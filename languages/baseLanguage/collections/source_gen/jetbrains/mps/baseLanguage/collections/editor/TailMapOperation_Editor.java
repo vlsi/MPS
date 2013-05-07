@@ -59,6 +59,7 @@ public class TailMapOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no fromKey>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("fromKey");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

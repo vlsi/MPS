@@ -80,6 +80,8 @@ public class PathHolder_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("macro");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -164,6 +166,8 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_o0ejdp_a0e0(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_o0ejdp_a0e0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("module");
       editorCell.addEditorCell(this.createRefNode_o0ejdp_a0a4a(editorContext, node));
       return editorCell;
     }
@@ -174,6 +178,8 @@ public class PathHolder_Editor extends DefaultNodeEditor {
       provider.setNoTargetText("<no title>");
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("title");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

@@ -85,6 +85,7 @@ public class AbstractContainerType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no elementType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("elementType");
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }

@@ -40,6 +40,7 @@ public class MinusExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no expr>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("expr");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

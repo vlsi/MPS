@@ -160,6 +160,7 @@ public class Layout_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no baseDirectory>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("baseDirectory");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
@@ -201,6 +202,7 @@ public class Layout_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no deployDirectory>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("deployDirectory");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -239,6 +241,7 @@ public class Layout_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no scriptsDirectory>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("scriptsDirectory");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -461,6 +464,7 @@ public class Layout_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no propertyFile>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("propertyFile");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

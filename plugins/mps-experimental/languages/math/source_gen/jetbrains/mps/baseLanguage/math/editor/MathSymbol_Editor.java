@@ -98,6 +98,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no upperBound>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("upperBound");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
@@ -149,6 +150,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no var>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("var");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
@@ -180,6 +182,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no precondition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("precondition");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
@@ -200,6 +203,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no expression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("expression");
     Style style = new StyleImpl();
     style.set(StyleAttributes.BASE_LINE_CELL, true);
     editorCell.getStyle().putAll(style);
@@ -265,6 +269,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no precondition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("precondition");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

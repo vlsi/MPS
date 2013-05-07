@@ -71,6 +71,8 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_ejwutq_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "classifier");
       editorCell.setCellId("ReferencePresentation_ejwutq_a0a0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("classifier");
       return editorCell;
     }
   }

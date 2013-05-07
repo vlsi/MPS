@@ -74,6 +74,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     provider.setNoTargetText("<no expr>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("expr");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

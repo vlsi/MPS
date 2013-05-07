@@ -140,6 +140,7 @@ public class Module_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no pluginXml>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("pluginXml");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -417,6 +418,7 @@ public class Module_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no pluginXml>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("pluginXml");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -70,6 +70,8 @@ public class ActionReference_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_ld3k57_a0a0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new AliasEditorComponent(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("action");
       return editorCell;
     }
   }
@@ -115,6 +117,8 @@ public class ActionReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_id");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("action");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

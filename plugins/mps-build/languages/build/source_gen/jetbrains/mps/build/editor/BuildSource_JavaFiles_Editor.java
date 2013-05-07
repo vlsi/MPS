@@ -31,6 +31,7 @@ public class BuildSource_JavaFiles_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no resset>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("resset");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

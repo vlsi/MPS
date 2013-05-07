@@ -103,6 +103,8 @@ public class NodeRefExpression_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("referentNode");
       Style style = new StyleImpl();
       SharedStyles_StyleSheet.applyReferenceDecorated(style, editorCell);
       editorCell.getStyle().putAll(style);

@@ -55,6 +55,7 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
     provider.setNoTargetText("<no extJar>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("extJar");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

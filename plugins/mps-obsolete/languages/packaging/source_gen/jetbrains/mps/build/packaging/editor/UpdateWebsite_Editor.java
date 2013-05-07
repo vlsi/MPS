@@ -85,6 +85,7 @@ public class UpdateWebsite_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no checkUrl>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("checkUrl");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -123,6 +124,7 @@ public class UpdateWebsite_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no updateUrl>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("updateUrl");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -165,6 +167,7 @@ public class UpdateWebsite_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no updateChannel>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("updateChannel");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -101,6 +101,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no direction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("direction");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -128,6 +129,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no latticeElementType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("latticeElementType");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -189,6 +191,8 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_590xoz_a0h0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new AliasEditorComponent(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("initialFunction");
       return editorCell;
     }
   }
@@ -199,6 +203,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no initialFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("initialFunction");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -260,6 +265,8 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_590xoz_a0k0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new AliasEditorComponent(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("mergeFunction");
       return editorCell;
     }
   }
@@ -270,6 +277,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no mergeFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("mergeFunction");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -331,6 +339,8 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_590xoz_a0n0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new AliasEditorComponent(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("funFunction");
       return editorCell;
     }
   }
@@ -341,6 +351,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no funFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("funFunction");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

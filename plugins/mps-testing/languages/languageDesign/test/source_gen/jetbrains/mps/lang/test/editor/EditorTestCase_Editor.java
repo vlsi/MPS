@@ -109,6 +109,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no nodeToEdit>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("nodeToEdit");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.SELECTABLE, true);
@@ -137,6 +138,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no result>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("result");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.SELECTABLE, true);
@@ -168,6 +170,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no code>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("code");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

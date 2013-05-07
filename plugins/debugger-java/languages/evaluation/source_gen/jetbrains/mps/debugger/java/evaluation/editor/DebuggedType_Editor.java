@@ -42,6 +42,7 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no highType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("highType");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -85,6 +86,7 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no lowType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("lowType");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

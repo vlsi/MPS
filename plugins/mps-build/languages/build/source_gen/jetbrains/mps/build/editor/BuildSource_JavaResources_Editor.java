@@ -45,6 +45,7 @@ public class BuildSource_JavaResources_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no fileset>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("fileset");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

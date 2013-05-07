@@ -72,6 +72,8 @@ public class GeneratorInternal_BuildSource_JavaJar_Editor extends DefaultNodeEdi
     private EditorCell createCollection_g0zw24_a0b0(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_g0zw24_a0b0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("targetJar");
       editorCell.addEditorCell(this.createRefNode_g0zw24_a0a1a(editorContext, node));
       return editorCell;
     }
@@ -82,6 +84,8 @@ public class GeneratorInternal_BuildSource_JavaJar_Editor extends DefaultNodeEdi
       provider.setNoTargetText("<no path>");
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("path");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

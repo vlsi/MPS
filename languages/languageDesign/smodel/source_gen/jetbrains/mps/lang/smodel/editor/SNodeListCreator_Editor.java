@@ -31,6 +31,7 @@ public class SNodeListCreator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no createdType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("createdType");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

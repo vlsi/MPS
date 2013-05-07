@@ -36,6 +36,7 @@ public class FileExistsCondition_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no pathToCheck>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("pathToCheck");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

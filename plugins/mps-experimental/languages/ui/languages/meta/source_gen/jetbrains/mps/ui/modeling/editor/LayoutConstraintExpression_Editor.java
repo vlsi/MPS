@@ -31,6 +31,7 @@ public class LayoutConstraintExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no constraint>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("constraint");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

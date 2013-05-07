@@ -56,6 +56,7 @@ public class BuildLayout_CustomCopy_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no fileset>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("fileset");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

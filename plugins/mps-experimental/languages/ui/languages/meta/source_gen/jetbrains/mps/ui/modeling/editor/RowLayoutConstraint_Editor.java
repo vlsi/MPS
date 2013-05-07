@@ -49,6 +49,7 @@ public class RowLayoutConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no row>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("row");
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
@@ -80,6 +81,7 @@ public class RowLayoutConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText(" ");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("spanRows");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

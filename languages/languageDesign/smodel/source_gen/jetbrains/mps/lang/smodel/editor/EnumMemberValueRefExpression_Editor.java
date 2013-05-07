@@ -105,6 +105,8 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("enum");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -164,6 +166,8 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_ldpt2z_a0e0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "member");
       editorCell.setCellId("ReferencePresentation_ldpt2z_a0e0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("member");
       return editorCell;
     }
   }

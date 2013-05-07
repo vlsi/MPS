@@ -512,6 +512,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no return>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("return");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyJavaDoc(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

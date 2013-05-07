@@ -79,6 +79,7 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no nodeToCoerce>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("nodeToCoerce");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -103,6 +104,7 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no pattern>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("pattern");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -78,6 +78,8 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_37ht8c_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "target");
       editorCell.setCellId("ReferencePresentation_37ht8c_a0a0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("target");
       return editorCell;
     }
   }

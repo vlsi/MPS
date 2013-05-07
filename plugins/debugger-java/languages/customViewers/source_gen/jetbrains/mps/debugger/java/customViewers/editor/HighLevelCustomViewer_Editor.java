@@ -105,6 +105,7 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no valueType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("valueType");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -136,6 +137,7 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no canWrap>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("canWrap");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -167,6 +169,7 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getPresentation>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("getPresentation");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -198,6 +201,7 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getWatchables>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("getWatchables");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

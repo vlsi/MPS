@@ -41,6 +41,7 @@ public class HeadPipeline_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no command>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("command");
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
@@ -72,6 +73,7 @@ public class HeadPipeline_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("?p");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("following");
     Style style = new StyleImpl();
     BashLanguageStyle_StyleSheet.applyNullStyle(style, editorCell);
     editorCell.getStyle().putAll(style);

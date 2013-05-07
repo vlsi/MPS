@@ -48,6 +48,7 @@ public class MatrixUnit_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no size>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("size");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);

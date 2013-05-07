@@ -117,6 +117,8 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("headerRowLinkDeclaration");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -215,6 +217,8 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role_1");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("rowsLinkDeclaration");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -301,6 +305,8 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role_2");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("cellsInRowLinkDeclaration");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

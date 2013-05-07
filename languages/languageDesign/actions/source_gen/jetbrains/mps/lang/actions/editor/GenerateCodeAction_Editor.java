@@ -110,6 +110,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no isApplicable>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("isApplicable");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -205,6 +206,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getActionUI>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("getActionUI");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -239,6 +241,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no executeSmartAction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("executeSmartAction");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

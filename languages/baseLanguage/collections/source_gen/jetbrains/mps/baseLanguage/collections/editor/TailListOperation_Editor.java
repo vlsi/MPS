@@ -73,6 +73,7 @@ public class TailListOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no fromIndex>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("fromIndex");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

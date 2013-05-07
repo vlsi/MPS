@@ -78,6 +78,8 @@ public class BuildLayout_FilesOf_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_1i5f76_a0b0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "element");
       editorCell.setCellId("ReferencePresentation_1i5f76_a0b0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("element");
       return editorCell;
     }
   }

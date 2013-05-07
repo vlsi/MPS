@@ -39,6 +39,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getAccessor>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("getAccessor");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -59,6 +60,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no setAccessor>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("setAccessor");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

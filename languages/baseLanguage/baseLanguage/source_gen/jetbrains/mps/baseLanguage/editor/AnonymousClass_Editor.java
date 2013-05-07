@@ -124,6 +124,8 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_msf9u8_a0a0a(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "classifier");
       editorCell.setCellId("ReferencePresentation_msf9u8_a0a0a");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("classifier");
       return editorCell;
     }
   }
@@ -505,6 +507,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<<initializer>>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("instanceInitializer");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -70,6 +70,7 @@ public class VectorType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no elementType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("elementType");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -188,6 +189,7 @@ public class VectorType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no elementType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("elementType");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

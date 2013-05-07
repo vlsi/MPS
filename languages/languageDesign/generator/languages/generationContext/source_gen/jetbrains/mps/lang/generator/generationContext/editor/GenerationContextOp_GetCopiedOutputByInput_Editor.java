@@ -58,6 +58,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
     provider.setNoTargetText("<no input node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("inputNode");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

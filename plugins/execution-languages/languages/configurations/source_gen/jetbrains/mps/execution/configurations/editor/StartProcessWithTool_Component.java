@@ -63,6 +63,7 @@ public class StartProcessWithTool_Component extends AbstractCellProvider {
     provider.setNoTargetText("<no tool>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("tool");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

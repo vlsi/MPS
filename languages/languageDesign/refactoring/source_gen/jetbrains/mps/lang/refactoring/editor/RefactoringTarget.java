@@ -86,6 +86,7 @@ public class RefactoringTarget extends AbstractCellProvider {
     provider.setNoTargetText("<applicable=true>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("isApplicableBlock");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

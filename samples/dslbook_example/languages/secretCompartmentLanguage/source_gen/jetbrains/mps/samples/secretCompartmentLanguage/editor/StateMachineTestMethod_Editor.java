@@ -211,6 +211,8 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_stateName");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("finalState");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

@@ -70,6 +70,7 @@ public class BuildSource_JavaContentRoot_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no basePath>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("basePath");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

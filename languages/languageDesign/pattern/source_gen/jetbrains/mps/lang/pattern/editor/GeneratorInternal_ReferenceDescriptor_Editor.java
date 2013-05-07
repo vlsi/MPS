@@ -113,6 +113,8 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     private EditorCell createReferencePresentation_vh2hfk_a0d0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "mainNode");
       editorCell.setCellId("ReferencePresentation_vh2hfk_a0d0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("mainNode");
       return editorCell;
     }
   }

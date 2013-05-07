@@ -59,6 +59,7 @@ public class PutAllOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no map>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("map");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

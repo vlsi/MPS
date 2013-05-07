@@ -37,6 +37,7 @@ public class StatementCommentPart_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no commentedStatement>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("commentedStatement");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
     editorCell.getStyle().putAll(style);

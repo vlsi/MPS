@@ -108,6 +108,8 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("macro");
       Style style = new StyleImpl();
       buildStyles_StyleSheet.applyMacro(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -157,6 +159,7 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no compositePart>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("compositePart");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);

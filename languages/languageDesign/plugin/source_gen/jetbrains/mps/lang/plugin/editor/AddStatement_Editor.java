@@ -44,6 +44,7 @@ public class AddStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no item>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("item");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

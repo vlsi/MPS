@@ -85,6 +85,8 @@ public class FinishWorkStatement_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_workName");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("workStatement");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyStringLiteral(style, editorCell);
       editorCell.getStyle().putAll(style);

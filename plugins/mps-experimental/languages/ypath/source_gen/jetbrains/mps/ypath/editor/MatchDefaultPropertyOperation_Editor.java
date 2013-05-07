@@ -45,6 +45,7 @@ public class MatchDefaultPropertyOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no matchExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("matchExpression");
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }

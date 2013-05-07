@@ -72,6 +72,8 @@ public class TemplateDeclarationReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("template");
       Style style = new StyleImpl();
       Styles_StyleSheet.applyReference(style, editorCell);
       editorCell.getStyle().putAll(style);

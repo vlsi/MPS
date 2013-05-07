@@ -61,6 +61,7 @@ public class SingleComplexExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no complexExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("complexExpression");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

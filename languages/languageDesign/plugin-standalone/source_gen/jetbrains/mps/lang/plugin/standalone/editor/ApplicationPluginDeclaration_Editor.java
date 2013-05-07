@@ -201,6 +201,7 @@ public class ApplicationPluginDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<init block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("initBlock");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -228,6 +229,7 @@ public class ApplicationPluginDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<dispose block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("disposeBlock");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -37,6 +37,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no array>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("array");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -65,6 +66,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no index>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("index");
     ArrayAccessExpression_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

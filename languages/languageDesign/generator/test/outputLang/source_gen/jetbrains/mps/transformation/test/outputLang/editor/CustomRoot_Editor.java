@@ -48,6 +48,7 @@ public class CustomRoot_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no statement>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("statement");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

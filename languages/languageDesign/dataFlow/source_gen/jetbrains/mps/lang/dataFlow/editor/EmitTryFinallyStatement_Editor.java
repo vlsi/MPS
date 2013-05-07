@@ -50,6 +50,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no tryPart>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("tryPart");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -82,6 +83,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no finallyPart>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("finallyPart");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

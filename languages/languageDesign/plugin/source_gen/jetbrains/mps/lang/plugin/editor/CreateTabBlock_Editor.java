@@ -68,6 +68,7 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no conceptsBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("conceptsBlock");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -85,6 +86,7 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no createBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("createBlock");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

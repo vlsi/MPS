@@ -61,6 +61,7 @@ public class ConsoleCreator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no project>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("project");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -88,6 +89,7 @@ public class ConsoleCreator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no viewer>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("viewer");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

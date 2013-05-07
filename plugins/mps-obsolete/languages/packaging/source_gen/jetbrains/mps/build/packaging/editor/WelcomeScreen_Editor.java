@@ -80,6 +80,7 @@ public class WelcomeScreen_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no caption>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("caption");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -118,6 +119,7 @@ public class WelcomeScreen_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no slogan>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("slogan");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

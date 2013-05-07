@@ -85,6 +85,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no argumentType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("argumentType");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -169,6 +170,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no filterClause>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("filterClause");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -204,6 +206,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no chooseComponentClause>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("chooseComponentClause");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -239,6 +242,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no initialValue>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("initialValue");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

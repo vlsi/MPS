@@ -64,6 +64,8 @@ public class BuildSource_JavaExternalJarRef_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_uanmw8_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "jar");
       editorCell.setCellId("ReferencePresentation_uanmw8_a0a0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("jar");
       return editorCell;
     }
   }

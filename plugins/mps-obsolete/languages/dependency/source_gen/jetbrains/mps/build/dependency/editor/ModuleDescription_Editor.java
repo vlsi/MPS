@@ -211,6 +211,7 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no classes>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("classes");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

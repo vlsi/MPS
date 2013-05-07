@@ -58,6 +58,7 @@ public class ButtonCreator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("action");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

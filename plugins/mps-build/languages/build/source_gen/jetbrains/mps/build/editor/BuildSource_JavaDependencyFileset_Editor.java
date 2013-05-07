@@ -47,6 +47,7 @@ public class BuildSource_JavaDependencyFileset_Editor extends DefaultNodeEditor 
     provider.setNoTargetText("<no classpath>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("classpath");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);

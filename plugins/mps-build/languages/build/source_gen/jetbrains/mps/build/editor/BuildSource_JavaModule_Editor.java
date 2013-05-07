@@ -129,6 +129,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<uses project options>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("options");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);

@@ -41,6 +41,7 @@ public class CommentedCommandList_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no commandList>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("commandList");
     Style style = new StyleImpl();
     BashLanguageStyle_StyleSheet.applyCommentedCommand(style, editorCell);
     editorCell.getStyle().putAll(style);

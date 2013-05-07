@@ -40,6 +40,7 @@ public class ListElementAccessExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no list>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("list");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -68,6 +69,7 @@ public class ListElementAccessExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no index>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("index");
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }

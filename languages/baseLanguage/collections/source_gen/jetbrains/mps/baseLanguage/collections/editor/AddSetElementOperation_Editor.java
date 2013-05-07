@@ -75,6 +75,7 @@ public class AddSetElementOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no argument>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("argument");
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }

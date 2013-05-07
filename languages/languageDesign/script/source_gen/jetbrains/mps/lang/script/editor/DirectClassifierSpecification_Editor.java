@@ -64,6 +64,8 @@ public class DirectClassifierSpecification_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_v9q52x_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "classifier");
       editorCell.setCellId("ReferencePresentation_v9q52x_a0a0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("classifier");
       return editorCell;
     }
   }

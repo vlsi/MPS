@@ -131,6 +131,7 @@ public class ApplyConstraintStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no widget>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("widget");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -155,6 +156,7 @@ public class ApplyConstraintStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no container>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("container");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

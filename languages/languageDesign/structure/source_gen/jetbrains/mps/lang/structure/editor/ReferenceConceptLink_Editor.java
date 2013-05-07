@@ -76,6 +76,8 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("conceptLinkDeclaration");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -134,6 +136,8 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_3r32uy_a0c0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "target");
       editorCell.setCellId("ReferencePresentation_3r32uy_a0c0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("target");
       return editorCell;
     }
   }

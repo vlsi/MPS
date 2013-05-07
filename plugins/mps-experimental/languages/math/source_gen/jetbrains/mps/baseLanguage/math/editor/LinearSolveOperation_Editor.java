@@ -147,6 +147,7 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("type");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -177,6 +178,7 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no matrix>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("matrix");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -226,6 +228,7 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no vector>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("vector");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -281,6 +284,8 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_kydwvz_a0a0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new MathContextEditorPart(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("context");
       return editorCell;
     }
   }

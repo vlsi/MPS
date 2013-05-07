@@ -224,6 +224,7 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no afterRead block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("afterReadBlock");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -251,6 +252,7 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no beforeWrite block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("beforeWriteBlock");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

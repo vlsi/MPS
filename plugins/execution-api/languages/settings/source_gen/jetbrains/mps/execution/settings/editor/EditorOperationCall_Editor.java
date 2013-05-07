@@ -82,6 +82,8 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_jn1wx6_a0a0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new AliasEditorComponent(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("editorOperationDeclaration");
       Style style = new StyleImpl();
       RunConfigurations_StyleSheet.applyOperation(style, editorCell);
       editorCell.getStyle().putAll(style);

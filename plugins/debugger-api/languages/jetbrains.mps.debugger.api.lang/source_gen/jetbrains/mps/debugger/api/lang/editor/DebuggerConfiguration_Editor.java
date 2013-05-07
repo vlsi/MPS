@@ -60,6 +60,7 @@ public class DebuggerConfiguration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no debugger>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("debugger");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -87,6 +88,7 @@ public class DebuggerConfiguration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getSettings>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("getSettings");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

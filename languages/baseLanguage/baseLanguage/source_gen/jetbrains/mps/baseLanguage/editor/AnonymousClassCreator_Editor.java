@@ -33,6 +33,7 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no cls>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("cls");
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }

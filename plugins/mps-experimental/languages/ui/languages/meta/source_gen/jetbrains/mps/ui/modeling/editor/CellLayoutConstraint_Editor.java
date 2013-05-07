@@ -52,6 +52,7 @@ public class CellLayoutConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rowConstraint>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("rowConstraint");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -76,6 +77,7 @@ public class CellLayoutConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no columnConstraint>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("columnConstraint");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

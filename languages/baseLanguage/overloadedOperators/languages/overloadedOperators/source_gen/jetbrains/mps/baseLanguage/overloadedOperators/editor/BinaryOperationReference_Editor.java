@@ -64,6 +64,8 @@ public class BinaryOperationReference_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_mfrs1f_a0a0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new AliasEditorComponent(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("binaryOperation");
       return editorCell;
     }
   }

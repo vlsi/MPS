@@ -118,6 +118,8 @@ public class GeometryHandler_Editor extends DefaultNodeEditor {
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_l8zkiy_a0c0a");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("geometry");
       return editorCell;
     }
   }

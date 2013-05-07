@@ -32,6 +32,7 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no defaultGetAccessor>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("defaultGetAccessor");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -49,6 +50,7 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no defaultSetAccessor>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("defaultSetAccessor");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -105,6 +105,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<expr>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("expression");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

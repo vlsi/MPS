@@ -112,6 +112,8 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("extensionPoint");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -202,6 +204,8 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_hr8njl_a0b0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("extensionPoint");
       return editorCell;
     }
   }

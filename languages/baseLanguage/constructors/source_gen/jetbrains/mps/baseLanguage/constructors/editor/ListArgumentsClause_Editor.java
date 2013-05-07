@@ -40,6 +40,7 @@ public class ListArgumentsClause_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no list>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("list");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

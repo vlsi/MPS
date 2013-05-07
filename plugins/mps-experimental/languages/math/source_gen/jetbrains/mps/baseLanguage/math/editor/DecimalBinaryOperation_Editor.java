@@ -49,6 +49,7 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no leftExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("leftExpression");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -87,6 +88,7 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rightExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("rightExpression");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -142,6 +144,8 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_sl2ryj_a0a0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new MathContextEditorPart(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("context");
       return editorCell;
     }
   }

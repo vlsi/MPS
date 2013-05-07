@@ -75,6 +75,8 @@ public class TemplateParameterReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("variableDeclaration");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
       editorCell.getStyle().putAll(style);

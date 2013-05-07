@@ -108,6 +108,7 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no order>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("order");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

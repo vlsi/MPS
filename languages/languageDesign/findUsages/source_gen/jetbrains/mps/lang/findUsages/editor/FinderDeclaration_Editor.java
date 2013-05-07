@@ -146,6 +146,8 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("forConcept");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -286,6 +288,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<isUsedByDefault = false>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("isUsedByDefault");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -317,6 +320,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<isVisible = true>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("isVisibleBlock");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -348,6 +352,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<isApplicable = true>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("isApplicableFunction");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -379,6 +384,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no findFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("findFunction");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -410,6 +416,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<searched nodes default={query node}>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("searchedNodesBlock");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -441,6 +448,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<categorize block default=\"Uncategorized\">");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("categorizeBlock");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

@@ -55,6 +55,7 @@ public class Concept_FindInstances_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<global scope>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("scope");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

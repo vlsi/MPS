@@ -56,6 +56,7 @@ public class SimpleCommand_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no paramList>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("paramList");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

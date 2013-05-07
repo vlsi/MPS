@@ -107,6 +107,7 @@ public class BuildLayout_CopyGlobMapper_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no to>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("to");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -70,6 +70,7 @@ public class CloseTabOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no componentExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("componentExpression");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

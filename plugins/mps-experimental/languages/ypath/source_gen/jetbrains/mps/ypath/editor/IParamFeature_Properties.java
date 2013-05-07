@@ -213,6 +213,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     provider.setNoTargetText("<no targetTypeFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("targetTypeFunction");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -271,6 +272,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     provider.setNoTargetText("<no cardinal>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("cardinal");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

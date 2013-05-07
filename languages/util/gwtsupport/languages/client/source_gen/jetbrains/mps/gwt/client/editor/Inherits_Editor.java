@@ -89,6 +89,8 @@ public class Inherits_Editor extends DefaultNodeEditor {
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_2duhcq_a0b0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("module");
       return editorCell;
     }
   }

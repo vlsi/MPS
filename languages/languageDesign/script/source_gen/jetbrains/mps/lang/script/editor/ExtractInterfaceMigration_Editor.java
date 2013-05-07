@@ -70,6 +70,7 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no oldClassifier>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("oldClassifier");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -127,6 +128,8 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_7cysuj_a0d0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "newClassifier");
       editorCell.setCellId("ReferencePresentation_7cysuj_a0d0");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("newClassifier");
       return editorCell;
     }
   }

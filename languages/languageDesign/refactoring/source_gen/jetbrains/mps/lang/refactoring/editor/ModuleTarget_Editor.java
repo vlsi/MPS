@@ -73,6 +73,7 @@ public class ModuleTarget_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no moduleType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("moduleType");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

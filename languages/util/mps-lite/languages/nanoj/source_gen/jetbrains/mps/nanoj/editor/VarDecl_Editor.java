@@ -68,6 +68,7 @@ public class VarDecl_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no varType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("varType");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

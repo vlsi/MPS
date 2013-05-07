@@ -87,6 +87,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no search>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("search");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

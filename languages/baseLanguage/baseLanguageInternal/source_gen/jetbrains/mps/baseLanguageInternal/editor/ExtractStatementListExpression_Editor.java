@@ -87,6 +87,7 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no stmts>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("stmts");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -115,6 +116,7 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no innerExpr>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("innerExpr");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

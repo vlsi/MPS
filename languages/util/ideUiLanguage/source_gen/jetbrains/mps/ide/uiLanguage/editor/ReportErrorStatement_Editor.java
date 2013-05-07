@@ -47,6 +47,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no errorText>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("errorText");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

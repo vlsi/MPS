@@ -87,6 +87,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no pattern>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("pattern");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -118,6 +119,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no nodeToMatch>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("nodeToMatch");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -156,6 +158,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no matches>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("matches");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

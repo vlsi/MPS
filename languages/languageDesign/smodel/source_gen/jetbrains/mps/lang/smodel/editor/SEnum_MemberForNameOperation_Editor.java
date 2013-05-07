@@ -58,6 +58,7 @@ public class SEnum_MemberForNameOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no nameExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("nameExpression");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyParameter(style, editorCell);
     editorCell.getStyle().putAll(style);

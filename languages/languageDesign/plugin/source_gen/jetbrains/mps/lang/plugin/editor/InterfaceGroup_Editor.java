@@ -102,6 +102,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<id>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("groupID");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -119,6 +120,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<contents>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("contents");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

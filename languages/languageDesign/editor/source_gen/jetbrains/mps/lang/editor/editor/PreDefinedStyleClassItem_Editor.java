@@ -109,6 +109,8 @@ public class PreDefinedStyleClassItem_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_value");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("key");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -134,6 +136,7 @@ public class PreDefinedStyleClassItem_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("allways");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("query");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -151,6 +154,7 @@ public class PreDefinedStyleClassItem_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no queryStyle>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("queryStyle");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

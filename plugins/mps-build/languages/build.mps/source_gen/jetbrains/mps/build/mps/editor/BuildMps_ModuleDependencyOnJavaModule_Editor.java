@@ -78,6 +78,8 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("module");
       Style style = new StyleImpl();
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
       editorCell.getStyle().putAll(style);

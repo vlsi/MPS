@@ -180,6 +180,7 @@ public class PersistentPropertiesComponent extends AbstractCellProvider {
     provider.setNoTargetText("<no check>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("checkProperties");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

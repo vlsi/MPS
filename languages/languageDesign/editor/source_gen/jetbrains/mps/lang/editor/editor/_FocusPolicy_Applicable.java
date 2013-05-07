@@ -87,6 +87,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     provider.setNoTargetText("<no focus policy condition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("focusPolicyApplicable");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

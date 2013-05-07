@@ -159,6 +159,7 @@ public class InputRootWithStatementList_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no statementList>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("statementList");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

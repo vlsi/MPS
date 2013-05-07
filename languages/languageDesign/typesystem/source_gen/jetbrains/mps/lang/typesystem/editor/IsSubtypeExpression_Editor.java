@@ -71,6 +71,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no subtypeExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("subtypeExpression");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -95,6 +96,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no supertypeExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("supertypeExpression");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

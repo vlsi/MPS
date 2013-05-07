@@ -78,6 +78,7 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     provider.setNoTargetText("<no innerClass>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("innerClass");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -106,6 +107,7 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     provider.setNoTargetText("<no inner>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("inner");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

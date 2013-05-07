@@ -138,6 +138,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no tail>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("tail");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);

@@ -55,6 +55,7 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no insertedNode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("insertedNode");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

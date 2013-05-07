@@ -56,6 +56,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no lValue>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("lValue");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
@@ -145,6 +146,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rValue>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("rValue");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);

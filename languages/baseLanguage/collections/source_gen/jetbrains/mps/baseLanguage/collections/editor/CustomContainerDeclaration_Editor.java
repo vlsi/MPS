@@ -122,6 +122,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no containerType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("containerType");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -183,6 +184,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no runtimeType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("runtimeType");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -237,6 +239,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no factory>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("factory");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -61,6 +61,7 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no nodeToCheck>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("nodeToCheck");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

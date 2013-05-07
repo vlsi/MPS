@@ -64,6 +64,7 @@ public class BuildLayout_JarManifest_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("MANIFEST.MF");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("name");
     editorCell.addKeyMap(new create_JarManifestName());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

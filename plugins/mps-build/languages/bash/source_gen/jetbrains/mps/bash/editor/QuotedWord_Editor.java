@@ -70,6 +70,7 @@ public class QuotedWord_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no word>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("word");
     Style style = new StyleImpl();
     BashLanguageStyle_StyleSheet.applyQuotedWord(style, editorCell);
     editorCell.getStyle().putAll(style);

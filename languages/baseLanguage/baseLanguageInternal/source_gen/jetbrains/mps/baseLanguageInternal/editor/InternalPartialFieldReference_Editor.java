@@ -61,6 +61,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no fieldType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("fieldType");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -124,6 +125,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no instanceType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("instanceType");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -152,6 +154,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no instance>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("instance");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);

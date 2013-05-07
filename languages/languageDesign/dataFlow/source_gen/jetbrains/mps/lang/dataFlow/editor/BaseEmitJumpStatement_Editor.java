@@ -68,6 +68,7 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no jumpTo>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("jumpTo");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -85,6 +86,7 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no position>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("position");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

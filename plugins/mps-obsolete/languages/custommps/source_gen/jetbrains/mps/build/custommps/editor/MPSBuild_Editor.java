@@ -111,6 +111,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no pathToBuildToolsZip>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("pathToBuildToolsZip");
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
@@ -170,6 +171,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no pathToBuildToolsZip>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("pathToBuildToolsZip");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -209,6 +211,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no licencePath>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("licencePath");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

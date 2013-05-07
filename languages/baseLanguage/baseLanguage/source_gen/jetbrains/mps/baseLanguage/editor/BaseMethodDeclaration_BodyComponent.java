@@ -79,6 +79,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
     provider.setNoTargetText("<no body>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("body");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, BaseMethodDeclaration_BodyComponent._StyleParameter_QueryFunction_fao2ea_a0b0((editorCell == null ?
       null :

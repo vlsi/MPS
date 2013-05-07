@@ -86,6 +86,8 @@ public class OperationCall_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_operationName");
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("function");
       Style style = new StyleImpl();
       TextGenStyles_StyleSheet.applyTextGenOperation(style, editorCell);
       editorCell.getStyle().putAll(style);

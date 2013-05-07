@@ -68,6 +68,7 @@ public class QuotesCommandSubstitution_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no command>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setRole("command");
     Style style = new StyleImpl();
     BashLanguageStyle_StyleSheet.applyQuotesCommandSubstitution(style, editorCell);
     editorCell.getStyle().putAll(style);
