@@ -8,21 +8,21 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8077936094962850237" nodeInfo="ng">
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8077936094962850237" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="name" nameId="tpck.1169194664001" value="CompositeWithParentScopeExpression" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="composite with" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8077936094962969171" nodeInfo="ng">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8077936094962969171" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="expr" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8077936094962911282" nodeInfo="ng">
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8077936094962911282" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="name" nameId="tpck.1169194664001" value="ParentScope" />
@@ -30,23 +30,23 @@
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="parent scope" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8077936094962944991" nodeInfo="ng">
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8077936094962944991" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="name" nameId="tpck.1169194664001" value="ComeFromExpression" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="come from" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8077936094962945822" nodeInfo="ng">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8077936094962945822" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="link" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
     </node>
   </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2995585510566823808" nodeInfo="ng">
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2995585510566823808" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="UniformScopeProvider" />
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2995585510566823812" nodeInfo="ng">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2995585510566823812" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
     </node>
   </root>

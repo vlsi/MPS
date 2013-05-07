@@ -2585,7 +2585,7 @@
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="7047854634821537948" nodeInfo="nn">
                               <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="7047854634821537950" nodeInfo="nn">
-                                <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="7047854634821537952" nodeInfo="ng">
+                                <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="7047854634821537952" nodeInfo="ig">
                                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="7047854634821537955" nodeInfo="ng">
                                     <property name="linkRole" nameId="tpck.1757699476691236116" value="target" />
                                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7047854634821537980" nodeInfo="nn">

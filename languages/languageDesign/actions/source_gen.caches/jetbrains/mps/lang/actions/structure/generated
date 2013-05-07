@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-arw7gvobs0uivjrocx6wvn1k4g8q42g">
+<dependencies version="2" modelHash="am2x6j55wxsh83v5fqo5pcbixbzqrfh">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="ggsqc6rgbf2p0m0z15dk8d5fjhmfbr" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8pja5s7kuga6tnod6ekp0ci8k86gmfl" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b3wz0owxesi28bm1lrvljioj8jycged" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3lg0crq1zjy3uktzvbog4vi38f0l45t" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
   <common hash="93fmb4meejdsuioftly29sxnsxs1agl">
@@ -138,16 +138,16 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1112056943463" name="NodeSubstituteActions" hash="1i55bv4ks5a3n3pv4nkx639fpup81cy">
+  <source id="1112056943463" name="NodeSubstituteActions" hash="-3tr61s5eqzkt932n9cwlr0xvsa1q4kl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1112058030570" name="NodeSubstituteActionsBuilder" hash="7xbc8ij809ch6j51dr8fstnshz6rha2">
+  <source id="1112058030570" name="NodeSubstituteActionsBuilder" hash="9hal6105gwilbbuot9m98ak2729citc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1138079221458" name="SideTransformHintSubstituteActionsBuilder" hash="810hwpzdp1qeelm0qfc68et16cp4jy4">
+  <source id="1138079221458" name="SideTransformHintSubstituteActionsBuilder" hash="9avqr8veqh7jjgiem9kv2olc3vbco6e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1138079416598" name="SideTransformHintSubstituteActions" hash="8131vqa009pegvo1sj5xxo6fycntaud">
+  <source id="1138079416598" name="SideTransformHintSubstituteActions" hash="-c7q67t6z5zqwidyg45m7dn6wpv59ymo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1140829206022" name="SideTransformTag" hash="evnu66vzitdm4ycf6i0piixdbihf7wj">
@@ -161,208 +161,208 @@
     <file name="SideTransformTag.java" />
     <file name="SideTransformTag_PropertySupport.java" />
   </source>
-  <source id="1154465102724" name="NodeSubstitutePreconditionFunction" hash="ewfsmiybb946tgaldvymqydf69iw14b">
+  <source id="1154465102724" name="NodeSubstitutePreconditionFunction" hash="-c4v4vdd05028lhxd1og6tqkt5js3903">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1154465273778" name="ConceptFunctionParameter_parentNode" hash="aot211ncbi654abirlzpkypf8x0vikg">
+  <source id="1154465273778" name="ConceptFunctionParameter_parentNode" hash="alfmf2n6mg8rzm2hzc5beorpbhksdc4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1154622616118" name="SideTransformHintSubstitutePreconditionFunction" hash="-9y9rc327tjl1r0m3mk36wl78lhvu1na">
+  <source id="1154622616118" name="SideTransformHintSubstitutePreconditionFunction" hash="90v14i8ssyyqvsyx2f925idxeokh5yf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1158700664498" name="NodeFactories" hash="6tf1vwpzorznwt12nqebrgasl44q8my">
+  <source id="1158700664498" name="NodeFactories" hash="-7qvjopq29de9rlvj6ybn7e1e7u4c34f">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1158700725281" name="NodeFactory" hash="-6umgsa4727j0pg0ub9s9feppenis11b">
+  <source id="1158700725281" name="NodeFactory" hash="-6qxmijpadqxeorj77epq4njlzebz1kx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1158701162220" name="NodeSetupFunction" hash="-dl556f96ek40qydyd0bqsmell08nzgr">
+  <source id="1158701162220" name="NodeSetupFunction" hash="cw2v7cfl6jk3nis8swagfatwa2zgm15">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177323652379" name="SubstituteMenuPart" hash="78kw1rhhvwgfw6n0y12sgex3s8p3jx4">
+  <source id="1177323652379" name="SubstituteMenuPart" hash="-32i5ddsn5tim3d3yiav48aktfs6fuy0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177323996388" name="AddMenuPart" hash="1mqicobr0qr7rhv4r2zlarwa3rfgfgq">
+  <source id="1177323996388" name="AddMenuPart" hash="7mg2io927v9f7pj4qkdoztf6vk6mhuv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177327161126" name="QueryFunction_CanSubstitute" hash="-c4favn9wq7o0p6fxalsr79a0eg4ia92">
+  <source id="1177327161126" name="QueryFunction_CanSubstitute" hash="-1pe4u9i153wmzc0mdvopzy75klys5u4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177327274449" name="ConceptFunctionParameter_pattern" hash="-8h6xvts5lipkeap1rvlhft2gmx1ilgp">
+  <source id="1177327274449" name="ConceptFunctionParameter_pattern" hash="-5z3xprtxu6l65nmfnz3atkrfgq0rwra">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177327570013" name="QueryFunction_Substitute_Handler" hash="-9po70lhcbgbnsqoudh92xl4a37pc760">
+  <source id="1177327570013" name="QueryFunction_Substitute_Handler" hash="cfv2qb0z5t6j01bhhkn1p6gbptl7k62">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177327666243" name="SimpleItemSubstitutePart" hash="b2clj3ua9120c1u7359zx6g4v0lpscr">
+  <source id="1177327666243" name="SimpleItemSubstitutePart" hash="1zjpuh35bqym2oj2odjxnguj93ikzwx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177333529597" name="ConceptPart" hash="-kjkutagvibq99nswwv2brvnzflgidn">
+  <source id="1177333529597" name="ConceptPart" hash="4yx9xovutfcryburh1q9fujiaa23ch3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177335944525" name="QueryFunction_SubstituteString" hash="axcqihgp7qbu9vdc9mry62b6cdlunml">
+  <source id="1177335944525" name="QueryFunction_SubstituteString" hash="-40gylnjolf5e7c8iwbrykucgob8ea2z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177337641126" name="ParameterizedSubstituteMenuPart" hash="-b7dlkudec2x4xskhecfzd7mz82qitz8">
+  <source id="1177337641126" name="ParameterizedSubstituteMenuPart" hash="55e78c53vrsfhfgcrjjovzicwfeujzj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177337833147" name="ConceptFunctionParameter_parameterObject" hash="-4sa38c0tsy8s4xmw4la5m96qeowq9x5">
+  <source id="1177337833147" name="ConceptFunctionParameter_parameterObject" hash="-1seweup32obr800zw1pivb96aouhvux">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177337890340" name="QueryFunction_ParameterizedSubstitute_Query" hash="5ex73z9mdk3szz3m7bhc67bee10grli">
+  <source id="1177337890340" name="QueryFunction_ParameterizedSubstitute_Query" hash="ey42q7xx8k302e5u3jguxkfbik56l04">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177339114370" name="QueryFunction_ParameterizedSubstitute_String" hash="-cowgi1a22noiltcgk1x8acvjswf4llk">
+  <source id="1177339114370" name="QueryFunction_ParameterizedSubstitute_String" hash="chdmw2omlqiq227s3cqkg9je893e8ds">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177339225103" name="QueryFunction_ParameterizedSubstitute_Handler" hash="-2qtj3t2oerhxa2b3jt0sz27n00n97jx">
+  <source id="1177339225103" name="QueryFunction_ParameterizedSubstitute_Handler" hash="asgngi8ym2fxsoy7vx9j5r428lqm5o1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177398027324" name="ConceptsSubstituteMenuPart" hash="3smgpgax50zlxfz6w1a5ehvubpw3rln">
+  <source id="1177398027324" name="ConceptsSubstituteMenuPart" hash="6haj9k8oj49fim65wlfawd8rtflxyev">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177402519659" name="WrapperSubstituteMenuPart" hash="-byp9v5hht1q60vh56r9qev24upk3qeb">
+  <source id="1177402519659" name="WrapperSubstituteMenuPart" hash="-817sds0f3trd921kqglesynfjihx9r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177402571666" name="QueryFunction_SubstituteWrapper" hash="-ep4bmxhmgece1nkw774xavubk2453r9">
+  <source id="1177402571666" name="QueryFunction_SubstituteWrapper" hash="-bvyoa0nn79qxa7dwkmbu2xqdsi4zp25">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177402641904" name="ConceptFunctionParameter_nodeToWrap" hash="-2a8qhljtxu0a1owt8qx2vthi6zl5rbt">
+  <source id="1177402641904" name="ConceptFunctionParameter_nodeToWrap" hash="ecny0e48oo8clfcrousotoz329xru0p">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177409831820" name="RemovePart" hash="4ydukahtildlea4p0rdq4icdauukupu">
+  <source id="1177409831820" name="RemovePart" hash="-ebzsew48xgr5s1f0ckx4movjaf4rem4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177413882405" name="RemoveByConditionPart" hash="-4zi1rg3x1z9cas3u2t3vwd1yesxo4h7">
+  <source id="1177413882405" name="RemoveByConditionPart" hash="atoz5iwge5fndlrvwgcm5ynjr7pwgrz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177413954598" name="QueryFunction_RemoveBy_Condition" hash="ertofvae50gouze4c0b19an4o4f0xx0">
+  <source id="1177413954598" name="QueryFunction_RemoveBy_Condition" hash="c3rmltyqmi9azat0xb55axxe9pfidky">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177414026667" name="ConceptFunctionParameter_concept" hash="5m9hjgzxqh6vnh5ezxd4g0x634aymkd">
+  <source id="1177414026667" name="ConceptFunctionParameter_concept" hash="elslrbz0anqsb2ugwp6luszysx7p8wd">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177495774157" name="MenuPart" hash="deticsema01327o3qpq623yfs0lu2gy">
+  <source id="1177495774157" name="MenuPart" hash="95ec7fsybva2qi0df852ec7qx6eg0r8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177496137779" name="SideTransformMenuPart" hash="79vexdga4d2bzjresgeaqdvi06nicjc">
+  <source id="1177496137779" name="SideTransformMenuPart" hash="-ehe6gczgnxnmdwsu6juaofn6gwlrm62">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177497140107" name="ConceptFunctionParameter_sourceNode" hash="d8ldplniabdqzgeblcfv23v62ya5p8n">
+  <source id="1177497140107" name="ConceptFunctionParameter_sourceNode" hash="-ddqw0of5ummi5zzxhpd865kduls7fut">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177498013932" name="SimpleSideTransformMenuPart" hash="-6ykqmqoslta6lu5eqwnpe9s5te8obr7">
+  <source id="1177498013932" name="SimpleSideTransformMenuPart" hash="-5q6o6078f8sn3xmzltzje0a0e1cmx3m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177498071304" name="QueryFunction_SideTransform_String" hash="-ev5fq08e7v9l8lkyjx5wei43zp6avaw">
+  <source id="1177498071304" name="QueryFunction_SideTransform_String" hash="d3vmei3e6e9vmi9str03yh9vqtbnzc1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177498227294" name="QueryFunction_SideTransform_Handler" hash="8e8muaubauu1wp82pq6b7mpl21g7o7c">
+  <source id="1177498227294" name="QueryFunction_SideTransform_Handler" hash="-7h1fkqwwf3kiuzqcx36ekwjo1l4d2o7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177508764419" name="ParameterizedSideTransformMenuPart" hash="-1ve08utwt83pgqkqxsuwtxeeanxl60j">
+  <source id="1177508764419" name="ParameterizedSideTransformMenuPart" hash="-8c79mryp6ws0hzy1t1ac42a321vfng9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177508842676" name="QueryFunction_ParameterizedSideTransform_Query" hash="-2tc8q6526y5ylx5zmlagwbnwtp9dlp">
+  <source id="1177508842676" name="QueryFunction_ParameterizedSideTransform_Query" hash="az4xf13a3464pukrxz3fg3w9w4ldp62">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177509289232" name="QueryFunction_ParameterizedSideTransform_Handler" hash="d0fp4uu77dl28bb51lrivb15t9ncbq6">
+  <source id="1177509289232" name="QueryFunction_ParameterizedSideTransform_Handler" hash="-b0wa19p6de4eoozpq8zyokct6gc0im9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177526535706" name="ConceptFunctionParameter_result" hash="-7a9knrz039f7pwyeq8q8h4pmqez5chb">
+  <source id="1177526535706" name="ConceptFunctionParameter_result" hash="aavlfb2h0w5fhtkh9pp9ed8xpke4ulw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177526592562" name="QueryFunction_SideTransform_ConceptHandler" hash="-csmp7oc1xdhlmpg0zdx6rqm5yotauu0">
+  <source id="1177526592562" name="QueryFunction_SideTransform_ConceptHandler" hash="49hetpoasud57w74sq8fayb78c9wyy6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177568407352" name="ConceptFunctionParameter_currentTargetNode" hash="-2sbic9921f8qtkuby1zxqcln6ruv25k">
+  <source id="1177568407352" name="ConceptFunctionParameter_currentTargetNode" hash="-9ydrjlftubuvxx2dwh0ajvitytilho0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177614709184" name="RemoveDefaultsPart" hash="8x90if1kna90lu09oeetqh8cm5ukofm">
+  <source id="1177614709184" name="RemoveDefaultsPart" hash="7veymld9r2zw0kl3z8kj9g7z8eqattt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177768753302" name="ConceptFunctionParameter_childConcept" hash="-97rtv9n6zhbqbzbxp69laxhhuwas3oo">
+  <source id="1177768753302" name="ConceptFunctionParameter_childConcept" hash="-9ygwagzv9c1mmx0v545kae7bnvl46bz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1178537049112" name="QueryFunction_SideTransform_NodeQuery" hash="3hkkyazntwp85fsvt5y96up9cms0gw5">
+  <source id="1178537049112" name="QueryFunction_SideTransform_NodeQuery" hash="-af0sjabtxxljfvxr1nyfsiuv8o0v7zr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1178539929008" name="SubstituteNodeBuilderVariableDeclaration" hash="-1je7s834dhd1yugdwhjvg5xj091nfh5">
+  <source id="1178539929008" name="SubstituteNodeBuilderVariableDeclaration" hash="2d8axuz4mqh2vdrv25nij4o6atvi900">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1178541723620" name="SubstituteNodeBuilderVariableReference" hash="897k9hg93jx5iv7uolyp98hqlgez2l5">
+  <source id="1178541723620" name="SubstituteNodeBuilderVariableReference" hash="bw1oa2qwc6yu7edtdu1trgg3uu6qrqr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1178781654714" name="QueryFunction_Substitute_CommonInitializer" hash="-1l4tkcgthn3c54vbzh361tq5g3uft7k">
+  <source id="1178781654714" name="QueryFunction_Substitute_CommonInitializer" hash="-8dxuwxw2mknr5lga4pzn697v40umzlv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1179456248444" name="QueryFunction_SubstituteVariableInitializer" hash="1d7vd8iu4m6dy36v0ie8xdtk29six1y">
+  <source id="1179456248444" name="QueryFunction_SubstituteVariableInitializer" hash="c76yseu2jn4phe6dm972lu1i9g063f8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1180111159572" name="IncludeRightTransformForNodePart" hash="3aipcuo9wguk1b11ubliu37wv151esz">
+  <source id="1180111159572" name="IncludeRightTransformForNodePart" hash="6t1dpjjo7aymqzishz6tykazh46wdwa">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1180134965967" name="ConceptSubstitutePart" hash="-bdrjlaw7tetow9f7hzb5umez9wkudwk">
+  <source id="1180134965967" name="ConceptSubstitutePart" hash="-9uqgwcog055bwm1u0wruvrac40b6nfd">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1182819125053" name="ConceptRightTransformPart" hash="-8aicfcsv7og0gf3bhjpx7bjgzutwcvk">
+  <source id="1182819125053" name="ConceptRightTransformPart" hash="72fgdkwzo6u4yctcaejojjumn9hzdz9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1196433731217" name="ISideTransform_String" hash="-2nw9uy2dgddupr7gfpyacifujtga0om">
+  <source id="1196433731217" name="ISideTransform_String" hash="eqx23xihs3ln046z0cut8vmn3uumfpk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1196433923911" name="SideTransform_SimpleString" hash="-q1qm27nyg9tp7a9puegy8us1vc5nhr">
+  <source id="1196433923911" name="SideTransform_SimpleString" hash="-1xqy3752uol53awm49xamlc40rwfeu8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1196434649611" name="Substitute_SimpleString" hash="7d3zi8tnlu3si3u88gw2lgiowgg2pls">
+  <source id="1196434649611" name="Substitute_SimpleString" hash="-bmnibi6due1kripl6nfjd7ceopvga5q">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1196434661488" name="ISubstitute_String" hash="94ia9pk2s2qsz0zor1tx5fmj9mjgtqp">
+  <source id="1196434661488" name="ISubstitute_String" hash="-cmmthiou3l186it83ipwfs3we7os2hy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1197454418909" name="QueryFunction_ST_RemoveBy_Condition" hash="c2d6lng1ah0odjf7curna7rrgwwn11y">
+  <source id="1197454418909" name="QueryFunction_ST_RemoveBy_Condition" hash="2fleeq479uj5g7x7i4i01w8l5w25wty">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1197454626277" name="RemoveSTByConditionPart" hash="-5t95r8nfqni1peaas05a1s3tr5g6yrf">
+  <source id="1197454626277" name="RemoveSTByConditionPart" hash="7djr21apokbe8u7op6ws4fx6vppyl6m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1199902626702" name="GenericSubstituteMenuPart" hash="ag3ffxluan4ep5mastmaks0qr7yvhav">
+  <source id="1199902626702" name="GenericSubstituteMenuPart" hash="-9zwk4m9zxquxgpvckjcvx030ikz1byj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1199902658767" name="QueryFunction_GenericSubstituteMenuPart" hash="bku9mv4vndwjpf7dmdf1iea1736hkx7">
+  <source id="1199902658767" name="QueryFunction_GenericSubstituteMenuPart" hash="-33e8jwaex0cbeur3bj4dlf5qkhr58g7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1199903446272" name="ConceptFunctionParameter_childSetter" hash="d8xfe1e1y2y25wurktkmez84yzmpmrk">
+  <source id="1199903446272" name="ConceptFunctionParameter_childSetter" hash="-kdt7f2j9neh5au0los4qleu7hyovak">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203072734037" name="QueryFunction_ParameterizedSubstitute_Icon" hash="91ynq0tizhujrzs6xbcopv3irx7i8v">
+  <source id="1203072734037" name="QueryFunction_ParameterizedSubstitute_Icon" hash="9ebjcd94ro6x4whsnh3qt41bw839tqv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203073162537" name="QueryFunction_SubstituteIcon" hash="4uznrf9132sw7aw97ii7kfiz3d26088">
+  <source id="1203073162537" name="QueryFunction_SubstituteIcon" hash="-2t1uoc4syc2x3zljdjh3lpme14cm8y9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203073706921" name="QueryFunction_SideTransform_Icon" hash="-ebseqgrvl783a7y7adrumy80a6gnihm">
+  <source id="1203073706921" name="QueryFunction_SideTransform_Icon" hash="5gqba4yyu3njne6k0mfmtlo685b9eb5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203347547493" name="SideTransformVariableDeclaration" hash="exhpmegj0z1xiyw27s7f97cp1lahtfy">
+  <source id="1203347547493" name="SideTransformVariableDeclaration" hash="3nsglxtar16tac8xh61kx3rc16i385u">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203347609566" name="QueryFunction_STVariableInitializer" hash="-8meaipnkl4umvb9hvteurx1myfch4ds">
+  <source id="1203347609566" name="QueryFunction_STVariableInitializer" hash="a7j83w79a6wuy1s2p1seyk8nz29wnqt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203348041101" name="SideTransformVariableReference" hash="-96uc9fufjhudww4a289zkphesocehsc">
+  <source id="1203348041101" name="SideTransformVariableReference" hash="6fmq59khlh5zm0xh5hjxlnyuuzm4nq2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203349485621" name="QueryFunction_ST_CommonInitializer" hash="-cka4zsu5sfywckfdrpq8g68lulmbdg8">
+  <source id="1203349485621" name="QueryFunction_ST_CommonInitializer" hash="-5g1t4i8ymzv937xwb0zbu9hgu0jss3d">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1206027602242" name="QueryFunction_ReturnSmallPart" hash="-6vd8dxehocu3woaoccx2bz1o9vk9kj2">
+  <source id="1206027602242" name="QueryFunction_ReturnSmallPart" hash="4c0z4rdybkpx6h6sqp8pu1vu2oj0lzh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1208867830282" name="ConceptFunctionParameter_strictly" hash="-3rdm9o3lmac4qiroam162gnbm2ebaao">
+  <source id="1208867830282" name="ConceptFunctionParameter_strictly" hash="aog361zupu9r5ofrqrrwqxwfg1b6wsi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1214830969967" name="ConceptFunctionParameter_wrapped" hash="ds5arahm3rq8qswn0wk0mcejmc7548l">
+  <source id="1214830969967" name="ConceptFunctionParameter_wrapped" hash="-bkzm9ov2mz2e7lt63la9y7x38sxyzhw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1215604970641" name="Side" hash="5mady01qbyzf3oov0l9ykhi2pmraafo">
@@ -376,130 +376,130 @@
     <file name="Side.java" />
     <file name="Side_PropertySupport.java" />
   </source>
-  <source id="1221135252814" name="PasteWrappers" hash="-dndzks62k8pva17x0hw9v3vtdxjxjjz">
+  <source id="1221135252814" name="PasteWrappers" hash="-956ytzttb1i0ha6rlf4v28eqlx293x6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1221135315536" name="PasteWrapper" hash="-agqhv15cbtwurqy1g0o8comg4s3ubd4">
+  <source id="1221135315536" name="PasteWrapper" hash="diu7q8a565rxp4ozbo3hblnde72ixn1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1221137268788" name="ConceptFunctionParameter_nodeToPasteWrap" hash="-edwin516ffsz9gm2x5mab68ndn482ok">
+  <source id="1221137268788" name="ConceptFunctionParameter_nodeToPasteWrap" hash="-3wd37yttpu9m6ochmm4tfow380cfo3h">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1221137293320" name="QueryFunction_PasteWrapper" hash="3qyocy0zzp5k7xpg30vo1tjtxhuujzh">
+  <source id="1221137293320" name="QueryFunction_PasteWrapper" hash="94ub9nc0z1h8s8w0mag9iubi84te45q">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1221634900557" name="ConceptFunctionParameter_link" hash="6g0j86rzlskfc3189b9a0zd9v3o3nu2">
+  <source id="1221634900557" name="ConceptFunctionParameter_link" hash="1jfkp6kb96thdrmni32315sanlwh356">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1230300670420" name="QueryFunction_ActionType" hash="2819hq134ik4d4l0hnacke1bjo99apy">
+  <source id="1230300670420" name="QueryFunction_ActionType" hash="9a5mpca823z07m2bbskpbv2m2m48isu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1235051137001" name="SmartEditorActions" hash="-978knvudbekuvx3t6t9ezssorg9g4q">
+  <source id="1235051137001" name="SmartEditorActions" hash="-90del8twxm7091izm1dca21bh94z7fu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1235051192073" name="SurroundWithAction" hash="99thz34xy902vpfw06mbpuh349f3767">
+  <source id="1235051192073" name="SurroundWithAction" hash="bjeswffyr5rsc7r47g4hnf8latm0liy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1235051221371" name="GenerateCodeAction" hash="-6hfq28q14ptiq9fjw4tu1ifwmur8zfk">
+  <source id="1235051221371" name="GenerateCodeAction" hash="7z9l51zx5elrirosk9zfoehxf71zktx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1235053632692" name="SmartActionParameter" hash="alnh17kl4g0t6m0397agq67cx32kspb">
+  <source id="1235053632692" name="SmartActionParameter" hash="-3p8pmc08z2br5mdsecgm969o7j5412m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1235053713157" name="SmartActionParameterReference" hash="4mkw6bluz12r0uesheamja54jm3lat8">
+  <source id="1235053713157" name="SmartActionParameterReference" hash="9obqlo3lgyupeccx7tr08r9l9mlhqwc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1235054742903" name="IsSmartActionApplicableFunction" hash="-73j6xoppx2ewkswdcg3ppt12xeagw7r">
+  <source id="1235054742903" name="IsSmartActionApplicableFunction" hash="-e3j0xn6jvvr8xse8fviviv22vw86se">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1235055936803" name="ConceptFunctionParameter_EditorCell" hash="-3zhvcsai02yhodcwht64p6sns5coj98">
+  <source id="1235055936803" name="ConceptFunctionParameter_EditorCell" hash="480649cbxi3sww4lnlvd10dm26ebxsm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1235056040733" name="ConceptFunctionParameter_OperationContext" hash="5z5rsowbhb28sk2nauybt97dql6goht">
+  <source id="1235056040733" name="ConceptFunctionParameter_OperationContext" hash="caecy26c2ngn8q7xc7r1l5ncrsg74pf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1235060070612" name="GetActionUIFunction" hash="-72wzh6ershf157oud8ht14kh033w5kd">
+  <source id="1235060070612" name="GetActionUIFunction" hash="bw9xz2dsewbum3zxw4g5xwi74fulqxw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1235060179343" name="ExecuteSmartActionFunction" hash="-5re9qxtpakyi4c70qjz19kamyhyvrhk">
+  <source id="1235060179343" name="ExecuteSmartActionFunction" hash="-d37dprgrlns9am56rum9j6wmjfjpk61">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="564335015825199468" name="PastePostProcessor" hash="-6i4sfcqs82egucjytydmr7a6ala6dvg">
+  <source id="564335015825199468" name="PastePostProcessor" hash="-adp6p60haq8gkqkugqpyi8dxst6ehxz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6026743057587433039" name="PastePostProcessFunction" hash="-3p6eqx087monxpaxuanyr2m7tnkvsz">
+  <source id="6026743057587433039" name="PastePostProcessFunction" hash="6eljddk237mwilhude3h46yfwdamjz0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6026743057587447931" name="ConceptFunctionParameter_nodeToPastePostProcess" hash="-6drvd71ahgjmd00xk3p13dc9sh8yxjv">
+  <source id="6026743057587447931" name="ConceptFunctionParameter_nodeToPastePostProcess" hash="6po9phuromlu21bx6j2omdtwuu821u3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5948027493682321734" name="CopyPreProcessor" hash="cwq1k44ianrvtipa0erpcllywwqoukp">
+  <source id="5948027493682321734" name="CopyPreProcessor" hash="autbw0rgbwpr8acuxdpsqe1s0d47370">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5948027493682346911" name="CopyPreProcessFunction" hash="2e0rffsay7y7whjzy4dkrgpufpsob9v">
+  <source id="5948027493682346911" name="CopyPreProcessFunction" hash="864okdigs36fe4obyj9v4h9me616dpb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5948027493682405428" name="ConceptFunctionParameter_nodeToCopyPreProcess" hash="-1e2h13jp8b58lvv04r3qmfahg5hysq9">
+  <source id="5948027493682405428" name="ConceptFunctionParameter_nodeToCopyPreProcess" hash="5x2qrncfo1dc77sxa07w3cx9cvdesp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5948027493682405480" name="ConceptFunctionParameter_nodeToCopyPreProcessOriginal" hash="-5tkbxyv54ytc3s375ukqiy7w24q36mu">
+  <source id="5948027493682405480" name="ConceptFunctionParameter_nodeToCopyPreProcessOriginal" hash="22selwfokqkxdeftkrsb1mexj12syby">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5948027493682789918" name="CopyPasteHandlers" hash="bqtg9zsktn3yiwduqrv9ulkm8do94ji">
+  <source id="5948027493682789918" name="CopyPasteHandlers" hash="40h1owvh8kpq3bubagr94g9my5fpowe">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5979988948250981289" name="SNodeCreatorAndInitializer" hash="-5w65ghab2jobx27txb4q3aptca7i7fl">
+  <source id="5979988948250981289" name="SNodeCreatorAndInitializer" hash="-3nar032h1rz6gu9am2fygly795w9sfi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7776141288922801652" name="NF_Concept_NewInstance" hash="-2sylgt23227pp656vniupwixxky3p01">
+  <source id="7776141288922801652" name="NF_Concept_NewInstance" hash="-a3po0zxe4t9dlm380prcjsw7z5xrsev">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5480835971642155304" name="NF_Model_CreateNewNodeOperation" hash="-483ntjfjo5vw94sdolw54q2b2gvmowl">
+  <source id="5480835971642155304" name="NF_Model_CreateNewNodeOperation" hash="-2b7hgt9khsoxww4ziln5g9jasdme3qb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5480835971642160908" name="NF_Model_CreateNewRootNodeOperation" hash="7gwkap0azyh9ezxy9pf7biggvvgbirk">
+  <source id="5480835971642160908" name="NF_Model_CreateNewRootNodeOperation" hash="-4cwskfhc2fcbbi90bxtxc1464yhjywt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="767145758118872824" name="NF_Node_InsertNewNextSiblingOperation" hash="-dgv47bf6asrlvtmyatutv4i0n1vsjj8">
+  <source id="767145758118872824" name="NF_Node_InsertNewNextSiblingOperation" hash="-289zmhn34sfbrp9un5k892awqudpqas">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="767145758118872826" name="NF_Node_InsertNewPrevSiblingOperation" hash="-3x8kkjpdqx6b85f0ixscr685dvza1kx">
+  <source id="767145758118872826" name="NF_Node_InsertNewPrevSiblingOperation" hash="7hce4wnvprjvczbh3wohf9f6wd4x5hr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="767145758118872828" name="NF_Node_ReplaceWithNewOperation" hash="3v12vcjiyheajbswe2u7g5btup1zacq">
+  <source id="767145758118872828" name="NF_Node_ReplaceWithNewOperation" hash="-2us5zjeceuj5amsmp63heizhonjilpe">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="767145758118872830" name="NF_Link_SetNewChildOperation" hash="-8x1guiafveksxbygfijun7bp6abkkzr">
+  <source id="767145758118872830" name="NF_Link_SetNewChildOperation" hash="8jt3ihjric5763htjniam961jhxvii3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="767145758118872833" name="NF_LinkList_AddNewChildOperation" hash="-5tkhb7cfmcyhnp34luzxfymanv1u9gr">
+  <source id="767145758118872833" name="NF_LinkList_AddNewChildOperation" hash="dfz0mu67qkir9rogo6ljbw2fpf6qbeu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5425882385312046132" name="ConceptFunctionParameter_targetNode" hash="3wfg81b4h17cmt87f9kvi4k4gi49fe1">
+  <source id="5425882385312046132" name="ConceptFunctionParameter_targetNode" hash="-5s2erkdyr1dojj6xnsearas47pkmfe8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5584396657084912703" name="NodeSetupFunction_NewNode" hash="-3twz5jff1mekvdmvbqnrlapj5lvll3a">
+  <source id="5584396657084912703" name="NodeSetupFunction_NewNode" hash="-8tazmlyyyf9sa6rw06vg0bf644ag6ln">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5584396657084920413" name="NodeSetupFunction_SampleNode" hash="-v2hzeq1haphx3sd3dlto55wzvyxnqn">
+  <source id="5584396657084920413" name="NodeSetupFunction_SampleNode" hash="19l7wy9xai318hqu9hl0m599mjpsoox">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5584396657084920670" name="NodeSetupFunction_EnclosingNode" hash="-6q33qmrpaydf1q582nf8x9jfjpor7o4">
+  <source id="5584396657084920670" name="NodeSetupFunction_EnclosingNode" hash="19bju7643vkh6bvc6xf8yko5u62y7g7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8372849190626007445" name="SideTransformMenuBuilderPart" hash="d2tn96rr2ewuvbis91jpcq7k52tfrnl">
+  <source id="8372849190626007445" name="SideTransformMenuBuilderPart" hash="b2l0joafa4d4hriiga6opoopkrf3owa">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8372849190626008398" name="NodeSubstituteMenuBuilderPart" hash="1v15bvdm2uoqnz4i8nwf42s8gv9lgnl">
+  <source id="8372849190626008398" name="NodeSubstituteMenuBuilderPart" hash="3a58qnunh1kg6azuxsx94nbp1nzhq27">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6400740936061763657" name="QueryFunction_IconNode" hash="6amifm659abgk1xthg44exbquyrr67z">
+  <source id="6400740936061763657" name="QueryFunction_IconNode" hash="-d2ncb6gotce4g8018sdg6nge93o365i">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="441141899447644451" name="QueryFunction_Substitute_SelectionHandler" hash="-bbhp25eyjerijms648jmv7dgyaajkyp">
+  <source id="441141899447644451" name="QueryFunction_Substitute_SelectionHandler" hash="cbuoyrmpa45r17xsrts5xam8ch04p6a">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="441141899510871798" name="ConceptFunctionParameter_createdNode" hash="d2nc3s1tvf1zjk6069to4l9tqs3zf17">
+  <source id="441141899510871798" name="ConceptFunctionParameter_createdNode" hash="-3ulvvf8fpviasa0f5dvy8sah3m1a2nw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

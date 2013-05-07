@@ -8,7 +8,7 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6942529559415680891" nodeInfo="ng">
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6942529559415680891" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="copy a node with trace" />
@@ -17,7 +17,7 @@
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="copy with trace" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1138411891628" resolveInfo="SNodeOperation" />
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2603522263179374343" nodeInfo="ng">
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2603522263179374343" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="copies a list of nodes with trace" />
@@ -25,7 +25,7 @@
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="copy list with trace" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2603522263179374348" nodeInfo="ng">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2603522263179374348" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="argument" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />

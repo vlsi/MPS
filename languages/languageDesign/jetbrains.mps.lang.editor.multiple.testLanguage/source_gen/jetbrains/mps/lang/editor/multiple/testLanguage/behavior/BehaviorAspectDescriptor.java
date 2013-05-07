@@ -20,10 +20,10 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new MultipleEditorsTestRefNodeListRoot_BehaviorDescriptor();
       case 4:
         return new MultipleEditorsTestRefNodeRoot_BehaviorDescriptor();
-      case 2:
-        return new MultipleEditorsTestMostSpecificRoot_BehaviorDescriptor();
       case 1:
         return new MultipleEditorsTestMostSpecificChild_BehaviorDescriptor();
+      case 2:
+        return new MultipleEditorsTestMostSpecificRoot_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5jrxtmc6g38f2cfejex0e4yu3g6bc8e">
+<dependencies version="2" modelHash="bvyuzpauhvz0t1d9qdp69e97x0i1ffw">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <common hash="-dasr5bvnwpe6uju8d63snoh2rocoi7r">
     <dep root="8974276187400029883" />
@@ -21,22 +21,22 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="8974276187400029883" name="IconResource" hash="8k4ebkr3xk0ytt1v92kv1eflkspzb50">
+  <source id="8974276187400029883" name="IconResource" hash="-a1cep1j02wynq8kom8eez1e3e1bwszp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400029885" name="IconResourceBundle" hash="-2c7br6qv44ouro99rcyltz9w9nea956">
+  <source id="8974276187400029885" name="IconResourceBundle" hash="c3wp8puln3a2ewk2aczhge3fgdeg41c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400029888" name="IconResourceDeclaration" hash="2uxheqvp49t62k6xbxjy84bwwye3ioz">
+  <source id="8974276187400029888" name="IconResourceDeclaration" hash="-e8jwdqjzfgsx3huw262xa1ombv1hpll">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400029891" name="IconResourceExpression" hash="45z31ts60sd05gvj6vrle2e3ahmqiy4">
+  <source id="8974276187400029891" name="IconResourceExpression" hash="-1yrmvkfkfk9b67u1q4a04w2g09a5fh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400029895" name="IconResourceReference" hash="8ztok4klwb1ybrnhyiptk4tfnxnlvk4">
+  <source id="8974276187400029895" name="IconResourceReference" hash="-5gsg82e7wm9ft99aybzyvp42tzp0hvz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400029898" name="Resource" hash="-a75pjdzboc0k394wiiakdbn5mptvk5e">
+  <source id="8974276187400029898" name="Resource" hash="-z8drqy2q8n5y1g9zak5jzr7ek5af8x">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

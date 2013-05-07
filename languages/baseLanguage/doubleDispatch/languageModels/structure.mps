@@ -7,7 +7,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2403002034744698617" nodeInfo="ng">
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2403002034744698617" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="DispatchModifier" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="dispatch" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.2403002034744051110" resolveInfo="Modifier" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="83dh1p2uiip6dj3rty3q0go1qrx8w4p">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
   <dep model="r:3a5df19a-24e4-45dd-b626-7b1cda9f9622(jetbrains.mps.traceInfo.tracemacro.testlang.editor)" hash="-c8tv2rn4it2yop3099sfde45ahaj82e" />
   <dep model="r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)" hash="-3meyr6rnexo7uk6b2sgvxnlbf11qwzt" />
   <dep model="r:b40e53b8-8ee8-490c-ac75-eb2133c3f7c1(jetbrains.mps.traceInfo.tracemacro.testlang.typesystem)" hash="-5ynlhrhsw3txixiec0ndktqrss15g9a" />

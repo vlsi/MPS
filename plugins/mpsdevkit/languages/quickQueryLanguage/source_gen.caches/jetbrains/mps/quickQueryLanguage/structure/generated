@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ehubx54xcouzp015h892aor4lya4bvi">
+<dependencies version="2" modelHash="ckmxne3acsleg28vhtp91at8s2hlldz">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <common hash="4ph9f2cvrw9teban5d19did9pyx2bpf">
     <dep root="1218793502081" />
@@ -22,25 +22,25 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1218793502081" name="ModelQuery" hash="214btqxhhlvu3c6diuysdhc7kvg25jw">
+  <source id="1218793502081" name="ModelQuery" hash="-d1pndpqh62ud7968zzvrk15wjwh5p1q">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1218793664585" name="QueryCondition" hash="bu98sq7q0x48r7mfe6evnnxc1367ejk">
+  <source id="1218793664585" name="QueryCondition" hash="3m0el5ctpgaw39l6mycooi4zfa4958m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1218793728835" name="Query_node_Parameter" hash="clfada7v1to9m4esxpusojkv2lsuhma">
+  <source id="1218793728835" name="Query_node_Parameter" hash="-51ou17t6e46xzz3awbablr1x713ucsy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1219745756351" name="ReplaceModelQuery" hash="myguvqk4oqvj5lowou29gftbacpy46">
+  <source id="1219745756351" name="ReplaceModelQuery" hash="-9cdb0bgl9k3uotvrwziva9tdtbaq5oq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1219745924291" name="QueryReplace" hash="-biih0jjjia1rw4te8rzzuykgqsckf3z">
+  <source id="1219745924291" name="QueryReplace" hash="3mn0ihrl6ez5vc4we2tnyg94ti47m3y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1219752983955" name="BaseQuery" hash="4dw9q0cdm1snbqovwzl22waes42t45v">
+  <source id="1219752983955" name="BaseQuery" hash="-8dbljy1byhbjf8ntr8noke6qylm8wpm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5046156961652249692" name="AbstractQueryFunction" hash="-w2zl1vzpfx96hz6r8mrt6b7xr8t3j4">
+  <source id="5046156961652249692" name="AbstractQueryFunction" hash="34gzzckyqnuvhdvilpx2ytnh0hzcykj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>
