@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="e3px78mem9p68tlib03jr131m8rbvor">
+<dependencies version="2" modelHash="-9xr71kzhqtd6kd6khsajeumz0otg2o9">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <common hash="-cv3op9agmqukslhtolkhqd9uld1dlx2" />
-  <source id="5294483648489409095" name="ThreadWatcher" hash="4bea9y1duj0fg6pgxsdmr9qxy75hyoz">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <common hash="egvxkfpaf0kzqwlfbr67cir482slm46" />
+  <source id="5294483648489409095" name="ThreadWatcher" hash="54ahlk6ff810bfvwe2z9pfavu1veyu7">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ThreadWatcher.java" />
   </source>
-  <source id="5294483648489409912" name="Output" hash="4t1nalker55e505sol7585z7gvxd9f8">
+  <source id="5294483648489409912" name="Output" hash="da89qjvw7gzhpqnz2dxqz0jcywt0r4h">
     <file name="Output.java" />
   </source>
-  <source id="5294483648489409936" name="FilesCollector" hash="b4k71xrymd9ml185q55qd8bkl2i1bta">
+  <source id="5294483648489409936" name="FilesCollector" hash="4411w8ifrqfbk6lbkbgdfiasssnk5q0">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FilesCollector.java" />
   </source>
-  <source id="5294483648489410428" name="CachingAppender" hash="-b9ovb0s680emhmviq1o55bh9ewu5v4m">
+  <source id="5294483648489410428" name="CachingAppender" hash="-evruo46sib9cuohmfo3ub5bmgd7kov8">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CachingAppender.java" />
   </source>
-  <source id="5294483648489410732" name="CachingPrintStream" hash="-bvbtegb77u01tcx89m3wu4k7mh1if5n">
+  <source id="5294483648489410732" name="CachingPrintStream" hash="-8r0jo7qo8o3ql3dkpvp6snn56k6ncss">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CachingPrintStream.java" />

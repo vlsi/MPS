@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="462ioma5ovv7ptqdkd541mmscp813di">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <common hash="-cbjhe8zhqcpqj4ir66xac9pcszert2t" />
-  <source id="5797068448049410625" name="GroupedToggleAction" hash="-drizwkkkb94ky4nlpejlw7u89bxgtbp">
+<dependencies version="2" modelHash="e09iy8wni4w1hthebnkug362pijuvla">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <common hash="-48etpx94php6ykz2tyonsil2ced51jn" />
+  <source id="5797068448049410625" name="GroupedToggleAction" hash="-1yl8xtpd5b47xhlu0o54mvoy5t1yl1y">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GroupedToggleAction.java" />
   </source>
-  <source id="5797068448049415641" name="ToggleActionGroup" hash="e7p2ldcti0pjta8mvcuge9a1j9qt2y">
+  <source id="5797068448049415641" name="ToggleActionGroup" hash="-6smk6pt34oq5faqv963zttmzqlip1qi">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ToggleActionGroup.java" />
   </source>

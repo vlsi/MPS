@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptKind;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -52,5 +54,18 @@ public abstract class BaseConceptDescriptor implements ConceptDescriptor {
       childrenNamesSet = new HashSet<String>(getReferenceNames());
     }
     return childrenNamesSet.contains(name);
+  }
+
+  @Override
+  public ConceptKind getConceptKind() {
+    Set<String> ancestors = getAncestorsNames();
+    return ancestors.contains(SNodeUtil.concept_InterfacePart) ? ConceptKind.INTERFACE
+        : ancestors.contains(SNodeUtil.concept_ImplementationPart) ? ConceptKind.IMPLEMENTATION
+        : ConceptKind.NORMAL;
+  }
+
+  @Override
+  public boolean isUnorderedChild(String name) {
+    return getUnorderedChildrenNames().contains(name);
   }
 }

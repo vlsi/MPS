@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d83kyboer7yr9ggbbl0mtog0f5n8pwz">
+<dependencies version="2" modelHash="-62izvc5x4wpn0xbaqpps9np85umaxdl">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8iq1c63z020s2os52d6vke4fdjpb056" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-785p0qyel9g3ihekfkf0bz6sctsf19i" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="-2yrzl19hp3efdakzxr044e2it1l9edi">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8pja5s7kuga6tnod6ekp0ci8k86gmfl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <common hash="-bivrofg106hlauw1k8sqlk58wlj62ck">
     <dep root="1147467115080" />
     <dep root="1147467790433" />
     <dep root="1147468365020" />
@@ -59,130 +59,130 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1147467115080" name="NodePropertyConstraint" hash="7huao383h493l3akyb9grfak6s1dapy">
+  <source id="1147467115080" name="NodePropertyConstraint" hash="bj5icjcoeh3k4agf95xc1ntmya2v47j">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1147467790433" name="ConstraintFunction_PropertyGetter" hash="7r5bsk8fkn0h5dau8lmqpf7ehalqltr">
+  <source id="1147467790433" name="ConstraintFunction_PropertyGetter" hash="-7r6s0tbrjda4dfetdbsgltz29rrw05n">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1147468365020" name="ConstraintsFunctionParameter_node" hash="-7bwk5i7gvpr6sxgprfr1k5ih0pv84a4">
+  <source id="1147468365020" name="ConstraintsFunctionParameter_node" hash="mn2si9gc8dhakenhg5eiykumlzhffq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1148684180339" name="ConstraintFunction_ReferentSearchScope_Factory" hash="chezzpgvzw97hm6qekok9mfsk1trsth">
+  <source id="1148684180339" name="ConstraintFunction_ReferentSearchScope_Factory" hash="-eww63p903ua81siyeqenms1k39nno4o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1148687176410" name="NodeReferentConstraint" hash="252agmo32ww04y5h8b3s5xoarvr2qjm">
+  <source id="1148687176410" name="NodeReferentConstraint" hash="9zkzwrh1eo9be7l4askxyj31g15q5ov">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1148934493876" name="ConstraintFunction_ReferentSearchScope_AbstractBase" hash="7cfn746uelvv8v00zylj49s1ms1teyo">
+  <source id="1148934493876" name="ConstraintFunction_ReferentSearchScope_AbstractBase" hash="-cbpirpuncn0fu5uvza1tx5h8y78diir">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1148934636683" name="ConceptParameter_ReferentSearchScope_enclosingNode" hash="4nr4eqwvvfkcoix68yvdrcn4dyxrndc">
+  <source id="1148934636683" name="ConceptParameter_ReferentSearchScope_enclosingNode" hash="-d99amzj52l9ttfwgxy3fqg6oj24f8vo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1152959968041" name="ConstraintFunction_PropertySetter" hash="-7hb2mvudpbjnash1b60sq8btgz65q80">
+  <source id="1152959968041" name="ConstraintFunction_PropertySetter" hash="a4x81vyqy4aprx400th2ymlb6t0g9v6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1159285995602" name="NodeDefaultSearchScope" hash="4e9lx45zxuf499z6yms0klnyb6g8tsx">
+  <source id="1159285995602" name="NodeDefaultSearchScope" hash="aykky28rk8fzzjfcyp737m58epprka2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1163200368514" name="ConstraintFunction_ReferentSetHandler" hash="-30voj7m7tan6p2pc9a1faxlrqekqhji">
+  <source id="1163200368514" name="ConstraintFunction_ReferentSetHandler" hash="e0uu750j6idu9saux93efwcvhu2ivmw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1163200647017" name="ConstraintFunctionParameter_referenceNode" hash="-eveu1ycw8xpwtidgeb2fyjjtla65i3z">
+  <source id="1163200647017" name="ConstraintFunctionParameter_referenceNode" hash="2y05kleyk3q0dlgdtgjlrk7ywo5wp2s">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1163202640154" name="ConstraintFunctionParameter_newReferentNode" hash="-761jq2x57tkntswumkqhh7ywaaqz0">
+  <source id="1163202640154" name="ConstraintFunctionParameter_newReferentNode" hash="6ivtlehvojt5zypacoe4qdfjzzs043w">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1163202694127" name="ConstraintFunctionParameter_oldReferentNode" hash="-79qwjcayuds3z3wfxiw7egdtgauhf8t">
+  <source id="1163202694127" name="ConstraintFunctionParameter_oldReferentNode" hash="-8srjw4qpboq90y9c2hdvfdfxwyi92fs">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1202989531578" name="ConstraintFunction_CanBeAChild" hash="-5i7h5kagrgnhjgl4v4ygdtuh4qr6jai">
+  <source id="1202989531578" name="ConstraintFunction_CanBeAChild" hash="-7mt8te3fbv9n95mihka1s2g78eyiugh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1202989658459" name="ConstraintFunctionParameter_parentNode" hash="8w1w5rxt1sepjfw8f7iv0spgdm1hces">
+  <source id="1202989658459" name="ConstraintFunctionParameter_parentNode" hash="-dbuuttupb7ojsc3mk4cyotz0dbcvunf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203001093456" name="ConstraintFunction_CanBeAParent" hash="-a6p3636wadorq4fzjmjck0sln93mlpx">
+  <source id="1203001093456" name="ConstraintFunction_CanBeAParent" hash="-enpi0vkefnsrct10ge8jhk9my0mam66">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203001236505" name="ConstraintFunctionParameter_childConcept" hash="-18x9ytc5he8emts4twfw9644w5yqe83">
+  <source id="1203001236505" name="ConstraintFunctionParameter_childConcept" hash="by0rhlcyofp4kdq8xm8hmk74wmbhrx9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203009604308" name="ConstraintFunctionParameter_link" hash="2ffiyl11uzze56hkxgah6h0lst2tyz9">
+  <source id="1203009604308" name="ConstraintFunctionParameter_link" hash="ekirk91i6fdhsehwtfqzpxmbl948eo6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1205764368223" name="ConstraintFunctionParameter_linkTarget" hash="8jhfwrjcxjvpx41mmfaprs26qjlq93w">
+  <source id="1205764368223" name="ConstraintFunctionParameter_linkTarget" hash="-1ubj53x75jt3fc7troqtx26gcaev2k">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1153138554286" name="ConstraintsFunctionParameter_propertyValue" hash="1yks05jpm6cns0hsqp68cqtbpc0r0f3">
+  <source id="1153138554286" name="ConstraintsFunctionParameter_propertyValue" hash="ca0bbowqziqua3yuej3rek9jv0groy1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1212096972063" name="ConstraintFunction_PropertyValidator" hash="-iu5ocip3o8h3zz26knfm4walbg6yde">
+  <source id="1212096972063" name="ConstraintFunction_PropertyValidator" hash="ce2vwqjasy9x77i3vys94cxghf4b68">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1213093968558" name="ConceptConstraints" hash="3dgl8l8qe8siuuruhz6i6jt1hkl4k7j">
+  <source id="1213093968558" name="ConceptConstraints" hash="-8cd6nb3hkq2cst5bicrm55j3txrdxa9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1227084988347" name="ConstraintFunction_CanBeARoot" hash="ftd3x6uraaasti09gzlckasp4atk60">
+  <source id="1227084988347" name="ConstraintFunction_CanBeARoot" hash="-bf2z3ks5g9kdcrji73bv8essmseb3hy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3906442776579549644" name="ConstraintFunctionParameter_parameterNode" hash="d12e3voyddon6tq3p55ol33r1sslo2a">
+  <source id="3906442776579549644" name="ConstraintFunctionParameter_parameterNode" hash="aa48vqntoilvp8lsr3xsyzmc8h751jr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3906442776579556545" name="ConstraintFunction_ReferentSearchScope_Presentation" hash="e5np1zegjmvx48bodx0lc22q50h7u1e">
+  <source id="3906442776579556545" name="ConstraintFunction_ReferentSearchScope_Presentation" hash="-66ofno9hvfxkwkewqoh47dvmbtyizwr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6768994795311967732" name="ConstraintFunctionParameter_visible" hash="8wn4wsw2wn88pgcnysd6b0esx9c23sr">
+  <source id="6768994795311967732" name="ConstraintFunctionParameter_visible" hash="-1agwy8sdk4t1ifxjkze5uv5ibjfn3ej">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6768994795311967741" name="ConstraintFunctionParameter_smartReference" hash="-2eotckf9htk8kqy3lxb6uluhgjlhs39">
+  <source id="6768994795311967741" name="ConstraintFunctionParameter_smartReference" hash="btm0manwqvgtb8gl6m3j4upcm1arw7m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4590747232508808445" name="ConstraintFunctionParameter_inEditor" hash="-26wd3oiab4x2gqvinuhh35o2veq8b6k">
+  <source id="4590747232508808445" name="ConstraintFunctionParameter_inEditor" hash="6l5cbacqjxh39ac2o0skav56x95hz56">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3754598629525415375" name="ConstraintFunction_GetAlternativeIcon" hash="efve90vssioe4qeenem4dr7p71q4qn1">
+  <source id="3754598629525415375" name="ConstraintFunction_GetAlternativeIcon" hash="6zbrsj7zqk82jlhbi0yyv0o8zw90hu4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7855321458717464197" name="ConstraintFunction_CanBeAnAncestor" hash="88kg1vi9r9htqo9g7coghtm8i7kxxzy">
+  <source id="7855321458717464197" name="ConstraintFunction_CanBeAnAncestor" hash="6q2gqbjalr592mfwkq7m1j3ir24wbb6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3481330710159180554" name="ConstraintFunction_ReferentSearchScope_Validator" hash="-c97r14ndrwptuld4o3wac23xm1rwhip">
+  <source id="3481330710159180554" name="ConstraintFunction_ReferentSearchScope_Validator" hash="dtjk0u5ml1j11xg4mzzjrms6ny1woxk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2990203945683059368" name="ConstraintFunctionParameter_checkedNode" hash="-cb1ggo1n1om1nzm4376dbddwqzosd6k">
+  <source id="2990203945683059368" name="ConstraintFunctionParameter_checkedNode" hash="bc30c7y5aramgdlun4x7pwuhb78i08t">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4962705936936018688" name="ConstraintFunction_RefSetHandlerKeepsReference" hash="-4it39jeyv8sf2l8kncpxuxpqu8k4akr">
+  <source id="4962705936936018688" name="ConstraintFunction_RefSetHandlerKeepsReference" hash="-6ouer9synxk4f0sunabl53ljbcjnwv6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2978993595262518683" name="ConstraintFunctionParameter_containingLink" hash="7hhl125us9izn95e1vuhopeby2r7frj">
+  <source id="2978993595262518683" name="ConstraintFunctionParameter_containingLink" hash="qbn4i4zygzbhnk2pstx1cq1ts9k2s6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8401916545537438634" name="NodeScopeFactory" hash="-8di77fi30wqk9pf2equar3v5hvxleca">
+  <source id="8401916545537438634" name="NodeScopeFactory" hash="chvj4ob466dc0g5ngknliy7qqrfxmwk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8401916545537438642" name="InheritedNodeScopeFactory" hash="nva84z4fdpimyv7ftmi9y8u8wg9auq">
+  <source id="8401916545537438642" name="InheritedNodeScopeFactory" hash="2wnla1td014btz0gedy3dcdz9qdf5g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8966504967485224688" name="ConstraintFunctionParameter_contextNode" hash="-dkavgpkndapjwpu18fyvp3vmbouzaau">
+  <source id="8966504967485224688" name="ConstraintFunctionParameter_contextNode" hash="-8r2h3kq2ss14gm4319hn6vbfkrowz9q">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4656991770397278586" name="ConstraintFunctionParameter_contextRole" hash="6l7sysce04pq73fhk4zbg4z5nwtp6i5">
+  <source id="4656991770397278586" name="ConstraintFunctionParameter_contextRole" hash="2kr2a6qfjkeb9bp0b8erkhwa5kp5lv6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4656991770397278593" name="ConstraintFunctionParameter_exists" hash="-cdwkcw4gq42f4spjcp06sq1ahoyuhsw">
+  <source id="4656991770397278593" name="ConstraintFunctionParameter_exists" hash="98urkm782fbuchjgzgp38c7qui76jqe">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4656991770397278600" name="ConstraintFunctionParameter_position" hash="3sq54x4fhd0tgurwmivfb4xfq0h0kll">
+  <source id="4656991770397278600" name="ConstraintFunctionParameter_position" hash="c0ehrn6fesp8w0v5prwd7h7ulfoheee">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5676632058862809931" name="ConstraintFunction_ReferentSearchScope_Scope" hash="evdeh5iyp0s34j3a6h4vzohf704v9k1">
+  <source id="5676632058862809931" name="ConstraintFunction_ReferentSearchScope_Scope" hash="52u7yi8z20qris5bgqcxpoka12ly7s6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6738154313879680265" name="ConstraintFunctionParameter_childNode" hash="869hingt625yx0r5dwe6hp2lqswen2y">
+  <source id="6738154313879680265" name="ConstraintFunctionParameter_childNode" hash="-2927qlny8mc6x2h61egqkt6povsx68b">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

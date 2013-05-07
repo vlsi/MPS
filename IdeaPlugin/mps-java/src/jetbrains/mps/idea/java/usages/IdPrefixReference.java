@@ -15,20 +15,22 @@
  */
 package jetbrains.mps.idea.java.usages;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
-import jetbrains.mps.idea.core.refactoring.MoveRenameBatch;
-import jetbrains.mps.idea.core.refactoring.MoveRenameBatch.RenameHandler;
+import jetbrains.mps.idea.java.refactoring.MoveRenameBatch;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -38,8 +40,8 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
-import java.util.Map;
-import java.util.Set;
+import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
+
 
 /**
  * danilla 3/24/13
@@ -50,17 +52,11 @@ public class IdPrefixReference implements PsiReference {
   private SNodeReference myTarget;
   private String myRole;
   private PsiElement myParent;
-  // target node of the underlying SReference
-  private NodePtr myRealTarget;
 
   public IdPrefixReference(SNodeReference target, String role, PsiElement fosterFather) {
     myTarget = target;
     myRole = role;
     myParent = fosterFather;
-
-    SNode source = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance());
-    SReference ref = source.getReference(myRole);
-    myRealTarget = new NodePtr(ref.getTargetSModelReference(), ref.getTargetNodeId());
   }
 
   @Override
@@ -76,34 +72,78 @@ public class IdPrefixReference implements PsiReference {
   @Nullable
   @Override
   public PsiElement resolve() {
-    return MPSPsiProvider.getInstance(myParent.getProject()).getPsi(myTarget);
+    ApplicationManager.getApplication().assertReadAccessAllowed();
+
+    return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
+      @Override
+      public PsiElement compute() {
+        return MPSPsiProvider.getInstance(myParent.getProject()).getPsi(myTarget);
+      }
+    });
   }
 
   @NotNull
   @Override
   public String getCanonicalText() {
-    return "ID PREFIX REF";
+    return "MPS id prefix reference";
   }
 
   @Override
   public PsiElement handleElementRename(String newElementName) throws IncorrectOperationException {
-    recordUsage();
+    SNodeId targetNodeId = ((SNodePointer) myTarget).getNodeId();
+    String str = targetNodeId.toString();
+    String newStr;
+    int lastDot = str.lastIndexOf(".");
+    if (lastDot < 0) {
+      newStr = Foreign.ID_PREFIX + newElementName;
+    } else {
+      newStr = str.substring(0, lastDot + 1) + newElementName;
+    }
+    final NodePtr newTarget = new NodePtr(((SNodePointer) myTarget).getModelReference(), new Foreign(newStr));
+
+    SNodeReference source = ((MPSPsiNode) myParent).getSNodeReference();
+
+    myParent.getProject().getComponent(MoveRenameBatch.class).scheduleIdPrefixRefUpdate(source, myRole, new Runnable() {
+      @Override
+      public void run() {
+        handleRename(newTarget);
+      }
+    });
     return myParent;
   }
 
   @Override
   public PsiElement bindToElement(@NotNull PsiElement element) throws IncorrectOperationException {
-    recordUsage();
+    SNodeReference source = ((MPSPsiNode) myParent).getSNodeReference();
+    final NodePtr newTargetPtr = JavaForeignIdBuilder.computeNodePtr(element);
+    myParent.getProject().getComponent(MoveRenameBatch.class).scheduleIdPrefixRefUpdate(source, myRole, new Runnable() {
+      @Override
+      public void run() {
+        handleRename(newTargetPtr);
+      }
+    });
     return myParent;
   }
 
-  private void recordUsage() {
-    assert myTarget instanceof SNodePointer;
-    NodePtr target = new NodePtr(myTarget.getModelReference(), ((SNodePointer) myTarget).getNodeId());
+  private void handleRename(NodePtr newNode) {
 
-    myParent.getProject().getComponent(MoveRenameBatch.class).recordUsage(target, new IdPrefixRenameHandler());
+    SNodePointer oldNode = (SNodePointer) myTarget;
+    SNode source = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance());
+    String oldId = source.getReference(myRole).getTargetNodeId().toString();
+    String newId = oldId.replaceFirst(oldNode.getNodeId().toString(), newNode.getNodeId().toString());
 
+    source.setReference(myRole, StaticReference.create(myRole, source, newNode.getSModelReference(), new Foreign(newId)));
 
+    // add model import if needed
+    if (!oldNode.getModelReference().equals(newNode.getSModelReference())) {
+      SModel model = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance()).getModel();
+      SModelReference newTargetModel = newNode.getSModelReference();
+
+      assert model instanceof SModelInternal;
+      assert newTargetModel instanceof jetbrains.mps.smodel.SModelReference;
+
+      ((SModelInternal) model).addModelImport((jetbrains.mps.smodel.SModelReference) newTargetModel, true);
+    }
   }
 
   @Override
@@ -122,33 +162,5 @@ public class IdPrefixReference implements PsiReference {
   @Override
   public boolean isSoft() {
     return false;
-  }
-
-  private class IdPrefixRenameHandler implements RenameHandler {
-    @Override
-    public void handleRename(NodePtr oldNode, NodePtr newNode) {
-
-      // let's see if this target is not already handled by normal SReference
-      if (myParent.getProject().getComponent(MoveRenameBatch.class).isHandledAsSReference(myRealTarget)) {
-        return;
-      }
-
-      SNode source = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance());
-      String oldId = source.getReference(myRole).getTargetNodeId().toString();
-      String newId = oldId.replaceFirst(oldNode.getNodeId().toString(), newNode.getNodeId().toString());
-
-      source.setReference(myRole, StaticReference.create(myRole, source, newNode.getSModelReference(), new Foreign(newId)));
-
-      // add model import if needed
-      if (!oldNode.getSModelReference().equals(newNode.getSModelReference())) {
-        SModel model = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance()).getModel();
-        SModelReference newTargetModel = newNode.getSModelReference();
-
-        assert model instanceof SModelInternal;
-        assert newTargetModel instanceof jetbrains.mps.smodel.SModelReference;
-
-        ((SModelInternal) model).addModelImport((jetbrains.mps.smodel.SModelReference) newTargetModel, true);
-      }
-    }
   }
 }

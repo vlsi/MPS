@@ -4,11 +4,12 @@ package jetbrains.mps.lang.structure.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import java.util.List;
 
-public abstract class AbstractConceptDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IStructureDeprecatable_BehaviorDescriptor {
+public abstract class AbstractConceptDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, InterfacePart_BehaviorDescriptor, IStructureDeprecatable_BehaviorDescriptor {
   public AbstractConceptDeclaration_BehaviorDescriptor() {
   }
 

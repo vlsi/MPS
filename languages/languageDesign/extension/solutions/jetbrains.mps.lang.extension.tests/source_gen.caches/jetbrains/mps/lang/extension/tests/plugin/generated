@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-aio603pgpd2u1pz06t8kr8hw85rwmnv">
+<dependencies version="2" modelHash="b36jnnjibmyee7ll6lnqw7izfy1sfhb">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.structure(MPS.Core/jetbrains.mps.smodel.structure@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="eriuyl8jyp85v62x0v8d54ukdz2vt7z" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" hash="-cia9xxxfuqiutf6zb4fv3ebfem3jw2d" />
-  <dep model="r:9b417160-a560-428b-b721-a26a33b5bd8c(jetbrains.mps.lang.extension.generator.template.main@generator)" hash="9a9imfuen35joua4wwoy8mjiy2sx1ac" />
-  <common hash="6isksdaavzybxxmh2jmh23uqlnvae5m">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="16sfc7fae7htr94ns3e2tugmu89lr5r" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" hash="e1kvc70tup8npz7wf77c1wtixwhcx1k" />
+  <dep model="r:9b417160-a560-428b-b721-a26a33b5bd8c(jetbrains.mps.lang.extension.generator.template.main@generator)" hash="-c5tpyl1chzc4236n2ipy1spoyng03sn" />
+  <common hash="6drfp14lgiopscwpv7mppj4x1n2wd04">
     <dep root="2622946712629256033" />
     <dep root="2622946712629256035" />
     <dep root="2622946712629256054" />
@@ -21,16 +21,16 @@
     <dep model="r:9b417160-a560-428b-b721-a26a33b5bd8c(jetbrains.mps.lang.extension.generator.template.main@generator)" />
     <file name="ExtensionDescriptor.java" />
   </common>
-  <source id="7036359038356246776" name="TestObject" hash="-a4z7wi52gmpaznugywlzoe25eyb7uor">
+  <source id="7036359038356246776" name="TestObject" hash="-9g648ibmhy03pva6jt1b0n6tpteqoi0">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <file name="TestObject.java" />
   </source>
-  <source id="7036359038356253954" name="testExtensionPoint" hash="-7lyfpclmy4c8uce893gxssk6ktt8iz4">
+  <source id="7036359038356253954" name="testExtensionPoint" hash="-akovi6kiqscmkosy6pn04mtrdqla8x7">
     <dep model="r:9b417160-a560-428b-b721-a26a33b5bd8c(jetbrains.mps.lang.extension.generator.template.main@generator)" />
   </source>
-  <source id="7036359038356253986" name="testExtensionPoint_extension" hash="bigzv5cutvtcph0u87fm4ratffpbxgz">
+  <source id="7036359038356253986" name="testExtensionPoint_extension" hash="dt68npti5dtventjfmu44owln3lnd5h">
     <dep root="7036359038356246776" />
     <dep root="7036359038356253954" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -41,26 +41,26 @@
     <dep model="r:9b417160-a560-428b-b721-a26a33b5bd8c(jetbrains.mps.lang.extension.generator.template.main@generator)" />
     <file name="Extension_testExtensionPoint7036359038356253986_.java" />
   </source>
-  <source id="2622946712629256033" name="lazyTestExtensionPoint" hash="-2u0xhjqlkgp2jeo5g51kaktvzl1yt76">
+  <source id="2622946712629256033" name="lazyTestExtensionPoint" hash="-94785kxq9sypqylivzzetgx8rpuqo8b">
     <dep model="r:9b417160-a560-428b-b721-a26a33b5bd8c(jetbrains.mps.lang.extension.generator.template.main@generator)" />
   </source>
-  <source id="2622946712629256035" name="LazyTestObject" hash="-dzrp1ae3zofugz7mirdyuctlc1ovvkr">
+  <source id="2622946712629256035" name="LazyTestObject" hash="bb9bkanv2faq8oz8q4o8ue1i2wfl2en">
     <file name="LazyTestObject.java" />
   </source>
-  <source id="2622946712629256054" name="lazyTestExtensionPoint_extension" hash="8t2jjw4nxjj25kstetumt14w8u7tbn6">
+  <source id="2622946712629256054" name="lazyTestExtensionPoint_extension" hash="-9ckp0y55b35i7od6l2i7uqxn9zflw9j">
     <dep root="2622946712629256033" />
     <dep model="r:9b417160-a560-428b-b721-a26a33b5bd8c(jetbrains.mps.lang.extension.generator.template.main@generator)" />
     <file name="Extension_lazyTestExtensionPoint2622946712629256054_.java" />
   </source>
-  <source id="4451661519483734255" name="multiExtensionPoint" hash="-ddlyyo32x9pgwylfn8mlqd9esfh3xh1">
+  <source id="4451661519483734255" name="multiExtensionPoint" hash="-a54q86xvnryz4t55vlu2zfnk6su0sg4">
     <dep model="r:9b417160-a560-428b-b721-a26a33b5bd8c(jetbrains.mps.lang.extension.generator.template.main@generator)" />
   </source>
-  <source id="4451661519483734260" name="multiExtensionPoint_extension" hash="-dc2kkplls4kxtyqr7i8re55a3ezjay7">
+  <source id="4451661519483734260" name="multiExtensionPoint_extension" hash="-butok0cg2rjlk5fs17i6z6jrhk2qn76">
     <dep root="4451661519483734255" />
     <dep model="r:9b417160-a560-428b-b721-a26a33b5bd8c(jetbrains.mps.lang.extension.generator.template.main@generator)" />
     <file name="Extension_multiExtensionPoint4451661519483734260_.java" />
   </source>
-  <source id="4451661519483734265" name="multiExtensionPoint_extension" hash="-951f4k2cqlen66qclbo1dmqtsomzd2r">
+  <source id="4451661519483734265" name="multiExtensionPoint_extension" hash="ee5m0f8ktsxh79uj59c0qkyxbt640r2">
     <dep root="4451661519483734255" />
     <dep model="r:9b417160-a560-428b-b721-a26a33b5bd8c(jetbrains.mps.lang.extension.generator.template.main@generator)" />
     <file name="Extension_multiExtensionPoint4451661519483734265_.java" />

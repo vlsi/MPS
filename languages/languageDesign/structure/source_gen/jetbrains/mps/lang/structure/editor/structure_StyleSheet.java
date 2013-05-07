@@ -10,6 +10,7 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class structure_StyleSheet {
   @Deprecated
@@ -21,9 +22,20 @@ public class structure_StyleSheet {
     return style;
   }
 
+  @Deprecated
+  public static Style getKeyword(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getKeyWord(editorCell));
+    return style;
+  }
+
   public static void applyAnnotationNode(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.UNDERLINED, true);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+  }
+
+  public static void applyKeyword(Style style, EditorCell editorCell) {
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
   }
 }

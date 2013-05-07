@@ -501,6 +501,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_2v2794_k3a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2v2794_l3a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2v2794_m3a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_2v2794_n3a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_2v2794_o3a(editorContext, node));
     return editorCell;
   }
 
@@ -1224,6 +1226,86 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createCollection_2v2794_n3a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_2v2794_n3a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_2v2794_a31d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2v2794_b31d0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_2v2794_a31d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "add context hints");
+    editorCell.setCellId("Constant_2v2794_a31d0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyProperty(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_2v2794_b31d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("addHints");
+    provider.setNoTargetText("<no addHints>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    CellModel_RefNodeList_AddHint_Actions.setCellActions(editorCell, node, editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createCollection_2v2794_o3a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_2v2794_o3a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_2v2794_a41d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2v2794_b41d0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_2v2794_a41d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove context hints");
+    editorCell.setCellId("Constant_2v2794_a41d0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyProperty(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_2v2794_b41d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("removeHints");
+    provider.setNoTargetText("<no removeHints>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    CellModel_RefNodeList_RemoveHint_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

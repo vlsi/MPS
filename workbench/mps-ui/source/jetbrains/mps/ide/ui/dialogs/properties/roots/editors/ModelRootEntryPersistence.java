@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
-import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,39 +36,28 @@ public class ModelRootEntryPersistence {
     return ourPersistence;
   }
 
-  private Map<String, Class<? extends ModelRootEntry>> myModelRootEntries = new HashMap<String, Class<? extends ModelRootEntry>>();
+  private Map<String, ModelRootEntryFactory> myModelRootEntries = new HashMap<String, ModelRootEntryFactory>();
 
   private ModelRootEntryPersistence() {
     init();
   }
 
   private void init() {
-    addModelRootEntry(PersistenceRegistry.DEFAULT_MODEL_ROOT, DefaultModelRootEntry.class);
-    addModelRootEntry(PersistenceRegistry.OBSOLETE_MODEL_ROOT, SModelRootEntry.class);
+
+    addModelRootEntry(PersistenceRegistry.DEFAULT_MODEL_ROOT, new FileBasedModelRootEntryFactory());
+    addModelRootEntry(PersistenceRegistry.OBSOLETE_MODEL_ROOT, new SModelRootEntryFactory());
   }
 
-  public void addModelRootEntry(String type, @NotNull Class<? extends ModelRootEntry> entry) {
-    myModelRootEntries.put(type, entry);
+  public void addModelRootEntry(String type, @NotNull ModelRootEntryFactory factory) {
+    myModelRootEntries.put(type, factory);
   }
 
   public ModelRootEntry getModelRootEntry(ModelRoot modelRoot) {
-    ModelRootEntry entry = null;
-    try {
-      Class<? extends ModelRootEntry> aClass = myModelRootEntries.get(modelRoot.getType());
-      if (aClass != null) {
-        entry = aClass.newInstance();
-      }
-    } catch (InstantiationException e) {
-    } catch (IllegalAccessException e) {
-    }
+    if(!myModelRootEntries.containsKey(modelRoot.getType()))
+      return null;
 
-    if (entry == null && modelRoot instanceof FileBasedModelRoot) {
-      entry = new FileBasedModelRootEntry();
-    }
-
-    if (entry == null) return null;
-    entry.setModelRoot(modelRoot);
-    return entry;
+    ModelRootEntryFactory factory = myModelRootEntries.get(modelRoot.getType());
+    return factory.getModelRootEntry(modelRoot);
   }
 
   public Set<String> getModelRootTypes() {

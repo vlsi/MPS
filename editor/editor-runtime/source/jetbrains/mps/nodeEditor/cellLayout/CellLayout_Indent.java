@@ -184,7 +184,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     List<Rectangle> result = new ArrayList<Rectangle>();
     List<EditorCell> indentLeafs = getIndentLeafs(editorCells);
     for (EditorCell leaf : indentLeafs) {
-      result.add(GeometryUtil.getBounds(editorCells));
+      result.add(GeometryUtil.getBounds(leaf));
     }
     return result;
   }

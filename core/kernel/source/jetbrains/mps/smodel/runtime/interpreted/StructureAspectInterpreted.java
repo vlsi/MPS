@@ -133,6 +133,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     private Set<String> referenceNames;
     private Set<String> childrenNames;
     private HashMap<String, Boolean> childrenMap = new HashMap<String, Boolean>();
+    private Set<String> unorderedChildren;
     private boolean isAbstract;
     private boolean isFinal;
     private String conceptAlias;
@@ -214,9 +215,13 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
           }
 
           // direct references and children
+          unorderedChildren = new HashSet<String>();
           for (SNode link : SNodeUtil.getConcept_LinkDeclarations(declaration)) {
             String role = SModelUtil.getLinkDeclarationRole(link);
             if (role != null) {
+              if (SPropertyOperations.getBoolean(link, "unordered")) {
+                unorderedChildren.add(role);
+              }
               if (SNodeUtil.getLinkDeclaration_IsReference(link)) {
                 directReferences.add(role);
               } else {
@@ -271,7 +276,9 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
           for (String child : parentDescriptor.getChildrenNames()) {
             childrenMap.put(child, parentDescriptor.isMultipleChild(child));
           }
+          unorderedChildren.addAll(parentDescriptor.getUnorderedChildrenNames());
         }
+        unorderedChildren = Collections.unmodifiableSet(unorderedChildren);
 
         childrenNames = Collections.unmodifiableSet(childrenMap.keySet());
       }
@@ -305,6 +312,11 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     @Override
     public Set<String> getChildrenNames() {
       return childrenNames;
+    }
+
+    @Override
+    public Set<String> getUnorderedChildrenNames() {
+      return unorderedChildren;
     }
 
     @Override

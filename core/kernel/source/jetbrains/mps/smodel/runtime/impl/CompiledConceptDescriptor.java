@@ -40,6 +40,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final Set<String> referenceNames;
   private final HashMap<String, Boolean> childMap = new HashMap<String, Boolean>();
   private final Set<String> childNames;
+  private final Set<String> unorderedNames;
   private final boolean isAbstract;
   private final boolean isFinal;
   private final String conceptAlias;
@@ -65,7 +66,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       String conceptAlias,
       String shortDescription,
       String helpUrl) {
-    this(conceptFqName, superConcept, isInterfaceConcept, parents, ownPropertyNames, ownReferenceNames, ownChildNames, isMultiple, isAbstract, isFinal,
+    this(conceptFqName, superConcept, isInterfaceConcept, parents, ownPropertyNames, ownReferenceNames, ownChildNames, isMultiple, new String[0], isAbstract, isFinal,
         conceptAlias, shortDescription, helpUrl, StaticScope.GLOBAL);
   }
 
@@ -77,6 +78,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       String[] ownReferenceNames,
       String[] ownChildNames,
       boolean[] isMultiple,
+      String[] unorderedChildren,
       boolean isAbstract,
       boolean isFinal,
       String conceptAlias,
@@ -97,7 +99,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     // hierarchy
     // todo: common with StructureAspectInterpreted to new class!
     // get parent descriptors
-        ConceptRegistry registry = ConceptRegistry.getInstance();
+    ConceptRegistry registry = ConceptRegistry.getInstance();
 
     List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(parents.length);
     for (String parent : parents) {
@@ -138,14 +140,23 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       childMap.put(ownChildNames[i], isMultiple[i]);
     }
 
+    Set<String> unorderedNamesNew = new HashSet<String>();
+    unorderedNamesNew.addAll(Arrays.asList(unorderedChildren));
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
+      unorderedNamesNew.addAll(parentDescriptor.getUnorderedChildrenNames());
       for (String child : parentDescriptor.getChildrenNames()) {
         childMap.put(child, parentDescriptor.isMultipleChild(child));
       }
     }
 
+    unorderedNames = Collections.unmodifiableSet(unorderedNamesNew);
     childNames = Collections.unmodifiableSet(childMap.keySet());
 
+  }
+
+  @Override
+  public Set<String> getUnorderedChildrenNames() {
+    return unorderedNames;
   }
 
   @Override

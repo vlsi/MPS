@@ -5,6 +5,11 @@ package jetbrains.mps.core.xml.sax.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.scope.SimpleRoleScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -19,6 +24,17 @@ public class XMLSAXNodeCreator_Behavior {
 
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule")) {
+      SNode node = SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule");
+      if (node == null) {
+        return new EmptyScope();
+      }
+      return SimpleRoleScope.forNamedElements(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
+    }
+    return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
 
   @Deprecated

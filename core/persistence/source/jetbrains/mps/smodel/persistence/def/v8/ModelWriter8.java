@@ -1,0 +1,49 @@
+/*
+ * Copyright 2003-2013 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.smodel.persistence.def.v8;
+
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.persistence.def.DocUtil;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.v7.ModelWriter7;
+import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SNode;
+
+/**
+ * evgeny, 4/29/13
+ */
+public class ModelWriter8 extends ModelWriter7 {
+
+  @Override
+  protected int getModelPersistenceVersion() {
+    return 8;
+  }
+
+  @Override
+  protected void saveModelNodes(Element parent, SModel sourceModel) {
+    for (SNode root : sourceModel.getRootNodes()) {
+      Element childElement = new Element(ModelPersistence.ROOT_NODE);
+      saveNode(childElement, root, true);
+      parent.addContent(childElement);
+    }
+  }
+
+  @Override
+  protected void saveNodeAttributes(Element element, SNode node) {
+    super.saveNodeAttributes(element, node);
+    DocUtil.setNotNullAttribute(element, ModelPersistence.NODE_INFO, myHelper.genNodeInfo(node));
+  }
+}

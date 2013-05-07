@@ -15,17 +15,22 @@
  */
 package jetbrains.mps.smodel.language;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguage;
@@ -159,6 +164,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
         }
       }
     }
+    reinitialize();
     notifyUnload(unloadedRuntimes);
   }
 
@@ -178,6 +184,16 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
         }
       }
     }
+    reinitialize();
     notifyLoad(loadedRuntimes);
+  }
+
+  private void reinitialize() {
+    for (LanguageRuntime languageRuntime : myLanguages.values()) {
+      languageRuntime.deinitialize();
+    }
+    for (LanguageRuntime languageRuntime : myLanguages.values()) {
+      languageRuntime.initialize(this);
+    }
   }
 }

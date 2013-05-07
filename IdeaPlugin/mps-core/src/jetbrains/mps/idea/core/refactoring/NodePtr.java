@@ -42,7 +42,7 @@ public class NodePtr {
 
   // SNodeReference may supersede NodePtr completely in the future
   // If it has getNodeId
-  public SNodeReference toSNodeReference() {
+  public SNodePointer toSNodeReference() {
     return new SNodePointer(myModelRef, myNodeId);
   }
 }

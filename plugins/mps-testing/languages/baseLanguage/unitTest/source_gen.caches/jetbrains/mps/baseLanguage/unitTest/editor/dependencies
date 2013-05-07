@@ -174,6 +174,28 @@
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertEquals_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertFalse_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertInNotNull_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertIsNull_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertSame_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertThrows_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertTrue_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.BTestCase_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.Fail_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.Message_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.PrepareMethod_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.TestMethodList_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.TestMethod_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.editor.Fail_Editor" file="Fail_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />

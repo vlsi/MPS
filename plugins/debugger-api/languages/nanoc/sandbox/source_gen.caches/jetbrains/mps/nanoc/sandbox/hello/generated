@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2vvyb5ch0rq3oyvsn6jj2yuzxnbs5ma">
-  <common hash="-9dn5ehjts1rm3qls245fcguhxioila0" />
-  <source id="6585869519574685729" name="Hello" hash="-2jng5xku7vsxwffeyfol3kjckij55pn">
+<dependencies version="2" modelHash="-bf6yohlnvum8lr2rv2nvakmf2wrp7o2">
+  <common hash="-3sgfdz4yb9c68nf6cz1qrd815ap1mer" />
+  <source id="6585869519574685729" name="Hello" hash="-1v1dh9g02xvmo2crtk36sjbv5phhzb5">
     <file name="Hello.c" />
   </source>
 </dependencies>

@@ -6,7 +6,6 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -14,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.structure_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />
@@ -163,6 +163,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.AbstractConceptDeclaration_deprecatedStuff" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor._ConceptDeclaration_DeleteAbstract_Action" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor._ConceptDeclaration_DeleteFinal_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.structure_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
@@ -281,6 +282,41 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.AggregationConceptLinkDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.AggregationConceptLink_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.AnnotationLinkDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.BooleanConceptPropertyDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.BooleanConceptProperty_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.ConceptDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.ConceptLinkDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.ConceptLink_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.ConceptPropertyDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.ConceptProperty_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.ConstrainedDataTypeDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.DeprecatedNodeAnnotation_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.EnumerationDataTypeDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.EnumerationMemberDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.IntegerConceptPropertyDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.IntegerConceptProperty_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.InterfaceConceptDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.InterfaceConceptReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.LinkDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.MigratedToMethodAnnotation_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.PrimitiveDataTypeDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.PropertyDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.ReferenceConceptLinkDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.ReferenceConceptLink_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.StringConceptPropertyDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.StringConceptProperty_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.structure.editor.EnumerationDataTypeDeclaration_Editor" file="EnumerationDataTypeDeclaration_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
@@ -384,7 +420,6 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -397,6 +432,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.AbstractConceptDeclaration_deprecatedStuff" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.structure_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
@@ -465,8 +501,10 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.structure_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
@@ -555,6 +593,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.structure_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
@@ -672,6 +711,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.editor.structure_StyleSheet" file="structure_StyleSheet.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />

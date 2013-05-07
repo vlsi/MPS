@@ -4,17 +4,17 @@ package jetbrains.mps.idea.java.psiStubs;
 
 import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 
 public class Mapper implements MPS2PsiMapper {
 
 
   @Override
   public boolean hasCorrespondingPsi(SModel model) {
+    ModelAccess.assertLegalRead();
     return model instanceof PsiJavaStubModelDescriptor;
   }
 
@@ -22,15 +22,11 @@ public class Mapper implements MPS2PsiMapper {
 
   @Override
   public PsiElement getPsiElement(final SNode node, Project project) {
-    return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
-      public PsiElement compute() {
-        if (!(hasCorrespondingPsi(node.getModel()))) {
-          return null;
-        }
-        PsiJavaStubModelDescriptor psiModel = (PsiJavaStubModelDescriptor) node.getModel();
-        return psiModel.getPsiSource(node);
-      }
-    });
-
+    ModelAccess.assertLegalRead();
+    if (!(hasCorrespondingPsi(node.getModel()))) {
+      return null;
+    }
+    PsiJavaStubModelDescriptor psiModel = (PsiJavaStubModelDescriptor) node.getModel();
+    return psiModel.getPsiSource(node);
   }
 }

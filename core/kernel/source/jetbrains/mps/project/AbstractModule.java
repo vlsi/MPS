@@ -19,7 +19,6 @@ import jetbrains.mps.project.IModule.ModelAdjuster;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
@@ -649,14 +648,12 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
     for (IFile file : event.getRemoved()) {
       if (file.equals(myDescriptorFile)) {
         ModuleRepositoryFacade.getInstance().removeModuleForced(this);
-        MPSClassesReloadManager.getInstance().requestReload();
         return;
       }
     }
     for (IFile file : event.getChanged()) {
       if (file.equals(myDescriptorFile)) {
         SModuleOperations.reloadFromDisk(this);
-        MPSClassesReloadManager.getInstance().requestReload();
         return;
       }
     }

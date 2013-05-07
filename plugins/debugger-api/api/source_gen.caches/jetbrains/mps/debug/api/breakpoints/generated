@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9sm93bgv1l8zoti75ozt0fcowbeyh8h">
+<dependencies version="2" modelHash="7fhvhxli6zczl3xsh8xg3sxut4g9nbf">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.traceInfo(MPS.Core/jetbrains.mps.traceInfo@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
-  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="1ch2bo1lsu57w10jkedj9pz559jmiz3" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="8yrxwsrrksi0bdb72jl9wpltddw17c0" />
-  <source id="4474271214082912942" name="IBreakpointsProvider" hash="-esf5whnadmbo6cxsiyecdusw8fufns3">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="59ea0wchjl1p3fmqjarzl02fje6rngu" />
+  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="-99megwfgoed1qx4j4jrdybqcflrfwf9" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <common hash="7j9lqh4p3ikvpasp07jnv9wzhzc2zuw" />
+  <source id="4474271214082912942" name="IBreakpointsProvider" hash="1x6jgfp5legk4puf1wxn8priuafg60w">
     <file name="IBreakpointsProvider.java" />
   </source>
-  <source id="4474271214082913201" name="ILocationBreakpoint" hash="9elud3mfxzu81spamvl8z4s8q86jfx8">
+  <source id="4474271214082913201" name="ILocationBreakpoint" hash="c7g4f0ftsbt87dc4tq6el45bf9sfoqg">
     <file name="ILocationBreakpoint.java" />
   </source>
-  <source id="4474271214082913209" name="IBreakpointListener" hash="-25xzqmrhkusfkqvu3vuxr2opmxnolaq">
+  <source id="4474271214082913209" name="IBreakpointListener" hash="5qv9f7mvvn2jksff1mzyvi1xls3vygl">
     <file name="IBreakpointListener.java" />
   </source>
-  <source id="4474271214082912939" name="IBreakpointPropertiesUi" hash="-53hfv26uago20a3nleor3ttkgn0azla">
+  <source id="4474271214082912939" name="IBreakpointPropertiesUi" hash="2awgdqnh4qj882ni1zhx0eqt86delq0">
     <file name="IBreakpointPropertiesUi.java" />
   </source>
-  <source id="4474271214082912938" name="IBreakpointKind" hash="-devio1vb56ls3a4120wtbikj8bt2y9r">
+  <source id="4474271214082912938" name="IBreakpointKind" hash="-cbmj72cl3r1n2dwive1wc9yp8irmtbx">
     <file name="IBreakpointKind.java" />
   </source>
-  <source id="4474271214082916065" name="BreakpointLocation" hash="-bp7gos1h7zps5jl2ida4igzcbu37i4a">
+  <source id="4474271214082916065" name="BreakpointLocation" hash="ahqzn1y9pgz0o7q31i7bl5cyr4gqiuk">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -41,14 +41,14 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BreakpointLocation.java" />
   </source>
-  <source id="4474271214082916358" name="AbstractBreakpoint" hash="90l5kfnwcjrwdhlzxz3hr0h7qe0isqs">
+  <source id="4474271214082916358" name="AbstractBreakpoint" hash="2m8p43pde9ky7xgd2ix1760mrgzy1b3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AbstractBreakpoint.java" />
   </source>
-  <source id="4474271214082916537" name="IBreakpoint" hash="-akhtitfzn4qd544usg83ff71t9y46rl">
+  <source id="4474271214082916537" name="IBreakpoint" hash="4syxkkxhjximykjs8hilavwooq2wqhx">
     <file name="IBreakpoint.java" />
   </source>
-  <source id="4474271214082916621" name="BreakpointProvidersManager" hash="53jhmjcakdlcrvlk9dvdyrx0ofqolz5">
+  <source id="4474271214082916621" name="BreakpointProvidersManager" hash="8h193tx9lkx86jdt5d34o0zyepi71u3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BreakpointProvidersManager.java" />
   </source>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bqxjj8q9icyw3uub5fl6zebd74rg19u">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <common hash="40iqbzlpzsin1bap9mx6contmirat7" />
-  <source id="6543581031674027297" name="Deque" hash="-b78yq7xsvje3emru1xdao3sa6en9gxd">
+<dependencies version="2" modelHash="bhtf4ul9pt0hjmcq4iu0d95e5s185pz">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <common hash="7k5flcoywq0z7t4kafqmofagvvmfljg" />
+  <source id="6543581031674027297" name="Deque" hash="1lk2md83km5wim2c7uowo5y4295yx2q">
     <file name="Deque.java" />
   </source>
-  <source id="6543581031674032086" name="LinkedList" hash="-4jaif1z1iy4vwoy7ujcufyzdie3t2rt">
+  <source id="6543581031674032086" name="LinkedList" hash="-du4csyg1pea586xhy4d8t1iv8hs6852">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="LinkedList.java" />
   </source>

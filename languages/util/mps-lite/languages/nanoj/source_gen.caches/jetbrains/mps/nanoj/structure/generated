@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9q3j9br3y2e9tyz9kkkqp1htj3lif6j">
+<dependencies version="2" modelHash="-1pgepbdnxb921nmhwzbrllnbvwoqk6z">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-785p0qyel9g3ihekfkf0bz6sctsf19i" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="1as5enx7s0sk3g8h3e6st466v85fnqz">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <common hash="5lvvku2cm2wapyw1mvygn09im3qrcyl">
     <dep root="689680155165915335" />
     <dep root="689680155165915337" />
     <dep root="689680155165915339" />
@@ -22,25 +22,25 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="689680155165915335" name="MinusExpression" hash="5b7y73j0570xjb71007k9rxxqo7sf7m">
+  <source id="689680155165915335" name="MinusExpression" hash="-eqv9vmzo1pqsygpqsv13lyhcfhdbh5l">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="689680155165915337" name="NanoClass" hash="-33aq7gpojs293zjwatk6y59hp00982j">
+  <source id="689680155165915337" name="NanoClass" hash="-f50xywkrg5nzi9qxncefmjf644ziya">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="689680155165915339" name="VarDecl" hash="-6m171yzgzd6cznfv73e7u1y3r8qhuz6">
+  <source id="689680155165915339" name="VarDecl" hash="-a0tlfisxtjdceyf7lnk10beag086kmc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="689680155165915342" name="NanoStatementList" hash="436782tbna8c57i0154l8ac6plepejz">
+  <source id="689680155165915342" name="NanoStatementList" hash="b6qxf8fz6upx3u2341vb7w7idjcu4rn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="689680155165915344" name="NanoExpression" hash="7zpfgv7pqp8ute71qo0awsb169ukwq6">
+  <source id="689680155165915344" name="NanoExpression" hash="7nsq4mpyyldfwb8cbcdp6muy76ahh6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="689680155165915346" name="NanoStatement" hash="-144zuw18fsmkwck6tsmtvn85ekoypex">
+  <source id="689680155165915346" name="NanoStatement" hash="-22ra0re3u9ts2zk4i5j607ss4ksdram">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="689680155165915348" name="VarDeclReference" hash="6qa9eblf0mnfo5288q6uoumwmzsvvf8">
+  <source id="689680155165915348" name="VarDeclReference" hash="-mc3co91bpad3h1clncot3wnwp1xxfr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8ky0osmq0tosom9xdq7f8oafylmfop0">
+<dependencies version="2" modelHash="e6rdmwcyeak8sqknzzqtckum355zxwg">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-785p0qyel9g3ihekfkf0bz6sctsf19i" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="5l7gn98t03h0yoyy47dk2a0v7ucgudd">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <common hash="-88e6fx7t70l59llrxlpssecpeeknmvl">
     <dep root="1174482743037" />
     <dep root="1174482753837" />
     <dep root="1174482769792" />
@@ -78,197 +78,197 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1174482743037" name="Regexp" hash="dfz68iy8d0k1hdlsrfsgh3xl9b364z2">
+  <source id="1174482743037" name="Regexp" hash="duzmnddreeiyn20fd58injdm5b7ddpr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174482753837" name="StringLiteralRegexp" hash="1dlt6rhk97mwz23um6hfy1nyyg2ckvi">
+  <source id="1174482753837" name="StringLiteralRegexp" hash="-d096t15dsimxkokrb5hv6bpq11au79r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174482769792" name="OrRegexp" hash="-8apko4caca7pw3k94ds0ww78a3ruajo">
+  <source id="1174482769792" name="OrRegexp" hash="-6grtyx343dcmzcjrjxu3dhok9yo6x7r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174482804200" name="PlusRegexp" hash="-aa5ots6oqa4pyr9hpl4jopv92r2gohp">
+  <source id="1174482804200" name="PlusRegexp" hash="-ar5hob0256l5zdxdblxb1vml7n8741g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174482808826" name="StarRegexp" hash="-25v36vbxh5jvh5fmbixakcrjgfpbfnq">
+  <source id="1174482808826" name="StarRegexp" hash="-68mj1kiy9psp9z3wi1s2d172aglsgn7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174483125581" name="RegexpDeclaration" hash="-9nto8b9t43w1x8wu1u8ovde7w9fbjcf">
+  <source id="1174483125581" name="RegexpDeclaration" hash="a505vis4csedh5mokq68497lvd4u2nt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174484562151" name="SeqRegexp" hash="-dxz24x3m469o2ytl2jlmz3ocdlexlc">
+  <source id="1174484562151" name="SeqRegexp" hash="-6o3vayhgni6lwo55qgomz5yigcum5xc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174485167097" name="BinaryRegexp" hash="5rdabnt6bsyonjhs0crq7m4snofzk8z">
+  <source id="1174485167097" name="BinaryRegexp" hash="-aa5hi4f6duym42u8rndzlrjtdj8fuu4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174485235885" name="UnaryRegexp" hash="7mt4q58f6y92qgrkgef8qekpnaj6vun">
+  <source id="1174485235885" name="UnaryRegexp" hash="-2vjg5nwx2301wqb7zke306bacyj6wlo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174491169200" name="ParensRegexp" hash="wylzh5mefa2n91mt7sfz7eravruscf">
+  <source id="1174491169200" name="ParensRegexp" hash="-33ntxim6iv10vz0u0sejanc2nn1hy4g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174510540317" name="InlineRegexpExpression" hash="-ebhtl1yql65wb99e31iatdgk9if5g7d">
+  <source id="1174510540317" name="InlineRegexpExpression" hash="6qa3vano5ojsjm7cl0ibtpej62ent6v">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174512414484" name="MatchRegexpStatement" hash="3tdogqxft443gmadhxifc2e99nta66">
+  <source id="1174512414484" name="MatchRegexpStatement" hash="-7n0bk2ma9znckw667e87j6tei3gjwuq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174552240608" name="QuestionRegexp" hash="aw6upxaw97sbpr5o5ndlz1cot2g02y7">
+  <source id="1174552240608" name="QuestionRegexp" hash="-4y8l4h8egjc83407vg6dhhyp4mjtkbd">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174554186090" name="SymbolClassRegexp" hash="1665giw15exgnnkry06thipz02ptjhq">
+  <source id="1174554186090" name="SymbolClassRegexp" hash="p6g94zzte4eprwckk633sisbn3jcfx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174554211468" name="PositiveSymbolClassRegexp" hash="-bn3f40um5pymqreoaz5asep96q6qx7l">
+  <source id="1174554211468" name="PositiveSymbolClassRegexp" hash="96jkp50vwu821udt8ctzw79oj6i96a9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174554238051" name="NegativeSymbolClassRegexp" hash="-285n7593w71v7o4joieik756utrl4l5">
+  <source id="1174554238051" name="NegativeSymbolClassRegexp" hash="-rd2j9a7clb4mnq3ok0kxr6dh92vc76">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174554386384" name="PredefinedSymbolClassDeclaration" hash="-2f0ak9ah8pv2k2bfaha5c0tmx7fnj94">
+  <source id="1174554386384" name="PredefinedSymbolClassDeclaration" hash="-e0cb5g6a35lruioxy3c504jkzvek4iu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174554406855" name="PredefinedSymbolClasses" hash="-49gpufp4vmdbzb5yjo08jz7fxo5h65d">
+  <source id="1174554406855" name="PredefinedSymbolClasses" hash="-3di6nhs6dek0e5mrrcg9adt05ubmmj6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174555732504" name="PredefinedSymbolClassRegexp" hash="-gzsihe6hxxatjpo8qvg7dqsbp4lsyx">
+  <source id="1174555732504" name="PredefinedSymbolClassRegexp" hash="dcpzh32ii5kitcgaein1o5crz44ggj0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174556813606" name="DotRegexp" hash="ap9o65zkb6l4ohr3a2chsk2xmyv4r10">
+  <source id="1174556813606" name="DotRegexp" hash="3dmz6hug9b8su3sc5fws3ai2dc6wdwz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174557861378" name="SymbolClassPart" hash="csnoh7lnct2d2fx4aigf0hcso688c8o">
+  <source id="1174557861378" name="SymbolClassPart" hash="dowvm7khygsa2giaf1oa9cfvc5yieuh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174557878319" name="CharacterSymbolClassPart" hash="9fmjfkdqvar8wiu9x8y027rtrkv44ow">
+  <source id="1174557878319" name="CharacterSymbolClassPart" hash="-17n8a8jnivf58ttqmo0p4qgjyh8c6ed">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174558301835" name="IntervalSymbolClassPart" hash="53tp9tbg3p59mt6p8e31l1c3zap2m5m">
+  <source id="1174558301835" name="IntervalSymbolClassPart" hash="-65q67vbkyzqfplkv9kqjckst8ktd17">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174558792178" name="PredefinedSymbolClassSymbolClassPart" hash="-77ksvh62oait18kkgdkbkrxtb28uzjm">
+  <source id="1174558792178" name="PredefinedSymbolClassSymbolClassPart" hash="-41hg00kt13pv108n8divl4etgmba4ou">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174564062919" name="MatchParensRegexp" hash="-687hqvjti820cfnfq5mgybnfw79tgzz">
+  <source id="1174564062919" name="MatchParensRegexp" hash="7wtalnoi19heodwiebad6vshajmexnu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174565027678" name="MatchVariableReference" hash="2pmqztl0hcdkga4n2cgqjii8djqw5ll">
+  <source id="1174565027678" name="MatchVariableReference" hash="5ygxzkdq38z8s49rb9g218dydg4x6pv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174653354106" name="RegexpUsingConstruction" hash="-8bsbtzl1lwhsq3o53nyqd8l1y31dvpx">
+  <source id="1174653354106" name="RegexpUsingConstruction" hash="-dqyc1mpmboqlzvntr0mdkn63sqanw9r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174655989549" name="ReplaceWithRegexpExpression" hash="9065ykvjdtg0tkz006l6g63kmyvlhxl">
+  <source id="1174655989549" name="ReplaceWithRegexpExpression" hash="osgyp5ivsziungmm07kal9de0o9lkw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174656254036" name="ReplaceBlock" hash="-cuc3dy9ojnpvz4caovkcnmosc8w169j">
+  <source id="1174656254036" name="ReplaceBlock" hash="bdgy2zw1ryfqlqe06r8pyv95jc5vm3c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174660461415" name="LazyStarRegexp" hash="-10vc3fzov1mslsou1xzpy4r639ah8f1">
+  <source id="1174660461415" name="LazyStarRegexp" hash="bidag0chbtjz00j7ktdkewhbynzipko">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174660505718" name="LazyPlusRegexp" hash="5cjinvm7p7pnfvozfugx3xzergsagjn">
+  <source id="1174660505718" name="LazyPlusRegexp" hash="12gvo9jq7a83mdhpwqx9pjvif3chmd9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174660533095" name="LazyQuestionRegexp" hash="-ci5125vc83iymz1fmwmpxooog8diqv9">
+  <source id="1174660533095" name="LazyQuestionRegexp" hash="44hrlwe8l0rtxckwy18mvm5qt9ewbiv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174662351725" name="Regexps" hash="ayhwa6wej0xvrbqmrf1d0eijz88d12b">
+  <source id="1174662351725" name="Regexps" hash="-br29fnzzxbaxg60s4nb23gn1kyltugs">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174662605354" name="RegexpDeclarationReferenceRegexp" hash="-9bmc0rv5mu6c1wvlb4uxhfn3lb27sys">
+  <source id="1174662605354" name="RegexpDeclarationReferenceRegexp" hash="47wnu93ckfyp879mmxnriucrbhmxv9e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174904166999" name="NTimesRegexp" hash="-cnxdh989xtk0chfhqccea9e5jgf4xj4">
+  <source id="1174904166999" name="NTimesRegexp" hash="-45gj6b3h52722dpedjb0brv5kc1axn7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174904442594" name="AtLeastNTimesRegexp" hash="-6kiau3sx60jycpjignkwqi7mmrkklv8">
+  <source id="1174904442594" name="AtLeastNTimesRegexp" hash="-e8pr4fjk1e1ze3yvsogn3qovgxn1u47">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174904605806" name="FromNToMTimesRegexp" hash="7ehbxfgvzaiab7pq5q5669suo9z9vvw">
+  <source id="1174904605806" name="FromNToMTimesRegexp" hash="3zgyl1emie7pt3xvdr3aqvosm684tne">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174906321267" name="PositiveLookAheadRegexp" hash="-cfz0lzavllth12iuhuk2lelu3mtkwhv">
+  <source id="1174906321267" name="PositiveLookAheadRegexp" hash="3g1liwszwx2is8cm9qyn17bj2bon1ja">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174906468661" name="NegativeLookAheadRegexp" hash="-9hzx1rom2pisljz1zy8hupc5djheq2b">
+  <source id="1174906468661" name="NegativeLookAheadRegexp" hash="2u08yjrya0p5z1jdwfeh1gfncem8prd">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174906544517" name="LookRegexp" hash="-1pb3pqtfpu22guf7riuji536g2dqud4">
+  <source id="1174906544517" name="LookRegexp" hash="-1rk17xy6dcsmcwcs0uoqszj8cqgi7rm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174906762287" name="PositiveLookBehindRegexp" hash="45pk5qrmaxpc2tceuwf1jbwnvahqe0x">
+  <source id="1174906762287" name="PositiveLookBehindRegexp" hash="-dt8ktvc4qzwxrlbm159k0mz19pstnoe">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174906790902" name="NegativeLookBehindRegexp" hash="-8rk4ffd7bvkokkk4mgilegqrr2nr1r2">
+  <source id="1174906790902" name="NegativeLookBehindRegexp" hash="-5owbq9zcshl75feqqyx42vx5it0dmht">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174909099093" name="MatchVariableReferenceRegexp" hash="b0rdb3e037phdvfugkcqa2sjzubwlk1">
+  <source id="1174909099093" name="MatchVariableReferenceRegexp" hash="6lupz09wi9nhpc07nepsqilfixnoukj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174919147781" name="RegexpExpression" hash="-14u1nskbmym6a8t1cnp8z4chwqx7uoj">
+  <source id="1174919147781" name="RegexpExpression" hash="-4wua5ncboxwmi6d92wumbzrurpp59y2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1175154849582" name="ForEachMatchStatement" hash="-xuq8eiyff1pet5jimfc0g52ge0g4z7">
+  <source id="1175154849582" name="ForEachMatchStatement" hash="-jy2x1gkjhobios0rpb1oj3uy894ts3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1175161264766" name="LineStartRegexp" hash="hmwa9sgr7yrccaq5hkdngxjk8rwg1o">
+  <source id="1175161264766" name="LineStartRegexp" hash="b7tbumzh6fa3y0t37cgjeos6c8jj1g7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1175161300324" name="LineEndRegexp" hash="5c4z1vq76t4ral2cxoqs99hdic4qo1c">
+  <source id="1175161300324" name="LineEndRegexp" hash="32zbuxxyxuzavktcqkfwbbi5jojas2e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1175164405556" name="SplitExpression" hash="2v05hla4r2uhfzuvnytqrqv5j1i5a7n">
+  <source id="1175164405556" name="SplitExpression" hash="-euwwknz2mpiccx356do0ysajet4wpeh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1175169009571" name="FindMatchStatement" hash="4cryjtiyyf59bfx8q93tzod86qztzqy">
+  <source id="1175169009571" name="FindMatchStatement" hash="82gasnmhj1rf4l1gcyclweirg8w2nr6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1179357154354" name="MatchRegexpExpression" hash="-4g7uq7fe54nbwfifh6nhhgyhwaem9d6">
+  <source id="1179357154354" name="MatchRegexpExpression" hash="-4rl73h6z33wfihd0aujmpr1kse4eq83">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203415418648" name="UnicodeCharacterRegexp" hash="-1zkebd5ky89wn8ln0um0w3q0r5qghod">
+  <source id="1203415418648" name="UnicodeCharacterRegexp" hash="2ia541zt7rppb7a7r9od4pakkhpicgn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203415512996" name="FourHex" hash="ccn9lpt85f99lr1afq03hlpqf57a8ir">
+  <source id="1203415512996" name="FourHex" hash="9ziyd59ykyvkc7nx479s4vdkmem37w7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FourHex_PropertySupport.java" />
   </source>
-  <source id="1220021842985" name="IntersectionSymbolClassPart" hash="9prxvjx7gj95ykr8hv8pbmk35f4hboc">
+  <source id="1220021842985" name="IntersectionSymbolClassPart" hash="-2fee18bxlqysfu8y91gmvpzylz5hkbs">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1220356640633" name="SymbolClassRegexpAndPart" hash="6087sx25ipax1ic8fgzurmykfirwfvi">
+  <source id="1220356640633" name="SymbolClassRegexpAndPart" hash="aisytaqvavqnaqweem57sydlf0fcwrm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1222256539755" name="SplitOperation" hash="7j76hs2wxdvlxuoj6xch8o5fjcmxk44">
+  <source id="1222256539755" name="SplitOperation" hash="dctg79rn2l9lcs3dopxkptqrfgoc8sb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1222260469397" name="MatchRegexpOperation" hash="ohhkdvl20p0fdzvsfuoncd6kdq232j">
+  <source id="1222260469397" name="MatchRegexpOperation" hash="-3f2jh55fftuyiqb5a858d8ecc86ik9t">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1222260556146" name="ReplaceWithRegexpOperation" hash="-7e753lw00tcxwpz0oeii9rjsiuu02ps">
+  <source id="1222260556146" name="ReplaceWithRegexpOperation" hash="6n0lu4fmhalzheafruejx3w6fs0h554">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7473568212391781030" name="_StringRegexp" hash="xzhfgza0q0u5qzjkdn6sveibd4xunt">
+  <source id="7473568212391781030" name="_StringRegexp" hash="8dbevf9rnjlr63mfnvu2thb0c15r71b">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="_StringRegexp_PropertySupport.java" />
   </source>
-  <source id="6129327962763158517" name="FindMatchExpression" hash="7k2nw4rehfwsc1z3v8mjjhkvbz7z9yp">
+  <source id="6129327962763158517" name="FindMatchExpression" hash="-47v5sna42f3kus1k78lesgu22kosbmj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3796137614137086346" name="ReplaceRegexpOperation" hash="a3eckllb82c6vkgi7wdarwqcrgglgm8">
+  <source id="3796137614137086346" name="ReplaceRegexpOperation" hash="-cgv3yvljf4zaakdx3bky8pm7qnkx5rv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3796137614137538892" name="LiteralReplacement" hash="-3texjhkgxfhxqhrlzv562hc5ckfia7t">
+  <source id="3796137614137538892" name="LiteralReplacement" hash="5hcvtgfdr5mc9av33144n3bqjs4z4kr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3796137614137538894" name="MatchVariableReferenceReplacement" hash="52yll0d4h5eivv1fzev4qjkvttlywyf">
+  <source id="3796137614137538894" name="MatchVariableReferenceReplacement" hash="-ctnfnd9x2r8ras1ek7096j5eun1isc5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3796137614137538898" name="Replacement" hash="-q0wfzy6ewuhjdu45o9gdeg7wsikcsq">
+  <source id="3796137614137538898" name="Replacement" hash="ehtmufi5bt2nuj45xe7lq6mb8l7i0dg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

@@ -73,6 +73,17 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
     return result[0];
   }
 
+  public final boolean isEssentialProtected(){
+    final boolean[] result = {false};
+    performUninterruptableAction(new Runnable() {
+      @Override
+      public void run() {
+        result[0] = isEssential();
+      }
+    });
+    return result[0];
+  }
+
   public final void clearProtected(final SNode node, final EditorComponent editor) {
     performUninterruptableAction(new Runnable() {
       @Override
@@ -84,27 +95,16 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
 
   //--------stuff to override---------
 
-  /**
-   * Since MPS 3.0
-   * should be transformed to abstract method in future
-   */
-  protected Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
-    return createMessages(rootNode, events, wasCheckedOnce, editorContext);
-  }
-
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createMessages(...jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    throw new UnsupportedOperationException("Method not implemented");
-  }
+  protected abstract Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext);
 
   protected abstract boolean hasDramaticalEvent(List<SModelEvent> events);
 
   protected boolean isLaterThan(BaseEditorChecker editorChecker) {
     return false;
+  }
+
+  protected boolean isEssential () {
+    return true;
   }
 
   protected abstract boolean areMessagesChanged();

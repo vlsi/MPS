@@ -172,6 +172,16 @@ public abstract class AbstractCellListHandler {
     myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout, this);
     myListEditorCell_Collection.setSelectable(false);
 
+    createInnerCells(myOwnerNode, editorContext);
+
+    // add insert/insert-before actions
+    myListEditorCell_Collection.setAction(CellActionType.INSERT, new CellAction_InsertIntoCollection(this, false));
+    myListEditorCell_Collection.setAction(CellActionType.INSERT_BEFORE, new CellAction_InsertIntoCollection(this, true));
+
+    return myListEditorCell_Collection;
+  }
+
+  protected void createInnerCells(SNode node, EditorContext editorContext) {
     Iterator<? extends SNode> listNodes = getNodesForList().iterator();
     if (!listNodes.hasNext()) {
       EditorCell emptyCell = createEmptyCell(editorContext);
@@ -186,12 +196,6 @@ public abstract class AbstractCellListHandler {
         prevNode = nextNode;
       }
     }
-
-    // add insert/insert-before actions
-    myListEditorCell_Collection.setAction(CellActionType.INSERT, new CellAction_InsertIntoCollection(this, false));
-    myListEditorCell_Collection.setAction(CellActionType.INSERT_BEFORE, new CellAction_InsertIntoCollection(this, true));
-
-    return myListEditorCell_Collection;
   }
 
   protected abstract List<? extends SNode> getNodesForList();

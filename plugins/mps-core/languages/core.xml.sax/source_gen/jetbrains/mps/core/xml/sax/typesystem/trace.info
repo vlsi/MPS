@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.core.xml.sax.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.core.xml.sax.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140434">
     <nodeInfo nodeId="2264311582634140436" fileName="typeof_XMLSAXHandler_resultObject_InferenceRule.java" startLine="19" startPosition="117" endLine="20" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140448" fileName="typeof_XMLSAXHandler_resultObject_InferenceRule.java" startLine="22" startPosition="7" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -306,6 +306,124 @@
       <varInfo nodeId="2264311582634140561" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="2264311582634140561" fileName="typeof_XMLSAXBreakStatement_InferenceRule.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXBreakStatement_InferenceRule" />
+  </root>
+  <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/4720003541456865497">
+    <nodeInfo nodeId="4720003541456866438" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541456866438" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="21" startPosition="50" endLine="22" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541456866438" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="22" startPosition="203" endLine="23" endPosition="362" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="33" startPosition="126" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_XMLSAXNodeRuleParamRef_InferenceRule#()V" />
+    <nodeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4720003541456866438" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="19" startPosition="121" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="16" startPosition="56" endLine="16" endPosition="56" />
+    <scopeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="73" />
+    <scopeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" />
+    <scopeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
+      <varInfo nodeId="4720003541456865497" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4720003541456866438" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="20" startPosition="5" endLine="23" endPosition="362">
+      <varInfo nodeId="4720003541456866438" varName="_info_12389875345" />
+      <varInfo nodeId="4720003541456866438" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="4720003541456865758" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="19" startPosition="121" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="4720003541456865497" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="4720003541456865497" varName="paramRef" />
+      <varInfo nodeId="4720003541456865497" varName="status" />
+      <varInfo nodeId="4720003541456865497" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="4720003541456865497" fileName="typeof_XMLSAXNodeRuleParamRef_InferenceRule.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXNodeRuleParamRef_InferenceRule" />
+  </root>
+  <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/4720003541458739942">
+    <nodeInfo nodeId="4720003541459220925" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="26" startPosition="70" endLine="27" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4720003541459227347" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="28" startPosition="5" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4720003541458745382" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="29" startPosition="0" endLine="30" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541458775176" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="30" startPosition="95" endLine="31" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541458949937" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="33" startPosition="7" endLine="34" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541458949937" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="34" startPosition="60" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4720003541458949937" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="35" startPosition="67" endLine="36" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541459014395" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="37" startPosition="7" endLine="38" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4720003541459015267" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="39" startPosition="5" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4720003541459171382" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="41" startPosition="5" endLine="42" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541459171382" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="42" startPosition="80" endLine="43" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541459171382" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="43" startPosition="74" endLine="44" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541459171382" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="44" startPosition="20" endLine="45" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541459171382" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="46" startPosition="54" endLine="47" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4720003541459171382" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="47" startPosition="32" endLine="48" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4720003541459243546" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="50" startPosition="11" endLine="51" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541459243546" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="51" startPosition="55" endLine="52" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541459243546" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="52" startPosition="209" endLine="53" endPosition="322" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="60" startPosition="46" endLine="61" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="65" startPosition="5" endLine="66" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="66" startPosition="126" endLine="67" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="71" startPosition="30" endLine="72" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_XMLSAXChildRule_InferenceRule#()V" />
+    <nodeInfo nodeId="4720003541459204202" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="25" startPosition="122" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="64" startPosition="68" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4720003541458949937" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="32" startPosition="97" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4720003541459243546" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="49" startPosition="63" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="64" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="4720003541459243546" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="48" startPosition="36" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4720003541458776237" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="31" startPosition="121" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4720003541459171382" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="45" startPosition="22" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4720003541459171382" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="40" startPosition="0" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="25" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="22" startPosition="49" endLine="22" endPosition="49" />
+    <scopeInfo nodeId="4720003541459204205" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="26" startPosition="70" endLine="27" endPosition="13" />
+    <scopeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="60" startPosition="46" endLine="61" endPosition="66" />
+    <scopeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="71" startPosition="30" endLine="72" endPosition="17" />
+    <scopeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="65" startPosition="5" endLine="67" endPosition="45">
+      <varInfo nodeId="4720003541458739942" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4720003541458949937" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="33" startPosition="7" endLine="36" endPosition="269">
+      <varInfo nodeId="4720003541458949937" varName="_reporter_2309309498" />
+      <varInfo nodeId="4720003541458949937" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="4720003541459243546" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="50" startPosition="11" endLine="53" endPosition="322">
+      <varInfo nodeId="4720003541459243546" varName="_info_12389875345" />
+      <varInfo nodeId="4720003541459243546" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="60" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="71" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="64" startPosition="68" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="4720003541459243546" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="49" startPosition="63" endLine="54" endPosition="11" />
+    <scopeInfo nodeId="4720003541458776240" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="32" startPosition="97" endLine="38" endPosition="13" />
+    <scopeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="64" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="4720003541458739942" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4720003541459171382" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="46" startPosition="54" endLine="55" endPosition="9" />
+    <scopeInfo nodeId="4720003541459171382" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="41" startPosition="5" endLine="56" endPosition="7">
+      <varInfo nodeId="4720003541459171382" varName="arg_it" />
+      <varInfo nodeId="4720003541459171382" varName="arg_var" />
+      <varInfo nodeId="4720003541459171382" varName="param_it" />
+      <varInfo nodeId="4720003541459171382" varName="param_var" />
+    </scopeInfo>
+    <scopeInfo nodeId="4720003541458739943" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="25" startPosition="122" endLine="57" endPosition="5">
+      <varInfo nodeId="4720003541458745383" varName="actualArgument" />
+      <varInfo nodeId="4720003541458775177" varName="params" />
+    </scopeInfo>
+    <scopeInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="25" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="4720003541458739942" varName="childRule" />
+      <varInfo nodeId="4720003541458739942" varName="status" />
+      <varInfo nodeId="4720003541458739942" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="4720003541458739942" fileName="typeof_XMLSAXChildRule_InferenceRule.java" startLine="21" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXChildRule_InferenceRule" />
   </root>
 </debugInfo>
 

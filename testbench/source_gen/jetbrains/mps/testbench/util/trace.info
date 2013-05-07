@@ -466,276 +466,299 @@
     <unitInfo nodeId="5294483648489410428" fileName="CachingAppender.java" startLine="13" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.testbench.util.CachingAppender" />
   </root>
   <root nodeRef="r:36bec8f9-6cb9-42f4-a517-ea58c11993b3(jetbrains.mps.testbench.util)/5294483648489410732">
-    <nodeInfo nodeId="5294483648489410737" fileName="CachingPrintStream.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="LS_BYTES" />
-    <nodeInfo nodeId="5294483648489410741" fileName="CachingPrintStream.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="bytes" />
-    <nodeInfo nodeId="5294483648489410746" fileName="CachingPrintStream.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="buffer" />
-    <nodeInfo nodeId="5294483648489410751" fileName="CachingPrintStream.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="5294483648489410755" fileName="CachingPrintStream.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="caching" />
-    <nodeInfo nodeId="4480898598412082866" fileName="CachingPrintStream.java" startLine="19" startPosition="60" endLine="20" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5294483648489410766" fileName="CachingPrintStream.java" startLine="20" startPosition="15" endLine="21" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410772" fileName="CachingPrintStream.java" startLine="21" startPosition="21" endLine="22" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410787" fileName="CachingPrintStream.java" startLine="25" startPosition="31" endLine="26" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410799" fileName="CachingPrintStream.java" startLine="30" startPosition="18" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5294483648489410801" fileName="CachingPrintStream.java" startLine="32" startPosition="5" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410816" fileName="CachingPrintStream.java" startLine="37" startPosition="21" endLine="38" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5294483648489410818" fileName="CachingPrintStream.java" startLine="39" startPosition="5" endLine="40" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410832" fileName="CachingPrintStream.java" startLine="44" startPosition="18" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5294483648489410834" fileName="CachingPrintStream.java" startLine="46" startPosition="5" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410841" fileName="CachingPrintStream.java" startLine="47" startPosition="29" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410852" fileName="CachingPrintStream.java" startLine="52" startPosition="44" endLine="53" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410861" fileName="CachingPrintStream.java" startLine="57" startPosition="47" endLine="58" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410872" fileName="CachingPrintStream.java" startLine="62" startPosition="40" endLine="63" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410879" fileName="CachingPrintStream.java" startLine="66" startPosition="43" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410885" fileName="CachingPrintStream.java" startLine="70" startPosition="42" endLine="71" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410893" fileName="CachingPrintStream.java" startLine="75" startPosition="36" endLine="76" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410900" fileName="CachingPrintStream.java" startLine="80" startPosition="36" endLine="81" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410913" fileName="CachingPrintStream.java" startLine="86" startPosition="18" endLine="87" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410916" fileName="CachingPrintStream.java" startLine="87" startPosition="14" endLine="88" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410922" fileName="CachingPrintStream.java" startLine="89" startPosition="5" endLine="90" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410938" fileName="CachingPrintStream.java" startLine="95" startPosition="18" endLine="96" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410942" fileName="CachingPrintStream.java" startLine="96" startPosition="24" endLine="97" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410947" fileName="CachingPrintStream.java" startLine="98" startPosition="5" endLine="99" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410966" fileName="CachingPrintStream.java" startLine="104" startPosition="18" endLine="105" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410970" fileName="CachingPrintStream.java" startLine="105" startPosition="19" endLine="106" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410977" fileName="CachingPrintStream.java" startLine="107" startPosition="5" endLine="108" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410991" fileName="CachingPrintStream.java" startLine="113" startPosition="18" endLine="114" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411002" fileName="CachingPrintStream.java" startLine="115" startPosition="5" endLine="116" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411014" fileName="CachingPrintStream.java" startLine="121" startPosition="18" endLine="122" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411025" fileName="CachingPrintStream.java" startLine="123" startPosition="5" endLine="124" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411037" fileName="CachingPrintStream.java" startLine="129" startPosition="18" endLine="130" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411048" fileName="CachingPrintStream.java" startLine="131" startPosition="5" endLine="132" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411060" fileName="CachingPrintStream.java" startLine="137" startPosition="18" endLine="138" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411071" fileName="CachingPrintStream.java" startLine="139" startPosition="5" endLine="140" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411083" fileName="CachingPrintStream.java" startLine="145" startPosition="18" endLine="146" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411094" fileName="CachingPrintStream.java" startLine="147" startPosition="5" endLine="148" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411106" fileName="CachingPrintStream.java" startLine="153" startPosition="18" endLine="154" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411117" fileName="CachingPrintStream.java" startLine="155" startPosition="5" endLine="156" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411130" fileName="CachingPrintStream.java" startLine="161" startPosition="18" endLine="162" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411141" fileName="CachingPrintStream.java" startLine="163" startPosition="5" endLine="164" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411153" fileName="CachingPrintStream.java" startLine="169" startPosition="18" endLine="170" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411164" fileName="CachingPrintStream.java" startLine="171" startPosition="5" endLine="172" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411176" fileName="CachingPrintStream.java" startLine="177" startPosition="18" endLine="178" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411187" fileName="CachingPrintStream.java" startLine="179" startPosition="5" endLine="180" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411197" fileName="CachingPrintStream.java" startLine="185" startPosition="18" endLine="186" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411202" fileName="CachingPrintStream.java" startLine="187" startPosition="5" endLine="188" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411213" fileName="CachingPrintStream.java" startLine="193" startPosition="18" endLine="194" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411218" fileName="CachingPrintStream.java" startLine="195" startPosition="5" endLine="196" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411230" fileName="CachingPrintStream.java" startLine="201" startPosition="18" endLine="202" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411235" fileName="CachingPrintStream.java" startLine="203" startPosition="5" endLine="204" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411247" fileName="CachingPrintStream.java" startLine="209" startPosition="18" endLine="210" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411252" fileName="CachingPrintStream.java" startLine="211" startPosition="5" endLine="212" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411264" fileName="CachingPrintStream.java" startLine="217" startPosition="18" endLine="218" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411269" fileName="CachingPrintStream.java" startLine="219" startPosition="5" endLine="220" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411281" fileName="CachingPrintStream.java" startLine="225" startPosition="18" endLine="226" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411286" fileName="CachingPrintStream.java" startLine="227" startPosition="5" endLine="228" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411298" fileName="CachingPrintStream.java" startLine="233" startPosition="18" endLine="234" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411303" fileName="CachingPrintStream.java" startLine="235" startPosition="5" endLine="236" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411316" fileName="CachingPrintStream.java" startLine="241" startPosition="18" endLine="242" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411321" fileName="CachingPrintStream.java" startLine="243" startPosition="5" endLine="244" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411333" fileName="CachingPrintStream.java" startLine="249" startPosition="18" endLine="250" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411338" fileName="CachingPrintStream.java" startLine="251" startPosition="5" endLine="252" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411350" fileName="CachingPrintStream.java" startLine="257" startPosition="18" endLine="258" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411355" fileName="CachingPrintStream.java" startLine="259" startPosition="5" endLine="260" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410785" fileName="CachingPrintStream.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOut#()Ljava/io/PrintStream;" />
-    <nodeInfo nodeId="5294483648489410795" fileName="CachingPrintStream.java" startLine="29" startPosition="30" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410811" fileName="CachingPrintStream.java" startLine="36" startPosition="29" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410828" fileName="CachingPrintStream.java" startLine="43" startPosition="23" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410877" fileName="CachingPrintStream.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBytesCount#()I" />
-    <nodeInfo nodeId="5294483648489410883" fileName="CachingPrintStream.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBuffer#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5294483648489410989" fileName="CachingPrintStream.java" startLine="112" startPosition="45" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411012" fileName="CachingPrintStream.java" startLine="120" startPosition="42" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411035" fileName="CachingPrintStream.java" startLine="128" startPosition="41" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411058" fileName="CachingPrintStream.java" startLine="136" startPosition="43" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411081" fileName="CachingPrintStream.java" startLine="144" startPosition="43" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411104" fileName="CachingPrintStream.java" startLine="152" startPosition="44" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411128" fileName="CachingPrintStream.java" startLine="160" startPosition="44" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411151" fileName="CachingPrintStream.java" startLine="168" startPosition="44" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411174" fileName="CachingPrintStream.java" startLine="176" startPosition="46" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411195" fileName="CachingPrintStream.java" startLine="184" startPosition="38" endLine="187" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411211" fileName="CachingPrintStream.java" startLine="192" startPosition="47" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411228" fileName="CachingPrintStream.java" startLine="200" startPosition="44" endLine="203" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411245" fileName="CachingPrintStream.java" startLine="208" startPosition="43" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411262" fileName="CachingPrintStream.java" startLine="216" startPosition="44" endLine="219" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411279" fileName="CachingPrintStream.java" startLine="224" startPosition="45" endLine="227" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411296" fileName="CachingPrintStream.java" startLine="232" startPosition="46" endLine="235" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411314" fileName="CachingPrintStream.java" startLine="240" startPosition="46" endLine="243" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411331" fileName="CachingPrintStream.java" startLine="248" startPosition="46" endLine="251" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411348" fileName="CachingPrintStream.java" startLine="256" startPosition="46" endLine="259" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410849" fileName="CachingPrintStream.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNotEmpty#()Z" />
-    <nodeInfo nodeId="5294483648489410858" fileName="CachingPrintStream.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5294483648489410869" fileName="CachingPrintStream.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5294483648489410890" fileName="CachingPrintStream.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flush#()V" />
-    <nodeInfo nodeId="5294483648489410897" fileName="CachingPrintStream.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" />
-    <nodeInfo nodeId="5294483648489410909" fileName="CachingPrintStream.java" startLine="85" startPosition="43" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410934" fileName="CachingPrintStream.java" startLine="94" startPosition="65" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410962" fileName="CachingPrintStream.java" startLine="103" startPosition="64" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410759" fileName="CachingPrintStream.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CachingPrintStream#(Ljava/io/OutputStream;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5294483648489410793" fileName="CachingPrintStream.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startCaching#()V" />
-    <nodeInfo nodeId="5294483648489410809" fileName="CachingPrintStream.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopCaching#()V" />
-    <nodeInfo nodeId="5294483648489410826" fileName="CachingPrintStream.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
-    <nodeInfo nodeId="5294483648489410984" fileName="CachingPrintStream.java" startLine="111" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(Z)V" />
-    <nodeInfo nodeId="5294483648489411007" fileName="CachingPrintStream.java" startLine="119" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(C)V" />
-    <nodeInfo nodeId="5294483648489411030" fileName="CachingPrintStream.java" startLine="127" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(I)V" />
-    <nodeInfo nodeId="5294483648489411053" fileName="CachingPrintStream.java" startLine="135" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(J)V" />
-    <nodeInfo nodeId="5294483648489411076" fileName="CachingPrintStream.java" startLine="143" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(F)V" />
-    <nodeInfo nodeId="5294483648489411099" fileName="CachingPrintStream.java" startLine="151" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(D)V" />
-    <nodeInfo nodeId="5294483648489411122" fileName="CachingPrintStream.java" startLine="159" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#([C)V" />
-    <nodeInfo nodeId="5294483648489411146" fileName="CachingPrintStream.java" startLine="167" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5294483648489411169" fileName="CachingPrintStream.java" startLine="175" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="5294483648489411192" fileName="CachingPrintStream.java" startLine="183" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#()V" />
-    <nodeInfo nodeId="5294483648489411206" fileName="CachingPrintStream.java" startLine="191" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(Z)V" />
-    <nodeInfo nodeId="5294483648489411223" fileName="CachingPrintStream.java" startLine="199" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(C)V" />
-    <nodeInfo nodeId="5294483648489411240" fileName="CachingPrintStream.java" startLine="207" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(I)V" />
-    <nodeInfo nodeId="5294483648489411257" fileName="CachingPrintStream.java" startLine="215" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(J)V" />
-    <nodeInfo nodeId="5294483648489411274" fileName="CachingPrintStream.java" startLine="223" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(F)V" />
-    <nodeInfo nodeId="5294483648489411291" fileName="CachingPrintStream.java" startLine="231" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(D)V" />
-    <nodeInfo nodeId="5294483648489411308" fileName="CachingPrintStream.java" startLine="239" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#([C)V" />
-    <nodeInfo nodeId="5294483648489411326" fileName="CachingPrintStream.java" startLine="247" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5294483648489411343" fileName="CachingPrintStream.java" startLine="255" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="5294483648489410904" fileName="CachingPrintStream.java" startLine="84" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#(I)V" />
-    <nodeInfo nodeId="5294483648489410927" fileName="CachingPrintStream.java" startLine="93" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#([B)V" />
-    <nodeInfo nodeId="5294483648489410952" fileName="CachingPrintStream.java" startLine="102" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#([BII)V" />
-    <scopeInfo nodeId="5294483648489410786" fileName="CachingPrintStream.java" startLine="25" startPosition="31" endLine="26" endPosition="29" />
-    <scopeInfo nodeId="5294483648489410800" fileName="CachingPrintStream.java" startLine="30" startPosition="18" endLine="31" endPosition="57" />
-    <scopeInfo nodeId="5294483648489410817" fileName="CachingPrintStream.java" startLine="37" startPosition="21" endLine="38" endPosition="53" />
-    <scopeInfo nodeId="5294483648489410833" fileName="CachingPrintStream.java" startLine="44" startPosition="18" endLine="45" endPosition="59" />
-    <scopeInfo nodeId="5294483648489410851" fileName="CachingPrintStream.java" startLine="52" startPosition="44" endLine="53" endPosition="21" />
-    <scopeInfo nodeId="5294483648489410860" fileName="CachingPrintStream.java" startLine="57" startPosition="47" endLine="58" endPosition="39" />
-    <scopeInfo nodeId="5294483648489410871" fileName="CachingPrintStream.java" startLine="62" startPosition="40" endLine="63" endPosition="29" />
-    <scopeInfo nodeId="5294483648489410878" fileName="CachingPrintStream.java" startLine="66" startPosition="43" endLine="67" endPosition="17" />
-    <scopeInfo nodeId="5294483648489410884" fileName="CachingPrintStream.java" startLine="70" startPosition="42" endLine="71" endPosition="29" />
-    <scopeInfo nodeId="5294483648489410892" fileName="CachingPrintStream.java" startLine="75" startPosition="36" endLine="76" endPosition="18" />
-    <scopeInfo nodeId="5294483648489410899" fileName="CachingPrintStream.java" startLine="80" startPosition="36" endLine="81" endPosition="18" />
-    <scopeInfo nodeId="5294483648489411001" fileName="CachingPrintStream.java" startLine="113" startPosition="18" endLine="114" endPosition="51" />
-    <scopeInfo nodeId="5294483648489411024" fileName="CachingPrintStream.java" startLine="121" startPosition="18" endLine="122" endPosition="51" />
-    <scopeInfo nodeId="5294483648489411047" fileName="CachingPrintStream.java" startLine="129" startPosition="18" endLine="130" endPosition="51" />
-    <scopeInfo nodeId="5294483648489411070" fileName="CachingPrintStream.java" startLine="137" startPosition="18" endLine="138" endPosition="52" />
-    <scopeInfo nodeId="5294483648489411093" fileName="CachingPrintStream.java" startLine="145" startPosition="18" endLine="146" endPosition="51" />
-    <scopeInfo nodeId="5294483648489411116" fileName="CachingPrintStream.java" startLine="153" startPosition="18" endLine="154" endPosition="51" />
-    <scopeInfo nodeId="5294483648489411140" fileName="CachingPrintStream.java" startLine="161" startPosition="18" endLine="162" endPosition="55" />
-    <scopeInfo nodeId="5294483648489411163" fileName="CachingPrintStream.java" startLine="169" startPosition="18" endLine="170" endPosition="51" />
-    <scopeInfo nodeId="5294483648489411186" fileName="CachingPrintStream.java" startLine="177" startPosition="18" endLine="178" endPosition="53" />
-    <scopeInfo nodeId="5294483648489411201" fileName="CachingPrintStream.java" startLine="185" startPosition="18" endLine="186" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411217" fileName="CachingPrintStream.java" startLine="193" startPosition="18" endLine="194" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411234" fileName="CachingPrintStream.java" startLine="201" startPosition="18" endLine="202" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411251" fileName="CachingPrintStream.java" startLine="209" startPosition="18" endLine="210" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411268" fileName="CachingPrintStream.java" startLine="217" startPosition="18" endLine="218" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411285" fileName="CachingPrintStream.java" startLine="225" startPosition="18" endLine="226" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411302" fileName="CachingPrintStream.java" startLine="233" startPosition="18" endLine="234" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411320" fileName="CachingPrintStream.java" startLine="241" startPosition="18" endLine="242" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411337" fileName="CachingPrintStream.java" startLine="249" startPosition="18" endLine="250" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411354" fileName="CachingPrintStream.java" startLine="257" startPosition="18" endLine="258" endPosition="24" />
-    <scopeInfo nodeId="5294483648489410912" fileName="CachingPrintStream.java" startLine="86" startPosition="18" endLine="88" endPosition="32" />
-    <scopeInfo nodeId="5294483648489410937" fileName="CachingPrintStream.java" startLine="95" startPosition="18" endLine="97" endPosition="37" />
-    <scopeInfo nodeId="5294483648489410965" fileName="CachingPrintStream.java" startLine="104" startPosition="18" endLine="106" endPosition="47" />
-    <scopeInfo nodeId="5294483648489410765" fileName="CachingPrintStream.java" startLine="19" startPosition="60" endLine="22" endPosition="75" />
-    <scopeInfo nodeId="5294483648489410785" fileName="CachingPrintStream.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410877" fileName="CachingPrintStream.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410883" fileName="CachingPrintStream.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410794" fileName="CachingPrintStream.java" startLine="29" startPosition="30" endLine="33" endPosition="24" />
-    <scopeInfo nodeId="5294483648489410810" fileName="CachingPrintStream.java" startLine="36" startPosition="29" endLine="40" endPosition="25" />
-    <scopeInfo nodeId="5294483648489410849" fileName="CachingPrintStream.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410858" fileName="CachingPrintStream.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410869" fileName="CachingPrintStream.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410890" fileName="CachingPrintStream.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410897" fileName="CachingPrintStream.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410988" fileName="CachingPrintStream.java" startLine="112" startPosition="45" endLine="116" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411011" fileName="CachingPrintStream.java" startLine="120" startPosition="42" endLine="124" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411034" fileName="CachingPrintStream.java" startLine="128" startPosition="41" endLine="132" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411057" fileName="CachingPrintStream.java" startLine="136" startPosition="43" endLine="140" endPosition="20" />
-    <scopeInfo nodeId="5294483648489411080" fileName="CachingPrintStream.java" startLine="144" startPosition="43" endLine="148" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411103" fileName="CachingPrintStream.java" startLine="152" startPosition="44" endLine="156" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411127" fileName="CachingPrintStream.java" startLine="160" startPosition="44" endLine="164" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411150" fileName="CachingPrintStream.java" startLine="168" startPosition="44" endLine="172" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411173" fileName="CachingPrintStream.java" startLine="176" startPosition="46" endLine="180" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411194" fileName="CachingPrintStream.java" startLine="184" startPosition="38" endLine="188" endPosition="20" />
-    <scopeInfo nodeId="5294483648489411210" fileName="CachingPrintStream.java" startLine="192" startPosition="47" endLine="196" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411227" fileName="CachingPrintStream.java" startLine="200" startPosition="44" endLine="204" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411244" fileName="CachingPrintStream.java" startLine="208" startPosition="43" endLine="212" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411261" fileName="CachingPrintStream.java" startLine="216" startPosition="44" endLine="220" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411278" fileName="CachingPrintStream.java" startLine="224" startPosition="45" endLine="228" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411295" fileName="CachingPrintStream.java" startLine="232" startPosition="46" endLine="236" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411313" fileName="CachingPrintStream.java" startLine="240" startPosition="46" endLine="244" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411330" fileName="CachingPrintStream.java" startLine="248" startPosition="46" endLine="252" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411347" fileName="CachingPrintStream.java" startLine="256" startPosition="46" endLine="260" endPosition="21" />
-    <scopeInfo nodeId="5294483648489410759" fileName="CachingPrintStream.java" startLine="19" startPosition="0" endLine="24" endPosition="0">
+    <nodeInfo nodeId="5294483648489410737" fileName="CachingPrintStream.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="LS_BYTES" />
+    <nodeInfo nodeId="1623579106308380595" fileName="CachingPrintStream.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIgnoredOutputPatterns" />
+    <nodeInfo nodeId="5294483648489410741" fileName="CachingPrintStream.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="bytes" />
+    <nodeInfo nodeId="5294483648489410746" fileName="CachingPrintStream.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="buffer" />
+    <nodeInfo nodeId="5294483648489410751" fileName="CachingPrintStream.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="5294483648489410755" fileName="CachingPrintStream.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="caching" />
+    <nodeInfo nodeId="4480898598412082866" fileName="CachingPrintStream.java" startLine="21" startPosition="60" endLine="22" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5294483648489410766" fileName="CachingPrintStream.java" startLine="22" startPosition="15" endLine="23" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410772" fileName="CachingPrintStream.java" startLine="23" startPosition="21" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1623579106308512332" fileName="CachingPrintStream.java" startLine="27" startPosition="93" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="1623579106308500029" fileName="CachingPrintStream.java" startLine="28" startPosition="20" endLine="29" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410787" fileName="CachingPrintStream.java" startLine="32" startPosition="31" endLine="33" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5294483648489410799" fileName="CachingPrintStream.java" startLine="37" startPosition="18" endLine="38" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5294483648489410801" fileName="CachingPrintStream.java" startLine="39" startPosition="5" endLine="40" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410816" fileName="CachingPrintStream.java" startLine="44" startPosition="21" endLine="45" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5294483648489410818" fileName="CachingPrintStream.java" startLine="46" startPosition="5" endLine="47" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410832" fileName="CachingPrintStream.java" startLine="51" startPosition="18" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5294483648489410834" fileName="CachingPrintStream.java" startLine="53" startPosition="5" endLine="54" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410841" fileName="CachingPrintStream.java" startLine="54" startPosition="29" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1623579106309278804" fileName="CachingPrintStream.java" startLine="60" startPosition="55" endLine="61" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1623579106310490624" fileName="CachingPrintStream.java" startLine="63" startPosition="60" endLine="64" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1623579106311494463" fileName="CachingPrintStream.java" startLine="67" startPosition="5" endLine="68" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5294483648489410861" fileName="CachingPrintStream.java" startLine="72" startPosition="47" endLine="73" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5294483648489410872" fileName="CachingPrintStream.java" startLine="77" startPosition="40" endLine="78" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5294483648489410879" fileName="CachingPrintStream.java" startLine="81" startPosition="43" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5294483648489410885" fileName="CachingPrintStream.java" startLine="85" startPosition="42" endLine="86" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5294483648489410893" fileName="CachingPrintStream.java" startLine="90" startPosition="36" endLine="91" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410900" fileName="CachingPrintStream.java" startLine="95" startPosition="36" endLine="96" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410913" fileName="CachingPrintStream.java" startLine="101" startPosition="18" endLine="102" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410916" fileName="CachingPrintStream.java" startLine="102" startPosition="14" endLine="103" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410922" fileName="CachingPrintStream.java" startLine="104" startPosition="5" endLine="105" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410938" fileName="CachingPrintStream.java" startLine="110" startPosition="18" endLine="111" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410942" fileName="CachingPrintStream.java" startLine="111" startPosition="24" endLine="112" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410947" fileName="CachingPrintStream.java" startLine="113" startPosition="5" endLine="114" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410966" fileName="CachingPrintStream.java" startLine="119" startPosition="18" endLine="120" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410970" fileName="CachingPrintStream.java" startLine="120" startPosition="19" endLine="121" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410977" fileName="CachingPrintStream.java" startLine="122" startPosition="5" endLine="123" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410991" fileName="CachingPrintStream.java" startLine="128" startPosition="18" endLine="129" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411002" fileName="CachingPrintStream.java" startLine="130" startPosition="5" endLine="131" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411014" fileName="CachingPrintStream.java" startLine="136" startPosition="18" endLine="137" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411025" fileName="CachingPrintStream.java" startLine="138" startPosition="5" endLine="139" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411037" fileName="CachingPrintStream.java" startLine="144" startPosition="18" endLine="145" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411048" fileName="CachingPrintStream.java" startLine="146" startPosition="5" endLine="147" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411060" fileName="CachingPrintStream.java" startLine="152" startPosition="18" endLine="153" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411071" fileName="CachingPrintStream.java" startLine="154" startPosition="5" endLine="155" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411083" fileName="CachingPrintStream.java" startLine="160" startPosition="18" endLine="161" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411094" fileName="CachingPrintStream.java" startLine="162" startPosition="5" endLine="163" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411106" fileName="CachingPrintStream.java" startLine="168" startPosition="18" endLine="169" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411117" fileName="CachingPrintStream.java" startLine="170" startPosition="5" endLine="171" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411130" fileName="CachingPrintStream.java" startLine="176" startPosition="18" endLine="177" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411141" fileName="CachingPrintStream.java" startLine="178" startPosition="5" endLine="179" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411153" fileName="CachingPrintStream.java" startLine="184" startPosition="18" endLine="185" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411164" fileName="CachingPrintStream.java" startLine="186" startPosition="5" endLine="187" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411176" fileName="CachingPrintStream.java" startLine="192" startPosition="18" endLine="193" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411187" fileName="CachingPrintStream.java" startLine="194" startPosition="5" endLine="195" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411197" fileName="CachingPrintStream.java" startLine="200" startPosition="18" endLine="201" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411202" fileName="CachingPrintStream.java" startLine="202" startPosition="5" endLine="203" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411213" fileName="CachingPrintStream.java" startLine="208" startPosition="18" endLine="209" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411218" fileName="CachingPrintStream.java" startLine="210" startPosition="5" endLine="211" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411230" fileName="CachingPrintStream.java" startLine="216" startPosition="18" endLine="217" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411235" fileName="CachingPrintStream.java" startLine="218" startPosition="5" endLine="219" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411247" fileName="CachingPrintStream.java" startLine="224" startPosition="18" endLine="225" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411252" fileName="CachingPrintStream.java" startLine="226" startPosition="5" endLine="227" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411264" fileName="CachingPrintStream.java" startLine="232" startPosition="18" endLine="233" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411269" fileName="CachingPrintStream.java" startLine="234" startPosition="5" endLine="235" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411281" fileName="CachingPrintStream.java" startLine="240" startPosition="18" endLine="241" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411286" fileName="CachingPrintStream.java" startLine="242" startPosition="5" endLine="243" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411298" fileName="CachingPrintStream.java" startLine="248" startPosition="18" endLine="249" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411303" fileName="CachingPrintStream.java" startLine="250" startPosition="5" endLine="251" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411316" fileName="CachingPrintStream.java" startLine="256" startPosition="18" endLine="257" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411321" fileName="CachingPrintStream.java" startLine="258" startPosition="5" endLine="259" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411333" fileName="CachingPrintStream.java" startLine="264" startPosition="18" endLine="265" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411338" fileName="CachingPrintStream.java" startLine="266" startPosition="5" endLine="267" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411350" fileName="CachingPrintStream.java" startLine="272" startPosition="18" endLine="273" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489411355" fileName="CachingPrintStream.java" startLine="274" startPosition="5" endLine="275" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489410785" fileName="CachingPrintStream.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOut#()Ljava/io/PrintStream;" />
+    <nodeInfo nodeId="5294483648489410795" fileName="CachingPrintStream.java" startLine="36" startPosition="30" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489410811" fileName="CachingPrintStream.java" startLine="43" startPosition="29" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489410828" fileName="CachingPrintStream.java" startLine="50" startPosition="23" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1623579106310042626" fileName="CachingPrintStream.java" startLine="62" startPosition="59" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489410877" fileName="CachingPrintStream.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBytesCount#()I" />
+    <nodeInfo nodeId="5294483648489410883" fileName="CachingPrintStream.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBuffer#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5294483648489410989" fileName="CachingPrintStream.java" startLine="127" startPosition="45" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411012" fileName="CachingPrintStream.java" startLine="135" startPosition="42" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411035" fileName="CachingPrintStream.java" startLine="143" startPosition="41" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411058" fileName="CachingPrintStream.java" startLine="151" startPosition="43" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411081" fileName="CachingPrintStream.java" startLine="159" startPosition="43" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411104" fileName="CachingPrintStream.java" startLine="167" startPosition="44" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411128" fileName="CachingPrintStream.java" startLine="175" startPosition="44" endLine="178" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411151" fileName="CachingPrintStream.java" startLine="183" startPosition="44" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411174" fileName="CachingPrintStream.java" startLine="191" startPosition="46" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411195" fileName="CachingPrintStream.java" startLine="199" startPosition="38" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411211" fileName="CachingPrintStream.java" startLine="207" startPosition="47" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411228" fileName="CachingPrintStream.java" startLine="215" startPosition="44" endLine="218" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411245" fileName="CachingPrintStream.java" startLine="223" startPosition="43" endLine="226" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411262" fileName="CachingPrintStream.java" startLine="231" startPosition="44" endLine="234" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411279" fileName="CachingPrintStream.java" startLine="239" startPosition="45" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411296" fileName="CachingPrintStream.java" startLine="247" startPosition="46" endLine="250" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411314" fileName="CachingPrintStream.java" startLine="255" startPosition="46" endLine="258" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411331" fileName="CachingPrintStream.java" startLine="263" startPosition="46" endLine="266" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489411348" fileName="CachingPrintStream.java" startLine="271" startPosition="46" endLine="274" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1623579106307770594" fileName="CachingPrintStream.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CachingPrintStream#(Ljava/io/OutputStream;Ljava/lang/String;[Ljava/util/regex/Pattern;)V" />
+    <nodeInfo nodeId="5294483648489410858" fileName="CachingPrintStream.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5294483648489410869" fileName="CachingPrintStream.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5294483648489410890" fileName="CachingPrintStream.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flush#()V" />
+    <nodeInfo nodeId="5294483648489410897" fileName="CachingPrintStream.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" />
+    <nodeInfo nodeId="5294483648489410909" fileName="CachingPrintStream.java" startLine="100" startPosition="43" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489410934" fileName="CachingPrintStream.java" startLine="109" startPosition="65" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489410962" fileName="CachingPrintStream.java" startLine="118" startPosition="64" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489410759" fileName="CachingPrintStream.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CachingPrintStream#(Ljava/io/OutputStream;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1623579106309505808" fileName="CachingPrintStream.java" startLine="61" startPosition="40" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5294483648489410793" fileName="CachingPrintStream.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startCaching#()V" />
+    <nodeInfo nodeId="5294483648489410809" fileName="CachingPrintStream.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopCaching#()V" />
+    <nodeInfo nodeId="5294483648489410826" fileName="CachingPrintStream.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
+    <nodeInfo nodeId="5294483648489410984" fileName="CachingPrintStream.java" startLine="126" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(Z)V" />
+    <nodeInfo nodeId="5294483648489411007" fileName="CachingPrintStream.java" startLine="134" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(C)V" />
+    <nodeInfo nodeId="5294483648489411030" fileName="CachingPrintStream.java" startLine="142" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(I)V" />
+    <nodeInfo nodeId="5294483648489411053" fileName="CachingPrintStream.java" startLine="150" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(J)V" />
+    <nodeInfo nodeId="5294483648489411076" fileName="CachingPrintStream.java" startLine="158" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(F)V" />
+    <nodeInfo nodeId="5294483648489411099" fileName="CachingPrintStream.java" startLine="166" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(D)V" />
+    <nodeInfo nodeId="5294483648489411122" fileName="CachingPrintStream.java" startLine="174" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#([C)V" />
+    <nodeInfo nodeId="5294483648489411146" fileName="CachingPrintStream.java" startLine="182" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5294483648489411169" fileName="CachingPrintStream.java" startLine="190" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="5294483648489411192" fileName="CachingPrintStream.java" startLine="198" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#()V" />
+    <nodeInfo nodeId="5294483648489411206" fileName="CachingPrintStream.java" startLine="206" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(Z)V" />
+    <nodeInfo nodeId="5294483648489411223" fileName="CachingPrintStream.java" startLine="214" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(C)V" />
+    <nodeInfo nodeId="5294483648489411240" fileName="CachingPrintStream.java" startLine="222" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(I)V" />
+    <nodeInfo nodeId="5294483648489411257" fileName="CachingPrintStream.java" startLine="230" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(J)V" />
+    <nodeInfo nodeId="5294483648489411274" fileName="CachingPrintStream.java" startLine="238" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(F)V" />
+    <nodeInfo nodeId="5294483648489411291" fileName="CachingPrintStream.java" startLine="246" startPosition="0" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(D)V" />
+    <nodeInfo nodeId="5294483648489411308" fileName="CachingPrintStream.java" startLine="254" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#([C)V" />
+    <nodeInfo nodeId="5294483648489411326" fileName="CachingPrintStream.java" startLine="262" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5294483648489411343" fileName="CachingPrintStream.java" startLine="270" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="1623579106310727267" fileName="CachingPrintStream.java" startLine="59" startPosition="44" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489410904" fileName="CachingPrintStream.java" startLine="99" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#(I)V" />
+    <nodeInfo nodeId="5294483648489410927" fileName="CachingPrintStream.java" startLine="108" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#([B)V" />
+    <nodeInfo nodeId="5294483648489410952" fileName="CachingPrintStream.java" startLine="117" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#([BII)V" />
+    <nodeInfo nodeId="5294483648489410849" fileName="CachingPrintStream.java" startLine="58" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNotEmpty#()Z" />
+    <scopeInfo nodeId="5294483648489410786" fileName="CachingPrintStream.java" startLine="32" startPosition="31" endLine="33" endPosition="29" />
+    <scopeInfo nodeId="5294483648489410800" fileName="CachingPrintStream.java" startLine="37" startPosition="18" endLine="38" endPosition="57" />
+    <scopeInfo nodeId="5294483648489410817" fileName="CachingPrintStream.java" startLine="44" startPosition="21" endLine="45" endPosition="53" />
+    <scopeInfo nodeId="5294483648489410833" fileName="CachingPrintStream.java" startLine="51" startPosition="18" endLine="52" endPosition="59" />
+    <scopeInfo nodeId="1623579106310042627" fileName="CachingPrintStream.java" startLine="63" startPosition="60" endLine="64" endPosition="23" />
+    <scopeInfo nodeId="5294483648489410860" fileName="CachingPrintStream.java" startLine="72" startPosition="47" endLine="73" endPosition="39" />
+    <scopeInfo nodeId="5294483648489410871" fileName="CachingPrintStream.java" startLine="77" startPosition="40" endLine="78" endPosition="29" />
+    <scopeInfo nodeId="5294483648489410878" fileName="CachingPrintStream.java" startLine="81" startPosition="43" endLine="82" endPosition="17" />
+    <scopeInfo nodeId="5294483648489410884" fileName="CachingPrintStream.java" startLine="85" startPosition="42" endLine="86" endPosition="29" />
+    <scopeInfo nodeId="5294483648489410892" fileName="CachingPrintStream.java" startLine="90" startPosition="36" endLine="91" endPosition="18" />
+    <scopeInfo nodeId="5294483648489410899" fileName="CachingPrintStream.java" startLine="95" startPosition="36" endLine="96" endPosition="18" />
+    <scopeInfo nodeId="5294483648489411001" fileName="CachingPrintStream.java" startLine="128" startPosition="18" endLine="129" endPosition="51" />
+    <scopeInfo nodeId="5294483648489411024" fileName="CachingPrintStream.java" startLine="136" startPosition="18" endLine="137" endPosition="51" />
+    <scopeInfo nodeId="5294483648489411047" fileName="CachingPrintStream.java" startLine="144" startPosition="18" endLine="145" endPosition="51" />
+    <scopeInfo nodeId="5294483648489411070" fileName="CachingPrintStream.java" startLine="152" startPosition="18" endLine="153" endPosition="52" />
+    <scopeInfo nodeId="5294483648489411093" fileName="CachingPrintStream.java" startLine="160" startPosition="18" endLine="161" endPosition="51" />
+    <scopeInfo nodeId="5294483648489411116" fileName="CachingPrintStream.java" startLine="168" startPosition="18" endLine="169" endPosition="51" />
+    <scopeInfo nodeId="5294483648489411140" fileName="CachingPrintStream.java" startLine="176" startPosition="18" endLine="177" endPosition="55" />
+    <scopeInfo nodeId="5294483648489411163" fileName="CachingPrintStream.java" startLine="184" startPosition="18" endLine="185" endPosition="51" />
+    <scopeInfo nodeId="5294483648489411186" fileName="CachingPrintStream.java" startLine="192" startPosition="18" endLine="193" endPosition="53" />
+    <scopeInfo nodeId="5294483648489411201" fileName="CachingPrintStream.java" startLine="200" startPosition="18" endLine="201" endPosition="24" />
+    <scopeInfo nodeId="5294483648489411217" fileName="CachingPrintStream.java" startLine="208" startPosition="18" endLine="209" endPosition="24" />
+    <scopeInfo nodeId="5294483648489411234" fileName="CachingPrintStream.java" startLine="216" startPosition="18" endLine="217" endPosition="24" />
+    <scopeInfo nodeId="5294483648489411251" fileName="CachingPrintStream.java" startLine="224" startPosition="18" endLine="225" endPosition="24" />
+    <scopeInfo nodeId="5294483648489411268" fileName="CachingPrintStream.java" startLine="232" startPosition="18" endLine="233" endPosition="24" />
+    <scopeInfo nodeId="5294483648489411285" fileName="CachingPrintStream.java" startLine="240" startPosition="18" endLine="241" endPosition="24" />
+    <scopeInfo nodeId="5294483648489411302" fileName="CachingPrintStream.java" startLine="248" startPosition="18" endLine="249" endPosition="24" />
+    <scopeInfo nodeId="5294483648489411320" fileName="CachingPrintStream.java" startLine="256" startPosition="18" endLine="257" endPosition="24" />
+    <scopeInfo nodeId="5294483648489411337" fileName="CachingPrintStream.java" startLine="264" startPosition="18" endLine="265" endPosition="24" />
+    <scopeInfo nodeId="5294483648489411354" fileName="CachingPrintStream.java" startLine="272" startPosition="18" endLine="273" endPosition="24" />
+    <scopeInfo nodeId="1623579106307770598" fileName="CachingPrintStream.java" startLine="27" startPosition="93" endLine="29" endPosition="52" />
+    <scopeInfo nodeId="5294483648489410912" fileName="CachingPrintStream.java" startLine="101" startPosition="18" endLine="103" endPosition="32" />
+    <scopeInfo nodeId="5294483648489410937" fileName="CachingPrintStream.java" startLine="110" startPosition="18" endLine="112" endPosition="37" />
+    <scopeInfo nodeId="5294483648489410965" fileName="CachingPrintStream.java" startLine="119" startPosition="18" endLine="121" endPosition="47" />
+    <scopeInfo nodeId="5294483648489410765" fileName="CachingPrintStream.java" startLine="21" startPosition="60" endLine="24" endPosition="75" />
+    <scopeInfo nodeId="5294483648489410785" fileName="CachingPrintStream.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1623579106309505811" fileName="CachingPrintStream.java" startLine="62" startPosition="59" endLine="65" endPosition="9" />
+    <scopeInfo nodeId="5294483648489410877" fileName="CachingPrintStream.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="5294483648489410883" fileName="CachingPrintStream.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1623579106307770594" fileName="CachingPrintStream.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1623579106307883782" varName="ignoredOutputPatterns" />
+      <varInfo nodeId="1623579106307883800" varName="name" />
+      <varInfo nodeId="1623579106307883798" varName="out" />
+    </scopeInfo>
+    <scopeInfo nodeId="5294483648489410794" fileName="CachingPrintStream.java" startLine="36" startPosition="30" endLine="40" endPosition="24" />
+    <scopeInfo nodeId="5294483648489410810" fileName="CachingPrintStream.java" startLine="43" startPosition="29" endLine="47" endPosition="25" />
+    <scopeInfo nodeId="5294483648489410858" fileName="CachingPrintStream.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="5294483648489410869" fileName="CachingPrintStream.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="5294483648489410890" fileName="CachingPrintStream.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="5294483648489410897" fileName="CachingPrintStream.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="5294483648489410988" fileName="CachingPrintStream.java" startLine="127" startPosition="45" endLine="131" endPosition="19" />
+    <scopeInfo nodeId="5294483648489411011" fileName="CachingPrintStream.java" startLine="135" startPosition="42" endLine="139" endPosition="19" />
+    <scopeInfo nodeId="5294483648489411034" fileName="CachingPrintStream.java" startLine="143" startPosition="41" endLine="147" endPosition="19" />
+    <scopeInfo nodeId="5294483648489411057" fileName="CachingPrintStream.java" startLine="151" startPosition="43" endLine="155" endPosition="20" />
+    <scopeInfo nodeId="5294483648489411080" fileName="CachingPrintStream.java" startLine="159" startPosition="43" endLine="163" endPosition="19" />
+    <scopeInfo nodeId="5294483648489411103" fileName="CachingPrintStream.java" startLine="167" startPosition="44" endLine="171" endPosition="19" />
+    <scopeInfo nodeId="5294483648489411127" fileName="CachingPrintStream.java" startLine="175" startPosition="44" endLine="179" endPosition="19" />
+    <scopeInfo nodeId="5294483648489411150" fileName="CachingPrintStream.java" startLine="183" startPosition="44" endLine="187" endPosition="19" />
+    <scopeInfo nodeId="5294483648489411173" fileName="CachingPrintStream.java" startLine="191" startPosition="46" endLine="195" endPosition="21" />
+    <scopeInfo nodeId="5294483648489411194" fileName="CachingPrintStream.java" startLine="199" startPosition="38" endLine="203" endPosition="20" />
+    <scopeInfo nodeId="5294483648489411210" fileName="CachingPrintStream.java" startLine="207" startPosition="47" endLine="211" endPosition="21" />
+    <scopeInfo nodeId="5294483648489411227" fileName="CachingPrintStream.java" startLine="215" startPosition="44" endLine="219" endPosition="21" />
+    <scopeInfo nodeId="5294483648489411244" fileName="CachingPrintStream.java" startLine="223" startPosition="43" endLine="227" endPosition="21" />
+    <scopeInfo nodeId="5294483648489411261" fileName="CachingPrintStream.java" startLine="231" startPosition="44" endLine="235" endPosition="21" />
+    <scopeInfo nodeId="5294483648489411278" fileName="CachingPrintStream.java" startLine="239" startPosition="45" endLine="243" endPosition="21" />
+    <scopeInfo nodeId="5294483648489411295" fileName="CachingPrintStream.java" startLine="247" startPosition="46" endLine="251" endPosition="21" />
+    <scopeInfo nodeId="5294483648489411313" fileName="CachingPrintStream.java" startLine="255" startPosition="46" endLine="259" endPosition="21" />
+    <scopeInfo nodeId="5294483648489411330" fileName="CachingPrintStream.java" startLine="263" startPosition="46" endLine="267" endPosition="21" />
+    <scopeInfo nodeId="5294483648489411347" fileName="CachingPrintStream.java" startLine="271" startPosition="46" endLine="275" endPosition="21" />
+    <scopeInfo nodeId="5294483648489410759" fileName="CachingPrintStream.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="5294483648489410763" varName="name" />
       <varInfo nodeId="5294483648489410761" varName="out" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489410827" fileName="CachingPrintStream.java" startLine="43" startPosition="23" endLine="48" endPosition="19" />
-    <scopeInfo nodeId="5294483648489410908" fileName="CachingPrintStream.java" startLine="85" startPosition="43" endLine="90" endPosition="21" />
-    <scopeInfo nodeId="5294483648489410933" fileName="CachingPrintStream.java" startLine="94" startPosition="65" endLine="99" endPosition="21" />
-    <scopeInfo nodeId="5294483648489410961" fileName="CachingPrintStream.java" startLine="103" startPosition="64" endLine="108" endPosition="31" />
-    <scopeInfo nodeId="5294483648489410793" fileName="CachingPrintStream.java" startLine="29" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410809" fileName="CachingPrintStream.java" startLine="36" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410826" fileName="CachingPrintStream.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410984" fileName="CachingPrintStream.java" startLine="111" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="5294483648489410827" fileName="CachingPrintStream.java" startLine="50" startPosition="23" endLine="55" endPosition="19" />
+    <scopeInfo nodeId="1623579106309505808" fileName="CachingPrintStream.java" startLine="61" startPosition="40" endLine="66" endPosition="7">
+      <varInfo nodeId="1623579106309505814" varName="nextPattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="5294483648489410908" fileName="CachingPrintStream.java" startLine="100" startPosition="43" endLine="105" endPosition="21" />
+    <scopeInfo nodeId="5294483648489410933" fileName="CachingPrintStream.java" startLine="109" startPosition="65" endLine="114" endPosition="21" />
+    <scopeInfo nodeId="5294483648489410961" fileName="CachingPrintStream.java" startLine="118" startPosition="64" endLine="123" endPosition="31" />
+    <scopeInfo nodeId="5294483648489410793" fileName="CachingPrintStream.java" startLine="36" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="5294483648489410809" fileName="CachingPrintStream.java" startLine="43" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1623579106310727270" fileName="CachingPrintStream.java" startLine="60" startPosition="55" endLine="66" endPosition="7">
+      <varInfo nodeId="1623579106309278805" varName="bufferContents" />
+    </scopeInfo>
+    <scopeInfo nodeId="5294483648489410826" fileName="CachingPrintStream.java" startLine="50" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="5294483648489410984" fileName="CachingPrintStream.java" startLine="126" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="5294483648489410986" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411007" fileName="CachingPrintStream.java" startLine="119" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="5294483648489411007" fileName="CachingPrintStream.java" startLine="134" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="5294483648489411009" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411030" fileName="CachingPrintStream.java" startLine="127" startPosition="0" endLine="134" endPosition="0">
+    <scopeInfo nodeId="5294483648489411030" fileName="CachingPrintStream.java" startLine="142" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="5294483648489411032" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411053" fileName="CachingPrintStream.java" startLine="135" startPosition="0" endLine="142" endPosition="0">
+    <scopeInfo nodeId="5294483648489411053" fileName="CachingPrintStream.java" startLine="150" startPosition="0" endLine="157" endPosition="0">
       <varInfo nodeId="5294483648489411055" varName="lo" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411076" fileName="CachingPrintStream.java" startLine="143" startPosition="0" endLine="150" endPosition="0">
+    <scopeInfo nodeId="5294483648489411076" fileName="CachingPrintStream.java" startLine="158" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="5294483648489411078" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411099" fileName="CachingPrintStream.java" startLine="151" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="5294483648489411099" fileName="CachingPrintStream.java" startLine="166" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="5294483648489411101" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411122" fileName="CachingPrintStream.java" startLine="159" startPosition="0" endLine="166" endPosition="0">
+    <scopeInfo nodeId="5294483648489411122" fileName="CachingPrintStream.java" startLine="174" startPosition="0" endLine="181" endPosition="0">
       <varInfo nodeId="5294483648489411124" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411146" fileName="CachingPrintStream.java" startLine="167" startPosition="0" endLine="174" endPosition="0">
+    <scopeInfo nodeId="5294483648489411146" fileName="CachingPrintStream.java" startLine="182" startPosition="0" endLine="189" endPosition="0">
       <varInfo nodeId="5294483648489411148" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411169" fileName="CachingPrintStream.java" startLine="175" startPosition="0" endLine="182" endPosition="0">
+    <scopeInfo nodeId="5294483648489411169" fileName="CachingPrintStream.java" startLine="190" startPosition="0" endLine="197" endPosition="0">
       <varInfo nodeId="5294483648489411171" varName="obj" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411192" fileName="CachingPrintStream.java" startLine="183" startPosition="0" endLine="190" endPosition="0" />
-    <scopeInfo nodeId="5294483648489411206" fileName="CachingPrintStream.java" startLine="191" startPosition="0" endLine="198" endPosition="0">
+    <scopeInfo nodeId="5294483648489411192" fileName="CachingPrintStream.java" startLine="198" startPosition="0" endLine="205" endPosition="0" />
+    <scopeInfo nodeId="5294483648489411206" fileName="CachingPrintStream.java" startLine="206" startPosition="0" endLine="213" endPosition="0">
       <varInfo nodeId="5294483648489411208" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411223" fileName="CachingPrintStream.java" startLine="199" startPosition="0" endLine="206" endPosition="0">
+    <scopeInfo nodeId="5294483648489411223" fileName="CachingPrintStream.java" startLine="214" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="5294483648489411225" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411240" fileName="CachingPrintStream.java" startLine="207" startPosition="0" endLine="214" endPosition="0">
+    <scopeInfo nodeId="5294483648489411240" fileName="CachingPrintStream.java" startLine="222" startPosition="0" endLine="229" endPosition="0">
       <varInfo nodeId="5294483648489411242" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411257" fileName="CachingPrintStream.java" startLine="215" startPosition="0" endLine="222" endPosition="0">
+    <scopeInfo nodeId="5294483648489411257" fileName="CachingPrintStream.java" startLine="230" startPosition="0" endLine="237" endPosition="0">
       <varInfo nodeId="5294483648489411259" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411274" fileName="CachingPrintStream.java" startLine="223" startPosition="0" endLine="230" endPosition="0">
+    <scopeInfo nodeId="5294483648489411274" fileName="CachingPrintStream.java" startLine="238" startPosition="0" endLine="245" endPosition="0">
       <varInfo nodeId="5294483648489411276" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411291" fileName="CachingPrintStream.java" startLine="231" startPosition="0" endLine="238" endPosition="0">
+    <scopeInfo nodeId="5294483648489411291" fileName="CachingPrintStream.java" startLine="246" startPosition="0" endLine="253" endPosition="0">
       <varInfo nodeId="5294483648489411293" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411308" fileName="CachingPrintStream.java" startLine="239" startPosition="0" endLine="246" endPosition="0">
+    <scopeInfo nodeId="5294483648489411308" fileName="CachingPrintStream.java" startLine="254" startPosition="0" endLine="261" endPosition="0">
       <varInfo nodeId="5294483648489411310" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411326" fileName="CachingPrintStream.java" startLine="247" startPosition="0" endLine="254" endPosition="0">
+    <scopeInfo nodeId="5294483648489411326" fileName="CachingPrintStream.java" startLine="262" startPosition="0" endLine="269" endPosition="0">
       <varInfo nodeId="5294483648489411328" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489411343" fileName="CachingPrintStream.java" startLine="255" startPosition="0" endLine="262" endPosition="0">
+    <scopeInfo nodeId="5294483648489411343" fileName="CachingPrintStream.java" startLine="270" startPosition="0" endLine="277" endPosition="0">
       <varInfo nodeId="5294483648489411345" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489410904" fileName="CachingPrintStream.java" startLine="84" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="5294483648489410904" fileName="CachingPrintStream.java" startLine="99" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="5294483648489410906" varName="buf" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489410927" fileName="CachingPrintStream.java" startLine="93" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="5294483648489410927" fileName="CachingPrintStream.java" startLine="108" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="5294483648489410929" varName="buf" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489410952" fileName="CachingPrintStream.java" startLine="102" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="5294483648489410952" fileName="CachingPrintStream.java" startLine="117" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="5294483648489410954" varName="buf" />
       <varInfo nodeId="5294483648489410959" varName="len" />
       <varInfo nodeId="5294483648489410957" varName="off" />
     </scopeInfo>
-    <unitInfo nodeId="5294483648489410732" fileName="CachingPrintStream.java" startLine="9" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.testbench.util.CachingPrintStream" />
+    <scopeInfo nodeId="5294483648489410851" fileName="CachingPrintStream.java" startLine="59" startPosition="44" endLine="68" endPosition="21" />
+    <scopeInfo nodeId="5294483648489410849" fileName="CachingPrintStream.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
+    <unitInfo nodeId="5294483648489410732" fileName="CachingPrintStream.java" startLine="10" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.testbench.util.CachingPrintStream" />
   </root>
 </debugInfo>
 

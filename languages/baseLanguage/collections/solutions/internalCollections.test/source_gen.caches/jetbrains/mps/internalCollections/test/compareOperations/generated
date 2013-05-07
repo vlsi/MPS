@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3zv5t0joc5qvahq80hba74h41mku9ba">
+<dependencies version="2" modelHash="17ys55tbkgx5j3e48l4kjzonr7kur1l">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="-ctxvs1rpiiexlq8dltxstwmrdnqkuz7" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="e4aodjamafijmcm1ggq1itbjxjw4yyr" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="-txtqj73mzxbk5ochs4rm18dc52hihu" />
-  <source id="1205497877107" name="Union_Test" hash="8j9ggbm6uuynmqze8evp6yc8jhd3y2w">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="dgtel9s427vm37iaz9u6ikq38xnt1eq" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8xjteqk842ql8pbze16i68m1ajw21lk" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <common hash="3gknizbw8vzf8hkq8woxcxneswlxk4a" />
+  <source id="1205497877107" name="Union_Test" hash="-dkmyuu0s0w1iddyi6pzec31cs6oro8s">
     <dep root="2796241438627699186" />
     <dep root="2796241438627699197" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -17,7 +17,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Union_Test.java" />
   </source>
-  <source id="1205514854257" name="SubtractTest_Test" hash="1buvjyfwrocsqe0qjp6box9nbn4ol3c">
+  <source id="1205514854257" name="SubtractTest_Test" hash="-arofl2jm3pc9zxtz4u30cx0o7piuwxu">
     <dep root="2796241438627699186" />
     <dep root="2796241438627699197" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -27,7 +27,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SubtractTest_Test.java" />
   </source>
-  <source id="1205515610187" name="Intersect_Test" hash="-4mva7gmszruig1w1pk1gxmmtmihtqgk">
+  <source id="1205515610187" name="Intersect_Test" hash="-19eyh7o8jsa3hu2woxcbwm4wt50mynt">
     <dep root="2796241438627699186" />
     <dep root="2796241438627699197" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -37,7 +37,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Intersect_Test.java" />
   </source>
-  <source id="1205528089811" name="Disjunct_Test" hash="-8uuyfvneu08dj3dacbgkxfwtk3et5dq">
+  <source id="1205528089811" name="Disjunct_Test" hash="-d8vdjkx2x92nohmoknew4o6kdyppd91">
     <dep root="2796241438627699186" />
     <dep root="2796241438627699197" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -47,7 +47,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Disjunct_Test.java" />
   </source>
-  <source id="1205574331460" name="Concat_Test" hash="-6u5qgqaz34069e37kqzx9g0lho26jhh">
+  <source id="1205574331460" name="Concat_Test" hash="-dgmx69n3418oq2zknbipptvrfxtptx3">
     <dep root="2796241438627699186" />
     <dep root="2796241438627699197" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -58,10 +58,10 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Concat_Test.java" />
   </source>
-  <source id="2796241438627699186" name="Foo" hash="-bwdp7gi4xu866tilsn57e37yrgft3de">
+  <source id="2796241438627699186" name="Foo" hash="-cu3rla8gqn20ju4ugu0oqe49ulz3oq6">
     <file name="Foo.java" />
   </source>
-  <source id="2796241438627699197" name="Bar" hash="-cekjdf3mafrollsja55c9lvbrzlj6gt">
+  <source id="2796241438627699197" name="Bar" hash="8s84u71g5pybsiuukvybmdaufqn3hot">
     <file name="Bar.java" />
   </source>
 </dependencies>

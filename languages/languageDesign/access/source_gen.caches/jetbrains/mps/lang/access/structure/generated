@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="asj1izasppbp1ft5qiti385xgfk45ms">
+<dependencies version="2" modelHash="-4ihauqn1uy6992zv1187y3ikm4c5ip">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-785p0qyel9g3ihekfkf0bz6sctsf19i" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="96pjjgrifm9n0ijb1jhc6nqxgg54m47" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="-56vpbb5gfg9600m7m0mzzmfmietnexv">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="8q8c9ybzbm0onqz04ml9wkx8pbi72wx" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <common hash="52591ouydq57lsa12hd10cmmno3a7a9">
     <dep root="5332677359380589431" />
     <dep root="8974276187400348170" />
     <dep root="8974276187400348172" />
@@ -27,34 +27,34 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="8974276187400348170" name="BaseExecuteCommandStatement" hash="-6e3egrvbh6pnhcz3153naq8xyuck8n1">
+  <source id="8974276187400348170" name="BaseExecuteCommandStatement" hash="cazl4ihxfgu4peutskhjrbwushb5hnl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400348172" name="BaseExecuteCommandStatementSync" hash="70zwdwadd65xmot7pmawzqf6tbm9mpd">
+  <source id="8974276187400348172" name="BaseExecuteCommandStatementSync" hash="-3vm2yum7eoobmun3ac7etvw71tdy7rw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400348173" name="CommandClosureLiteral" hash="ag5ilumiphwa2su51pyjo5rwoktnk37">
+  <source id="8974276187400348173" name="CommandClosureLiteral" hash="d47qrdpkequ7ied92xzsdti9fv3jygc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400348174" name="ExecuteCommandInEDTStatement" hash="-46p3zqhawzxcy0un2jdxa68n8l2c6p">
+  <source id="8974276187400348174" name="ExecuteCommandInEDTStatement" hash="-4bfm6fj5g3jues0od70fjj75iyvop91">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400348177" name="ExecuteCommandStatement" hash="cf0szmqx7zd5vchslw8yzo613bt5y5v">
+  <source id="8974276187400348177" name="ExecuteCommandStatement" hash="6g0rk07m62xsmk270mptmklbm4ec757">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400348179" name="ExecuteEDTCommandStatement" hash="53z7u6jg9j4485euzyag67tinv51tbv">
+  <source id="8974276187400348179" name="ExecuteEDTCommandStatement" hash="-4lvrv45hgq7zokb8pefx2ky4b8l3lg5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400348181" name="ExecuteLightweightCommandStatement" hash="6r63kl514fe3o9rw0exwexyqcg0547n">
+  <source id="8974276187400348181" name="ExecuteLightweightCommandStatement" hash="-8ywfuokme82t1n5kv6qunvrhrh1ik67">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400348183" name="ExecuteWriteActionStatement" hash="clx5x2kg6opi1yblrlpgeq7ob7y09aj">
+  <source id="8974276187400348183" name="ExecuteWriteActionStatement" hash="8qeyh1gosm0cqo5xoucweb67nd7tppo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8974276187400348185" name="IExecuteCommandStatementSync" hash="-81okpmdzgyi1ribsrq730kxdyerl3js">
+  <source id="8974276187400348185" name="IExecuteCommandStatementSync" hash="49dto5fps59u5em5udpw3gweuvo4axg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5332677359380589431" name="ExecuteTransparentCommandStatement" hash="d5p246g096ir6keju4mcgs6pcy1ptdx">
+  <source id="5332677359380589431" name="ExecuteTransparentCommandStatement" hash="-1lpjrg3wzhueb88jovvc9acw8d7urog">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>
