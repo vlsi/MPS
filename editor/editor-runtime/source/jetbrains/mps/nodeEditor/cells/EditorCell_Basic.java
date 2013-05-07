@@ -402,11 +402,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public boolean isReferenceCell() {
-    return myIsReferenceCell;
-  }
-
-  @Override
   public void setSelected(boolean selected) {
     mySelected = selected;
   }
@@ -674,6 +669,15 @@ public abstract class EditorCell_Basic implements EditorCell {
   @Override
   public boolean isBig() {
     return myBig;
+  }
+
+  public void setReferenceCell(boolean isReference) {
+    myIsReferenceCell = isReference;
+  }
+
+  @Override
+  public boolean isReferenceCell() {
+    return myIsReferenceCell;
   }
 
   @Override
