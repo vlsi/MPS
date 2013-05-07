@@ -1620,11 +1620,11 @@
     <property name="name" nameId="tpck.1169194664001" value="LinkedHashMapOrder" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="mapType" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1240219850851" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1240219850851" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="false" />
       <property name="externalValue" nameId="tpce.1083923523172" value="insertion_order" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1240219896671" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1240219896671" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="true" />
       <property name="externalValue" nameId="tpce.1083923523172" value="access_order" />
     </node>

@@ -2712,15 +2712,15 @@
     <property name="name" nameId="tpck.1169194664001" value="TrimKind" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.string.expression" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1225271514375" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1225271514375" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="both" />
       <property name="externalValue" nameId="tpce.1083923523172" value="both" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1225271514376" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1225271514376" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="leading" />
       <property name="externalValue" nameId="tpce.1083923523172" value="leading" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1225271514377" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1225271514377" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="trailing" />
       <property name="externalValue" nameId="tpce.1083923523172" value="trailing" />
     </node>

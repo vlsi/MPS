@@ -251,27 +251,27 @@
     <property name="name" nameId="tpck.1169194664001" value="RuleType" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="generator" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6370754048397540922" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6370754048397540922" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="strictly_before" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="strictly_before" />
       <property name="externalValue" nameId="tpce.1083923523172" value="before (&lt;)" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6370754048397540923" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6370754048397540923" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="strictly_together" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="strictly_together" />
       <property name="externalValue" nameId="tpce.1083923523172" value="together with (=)" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6370754048397540924" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6370754048397540924" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="before_or_together" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="before_or_together" />
       <property name="externalValue" nameId="tpce.1083923523172" value="before or together (&lt;=)" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2643213347103734302" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2643213347103734302" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="after_or_together" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="after_or_together" />
       <property name="externalValue" nameId="tpce.1083923523172" value="after or together (&gt;=)" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2643213347103734303" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2643213347103734303" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="strictly_after" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="strictly_after" />
       <property name="externalValue" nameId="tpce.1083923523172" value="after (&gt;)" />

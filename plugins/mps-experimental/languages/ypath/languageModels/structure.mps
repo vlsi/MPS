@@ -68,39 +68,39 @@
     <property name="name" nameId="tpck.1169194664001" value="TraversalAxis" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="treeOperation.traverse" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1168457888646" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1168457888646" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="DESCENDANTS" />
       <property name="externalValue" nameId="tpce.1083923523172" value="DESCENDANTS" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1169310540136" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1169310540136" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="SELF_DESCENDANTS" />
       <property name="externalValue" nameId="tpce.1083923523172" value="SELF_DESCENDANTS" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1168458386233" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1168458386233" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="CHILDREN" />
       <property name="externalValue" nameId="tpce.1083923523172" value="CHILDREN" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1168458451203" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1168458451203" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="ANCESTORS" />
       <property name="externalValue" nameId="tpce.1083923523172" value="ANCESTORS" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1169311161978" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1169311161978" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="SELF_ANCESTORS" />
       <property name="externalValue" nameId="tpce.1083923523172" value="SELF_ANCESTORS" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1168458468740" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1168458468740" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="FOLLOWING_SIBLINGS" />
       <property name="externalValue" nameId="tpce.1083923523172" value="FOLLOWING_SIBLINGS" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1169311210596" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1169311210596" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="SELF_FOLLOWING_SIBLINGS" />
       <property name="externalValue" nameId="tpce.1083923523172" value="SELF_FOLLOWING_SIBLINGS" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1168458479924" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1168458479924" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="PRECEDING_SIBLINGS" />
       <property name="externalValue" nameId="tpce.1083923523172" value="PRECEDING_SIBLINGS" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1169311237643" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1169311237643" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="PRECEDING_SIBLINGS_SELF" />
       <property name="externalValue" nameId="tpce.1083923523172" value="PRECEDING_SIBLINGS_SELF" />
     </node>
@@ -989,43 +989,43 @@
     <property name="name" nameId="tpck.1169194664001" value="FragmentTypeEnum" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="treePath.features.functions" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419521950" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419521950" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="REPLACE_SINGLE" />
       <property name="externalValue" nameId="tpce.1083923523172" value="replace single" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419564011" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419564011" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="REPLACE_SELECTION" />
       <property name="externalValue" nameId="tpce.1083923523172" value="replace selection" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419568550" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419568550" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="REPLACE_ALL" />
       <property name="externalValue" nameId="tpce.1083923523172" value="replace all" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196420251775" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196420251775" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="REMOVE_SINGLE" />
       <property name="externalValue" nameId="tpce.1083923523172" value="remove single" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196420259670" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196420259670" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="REMOVE_SELECTION" />
       <property name="externalValue" nameId="tpce.1083923523172" value="remove selection" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196420267949" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196420267949" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="REMOVE_ALL" />
       <property name="externalValue" nameId="tpce.1083923523172" value="remove all" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419570737" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419570737" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="INSERT_AT_START" />
       <property name="externalValue" nameId="tpce.1083923523172" value="insert at start" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419579750" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419579750" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="INSERT_AT_END" />
       <property name="externalValue" nameId="tpce.1083923523172" value="insert at end" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419581755" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419581755" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="INSERT_BEFORE" />
       <property name="externalValue" nameId="tpce.1083923523172" value="insert before" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419585696" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1196419585696" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="INSERT_AFTER" />
       <property name="externalValue" nameId="tpce.1083923523172" value="insert after" />
     </node>

@@ -37,27 +37,27 @@
     <property name="name" nameId="tpck.1169194664001" value="Severity" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1167245288119" resolveInfo="debug" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1167245107476" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1167245107476" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="fatal" />
       <property name="externalValue" nameId="tpce.1083923523172" value="fatal" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1167245252932" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1167245252932" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="error" />
       <property name="externalValue" nameId="tpce.1083923523172" value="error" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1167245264682" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1167245264682" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="warn" />
       <property name="externalValue" nameId="tpce.1083923523172" value="warn" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1167245288119" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1167245288119" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="debug" />
       <property name="externalValue" nameId="tpce.1083923523172" value="debug" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1169477928086" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1169477928086" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="info" />
       <property name="externalValue" nameId="tpce.1083923523172" value="info" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1167245293010" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1167245293010" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="trace" />
       <property name="externalValue" nameId="tpce.1083923523172" value="trace" />
     </node>

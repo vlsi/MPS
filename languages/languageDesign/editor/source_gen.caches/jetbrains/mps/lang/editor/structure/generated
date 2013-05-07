@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d6c8wh8o7q4pvm9wplrig5vf54lm38l">
+<dependencies version="2" modelHash="74zqu1e4rd5w3nuxxexfrhn64jwtxlg">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8pja5s7kuga6tnod6ekp0ci8k86gmfl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-4a6ojdu29sxrk50cykax0ufz3tor9cb" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-98t29efwmnhx95l2dy0yl52hl0tewrf" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c3wykz1pbxeuwqddsti0zwg3d2aw2bf" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3lg0crq1zjy3uktzvbog4vi38f0l45t" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="aj6wziuqpisiamtbgrganpjc3p2mc8n" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
@@ -298,7 +298,7 @@
   <source id="1081293058843" name="CellKeyMapDeclaration" hash="aloyinulq7fxz6let7odhk87uxbfkwb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1083928804390" name="_YesNoDefault_Enum" hash="atvdq6wmhnmanh4r8lv3iqpnadfy15t">
+  <source id="1083928804390" name="_YesNoDefault_Enum" hash="uwf5hb8aovq1u4chdfsvbo0zm3lomz">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -309,7 +309,7 @@
     <file name="_YesNoDefault_Enum.java" />
     <file name="_YesNoDefault_Enum_PropertySupport.java" />
   </source>
-  <source id="1083952545109" name="_Colors_Enum" hash="9as4w6g33b4bkm8u9udwfsjfacat9xz">
+  <source id="1083952545109" name="_Colors_Enum" hash="99k6wzadta67lcp69usx02zc60pb5l0">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -329,7 +329,7 @@
   <source id="1088612959204" name="CellModel_Alternation" hash="dghvytektwb3h70411fgcfqkowvfj0l">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1101211480448" name="_FontStyle_Enum" hash="-dx95u5ec5av9bcmzsv7ulv4d83xjv91">
+  <source id="1101211480448" name="_FontStyle_Enum" hash="-1kapkyaj6j4a73kvfemga1ton18ht86">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -355,7 +355,7 @@
   <source id="1106270637846" name="CellLayout_Flow" hash="-5wlmzy1vynyhyls7vxaccr1kisn66dj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1130847686886" name="UnderlineStyle" hash="-4bj3uaycmwqwou85tyfl4q2grd72r9s">
+  <source id="1130847686886" name="UnderlineStyle" hash="-cyrvhva6z6pbhsujf56ke0h9ralmuje">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -366,7 +366,7 @@
     <file name="UnderlineStyle.java" />
     <file name="UnderlineStyle_PropertySupport.java" />
   </source>
-  <source id="1130926557197" name="FocusPolicy" hash="-37d8l59zd3oi88zom2iv4q6643a2pvs">
+  <source id="1130926557197" name="FocusPolicy" hash="-77co3prfblxipmtejqu4ca6pjv2vcma">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -401,7 +401,7 @@
   <source id="1137553248617" name="CellModel_ConceptProperty" hash="60tj33ranv9nrlxqczvyaohmdgidz5o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1138197387103" name="_Layout_Constraints_Enum" hash="66du93xfcdvrbizgrcr03zrfewkzls">
+  <source id="1138197387103" name="_Layout_Constraints_Enum" hash="-3k4xmkksmlncmpppl2itk4mi800ebcs">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -418,7 +418,7 @@
   <source id="1139535280617" name="CellActionMapItem" hash="-eg97pd2cgr4r6ig192u8vgg8yh6191u">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1139535328871" name="CellActionId" hash="20w5kve1jvabw75piodpq4m5cf7paus">
+  <source id="1139535328871" name="CellActionId" hash="5i1ycsscqc7643jon1gm1a93mpx9fin">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -432,7 +432,7 @@
   <source id="1139535439104" name="CellActionMap_ExecuteFunction" hash="95wxkay2xjvq34a7ejvf4pnt4v0h3wd">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1139744471051" name="_ImageAlignment_Enum" hash="-erb5px2aikmlh69aer36ma5uw8f1p70">
+  <source id="1139744471051" name="_ImageAlignment_Enum" hash="-dsrkyam8j10u8h64pgz26104t4kl4p3">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -452,7 +452,7 @@
   <source id="1140524381322" name="CellModel_ListWithRole" hash="9d7qqg092lax7kvsj7ldbz0hdbtpk04">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1140813780565" name="RightTransformAnchorTag" hash="8pqis7b1ipo03d9qqfefuxnh2xrnloj">
+  <source id="1140813780565" name="RightTransformAnchorTag" hash="-9rkwke2sypb9jmi7hbug6jp1b219xrn">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -463,7 +463,7 @@
     <file name="RightTransformAnchorTag.java" />
     <file name="RightTransformAnchorTag_PropertySupport.java" />
   </source>
-  <source id="1141091053936" name="CellKeyMapCaretPolicy" hash="7gmry8zpnw6psw4svk9tb22aonms6ob">
+  <source id="1141091053936" name="CellKeyMapCaretPolicy" hash="-cbai7c4t2lhswyzjsf6di8hhtsicg50">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -480,7 +480,7 @@
   <source id="1142886811589" name="ConceptFunctionParameter_node" hash="b19zik8a96uffaiqbtmjwo06fi3c7ht">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1143891911797" name="_LeftRight_Enum" hash="d1mag2nepeiqj0wg1t38sl1a9qfhhg6">
+  <source id="1143891911797" name="_LeftRight_Enum" hash="bsx559gqheuforym1hi5mu4ltdnd6u4">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -695,7 +695,7 @@
   <source id="1187258617779" name="ForegroundNullColorStyleClassItem" hash="e1y0qa8dzadlh9fumyms1fy6sj1b5ae">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1197893505573" name="_CaretPosition_Enum" hash="6z1gm75swacxeq684vmwp0q2rg0odl4">
+  <source id="1197893505573" name="_CaretPosition_Enum" hash="a4nxnivo5l13wbwp80n0stuieqsy8hu">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -730,7 +730,7 @@
   <source id="1201268783309" name="SelectPositionParameter" hash="-2dn18qozknx9bg0lufvak61ovndlpyv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1201268793545" name="SelectPosition" hash="5ezdg6uyme15vvvst9ke3nh594c535r">
+  <source id="1201268793545" name="SelectPosition" hash="cm5atb2hulutvgi21y63g3ps3du1yjj">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -774,7 +774,7 @@
   <source id="1215085197271" name="LastPositionAllowedStyleClassItem" hash="9tb4ocdbz4ecftjkjte91ywbpwfzdh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1216308376568" name="_NextLine_Enum" hash="bqy1s2pephimqdzz5frymdqrx3sml9m">
+  <source id="1216308376568" name="_NextLine_Enum" hash="6c06gtz6ep9ag5i0i579skzxo9jzq2d">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -851,7 +851,7 @@
   <source id="1226339938453" name="AbstractPaddingStyleClassItem" hash="bze318xqp1ko5ww4j0ail3ucngcpmk3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1226504633752" name="_Enum_Measure" hash="-53e3wwh75tit8wm9pvnn1o8a8k0m250">
+  <source id="1226504633752" name="_Enum_Measure" hash="-a3kekqbkf8xheh32qeyz69lohyq2pmb">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -883,7 +883,7 @@
   <source id="1235999440492" name="HorizontalAlign" hash="a8jis5br7gmxl5jpfa6cbcn83gglwpo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1235999709834" name="AlignEnum" hash="-abbh5h0umqdfnbv7sye9fq4gb14cwt6">
+  <source id="1235999709834" name="AlignEnum" hash="6sffwa8a3sfjri9d7e0iewuowjzihlt">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -965,7 +965,7 @@
   <source id="7620205565664569937" name="DefaultBaseLine" hash="-9z29d3qji07ogdla931n6g0syxew7pn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7620205565664606377" name="DefaultBaseLineEnum" hash="3r5r8y08r9gpsxnio8ly8nq4mzqmc3g">
+  <source id="7620205565664606377" name="DefaultBaseLineEnum" hash="6a7a5flitlzzb2bl2f7cxdx9cq99mmf">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -979,7 +979,7 @@
   <source id="1886960078078641793" name="CellLayout_Superscript" hash="-u6lxtgjmq6g496ce4udh4ebuk4ihp9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8255250703325730686" name="ScriptSwitchEnum" hash="eqgff4bbq7pc7u29hb6p8lahvq9pylk">
+  <source id="8255250703325730686" name="ScriptSwitchEnum" hash="748abnmervj5ra20707ecakmmpsm32t">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -999,7 +999,7 @@
   <source id="5949640294884234625" name="CellLayout_Table" hash="-1zfp5u9r4caf4lxe5wvy1e6g2kpd6ee">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6820251943131810951" name="TableComponentEnum" hash="4fal3wcuzfij1u3px9w8vq70a92ju4c">
+  <source id="6820251943131810951" name="TableComponentEnum" hash="-24l8c4mxqmh92s6noaoun45rd2m1dug">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />

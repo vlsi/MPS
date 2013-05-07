@@ -557,15 +557,15 @@
     <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaContentFolderKind" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Sources" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5248329904288265464" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5248329904288265464" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="source" />
       <property name="externalValue" nameId="tpce.1083923523172" value="source" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5248329904288265465" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5248329904288265465" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="test" />
       <property name="externalValue" nameId="tpce.1083923523172" value="test" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5248329904288265466" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5248329904288265466" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="excluded" />
       <property name="externalValue" nameId="tpce.1083923523172" value="excluded" />
     </node>
@@ -1284,23 +1284,23 @@
     <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CopyFilterEolStyle" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File.Handlers" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254427813" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254427813" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="local" />
       <property name="externalValue" nameId="tpce.1083923523172" value="use local system line separator" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416815" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416815" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="asis" />
       <property name="externalValue" nameId="tpce.1083923523172" value="leave as is" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416816" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416816" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="cr" />
       <property name="externalValue" nameId="tpce.1083923523172" value="convert to a single CR" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416817" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416817" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="lf" />
       <property name="externalValue" nameId="tpce.1083923523172" value="convert to a single LF" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416818" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="4198392933254416818" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="crlf" />
       <property name="externalValue" nameId="tpce.1083923523172" value="convert to the pair CRLF" />
     </node>
@@ -1342,15 +1342,15 @@
     <property name="name" nameId="tpck.1169194664001" value="BuildLayout_TarCompression" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1979010778009209125" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1979010778009209125" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="none" />
       <property name="externalValue" nameId="tpce.1083923523172" value="none" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1979010778009209126" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1979010778009209126" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="gzip" />
       <property name="externalValue" nameId="tpce.1083923523172" value="gzip" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1979010778009209127" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1979010778009209127" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="bzip2" />
       <property name="externalValue" nameId="tpce.1083923523172" value="bzip2" />
     </node>

@@ -114,11 +114,11 @@
   <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="5299416737274925392" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ScriptType" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5299416737274925393" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5299416737274925393" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="enhancement" />
       <property name="externalValue" nameId="tpce.1083923523172" value="enhancement" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5299416737274925394" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5299416737274925394" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="migration" />
       <property name="externalValue" nameId="tpce.1083923523172" value="migration" />
     </node>
