@@ -59,7 +59,7 @@ public class ModelLoader {
     int loadedNodes = myModel.getNodesCount() - nodesCountBefore;
     if (loadedNodes > 0) {
       LOG.info("model " + myModel.getReference().getModelName() + " (" + myModel.getPersistenceVersion() + ")" +
-          ": loaded " + loadedNodes + " new nodes, stubs size = " + nodesCountBefore + " nodes");
+          ": loaded " + loadedNodes + " new nodes, stubs size = " + nodesCountBefore + " nodes", new Throwable());
     }
   }
 
@@ -70,6 +70,7 @@ public class ModelLoader {
         LOG.error("model " + myModel.getReference().getModelName() + " (" + myModel.getPersistenceVersion() + ")"
             + ": no peer node in full model for " + node.getNodeId()
             + " (in " + ((StreamDataSource) myModel.getModelDescriptor().getSource()).getLocation() + ")");
+        return;
       }
       Iterator<jetbrains.mps.smodel.SNode> it = fullNode.getChildren().iterator();
       SNode curr = it.hasNext() ? it.next() : null;
