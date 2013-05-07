@@ -314,10 +314,13 @@ public class MPSMakeMediator {
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
-//          myContext.getCompileContext().processMessage(
-//            new CompilerMessage(MPSMakeConstants.BUILDER_ID,
-//              Kind.ERROR,
-//              msg.getText()));
+          // We need to report the problem twice:
+          // -- once for the build process to recognize the error
+          // -- once for the MPSCompilerComponent to recognize and display a reference to the model
+          myContext.getCompileContext().processMessage(
+            new CompilerMessage(MPSMakeConstants.BUILDER_ID,
+              Kind.ERROR,
+              msg.getText()));
           myContext.getCompileContext().processMessage(
             new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID,
               MPSCustomMessages.MSG_ERROR,
