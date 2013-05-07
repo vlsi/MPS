@@ -101,7 +101,6 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     EditorCell result = createCell_internal(myEditorContext);
     // do not override role/link-declaration if they are already set
     if (result.getRole() == null) {
-      result.setRole(myGenuineRole);
       if (myGenuineLinkDeclaration != null) {
         ((jetbrains.mps.nodeEditor.cells.EditorCell) result).setLinkDeclaration(myGenuineLinkDeclaration);
       } else {
