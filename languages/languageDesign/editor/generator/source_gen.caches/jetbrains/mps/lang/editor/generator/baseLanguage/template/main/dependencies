@@ -23,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellKeyMapItem_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior" />

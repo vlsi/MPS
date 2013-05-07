@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9v4xp5n350tc6lqt8ov7wpfzrmk863n">
+<dependencies version="2" modelHash="cp3udkdmli7f91mhb5muz3yc9npkav5">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
@@ -37,7 +37,7 @@
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2ndxdy2yylqxt61razyif42s9aj25s9" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
-  <common hash="-1au83ab8k0itdhffc7bp8fe698lxekb">
+  <common hash="-6q1rnsj4ktm6cv0e7y8udmt01ymawaz">
     <dep root="1096629760203" />
     <dep root="1096630339736" />
     <dep root="1096647705671" />
@@ -337,7 +337,7 @@
   <source id="1236442846524" name="reduce_QueryFunction_String" hash="93j1gojj0wkxkz3fidjtmc9xy25sls5">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5170495790389304146" name="template_cellSetupBlock" hash="-4z73okm53bjuzwz4sfvg2cbpvp98aat">
+  <source id="5170495790389304146" name="template_cellSetupBlock" hash="-d8fl4u6v62mv4uznxdoevsukqmtlz1h">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="996730828437272666" name="reduce_CellModel_JComponent" hash="qfrlfnhd9lsvyplchefepfsj9o9k52">

@@ -26,6 +26,7 @@ import jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -711,7 +712,13 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6056616051583240002(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell", false, false), "relationDeclaration", false), "role");
+    SNode linkDeclaration;
+    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefNode")) {
+      linkDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefNode"), "relationDeclaration", false);
+    } else {
+      linkDeclaration = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell", false, false), "relationDeclaration", false);
+    }
+    return SModelUtil.getGenuineLinkRole(linkDeclaration);
   }
 
   public static Object propertyMacro_GetPropertyValue_5170495790389308466(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1361,11 +1368,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2014805417903979694(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell", false, false) != null) && !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"));
+    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell", false, false) != null) && !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList") && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell") && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefNode"));
   }
 
   public static boolean ifMacro_Condition_6056616051583186728(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell", false, false) != null) && !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"));
+    return ((SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell", false, false) != null) && !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList") && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell") && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefNode"))) || SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefNode");
   }
 
   public static boolean ifMacro_Condition_1384401029892781493(final IOperationContext operationContext, final IfMacroContext _context) {
