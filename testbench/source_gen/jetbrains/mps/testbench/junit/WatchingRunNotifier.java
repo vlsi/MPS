@@ -21,7 +21,7 @@ import org.junit.runner.notification.Failure;
 public class WatchingRunNotifier extends DelegatingRunNotifier {
   private static final Level WATCH_LEVEL = Level.ERROR;
   private static final Logger[] IGNORED_LOGGERS = new Logger[]{Logger.getInstance("#com.intellij.openapi.application.impl.LaterInvocator"), Logger.getInstance("#com.intellij.application.impl.ApplicationImpl")};
-  private static final Pattern[] IGNORED_OUTPUT_PATTERNS = new Pattern[]{Pattern.compile("(\\d)* ms execution limit failed for:[^,]*,(\\d*)\\n")};
+  private static final Pattern[] IGNORED_OUTPUT_PATTERNS = new Pattern[]{Pattern.compile("(\\d)* ms execution limit failed for:[^,]*,(\\d*)(\\s)*")};
   private Level oldLevel;
   private CachingPrintStream cacheOut;
   private CachingPrintStream cacheErr;

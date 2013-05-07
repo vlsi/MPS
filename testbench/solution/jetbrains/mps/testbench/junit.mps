@@ -950,7 +950,7 @@
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lgzx.~Pattern%dcompile(java%dlang%dString)%cjava%dutil%dregex%dPattern" resolveInfo="compile" />
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lgzx.~Pattern" resolveInfo="Pattern" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1623579106307309448" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="(\\d)* ms execution limit failed for:[^,]*,(\\d*)\\n" />
+              <property name="value" nameId="tpee.1070475926801" value="(\\d)* ms execution limit failed for:[^,]*,(\\d*)(\\s)*" />
             </node>
           </node>
           <node role="componentType" roleId="tpee.1154542793668" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1623579106307306254" nodeInfo="in">
