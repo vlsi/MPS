@@ -368,6 +368,10 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public String getRole() {
+    String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
+    if (role != null) {
+      return role;
+    }
     return myRole;
   }
 
