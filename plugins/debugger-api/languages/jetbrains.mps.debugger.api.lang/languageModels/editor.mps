@@ -232,7 +232,7 @@
                       <link role="concept" roleId="tp25.1138405853777" targetNodeId="86gq.1104094430779063683" resolveInfo="DebuggerType" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="6899962303585736427" nodeInfo="nn">
-                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6899962303585736428" nodeInfo="ng">
+                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6899962303585736428" nodeInfo="ig">
                         <property name="name" nameId="tpck.1169194664001" value="debuggerType" />
                         <link role="concept" roleId="tpd4.1174642800329" targetNodeId="86gq.1104094430779063683" resolveInfo="DebuggerType" />
                       </node>

@@ -114,7 +114,7 @@
       <property name="role" nameId="tpce.1071599776563" value="runtimeStubModels" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1855399583446017058" resolveInfo="StubEntry" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="5221322343054758190" nodeInfo="ng" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="5221322343054758190" nodeInfo="ig" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="269654322145263515" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -251,27 +251,27 @@
     <property name="name" nameId="tpck.1169194664001" value="RuleType" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="generator" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6370754048397540922" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6370754048397540922" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="strictly_before" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="strictly_before" />
       <property name="externalValue" nameId="tpce.1083923523172" value="before (&lt;)" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6370754048397540923" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6370754048397540923" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="strictly_together" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="strictly_together" />
       <property name="externalValue" nameId="tpce.1083923523172" value="together with (=)" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6370754048397540924" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6370754048397540924" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="before_or_together" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="before_or_together" />
       <property name="externalValue" nameId="tpce.1083923523172" value="before or together (&lt;=)" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2643213347103734302" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2643213347103734302" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="after_or_together" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="after_or_together" />
       <property name="externalValue" nameId="tpce.1083923523172" value="after or together (&gt;=)" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2643213347103734303" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2643213347103734303" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="strictly_after" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="strictly_after" />
       <property name="externalValue" nameId="tpce.1083923523172" value="after (&gt;)" />

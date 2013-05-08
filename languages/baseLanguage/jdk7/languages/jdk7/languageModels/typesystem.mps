@@ -150,7 +150,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="400642802550421747" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="400642802550421747" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="switchStatement" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="rymi.400642802549924137" resolveInfo="StringSwitchStatement" />
     </node>
@@ -304,7 +304,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="400642802550421746" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="400642802550421746" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="switchStatement" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="rymi.400642802549924137" resolveInfo="StringSwitchStatement" />
     </node>

@@ -64,7 +64,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1218796573290" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1218796573290" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="parameter" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfw.1218793728835" resolveInfo="Query_node_Parameter" />
     </node>
@@ -332,7 +332,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5046156961652249698" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5046156961652249698" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="bmd" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpfw.5046156961652249692" resolveInfo="AbstractQueryFunction" />
     </node>
