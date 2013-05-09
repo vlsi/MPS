@@ -763,7 +763,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name") + "_KeyPack";
   }
 
-  public static Object propertyMacro_GetPropertyValue_4533715527319147228(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_8872173783417963895(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
 
@@ -1040,11 +1040,11 @@ public class QueriesGenerated {
     return QueriesUtil.getGeneratedClassByAncestor(_context.getNode(), _context);
   }
 
-  public static Object referenceMacro_GetReferent_1984509221794487461(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8872173783417963930(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass");
   }
 
-  public static Object referenceMacro_GetReferent_1984509221793794121(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8872173783417963940(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:editorDeclarations"))).first(), "generatedClass");
   }
 
@@ -1411,7 +1411,7 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "side", null, null);
   }
 
-  public static boolean ifMacro_Condition_1984509221793552620(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8872173783417963905(final IOperationContext operationContext, final IfMacroContext _context) {
     return (int) Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:editorDeclarations"))).count() == 1;
   }
 
@@ -2111,7 +2111,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "styleKey", true);
   }
 
-  public static Iterable sourceNodesQuery_4533715527319095915(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_8872173783417963828(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "conceptDeclaration", false);
@@ -2123,7 +2123,7 @@ public class QueriesGenerated {
     }, true);
   }
 
-  public static Iterable sourceNodesQuery_1984509221794364405(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_8872173783417963922(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ((Iterable<SNode>) _context.getVariable("var:editorDeclarations"));
   }
 
@@ -2135,7 +2135,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 
-  public static Object insertMacro_varValue_1984509221792641978(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_8872173783417963860(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "conceptDeclaration", false) == _context.getNode();
