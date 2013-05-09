@@ -59,4 +59,8 @@ public interface ModelAccess {
    * touch any UI elements and perform other EDT-bound actions of the IntelliJ platform.
    */
   void runWriteInEDT(Runnable r);
+
+  void executeCommand(Runnable r);
+
+  void executeCommandInEDT(Runnable r);
 }

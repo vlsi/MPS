@@ -45,6 +45,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MPSModuleRepository implements CoreComponent, SRepository {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(MPSModuleRepository.class));
+  private final MPSModuleRepository.GlobalModelAccess myGlobalModelAccess;
   private List<SRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<SRepositoryListener>();
 
   private Set<SModule> myModules = new LinkedHashSet<SModule>();
@@ -57,6 +58,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   }
 
   public MPSModuleRepository() {
+    myGlobalModelAccess = new GlobalModelAccess();
   }
 
   @Override
@@ -175,8 +177,8 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   //---------------get by-----------------------------
 
   @Override
-  public ModelAccess getModelAccess() {
-    return ModelAccess.instance();
+  public org.jetbrains.mps.openapi.module.ModelAccess getModelAccess() {
+    return myGlobalModelAccess;
   }
 
   @Deprecated  //3.0, use getModules
@@ -385,5 +387,52 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   @Deprecated //use ModuleRepositoryFacade instead
   public SModule getModule(@NotNull SModuleReference ref) {
     return ModuleRepositoryFacade.getInstance().getModule(ref);
+  }
+
+  private class GlobalModelAccess implements org.jetbrains.mps.openapi.module.ModelAccess {
+    @Override
+    public boolean canRead() {
+      return jetbrains.mps.smodel.ModelAccess.instance().canRead();
+    }
+
+    @Override
+    public void checkReadAccess() {
+      jetbrains.mps.smodel.ModelAccess.instance().checkReadAccess();
+    }
+
+    @Override
+    public boolean canWrite() {
+      return jetbrains.mps.smodel.ModelAccess.instance().canWrite();
+    }
+
+    @Override
+    public void checkWriteAccess() {
+      jetbrains.mps.smodel.ModelAccess.instance().checkWriteAccess();
+    }
+
+    @Override
+    public void runReadAction(Runnable r) {
+      jetbrains.mps.smodel.ModelAccess.instance().runReadAction(r);
+    }
+
+    @Override
+    public void runWriteAction(Runnable r) {
+      jetbrains.mps.smodel.ModelAccess.instance().runWriteAction(r);
+    }
+
+    @Override
+    public void runWriteInEDT(Runnable r) {
+      jetbrains.mps.smodel.ModelAccess.instance().runWriteInEDT(r);
+    }
+
+    @Override
+    public void executeCommand(Runnable r) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void executeCommandInEDT(Runnable r) {
+      throw new UnsupportedOperationException();
+    }
   }
 }

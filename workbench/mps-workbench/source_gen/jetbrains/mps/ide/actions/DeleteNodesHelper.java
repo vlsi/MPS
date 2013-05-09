@@ -4,7 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -12,14 +14,11 @@ import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.Iterator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.Set;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -36,20 +35,23 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class DeleteNodesHelper {
   private List<SNode> myNodesToDelete;
-  private IOperationContext myContext;
+  private SRepository myRepository;
+  private Project myProject;
 
-  public DeleteNodesHelper(List<SNode> nodes, IOperationContext context) {
-    myContext = context;
+  public DeleteNodesHelper(List<SNode> nodes, @NotNull Project project) {
+    myProject = project;
+    myRepository = myProject.getRepository();
     myNodesToDelete = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
   }
 
   public boolean hasOptions() {
     return ListSequence.fromList(myNodesToDelete).translate(new ITranslator2<SNode, RelationDescriptor>() {
       public Iterable<RelationDescriptor> translate(final SNode node) {
-        List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(ProjectHelper.toIdeaProject(myContext.getProject()), node);
+        List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(ProjectHelper.toIdeaProject(myProject), node);
         return ListSequence.fromList(tabs).where(new IWhereFilter<RelationDescriptor>() {
           public boolean accept(RelationDescriptor it) {
             return it.isApplicable(node) && !(it.getNodes(node).isEmpty());
@@ -60,9 +62,9 @@ public class DeleteNodesHelper {
   }
 
   public void deleteNodes(final boolean safe, final boolean aspects, final boolean fromProjectPane) {
-    assert !(ModelAccess.instance().canRead()) : "can lead to deadlock";
+    assert !(myRepository.getModelAccess().canRead()) : "can lead to deadlock";
 
-    final Project ideaProject = ProjectHelper.toIdeaProject(myContext.getProject());
+    final com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(myProject);
     final _FunctionTypes._void_P0_E0 performer = new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         ProjectPane projectPane = ProjectPane.getInstance(ideaProject);
@@ -80,7 +82,7 @@ public class DeleteNodesHelper {
         }
       }
     };
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myRepository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         if (aspects) {
           List<SNode> addNodes = ListSequence.fromList(myNodesToDelete).translate(new ITranslator2<SNode, SNode>() {
@@ -108,7 +110,7 @@ public class DeleteNodesHelper {
     });
 
     if (!(safe)) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      myRepository.getModelAccess().executeCommand(new Runnable() {
         public void run() {
           performer.invoke();
         }
@@ -118,16 +120,16 @@ public class DeleteNodesHelper {
 
     ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Finding Usages", true) {
       @Override
-      public void run(@NotNull final ProgressIndicator p0) {
+      public void run(@NotNull final ProgressIndicator pi) {
         final Set<SearchResult<SNode>> results = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
-        ModelAccess.instance().runReadAction(new Runnable() {
+        myRepository.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             ListSequence.fromList(myNodesToDelete).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
                 SearchResults<SNode> usages = FindUtils.getSearchResults(new EmptyProgressMonitor(), it, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
                 SetSequence.fromSet(results).addSequence(ListSequence.fromList(usages.getSearchResults()));
 
-                if (p0.isCanceled()) {
+                if (pi.isCanceled()) {
                   return;
                 }
 
@@ -136,7 +138,7 @@ public class DeleteNodesHelper {
                   SetSequence.fromSet(results).addSequence(ListSequence.fromList(instances.getSearchResults()));
                 }
 
-                if (p0.isCanceled()) {
+                if (pi.isCanceled()) {
                   return;
                 }
               }
@@ -144,7 +146,7 @@ public class DeleteNodesHelper {
           }
         });
 
-        if (p0.isCanceled()) {
+        if (pi.isCanceled()) {
           return;
         }
 
@@ -165,7 +167,7 @@ public class DeleteNodesHelper {
         }
         final SearchResults sr = new SearchResults(SetSequence.fromSetWithValues(new HashSet<SNode>(), myNodesToDelete), SetSequence.fromSet(results).toListSequence());
 
-        if (p0.isCanceled()) {
+        if (pi.isCanceled()) {
           return;
         }
 

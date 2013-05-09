@@ -26,7 +26,21 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
-public interface ModelCommandExecutor extends org.jetbrains.mps.openapi.module.ModelAccess {
+public interface ModelCommandExecutor {
+
+  boolean canRead();
+
+  void checkReadAccess();
+
+  boolean canWrite();
+
+  void checkWriteAccess();
+
+  void runReadAction(Runnable r);
+
+  void runWriteAction(Runnable r);
+
+  void runWriteInEDT(Runnable r);
 
   /**
    * Enables canRead() without actually acquiring the read lock (screw you, ReadWriteLock!).

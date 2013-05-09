@@ -77,6 +77,14 @@ public class DisposedRepository implements SRepository {
       public void runWriteInEDT(Runnable r) {
 
       }
+
+      @Override
+      public void executeCommand(Runnable r) {
+      }
+
+      @Override
+      public void executeCommandInEDT(Runnable r) {
+      }
     };
   }
 

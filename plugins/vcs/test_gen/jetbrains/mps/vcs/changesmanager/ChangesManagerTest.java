@@ -487,7 +487,7 @@ public class ChangesManagerTest {
   }
 
   private void runCommandAndWait(Runnable r) {
-    ModelAccess.instance().runCommandInEDT(r, myProject);
+    myProject.getRepository().getModelAccess().executeCommandInEDT(r);
     ModelAccess.instance().flushEventQueue();
   }
 
@@ -942,7 +942,7 @@ public class ChangesManagerTest {
     String changeSetStringBefore = getChangeSetString(myUiDiff.getChangeSet());
     runCommandAndWait(new Runnable() {
       public void run() {
-        DeleteModelHelper.deleteModel(myIdeaProject, md.getModule(), md, false, true);
+        DeleteModelHelper.deleteModel(myProject, md.getModule(), md, false, true);
       }
     });
     waitForChangesManager();
