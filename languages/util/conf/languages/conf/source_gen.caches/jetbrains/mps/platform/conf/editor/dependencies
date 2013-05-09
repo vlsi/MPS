@@ -306,7 +306,8 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.platform.conf.editor.ActionReference_Editor" />
     <classNode dependClassName="jetbrains.mps.platform.conf.editor.Action_Editor" />
     <classNode dependClassName="jetbrains.mps.platform.conf.editor.Actions_Editor" />

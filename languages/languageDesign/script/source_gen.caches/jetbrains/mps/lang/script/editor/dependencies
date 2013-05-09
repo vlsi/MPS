@@ -66,7 +66,8 @@
     <classNode dependClassName="jetbrains.mps.lang.script.editor.MigrationScript_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.script.editor.PullUpMethod_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.script.editor.WhitespaceMigrationScriptPart_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>

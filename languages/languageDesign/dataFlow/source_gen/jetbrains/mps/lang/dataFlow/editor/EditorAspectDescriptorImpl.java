@@ -4,48 +4,53 @@ package jetbrains.mps.lang.dataFlow.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new BaseEmitJumpStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseEmitJumpStatement_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new BaseEmitVariableStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseEmitVariableStatement_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new BaseInstructionOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseInstructionOperation_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new DataFlowBuilderDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new DataFlowBuilderDeclaration_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new EmitCodeForStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new EmitCodeForStatement_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new EmitLabelStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new EmitLabelStatement_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new EmitMayBeUnreachable_Editor());
+        return Collections.<ConceptEditor>singletonList(new EmitMayBeUnreachable_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new EmitNopStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new EmitNopStatement_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new EmitRetStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new EmitRetStatement_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new EmitTryFinallyStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new EmitTryFinallyStatement_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new EmitWriteStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new EmitWriteStatement_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new GetCodeForExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new GetCodeForExpression_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new InsertAfter_Editor());
+        return Collections.<ConceptEditor>singletonList(new InsertAfter_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new InsertBefore_Editor());
+        return Collections.<ConceptEditor>singletonList(new InsertBefore_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new LabelPosition_Editor());
+        return Collections.<ConceptEditor>singletonList(new LabelPosition_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new RelativePosition_Editor());
+        return Collections.<ConceptEditor>singletonList(new RelativePosition_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

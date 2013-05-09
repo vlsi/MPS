@@ -4,48 +4,53 @@ package jetbrains.mps.samples.agreementLanguage.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AccountType_Editor());
+        return Collections.<ConceptEditor>singletonList(new AccountType_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new AgreementDeclarations_Editor());
+        return Collections.<ConceptEditor>singletonList(new AgreementDeclarations_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new Date_Editor());
+        return Collections.<ConceptEditor>singletonList(new Date_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new Date_Future_Editor());
+        return Collections.<ConceptEditor>singletonList(new Date_Future_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new Date_Past_Editor());
+        return Collections.<ConceptEditor>singletonList(new Date_Past_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new Event_Editor());
+        return Collections.<ConceptEditor>singletonList(new Event_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new EventType_Editor());
+        return Collections.<ConceptEditor>singletonList(new EventType_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new EventVariable_Editor());
+        return Collections.<ConceptEditor>singletonList(new EventVariable_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new EventVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new EventVariableReference_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new Plan_Editor());
+        return Collections.<ConceptEditor>singletonList(new Plan_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new PostingRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new PostingRule_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new PostingRuleTemporalProperty_Editor());
+        return Collections.<ConceptEditor>singletonList(new PostingRuleTemporalProperty_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new Quantity_Editor());
+        return Collections.<ConceptEditor>singletonList(new Quantity_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new QuantityTemporalProperty_Editor());
+        return Collections.<ConceptEditor>singletonList(new QuantityTemporalProperty_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new Value_Editor());
+        return Collections.<ConceptEditor>singletonList(new Value_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new ValueReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ValueReference_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

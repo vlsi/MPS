@@ -4,54 +4,59 @@ package jetbrains.mps.execution.configurations.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new BeforeTask_Editor());
+        return Collections.<ConceptEditor>singletonList(new BeforeTask_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new BeforeTaskCall_Editor());
+        return Collections.<ConceptEditor>singletonList(new BeforeTaskCall_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new BeforeTaskParameter_Editor());
+        return Collections.<ConceptEditor>singletonList(new BeforeTaskParameter_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new BeforeTaskParameterReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new BeforeTaskParameterReference_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new ConfigurationFromExecutorReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConfigurationFromExecutorReference_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new ConsoleCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConsoleCreator_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new ConsoleType_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConsoleType_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new ExecuteConfiguration_Function_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExecuteConfiguration_Function_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new GetProjectOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new GetProjectOperation_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new NodeListSource_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeListSource_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new NodeSource_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeSource_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new RunConfiguration_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfiguration_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new RunConfigurationCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationCreator_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new RunConfigurationExecutor_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationExecutor_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new RunConfigurationKind_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationKind_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new RunConfigurationProducer_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationProducer_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new RunConfigurationProducerPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationProducerPart_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new RunConfigurationSource_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationSource_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new StartProcessHandlerStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new StartProcessHandlerStatement_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

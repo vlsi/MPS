@@ -576,7 +576,8 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.editor.ToolType_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.editor.ToolbarCreator_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.editor.UpdateGroupBlock_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>

@@ -4,126 +4,131 @@ package jetbrains.mps.ui.modeling.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AlignmentLayoutConstraint_Editor());
+        return Collections.<ConceptEditor>singletonList(new AlignmentLayoutConstraint_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new ApplyConstraintStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ApplyConstraintStatement_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new AspectParameterDecl_Editor());
+        return Collections.<ConceptEditor>singletonList(new AspectParameterDecl_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new AspectParameterRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new AspectParameterRef_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new AuxObjectAccessOp_Editor());
+        return Collections.<ConceptEditor>singletonList(new AuxObjectAccessOp_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new AuxObjectFactory_Editor());
+        return Collections.<ConceptEditor>singletonList(new AuxObjectFactory_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new AuxObjectTemplate_Editor());
+        return Collections.<ConceptEditor>singletonList(new AuxObjectTemplate_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new Auxillary_Editor());
+        return Collections.<ConceptEditor>singletonList(new Auxillary_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new BeforeUIObjectParam_Editor());
+        return Collections.<ConceptEditor>singletonList(new BeforeUIObjectParam_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new BoxLayoutConstraint_Editor());
+        return Collections.<ConceptEditor>singletonList(new BoxLayoutConstraint_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new CellLayoutConstraint_Editor());
+        return Collections.<ConceptEditor>singletonList(new CellLayoutConstraint_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new ChildAspectDefinition_Editor());
+        return Collections.<ConceptEditor>singletonList(new ChildAspectDefinition_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new ColumnLayoutConstraint_Editor());
+        return Collections.<ConceptEditor>singletonList(new ColumnLayoutConstraint_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new Container_Editor());
+        return Collections.<ConceptEditor>singletonList(new Container_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new ContainerItemAdder_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContainerItemAdder_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new ContainerItemClearer_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContainerItemClearer_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new ContainerItemInserter_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContainerItemInserter_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new ContainerItemIterator_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContainerItemIterator_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new ContainerItemRemover_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContainerItemRemover_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new ContainerTemplate_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContainerTemplate_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new Context_Editor());
+        return Collections.<ConceptEditor>singletonList(new Context_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new ContextUIObjectParam_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContextUIObjectParam_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new EditableUIProperty_Editor());
+        return Collections.<ConceptEditor>singletonList(new EditableUIProperty_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new EditableUIPropertyAccessCode_Editor());
+        return Collections.<ConceptEditor>singletonList(new EditableUIPropertyAccessCode_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new Event_Editor());
+        return Collections.<ConceptEditor>singletonList(new Event_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new EventHandlerSetup_Editor());
+        return Collections.<ConceptEditor>singletonList(new EventHandlerSetup_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new EventHandlerTemplate_Editor());
+        return Collections.<ConceptEditor>singletonList(new EventHandlerTemplate_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new EventProducer_Editor());
+        return Collections.<ConceptEditor>singletonList(new EventProducer_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new EventProperty_Editor());
+        return Collections.<ConceptEditor>singletonList(new EventProperty_Editor());
       case 29:
-        return Collections.<EditorAspect>singletonList(new EventPropertyGetter_Editor());
+        return Collections.<ConceptEditor>singletonList(new EventPropertyGetter_Editor());
       case 30:
-        return Collections.<EditorAspect>singletonList(new ExpressionWithUnit_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExpressionWithUnit_Editor());
       case 31:
-        return Collections.<EditorAspect>singletonList(new ForceLayoutCode_Editor());
+        return Collections.<ConceptEditor>singletonList(new ForceLayoutCode_Editor());
       case 32:
-        return Collections.<EditorAspect>singletonList(new Geometry_Editor());
+        return Collections.<ConceptEditor>singletonList(new Geometry_Editor());
       case 33:
-        return Collections.<EditorAspect>singletonList(new HorizontalAlignment_Editor());
+        return Collections.<ConceptEditor>singletonList(new HorizontalAlignment_Editor());
       case 34:
-        return Collections.<EditorAspect>singletonList(new HorizontalConstraint_Editor());
+        return Collections.<ConceptEditor>singletonList(new HorizontalConstraint_Editor());
       case 35:
-        return Collections.<EditorAspect>singletonList(new ItemUIObjectParam_Editor());
+        return Collections.<ConceptEditor>singletonList(new ItemUIObjectParam_Editor());
       case 36:
-        return Collections.<EditorAspect>singletonList(new LayoutConstraintExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new LayoutConstraintExpression_Editor());
       case 37:
-        return Collections.<EditorAspect>singletonList(new LayoutConstraintType_Editor());
+        return Collections.<ConceptEditor>singletonList(new LayoutConstraintType_Editor());
       case 38:
-        return Collections.<EditorAspect>singletonList(new OverrideAnnotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new OverrideAnnotation_Editor());
       case 39:
-        return Collections.<EditorAspect>singletonList(new PropertyChangeHandlerSetup_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertyChangeHandlerSetup_Editor());
       case 40:
-        return Collections.<EditorAspect>singletonList(new PropertyValueParam_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertyValueParam_Editor());
       case 41:
-        return Collections.<EditorAspect>singletonList(new RowLayoutConstraint_Editor());
+        return Collections.<ConceptEditor>singletonList(new RowLayoutConstraint_Editor());
       case 42:
-        return Collections.<EditorAspect>singletonList(new ThisUIObjectParam_Editor());
+        return Collections.<ConceptEditor>singletonList(new ThisUIObjectParam_Editor());
       case 43:
-        return Collections.<EditorAspect>singletonList(new UIAction_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIAction_Editor());
       case 44:
-        return Collections.<EditorAspect>singletonList(new UIActionCode_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIActionCode_Editor());
       case 45:
-        return Collections.<EditorAspect>singletonList(new UIObject_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIObject_Editor());
       case 46:
-        return Collections.<EditorAspect>singletonList(new UIObjectFactory_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIObjectFactory_Editor());
       case 47:
-        return Collections.<EditorAspect>singletonList(new UIObjectTemplate_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIObjectTemplate_Editor());
       case 48:
-        return Collections.<EditorAspect>singletonList(new UIProperty_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIProperty_Editor());
       case 49:
-        return Collections.<EditorAspect>singletonList(new UIPropertyAccessCode_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIPropertyAccessCode_Editor());
       case 50:
-        return Collections.<EditorAspect>singletonList(new UIPropertyGetter_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIPropertyGetter_Editor());
       case 51:
-        return Collections.<EditorAspect>singletonList(new UIPropertySetter_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIPropertySetter_Editor());
       case 52:
-        return Collections.<EditorAspect>singletonList(new UnitType_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnitType_Editor());
       case 53:
-        return Collections.<EditorAspect>singletonList(new VerticalAlignment_Editor());
+        return Collections.<ConceptEditor>singletonList(new VerticalAlignment_Editor());
       case 54:
-        return Collections.<EditorAspect>singletonList(new VerticalConstraint_Editor());
+        return Collections.<ConceptEditor>singletonList(new VerticalConstraint_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

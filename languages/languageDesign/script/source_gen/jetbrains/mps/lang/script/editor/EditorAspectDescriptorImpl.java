@@ -4,38 +4,43 @@ package jetbrains.mps.lang.script.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new CommentMigrationScriptPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommentMigrationScriptPart_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new DirectClassifierSpecification_Editor());
+        return Collections.<ConceptEditor>singletonList(new DirectClassifierSpecification_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new DirectMethodSpecification_Editor());
+        return Collections.<ConceptEditor>singletonList(new DirectMethodSpecification_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new ExtractInterfaceMigration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtractInterfaceMigration_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new FQNameClassifierSpecification_Editor());
+        return Collections.<ConceptEditor>singletonList(new FQNameClassifierSpecification_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new FQNameMethodSpecification_Editor());
+        return Collections.<ConceptEditor>singletonList(new FQNameMethodSpecification_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new FactoryMigrationScriptPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new FactoryMigrationScriptPart_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new MigrationScript_Editor());
+        return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new MigrationScriptPart_Instance_Editor());
+        return Collections.<ConceptEditor>singletonList(new MigrationScriptPart_Instance_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new PullUpMethod_Editor());
+        return Collections.<ConceptEditor>singletonList(new PullUpMethod_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new WhitespaceMigrationScriptPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new WhitespaceMigrationScriptPart_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

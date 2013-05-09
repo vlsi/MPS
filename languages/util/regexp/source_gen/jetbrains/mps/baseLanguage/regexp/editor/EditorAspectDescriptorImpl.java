@@ -4,106 +4,111 @@ package jetbrains.mps.baseLanguage.regexp.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AtLeastNTimesRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new AtLeastNTimesRegexp_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new BinaryRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new BinaryRegexp_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new CharacterSymbolClassPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new CharacterSymbolClassPart_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new DotRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new DotRegexp_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new FindMatchExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new FindMatchExpression_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new FindMatchStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new FindMatchStatement_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new ForEachMatchStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ForEachMatchStatement_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new FromNToMTimesRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new FromNToMTimesRegexp_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new InlineRegexpExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new InlineRegexpExpression_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new IntersectionSymbolClassPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new IntersectionSymbolClassPart_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new IntervalSymbolClassPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new IntervalSymbolClassPart_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new LineEndRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new LineEndRegexp_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new LineStartRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new LineStartRegexp_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new LiteralReplacement_Editor());
+        return Collections.<ConceptEditor>singletonList(new LiteralReplacement_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new LookRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new LookRegexp_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new MatchParensRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatchParensRegexp_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new MatchRegexpExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatchRegexpExpression_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new MatchRegexpOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatchRegexpOperation_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new MatchRegexpStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatchRegexpStatement_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new MatchVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatchVariableReference_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new MatchVariableReferenceRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatchVariableReferenceRegexp_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new MatchVariableReferenceReplacement_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatchVariableReferenceReplacement_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new NTimesRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new NTimesRegexp_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new NegativeSymbolClassRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new NegativeSymbolClassRegexp_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new OrRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new OrRegexp_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new ParensRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParensRegexp_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new PositiveSymbolClassRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new PositiveSymbolClassRegexp_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new PredefinedSymbolClassDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new PredefinedSymbolClassDeclaration_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new PredefinedSymbolClassRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new PredefinedSymbolClassRegexp_Editor());
       case 29:
-        return Collections.<EditorAspect>singletonList(new PredefinedSymbolClassSymbolClassPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new PredefinedSymbolClassSymbolClassPart_Editor());
       case 30:
-        return Collections.<EditorAspect>singletonList(new PredefinedSymbolClasses_Editor());
+        return Collections.<ConceptEditor>singletonList(new PredefinedSymbolClasses_Editor());
       case 31:
-        return Collections.<EditorAspect>singletonList(new Regexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new Regexp_Editor());
       case 32:
-        return Collections.<EditorAspect>singletonList(new RegexpDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new RegexpDeclaration_Editor());
       case 33:
-        return Collections.<EditorAspect>singletonList(new RegexpDeclarationReferenceRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new RegexpDeclarationReferenceRegexp_Editor());
       case 34:
-        return Collections.<EditorAspect>singletonList(new Regexps_Editor());
+        return Collections.<ConceptEditor>singletonList(new Regexps_Editor());
       case 35:
-        return Collections.<EditorAspect>singletonList(new ReplaceBlock_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReplaceBlock_Editor());
       case 36:
-        return Collections.<EditorAspect>singletonList(new ReplaceRegexpOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReplaceRegexpOperation_Editor());
       case 37:
-        return Collections.<EditorAspect>singletonList(new ReplaceWithRegexpExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReplaceWithRegexpExpression_Editor());
       case 38:
-        return Collections.<EditorAspect>singletonList(new ReplaceWithRegexpOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReplaceWithRegexpOperation_Editor());
       case 39:
-        return Collections.<EditorAspect>singletonList(new SeqRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new SeqRegexp_Editor());
       case 40:
-        return Collections.<EditorAspect>singletonList(new SplitExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new SplitExpression_Editor());
       case 41:
-        return Collections.<EditorAspect>singletonList(new SplitOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new SplitOperation_Editor());
       case 42:
-        return Collections.<EditorAspect>singletonList(new StringLiteralRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new StringLiteralRegexp_Editor());
       case 43:
-        return Collections.<EditorAspect>singletonList(new UnaryRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnaryRegexp_Editor());
       case 44:
-        return Collections.<EditorAspect>singletonList(new UnicodeCharacterRegexp_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnicodeCharacterRegexp_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

@@ -4,38 +4,43 @@ package jetbrains.mps.transformation.test.inputLang.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new InputNode_A_Editor());
+        return Collections.<ConceptEditor>singletonList(new InputNode_A_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new InputNode_B_Editor());
+        return Collections.<ConceptEditor>singletonList(new InputNode_B_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new InputNode_C_Editor());
+        return Collections.<ConceptEditor>singletonList(new InputNode_C_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new InputRoot_Editor());
+        return Collections.<ConceptEditor>singletonList(new InputRoot_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new InputRootWithStatementList_Editor());
+        return Collections.<ConceptEditor>singletonList(new InputRootWithStatementList_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new RefTestClass_Editor());
+        return Collections.<ConceptEditor>singletonList(new RefTestClass_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new RefTestExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new RefTestExpression_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new RefTestMethod_Editor());
+        return Collections.<ConceptEditor>singletonList(new RefTestMethod_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new RefTestMethodCall_Editor());
+        return Collections.<ConceptEditor>singletonList(new RefTestMethodCall_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new RefTestParam_Editor());
+        return Collections.<ConceptEditor>singletonList(new RefTestParam_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new RefTestParamRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new RefTestParamRef_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

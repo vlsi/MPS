@@ -4,52 +4,57 @@ package jetbrains.mps.lang.generator.generationContext.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_Base_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_Base_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_CreateUniqueName_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_CreateUniqueName_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_DirtyNode_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_DirtyNode_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_GenParameterRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GenParameterRef_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_GetCopiedOutputByInput_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetCopiedOutputByInput_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_GetOriginalCopiedInputByOutput_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOriginalCopiedInputByOutput_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_GetOutputByLabel_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabel_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_GetOutputByLabelAndInput_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabelAndInput_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_GetOutputListByLabelAndInput_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputListByLabelAndInput_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_GetPrevInputByLabel_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetPrevInputByLabel_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_LinkPatternRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_LinkPatternRef_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_NodePatternRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_NodePatternRef_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_ParameterRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_ParameterRef_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_PropertyPatternRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_PropertyPatternRef_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_ShowMessageBase_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_ShowMessageBase_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_UserObjectAccessBase_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_UserObjectAccessBase_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new GenerationContextOp_VarRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_VarRef_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

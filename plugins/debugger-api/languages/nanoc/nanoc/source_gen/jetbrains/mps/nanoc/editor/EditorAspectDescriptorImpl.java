@@ -4,42 +4,47 @@ package jetbrains.mps.nanoc.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new CAssignmentExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new CAssignmentExpression_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new CBinaryOp_Editor());
+        return Collections.<ConceptEditor>singletonList(new CBinaryOp_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new CBody_Editor());
+        return Collections.<ConceptEditor>singletonList(new CBody_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new CExpressionStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new CExpressionStatement_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new CFor_Editor());
+        return Collections.<ConceptEditor>singletonList(new CFor_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new CParenthesis_Editor());
+        return Collections.<ConceptEditor>singletonList(new CParenthesis_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new CType_Editor());
+        return Collections.<ConceptEditor>singletonList(new CType_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new CWhile_Editor());
+        return Collections.<ConceptEditor>singletonList(new CWhile_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new File_Editor());
+        return Collections.<ConceptEditor>singletonList(new File_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new IntConst_Editor());
+        return Collections.<ConceptEditor>singletonList(new IntConst_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new VarDecl_Editor());
+        return Collections.<ConceptEditor>singletonList(new VarDecl_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new VarDeclStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new VarDeclStatement_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new VarRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new VarRef_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

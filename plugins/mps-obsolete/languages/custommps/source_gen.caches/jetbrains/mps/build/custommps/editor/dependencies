@@ -17,7 +17,8 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.build.custommps.editor.LibraryFolder_Editor" />
     <classNode dependClassName="jetbrains.mps.build.custommps.editor.MPSBuild_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>

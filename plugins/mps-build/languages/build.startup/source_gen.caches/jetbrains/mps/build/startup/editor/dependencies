@@ -19,7 +19,8 @@
     <classNode dependClassName="jetbrains.mps.build.startup.editor.ClassPathItem_Editor" />
     <classNode dependClassName="jetbrains.mps.build.startup.editor.MpsStartupScript_Editor" />
     <classNode dependClassName="jetbrains.mps.build.startup.editor.SimpleVmOptions_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>

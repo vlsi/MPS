@@ -4,44 +4,49 @@ package jetbrains.mps.lang.quotation.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AbstractAntiquotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractAntiquotation_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new Antiquotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new Antiquotation_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new ListAntiquotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ListAntiquotation_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new NodeBuilder_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeBuilder_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new NodeBuilderExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderExpression_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new NodeBuilderInitLink_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderInitLink_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new NodeBuilderInitPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderInitPart_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new NodeBuilderInitProperty_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderInitProperty_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new NodeBuilderList_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderList_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new NodeBuilderNode_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderNode_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new NodeBuilderRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderRef_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new PropertyAntiquotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertyAntiquotation_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new Quotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new Quotation_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new ReferenceAntiquotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReferenceAntiquotation_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

@@ -4,66 +4,71 @@ package jetbrains.mps.core.xml.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new XmlAttribute_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlAttribute_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new XmlBaseAttribute_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlBaseAttribute_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new XmlBaseElement_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlBaseElement_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new XmlCDATA_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlCDATA_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new XmlCharRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlCharRef_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new XmlCharRefValue_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlCharRefValue_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new XmlComment_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlComment_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new XmlCommentLine_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlCommentLine_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new XmlContent_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlContent_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new XmlDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlDeclaration_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new XmlDoctypeDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlDoctypeDeclaration_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new XmlDocument_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlDocument_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new XmlElement_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlElement_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new XmlEntityRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlEntityRef_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new XmlEntityRefValue_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlEntityRefValue_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new XmlExternalId_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlExternalId_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new XmlFile_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlFile_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new XmlNoSpaceValue_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlNoSpaceValue_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new XmlProcessingInstruction_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlProcessingInstruction_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new XmlProlog_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlProlog_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new XmlPrologElement_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlPrologElement_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new XmlText_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlText_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new XmlTextValue_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlTextValue_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new XmlValuePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlValuePart_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new XmlWhitespace_Editor());
+        return Collections.<ConceptEditor>singletonList(new XmlWhitespace_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

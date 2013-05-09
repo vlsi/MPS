@@ -82,7 +82,8 @@
     <classNode dependClassName="jetbrains.mps.lang.generator.generationParameters.editor.DefaultGenerationParameterId_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationParameters.editor.DefaultGeneratorParameterContainer_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationParameters.editor.DefaultGeneratorParameter_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>

@@ -152,7 +152,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderProperty_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilder_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilders_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>

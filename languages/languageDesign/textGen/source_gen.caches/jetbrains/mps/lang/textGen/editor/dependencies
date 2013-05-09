@@ -121,7 +121,8 @@
     <classNode dependClassName="jetbrains.mps.lang.textGen.editor.UtilityMethodCall_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.editor.UtilityMethodDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.editor.WithIndentOperation_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>

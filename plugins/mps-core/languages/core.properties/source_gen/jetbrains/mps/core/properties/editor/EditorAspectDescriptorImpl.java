@@ -4,24 +4,29 @@ package jetbrains.mps.core.properties.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new PropertiesComment_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertiesComment_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new PropertiesDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertiesDeclaration_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new PropertiesFile_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertiesFile_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new PropertiesLine_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertiesLine_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

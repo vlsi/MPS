@@ -4,74 +4,79 @@ package jetbrains.mps.lang.refactoring.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AbstractMoveExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractMoveExpression_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new AbstractUIArgumentExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractUIArgumentExpression_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new ChangeFeatureNameExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ChangeFeatureNameExpression_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new ChangeFeatureNameOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ChangeFeatureNameOperation_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new ContextMemberOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContextMemberOperation_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new ContextType_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContextType_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new CreateRefactoringContext_Editor());
+        return Collections.<ConceptEditor>singletonList(new CreateRefactoringContext_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new DeleteFeatureExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new DeleteFeatureExpression_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new DeleteFeatureOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new DeleteFeatureOperation_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new ExecuteFindersExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExecuteFindersExpression_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new ExecuteRefactoringStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExecuteRefactoringStatement_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new FinderReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new FinderReference_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new IsRefactoringApplicable_Editor());
+        return Collections.<ConceptEditor>singletonList(new IsRefactoringApplicable_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new MergeNodeWithAnotherNodeExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new MergeNodeWithAnotherNodeExpression_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new ModelTarget_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModelTarget_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new ModelsToGenerateByDefault_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModelsToGenerateByDefault_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new ModuleTarget_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModuleTarget_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new MoveNodeToNodeExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new MoveNodeToNodeExpression_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new MoveNodesToNodeExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new MoveNodesToNodeExpression_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new NodeTarget_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeTarget_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new OldRefactoring_Editor());
+        return Collections.<ConceptEditor>singletonList(new OldRefactoring_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new Refactoring_Editor());
+        return Collections.<ConceptEditor>singletonList(new Refactoring_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new RefactoringParameter_Editor());
+        return Collections.<ConceptEditor>singletonList(new RefactoringParameter_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new RefactoringParameterReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new RefactoringParameterReference_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new RequiredAdditionalArgument_Editor());
+        return Collections.<ConceptEditor>singletonList(new RequiredAdditionalArgument_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new RequiredAdditionalArgumentReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new RequiredAdditionalArgumentReference_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new RequiredUserEnteredArgument_Editor());
+        return Collections.<ConceptEditor>singletonList(new RequiredUserEnteredArgument_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new UpdateModelByDefaultOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new UpdateModelByDefaultOperation_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new UpdateModelProcedure_Editor());
+        return Collections.<ConceptEditor>singletonList(new UpdateModelProcedure_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

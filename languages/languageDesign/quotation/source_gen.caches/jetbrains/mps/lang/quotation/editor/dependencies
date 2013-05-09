@@ -57,7 +57,8 @@
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.Quotation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>

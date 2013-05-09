@@ -3,13 +3,13 @@
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.descriptor(MPS.Editor/jetbrains.mps.openapi.editor.descriptor@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" hash="-bivbw2yxxowjudrl8t1jtz7d9h1lcwl" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="dgzpe8t5xtmfn9j4ba4t7uzkcnsuq7n" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="6rn05s8qpyzdl2hdaxvgdshw01xz5r2" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="9h95vmers092sti9k2unoz0wm58k39u" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="-5709gnyqzt9qaokq74neqctvj1hk8zt" />
   <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" hash="-1m3cjs9co15fbvb7pyotjhvjytv1fth" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)" hash="-91xlg6lrncfne9jpq6bo0679r4b90gc" />
-  <dep model="r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)" hash="-bpywbq5jip68dunvp8ln99ivmrfq80w" />
+  <dep model="r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)" hash="1qi8zm4wef3pjhxk11nznubagueb1ym" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <common hash="cglr0r43kjoa9saa9yyydiz36o2o941">
     <dep root="3210697320273550868" />

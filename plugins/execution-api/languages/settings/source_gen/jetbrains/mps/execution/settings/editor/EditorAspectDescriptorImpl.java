@@ -4,56 +4,61 @@ package jetbrains.mps.execution.settings.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new CheckProperitesOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new CheckProperitesOperation_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new DeprecatedAnnotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new DeprecatedAnnotation_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new EditorExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new EditorExpression_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new EditorOperationCall_Editor());
+        return Collections.<ConceptEditor>singletonList(new EditorOperationCall_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new EditorPropertyDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new EditorPropertyDeclaration_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new EditorPropertyReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new EditorPropertyReference_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new GetEditorOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new GetEditorOperation_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new GridBagConstraints_Editor());
+        return Collections.<ConceptEditor>singletonList(new GridBagConstraints_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new PersistentConfiguration_Editor());
+        return Collections.<ConceptEditor>singletonList(new PersistentConfiguration_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new PersistentConfigurationTemplate_Editor());
+        return Collections.<ConceptEditor>singletonList(new PersistentConfigurationTemplate_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new PersistentConfigurationTemplateInitializer_Editor());
+        return Collections.<ConceptEditor>singletonList(new PersistentConfigurationTemplateInitializer_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new PersistentConfigurationType_Editor());
+        return Collections.<ConceptEditor>singletonList(new PersistentConfigurationType_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new PersistentPropertyDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new PersistentPropertyDeclaration_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new PersistentPropertyReferenceOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new PersistentPropertyReferenceOperation_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new ReportConfigurationErrorStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReportConfigurationErrorStatement_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new SettingsEditor_Editor());
+        return Collections.<ConceptEditor>singletonList(new SettingsEditor_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new SettingsEditorType_Editor());
+        return Collections.<ConceptEditor>singletonList(new SettingsEditorType_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new TemplateParameter_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateParameter_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new TemplateParameterReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateParameterReference_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new TemplatePersistentConfigurationType_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplatePersistentConfigurationType_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

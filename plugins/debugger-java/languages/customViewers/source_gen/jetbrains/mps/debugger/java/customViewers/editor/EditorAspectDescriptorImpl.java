@@ -4,32 +4,37 @@ package jetbrains.mps.debugger.java.customViewers.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new CustomWatchable_Editor());
+        return Collections.<ConceptEditor>singletonList(new CustomWatchable_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new CustomWatchablesContainer_Editor());
+        return Collections.<ConceptEditor>singletonList(new CustomWatchablesContainer_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new HighLevelCustomViewer_Editor());
+        return Collections.<ConceptEditor>singletonList(new HighLevelCustomViewer_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new HighLevelWatchableCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new HighLevelWatchableCreator_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new ToProcessMethod_Editor());
+        return Collections.<ConceptEditor>singletonList(new ToProcessMethod_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new WatchableListType_Editor());
+        return Collections.<ConceptEditor>singletonList(new WatchableListType_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new WatchableType_Editor());
+        return Collections.<ConceptEditor>singletonList(new WatchableType_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new WatchablesListCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new WatchablesListCreator_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

@@ -4,178 +4,183 @@ package jetbrains.mps.lang.typesystem.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AbstractComparableStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractComparableStatement_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new AbstractEquationStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractEquationStatement_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new AbstractInequationStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractInequationStatement_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new AddDependencyStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new AddDependencyStatement_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new ApplicableNodeCondition_Editor());
+        return Collections.<ConceptEditor>singletonList(new ApplicableNodeCondition_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new ApplicableNodeReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ApplicableNodeReference_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new AssertStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new AssertStatement_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new CaretPositionOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new CaretPositionOperation_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new CoerceExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new CoerceExpression_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new CoerceStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new CoerceStatement_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new CoerceStrongExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new CoerceStrongExpression_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new ComparisonRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new ComparisonRule_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new ConceptClauseLinkInfo_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptClauseLinkInfo_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new ConceptReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptReference_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new ConceptTypeClause_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptTypeClause_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new CreateEquationStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new CreateEquationStatement_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new DefaultGroupReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new DefaultGroupReference_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new Dependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new Dependency_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new DependentComputationItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new DependentComputationItem_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new ErrorInfoExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ErrorInfoExpression_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new GetOperationType_Editor());
+        return Collections.<ConceptEditor>singletonList(new GetOperationType_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new ImmediateSupertypesExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ImmediateSupertypesExpression_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new InequationReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new InequationReference_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new InequationReplacementRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new InequationReplacementRule_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new InferenceRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new InferenceRule_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new InfoStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new InfoStatement_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new IsStrongSubtypeExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new IsStrongSubtypeExpression_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new IsSubtypeExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new IsSubtypeExpression_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new JoinContainer_Editor());
+        return Collections.<ConceptEditor>singletonList(new JoinContainer_Editor());
       case 29:
-        return Collections.<EditorAspect>singletonList(new JoinType_Editor());
+        return Collections.<ConceptEditor>singletonList(new JoinType_Editor());
       case 30:
-        return Collections.<EditorAspect>singletonList(new LinkPatternVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new LinkPatternVariableReference_Editor());
       case 31:
-        return Collections.<EditorAspect>singletonList(new MatchStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatchStatement_Editor());
       case 32:
-        return Collections.<EditorAspect>singletonList(new MatchStatementItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatchStatementItem_Editor());
       case 33:
-        return Collections.<EditorAspect>singletonList(new MeetContainer_Editor());
+        return Collections.<ConceptEditor>singletonList(new MeetContainer_Editor());
       case 34:
-        return Collections.<EditorAspect>singletonList(new MeetType_Editor());
+        return Collections.<ConceptEditor>singletonList(new MeetType_Editor());
       case 35:
-        return Collections.<EditorAspect>singletonList(new MultipleForeachLoop_Editor());
+        return Collections.<ConceptEditor>singletonList(new MultipleForeachLoop_Editor());
       case 36:
-        return Collections.<EditorAspect>singletonList(new MultipleForeachLoopVariable_Editor());
+        return Collections.<ConceptEditor>singletonList(new MultipleForeachLoopVariable_Editor());
       case 37:
-        return Collections.<EditorAspect>singletonList(new NodeInfo_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeInfo_Editor());
       case 38:
-        return Collections.<EditorAspect>singletonList(new Node_InferTypeOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new Node_InferTypeOperation_Editor());
       case 39:
-        return Collections.<EditorAspect>singletonList(new Node_TypeOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new Node_TypeOperation_Editor());
       case 40:
-        return Collections.<EditorAspect>singletonList(new NonTypesystemRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new NonTypesystemRule_Editor());
       case 41:
-        return Collections.<EditorAspect>singletonList(new NormalTypeClause_Editor());
+        return Collections.<ConceptEditor>singletonList(new NormalTypeClause_Editor());
       case 42:
-        return Collections.<EditorAspect>singletonList(new OperationContextExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new OperationContextExpression_Editor());
       case 43:
-        return Collections.<EditorAspect>singletonList(new OrStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new OrStatement_Editor());
       case 44:
-        return Collections.<EditorAspect>singletonList(new OriginalNodeId_Editor());
+        return Collections.<ConceptEditor>singletonList(new OriginalNodeId_Editor());
       case 45:
-        return Collections.<EditorAspect>singletonList(new OverloadedOpRulesContainer_Editor());
+        return Collections.<ConceptEditor>singletonList(new OverloadedOpRulesContainer_Editor());
       case 46:
-        return Collections.<EditorAspect>singletonList(new OverloadedOpTypeRule_OneTypeSpecified_Editor());
+        return Collections.<ConceptEditor>singletonList(new OverloadedOpTypeRule_OneTypeSpecified_Editor());
       case 47:
-        return Collections.<EditorAspect>singletonList(new OverloadedOperatorTypeRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new OverloadedOperatorTypeRule_Editor());
       case 48:
-        return Collections.<EditorAspect>singletonList(new PatternCondition_Editor());
+        return Collections.<ConceptEditor>singletonList(new PatternCondition_Editor());
       case 49:
-        return Collections.<EditorAspect>singletonList(new PatternVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new PatternVariableReference_Editor());
       case 50:
-        return Collections.<EditorAspect>singletonList(new PrintToTrace_Editor());
+        return Collections.<ConceptEditor>singletonList(new PrintToTrace_Editor());
       case 51:
-        return Collections.<EditorAspect>singletonList(new PropertyMessageTarget_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertyMessageTarget_Editor());
       case 52:
-        return Collections.<EditorAspect>singletonList(new PropertyNameTarget_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertyNameTarget_Editor());
       case 53:
-        return Collections.<EditorAspect>singletonList(new PropertyPatternVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableReference_Editor());
       case 54:
-        return Collections.<EditorAspect>singletonList(new QuickFixArgument_Editor());
+        return Collections.<ConceptEditor>singletonList(new QuickFixArgument_Editor());
       case 55:
-        return Collections.<EditorAspect>singletonList(new QuickFixArgumentReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new QuickFixArgumentReference_Editor());
       case 56:
-        return Collections.<EditorAspect>singletonList(new QuickFixField_Editor());
+        return Collections.<ConceptEditor>singletonList(new QuickFixField_Editor());
       case 57:
-        return Collections.<EditorAspect>singletonList(new QuickFixFieldReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new QuickFixFieldReference_Editor());
       case 58:
-        return Collections.<EditorAspect>singletonList(new ReferenceMessageTarget_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReferenceMessageTarget_Editor());
       case 59:
-        return Collections.<EditorAspect>singletonList(new ReferenceRoleTarget_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReferenceRoleTarget_Editor());
       case 60:
-        return Collections.<EditorAspect>singletonList(new ReplacementRuleReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReplacementRuleReference_Editor());
       case 61:
-        return Collections.<EditorAspect>singletonList(new ReportErrorStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReportErrorStatement_Editor());
       case 62:
-        return Collections.<EditorAspect>singletonList(new RuntimeErrorType_Editor());
+        return Collections.<ConceptEditor>singletonList(new RuntimeErrorType_Editor());
       case 63:
-        return Collections.<EditorAspect>singletonList(new RuntimeTypeVariable_Editor());
+        return Collections.<ConceptEditor>singletonList(new RuntimeTypeVariable_Editor());
       case 64:
-        return Collections.<EditorAspect>singletonList(new SelectionType_Editor());
+        return Collections.<ConceptEditor>singletonList(new SelectionType_Editor());
       case 65:
-        return Collections.<EditorAspect>singletonList(new SubtypingRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new SubtypingRule_Editor());
       case 66:
-        return Collections.<EditorAspect>singletonList(new TypeCheckerAccessExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new TypeCheckerAccessExpression_Editor());
       case 67:
-        return Collections.<EditorAspect>singletonList(new TypeClause_Editor());
+        return Collections.<ConceptEditor>singletonList(new TypeClause_Editor());
       case 68:
-        return Collections.<EditorAspect>singletonList(new TypeOfExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new TypeOfExpression_Editor());
       case 69:
-        return Collections.<EditorAspect>singletonList(new TypeVarDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new TypeVarDeclaration_Editor());
       case 70:
-        return Collections.<EditorAspect>singletonList(new TypeVarReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new TypeVarReference_Editor());
       case 71:
-        return Collections.<EditorAspect>singletonList(new TypesystemIntention_Editor());
+        return Collections.<ConceptEditor>singletonList(new TypesystemIntention_Editor());
       case 72:
-        return Collections.<EditorAspect>singletonList(new TypesystemIntentionArgument_Editor());
+        return Collections.<ConceptEditor>singletonList(new TypesystemIntentionArgument_Editor());
       case 73:
-        return Collections.<EditorAspect>singletonList(new TypesystemQuickFix_Editor());
+        return Collections.<ConceptEditor>singletonList(new TypesystemQuickFix_Editor());
       case 74:
-        return Collections.<EditorAspect>singletonList(new VariableConverterItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new VariableConverterItem_Editor());
       case 75:
-        return Collections.<EditorAspect>singletonList(new VariableConvertersContainer_Editor());
+        return Collections.<ConceptEditor>singletonList(new VariableConvertersContainer_Editor());
       case 76:
-        return Collections.<EditorAspect>singletonList(new WarningStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new WarningStatement_Editor());
       case 77:
-        return Collections.<EditorAspect>singletonList(new WasSelectedNodeOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new WasSelectedNodeOperation_Editor());
       case 78:
-        return Collections.<EditorAspect>singletonList(new WhenConcreteStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new WhenConcreteStatement_Editor());
       case 79:
-        return Collections.<EditorAspect>singletonList(new WhenConcreteVariableDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new WhenConcreteVariableDeclaration_Editor());
       case 80:
-        return Collections.<EditorAspect>singletonList(new WhenConcreteVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new WhenConcreteVariableReference_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

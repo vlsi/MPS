@@ -4,72 +4,77 @@ package jetbrains.mps.build.workflow.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new BwfAntStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfAntStatement_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new BwfAntTaskBundleDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfAntTaskBundleDeclaration_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new BwfAntTaskDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfAntTaskDeclaration_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new BwfCustomMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfCustomMacro_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new BwfDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfDependency_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new BwfFileSet_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfFileSet_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new BwfJavaClassPath_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfJavaClassPath_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new BwfJavaDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfJavaDependency_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new BwfJavaDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfJavaDescriptor_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new BwfJavaLibrary_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfJavaLibrary_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new BwfJavaLibraryReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfJavaLibraryReference_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new BwfJavaModule_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfJavaModule_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new BwfJavaModuleReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfJavaModuleReference_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new BwfMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfMacro_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new BwfMacroListImport_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfMacroListImport_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new BwfPathDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfPathDeclaration_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new BwfPathReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfPathReference_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new BwfProject_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfProject_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new BwfProjectPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfProjectPart_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new BwfProjectPartStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfProjectPartStatement_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new BwfStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfStatement_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new BwfSubTask_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfSubTask_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new BwfSubTaskDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfSubTaskDependency_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new BwfTask_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfTask_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new BwfTaskDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfTaskDependency_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new BwfTaskLibrary_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfTaskLibrary_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new BwfTaskLibraryDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfTaskLibraryDependency_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new BwfTaskPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new BwfTaskPart_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

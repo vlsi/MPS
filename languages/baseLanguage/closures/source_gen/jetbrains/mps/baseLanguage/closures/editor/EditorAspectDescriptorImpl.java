@@ -4,50 +4,55 @@ package jetbrains.mps.baseLanguage.closures.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AbstractFunctionType_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractFunctionType_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new ClosureControlStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClosureControlStatement_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new ClosureLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClosureLiteral_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new CompactInvokeFunctionExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new CompactInvokeFunctionExpression_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new ControlAbstractionContainer_Editor());
+        return Collections.<ConceptEditor>singletonList(new ControlAbstractionContainer_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new ControlAbstractionDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ControlAbstractionDeclaration_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new ControlClosureLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new ControlClosureLiteral_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new FunctionMethodDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new FunctionMethodDeclaration_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new FunctionType_Editor());
+        return Collections.<ConceptEditor>singletonList(new FunctionType_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new InvokeExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new InvokeExpression_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new InvokeFunctionExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new InvokeFunctionExpression_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new InvokeFunctionOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new InvokeFunctionOperation_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new UnboundClosureParameterDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnboundClosureParameterDeclaration_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new UnrestrictedClosureLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnrestrictedClosureLiteral_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new UnrestrictedFunctionType_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnrestrictedFunctionType_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new YieldAllStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new YieldAllStatement_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new YieldStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new YieldStatement_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

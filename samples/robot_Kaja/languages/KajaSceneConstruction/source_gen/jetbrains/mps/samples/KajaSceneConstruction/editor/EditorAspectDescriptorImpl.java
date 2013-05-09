@@ -4,24 +4,29 @@ package jetbrains.mps.samples.KajaSceneConstruction.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new BuildWall_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildWall_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new DestroyWall_Editor());
+        return Collections.<ConceptEditor>singletonList(new DestroyWall_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new DropMark_Editor());
+        return Collections.<ConceptEditor>singletonList(new DropMark_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new PickMark_Editor());
+        return Collections.<ConceptEditor>singletonList(new PickMark_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 

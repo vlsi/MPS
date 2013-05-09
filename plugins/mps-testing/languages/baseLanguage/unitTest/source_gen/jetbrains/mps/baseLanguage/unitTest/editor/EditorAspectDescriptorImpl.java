@@ -4,42 +4,47 @@ package jetbrains.mps.baseLanguage.unitTest.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AssertEquals_Editor());
+        return Collections.<ConceptEditor>singletonList(new AssertEquals_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new AssertFalse_Editor());
+        return Collections.<ConceptEditor>singletonList(new AssertFalse_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new AssertInNotNull_Editor());
+        return Collections.<ConceptEditor>singletonList(new AssertInNotNull_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new AssertIsNull_Editor());
+        return Collections.<ConceptEditor>singletonList(new AssertIsNull_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new AssertSame_Editor());
+        return Collections.<ConceptEditor>singletonList(new AssertSame_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new AssertThrows_Editor());
+        return Collections.<ConceptEditor>singletonList(new AssertThrows_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new AssertTrue_Editor());
+        return Collections.<ConceptEditor>singletonList(new AssertTrue_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new BTestCase_Editor());
+        return Collections.<ConceptEditor>singletonList(new BTestCase_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new Fail_Editor());
+        return Collections.<ConceptEditor>singletonList(new Fail_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new Message_Editor());
+        return Collections.<ConceptEditor>singletonList(new Message_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new PrepareMethod_Editor());
+        return Collections.<ConceptEditor>singletonList(new PrepareMethod_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new TestMethod_Editor());
+        return Collections.<ConceptEditor>singletonList(new TestMethod_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new TestMethodList_Editor());
+        return Collections.<ConceptEditor>singletonList(new TestMethodList_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
     return Collections.emptyList();
   }
 
