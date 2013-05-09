@@ -4,8 +4,8 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
@@ -18,13 +18,19 @@ import jetbrains.mps.ide.project.ProjectHelper;
 
 public class CommitUtil {
   public static void refactorRenameNode(final IOperationContext context, final SNode node, final String newName) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    final SRepository repository = (context != null && context.getProject() != null ?
+      context.getProject().getRepository() :
+      node.getModel().getRepository()
+    );
+    ModelAccess modelAccess = repository.getModelAccess();
+
+    modelAccess.executeCommand(new Runnable() {
       public void run() {
-        SModelRepository.getInstance().saveAll();
+        repository.saveAll();
       }
     });
 
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    jetbrains.mps.smodel.ModelAccess.instance().runReadInEDT(new Runnable() {
       @Override
       public void run() {
         IRefactoring refactoring;
@@ -49,7 +55,7 @@ public class CommitUtil {
         final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
         refactoringContext.setCurrentOperationContext(context);
         refactoringContext.setSelectedNode(node);
-        ModelAccess.instance().runReadAction(new Runnable() {
+        jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             refactoringContext.setSelectedModel(SNodeOperations.getModel(node));
           }

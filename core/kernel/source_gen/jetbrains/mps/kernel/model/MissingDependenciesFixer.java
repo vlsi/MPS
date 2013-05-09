@@ -5,9 +5,8 @@ package jetbrains.mps.kernel.model;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.project.AbstractModule;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -52,7 +51,8 @@ public class MissingDependenciesFixer {
 
 
   public static void fixDependencies(final SModel model) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    SRepository repository = model.getModule().getRepository();
+    repository.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         AbstractModule module = (AbstractModule) model.getModule();
         if (module == null) {
