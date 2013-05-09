@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ej6qe96594uxmx2bg0d89yyf967uqjq">
+<dependencies version="2" modelHash="c4av76fqkptpqybmxr4w4hwo8wyg3s5">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -43,7 +43,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590556(jetbrains.mps.uiLanguage.generator.baseLanguage.template.grid@generator)" hash="-5ncrad1wa9jjvg6g38t2672j8mu9ocl" />
   <dep model="r:00000000-0000-4000-0000-011c89590557(jetbrains.mps.uiLanguage.generator.baseLanguage.template.main@generator)" hash="-8asjky8asxh5of7p4h6asaa6re2r9dd" />
   <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="108m9frs6rdj82t6r1g3jbfyyzennzo" />
-  <common hash="3iubvphuw2v6ynozxtqongbumpbd9cx" />
+  <common hash="-bfz1gwi88an8ss3jcuf5vnt72vtp2x7" />
   <source id="7619659760484896449" name="NewSolutionDialog_Controller" hash="etr2xwg6hszza6026wc6iy6488q04va">
     <dep root="7619659760484896415" />
   </source>

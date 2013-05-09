@@ -35,7 +35,6 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class DeleteNodesHelper {
   private List<SNode> myNodesToDelete;
@@ -176,7 +175,7 @@ public class DeleteNodesHelper {
             RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
               @Override
               public void performAction(RefactoringViewItem refactoringViewItem) {
-                ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                myRepository.getModelAccess().executeCommand(new Runnable() {
                   public void run() {
                     performer.invoke();
                   }

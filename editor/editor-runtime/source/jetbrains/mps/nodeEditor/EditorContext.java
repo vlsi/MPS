@@ -39,6 +39,7 @@ import jetbrains.mps.util.performance.PerformanceTracer;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
@@ -61,7 +62,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   public EditorContext(EditorComponent editorComponent, SModel model, IOperationContext operationContext) {
     myNodeEditorComponent = editorComponent;
-    myModelDescriptor = model == null ? null : model;
+    myModelDescriptor = model;
     myOperationContext = operationContext;
   }
 
@@ -106,6 +107,14 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   @Override
   public IScope getScope() {
     return myOperationContext.getScope();
+  }
+
+  @Override
+  public SRepository getRepository() {
+    IOperationContext operationContext = getOperationContext();
+    // Note: there should be a project
+    assert operationContext != null && operationContext.getProject() != null;
+    return operationContext.getProject().getRepository();
   }
 
   @Override

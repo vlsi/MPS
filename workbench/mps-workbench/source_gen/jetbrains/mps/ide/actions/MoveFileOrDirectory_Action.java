@@ -13,7 +13,8 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.workbench.dialogs.MoveFileDialog;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.ide.projectView.ProjectView;
 import javax.swing.SwingUtilities;
@@ -59,7 +60,11 @@ public class MoveFileOrDirectory_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("selectedFile") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -73,13 +78,15 @@ public class MoveFileOrDirectory_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       String path = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent().getPath();
-      MoveFileDialog dialog = new MoveFileDialog(((Project) MapSequence.fromMap(_params).get("project")), path, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory());
+      MoveFileDialog dialog = new MoveFileDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), path, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory());
       dialog.show();
       if (!(dialog.isOK())) {
         return;
       }
       final String result = dialog.getResult();
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+      modelAccess.executeCommand(new Runnable() {
         public void run() {
           try {
             if (MoveFileOrDirectory_Action.this.isNotValid(result, _params)) {
@@ -87,10 +94,10 @@ public class MoveFileOrDirectory_Action extends BaseAction {
             }
             VirtualFile virtualFile = LocalFileSystem.getInstance().findFileByPath(result);
             ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).move(null, virtualFile);
-            ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).refresh();
+            ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).refresh();
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getProjectViewPaneById(FileViewProjectPane.ID).select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
+                ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).getProjectViewPaneById(FileViewProjectPane.ID).select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
               }
             });
           } catch (IOException e) {

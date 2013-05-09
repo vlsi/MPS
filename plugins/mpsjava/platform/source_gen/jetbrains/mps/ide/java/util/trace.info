@@ -332,7 +332,7 @@
     <nodeInfo nodeId="5397868107582795307" fileName="StubResolver.java" startLine="106" startPosition="5" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5397868107582795310" fileName="StubResolver.java" startLine="107" startPosition="0" endLine="108" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2354139374978876891" fileName="StubResolver.java" startLine="108" startPosition="73" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8201298579766229638" fileName="StubResolver.java" startLine="109" startPosition="0" endLine="110" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8201298579766229638" fileName="StubResolver.java" startLine="109" startPosition="0" endLine="110" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5397868107582795458" fileName="StubResolver.java" startLine="111" startPosition="30" endLine="112" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9073603541474871852" fileName="StubResolver.java" startLine="117" startPosition="56" endLine="118" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9164503229271487747" fileName="StubResolver.java" startLine="124" startPosition="32" endLine="125" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
@@ -363,8 +363,8 @@
     <nodeInfo nodeId="2354139374978876832" fileName="StubResolver.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Z" />
     <nodeInfo nodeId="2354139374978876859" fileName="StubResolver.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SModelReference;)V" />
     <nodeInfo nodeId="2534586358646788799" fileName="StubResolver.java" startLine="103" startPosition="7" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5397868107582795458" fileName="StubResolver.java" startLine="110" startPosition="67" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5397868107582795458" fileName="StubResolver.java" startLine="110" startPosition="67" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5397868107582795458" fileName="StubResolver.java" startLine="110" startPosition="60" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5397868107582795458" fileName="StubResolver.java" startLine="110" startPosition="60" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2082194532791126333" fileName="StubResolver.java" startLine="116" startPosition="79" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9164503229271487738" fileName="StubResolver.java" startLine="123" startPosition="86" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8883975518329349205" fileName="StubResolver.java" startLine="127" startPosition="70" endLine="130" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -424,7 +424,7 @@
     <scopeInfo nodeId="2354139374978876859" fileName="StubResolver.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="2354139374978876859" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5397868107582795458" fileName="StubResolver.java" startLine="110" startPosition="67" endLine="113" endPosition="5" />
+    <scopeInfo nodeId="5397868107582795458" fileName="StubResolver.java" startLine="110" startPosition="60" endLine="113" endPosition="5" />
     <scopeInfo nodeId="2082194532791124435" fileName="StubResolver.java" startLine="116" startPosition="79" endLine="119" endPosition="5" />
     <scopeInfo nodeId="2082194532791126333" fileName="StubResolver.java" startLine="116" startPosition="79" endLine="119" endPosition="5">
       <varInfo nodeId="2082194532791126334" varName="model" />
