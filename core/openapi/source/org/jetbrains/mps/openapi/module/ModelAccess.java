@@ -45,6 +45,8 @@ public interface ModelAccess {
    */
   void runReadAction(Runnable r);
 
+  void runReadInEDT(Runnable r);
+
   /**
    * Modifications to models can only be performed from within managed actions, which hold the appropriate write lock.
    * The method obtains such a lock and executes the provided action.

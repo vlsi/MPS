@@ -11,12 +11,13 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
-import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.project.Project;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.properties.StandardDialogs;
 import org.apache.log4j.Logger;
@@ -62,10 +63,6 @@ public class ModelProperties_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("size", event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE));
     if (MapSequence.fromMap(_params).get("size") == null) {
       return false;
@@ -74,13 +71,21 @@ public class ModelProperties_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("place") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(((SModel) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
+      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
+      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
       configurable.setParentForCallBack(configurableEditor);
       SwingUtilities.invokeLater(new Runnable() {
         @Override
@@ -91,7 +96,7 @@ public class ModelProperties_Action extends BaseAction {
 
 
       /*
-        StandardDialogs.createModelPropertiesDialog(((SModel) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context"))).show();
+        StandardDialogs.createModelPropertiesDialog(((SModel) MapSequence.fromMap(_params).get("model"))).show();
       */
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

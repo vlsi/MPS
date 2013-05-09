@@ -17,7 +17,13 @@ package jetbrains.mps.ide.ui.dialogs.properties;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.ui.*;
+import com.intellij.ui.AnActionButton;
+import com.intellij.ui.AnActionButtonRunnable;
+import com.intellij.ui.IdeBorderFactory;
+import com.intellij.ui.SpeedSearchBase;
+import com.intellij.ui.SpeedSearchComparator;
+import com.intellij.ui.TableUtil;
+import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.table.JBTable;
@@ -51,24 +57,31 @@ import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
-import org.jdom.Element;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelsOnlyScope;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
+import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.TableCellRenderer;
-import java.awt.*;
+import java.awt.Dimension;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -77,14 +90,14 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
   private SModel myModelDescriptor;
   private boolean myInPlugin = false;
 
-  public ModelPropertiesConfigurable(SModel modelDescriptor, IOperationContext context) {
-    this(modelDescriptor, context, false);
+  public ModelPropertiesConfigurable(SModel modelDescriptor, Project project) {
+    this(modelDescriptor, project, false);
   }
 
-  public ModelPropertiesConfigurable(SModel modelDescriptor, IOperationContext context, boolean inPlugin) {
-    super(context.getProject());
+  public ModelPropertiesConfigurable(SModel modelDescriptor, Project project, boolean inPlugin) {
+    super(project);
     myModelDescriptor = modelDescriptor;
-    myModelProperties = new ModelProperties(modelDescriptor, context);
+    myModelProperties = new ModelProperties(modelDescriptor);
     myInPlugin = inPlugin;
 
     //addTab(new ModelCommonTab());
@@ -160,13 +173,14 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     public ModelDependenciesComponent() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.title"), General.Dependencies, PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.tip"));
+      super(PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.title"), General.Dependencies,
+          PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.tip"));
       myImportedModels = new ModelImportedModelsTableModel(myModelProperties);
       init();
     }
 
     protected IScope getScope() {
-      return ((AbstractModule)myModelDescriptor.getModule()).getScope();
+      return ((AbstractModule) myModelDescriptor.getModule()).getScope();
     }
 
     protected boolean confirmRemove(final Object value) {
@@ -174,8 +188,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         final SModelReference modelReference = (SModelReference) value;
         if (!myModelProperties.getImportedModelsRemoveCondition().met((jetbrains.mps.smodel.SModelReference) modelReference)) {
           ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
-            ProjectHelper.toIdeaProject(myProject), "Delete imported model",
-            "This model is used in model. Do you really what to delete it?", "Model state will become inconsistent") {
+              ProjectHelper.toIdeaProject(myProject), "Delete imported model",
+              "This model is used in model. Do you really what to delete it?", "Model state will become inconsistent") {
             @Override
             public void doViewAction() {
               myFindAnActionButton.actionPerformed(null);
@@ -204,22 +218,22 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       importedModelsTable.setModel(myImportedModels);
 
       importedModelsTable.setDefaultRenderer(SModelReference.class,
-        new ModelTableCellRender(getScope()) {
-          @Override
-          protected DependencyCellState getDependencyCellState(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-            if (!StateUtil.isAvailable((jetbrains.mps.smodel.SModelReference) modelReference)) {
-              return DependencyCellState.NOT_AVALIABLE;
-            }
-            if (!StateUtil.isInScope(myScope, (jetbrains.mps.smodel.SModelReference) modelReference)) {
-              return DependencyCellState.NOT_IN_SCOPE;
-            }
-            if ((myModelProperties.getImportedModelsRemoveCondition().met((jetbrains.mps.smodel.SModelReference) modelReference))) {
-              return DependencyCellState.UNUSED;
-            }
+          new ModelTableCellRender(getScope()) {
+            @Override
+            protected DependencyCellState getDependencyCellState(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
+              if (!StateUtil.isAvailable((jetbrains.mps.smodel.SModelReference) modelReference)) {
+                return DependencyCellState.NOT_AVALIABLE;
+              }
+              if (!StateUtil.isInScope(myScope, (jetbrains.mps.smodel.SModelReference) modelReference)) {
+                return DependencyCellState.NOT_IN_SCOPE;
+              }
+              if ((myModelProperties.getImportedModelsRemoveCondition().met((jetbrains.mps.smodel.SModelReference) modelReference))) {
+                return DependencyCellState.UNUSED;
+              }
 
-            return super.getDependencyCellState(modelReference);
+              return super.getDependencyCellState(modelReference);
+            }
           }
-        }
       );
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(importedModelsTable);
@@ -235,7 +249,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         public void run(AnActionButton anActionButton) {
           int first = importedModelsTable.getSelectionModel().getMinSelectionIndex();
           int last = importedModelsTable.getSelectionModel().getMaxSelectionIndex();
-          for(int i : importedModelsTable.getSelectedRows()) {
+          for (int i : importedModelsTable.getSelectedRows()) {
             if (!confirmRemove(importedModelsTable.getValueAt(i, 0))) {
               return;
             }
@@ -249,7 +263,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         @Override
         public void actionPerformed(AnActionEvent e) {
           if (myInPlugin) {
-            Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(", Messages.getInformationIcon());
+            Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(",
+                Messages.getInformationIcon());
             return;
           }
 
@@ -262,16 +277,19 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
               List<SModel> models = new LinkedList<SModel>();
               for (int i : myTable.getSelectedRows()) {
                 Object value = myImportedModels.getValueAt(i, 0);
-                if(value instanceof SModelReference){
+                if (value instanceof SModelReference) {
                   models.add(((SModelReference) value).resolve(MPSModuleRepository.getInstance()));
                 }
               }
 
               ModelsHolder modelsHolder = new ModelsHolder(models, null) {
                 @Override
-                public void read(Element element, Project project) throws CantLoadSomethingException {}
+                public void read(Element element, Project project) throws CantLoadSomethingException {
+                }
+
                 @Override
-                public void write(Element element, Project project) throws CantSaveSomethingException {}
+                public void write(Element element, Project project) throws CantSaveSomethingException {
+                }
               };
               query[0] = new SearchQuery(modelsHolder, scope);
               provider[0] = FindUtils.makeProvider(new ModelUsagesFinder() {
@@ -282,7 +300,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
                   for (SModel searchedModel : modelsHolder.getObject()) {
                     searchResults.getSearchedNodes().add(searchedModel);
                     SearchQuery searchQuery = new SearchQuery(searchedModel, query.getScope());
-                    searchResults.addAll(super.find(searchQuery,monitor));
+                    searchResults.addAll(super.find(searchQuery, monitor));
                   }
 
                   return searchResults;
@@ -290,7 +308,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
               });
             }
           });
-          IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
+          IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent(
+              "jetbrains.mps.ide.findusages.view.UsagesViewTool");
           usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
           forceCancelCloseDialog();
         }
@@ -299,7 +318,9 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
       JPanel table = decorator.createPanel();
       table.setBorder(IdeBorderFactory.createBorder());
-      myImportedModelsComponent.add(table, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+      myImportedModelsComponent.add(table, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       new SpeedSearchBase<JBTable>(importedModelsTable) {
         @Override
@@ -372,7 +393,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     protected void findUsages(final Object value) {
       if (myInPlugin) {
-        Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(", Messages.getInformationIcon());
+        Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(",
+            Messages.getInformationIcon());
         return;
       }
 
@@ -383,11 +405,12 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         @Override
         public void run() {
           query[0] = new SearchQuery(
-            MPSModuleRepository.getInstance().getModuleByFqName(((SModuleReference) value).getModuleName()), scope);
+              MPSModuleRepository.getInstance().getModuleByFqName(((SModuleReference) value).getModuleName()), scope);
           provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder());
         }
       });
-      IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
+      IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent(
+          "jetbrains.mps.ide.findusages.view.UsagesViewTool");
       usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
       forceCancelCloseDialog();
     }
@@ -399,7 +422,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         @Override
         public void actionPerformed(AnActionEvent e) {
           if (myInPlugin) {
-            Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(", Messages.getInformationIcon());
+            Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(",
+                Messages.getInformationIcon());
             return;
           }
 
@@ -412,7 +436,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
               List<SModule> modules = new LinkedList<SModule>();
               for (int i : myTable.getSelectedRows()) {
                 Object value = myUsedLangsTableModel.getValueAt(i, UsedLangsTableModel.ITEM_COLUMN);
-                if(value instanceof SModuleReference){
+                if (value instanceof SModuleReference) {
                   modules.add(
                       MPSModuleRepository.getInstance().getModuleByFqName(
                           ((SModuleReference) value).getModuleName())
@@ -420,24 +444,27 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
                 }
               }
 
-              ModulesHolder modulesHolder = new ModulesHolder(modules, null){
+              ModulesHolder modulesHolder = new ModulesHolder(modules, null) {
                 @Override
-                public void write(Element element, Project project) throws CantSaveSomethingException {}
+                public void write(Element element, Project project) throws CantSaveSomethingException {
+                }
+
                 @Override
-                public void read(Element element, Project project) throws CantLoadSomethingException {}
+                public void read(Element element, Project project) throws CantLoadSomethingException {
+                }
               };
               query[0] = new SearchQuery(modulesHolder, scope);
               provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder() {
                 @Override
                 public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-                  if(!(query.getObjectHolder() instanceof ModulesHolder))
+                  if (!(query.getObjectHolder() instanceof ModulesHolder))
                     return super.find(query, monitor);
 
                   SearchResults searchResults = new SearchResults();
                   ModulesHolder modulesHolder = (ModulesHolder) query.getObjectHolder();
                   for (SModule searchedModule : modulesHolder.getObject()) {
                     SearchQuery searchQuery = new SearchQuery(searchedModule, query.getScope());
-                    searchResults.addAll(super.find(searchQuery,monitor));
+                    searchResults.addAll(super.find(searchQuery, monitor));
                   }
 
                   return searchResults;
@@ -445,7 +472,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
               });
             }
           });
-          IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
+          IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent(
+              "jetbrains.mps.ide.findusages.view.UsagesViewTool");
           usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
           forceCancelCloseDialog();
         }
@@ -457,8 +485,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       final SModuleReference moduleReference = (SModuleReference) value;
       if (!myModelProperties.getUsedLanguageRemoveCondition().met(moduleReference)) {
         ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
-          ProjectHelper.toIdeaProject(myProject), "Delete used language",
-          "This language is used by model. Do you really what to delete it?", "Model state will become inconsistent") {
+            ProjectHelper.toIdeaProject(myProject), "Delete used language",
+            "This language is used by model. Do you really what to delete it?", "Model state will become inconsistent") {
           @Override
           public void doViewAction() {
             findUsages(value);
@@ -479,7 +507,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     private ModelsLangEngagedOnGenTM myLangEngagedOnGenTM;
 
     public InfoTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.model.infotab.title"), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("mps.properties.configurable.model.infotab.tip"));
+      super(PropertiesBundle.message("mps.properties.configurable.model.infotab.title"), IdeIcons.DEFAULT_ICON,
+          PropertiesBundle.message("mps.properties.configurable.model.infotab.tip"));
       myIsDefSModelDescr = myInPlugin && myModelDescriptor instanceof DefaultSModelDescriptor;
       init();
     }
@@ -515,17 +544,26 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       final JPanel panel = new JPanel();
       panel.setLayout(new GridLayoutManager(rowsCount, 1, INSETS, -1, -1));
 
-      myDoNotGenerateCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.model.infotab.checkboxDNG"), myModelProperties.isDoNotGenerate());
-      panel.add(myDoNotGenerateCheckBox, new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      myDoNotGenerateCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.model.infotab.checkboxDNG"),
+          myModelProperties.isDoNotGenerate());
+      panel.add(myDoNotGenerateCheckBox, new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
+          GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       if (myIsDefSModelDescr) {
-        myGenerateIntoModelFolderCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.model.infotab.checkboxGIMF"), myModelProperties.isGenerateIntoModelFolder());
-        panel.add(myGenerateIntoModelFolderCheckBox, new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        myGenerateIntoModelFolderCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.model.infotab.checkboxGIMF"),
+            myModelProperties.isGenerateIntoModelFolder());
+        panel.add(myGenerateIntoModelFolderCheckBox,
+            new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
+                GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null,
+                0, false));
       }
 
-      panel.add(new JBLabel(getInfoText()), new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      panel.add(new JBLabel(getInfoText()), new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
+          GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-      panel.add(new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.filepathlabel")), new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      panel.add(new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.filepathlabel")),
+          new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+              GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       String filePath = "(not editable model)";
       if (myModelDescriptor instanceof EditableSModel) {
@@ -537,7 +575,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       JTextField textField = new JTextField();
       textField.setEditable(false);
       textField.setText(filePath);
-      panel.add(textField, new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+      panel.add(textField, new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
       final JBTable languagesTable = new JBTable();
       languagesTable.setShowHorizontalLines(false);
@@ -574,7 +613,9 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
       JPanel table = decorator.createPanel();
       table.setBorder(IdeBorderFactory.createBorder());
-      panel.add(table, new GridConstraints(rowIndex, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+      panel.add(table, new GridConstraints(rowIndex, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       new SpeedSearchBase<JBTable>(languagesTable) {
         @Override
@@ -625,8 +666,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     public boolean isModified() {
       return myDoNotGenerateCheckBox.isSelected() != myModelProperties.isDoNotGenerate()
-        || (myIsDefSModelDescr ? (myGenerateIntoModelFolderCheckBox.isSelected() != myModelProperties.isGenerateIntoModelFolder()) : false)
-        || myLangEngagedOnGenTM.isModified();
+          || (myIsDefSModelDescr ? (myGenerateIntoModelFolderCheckBox.isSelected() != myModelProperties.isGenerateIntoModelFolder()) : false)
+          || myLangEngagedOnGenTM.isModified();
     }
 
     @Override

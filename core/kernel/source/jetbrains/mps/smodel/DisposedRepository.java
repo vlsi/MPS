@@ -69,6 +69,11 @@ public class DisposedRepository implements SRepository {
       }
 
       @Override
+      public void runReadInEDT(Runnable r) {
+
+      }
+
+      @Override
       public void runWriteAction(Runnable r) {
 
       }

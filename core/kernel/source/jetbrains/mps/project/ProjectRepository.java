@@ -98,6 +98,11 @@ public class ProjectRepository implements SRepository {
     }
 
     @Override
+    public void runReadInEDT(Runnable r) {
+      jetbrains.mps.smodel.ModelAccess.instance().runReadInEDT(r);
+    }
+
+    @Override
     public void runWriteAction(Runnable r) {
       jetbrains.mps.smodel.ModelAccess.instance().runWriteAction(r);
     }
