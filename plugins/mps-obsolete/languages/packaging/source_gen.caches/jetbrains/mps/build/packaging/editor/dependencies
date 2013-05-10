@@ -213,6 +213,8 @@
   <dependency className="jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent" file="CompositecomponentEntriesEditorComponent.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -234,6 +236,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.ConfigurationReference_Editor" file="ConfigurationReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -256,6 +259,8 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -280,6 +285,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.Configuration_Editor" file="Configuration_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -359,7 +365,9 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.ComponentsList_Editor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.CompositePathComponent_Editor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.CompositeString_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.ConfigurationReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.Copy_Editor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.Echo_Editor" />
@@ -368,6 +376,8 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.Folder_Editor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.Help_Editor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.IdeaInitializerReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.Jar_Editor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.Layout_Editor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.Library_Editor" />
@@ -505,6 +515,9 @@
   <dependency className="jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent" file="IncludeExcludeEditorComponent.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -523,10 +536,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector" file="IncludeExcludeInInspector.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -542,6 +559,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.Jar_Editor" file="Jar_Editor.java">
     <classNode dependClassName="java.lang.Class" />

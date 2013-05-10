@@ -188,6 +188,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertTrue_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.BTestCase_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.Fail_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.MessageComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.Message_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.PrepareMethod_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.TestMethodList_Editor" />
@@ -218,6 +219,9 @@
   <dependency className="jetbrains.mps.baseLanguage.unitTest.editor.MessageComponent" file="MessageComponent.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
@@ -234,6 +238,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.editor.Message_Editor" file="Message_Editor.java">
     <classNode dependClassName="java.lang.Class" />

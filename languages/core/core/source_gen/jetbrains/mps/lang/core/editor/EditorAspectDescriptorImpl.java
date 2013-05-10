@@ -26,9 +26,23 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1, editorComponentId)) {
+          case 0:
+            return Collections.<ConceptEditorComponent>singletonList(new AliasEditorComponent(null));
+          case 1:
+            return Collections.<ConceptEditorComponent>singletonList(new ShortDescriptionEditorComponent(null));
+          default:
+        }
+        break;
+      default:
+    }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1 = new String[]{"AliasEditorComponent", "ShortDescriptionEditorComponent"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"};
 }

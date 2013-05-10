@@ -58,9 +58,25 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1, editorComponentId)) {
+          case 0:
+            return Collections.<ConceptEditorComponent>singletonList(new EditorComponent(null));
+          case 1:
+            return Collections.<ConceptEditorComponent>singletonList(new PersistentMethodsComponent(null));
+          case 2:
+            return Collections.<ConceptEditorComponent>singletonList(new PersistentPropertiesComponent(null));
+          default:
+        }
+        break;
+      default:
+    }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.execution.settings.structure.CheckProperitesOperation", "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation", "jetbrains.mps.execution.settings.structure.EditorExpression", "jetbrains.mps.execution.settings.structure.EditorOperationCall", "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyReference", "jetbrains.mps.execution.settings.structure.GetEditorOperation", "jetbrains.mps.execution.settings.structure.GridBagConstraints", "jetbrains.mps.execution.settings.structure.PersistentConfiguration", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer", "jetbrains.mps.execution.settings.structure.PersistentConfigurationType", "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration", "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation", "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement", "jetbrains.mps.execution.settings.structure.SettingsEditor", "jetbrains.mps.execution.settings.structure.SettingsEditorType", "jetbrains.mps.execution.settings.structure.TemplateParameter", "jetbrains.mps.execution.settings.structure.TemplateParameterReference", "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1 = new String[]{"EditorComponent", "PersistentMethodsComponent", "PersistentPropertiesComponent"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.execution.settings.structure.PersistentConfiguration"};
 }

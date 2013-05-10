@@ -128,9 +128,23 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("IAspectParameterHolder_Component".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new IAspectParameterHolder_Component(null));
+        }
+        break;
+      case 1:
+        if ("IPartiallyDefinedStub_Component".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new IPartiallyDefinedStub_Component(null));
+        }
+        break;
+      default:
+    }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.ui.modeling.structure.AlignmentLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ApplyConstraintStatement", "jetbrains.mps.ui.modeling.structure.AspectParameterDecl", "jetbrains.mps.ui.modeling.structure.AspectParameterRef", "jetbrains.mps.ui.modeling.structure.AuxObjectAccessOp", "jetbrains.mps.ui.modeling.structure.AuxObjectFactory", "jetbrains.mps.ui.modeling.structure.AuxObjectTemplate", "jetbrains.mps.ui.modeling.structure.Auxillary", "jetbrains.mps.ui.modeling.structure.BeforeUIObjectParam", "jetbrains.mps.ui.modeling.structure.BoxLayoutConstraint", "jetbrains.mps.ui.modeling.structure.CellLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ChildAspectDefinition", "jetbrains.mps.ui.modeling.structure.ColumnLayoutConstraint", "jetbrains.mps.ui.modeling.structure.Container", "jetbrains.mps.ui.modeling.structure.ContainerItemAdder", "jetbrains.mps.ui.modeling.structure.ContainerItemClearer", "jetbrains.mps.ui.modeling.structure.ContainerItemInserter", "jetbrains.mps.ui.modeling.structure.ContainerItemIterator", "jetbrains.mps.ui.modeling.structure.ContainerItemRemover", "jetbrains.mps.ui.modeling.structure.ContainerTemplate", "jetbrains.mps.ui.modeling.structure.Context", "jetbrains.mps.ui.modeling.structure.ContextUIObjectParam", "jetbrains.mps.ui.modeling.structure.EditableUIProperty", "jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode", "jetbrains.mps.ui.modeling.structure.Event", "jetbrains.mps.ui.modeling.structure.EventHandlerSetup", "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", "jetbrains.mps.ui.modeling.structure.EventProducer", "jetbrains.mps.ui.modeling.structure.EventProperty", "jetbrains.mps.ui.modeling.structure.EventPropertyGetter", "jetbrains.mps.ui.modeling.structure.ExpressionWithUnit", "jetbrains.mps.ui.modeling.structure.ForceLayoutCode", "jetbrains.mps.ui.modeling.structure.Geometry", "jetbrains.mps.ui.modeling.structure.HorizontalAlignment", "jetbrains.mps.ui.modeling.structure.HorizontalConstraint", "jetbrains.mps.ui.modeling.structure.ItemUIObjectParam", "jetbrains.mps.ui.modeling.structure.LayoutConstraintExpression", "jetbrains.mps.ui.modeling.structure.LayoutConstraintType", "jetbrains.mps.ui.modeling.structure.OverrideAnnotation", "jetbrains.mps.ui.modeling.structure.PropertyChangeHandlerSetup", "jetbrains.mps.ui.modeling.structure.PropertyValueParam", "jetbrains.mps.ui.modeling.structure.RowLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ThisUIObjectParam", "jetbrains.mps.ui.modeling.structure.UIAction", "jetbrains.mps.ui.modeling.structure.UIActionCode", "jetbrains.mps.ui.modeling.structure.UIObject", "jetbrains.mps.ui.modeling.structure.UIObjectFactory", "jetbrains.mps.ui.modeling.structure.UIObjectTemplate", "jetbrains.mps.ui.modeling.structure.UIProperty", "jetbrains.mps.ui.modeling.structure.UIPropertyAccessCode", "jetbrains.mps.ui.modeling.structure.UIPropertyGetter", "jetbrains.mps.ui.modeling.structure.UIPropertySetter", "jetbrains.mps.ui.modeling.structure.UnitType", "jetbrains.mps.ui.modeling.structure.VerticalAlignment", "jetbrains.mps.ui.modeling.structure.VerticalConstraint"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.ui.modeling.structure.IAspectParameterHolder", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"};
 }

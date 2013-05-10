@@ -184,9 +184,33 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("CommentSymbol".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new CommentSymbol(null));
+        }
+        break;
+      case 1:
+        if ("ExternalCommandDescription_EditorComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new ExternalCommandDescription_EditorComponent(null));
+        }
+        break;
+      case 2:
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c0a1, editorComponentId)) {
+          case 0:
+            return Collections.<ConceptEditorComponent>singletonList(new OptionDeclaration_EditorComponent(null));
+          case 1:
+            return Collections.<ConceptEditorComponent>singletonList(new Option_EditorComponent(null));
+          default:
+        }
+        break;
+      default:
+    }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.bash.structure.AbstractCommand", "jetbrains.mps.bash.structure.AppendingOutputErrorRedirection", "jetbrains.mps.bash.structure.AppendingOutputRedirection", "jetbrains.mps.bash.structure.Argument", "jetbrains.mps.bash.structure.ArgumentList", "jetbrains.mps.bash.structure.ArgumentListReference", "jetbrains.mps.bash.structure.ArgumentReference", "jetbrains.mps.bash.structure.ArithmeticCommand", "jetbrains.mps.bash.structure.ArithmeticExpansion", "jetbrains.mps.bash.structure.AsyncTerminator", "jetbrains.mps.bash.structure.BaseAssingmentExpression", "jetbrains.mps.bash.structure.BaseCommandSubstitution", "jetbrains.mps.bash.structure.BaseVariableAssingment", "jetbrains.mps.bash.structure.BasedIntegerLiteral", "jetbrains.mps.bash.structure.BasicParameterExpansion", "jetbrains.mps.bash.structure.BinaryArithmeticExpression", "jetbrains.mps.bash.structure.BinaryConditionalExpression", "jetbrains.mps.bash.structure.BracketConditionalExpression", "jetbrains.mps.bash.structure.BracketExpression", "jetbrains.mps.bash.structure.CaseClause", "jetbrains.mps.bash.structure.CaseCommand", "jetbrains.mps.bash.structure.CaseTerminator", "jetbrains.mps.bash.structure.CombiningConditionalExpression", "jetbrains.mps.bash.structure.Command", "jetbrains.mps.bash.structure.CommandList", "jetbrains.mps.bash.structure.CommandTerminator", "jetbrains.mps.bash.structure.CommentedCommandList", "jetbrains.mps.bash.structure.CommentedFollowingCommandList", "jetbrains.mps.bash.structure.CommentedText", "jetbrains.mps.bash.structure.ConditionalCommand", "jetbrains.mps.bash.structure.ConditionalOperation", "jetbrains.mps.bash.structure.DecimalConstant", "jetbrains.mps.bash.structure.DuplicateInputFileDiscriptor", "jetbrains.mps.bash.structure.DuplicateOutputFileDiscriptor", "jetbrains.mps.bash.structure.ElifCommand", "jetbrains.mps.bash.structure.ExternalCommandCall", "jetbrains.mps.bash.structure.ExternalCommandDeclaration", "jetbrains.mps.bash.structure.FollowingCommandList", "jetbrains.mps.bash.structure.FollowingPipeline", "jetbrains.mps.bash.structure.ForCommand", "jetbrains.mps.bash.structure.ForeachCommand", "jetbrains.mps.bash.structure.FreeCommand", "jetbrains.mps.bash.structure.FunctionCallCommand", "jetbrains.mps.bash.structure.FunctionDeclaration", "jetbrains.mps.bash.structure.GeneralizedWord", "jetbrains.mps.bash.structure.GroupingCommand", "jetbrains.mps.bash.structure.HeadCommandList", "jetbrains.mps.bash.structure.HeadPipeline", "jetbrains.mps.bash.structure.HereDocumentRedirection", "jetbrains.mps.bash.structure.HereStringRedirection", "jetbrains.mps.bash.structure.HexIntegerLiteral", "jetbrains.mps.bash.structure.IfCommand", "jetbrains.mps.bash.structure.InputLines", "jetbrains.mps.bash.structure.InputRedirection", "jetbrains.mps.bash.structure.NotCommand", "jetbrains.mps.bash.structure.Option", "jetbrains.mps.bash.structure.OptionReference", "jetbrains.mps.bash.structure.OptionSet", "jetbrains.mps.bash.structure.OptionSetReference", "jetbrains.mps.bash.structure.OptionWithParam", "jetbrains.mps.bash.structure.OptionWithParamReference", "jetbrains.mps.bash.structure.OutputErrorRedirection", "jetbrains.mps.bash.structure.OutputRedirection", "jetbrains.mps.bash.structure.PostVariableExpression", "jetbrains.mps.bash.structure.PreVariableExpression", "jetbrains.mps.bash.structure.QuotedWord", "jetbrains.mps.bash.structure.QuotesCommandSubstitution", "jetbrains.mps.bash.structure.ReadingWritingRedirection", "jetbrains.mps.bash.structure.RedirectedCommand", "jetbrains.mps.bash.structure.SelectCommand", "jetbrains.mps.bash.structure.SemicolonTerminator", "jetbrains.mps.bash.structure.ShellScript", "jetbrains.mps.bash.structure.SimpleCommand", "jetbrains.mps.bash.structure.SimpleWord", "jetbrains.mps.bash.structure.StringConditionalExpression", "jetbrains.mps.bash.structure.TildeExpansion", "jetbrains.mps.bash.structure.UnaryArithmeticExpression", "jetbrains.mps.bash.structure.UnaryConditionalExpression", "jetbrains.mps.bash.structure.UntilLoopCommand", "jetbrains.mps.bash.structure.VariableNameDeclaration", "jetbrains.mps.bash.structure.VariableReference", "jetbrains.mps.bash.structure.WhileLoopCommand", "jetbrains.mps.bash.structure.WordList"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0c0a1 = new String[]{"OptionDeclaration_EditorComponent", "Option_EditorComponent"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.bash.structure.IComment", "jetbrains.mps.bash.structure.IDescribedConcept", "jetbrains.mps.bash.structure.Option"};
 }

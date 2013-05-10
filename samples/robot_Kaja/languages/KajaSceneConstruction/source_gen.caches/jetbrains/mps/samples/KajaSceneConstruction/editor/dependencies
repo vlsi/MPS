@@ -50,6 +50,7 @@
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.DestroyWall_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.DropMark_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.PickMark_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.Position" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
@@ -69,6 +70,9 @@
   <dependency className="jetbrains.mps.samples.KajaSceneConstruction.editor.Position" file="Position.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -84,6 +88,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
 </dependenciesRoot>
 

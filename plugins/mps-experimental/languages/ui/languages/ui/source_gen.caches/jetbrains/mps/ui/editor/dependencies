@@ -273,6 +273,7 @@
     <classNode dependClassName="jetbrains.mps.ui.editor.Validator_Editor" />
     <classNode dependClassName="jetbrains.mps.ui.editor.ViewBinding_Editor" />
     <classNode dependClassName="jetbrains.mps.ui.editor.View_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.common_UIObjectStatement" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ui.editor.EnclosingContextCompartmentExpression_Editor" file="EnclosingContextCompartmentExpression_Editor.java">
@@ -637,6 +638,8 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
@@ -663,6 +666,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
 </dependenciesRoot>
 

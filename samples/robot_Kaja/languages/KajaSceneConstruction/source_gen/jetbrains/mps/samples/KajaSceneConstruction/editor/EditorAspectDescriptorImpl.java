@@ -26,9 +26,18 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("Position".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new Position(null));
+        }
+        break;
+      default:
+    }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark", "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"};
 }

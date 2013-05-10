@@ -84,9 +84,28 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("IFeature_Properties".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new IFeature_Properties(null));
+        }
+        break;
+      case 1:
+        if ("IParamFeature_Properties".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new IParamFeature_Properties(null));
+        }
+        break;
+      case 2:
+        if ("TreePath_component".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new TreePath_component(null));
+        }
+        break;
+      default:
+    }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.ypath.structure.FromOperation", "jetbrains.mps.ypath.structure.GenericFeature", "jetbrains.mps.ypath.structure.GenericParamFeature", "jetbrains.mps.ypath.structure.IterateOperation", "jetbrains.mps.ypath.structure.LambdaMethod", "jetbrains.mps.ypath.structure.LambdaMethodParameter", "jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation", "jetbrains.mps.ypath.structure.MatchKindOperation", "jetbrains.mps.ypath.structure.MatchPropertyOperation", "jetbrains.mps.ypath.structure.NodeKindCase", "jetbrains.mps.ypath.structure.NodeKindDefaultCase", "jetbrains.mps.ypath.structure.NodeKindSpecificCase", "jetbrains.mps.ypath.structure.ParamListFeature", "jetbrains.mps.ypath.structure.ParamSequenceFeature", "jetbrains.mps.ypath.structure.ParameterWrapper", "jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.ypath.structure.SwitchNodeKindStatement", "jetbrains.mps.ypath.structure.TreeNodeKind", "jetbrains.mps.ypath.structure.TreeNodeKindOccurrence", "jetbrains.mps.ypath.structure.TreeNodeKindProperty", "jetbrains.mps.ypath.structure.TreeNodeKindReference", "jetbrains.mps.ypath.structure.TreePathAdapterExpression", "jetbrains.mps.ypath.structure.TreePathAspect", "jetbrains.mps.ypath.structure.TreePathCreator", "jetbrains.mps.ypath.structure.TreePathOperationExpression", "jetbrains.mps.ypath.structure.TreePathType", "jetbrains.mps.ypath.structure.VisitBlock", "jetbrains.mps.ypath.structure.VisitChildrenExpression", "jetbrains.mps.ypath.structure.VisitNodesStatement", "jetbrains.mps.ypath.structure.VisitParameterDeclaration", "jetbrains.mps.ypath.structure.VisitParameterDeclarationList", "jetbrains.mps.ypath.structure.WhereOperation"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IParamFeature", "jetbrains.mps.ypath.structure.TreePath"};
 }

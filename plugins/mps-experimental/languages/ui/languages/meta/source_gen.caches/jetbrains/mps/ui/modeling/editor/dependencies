@@ -513,6 +513,8 @@
     <classNode dependClassName="jetbrains.mps.ui.modeling.editor.Geometry_Editor" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Editor" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.editor.HorizontalConstraint_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.modeling.editor.IAspectParameterHolder_Component" />
+    <classNode dependClassName="jetbrains.mps.ui.modeling.editor.IPartiallyDefinedStub_Component" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.editor.ItemUIObjectParam_Editor" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.editor.LayoutConstraintExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.editor.LayoutConstraintType_Editor" />
@@ -780,6 +782,8 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap" />
@@ -800,11 +804,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.ui.modeling.editor.IPartiallyDefinedStub_Component" file="IPartiallyDefinedStub_Component.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
@@ -825,6 +832,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.ui.modeling.editor.ItemUIObjectParam_Editor" file="ItemUIObjectParam_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.core.editor.AliasEditorComponent" />

@@ -14,6 +14,9 @@
   <dependency className="jetbrains.mps.lang.generator.editor.BaseMappingRule_premise" file="BaseMappingRule_premise.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -36,10 +39,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.CopyScrNodeMacro_inspector" file="CopyScrNodeMacro_inspector.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -62,6 +69,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.CopySrcListMacro_Editor" file="CopySrcListMacro_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -193,6 +201,8 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.AbandonInput_RuleConsequence_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.editor.BaseMappingRule_premise" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.editor.CopyScrNodeMacro_inspector" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.CopySrcListMacro_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.CopySrcNodeMacro_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.CreateRootRule_Editor" />
@@ -201,6 +211,7 @@
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.GeneratorDescriptor_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.GeneratorMessage_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.GeneratorParameterReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.IfMacro_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.IncludeMacro_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.InlineSwitch_Case_Editor" />
@@ -217,6 +228,7 @@
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.MappingScriptReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.MappingScript_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.NodeMacro_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.editor.NodeMacro_postfix" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.PatternReduction_MappingRule_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.PropertyMacro_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.Reduction_MappingRule_Editor" />
@@ -312,6 +324,8 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -339,6 +353,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.IfMacro_Editor" file="IfMacro_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -800,6 +815,8 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -831,6 +848,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.PatternReduction_MappingRule_Editor" file="PatternReduction_MappingRule_Editor.java">
     <classNode dependClassName="java.lang.Class" />

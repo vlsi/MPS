@@ -78,9 +78,38 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 1:
+        if ("AbstractAction_properties".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new AbstractAction_properties(null));
+        }
+        break;
+      case 0:
+        if ("BaseConcept_brokenRefs".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new BaseConcept_brokenRefs(null));
+        }
+        break;
+      case 2:
+        if ("ConfigurationXmlNode_Header".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new ConfigurationXmlNode_Header(null));
+        }
+        break;
+      case 3:
+        if ("ConfigurationXmlRootNode_children".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new ConfigurationXmlRootNode_children(null));
+        }
+        break;
+      case 4:
+        if ("Extension_name".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new Extension_name(null));
+        }
+        break;
+      default:
+    }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.platform.conf.structure.Action", "jetbrains.mps.platform.conf.structure.ActionReference", "jetbrains.mps.platform.conf.structure.Actions", "jetbrains.mps.platform.conf.structure.BeanExtension", "jetbrains.mps.platform.conf.structure.BeanExtensionAttribute", "jetbrains.mps.platform.conf.structure.BeanExtensionPoint", "jetbrains.mps.platform.conf.structure.Component", "jetbrains.mps.platform.conf.structure.ComponentRoot", "jetbrains.mps.platform.conf.structure.Components", "jetbrains.mps.platform.conf.structure.ComponentsRoot", "jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", "jetbrains.mps.platform.conf.structure.Extension", "jetbrains.mps.platform.conf.structure.ExtensionPoints", "jetbrains.mps.platform.conf.structure.Extensions", "jetbrains.mps.platform.conf.structure.Group", "jetbrains.mps.platform.conf.structure.GroupReference", "jetbrains.mps.platform.conf.structure.IdeaVersion", "jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", "jetbrains.mps.platform.conf.structure.InterfaceExtension", "jetbrains.mps.platform.conf.structure.MouseShortcut", "jetbrains.mps.platform.conf.structure.Plugin", "jetbrains.mps.platform.conf.structure.PluginDependency", "jetbrains.mps.platform.conf.structure.PluginDetails", "jetbrains.mps.platform.conf.structure.PluginHelpset", "jetbrains.mps.platform.conf.structure.PluginVendor", "jetbrains.mps.platform.conf.structure.RootRoot", "jetbrains.mps.platform.conf.structure.Separator", "jetbrains.mps.platform.conf.structure.Service", "jetbrains.mps.platform.conf.structure.Shortcut", "jetbrains.mps.platform.conf.structure.XInclude"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.platform.conf.structure.AbstractAction", "jetbrains.mps.platform.conf.structure.ConfigurationXmlNode", "jetbrains.mps.platform.conf.structure.ConfigurationXmlRootNode", "jetbrains.mps.platform.conf.structure.Extension"};
 }

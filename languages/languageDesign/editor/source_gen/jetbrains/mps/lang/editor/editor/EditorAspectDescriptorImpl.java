@@ -210,9 +210,43 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("CellModelCollection_FoldedCellComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new CellModelCollection_FoldedCellComponent(null));
+        }
+        break;
+      case 1:
+        if ("CellModelListWithRole_FoldedCellComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new CellModelListWithRole_FoldedCellComponent(null));
+        }
+        break;
+      case 2:
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c0a1, editorComponentId)) {
+          case 0:
+            return Collections.<ConceptEditorComponent>singletonList(new Common_Component(null));
+          case 1:
+            return Collections.<ConceptEditorComponent>singletonList(new Style_Component(null));
+          case 2:
+            return Collections.<ConceptEditorComponent>singletonList(new _CellKeyMapLnk_Component(null));
+          case 3:
+            return Collections.<ConceptEditorComponent>singletonList(new _CellModel_Common(null));
+          case 4:
+            return Collections.<ConceptEditorComponent>singletonList(new _CloseTag(null));
+          case 5:
+            return Collections.<ConceptEditorComponent>singletonList(new _FocusPolicy_Applicable(null));
+          case 6:
+            return Collections.<ConceptEditorComponent>singletonList(new _OpenTag(null));
+          default:
+        }
+        break;
+      default:
+    }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem", "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem", "jetbrains.mps.lang.editor.structure.CaretPositionParameter", "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", "jetbrains.mps.lang.editor.structure.CellActionMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", "jetbrains.mps.lang.editor.structure.CellKeyMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", "jetbrains.mps.lang.editor.structure.CellLayout", "jetbrains.mps.lang.editor.structure.CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", "jetbrains.mps.lang.editor.structure.CellMenuDescriptor", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms", "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group", "jetbrains.mps.lang.editor.structure.CellModel_Alternation", "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell", "jetbrains.mps.lang.editor.structure.CellModel_Block", "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", "jetbrains.mps.lang.editor.structure.CellModel_BlockStart", "jetbrains.mps.lang.editor.structure.CellModel_Collection", "jetbrains.mps.lang.editor.structure.CellModel_Component", "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty", "jetbrains.mps.lang.editor.structure.CellModel_Constant", "jetbrains.mps.lang.editor.structure.CellModel_Custom", "jetbrains.mps.lang.editor.structure.CellModel_Empty", "jetbrains.mps.lang.editor.structure.CellModel_Error", "jetbrains.mps.lang.editor.structure.CellModel_Image", "jetbrains.mps.lang.editor.structure.CellModel_Indent", "jetbrains.mps.lang.editor.structure.CellModel_JComponent", "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", "jetbrains.mps.lang.editor.structure.CellModel_Property", "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.CellModel_RefCell", "jetbrains.mps.lang.editor.structure.CellModel_RefNode", "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.CellModel_URL", "jetbrains.mps.lang.editor.structure.ColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints", "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression", "jetbrains.mps.lang.editor.structure.DefaultBaseLine", "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", "jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", "jetbrains.mps.lang.editor.structure.FloatStyleClassItem", "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem", "jetbrains.mps.lang.editor.structure.HorizontalAlign", "jetbrains.mps.lang.editor.structure.InlineEditorComponent", "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem", "jetbrains.mps.lang.editor.structure.ModelAccessor", "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem", "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionStyleClassItem", "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem", "jetbrains.mps.lang.editor.structure.RGBColor", "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", "jetbrains.mps.lang.editor.structure.ScriptKindClassItem", "jetbrains.mps.lang.editor.structure.SelectOperation", "jetbrains.mps.lang.editor.structure.SelectPositionParameter", "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem", "jetbrains.mps.lang.editor.structure.StyleKey", "jetbrains.mps.lang.editor.structure.StyleKeyPack", "jetbrains.mps.lang.editor.structure.StyleSheet", "jetbrains.mps.lang.editor.structure.StyleSheetClass", "jetbrains.mps.lang.editor.structure.StyleSheetClassReference", "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem", "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0c0a1 = new String[]{"Common_Component", "Style_Component", "_CellKeyMapLnk_Component", "_CellModel_Common", "_CloseTag", "_FocusPolicy_Applicable", "_OpenTag"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.structure.CellModel_Collection", "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole", "jetbrains.mps.lang.editor.structure.EditorCellModel"};
 }
