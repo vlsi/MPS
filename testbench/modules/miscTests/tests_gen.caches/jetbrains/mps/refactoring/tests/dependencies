@@ -18,13 +18,13 @@
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
     <classNode dependClassName="jetbrains.mps.refactoring.tests.RefactoringTestFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.refactoring.tests.IRefactoringTester" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RefactoringTestFacade" file="RefactoringTestFacade.java">
@@ -53,11 +53,11 @@
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
     <classNode dependClassName="jetbrains.mps.refactoring.tests.RefactoringTestFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.refactoring.tests.IRefactoringTester" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy" file="RenameLinkRefactoringTester_Hierarchy.java">
@@ -79,12 +79,12 @@
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
     <classNode dependClassName="jetbrains.mps.refactoring.tests.RefactoringTestFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.refactoring.tests.IRefactoringTester" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Simple" file="RenameLinkRefactoringTester_Simple.java">
@@ -106,11 +106,11 @@
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
     <classNode dependClassName="jetbrains.mps.refactoring.tests.RefactoringTestFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.refactoring.tests.IRefactoringTester" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RenamePropertyRefactoringTester_Simple" file="RenamePropertyRefactoringTester_Simple.java">
@@ -132,12 +132,12 @@
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
     <classNode dependClassName="jetbrains.mps.refactoring.tests.RefactoringTestFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.refactoring.tests.IRefactoringTester" />
   </dependency>
 </dependenciesRoot>

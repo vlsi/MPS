@@ -68,17 +68,20 @@ public class RefactoringContext {
   private List<SNode> mySelectedNodes = new ArrayList<SNode>();
   private IOperationContext myCurrentOperationContext;
   private IScope myCurrentScope;
-  private Project mySelectedProject;
+  private final Project myProject;
   private SModule mySelectedModule;
   private List<SModel> mySelectedModels;
   private List<SModule> mySelectedModules;
+
   private Map<StructureModificationData.ConceptFeature, StructureModificationData.ConceptFeature> myConceptFeatureMap = new HashMap<StructureModificationData.ConceptFeature, StructureModificationData.ConceptFeature>();
   private Map<StructureModificationData.FullNodeId, StructureModificationData.FullNodeId> myMoveMap = new HashMap<StructureModificationData.FullNodeId, StructureModificationData.FullNodeId>();
   private Map<String, Set<StructureModificationData.ConceptFeature>> myFQNamesToConceptFeaturesCache = new HashMap<String, Set<StructureModificationData.ConceptFeature>>();
   private Map<SNodeId, Set<StructureModificationData.FullNodeId>> myNodeIdsToFullNodeIdsCache = new HashMap<SNodeId, Set<StructureModificationData.FullNodeId>>();
+
   private boolean myCachesAreUpToDate = false;
 
-  public RefactoringContext(IRefactoring refactoring) {
+  public RefactoringContext(Project project, IRefactoring refactoring) {
+    myProject = project;
     setRefactoring(refactoring);
   }
 
@@ -556,10 +559,6 @@ public class RefactoringContext {
     mySelectedModules = modules;
   }
 
-  public void setSelectedProject(Project selectedProject) {
-    mySelectedProject = selectedProject;
-  }
-
   public void setCurrentScope(IScope currentScope) {
     myCurrentScope = currentScope;
   }
@@ -569,7 +568,7 @@ public class RefactoringContext {
   }
 
   public Project getSelectedProject() {
-    return mySelectedProject;
+    return myProject;
   }
 
   public IScope getCurrentScope() {
@@ -677,8 +676,7 @@ public class RefactoringContext {
 
   public static RefactoringContext createRefactoringContext(IRefactoring refactoring, List names, List parameters, Object target, Project project) {
 
-    RefactoringContext result = new RefactoringContext(refactoring);
-    result.setSelectedProject(project);
+    RefactoringContext result = new RefactoringContext(project, refactoring);
     result.setCurrentOperationContext(new ProjectOperationContext(project));
     result.setTarget(target);
     result.setParameters(names, parameters);

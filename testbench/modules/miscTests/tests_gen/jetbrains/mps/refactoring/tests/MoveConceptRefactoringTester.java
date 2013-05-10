@@ -5,9 +5,9 @@ package jetbrains.mps.refactoring.tests;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.refactoring.framework.IRefactoring;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -26,36 +26,37 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
   @Override
   public boolean testRefactoring(final Project project, final SModel sandbox1, final SModel sandbox2, final Language testRefactoringLanguage, final Language testRefactoringTargetLanguage) {
     final String conceptName = "MyVeryGoodConcept1";
+    final ModelAccess modelAccess = project.getRepository().getModelAccess();
     final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    modelAccess.runReadAction(new Runnable() {
       public void run() {
         refactoring.value = RefactoringUtil.getRefactoringByClassName(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "3068114543317961454"), "virtual_getFqName_1213877404258", new Object[]{}));
       }
     });
-    final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);
+
+    final RefactoringContext refactoringContext = new RefactoringContext(project, refactoring.value);
     refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
     final SModelReference[] targetStructureModelReference = new SModelReference[]{null};
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
+
+    modelAccess.runReadAction(new Runnable() {
       public void run() {
         SModel structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         targetStructureModelReference[0] = (jetbrains.mps.smodel.SModelReference) testRefactoringTargetLanguage.getStructureModelDescriptor().getReference();
         SModel model = structureModelDescriptor;
         SNode concept = SModelOperations.getRootByName(model, conceptName);
-        refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedNode(concept);
         refactoringContext.setSelectedNodes(Arrays.asList(concept));
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter("targetModel", targetStructureModelReference[0]);
       }
     });
+
     new RefactoringTestFacade().doExecuteInTest(refactoringContext);
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       @Override
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
+        modelAccess.runReadAction(new Runnable() {
           public void run() {
             try {
               if (sandbox1.isLoaded()) {

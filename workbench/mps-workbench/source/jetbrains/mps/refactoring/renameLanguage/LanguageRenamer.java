@@ -36,11 +36,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class LanguageRenamer {
   private Language myLanguage;
   private String myNewName;
-  private RefactoringContext myContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(new MyRefactoring()));
+  private RefactoringContext myContext;
 
   public LanguageRenamer(Project project, Language language, String newName) {
     myLanguage = language;
     myNewName = newName;
+    myContext = new RefactoringContext(project, OldRefactoringAdapter.createAdapterFor(new MyRefactoring()));
   }
 
   public void rename(boolean deleteOldFiles) {
