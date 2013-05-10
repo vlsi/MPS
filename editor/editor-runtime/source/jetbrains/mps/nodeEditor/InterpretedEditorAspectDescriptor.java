@@ -64,7 +64,7 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
   }
 
   @Override
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor concept) {
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor concept, String editorComponentId) {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
