@@ -90,6 +90,11 @@ public class DisposedRepository implements SRepository {
       @Override
       public void executeCommandInEDT(Runnable r) {
       }
+
+      @Override
+      public void executeUndoTransparentCommand(Runnable r) {
+
+      }
     };
   }
 

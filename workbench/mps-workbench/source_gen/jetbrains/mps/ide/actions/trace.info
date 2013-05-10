@@ -5318,7 +5318,7 @@
     <nodeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="52" startPosition="5" endLine="53" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="54" startPosition="69" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="56" startPosition="5" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1382572689121738539" fileName="GoToRule_Action.java" startLine="61" startPosition="9" endLine="62" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1382572689121738539" fileName="GoToRule_Action.java" startLine="61" startPosition="9" endLine="62" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="64" startPosition="45" endLine="65" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="70" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="37" startPosition="27" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5343,7 +5343,7 @@
     <scopeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="46" startPosition="53" endLine="47" endPosition="19" />
     <scopeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="50" startPosition="62" endLine="51" endPosition="19" />
     <scopeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="54" startPosition="69" endLine="55" endPosition="19" />
-    <scopeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="61" startPosition="9" endLine="62" endPosition="185" />
+    <scopeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="61" startPosition="9" endLine="62" endPosition="198" />
     <scopeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="64" startPosition="45" endLine="65" endPosition="82" />
     <scopeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="23" startPosition="28" endLine="26" endPosition="41" />
     <scopeInfo nodeId="1382572689121738536" fileName="GoToRule_Action.java" startLine="37" startPosition="27" endLine="40" endPosition="7" />

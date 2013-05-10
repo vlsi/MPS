@@ -41,9 +41,9 @@ public abstract class BaseNodeDialog extends DialogWrapper {
     setTitle(text);
     myOperationContext = operationContext;
 
-    InspectorEditorComponent inspector = new InspectorEditorComponent();
+    InspectorEditorComponent inspector = new InspectorEditorComponent(operationContext.getProject().getRepository());
     inspector.setNoVirtualFile(true);
-    myEditorComponent = new UIEditorComponent(getOperationContext(), inspector);
+    myEditorComponent = new UIEditorComponent(getOperationContext().getProject().getRepository(), inspector);
 
     mySplitter = new Splitter(true, 0.6f);
     mySplitter.setFirstComponent(myEditorComponent.getExternalComponent());

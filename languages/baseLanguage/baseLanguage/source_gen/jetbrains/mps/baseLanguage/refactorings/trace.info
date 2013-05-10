@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="MoveStaticMethod.java" startLine="36" startPosition="74" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod$1" />
   <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/2869783065404758436">
     <nodeInfo nodeId="2869783065404758436" fileName="MakeFieldFinal.java" startLine="18" startPosition="52" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2869783065404758436" fileName="MakeFieldFinal.java" startLine="22" startPosition="39" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -61,14 +60,19 @@
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="22" startPosition="52" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="26" startPosition="39" endLine="27" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="30" startPosition="47" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="418677511065472017" fileName="MoveStaticMethod.java" startLine="34" startPosition="68" endLine="35" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418677511065472029" fileName="MoveStaticMethod.java" startLine="37" startPosition="25" endLine="38" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834738479" fileName="MoveStaticMethod.java" startLine="40" startPosition="7" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418677511065472049" fileName="MoveStaticMethod.java" startLine="44" startPosition="69" endLine="45" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="418677511065472042" fileName="MoveStaticMethod.java" startLine="48" startPosition="86" endLine="49" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
+    <nodeInfo nodeId="5938312768538487390" fileName="MoveStaticMethod.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveStaticMethod#()V" />
+    <nodeInfo nodeId="5938312768538473185" fileName="MoveStaticMethod.java" startLine="35" startPosition="177" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
     <nodeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="13" startPosition="52" endLine="14" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -84,12 +88,14 @@
     <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="22" startPosition="52" endLine="23" endPosition="41" />
     <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="26" startPosition="39" endLine="27" endPosition="32" />
     <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="30" startPosition="47" endLine="31" endPosition="27" />
+    <scopeInfo nodeId="5938312768538487391" fileName="MoveStaticMethod.java" startLine="37" startPosition="25" endLine="38" endPosition="282" />
     <scopeInfo nodeId="418677511065471955" fileName="MoveStaticMethod.java" startLine="44" startPosition="69" endLine="45" endPosition="96" />
     <scopeInfo nodeId="418677511065472041" fileName="MoveStaticMethod.java" startLine="48" startPosition="86" endLine="49" endPosition="99" />
     <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="17" startPosition="29" endLine="19" endPosition="43" />
     <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="5938312768538487390" fileName="MoveStaticMethod.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="418677511065471952" varName="refactoringContext" />
     </scopeInfo>
@@ -116,6 +122,7 @@
     <scopeInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="25" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="418677511065471956" varName="entity" />
     </scopeInfo>
+    <unitInfo nodeId="5938312768538487390" fileName="MoveStaticMethod.java" startLine="36" startPosition="74" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod$1" />
     <unitInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod" />
     <unitInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod_Target" />
   </root>

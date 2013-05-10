@@ -439,5 +439,10 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     public void executeCommandInEDT(Runnable r) {
       throw new UnsupportedOperationException();
     }
+
+    @Override
+    public void executeUndoTransparentCommand(Runnable r) {
+      throw new UnsupportedOperationException();
+    }
   }
 }
