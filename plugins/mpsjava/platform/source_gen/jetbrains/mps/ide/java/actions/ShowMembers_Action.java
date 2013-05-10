@@ -15,7 +15,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.Disposable;
 import jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup;
 import com.intellij.openapi.project.Project;
@@ -58,8 +58,8 @@ public class ShowMembers_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     {
@@ -75,6 +75,10 @@ public class ShowMembers_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
@@ -84,7 +88,7 @@ public class ShowMembers_Action extends BaseAction {
       // model contains only SNodePointers 
       final Wrappers._T<MemberContainerStructureModel> model = new Wrappers._T<MemberContainerStructureModel>();
 
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           SNode container = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false);
           title.value = container.getPresentation();
@@ -98,7 +102,7 @@ public class ShowMembers_Action extends BaseAction {
         }
       };
 
-      FileStructurePopup popup = new FileStructurePopup(model.value, ((Project) MapSequence.fromMap(_params).get("project")), auxDisposable, false);
+      FileStructurePopup popup = new FileStructurePopup(model.value, ((Project) MapSequence.fromMap(_params).get("ideaProject")), auxDisposable, false);
       popup.setTitle(title.value);
       popup.show();
     } catch (Throwable t) {

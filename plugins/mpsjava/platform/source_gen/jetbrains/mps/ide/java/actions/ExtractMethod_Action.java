@@ -22,10 +22,9 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.openapi.editor.EditorContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -99,7 +98,7 @@ public class ExtractMethod_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.extractMethod");
       final Wrappers._T<ExtractMethodRefactoringParameters> params = new Wrappers._T<ExtractMethodRefactoringParameters>();
       final Wrappers._T<ExtractMethodRefactoring> refactoring = new Wrappers._T<ExtractMethodRefactoring>();
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      ((EditorContext) MapSequence.fromMap(_params).get("context")).getRepository().getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           params.value = ExtractMethodFactory.createParameters(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
           refactoring.value = ExtractMethodFactory.createRefactoring(params.value);

@@ -14,11 +14,12 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.openapi.editor.EditorContext;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -115,9 +116,10 @@ public class GoToInheritedClassifier_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      final ModelAccess modelAccess = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess();
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
       final List<String> finderClasses = ListSequence.fromList(new ArrayList<String>());
-      ModelAccess.instance().runReadAction(new Runnable() {
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
             ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
@@ -133,7 +135,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
         @Override
         public void run(@NotNull final ProgressIndicator p) {
-          ModelAccess.instance().runReadAction(new Runnable() {
+          modelAccess.runReadAction(new Runnable() {
             public void run() {
               for (String finderClass : ListSequence.fromList(finderClasses)) {
                 List<SNode> list = FindUtils.executeFinder(finderClass, ((SNode) MapSequence.fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p));

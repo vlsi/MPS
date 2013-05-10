@@ -15,12 +15,11 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.openapi.editor.EditorContext;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.openapi.editor.EditorContext;
 import java.awt.Point;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import java.util.List;
@@ -31,6 +30,7 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Comparator;
 import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.SurroundWithIntention;
@@ -83,8 +83,8 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
@@ -101,7 +101,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
       int y = selectedCell.getY();
       y += selectedCell.getHeight();
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           ActionGroup group = ShowSurroundWithIntentions_Action.this.getActionGroup(_params);
           if (group.getChildren(event).length == 0) {
@@ -154,7 +154,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
             public void run() {
               finalPair.o1.execute(finalPair.o2, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
             }
-          }, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+          }, ((MPSProject) MapSequence.fromMap(_params).get("project")));
         }
       });
     }

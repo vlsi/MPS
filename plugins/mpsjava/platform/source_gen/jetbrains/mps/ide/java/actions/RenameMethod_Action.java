@@ -13,9 +13,10 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.RenameUtil;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -23,7 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.platform.refactoring.RenameMethodDialog;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -90,15 +90,16 @@ public class RenameMethod_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.rename");
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
       final Wrappers._T<List<SNode>> overridingList = new Wrappers._T<List<SNode>>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           overridingList.value = MethodRefactoringUtils.findOverridingMethods(RenameUtil.getMethodDeclaration(((SNode) MapSequence.fromMap(_params).get("target"))), new EmptyProgressMonitor());
         }
       });
 
       final Wrappers._T<String> oldName = new Wrappers._T<String>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("target")), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
             oldName.value = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("target")), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name");
@@ -114,7 +115,7 @@ public class RenameMethod_Action extends BaseAction {
       if (newName == null) {
         return;
       }
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      modelAccess.runReadInEDT(new Runnable() {
         @Override
         public void run() {
           SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));

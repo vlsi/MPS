@@ -20,6 +20,8 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.StructureModificationData;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.Collection;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -80,9 +82,14 @@ public class RefactoringContext {
 
   private boolean myCachesAreUpToDate = false;
 
-  public RefactoringContext(Project project, IRefactoring refactoring) {
+
+  public RefactoringContext(@NotNull Project project, IRefactoring refactoring) {
     myProject = project;
     setRefactoring(refactoring);
+  }
+
+  public SRepository getRepository() {
+    return myProject.getRepository();
   }
 
   public StructureModification getStructureModification() {
