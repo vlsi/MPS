@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="38" startPosition="45" endLine="50" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy$2" />
   <root nodeRef="r:9f33ff09-28dd-4da2-8dbe-cebf2d7195a4(jetbrains.mps.refactoring.tests)/8306023725008093118">
     <nodeInfo nodeId="8306023725008093139" fileName="MoveConceptRefactoringTester.java" startLine="27" startPosition="189" endLine="28" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1122791325004695785" fileName="MoveConceptRefactoringTester.java" startLine="28" startPosition="52" endLine="29" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -377,6 +376,14 @@
     <nodeInfo nodeId="8306023725008095441" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="34" startPosition="7" endLine="35" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8306023725008095448" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="35" startPosition="92" endLine="36" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8306023725008095454" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="36" startPosition="88" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008095495" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="40" startPosition="25" endLine="41" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008095501" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="41" startPosition="102" endLine="42" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008095507" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="42" startPosition="48" endLine="43" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008095520" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="43" startPosition="82" endLine="44" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008095531" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="44" startPosition="193" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008095536" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="45" startPosition="55" endLine="46" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008095541" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="46" startPosition="49" endLine="47" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008095546" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="47" startPosition="70" endLine="48" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8306023725008095468" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="50" startPosition="7" endLine="51" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8306023725008095474" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="51" startPosition="68" endLine="52" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8306023725008095587" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="60" startPosition="40" endLine="61" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -392,6 +399,7 @@
     <nodeInfo nodeId="7711885061309965794" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="7711885061309965793" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="29" startPosition="82" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8306023725008095580" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="59" startPosition="17" endLine="64" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8306023725008095465" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="39" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8306023725008095458" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="37" startPosition="45" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8306023725008095564" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="58" startPosition="29" endLine="71" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8306023725008095560" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="57" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -408,10 +416,17 @@
     <scopeInfo nodeId="8306023725008095566" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="68" startPosition="35" endLine="70" endPosition="32" />
     <scopeInfo nodeId="7711885061309965794" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="8306023725008095586" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="60" startPosition="40" endLine="63" endPosition="23" />
+    <scopeInfo nodeId="8306023725008095494" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="40" startPosition="25" endLine="48" endPosition="64">
+      <varInfo nodeId="8306023725008095521" varName="link" />
+      <varInfo nodeId="8306023725008095502" varName="model" />
+      <varInfo nodeId="8306023725008095508" varName="node" />
+      <varInfo nodeId="8306023725008095496" varName="structureModelDescriptor" />
+    </scopeInfo>
     <scopeInfo nodeId="8306023725008095579" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="59" startPosition="17" endLine="67" endPosition="97">
       <varInfo nodeId="8306023725008095606" varName="root" />
       <varInfo nodeId="8306023725008095600" varName="sModel" />
     </scopeInfo>
+    <scopeInfo nodeId="8306023725008095465" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="39" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="8306023725008095563" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="58" startPosition="29" endLine="71" endPosition="13" />
     <scopeInfo nodeId="8306023725008095560" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="57" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="8306023725008095552" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="55" startPosition="25" endLine="73" endPosition="11" />
@@ -430,6 +445,7 @@
       <varInfo nodeId="8306023725008095433" varName="testRefactoringTargetLanguage" />
     </scopeInfo>
     <unitInfo nodeId="7711885061309965794" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="30" startPosition="45" endLine="34" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy$1" />
+    <unitInfo nodeId="8306023725008095464" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="38" startPosition="45" endLine="50" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy$2" />
     <unitInfo nodeId="8306023725008095559" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="56" startPosition="49" endLine="73" endPosition="9" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy$4" />
     <unitInfo nodeId="8306023725008095486" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="53" startPosition="41" endLine="75" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy$3" />
     <unitInfo nodeId="8306023725008095415" fileName="RenameLinkRefactoringTester_Hierarchy.java" startLine="23" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy" />
