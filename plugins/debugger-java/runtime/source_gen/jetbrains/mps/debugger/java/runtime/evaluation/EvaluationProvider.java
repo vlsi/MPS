@@ -14,7 +14,6 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -41,7 +40,7 @@ public class EvaluationProvider implements IEvaluationProvider {
 
   public EvaluationProvider(@NotNull DebugSession debugSession) {
     myDebugSession = debugSession;
-    DebugSessionManagerComponent.getInstance(myDebugSession.getProject()).addDebugSessionListener(new DebugSessionManagerComponent.DebugSessionAdapter() {
+    DebugSessionManagerComponent.getInstance(myDebugSession.getIdeaProject()).addDebugSessionListener(new DebugSessionManagerComponent.DebugSessionAdapter() {
       @Override
       public void registered(AbstractDebugSession session) {
         init();
@@ -50,7 +49,7 @@ public class EvaluationProvider implements IEvaluationProvider {
       @Override
       public void detached(AbstractDebugSession session) {
         dispose();
-        DebugSessionManagerComponent.getInstance(myDebugSession.getProject()).removeDebugSessionListener(this);
+        DebugSessionManagerComponent.getInstance(myDebugSession.getIdeaProject()).removeDebugSessionListener(this);
       }
     });
   }
@@ -59,7 +58,7 @@ public class EvaluationProvider implements IEvaluationProvider {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         EvaluationModule module = new EvaluationModule();
-        MPSModuleRepository.getInstance().registerModule(module, ProjectHelper.toMPSProject(myDebugSession.getProject()));
+        MPSModuleRepository.getInstance().registerModule(module, myDebugSession.getProject());
         myContainerModule = module.getModuleReference();
       }
     });
@@ -68,7 +67,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   private synchronized void dispose() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().unregisterModule((AbstractModule) myContainerModule.resolve(MPSModuleRepository.getInstance()), ProjectHelper.toMPSProject(myDebugSession.getProject()));
+        MPSModuleRepository.getInstance().unregisterModule((AbstractModule) myContainerModule.resolve(MPSModuleRepository.getInstance()), myDebugSession.getProject());
         myContainerModule = null;
       }
     });
@@ -145,7 +144,7 @@ public class EvaluationProvider implements IEvaluationProvider {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override
           public void run() {
-            EditWatchDialog editWatchDialog = new EditWatchDialog(new ProjectOperationContext(ProjectHelper.toMPSProject(myDebugSession.getProject())), EvaluationProvider.this, model, new _FunctionTypes._void_P0_E0() {
+            EditWatchDialog editWatchDialog = new EditWatchDialog(new ProjectOperationContext(myDebugSession.getProject()), EvaluationProvider.this, model, new _FunctionTypes._void_P0_E0() {
               public void invoke() {
                 addWatch(model);
               }

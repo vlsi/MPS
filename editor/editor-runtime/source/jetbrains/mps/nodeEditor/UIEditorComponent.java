@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.event.SModelEvent;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.KeyStroke;
 import java.util.List;

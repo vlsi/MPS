@@ -8,13 +8,13 @@ import org.apache.log4j.LogManager;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.Dimension;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -55,19 +55,23 @@ public class FindInstancesDialog extends BaseDialog {
   private static Logger LOG = LogManager.getLogger(QueryFinder.class);
   private JPanel myPanel = new JPanel(new BorderLayout());
   private IOperationContext myContext;
+  private ModelAccess myModelAccess;
   private EmbeddableEditor myEditor;
   private ScopeEditor myScope;
   private SNode myNode;
   private boolean myDisposed = false;
 
+
   public FindInstancesDialog(final SNode concept, final IOperationContext context, final SModule module) {
     super(ProjectHelper.toMainFrame(context.getProject()), "Find Instances by condition");
     this.myContext = context;
+    this.myModelAccess = context.getProject().getRepository().getModelAccess();
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+    myModelAccess.executeCommand(new Runnable() {
       public void run() {
-        FindInstancesDialog.this.myNode = _quotation_createNode_vfh0rq_a0a0a4a7((concept == null ?
+        FindInstancesDialog.this.myNode = _quotation_createNode_vfh0rq_a0a0a0a6a9((concept == null ?
           SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626") :
           concept
         ));
@@ -89,7 +93,7 @@ public class FindInstancesDialog extends BaseDialog {
     });
     if (module instanceof Language) {
       final Set<Language> languageList = SetSequence.fromSet(new HashSet<Language>());
-      ModelAccess.instance().runReadAction(new Runnable() {
+      myModelAccess.runReadAction(new Runnable() {
         public void run() {
           new LanguageDependenciesManager((Language) module).collectAllExtendedLanguages(languageList);
         }
@@ -103,7 +107,7 @@ public class FindInstancesDialog extends BaseDialog {
     if (module instanceof Language) {
       this.myEditor.addLanguageStructureModel((Language) module);
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myModelAccess.runReadAction(new Runnable() {
       public void run() {
         FindInstancesDialog.this.myScope = new ScopeEditor(new ScopeOptions());
         FindInstancesDialog.this.myPanel.add(FindInstancesDialog.this.myScope.getComponent(), BorderLayout.SOUTH);
@@ -119,7 +123,7 @@ public class FindInstancesDialog extends BaseDialog {
   @BaseDialog.Button(position = 0, name = "Find", mnemonic = 'F', defaultButton = true)
   public void buttonFind() {
     final Wrappers._T<Language> language = new Wrappers._T<Language>();
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    jetbrains.mps.smodel.ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         language.value = SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(FindInstancesDialog.this.myNode));
       }
@@ -135,7 +139,7 @@ public class FindInstancesDialog extends BaseDialog {
     final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
     final Wrappers._T<String> fqName = new Wrappers._T<String>();
     final Wrappers._T<ClassLoader> loader = new Wrappers._T<ClassLoader>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myModelAccess.runReadAction(new Runnable() {
       public void run() {
         model.value = SNodeOperations.getModel(myNode);
         fqName.value = jetbrains.mps.util.SNodeOperations.getModelLongName(model.value) + "." + QueryExecutor.GENERATED_QUERY_NAME;
@@ -156,7 +160,7 @@ public class FindInstancesDialog extends BaseDialog {
       return;
     }
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myModelAccess.runReadAction(new Runnable() {
       public void run() {
         final IScope scope = FindInstancesDialog.this.myScope.getOptions().getScope(FindInstancesDialog.this.myContext, model.value);
         FindInstancesDialog.this.execute(FindInstancesDialog.this.myContext.getProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
@@ -171,7 +175,7 @@ public class FindInstancesDialog extends BaseDialog {
 
   public void execute(Project project, Query query, final SNode queryNode, final IScope scope) {
     final Wrappers._T<SearchQuery> searchQuery = new Wrappers._T<SearchQuery>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myModelAccess.runReadAction(new Runnable() {
       public void run() {
         if (SLinkOperations.getTarget(queryNode, "conceptDeclaration", false) != null) {
           searchQuery.value = new SearchQuery(new NodeHolder(SLinkOperations.getTarget(queryNode, "conceptDeclaration", false)), scope);
@@ -190,7 +194,7 @@ public class FindInstancesDialog extends BaseDialog {
       return;
     }
     myDisposed = true;
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    myModelAccess.runWriteInEDT(new Runnable() {
       public void run() {
         myEditor.disposeEditor();
       }
@@ -198,7 +202,7 @@ public class FindInstancesDialog extends BaseDialog {
     super.dispose();
   }
 
-  private static SNode _quotation_createNode_vfh0rq_a0a0a4a7(Object parameter_1) {
+  private static SNode _quotation_createNode_vfh0rq_a0a0a0a6a9(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

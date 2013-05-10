@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.dialogs.project;
 
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Action;
 import java.awt.HeadlessException;
@@ -23,9 +24,10 @@ import java.awt.event.ActionEvent;
 
 public abstract class BasePropertiesDialog extends BaseTabbedBindedDialog {
   protected BasePropertiesDialog(String text, IOperationContext operationContext) throws HeadlessException {
-    super(text, operationContext);
+    super(text, operationContext.getProject());
   }
 
+  @NotNull
   @Override
   protected Action[] createActions() {
     return new Action[]{

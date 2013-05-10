@@ -45,6 +45,8 @@ public interface ModelAccess {
    */
   void runReadAction(Runnable r);
 
+  void runReadInEDT(Runnable r);
+
   /**
    * Modifications to models can only be performed from within managed actions, which hold the appropriate write lock.
    * The method obtains such a lock and executes the provided action.
@@ -59,4 +61,8 @@ public interface ModelAccess {
    * touch any UI elements and perform other EDT-bound actions of the IntelliJ platform.
    */
   void runWriteInEDT(Runnable r);
+
+  void executeCommand(Runnable r);
+
+  void executeCommandInEDT(Runnable r);
 }

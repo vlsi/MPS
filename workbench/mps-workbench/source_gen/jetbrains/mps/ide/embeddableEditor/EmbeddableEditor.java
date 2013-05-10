@@ -4,6 +4,7 @@ package jetbrains.mps.ide.embeddableEditor;
 
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
@@ -21,7 +22,6 @@ import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
@@ -58,6 +58,7 @@ public class EmbeddableEditor {
   private MPSFileNodeEditor myNodeEditor;
   private EmbeddableEditorPanel myPanel;
   private final IOperationContext myContext;
+  private SRepository myRepository;
   private final SModel myModel;
   private boolean myModelCreated;
   private SNode myNode;
@@ -68,6 +69,7 @@ public class EmbeddableEditor {
     modelInitializer.invoke(myModel);
     TemporaryModels.getInstance().addMissingModuleImports(myModel);
     myContext = new ModuleContext(myModel.getModule(), p);
+    myRepository = p.getRepository();
     myModelCreated = true;
   }
 
@@ -117,7 +119,7 @@ public class EmbeddableEditor {
   }
 
   public void make(final Set<IClassPathItem> classPath) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         TemporaryModels.getInstance().addMissingModuleImports(myModel);
       }
@@ -195,7 +197,7 @@ public class EmbeddableEditor {
   }
 
   public void addLanguageStructureModel(final Language language) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    myRepository.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SModelReference ref = (jetbrains.mps.smodel.SModelReference) language.getStructureModelDescriptor().getReference();
         ((SModelInternal) myModel).addModelImport(ref, false);
@@ -204,7 +206,7 @@ public class EmbeddableEditor {
   }
 
   public void addLanguage(final Language language) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         ((SModelInternal) myModel).addLanguage(language.getModuleReference());
       }
@@ -212,7 +214,7 @@ public class EmbeddableEditor {
   }
 
   public void addModel(final SModelReference model) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         ((SModelInternal) myModel).addModelImport(model, false);
       }
@@ -222,7 +224,7 @@ public class EmbeddableEditor {
   public void disposeEditor() {
     myNodeEditor.dispose();
     if (myModelCreated) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      myRepository.getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           TemporaryModels.getInstance().dispose(myModel);
         }

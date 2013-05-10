@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -45,6 +44,11 @@ public abstract class Project implements MPSModuleOwner {
   protected final Set<SModuleReference> myModules = new LinkedHashSet<SModuleReference>();
   private final ProjectScope myScope = new ProjectScope();
   private boolean isDisposed;
+  private final SRepository myRepository;
+
+  protected Project() {
+    myRepository = new ProjectRepository(this);
+  }
 
   public ProjectScope getScope() {
     return myScope;
@@ -53,7 +57,7 @@ public abstract class Project implements MPSModuleOwner {
   public abstract List<String> getWatchedModulesPaths();
 
   public SRepository getRepository() {
-    return MPSModuleRepository.getInstance();
+    return myRepository;
   }
 
   @NotNull
@@ -142,6 +146,10 @@ public abstract class Project implements MPSModuleOwner {
   @Override
   public boolean isHidden() {
     return false;
+  }
+
+  public void save() {
+    throw new UnsupportedOperationException();
   }
 
   public class ProjectScope extends DefaultScope {

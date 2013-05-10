@@ -190,7 +190,7 @@
     <nodeInfo nodeId="3990508698139428513" fileName="CppDebugSession.java" startLine="70" startPosition="26" endLine="71" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139428565" fileName="CppDebugSession.java" startLine="91" startPosition="64" endLine="92" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139428568" fileName="CppDebugSession.java" startLine="92" startPosition="44" endLine="93" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139428576" fileName="CppDebugSession.java" startLine="93" startPosition="59" endLine="94" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139428576" fileName="CppDebugSession.java" startLine="93" startPosition="59" endLine="94" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139428753" fileName="CppDebugSession.java" startLine="103" startPosition="105" endLine="104" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139428738" fileName="CppDebugSession.java" startLine="106" startPosition="10" endLine="107" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139428745" fileName="CppDebugSession.java" startLine="111" startPosition="64" endLine="112" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -280,7 +280,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428533" fileName="CppDebugSession.java" startLine="79" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="3990508698139428538" fileName="CppDebugSession.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="3990508698139428564" fileName="CppDebugSession.java" startLine="91" startPosition="64" endLine="94" endPosition="123" />
+    <scopeInfo nodeId="3990508698139428564" fileName="CppDebugSession.java" startLine="91" startPosition="64" endLine="94" endPosition="127" />
     <scopeInfo nodeId="3990508698139428657" fileName="CppDebugSession.java" startLine="141" startPosition="0" endLine="144" endPosition="0" />
     <scopeInfo nodeId="3990508698139428663" fileName="CppDebugSession.java" startLine="145" startPosition="0" endLine="148" endPosition="0" />
     <scopeInfo nodeId="3990508698139428693" fileName="CppDebugSession.java" startLine="152" startPosition="56" endLine="155" endPosition="7" />

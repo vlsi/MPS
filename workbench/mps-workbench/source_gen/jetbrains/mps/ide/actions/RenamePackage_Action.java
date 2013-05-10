@@ -12,12 +12,12 @@ import jetbrains.mps.ide.ui.smodel.PackageNode;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.Set;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import java.util.Set;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -58,6 +58,10 @@ public class RenamePackage_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
@@ -71,21 +75,18 @@ public class RenamePackage_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<Set<SNode>> nodes = new Wrappers._T<Set<SNode>>();
       final PackageNode treeNode = (PackageNode) ((TreeNode) MapSequence.fromMap(_params).get("ppNode"));
       final String name = treeNode.getPackage();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          nodes.value = treeNode.getNodesUnderPackage();
-        }
-      });
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
       final String newName = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter New Package Name", name);
       if (newName == null) {
         return;
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
-          for (SNode node : nodes.value) {
+          Set<SNode> nodesUnderPackage = treeNode.getNodesUnderPackage();
+          for (SNode node : nodesUnderPackage) {
             String oldPackage = SPropertyOperations.getString(node, "virtualPackage");
             String newPackage = newName + oldPackage.substring(name.length());
             SPropertyOperations.set(node, "virtualPackage", (newPackage.length() > 0 ?

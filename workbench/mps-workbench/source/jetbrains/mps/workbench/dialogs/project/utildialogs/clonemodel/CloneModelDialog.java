@@ -18,41 +18,47 @@ package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.model.RootReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
-import org.jdesktop.beansbinding.*;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jdesktop.beansbinding.AutoBinding;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
+import org.jdesktop.beansbinding.BeanProperty;
+import org.jdesktop.beansbinding.Bindings;
+import org.jdesktop.beansbinding.Converter;
+import org.jdesktop.beansbinding.Property;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+import java.awt.GridBagConstraints;
 
 public class CloneModelDialog extends BaseStretchingBindedDialog {
-  private static final Logger LOG = LogManager.getLogger(CloneModelDialog.class);
-
   private CloneModelProperties myModelProperties;
   private SModel myCloningModel;
+  private SModule myModule;
   private JComboBox myModelStereotype;
 
-  public CloneModelDialog(final SModel modelDescriptor, IOperationContext operationContext) {
-    super("Clone Model " + jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor), operationContext);
+  public CloneModelDialog(final SModel modelDescriptor, Project project) {
+    super("Clone Model " + jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor), project);
 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        myCloningModel = modelDescriptor;
-      }
-    });
-
+    myCloningModel = modelDescriptor;
+    myModule = modelDescriptor.getModule();
     collectModelProps();
     initUI();
     myModelStereotype.setSelectedItem(SModelStereotype.getStereotype(modelDescriptor));
@@ -159,54 +165,50 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     final String modelName = myModelProperties.getModelName();
     RootReference reference = myModelProperties.getRoot();
 
-    IOperationContext operationContext = getOperationContext();
-    final SModule module = operationContext.getModule();
-    assert module != null;
-
-    Project project = getOperationContext().getProject();
+    Project project = getProject();
     assert project != null;
 
-    for (org.jetbrains.mps.openapi.model.SModel model : module.getModels()) {
+    for (org.jetbrains.mps.openapi.model.SModel model : myModule.getModels()) {
       if (model.getModelName().equals(modelName)) {
         setErrorText("Model with the same name already exists. Please choose another name");
         return false;
       }
     }
 
-    final ModelRoot modelRoot = ModuleUtil.findModelRoot(module, reference.getPath());
-    final SModel modelDescriptor = ModelAccess.instance().runWriteActionInCommand(
-        new Computable<SModel>() {
-          @Override
-          public SModel compute() {
-            EditableSModel model = (EditableSModel) modelRoot.createModel(modelName);
+    final ModelRoot modelRoot = ModuleUtil.findModelRoot(myModule, reference.getPath());
+    final SModel[] newModel = new SModel[]{null};
+    project.getRepository().getModelAccess().executeCommand(new Runnable() {
+      @Override
+      public void run() {
+        EditableSModel model = (EditableSModel) modelRoot.createModel(modelName);
 
-            for (SModelReference ref : myModelProperties.getImportedModels()) {
-              ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(ref, false);
-            }
+        for (SModelReference ref : myModelProperties.getImportedModels()) {
+          ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(ref, false);
+        }
 
-            for (SModuleReference mr : myModelProperties.getImportedLanguages()) {
-              ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(mr);
-            }
+        for (SModuleReference mr : myModelProperties.getImportedLanguages()) {
+          ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(mr);
+        }
 
-            for (SModuleReference mr : myModelProperties.getImportedDevkits()) {
-              ((jetbrains.mps.smodel.SModelInternal) model).addDevKit(mr);
-            }
+        for (SModuleReference mr : myModelProperties.getImportedDevkits()) {
+          ((jetbrains.mps.smodel.SModelInternal) model).addDevKit(mr);
+        }
 
-            for (SModuleReference mr : myModelProperties.getLanguagesInGeneration()) {
-              ((jetbrains.mps.smodel.SModelInternal) model).addEngagedOnGenerationLanguage(mr);
-            }
+        for (SModuleReference mr : myModelProperties.getLanguagesInGeneration()) {
+          ((jetbrains.mps.smodel.SModelInternal) model).addEngagedOnGenerationLanguage(mr);
+        }
 
-            CopyUtil.copyModelContent(myCloningModel, model);
+        CopyUtil.copyModelContent(myCloningModel, model);
 
-            // todo: register here
-            model.setChanged(true);
-            model.save();
+        // todo: register here
+        model.setChanged(true);
+        model.save();
 
-            return model;
-          }
-        }, project);
+        newModel[0] = model;
+      }
+    });
 
-    if (modelDescriptor == null) {
+    if (newModel[0] == null) {
       setErrorText("You can't create a model in the model root that you specified");
       return false;
     }
@@ -217,7 +219,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
       @Override
       public void run() {
         pane.rebuildTree();
-        pane.selectModel(modelDescriptor, false);
+        pane.selectModel(newModel[0], false);
       }
     });
     return true;

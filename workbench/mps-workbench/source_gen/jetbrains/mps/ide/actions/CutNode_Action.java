@@ -14,11 +14,10 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -64,12 +63,8 @@ public class CutNode_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     {
@@ -110,7 +105,7 @@ public class CutNode_Action extends BaseAction {
   }
 
   private ProjectPane getProjectPane(final Map<String, Object> _params) {
-    return ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
+    return ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")));
   }
 
   protected static Logger LOG = LogManager.getLogger(CutNode_Action.class);

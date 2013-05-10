@@ -15,11 +15,14 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import javax.swing.JOptionPane;
+import java.awt.Frame;
 import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -71,7 +74,7 @@ public class DeleteModules_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -83,6 +86,10 @@ public class DeleteModules_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("selSize") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
+      return false;
+    }
     return true;
   }
 
@@ -90,15 +97,26 @@ public class DeleteModules_Action extends BaseAction {
     try {
       String message = "Are you sure you want to delete selected modules? This operation is not undoable.";
       final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, true);
-      DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Modules", message, filesOption);
+      DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Modules", message, filesOption);
       dialog.show();
       if (!(dialog.isOK())) {
         return;
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+      if (!(filesOption.selected) && Sequence.fromIterable(((Iterable<SModule>) ((List<SModule>) MapSequence.fromMap(_params).get("modules")))).any(new IWhereFilter<SModule>() {
+        public boolean accept(SModule it) {
+          return !(((MPSProject) MapSequence.fromMap(_params).get("project")).isProjectModule(it));
+        }
+      })) {
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Non-project modules can only be deleted with files deletion enabled", "Can't delete module", JOptionPane.WARNING_MESSAGE);
+        return;
+      }
+
+      modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
           for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
-            DeleteModuleHelper.deleteModule(((Project) MapSequence.fromMap(_params).get("project")), module, false, filesOption.selected);
+            DeleteModuleHelper.deleteModule(((MPSProject) MapSequence.fromMap(_params).get("project")), module, false, filesOption.selected);
           }
         }
       });

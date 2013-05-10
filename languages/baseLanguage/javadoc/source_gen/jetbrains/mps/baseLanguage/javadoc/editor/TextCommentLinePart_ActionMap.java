@@ -152,7 +152,7 @@ public class TextCommentLinePart_ActionMap {
               return;
             } else {
               //  This is the end of line 
-              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
                 public void run() {
                   SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(currentNode), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
                   SNode nextLine = SNodeOperations.cast(SNodeOperations.getNextSibling(curLine), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");

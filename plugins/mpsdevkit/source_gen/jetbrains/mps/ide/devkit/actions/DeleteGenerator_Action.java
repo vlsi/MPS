@@ -11,11 +11,10 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -59,7 +58,7 @@ public class DeleteGenerator_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -79,18 +78,20 @@ public class DeleteGenerator_Action extends BaseAction {
       final DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", true, false);
       final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, false);
 
-      DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Generator", "Are you sure you want to delete generator?\n\nThis operation is not undoable.", safeOption, filesOption);
+      DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Generator", "Are you sure you want to delete generator?\n\nThis operation is not undoable.", safeOption, filesOption);
       dialog.show();
       if (!(dialog.isOK())) {
         return;
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+      modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
           Generator generator = ((Generator) ((SModule) MapSequence.fromMap(_params).get("module")));
           Language sourceLanguage = generator.getSourceLanguage();
           for (GeneratorDescriptor gen : ListSequence.fromList(sourceLanguage.getModuleDescriptor().getGenerators())) {
             if (generator.getModuleReference().getModuleId().equals(gen.getId())) {
-              DeleteGeneratorHelper.deleteGenerator(((Project) MapSequence.fromMap(_params).get("project")), sourceLanguage, generator, gen, safeOption.selected, filesOption.selected);
+              DeleteGeneratorHelper.deleteGenerator(((MPSProject) MapSequence.fromMap(_params).get("project")), sourceLanguage, generator, gen, safeOption.selected, filesOption.selected);
               break;
             }
           }

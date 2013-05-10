@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -28,7 +27,7 @@ public class BaseTestBody {
   }
 
   public void addNodeById(final String id) throws Exception {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SNode node = BaseTestBody.this.myModel.getNode(SNodeId.fromString(id));
         SNode copy = CopyUtil.copy(node, ((Map<SNode, SNode>) BaseTestBody.this.myMap), true);
