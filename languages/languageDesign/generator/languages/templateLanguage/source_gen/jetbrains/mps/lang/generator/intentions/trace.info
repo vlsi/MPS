@@ -3618,31 +3618,30 @@
     <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="60" startPosition="5" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7902250453896652146" fileName="NewTemplateInWeavingRule_Intention.java" startLine="64" startPosition="91" endLine="65" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7902250453896652154" fileName="NewTemplateInWeavingRule_Intention.java" startLine="66" startPosition="29" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8699312839322426946" fileName="NewTemplateInWeavingRule_Intention.java" startLine="69" startPosition="208" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8699312839322471843" fileName="NewTemplateInWeavingRule_Intention.java" startLine="71" startPosition="5" endLine="72" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="75" startPosition="53" endLine="76" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="79" startPosition="35" endLine="80" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="84" startPosition="37" endLine="85" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="86" startPosition="5" endLine="87" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8699312839322230165" fileName="NewTemplateInWeavingRule_Intention.java" startLine="94" startPosition="87" endLine="95" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8699312839322230177" fileName="NewTemplateInWeavingRule_Intention.java" startLine="98" startPosition="78" endLine="99" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8699312839322230183" fileName="NewTemplateInWeavingRule_Intention.java" startLine="99" startPosition="92" endLine="100" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8699312839322230365" fileName="NewTemplateInWeavingRule_Intention.java" startLine="101" startPosition="47" endLine="102" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8699312839322230219" fileName="NewTemplateInWeavingRule_Intention.java" startLine="103" startPosition="40" endLine="104" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8699312839322230237" fileName="NewTemplateInWeavingRule_Intention.java" startLine="106" startPosition="7" endLine="107" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8699312839322230245" fileName="NewTemplateInWeavingRule_Intention.java" startLine="107" startPosition="157" endLine="108" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8699312839322230251" fileName="NewTemplateInWeavingRule_Intention.java" startLine="108" startPosition="47" endLine="109" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="320659223196754128" fileName="NewTemplateInWeavingRule_Intention.java" startLine="109" startPosition="82" endLine="110" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453077" fileName="NewTemplateInWeavingRule_Intention.java" startLine="110" startPosition="245" endLine="111" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8699312839322230394" fileName="NewTemplateInWeavingRule_Intention.java" startLine="111" startPosition="49" endLine="112" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8699312839322230405" fileName="NewTemplateInWeavingRule_Intention.java" startLine="113" startPosition="107" endLine="114" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8699312839322230416" fileName="NewTemplateInWeavingRule_Intention.java" startLine="116" startPosition="138" endLine="117" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636454271" fileName="NewTemplateInWeavingRule_Intention.java" startLine="120" startPosition="7" endLine="121" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8699312839322230307" fileName="NewTemplateInWeavingRule_Intention.java" startLine="121" startPosition="24" endLine="122" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8699312839322230313" fileName="NewTemplateInWeavingRule_Intention.java" startLine="122" startPosition="148" endLine="123" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="126" startPosition="48" endLine="127" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8699312839322471843" fileName="NewTemplateInWeavingRule_Intention.java" startLine="68" startPosition="5" endLine="69" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="72" startPosition="53" endLine="73" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="76" startPosition="35" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="81" startPosition="37" endLine="82" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="83" startPosition="5" endLine="84" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8699312839322230165" fileName="NewTemplateInWeavingRule_Intention.java" startLine="91" startPosition="87" endLine="92" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8699312839322230177" fileName="NewTemplateInWeavingRule_Intention.java" startLine="95" startPosition="78" endLine="96" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8699312839322230183" fileName="NewTemplateInWeavingRule_Intention.java" startLine="96" startPosition="92" endLine="97" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8699312839322230365" fileName="NewTemplateInWeavingRule_Intention.java" startLine="98" startPosition="47" endLine="99" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8699312839322230219" fileName="NewTemplateInWeavingRule_Intention.java" startLine="100" startPosition="40" endLine="101" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8699312839322230237" fileName="NewTemplateInWeavingRule_Intention.java" startLine="103" startPosition="7" endLine="104" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8699312839322230245" fileName="NewTemplateInWeavingRule_Intention.java" startLine="104" startPosition="157" endLine="105" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8699312839322230251" fileName="NewTemplateInWeavingRule_Intention.java" startLine="105" startPosition="47" endLine="106" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="320659223196754128" fileName="NewTemplateInWeavingRule_Intention.java" startLine="106" startPosition="82" endLine="107" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636453077" fileName="NewTemplateInWeavingRule_Intention.java" startLine="107" startPosition="245" endLine="108" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8699312839322230394" fileName="NewTemplateInWeavingRule_Intention.java" startLine="108" startPosition="49" endLine="109" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8699312839322230405" fileName="NewTemplateInWeavingRule_Intention.java" startLine="110" startPosition="107" endLine="111" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8699312839322230416" fileName="NewTemplateInWeavingRule_Intention.java" startLine="113" startPosition="138" endLine="114" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636454271" fileName="NewTemplateInWeavingRule_Intention.java" startLine="117" startPosition="7" endLine="118" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8699312839322230307" fileName="NewTemplateInWeavingRule_Intention.java" startLine="118" startPosition="24" endLine="119" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8699312839322230313" fileName="NewTemplateInWeavingRule_Intention.java" startLine="119" startPosition="148" endLine="120" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="123" startPosition="48" endLine="124" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewTemplateInWeavingRule_Intention#()V" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="91" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="88" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -3651,23 +3650,22 @@
     <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="57" startPosition="84" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7902250453896652152" fileName="NewTemplateInWeavingRule_Intention.java" startLine="65" startPosition="66" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322423515" fileName="NewTemplateInWeavingRule_Intention.java" startLine="68" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="83" startPosition="99" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8699312839322230217" fileName="NewTemplateInWeavingRule_Intention.java" startLine="102" startPosition="24" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322230414" fileName="NewTemplateInWeavingRule_Intention.java" startLine="115" startPosition="127" endLine="118" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="8699312839322230412" fileName="NewTemplateInWeavingRule_Intention.java" startLine="114" startPosition="167" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="80" startPosition="99" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8699312839322230217" fileName="NewTemplateInWeavingRule_Intention.java" startLine="99" startPosition="24" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8699312839322230414" fileName="NewTemplateInWeavingRule_Intention.java" startLine="112" startPosition="127" endLine="115" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="123" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="8699312839322230412" fileName="NewTemplateInWeavingRule_Intention.java" startLine="111" startPosition="167" endLine="116" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="57" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="83" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="8699312839322230188" fileName="NewTemplateInWeavingRule_Intention.java" startLine="100" startPosition="63" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322230403" fileName="NewTemplateInWeavingRule_Intention.java" startLine="112" startPosition="209" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="64" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="98" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="80" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="8699312839322230188" fileName="NewTemplateInWeavingRule_Intention.java" startLine="97" startPosition="63" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="64" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="8699312839322230403" fileName="NewTemplateInWeavingRule_Intention.java" startLine="109" startPosition="209" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="95" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="30" startPosition="47" endLine="30" endPosition="47" />
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="91" startPosition="38" endLine="91" endPosition="38" />
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="88" startPosition="38" endLine="88" endPosition="38" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="33" startPosition="30" endLine="34" endPosition="72" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="37" startPosition="35" endLine="38" endPosition="38" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="41" startPosition="41" endLine="42" endPosition="88" />
@@ -3676,64 +3674,63 @@
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="53" startPosition="44" endLine="54" endPosition="16" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="58" startPosition="53" endLine="59" endPosition="19" />
     <scopeInfo nodeId="7902250453896652153" fileName="NewTemplateInWeavingRule_Intention.java" startLine="66" startPosition="29" endLine="67" endPosition="19" />
-    <scopeInfo nodeId="8699312839322423516" fileName="NewTemplateInWeavingRule_Intention.java" startLine="69" startPosition="208" endLine="70" endPosition="19" />
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="75" startPosition="53" endLine="76" endPosition="134" />
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="79" startPosition="35" endLine="80" endPosition="17" />
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="84" startPosition="37" endLine="85" endPosition="140" />
-    <scopeInfo nodeId="8699312839322230164" fileName="NewTemplateInWeavingRule_Intention.java" startLine="94" startPosition="87" endLine="95" endPosition="28" />
-    <scopeInfo nodeId="8699312839322230218" fileName="NewTemplateInWeavingRule_Intention.java" startLine="103" startPosition="40" endLine="104" endPosition="75" />
-    <scopeInfo nodeId="8699312839322230415" fileName="NewTemplateInWeavingRule_Intention.java" startLine="116" startPosition="138" endLine="117" endPosition="147" />
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="126" startPosition="48" endLine="127" endPosition="53" />
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="72" startPosition="53" endLine="73" endPosition="134" />
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="76" startPosition="35" endLine="77" endPosition="17" />
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="81" startPosition="37" endLine="82" endPosition="140" />
+    <scopeInfo nodeId="8699312839322230164" fileName="NewTemplateInWeavingRule_Intention.java" startLine="91" startPosition="87" endLine="92" endPosition="28" />
+    <scopeInfo nodeId="8699312839322230218" fileName="NewTemplateInWeavingRule_Intention.java" startLine="100" startPosition="40" endLine="101" endPosition="75" />
+    <scopeInfo nodeId="8699312839322230415" fileName="NewTemplateInWeavingRule_Intention.java" startLine="113" startPosition="138" endLine="114" endPosition="147" />
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="123" startPosition="48" endLine="124" endPosition="53" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="91" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="88" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="75" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="79" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="94" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="8699312839322230162" varName="editorContext" />
       <varInfo nodeId="8699312839322230162" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8699312839322230413" fileName="NewTemplateInWeavingRule_Intention.java" startLine="115" startPosition="127" endLine="118" endPosition="11" />
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="126" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="8699312839322230413" fileName="NewTemplateInWeavingRule_Intention.java" startLine="112" startPosition="127" endLine="115" endPosition="11" />
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="123" startPosition="0" endLine="126" endPosition="0" />
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="57" startPosition="84" endLine="61" endPosition="16" />
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="83" startPosition="99" endLine="87" endPosition="30" />
-    <scopeInfo nodeId="8699312839322230189" fileName="NewTemplateInWeavingRule_Intention.java" startLine="101" startPosition="47" endLine="105" endPosition="9" />
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="80" startPosition="99" endLine="84" endPosition="30" />
+    <scopeInfo nodeId="8699312839322230189" fileName="NewTemplateInWeavingRule_Intention.java" startLine="98" startPosition="47" endLine="102" endPosition="9" />
+    <scopeInfo nodeId="8699312839322230320" fileName="NewTemplateInWeavingRule_Intention.java" startLine="64" startPosition="91" endLine="69" endPosition="263">
+      <varInfo nodeId="7902250453896652147" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="57" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="8699312839322230162" varName="editorContext" />
       <varInfo nodeId="8699312839322230162" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="83" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="80" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="8699312839322230162" varName="context" />
       <varInfo nodeId="8699312839322230162" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8699312839322230404" fileName="NewTemplateInWeavingRule_Intention.java" startLine="113" startPosition="107" endLine="119" endPosition="9">
+    <scopeInfo nodeId="8699312839322230404" fileName="NewTemplateInWeavingRule_Intention.java" startLine="110" startPosition="107" endLine="116" endPosition="9">
       <varInfo nodeId="8699312839322230406" varName="contextNodeConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="8699312839322230320" fileName="NewTemplateInWeavingRule_Intention.java" startLine="64" startPosition="91" endLine="72" endPosition="263">
-      <varInfo nodeId="7902250453896652147" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="64" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="8699312839322230162" varName="editorContext" />
       <varInfo nodeId="8699312839322230162" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8699312839322230168" fileName="NewTemplateInWeavingRule_Intention.java" startLine="98" startPosition="78" endLine="123" endPosition="58">
+    <scopeInfo nodeId="8699312839322230168" fileName="NewTemplateInWeavingRule_Intention.java" startLine="95" startPosition="78" endLine="120" endPosition="58">
       <varInfo nodeId="8699312839322230178" varName="applicableConcept" />
       <varInfo nodeId="8699312839322230395" varName="contextNodeType" />
       <varInfo nodeId="8699312839322230184" varName="name" />
       <varInfo nodeId="8699312839322230238" varName="t" />
       <varInfo nodeId="8699312839322230308" varName="tr" />
     </scopeInfo>
-    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="98" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="95" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="8699312839322230162" varName="editorContext" />
       <varInfo nodeId="8699312839322230162" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="90" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeavingRule_Intention$IntentionImplementation" />
-    <unitInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="27" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeavingRule_Intention" />
+    <unitInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="87" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeavingRule_Intention$IntentionImplementation" />
+    <unitInfo nodeId="8699312839322230162" fileName="NewTemplateInWeavingRule_Intention.java" startLine="27" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeavingRule_Intention" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)/9092065972411421046">
     <nodeInfo nodeId="9092065972411421046" fileName="NewTemplateFragment_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
