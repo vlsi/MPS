@@ -96,6 +96,8 @@ public class SModelRepository implements CoreComponent {
         return;
       }
 
+      modelDescriptor.attach(MPSModuleRepository.getInstance());
+
       SModelReference modelReference = modelDescriptor.getReference();
       SModel registeredModel = getModelDescriptor(modelReference);
 
@@ -148,6 +150,7 @@ public class SModelRepository implements CoreComponent {
       ((SModelInternal) md).removeModelListener(myModelsListener);
       fireModelRemoved(md);
       ((SModelBase) md).dispose();
+      md.detach();
     }
   }
 
