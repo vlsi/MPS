@@ -16,11 +16,10 @@ import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import java.util.ArrayList;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -72,10 +71,6 @@ public class SetNodePackage_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("scope", event.getData(MPSCommonDataKeys.SCOPE));
-    if (MapSequence.fromMap(_params).get("scope") == null) {
-      return false;
-    }
     {
       List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
       boolean error = false;
@@ -96,7 +91,7 @@ public class SetNodePackage_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -107,19 +102,20 @@ public class SetNodePackage_Action extends BaseAction {
     try {
       final Wrappers._T<List<String>> packages = new Wrappers._T<List<String>>();
       final Wrappers._T<String> oldPackage = new Wrappers._T<String>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           packages.value = SetNodePackage_Action.this.fetchExistingPackages(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), _params);
           oldPackage.value = SPropertyOperations.getString(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), "virtualPackage");
         }
       });
-      final SetNodePackageDialog dialog = new SetNodePackageDialog(((Project) MapSequence.fromMap(_params).get("project")), packages.value);
+      final SetNodePackageDialog dialog = new SetNodePackageDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), packages.value);
       dialog.setPackage(oldPackage.value);
       dialog.show();
       if (dialog.isCancelled()) {
         return;
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
           for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
             SPropertyOperations.set(node, "virtualPackage", dialog.getPackage());

@@ -17,7 +17,7 @@ import jetbrains.mps.util.Computable;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.util.AsyncResult;
 import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.choose.nodes.NodePresentation;
 
 public abstract class NodeTreeModel implements TreeModel {
@@ -104,12 +103,12 @@ public abstract class NodeTreeModel implements TreeModel {
       DataManager.getInstance().getDataContextFromFocus().doWhenDone(new AsyncResult.Handler<DataContext>() {
         @Override
         public void run(DataContext dataContext) {
-          final Project p = MPSCommonDataKeys.PROJECT.getData(dataContext);
-          if (p == null) {
+          final Project project = MPSCommonDataKeys.MPS_PROJECT.getData(dataContext);
+          if (project == null) {
             return;
           }
-          ModelAccess.instance().runWriteInEDT(new Runnable() {
-            @Override
+
+          project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
             public void run() {
               SNode node = ((SNodePointer) myNode).resolve(MPSModuleRepository.getInstance());
               if (node == null) {
@@ -123,7 +122,7 @@ public abstract class NodeTreeModel implements TreeModel {
               if (module == null) {
                 return;
               }
-              NavigationSupport.getInstance().openNode(new ModuleContext(module, ProjectHelper.toMPSProject(p)), node, true, true);
+              NavigationSupport.getInstance().openNode(new ModuleContext(module, project), node, true, true);
             }
           });
         }

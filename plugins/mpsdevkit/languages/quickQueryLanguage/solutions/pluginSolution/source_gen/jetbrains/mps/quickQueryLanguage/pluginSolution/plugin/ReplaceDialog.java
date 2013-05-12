@@ -6,12 +6,12 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -50,6 +50,7 @@ public class ReplaceDialog extends BaseDialog {
   private EmbeddableEditor myEditor;
   private ScopeEditor myScope;
   private IOperationContext myContext;
+  private ModelAccess myModelAccess;
   private SNode myNode;
   private JPanel myPanel = new JPanel(new BorderLayout());
   private boolean myDisposed = false;
@@ -57,9 +58,11 @@ public class ReplaceDialog extends BaseDialog {
   public ReplaceDialog(final SNode concept, final IOperationContext context, final Language language) {
     super(ProjectHelper.toMainFrame(context.getProject()), "Modify Instances by condition");
     this.myContext = context;
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    this.myModelAccess = context.getProject().getRepository().getModelAccess();
+
+    myModelAccess.executeCommand(new Runnable() {
       public void run() {
-        ReplaceDialog.this.myNode = _quotation_createNode_bs6rum_a0a0a2a6((concept == null ?
+        ReplaceDialog.this.myNode = _quotation_createNode_bs6rum_a0a0a0a4a7((concept == null ?
           SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626") :
           concept
         ));
@@ -82,7 +85,7 @@ public class ReplaceDialog extends BaseDialog {
     });
     this.myEditor.addLanguageStructureModel(language);
     final Set<Language> languageList = SetSequence.fromSet(new HashSet<Language>());
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myModelAccess.runReadAction(new Runnable() {
       public void run() {
         new LanguageDependenciesManager(language).collectAllExtendedLanguages(languageList);
       }
@@ -105,7 +108,7 @@ public class ReplaceDialog extends BaseDialog {
   @BaseDialog.Button(position = 0, name = "Modify", mnemonic = 'M', defaultButton = true)
   public void buttonReplace() {
     final Wrappers._T<Language> language = new Wrappers._T<Language>();
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    jetbrains.mps.smodel.ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         language.value = SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(ReplaceDialog.this.myNode));
       }
@@ -119,7 +122,7 @@ public class ReplaceDialog extends BaseDialog {
       return;
     }
     final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myModelAccess.runReadAction(new Runnable() {
       public void run() {
         model.value = SNodeOperations.getModel(myNode);
       }
@@ -139,7 +142,7 @@ public class ReplaceDialog extends BaseDialog {
       return;
     }
     final IScope scope = this.myScope.getOptions().getScope(this.myContext, model.value);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myModelAccess.runReadAction(new Runnable() {
       public void run() {
         ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
       }
@@ -154,7 +157,7 @@ public class ReplaceDialog extends BaseDialog {
 
   public void execute(Project project, Query query, final SNode queryNode, final IScope scope) {
     final Wrappers._T<SearchQuery> searchQuery = new Wrappers._T<SearchQuery>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myModelAccess.runReadAction(new Runnable() {
       public void run() {
         if (SLinkOperations.getTarget(queryNode, "conceptDeclaration", false) != null) {
           searchQuery.value = new SearchQuery(new NodeHolder(SLinkOperations.getTarget(queryNode, "conceptDeclaration", false)), scope);
@@ -173,14 +176,14 @@ public class ReplaceDialog extends BaseDialog {
       return;
     }
     myDisposed = true;
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    myModelAccess.runWriteInEDT(new Runnable() {
       public void run() {
         myEditor.disposeEditor();
       }
     });
   }
 
-  private static SNode _quotation_createNode_bs6rum_a0a0a2a6(Object parameter_1) {
+  private static SNode _quotation_createNode_bs6rum_a0a0a0a4a7(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

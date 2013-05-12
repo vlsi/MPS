@@ -453,6 +453,11 @@
     <property name="name" nameId="tpck.1169194664001" value="GoToTypeErrorRule_InGroup" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     <property name="caption" nameId="tp4k.1205250923097" value="Go to Rule Which Caused Error" />
+    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1375078825678823735" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="project" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dMPS_PROJECT" resolveInfo="MPS_PROJECT" />
+      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="1375078825678823736" nodeInfo="ng" />
+    </node>
     <node role="constructionParameter" roleId="tp4k.1227008813498" type="tp4k.ActionConstructionParameterDeclaration" typeId="tp4k.1227008846812" id="5181507218630412341" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="errorId" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5181507218630412342" nodeInfo="nn" />
@@ -500,13 +505,13 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5181507218630412362" nodeInfo="nn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5181507218630412363" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5181507218630412364" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~GoToTypeErrorRuleUtil%dgoToRuleById(jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dutil%dPair)%cvoid" resolveInfo="goToRuleById" />
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9a8.~GoToTypeErrorRuleUtil" resolveInfo="GoToTypeErrorRuleUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~GoToTypeErrorRuleUtil%dgoToRuleById(jetbrains%dmps%dproject%dProject,jetbrains%dmps%dutil%dPair)%cvoid" resolveInfo="goToRuleById" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5181507218630412365" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="5181507218630412366" nodeInfo="nn" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="5181507218630412367" nodeInfo="nn">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="5181507218630412382" resolveInfo="operationContext" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1375078825678829801" nodeInfo="nn">
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="1375078825678823735" resolveInfo="project" />
               </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="5181507218630412366" nodeInfo="nn" />
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5181507218630412368" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5181507218630412369" nodeInfo="nn">
@@ -544,11 +549,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="5181507218630412382" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="operationContext" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dOPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
-      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="5181507218630412383" nodeInfo="ng" />
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="5181507218630412384" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="node" />
@@ -648,13 +648,13 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5181507218630412426" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5181507218630412427" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~GoToTypeErrorRuleUtil%dgoToRuleById(jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dutil%dPair)%cvoid" resolveInfo="goToRuleById" />
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9a8.~GoToTypeErrorRuleUtil" resolveInfo="GoToTypeErrorRuleUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~GoToTypeErrorRuleUtil%dgoToRuleById(jetbrains%dmps%dproject%dProject,jetbrains%dmps%dutil%dPair)%cvoid" resolveInfo="goToRuleById" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5181507218630412428" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="5181507218630412429" nodeInfo="nn" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="5181507218630412430" nodeInfo="nn">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="5181507218630412480" resolveInfo="operationContext" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1375078825678817787" nodeInfo="nn">
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="1375078825678810304" resolveInfo="project" />
               </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="5181507218630412429" nodeInfo="nn" />
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5181507218630412431" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5181507218630412432" nodeInfo="nn">
@@ -774,11 +774,6 @@
         </node>
       </node>
     </node>
-    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="5181507218630412480" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="operationContext" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dOPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
-      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="5181507218630412481" nodeInfo="ng" />
-    </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="5181507218630412482" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="node" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dNODE" resolveInfo="NODE" />
@@ -788,6 +783,11 @@
       <property name="name" nameId="tpck.1169194664001" value="editorComponent" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="1d7m.~MPSEditorDataKeys%dEDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="5181507218630412485" nodeInfo="ng" />
+    </node>
+    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1375078825678810304" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="project" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dMPS_PROJECT" resolveInfo="MPS_PROJECT" />
+      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="1375078825678810305" nodeInfo="ng" />
     </node>
   </root>
   <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5181507218630412486" nodeInfo="ng">

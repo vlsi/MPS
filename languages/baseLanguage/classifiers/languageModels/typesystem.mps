@@ -75,7 +75,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1205753100060" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1205753100060" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpression" />
     </node>
@@ -211,7 +211,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1205769672847" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1205769672847" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1205769149993" resolveInfo="DefaultClassifierMethodCallOperation" />
     </node>
@@ -237,7 +237,7 @@
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CoerceStatement" typeId="tpd4.1176558773329" id="1205921883368" nodeInfo="nn">
-        <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1205921883369" nodeInfo="ng">
+        <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1205921883369" nodeInfo="ig">
           <property name="name" nameId="tpck.1169194664001" value="baseClassifierType" />
           <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1205752813637" resolveInfo="BaseClassifierType" />
         </node>
@@ -285,7 +285,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1205853966221" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1205853966221" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1205756064662" resolveInfo="IMemberOperation" />
     </node>
@@ -319,7 +319,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1214001475037" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1214001475037" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1213999117680" resolveInfo="DefaultClassifierFieldAccessOperation" />
     </node>
@@ -385,7 +385,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1217433986273" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1217433986273" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="expresson" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1217433449852" resolveInfo="SuperClassifierExpresson" />
     </node>
@@ -395,7 +395,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Fields" />
     <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="5415321287508135638" nodeInfo="nn" />
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5415321287508135639" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5415321287508135639" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="decl" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1213999088275" resolveInfo="DefaultClassifierFieldDeclaration" />
     </node>

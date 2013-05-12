@@ -15,10 +15,14 @@
  */
 package jetbrains.mps.workbench.dialogs;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.Project;
 
-import javax.swing.*;
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -29,7 +33,7 @@ public class DeleteDialog extends DialogWrapper {
   private JCheckBox[] myCheckBoxes;
 
   public DeleteDialog(Project project, String caption, String message, DeleteOption... options) {
-    super(project, true);
+    super(ProjectHelper.toIdeaProject(project), true);
     myMessage = message;
     myOptions = options;
 

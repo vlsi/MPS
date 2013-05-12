@@ -16,9 +16,10 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,7 +27,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring;
 import com.intellij.openapi.ui.Messages;
 import java.awt.Frame;
-import jetbrains.mps.openapi.editor.EditorContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -94,13 +94,14 @@ public class InlineLocalVariable_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.inline");
+      ModelAccess modelAccess = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess();
       final Wrappers._T<InlineVariableRefactoring> ref = new Wrappers._T<InlineVariableRefactoring>();
 
       final Wrappers._boolean isAvailable = new Wrappers._boolean(true);
       String messageDialogTitle = "Inline Variable";
       final Wrappers._T<String> infoMessage = new Wrappers._T<String>(null);
       final Wrappers._T<String> yesNoMessage = new Wrappers._T<String>(null);
-      ModelAccess.instance().runReadAction(new Runnable() {
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
             SNode localVariableDeclaration = SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
@@ -140,7 +141,7 @@ public class InlineLocalVariable_Action extends BaseAction {
         }
       }
 
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      modelAccess.executeCommand(new Runnable() {
         public void run() {
           SNode result = ref.value.doRefactoring();
           ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(result);

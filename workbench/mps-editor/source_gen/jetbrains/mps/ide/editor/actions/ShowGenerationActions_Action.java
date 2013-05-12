@@ -15,11 +15,10 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.openapi.editor.EditorContext;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.openapi.editor.EditorContext;
 import java.awt.Point;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -78,7 +77,7 @@ public class ShowGenerationActions_Action extends BaseAction {
       int x = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getX();
       int y = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getY() + ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getHeight();
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           ActionGroup group = ((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.GenerationActions_ActionGroup"));
           group.update(event);

@@ -12,7 +12,7 @@ import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
@@ -47,7 +47,9 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
     // get node 
     final Wrappers._T<SNode> operationNode = new Wrappers._T<SNode>();
     final Wrappers._T<String> concept = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess modelAccess = context.getProject().getRepository().getModelAccess();
+
+    modelAccess.runReadAction(new Runnable() {
       public void run() {
         operationNode.value = (cell == null ?
           node :
@@ -73,7 +75,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
     final Wrappers._T<IResultProvider> provider = new Wrappers._T<IResultProvider>();
     final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();
     final Wrappers._T<ViewOptions> viewOptions = new Wrappers._T<ViewOptions>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    modelAccess.runReadAction(new Runnable() {
       public void run() {
         provider.value = options.value.getOption(FindersOptions.class).getResult();
         query.value = options.value.getOption(ScopeOptions.class).getResult(operationNode.value, context, model);

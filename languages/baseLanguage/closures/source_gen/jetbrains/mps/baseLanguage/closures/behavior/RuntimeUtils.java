@@ -13,6 +13,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -58,7 +62,19 @@ public class RuntimeUtils {
     synchronized (RuntimeUtils.class) {
       if (STATIC_RUNTIME_CLASSIFIERS == null) {
         STATIC_RUNTIME_CLASSIFIERS = MapSequence.fromMap(new HashMap<String, SNode>());
-        for (SNode cls : SModelOperations.getNodes(getStaticRuntimeModel(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+        for (SNode cls : ListSequence.fromList(SModelOperations.getRoots(getStaticRuntimeModel(), "jetbrains.mps.baseLanguage.structure.Classifier")).translate(new ITranslator2<SNode, SNode>() {
+          public Iterable<SNode> translate(SNode it) {
+            return SLinkOperations.getTargets(it, "member", true);
+          }
+        }).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+          }
+        })) {
           MapSequence.fromMap(STATIC_RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, "nestedName"), cls);
         }
         ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {

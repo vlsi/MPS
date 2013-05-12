@@ -26,7 +26,7 @@
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230303479284" nodeInfo="nn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1230303505944" nodeInfo="nn">
               <node role="expression" roleId="tpee.1068580123156" type="tpd4.CoerceStrongExpression" typeId="tpd4.1178871491133" id="1230303547246" nodeInfo="nn">
-                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1230303563442" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1230303563442" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="mapType" />
                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.1197683403723" resolveInfo="MapType" />
                 </node>
@@ -60,7 +60,7 @@
                 <node role="nodeToCoerce" roleId="tpd4.1178870894645" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1197933043414" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1197932910363" resolveInfo="type" />
                 </node>
-                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1197933043415" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1197933043415" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="mapType" />
                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.1197683403723" resolveInfo="MapType" />
                 </node>
@@ -2536,7 +2536,7 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="1225712325760" nodeInfo="nn" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1225712329646" nodeInfo="nn" />
                 </node>
-                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1225712325761" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1225712325761" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="listType" />
                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.1151688443754" resolveInfo="ListType" />
                 </node>

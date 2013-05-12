@@ -175,7 +175,7 @@
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1823319949748483829" nodeInfo="nn">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1823319949748483832" nodeInfo="nn" />
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="1823319949748483821" nodeInfo="nn">
-                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1823319949748483822" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1823319949748483822" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="instructionType" />
                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp41.4969132436616196224" resolveInfo="InstructionType" />
                 </node>

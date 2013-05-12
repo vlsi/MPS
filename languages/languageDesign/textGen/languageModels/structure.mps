@@ -109,7 +109,7 @@
     <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.ReferenceConceptLinkDeclaration" typeId="tpce.1105741578420" id="1234799334167" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="applicableHiddenParameter" />
       <link role="targetType" roleId="tpce.1105736621938" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3044950653914717096" nodeInfo="ng" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3044950653914717096" nodeInfo="ig" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="3044950653914717095" nodeInfo="ng">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="wbvt.3044950653914717099" resolveInfo="getApplicableHiddenParameter" />
       </node>
@@ -169,7 +169,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="parameter" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="context" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1234884991117" resolveInfo="AbstractTextGenParameter" />
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4868589652820089110" nodeInfo="ng" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4868589652820089110" nodeInfo="ig" />
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1234280802196" nodeInfo="ig">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1234280888847" nodeInfo="in">
@@ -297,7 +297,7 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="6911933836258445303" nodeInfo="ng">
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="6911933836258445303" nodeInfo="ig">
       <property name="comment" nameId="tpce.1225118933224" value="replaced by ReferenceAppendPart" />
     </node>
   </root>

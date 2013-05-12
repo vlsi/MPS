@@ -301,19 +301,19 @@
     <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Logical" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893064772" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893064772" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="north" />
       <property name="externalValue" nameId="tpce.1083923523172" value="north" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893078070" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893078070" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="east" />
       <property name="externalValue" nameId="tpce.1083923523172" value="east" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893078073" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893078073" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="south" />
       <property name="externalValue" nameId="tpce.1083923523172" value="south" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893078077" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893078077" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="west" />
       <property name="externalValue" nameId="tpce.1083923523172" value="west" />
     </node>

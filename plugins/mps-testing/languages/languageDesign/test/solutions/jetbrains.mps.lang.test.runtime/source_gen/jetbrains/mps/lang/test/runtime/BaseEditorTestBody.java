@@ -140,7 +140,8 @@ public class BaseEditorTestBody extends BaseTestBody {
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
       public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        org.jetbrains.mps.openapi.module.ModelAccess modelAccess = editor.getEditorContext().getRepository().getModelAccess();
+        modelAccess.executeCommand(new Runnable() {
           public void run() {
             editor.getEditorContext().select(node);
             IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();

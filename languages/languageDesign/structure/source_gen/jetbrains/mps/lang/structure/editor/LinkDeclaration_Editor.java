@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -81,7 +80,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
               return it.invoke(editorContext, node, oldValue, newValue);
             }
           }))) {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
               public void run() {
                 SPropertyOperations.set(node, "role", newValue);
               }

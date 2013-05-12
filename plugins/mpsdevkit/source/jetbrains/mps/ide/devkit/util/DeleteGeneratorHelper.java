@@ -15,15 +15,16 @@
  */
 package jetbrains.mps.ide.devkit.util;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
@@ -32,7 +33,8 @@ import java.util.List;
 public class DeleteGeneratorHelper {
   private static final Logger LOG = LogManager.getLogger(DeleteGeneratorHelper.class);
 
-  public static void deleteGenerator(Project project, Language sourceLanguage, Generator generator, GeneratorDescriptor generatorDescriptor, boolean safeDelete, boolean deleteFiles) {
+  public static void deleteGenerator(Project project, Language sourceLanguage, Generator generator, GeneratorDescriptor generatorDescriptor,
+      boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {
       safeDelete(project, sourceLanguage, generator, generatorDescriptor, deleteFiles);
     } else {
@@ -47,7 +49,8 @@ public class DeleteGeneratorHelper {
     sourceLanguage.save();
   }
 
-  private static void safeDelete(final Project project, Language sourceLanguage, final Generator generator, GeneratorDescriptor generatorDescriptor, boolean deleteFiles) {
+  private static void safeDelete(final Project project, Language sourceLanguage, final Generator generator, GeneratorDescriptor generatorDescriptor,
+      boolean deleteFiles) {
     List<Generator> dependant = new ArrayList<Generator>();
     for (Generator gen : (List<Generator>) ModuleRepositoryFacade.getInstance().getAllModules(Generator.class)) {
       if (gen.getReferencedGenerators().contains(generator)) {
@@ -63,8 +66,9 @@ public class DeleteGeneratorHelper {
       }
 
       SwingUtilities.invokeLater(new Runnable() {
+        @Override
         public void run() {
-          Messages.showErrorDialog(project, report.toString(), "Deleting Generator");
+          Messages.showErrorDialog(ProjectHelper.toIdeaProject(project), report.toString(), "Deleting Generator");
         }
       });
       return;

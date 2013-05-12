@@ -218,7 +218,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1904811872814114090" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1904811872814114090" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="routineDefinition" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="c2kz.3308300503039700857" resolveInfo="RoutineDefinition" />
     </node>
@@ -399,7 +399,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1904811872814167853" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1904811872814167853" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="script" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="c2kz.3265739055509559110" resolveInfo="Script" />
     </node>
@@ -579,14 +579,14 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1904811872814168201" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1904811872814168201" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="library" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="c2kz.4394627182934741782" resolveInfo="Library" />
     </node>
   </root>
   <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6630310702470230800" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="check_KajaDataflow" />
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6630310702470231530" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6630310702470231530" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="commandList" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="c2kz.3308300503039896127" resolveInfo="CommandList" />
     </node>

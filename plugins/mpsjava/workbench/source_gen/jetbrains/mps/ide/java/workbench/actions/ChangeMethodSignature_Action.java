@@ -14,14 +14,14 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.ui.Messages;
 import java.awt.Frame;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
@@ -99,7 +99,9 @@ public class ChangeMethodSignature_Action extends BaseAction {
     try {
       final Wrappers._T<SNode> baseMethod = new Wrappers._T<SNode>();
       final Wrappers._T<String> message = new Wrappers._T<String>("");
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+
+      modelAccess.runWriteAction(new Runnable() {
         public void run() {
           SModelRepository.getInstance().saveAll();
           baseMethod.value = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), ((SNode) MapSequence.fromMap(_params).get("method")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getBaseMethod_5014346297260519893", new Object[]{});
@@ -123,8 +125,7 @@ public class ChangeMethodSignature_Action extends BaseAction {
       if (ListSequence.fromList(myRefactorings).isEmpty()) {
         return;
       }
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        @Override
+      modelAccess.runReadInEDT(new Runnable() {
         public void run() {
           SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("method")));
           if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("method"))))) {
@@ -138,7 +139,6 @@ public class ChangeMethodSignature_Action extends BaseAction {
           RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature", Arrays.asList("myRefactorings"), Arrays.asList(myRefactorings), methodToRefactor, ((MPSProject) MapSequence.fromMap(_params).get("project"))));
         }
       });
-
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ChangeMethodSignature", t);

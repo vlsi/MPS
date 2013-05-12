@@ -512,8 +512,8 @@
   </root>
   <root nodeRef="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)/4477049948824855836">
     <nodeInfo nodeId="1455391539105549287" fileName="BaseVersionEditorComponent.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScrollPane" />
-    <nodeInfo nodeId="4477049948824882325" fileName="BaseVersionEditorComponent.java" startLine="34" startPosition="98" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4477049948824882337" fileName="BaseVersionEditorComponent.java" startLine="35" startPosition="28" endLine="36" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4477049948824882325" fileName="BaseVersionEditorComponent.java" startLine="34" startPosition="98" endLine="35" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4477049948824882337" fileName="BaseVersionEditorComponent.java" startLine="35" startPosition="57" endLine="36" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4477049948824882349" fileName="BaseVersionEditorComponent.java" startLine="36" startPosition="114" endLine="37" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4477049948824882381" fileName="BaseVersionEditorComponent.java" startLine="37" startPosition="108" endLine="38" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8064780802314627211" fileName="BaseVersionEditorComponent.java" startLine="38" startPosition="41" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

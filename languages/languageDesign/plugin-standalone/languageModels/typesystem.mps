@@ -23,7 +23,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="481983775135178864" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="481983775135178864" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="pluginType" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tgbt.481983775135178856" resolveInfo="ProjectPluginType" />
     </node>
@@ -40,7 +40,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="481983775135178870" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="481983775135178870" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="customApplicationPluginType" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tgbt.481983775135178831" resolveInfo="ApplicationPluginType" />
     </node>
@@ -74,7 +74,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="681855071694758183" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="681855071694758183" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="operation" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tgbt.681855071694758165" resolveInfo="GetToolInProjectOperation" />
     </node>
@@ -108,7 +108,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="681855071694758196" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="681855071694758196" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="operation" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tgbt.681855071694758168" resolveInfo="GetPreferencesComponentInProjectOperation" />
     </node>

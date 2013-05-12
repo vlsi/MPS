@@ -27,7 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.refactoring.RefactoringView;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -242,8 +241,7 @@ public class ApiMigrationHelper {
       @Override
       public void performAction(RefactoringViewItem refactoringViewItem) {
         refactoringViewItem.close();
-
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        p.getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
             for (SNode cls : SetSequence.fromSet(changedClassUsages)) {
               SLinkOperations.setTarget(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", newNode, false);
@@ -262,7 +260,7 @@ public class ApiMigrationHelper {
               if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), newNode)) {
                 continue;
               }
-              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0db0p(oldNode, operand));
+              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0a0b0a0a1a0db0p(oldNode, operand));
             }
           }
         });
@@ -338,7 +336,7 @@ public class ApiMigrationHelper {
       public void performAction(RefactoringViewItem refactoringViewItem) {
         final List<SNodeReference> included = ((RefactoringViewItemImpl) refactoringViewItem).getUsagesView().getIncludedResultNodes();
         refactoringViewItem.close();
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        p.getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
             for (int i = 0; i < ListSequence.fromList(usages).count(); i++) {
               _FunctionTypes._void_P1_E0<? super SNode> transformer = ListSequence.fromList(transformations).getElement(i)._2();
@@ -551,7 +549,7 @@ public class ApiMigrationHelper {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0db0p(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_yke5lt_a0a2a4a0a0b0a0a1a0db0p(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

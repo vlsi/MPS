@@ -9,14 +9,13 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
@@ -52,7 +51,7 @@ public class GoToNodeById_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -87,8 +86,8 @@ public class GoToNodeById_Action extends BaseAction {
         return;
       }
       final String trimmedValue = value;
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
-        @Override
+
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runWriteInEDT(new Runnable() {
         public void run() {
           SNode node;
           node = ((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getNode(id);

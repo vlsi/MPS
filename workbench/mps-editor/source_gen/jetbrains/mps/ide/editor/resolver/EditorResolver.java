@@ -83,8 +83,8 @@ public class EditorResolver implements IResolver {
 
   private class FakeEditorComponent extends EditorComponent {
     public FakeEditorComponent(SNode node, IOperationContext operationContext) {
-      super(operationContext);
-      setEditorContext(new EditorContext(this, SNodeOperations.getModel(node), operationContext));
+      super(operationContext.getProject().getRepository());
+      setEditorContext(new EditorContext(this, SNodeOperations.getModel(node), operationContext.getProject().getRepository()));
       editNode(node, operationContext);
     }
 

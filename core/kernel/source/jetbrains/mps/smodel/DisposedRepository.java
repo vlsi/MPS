@@ -42,7 +42,60 @@ public class DisposedRepository implements SRepository {
 
   @Override
   public ModelAccess getModelAccess() {
-    return null;
+    return new ModelAccess() {
+      @Override
+      public boolean canRead() {
+        return true;
+      }
+
+      @Override
+      public void checkReadAccess() {
+
+      }
+
+      @Override
+      public boolean canWrite() {
+        return true;
+      }
+
+      @Override
+      public void checkWriteAccess() {
+
+      }
+
+      @Override
+      public void runReadAction(Runnable r) {
+
+      }
+
+      @Override
+      public void runReadInEDT(Runnable r) {
+
+      }
+
+      @Override
+      public void runWriteAction(Runnable r) {
+
+      }
+
+      @Override
+      public void runWriteInEDT(Runnable r) {
+
+      }
+
+      @Override
+      public void executeCommand(Runnable r) {
+      }
+
+      @Override
+      public void executeCommandInEDT(Runnable r) {
+      }
+
+      @Override
+      public void executeUndoTransparentCommand(Runnable r) {
+
+      }
+    };
   }
 
   @Override

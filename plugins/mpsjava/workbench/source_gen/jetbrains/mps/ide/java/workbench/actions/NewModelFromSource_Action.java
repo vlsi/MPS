@@ -15,16 +15,16 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
-import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
@@ -119,6 +119,7 @@ public class NewModelFromSource_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
       if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
         int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
         if (code == JOptionPane.YES_OPTION) {
@@ -133,7 +134,7 @@ public class NewModelFromSource_Action extends BaseAction {
         return;
       }
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           String stereotype = NewModelFromSource_Action.this.getStereotype(_params);
           dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), NewModelFromSource_Action.this.getNamespace(_params), ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, NewModelFromSource_Action.this.isStrict(_params));
@@ -157,7 +158,7 @@ public class NewModelFromSource_Action extends BaseAction {
           // ... Runnable() { void run() } 
           // Also I don't want to show error dialog while in write action 
           final Wrappers._T<JavaParseException> parseException = new Wrappers._T<JavaParseException>(null);
-          ModelAccess.instance().runWriteAction(new Runnable() {
+          modelAccess.runWriteAction(new Runnable() {
             public void run() {
               try {
                 dirParser.parseDirs();

@@ -5,25 +5,24 @@ package jetbrains.mps.ide.refactoring;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import javax.swing.JCheckBox;
 import jetbrains.mps.smodel.Language;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import java.awt.HeadlessException;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.refactoring.renameLanguage.LanguageRenamer;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
@@ -36,18 +35,19 @@ public class RenameLanguageDialog extends RenameDialog {
   private Language myLanguage;
   private Project myProject;
 
-  public RenameLanguageDialog(Project project, Language language) throws HeadlessException {
+  public RenameLanguageDialog(com.intellij.openapi.project.Project project, Language language) throws HeadlessException {
     super(project, language.getModuleName(), "language");
     myLanguage = language;
-    myProject = project;
+    myProject = ProjectHelper.toMPSProject(project);
     setTitle("Rename Language");
 
-    myRegenerateLanguage.getModel().setSelected(ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return !(myLanguage.isBootstrap());
+    final boolean[] regenerateHolder = new boolean[]{false};
+    myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        regenerateHolder[0] = !(myLanguage.isBootstrap());
       }
-    }));
+    });
+    myRegenerateLanguage.getModel().setSelected(regenerateHolder[0]);
   }
 
   @Override
@@ -77,7 +77,8 @@ public class RenameLanguageDialog extends RenameDialog {
       return;
     }
     final LanguageRenamer renamer = new LanguageRenamer(myProject, myLanguage, fqName);
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ModelAccess modelAccess = myProject.getRepository().getModelAccess();
+    modelAccess.executeCommand(new Runnable() {
       public void run() {
         renamer.rename(needToRegenerate);
         renamer.update();
@@ -85,35 +86,33 @@ public class RenameLanguageDialog extends RenameDialog {
     });
     if (needToRegenerate) {
       final Set<Language> langs = new LinkedHashSet<Language>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           langs.add(myLanguage);
           langs.addAll(ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(myLanguage));
         }
       });
       for (final Language l : langs) {
-        GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
-          @Override
-          public GenParameters compute() {
+        final Wrappers._T<GenParameters> params = new Wrappers._T<GenParameters>(null);
+        modelAccess.runReadAction(new Runnable() {
+          public void run() {
             ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
             languageConfig.setModuleRef(l.getModuleReference());
             languageConfig.setName("tmp");
             try {
-              return languageConfig.getGenParams(myProject.getComponent(MPSProject.class), true);
-            } catch (IllegalGeneratorConfigurationException e) {
-              return null;
+              params.value = languageConfig.getGenParams(myProject, true);
+            } catch (IllegalGeneratorConfigurationException ignored) {
             }
           }
         });
-        if (params == null) {
+        if (params.value == null) {
           setErrorText("Rebuild configuration is invalid");
           return;
         }
-        ModuleContext context = new ModuleContext(myLanguage, ProjectHelper.toMPSProject(myProject));
+        ModuleContext context = new ModuleContext(myLanguage, myProject);
         MakeSession sess = new MakeSession(context);
         if (IMakeService.INSTANCE.get().openNewSession(sess)) {
-          IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) params.getModelDescriptors())).resources(false));
+          IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) params.value.getModelDescriptors())).resources(false));
         }
         //         GeneratorUIFacade.getInstance().generateModels(new ModuleContext(myLanguage, myProject), params.getModelDescriptors(), GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false); 
       }

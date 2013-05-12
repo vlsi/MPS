@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.refactorings.MoveNodes;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
@@ -34,7 +33,7 @@ public class MoveStaticMethod extends BaseRefactoring {
 
   public boolean init(final RefactoringContext refactoringContext) {
     refactoringContext.setParameter("refactor", new MoveStaticMethodRefactoring(refactoringContext.getSelectedNode(), ((SNode) refactoringContext.getParameter("destination"))));
-    ModelAccess.instance().runReadAction(new Runnable() {
+    refactoringContext.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         ((MoveStaticMethodRefactoring) refactoringContext.getParameter("refactor")).setUssages(FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder"));
       }

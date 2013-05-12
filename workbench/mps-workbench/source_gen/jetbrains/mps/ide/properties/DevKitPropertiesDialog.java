@@ -5,7 +5,6 @@ package jetbrains.mps.ide.properties;
 import jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class DevKitPropertiesDialog extends BasePropertiesDialog {
   public DevKit myDevKit;
@@ -27,14 +26,14 @@ public class DevKitPropertiesDialog extends BasePropertiesDialog {
     if (!(checkValidity())) {
       return false;
     }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      @Override
+
+    getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         myProperties.saveTo(myDevKit.getModuleDescriptor());
         myDevKit.setDevKitDescriptor(myDevKit.getModuleDescriptor(), true);
         myDevKit.save();
       }
-    }, getOperationContext().getProject());
+    });
     return true;
   }
 }

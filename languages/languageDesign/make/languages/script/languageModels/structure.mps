@@ -44,11 +44,11 @@
     <property name="name" nameId="tpck.1169194664001" value="Result" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2360002718792446683" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2360002718792446683" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="SUCCESS" />
       <property name="externalValue" nameId="tpce.1083923523172" value="success" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2360002718792446684" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2360002718792446684" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="FAILURE" />
       <property name="externalValue" nameId="tpce.1083923523172" value="failure" />
     </node>
@@ -316,19 +316,19 @@
     <property name="name" nameId="tpck.1169194664001" value="Feedback" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="3668957831723333675" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="3668957831723333675" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="INFO" />
       <property name="externalValue" nameId="tpce.1083923523172" value="info" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="3668957831723333676" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="3668957831723333676" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="WARNING" />
       <property name="externalValue" nameId="tpce.1083923523172" value="warning" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="3668957831723333677" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="3668957831723333677" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="ERROR" />
       <property name="externalValue" nameId="tpce.1083923523172" value="error" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6320856973181134892" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6320856973181134892" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="MESSAGE" />
       <property name="externalValue" nameId="tpce.1083923523172" value="message" />
     </node>

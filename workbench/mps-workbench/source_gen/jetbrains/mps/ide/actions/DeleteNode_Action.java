@@ -11,12 +11,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
-import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -56,7 +53,7 @@ public class DeleteNode_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -64,19 +61,15 @@ public class DeleteNode_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final DeleteNodesHelper helper = new DeleteNodesHelper(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      final DeleteNodesHelper helper = new DeleteNodesHelper(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
 
       final Wrappers._boolean dialogNeeded = new Wrappers._boolean(false);
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           dialogNeeded.value = helper.hasOptions();
         }
@@ -85,7 +78,7 @@ public class DeleteNode_Action extends BaseAction {
       DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", false, true);
       DeleteDialog.DeleteOption aspectsOption = new DeleteDialog.DeleteOption("Delete Aspects", true, true);
       if (dialogNeeded.value) {
-        DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Node", "Are you sure you want to delete selected node?", safeOption, aspectsOption);
+        DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Node", "Are you sure you want to delete selected node?", safeOption, aspectsOption);
         dialog.show();
         if (!(dialog.isOK())) {
           return;

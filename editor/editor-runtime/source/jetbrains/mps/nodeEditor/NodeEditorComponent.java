@@ -17,20 +17,18 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.event.SModelEvent;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.awt.event.HierarchyEvent;
 import java.awt.event.HierarchyListener;
@@ -39,8 +37,8 @@ import java.util.List;
 public class NodeEditorComponent extends EditorComponent {
   private SNode myLastInspectedNode = null;
 
-  public NodeEditorComponent(final IOperationContext operationContext) {
-    super(operationContext, true, false);
+  public NodeEditorComponent(SRepository repository) {
+    super(repository, true, false);
 
     getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
       @Override
@@ -60,7 +58,7 @@ public class NodeEditorComponent extends EditorComponent {
     addHierarchyListener(new HierarchyListener() {
       @Override
       public void hierarchyChanged(HierarchyEvent hierarchyEvent) {
-        if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED)){
+        if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED)) {
           return;
         }
         if (!isShowing()) return;
@@ -85,9 +83,9 @@ public class NodeEditorComponent extends EditorComponent {
           return;
         }
 
-        if (jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode) || jetbrains.mps.util.SNodeOperations.isModelDisposed(selectedNode.getModel())) return;
+        if (jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode) || jetbrains.mps.util.SNodeOperations.isModelDisposed(selectedNode.getModel()))
+          return;
 
-        assert getOperationContext() == null || getOperationContext().getModule() != null : "No module for: " + getOperationContext() + ", but model was not disposed: " + selectedNode.getModel();
         inspect(selectedNode);
       }
     });

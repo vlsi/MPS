@@ -31,7 +31,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5447719361346490735" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5447719361346490735" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ml" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v0h4.5447719361346490674" resolveInfo="MoneyLiteral" />
     </node>
@@ -102,7 +102,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3694786099210003298" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3694786099210003298" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="moneyType" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v0h4.5447719361346490730" resolveInfo="MoneyType" />
     </node>
@@ -127,7 +127,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="654553635094964693" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="654553635094964693" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="op" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v0h4.5447719361346519865" resolveInfo="GetAmount" />
     </node>
@@ -150,14 +150,14 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="654553635094966710" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="654553635094966710" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="op" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v0h4.1790427706118304177" resolveInfo="GetCurrency" />
     </node>
   </root>
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1861416031385290160" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_ConvertTo" />
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1861416031385295030" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1861416031385295030" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="conversion" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v0h4.1790427706118381722" resolveInfo="ConvertTo" />
     </node>

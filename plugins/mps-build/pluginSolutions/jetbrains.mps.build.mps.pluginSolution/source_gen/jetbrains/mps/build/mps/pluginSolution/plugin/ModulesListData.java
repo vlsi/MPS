@@ -13,7 +13,7 @@ public class ModulesListData implements NodeData {
   private final List<NodeData> myData = ListSequence.fromList(new LinkedList<NodeData>());
   private final List<ModuleData> myModules = ListSequence.fromList(new LinkedList<ModuleData>());
 
-  public ModulesListData(List<SModule> modules) {
+  public ModulesListData(Iterable<? extends SModule> modules) {
     for (SModule m : modules) {
       ModuleData moduleData = new ModuleData(m);
       ListSequence.fromList(this.myModules).addElement(moduleData);

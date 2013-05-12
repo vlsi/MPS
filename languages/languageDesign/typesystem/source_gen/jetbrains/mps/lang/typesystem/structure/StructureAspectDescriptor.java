@@ -31,7 +31,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.typesystem.structure.AddDependencyStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"dependency"}, new boolean[]{false}).alias("addDependency", "").staticScope(StaticScope.NONE).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.InterfacePart").abstract_().create();
       case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("applicableNode").staticScope(StaticScope.NONE).create();
       case 10:

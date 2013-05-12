@@ -146,7 +146,7 @@ public abstract class BaseNodeEditor implements Editor {
       myComponent.remove(myReplace);
       myReplace = null;
     }
-    myEditorComponent = new NodeEditorComponent(myContext);
+    myEditorComponent = new NodeEditorComponent(myContext.getProject().getRepository());
     myComponent.add(myEditorComponent.getExternalComponent(), BorderLayout.CENTER);
     myComponent.validate();
   }

@@ -74,6 +74,7 @@ public class SModel implements SModelData {
 
   private boolean myDisposed;
 
+  private final Object FAST_FINDER_LOCK = new Object();
   private FastNodeFinder myFastNodeFinder;
 
   private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
@@ -461,12 +462,14 @@ public class SModel implements SModelData {
   //---------fast node finder--------
 
   //todo this is an external functionality. Should be implemented externally
-  public final synchronized FastNodeFinder getFastNodeFinder() {
-    if (myFastNodeFinder == null) {
-      myFastNodeFinder = createFastNodeFinder();
+  public final FastNodeFinder getFastNodeFinder() {
+    synchronized (FAST_FINDER_LOCK) {
+      if (myFastNodeFinder == null) {
+        myFastNodeFinder = createFastNodeFinder();
+      }
+      fireModelNodesReadAccess();
+      return myFastNodeFinder;
     }
-    fireModelNodesReadAccess();
-    return myFastNodeFinder;
   }
 
   protected FastNodeFinder createFastNodeFinder() {
@@ -480,10 +483,12 @@ public class SModel implements SModelData {
   }
 
   //todo this is an external functionality. Should be implemented externally
-  public synchronized void disposeFastNodeFinder() {
-    if (myFastNodeFinder != null) {
-      myFastNodeFinder.dispose();
-      myFastNodeFinder = null;
+  public void disposeFastNodeFinder() {
+    synchronized (FAST_FINDER_LOCK) {
+      if (myFastNodeFinder != null) {
+        myFastNodeFinder.dispose();
+        myFastNodeFinder = null;
+      }
     }
   }
 
@@ -1170,11 +1175,6 @@ public class SModel implements SModelData {
     @Override
     public SRepository getRepository() {
       return null;
-    }
-
-    @Override
-    public boolean isInRepository() {
-      return false;
     }
 
     @Override

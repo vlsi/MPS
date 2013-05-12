@@ -15,19 +15,23 @@
  */
 package jetbrains.mps.smodel.event;
 
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * @author Kostik
  */
 public class SModelRootEvent extends SModelEvent {
   private SNode myRoot;
+  private SNodeReference myRootRef;
   private boolean myAdded;
 
   public SModelRootEvent(SModel model, SNode root, boolean added) {
     super(model);
     myRoot = root;
+    myRootRef = root.getReference();
     myAdded = added;
   }
 
@@ -42,6 +46,10 @@ public class SModelRootEvent extends SModelEvent {
 
   public boolean isAdded() {
     return myAdded;
+  }
+
+  public SNodeReference getRootRef() {
+    return myRootRef;
   }
 
   public boolean isRemoved() {

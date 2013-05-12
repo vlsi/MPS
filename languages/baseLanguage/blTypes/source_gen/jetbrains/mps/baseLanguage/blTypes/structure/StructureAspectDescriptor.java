@@ -24,7 +24,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"extends"}, new boolean[]{true}).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("descriptor").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart").references("descriptor").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

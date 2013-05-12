@@ -17,7 +17,7 @@ import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModelRootUtil;
@@ -75,8 +75,8 @@ public class NewSubTestModel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
@@ -93,7 +93,7 @@ public class NewSubTestModel_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<SModel> result = new Wrappers._T<SModel>();
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           SModelFqName newModelFqName = new SModelFqName(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS);
           result.value = SModuleOperations.createModelWithAdjustments(newModelFqName.toString(), ModelRootUtil.getModelRoot(((SModel) MapSequence.fromMap(_params).get("model"))));

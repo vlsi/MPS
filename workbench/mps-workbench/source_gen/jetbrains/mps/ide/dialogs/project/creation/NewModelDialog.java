@@ -209,7 +209,7 @@ public class NewModelDialog extends DialogWrapper {
 
     assert myResult != null;
 
-    MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myContext);
+    MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myContext.getProject());
     final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myContext.getProject()), configurable, "#MPSPropertiesConfigurable");
     SwingUtilities.invokeLater(new Runnable() {
       @Override

@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -56,7 +55,7 @@ public class EmptyCommentLine extends KeyMapImpl {
     }
 
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           SNode textPart = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", null);
           ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"), "part", true)).addElement(textPart);

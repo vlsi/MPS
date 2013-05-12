@@ -7,11 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
+import jetbrains.mps.project.Project;
 import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -36,6 +36,7 @@ import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 
@@ -44,27 +45,29 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
   private ChangeMethodSignatureParameters myParameters;
   private IOperationContext myOperationContext;
   private EmbeddableEditor myEditor;
+  private Project myProject;
   private List<ChangeMethodSignatureRefactoring> myRefactorings = null;
 
-  public ChangeMethodSignatureDialog(@NotNull Project project, SNode node, IOperationContext operationContext) {
+
+
+  public ChangeMethodSignatureDialog(@NotNull com.intellij.openapi.project.Project project, SNode node, IOperationContext operationContext) {
     super(project, true);
     setTitle("Change Method Signature");
-
+    this.myProject = ProjectHelper.toMPSProject(project);
     this.myOperationContext = operationContext;
     this.myDeclaration = node;
     // TODO: call this constructor inside read action? 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         ChangeMethodSignatureDialog.this.myParameters = new ChangeMethodSignatureParameters(myDeclaration);
       }
     });
-
     init();
   }
 
   private JComponent createSingnaturePanel() {
     JPanel panel = new JPanel(new BorderLayout());
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         final SNode baseMethodDecalration = ChangeMethodSignatureDialog.this.myParameters.getDeclaration();
         SLinkOperations.setTarget(baseMethodDecalration, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
@@ -116,10 +119,11 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
   @Override
   protected void doRefactoringAction() {
     final Wrappers._T<List<SNode>> methodsToRefactor = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
-    ProgressManager.getInstance().run(new Task.Modal(myProject, "Search for overriding methods", true) {
+    ProgressManager.getInstance().run(new Task.Modal(getProject(), "Search for overriding methods", true) {
       @Override
       public void run(@NotNull final ProgressIndicator indicator) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        ModelAccess modelAccess = ChangeMethodSignatureDialog.this.myProject.getRepository().getModelAccess();
+        modelAccess.runReadAction(new Runnable() {
           public void run() {
             methodsToRefactor.value = MethodRefactoringUtils.findOverridingMethods(ChangeMethodSignatureDialog.this.myDeclaration, ChangeMethodSignatureDialog.this.myOperationContext, new ProgressMonitorAdapter(indicator));
           }

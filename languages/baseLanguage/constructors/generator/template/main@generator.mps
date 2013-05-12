@@ -446,7 +446,7 @@
                                   <link role="link" roleId="tp25.1138056516764" targetNodeId="fbxt.5379647004618207272" />
                                 </node>
                               </node>
-                              <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7451562887563468832" nodeInfo="ng">
+                              <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7451562887563468832" nodeInfo="ig">
                                 <property name="name" nameId="tpck.1169194664001" value="primitiveType" />
                                 <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1164118113764" resolveInfo="PrimitiveType" />
                               </node>

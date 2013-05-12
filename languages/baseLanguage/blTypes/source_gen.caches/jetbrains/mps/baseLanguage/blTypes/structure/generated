@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1dkgeni9n0yw7hggefiwlo39mhi80au">
+<dependencies version="2" modelHash="-15ci6jb3j9yzfiy0w51zzanjux1afw8">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-98t29efwmnhx95l2dy0yl52hl0tewrf" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c3wykz1pbxeuwqddsti0zwg3d2aw2bf" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <common hash="-8y3d3gyymah76whyiejz6sn0hpjww19">
     <dep root="1159268590033" />
@@ -24,7 +24,7 @@
   <source id="1159268590033" name="PrimitiveTypeDescriptor" hash="8glgszzxytx4hojohh8crtefnweuqyc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1159268661480" name="PrimitiveTypeRef" hash="-6zohy8vmskcfmlgis52bh3m66u7qtpc">
+  <source id="1159268661480" name="PrimitiveTypeRef" hash="8hkkdystoqix78vemv0wuwvcqj06dcu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1159276917520" name="FunctionType" hash="871mas123icgefu110w2aq2qwesajl3">
