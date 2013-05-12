@@ -6,8 +6,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -31,10 +29,8 @@ public class PatternAddingUtil {
   public static void addVariablePattern(EditorContext context) {
     EditorCell contextCell = context.getSelectedCell();
     SNode node = contextCell.getSNode();
-    SNode linkDeclaration = SNodeOperations.cast(((jetbrains.mps.nodeEditor.cells.EditorCell) contextCell).getLinkDeclaration(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    if (linkDeclaration != null && SPropertyOperations.hasValue(genuineLinkDeclaration, "metaClass", "reference", "reference")) {
-      String role = SPropertyOperations.getString(genuineLinkDeclaration, "role");
+    if (contextCell.isReferenceCell()) {
+      String role = contextCell.getRole();
       AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), role), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration");
     } else {
       AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.Pattern")), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
