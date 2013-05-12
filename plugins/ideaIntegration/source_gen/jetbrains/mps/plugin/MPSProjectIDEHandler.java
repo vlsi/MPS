@@ -83,7 +83,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           try {
             handler.removeIdeHandler(MPSProjectIDEHandler.this);
           } catch (RemoteException e) {
-            MPSProjectIDEHandler.LOG.error(e);
+            MPSProjectIDEHandler.LOG.error(null, e);
           }
         }
         try {

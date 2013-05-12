@@ -69,7 +69,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
       try {
         constructors.get(i).invoke(null, node);
       } catch (IllegalAccessException e) {
-        LOG.error(e);
+        LOG.error(null, e);
       } catch (InvocationTargetException e) {
         e.printStackTrace();
       }

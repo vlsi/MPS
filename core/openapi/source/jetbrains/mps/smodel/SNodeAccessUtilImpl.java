@@ -58,7 +58,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
       Object getterValue = descriptor.getValue(node, GlobalScope.getInstance());
       return getterValue == null ? null : String.valueOf(getterValue);
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
       return null;
     } finally {
       getters.remove(current);
@@ -80,7 +80,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     try {
       descriptor.setValue(node, propertyValue, GlobalScope.getInstance());
     } catch (Exception t) {
-      LOG.error(t);
+      LOG.error(null, t);
     } finally {
       threadSet.remove(pair);
     }

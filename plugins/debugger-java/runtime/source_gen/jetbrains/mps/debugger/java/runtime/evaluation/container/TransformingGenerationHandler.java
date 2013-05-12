@@ -46,7 +46,7 @@ public class TransformingGenerationHandler extends InMemoryJavaGenerationHandler
             }
           }
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(null, t);
         }
 
       }

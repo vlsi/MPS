@@ -49,7 +49,7 @@ public class NodeFactoryUtil {
     try {
       QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, factory, "jetbrains.mps.lang.actions.structure.NodeFactory", "call_getQueryMethodName_1220279061997", new Object[]{}), null, new NodeSetupContext(newNode, sampleNode, enclosingNode, model), SNodeOperations.getModel(factory));
     } catch (Exception e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
   }
 }

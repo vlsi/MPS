@@ -75,9 +75,9 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
     } catch (ObjectCollectedException ex) {
       LOG.warn("ObjectCollectedException: " + ex.getMessage());
     } catch (InternalException ex) {
-      LOG.error(ex);
+      LOG.error(null, ex);
     } catch (Exception ex) {
-      LOG.error(ex);
+      LOG.error(null, ex);
     }
   }
 

@@ -153,7 +153,7 @@ class IdeaFile implements IFileEx {
         myPath = null;
         return true;
       } catch (IOException e) {
-        IdeaFileSystemProvider.LOG.error(e);
+        IdeaFileSystemProvider.LOG.error(null, e);
         return false;
       }
     }

@@ -64,7 +64,7 @@ public class JDOMUtil {
         try {
           in.close();
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
     }
@@ -115,7 +115,7 @@ public class JDOMUtil {
       writeDocument(doc, writer);
     } catch (IOException e) {
       // This is hardly possible
-      LOG.error(e);
+      LOG.error(null, e);
     }
     return writer.toString();
   }

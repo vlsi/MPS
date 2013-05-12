@@ -46,7 +46,7 @@ public class JarFileClassPathItemFS extends RealClassPathItemFS {
       myFile = transformFile(FileSystem.getInstance().getFileByPath(path));
       myPrefix = "jar:" + new File(myFile.getPath()).toURI().toURL() + "!/";
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
   }
 

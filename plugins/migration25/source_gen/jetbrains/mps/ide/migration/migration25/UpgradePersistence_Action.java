@@ -93,7 +93,7 @@ public class UpgradePersistence_Action extends BaseAction {
             ((EditableSModel) model).reloadFromSource();
 
           } catch (IOException ex) {
-            LOG.error(ex);
+            LOG.error(null, ex);
           }
         }
       }

@@ -83,7 +83,7 @@ public class MPSVcsManager implements ProjectComponent {
     try {
       changeProvider.getChanges(scope, builder, new EmptyProgressIndicator(), new MPSVcsManager.StubChangeListManagerGate());
     } catch (VcsException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
     return builder.isInConflict();
   }

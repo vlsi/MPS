@@ -67,7 +67,7 @@ public class IoFileSystemProvider implements FileSystemProvider {
     try {
       r.run();
     } catch (Exception e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return false;
     }
     return true;

@@ -72,7 +72,7 @@ public abstract class AbstractCellMenuComponent {
         try {
           actions.addAll(menuPart.createActions(cellContext, editorContext));
         } catch (Exception e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
       return actions;
@@ -81,7 +81,7 @@ public abstract class AbstractCellMenuComponent {
       try {
         actions.addAll(menuPart.createActions(cellContext, (jetbrains.mps.nodeEditor.EditorContext) editorContext));
       } catch (Exception e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     }
     return actions;

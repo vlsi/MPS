@@ -117,7 +117,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
       try {
         sModelListener.problemsUpdated(this);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -127,7 +127,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
       try {
         sModelListener.beforeModelFileChanged(event);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -137,7 +137,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
       try {
         sModelListener.modelFileChanged(event);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -147,7 +147,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
       try {
         sModelListener.beforeModelRenamed(event);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -157,7 +157,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
       try {
         sModelListener.modelRenamed(event);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -167,7 +167,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
       try {
         sModelListener.modelLoadingStateChanged(this, oldState, newState);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -177,7 +177,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
       try {
         sModelListener.beforeModelDisposed(model);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -187,7 +187,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
       try {
         sModelListener.modelSaved(this);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }

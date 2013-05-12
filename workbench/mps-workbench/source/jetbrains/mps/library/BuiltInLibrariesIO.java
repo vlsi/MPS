@@ -68,15 +68,15 @@ public class BuiltInLibrariesIO {
         result.put(name, predefinedLibrary);
       }
     } catch (JDOMException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } finally {
       if (in != null) {
         try {
           in.close();
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
     }
@@ -92,9 +92,9 @@ public class BuiltInLibrariesIO {
         write(configFile, name, path);
       }
     } catch (JDOMException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
   }
 

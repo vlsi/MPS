@@ -407,7 +407,7 @@
     <nodeInfo nodeId="280922463088952288" fileName="TransformingGenerationHandler.java" startLine="40" startPosition="13" endLine="41" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="846214144107996599" fileName="TransformingGenerationHandler.java" startLine="41" startPosition="61" endLine="42" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="846214144107996613" fileName="TransformingGenerationHandler.java" startLine="44" startPosition="117" endLine="45" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="846214144107996623" fileName="TransformingGenerationHandler.java" startLine="48" startPosition="31" endLine="49" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="846214144107996623" fileName="TransformingGenerationHandler.java" startLine="48" startPosition="31" endLine="49" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="846214144107996628" fileName="TransformingGenerationHandler.java" startLine="50" startPosition="9" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="846214144107996632" fileName="TransformingGenerationHandler.java" startLine="53" startPosition="5" endLine="54" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="846214144107996609" fileName="TransformingGenerationHandler.java" startLine="43" startPosition="45" endLine="46" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -420,10 +420,10 @@
     <nodeInfo nodeId="846214144107996563" fileName="TransformingGenerationHandler.java" startLine="34" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleOutput#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/generator/GenerationStatus;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/progress/ProgressMonitor;)Z" />
     <scopeInfo nodeId="846214144107996505" fileName="TransformingGenerationHandler.java" startLine="30" startPosition="47" endLine="31" endPosition="30" />
     <scopeInfo nodeId="846214144107996612" fileName="TransformingGenerationHandler.java" startLine="44" startPosition="117" endLine="45" endPosition="41" />
-    <scopeInfo nodeId="846214144107996619" fileName="TransformingGenerationHandler.java" startLine="48" startPosition="0" endLine="49" endPosition="23">
+    <scopeInfo nodeId="846214144107996619" fileName="TransformingGenerationHandler.java" startLine="48" startPosition="0" endLine="49" endPosition="29">
       <varInfo nodeId="846214144107996620" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="846214144107996622" fileName="TransformingGenerationHandler.java" startLine="48" startPosition="31" endLine="49" endPosition="23" />
+    <scopeInfo nodeId="846214144107996622" fileName="TransformingGenerationHandler.java" startLine="48" startPosition="31" endLine="49" endPosition="29" />
     <scopeInfo nodeId="846214144107996483" fileName="TransformingGenerationHandler.java" startLine="24" startPosition="147" endLine="26" endPosition="95" />
     <scopeInfo nodeId="846214144107996608" fileName="TransformingGenerationHandler.java" startLine="43" startPosition="45" endLine="46" endPosition="13" />
     <scopeInfo nodeId="846214144107996609" fileName="TransformingGenerationHandler.java" startLine="43" startPosition="45" endLine="46" endPosition="13">

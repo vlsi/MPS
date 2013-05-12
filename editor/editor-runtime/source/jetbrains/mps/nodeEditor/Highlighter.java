@@ -277,7 +277,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         attemptCounter--;
       }
     } catch (InterruptedException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
   }
 
@@ -646,7 +646,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             myCommandWatcher.resetGracePeriod();
           }
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(null, t);
         }
       }
     }
