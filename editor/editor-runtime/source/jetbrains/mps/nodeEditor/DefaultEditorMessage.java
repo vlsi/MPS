@@ -21,6 +21,8 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
@@ -123,12 +125,17 @@ public class DefaultEditorMessage implements EditorMessage {
     editorComponent.changeSelection(getCellInBothWays(editorComponent));
   }
 
-  protected jetbrains.mps.openapi.editor.cells.EditorCell getCellInBothWays(EditorComponent editor) {
-    jetbrains.mps.openapi.editor.cells.EditorCell editorCell = getCell(editor);
-    if (editorCell != null) {
-      return editorCell;
-    }
-    return getCellForParentNodeInMainEditor(editor);
+  protected jetbrains.mps.openapi.editor.cells.EditorCell getCellInBothWays(final EditorComponent editor) {
+    return ModelAccess.instance().runReadAction(new Computable<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+      @Override
+      public jetbrains.mps.openapi.editor.cells.EditorCell compute() {
+        jetbrains.mps.openapi.editor.cells.EditorCell editorCell = getCell(editor);
+        if (editorCell != null) {
+          return editorCell;
+        }
+        return getCellForParentNodeInMainEditor(editor);
+      }
+    });
   }
 
   @Override
