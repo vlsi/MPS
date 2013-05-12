@@ -70,8 +70,10 @@ public class ActionReference_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_ld3k57_a0a0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new AliasEditorComponent(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("action");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("action");
+      }
       return editorCell;
     }
   }

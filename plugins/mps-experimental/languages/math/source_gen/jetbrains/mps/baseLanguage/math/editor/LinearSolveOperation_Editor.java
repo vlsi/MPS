@@ -284,8 +284,10 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_kydwvz_a0a0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new MathContextEditorPart(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("context");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("context");
+      }
       return editorCell;
     }
   }

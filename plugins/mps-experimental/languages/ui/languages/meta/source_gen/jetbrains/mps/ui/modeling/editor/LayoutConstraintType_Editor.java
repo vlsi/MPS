@@ -81,8 +81,10 @@ public class LayoutConstraintType_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_o1ved1_a0c0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new AliasEditorComponent(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("constraintConcept");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("constraintConcept");
+      }
       return editorCell;
     }
   }

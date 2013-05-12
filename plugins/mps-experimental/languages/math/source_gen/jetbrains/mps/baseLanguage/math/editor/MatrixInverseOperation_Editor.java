@@ -83,8 +83,10 @@ public class MatrixInverseOperation_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_j4oyiy_a0b0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new MathContextEditorPart(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("context");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("context");
+      }
       return editorCell;
     }
   }

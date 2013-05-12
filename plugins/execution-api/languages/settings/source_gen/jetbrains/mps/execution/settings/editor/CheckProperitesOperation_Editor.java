@@ -71,8 +71,10 @@ public class CheckProperitesOperation_Editor extends DefaultNodeEditor {
     private EditorCell createComponent_ti2jjv_a0a0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new AliasEditorComponent(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("member");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("member");
+      }
       Style style = new StyleImpl();
       RunConfigurations_StyleSheet.applyOperation(style, editorCell);
       editorCell.getStyle().putAll(style);
