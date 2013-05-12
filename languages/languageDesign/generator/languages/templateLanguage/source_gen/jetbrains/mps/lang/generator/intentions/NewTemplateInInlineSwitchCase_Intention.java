@@ -64,9 +64,6 @@ public class NewTemplateInInlineSwitchCase_Intention implements IntentionFactory
     if (editorCell == null) {
       return false;
     }
-    if (((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).getLinkDeclaration() != SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "caseConsequence")) {
-      return false;
-    }
     return SLinkOperations.getTarget(node, "caseConsequence", true) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "caseConsequence", true)), "jetbrains.mps.lang.generator.structure.RuleConsequence");
   }
 
