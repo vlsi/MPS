@@ -155,7 +155,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
         return;
       }
       myRepository.getModelAccess().checkReadAccess();
-      if (myModel.isUpdateMode()) return;
+      if (myModel != null && myModel.isUpdateMode()) return;
       myRepository.getModelAccess().checkWriteAccess();
       if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
         throw new IllegalModelChangeError(
