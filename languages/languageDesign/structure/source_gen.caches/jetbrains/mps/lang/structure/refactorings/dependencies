@@ -49,7 +49,6 @@
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
@@ -89,9 +88,9 @@
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseLoggableRefactoring" />
   </dependency>

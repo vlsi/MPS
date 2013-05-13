@@ -15,8 +15,8 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.refactoring.MoveUpDialog;
 import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.structure.scripts.RefUtil;
 import jetbrains.mps.ide.refactoring.OptionDialog;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
@@ -83,14 +83,15 @@ public class MoveLinkUp_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SNode targetConcept = MoveUpDialog.getConcept(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), "link");
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
       if (targetConcept == null) {
         return;
       }
       final Wrappers._T<SNode> linkToReplace = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           linkToReplace.value = RefUtil.findLinkToMerge(targetConcept, ((SNode) MapSequence.fromMap(_params).get("target")));
-
         }
       });
       Boolean mergeLinks = false;
@@ -109,8 +110,7 @@ public class MoveLinkUp_Action extends BaseAction {
         }
       }
       final Boolean merge = mergeLinks;
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        @Override
+      modelAccess.runReadInEDT(new Runnable() {
         public void run() {
           SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
           if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {

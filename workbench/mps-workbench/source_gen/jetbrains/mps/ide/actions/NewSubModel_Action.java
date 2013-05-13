@@ -18,10 +18,9 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -77,8 +76,8 @@ public class NewSubModel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
@@ -96,12 +95,14 @@ public class NewSubModel_Action extends BaseAction {
     try {
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
       final String namespace = SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model")));
-      ModelAccess.instance().runReadAction(new Runnable() {
+
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           String stereotype = SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model")));
-          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), namespace, ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, true);
+          dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), (AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), namespace, stereotype, true);
         }
       });
+
       dialog.value.show();
       SModel result = dialog.value.getResult();
       if (result != null) {

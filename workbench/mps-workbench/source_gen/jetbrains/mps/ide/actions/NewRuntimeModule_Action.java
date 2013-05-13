@@ -16,7 +16,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
@@ -81,12 +82,16 @@ public class NewRuntimeModule_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
     if (MapSequence.fromMap(_params).get("treeNode") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -95,12 +100,15 @@ public class NewRuntimeModule_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
-      ModelAccess.instance().runReadAction(new Runnable() {
+      final ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           ListSequence.fromList(modules).addSequence(SetSequence.fromSet(MPSModuleRepository.getInstance().getAllModules()));
         }
       });
-      BaseModuleModel baseSolutionModel = new BaseModuleModel(((Project) MapSequence.fromMap(_params).get("project")), "runtime module") {
+
+      BaseModuleModel baseSolutionModel = new BaseModuleModel(((Project) MapSequence.fromMap(_params).get("ideaProject")), "runtime module") {
         @Override
         public SModuleReference[] find(IScope p0) {
           return ListSequence.fromList(modules).select(new ISelector<SModule, SModuleReference>() {
@@ -121,7 +129,7 @@ public class NewRuntimeModule_Action extends BaseAction {
               final Language language = (Language) ((SModule) MapSequence.fromMap(_params).get("contextModule"));
               language.getModuleDescriptor().getRuntimeModules().add((ModuleReference) module);
               final MPSTree mpsTree = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getTree();
-              ModelAccess.instance().runWriteInEDT(new Runnable() {
+              modelAccess.runWriteInEDT(new Runnable() {
                 public void run() {
                   language.save();
                   mpsTree.rebuildLater();
@@ -131,7 +139,7 @@ public class NewRuntimeModule_Action extends BaseAction {
           };
         }
       };
-      ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(((Project) MapSequence.fromMap(_params).get("project")), baseSolutionModel, NewRuntimeModule_Action.this);
+      ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(((Project) MapSequence.fromMap(_params).get("ideaProject")), baseSolutionModel, NewRuntimeModule_Action.this);
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
         @Override
         public void elementChosen(Object p0) {

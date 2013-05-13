@@ -11,8 +11,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import javax.swing.JComponent;
@@ -53,18 +51,14 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
 
   @Override
   public Object getSelectedObject() {
-    final Object selection = myTree.getSelectionPath().getLastPathComponent();
-    final Wrappers._T<Object> result = new Wrappers._T<Object>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        if (selection instanceof SNodeTreeNode) {
-          result.value = ((SNodeTreeNode) selection).getSNode();
-        } else if (selection instanceof SModelTreeNode) {
-          result.value = ((SModelTreeNode) selection).getModel();
-        }
-      }
-    });
-    return result.value;
+    Object selection = myTree.getSelectionPath().getLastPathComponent();
+    Object result = null;
+    if (selection instanceof SNodeTreeNode) {
+      result = ((SNodeTreeNode) selection).getSNode();
+    } else if (selection instanceof SModelTreeNode) {
+      result = ((SModelTreeNode) selection).getModel();
+    }
+    return result;
   }
 
   @Override
