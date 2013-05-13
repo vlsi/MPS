@@ -55,7 +55,7 @@ public class GlobalScope extends BaseScope implements CoreComponent {
   }
 
   public String toString() {
-    return "global scope";
+    return "globalEvents scope";
   }
 
   @Override

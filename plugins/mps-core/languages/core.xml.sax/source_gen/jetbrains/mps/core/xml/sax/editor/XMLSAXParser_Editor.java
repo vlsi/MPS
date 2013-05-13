@@ -378,7 +378,7 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pkrqbh_n0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "global text handler");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "globalEvents text handler");
     editorCell.setCellId("Constant_pkrqbh_n0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

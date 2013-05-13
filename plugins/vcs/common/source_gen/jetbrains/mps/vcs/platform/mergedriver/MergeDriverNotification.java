@@ -82,8 +82,8 @@ public class MergeDriverNotification {
           }
         }), "and");
         String mainMessage = (myCompositeState == AbstractInstaller.State.OUTDATED ?
-          "You have some of the global settings outdated, you need to <a href=\"install\">update them</a>" :
-          "To make it work better with MPS, it is recommended to <a href=\"install\">update some of their global settings</a>"
+          "You have some of the globalEvents settings outdated, you need to <a href=\"install\">update them</a>" :
+          "To make it work better with MPS, it is recommended to <a href=\"install\">update some of their globalEvents settings</a>"
         );
         String message = String.format("<p>You are using %s. %s.</p><p><a href=\"http://confluence.jetbrains.com/display/MPSD2/Version+Control\">More info</a>.</p><p><a href=\"dismiss\">Don't offer again</a>.</p>", whichVcses, mainMessage);
         myLastNotification = new Notification("MergeDriver", "VCS Addons", message, NotificationType.WARNING, new NotificationListener() {

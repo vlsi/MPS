@@ -25,7 +25,7 @@ public class MappingConfigRefAllGlobal_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pzksw5_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "all global");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "all globalEvents");
     editorCell.setCellId("Constant_pzksw5_a0");
     Style style = new StyleImpl();
     ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);

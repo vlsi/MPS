@@ -121,7 +121,7 @@ public abstract class ReferenceDescriptor {
                 return searchScope;
               }
             }
-            // global search scope
+            // globalEvents search scope
             return new jetbrains.mps.scope.DefaultScope(getModel(), getModuleScope(getModule()), NameUtil.nodeFQName(linkTarget));
           } catch (Exception t) {
             LOG.error(t, getContextNode());

@@ -51,7 +51,7 @@ public class LanguageScope {
   }
 
   public static void popCurrent(LanguageScope languageScope, Object owner) {
-    if (CURRENT_STACK.get().size() == 1) throw new IllegalStateException("attempt to remove global LanguageScope");
+    if (CURRENT_STACK.get().size() == 1) throw new IllegalStateException("attempt to remove globalEvents LanguageScope");
     CurrentLanguageScope cls = CURRENT_STACK.get().peek();
     if (cls.myOwner != owner) throw new IllegalStateException("attempt to remove foreign LanguageScope");
     if (cls.myLangScope!= languageScope) throw new IllegalStateException("attempt to remove another LanguageScope");

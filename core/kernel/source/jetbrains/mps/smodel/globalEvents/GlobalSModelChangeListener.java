@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.events.global;
+package jetbrains.mps.smodel.globalEvents;
 
-public interface GlobalRepositoryListener<T> {
-  void attached(T m);
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelChangeListener;
 
-  void detached(T m);
+public interface GlobalSModelChangeListener extends SModelChangeListener, GlobalRepositoryListener<SModel> {
+
 }

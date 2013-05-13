@@ -24,7 +24,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.MappingConfigNormalRef").super_("jetbrains.mps.lang.project.structure.MappingConfigRefBase").parents("jetbrains.mps.lang.project.structure.MappingConfigRefBase").properties("modelUID", "nodeID").alias("ref", "").create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal").super_("jetbrains.mps.lang.project.structure.MappingConfigRefBase").parents("jetbrains.mps.lang.project.structure.MappingConfigRefBase").alias("all global", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal").super_("jetbrains.mps.lang.project.structure.MappingConfigRefBase").parents("jetbrains.mps.lang.project.structure.MappingConfigRefBase").alias("all globalEvents", "").create();
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal").super_("jetbrains.mps.lang.project.structure.MappingConfigRefBase").parents("jetbrains.mps.lang.project.structure.MappingConfigRefBase").alias("all local", "").create();
       case 7:

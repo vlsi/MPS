@@ -149,7 +149,7 @@ public class ExecuteFindersGetSearchResults_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_yvubny_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("scope");
-    provider.setNoTargetText("<global scope>");
+    provider.setNoTargetText("<globalEvents scope>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

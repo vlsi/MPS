@@ -40,7 +40,7 @@ public class ComparableRelation extends AbstractRelation {
     if (nodes.isEmpty()) {
       return false;
     }
-    // TODO: why not use global TypeChecker? there can be the only one, after all
+    // TODO: why not use globalEvents TypeChecker? there can be the only one, after all
     SubTypingManagerNew subTypingManager = (SubTypingManagerNew) TypeChecker.getInstance().getSubtypingManager();
     nodes = SubtypingUtil.eliminateSuperTypes(nodes);
     List<SNode> types = new LinkedList<SNode>();

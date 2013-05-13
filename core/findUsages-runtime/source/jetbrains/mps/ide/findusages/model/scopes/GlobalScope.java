@@ -36,6 +36,6 @@ public class GlobalScope extends FindUsagesScope {
   }
 
   public String toString() {
-    return "global scope";
+    return "globalEvents scope";
   }
 }
