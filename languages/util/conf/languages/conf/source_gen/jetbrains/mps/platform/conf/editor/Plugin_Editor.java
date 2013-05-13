@@ -231,7 +231,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no vendor>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("vendor");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("vendor");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -249,7 +251,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no ideaVersion>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("ideaVersion");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ideaVersion");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -267,7 +271,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no helpset>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("helpset");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("helpset");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

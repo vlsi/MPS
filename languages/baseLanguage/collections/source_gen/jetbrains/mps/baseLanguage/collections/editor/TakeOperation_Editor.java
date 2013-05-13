@@ -72,7 +72,9 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no elementsToTake>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("elementsToTake");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("elementsToTake");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

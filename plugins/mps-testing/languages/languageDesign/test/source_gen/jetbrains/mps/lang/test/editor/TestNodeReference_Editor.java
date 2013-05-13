@@ -70,8 +70,10 @@ public class TestNodeReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("declaration");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("declaration");
+      }
       Style style = new StyleImpl();
       transformationTest_StyleSheet.applyNodeAnnotation(style, editorCell);
       editorCell.getStyle().putAll(style);

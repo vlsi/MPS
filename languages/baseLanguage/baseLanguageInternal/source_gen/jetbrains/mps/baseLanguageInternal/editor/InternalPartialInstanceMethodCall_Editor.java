@@ -67,7 +67,9 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     provider.setNoTargetText("<no returnType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("returnType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("returnType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -96,7 +98,9 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     provider.setNoTargetText("<no instance>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("instance");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("instance");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);

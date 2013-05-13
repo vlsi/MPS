@@ -107,8 +107,10 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("applicableLink");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("applicableLink");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -194,7 +196,9 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("referentSetHandler");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("referentSetHandler");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -255,7 +259,9 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<true>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("keepsReference");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("keepsReference");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -310,7 +316,9 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("searchScopeFactory");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("searchScopeFactory");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -369,7 +377,9 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("validator");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("validator");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -408,7 +418,9 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no presentation>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("presentation");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("presentation");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

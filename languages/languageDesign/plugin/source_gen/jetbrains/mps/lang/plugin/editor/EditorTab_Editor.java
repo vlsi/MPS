@@ -173,7 +173,9 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no icon>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("icon");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("icon");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -274,7 +276,9 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no order>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("order");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("order");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -352,8 +356,10 @@ public class EditorTab_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("baseNodeConcept");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("baseNodeConcept");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -372,7 +378,9 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<base node = default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("baseNodeBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("baseNodeBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -397,7 +405,9 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<isApplicable = true>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("isApplicableBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("isApplicableBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -422,7 +432,9 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<nodes = default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("nodesBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("nodesBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -447,7 +459,9 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<can't create nodes>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("createTabBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("createTabBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

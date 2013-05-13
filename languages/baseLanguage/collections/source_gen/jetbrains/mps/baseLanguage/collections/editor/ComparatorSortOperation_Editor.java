@@ -78,7 +78,9 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no comparator>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("closure");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("closure");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -107,7 +109,9 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no ascending>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("ascending");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ascending");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

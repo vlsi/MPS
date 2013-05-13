@@ -121,7 +121,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no shortName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("shortName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("shortName");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -160,7 +162,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("MPS");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("codename");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("codename");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -299,7 +303,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no fullName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("fullName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("fullName");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -338,7 +344,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no buildNumber>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("buildNumber");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("buildNumber");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -411,7 +419,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no icon32>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("icon32");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("icon32");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -450,7 +460,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no icon16>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("icon16");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("icon16");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -489,7 +501,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no icon32opaque>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("icon32opaque");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("icon32opaque");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -531,7 +545,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no splashScreen>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("splashScreen");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("splashScreen");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -571,7 +587,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no textColor>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("textColor");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("textColor");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -610,7 +628,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no aboutScreen>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("aboutScreen");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("aboutScreen");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -628,7 +648,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no welcomeScreen>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("welcomeScreen");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("welcomeScreen");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -646,7 +668,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no updateWebsite>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("updateWebsite");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("updateWebsite");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -664,7 +688,9 @@ public class Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no help>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("help");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("help");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -73,7 +73,9 @@ public class HeadListOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no upToIndex>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("upToIndex");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("upToIndex");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

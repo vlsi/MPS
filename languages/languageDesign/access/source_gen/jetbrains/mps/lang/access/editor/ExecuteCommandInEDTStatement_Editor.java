@@ -60,7 +60,9 @@ public class ExecuteCommandInEDTStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no project>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("project");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("project");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -96,7 +98,9 @@ public class ExecuteCommandInEDTStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no commandClosureLiteral>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("commandClosureLiteral");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("commandClosureLiteral");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

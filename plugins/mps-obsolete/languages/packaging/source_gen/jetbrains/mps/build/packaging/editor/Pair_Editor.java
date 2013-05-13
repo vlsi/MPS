@@ -43,7 +43,9 @@ public class Pair_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no first>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("first");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("first");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -68,7 +70,9 @@ public class Pair_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no second>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("second");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("second");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

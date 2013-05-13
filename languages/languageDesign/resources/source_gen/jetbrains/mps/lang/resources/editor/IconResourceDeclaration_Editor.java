@@ -66,7 +66,9 @@ public class IconResourceDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no iconExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("iconExpression");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("iconExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

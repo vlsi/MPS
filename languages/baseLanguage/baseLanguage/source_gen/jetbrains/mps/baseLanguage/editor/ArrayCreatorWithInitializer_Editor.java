@@ -49,7 +49,9 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no componentType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("componentType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("componentType");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }

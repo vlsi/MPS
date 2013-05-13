@@ -50,7 +50,9 @@ public class CommentedStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no statement>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("statement");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("statement");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);

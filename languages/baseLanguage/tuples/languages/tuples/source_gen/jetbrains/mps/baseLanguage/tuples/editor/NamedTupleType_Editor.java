@@ -170,8 +170,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0b0a");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("classifier");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("classifier");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, false);
       editorCell.getStyle().putAll(style);
@@ -411,8 +413,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_nestedName");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("classifier");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("classifier");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -461,8 +465,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_2ojjgh_a0c0a(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
       editorCell.setCellId("Collection_2ojjgh_a0c0a");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("classifier");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("classifier");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.SELECTABLE, false);
       editorCell.getStyle().putAll(style);
@@ -564,8 +570,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0b1a");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("classifier");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("classifier");
+      }
       return editorCell;
     }
   }

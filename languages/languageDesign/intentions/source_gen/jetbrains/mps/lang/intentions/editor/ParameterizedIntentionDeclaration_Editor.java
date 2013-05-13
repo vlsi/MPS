@@ -156,8 +156,10 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("forConcept");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("forConcept");
+      }
       Style style = new StyleImpl();
       SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -309,7 +311,9 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     provider.setNoTargetText("<add query>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("queryBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("queryBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -334,7 +338,9 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     provider.setNoTargetText("<no descriptionBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("descriptionFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("descriptionFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -362,7 +368,9 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     provider.setNoTargetText("<isApplicable = true>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("isApplicableFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("isApplicableFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -390,7 +398,9 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     provider.setNoTargetText("<no executeBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("executeFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("executeFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

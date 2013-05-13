@@ -40,7 +40,9 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no expectedType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("expectedType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("expectedType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -65,7 +67,9 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no defaultValue>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("defaultValue");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("defaultValue");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

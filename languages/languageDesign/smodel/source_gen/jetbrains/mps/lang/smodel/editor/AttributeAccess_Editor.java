@@ -49,7 +49,9 @@ public class AttributeAccess_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no qualifier>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("qualifier");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("qualifier");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

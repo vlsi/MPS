@@ -69,7 +69,9 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rowsCount>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("rowsCount");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("rowsCount");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -98,7 +100,9 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no colsCount>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("colsCount");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("colsCount");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -136,7 +140,9 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rowIndex>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("rowIndex");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("rowIndex");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -164,7 +170,9 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no colIndex>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("colIndex");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("colIndex");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -199,7 +207,9 @@ public class MatrixInitializer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no expression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("expression");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("expression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

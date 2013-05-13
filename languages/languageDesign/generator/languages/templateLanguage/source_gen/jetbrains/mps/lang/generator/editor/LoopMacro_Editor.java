@@ -247,8 +247,10 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("mappingLabel");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("mappingLabel");
+      }
       Style style = new StyleImpl();
       Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -302,7 +304,9 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("sourceNodesQuery");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("sourceNodesQuery");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }

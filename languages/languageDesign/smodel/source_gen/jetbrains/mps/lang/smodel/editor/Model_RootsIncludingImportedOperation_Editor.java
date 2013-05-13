@@ -61,7 +61,9 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
     provider.setNoTargetText("<no scope>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("scope");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("scope");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -121,8 +123,10 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("concept");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("concept");
+      }
       Style style = new StyleImpl();
       SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
       editorCell.getStyle().putAll(style);

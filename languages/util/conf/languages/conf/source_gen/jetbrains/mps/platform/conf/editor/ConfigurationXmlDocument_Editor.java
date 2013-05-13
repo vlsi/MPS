@@ -96,7 +96,9 @@ public class ConfigurationXmlDocument_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no root>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("root");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("root");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

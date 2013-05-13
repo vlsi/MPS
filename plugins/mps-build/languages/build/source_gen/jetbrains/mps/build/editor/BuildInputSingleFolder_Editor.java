@@ -60,7 +60,9 @@ public class BuildInputSingleFolder_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no path>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("path");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("path");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);

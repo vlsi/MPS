@@ -47,7 +47,9 @@ public class InsertAfter_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no instruction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("instruction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("instruction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

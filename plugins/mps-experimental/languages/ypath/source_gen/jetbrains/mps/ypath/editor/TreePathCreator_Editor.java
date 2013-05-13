@@ -51,7 +51,9 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no parentBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("parentBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("parentBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -76,7 +78,9 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no childrenBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("childrenBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("childrenBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

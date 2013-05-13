@@ -116,7 +116,9 @@ public class BuildMps_IdeaPluginVendor_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no icon16>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("icon16");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("icon16");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

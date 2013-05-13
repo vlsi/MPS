@@ -49,7 +49,9 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no emitStatement>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("emitStatement");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("emitStatement");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

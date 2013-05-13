@@ -121,7 +121,9 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<context node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("searchNode");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("searchNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -146,7 +148,9 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<global scope>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("searchScope");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("searchScope");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

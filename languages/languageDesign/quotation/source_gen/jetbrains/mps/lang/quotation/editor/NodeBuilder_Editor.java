@@ -62,7 +62,9 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no quotedNode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("quotedNode");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("quotedNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -117,7 +119,9 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no modelToCreate>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("modelToCreate");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("modelToCreate");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

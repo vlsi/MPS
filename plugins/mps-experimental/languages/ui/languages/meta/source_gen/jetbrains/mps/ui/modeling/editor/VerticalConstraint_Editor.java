@@ -45,7 +45,9 @@ public class VerticalConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("..");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("top");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("top");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -70,7 +72,9 @@ public class VerticalConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("..");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("height");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("height");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -95,7 +99,9 @@ public class VerticalConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("..");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("bottom");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("bottom");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

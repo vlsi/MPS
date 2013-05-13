@@ -63,7 +63,9 @@ public class AuxObjectTemplate_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no runtimeType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("runtimeType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("runtimeType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -95,7 +97,9 @@ public class AuxObjectTemplate_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no factory>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("factory");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("factory");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

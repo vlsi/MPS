@@ -114,7 +114,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no applicableNode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("applicableNode");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("applicableNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -139,7 +141,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no supertypeNode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("supertypeNode");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("supertypeNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -188,7 +192,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("true");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("isApplicableClause");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("isApplicableClause");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -260,7 +266,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no body>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("body");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("body");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

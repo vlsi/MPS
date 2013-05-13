@@ -54,7 +54,9 @@ public class WhileLoopCommand_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no testCommand>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("testCommand");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("testCommand");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -89,7 +91,9 @@ public class WhileLoopCommand_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no commands>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("commands");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("commands");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

@@ -56,7 +56,9 @@ public class BuildLayout_EchoProperties_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no fileName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("fileName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("fileName");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

@@ -73,7 +73,9 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no initializer>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("initializer");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("initializer");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.AUTO_DELETABLE, false);
     editorCell.getStyle().putAll(style);

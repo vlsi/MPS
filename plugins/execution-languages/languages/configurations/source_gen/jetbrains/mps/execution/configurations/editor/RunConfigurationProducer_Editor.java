@@ -80,7 +80,9 @@ public class RunConfigurationProducer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no configuration>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("configuration");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("configuration");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

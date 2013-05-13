@@ -65,7 +65,9 @@ public class MessageComponent extends AbstractCellProvider {
     provider.setNoTargetText("<no message>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("message");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("message");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

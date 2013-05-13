@@ -113,8 +113,10 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_extensionName");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("extensionPoint");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("extensionPoint");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -220,7 +222,9 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<do nothing>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("activator");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("activator");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -261,7 +265,9 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<do nothing>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("deactivator");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("deactivator");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -302,7 +308,9 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no objectGetter>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("objectGetter");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("objectGetter");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

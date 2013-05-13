@@ -39,7 +39,9 @@ public class MapElement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no map>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("map");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("map");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -70,7 +72,9 @@ public class MapElement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no key>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("key");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("key");
+    }
     MapElement_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

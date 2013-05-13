@@ -102,8 +102,10 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("classConcept");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("classConcept");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -214,8 +216,10 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("classConcept");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("classConcept");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
       editorCell.getStyle().putAll(style);

@@ -52,7 +52,9 @@ public class DecideOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no x>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("x");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("x");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -77,7 +79,9 @@ public class DecideOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no y>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("y");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("y");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

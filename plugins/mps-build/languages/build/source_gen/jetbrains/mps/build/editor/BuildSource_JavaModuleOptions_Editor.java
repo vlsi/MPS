@@ -78,8 +78,10 @@ public class BuildSource_JavaModuleOptions_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_bvukwp_a0b0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "compileOptions");
       editorCell.setCellId("ReferencePresentation_bvukwp_a0b0");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("compileOptions");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("compileOptions");
+      }
       return editorCell;
     }
   }

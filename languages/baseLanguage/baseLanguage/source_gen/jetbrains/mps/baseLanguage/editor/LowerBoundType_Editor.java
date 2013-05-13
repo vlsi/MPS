@@ -58,7 +58,9 @@ public class LowerBoundType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no bound>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("bound");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("bound");
+    }
     LowerBoundToWildcard.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

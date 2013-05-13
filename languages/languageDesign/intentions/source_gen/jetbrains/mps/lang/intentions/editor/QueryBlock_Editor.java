@@ -90,7 +90,9 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no paramType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("paramType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("paramType");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }

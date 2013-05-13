@@ -47,7 +47,9 @@ public class InlineTemplateWithContext_RuleConsequence_Editor extends DefaultNod
     provider.setNoTargetText("<no content node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("contentNode");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("contentNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

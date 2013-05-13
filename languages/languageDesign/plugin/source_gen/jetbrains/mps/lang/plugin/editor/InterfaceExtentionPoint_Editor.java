@@ -84,7 +84,9 @@ public class InterfaceExtentionPoint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<id>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("pointID");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("pointID");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

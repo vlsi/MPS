@@ -147,7 +147,9 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("type");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("type");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -178,7 +180,9 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no matrix>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("matrix");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("matrix");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -228,7 +232,9 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no vector>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("vector");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("vector");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

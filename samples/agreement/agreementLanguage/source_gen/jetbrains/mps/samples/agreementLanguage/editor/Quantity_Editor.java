@@ -72,7 +72,9 @@ public class Quantity_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no amount>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("amount");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("amount");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

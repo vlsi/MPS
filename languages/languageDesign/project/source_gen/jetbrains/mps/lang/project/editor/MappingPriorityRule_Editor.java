@@ -65,7 +65,9 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no left>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("left");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("left");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -120,7 +122,9 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no right>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("right");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("right");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

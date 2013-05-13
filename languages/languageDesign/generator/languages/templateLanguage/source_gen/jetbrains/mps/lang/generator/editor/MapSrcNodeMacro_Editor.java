@@ -249,8 +249,10 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("mappingLabel");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("mappingLabel");
+      }
       Style style = new StyleImpl();
       Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -304,7 +306,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<current source node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("sourceNodeQuery");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("sourceNodeQuery");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
@@ -357,7 +361,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("mapperFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("mapperFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -407,7 +413,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("postMapperFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("postMapperFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

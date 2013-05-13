@@ -73,7 +73,9 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no length>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("length");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("length");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

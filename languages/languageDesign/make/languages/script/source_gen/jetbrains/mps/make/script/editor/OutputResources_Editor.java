@@ -48,7 +48,9 @@ public class OutputResources_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no resource>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("resource");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("resource");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

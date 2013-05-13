@@ -53,7 +53,9 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("expected");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("expected");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("expected");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -81,7 +83,9 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("actual");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("actual");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("actual");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

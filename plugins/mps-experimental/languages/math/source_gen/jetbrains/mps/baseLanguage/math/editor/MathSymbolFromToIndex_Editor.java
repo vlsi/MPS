@@ -60,7 +60,9 @@ public class MathSymbolFromToIndex_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no from>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("from");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("from");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -43,7 +43,9 @@ public class PropertyNameTarget_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no propertyName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("propertyName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("propertyName");
+    }
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);

@@ -155,8 +155,10 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("conceptDeclaration");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("conceptDeclaration");
+      }
       Style style = new StyleImpl();
       SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -228,7 +230,9 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no extension>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("extension");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("extension");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -281,7 +285,9 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("utf-8");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("encoding");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("encoding");
+    }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ConceptTextGenDeclaration_Editor.ConceptTextGenDeclaration_generic_cellMenu_9mcqjq_a0c8a(), new ConceptTextGenDeclaration_Editor.ConceptTextGenDeclaration_generic_cellMenu_9mcqjq_b0c8a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -361,7 +367,9 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no textGenBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("textGenBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("textGenBlock");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

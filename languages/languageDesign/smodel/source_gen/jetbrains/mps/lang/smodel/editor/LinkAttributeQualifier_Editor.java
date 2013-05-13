@@ -75,8 +75,10 @@ public class LinkAttributeQualifier_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_mg3hvm_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "attributeConcept");
       editorCell.setCellId("ReferencePresentation_mg3hvm_a0a0");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("attributeConcept");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("attributeConcept");
+      }
       return editorCell;
     }
   }
@@ -100,7 +102,9 @@ public class LinkAttributeQualifier_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<link>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("linkQualifier");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("linkQualifier");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);

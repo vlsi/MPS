@@ -77,7 +77,9 @@ public class InsertElementOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no index>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("index");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("index");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
@@ -108,7 +110,9 @@ public class InsertElementOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no element>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("element");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("element");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

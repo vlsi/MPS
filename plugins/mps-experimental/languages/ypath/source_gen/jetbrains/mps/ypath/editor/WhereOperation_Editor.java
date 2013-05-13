@@ -74,7 +74,9 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no whereBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("whereBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("whereBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -132,7 +134,9 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no filter>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("filter");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("filter");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

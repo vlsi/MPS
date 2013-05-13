@@ -594,7 +594,9 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no layout>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("layout");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("layout");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -709,7 +711,9 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("./");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("scriptsDir");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("scriptsDir");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

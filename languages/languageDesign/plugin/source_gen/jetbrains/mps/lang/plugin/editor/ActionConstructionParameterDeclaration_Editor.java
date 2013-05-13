@@ -45,7 +45,9 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("type");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("type");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -101,7 +103,9 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     provider.setNoTargetText("<no toStringFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("toStringFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("toStringFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -78,7 +78,9 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     provider.setNoTargetText("<auto>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("nodeToCheck");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("nodeToCheck");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -111,7 +113,9 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     provider.setNoTargetText("<no errorString>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("errorString");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("errorString");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

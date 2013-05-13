@@ -36,7 +36,9 @@ public class ConditionalOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no testExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("testExpression");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("testExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -61,7 +63,9 @@ public class ConditionalOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no ifTrue>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("ifTrue");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifTrue");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -86,7 +90,9 @@ public class ConditionalOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no ifFalse>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("ifFalse");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifFalse");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

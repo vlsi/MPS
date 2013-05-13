@@ -190,7 +190,9 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no applicableNode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("applicableNode");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("applicableNode");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
@@ -305,7 +307,9 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no body>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("body");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("body");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

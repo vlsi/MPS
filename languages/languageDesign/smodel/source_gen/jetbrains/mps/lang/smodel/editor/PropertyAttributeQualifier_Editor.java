@@ -78,8 +78,10 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_wc9pc4_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "attributeConcept");
       editorCell.setCellId("ReferencePresentation_wc9pc4_a0a0");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("attributeConcept");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("attributeConcept");
+      }
       return editorCell;
     }
   }
@@ -103,7 +105,9 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<property>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("propertyQualifier");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("propertyQualifier");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

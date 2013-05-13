@@ -68,7 +68,9 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no visibility>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("visibility");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("visibility");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -294,7 +296,9 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<< ... >>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("parentBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("parentBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -351,7 +355,9 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<< ... >>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("childrenBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("childrenBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

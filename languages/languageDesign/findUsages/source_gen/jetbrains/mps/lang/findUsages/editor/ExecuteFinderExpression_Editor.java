@@ -92,8 +92,10 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("finder");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("finder");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -122,7 +124,9 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("queryNode");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("queryNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -150,7 +154,9 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<same scope>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("queryScope");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("queryScope");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -178,7 +184,9 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<progress monitor>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("monitor");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("monitor");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

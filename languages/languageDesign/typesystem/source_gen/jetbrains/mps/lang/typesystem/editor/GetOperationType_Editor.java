@@ -63,7 +63,9 @@ public class GetOperationType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no operation>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("operation");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("operation");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -94,7 +96,9 @@ public class GetOperationType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no leftOperandType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("leftOperandType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("leftOperandType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -122,7 +126,9 @@ public class GetOperationType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rightOperandType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("rightOperandType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("rightOperandType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

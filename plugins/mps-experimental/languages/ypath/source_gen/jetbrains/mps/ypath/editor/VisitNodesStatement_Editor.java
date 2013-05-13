@@ -31,7 +31,9 @@ public class VisitNodesStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no visitBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("visitBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("visitBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

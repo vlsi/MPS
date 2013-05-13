@@ -75,7 +75,9 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no nodeToCoerce>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("nodeToCoerce");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("nodeToCoerce");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -100,7 +102,9 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no pattern>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("pattern");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("pattern");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -139,7 +143,9 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no body>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("body");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("body");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -192,7 +198,9 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no elseClause>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("elseClause");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("elseClause");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

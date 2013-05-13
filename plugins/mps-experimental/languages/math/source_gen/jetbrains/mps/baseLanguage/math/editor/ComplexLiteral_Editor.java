@@ -34,7 +34,9 @@ public class ComplexLiteral_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no real>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("real");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("real");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -59,7 +61,9 @@ public class ComplexLiteral_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no imag>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("imag");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("imag");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

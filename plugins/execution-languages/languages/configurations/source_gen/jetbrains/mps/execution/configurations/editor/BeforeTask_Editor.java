@@ -222,7 +222,9 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no execute>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("execute");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("execute");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

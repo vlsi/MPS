@@ -45,7 +45,9 @@ public class BwfAntStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no element>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("element");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("element");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

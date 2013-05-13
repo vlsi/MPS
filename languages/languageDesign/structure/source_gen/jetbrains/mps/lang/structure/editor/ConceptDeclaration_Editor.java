@@ -265,8 +265,10 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("extends");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("extends");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyConceptName(style, editorCell);
       editorCell.getStyle().putAll(style);

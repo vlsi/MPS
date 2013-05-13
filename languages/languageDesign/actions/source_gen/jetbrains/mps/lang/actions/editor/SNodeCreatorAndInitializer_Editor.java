@@ -52,7 +52,9 @@ public class SNodeCreatorAndInitializer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no createdType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("createdType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("createdType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -80,7 +82,9 @@ public class SNodeCreatorAndInitializer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("prototype");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("prototype");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);

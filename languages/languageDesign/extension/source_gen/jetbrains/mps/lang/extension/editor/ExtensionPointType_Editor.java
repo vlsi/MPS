@@ -98,8 +98,10 @@ public class ExtensionPointType_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_extensionName");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("extensionPoint");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("extensionPoint");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
       editorCell.getStyle().putAll(style);

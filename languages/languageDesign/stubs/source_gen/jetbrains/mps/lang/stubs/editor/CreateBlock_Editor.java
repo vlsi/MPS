@@ -32,7 +32,9 @@ public class CreateBlock_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no canCreateFunc>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("canCreateFunc");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("canCreateFunc");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -50,7 +52,9 @@ public class CreateBlock_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no createFunc>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("createFunc");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("createFunc");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

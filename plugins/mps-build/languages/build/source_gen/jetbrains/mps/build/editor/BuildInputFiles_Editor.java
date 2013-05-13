@@ -90,7 +90,9 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no dir>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("dir");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("dir");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

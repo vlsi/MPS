@@ -70,8 +70,10 @@ public class MappingScriptReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("mappingScript");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("mappingScript");
+      }
       Style style = new StyleImpl();
       Styles_StyleSheet.applyReference(style, editorCell);
       editorCell.getStyle().putAll(style);

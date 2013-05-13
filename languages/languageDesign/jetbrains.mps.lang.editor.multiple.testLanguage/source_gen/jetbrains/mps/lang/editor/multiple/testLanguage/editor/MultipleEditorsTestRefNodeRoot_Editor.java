@@ -113,7 +113,9 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no richChild>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("richChild");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("richChild");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -193,7 +195,9 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no compactChild>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("compactChild");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("compactChild");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -272,7 +276,9 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no conditionallyProjectedChild>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("conditionallyProjectedChild");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("conditionallyProjectedChild");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -394,7 +400,9 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no conditionallyRichOrCompactChild>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("conditionallyRichOrCompactChild");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("conditionallyRichOrCompactChild");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

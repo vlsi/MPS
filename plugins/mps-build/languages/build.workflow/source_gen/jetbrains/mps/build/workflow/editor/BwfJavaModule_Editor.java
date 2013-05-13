@@ -173,7 +173,9 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no sources>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("sources");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("sources");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -206,7 +208,9 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no resources>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("resources");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("resources");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

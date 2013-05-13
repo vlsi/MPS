@@ -55,7 +55,9 @@ public class Node_ReplaceWithAnotherOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no replacementNode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("replacementNode");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("replacementNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -62,7 +62,9 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     provider.setNoTargetText("no base name");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("baseName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("baseName");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -110,7 +112,9 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     provider.setNoTargetText("<no node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("contextNode");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("contextNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

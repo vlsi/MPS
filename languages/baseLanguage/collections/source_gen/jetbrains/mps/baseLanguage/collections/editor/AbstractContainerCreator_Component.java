@@ -151,7 +151,9 @@ public class AbstractContainerCreator_Component extends AbstractCellProvider {
     provider.setNoTargetText("<no elementType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("elementType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("elementType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -335,7 +337,9 @@ public class AbstractContainerCreator_Component extends AbstractCellProvider {
     provider.setNoTargetText("<no copyFrom>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("copyFrom");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("copyFrom");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -389,7 +393,9 @@ public class AbstractContainerCreator_Component extends AbstractCellProvider {
     provider.setNoTargetText("<no initSize>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("initSize");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("initSize");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

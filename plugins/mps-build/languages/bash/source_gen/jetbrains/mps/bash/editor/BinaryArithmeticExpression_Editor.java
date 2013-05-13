@@ -44,7 +44,9 @@ public class BinaryArithmeticExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no leftExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("leftExpression");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("leftExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -83,7 +85,9 @@ public class BinaryArithmeticExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rightExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("rightExpression");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("rightExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

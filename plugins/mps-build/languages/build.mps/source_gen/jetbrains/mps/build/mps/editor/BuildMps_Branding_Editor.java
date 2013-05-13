@@ -52,7 +52,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no shortName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("shortName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("shortName");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -126,7 +128,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no codename>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("codename");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("codename");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -255,7 +259,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no fullName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("fullName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("fullName");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -286,7 +292,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no buildNumber>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("buildNumber");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("buildNumber");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -324,7 +332,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no buildDate>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("buildDate");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("buildDate");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -383,7 +393,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no icon16>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("icon16");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("icon16");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -414,7 +426,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no icon32>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("icon32");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("icon32");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -445,7 +459,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no icon32opaque>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("icon32opaque");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("icon32opaque");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -476,7 +492,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no splashScreen>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("splashScreen");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("splashScreen");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -504,7 +522,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no textColor>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("textColor");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("textColor");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -535,7 +555,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no aboutScreen>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("aboutScreen");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("aboutScreen");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -566,7 +588,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no dialogImage>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("dialogImage");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("dialogImage");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -625,7 +649,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no welcomeCaption>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("welcomeCaption");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("welcomeCaption");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -656,7 +682,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no welcomeSlogan>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("welcomeSlogan");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("welcomeSlogan");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -687,7 +715,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no welcomeLogo>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("welcomeLogo");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("welcomeLogo");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -705,7 +735,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no updateWebsite>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("updateWebsite");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("updateWebsite");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -726,7 +758,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no help>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("help");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("help");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -757,7 +791,9 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no feedbackUrl>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("feedbackUrl");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("feedbackUrl");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

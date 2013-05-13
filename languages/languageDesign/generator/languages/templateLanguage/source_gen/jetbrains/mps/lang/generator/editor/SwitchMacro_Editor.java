@@ -248,8 +248,10 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("mappingLabel");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("mappingLabel");
+      }
       Style style = new StyleImpl();
       Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -303,7 +305,9 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<current input node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("sourceNodeQuery");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("sourceNodeQuery");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -401,8 +405,10 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("templateSwitch");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("templateSwitch");
+      }
       Style style = new StyleImpl();
       Styles_StyleSheet.applyReference(style, editorCell);
       editorCell.getStyle().putAll(style);

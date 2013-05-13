@@ -105,7 +105,9 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no valueType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("valueType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("valueType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -137,7 +139,9 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no canWrap>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("canWrap");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("canWrap");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -169,7 +173,9 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getPresentation>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("getPresentation");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("getPresentation");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -201,7 +207,9 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getWatchables>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("getWatchables");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("getWatchables");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

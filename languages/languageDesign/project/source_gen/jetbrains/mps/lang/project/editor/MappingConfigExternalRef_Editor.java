@@ -61,7 +61,9 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no generator>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("generator");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("generator");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -99,7 +101,9 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no innerRef>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("innerRef");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("innerRef");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);

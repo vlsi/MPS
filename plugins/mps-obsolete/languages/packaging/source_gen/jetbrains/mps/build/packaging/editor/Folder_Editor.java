@@ -75,7 +75,9 @@ public class Folder_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no title>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("title");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("title");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -103,7 +105,9 @@ public class Folder_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no sourcePath>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("sourcePath");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("sourcePath");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

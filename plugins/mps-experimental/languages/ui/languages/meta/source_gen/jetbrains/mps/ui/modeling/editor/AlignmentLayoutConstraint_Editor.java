@@ -43,7 +43,9 @@ public class AlignmentLayoutConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no hAlignment>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("hAlignment");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("hAlignment");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -68,7 +70,9 @@ public class AlignmentLayoutConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no vAlignment>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("vAlignment");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("vAlignment");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

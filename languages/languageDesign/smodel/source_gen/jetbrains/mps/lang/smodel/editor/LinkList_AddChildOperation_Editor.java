@@ -55,7 +55,9 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no childNode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("childNode");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("childNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

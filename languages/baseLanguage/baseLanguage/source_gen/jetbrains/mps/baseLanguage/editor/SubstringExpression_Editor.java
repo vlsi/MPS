@@ -39,7 +39,9 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no operand>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("operand");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("operand");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -67,7 +69,9 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("0");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("startIndex");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("startIndex");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -92,7 +96,9 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("end");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("endIndex");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("endIndex");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

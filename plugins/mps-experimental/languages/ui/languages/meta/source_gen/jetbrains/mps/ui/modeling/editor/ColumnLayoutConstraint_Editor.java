@@ -49,7 +49,9 @@ public class ColumnLayoutConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no col>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("col");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("col");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
@@ -81,7 +83,9 @@ public class ColumnLayoutConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText(" ");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("spanCols");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("spanCols");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

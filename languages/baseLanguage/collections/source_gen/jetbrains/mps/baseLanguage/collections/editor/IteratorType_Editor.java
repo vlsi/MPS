@@ -65,7 +65,9 @@ public class IteratorType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no elementType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("elementType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("elementType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

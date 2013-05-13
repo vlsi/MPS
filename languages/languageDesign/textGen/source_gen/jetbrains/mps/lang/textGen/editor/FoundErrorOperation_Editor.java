@@ -51,7 +51,9 @@ public class FoundErrorOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no text>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("text");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("text");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

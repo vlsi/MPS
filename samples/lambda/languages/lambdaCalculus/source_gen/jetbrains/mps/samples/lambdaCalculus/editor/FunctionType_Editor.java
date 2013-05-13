@@ -34,7 +34,9 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no domain>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("domain");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("domain");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -59,7 +61,9 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no range>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("range");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("range");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

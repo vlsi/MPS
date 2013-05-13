@@ -64,8 +64,10 @@ public class DirectMethodSpecification_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_dfgzix_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "methodDeclaration");
       editorCell.setCellId("ReferencePresentation_dfgzix_a0a0");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("methodDeclaration");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("methodDeclaration");
+      }
       return editorCell;
     }
   }

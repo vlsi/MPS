@@ -47,7 +47,9 @@ public class _Component_Visibility extends AbstractCellProvider {
     provider.setNoTargetText("/*package*/");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("visibility");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("visibility");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);

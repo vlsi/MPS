@@ -67,7 +67,9 @@ public class Jar_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no title>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("title");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("title");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
@@ -117,7 +119,9 @@ public class Jar_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no manifest>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("manifest");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("manifest");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

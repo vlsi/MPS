@@ -55,7 +55,9 @@ public class ImmediateSupertypesExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no subtypeExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("subtypeExpression");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("subtypeExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

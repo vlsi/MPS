@@ -77,7 +77,9 @@ public class FoldRightOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no seed>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("seed");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("seed");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -105,7 +107,9 @@ public class FoldRightOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no comb>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("closure");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("closure");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
     }

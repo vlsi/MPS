@@ -152,7 +152,9 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no nodeExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("nodeExpression");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("nodeExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -180,7 +182,9 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no projectExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("projectExpression");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("projectExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

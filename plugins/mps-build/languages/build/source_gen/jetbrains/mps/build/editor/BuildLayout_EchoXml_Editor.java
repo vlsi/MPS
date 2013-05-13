@@ -47,7 +47,9 @@ public class BuildLayout_EchoXml_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no fileName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("fileName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("fileName");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -68,7 +70,9 @@ public class BuildLayout_EchoXml_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no element>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("element");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("element");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);

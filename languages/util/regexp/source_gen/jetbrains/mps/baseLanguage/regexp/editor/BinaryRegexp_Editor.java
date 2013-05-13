@@ -38,7 +38,9 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no left>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("left");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("left");
+    }
     BinaryRegexp_Left_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -67,7 +69,9 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no right>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("right");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("right");
+    }
     BinaryRegexp_Right_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

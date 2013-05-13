@@ -71,7 +71,9 @@ public class RunConfigurationProducerPart_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no source>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("source");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("source");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -102,7 +104,9 @@ public class RunConfigurationProducerPart_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no create>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("create");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("create");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

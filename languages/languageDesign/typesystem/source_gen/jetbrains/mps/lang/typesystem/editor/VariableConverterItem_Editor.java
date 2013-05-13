@@ -47,7 +47,9 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no applicableBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("applicableBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("applicableBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -82,7 +84,9 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no convertBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("convertBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("convertBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

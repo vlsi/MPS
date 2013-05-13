@@ -37,7 +37,9 @@ public class FindMatchExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no inputExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("inputExpression");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("inputExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -65,7 +67,9 @@ public class FindMatchExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no regexp>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("regexp");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("regexp");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -58,7 +58,9 @@ public class Concept_GetAllSubConcepts_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<smodel>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("smodel");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("smodel");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -86,7 +88,9 @@ public class Concept_GetAllSubConcepts_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<scope>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("scope");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("scope");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

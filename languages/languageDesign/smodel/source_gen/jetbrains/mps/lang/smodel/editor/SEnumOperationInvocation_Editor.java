@@ -106,8 +106,10 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("enumDeclaration");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("enumDeclaration");
+      }
       Style style = new StyleImpl();
       SharedStyles_StyleSheet.applyReferenceDecorated(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -149,7 +151,9 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no operation>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("operation");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("operation");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

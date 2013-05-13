@@ -103,8 +103,10 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("macro");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("macro");
+      }
       Style style = new StyleImpl();
       buildStyles_StyleSheet.applyMacro(style, editorCell);
       editorCell.getStyle().putAll(style);

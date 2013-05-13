@@ -155,7 +155,9 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no leftOperandType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("leftOperandType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("leftOperandType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -272,7 +274,9 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rightOperandType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("rightOperandType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("rightOperandType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -362,7 +366,9 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no isApplicable>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("isApplicable");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("isApplicable");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -387,7 +393,9 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no function>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("function");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("function");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

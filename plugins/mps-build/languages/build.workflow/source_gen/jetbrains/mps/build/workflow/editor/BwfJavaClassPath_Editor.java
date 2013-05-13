@@ -31,7 +31,9 @@ public class BwfJavaClassPath_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no classpath>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("classpath");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("classpath");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

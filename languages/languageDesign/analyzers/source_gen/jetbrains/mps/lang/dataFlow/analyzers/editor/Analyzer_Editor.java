@@ -101,7 +101,9 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no direction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("direction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("direction");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -129,7 +131,9 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no latticeElementType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("latticeElementType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("latticeElementType");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -205,7 +209,9 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no initialFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("initialFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("initialFunction");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -281,7 +287,9 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no mergeFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("mergeFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("mergeFunction");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -357,7 +365,9 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no funFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("funFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("funFunction");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

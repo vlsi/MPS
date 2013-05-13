@@ -109,8 +109,10 @@ public class BuildLayout_ImportContent_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_roxgcf_a0b0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "target");
       editorCell.setCellId("ReferencePresentation_roxgcf_a0b0");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("target");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("target");
+      }
       return editorCell;
     }
   }

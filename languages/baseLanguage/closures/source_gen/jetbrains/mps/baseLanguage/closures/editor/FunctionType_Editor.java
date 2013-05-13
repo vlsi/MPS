@@ -160,7 +160,9 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no resultType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("resultType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("resultType");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
@@ -350,8 +352,10 @@ public class FunctionType_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_nestedName");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("runtimeIface");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("runtimeIface");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

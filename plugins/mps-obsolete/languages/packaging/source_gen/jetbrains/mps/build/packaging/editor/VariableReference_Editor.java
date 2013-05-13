@@ -78,8 +78,10 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("variable");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("variable");
+      }
       Style style = new StyleImpl();
       PackagingStyles_StyleSheet.applyVariable(style, editorCell);
       editorCell.getStyle().putAll(style);

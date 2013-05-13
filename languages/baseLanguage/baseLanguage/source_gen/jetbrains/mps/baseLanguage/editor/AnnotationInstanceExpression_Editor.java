@@ -31,7 +31,9 @@ public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no annotationInstance>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("annotationInstance");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("annotationInstance");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

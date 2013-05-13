@@ -35,7 +35,9 @@ public class XmlDocument_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no prolog>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("prolog");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("prolog");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -56,7 +58,9 @@ public class XmlDocument_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rootElement>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("rootElement");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("rootElement");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

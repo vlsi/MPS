@@ -64,8 +64,10 @@ public class BuildSource_JavaExternalJarFolderRef_Editor extends DefaultNodeEdit
     private EditorCell createReferencePresentation_cqnk8f_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "folder");
       editorCell.setCellId("ReferencePresentation_cqnk8f_a0a0");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("folder");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("folder");
+      }
       return editorCell;
     }
   }

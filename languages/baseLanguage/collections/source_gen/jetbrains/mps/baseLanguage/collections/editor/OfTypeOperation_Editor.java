@@ -59,7 +59,9 @@ public class OfTypeOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no requestedType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("requestedType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("requestedType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

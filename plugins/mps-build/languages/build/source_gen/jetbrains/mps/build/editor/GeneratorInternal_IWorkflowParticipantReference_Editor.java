@@ -68,8 +68,10 @@ public class GeneratorInternal_IWorkflowParticipantReference_Editor extends Defa
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_alias");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("participant");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("participant");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

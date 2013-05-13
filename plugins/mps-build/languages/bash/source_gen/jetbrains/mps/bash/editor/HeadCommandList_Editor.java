@@ -41,7 +41,9 @@ public class HeadCommandList_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no base>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("base");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("base");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
     }
@@ -73,7 +75,9 @@ public class HeadCommandList_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("?c");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("following");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("following");
+    }
     Style style = new StyleImpl();
     BashLanguageStyle_StyleSheet.applyNullStyle(style, editorCell);
     editorCell.getStyle().putAll(style);

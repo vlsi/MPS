@@ -96,7 +96,9 @@ public class ActionTestChildWrapper_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no childToWrap>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("childToWrap");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("childToWrap");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -74,7 +74,9 @@ public class TreeSetCreator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no comparator>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("comparator");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("comparator");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

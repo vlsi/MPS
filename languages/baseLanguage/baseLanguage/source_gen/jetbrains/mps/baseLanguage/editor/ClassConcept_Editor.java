@@ -234,7 +234,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("superclass");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("superclass");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_3_RTransform");
     editorCell.getStyle().putAll(style);
@@ -610,7 +612,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no staticInitializer>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("staticInitializer");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("staticInitializer");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.POSITION_CHILDREN, "next-line");
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -656,7 +660,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<<static initializer>>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("classInitializer");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("classInitializer");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -811,7 +817,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<<initializer>>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("instanceInitializer");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("instanceInitializer");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

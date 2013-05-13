@@ -127,7 +127,9 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no switchLabel>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("switchLabel");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("switchLabel");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -173,7 +175,9 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no expression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("expression");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("expression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -294,7 +298,9 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no defaultBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("defaultBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("defaultBlock");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -358,7 +364,9 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no switchLabel>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("switchLabel");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("switchLabel");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

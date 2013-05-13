@@ -66,7 +66,9 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no expressionConcept>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("expressionConcept");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("expressionConcept");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -94,7 +96,9 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no statementConcept>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("statementConcept");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("statementConcept");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

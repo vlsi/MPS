@@ -52,7 +52,9 @@ public class BoxLayoutConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no hConstraint>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("hConstraint");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("hConstraint");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -77,7 +79,9 @@ public class BoxLayoutConstraint_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no vConstraint>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("vConstraint");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("vConstraint");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

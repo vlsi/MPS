@@ -437,7 +437,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<<static initializer>>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("classInitializer");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("classInitializer");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

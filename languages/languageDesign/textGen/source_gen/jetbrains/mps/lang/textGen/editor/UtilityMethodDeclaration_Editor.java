@@ -100,7 +100,9 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no return type>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("returnType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("returnType");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }

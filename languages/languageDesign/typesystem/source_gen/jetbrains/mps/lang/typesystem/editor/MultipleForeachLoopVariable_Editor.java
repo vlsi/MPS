@@ -34,7 +34,9 @@ public class MultipleForeachLoopVariable_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no variable>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("variable");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("variable");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -59,7 +61,9 @@ public class MultipleForeachLoopVariable_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no iterable>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("iterable");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("iterable");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

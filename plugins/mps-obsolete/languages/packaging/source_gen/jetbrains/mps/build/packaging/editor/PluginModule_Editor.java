@@ -84,7 +84,9 @@ public class PluginModule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no pluginXmlReference>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("pluginXmlReference");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("pluginXmlReference");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

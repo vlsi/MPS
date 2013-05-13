@@ -37,7 +37,9 @@ public class Operation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<expression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("leftOperand");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("leftOperand");
+    }
     Operation_leftOperand_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

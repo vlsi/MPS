@@ -80,7 +80,9 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no objectType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("objectType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("objectType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

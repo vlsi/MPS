@@ -435,7 +435,9 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no icon>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("icon");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("icon");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -697,7 +699,9 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<update block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("updateBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("updateBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -725,7 +729,9 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<execute block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("executeFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("executeFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

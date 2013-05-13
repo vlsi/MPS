@@ -41,7 +41,9 @@ public class FromOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no fromExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("fromExpression");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("fromExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -85,8 +85,10 @@ public class OptionWithParamReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_symbol");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("optionWithParam");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("optionWithParam");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -105,7 +107,9 @@ public class OptionWithParamReference_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no word>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("word");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("word");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

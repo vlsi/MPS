@@ -63,7 +63,9 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     provider.setNoTargetText("<no text>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("messageText");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("messageText");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -92,7 +94,9 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     provider.setNoTargetText("<node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("referenceNode");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("referenceNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

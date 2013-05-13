@@ -58,7 +58,9 @@ public class InspectorBlock_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("block");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("block");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

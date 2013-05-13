@@ -74,7 +74,9 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     provider.setNoTargetText("<no userKey>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("userKey");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("userKey");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

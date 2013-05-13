@@ -46,7 +46,9 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no feature>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("feature");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("feature");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -71,7 +73,9 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no newConceptFQName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("newConceptFQName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("newConceptFQName");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -96,7 +100,9 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no newFeatureName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("newFeatureName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("newFeatureName");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -61,7 +61,9 @@ public class BaseExecuteCommandStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no commandClosureLiteral>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("commandClosureLiteral");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("commandClosureLiteral");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

@@ -98,7 +98,9 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no delimiter>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("delimiter");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("delimiter");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -142,7 +144,9 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no delimiter>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("delimiter");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("delimiter");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

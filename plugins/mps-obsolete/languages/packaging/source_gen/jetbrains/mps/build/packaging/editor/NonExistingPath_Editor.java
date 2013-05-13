@@ -49,7 +49,9 @@ public class NonExistingPath_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no macro>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("macro");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("macro");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

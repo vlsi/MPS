@@ -56,7 +56,9 @@ public class CommandList_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no head>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("head");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("head");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.FIRST);
     editorCell.getStyle().putAll(style);
@@ -80,7 +82,9 @@ public class CommandList_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("terminator");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("terminator");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
@@ -115,7 +119,9 @@ public class CommandList_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no comment>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("comment");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("comment");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -57,7 +57,9 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<test command>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("testCommand");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("testCommand");
+    }
     Style style = new StyleImpl();
     BashLanguageStyle_StyleSheet.applyNullStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -106,7 +108,9 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<if true>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("ifTrue");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifTrue");
+    }
     Style style = new StyleImpl();
     BashLanguageStyle_StyleSheet.applyNullStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -218,7 +222,9 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<if false>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("ifFalse");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifFalse");
+    }
     Style style = new StyleImpl();
     BashLanguageStyle_StyleSheet.applyNullStyle(style, editorCell);
     editorCell.getStyle().putAll(style);

@@ -67,7 +67,9 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("searchScopeFactory");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("searchScopeFactory");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -112,7 +114,9 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("validator");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("validator");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -154,7 +158,9 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no presentation>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("presentation");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("presentation");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);

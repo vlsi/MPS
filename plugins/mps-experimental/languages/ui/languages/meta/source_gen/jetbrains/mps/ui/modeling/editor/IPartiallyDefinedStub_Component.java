@@ -91,8 +91,10 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("hasTemplate");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("hasTemplate");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -153,8 +155,10 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_qot6m0_a0b0");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("selector");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("selector");
+      }
       return editorCell;
     }
   }
@@ -207,8 +211,10 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_qot6m0_a0c0");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("role");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("role");
+      }
       return editorCell;
     }
   }
@@ -261,8 +267,10 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_qot6m0_a0d0");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("template");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("template");
+      }
       return editorCell;
     }
   }

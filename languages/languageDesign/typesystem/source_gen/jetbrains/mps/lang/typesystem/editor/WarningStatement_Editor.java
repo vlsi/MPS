@@ -62,7 +62,9 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<error string>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("warningText");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("warningText");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -90,7 +92,9 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<node to highlight>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("nodeToReport");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("nodeToReport");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -143,7 +147,9 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no messageTarget>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("messageTarget");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("messageTarget");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -253,7 +259,9 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no foreignMessageSource>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("foreignMessageSource");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("foreignMessageSource");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

@@ -73,7 +73,9 @@ public class TailSetOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no fromElement>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("fromElement");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("fromElement");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

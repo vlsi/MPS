@@ -47,7 +47,9 @@ public class BeanPropertyView_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no bean>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("bean");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("bean");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -102,8 +104,10 @@ public class BeanPropertyView_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_te95m9_a0d0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "getter");
       editorCell.setCellId("ReferencePresentation_te95m9_a0d0");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("getter");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("getter");
+      }
       return editorCell;
     }
   }

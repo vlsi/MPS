@@ -168,7 +168,9 @@ public class Child_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no grandChild_0_1>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("grandChild_0_1");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("grandChild_0_1");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -207,7 +209,9 @@ public class Child_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no grandChild_1>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("grandChild_1");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("grandChild_1");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

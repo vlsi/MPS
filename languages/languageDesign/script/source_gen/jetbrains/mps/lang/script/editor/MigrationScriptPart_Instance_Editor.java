@@ -233,8 +233,10 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("affectedInstanceConcept");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("affectedInstanceConcept");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
       editorCell.getStyle().putAll(style);
@@ -289,7 +291,9 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no condition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("affectedInstancePredicate");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("affectedInstancePredicate");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -340,7 +344,9 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no affectedInstanceUpdater>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("affectedInstanceUpdater");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("affectedInstanceUpdater");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -200,7 +200,9 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no parameterType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("parameterType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("parameterType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -426,8 +428,10 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("opposite");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("opposite");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -588,7 +592,9 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no parameterQueryFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("parameterQueryFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("parameterQueryFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -647,7 +653,9 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no toStringFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("toStringFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("toStringFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -763,7 +771,9 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no paramSequenceFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("sequenceFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("sequenceFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -822,7 +832,9 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no paramSizeFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("sizeFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("sizeFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

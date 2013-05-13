@@ -214,7 +214,9 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     provider.setNoTargetText("<no debuggerConfiguration>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("debuggerConfiguration");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("debuggerConfiguration");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -200,7 +200,9 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("propertyValueFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("propertyValueFunction");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }

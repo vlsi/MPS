@@ -44,7 +44,9 @@ public class BuildSource_JavaDependencyJar_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no jar>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("jar");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("jar");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

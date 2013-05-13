@@ -119,7 +119,9 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("superclass");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("superclass");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -336,7 +338,9 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<<before test>>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("beforeTest");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("beforeTest");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -357,7 +361,9 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<<after test>>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("afterTest");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("afterTest");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -389,7 +395,9 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no testMethodList>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("testMethodList");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("testMethodList");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

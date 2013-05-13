@@ -58,7 +58,9 @@ public class SEnum_MemberForValueOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no valueExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("valueExpression");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("valueExpression");
+    }
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyParameter(style, editorCell);
     editorCell.getStyle().putAll(style);

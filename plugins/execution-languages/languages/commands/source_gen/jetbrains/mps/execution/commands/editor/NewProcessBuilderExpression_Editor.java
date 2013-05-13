@@ -122,7 +122,9 @@ public class NewProcessBuilderExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("current directory");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("workingDirectory");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("workingDirectory");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -167,7 +169,9 @@ public class NewProcessBuilderExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("current directory");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("workingDirectory");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("workingDirectory");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

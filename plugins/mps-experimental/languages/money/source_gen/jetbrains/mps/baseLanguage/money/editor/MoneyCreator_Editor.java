@@ -57,7 +57,9 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no amount>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("amount");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("amount");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -82,7 +84,9 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no currency>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("currency");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("currency");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

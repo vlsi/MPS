@@ -92,7 +92,9 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no extends>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("extends");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("extends");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -203,7 +205,9 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no leftTarget>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("leftTarget");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("leftTarget");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -262,7 +266,9 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rightTarget>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("rightTarget");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("rightTarget");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -84,8 +84,10 @@ public class EditableUIPropertyAccessCode_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("property");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("property");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -134,7 +136,9 @@ public class EditableUIPropertyAccessCode_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getter>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("getter");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("getter");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -170,7 +174,9 @@ public class EditableUIPropertyAccessCode_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no setter>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("setter");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("setter");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -206,7 +212,9 @@ public class EditableUIPropertyAccessCode_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no handlerSetup>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("handlerSetup");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("handlerSetup");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

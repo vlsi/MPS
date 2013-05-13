@@ -68,7 +68,9 @@ public class BuildLayout_NamedContainer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no containerName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("containerName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("containerName");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

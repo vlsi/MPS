@@ -351,7 +351,9 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no toolIcon>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("toolIcon");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("toolIcon");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -481,7 +483,9 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no toolInitBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("toolInitBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("toolInitBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -506,7 +510,9 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no toolDisposeBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("toolDisposeBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("toolDisposeBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -531,7 +537,9 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<getComponent block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("getComponentBlock");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("getComponentBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

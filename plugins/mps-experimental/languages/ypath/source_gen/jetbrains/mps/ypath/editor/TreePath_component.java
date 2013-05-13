@@ -44,7 +44,9 @@ public class TreePath_component extends AbstractCellProvider {
     provider.setNoTargetText("<no treePathType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("treePathType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("treePathType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

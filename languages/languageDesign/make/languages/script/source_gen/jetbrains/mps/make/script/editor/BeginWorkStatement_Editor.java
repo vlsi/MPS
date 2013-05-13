@@ -86,7 +86,9 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no ofTotal>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("ofTotal");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ofTotal");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -124,7 +126,9 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no expected>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("expected");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("expected");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

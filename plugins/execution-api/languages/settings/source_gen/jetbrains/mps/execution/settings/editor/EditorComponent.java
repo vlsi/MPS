@@ -96,7 +96,9 @@ public class EditorComponent extends AbstractCellProvider {
     provider.setNoTargetText("<no editor>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("editor");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("editor");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

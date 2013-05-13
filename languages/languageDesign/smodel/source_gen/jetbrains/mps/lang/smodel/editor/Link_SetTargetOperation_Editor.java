@@ -55,7 +55,9 @@ public class Link_SetTargetOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no linkTarget>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("linkTarget");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("linkTarget");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

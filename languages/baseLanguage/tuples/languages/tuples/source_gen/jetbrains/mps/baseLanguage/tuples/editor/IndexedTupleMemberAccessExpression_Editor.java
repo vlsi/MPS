@@ -38,7 +38,9 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
     provider.setNoTargetText("<no tuple>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("tuple");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("tuple");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -66,7 +68,9 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
     provider.setNoTargetText("<no index>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("index");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("index");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

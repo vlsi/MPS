@@ -69,7 +69,9 @@ public class Copy_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no sourcePath>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("sourcePath");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("sourcePath");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
