@@ -1367,7 +1367,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
   }
 
-  public static boolean ifMacro_Condition_155103030273174783(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2596422997916220281(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefNode"));
   }
 

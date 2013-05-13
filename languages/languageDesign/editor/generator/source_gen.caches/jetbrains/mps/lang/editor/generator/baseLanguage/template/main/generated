@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1uc0p9aipgot63bll50mwn1r79pj5h2">
+<dependencies version="2" modelHash="-e9fm5pvwz279bardtxhaq0400s01f82">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
@@ -337,7 +337,7 @@
   <source id="1236442846524" name="reduce_QueryFunction_String" hash="93j1gojj0wkxkz3fidjtmc9xy25sls5">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5170495790389304146" name="template_cellSetupBlock" hash="aet6g8cb0cqx9kstghyh3lvj4ads41g">
+  <source id="5170495790389304146" name="template_cellSetupBlock" hash="-5ec7cv9sik6oc2f4f88ags5jco34m1">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="996730828437272666" name="reduce_CellModel_JComponent" hash="qfrlfnhd9lsvyplchefepfsj9o9k52">
