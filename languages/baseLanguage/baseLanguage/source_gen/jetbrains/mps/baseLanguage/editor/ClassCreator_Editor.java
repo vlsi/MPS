@@ -99,7 +99,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_53xyyk_a0b0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "constructorDeclaration");
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "baseMethodDeclaration");
       editorCell.setCellId("ReferencePresentation_53xyyk_a0b0");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
