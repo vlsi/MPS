@@ -427,7 +427,7 @@
   </void>
   <void method="put">
    <string>public java.lang.Object jetbrains.mps.smodel.SNode.getUserObject(java.lang.Object)</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public java.lang.String jetbrains.mps.smodel.SNode.getConceptFqName()</string>
