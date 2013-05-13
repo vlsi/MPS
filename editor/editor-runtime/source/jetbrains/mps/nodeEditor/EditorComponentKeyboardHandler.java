@@ -81,7 +81,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
           jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM.equals(actionType);
 
       if (selectedCell.isErrorState() && strictMatching) {
-        boolean res = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        boolean res = ModelAccess.instance().runWriteActionInCommand(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
             return APICellAdapter.validate(selectedCell, strictMatching, false);
