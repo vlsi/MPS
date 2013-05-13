@@ -65,7 +65,7 @@ public abstract class BaseNodeDialog extends DialogWrapper {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myEditorComponent.editNode(getNode(), myEditorComponent.getOperationContext());
+        myEditorComponent.editNode(getNode());
       }
     });
     super.show();

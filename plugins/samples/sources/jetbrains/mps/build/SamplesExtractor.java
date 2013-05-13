@@ -25,6 +25,7 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.BuildNumber;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.build.SamplesExtractor.MyState;
 import org.apache.log4j.Logger;
@@ -96,7 +97,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   private int currentBuildNumberString() {
     BuildNumber buildNumber = myApplicationInfo.getBuild();
     String currentBuildNumberString = buildNumber.asString();
-    if (!currentBuildNumberString.matches("MPS[-\\.\\d]*.*")) {
+    if (!currentBuildNumberString.matches("MPS[-\\.\\d]*.*") || InternalFlag.isInternalMode()) {
       // "Normal" build number starts with MPS, then goes some actual build number with numbers and dots and dashes, then goes some suffix like M1.
       // If build number looks like "11.snapshot", we consider it developers build and do not to extract samples.
       return MyState.DEFAULT;
@@ -149,7 +150,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
         SwingUtilities.invokeLater(new Runnable() {
           @Override
           public void run() {
-            int answer = Messages.showYesNoDialog("Do you want to replace directory\n" + samplesDir + "\n with version " + currentBuildNumberString() + " (old directory contents will be deleted)?", "Replace MPS Samples?", Messages.getQuestionIcon());
+            int answer = Messages.showYesNoDialog("Do you want to replace directory\n" + samplesDir + "\n with version " + myApplicationInfo.getBuild().asString() + " (old directory contents will be deleted)?", "Replace MPS Samples?", Messages.getQuestionIcon());
             if (answer == 0) {
               FileUtil.delete(samplesDir);
               actuallyExtractSamples(samplesZipFile);

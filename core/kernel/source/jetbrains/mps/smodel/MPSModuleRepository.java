@@ -206,6 +206,12 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   }
 
   @Override
+  public SRepository getParent() {
+    // root repository
+    return null;
+  }
+
+  @Override
   public SModule getModule(SModuleId id) {
     assertCanRead();
 

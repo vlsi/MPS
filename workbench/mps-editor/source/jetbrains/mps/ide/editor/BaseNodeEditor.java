@@ -18,8 +18,6 @@ package jetbrains.mps.ide.editor;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.editor.Document;
 import com.intellij.util.ui.JBInsets;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.MementoPersistence;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
@@ -30,6 +28,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -93,7 +93,7 @@ public abstract class BaseNodeEditor implements Editor {
         if (node == null) {
           return;
         }
-        myEditorComponent.editNode(node, context);
+        myEditorComponent.editNode(node);
         if (select) {
           myEditorComponent.selectNode(node);
         }
