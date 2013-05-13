@@ -236,6 +236,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     setSemanticNodeToCells(cell, mySNode);
     if (cell.getRole() == null) {
       cell.setRole(role);
+      cell.setReferenceCell(true);
     }
     addCell(cell);
   }
@@ -246,6 +247,10 @@ public class DefaultEditor extends DefaultNodeEditor {
     provider.setRole(role);
     provider.setNoTargetText("<no " + role + ">");
     EditorCell editorCell = provider.createEditorCell(myEditorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole(role);
+      editorCell.setReferenceCell(true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     addCell(editorCell);
   }
