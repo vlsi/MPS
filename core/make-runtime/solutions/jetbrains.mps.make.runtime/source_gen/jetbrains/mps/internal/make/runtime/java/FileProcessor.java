@@ -117,7 +117,7 @@ import jetbrains.mps.util.JDOMUtil;
         writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), FileUtil.DEFAULT_CHARSET);
         writer.write(myContent);
       } catch (IOException e) {
-        FileProcessor.LOG.error(e);
+        FileProcessor.LOG.error(null, e);
       } finally {
         if (writer != null) {
           try {
@@ -175,7 +175,7 @@ import jetbrains.mps.util.JDOMUtil;
         stream = file.openOutputStream();
         stream.write(myContent);
       } catch (IOException e) {
-        FileProcessor.LOG.error(e);
+        FileProcessor.LOG.error(null, e);
       } finally {
         if (stream != null) {
           try {
@@ -235,7 +235,7 @@ import jetbrains.mps.util.JDOMUtil;
       try {
         JDOMUtil.writeDocument(myDocument, file);
       } catch (IOException e) {
-        FileProcessor.LOG.error(e);
+        FileProcessor.LOG.error(null, e);
       }
     }
 

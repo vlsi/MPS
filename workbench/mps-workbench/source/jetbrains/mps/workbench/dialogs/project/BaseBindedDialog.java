@@ -147,7 +147,7 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
             }
           });
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(null, t);
         }
       }
     });

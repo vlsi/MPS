@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.ModelAccess;
         }
       });
     } catch (Throwable t) {
-      myLog.error(t);
+      myLog.error(null, t);
     }
   }
 

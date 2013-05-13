@@ -758,7 +758,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       try {
         l.commandStarted();
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -774,7 +774,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       try {
         l.beforeCommandFinished();
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
 
@@ -782,7 +782,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       try {
         l.commandFinished();
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
     super.onCommandFinished();

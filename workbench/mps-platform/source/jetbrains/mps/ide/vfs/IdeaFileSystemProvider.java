@@ -103,7 +103,7 @@ public class IdeaFileSystemProvider implements FileSystemProvider, SafeWriteRequ
             out = file.openOutputStream();
             out.write(content);
           } catch (IOException e) {
-            LOG.error(e);
+            LOG.error(null, e);
           } finally {
             FileUtil.closeFileSafe(out);
           }

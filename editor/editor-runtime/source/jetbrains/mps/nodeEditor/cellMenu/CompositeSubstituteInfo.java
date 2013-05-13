@@ -65,7 +65,7 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
         try {
           actionLists.add(menuPart.createActions(myCellContext, getEditorContext()));
         } catch (Throwable e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
       return flatten(actionLists);
@@ -74,7 +74,7 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
       try {
         actionLists.add(menuPart.createActions(myCellContext, (jetbrains.mps.nodeEditor.EditorContext) getEditorContext()));
       } catch (Throwable e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     }
     return flatten(actionLists);

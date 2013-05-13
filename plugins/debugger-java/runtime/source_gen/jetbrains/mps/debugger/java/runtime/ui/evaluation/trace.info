@@ -670,13 +670,13 @@
     <nodeInfo nodeId="7406771907178600211" fileName="EvaluationUi.java" startLine="78" startPosition="20" endLine="79" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="775296678941461179" fileName="EvaluationUi.java" startLine="81" startPosition="43" endLine="82" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7406771907178600220" fileName="EvaluationUi.java" startLine="83" startPosition="33" endLine="84" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7406771907178600225" fileName="EvaluationUi.java" startLine="84" startPosition="39" endLine="85" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7406771907178600225" fileName="EvaluationUi.java" startLine="84" startPosition="39" endLine="85" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7406771907178600140" fileName="EvaluationUi.java" startLine="89" startPosition="53" endLine="90" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7406771907178600240" fileName="EvaluationUi.java" startLine="91" startPosition="53" endLine="92" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7406771907178600247" fileName="EvaluationUi.java" startLine="92" startPosition="44" endLine="93" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7406771907178600247" fileName="EvaluationUi.java" startLine="92" startPosition="44" endLine="93" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5207878536355562590" fileName="EvaluationUi.java" startLine="94" startPosition="37" endLine="95" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7406771907178600258" fileName="EvaluationUi.java" startLine="96" startPosition="27" endLine="97" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7406771907178600263" fileName="EvaluationUi.java" startLine="97" startPosition="33" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7406771907178600263" fileName="EvaluationUi.java" startLine="97" startPosition="33" endLine="98" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7406771907178600284" fileName="EvaluationUi.java" startLine="105" startPosition="25" endLine="106" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2999655953941675147" fileName="EvaluationUi.java" startLine="106" startPosition="53" endLine="107" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7406771907178600315" fileName="EvaluationUi.java" startLine="115" startPosition="25" endLine="116" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -786,18 +786,18 @@
     <scopeInfo nodeId="280922463090926271" fileName="EvaluationUi.java" startLine="223" startPosition="36" endLine="224" endPosition="45" />
     <scopeInfo nodeId="3196684409401005404" fileName="EvaluationUi.java" startLine="55" startPosition="25" endLine="57" endPosition="21" />
     <scopeInfo nodeId="7406771907178600124" fileName="EvaluationUi.java" startLine="61" startPosition="66" endLine="63" endPosition="13" />
-    <scopeInfo nodeId="7406771907178600216" fileName="EvaluationUi.java" startLine="83" startPosition="0" endLine="85" endPosition="25">
+    <scopeInfo nodeId="7406771907178600216" fileName="EvaluationUi.java" startLine="83" startPosition="0" endLine="85" endPosition="31">
       <varInfo nodeId="7406771907178600217" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7406771907178600219" fileName="EvaluationUi.java" startLine="83" startPosition="33" endLine="85" endPosition="25" />
-    <scopeInfo nodeId="7406771907178600236" fileName="EvaluationUi.java" startLine="91" startPosition="0" endLine="93" endPosition="30">
+    <scopeInfo nodeId="7406771907178600219" fileName="EvaluationUi.java" startLine="83" startPosition="33" endLine="85" endPosition="31" />
+    <scopeInfo nodeId="7406771907178600236" fileName="EvaluationUi.java" startLine="91" startPosition="0" endLine="93" endPosition="36">
       <varInfo nodeId="7406771907178600237" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7406771907178600239" fileName="EvaluationUi.java" startLine="91" startPosition="53" endLine="93" endPosition="30" />
-    <scopeInfo nodeId="7406771907178600254" fileName="EvaluationUi.java" startLine="96" startPosition="0" endLine="98" endPosition="19">
+    <scopeInfo nodeId="7406771907178600239" fileName="EvaluationUi.java" startLine="91" startPosition="53" endLine="93" endPosition="36" />
+    <scopeInfo nodeId="7406771907178600254" fileName="EvaluationUi.java" startLine="96" startPosition="0" endLine="98" endPosition="25">
       <varInfo nodeId="7406771907178600255" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7406771907178600257" fileName="EvaluationUi.java" startLine="96" startPosition="27" endLine="98" endPosition="19" />
+    <scopeInfo nodeId="7406771907178600257" fileName="EvaluationUi.java" startLine="96" startPosition="27" endLine="98" endPosition="25" />
     <scopeInfo nodeId="7406771907178600283" fileName="EvaluationUi.java" startLine="105" startPosition="25" endLine="107" endPosition="55" />
     <scopeInfo nodeId="7406771907178600314" fileName="EvaluationUi.java" startLine="115" startPosition="25" endLine="117" endPosition="55" />
     <scopeInfo nodeId="3196684409401005394" fileName="EvaluationUi.java" startLine="159" startPosition="0" endLine="161" endPosition="0" />

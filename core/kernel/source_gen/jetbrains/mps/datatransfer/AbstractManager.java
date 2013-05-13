@@ -52,7 +52,7 @@ public abstract class AbstractManager {
           try {
             myInstance = (T) postProcessorClass.newInstance();
           } catch (Throwable t) {
-            myLog.error(t);
+            myLog.error(null, t);
           }
         } else {
           myLog.warn("Class not found (probably code for corresponding model should be regenerated): " + myClassName);

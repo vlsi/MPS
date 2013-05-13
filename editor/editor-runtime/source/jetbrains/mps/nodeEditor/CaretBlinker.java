@@ -111,7 +111,7 @@ public class CaretBlinker implements ApplicationComponent {
             wait(getCaretBlinkingRateTimeMillis());
           }
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(null, t);
         }
       }
     }

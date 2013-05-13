@@ -34,7 +34,7 @@ public class VersionUtil {
     try {
       props.load(new FileInputStream(new File(PathManager.getHomePath() + File.separator + "build.number")));
     } catch (Exception e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
     return "" + props.get("build.number");
   }

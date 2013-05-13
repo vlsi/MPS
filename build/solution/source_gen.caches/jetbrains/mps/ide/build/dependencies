@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.build.Info.plist" file="Info.plist.xml" />
-  <dependency className="jetbrains.mps.ide.build.installer" file="installer.nsi" />
-  <dependency className="jetbrains.mps.ide.build.mps" file="mps.bat" />
-  <dependency className="jetbrains.mps.ide.build.mps" file="mps.sh" />
-  <dependency className="jetbrains.mps.ide.build.mps" file="mps.vmoptions" />
+  <dependency className="jetbrains.mps.ide.build.installer.nsi" file="installer.nsi" />
+  <dependency className="jetbrains.mps.ide.build.mps.bat" file="mps.bat" />
+  <dependency className="jetbrains.mps.ide.build.mps.sh" file="mps.sh" />
+  <dependency className="jetbrains.mps.ide.build.mps.vmoptions" file="mps.vmoptions" />
   <dependency className="jetbrains.mps.ide.build.mps" file="mps.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsAdditionalPluginsDist" file="mpsAdditionalPluginsDist.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsBootstrapCore" file="mpsBootstrapCore.xml" />

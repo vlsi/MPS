@@ -248,7 +248,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
         nodePresentation = node.getPresentation();
       } catch (Throwable t) {
         nodePresentation = null;
-        LOG.error(t);
+        LOG.error(null, t);
       }
       String nodeString = nodePresentation;
       output.append(nodeString);

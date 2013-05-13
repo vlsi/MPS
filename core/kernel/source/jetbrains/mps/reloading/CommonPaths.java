@@ -154,9 +154,9 @@ public class CommonPaths {
           return ClassPathFactory.getInstance().createFromPath(file.getCanonicalPath(), "Common paths");
         }
       } catch (URISyntaxException e) {
-        LOG.error(e);
+        LOG.error(null, e);
       } catch (Throwable e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     }
     return null;
@@ -245,7 +245,7 @@ public class CommonPaths {
         try {
           result.add(ClassPathFactory.getInstance().createFromPath(dir.getAbsolutePath(), "Common paths"));
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
     }, ClassType.values());
@@ -259,7 +259,7 @@ public class CommonPaths {
         item.add(ClassPathFactory.getInstance().createFromPath(fullPath, "Common paths"));
         return;
       } catch (Throwable e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     }
   }
