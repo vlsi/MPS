@@ -938,6 +938,11 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       }
     }
 
+    SRepository repo = model.getModelDescriptor().getRepository();
+    if (repo != null) {
+      attach(repo);
+    }
+
     model.registerNode(this);
     myModel = model;
     myModelForUndo = model;
