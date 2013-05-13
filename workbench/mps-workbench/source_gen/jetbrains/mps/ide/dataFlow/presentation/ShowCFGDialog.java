@@ -11,6 +11,12 @@ import java.awt.event.MouseEvent;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import javax.swing.SwingUtilities;
+import javax.swing.JPopupMenu;
+import javax.swing.JMenuItem;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.Color;
 import org.jetbrains.annotations.Nullable;
@@ -40,12 +46,37 @@ public class ShowCFGDialog extends DialogWrapper {
     graph.relayout();
     this.myControlFlowGraph.addBlockListener(new IBlockListener() {
       @Override
-      public void mousePressed(MouseEvent event, final IBlock block) {
+      public void mousePressed(final MouseEvent event, final IBlock block) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
-            SNode node = check_wx2hhz_a0a0a0a0a0a0a0a8a3(((SNodePointer) block.getSourceNode()));
-            if (node != null) {
-              NavigationSupport.getInstance().openNode(operationContext, node, true, true);
+            final SNode node = check_wx2hhz_a0a0a0a0a0a0a0a8a3(((SNodePointer) block.getSourceNode()));
+            if (SwingUtilities.isRightMouseButton(event)) {
+
+              JPopupMenu menu = new JPopupMenu();
+              JMenuItem item = new JMenuItem("go to data flow rule");
+              menu.add(item);
+              menu.show(event.getComponent(), block.getX() + block.getWidth() / 2, block.getY() + block.getHeight() / 2);
+              SNodeReference ruleRef = block.getRuleNode();
+              final SNode ruleNode = check_wx2hhz_a0g0b0a0a0a0a0a0a8a3(ruleRef);
+
+              if (ruleNode == null) {
+                item.setEnabled(false);
+              }
+              item.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent p0) {
+                  ModelAccess.instance().runWriteInEDT(new Runnable() {
+                    public void run() {
+                      if (ruleNode != null) {
+                        NavigationSupport.getInstance().openNode(operationContext, ruleNode, true, false);
+                      }
+                    }
+                  });
+                }
+              });
+            } else {
+              if (node != null) {
+                NavigationSupport.getInstance().openNode(operationContext, node, true, true);
+              }
             }
           }
         });
@@ -124,6 +155,13 @@ public class ShowCFGDialog extends DialogWrapper {
   }
 
   private static SNode check_wx2hhz_a0a0a0a0a0a0a0a8a3(SNodePointer checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
+    }
+    return null;
+  }
+
+  private static SNode check_wx2hhz_a0g0b0a0a0a0a0a0a8a3(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
