@@ -6,6 +6,9 @@
       <sourceRoot location="." />
     </modelRoot>
   </models>
+  <facets>
+    <facet pluginId="com.intellij" type="ideaPlugin" />
+  </facets>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/lib/diffutils-1.2.1.jar" />
   </stubModelEntries>

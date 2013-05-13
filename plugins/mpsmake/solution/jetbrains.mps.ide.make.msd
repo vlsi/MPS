@@ -9,6 +9,9 @@
     </modelRoot>
     <modelRoot path="${mps_home}/plugins/mpsmake/classes" type="java_classes" />
   </models>
+  <facets>
+    <facet pluginId="com.intellij" type="ideaPlugin" />
+  </facets>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/plugins/mpsmake/classes" />
   </stubModelEntries>
