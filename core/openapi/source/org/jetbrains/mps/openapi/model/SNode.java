@@ -82,8 +82,6 @@ public interface SNode {
    */
   String getName();
 
-  boolean isInRepository();
-
   // tree operation
 
   void addChild(String role, SNode child);

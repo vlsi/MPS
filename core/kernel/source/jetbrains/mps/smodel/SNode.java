@@ -207,11 +207,6 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @Override
-  public boolean isInRepository() {
-    return myRepository != null;
-  }
-
-  @Override
   public final boolean hasProperty(String propertyName) {
     propertyRead(propertyName);
 
