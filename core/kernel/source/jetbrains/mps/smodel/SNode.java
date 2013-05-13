@@ -208,17 +208,12 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public SRepository getRepository() {
-    nodeRead();
-
-    org.jetbrains.mps.openapi.model.SModel model = internal_getModel();
-    return model == null ? null : model.getRepository();
+    return myRepository;
   }
 
   @Override
   public boolean isInRepository() {
-    nodeRead();
-
-    return getRepository() != null;
+    return myRepository != null;
   }
 
   @Override
