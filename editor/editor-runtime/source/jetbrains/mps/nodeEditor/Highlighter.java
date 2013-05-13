@@ -428,47 +428,52 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     return runUpdateMessagesAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        final SNode editedNode = component.getEditedNode();
-        if (editedNode != null && org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance())) {
-          final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
-          boolean rootWasCheckedOnce = wasCheckedOnce(component);
-          if (!rootWasCheckedOnce) {
-            checkersToRecheck.addAll(checkers);
-          } else {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              @Override
-              public void run() {
-                if (myStopThread) {
-                  return;
-                }
-                for (BaseEditorChecker checker : checkers) {
-                  if (checker.hasDramaticalEventProtected(events) && (!essentialOnly || checker.isEssentialProtected())) {
-                    checkersToRecheck.add(checker);
+        return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            final SNode editedNode = component.getEditedNode();
+            if (editedNode != null && org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance())) {
+              final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
+              boolean rootWasCheckedOnce = wasCheckedOnce(component);
+              if (!rootWasCheckedOnce) {
+                checkersToRecheck.addAll(checkers);
+              } else {
+                ModelAccess.instance().runReadAction(new Runnable() {
+                  @Override
+                  public void run() {
+                    if (myStopThread) {
+                      return;
+                    }
+                    for (BaseEditorChecker checker : checkers) {
+                      if (checker.hasDramaticalEventProtected(events) && (!essentialOnly || checker.isEssentialProtected())) {
+                        checkersToRecheck.add(checker);
+                      }
+                    }
                   }
-                }
+                });
               }
-            });
-          }
 
-          if ((checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) || myStopThread) {
+              if ((checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) || myStopThread) {
+                return false;
+              }
+              List<BaseEditorChecker> checkersToRecheckList = new ArrayList<BaseEditorChecker>(checkersToRecheck);
+              Collections.sort(checkersToRecheckList, new PriorityComparator());
+
+              boolean recreateInspectorMessages = mainEditorMessagesChanged || !myInspectorMessagesCreated;
+              if (component instanceof InspectorEditorComponent) {
+                myInspectorMessagesCreated = true;
+              } else {
+                myCheckedOnceEditors.add(component);
+              }
+
+
+              if (updateEditor(component, events, rootWasCheckedOnce, checkersToRecheckList, checkersToRemove, recreateInspectorMessages)) {
+                return true;
+              }
+            }
             return false;
           }
-          List<BaseEditorChecker> checkersToRecheckList = new ArrayList<BaseEditorChecker>(checkersToRecheck);
-          Collections.sort(checkersToRecheckList, new PriorityComparator());
-
-          boolean recreateInspectorMessages = mainEditorMessagesChanged || !myInspectorMessagesCreated;
-          if (component instanceof InspectorEditorComponent) {
-            myInspectorMessagesCreated = true;
-          } else {
-            myCheckedOnceEditors.add(component);
-          }
-
-
-          if (updateEditor(component, events, rootWasCheckedOnce, checkersToRecheckList, checkersToRemove, recreateInspectorMessages)) {
-            return true;
-          }
-        }
-        return false;
+        });
       }
     });
   }
