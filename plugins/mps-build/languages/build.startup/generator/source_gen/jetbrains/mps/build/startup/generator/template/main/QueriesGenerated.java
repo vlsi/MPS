@@ -6,10 +6,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -18,34 +18,6 @@ import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_3885435385580638724(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580638754(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "startupClass");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580638768(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MpsStartupScript_Behavior.call_getPathToVmOptionsFile_5842819808956911442(_context.getNode()).replace(MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode()), "exe." + MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode())).replace("/", "\\");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580638816(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "options");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580638840(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true)).first(), "path").replace("/", "\\");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580638864(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "path").replace("/", "\\");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580638894(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "startupFolder");
-  }
-
   public static Object propertyMacro_GetPropertyValue_3885435385580639066(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String startupDir = SPropertyOperations.getString(_context.getNode(), "startupFolder");
     if (startupDir.endsWith("/")) {
@@ -83,14 +55,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_4962066449779579863(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4962066449779579875(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_8979762117546981953(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String pathString = "";
     String prefix = "$APP_PACKAGE/";
@@ -114,12 +78,36 @@ public class QueriesGenerated {
     return _context.getTemplateValue() + "/" + SPropertyOperations.getString(_context.getNode(), "startupFolder");
   }
 
-  public static Iterable sourceNodesQuery_5842819808956703339(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_1731640411964942144(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "startupClass");
   }
 
-  public static Iterable sourceNodesQuery_3885435385580638876(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true)).skip(1);
+  public static Object propertyMacro_GetPropertyValue_1731640411964944768(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + MpsStartupScript_Behavior.call_getPathToVmOptionsFile_5842819808956911442(_context.getNode()).replace(MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode()), "exe." + MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode())).replace("/", "\\");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1731640411964953768(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "options");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1731640411965070846(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true)).first(), "path").replace("/", "\\");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1731640411965084740(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "path").replace("/", "\\");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1731640411965091586(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "startupFolder");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1731640411964801466(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name") + ".bat";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1731640411967557625(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name") + "." + MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_5842819808956703170(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -130,7 +118,15 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true);
   }
 
-  public static Iterable sourceNodesQuery_4962066449779579886(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1731640411964947374(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode());
+  }
+
+  public static Iterable sourceNodesQuery_1731640411965079018(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true)).skip(1);
+  }
+
+  public static Iterable sourceNodesQuery_1731640411967575305(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     String[] options = MpsStartupScript_Behavior.call_getDefaultVmoptions_5842819808956701267(_context.getNode()).split("\\s");
     List<SNode> lines = ListSequence.fromList(new ArrayList<SNode>());
     for (String option : options) {
@@ -138,19 +134,16 @@ public class QueriesGenerated {
         continue;
       }
 
-      ListSequence.fromList(lines).addElement(_quotation_createNode_x583g4_a0a2a2a42(option));
+      ListSequence.fromList(lines).addElement(_quotation_createNode_x583g4_a0a2a2a32(option));
     }
     return lines;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a2a2a42(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a2a2a32(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GLine", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GText", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_3, "text", (String) parameter_1);
-    quotedNode_2.addChild("item", quotedNode_3);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.startup.structure.TextLine", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
     return quotedNode_2;
   }
 }

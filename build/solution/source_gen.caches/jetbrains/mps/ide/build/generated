@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8vx8uhw1hpbzo3tr4mfvfznx0qmucuz">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
-  <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="-cdibkrslw3kv2f60mncsl6eesezgrl6" />
-  <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="-3dj8w0ev6pth7mse3vaq6nz8kvqmu6r" />
+<dependencies version="2" modelHash="dbb9bp0jmzyrrngmgibzzfx2tjw3b1o">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
+  <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="1kkkdp7f8nj5tw5ighggz7m6ohfwbkt" />
+  <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="esq4p9ux5s3xyct3g70nc6g8lrzrk93" />
   <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="9d2bzkw1idi1apkjg2nzbjg2hdrzqh3" />
-  <dep model="r:9eaefcec-a5af-4365-b04c-b6940eebe416(jetbrains.mps.build.startup.generator.template.main@generator)" hash="-dczj4zkwl18d4njrv4uj2hd97o8b1ly" />
+  <dep model="r:9eaefcec-a5af-4365-b04c-b6940eebe416(jetbrains.mps.build.startup.generator.template.main@generator)" hash="-7et9bcdmzxq421pzhcu59ixyyt8xn32" />
   <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
-  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-4rsupx7l89y549sm33oq8w808fmsrqp" />
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="6jh858yfu25hlwqqgknksapeq3mn3ym" />
   <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" hash="e1aftwva2wqq2p2lda0m6nhpb0mjboc" />
-  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="-17fq7ayniqu3ik9c245uw9x66dje5x2" />
-  <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-9q22xsxwssplk0hxpgc08qmk4ogud1l" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="ex51i4zdqn7yvpvzs15do20yode60xe" />
+  <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-d5d9w8abuqtq2rr8fp0jyiyuwa1qbm7" />
   <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-9ntehf9sac5tenjm0ynborvjqjd1qf5" />
-  <common hash="5vh7rgg8yyk80b189zru752vaheu7j3" />
+  <common hash="ch3o88yhztvxma69iqevzgv2a805zcj" />
   <source id="7926701909975931624" name="mpsBootstrapCore" hash="6mq1qslfz77e5z365wdd42yo499q9jt">
     <dep root="7181125477683264500" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -307,9 +307,6 @@
     <file name="mps.sh" />
     <file name="mps.vmoptions" />
   </source>
-  <source id="716066598061903449" name="installer" hash="7zwbvr6ka6z1xt0pbjbbpdz0pgzgh7e">
-    <file name="installer.nsi" />
-  </source>
   <source id="4197214709894135186" name="mpsObsolete" hash="6c1ul0w3kppfu94nyfml4gaki6db0vf">
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
@@ -435,6 +432,9 @@
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsTesting.xml" />
+  </source>
+  <source id="1731640411968857441" name="installer.nsi" hash="-9lb6tqn1uw5q1ki3bb5vo88lh3z7ros">
+    <file name="installer.nsi" />
   </source>
 </dependencies>
 
