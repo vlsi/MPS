@@ -888,7 +888,7 @@ public class QueriesGenerated {
       }
 
       public String getDescriptionText(String pattern) {
-        return "globalEvents replace";
+        return "global replace";
       }
     });
     return result;
