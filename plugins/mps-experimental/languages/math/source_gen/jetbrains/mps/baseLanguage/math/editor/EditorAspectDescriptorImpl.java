@@ -83,12 +83,12 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        if ("ExponentOperation_Component".equals(editorComponentId)) {
+        if ("jetbrains.mps.baseLanguage.math.editor.ExponentOperation_Component".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new ExponentOperation_Component(null));
         }
         break;
       case 1:
-        if ("MathContextEditorPart".equals(editorComponentId)) {
+        if ("jetbrains.mps.baseLanguage.math.editor.MathContextEditorPart".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new MathContextEditorPart(null));
         }
         break;

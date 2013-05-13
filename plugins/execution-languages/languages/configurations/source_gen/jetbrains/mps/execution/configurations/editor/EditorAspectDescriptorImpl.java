@@ -59,7 +59,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        if ("BeforeTasksComponent".equals(editorComponentId)) {
+        if ("jetbrains.mps.execution.configurations.editor.BeforeTasksComponent".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new BeforeTasksComponent(null));
         }
         break;
@@ -73,7 +73,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         }
         break;
       case 2:
-        if ("StartProcessWithTool_Component".equals(editorComponentId)) {
+        if ("jetbrains.mps.execution.configurations.editor.StartProcessWithTool_Component".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new StartProcessWithTool_Component(null));
         }
         break;
@@ -83,6 +83,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.ConsoleCreator", "jetbrains.mps.execution.configurations.structure.ConsoleType", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0b0a1 = new String[]{"ComplexCanRunAndDebug", "SimpleCanRunAndDebug"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b0a1 = new String[]{"jetbrains.mps.execution.configurations.editor.ComplexCanRunAndDebug", "jetbrains.mps.execution.configurations.editor.SimpleCanRunAndDebug"};
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
 }

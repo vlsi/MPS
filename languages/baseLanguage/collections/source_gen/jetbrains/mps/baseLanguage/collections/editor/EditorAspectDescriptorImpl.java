@@ -185,17 +185,17 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        if ("AbstractContainerCreator_Component".equals(editorComponentId)) {
+        if ("jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_Component".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new AbstractContainerCreator_Component(null));
         }
         break;
       case 1:
-        if ("CustomMapCreator_component".equals(editorComponentId)) {
+        if ("jetbrains.mps.baseLanguage.collections.editor.CustomMapCreator_component".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new CustomMapCreator_component(null));
         }
         break;
       case 2:
-        if ("HashMapCreator_editorComponent".equals(editorComponentId)) {
+        if ("jetbrains.mps.baseLanguage.collections.editor.HashMapCreator_editorComponent".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new HashMapCreator_editorComponent(null));
         }
         break;

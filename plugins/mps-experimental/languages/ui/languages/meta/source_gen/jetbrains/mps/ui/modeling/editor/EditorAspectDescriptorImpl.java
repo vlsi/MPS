@@ -131,12 +131,12 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        if ("IAspectParameterHolder_Component".equals(editorComponentId)) {
+        if ("jetbrains.mps.ui.modeling.editor.IAspectParameterHolder_Component".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new IAspectParameterHolder_Component(null));
         }
         break;
       case 1:
-        if ("IPartiallyDefinedStub_Component".equals(editorComponentId)) {
+        if ("jetbrains.mps.ui.modeling.editor.IPartiallyDefinedStub_Component".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new IPartiallyDefinedStub_Component(null));
         }
         break;

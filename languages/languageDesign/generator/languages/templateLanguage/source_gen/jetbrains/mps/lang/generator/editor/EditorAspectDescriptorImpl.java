@@ -121,22 +121,22 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        if ("BaseMappingRule_premise".equals(editorComponentId)) {
+        if ("jetbrains.mps.lang.generator.editor.BaseMappingRule_premise".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new BaseMappingRule_premise(null));
         }
         break;
       case 1:
-        if ("CopyScrNodeMacro_inspector".equals(editorComponentId)) {
+        if ("jetbrains.mps.lang.generator.editor.CopyScrNodeMacro_inspector".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new CopyScrNodeMacro_inspector(null));
         }
         break;
       case 2:
-        if ("ITemplateCall_actualArguments".equals(editorComponentId)) {
+        if ("jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new ITemplateCall_actualArguments(null));
         }
         break;
       case 3:
-        if ("NodeMacro_postfix".equals(editorComponentId)) {
+        if ("jetbrains.mps.lang.generator.editor.NodeMacro_postfix".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new NodeMacro_postfix(null));
         }
         break;

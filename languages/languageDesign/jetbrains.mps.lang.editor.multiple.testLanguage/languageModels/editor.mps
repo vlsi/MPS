@@ -1608,5 +1608,48 @@
       </node>
     </node>
   </root>
+  <root type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="7033942394254568197" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="MainEditorComponent" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="MultipleEditorsTestChild" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7348800710869118178" nodeInfo="nn">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7348800710870008099" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="tmp" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="7348800710869118179" nodeInfo="nn" />
+    </node>
+  </root>
+  <root type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="7033942394256349885" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="ExtensionEditorComponent" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="MultipleEditorsTestChild" />
+    <node role="contextHints" roleId="tpc2.7348800710862477686" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="2467262375113369403" nodeInfo="ig">
+      <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
+    </node>
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7033942394256350548" nodeInfo="nn">
+      <property name="text" nameId="tpc2.1073389577007" value="newComponentCell" />
+    </node>
+    <node role="overridenEditorComponent" roleId="tpc2.7033942394258392116" type="tpc2.EditorComponentDeclarationReference" typeId="tpc2.7033942394256351208" id="608335627140651025" nodeInfo="ng">
+      <link role="editorComponent" roleId="tpc2.7033942394256351817" targetNodeId="7033942394254568197" resolveInfo="MainEditorComponent" />
+    </node>
+  </root>
+  <root type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="608335627140652040" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="ExtensionEditorComponent2" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="MultipleEditorsTestChild" />
+    <node role="contextHints" roleId="tpc2.7348800710862477686" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="2467262375113370074" nodeInfo="ig">
+      <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576567" resolveInfo="compact" />
+    </node>
+    <node role="overridenEditorComponent" roleId="tpc2.7033942394258392116" type="tpc2.EditorComponentDeclarationReference" typeId="tpc2.7033942394256351208" id="2467262375110725909" nodeInfo="ng">
+      <link role="editorComponent" roleId="tpc2.7033942394256351817" targetNodeId="7033942394254568197" resolveInfo="MainEditorComponent" />
+    </node>
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="608335627140652041" nodeInfo="nn">
+      <property name="text" nameId="tpc2.1073389577007" value="newComponentCell" />
+    </node>
+  </root>
+  <root type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="7348800710869729426" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="AdditionalEditorComponent" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="MultipleEditorsTestChild" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2467262375113370744" nodeInfo="nn">
+      <property name="text" nameId="tpc2.1073389577007" value="testCell" />
+    </node>
+  </root>
 </model>
 

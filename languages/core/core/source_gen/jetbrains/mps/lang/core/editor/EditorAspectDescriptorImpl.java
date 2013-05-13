@@ -43,6 +43,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1 = new String[]{"AliasEditorComponent", "ShortDescriptionEditorComponent"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1 = new String[]{"jetbrains.mps.lang.core.editor.AliasEditorComponent", "jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent"};
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"};
 }

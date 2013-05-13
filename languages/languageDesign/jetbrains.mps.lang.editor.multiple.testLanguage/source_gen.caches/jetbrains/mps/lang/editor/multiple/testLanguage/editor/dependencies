@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.editor.multiple.testLanguage.editor.AdditionalEditorComponent" file="AdditionalEditorComponent.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.testLanguage.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.AdditionalEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.ExtensionEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.ExtensionEditorComponent2" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.MainEditorComponent" />
     <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestChild_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestChild_compact_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestChild_rich_Editor" />
@@ -19,6 +37,49 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.multiple.testLanguage.editor.ExtensionEditorComponent" file="ExtensionEditorComponent.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.multiple.testLanguage.editor.ExtensionEditorComponent2" file="ExtensionEditorComponent2.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.multiple.testLanguage.editor.MainEditorComponent" file="MainEditorComponent.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestChild_Editor" file="MultipleEditorsTestChild_Editor.java">
     <classNode dependClassName="java.lang.Class" />

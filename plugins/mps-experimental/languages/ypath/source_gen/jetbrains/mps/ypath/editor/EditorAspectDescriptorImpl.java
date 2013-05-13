@@ -87,17 +87,17 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        if ("IFeature_Properties".equals(editorComponentId)) {
+        if ("jetbrains.mps.ypath.editor.IFeature_Properties".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new IFeature_Properties(null));
         }
         break;
       case 1:
-        if ("IParamFeature_Properties".equals(editorComponentId)) {
+        if ("jetbrains.mps.ypath.editor.IParamFeature_Properties".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new IParamFeature_Properties(null));
         }
         break;
       case 2:
-        if ("TreePath_component".equals(editorComponentId)) {
+        if ("jetbrains.mps.ypath.editor.TreePath_component".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new TreePath_component(null));
         }
         break;

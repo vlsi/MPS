@@ -79,12 +79,12 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        if ("AffectedNodesClauseInParent".equals(editorComponentId)) {
+        if ("jetbrains.mps.lang.refactoring.editor.AffectedNodesClauseInParent".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new AffectedNodesClauseInParent(null));
         }
         break;
       case 1:
-        if ("RefactoringTarget".equals(editorComponentId)) {
+        if ("jetbrains.mps.lang.refactoring.editor.RefactoringTarget".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new RefactoringTarget(null));
         }
         break;
