@@ -565,7 +565,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no layout>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("cellLayout");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("cellLayout");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -701,7 +703,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no usesFoldingCondition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("usesFoldingCondition");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("usesFoldingCondition");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -741,7 +745,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no addHints>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("addHints");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("addHints");
+    }
     CellModel_Collection_AddHint_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -782,7 +788,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no removeHints>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("removeHints");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("removeHints");
+    }
     CellModel_Collection_RemoveHint_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

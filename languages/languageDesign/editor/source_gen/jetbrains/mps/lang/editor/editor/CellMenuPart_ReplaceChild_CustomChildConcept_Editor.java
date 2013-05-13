@@ -102,7 +102,9 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     provider.setNoTargetText("<no childConceptFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("childConceptFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("childConceptFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -50,7 +50,9 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no cellModel>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("cellModel");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("cellModel");
+    }
     editorCell.addKeyMap(new EditorCellModel_KeyMap());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

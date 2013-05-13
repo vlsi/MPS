@@ -117,7 +117,9 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no extendedClass>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("extendedClass");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("extendedClass");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

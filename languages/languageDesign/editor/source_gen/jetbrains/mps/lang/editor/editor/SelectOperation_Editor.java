@@ -62,7 +62,9 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no editorContext>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("editorContext");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("editorContext");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -31,7 +31,9 @@ public class ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getter>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("getter");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("getter");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

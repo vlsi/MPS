@@ -133,7 +133,9 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no cellProvider>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("cellProvider");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("cellProvider");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

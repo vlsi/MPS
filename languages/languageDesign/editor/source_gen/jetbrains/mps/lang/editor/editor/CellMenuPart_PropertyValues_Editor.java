@@ -102,7 +102,9 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no valuesFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("valuesFunction");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("valuesFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

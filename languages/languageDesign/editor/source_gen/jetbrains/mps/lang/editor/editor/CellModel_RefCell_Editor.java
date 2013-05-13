@@ -114,8 +114,10 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("relationDeclaration");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("relationDeclaration");
+      }
       Style style = new StyleImpl();
       SharedStyles_StyleSheet.applyReferenceDecorated(style, editorCell);
       style.set(StyleAttributes.DRAW_BORDER, true);
@@ -149,7 +151,9 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<press ctrl-space>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("editorComponent");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("editorComponent");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -296,8 +300,10 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role_1");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("relationDeclaration");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("relationDeclaration");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.DRAW_BORDER, true);
       editorCell.getStyle().putAll(style);
@@ -377,8 +383,10 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_lfsepz_a0b1d0(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_lfsepz_a0b1d0");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("editorComponent");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("editorComponent");
+      }
       editorCell.addEditorCell(this.createRefCell_lfsepz_a0a1b3a(editorContext, node));
       return editorCell;
     }
@@ -390,8 +398,10 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1b3a._Inline_lfsepz_a0a0b1d0());
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("editorComponent");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("editorComponent");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -426,8 +436,10 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
         EditorCell editorCell;
         editorCell = provider.createEditorCell(editorContext);
         editorCell.setCellId("property_name");
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("conceptDeclaration");
+        if (editorCell.getRole() == null) {
+          editorCell.setReferenceCell(true);
+          editorCell.setRole("conceptDeclaration");
+        }
         editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
         SNode attributeConcept = provider.getRoleAttribute();
         Class attributeKind = provider.getRoleAttributeClass();

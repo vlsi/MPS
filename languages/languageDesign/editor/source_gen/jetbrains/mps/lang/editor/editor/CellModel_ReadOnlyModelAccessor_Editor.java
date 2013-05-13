@@ -169,7 +169,9 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no modelAccessor>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("modelAccessor");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("modelAccessor");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

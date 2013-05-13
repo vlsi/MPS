@@ -121,7 +121,9 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no image provider>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("imagePathProvider");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("imagePathProvider");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

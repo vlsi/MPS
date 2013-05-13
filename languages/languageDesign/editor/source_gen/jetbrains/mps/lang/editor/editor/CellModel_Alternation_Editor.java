@@ -114,7 +114,9 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no cell model>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("ifTrueCellModel");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifTrueCellModel");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -156,7 +158,9 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("ifFalseCellModel");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifFalseCellModel");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -226,7 +230,9 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no cell model>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("ifTrueCellModel");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifTrueCellModel");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -268,7 +274,9 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no cell model>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("ifFalseCellModel");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifFalseCellModel");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -412,7 +420,9 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no alternationCondition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("alternationCondition");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("alternationCondition");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);

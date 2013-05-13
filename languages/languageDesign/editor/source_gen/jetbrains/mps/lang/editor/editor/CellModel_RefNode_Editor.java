@@ -96,8 +96,10 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("relationDeclaration");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("relationDeclaration");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.DRAW_BORDER, true);
       editorCell.getStyle().putAll(style);
@@ -239,8 +241,10 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role_1");
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("relationDeclaration");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("relationDeclaration");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.DRAW_BORDER, true);
       editorCell.getStyle().putAll(style);
@@ -380,7 +384,9 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no addHints>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("addHints");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("addHints");
+    }
     CellModel_RefNode_AddHint_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -421,7 +427,9 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no removeHints>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("removeHints");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("removeHints");
+    }
     CellModel_RefNode_RemoveHint_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

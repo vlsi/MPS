@@ -61,7 +61,9 @@ public class CellModelCollection_FoldedCellComponent extends AbstractCellProvide
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("foldedCellModel");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("foldedCellModel");
+    }
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBordered(style, editorCell);
     editorCell.getStyle().putAll(style);

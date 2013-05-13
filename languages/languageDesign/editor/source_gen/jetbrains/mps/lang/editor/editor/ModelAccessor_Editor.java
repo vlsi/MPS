@@ -152,7 +152,9 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getter>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("getter");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("getter");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -229,7 +231,9 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no setter>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("setter");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("setter");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -306,7 +310,9 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no validator>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setRole("validator");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("validator");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
