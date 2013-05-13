@@ -67,7 +67,7 @@ public class NewSolutionDialog extends DialogWrapper {
 
     super.doOKAction();
 
-    NewModuleUtil.runModuleCreation(ProjectHelper.toIdeaProject(myProject), new _FunctionTypes._void_P0_E0() {
+    NewModuleUtil.runModuleCreation(myProject, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         myResult = NewModuleUtil.createSolution(mySolutionSettings.getSolutionName(), mySolutionSettings.getSolutionLocation(), (MPSProject) myProject);
       }

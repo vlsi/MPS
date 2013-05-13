@@ -152,7 +152,7 @@
     <nodeInfo nodeId="6456559845239236596" fileName="NewModuleUtil.java" startLine="139" startPosition="80" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2273513587775220632" fileName="NewModuleUtil.java" startLine="293" startPosition="94" endLine="296" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1052960076632931815" fileName="NewModuleUtil.java" startLine="71" startPosition="60" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6526493364578755942" fileName="NewModuleUtil.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8050999366830929490" fileName="NewModuleUtil.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8784082215664551577" fileName="NewModuleUtil.java" startLine="153" startPosition="0" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8084576643565880455" fileName="NewModuleUtil.java" startLine="171" startPosition="129" endLine="175" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1613125646032873275" fileName="NewModuleUtil.java" startLine="195" startPosition="61" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -162,7 +162,7 @@
     <nodeInfo nodeId="4543209876460447564" fileName="NewModuleUtil.java" startLine="84" startPosition="93" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8784082215665182089" fileName="NewModuleUtil.java" startLine="92" startPosition="93" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8784082215665268241" fileName="NewModuleUtil.java" startLine="100" startPosition="89" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6526493364578755941" fileName="NewModuleUtil.java" startLine="110" startPosition="116" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8050999366830920571" fileName="NewModuleUtil.java" startLine="110" startPosition="87" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3403300522828494512" fileName="NewModuleUtil.java" startLine="162" startPosition="33" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1613125646032873268" fileName="NewModuleUtil.java" startLine="194" startPosition="45" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7078490058112055377" fileName="NewModuleUtil.java" startLine="271" startPosition="14" endLine="277" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -175,7 +175,7 @@
     <nodeInfo nodeId="2273513587775220687" fileName="NewModuleUtil.java" startLine="220" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createNewDevkit#(Ljava/lang/String;Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/MPSModuleOwner;)Ljetbrains/mps/project/DevKit;" />
     <nodeInfo nodeId="4543209876460423580" fileName="NewModuleUtil.java" startLine="248" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModule#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/project/Project;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P3_E0;)null" />
     <nodeInfo nodeId="7078490058112055375" fileName="NewModuleUtil.java" startLine="271" startPosition="12" endLine="278" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5049856602248782874" fileName="NewModuleUtil.java" startLine="110" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="runModuleCreation#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <nodeInfo nodeId="5049856602248782874" fileName="NewModuleUtil.java" startLine="110" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="runModuleCreation#(Ljetbrains/mps/project/Project;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
     <nodeInfo nodeId="8784082215665646792" fileName="NewModuleUtil.java" startLine="161" startPosition="0" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8784082215664449138" fileName="NewModuleUtil.java" startLine="230" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createMainLanguageAspects#(Ljetbrains/mps/smodel/Language;)V" />
     <nodeInfo nodeId="8784082215682016091" fileName="NewModuleUtil.java" startLine="313" startPosition="51" endLine="322" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -212,7 +212,7 @@
     <scopeInfo nodeId="7078490058112055387" fileName="NewModuleUtil.java" startLine="274" startPosition="29" endLine="275" endPosition="31" />
     <scopeInfo nodeId="2273513587775220636" fileName="NewModuleUtil.java" startLine="294" startPosition="34" endLine="295" endPosition="105" />
     <scopeInfo nodeId="1052960076632931816" fileName="NewModuleUtil.java" startLine="72" startPosition="82" endLine="74" endPosition="49" />
-    <scopeInfo nodeId="6526493364578755943" fileName="NewModuleUtil.java" startLine="112" startPosition="25" endLine="114" endPosition="19" />
+    <scopeInfo nodeId="8050999366830929491" fileName="NewModuleUtil.java" startLine="112" startPosition="25" endLine="114" endPosition="19" />
     <scopeInfo nodeId="8784082215664551579" fileName="NewModuleUtil.java" startLine="154" startPosition="30" endLine="156" endPosition="49">
       <varInfo nodeId="4543209876460447535" varName="devkitRef" />
     </scopeInfo>
@@ -242,7 +242,7 @@
     <scopeInfo nodeId="1052960076632931815" fileName="NewModuleUtil.java" startLine="71" startPosition="60" endLine="75" endPosition="5">
       <varInfo nodeId="1052960076632931827" varName="extendedLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="6526493364578755942" fileName="NewModuleUtil.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="8050999366830929490" fileName="NewModuleUtil.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
     <scopeInfo nodeId="1613125646032873274" fileName="NewModuleUtil.java" startLine="195" startPosition="61" endLine="199" endPosition="7" />
     <scopeInfo nodeId="2273513587775220459" fileName="NewModuleUtil.java" startLine="213" startPosition="112" endLine="217" endPosition="132">
       <varInfo nodeId="2273513587775220466" varName="descriptor" />
@@ -275,7 +275,7 @@
       <varInfo nodeId="4543209876460423592" varName="descriptorFile" />
       <varInfo nodeId="4543209876460423607" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="5049856602248782877" fileName="NewModuleUtil.java" startLine="110" startPosition="116" endLine="116" endPosition="7" />
+    <scopeInfo nodeId="5049856602248782877" fileName="NewModuleUtil.java" startLine="110" startPosition="87" endLine="116" endPosition="7" />
     <scopeInfo nodeId="8784082215665646794" fileName="NewModuleUtil.java" startLine="162" startPosition="33" endLine="168" endPosition="7" />
     <scopeInfo nodeId="1613125646032873268" fileName="NewModuleUtil.java" startLine="194" startPosition="45" endLine="200" endPosition="5">
       <varInfo nodeId="1613125646032873272" varName="modelDescriptor" />
@@ -405,11 +405,9 @@
     <unitInfo nodeId="4543209876460447576" fileName="NewModuleUtil.java" startLine="85" startPosition="100" endLine="89" endPosition="5" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil$1" />
     <unitInfo nodeId="8784082215665182095" fileName="NewModuleUtil.java" startLine="93" startPosition="100" endLine="97" endPosition="5" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil$2" />
     <unitInfo nodeId="8784082215665268247" fileName="NewModuleUtil.java" startLine="101" startPosition="98" endLine="105" endPosition="5" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil$3" />
-    <unitInfo nodeId="6526493364578755942" fileName="NewModuleUtil.java" startLine="111" startPosition="55" endLine="116" endPosition="5" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil$4" />
+    <unitInfo nodeId="8050999366830929490" fileName="NewModuleUtil.java" startLine="111" startPosition="58" endLine="116" endPosition="5" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil$4" />
     <unitInfo nodeId="7078490058112055383" fileName="NewModuleUtil.java" startLine="272" startPosition="51" endLine="277" endPosition="9" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil$5" />
     <unitInfo nodeId="5890305283801268194" fileName="NewModuleUtil.java" startLine="52" startPosition="0" endLine="327" endPosition="0" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904ab(jetbrains.mps.ide.newSolutionDialog)/7619659760484896415" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904ab(jetbrains.mps.ide.newSolutionDialog)/7619659760484896449" />
 </debugInfo>
 
