@@ -54,7 +54,6 @@
   </usedDevKits>
   <extendedLanguages>
     <extendedLanguage>479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)</extendedLanguage>
-    <extendedLanguage>4a1e4a24-105b-44ed-959c-6586fc957db3(jetbrains.mps.bash)</extendedLanguage>
   </extendedLanguages>
 </language>
 

@@ -4,12 +4,12 @@ package jetbrains.mps.build.startup.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -18,43 +18,6 @@ import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_3885435385580639066(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String startupDir = SPropertyOperations.getString(_context.getNode(), "startupFolder");
-    if (startupDir.endsWith("/")) {
-      startupDir = startupDir.substring(0, startupDir.length() - 1);
-    }
-    String[] path = startupDir.split("/");
-    String pathFromStartupDir = "..";
-    for (int i = 0; i < path.length - 1; i++) {
-      pathFromStartupDir += "/..";
-    }
-    return pathFromStartupDir;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580639184(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "startupClass");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580639219(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MpsStartupScript_Behavior.call_getPathToVmOptionsFile_5842819808956911442(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580639382(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "options");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580639425(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "path");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580639468(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "startupFolder");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3885435385580639633(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_8979762117546981953(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String pathString = "";
     String prefix = "$APP_PACKAGE/";
@@ -110,12 +73,29 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name") + "." + MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_5842819808956703170(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4487788881657620080(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String startupDir = SPropertyOperations.getString(_context.getNode(), "startupFolder");
+    if (startupDir.endsWith("/")) {
+      startupDir = startupDir.substring(0, startupDir.length() - 1);
+    }
+    String[] path = startupDir.split("/");
+    String pathFromStartupDir = "..";
+    for (int i = 0; i < path.length - 1; i++) {
+      pathFromStartupDir += "/..";
+    }
+    return _context.getTemplateValue() + pathFromStartupDir;
   }
 
-  public static Iterable sourceNodesQuery_3885435385580639437(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true);
+  public static Object propertyMacro_GetPropertyValue_4487788881657707878(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "startupClass");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4487788881657806288(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + "\"" + SPropertyOperations.getString(_context.getNode(), "options") + "\"";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4487788881657840185(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "path");
   }
 
   public static Iterable sourceNodesQuery_1731640411964947374(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -134,12 +114,20 @@ public class QueriesGenerated {
         continue;
       }
 
-      ListSequence.fromList(lines).addElement(_quotation_createNode_x583g4_a0a2a2a32(option));
+      ListSequence.fromList(lines).addElement(_quotation_createNode_x583g4_a0a2a2a81(option));
     }
     return lines;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a2a2a32(Object parameter_1) {
+  public static Iterable sourceNodesQuery_4487788881657789666(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode());
+  }
+
+  public static Iterable sourceNodesQuery_4487788881657835967(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true);
+  }
+
+  private static SNode _quotation_createNode_x583g4_a0a2a2a81(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.startup.structure.TextLine", null, null, GlobalScope.getInstance(), false);

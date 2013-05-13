@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7et9bcdmzxq421pzhcu59ixyyt8xn32">
+<dependencies version="2" modelHash="-4hulncg3juy290mmx4ahjzww3d3mkpz">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -16,10 +16,10 @@
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <dep model="r:f9efd379-0776-49f3-ae79-8113b86e36ad(jetbrains.mps.build.startup.behavior)" hash="-5qaojrz8rwug9hg8bj1cke5u22zlj2j" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
-  <common hash="cu9xl44dg44w2pyf8nvkhhx0qyax2s9">
+  <common hash="-7intyllp7l9idiy9atynu0qgsjkks4v">
     <dep root="1731640411964801460" />
     <dep root="1731640411967557611" />
-    <dep root="3885435385580638984" />
+    <dep root="4487788881657579420" />
     <dep root="8979762117546970698" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -39,10 +39,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="3885435385580635038" name="main" hash="-efy9pm8dbtn0546x876918e4szqc9sa">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
-  <source id="3885435385580638984" name="UnixStartupScript" hash="-1ezf2sdzjmtozv6l5z3xrvs0koku8hl">
+  <source id="3885435385580635038" name="main" hash="-4akggk4iqagjd3p45sjkzycobl3f06t">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="8979762117546970698" name="Info.plist" hash="3f1l4orqkdvakzv74d79c69hr2c6krh">
@@ -52,6 +49,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1731640411967557611" name="mps.vmoptions" hash="1577lwrq547k2mcd90jh8zpzb9d1w0z">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="4487788881657579420" name="mps.sh" hash="cq1myia6z392ve9rme5olpmd0svq8z1">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>
