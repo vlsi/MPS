@@ -41,15 +41,17 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -427,7 +429,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       @Override
       public Boolean compute() {
         final SNode editedNode = component.getEditedNode();
-        if (editedNode != null && editedNode.isInRepository()) {
+        if (editedNode != null && org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance())) {
           final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
           boolean rootWasCheckedOnce = wasCheckedOnce(component);
           if (!rootWasCheckedOnce) {
@@ -513,7 +515,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           SNode node = editor.getEditedNode();
           if (node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isDisposed(node))
             return false;
-          if (!node.isInRepository()) {
+          if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
             // asking runLoPrioRead() implementation to re-execute this task later:
             // editor was not updated in accordance with last modelReload event yet.
             return null;

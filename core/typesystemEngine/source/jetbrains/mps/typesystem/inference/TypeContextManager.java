@@ -49,6 +49,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -111,7 +112,7 @@ public class TypeContextManager implements CoreComponent {
           for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
             if (nodePointer == null) continue;
             SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
-            if (node == null || !node.isInRepository() || modelRef.equals(nodePointer.getModelReference())) {
+            if (node == null || !SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()) || modelRef.equals(nodePointer.getModelReference())) {
               removeContextForNode(nodePointer);
             }
           }

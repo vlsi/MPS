@@ -111,6 +111,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -1441,7 +1442,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         //!getEditedNode().isInRepository();
         // this is a very dirty hack, remove ASAP. This is because we have the only one module, which is not in repository, and it was
         // treated normally before - DiffTemporaryModule
-        (!getEditedNode().isInRepository() && !(getEditedNode().getModel().getModule().getClass().getName().equals(
+        (!SNodeUtil.isAccessible(getEditedNode(), myRepository) && !(getEditedNode().getModel().getModule().getClass().getName().equals(
             "jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule")));
   }
 
