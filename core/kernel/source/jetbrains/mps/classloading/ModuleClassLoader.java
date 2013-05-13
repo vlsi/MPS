@@ -80,7 +80,15 @@ public class ModuleClassLoader extends ClassLoader {
           resolveClass(clazz);
         }
         return clazz;
-      } finally {
+      }
+      catch (ClassNotFoundException e) {
+        throw e;
+      }
+      catch (RuntimeException re) {
+        LOG.error("Exception during class loading", re);
+        throw new ClassNotFoundException(name, re);
+      }
+      finally {
         if (clazz != null) {
           myClasses.put(name, clazz);
         }
@@ -198,6 +206,8 @@ public class ModuleClassLoader extends ClassLoader {
     }
     Set<ModuleClassLoader> classLoaders = new HashSet<ModuleClassLoader>();
     for (SModule dep : mySupport.getCompileDependencies()) {
+      if (!ModuleClassLoaderSupport.canCreate(dep)) continue; // avoid exceptions during class loading
+
       ModuleClassLoader classLoader = myManager.getClassLoader(dep);
       if (classLoader != null) {
         classLoaders.add(classLoader);
