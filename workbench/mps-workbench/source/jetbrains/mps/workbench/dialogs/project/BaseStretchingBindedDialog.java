@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.dialogs.project;
 
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.Project;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -26,8 +26,8 @@ import java.awt.HeadlessException;
 public abstract class BaseStretchingBindedDialog extends BaseBindedDialog {
   private JPanel myContentPanel;
 
-  protected BaseStretchingBindedDialog(String text, IOperationContext operationContext) throws HeadlessException {
-    super(text, operationContext);
+  protected BaseStretchingBindedDialog(String text, Project project) throws HeadlessException {
+    super(text, project);
     myContentPanel = new JPanel(new GridBagLayout());
   }
 

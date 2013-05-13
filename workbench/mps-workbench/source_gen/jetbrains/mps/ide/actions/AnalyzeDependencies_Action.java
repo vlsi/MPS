@@ -16,13 +16,12 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.dependencyViewer.DependencyViewerScope;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -56,15 +55,15 @@ public class AnalyzeDependencies_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("myModels", event.getData(MPSCommonDataKeys.MODELS));
-    MapSequence.fromMap(_params).put("myModules", event.getData(MPSDataKeys.MODULES));
-    MapSequence.fromMap(_params).put("myMPSProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("myMPSProject") == null) {
+    MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("myEditorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
-    MapSequence.fromMap(_params).put("myProject", event.getData(PlatformDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("myProject") == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     return true;
@@ -72,22 +71,22 @@ public class AnalyzeDependencies_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      AnalyzeDependencies_Tool tool = ((Project) MapSequence.fromMap(_params).get("myProject")).getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
+      AnalyzeDependencies_Tool tool = ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
       final DependencyViewerScope scope = new DependencyViewerScope();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          if (((List<SModel>) MapSequence.fromMap(_params).get("myModels")) != null) {
-            for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("myModels"))) {
+          if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
+            for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("models"))) {
               scope.add(model);
             }
           }
-          if (((List<SModule>) MapSequence.fromMap(_params).get("myModules")) != null) {
-            for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("myModules"))) {
+          if (((List<SModule>) MapSequence.fromMap(_params).get("modules")) != null) {
+            for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
               scope.add(module);
             }
           }
           if (scope.isEmpty()) {
-            SNode node = check_rkpdtm_a0a0c0a2a0(check_rkpdtm_a0a0a2a0c0a(((EditorComponent) MapSequence.fromMap(_params).get("myEditorComponent"))));
+            SNode node = check_rkpdtm_a0a0c0a0a2a0(check_rkpdtm_a0a0a2a0a0c0a(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
             if (node != null) {
               scope.add(node);
             }
@@ -97,7 +96,7 @@ public class AnalyzeDependencies_Action extends BaseAction {
       if (scope.isEmpty()) {
         return;
       }
-      tool.setContent(scope, ((MPSProject) MapSequence.fromMap(_params).get("myMPSProject")));
+      tool.setContent(scope, ((MPSProject) MapSequence.fromMap(_params).get("project")));
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
@@ -108,14 +107,14 @@ public class AnalyzeDependencies_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(AnalyzeDependencies_Action.class);
 
-  private static SNode check_rkpdtm_a0a0c0a2a0(EditorCell checkedDotOperand) {
+  private static SNode check_rkpdtm_a0a0c0a0a2a0(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }
     return null;
   }
 
-  private static EditorCell check_rkpdtm_a0a0a2a0c0a(EditorComponent checkedDotOperand) {
+  private static EditorCell check_rkpdtm_a0a0a2a0a0c0a(EditorComponent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRootCell();
     }

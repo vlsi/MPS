@@ -14,11 +14,12 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.vfs.FileSystem;
@@ -85,20 +86,26 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
       TreeFileChooser chooser = new TreeFileChooser();
       chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
       chooser.setContext(((IOperationContext) MapSequence.fromMap(_params).get("context")));
       final Wrappers._T<IFile> projectFolder = new Wrappers._T<IFile>(null);
       final Wrappers._T<String> basePath = new Wrappers._T<String>(null);
-      ModelAccess.instance().runReadAction(new Runnable() {
+
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           basePath.value = BuildProject_Behavior.call_getBasePath_4959435991187146924(((SNode) MapSequence.fromMap(_params).get("node")), Context.defaultContext());
-          if (basePath.value != null && isNotEmpty_mmt9i1_a0a1a0a0a0a5a0a5(basePath.value)) {
+          if (basePath.value != null && isNotEmpty_mmt9i1_a0a1a0a0a0a7a0a5(basePath.value)) {
             projectFolder.value = FileSystem.getInstance().getFileByPath(basePath.value);
           }
         }
@@ -117,7 +124,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
         return;
       }
 
-      ModelAccess.instance().runCommandInEDT(new Runnable() {
+      modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
           List<ModulesMiner.ModuleHandle> modules = ModulesMiner.getInstance().collectModules(dir, false);
           VisibleModules visible = new VisibleModules(((SNode) MapSequence.fromMap(_params).get("node")), null);
@@ -144,7 +151,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
           }
 
         }
-      }, ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
+      });
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ImportAllModulesFromFolder", t);
@@ -154,7 +161,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(ImportAllModulesFromFolder_Action.class);
 
-  public static boolean isNotEmpty_mmt9i1_a0a1a0a0a0a5a0a5(String str) {
+  public static boolean isNotEmpty_mmt9i1_a0a1a0a0a0a7a0a5(String str) {
     return str != null && str.length() > 0;
   }
 }

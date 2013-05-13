@@ -59,7 +59,7 @@ public class GoToRule_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GoToTypeErrorRuleUtil.goToRuleById(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Pair<String, String>) MapSequence.fromMap(_params).get("ruleModelAndId")));
+      GoToTypeErrorRuleUtil.goToRuleById(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject(), ((Pair<String, String>) MapSequence.fromMap(_params).get("ruleModelAndId")));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "GoToRule", t);

@@ -17,10 +17,9 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.java.platform.refactorings.IntroduceConstantDialog;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -70,8 +69,8 @@ public class IntroduceConstant_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("component", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
@@ -90,14 +89,14 @@ public class IntroduceConstant_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.introduceConstant");
       final Wrappers._T<IntroduceConstantRefactoring> refactoring = new Wrappers._T<IntroduceConstantRefactoring>();
       final Wrappers._T<String> error = new Wrappers._T<String>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           refactoring.value = new IntroduceConstantRefactoring();
           error.value = refactoring.value.init(((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("component")));
         }
       });
       if (error.value == null) {
-        IntroduceConstantDialog dialog = new IntroduceConstantDialog(((Project) MapSequence.fromMap(_params).get("projct")), refactoring.value, ((EditorContext) MapSequence.fromMap(_params).get("context")));
+        IntroduceConstantDialog dialog = new IntroduceConstantDialog(((Project) MapSequence.fromMap(_params).get("projct")), refactoring.value, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
         dialog.show();
       } else {
         JOptionPane.showMessageDialog(((EditorComponent) MapSequence.fromMap(_params).get("component")), error.value, "Error", JOptionPane.ERROR_MESSAGE);

@@ -15,8 +15,7 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel.CloneModelDialog;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -69,8 +68,8 @@ public class CloneModel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("selSize", event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE));
@@ -83,9 +82,9 @@ public class CloneModel_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<CloneModelDialog> dialog = new Wrappers._T<CloneModelDialog>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          dialog.value = new CloneModelDialog(((SModel) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+          dialog.value = new CloneModelDialog(((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
         }
       });
       dialog.value.show();

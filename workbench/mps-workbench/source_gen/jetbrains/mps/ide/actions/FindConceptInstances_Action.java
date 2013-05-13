@@ -43,7 +43,7 @@ public class FindConceptInstances_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).isApplicable() && SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+    return new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).isApplicable() && SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

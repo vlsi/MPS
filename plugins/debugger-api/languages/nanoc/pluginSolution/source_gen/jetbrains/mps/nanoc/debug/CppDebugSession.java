@@ -91,7 +91,7 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   public void setProcessHandler(ProcessHandler processHandler) {
     super.setProcessHandler(processHandler);
     myEventsHandler = new GDBEventsHandler(processHandler);
-    myRequestManager = new GDBRequestManager(myEventsHandler, getProject().getComponent(BreakpointManagerComponent.class));
+    myRequestManager = new GDBRequestManager(myEventsHandler, getIdeaProject().getComponent(BreakpointManagerComponent.class));
   }
 
   /*package*/ void setupBreakpointListener() {

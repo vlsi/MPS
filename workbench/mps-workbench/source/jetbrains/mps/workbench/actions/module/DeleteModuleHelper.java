@@ -15,25 +15,20 @@
  */
 package jetbrains.mps.workbench.actions.module;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-
-import javax.swing.JOptionPane;
 
 public class DeleteModuleHelper {
   private static final Logger LOG = LogManager.getLogger(DeleteModuleHelper.class);
@@ -47,16 +42,14 @@ public class DeleteModuleHelper {
   }
 
   private static void delete(Project project, SModule module, boolean deleteFiles) {
-    MPSProject mpsProject = project.getComponent(MPSProject.class);
-    if (!mpsProject.isProjectModule(module) && !deleteFiles) {
-      JOptionPane.showMessageDialog(WindowManager.getInstance().getFrame(project), "Non-project modules can only be deleted with files deletion enabled",
-          "Can't delete module", JOptionPane.WARNING_MESSAGE);
+    if (!project.isProjectModule(module) && !deleteFiles) {
+      throw new IllegalArgumentException("Non-project modules can only be deleted with files deletion enabled");
     }
 
     //remove from project
-    if (mpsProject.isProjectModule(module)) {
-      mpsProject.removeModule(module.getModuleReference());
-      ((StandaloneMPSProject) mpsProject).update();
+    if (project.isProjectModule(module)) {
+      project.removeModule(module.getModuleReference());
+      ((StandaloneMPSProject) project).update();
       project.save();
     }
 
@@ -86,19 +79,19 @@ public class DeleteModuleHelper {
         }
 
         IFile moduleFolder = curModule.getDescriptorFile().getParent();
-        if(deleteDirIfEmpty(moduleFolder))
+        if (deleteDirIfEmpty(moduleFolder))
           moduleFolder.delete();
       }
     }
 
     //remove from project
-    if (mpsProject.isProjectModule(module)) {
-      mpsProject.removeModule(module.getModuleReference());
-      ((StandaloneMPSProject) mpsProject).update();
+    if (project.isProjectModule(module)) {
+      project.removeModule(module.getModuleReference());
+      ((StandaloneMPSProject) project).update();
       project.save();
     }
 
-    if(deleteFiles)
+    if (deleteFiles)
       ModuleRepositoryFacade.getInstance().removeModuleForced(module);
   }
 
@@ -109,18 +102,18 @@ public class DeleteModuleHelper {
   }
 
   private static boolean deleteDirIfEmpty(IFile file) {
-    if(!file.exists())
+    if (!file.exists())
       return true;
 
-    if(!file.isDirectory())
+    if (!file.isDirectory())
       return false;
 
-    if(file.isDirectory() && file.getChildren().isEmpty())
+    if (file.isDirectory() && file.getChildren().isEmpty())
       return true;
 
     boolean checkChild = true;
     for (IFile child : file.getChildren())
-      if(!deleteDirIfEmpty(child))
+      if (!deleteDirIfEmpty(child))
         return false;
 
     return true;

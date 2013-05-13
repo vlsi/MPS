@@ -43,7 +43,7 @@ public class ForeignIdReferenceCacheTest extends DataMPSFixtureTestCase {
     assertEquals(sourceRoots.length, 1);
 
     VirtualFile sourceRoot = sourceRoots[0];
-    final IFile psiTestModel = copyResource(sourceRoot.getPath()+"/psiTest.mps", "psiTest.mps", "/tests/psiProject/models/jetbrains/mps/psiTest.mps");
+    final IFile psiTestModel = copyResource(sourceRoot.getPath() + "/psiTest.mps", "psiTest.mps", "/tests/psiProject/models/jetbrains/mps/psiTest.mps");
 
     DefaultModelRoot root = new DefaultModelRoot();
     root.setContentRoot(psiTestModel.getParent().getPath());
@@ -58,25 +58,30 @@ public class ForeignIdReferenceCacheTest extends DataMPSFixtureTestCase {
     FileBasedIndex.getInstance().requestRebuild(ForeignIdReferenceIndex.ID);
   }
 
-  public void testIndex () {
-    Project project = myModule.getProject();
-    List<Collection<Pair<SNodeDescriptor,String>>> values = FileBasedIndex.getInstance().getValues(ForeignIdReferenceIndex.ID, "Marker.f", GlobalSearchScope.allScope(project));
-    List<Collection<Pair<SNodeDescriptor,String>>> values2 = FileBasedIndex.getInstance().getValues(ForeignIdReferenceIndex.ID, "Marker.", GlobalSearchScope.allScope(project));
-    assertEquals(values, values2);
+  public void testIndex() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        Project project = myModule.getProject();
+        List<Collection<Pair<SNodeDescriptor, String>>> values = FileBasedIndex.getInstance().getValues(ForeignIdReferenceIndex.ID, "Marker.f", GlobalSearchScope.allScope(project));
+        List<Collection<Pair<SNodeDescriptor, String>>> values2 = FileBasedIndex.getInstance().getValues(ForeignIdReferenceIndex.ID, "Marker.", GlobalSearchScope.allScope(project));
+        assertEquals(values, values2);
 
-    assertEquals(values.size(), 1);
-    Collection<Pair<SNodeDescriptor, String>> pairs = values.get(0);
-    assertEquals(pairs.size(), 1);
-    Pair<SNodeDescriptor, String> p = pairs.iterator().next();
+        assertEquals(values.size(), 1);
+        Collection<Pair<SNodeDescriptor, String>> pairs = values.get(0);
+        assertEquals(pairs.size(), 1);
+        Pair<SNodeDescriptor, String> p = pairs.iterator().next();
 
-    String role = p.o2;
-    assertEquals("variableDeclaration", role);
+        String role = p.o2;
+        assertEquals("variableDeclaration", role);
 
-    SNode snode = p.o1.getNodeReference().resolve(MPSModuleRepository.getInstance());
-    assertEquals("jetbrains.mps.baseLanguage.structure.StaticFieldReference", snode.getConcept().getQualifiedName());
+        SNode snode = p.o1.getNodeReference().resolve(MPSModuleRepository.getInstance());
+        assertEquals("jetbrains.mps.baseLanguage.structure.StaticFieldReference", snode.getConcept().getQualifiedName());
+      }
+    });
   }
 
-  public void testReferences () {
+  public void testReferences() {
     Project project = myModule.getProject();
     Iterable<SReference> refs = ForeignIdReferenceCache.getInstance(project).getReferencesMatchingPrefix("Marker.f", GlobalSearchScope.allScope(project));
     Iterator<SReference> it = refs.iterator();

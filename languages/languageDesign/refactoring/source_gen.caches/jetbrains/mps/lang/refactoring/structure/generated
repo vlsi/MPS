@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d3hhzfhicckxtzyhdlnez0d2n80qjvl">
+<dependencies version="2" modelHash="-abxwf0dcv658xc7ij3l8m9wp54tz4mc">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
@@ -64,6 +64,7 @@
     <dep root="478744034994716100" />
     <dep root="5497648299878398634" />
     <dep root="5497648299878741970" />
+    <dep root="5938312768538179915" />
     <dep root="6598645150040035709" />
     <dep root="6895093993902236229" />
     <dep root="6895093993902310761" />
@@ -334,6 +335,9 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2298239814950983788" name="ExecuteRefactoringStatement" hash="-norqo7mhdm149ybcntyctrjwom0dlq">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5938312768538179915" name="RepositoryOperation" hash="a9wq4pewnh47qdtsd7tqied7xgp90th">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

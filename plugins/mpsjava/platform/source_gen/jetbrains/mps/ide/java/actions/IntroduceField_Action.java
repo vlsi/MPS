@@ -17,10 +17,9 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.java.platform.refactorings.IntroduceFieldDialog;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -74,8 +73,8 @@ public class IntroduceField_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("component") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
@@ -90,13 +89,13 @@ public class IntroduceField_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.introduceField");
       final IntroduceFieldRefactoring introducer = new IntroduceFieldRefactoring();
       final Wrappers._T<String> error = new Wrappers._T<String>();
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           error.value = introducer.init(((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("component")));
         }
       });
       if (error.value == null) {
-        IntroduceFieldDialog dialog = new IntroduceFieldDialog(((Project) MapSequence.fromMap(_params).get("project")), introducer, ((EditorContext) MapSequence.fromMap(_params).get("context")));
+        IntroduceFieldDialog dialog = new IntroduceFieldDialog(((Project) MapSequence.fromMap(_params).get("project")), introducer, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
         dialog.show();
       } else {
         JOptionPane.showMessageDialog(((EditorComponent) MapSequence.fromMap(_params).get("component")), error.value, "Error", JOptionPane.ERROR_MESSAGE);

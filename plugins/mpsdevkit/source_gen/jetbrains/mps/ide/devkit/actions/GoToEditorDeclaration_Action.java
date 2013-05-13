@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
@@ -23,6 +22,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -64,10 +64,6 @@ public class GoToEditorDeclaration_Action extends BaseAction {
 
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
@@ -114,20 +110,25 @@ public class GoToEditorDeclaration_Action extends BaseAction {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Couldn't find declaring language for concept " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_getFqName_1213877404258", new Object[]{}), "Error", JOptionPane.ERROR_MESSAGE);
         return;
       }
-      SNode conceptDeclaration = ModelAccess.instance().runReadAction(new Computable<SNode>() {
-        public SNode compute() {
-          return SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
+      org.jetbrains.mps.openapi.module.ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+      final SNode[] cd = new SNode[]{null};
+      modelAccess.runReadAction(new Runnable() {
+        public void run() {
+          cd[0] = SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
         }
       });
+      SNode conceptDeclaration = cd[0];
       SModel editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(l, conceptDeclaration, ((IScope) MapSequence.fromMap(_params).get("scope")));
       if (editorModel == null) {
         return;
       }
+
       final SNode editorNode = GoToEditorDeclarationHelper.getOrCreateEditorForConcept(editorModel, conceptDeclaration, ((SNode) MapSequence.fromMap(_params).get("node")), ((IScope) MapSequence.fromMap(_params).get("scope")));
       if (editorNode == null) {
         return;
       }
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
+
+      modelAccess.runWriteInEDT(new Runnable() {
         public void run() {
           NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), editorNode, true, true);
           NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), editorNode, false);

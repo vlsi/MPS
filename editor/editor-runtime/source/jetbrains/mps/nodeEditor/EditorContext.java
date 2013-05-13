@@ -27,7 +27,10 @@ import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.project.GlobalOperationContext;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
@@ -36,9 +39,13 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
@@ -49,9 +56,10 @@ import java.util.List;
  * Created Sep 14, 2003
  */
 public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext {
-  private EditorComponent myNodeEditorComponent;
-  private SModel myModelDescriptor;
-  private IOperationContext myOperationContext;
+  private final EditorComponent myNodeEditorComponent;
+  private final SRepository myRepository;
+  private final SModel myModel;
+
   private EditorCell myContextCell;
   private List<Pair<SNode, SNodeReference>> myModelModifications = null;
   private IPerformanceTracer myPerformanceTracer = null;
@@ -59,10 +67,10 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private ReferencedNodeContext myCurrentRefNodeContext;
   private EditorCellFactory myCellFactory;
 
-  public EditorContext(EditorComponent editorComponent, SModel model, IOperationContext operationContext) {
+  public EditorContext(EditorComponent editorComponent, @Nullable SModel model, @NotNull SRepository repository) {
     myNodeEditorComponent = editorComponent;
-    myModelDescriptor = model == null ? null : model;
-    myOperationContext = operationContext;
+    myModel = model;
+    myRepository = repository;
   }
 
   public EditorComponent getNodeEditorComponent() {
@@ -105,7 +113,12 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   @Override
   public IScope getScope() {
-    return myOperationContext.getScope();
+    return getOperationContext().getScope();
+  }
+
+  @Override
+  public SRepository getRepository() {
+    return myRepository;
   }
 
   @Override
@@ -115,12 +128,18 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   @Override
   public SModel getModel() {
-    return myModelDescriptor;
+    return myModel;
   }
 
   @Override
   public IOperationContext getOperationContext() {
-    return myOperationContext;
+    Project project = ProjectHelper.getProject(myRepository);
+    if (project == null) return new GlobalOperationContext();
+
+    SModule module = myModel == null ? null : myModel.getModule();
+    if (module == null) return new ProjectOperationContext(project);
+
+    return new ModuleContext(module, project);
   }
 
   public final Frame getMainFrame() {
@@ -138,13 +157,13 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   }
 
   private EditorCell createNodeCell(List<Pair<SNode, SNodeReference>> modifications) {
-    return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, modifications, myCurrentRefNodeContext);
+    return getOperationContext().getComponent(EditorManager.class).createEditorCell(this, modifications, myCurrentRefNodeContext);
   }
 
   public jetbrains.mps.nodeEditor.cells.EditorCell createRootCell(SNode node, java.util.List<SModelEvent> events) {
     myModelModifications = EditorManager.convert(events);
     initializeRefContext(node);
-    EditorCell result = myOperationContext.getComponent(EditorManager.class).createRootCell(this, node, events);
+    EditorCell result = getOperationContext().getComponent(EditorManager.class).createRootCell(this, node, events);
     resetCurrentRefContext();
     myModelModifications = null;
     return (jetbrains.mps.nodeEditor.cells.EditorCell) result;
@@ -153,7 +172,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   public jetbrains.mps.nodeEditor.cells.EditorCell createInspectedCell(SNode node, java.util.List<SModelEvent> events) {
     myModelModifications = EditorManager.convert(events);
     initializeRefContext(node);
-    EditorCell result = myOperationContext.getComponent(EditorManager.class).createInspectedCell(this, node, events);
+    EditorCell result = getOperationContext().getComponent(EditorManager.class).createInspectedCell(this, node, events);
     resetCurrentRefContext();
     myModelModifications = null;
     return (jetbrains.mps.nodeEditor.cells.EditorCell) result;
@@ -413,7 +432,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
         return cellWithRole;
     }
 
-    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, (cellWithRole), this, roleAttribute,
+    return getOperationContext().getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, (cellWithRole), this, roleAttribute,
         myModelModifications);
   }
 

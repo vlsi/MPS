@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.references.UnregisteredNodes;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -135,7 +136,7 @@ public final class StaticReference extends SReferenceBase {
     if (targetModelReference == null) return null;
 
     SModel modelDescriptor = null;
-    if (current != null && current.isInRepository()) {
+    if (current != null && current.getRepository()!=null) {
       modelDescriptor = current.resolveModel((jetbrains.mps.smodel.SModelReference) targetModelReference);
     } else if (!MPSCore.getInstance().isMergeDriverMode()) {
       modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);

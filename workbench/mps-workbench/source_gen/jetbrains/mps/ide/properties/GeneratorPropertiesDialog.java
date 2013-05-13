@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class GeneratorPropertiesDialog extends BasePropertiesDialog {
   public Generator myGenerator;
@@ -57,14 +56,13 @@ public class GeneratorPropertiesDialog extends BasePropertiesDialog {
       setErrorText(errorString);
       return false;
     }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      @Override
+    getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         myProperties.saveTo(myGenerator.getModuleDescriptor());
         myGenerator.setModuleDescriptor(myGenerator.getModuleDescriptor(), true);
         myGenerator.save();
       }
-    }, getOperationContext().getProject());
+    });
     return true;
   }
 }

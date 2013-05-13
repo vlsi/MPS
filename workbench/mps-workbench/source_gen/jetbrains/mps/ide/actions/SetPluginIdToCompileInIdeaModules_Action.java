@@ -10,10 +10,12 @@ import java.util.Map;
 import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import com.intellij.ide.plugins.PluginManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.library.LibraryInitializer;
 import com.intellij.ide.plugins.cl.PluginClassLoader;
+import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.vfs.IFile;
@@ -55,7 +57,9 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
       for (SModule module : MPSModuleRepository.getInstance().getModules()) {
         String pluginId = SetPluginIdToCompileInIdeaModules_Action.this.getPluginIdForModule(module, _params);
         if (pluginId != null) {
-          System.out.println("for " + module.getModuleName() + " : " + pluginId);
+          SetPluginIdToCompileInIdeaModules_Action.this.setPluginId(module, pluginId, _params);
+        } else {
+          SetPluginIdToCompileInIdeaModules_Action.this.setPluginId(module, PluginManager.CORE_PLUGIN_ID, _params);
         }
       }
     } catch (Throwable t) {
@@ -83,6 +87,12 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     }
 
     return ((PluginClassLoader) classLoader).getPluginId().getIdString();
+  }
+
+  /*package*/ void setPluginId(SModule module, String pluginId, final Map<String, Object> _params) {
+    IdeaPluginModuleFacetImpl facet = new IdeaPluginModuleFacetImpl();
+    facet.setModule(module);
+    facet.setPluginId(pluginId);
   }
 
   protected static Logger LOG = LogManager.getLogger(SetPluginIdToCompileInIdeaModules_Action.class);

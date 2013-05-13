@@ -10,11 +10,12 @@ import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -55,7 +56,11 @@ public class FindNotMigratableLinks_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -66,7 +71,7 @@ public class FindNotMigratableLinks_Action extends BaseAction {
     try {
       final List<SNodeReference> usages = ListSequence.fromList(new ArrayList<SNodeReference>());
 
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           for (SNode link : Arrays.asList(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "method"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticField"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticInnerClassifiers"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "constructor"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "staticMethod"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "field"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "property"))) {
             for (SNode node : Sequence.fromIterable(NonMigratableUsagesFinder.findNonMigratableUsages(link))) {
@@ -76,7 +81,7 @@ public class FindNotMigratableLinks_Action extends BaseAction {
         }
       });
 
-      InternalActionsUtils.showUsagesViewForNodes(((Project) MapSequence.fromMap(_params).get("project")), usages);
+      InternalActionsUtils.showUsagesViewForNodes(((Project) MapSequence.fromMap(_params).get("ideaProject")), usages);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindNotMigratableLinks", t);

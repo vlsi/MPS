@@ -111,6 +111,11 @@ public class MPSProject extends Project implements ProjectComponent {
   }
 
   @Override
+  public void save() {
+    getProject().save();
+  }
+
+  @Override
   public List<String> getWatchedModulesPaths() {
     return Collections.emptyList();
   }

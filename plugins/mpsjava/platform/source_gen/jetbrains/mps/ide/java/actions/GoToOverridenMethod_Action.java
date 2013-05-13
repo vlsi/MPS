@@ -22,7 +22,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.editor.util.GoToHelper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -114,7 +114,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
         @Override
         public void run(@NotNull ProgressIndicator p0) {
-          ModelAccess.instance().runReadAction(new Runnable() {
+          ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
             public void run() {
               overridenMethods.value = GoToOverridenMethod_Action.this.getOverridenMethod(_params);
               methodName[0] = SPropertyOperations.getString(GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params), "name");

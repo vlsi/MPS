@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -38,7 +37,7 @@ public class TextCommentPartUtil {
     index.value = newText.indexOf("<");
     if (index.value != -1) {
       final Wrappers._T<SNode> htmlElement = new Wrappers._T<SNode>();
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           divideLineBetweenCaret(node, index.value, index.value + 1, newText);
 

@@ -1213,5 +1213,12 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5938312768538179915" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Context" />
+    <property name="name" nameId="tpck.1169194664001" value="RepositoryOperation" />
+    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="repository" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="7953996722066252909" resolveInfo="ContextMemberOperation" />
+  </root>
 </model>
 

@@ -218,10 +218,11 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
       scopeType = ScopeType.MODULE;
     } else if (selectedModel == myModelScopeButton.getModel()) {
       scopeType = ScopeType.MODEL;
-    } else if (selectedModel == myBootstrapScopeButton.getModel()) {
+    } else if (myBootstrapScopeButton != null && selectedModel == myBootstrapScopeButton.getModel()) {
       scopeType = ScopeType.BOOTSTRAP;
     } else {
-      throw new IllegalArgumentException();
+      //No need to throw exception - just use default value
+      scopeType = ScopeType.GLOBAL;
     }
     myOptions.setScopeType(scopeType);
 

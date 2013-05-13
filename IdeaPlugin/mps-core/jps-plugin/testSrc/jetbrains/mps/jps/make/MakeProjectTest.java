@@ -75,43 +75,24 @@ public class MakeProjectTest extends MpsJpsBuildTestCase {
       "src/code2/trace.info");
 
 
-     doBuild(CompileScopeTestBuilder.rebuild().all());
+    doBuild(CompileScopeTestBuilder.make().all());
 
-      assertGenerated(
-        "models/trace.info",
-        "models/trace.info",
-        "mps-make/makeTests/source_gen.caches/code/dependencies",
-        "mps-make/makeTests/source_gen.caches/code/generated",
-        "mps-make/makeTests/source_gen.caches/code2/dependencies",
-        "mps-make/makeTests/source_gen.caches/code2/generated",
-        "mps-make/makeTests/source_gen.caches/data/dependencies",
-        "mps-make/makeTests/source_gen.caches/data/generated",
-        "mps-make/makeTests/source_gen.caches/data2/dependencies",
-        "mps-make/makeTests/source_gen.caches/data2/generated",
-        "src/code/trace.info",
-        "src/code2/trace.info");
+    assertGenerated(); // nothing
 
+    touch(getAbsolutePath("models/data.mps"));
+    touch(getAbsolutePath("models/code.mps"));
 
-    delete(getAbsolutePath("models/Manifest.java"));
-    delete(getAbsolutePath("src/code/Test.java"));
-
-    doBuild(CompileScopeTestBuilder.rebuild().all());
+    doBuild(CompileScopeTestBuilder.make().all());
 
     assertGenerated(
       "models/Manifest.java",
       "models/trace.info",
-      "models/trace.info",
       "mps-make/makeTests/source_gen.caches/code/dependencies",
       "mps-make/makeTests/source_gen.caches/code/generated",
-      "mps-make/makeTests/source_gen.caches/code2/dependencies",
-      "mps-make/makeTests/source_gen.caches/code2/generated",
       "mps-make/makeTests/source_gen.caches/data/dependencies",
       "mps-make/makeTests/source_gen.caches/data/generated",
-      "mps-make/makeTests/source_gen.caches/data2/dependencies",
-      "mps-make/makeTests/source_gen.caches/data2/generated",
       "src/code/Test.java",
-      "src/code/trace.info",
-      "src/code2/trace.info");
+      "src/code/trace.info");
 
   }
 }

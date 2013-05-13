@@ -4,8 +4,7 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -31,16 +30,17 @@ public class MakeActionImpl {
     final Iterable<? extends IResource> inputRes = params.collectInput(!(this.cleanMake));
 
     // save all before launching make 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    final Project project = context.getProject();
+    project.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
-        SModelRepository.getInstance().saveAll();
+        project.getRepository().saveAll();
       }
     });
 
     MakeSession session = new MakeSession(context, null, cleanMake) {
       @Override
       public void doExecute(Runnable scriptRunnable) {
-        if (GenerationCheckHelper.getInstance().checkModelsBeforeGenerationIfNeeded(MakeActionImpl.this.context.getProject(), MakeActionImpl.this.context, ListSequence.fromListWithValues(new ArrayList<SModel>(), MakeActionImpl.this.selectModels(inputRes)), null)) {
+        if (GenerationCheckHelper.getInstance().checkModelsBeforeGenerationIfNeeded(project, MakeActionImpl.this.context, ListSequence.fromListWithValues(new ArrayList<SModel>(), MakeActionImpl.this.selectModels(inputRes)), null)) {
           // ok to go 
           scriptRunnable.run();
         } else {

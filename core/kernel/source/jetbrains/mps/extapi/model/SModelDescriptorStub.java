@@ -221,16 +221,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
     return getSModelInternal().isRoot(node);
   }
 
-  @Override
-  public Iterable<SNode> getRootNodes() {
-    return getSModelInternal().getRootNodes();
-  }
-
-  @Override
-  public SNode getNode(SNodeId id) {
-    return getSModelInternal().getNode(id);
-  }
-
   //
 
   @Override
