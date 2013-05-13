@@ -117,10 +117,9 @@ public class DeleteModelHelper {
 
   public static void safeDelete(final Project project, final SModel modelDescriptor, boolean deleteFiles) {
     IRefactoring ref = new SafeDeleteModelRefactoring(deleteFiles);
-    final RefactoringContext context = new RefactoringContext(ref);
+    final RefactoringContext context = new RefactoringContext(project, ref);
     context.setSelectedModel(modelDescriptor);
     context.setSelectedModule(modelDescriptor.getModule());
-    context.setSelectedProject(project);
     context.setCurrentOperationContext(new ProjectOperationContext(project));
 
     project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {

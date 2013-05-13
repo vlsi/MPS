@@ -37,6 +37,8 @@
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/solution" />
+
     <checkinHandlerFactory
             implementation="jetbrains.mps.ide.modelchecker.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory"/>
     <mps.ModelValidator implementation="jetbrains.mps.ide.modelchecker.ModelValidatorAdapter"/>

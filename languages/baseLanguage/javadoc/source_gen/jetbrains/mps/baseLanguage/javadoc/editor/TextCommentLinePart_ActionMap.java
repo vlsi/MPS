@@ -14,8 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_Behavior;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class TextCommentLinePart_ActionMap {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -50,7 +48,7 @@ public class TextCommentLinePart_ActionMap {
       this.execute_internal(editorContext, this.myNode);
     }
 
-    public void execute_internal(final EditorContext editorContext, SNode node) {
+    public void execute_internal(EditorContext editorContext, SNode node) {
       int caretPosition = ((EditorCell_Label) editorContext.getSelectedCell()).getCaretPosition();
       // todo: this cannot distinguish backspace and delete when placed on the first position in a part 
       if (caretPosition == 0) {
@@ -113,8 +111,8 @@ public class TextCommentLinePart_ActionMap {
         }
       } else {
         // We're doing delete 
-        final Wrappers._T<SNode> nodeToSelect = new Wrappers._T<SNode>(null);
-        final Wrappers._int caret = new Wrappers._int(-1);
+        SNode nodeToSelect = null;
+        int caret = -1;
         EditorCell_Label selectedCell = ((EditorCell_Label) editorContext.getSelectedCell());
         if (isNotEmpty_iqiv00_a0e0a2a3c(selectedCell.getSelectedText())) {
           selectedCell.deleteSelection();
@@ -122,25 +120,21 @@ public class TextCommentLinePart_ActionMap {
             if ((SNodeOperations.getNextSibling(node) == null)) {
               CommentLine_Behavior.call_tryMergeToRight_439148907936414403(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"), SNodeOperations.getIndexInParent(node));
             } else {
-              nodeToSelect.value = SNodeOperations.getNextSibling(node);
+              nodeToSelect = SNodeOperations.getNextSibling(node);
               SNodeOperations.deleteNode(node);
             }
           }
-          editorContext.selectWRTFocusPolicy(nodeToSelect.value);
+          editorContext.selectWRTFocusPolicy(nodeToSelect);
           return;
         } else if (selectedCell.getCaretPosition() == selectedCell.getText().length()) {
           //  Caret is at the end of part 
-          final Wrappers._boolean isLastPart = new Wrappers._boolean();
-          final Wrappers._boolean isLastLine = new Wrappers._boolean();
-          final SNode currentNode = editorContext.getSelectedNode();
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              isLastPart.value = (SNodeOperations.getNextSibling(currentNode) == null);
-              isLastLine.value = (SNodeOperations.getNextSibling(SNodeOperations.getParent(currentNode)) == null);
-            }
-          });
-          if (isLastPart.value) {
-            if (isLastLine.value) {
+          boolean isLastPart;
+          boolean isLastLine;
+          SNode currentNode = editorContext.getSelectedNode();
+          isLastPart = (SNodeOperations.getNextSibling(currentNode) == null);
+          isLastLine = (SNodeOperations.getNextSibling(SNodeOperations.getParent(currentNode)) == null);
+          if (isLastPart) {
+            if (isLastLine) {
               //  This is end of comment lines container 
               if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(currentNode)), "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment")) {
                 //  Shouldn't delete documentation comment 
@@ -152,39 +146,35 @@ public class TextCommentLinePart_ActionMap {
               return;
             } else {
               //  This is the end of line 
-              editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
-                public void run() {
-                  SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(currentNode), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-                  SNode nextLine = SNodeOperations.cast(SNodeOperations.getNextSibling(curLine), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-                  nodeToSelect.value = ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).last();
-                  int index = SNodeOperations.getIndexInParent(currentNode);
-                  ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)));
-                  if (SNodeOperations.isInstanceOf(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmpty_iqiv00_a0a5a0a0a0a1a0a0f0a4a0c0d2(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
-                    caret.value = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
-                  } else {
-                    caret.value = 0;
-                  }
-                  CommentLine_Behavior.call_tryMergeToRight_439148907936414403(curLine, index);
+              SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(currentNode), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+              SNode nextLine = SNodeOperations.cast(SNodeOperations.getNextSibling(curLine), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+              nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).last();
+              int index = SNodeOperations.getIndexInParent(currentNode);
+              ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)));
+              if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmpty_iqiv00_a0a6a0a0g0a4a0c0d2(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
+                caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
+              } else {
+                caret = 0;
+              }
+              CommentLine_Behavior.call_tryMergeToRight_439148907936414403(curLine, index);
 
-                  SNodeOperations.deleteNode(nextLine);
-                  editorContext.selectWRTFocusPolicy(nodeToSelect.value);
-                  ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret.value);
-                }
-              });
+              SNodeOperations.deleteNode(nextLine);
+              editorContext.selectWRTFocusPolicy(nodeToSelect);
+              ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret);
               return;
             }
           } else {
             //  Caret is at the end of text part inside comment line 
             if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(currentNode), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
-              nodeToSelect.value = SNodeOperations.getNextSibling(currentNode);
-              if (isEmpty_iqiv00_a0b0b0a5a0e0a2a3c(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
-                SNodeOperations.deleteNode(nodeToSelect.value);
-                nodeToSelect.value = node;
+              nodeToSelect = SNodeOperations.getNextSibling(currentNode);
+              if (isEmpty_iqiv00_a0b0b0a6a0e0a2a3c(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
+                SNodeOperations.deleteNode(nodeToSelect);
+                nodeToSelect = node;
               } else {
-                SPropertyOperations.set(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").substring(1));
+                SPropertyOperations.set(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").substring(1));
               }
-              editorContext.selectWRTFocusPolicy(nodeToSelect.value);
-              ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret.value);
+              editorContext.selectWRTFocusPolicy(nodeToSelect);
+              ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret);
             } else if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(currentNode), "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart") || SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(currentNode), "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement")) {
               NodeCaretPair nodeCaret = BehaviorReflection.invokeVirtual(NodeCaretPair.class, SNodeOperations.cast(SNodeOperations.getNextSibling(currentNode), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), "virtual_smartDelete_9042833497008205283", new Object[]{true});
               editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
@@ -212,11 +202,11 @@ public class TextCommentLinePart_ActionMap {
       return str == null || str.length() == 0;
     }
 
-    public static boolean isNotEmpty_iqiv00_a0a5a0a0a0a1a0a0f0a4a0c0d2(String str) {
+    public static boolean isNotEmpty_iqiv00_a0a6a0a0g0a4a0c0d2(String str) {
       return str != null && str.length() > 0;
     }
 
-    public static boolean isEmpty_iqiv00_a0b0b0a5a0e0a2a3c(String str) {
+    public static boolean isEmpty_iqiv00_a0b0b0a6a0e0a2a3c(String str) {
       return str == null || str.length() == 0;
     }
 

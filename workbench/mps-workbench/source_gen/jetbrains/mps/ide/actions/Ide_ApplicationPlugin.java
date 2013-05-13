@@ -101,6 +101,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new SetBookmarkNoNumber_Action());
     addAction(new SetModuleFolder_Action());
     addAction(new SetNodePackage_Action());
+    addAction(new SetPluginIdToCompileInIdeaModules_Action());
     addAction(new ShowBookmarksDialog_Action());
     addAction(new ShowBookmarks_Action());
     addAction(new ShowClassInHierarchy_Action());

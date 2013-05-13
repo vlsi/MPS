@@ -318,7 +318,7 @@ public class ImportHelper {
               if (dependency[0]) {
                 ((AbstractModule) myModule).addDependency(module[0], false);
                 ((jetbrains.mps.smodel.SModelInternal) myModel).addModelImport(getModelReference(), false);
-              } else{
+              } else {
                 ((AbstractModule) myModule).addUsedLanguage(module[0]);
                 ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage(module[0]);
               }
@@ -326,6 +326,13 @@ public class ImportHelper {
             }
           });
         }
+      } else {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          @Override
+          public void run() {
+            ((jetbrains.mps.smodel.SModelInternal) myModel).addModelImport(getModelReference(), false);
+          }
+        });
       }
     }
   }

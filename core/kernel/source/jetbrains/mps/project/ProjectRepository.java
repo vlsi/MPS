@@ -36,6 +36,15 @@ public class ProjectRepository implements SRepository {
     myProjectModelAccess = new ProjectModelAccess();
   }
 
+  public Project getProject() {
+    return project;
+  }
+
+  @Override
+  public SRepository getParent() {
+    return MPSModuleRepository.getInstance();
+  }
+
   @Override
   public SModule getModule(SModuleId ref) {
     return MPSModuleRepository.getInstance().getModule(ref);
@@ -120,6 +129,11 @@ public class ProjectRepository implements SRepository {
     @Override
     public void executeCommandInEDT(Runnable r) {
       jetbrains.mps.smodel.ModelAccess.instance().runCommandInEDT(r, project);
+    }
+
+    @Override
+    public void executeUndoTransparentCommand(Runnable r) {
+      jetbrains.mps.smodel.ModelAccess.instance().runUndoTransparentCommand(r, project);
     }
   }
 }

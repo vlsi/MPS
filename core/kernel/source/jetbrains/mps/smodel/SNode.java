@@ -155,7 +155,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
         return;
       }
       myRepository.getModelAccess().checkReadAccess();
-      if (myModel.isUpdateMode()) return;
+      if (myModel != null && myModel.isUpdateMode()) return;
       myRepository.getModelAccess().checkWriteAccess();
       if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
         throw new IllegalModelChangeError(
@@ -318,7 +318,6 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     SNode firstChild = firstChild();
     final SNode anchor = firstChild == null ? null : firstChild.treePrevious();
     insertChild(role, child, anchor);
-    nodeAdded(role, child);
   }
 
   @Override

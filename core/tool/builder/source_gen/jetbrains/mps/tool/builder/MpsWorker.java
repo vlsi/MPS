@@ -47,10 +47,6 @@ import org.apache.log4j.Level;
 import jetbrains.mps.tool.builder.util.PathManager;
 import java.io.StringWriter;
 import java.io.PrintWriter;
-import jetbrains.mps.logging.MPSAppenderBase;
-import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
-import org.jetbrains.annotations.Nullable;
 import java.util.LinkedHashSet;
 
 public abstract class MpsWorker {
@@ -73,7 +69,7 @@ public abstract class MpsWorker {
     myWhatToDo = whatToDo;
     myLogger = logger;
     this.myEnvironment = environment;
-    myEnvironment.init(whatToDo.getMacro(), whatToDo.isLoadBootstrapLibraries(), whatToDo.getLibraries(), whatToDo.getLogLevel(), new MpsWorker.MyMessageHandlerAppender());
+    myEnvironment.init(whatToDo.getMacro(), whatToDo.isLoadBootstrapLibraries(), whatToDo.getLibraries(), whatToDo.getLogLevel(), null);
   }
 
   public void setEnvironment(Environment environment) {
@@ -370,37 +366,6 @@ public abstract class MpsWorker {
     StringWriter writer = new StringWriter();
     e.printStackTrace(new PrintWriter(writer));
     return writer.getBuffer();
-  }
-
-  public class MyMessageHandlerAppender extends MPSAppenderBase {
-    public MyMessageHandlerAppender() {
-    }
-
-    protected void append(@NotNull Priority level, @NotNull String categoryName, @NotNull String messageText, @Nullable Throwable throwable, @Nullable Object object) {
-      if (level.equals(Level.FATAL)) {
-        if (throwable != null) {
-          MpsWorker.this.log(throwable);
-        } else {
-          MpsWorker.this.error(messageText);
-        }
-      } else
-      if (level.equals(Level.ERROR)) {
-        if (throwable != null) {
-          MpsWorker.this.log(throwable);
-        } else {
-          MpsWorker.this.error(messageText);
-        }
-      } else
-      if (level.equals(Level.WARN)) {
-        MpsWorker.this.warning(messageText);
-      } else
-      if (level.equals(Level.INFO)) {
-        MpsWorker.this.info(messageText);
-      } else
-      if (level.equals(Level.DEBUG)) {
-        MpsWorker.this.debug(messageText);
-      }
-    }
   }
 
   protected static interface AntLogger {

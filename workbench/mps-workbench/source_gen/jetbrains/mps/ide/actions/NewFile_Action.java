@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.ui.InputValidator;
-import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.application.ApplicationManager;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
@@ -85,7 +85,8 @@ public class NewFile_Action extends BaseAction {
           if (p.contains(System.getProperty("file.separator"))) {
             return false;
           }
-          ModelAccess.instance().runWriteAction(new Runnable() {
+
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
             public void run() {
               try {
                 result[0] = dir.createChildData(null, p);

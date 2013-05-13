@@ -31,6 +31,11 @@ public class DisposedRepository implements SRepository {
   }
 
   @Override
+  public SRepository getParent() {
+    return null;
+  }
+
+  @Override
   public SModule getModule(SModuleId ref) {
     return null;
   }
@@ -89,6 +94,11 @@ public class DisposedRepository implements SRepository {
 
       @Override
       public void executeCommandInEDT(Runnable r) {
+      }
+
+      @Override
+      public void executeUndoTransparentCommand(Runnable r) {
+
       }
     };
   }

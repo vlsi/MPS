@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:fdeb7acd-bf73-473a-b179-49cceada9138(jetbrains.mps.testModels.anonymousClass1)">
+<model modelUID="r:fdeb7acd-bf73-473a-b179-49cceada9138(jetbrains.mps.testModels.anonymousClass1)" doNotGenerate="true">
   <persistence version="8" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <import index="dtcj" modelUID="r:afe920f9-0fd2-495f-823f-978208f85cf7(jetbrains.mps.testModels.anonymousClass2)" version="-1" />

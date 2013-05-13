@@ -837,8 +837,8 @@
                 </node>
                 <node role="initValue" roleId="tp2q.1237721435808" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4480898598418565173" nodeInfo="nn">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreatorWithInitializer" typeId="tpee.1154542696413" id="4480898598418565174" nodeInfo="nn">
-                    <node role="initValue" roleId="tpee.1154542803372" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4480898598418565175" nodeInfo="nn">
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="ot0m.5294483648489409948" resolveInfo="EXCLUDE" />
+                    <node role="initValue" roleId="tpee.1154542803372" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2125730609882603865" nodeInfo="nn">
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="ot0m.5294483648489409946" resolveInfo="INCLUDE" />
                       <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="ot0m.5294483648489409942" resolveInfo="FilesCollector.FilePattern.Type" />
                     </node>
                     <node role="initValue" roleId="tpee.1154542803372" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5294483648489412842" nodeInfo="nn">
@@ -851,8 +851,8 @@
                 </node>
                 <node role="initValue" roleId="tp2q.1237721435808" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4480898598418731309" nodeInfo="nn">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreatorWithInitializer" typeId="tpee.1154542696413" id="4480898598418731310" nodeInfo="nn">
-                    <node role="initValue" roleId="tpee.1154542803372" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4480898598418731311" nodeInfo="nn">
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="ot0m.5294483648489409948" resolveInfo="EXCLUDE" />
+                    <node role="initValue" roleId="tpee.1154542803372" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2125730609882600912" nodeInfo="nn">
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="ot0m.5294483648489409946" resolveInfo="INCLUDE" />
                       <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="ot0m.5294483648489409942" resolveInfo="FilesCollector.FilePattern.Type" />
                     </node>
                     <node role="initValue" roleId="tpee.1154542803372" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5294483648489412847" nodeInfo="nn">

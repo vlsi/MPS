@@ -206,6 +206,12 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   }
 
   @Override
+  public SRepository getParent() {
+    // root repository
+    return null;
+  }
+
+  @Override
   public SModule getModule(SModuleId id) {
     assertCanRead();
 
@@ -437,6 +443,11 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
 
     @Override
     public void executeCommandInEDT(Runnable r) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void executeUndoTransparentCommand(Runnable r) {
       throw new UnsupportedOperationException();
     }
   }

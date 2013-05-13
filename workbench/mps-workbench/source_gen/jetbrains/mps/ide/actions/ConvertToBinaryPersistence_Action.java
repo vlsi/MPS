@@ -14,10 +14,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.persistence.PersistenceUtil;
@@ -94,10 +95,11 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
           return !(it.isReadOnly()) && it.getSource() instanceof FileDataSource;
         }
       });
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
 
       final ModelFactory binaryFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY);
 
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      modelAccess.runWriteAction(new Runnable() {
         public void run() {
           for (SModel smodel : Sequence.fromIterable(seq)) {
             IFile oldFile = ((FileDataSource) smodel.getSource()).getFile();
