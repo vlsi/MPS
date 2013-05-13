@@ -8,7 +8,7 @@ import jetbrains.mps.lang.core.refactorings.MoveNodes;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.scripts.RefUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -48,7 +48,8 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
 
   public boolean init(final RefactoringContext refactoringContext) {
     final Wrappers._T<SNode> concept = new Wrappers._T<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess modelAccess = refactoringContext.getRepository().getModelAccess();
+    modelAccess.runReadAction(new Runnable() {
       public void run() {
         concept.value = SNodeOperations.getAncestor(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
       }
@@ -60,7 +61,7 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
     if (!(((Boolean) refactoringContext.getParameter("mergeLinks")))) {
       refactoringContext.setParameter("linkToReplace", null);
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
+    modelAccess.runReadAction(new Runnable() {
       public void run() {
         refactoringContext.setParameter("linkToReplace", RefUtil.findLinkToMerge(((SNode) refactoringContext.getParameter("targetConcept")), refactoringContext.getSelectedNode()));
       }

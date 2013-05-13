@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:1d00dd1b-8d1d-4696-8986-1d57f71f4e8b(jetbrains.mps.testModels.interfaces2)">
+<model modelUID="r:1d00dd1b-8d1d-4696-8986-1d57f71f4e8b(jetbrains.mps.testModels.interfaces2)" doNotGenerate="true">
   <persistence version="8" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />

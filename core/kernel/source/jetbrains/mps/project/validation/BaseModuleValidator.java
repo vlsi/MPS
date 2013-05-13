@@ -18,6 +18,8 @@ package jetbrains.mps.project.validation;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.Generator;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -85,6 +87,22 @@ public class BaseModuleValidator<T extends AbstractModule> implements ModuleVali
             errors.add("Can't find library: " + path);
           }
         }
+      }
+    }
+
+    // todo: =(
+    if (!(myModule instanceof Generator)) {
+      errors.addAll(validateDependenciesOnGenerators());
+    }
+
+    return errors;
+  }
+
+  private List<String> validateDependenciesOnGenerators() {
+    List<String> errors = new ArrayList<String>();
+    for (SDependency dependency : myModule.getDeclaredDependencies()) {
+      if (dependency.getTarget() instanceof Generator) {
+        errors.add("Contains dependency on generator: " + dependency.getTarget().getModuleName());
       }
     }
     return errors;
