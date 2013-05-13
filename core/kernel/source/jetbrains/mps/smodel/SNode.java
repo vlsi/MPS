@@ -61,6 +61,7 @@ import java.util.Set;
 public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNode.class));
   private static final String[] EMPTY_ARRAY = new String[0];
+  private static final Object USER_OBJECT_LOCK = new Object();
 
   private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();
 
@@ -637,60 +638,59 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public Object getUserObject(Object key) {
-    assertCanRead();
-
-    fireNodeReadAccess();
-    if (myUserObjects == null) return null;
-    for (int i = 0; i < myUserObjects.length; i += 2) {
-      if (myUserObjects[i].equals(key)) {
-        return myUserObjects[i + 1];
+    synchronized (USER_OBJECT_LOCK) {
+      if (myUserObjects == null) return null;
+      for (int i = 0; i < myUserObjects.length; i += 2) {
+        if (myUserObjects[i].equals(key)) {
+          return myUserObjects[i + 1];
+        }
       }
+      return null;
     }
-    return null;
   }
 
   @Override
   public void putUserObject(Object key, @Nullable Object value) {
-    assertCanChange();
-
-    if (value == null) {
-      if (myUserObjects == null) return;
-      for (int i = 0; i < myUserObjects.length; i += 2) {
-        if (myUserObjects[i].equals(key)) {
-          Object[] newarr = new Object[myUserObjects.length - 2];
-          if (i > 0) {
-            System.arraycopy(myUserObjects, 0, newarr, 0, i);
+    synchronized (USER_OBJECT_LOCK) {
+      if (value == null) {
+        if (myUserObjects == null) return;
+        for (int i = 0; i < myUserObjects.length; i += 2) {
+          if (myUserObjects[i].equals(key)) {
+            Object[] newarr = new Object[myUserObjects.length - 2];
+            if (i > 0) {
+              System.arraycopy(myUserObjects, 0, newarr, 0, i);
+            }
+            if (i + 2 < myUserObjects.length) {
+              System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
+            }
+            myUserObjects = newarr;
+            break;
           }
-          if (i + 2 < myUserObjects.length) {
-            System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
-          }
-          myUserObjects = newarr;
-          break;
         }
-      }
-      if (myUserObjects.length == 0) {
-        myUserObjects = null;
-      }
-      return;
-    }
-
-    if (myUserObjects == null) {
-      myUserObjects = new Object[]{key, value};
-      return;
-    }
-
-    for (int i = 0; i < myUserObjects.length; i += 2) {
-      if (myUserObjects[i].equals(key)) {
-        myUserObjects = Arrays.copyOf(myUserObjects, myUserObjects.length, Object[].class);
-        myUserObjects[i + 1] = value;
+        if (myUserObjects.length == 0) {
+          myUserObjects = null;
+        }
         return;
       }
+
+      if (myUserObjects == null) {
+        myUserObjects = new Object[]{key, value};
+        return;
+      }
+
+      for (int i = 0; i < myUserObjects.length; i += 2) {
+        if (myUserObjects[i].equals(key)) {
+          myUserObjects = Arrays.copyOf(myUserObjects, myUserObjects.length, Object[].class);
+          myUserObjects[i + 1] = value;
+          return;
+        }
+      }
+      Object[] newarr = new Object[myUserObjects.length + 2];
+      System.arraycopy(myUserObjects, 0, newarr, 2, myUserObjects.length);
+      newarr[0] = key;
+      newarr[1] = value;
+      myUserObjects = newarr;
     }
-    Object[] newarr = new Object[myUserObjects.length + 2];
-    System.arraycopy(myUserObjects, 0, newarr, 2, myUserObjects.length);
-    newarr[0] = key;
-    newarr[1] = value;
-    myUserObjects = newarr;
   }
 
   @Override
