@@ -31,6 +31,11 @@ public class DisposedRepository implements SRepository {
   }
 
   @Override
+  public SRepository getParent() {
+    return null;
+  }
+
+  @Override
   public SModule getModule(SModuleId ref) {
     return null;
   }

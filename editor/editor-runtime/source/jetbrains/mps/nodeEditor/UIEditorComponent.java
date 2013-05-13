@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -41,7 +40,7 @@ public class UIEditorComponent extends EditorComponent {
     getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
       @Override
       protected void selectionChangedTo(EditorComponent editorComponent, SingularSelection newSelection) {
-        myInspector.editNode(newSelection.getEditorCell().getSNode(), editorComponent.getOperationContext());
+        myInspector.editNode(newSelection.getEditorCell().getSNode());
       }
     });
   }

@@ -41,6 +41,11 @@ public class ProjectRepository implements SRepository {
   }
 
   @Override
+  public SRepository getParent() {
+    return MPSModuleRepository.getInstance();
+  }
+
+  @Override
   public SModule getModule(SModuleId ref) {
     return MPSModuleRepository.getInstance().getModule(ref);
   }

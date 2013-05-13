@@ -39,6 +39,8 @@ package org.jetbrains.mps.openapi.module;
  */
 public interface SRepository {
 
+  SRepository getParent();
+
   SModule getModule(SModuleId ref);
 
   /**

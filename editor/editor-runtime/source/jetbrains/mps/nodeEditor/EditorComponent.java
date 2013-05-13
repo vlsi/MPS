@@ -145,6 +145,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -991,9 +992,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
+  @Deprecated
   public void editNode(final SNode node, final IOperationContext operationContext) {
+    editNode(node);
+  }
+
+  public void editNode(final SNode node) {
     if (isDisposed()) return;
     clearModelDisposedTrace();
+
+    assert node == null || SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
 
     if (myNode != null && notifiesCreation()) {
       notifyDisposal();
