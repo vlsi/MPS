@@ -17,34 +17,41 @@ package jetbrains.mps.intentions;
 
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Computable;
+import com.intellij.packageDependencies.ui.TreeExpansionMonitor;
+import com.intellij.ui.CheckboxTree;
+import com.intellij.ui.CheckboxTree.CheckboxTreeCellRenderer;
+import com.intellij.ui.CheckboxTreeBase.CheckPolicy;
+import com.intellij.ui.CheckedTreeNode;
+import com.intellij.ui.ColoredTreeCellRenderer;
+import com.intellij.ui.FilterComponent;
+import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.uiDesigner.core.GridConstraints;
+import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.util.containers.SortedList;
+import com.intellij.util.ui.tree.TreeUtil;
 import jetbrains.mps.util.StringUtil;
 import org.jetbrains.annotations.Nls;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.Icon;
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.UIManager;
-import javax.swing.border.TitledBorder;
-import java.awt.Component;
-import java.util.ArrayList;
-import java.util.Collections;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.Comparator;
-import java.util.LinkedHashMap;
+import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class IntentionsPreferencesPage implements Configurable {
-  private List<IntentionEnabledCheckBox> myCheckBoxes = null;
   private IntentionsManager myIntentionsManager;
+
+  private CheckboxTree myTree;
+  private Map<String, LanguageTreeNode> myLanguageTreeNodes = new HashMap<String, LanguageTreeNode>();
 
   public IntentionsPreferencesPage(IntentionsManager intentionsManager) {
     myIntentionsManager = intentionsManager;
+    initCheckBoxes();
   }
 
   @Nls
@@ -61,52 +68,49 @@ public class IntentionsPreferencesPage implements Configurable {
 
   @Override
   public JComponent createComponent() {
-    initCheckBoxes();
-    JPanel mainPanel = new JPanel();
-    mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-    mainPanel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
-    LinkedHashMap<String, JPanel> languagesToPanels = new LinkedHashMap<String, JPanel>();
-    for (IntentionEnabledCheckBox checkBox : myCheckBoxes) {
-      String languageFqName = checkBox.getLanguageFqName();
-      if (languageFqName != null) {
-        JPanel languagePanel = languagesToPanels.get(languageFqName);
-        if (languagePanel == null) {
-          languagePanel = new JPanel();
-          languagePanel.setLayout(new BoxLayout(languagePanel, BoxLayout.Y_AXIS));
-          languagePanel.add(Box.createHorizontalGlue());
-          languagePanel.setBorder(new TitledBorder(checkBox.getLanguageFqName()));
-          languagePanel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
-          languagePanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-          languagesToPanels.put(languageFqName, languagePanel);
-          mainPanel.add(languagePanel);
-        }
-        languagePanel.add(checkBox.getCheckBox());
-      }
+    CheckedTreeNode rootNode = new CheckedTreeNode(null);
+    for (LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
+      rootNode.add(languageTreeNode);
     }
+    myTree = new CheckboxTree(getCheckboxTreeCellRenderer(), rootNode, new CheckPolicy(true, true, true, false));
+    myTree.setRootVisible(false);
+    TreeUtil.expandAll(myTree);
+
+    JPanel mainPanel = new JPanel(new GridLayoutManager(1,1));
+
+    mainPanel.add(ScrollPaneFactory.createScrollPane(myTree), new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
     return mainPanel;
   }
 
   private void initCheckBoxes() {
-    myCheckBoxes = new ArrayList<IntentionEnabledCheckBox>();
-    for (Intention intention : myIntentionsManager.getAllIntentions()) {
-      myCheckBoxes.add(new IntentionEnabledCheckBox(intention));
-    }
-    for (IntentionFactory intentionFactory : myIntentionsManager.getAllIntentionFactories()) {
-      myCheckBoxes.add(new IntentionEnabledCheckBox(intentionFactory));
-    }
-    Collections.sort(myCheckBoxes, new Comparator<IntentionEnabledCheckBox>() {
+    List<IntentionDescriptor> intentionList = new SortedList<IntentionDescriptor>(new Comparator<IntentionDescriptor>() {
       @Override
-      public int compare(IntentionEnabledCheckBox o1, IntentionEnabledCheckBox o2) {
-        return StringUtil.compare(o1.getLanguageFqName(), o2.getLanguageFqName());
+      public int compare(IntentionDescriptor o1, IntentionDescriptor o2) {
+        int langCompare = StringUtil.compare(o1.getLanguageFqName(), o2.getLanguageFqName());
+        return langCompare != 0 ? langCompare : StringUtil.compare(o1.getPresentation().toLowerCase(), o2.getPresentation().toLowerCase());
       }
     });
+    intentionList.addAll(myIntentionsManager.getAllIntentions());
+    intentionList.addAll(myIntentionsManager.getAllIntentionFactories());
+    for(IntentionDescriptor descriptor : intentionList) {
+      final String languageFqName = descriptor.getLanguageFqName() != null ? descriptor.getLanguageFqName() : "Unspecified Language";
+      LanguageTreeNode langTreeNode = myLanguageTreeNodes.get(languageFqName);
+      if(langTreeNode == null) {
+        langTreeNode = new LanguageTreeNode(languageFqName);
+        myLanguageTreeNodes.put(languageFqName, langTreeNode);
+      }
+      langTreeNode.add(new IntentionTreeNode(descriptor));
+    }
   }
 
   @Override
   public boolean isModified() {
-    for (IntentionEnabledCheckBox checkBox : myCheckBoxes) {
-      if (checkBox.isModified()) {
-        return true;
+    for(LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
+      Enumeration<IntentionTreeNode> intentionTreeNode = languageTreeNode.children();
+      while (intentionTreeNode.hasMoreElements()) {
+        if (intentionTreeNode.nextElement().isModified()) {
+          return true;
+        }
       }
     }
     return false;
@@ -114,60 +118,86 @@ public class IntentionsPreferencesPage implements Configurable {
 
   @Override
   public void apply() throws ConfigurationException {
-    for (IntentionEnabledCheckBox checkBox : myCheckBoxes) {
-      checkBox.apply();
+    for(LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
+      Enumeration<IntentionTreeNode> intentionTreeNode = languageTreeNode.children();
+      while (intentionTreeNode.hasMoreElements()) {
+        intentionTreeNode.nextElement().apply();
+      }
     }
   }
 
   @Override
   public void reset() {
-    for (IntentionEnabledCheckBox checkBox : myCheckBoxes) {
-      checkBox.reset();
+    for(LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
+      Enumeration<IntentionTreeNode> intentionTreeNode = languageTreeNode.children();
+      while (intentionTreeNode.hasMoreElements()) {
+        intentionTreeNode.nextElement().reset();
+      }
     }
   }
 
   @Override
   public void disposeUIResources() {
-    myCheckBoxes = null;
+    myTree = null;
   }
 
-  private class IntentionEnabledCheckBox {
-    private JCheckBox myCheckBox;
-    private String myLanguageFqName;
-    private String myPersistentStateKey;
+  private class LanguageTreeNode extends CheckedTreeNode {
 
-    private IntentionEnabledCheckBox(final IntentionFactory intentionFactory) {
-      myCheckBox = new JCheckBox(intentionFactory.getPresentation());
-      myCheckBox.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
-      myLanguageFqName = intentionFactory.getLanguageFqName();
-      myPersistentStateKey = intentionFactory.getPersistentStateKey();
+    public LanguageTreeNode(final String languageFqName) {
+      super(languageFqName);
     }
 
-    private IntentionEnabledCheckBox(final Intention intention) {
-      myCheckBox = new JCheckBox(intention.getPresentation());
-      myCheckBox.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
-      myLanguageFqName = intention.getLanguageFqName();
-      myPersistentStateKey = intention.getPersistentStateKey();
+    @Override
+    public String getUserObject() {
+      return (String)super.getUserObject();
+    }
+  }
+
+  private class IntentionTreeNode extends CheckedTreeNode {
+    private final String myPersistentStateKey;
+
+    public IntentionTreeNode(final IntentionDescriptor intentionDescriptor) {
+      super(intentionDescriptor);
+      myPersistentStateKey = intentionDescriptor.getPersistentStateKey();
+    }
+
+    @Override
+    public IntentionDescriptor getUserObject() {
+      return (IntentionDescriptor)super.getUserObject();
     }
 
     private boolean isModified() {
-      return myIntentionsManager.isIntentionDisabled(myPersistentStateKey) == myCheckBox.isSelected();
-    }
-
-    private JCheckBox getCheckBox() {
-      return myCheckBox;
-    }
-
-    private String getLanguageFqName() {
-      return myLanguageFqName;
+      return myIntentionsManager.isIntentionDisabled(myPersistentStateKey) == isChecked();
     }
 
     private void apply() {
-      myIntentionsManager.setIntentionState(myPersistentStateKey, !myCheckBox.isSelected());
+      myIntentionsManager.setIntentionState(myPersistentStateKey, !isChecked());
     }
 
     private void reset() {
-      myCheckBox.setSelected(!myIntentionsManager.isIntentionDisabled(myPersistentStateKey));
+      setChecked(!myIntentionsManager.isIntentionDisabled(myPersistentStateKey));
     }
+  }
+
+  private static CheckboxTreeCellRenderer getCheckboxTreeCellRenderer() {
+    return new CheckboxTreeCellRenderer() {
+      @Override
+      public void customizeRenderer(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
+        super.customizeRenderer(tree, value, selected, expanded, leaf, row, hasFocus);
+        ColoredTreeCellRenderer renderer = getTextRenderer();
+        JCheckBox checkBox = getCheckbox();
+
+        if (value instanceof IntentionTreeNode) {
+          IntentionTreeNode intentionTreeNode = (IntentionTreeNode) value;
+          renderer.append(intentionTreeNode.getUserObject().getPresentation());
+          checkBox.setSelected(intentionTreeNode.isChecked());
+        } else if (value instanceof LanguageTreeNode) {
+          LanguageTreeNode languageTreeNode = (LanguageTreeNode) value;
+          renderer.append(languageTreeNode.getUserObject());
+          checkBox.setSelected(languageTreeNode.isChecked());
+        }
+
+      }
+    };
   }
 }
