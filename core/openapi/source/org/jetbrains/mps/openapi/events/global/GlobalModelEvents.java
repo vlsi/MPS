@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.globalEvents;
+package org.jetbrains.mps.openapi.events.global;
 
 import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.mps.openapi.model.SModel;

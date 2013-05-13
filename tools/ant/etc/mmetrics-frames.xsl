@@ -900,7 +900,7 @@ will increase this number.
 <xsl:template match="metrics" mode="print.metrics">
   <tr>
     <xsl:call-template name="alternate-row"/>
-      <!-- the globalEvents metrics is the top package metrics -->
+      <!-- the global metrics is the top package metrics -->
     <td><xsl:apply-templates select="./package/@vg"/></td>
     <td><xsl:apply-templates select="./package/@loc"/></td>
     <td><xsl:apply-templates select="./package/@dit"/></td>

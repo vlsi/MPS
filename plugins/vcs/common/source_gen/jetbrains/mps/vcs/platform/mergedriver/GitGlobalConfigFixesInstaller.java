@@ -53,14 +53,14 @@ import org.apache.log4j.LogManager;
       if (LOG.isEnabledFor(Priority.WARN)) {
         LOG.warn("Can't set value", e);
       }
-      Messages.showErrorDialog(myProject, "Can't set Git globalEvents property: " + e.getMessage(), "Git Global property");
+      Messages.showErrorDialog(myProject, "Can't set Git global property: " + e.getMessage(), "Git Global property");
       return AbstractInstaller.State.NOT_INSTALLED;
     }
   }
 
   @Override
   public String getActionTitle() {
-    return "Git globalEvents autocrlf setting (~/.gitconfig)";
+    return "Git global autocrlf setting (~/.gitconfig)";
   }
 
   @Override
@@ -77,7 +77,7 @@ import org.apache.log4j.LogManager;
     GitSimpleHandler h = new GitSimpleHandler(project, project.getBaseDir(), GitCommand.CONFIG);
     h.setSilent(true);
     h.ignoreErrorCode(1);
-    h.addParameters("--globalEvents", key, value);
+    h.addParameters("--global", key, value);
     h.run();
   }
 

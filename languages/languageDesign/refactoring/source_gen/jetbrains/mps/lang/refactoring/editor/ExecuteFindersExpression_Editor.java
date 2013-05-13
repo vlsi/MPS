@@ -142,7 +142,7 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_xmss8u_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("searchScope");
-    provider.setNoTargetText("<globalEvents scope>");
+    provider.setNoTargetText("<global scope>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

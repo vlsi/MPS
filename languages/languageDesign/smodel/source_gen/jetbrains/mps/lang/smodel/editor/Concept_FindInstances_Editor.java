@@ -52,7 +52,7 @@ public class Concept_FindInstances_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_2v58n3_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("scope");
-    provider.setNoTargetText("<globalEvents scope>");
+    provider.setNoTargetText("<global scope>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

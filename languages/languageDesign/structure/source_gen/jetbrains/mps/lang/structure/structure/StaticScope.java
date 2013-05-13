@@ -7,7 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum StaticScope {
-  global("globalEvents", null),
+  global("global", null),
   root("containing root", "root"),
   none("none", "none");
 

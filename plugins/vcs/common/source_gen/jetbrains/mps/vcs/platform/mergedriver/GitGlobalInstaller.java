@@ -147,7 +147,7 @@ import org.apache.log4j.LogManager;
 
   @Override
   public String getActionTitle() {
-    return "Git globalEvents merge driver setting (~/.gitconfig)";
+    return "Git global merge driver setting (~/.gitconfig)";
   }
 
   @Override

@@ -108,7 +108,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       return;
     }
 
-    // use globalEvents language scope as the context is unknown
+    // use global language scope as the context is unknown
     LanguageScopeExecutor.execWithLanguageScope(null, new Computable<Object>() {
       @Override
       public Object compute() {

@@ -33,7 +33,7 @@ public abstract class AbstractMigrationScriptHelper {
     if (applyToSelection) {
       SetSequence.fromSet(modelsToMigration).addSequence(SetSequence.fromSet(collectModelsForMigration(models, modules)));
     }
-    // TODO: why globalEvents scope???
+    // TODO: why global scope??? 
     if (SetSequence.fromSet(modelsToMigration).isEmpty()) {
       SetSequence.fromSet(modelsToMigration).addSequence(SetSequence.fromSet(collectModelsForMigration(Collections.<SModel>emptySet(), GlobalScope.getInstance().getModules())));
     }
