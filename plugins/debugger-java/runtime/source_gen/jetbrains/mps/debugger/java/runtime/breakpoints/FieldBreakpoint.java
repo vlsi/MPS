@@ -87,9 +87,9 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
     } catch (ObjectCollectedException ex) {
       LOG.warn("ObjectCollectedException: " + ex.getMessage());
     } catch (InternalException ex) {
-      LOG.error(ex);
+      LOG.error(null, ex);
     } catch (Exception ex) {
-      LOG.error(ex);
+      LOG.error(null, ex);
     }
   }
 

@@ -40,8 +40,8 @@
     <nodeInfo nodeId="6460341978864599325" fileName="StepRequestor.java" startLine="34" startPosition="28" endLine="35" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6460341978864599335" fileName="StepRequestor.java" startLine="35" startPosition="68" endLine="36" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6460341978864599343" fileName="StepRequestor.java" startLine="36" startPosition="55" endLine="37" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599279" fileName="StepRequestor.java" startLine="40" startPosition="50" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599288" fileName="StepRequestor.java" startLine="42" startPosition="44" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599279" fileName="StepRequestor.java" startLine="40" startPosition="50" endLine="41" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599288" fileName="StepRequestor.java" startLine="42" startPosition="44" endLine="43" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6460341978864599146" fileName="StepRequestor.java" startLine="47" startPosition="40" endLine="48" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6460341978864599640" fileName="StepRequestor.java" startLine="49" startPosition="25" endLine="50" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6460341978864599697" fileName="StepRequestor.java" startLine="53" startPosition="37" endLine="54" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -56,8 +56,8 @@
     <nodeInfo nodeId="6460341978864599414" fileName="StepRequestor.java" startLine="74" startPosition="43" endLine="75" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6460341978864599438" fileName="StepRequestor.java" startLine="76" startPosition="11" endLine="77" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6460341978864599444" fileName="StepRequestor.java" startLine="77" startPosition="41" endLine="78" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599421" fileName="StepRequestor.java" startLine="79" startPosition="52" endLine="80" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599430" fileName="StepRequestor.java" startLine="81" startPosition="46" endLine="82" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599421" fileName="StepRequestor.java" startLine="79" startPosition="52" endLine="80" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599430" fileName="StepRequestor.java" startLine="81" startPosition="46" endLine="82" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6460341978864599450" fileName="StepRequestor.java" startLine="83" startPosition="7" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6460341978864599452" fileName="StepRequestor.java" startLine="84" startPosition="61" endLine="85" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6460341978864599474" fileName="StepRequestor.java" startLine="86" startPosition="148" endLine="87" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -80,14 +80,14 @@
     <nodeInfo nodeId="6460341978864599258" fileName="StepRequestor.java" startLine="27" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StepRequestor#(Lcom/sun/jdi/ThreadReference;ILjetbrains/mps/debug/api/IDebuggableFramesSelector;)V" />
     <nodeInfo nodeId="6460341978864599383" fileName="StepRequestor.java" startLine="71" startPosition="124" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6460341978864599373" fileName="StepRequestor.java" startLine="70" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nextStep#(Lcom/sun/jdi/ThreadReference;Lcom/sun/jdi/StackFrame;)I" />
-    <scopeInfo nodeId="6460341978864599277" fileName="StepRequestor.java" startLine="40" startPosition="0" endLine="41" endPosition="19">
+    <scopeInfo nodeId="6460341978864599277" fileName="StepRequestor.java" startLine="40" startPosition="0" endLine="41" endPosition="25">
       <varInfo nodeId="6460341978864599284" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599278" fileName="StepRequestor.java" startLine="40" startPosition="50" endLine="41" endPosition="19" />
-    <scopeInfo nodeId="6460341978864599286" fileName="StepRequestor.java" startLine="42" startPosition="0" endLine="43" endPosition="19">
+    <scopeInfo nodeId="6460341978864599278" fileName="StepRequestor.java" startLine="40" startPosition="50" endLine="41" endPosition="25" />
+    <scopeInfo nodeId="6460341978864599286" fileName="StepRequestor.java" startLine="42" startPosition="0" endLine="43" endPosition="25">
       <varInfo nodeId="6460341978864599293" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599287" fileName="StepRequestor.java" startLine="42" startPosition="44" endLine="43" endPosition="19" />
+    <scopeInfo nodeId="6460341978864599287" fileName="StepRequestor.java" startLine="42" startPosition="44" endLine="43" endPosition="25" />
     <scopeInfo nodeId="6460341978864599654" fileName="StepRequestor.java" startLine="49" startPosition="25" endLine="50" endPosition="31" />
     <scopeInfo nodeId="6460341978864599670" fileName="StepRequestor.java" startLine="53" startPosition="37" endLine="54" endPosition="33" />
     <scopeInfo nodeId="6460341978864599762" fileName="StepRequestor.java" startLine="58" startPosition="0" endLine="59" endPosition="31">
@@ -95,14 +95,14 @@
     </scopeInfo>
     <scopeInfo nodeId="6460341978864599765" fileName="StepRequestor.java" startLine="58" startPosition="50" endLine="59" endPosition="31" />
     <scopeInfo nodeId="6460341978864599628" fileName="StepRequestor.java" startLine="64" startPosition="85" endLine="65" endPosition="24" />
-    <scopeInfo nodeId="6460341978864599419" fileName="StepRequestor.java" startLine="79" startPosition="0" endLine="80" endPosition="21">
+    <scopeInfo nodeId="6460341978864599419" fileName="StepRequestor.java" startLine="79" startPosition="0" endLine="80" endPosition="27">
       <varInfo nodeId="6460341978864599426" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599420" fileName="StepRequestor.java" startLine="79" startPosition="52" endLine="80" endPosition="21" />
-    <scopeInfo nodeId="6460341978864599428" fileName="StepRequestor.java" startLine="81" startPosition="0" endLine="82" endPosition="21">
+    <scopeInfo nodeId="6460341978864599420" fileName="StepRequestor.java" startLine="79" startPosition="52" endLine="80" endPosition="27" />
+    <scopeInfo nodeId="6460341978864599428" fileName="StepRequestor.java" startLine="81" startPosition="0" endLine="82" endPosition="27">
       <varInfo nodeId="6460341978864599435" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599429" fileName="StepRequestor.java" startLine="81" startPosition="46" endLine="82" endPosition="21" />
+    <scopeInfo nodeId="6460341978864599429" fileName="StepRequestor.java" startLine="81" startPosition="46" endLine="82" endPosition="27" />
     <scopeInfo nodeId="6460341978864599473" fileName="StepRequestor.java" startLine="86" startPosition="148" endLine="87" endPosition="26" />
     <scopeInfo nodeId="6460341978864599507" fileName="StepRequestor.java" startLine="91" startPosition="183" endLine="92" endPosition="26" />
     <scopeInfo nodeId="6460341978864599437" fileName="StepRequestor.java" startLine="76" startPosition="11" endLine="78" endPosition="43" />

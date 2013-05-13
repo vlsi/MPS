@@ -53,7 +53,7 @@ public class DesignPartLoader {
       }
       return (IFeatureDesign) klass.newInstance();
     } catch (Throwable t) {
-      DesignPartLoader.LOG.error(t);
+      DesignPartLoader.LOG.error(null, t);
     }
     return null;
   }

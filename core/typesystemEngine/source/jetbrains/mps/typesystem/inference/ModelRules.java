@@ -107,7 +107,7 @@ public class ModelRules {
 //        myOverloadedOperationsManager.makeConsistent();                  */
         return true;
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
         return false;
       } finally {
         myLoadedLanguages.add(languageNamespace);

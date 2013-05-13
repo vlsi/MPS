@@ -1055,15 +1055,15 @@
     <nodeInfo nodeId="8961922059449034324" fileName="DebugProcessMulticaster.java" startLine="28" startPosition="32" endLine="29" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8961922059449034339" fileName="DebugProcessMulticaster.java" startLine="34" startPosition="32" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8961922059449034364" fileName="DebugProcessMulticaster.java" startLine="41" startPosition="11" endLine="42" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8961922059449034356" fileName="DebugProcessMulticaster.java" startLine="43" startPosition="29" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8961922059449034356" fileName="DebugProcessMulticaster.java" startLine="43" startPosition="29" endLine="44" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8961922059449034391" fileName="DebugProcessMulticaster.java" startLine="51" startPosition="11" endLine="52" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8961922059449034383" fileName="DebugProcessMulticaster.java" startLine="53" startPosition="29" endLine="54" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8961922059449034383" fileName="DebugProcessMulticaster.java" startLine="53" startPosition="29" endLine="54" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8961922059449034419" fileName="DebugProcessMulticaster.java" startLine="61" startPosition="11" endLine="62" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8961922059449034411" fileName="DebugProcessMulticaster.java" startLine="63" startPosition="29" endLine="64" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8961922059449034411" fileName="DebugProcessMulticaster.java" startLine="63" startPosition="29" endLine="64" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8961922059449034449" fileName="DebugProcessMulticaster.java" startLine="71" startPosition="11" endLine="72" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8961922059449034441" fileName="DebugProcessMulticaster.java" startLine="73" startPosition="29" endLine="74" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8961922059449034441" fileName="DebugProcessMulticaster.java" startLine="73" startPosition="29" endLine="74" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8961922059449034478" fileName="DebugProcessMulticaster.java" startLine="81" startPosition="11" endLine="82" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8961922059449034470" fileName="DebugProcessMulticaster.java" startLine="83" startPosition="29" endLine="84" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8961922059449034470" fileName="DebugProcessMulticaster.java" startLine="83" startPosition="29" endLine="84" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8961922059449034292" fileName="DebugProcessMulticaster.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugProcessMulticaster#()V" />
     <nodeInfo nodeId="8961922059449034321" fileName="DebugProcessMulticaster.java" startLine="27" startPosition="67" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="8961922059449034336" fileName="DebugProcessMulticaster.java" startLine="33" startPosition="70" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
@@ -1090,30 +1090,30 @@
     <scopeInfo nodeId="8961922059449034323" fileName="DebugProcessMulticaster.java" startLine="28" startPosition="32" endLine="29" endPosition="32" />
     <scopeInfo nodeId="8961922059449034338" fileName="DebugProcessMulticaster.java" startLine="34" startPosition="32" endLine="35" endPosition="35" />
     <scopeInfo nodeId="8961922059449034363" fileName="DebugProcessMulticaster.java" startLine="41" startPosition="11" endLine="42" endPosition="36" />
-    <scopeInfo nodeId="8961922059449034354" fileName="DebugProcessMulticaster.java" startLine="43" startPosition="0" endLine="44" endPosition="21">
+    <scopeInfo nodeId="8961922059449034354" fileName="DebugProcessMulticaster.java" startLine="43" startPosition="0" endLine="44" endPosition="27">
       <varInfo nodeId="8961922059449034361" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8961922059449034355" fileName="DebugProcessMulticaster.java" startLine="43" startPosition="29" endLine="44" endPosition="21" />
+    <scopeInfo nodeId="8961922059449034355" fileName="DebugProcessMulticaster.java" startLine="43" startPosition="29" endLine="44" endPosition="27" />
     <scopeInfo nodeId="8961922059449034390" fileName="DebugProcessMulticaster.java" startLine="51" startPosition="11" endLine="52" endPosition="40" />
-    <scopeInfo nodeId="8961922059449034381" fileName="DebugProcessMulticaster.java" startLine="53" startPosition="0" endLine="54" endPosition="21">
+    <scopeInfo nodeId="8961922059449034381" fileName="DebugProcessMulticaster.java" startLine="53" startPosition="0" endLine="54" endPosition="27">
       <varInfo nodeId="8961922059449034388" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8961922059449034382" fileName="DebugProcessMulticaster.java" startLine="53" startPosition="29" endLine="54" endPosition="21" />
+    <scopeInfo nodeId="8961922059449034382" fileName="DebugProcessMulticaster.java" startLine="53" startPosition="29" endLine="54" endPosition="27" />
     <scopeInfo nodeId="8961922059449034418" fileName="DebugProcessMulticaster.java" startLine="61" startPosition="11" endLine="62" endPosition="41" />
-    <scopeInfo nodeId="8961922059449034409" fileName="DebugProcessMulticaster.java" startLine="63" startPosition="0" endLine="64" endPosition="21">
+    <scopeInfo nodeId="8961922059449034409" fileName="DebugProcessMulticaster.java" startLine="63" startPosition="0" endLine="64" endPosition="27">
       <varInfo nodeId="8961922059449034416" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8961922059449034410" fileName="DebugProcessMulticaster.java" startLine="63" startPosition="29" endLine="64" endPosition="21" />
+    <scopeInfo nodeId="8961922059449034410" fileName="DebugProcessMulticaster.java" startLine="63" startPosition="29" endLine="64" endPosition="27" />
     <scopeInfo nodeId="8961922059449034448" fileName="DebugProcessMulticaster.java" startLine="71" startPosition="11" endLine="72" endPosition="56" />
-    <scopeInfo nodeId="8961922059449034439" fileName="DebugProcessMulticaster.java" startLine="73" startPosition="0" endLine="74" endPosition="21">
+    <scopeInfo nodeId="8961922059449034439" fileName="DebugProcessMulticaster.java" startLine="73" startPosition="0" endLine="74" endPosition="27">
       <varInfo nodeId="8961922059449034446" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8961922059449034440" fileName="DebugProcessMulticaster.java" startLine="73" startPosition="29" endLine="74" endPosition="21" />
+    <scopeInfo nodeId="8961922059449034440" fileName="DebugProcessMulticaster.java" startLine="73" startPosition="29" endLine="74" endPosition="27" />
     <scopeInfo nodeId="8961922059449034477" fileName="DebugProcessMulticaster.java" startLine="81" startPosition="11" endLine="82" endPosition="42" />
-    <scopeInfo nodeId="8961922059449034468" fileName="DebugProcessMulticaster.java" startLine="83" startPosition="0" endLine="84" endPosition="21">
+    <scopeInfo nodeId="8961922059449034468" fileName="DebugProcessMulticaster.java" startLine="83" startPosition="0" endLine="84" endPosition="27">
       <varInfo nodeId="8961922059449034475" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8961922059449034469" fileName="DebugProcessMulticaster.java" startLine="83" startPosition="29" endLine="84" endPosition="21" />
+    <scopeInfo nodeId="8961922059449034469" fileName="DebugProcessMulticaster.java" startLine="83" startPosition="29" endLine="84" endPosition="27" />
     <scopeInfo nodeId="8961922059449034292" fileName="DebugProcessMulticaster.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="8961922059449034303" fileName="DebugProcessMulticaster.java" startLine="21" startPosition="32" endLine="23" endPosition="20">
       <varInfo nodeId="8961922059449034305" varName="result" />

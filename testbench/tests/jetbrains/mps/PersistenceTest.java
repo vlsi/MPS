@@ -220,10 +220,10 @@ public class PersistenceTest extends BaseMPSTest {
         modelDescriptor.reloadFromSource();
       } catch (ModelReadException e) {
         // This hardly can happend, unreadable model should be already filtered out
-        LOG.error(e);
+        LOG.error(null, e);
         fail();
       } catch (IOException e) {
-        LOG.error(e);
+        LOG.error(null, e);
         fail();
       }
     }

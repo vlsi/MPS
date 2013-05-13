@@ -20,6 +20,8 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
 import java.awt.event.KeyEvent;
@@ -75,12 +77,18 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     jetbrains.mps.openapi.editor.cells.CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
 
     if (selectedCell != null) {
-      boolean strictMatching = jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM.equals(actionType) || jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM.equals(actionType);
+      final boolean strictMatching = jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM.equals(actionType) ||
+          jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM.equals(actionType);
 
       if (selectedCell.isErrorState() && strictMatching) {
-        if (APICellAdapter.validate(selectedCell, strictMatching, false)) {
-          return true;
-        }
+        boolean res = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            return APICellAdapter.validate(selectedCell, strictMatching, false);
+          }
+        });
+
+        if (res) return true;
       }
 
       if (actionType != null) {
@@ -116,7 +124,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
 
     int keyCode = keyEvent.getKeyCode();
     if (keyCode == KeyEvent.VK_CONTROL || keyCode == KeyEvent.VK_ALT || keyCode == KeyEvent.VK_SHIFT ||
-      keyCode == KeyEvent.VK_PAGE_UP || keyCode == KeyEvent.VK_PAGE_DOWN) {
+        keyCode == KeyEvent.VK_PAGE_UP || keyCode == KeyEvent.VK_PAGE_DOWN) {
       return false;
     }
 

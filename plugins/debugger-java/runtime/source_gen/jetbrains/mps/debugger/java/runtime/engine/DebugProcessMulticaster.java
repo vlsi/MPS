@@ -41,7 +41,7 @@ public class DebugProcessMulticaster {
       try {
         listener.connectorIsReady();
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -51,7 +51,7 @@ public class DebugProcessMulticaster {
       try {
         listener.paused(suspendContext);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -61,7 +61,7 @@ public class DebugProcessMulticaster {
       try {
         listener.resumed(suspendContext);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -71,7 +71,7 @@ public class DebugProcessMulticaster {
       try {
         listener.processDetached(process, closedByUser);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -81,7 +81,7 @@ public class DebugProcessMulticaster {
       try {
         listener.processAttached(process);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }

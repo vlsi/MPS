@@ -30,13 +30,13 @@ public class ActionUtils {
     try {
       group.update(e);
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
     }
     for (AnAction child : group.getChildren(null)) {
       try {
         child.update(e);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
       if (child instanceof ActionGroup) updateGroup((ActionGroup) child, e);
     }
