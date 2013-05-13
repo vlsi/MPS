@@ -26,9 +26,9 @@ import jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -39,10 +39,10 @@ import jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior;
 import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -764,19 +764,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8872173783417963895(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_907051507539352431(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_3784190569164376578(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:editorComponentDeclarations"))).first(), "name");
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_4618993321951577858(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_5950344441595673066(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1060,20 +1060,20 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:editorDeclarations"))).first(), "generatedClass");
   }
 
-  public static Object referenceMacro_GetReferent_3784190569164372644(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:editorComponentDeclarations"))).first(), "generatedClass"))).first();
-  }
-
-  public static Object referenceMacro_GetReferent_4618993321951681449(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass"))).first();
-  }
-
   public static Object referenceMacro_GetReferent_5950344441595673014(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "renderingCondition", true), "query_method");
   }
 
   public static Object referenceMacro_GetReferent_4820515453829457006(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "contextHints_QueryMethod");
+  }
+
+  public static Object referenceMacro_GetReferent_2467262375112577217(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass"))).first();
+  }
+
+  public static Object referenceMacro_GetReferent_2467262375112320862(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("editorComponents"))).first(), "generatedClass"))).first();
   }
 
   public static boolean ifMacro_Condition_7517620136073670748(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1440,11 +1440,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_3784190569164330626(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (int) Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:editorComponentDeclarations"))).count() == 1;
+    return (int) Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:mainEditorComponents"))).count() == 1;
   }
 
   public static boolean ifMacro_Condition_3784190569164248155(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:editorComponentDeclarations"))).count() > 1;
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:mainEditorComponents"))).count() > 1;
   }
 
   public static boolean ifMacro_Condition_5950344441595673031(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1457,6 +1457,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_5950344441595673083(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "renderingCondition", true) == null && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty");
+  }
+
+  public static boolean ifMacro_Condition_2467262375112320830(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (int) Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("editorComponents"))).count() == 1;
   }
 
   public static SNode sourceNodeQuery_996730828436923520(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1971,12 +1975,32 @@ public class QueriesGenerated {
     return SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
   }
 
+  public static SNode sourceNodeQuery_2467262375111914308(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:mainEditorComponents"))).first();
+  }
+
   public static SNode sourceNodeQuery_1947450138885494514(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "addHints", true);
   }
 
   public static SNode sourceNodeQuery_1947450138885494531(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "removeHints", true);
+  }
+
+  public static Object templateArgumentQuery_2467262375112804984(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:allEditorComponents"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it == _context.getNode() || SLinkOperations.getTarget(SLinkOperations.getTarget(it, "overridenEditorComponent", true), "editorComponent", false) == _context.getNode();
+      }
+    });
+  }
+
+  public static Object templateArgumentQuery_2467262375112930429(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:allEditorComponents"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it == _context.getNode() || SLinkOperations.getTarget(SLinkOperations.getTarget(it, "overridenEditorComponent", true), "editorComponent", false) == _context.getNode();
+      }
+    });
   }
 
   public static Iterable sourceNodesQuery_7517620136073798900(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -2148,6 +2172,10 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "conceptDeclaration", false);
       }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it != null);
+      }
     }).distinct().sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");
@@ -2164,6 +2192,10 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "conceptDeclaration", false);
       }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it != null);
+      }
     }).distinct().sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");
@@ -2172,7 +2204,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4618993321951542237(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ((Iterable<SNode>) _context.getVariable("var:editorComponentDeclarations"));
+    return ((Iterable<SNode>) _context.getVariable("var:mainEditorComponents"));
   }
 
   public static Iterable sourceNodesQuery_5950344441595673097(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -2181,6 +2213,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_4820515453829072277(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
+  }
+
+  public static Iterable sourceNodesQuery_2467262375112433681(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ((Iterable<SNode>) _context.getVariable("editorComponents"));
   }
 
   public static Object insertMacro_varValue_8872173783417963860(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -2201,6 +2237,21 @@ public class QueriesGenerated {
         return SLinkOperations.getTarget(it, "conceptDeclaration", false) == _context.getNode();
       }
     }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return SPropertyOperations.getString(it, "name");
+      }
+    }, true);
+  }
+
+  public static Object insertMacro_varValue_2467262375110794919(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:allEditorComponents"))).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return (SLinkOperations.getTarget(it, "overridenEditorComponent", true) == null ?
+          it :
+          SLinkOperations.getTarget(SLinkOperations.getTarget(it, "overridenEditorComponent", true), "editorComponent", false)
+        );
+      }
+    }).distinct().sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");
       }
