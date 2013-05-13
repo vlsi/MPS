@@ -169,6 +169,7 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -187,7 +188,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.ApplyNonConflictsForRoot" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter" />
