@@ -34,7 +34,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="9152904044274365445" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="9152904044274365445" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="literal" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v5hn.9152904044274328259" resolveInfo="XmlLiteral" />
     </node>
@@ -65,7 +65,7 @@
         <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="5970100369440882706" nodeInfo="ng" />
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="9152904044274516049" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="9152904044274516049" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="macro" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v5hn.9152904044274469601" resolveInfo="TextMacro" />
     </node>
@@ -96,7 +96,7 @@
         <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="5970100369440882523" nodeInfo="ng" />
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="9152904044274518141" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="9152904044274518141" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="macro" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v5hn.9152904044274518122" resolveInfo="ElementMacro" />
     </node>

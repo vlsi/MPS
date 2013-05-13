@@ -18,7 +18,9 @@ package jetbrains.mps.ide.project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectRepository;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.awt.Frame;
 
@@ -49,6 +51,14 @@ public class ProjectHelper {
       com.intellij.openapi.project.Project project = ((MPSProject) p).getProject();
       if (project == null) return null;
       return WindowManager.getInstance().getFrame(project);
+    }
+    return null;
+  }
+
+  @Nullable
+  public static Project getProject(SRepository repository) {
+    if (repository instanceof ProjectRepository) {
+      return ((ProjectRepository) repository).getProject();
     }
     return null;
   }

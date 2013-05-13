@@ -21,31 +21,39 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
-import jetbrains.mps.workbench.goTo.navigation.RootNodeElement;
-import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
-import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
+import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
+import jetbrains.mps.workbench.goTo.navigation.RootNodeElement;
+import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
+import org.jetbrains.mps.util.Condition;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JOptionPane;
+import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -54,7 +62,7 @@ import java.util.Set;
 
 public class ImportHelper {
   public static void addModelImport(final Project project, final SModule module, final SModel model,
-                    @Nullable BaseAction parentAction) {
+      @Nullable BaseAction parentAction) {
     BaseModelModel goToModelModel = new BaseModelModel(project) {
       @Override
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
@@ -67,7 +75,7 @@ public class ImportHelper {
           @Override
           public boolean met(SModel modelDescriptor) {
             boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-              || SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
+                || SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
             boolean hasModule = modelDescriptor.getModule() != null;
             return rightStereotype && hasModule;
           }
@@ -102,7 +110,7 @@ public class ImportHelper {
   }
 
   public static void addLanguageImport(final Project project, final SModule contextModule, final SModel model,
-                     @Nullable BaseAction parentAction) {
+      @Nullable BaseAction parentAction) {
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
       @Override
       public NavigationItem doGetNavigationItem(SModuleReference ref) {
@@ -192,8 +200,8 @@ public class ImportHelper {
         public void run() {
           boolean reload = false;
           for (SModuleReference ref : toImport) {
-            if (((AbstractModule)myContextModule).getScope().getLanguage(ref) == null) {
-              ((AbstractModule)myContextModule).addUsedLanguage((SModuleReference) ref);
+            if (((AbstractModule) myContextModule).getScope().getLanguage(ref) == null) {
+              ((AbstractModule) myContextModule).addUsedLanguage((SModuleReference) ref);
               reload = true;
             }
             ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage((SModuleReference) ref);
@@ -214,7 +222,7 @@ public class ImportHelper {
   }
 
   public static void addModelImportByRoot(final Project project, final SModule contextModule, final SModel model,
-                      String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
+      String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
     BaseMPSChooseModel goToNodeModel = new RootChooseModel(project, new RootNodeNameIndex()) {
       @Override
       public NavigationItem doGetNavigationItem(final NavigationTarget object) {
@@ -273,42 +281,59 @@ public class ImportHelper {
 
     @Override
     public void navigate(boolean requestFocus) {
-      final SModuleReference moduleToImport = ModelAccess.instance().runReadAction(new Computable<SModuleReference>() {
+      final SModuleReference[] module = {null};
+      final boolean[] dependency = {true};
+
+      ModelAccess.instance().runReadAction(new Runnable() {
         @Override
-        public SModuleReference compute() {
-          SModel md = SModelRepository.getInstance().getModelDescriptor(getModelReference());
-          final SModuleReference moduleReference = md.getModule().getModuleReference();
-          if (((AbstractModule)myModule).getScope().getModelDescriptor(getModelReference()) == null) {
-            return moduleReference;
+        public void run() {
+          SModelReference mrefToImport = getModelReference();
+          SModel modelToImport = SModelRepository.getInstance().getModelDescriptor(mrefToImport);
+          SModule moduleToImport = modelToImport.getModule();
+
+          if (moduleToImport instanceof Language &&
+              myModule instanceof Solution &&
+              ((Language) moduleToImport).isAccessoryModel(mrefToImport)
+              ) {
+            dependency[0] = false;
           }
-          return null;
+
+          if (((AbstractModule) myModule).getScope().getModelDescriptor(mrefToImport) == null) {
+            module[0] = moduleToImport.getModuleReference();
+          }
         }
       });
 
-      if (moduleToImport != null) {
+      if (module[0] != null) {
         int res = JOptionPane.showConfirmDialog(getFrame(),
-          "<html>Model <b>" + getModelReference().getModelName() + "</b> is owned by module <b>" + moduleToImport.getModuleName() + "</b> which is not imported.</html>\n\n" +
+            "<html>Model <b>" + getModelReference().getModelName() + "</b> is owned by module <b>" + module[0].getModuleName() + "</b> which is not imported.</html>\n\n" +
 
-            "Importing the module will take some time.\n" +
-            "Do you want to automatically import the module?",
-          "Module import", JOptionPane.YES_NO_OPTION);
+                "Importing the module will take some time.\n" +
+                "Do you want to automatically import the module?",
+            "Module import", JOptionPane.YES_NO_OPTION);
         if (res == JOptionPane.YES_OPTION) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             @Override
             public void run() {
-              ((AbstractModule)myModule).addDependency(moduleToImport, false);
+              if (dependency[0]) {
+                ((AbstractModule) myModule).addDependency(module[0], false);
+                ((jetbrains.mps.smodel.SModelInternal) myModel).addModelImport(getModelReference(), false);
+              } else {
+                ((AbstractModule) myModule).addUsedLanguage(module[0]);
+                ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage(module[0]);
+              }
               ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
             }
           });
         }
+      } else {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          @Override
+          public void run() {
+            ((jetbrains.mps.smodel.SModelInternal) myModel).addModelImport(getModelReference(), false);
+          }
+        });
       }
-
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        @Override
-        public void run() {
-          ((jetbrains.mps.smodel.SModelInternal) myModel).addModelImport(getModelReference(), false);
-        }
-      });
     }
   }
 

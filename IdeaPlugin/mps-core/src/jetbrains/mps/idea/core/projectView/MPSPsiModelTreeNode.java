@@ -19,8 +19,6 @@ package jetbrains.mps.idea.core.projectView;
 import com.intellij.ide.projectView.PresentationData;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.BasePsiNode;
-import com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode;
-import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.Project;
@@ -32,9 +30,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleOperationContext;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -59,7 +55,7 @@ public class MPSPsiModelTreeNode extends BasePsiNode<MPSPsiModel> implements Nav
     return (MPSPsiModel) getValue();
   }
 
-  public MPSPsiModel getModel () {
+  public MPSPsiModel getModel() {
     return (MPSPsiModel) getValue();
   }
 
@@ -92,10 +88,7 @@ public class MPSPsiModelTreeNode extends BasePsiNode<MPSPsiModel> implements Nav
     SModel sModel = modelReference.resolve(MPSModuleRepository.getInstance());
 
     MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(sModel,
-      new ModuleOperationContext(sModel.getModule()) {
-        @Override
-        public jetbrains.mps.project.Project getProject() { return ProjectHelper.toMPSProject(MPSPsiModelTreeNode.this.getProject()); }
-      },
+      ProjectHelper.toMPSProject(MPSPsiModelTreeNode.this.getProject()),
       true
     );
 

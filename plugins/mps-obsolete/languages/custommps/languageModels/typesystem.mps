@@ -133,7 +133,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1234292492499" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1234292492499" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="mpsBuild" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="j1at.1233149592028" resolveInfo="MPSBuild" />
     </node>
@@ -166,7 +166,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238590587795" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238590587795" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="libraryFolder" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="j1at.1233679247700" resolveInfo="LibraryFolder" />
     </node>

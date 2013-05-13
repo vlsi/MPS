@@ -26,12 +26,26 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.util.IntegerValueDocumentFilter;
 
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.JTextField;
+import javax.swing.Timer;
 import javax.swing.border.Border;
-import javax.swing.text.AbstractDocument;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.GraphicsEnvironment;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -63,11 +77,11 @@ class EditorSettingsPreferencesPage {
 
   public EditorSettingsPreferencesPage(EditorSettings settings) {
     mySettings = settings;
-    JPanel panel = new JPanel(new GridLayoutManager(4, 1, new JBInsets(5,5,5,5), 10, 10));
+    JPanel panel = new JPanel(new GridLayoutManager(4, 1, new JBInsets(5, 5, 5, 5), 10, 10));
 
     ButtonGroup group = new ButtonGroup();
 
-    JPanel editorTabsRB = new JPanel(new GridLayout(4,1));
+    JPanel editorTabsRB = new JPanel(new GridLayout(4, 1));
     editorTabsRB.setBorder(IdeBorderFactory.createTitledBorder("Aspect Tabs", true));
 
     myDontShow = new JBRadioButton("Do not show tabs");
@@ -89,7 +103,9 @@ class EditorSettingsPreferencesPage {
     myFirstSelection = myTabPerAspect;
     myFirstSelection.setSelected(true);
 
-    panel.add(editorTabsRB, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+    panel.add(editorTabsRB,
+        new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+            GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     JPanel fontPropertiesPanel = new JPanel(new GridLayoutManager(5, 2, JBInsets.NONE, 2, 2));
 
@@ -119,7 +135,9 @@ class EditorSettingsPreferencesPage {
     myIndentSizeComboBox = new JComboBox(indents.toArray());
     fontPropertiesPanel.add(myIndentSizeComboBox, getEditorConstraint(4, 1));
 
-    panel.add(fontPropertiesPanel, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+    panel.add(fontPropertiesPanel,
+        new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+            GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     JPanel checkboxes = new JPanel(new GridLayout(3, 1));
     myUseBraces = new JCheckBox("Use Braces");
@@ -131,7 +149,9 @@ class EditorSettingsPreferencesPage {
     myPowerSaveModeCheckBox = new JCheckBox("Power Save Mode");
     checkboxes.add(myPowerSaveModeCheckBox);
 
-    panel.add(checkboxes, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+    panel.add(checkboxes,
+        new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+            GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     JPanel colorSettingsPanel = new JPanel();
     Border border = BorderFactory.createEmptyBorder(5, 5, 0, 0);
@@ -159,7 +179,9 @@ class EditorSettingsPreferencesPage {
     };
     panel.addMouseListener(adapter);
 
-    panel.add(colorSettingsPanel, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+    panel.add(colorSettingsPanel,
+        new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+            GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     myBlinkingDemo.setBackground(fontPropertiesPanel.getBackground());
 
@@ -174,7 +196,7 @@ class EditorSettingsPreferencesPage {
       public void actionPerformed(ActionEvent e) {
         myBlinkingDemo.repaint();
         EditorCell rootCell = myBlinkingDemo.getRootCell();
-        if (rootCell!=null){
+        if (rootCell != null) {
           rootCell.switchCaretVisible();
           myTimer.setDelay(getBlinkingPeriod());
         }
@@ -193,11 +215,13 @@ class EditorSettingsPreferencesPage {
   }
 
   private GridConstraints getLabelConstraint(int row, int column) {
-    return new GridConstraints(row, column, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+    return new GridConstraints(row, column, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+        GridConstraints.SIZEPOLICY_FIXED, null, null, null);
   }
 
   private GridConstraints getEditorConstraint(int row, int column) {
-    return new GridConstraints(row, column, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+    return new GridConstraints(row, column, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
+        GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
   }
 
 
@@ -266,7 +290,7 @@ class EditorSettingsPreferencesPage {
           mySettings.getState().setLineSpacing(1.0);
         }
 
-        mySettings.getState().setShow( myTabPerAspect.isSelected() ||myTabPerNode.isSelected() || myAllTabs.isSelected());
+        mySettings.getState().setShow(myTabPerAspect.isSelected() || myTabPerNode.isSelected() || myAllTabs.isSelected());
         mySettings.getState().setShowPlain(myTabPerNode.isSelected() || myAllTabs.isSelected());
         mySettings.getState().setShowGrayed(myAllTabs.isSelected());
         applyState();
@@ -308,7 +332,7 @@ class EditorSettingsPreferencesPage {
     boolean sameTabs = myFirstSelection.isSelected();
 
     return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces && samePowerSaveMode
-      && sameFontSize && sameFontFamily && sameLineSpacing && sameBlinkingRate && sameTabs);
+        && sameFontSize && sameFontFamily && sameLineSpacing && sameBlinkingRate && sameTabs);
   }
 
   public void reset() {

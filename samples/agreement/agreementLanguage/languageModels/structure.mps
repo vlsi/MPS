@@ -130,11 +130,11 @@
     <property name="name" nameId="tpck.1169194664001" value="ValueType" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1111792874919" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1111792874919" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1111792874919" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="Quantity" />
       <property name="externalValue" nameId="tpce.1083923523172" value="QUANTITY" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1111792901670" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1111792901670" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="Money" />
       <property name="externalValue" nameId="tpce.1083923523172" value="MONEY" />
     </node>
@@ -144,15 +144,15 @@
     <property name="name" nameId="tpck.1169194664001" value="Unit" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1111793245330" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1111793245330" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1111793245330" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="USD_KWH" />
       <property name="externalValue" nameId="tpce.1083923523172" value="USD_KWH" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1111793298691" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1111793298691" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="USD" />
       <property name="externalValue" nameId="tpce.1083923523172" value="USD" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1111793319239" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1111793319239" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="KWH" />
       <property name="externalValue" nameId="tpce.1083923523172" value="KWH" />
     </node>
@@ -247,12 +247,12 @@
     <property name="name" nameId="tpck.1169194664001" value="Taxable" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1116367977408" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1116367977408" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1116367977408" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="true" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="taxable" />
       <property name="externalValue" nameId="tpce.1083923523172" value="TAXABLE" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1116368030878" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1116368030878" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="false" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="tax_free" />
       <property name="externalValue" nameId="tpce.1083923523172" value="TAXFREE" />

@@ -44,7 +44,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7080278351417151338" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7080278351417151338" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="message" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpe3.1172073500303" resolveInfo="Message" />
     </node>
@@ -53,7 +53,7 @@
     <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     <property name="name" nameId="tpck.1169194664001" value="check_BTestCase" />
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7211295963330363319" nodeInfo="nn" />
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7211295963330363320" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7211295963330363320" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="test" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpe3.1171931851043" resolveInfo="BTestCase" />
     </node>
@@ -83,7 +83,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8797237962358949633" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8797237962358949633" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="testCase" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpe3.1216130694486" resolveInfo="ITestCase" />
     </node>

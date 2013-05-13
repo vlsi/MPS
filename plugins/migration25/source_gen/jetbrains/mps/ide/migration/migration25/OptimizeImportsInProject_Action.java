@@ -9,27 +9,24 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.Queue;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.project.OptimizeImportsHelper;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -63,7 +60,7 @@ public class OptimizeImportsInProject_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
@@ -73,10 +70,12 @@ public class OptimizeImportsInProject_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Queue<SModule> modules = QueueSequence.fromQueueWithValues(new LinkedList<SModule>(), ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModules());
+      final Queue<SModule> modules = QueueSequence.fromQueueWithValues(new LinkedList<SModule>(), ((MPSProject) MapSequence.fromMap(_params).get("project")).getModules());
       final List<SModel> modelsToFix = ListSequence.fromList(new ArrayList<SModel>());
       final CountDownLatch latch = new CountDownLatch(1);
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           try {
             while (QueueSequence.fromQueue(modules).isNotEmpty()) {
@@ -104,9 +103,9 @@ public class OptimizeImportsInProject_Action extends BaseAction {
       } catch (InterruptedException ignore) {
       }
       if (ListSequence.fromList(modelsToFix).isNotEmpty()) {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        modelAccess.executeCommand(new Runnable() {
           public void run() {
-            new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context"))).optimizeModelsImports(modelsToFix);
+            new OptimizeImportsHelper().optimizeModelsImports(modelsToFix);
             SModelRepository.getInstance().saveAll();
           }
         });

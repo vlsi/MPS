@@ -232,7 +232,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1225195203356" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1225195203356" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="1i04.1225194240794" resolveInfo="ConceptBehavior" />
     </node>
@@ -316,7 +316,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1225195239822" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1225195239822" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="1i04.1225194628440" resolveInfo="SuperNodeExpression" />
     </node>
@@ -435,7 +435,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1225196556180" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1225196556180" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="thisNode" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="1i04.1225194691553" resolveInfo="ThisNodeExpression" />
     </node>
@@ -475,7 +475,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1227262739031" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1227262739031" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="method" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="1i04.1225194472830" resolveInfo="ConceptMethodDeclaration" />
     </node>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1c5hemsz7tobswowllhqnrn3pcsn722">
+<dependencies version="2" modelHash="-cwnzfvek64ubb8676tpzpxxalro2uc8">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8pja5s7kuga6tnod6ekp0ci8k86gmfl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="2op8y9fig1r9t602jduaxchhejyx723" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" hash="bmvxok65gbaet368cczjs0rvo3upthu" />
   <dep model="r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.execution.common.structure)" hash="-a2nz0gm463vmm7lau3hm4i58tpcqpka" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
@@ -81,7 +81,7 @@
   <source id="4366236229294105349" name="RunConfigurationProducer" hash="-b6ftlz3bnxn3jy77an3yzyn6oywui25">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4366236229294141334" name="RunConfigurationSource" hash="-ekhdbxd6e6a5wr10yr0d8x49oz7rl8b">
+  <source id="4366236229294141334" name="RunConfigurationSource" hash="5g8f33phqcwfz84oeadnr0howsdpsg9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4366236229294149030" name="RunConfigurationProducerPart" hash="-7gg7kwigolm0r6q274v8eyvdpqactbq">
@@ -96,7 +96,7 @@
   <source id="3642991921658122718" name="RunConfigurationCreator" hash="-4dbw3r2a40vhd6o2bq4h9ils0z7r6tt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7301162575811126381" name="ModelSource" hash="cankqwmhb6ql5m95u2j7vgc67cdrnvp">
+  <source id="7301162575811126381" name="ModelSource" hash="-d6f6cd6salfui0adb37twp2md4b7fhm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7301162575811126382" name="ProjectSource" hash="-835dt53usoqpxaum1mim9occnd2r5hx">
@@ -105,7 +105,7 @@
   <source id="7301162575811126383" name="NodeListSource" hash="ejybvalyyusvofld58z5l0tmano2w20">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7301162575811126384" name="ModuleSource" hash="afyj7f3ujsh8t45pd7k28sr7ibnbl01">
+  <source id="7301162575811126384" name="ModuleSource" hash="8g8rxqiakhg2mstyu2ra0pqg3ztlvwu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7301162575811126385" name="NodeSource" hash="-6sorjhle8ugdmjxc768tyaxnev79rny">

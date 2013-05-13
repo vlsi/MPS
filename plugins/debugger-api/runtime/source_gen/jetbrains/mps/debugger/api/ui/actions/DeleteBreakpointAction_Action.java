@@ -13,7 +13,8 @@ import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
@@ -51,7 +52,11 @@ public class DeleteBreakpointAction_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -64,10 +69,10 @@ public class DeleteBreakpointAction_Action extends BaseAction {
       if (breakpoint == null) {
         return;
       }
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
+
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          BreakpointManagerComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).removeBreakpoint(breakpoint);
+          BreakpointManagerComponent.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).removeBreakpoint(breakpoint);
         }
       });
     } catch (Throwable t) {

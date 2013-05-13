@@ -9962,7 +9962,7 @@
                                 <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="730364496702846793" nodeInfo="nn" />
                               </node>
                             </node>
-                            <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="730364496702846788" nodeInfo="ng">
+                            <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="730364496702846788" nodeInfo="ig">
                               <property name="name" nameId="tpck.1169194664001" value="classifierType" />
                               <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                             </node>

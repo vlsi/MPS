@@ -278,7 +278,7 @@
                           <link role="link" roleId="tp25.1138056516764" targetNodeId="v54s.8029776554053057803" />
                         </node>
                       </node>
-                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3175313036448599418" nodeInfo="ng">
+                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3175313036448599418" nodeInfo="ig">
                         <property name="name" nameId="tpck.1169194664001" value="classifierType" />
                         <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                       </node>

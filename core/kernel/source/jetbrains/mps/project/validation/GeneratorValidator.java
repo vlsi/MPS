@@ -17,11 +17,18 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class GeneratorValidator extends BaseModuleValidator<Generator> {
   public GeneratorValidator(Generator module) {
@@ -44,7 +51,9 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     List<String> warnings = new ArrayList<String>(super.getWarnings());
     Set<String> usedLanguages = new HashSet<String>();
     for (SModel model : myModule.getOwnTemplateModels()) {
-      if(SModelStereotype.isGeneratorModel(model)) {
+      // Note: the following method invocation traverses the whole model.
+      // For performance reasons, we perform these checks only for loaded models.
+      if (SModelStereotype.isGeneratorModel(model) && model.isLoaded()) {
         usedLanguages.addAll(ModelContentUtil.getUsedLanguageNamespacesInTemplateModel(model));
       }
     }
@@ -55,13 +64,13 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     Set<Language> ext = new LinkedHashSet<Language>();
     new LanguageDependenciesManager(sourceLanguage).collectAllExtendedLanguages(ext);
 
-    for(Language language : ext){
+    for (Language language : ext) {
       extendedLanguages.add(language.getModuleName());
     }
 
     for (String lang : usedLanguages) {
       Language language = ModuleRepositoryFacade.getInstance().getModule(lang, Language.class);
-      if(language == null) continue;
+      if (language == null) continue;
 
       if (!extendedLanguages.contains(lang) && !language.getRuntimeModulesReferences().isEmpty()) {
         warnings.add(sourceLanguage + " should extend " + lang);

@@ -11,7 +11,6 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.OptimizeImportsHelper;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelRepository;
 import org.apache.log4j.Logger;
@@ -47,16 +46,12 @@ public class OptimizeProjectImports_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      OptimizeImportsHelper helper = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      OptimizeImportsHelper helper = new OptimizeImportsHelper();
       helper.optimizeProjectImports(((MPSProject) MapSequence.fromMap(_params).get("project")));
       SModelRepository.getInstance().saveAll();
     } catch (Throwable t) {

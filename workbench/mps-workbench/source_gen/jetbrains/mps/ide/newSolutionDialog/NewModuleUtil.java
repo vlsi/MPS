@@ -10,11 +10,11 @@ import java.io.File;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.DevKit;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.application.ApplicationManager;
 import javax.lang.model.SourceVersion;
@@ -81,25 +81,25 @@ public class NewModuleUtil {
 
 
 
-  public static Solution createSolution(String namespace, String rootPath, MPSProject project) {
-    return NewModuleUtil.createModule(MPSExtentions.DOT_SOLUTION, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<Solution, String, IFile, MPSProject>() {
-      public Solution invoke(String s, IFile f, MPSProject p) {
+  public static Solution createSolution(String namespace, String rootPath, Project project) {
+    return NewModuleUtil.createModule(MPSExtentions.DOT_SOLUTION, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<Solution, String, IFile, Project>() {
+      public Solution invoke(String s, IFile f, Project p) {
         return createNewSolution(s, f, p);
       }
     });
   }
 
-  public static Language createLanguage(String namespace, String rootPath, MPSProject project) {
-    return NewModuleUtil.createModule(MPSExtentions.DOT_LANGUAGE, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<Language, String, IFile, MPSProject>() {
-      public Language invoke(String s, IFile f, MPSProject p) {
+  public static Language createLanguage(String namespace, String rootPath, Project project) {
+    return NewModuleUtil.createModule(MPSExtentions.DOT_LANGUAGE, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<Language, String, IFile, Project>() {
+      public Language invoke(String s, IFile f, Project p) {
         return createNewLanguage(s, f, true, true, p);
       }
     });
   }
 
-  public static DevKit createDevKit(String namespace, String rootPath, MPSProject project) {
-    return NewModuleUtil.createModule(MPSExtentions.DOT_DEVKIT, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<DevKit, String, IFile, MPSProject>() {
-      public DevKit invoke(String s, IFile f, MPSProject p) {
+  public static DevKit createDevKit(String namespace, String rootPath, Project project) {
+    return NewModuleUtil.createModule(MPSExtentions.DOT_DEVKIT, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<DevKit, String, IFile, Project>() {
+      public DevKit invoke(String s, IFile f, Project p) {
         return createNewDevkit(s, f, p);
       }
     });
@@ -107,7 +107,7 @@ public class NewModuleUtil {
 
 
 
-  public static void runModuleCreation(Project p, final _FunctionTypes._void_P0_E0 r) {
+  public static void runModuleCreation(com.intellij.openapi.project.Project p, final _FunctionTypes._void_P0_E0 r) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().assertWriteAccessAllowed();
@@ -245,7 +245,7 @@ public class NewModuleUtil {
 
 
 
-  private static <T extends AbstractModule> T createModule(String extension, String namespace, String rootPath, MPSProject project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super MPSProject> creator) {
+  private static <T extends AbstractModule> T createModule(String extension, String namespace, String rootPath, Project project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super Project> creator) {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, extension);
     T module = creator.invoke(namespace, descriptorFile, project);
     project.addModule(module.getModuleReference());

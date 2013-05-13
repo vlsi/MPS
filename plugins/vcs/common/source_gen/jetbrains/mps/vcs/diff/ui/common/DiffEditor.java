@@ -41,7 +41,7 @@ public class DiffEditor implements EditorMessageOwner {
 
   public DiffEditor(IOperationContext context, SNode node, String contentTitle, boolean isLeftEditor) {
     myMainEditorComponent = new DiffEditor.MainEditorComponent(context, isLeftEditor);
-    myInspector = new InspectorEditorComponent(isLeftEditor);
+    myInspector = new InspectorEditorComponent(context.getProject().getRepository(), isLeftEditor);
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
         ec.setNoVirtualFile(true);
@@ -156,7 +156,7 @@ public class DiffEditor implements EditorMessageOwner {
     private DiffFileEditor myDiffFileEditor;
 
     public MainEditorComponent(IOperationContext operationContext, boolean rightToLeft) {
-      super(operationContext, false, rightToLeft);
+      super(operationContext.getProject().getRepository(), false, rightToLeft);
       myDiffFileEditor = new DiffFileEditor(this);
     }
 

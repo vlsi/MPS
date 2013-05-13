@@ -29,8 +29,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -215,8 +215,14 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
   }
 
-  private boolean isIndirectRoot(EditorComponent editor) {
-    return !(isDirectCell(getCell(editor))) && check_myu41h_a0a0a0t(getNode(), this) == null && !(editor instanceof InspectorEditorComponent);
+  private boolean isIndirectRoot(final EditorComponent editor) {
+    final Wrappers._boolean res = new Wrappers._boolean();
+    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Boolean>() {
+      public Boolean invoke() {
+        return res.value = !(isDirectCell(getCell(editor))) && check_myu41h_a0a0a0a0b0t(getNode(), ChangeEditorMessage.this) == null && !(editor instanceof InspectorEditorComponent);
+      }
+    }));
+    return res.value;
   }
 
   private Rectangle getFirstPseudoLineBounds(EditorComponent editor) {
@@ -447,7 +453,7 @@ __switch__:
     return null;
   }
 
-  private static SNode check_myu41h_a0a0a0t(SNode checkedDotOperand, ChangeEditorMessage checkedDotThisExpression) {
+  private static SNode check_myu41h_a0a0a0a0b0t(SNode checkedDotOperand, ChangeEditorMessage checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getParent();
     }

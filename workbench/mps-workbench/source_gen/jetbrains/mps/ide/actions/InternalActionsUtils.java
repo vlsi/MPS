@@ -14,7 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.UnregisteredNodes;
+import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
@@ -136,7 +136,7 @@ public class InternalActionsUtils {
   public static void showUsagesViewForNodes(Project project, final List<SNodeReference> nodes) {
     IResultProvider provider = FindUtils.makeProvider(new IFinder() {
       @Override
-      public SearchResults find(SearchQuery query, ProgressMonitor progress) {
+      public SearchResults find(SearchQuery query, jetbrains.mps.progress.ProgressMonitor progress) {
         SearchResults<SNode> results = new SearchResults<SNode>();
         for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodeReference, SNode>() {
           public SNode select(SNodeReference it) {

@@ -28,7 +28,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1241364865028" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1241364865028" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="reference" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="64en.1241363083334" resolveInfo="InputFieldReference" />
     </node>

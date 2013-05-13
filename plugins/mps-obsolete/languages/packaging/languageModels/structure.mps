@@ -91,14 +91,14 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1229522370639" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="scriptsFolder" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="462257719548595179" nodeInfo="ng" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="462257719548595179" nodeInfo="ig" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4993758969474324591" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="useTmpDir" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="462257719548595180" nodeInfo="ng" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="462257719548595180" nodeInfo="ig" />
     </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="9063453653393258905" nodeInfo="ng">
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="9063453653393258905" nodeInfo="ig">
       <property name="comment" nameId="tpce.1225118933224" value="Use jetbrains.mps.build and jetbrains.mps.build.mps languages in order to build modules from mps." />
     </node>
   </root>
@@ -133,7 +133,7 @@
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1233309050521" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="acceptFiles" />
       <property name="inheritable" nameId="tpce.1218571350029" value="true" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278838720" nodeInfo="ng" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278838720" nodeInfo="ig" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278838719" nodeInfo="ng">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpsf.1262430001741497846" resolveInfo="acceptFiles" />
       </node>
@@ -220,7 +220,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1203619938976" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="cleanAfterTheJob" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843141" nodeInfo="ng" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843141" nodeInfo="ig" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843140" nodeInfo="ng">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpsf.1262430001741498148" resolveInfo="cleanAfterTheJob" />
       </node>
@@ -686,7 +686,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="sourcePaths" />
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1233321577500" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="canStartFromBasedir" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843053" nodeInfo="ng" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843053" nodeInfo="ig" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843052" nodeInfo="ng">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpsf.1262430001741498253" resolveInfo="canStartFromBasedir" />
       </node>

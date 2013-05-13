@@ -22,10 +22,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
@@ -86,20 +83,18 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
         }
         affectedModels.add(model);
       }
-      final IOperationContext operationContext = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
+      final jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
       ThreadUtils.assertEDT();
       try {
-        jetbrains.mps.project.Project project = operationContext.getProject();
         if (project != null) {
-          ModelAccess.instance().runCommandInEDT(new Runnable() {
-            @Override
+          project.getRepository().getModelAccess().executeCommandInEDT(new Runnable() {
             public void run() {
-              new OptimizeImportsHelper(operationContext).optimizeModelsImports(affectedModels);
+              new OptimizeImportsHelper().optimizeModelsImports(affectedModels);
               for (SModel affectedModel : affectedModels) {
                 ((EditableSModel) affectedModel).save();
               }
             }
-          }, project);
+          });
         }
       } catch (Throwable e) {
         LOG.error("Couldn't optimize imports before commit", e);

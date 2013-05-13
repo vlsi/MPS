@@ -9,11 +9,12 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.datatransfer.PasteNodeData;
@@ -23,13 +24,11 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.PasteEnv;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -51,7 +50,8 @@ public class PasteNode_Action extends BaseAction {
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     boolean searchPanelInactive = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null || !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible());
-    return searchPanelInactive && ((SModel) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModel && PasteNode_Action.this.canPasteNodes(_params);
+    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    return searchPanelInactive && ((SModel) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModel && PasteNode_Action.this.canPasteNodes(modelAccess, _params);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -76,10 +76,6 @@ public class PasteNode_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("pack", event.getData(MPSDataKeys.VIRTUAL_PACKAGE));
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
     MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
@@ -99,14 +95,16 @@ public class PasteNode_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData(_params);
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+      PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData(modelAccess, _params);
       final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, ((SModel) MapSequence.fromMap(_params).get("contextModel")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       final List<SNode> pasteNodes = pasteNodeData.getNodes();
       final Set<SReference> refsToResolve = pasteNodeData.getRequireResolveReferences();
       if (pasteNodes == null || pasteNodes.size() == 0) {
         return;
       }
-      ModelAccess.instance().runCommandInEDT(new Runnable() {
+
+      modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
           if (SNodeOperations.isModelDisposed(((SModel) MapSequence.fromMap(_params).get("contextModel")))) {
             return;
@@ -132,7 +130,7 @@ public class PasteNode_Action extends BaseAction {
           if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null) {
             final SNode root = pasteNodes.get(0).getContainingRoot();
             assert root != null;
-            ModelAccess.instance().runWriteInEDT(new Runnable() {
+            jetbrains.mps.smodel.ModelAccess.instance().runWriteInEDT(new Runnable() {
               public void run() {
                 NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, true, true);
                 NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, false);
@@ -140,7 +138,7 @@ public class PasteNode_Action extends BaseAction {
             });
           }
         }
-      }, ((MPSProject) MapSequence.fromMap(_params).get("project")));
+      });
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "PasteNode", t);
@@ -148,9 +146,9 @@ public class PasteNode_Action extends BaseAction {
     }
   }
 
-  private PasteNodeData getPasteData(final Map<String, Object> _params) {
+  private PasteNodeData getPasteData(ModelAccess modelAccess, final Map<String, Object> _params) {
     final Wrappers._T<PasteNodeData> result = new Wrappers._T<PasteNodeData>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    modelAccess.runReadAction(new Runnable() {
       public void run() {
         result.value = CopyPasteUtil.getPasteNodeDataFromClipboard(((SModel) MapSequence.fromMap(_params).get("contextModel")));
       }
@@ -158,8 +156,8 @@ public class PasteNode_Action extends BaseAction {
     return result.value;
   }
 
-  private boolean canPasteNodes(final Map<String, Object> _params) {
-    return PasteNode_Action.this.getPasteData(_params) != null;
+  private boolean canPasteNodes(ModelAccess modelAccess, final Map<String, Object> _params) {
+    return PasteNode_Action.this.getPasteData(modelAccess, _params) != null;
   }
 
   protected static Logger LOG = LogManager.getLogger(PasteNode_Action.class);

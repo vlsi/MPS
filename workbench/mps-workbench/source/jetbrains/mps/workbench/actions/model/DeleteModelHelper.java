@@ -15,20 +15,19 @@
  */
 package jetbrains.mps.workbench.actions.model;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
@@ -41,7 +40,6 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -89,12 +87,12 @@ public class DeleteModelHelper {
     FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileGenerationUtil.getCachesDir(moduleOutput)).delete();
     FileGenerationUtil.getDefaultOutputDir(modelDescriptor, classesGenDir).delete();
 
-    if(moduleOutput.getChildren().isEmpty())
+    if (moduleOutput.getChildren().isEmpty())
       moduleOutput.delete();
     final IFile sourceGenCaches = FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(moduleOutputPath));
-    if(sourceGenCaches.getChildren().isEmpty())
+    if (sourceGenCaches.getChildren().isEmpty())
       sourceGenCaches.delete();
-    if(classesGenDir != null && classesGenDir.getChildren().isEmpty())
+    if (classesGenDir != null && classesGenDir.getChildren().isEmpty())
       classesGenDir.delete();
   }
 
@@ -119,19 +117,18 @@ public class DeleteModelHelper {
 
   public static void safeDelete(final Project project, final SModel modelDescriptor, boolean deleteFiles) {
     IRefactoring ref = new SafeDeleteModelRefactoring(deleteFiles);
-    final RefactoringContext context = new RefactoringContext(ref);
+    final RefactoringContext context = new RefactoringContext(project, ref);
     context.setSelectedModel(modelDescriptor);
     context.setSelectedModule(modelDescriptor.getModule());
-    context.setSelectedProject(ProjectHelper.toMPSProject(project));
-    context.setCurrentOperationContext(new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    context.setCurrentOperationContext(new ProjectOperationContext(project));
+
+    project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         if (modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance()) != modelDescriptor) return;
         RefactoringAccess.getInstance().getRefactoringFacade().execute(context);
       }
     });
-
   }
 
   private static boolean deleteModelFromLanguage(Language language, SModel modelDescriptor) {

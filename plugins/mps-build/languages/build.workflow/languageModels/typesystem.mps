@@ -189,7 +189,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1117643560963218864" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1117643560963218864" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="lib" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="8xvf.7306485738221391506" resolveInfo="BwfTaskLibrary" />
     </node>

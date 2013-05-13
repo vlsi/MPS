@@ -16,9 +16,8 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.OptimizeImportsHelper;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
@@ -66,15 +65,15 @@ public class OptimizeModelImports_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
     if (MapSequence.fromMap(_params).get("models") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -84,13 +83,13 @@ public class OptimizeModelImports_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<String> report = new Wrappers._T<String>();
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
-          report.value = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context"))).optimizeModelsImports(((List<SModel>) MapSequence.fromMap(_params).get("models")));
+          report.value = new OptimizeImportsHelper().optimizeModelsImports(((List<SModel>) MapSequence.fromMap(_params).get("models")));
           SModelRepository.getInstance().saveAll();
         }
       });
-      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), (report.value.equals("") ?
+      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), (report.value.equals("") ?
         "Nothing to optimize" :
         report.value
       ), "Optimize Imports", Messages.getInformationIcon());

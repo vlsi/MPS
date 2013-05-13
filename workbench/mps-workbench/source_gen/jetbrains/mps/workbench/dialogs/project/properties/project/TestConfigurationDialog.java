@@ -313,8 +313,8 @@ public class TestConfigurationDialog extends DialogWrapper {
           if (isSelected) {
             return result;
           }
-          ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
+
+          myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
             public void run() {
               boolean inProject = false;
               for (SModel projectModel : myProject.getProjectModels()) {

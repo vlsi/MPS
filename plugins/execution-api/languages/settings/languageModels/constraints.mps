@@ -144,7 +144,7 @@
                 <link role="concept" roleId="tp25.1138405853777" targetNodeId="fb9u.946964771156066332" resolveInfo="PersistentConfigurationType" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpd4.CoerceStrongExpression" typeId="tpd4.1178871491133" id="946964771156067102" nodeInfo="nn">
-                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="946964771156067103" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="946964771156067103" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="persistentConfigurationType" />
                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="fb9u.946964771156066332" resolveInfo="PersistentConfigurationType" />
                 </node>
@@ -304,7 +304,7 @@
                 <link role="concept" roleId="tp25.1138405853777" targetNodeId="fb9u.946964771156066618" resolveInfo="SettingsEditorType" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpd4.CoerceStrongExpression" typeId="tpd4.1178871491133" id="946964771156067162" nodeInfo="nn">
-                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="946964771156067163" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="946964771156067163" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="settingsEditorType" />
                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="fb9u.946964771156066618" resolveInfo="SettingsEditorType" />
                 </node>
@@ -520,7 +520,7 @@
             </node>
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5365453833390705372" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="5365453833390705353" nodeInfo="nn">
-                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5365453833390705365" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5365453833390705365" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="persistentConfigurationType" />
                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="fb9u.946964771156066332" resolveInfo="PersistentConfigurationType" />
                 </node>

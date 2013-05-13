@@ -5020,7 +5020,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1199633278599" nodeInfo="nn">
               <node role="expression" roleId="tpee.1079359253376" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="1199633278600" nodeInfo="nn">
-                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1199633278601" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1199633278601" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="classifierType" />
                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                 </node>
@@ -8936,9 +8936,9 @@
     <node role="executeFunction" roleId="tp3j.2522969319638198291" type="tp3j.ExecuteBlock" typeId="tp3j.1192795911897" id="1238764345599" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1238764345600" nodeInfo="nn">
         <node role="statement" roleId="tpee.1068581517665" type="tpd4.CoerceStatement" typeId="tpd4.1176558773329" id="1238772364164" nodeInfo="nn">
-          <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="1238772364165" nodeInfo="ng">
+          <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="1238772364165" nodeInfo="ig">
             <property name="name" nameId="tpck.1169194664001" value="iterable" />
-            <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1238772364166" nodeInfo="nn">
+            <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1238772364166" nodeInfo="in">
               <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1238772364167" nodeInfo="in">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Iterable" resolveInfo="Iterable" />
                 <node role="parameter" roleId="tpee.1109201940907" type="tpee.Type" typeId="tpee.1068431790189" id="1238772364168" nodeInfo="in">
@@ -9096,9 +9096,9 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1238764769080" nodeInfo="nn" />
               </node>
-              <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="1238764774810" nodeInfo="ng">
+              <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="1238764774810" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="iterable" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1238764774811" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1238764774811" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1238764774812" nodeInfo="in">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Iterable" resolveInfo="Iterable" />
                     <node role="parameter" roleId="tpee.1109201940907" type="tpee.Type" typeId="tpee.1068431790189" id="1238764774813" nodeInfo="in">
@@ -14515,7 +14515,7 @@
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2040594400225362037" resolveInfo="node" />
           </node>
           <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="8826502219009005236" nodeInfo="ng">
-            <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8826502219009005241" nodeInfo="ng">
+            <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8826502219009005241" nodeInfo="ig">
               <property name="name" nameId="tpck.1169194664001" value="statementList" />
               <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1068580123136" resolveInfo="StatementList" />
             </node>
@@ -14575,7 +14575,7 @@
                 </node>
               </node>
             </node>
-            <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8826502219009005249" nodeInfo="ng">
+            <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8826502219009005249" nodeInfo="ig">
               <property name="name" nameId="tpck.1169194664001" value="blockStatement" />
               <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1082485599095" resolveInfo="BlockStatement" />
             </node>
@@ -14606,7 +14606,7 @@
             </node>
           </node>
           <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="8826502219009021394" nodeInfo="ng">
-            <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8826502219009021399" nodeInfo="ng">
+            <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8826502219009021399" nodeInfo="ig">
               <property name="name" nameId="tpck.1169194664001" value="returnStatement" />
               <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1068581242878" resolveInfo="ReturnStatement" />
             </node>
@@ -14647,7 +14647,7 @@
             </node>
           </node>
           <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="8826502219009021439" nodeInfo="ng">
-            <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8826502219009021444" nodeInfo="ng">
+            <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8826502219009021444" nodeInfo="ig">
               <property name="name" nameId="tpck.1169194664001" value="expressionStatement" />
               <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1068580123155" resolveInfo="ExpressionStatement" />
             </node>
