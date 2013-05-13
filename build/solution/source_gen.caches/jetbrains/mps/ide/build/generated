@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dbb9bp0jmzyrrngmgibzzfx2tjw3b1o">
+<dependencies version="2" modelHash="3hxdgx5dlpqg6tcjlr85m5e31xq0e4">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="1kkkdp7f8nj5tw5ighggz7m6ohfwbkt" />
@@ -141,7 +141,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsPlugins.xml" />
   </source>
-  <source id="8524659923334108558" name="mpsBuild" hash="-a1995uq9hcv7mz21s1j5cjcez6ns944">
+  <source id="8524659923334108558" name="mpsBuild" hash="22uy7ibnstkcjz89o7zujqxbkip4iu9">
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
@@ -377,7 +377,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsMakePlugin.xml" />
   </source>
-  <source id="4416206207494300367" name="mpsDeprecatedBuildlanguage" hash="et323ozdr618bvhebsjh7zqhp8y7lwk">
+  <source id="4416206207494300367" name="mpsDeprecatedBuildlanguage" hash="5ty1a58blredrflrn4lp3nav3phwq7u">
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
