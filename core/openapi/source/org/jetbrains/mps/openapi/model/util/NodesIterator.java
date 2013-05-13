@@ -15,7 +15,6 @@
  */
 package org.jetbrains.mps.openapi.model.util;
 
-import jetbrains.mps.util.containers.EmptyIterator;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
