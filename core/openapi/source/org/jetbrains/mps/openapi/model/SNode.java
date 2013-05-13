@@ -82,8 +82,6 @@ public interface SNode {
    */
   String getName();
 
-  SRepository getRepository();
-
   boolean isInRepository();
 
   // tree operation
