@@ -1174,6 +1174,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public IOperationContext getOperationContext() {
+    EditorContext editorContext = getEditorContext();
+    if (editorContext != null) return editorContext.getOperationContext();
+
     jetbrains.mps.project.Project p = ProjectHelper.getProject(myRepository);
     return p == null ? null : new ProjectOperationContext(p);
   }
@@ -2813,6 +2816,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected void setEditorContext(EditorContext editorContext) {
+    assert editorContext == null || myRepository == editorContext.getRepository();
     myEditorContext = editorContext;
   }
 
