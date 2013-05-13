@@ -222,12 +222,16 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
   //--------------------------------------------------
   @Override
-  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
+  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors(boolean typesystemErrors) {
+    if (typesystemErrors) {
+      return new THashSet<Pair<SNode, List<IErrorReporter>>>(super.getNodesWithErrors(typesystemErrors));
+    }
+
+    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>();
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
     Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMapNT.keySet());
     keySet.addAll(nodesToErrorsMapNT.keySet());
 
-    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(super.getNodesWithErrors());
     for (SNode key : keySet) {
       List<IErrorReporter> reporters = getErrors(key);
       if (reporters.isEmpty()) continue;

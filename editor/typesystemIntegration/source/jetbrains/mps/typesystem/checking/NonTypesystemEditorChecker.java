@@ -63,7 +63,7 @@ public class NonTypesystemEditorChecker extends AbstractTypesystemEditorChecker 
         }
 
         // highlight nodes with errors
-        collectMessagesForNodesWithErrors(context, editorContext, messages);
+        collectMessagesForNodesWithErrors(context, editorContext, messages, false);
       }
     });
   }

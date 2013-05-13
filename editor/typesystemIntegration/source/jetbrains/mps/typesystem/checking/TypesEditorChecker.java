@@ -49,7 +49,7 @@ public class TypesEditorChecker extends AbstractTypesystemEditorChecker {
         }
 
         // highlight nodes with errors
-        collectMessagesForNodesWithErrors(context, editorContext, messages);
+        collectMessagesForNodesWithErrors(context, editorContext, messages, true);
       }
     });
   }

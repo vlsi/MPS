@@ -235,13 +235,16 @@ public abstract class SimpleTypecheckingContext<
       checkRoot(refreshTypes);
       //non-typesystem checks
       applyNonTypesystemRules();
-      return new THashSet<Pair<SNode, List<IErrorReporter>>>(getTypechecking().getNodesWithErrors());
+      final Set<Pair<SNode, List<IErrorReporter>>> nodesWithErrors = getTypechecking().getNodesWithErrors(true);
+      final THashSet<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(nodesWithErrors);
+      result.addAll(getTypechecking().getNodesWithErrors(false));
+      return result;
     }
   }
 
   @Override
-  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    return getTypechecking().getNodesWithErrors();
+  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors(boolean typesystemErrors) {
+    return getTypechecking().getNodesWithErrors(typesystemErrors);
   }
 
   public boolean isCheckedRoot(boolean considerNonTypesystemRules) {

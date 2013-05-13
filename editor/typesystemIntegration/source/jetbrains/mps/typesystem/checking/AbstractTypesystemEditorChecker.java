@@ -95,8 +95,9 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
     context.clear();
   }
 
-  protected void collectMessagesForNodesWithErrors(TypeCheckingContext context, final EditorContext editorContext, Set<EditorMessage> messages) {
-    for (Pair<SNode, List<IErrorReporter>> errorNode : context.getNodesWithErrors()) {
+  protected void collectMessagesForNodesWithErrors(TypeCheckingContext context, final EditorContext editorContext, Set<EditorMessage> messages,
+      boolean typesystemErrors) {
+    for (Pair<SNode, List<IErrorReporter>> errorNode : context.getNodesWithErrors(typesystemErrors)) {
       List<IErrorReporter> errors = new ArrayList<IErrorReporter>(errorNode.o2);
       Collections.sort(errors, new Comparator<IErrorReporter>() {
         @Override
