@@ -746,7 +746,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2938276814759154454(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell", false, false), "relationDeclaration", false), "role");
+    return SModelUtil.getGenuineLinkRole(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell", false, false), "relationDeclaration", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_625126330683217452(final IOperationContext operationContext, final PropertyMacroContext _context) {
