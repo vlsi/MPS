@@ -14,13 +14,13 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.featureStatistics.FeatureUsageTracker;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
@@ -89,9 +89,11 @@ public class Rename_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.rename");
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+
       final Wrappers._T<String> oldName = new Wrappers._T<String>();
       final Wrappers._boolean canBeRenamed = new Wrappers._boolean();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           canBeRenamed.value = RenameUtil.canBeRenamed(((SNode) MapSequence.fromMap(_params).get("target")));
           oldName.value = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "name");
@@ -105,7 +107,7 @@ public class Rename_Action extends BaseAction {
       if (newName == null) {
         return;
       }
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      modelAccess.runReadInEDT(new Runnable() {
         @Override
         public void run() {
           SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
