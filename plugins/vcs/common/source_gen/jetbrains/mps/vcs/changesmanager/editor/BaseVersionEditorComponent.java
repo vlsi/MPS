@@ -32,7 +32,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   private JScrollPane myScrollPane;
 
   public BaseVersionEditorComponent(IOperationContext operationContext, ChangeGroup changeGroup) {
-    super(operationContext);
+    super(operationContext.getProject().getRepository());
     final SModel baseModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
     SNode baseRoot = baseModel.getNode(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
     editNode(baseRoot, operationContext);

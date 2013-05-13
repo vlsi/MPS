@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -60,7 +60,11 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -70,7 +74,7 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Set<String> usedConcepts = SetSequence.fromSet(new HashSet<String>());
-      InternalActionsUtils.executeActionOnAllNodesInModal("find used concepts", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
+      InternalActionsUtils.executeActionOnAllNodesInModal("find used concepts", ((Project) MapSequence.fromMap(_params).get("ideaProject")), new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode node) {
           SetSequence.fromSet(usedConcepts).addSequence(SetSequence.fromSet(LanguageHierarchyCache.getAncestorsNames(node.getConcept().getConceptId())));
         }
@@ -79,7 +83,7 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
       List<SNodeReference> concepts = ListSequence.fromList(InternalActionsUtils.getAllConcepts()).where(new IWhereFilter<SNodeReference>() {
         public boolean accept(final SNodeReference it) {
           final Wrappers._boolean isOk = new Wrappers._boolean(false);
-          ModelAccess.instance().runReadAction(new Runnable() {
+          ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
             public void run() {
               SNode concept = SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
               isOk.value = (concept != null) && (BehaviorReflection.invokeVirtual(Boolean.TYPE, concept, "virtual_isDeprecated_1224609060727", new Object[]{}) || !(SetSequence.fromSet(usedConcepts).contains(NameUtil.nodeFQName(concept))));
@@ -89,7 +93,7 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
         }
       }).toListSequence();
 
-      InternalActionsUtils.showUsagesViewForNodes(((Project) MapSequence.fromMap(_params).get("project")), concepts);
+      InternalActionsUtils.showUsagesViewForNodes(((Project) MapSequence.fromMap(_params).get("ideaProject")), concepts);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindUnusedAndDeprecatedConcepts", t);

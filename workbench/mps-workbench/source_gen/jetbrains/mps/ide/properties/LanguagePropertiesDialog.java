@@ -6,7 +6,6 @@ import jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog;
 import jetbrains.mps.smodel.Language;
 import com.intellij.openapi.Disposable;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -38,15 +37,14 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
     if (!(checkValidity())) {
       return false;
     }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      @Override
+    getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         myProperties.saveTo(myLanguage.getModuleDescriptor());
         myLanguage.setLanguageDescriptor(myLanguage.getModuleDescriptor(), true);
         myLanguage.validateExtends();
         myLanguage.save();
       }
-    }, getOperationContext().getProject());
+    });
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {

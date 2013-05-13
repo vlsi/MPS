@@ -230,7 +230,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2323553266854787379" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2323553266854787379" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="method" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.7812454656619025416" resolveInfo="MethodDeclaration" />
     </node>
@@ -2954,7 +2954,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6855443792548971321" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6855443792548971321" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="classConcept" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>

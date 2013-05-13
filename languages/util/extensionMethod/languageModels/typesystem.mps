@@ -17,7 +17,7 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3316739663069186517" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_ExtensionThis" />
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3316739663069186519" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3316739663069186519" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="extensionThis" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uigu.3316739663067157299" resolveInfo="ThisExtensionExpression" />
     </node>
@@ -665,7 +665,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5744862332973318446" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5744862332973318446" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="emcall" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uigu.1550313277221324859" resolveInfo="ExtensionMethodCall" />
     </node>
@@ -1282,7 +1282,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7685333756920239743" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7685333756920239743" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="lexmcall" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uigu.7685333756920172912" resolveInfo="LocalExtendedMethodCall" />
     </node>

@@ -18,7 +18,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.BaseConcept").parents().properties("shortDescription", "alias", "virtualPackage").children(new String[]{"smodelAttribute"}, new boolean[]{true}).abstract_().create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ExportScope").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ExportScope").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.InterfacePart").abstract_().create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ExportScopeModule").super_("jetbrains.mps.lang.core.structure.ExportScope").parents("jetbrains.mps.lang.core.structure.ExportScope").alias("@export(module)", "").create();
       case 4:

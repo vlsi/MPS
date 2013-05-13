@@ -17,7 +17,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -32,7 +32,6 @@ import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
 import java.util.Arrays;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.ProgressManager;
 
 public class AnnotationHelper {
@@ -70,9 +69,10 @@ public class AnnotationHelper {
     }
 
     final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
-    final Project project = ProjectHelper.toIdeaProject(editorComponent.getOperationContext().getProject());
-    final AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
-    if (vcs == null) {
+    final Project project = editorComponent.getOperationContext().getProject();
+    final com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
+    final AbstractVcs vcs = ProjectLevelVcsManager.getInstance(ideaProject).getVcsFor(file);
+    if (vcs == null || project == null) {
       return false;
     }
 
@@ -81,7 +81,7 @@ public class AnnotationHelper {
         return fs == FileStatus.UNKNOWN || fs == FileStatus.ADDED || fs == FileStatus.IGNORED;
       }
     };
-    if (checkFileStatus.invoke(FileStatusManager.getInstance(project).getStatus(file))) {
+    if (checkFileStatus.invoke(FileStatusManager.getInstance(ideaProject).getStatus(file))) {
       return false;
     }
 
@@ -93,7 +93,7 @@ public class AnnotationHelper {
     if (dryRun) {
       return true;
     }
-    Task.Backgroundable annotateTask = new Task.Backgroundable(project, "Retrieving annotations", true, BackgroundFromStartOption.getInstance()) {
+    Task.Backgroundable annotateTask = new Task.Backgroundable(ideaProject, "Retrieving annotations", true, BackgroundFromStartOption.getInstance()) {
       private FileAnnotation myFileAnnotation;
       private VcsException myException;
 
@@ -114,11 +114,11 @@ public class AnnotationHelper {
       @Override
       public void onSuccess() {
         if (myException != null) {
-          AbstractVcsHelper.getInstance(project).showErrors(Arrays.asList(myException), "Exception on retrieving annotation");
+          AbstractVcsHelper.getInstance(ideaProject).showErrors(Arrays.asList(myException), "Exception on retrieving annotation");
         }
 
         if (myFileAnnotation != null) {
-          ModelAccess.instance().runReadAction(new Runnable() {
+          project.getRepository().getModelAccess().runReadAction(new Runnable() {
             public void run() {
               AnnotationColumn annotationColumn = new AnnotationColumn(leftEditorHighlighter, root, myFileAnnotation, vcs, file);
               leftEditorHighlighter.addLeftColumn(annotationColumn);

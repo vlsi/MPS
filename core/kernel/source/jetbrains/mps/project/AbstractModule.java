@@ -39,8 +39,11 @@ import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
+import jetbrains.mps.smodel.DisposedRepository;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IllegalModelAccessError;
+import jetbrains.mps.smodel.IllegalModelChangeError;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -48,6 +51,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
@@ -55,6 +59,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.iterable.TranslatingIterator;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -108,16 +113,11 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   protected boolean myChanged = false;
 
   private final Object REPO_LOCK = new Object();
-  private SRepository myRepo;
-  private boolean myDisposed = false;
+  private SRepository myRepository = null;
 
+  private static Set<String> ourErroredModules = new ConcurrentHashSet<String>();
 
   //----model creation
-
-  @Override
-  public boolean isInRepository() {
-    return getRepository() != null;
-  }
 
   protected AbstractModule() {
     this(null);
@@ -130,38 +130,47 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   //----reference
   @Override
   public SModuleId getModuleId() {
+    assertCanRead();
     return getModuleReference().getModuleId();
   }
 
   @Override
   public String getModuleName() {
+    assertCanRead();
     return myModuleReference.getModuleName();
   }
 
   @Override
   public void attach(SRepository repo) {
     synchronized (REPO_LOCK) {
-      assert myRepo == null;
-      myRepo = repo;
+      assert myRepository == null;
+      myRepository = repo;
+      for (SModel m : getOwnModelDescriptors()) {
+        m.attach(repo);
+      }
     }
   }
 
   @Override
   public void detach() {
     synchronized (REPO_LOCK) {
-      assert myRepo != null;
-      myRepo = null;
-      myDisposed = true;
+      assert myRepository != null;
+      for (SModel m : getOwnModelDescriptors()) {
+        m.detach();
+      }
+      myRepository = DisposedRepository.INSTANCE;
     }
   }
 
   @Override
   public SRepository getRepository() {
-    return myRepo;
+    assertCanRead();
+    return myRepository;
   }
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
+    assertCanRead();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return new ArrayList<SDependency>();
 
@@ -188,6 +197,7 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
+    assertCanRead();
     // todo: collect languages for now? and convert to SLanguages in the end?
     if (getModuleDescriptor() == null) {
       return Collections.emptySet();
@@ -222,17 +232,21 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
 
   @Override
   public SModel resolveInDependencies(org.jetbrains.mps.openapi.model.SModelId ref) {
+    assertCanRead();
     // TODO: implement something more meaningful
     return SModelRepository.getInstance().getModelDescriptor(ref);
   }
 
   @Override
   public SModel getModel(org.jetbrains.mps.openapi.model.SModelId id) {
+    assertCanRead();
     // TODO API (implement)
     return null;
   }
 
   protected void setModuleReference(@NotNull SModuleReference reference) {
+    assertCanChange();
+
     assert reference.getModuleId() != null : "module must have an id";
     assert myModuleReference == null || reference.getModuleId().equals(myModuleReference.getModuleId()) : "module id can't be changed";
 
@@ -250,6 +264,8 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   @NotNull
   //module reference is immutable, so we cn return original
   public SModuleReference getModuleReference() {
+    assertCanRead();
+
     return myModuleReference;
   }
 
@@ -257,28 +273,34 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
 
   //todo move to EditableModule class
   public ModuleDescriptor getModuleDescriptor() {
+    assertCanRead();
+
     return null;
   }
 
   //todo should be replaced with events
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
+    assertCanChange();
     setChanged();
     dependenciesChanged();
   }
 
   @Override
   public void setChanged() {
+    assertCanChange();
     myChanged = true;
   }
 
   @Override
   public void save() {
+    assertCanChange();
     myChanged = false;
   }
 
   //----adding different deps
 
   public void addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
+    assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     for (Dependency dep : descriptor.getDependencies()) {
@@ -302,6 +324,7 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   }
 
   public void removeDependency(@NotNull Dependency dependency) {
+    assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     if (!descriptor.getDependencies().contains(dependency)) return;
@@ -313,6 +336,7 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   }
 
   public void addUsedLanguage(SModuleReference langRef) {
+    assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     if (descriptor.getUsedLanguages().contains(langRef)) return;
@@ -324,6 +348,7 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   }
 
   public void removeUsedLanguage(SModuleReference langRef) {
+    assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     if (!descriptor.getUsedLanguages().contains(langRef)) return;
@@ -335,6 +360,7 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   }
 
   public void addUsedDevkit(SModuleReference devkitRef) {
+    assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     if (descriptor.getUsedDevkits().contains(devkitRef)) return;
@@ -346,6 +372,7 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   }
 
   public void removeUsedDevkit(SModuleReference devkitRef) {
+    assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     if (!descriptor.getUsedDevkits().contains(devkitRef)) return;
@@ -360,10 +387,12 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
 
   @Deprecated
   public final DependenciesManager getDependenciesManager() {
+    assertCanRead();
     throw new UnsupportedOperationException();
   }
 
   public final List<Dependency> getDependencies() {
+    assertCanRead();
     List<Dependency> dependencies = new ArrayList<Dependency>();
     for (SDependency dependency : getDeclaredDependencies()) {
       if (dependency instanceof SDependencyAdapter) {
@@ -377,12 +406,14 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
 
   @Deprecated
   public final Collection<SModuleReference> getUsedLanguagesReferences() {
+    assertCanRead();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return Collections.unmodifiableCollection(descriptor.getUsedLanguages());
   }
 
   public Collection<SModuleReference> getUsedDevkitReferences() {
+    assertCanRead();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return Collections.unmodifiableCollection(descriptor.getUsedDevkits());
@@ -488,6 +519,7 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
 
   @Override
   public Iterable<ModelRoot> getModelRoots() {
+    assertCanRead();
     return Collections.unmodifiableCollection(mySModelRoots);
   }
 
@@ -583,20 +615,24 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
 
   @Override
   public boolean isReadOnly() {
+    assertCanRead();
     return isPackaged();
   }
 
   @Override
   public boolean isPackaged() {
+    assertCanRead();
     return getModuleSourceDir() == null || FileSystem.getInstance().isPackaged(getModuleSourceDir());
   }
 
   public final List<SModel> getOwnModelDescriptors() {
+    assertCanRead();
     return getModels();
   }
 
   @Override
   public List<SModel> getModels() {
+    assertCanRead();
     return SModelRepository.getInstance().getModelDescriptors(this);
   }
 
@@ -612,14 +648,15 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   }
 
   public IFile getDescriptorFile() {
+    assertCanRead();
     return myDescriptorFile;
   }
 
   @NotNull
   public IScope getScope() {
+    assertCanRead();
     return myScope;
   }
-
 
   public void attach() {
     if (myDescriptorFile != null) {
@@ -660,6 +697,7 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   }
 
   public void dispose() {
+    assertCanChange();
     FileSystem.getInstance().removeListener(this);
     for (ModuleFacetBase f : myFacets) {
       f.dispose();
@@ -673,6 +711,7 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   }
 
   public List<String> getSourcePaths() {
+    assertCanRead();
     return new ArrayList<String>(SModuleOperations.getAllSourcePaths(this));
   }
 
@@ -997,5 +1036,48 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   @Deprecated
   public final IFile getClassesGen() {
     return getJavaFacet(this).getClassesGen();
+  }
+
+  protected void assertCanRead() {
+//    if (myRepository == null) return;
+//    if (myRepository instanceof DisposedRepository) {
+//      showDisposedMessage();
+//      return;
+//    }
+//
+//    synchronized (REPO_LOCK) {
+//      if (myRepository == null) return;
+//      if (myRepository instanceof DisposedRepository) {
+//        showDisposedMessage();
+//        return;
+//      }
+//      myRepository.getModelAccess().checkReadAccess();
+//    }
+  }
+
+  protected void assertCanChange() {
+//    if (myRepository == null) return;
+//    if (myRepository instanceof DisposedRepository) {
+//      showDisposedMessage();
+//      return;
+//    }
+//
+//    synchronized (REPO_LOCK) {
+//      if (myRepository == null) return;
+//      if (myRepository instanceof DisposedRepository) {
+//        showDisposedMessage();
+//        return;
+//      }
+//      myRepository.getModelAccess().checkWriteAccess();
+//      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
+//        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
+//      }
+//    }
+  }
+
+  private void showDisposedMessage() {
+    if (ourErroredModules.add(getModuleName())) {
+      LOG.error(new IllegalModelAccessError("Accessing disposed model " + getModuleName()));
+    }
   }
 }

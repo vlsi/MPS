@@ -17,13 +17,6 @@
 package jetbrains.mps.idea.java.tests;
 
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.idea.core.tests.BrokenMakeTest;
-import jetbrains.mps.idea.core.tests.ComplicatedMakeTests;
-import jetbrains.mps.idea.core.tests.EditorTests;
-import jetbrains.mps.idea.core.tests.FacetTests;
-import jetbrains.mps.idea.core.tests.MainMakeTests;
-import jetbrains.mps.idea.core.tests.ProjectViewTests;
-import jetbrains.mps.idea.core.tests.SimpleMakeTest;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

@@ -5,8 +5,9 @@ package jetbrains.mps.ide.actions;
 import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import java.util.List;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -27,7 +28,7 @@ public class SetNodePackageDialog extends DialogWrapper {
   private String myPackage;
 
   public SetNodePackageDialog(Project project, List<String> existingPackages) {
-    super(project);
+    super(ProjectHelper.toIdeaProject(project));
     setTitle("Set Virtual Package");
     setOKButtonText("&OK");
     setCancelButtonText("Ca&ncel");

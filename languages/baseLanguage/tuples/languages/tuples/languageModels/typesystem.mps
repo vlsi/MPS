@@ -96,14 +96,14 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238853976033" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238853976033" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="tuple" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1238853782547" resolveInfo="IndexedTupleLiteral" />
     </node>
   </root>
   <root type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="1238854440948" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="indexedTuple_assignableTo_indexedTuple" />
-    <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238854462052" nodeInfo="ng">
+    <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238854462052" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="rightTuple" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1238852151516" resolveInfo="IndexedTupleType" />
     </node>
@@ -189,7 +189,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238854451595" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238854451595" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="leftTuple" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1238852151516" resolveInfo="IndexedTupleType" />
     </node>
@@ -472,7 +472,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238857867842" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1238857867842" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="mae" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1238857743184" resolveInfo="IndexedTupleMemberAccessExpression" />
     </node>
@@ -790,14 +790,14 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239579059909" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239579059909" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="literal" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239559992092" resolveInfo="NamedTupleLiteral" />
     </node>
   </root>
   <root type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="1239579497085" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="namedTuple_assignableTo_namedTuple" />
-    <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239579532425" nodeInfo="ng">
+    <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239579532425" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="right" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239531918181" resolveInfo="NamedTupleType" />
     </node>
@@ -942,7 +942,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239579510770" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239579510770" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="left" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239531918181" resolveInfo="NamedTupleType" />
     </node>
@@ -1251,7 +1251,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239579751282" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239579751282" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="operation" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239576519914" resolveInfo="NamedTupleComponentAccessOperation" />
     </node>
@@ -1294,7 +1294,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239617256755" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239617256755" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ntt" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239531918181" resolveInfo="NamedTupleType" />
     </node>
@@ -1569,7 +1569,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239722394649" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239722394649" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ntt" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239531918181" resolveInfo="NamedTupleType" />
     </node>
@@ -1635,7 +1635,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239881391430" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239881391430" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ntt" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239531918181" resolveInfo="NamedTupleType" />
     </node>
@@ -1647,7 +1647,7 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4292022102258807890" nodeInfo="nn">
         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4292022102258807891" nodeInfo="nn">
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CoerceStatement" typeId="tpd4.1176558773329" id="1240403562736" nodeInfo="nn">
-            <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1240403570474" nodeInfo="ng">
+            <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1240403570474" nodeInfo="ig">
               <property name="name" nameId="tpck.1169194664001" value="namedTupleType" />
               <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239531918181" resolveInfo="NamedTupleType" />
             </node>
@@ -1731,7 +1731,7 @@
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4292022102258803079" nodeInfo="nn" />
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1240403544749" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1240403544749" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="expression" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
@@ -1842,7 +1842,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8197465398807013610" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8197465398807013610" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="namedTupleLiteral" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239559992092" resolveInfo="NamedTupleLiteral" />
     </node>
@@ -2027,7 +2027,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5264858465808079242" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5264858465808079242" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="itt" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1238852151516" resolveInfo="IndexedTupleType" />
     </node>
@@ -2200,7 +2200,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7367153454745440813" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7367153454745440813" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ntd" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239360506533" resolveInfo="NamedTupleDeclaration" />
     </node>
@@ -2271,7 +2271,7 @@
         <node role="expression" roleId="tpee.1068581517676" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2213502935616202043" nodeInfo="nn" />
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2213502935616190239" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2213502935616190239" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ntt" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239531918181" resolveInfo="NamedTupleType" />
     </node>
@@ -2368,14 +2368,14 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3122175964860976723" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3122175964860976723" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ntt" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239531918181" resolveInfo="NamedTupleType" />
     </node>
   </root>
   <root type="tpd4.ComparisonRule" typeId="tpd4.1188811367543" id="1654804677203434347" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="comparable_IndexedTupleType_Object" />
-    <node role="anotherNode" roleId="tpd4.1188820750135" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1654804677203434352" nodeInfo="ng">
+    <node role="anotherNode" roleId="tpd4.1188820750135" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1654804677203434352" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="classifierType" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
     </node>
@@ -2403,14 +2403,14 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1654804677203434351" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1654804677203434351" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="indexedTupleType" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1238852151516" resolveInfo="IndexedTupleType" />
     </node>
   </root>
   <root type="tpd4.ComparisonRule" typeId="tpd4.1188811367543" id="1654804677203434372" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="comparable_NamedTupleType_Object" />
-    <node role="anotherNode" roleId="tpd4.1188820750135" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1654804677203434373" nodeInfo="ng">
+    <node role="anotherNode" roleId="tpd4.1188820750135" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1654804677203434373" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="classifierType" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
     </node>
@@ -2438,7 +2438,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1654804677203434385" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1654804677203434385" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="namedTupleType" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1239531918181" resolveInfo="NamedTupleType" />
     </node>

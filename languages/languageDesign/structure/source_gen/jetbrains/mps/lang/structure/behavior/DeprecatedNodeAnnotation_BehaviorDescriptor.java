@@ -4,12 +4,13 @@ package jetbrains.mps.lang.structure.behavior;
 
 import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class DeprecatedNodeAnnotation_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+public class DeprecatedNodeAnnotation_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public DeprecatedNodeAnnotation_BehaviorDescriptor() {
   }
 

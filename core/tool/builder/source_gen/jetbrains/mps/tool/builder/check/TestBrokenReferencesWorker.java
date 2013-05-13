@@ -14,12 +14,12 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.tool.builder.FileMPSProject;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.AbstractModule;
 import java.util.List;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.validation.ModelValidator;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -69,8 +69,7 @@ public class TestBrokenReferencesWorker extends MakeWorker {
     for (SModule m : go.getModules()) {
       extractModels(go.getModels(), m);
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : go.getModels()) {
           if (!(SModelStereotype.isUserModel(sm))) {

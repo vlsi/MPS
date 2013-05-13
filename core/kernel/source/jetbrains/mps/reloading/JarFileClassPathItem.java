@@ -97,11 +97,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
       inp = zf.getInputStream(entry);
       if (inp == null) return null;
 
-      byte[] result = new byte[(int) entry.getSize()];
-
-      ReadUtil.read(result, inp);
-
-      return result;
+      return ReadUtil.read(inp);
     } catch (IOException e) {
       LOG.error(e);
       return null;

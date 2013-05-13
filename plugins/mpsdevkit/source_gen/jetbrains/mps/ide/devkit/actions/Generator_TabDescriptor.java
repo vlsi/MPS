@@ -29,8 +29,9 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
 import javax.swing.JFrame;
 import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.ide.project.ProjectHelper;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
 import java.util.ArrayList;
@@ -124,11 +125,13 @@ public class Generator_TabDescriptor extends RelationDescriptor {
   }
 
   public SNode createNode(final SNode node, final SNode concept) {
-    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    JFrame frame = WindowManager.getInstance().getFrame(project);
+    Project ideaProject = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    JFrame frame = WindowManager.getInstance().getFrame(ideaProject);
+    jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(ideaProject);
+    ModelAccess modelAccess = project.getRepository().getModelAccess();
 
     final Wrappers._T<Language> language = new Wrappers._T<Language>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    modelAccess.runReadAction(new Runnable() {
       public void run() {
         language.value = SModelUtil.getDeclaringLanguage(node);
         assert language.value != null : "Language shouldn't be null for " + node;
@@ -137,7 +140,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
 
     final List<Generator> genList = ListSequence.fromListWithValues(new ArrayList<Generator>(), language.value.getGenerators());
     if (ListSequence.fromList(genList).isEmpty()) {
-      NewGeneratorDialog dialog = new NewGeneratorDialog(project, language.value);
+      NewGeneratorDialog dialog = new NewGeneratorDialog(ideaProject, language.value);
       dialog.show();
       Generator createdGenerator = dialog.getResult();
       if (createdGenerator == null) {
@@ -145,7 +148,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
       }
       ListSequence.fromList(genList).addElement(createdGenerator);
     } else {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      modelAccess.executeCommand(new Runnable() {
         public void run() {
           for (Generator generator : genList) {
             if (generator.getOwnTemplateModels().isEmpty()) {
@@ -163,7 +166,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     }
 
     final List<SNode> mappings = new ArrayList<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    modelAccess.runReadAction(new Runnable() {
       public void run() {
         for (Generator generator : genList) {
           for (SNode confAdapter : GenerationFacade.getOwnMappings(generator)) {
@@ -175,7 +178,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
 
     if (ListSequence.fromList(mappings).isEmpty()) {
       // generator is present - this means we don't have template models or mappings 
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      modelAccess.executeCommand(new Runnable() {
         public void run() {
           SModel model = null;
           for (Generator generator : genList) {
@@ -196,14 +199,14 @@ public class Generator_TabDescriptor extends RelationDescriptor {
 
     final Wrappers._T<SNode> mapping = new Wrappers._T<SNode>();
     if (ListSequence.fromList(mappings).count() > 1) {
-      MappingDialog configurationDialog = new MappingDialog(project, language.value);
+      MappingDialog configurationDialog = new MappingDialog(ideaProject, language.value);
       configurationDialog.show();
       mapping.value = configurationDialog.getResult();
     } else {
       mapping.value = ListSequence.fromList(mappings).first();
     }
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    modelAccess.executeCommand(new Runnable() {
       public void run() {
         SModel model = SNodeOperations.getModel(mapping.value);
         if (SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {

@@ -45,7 +45,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.Pattern").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").abstract_().create();
       case 15:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.PatternExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.ISuppressErrors").children(new String[]{"patternNode"}, new boolean[]{false}).alias(">pattern<", "").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.PatternExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.ISuppressErrors", "jetbrains.mps.lang.core.structure.InterfacePart").children(new String[]{"patternNode"}, new boolean[]{false}).alias(">pattern<", "").staticScope(StaticScope.NONE).create();
       case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration").super_("jetbrains.mps.lang.pattern.structure.Pattern").parents("jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.core.structure.INamedConcept").properties("varName").create();
       case 17:

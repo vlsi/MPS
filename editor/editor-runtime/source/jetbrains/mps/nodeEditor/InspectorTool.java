@@ -16,34 +16,38 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.ui.LightColors;
 import com.intellij.ui.HyperlinkLabel;
+import com.intellij.ui.LightColors;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tools.BaseTool;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.*;
-import javax.swing.event.HyperlinkListener;
+import javax.swing.BorderFactory;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
 
@@ -96,7 +100,8 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
           public void run() {
             InspectorTool.this.myMessagePanel = new MyMessagePanel();
             myComponent = new MyPanel();
-            myInspectorComponent = new InspectorEditorComponent();
+            jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
+            myInspectorComponent = new InspectorEditorComponent(project.getRepository());
             myComponent.add(myInspectorComponent.getExternalComponent(), BorderLayout.CENTER);
             myMessagePanel.setNode(null);
             myComponent.add(myMessagePanel, BorderLayout.NORTH);
@@ -123,11 +128,11 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
   @Override
   public JComponent getComponent() {
     return myComponent;
-  } 
+  }
 
   public void inspect(final SNode node, IOperationContext context, FileEditor fileEditor) {
     myFileEditor = fileEditor;
-    myInspectorComponent.editNode(node, context);
+    myInspectorComponent.editNode(node);
     myMessagePanel.setNode(node);
   }
 
@@ -162,7 +167,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
       setBackground(StyleRegistry.getInstance().isDarkTheme() ? Color.LIGHT_GRAY : LightColors.YELLOW);
       setBorder(BorderFactory.createEmptyBorder(0, 4, 0, 4));
 
-      myLabel.setForeground(StyleRegistry.getInstance().isDarkTheme() ? Color.DARK_GRAY: StyleRegistry.getInstance().getEditorForeground());
+      myLabel.setForeground(StyleRegistry.getInstance().isDarkTheme() ? Color.DARK_GRAY : StyleRegistry.getInstance().getEditorForeground());
 
       add(myLabel, BorderLayout.CENTER);
       add(myOpenConceptLabel, BorderLayout.EAST);

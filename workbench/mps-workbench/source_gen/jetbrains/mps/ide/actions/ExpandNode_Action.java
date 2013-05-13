@@ -9,9 +9,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ui.MPSTree;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -47,7 +46,7 @@ public class ExpandNode_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -60,7 +59,7 @@ public class ExpandNode_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
+      ProjectPane pane = ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")));
       MPSTree tree = pane.getTree();
       TreePath path = tree.getSelectionPath();
       if (path == null) {

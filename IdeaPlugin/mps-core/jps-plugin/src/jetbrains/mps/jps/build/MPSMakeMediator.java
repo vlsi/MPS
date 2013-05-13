@@ -314,6 +314,9 @@ public class MPSMakeMediator {
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
+          // We need to report the problem twice:
+          // -- once for the build process to recognize the error
+          // -- once for the MPSCompilerComponent to recognize and display a reference to the model
           myContext.getCompileContext().processMessage(
             new CompilerMessage(MPSMakeConstants.BUILDER_ID,
               Kind.ERROR,

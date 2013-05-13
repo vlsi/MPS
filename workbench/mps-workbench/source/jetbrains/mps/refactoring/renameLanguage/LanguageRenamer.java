@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.refactoring.renameLanguage;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -26,18 +26,22 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class LanguageRenamer {
   private Language myLanguage;
   private String myNewName;
-  private RefactoringContext myContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(new MyRefactoring()));
+  private RefactoringContext myContext;
 
   public LanguageRenamer(Project project, Language language, String newName) {
     myLanguage = language;
     myNewName = newName;
+    myContext = new RefactoringContext(project, OldRefactoringAdapter.createAdapterFor(new MyRefactoring()));
   }
 
   public void rename(boolean deleteOldFiles) {

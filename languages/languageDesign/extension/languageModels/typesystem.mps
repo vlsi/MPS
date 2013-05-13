@@ -51,7 +51,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8029776554053057816" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8029776554053057816" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="eog" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v54s.8029776554053043557" resolveInfo="ExtensionObjectGetter" />
     </node>
@@ -107,7 +107,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6626851894249712468" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6626851894249712468" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="epe" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v54s.6626851894249711936" resolveInfo="ExtensionPointExpression" />
     </node>
@@ -140,7 +140,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7036359038356115124" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7036359038356115124" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="efr" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v54s.7036359038356115102" resolveInfo="ExtensionFieldReference" />
     </node>
@@ -181,7 +181,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3175313036448550193" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3175313036448550193" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ept" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v54s.3175313036448544056" resolveInfo="ExtensionPointType" />
     </node>
@@ -253,7 +253,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3175313036448577256" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3175313036448577256" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="geoo" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v54s.3175313036448560967" resolveInfo="GetExtensionObjectsOperation" />
     </node>

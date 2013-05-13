@@ -429,7 +429,11 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       error.append("Methods ended with exception:");
       error.append(System.getProperty("line.separator"));
       for (String s : currentException.keySet()) {
-        error.append("In method " + s + " was exception " + Arrays.toString(currentException.get(s).getStackTrace()));
+        Exception ce = currentException.get(s);
+        error.append("There was an exception in method " + s + "\n");
+        for (StackTraceElement elem : ce.getStackTrace()) {
+          error.append(elem + "\n");
+        }
         error.append(System.getProperty("line.separator"));
       }
 

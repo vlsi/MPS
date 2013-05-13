@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public abstract class AbstractDebugSession<State extends AbstractUiState> {
   protected ProcessHandler myProcessHandler;
@@ -157,8 +158,12 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
     return false;
   }
 
-  public Project getProject() {
+  public Project getIdeaProject() {
     return myProject;
+  }
+
+  public jetbrains.mps.project.Project getProject() {
+    return ProjectHelper.toMPSProject(myProject);
   }
 
   public static   enum ExecutionState {

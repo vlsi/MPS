@@ -81,7 +81,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             @Override
             public void run() {
-              GoToTypeErrorRuleUtil.goToTypeErrorRule(getOperationContext(), myError);
+              GoToTypeErrorRuleUtil.goToTypeErrorRule(getOperationContext().getProject(), myError);
             }
           });
         }

@@ -145,15 +145,17 @@ public class MacrosFactory {
       //project dir (for any project persistence)
       String prefix = IFileUtils.getCanonicalPath(anchorFile.isDirectory() ? anchorFile : anchorFile.getParent());
 
-      for (String samplesPath : SamplesManager.getInstance().getSamplesPaths()) {
-        if (samplesPath == null) continue;
-        if (!pathStartsWith(absolutePath, samplesPath) && pathStartsWith(prefix, samplesPath)) continue;
+      // TODO this doesn't make sense, review
+//      for (String samplesPath : SamplesManager.getInstance().getSamplesPaths()) {
+//        if (samplesPath == null) continue;
+//        if (!pathStartsWith(absolutePath, samplesPath) && pathStartsWith(prefix, samplesPath)) continue;
+//
+//        return MacrosFactory.PROJECT + shrink(absolutePath, prefix);
+//      }
+//
+//      IFile anchorFolder = anchorFile.getParent();
+//      prefix = IFileUtils.getCanonicalPath(anchorFolder);
 
-        return MacrosFactory.PROJECT + shrink(absolutePath, prefix);
-      }
-
-      IFile anchorFolder = anchorFile.getParent();
-      prefix = IFileUtils.getCanonicalPath(anchorFolder);
       if (pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
         return PROJECT + relationalPath;

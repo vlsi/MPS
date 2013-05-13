@@ -33,7 +33,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3990190717072396552" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3990190717072396552" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="constantReference" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="nd9w.3990190717072393829" resolveInfo="ConstantReference" />
     </node>
@@ -63,7 +63,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3990190717072396572" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3990190717072396572" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="constant" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="nd9w.1494751830318912537" resolveInfo="Constant" />
     </node>

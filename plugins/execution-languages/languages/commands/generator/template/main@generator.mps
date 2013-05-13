@@ -52,7 +52,7 @@
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="865001690840232879" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="865001690840232880" nodeInfo="nn">
-                    <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="865001690840232881" nodeInfo="ng">
+                    <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="865001690840232881" nodeInfo="ig">
                       <property name="name" nameId="tpck.1169194664001" value="commandType" />
                       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="rzqf.856705193941281750" resolveInfo="CommandType" />
                     </node>
@@ -964,7 +964,7 @@
                   <link role="concept" roleId="tp25.1138405853777" targetNodeId="rzqf.856705193941281750" resolveInfo="CommandType" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="865001690840233244" nodeInfo="nn">
-                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="865001690840233245" nodeInfo="ng">
+                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="865001690840233245" nodeInfo="ig">
                     <property name="name" nameId="tpck.1169194664001" value="commandType" />
                     <link role="concept" roleId="tpd4.1174642800329" targetNodeId="rzqf.856705193941281750" resolveInfo="CommandType" />
                   </node>
@@ -1386,7 +1386,7 @@
                                   <link role="concept" roleId="tp25.1138405853777" targetNodeId="rzqf.856705193941281750" resolveInfo="CommandType" />
                                 </node>
                                 <node role="initializer" roleId="tpee.1068431790190" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="865001690840233428" nodeInfo="nn">
-                                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="865001690840233429" nodeInfo="ng">
+                                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="865001690840233429" nodeInfo="ig">
                                     <property name="name" nameId="tpck.1169194664001" value="commandType" />
                                     <link role="concept" roleId="tpd4.1174642800329" targetNodeId="rzqf.856705193941281750" resolveInfo="CommandType" />
                                   </node>
@@ -2074,7 +2074,7 @@
               </node>
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="865001690840234060" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="865001690840234061" nodeInfo="nn">
-                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="865001690840234062" nodeInfo="ng">
+                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="865001690840234062" nodeInfo="ig">
                     <property name="name" nameId="tpck.1169194664001" value="commandType" />
                     <link role="concept" roleId="tpd4.1174642800329" targetNodeId="rzqf.856705193941281750" resolveInfo="CommandType" />
                   </node>
@@ -2128,7 +2128,7 @@
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.AndExpression" typeId="tpee.1080120340718" id="865001690840234084" nodeInfo="nn">
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="865001690840234085" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="865001690840234086" nodeInfo="nn">
-                    <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="865001690840234087" nodeInfo="ng">
+                    <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="865001690840234087" nodeInfo="ig">
                       <property name="name" nameId="tpck.1169194664001" value="commandType" />
                       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="rzqf.856705193941281750" resolveInfo="CommandType" />
                     </node>

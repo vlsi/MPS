@@ -20,10 +20,16 @@ import com.intellij.compiler.CompilerWorkspaceConfiguration;
 import com.intellij.compiler.impl.CompilerUtil;
 import com.intellij.compiler.server.CustomBuilderMessageHandler;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.compiler.*;
+import com.intellij.openapi.compiler.CompileContext;
+import com.intellij.openapi.compiler.CompileScope;
+import com.intellij.openapi.compiler.CompileTask;
+import com.intellij.openapi.compiler.CompilerManager;
+import com.intellij.openapi.compiler.CompilerMessageCategory;
+import com.intellij.openapi.compiler.CompilerPaths;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.io.FileUtil;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.library.LibraryInitializer;
@@ -61,15 +67,24 @@ public class MPSCompilerComponent implements ProjectComponent {
 
     compilerManager.addCompilableFileType(MPSFileTypeFactory.MPS_FILE_TYPE);
 
-    for (MPSCompiler2 compiler : compilerManager.getCompilers(MPSCompiler2.class)) {
-      compilerManager.removeCompiler(compiler);
-    }
-    compilerManager.addCompiler(new MPSCompiler2(project));
+//    for (MPSNoCompiler compiler : compilerManager.getCompilers(MPSNoCompiler.class)) {
+//      compilerManager.removeCompiler(compiler);
+//    }
+//    compilerManager.addCompiler(new MPSNoCompiler());
 
     compilerManager.addBeforeTask(new CompileTask() {
       @Override
       public boolean execute(final CompileContext context) {
-        if (!CompilerWorkspaceConfiguration.getInstance(project).USE_COMPILE_SERVER) return true;
+        final CompileScope compileScope = context.getCompileScope();
+        if (compileScope == null) return true;
+
+        if (!CompilerWorkspaceConfiguration.getInstance(project).USE_COMPILE_SERVER) {
+          final VirtualFile[] files = compileScope.getFiles(MPSFileTypeFactory.MPS_FILE_TYPE, true);
+          if (files.length > 0) {
+            context.addMessage(CompilerMessageCategory.ERROR, "Generating MPS models is not supported for in-process compiler", null, 0, 0);
+            return false;
+          }
+        }
 
         StringBuilder sb = new StringBuilder();
         PluginLibrariesContributor pluginLibContributor = ApplicationManager.getApplication().getComponent(PluginLibrariesContributor.class);
@@ -80,7 +95,7 @@ public class MPSCompilerComponent implements ProjectComponent {
           }
           sb.append(path);
         }
-        context.getCompileScope().putUserData(MPSMakeConstants.MPS_LANGUAGES, sb.toString());
+        compileScope.putUserData(MPSMakeConstants.MPS_LANGUAGES, sb.toString());
 
 
         final File repositoryCache = new File(CompilerPaths.getCompilerSystemDirectory(project), "mps_repository.dat");
@@ -93,7 +108,7 @@ public class MPSCompilerComponent implements ProjectComponent {
             try {
               mos = new ModelOutputStream(new FileOutputStream(repositoryCache));
               cachedRepositoryData.save(mos);
-              context.getCompileScope().putUserData(MPSMakeConstants.MPS_REPOSITORY, repositoryCache.getPath());
+              compileScope.putUserData(MPSMakeConstants.MPS_REPOSITORY, repositoryCache.getPath());
             } catch (IOException e) {
               context.addMessage(CompilerMessageCategory.INFORMATION, "cannot save cache for MPS, generation may be slow", null, 0, 0);
             } finally {

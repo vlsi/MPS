@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.dialogs.project;
 
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import org.jdesktop.beansbinding.AutoBinding;
@@ -25,6 +26,8 @@ public interface IBindedDialog {
   JComponent getMainComponent();
 
   IOperationContext getOperationContext();
+
+  Project getProject();
 
   IScope getModuleScope();
 
