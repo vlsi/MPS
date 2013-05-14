@@ -224,7 +224,7 @@
     <nodeInfo nodeId="6030177200825199483" fileName="ModelMergeTool.java" startLine="70" startPosition="44" endLine="71" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6030177200825199490" fileName="ModelMergeTool.java" startLine="71" startPosition="93" endLine="72" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6030177200825199494" fileName="ModelMergeTool.java" startLine="72" startPosition="37" endLine="73" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1493963027547820669" fileName="ModelMergeTool.java" startLine="74" startPosition="7" endLine="75" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1493963027547820669" fileName="ModelMergeTool.java" startLine="74" startPosition="7" endLine="75" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6030177200825199357" fileName="ModelMergeTool.java" startLine="76" startPosition="29" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6030177200825199512" fileName="ModelMergeTool.java" startLine="82" startPosition="47" endLine="83" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6030177200825199220" fileName="ModelMergeTool.java" startLine="86" startPosition="75" endLine="87" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -304,7 +304,7 @@
       <varInfo nodeId="6030177200825199253" varName="req" />
       <varInfo nodeId="6030177200825199255" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199364" fileName="ModelMergeTool.java" startLine="38" startPosition="9" endLine="75" endPosition="37">
+    <scopeInfo nodeId="6030177200825199364" fileName="ModelMergeTool.java" startLine="38" startPosition="9" endLine="75" endPosition="32">
       <varInfo nodeId="6030177200825199385" varName="backupFile" />
       <varInfo nodeId="6030177200825199400" varName="baseModel" />
       <varInfo nodeId="6030177200825199393" varName="contents" />

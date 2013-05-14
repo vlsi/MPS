@@ -72,7 +72,7 @@ public class ModelMergeTool extends MergeTool {
         resolved(mrequest, asString);
         MergeBackupUtil.packMergeResult(backupFile, file.getName(), asString);
       }
-      dialog.unregisterResultModel();
+      dialog.unregisterModels();
     } catch (IOException e) {
       LOG.error(e);
     }
