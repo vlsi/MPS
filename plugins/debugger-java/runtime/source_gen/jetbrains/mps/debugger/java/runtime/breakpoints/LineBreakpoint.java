@@ -64,9 +64,9 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
       requestManager.setInvalid(this, "no executable code found");
       LOG.warn("InvalidLineNumberException: " + ex.getMessage());
     } catch (InternalException ex) {
-      LOG.error(ex);
+      LOG.error(null, ex);
     } catch (Exception ex) {
-      LOG.error(ex);
+      LOG.error(null, ex);
     }
   }
 

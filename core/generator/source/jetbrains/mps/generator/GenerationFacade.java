@@ -205,7 +205,7 @@ public class GenerationFacade {
           }
         });
       } catch (RuntimeException e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     }
 

@@ -68,7 +68,7 @@ public class GenerationPlan {
       }
       myConflictingPriorityRules = partitioner.getConflictingPriorityRules();
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
       throw new RuntimeException("Couldn't compute generation steps for model '" + jetbrains.mps.util.SNodeOperations.getModelLongName(inputModel) + "'", t);
     }
   }

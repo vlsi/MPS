@@ -94,7 +94,7 @@ public class FindersOptions extends BaseOptions {
           }
           finders.add(finder);
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(null, t);
         }
       } else {
         LOG.warn("Can't find a class " + finderClassName + " in " + languageNamespace + ". The finder is disabled.");

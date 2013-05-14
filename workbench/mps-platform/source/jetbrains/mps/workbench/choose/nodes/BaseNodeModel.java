@@ -20,10 +20,12 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 /**
  * Use BaseNodePointerModel
@@ -66,7 +68,7 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
           @Override
           public void run() {
             SNode node = getNode();
-            if (node == null || !node.isInRepository()) {
+            if (node == null || !SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
               return;
             }
             // TODO: use node pointers here

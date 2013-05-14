@@ -107,7 +107,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   }
 
   public boolean messagesChanged(Object requesting) {
-    int hash = getTypechecking().getNodesWithErrors().hashCode();
+    int hash = getTypechecking().getNodesWithErrors(true).hashCode();
     if (hash != myOldHash) {
       myRequesting.clear();
       myOldHash = hash;

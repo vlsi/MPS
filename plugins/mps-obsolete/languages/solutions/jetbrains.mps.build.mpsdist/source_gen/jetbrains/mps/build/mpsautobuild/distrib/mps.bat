@@ -53,4 +53,3 @@ goto :eof
 :emptyacc
 set ACC=%1
 goto :eof
-

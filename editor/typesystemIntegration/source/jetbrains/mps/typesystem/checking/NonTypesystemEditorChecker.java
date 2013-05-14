@@ -55,7 +55,7 @@ public class NonTypesystemEditorChecker extends AbstractTypesystemEditorChecker 
             typesComponent.applyNonTypesystemRulesToRoot(editorContext.getOperationContext(), context);
             typesComponent.setCheckedNonTypesystem();
           } catch (Throwable t) {
-            LOG.error(t);
+            LOG.error(null, t);
             typesComponent.setCheckedNonTypesystem();
           } finally {
             context.resetIsNonTypesystemComputation();
@@ -63,7 +63,7 @@ public class NonTypesystemEditorChecker extends AbstractTypesystemEditorChecker 
         }
 
         // highlight nodes with errors
-        collectMessagesForNodesWithErrors(context, editorContext, messages);
+        collectMessagesForNodesWithErrors(context, editorContext, messages, false);
       }
     });
   }

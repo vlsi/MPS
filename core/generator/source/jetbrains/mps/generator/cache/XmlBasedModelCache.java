@@ -65,7 +65,7 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
     } catch (IOException e) {
       /* not a valid XML? ignore */
       if (!(e.getCause() instanceof SAXParseException) && !(e.getCause() instanceof JDOMParseException)) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     } finally {
       try {
@@ -73,7 +73,7 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
           is.close();
         }
       } catch (IOException e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     }
     return null;

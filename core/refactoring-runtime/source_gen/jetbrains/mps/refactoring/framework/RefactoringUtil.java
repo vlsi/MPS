@@ -98,7 +98,7 @@ public class RefactoringUtil {
             AbstractLoggableRefactoring oldRefactoring = constructor.newInstance();
             result.add(OldRefactoringAdapter.createAdapterFor(oldRefactoring));
           } catch (Throwable t) {
-            LOG.error(t);
+            LOG.error(null, t);
           }
         }
       }
@@ -119,7 +119,7 @@ public class RefactoringUtil {
           constructor.setAccessible(false);
           result.add(constructor.newInstance());
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(null, t);
         }
       }
     }

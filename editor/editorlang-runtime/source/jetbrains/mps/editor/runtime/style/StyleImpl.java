@@ -184,7 +184,7 @@ public class StyleImpl implements Style {
       try {
         l.styleChanged(e);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }

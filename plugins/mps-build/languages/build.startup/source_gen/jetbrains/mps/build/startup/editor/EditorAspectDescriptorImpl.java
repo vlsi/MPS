@@ -19,6 +19,10 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new MpsStartupScript_Editor());
       case 2:
         return Collections.<ConceptEditor>singletonList(new SimpleVmOptions_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new TextFile_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new TextLine_Editor());
       default:
     }
     return Collections.emptyList();
@@ -28,5 +32,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.startup.structure.ClassPathItem", "jetbrains.mps.build.startup.structure.MpsStartupScript", "jetbrains.mps.build.startup.structure.SimpleVmOptions"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.startup.structure.ClassPathItem", "jetbrains.mps.build.startup.structure.MpsStartupScript", "jetbrains.mps.build.startup.structure.SimpleVmOptions", "jetbrains.mps.build.startup.structure.TextFile", "jetbrains.mps.build.startup.structure.TextLine"};
 }

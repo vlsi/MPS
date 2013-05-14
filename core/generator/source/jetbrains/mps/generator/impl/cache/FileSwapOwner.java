@@ -125,7 +125,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
         saveModel(model.getReference(), roots, mos);
       } catch (IOException e) {
         ioex = e;
-        LOG.error(e);
+        LOG.error(null, e);
       } finally {
         if (mos != null) {
           try {
@@ -158,7 +158,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
         mis = new ModelInputStream(new FileInputStream(swapFile));
         return loadModel(mref, mis, new TransientSModel(mref));
       } catch (IOException e) {
-        LOG.error(e);
+        LOG.error(null, e);
         throw new RuntimeException(e);
       } finally {
         if (mis != null) {

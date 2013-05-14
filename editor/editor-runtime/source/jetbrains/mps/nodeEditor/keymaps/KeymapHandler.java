@@ -210,7 +210,7 @@ public abstract class KeymapHandler<E> {
           return actionCell;
         }
       } catch (Exception e) {
-        LOG.error(e);
+        LOG.error(null, e);
         return null;
       }
       if (actionCell == keymapOwnerCell) {

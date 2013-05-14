@@ -38,9 +38,9 @@ public class StepRequestor implements Requestor {
         }
       }
     } catch (IncompatibleThreadStateException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (AbsentInformationException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
   }
 
@@ -77,9 +77,9 @@ public class StepRequestor implements Requestor {
         frameCount = thread.frameCount();
         sourceName = location.sourceName();
       } catch (IncompatibleThreadStateException e) {
-        LOG.error(e);
+        LOG.error(null, e);
       } catch (AbsentInformationException e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
       //  if we are not in debuggable position we step again 
       //  TODO this place may lead (and does lead) to bad performance (see MPS-8725) 

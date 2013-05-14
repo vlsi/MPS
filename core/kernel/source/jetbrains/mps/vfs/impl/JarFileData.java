@@ -156,7 +156,7 @@ class JarFileData extends AbstractJarFileData {
           }
         }
       } catch (IOException e) {
-        LOG.error(e);
+        LOG.error(null, e);
       } finally {
         if (zipFile != null) {
           try {

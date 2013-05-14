@@ -91,10 +91,10 @@ public class MPSTestEditorManagerImpl extends TestEditorManagerImpl {
         LOG.assertTrue(editor.isValid());
       }
       catch (Exception e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
       catch (AssertionError e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     }
 

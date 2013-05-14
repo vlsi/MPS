@@ -207,7 +207,7 @@ public class IconManager {
         }
       }
     } catch (Exception e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
     return EMPTY_ICON;
   }
@@ -287,14 +287,14 @@ public class IconManager {
           }
         }
       } catch (IOException e) {
-        LOG.error(e);
+        LOG.error(null, e);
       } finally {
         try {
           if (is != null) {
             is.close();
           }
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
       icon = new ImageIcon(image);

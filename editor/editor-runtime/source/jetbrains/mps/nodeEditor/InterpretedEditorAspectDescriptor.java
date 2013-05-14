@@ -82,19 +82,19 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
       Constructor<? extends ConceptEditor> cons = editorClass.getConstructor();
       return cons.newInstance();
     } catch (NoSuchMethodException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (SecurityException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (InstantiationException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (IllegalAccessException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (InvocationTargetException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (IllegalArgumentException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (ClassCastException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
     return null;
   }

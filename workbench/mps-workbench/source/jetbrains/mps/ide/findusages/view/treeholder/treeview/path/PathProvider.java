@@ -78,7 +78,7 @@ public class PathProvider {
     try {
       name = node.getName();
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
       name = "<getName() caused an exception on this node>";
     }
     if (name != null) {

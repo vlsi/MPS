@@ -152,7 +152,7 @@ public class CollectTests_Action extends BaseAction {
               try {
                 smodel.value = smd;
               } catch (RuntimeException ex) {
-                LOG.error(ex);
+                LOG.error(null, ex);
               }
             }
           });

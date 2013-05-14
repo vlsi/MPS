@@ -94,7 +94,7 @@ public class ChildSubstituteActionsUtil {
     try {
       return (List<SubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactoryContext(parentNode, currentChild, childConcept, childSetter), SNodeOperations.getModel(builder));
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
       return Collections.emptyList();
     }
   }
@@ -130,7 +130,7 @@ public class ChildSubstituteActionsUtil {
       try {
         QueryMethodGenerated.invoke(methodName, context, new RemoveSubstituteActionByConditionContext(ListSequence.fromList(actions).iterator(), parentNode, currentChild, childConcept), SNodeOperations.getModel(builder));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
 
@@ -162,7 +162,7 @@ public class ChildSubstituteActionsUtil {
       try {
         return (Boolean) QueryMethodGenerated.invoke(methodName, context, new NodeSubstitutePreconditionContext(parentNode, concept, currentTarget, link, wrapped), SNodeOperations.getModel(actionsBuilder));
       } catch (Exception e) {
-        LOG.error(e);
+        LOG.error(null, e);
         return false;
       }
     }

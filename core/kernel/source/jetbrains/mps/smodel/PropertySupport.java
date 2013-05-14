@@ -125,13 +125,13 @@ public abstract class PropertySupport {
         LOG.error("Can't find a class " + propertySupportClassName);
       }
     } catch (NoSuchMethodException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (InstantiationException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (IllegalAccessException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (InvocationTargetException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
     return propertySupport;
   }

@@ -145,7 +145,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
             try {
               method.invoke(l, args);
             } catch (Throwable t) {
-              LOG.error(t);
+              LOG.error(null, t);
             }
           }
 
@@ -164,7 +164,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
         try {
           l.eventsHappenedInCommand(Collections.unmodifiableList(events));
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(null, t);
         }
       }
     }
