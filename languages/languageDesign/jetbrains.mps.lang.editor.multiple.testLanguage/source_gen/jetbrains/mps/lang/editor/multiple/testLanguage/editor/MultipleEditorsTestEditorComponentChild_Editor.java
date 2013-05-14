@@ -22,7 +22,7 @@ public class MultipleEditorsTestEditorComponentChild_Editor extends DefaultNodeE
   }
 
   private EditorCell createComponent_9j3wy4_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_EditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_default");
     return editorCell;
   }
 }

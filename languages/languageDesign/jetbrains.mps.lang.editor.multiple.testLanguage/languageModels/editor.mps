@@ -1786,13 +1786,13 @@
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.1217012833662065273" resolveInfo="MultipleEditorsTestEditorComponentChild" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1217012833662084192" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1217012833662086608" nodeInfo="ng">
-        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1217012833662085066" resolveInfo="MultipleEditorsTestEditorComponentChild_EditorComponent" />
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1217012833662085066" resolveInfo="MultipleEditorsTestEditorComponentChild_default" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1217012833662084193" nodeInfo="nn" />
     </node>
   </root>
   <root type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="1217012833662085066" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentChild_EditorComponent" />
+    <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentChild_default" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.1217012833662065273" resolveInfo="MultipleEditorsTestEditorComponentChild" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1217012833662087389" nodeInfo="nn">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1217012833662087390" nodeInfo="nn" />
@@ -1838,10 +1838,10 @@
     </node>
   </root>
   <root type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="1217012833662319028" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentChild_richEditorComponent" />
+    <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentChild_rich" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.1217012833662065273" resolveInfo="MultipleEditorsTestEditorComponentChild" />
     <node role="overridenEditorComponent" roleId="tpc2.7033942394258392116" type="tpc2.EditorComponentDeclarationReference" typeId="tpc2.7033942394256351208" id="1217012833662319765" nodeInfo="ng">
-      <link role="editorComponent" roleId="tpc2.7033942394256351817" targetNodeId="1217012833662085066" resolveInfo="MultipleEditorsTestEditorComponentChild_EditorComponent" />
+      <link role="editorComponent" roleId="tpc2.7033942394256351817" targetNodeId="1217012833662085066" resolveInfo="MultipleEditorsTestEditorComponentChild_default" />
     </node>
     <node role="contextHints" roleId="tpc2.7348800710862477686" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="1217012833662319767" nodeInfo="ig">
       <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
@@ -1908,13 +1908,13 @@
     </node>
   </root>
   <root type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="1217012833662541016" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentChild_compactEditorComponent" />
+    <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentChild_compact" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.1217012833662065273" resolveInfo="MultipleEditorsTestEditorComponentChild" />
     <node role="contextHints" roleId="tpc2.7348800710862477686" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="1217012833662541026" nodeInfo="ig">
       <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576567" resolveInfo="compact" />
     </node>
     <node role="overridenEditorComponent" roleId="tpc2.7033942394258392116" type="tpc2.EditorComponentDeclarationReference" typeId="tpc2.7033942394256351208" id="1217012833662541022" nodeInfo="ng">
-      <link role="editorComponent" roleId="tpc2.7033942394256351817" targetNodeId="1217012833662085066" resolveInfo="MultipleEditorsTestEditorComponentChild_EditorComponent" />
+      <link role="editorComponent" roleId="tpc2.7033942394256351817" targetNodeId="1217012833662085066" resolveInfo="MultipleEditorsTestEditorComponentChild_default" />
     </node>
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1217012833662541881" nodeInfo="nn">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1217012833662541882" nodeInfo="nn" />
@@ -1969,7 +1969,7 @@
     <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6420745394459388008" resolveInfo="MultipleEditorsTestEditorComponentChildSubconcept" />
     <node role="overridenEditorComponent" roleId="tpc2.7033942394258392116" type="tpc2.EditorComponentDeclarationReference" typeId="tpc2.7033942394256351208" id="6420745394459646338" nodeInfo="ng">
-      <link role="editorComponent" roleId="tpc2.7033942394256351817" targetNodeId="1217012833662085066" resolveInfo="MultipleEditorsTestEditorComponentChild_EditorComponent" />
+      <link role="editorComponent" roleId="tpc2.7033942394256351817" targetNodeId="1217012833662085066" resolveInfo="MultipleEditorsTestEditorComponentChild_default" />
     </node>
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6420745394459647197" nodeInfo="nn">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6420745394459647198" nodeInfo="nn" />

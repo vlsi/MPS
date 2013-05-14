@@ -37,12 +37,12 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        if ("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_EditorComponent".equals(editorComponentId)) {
-          return Arrays.asList(new ConceptEditorComponent[]{new MultipleEditorsTestEditorComponentChild_EditorComponent(), new MultipleEditorsTestEditorComponentChild_compactEditorComponent(), new MultipleEditorsTestEditorComponentChild_richEditorComponent()});
+        if ("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_default".equals(editorComponentId)) {
+          return Arrays.asList(new ConceptEditorComponent[]{new MultipleEditorsTestEditorComponentChild_compact(), new MultipleEditorsTestEditorComponentChild_default(), new MultipleEditorsTestEditorComponentChild_rich()});
         }
         break;
       case 1:
-        if ("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_EditorComponent".equals(editorComponentId)) {
+        if ("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_default".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent());
         }
         break;

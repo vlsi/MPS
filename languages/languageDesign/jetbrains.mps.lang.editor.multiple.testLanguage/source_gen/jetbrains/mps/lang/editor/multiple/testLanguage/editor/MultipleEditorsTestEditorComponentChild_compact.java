@@ -18,7 +18,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
-public class MultipleEditorsTestEditorComponentChild_compactEditorComponent implements ConceptEditorComponent {
+public class MultipleEditorsTestEditorComponentChild_compact implements ConceptEditorComponent {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact"});
 
   public Collection<String> getContextHints() {
@@ -26,21 +26,21 @@ public class MultipleEditorsTestEditorComponentChild_compactEditorComponent impl
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_enni7w_a(editorContext, node);
+    return this.createCollection_l1cby4_a(editorContext, node);
   }
 
-  private EditorCell createCollection_enni7w_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_l1cby4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_enni7w_a");
-    editorCell.addEditorCell(this.createProperty_enni7w_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_enni7w_b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_enni7w_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_enni7w_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_enni7w_e0(editorContext, node));
+    editorCell.setCellId("Collection_l1cby4_a");
+    editorCell.addEditorCell(this.createProperty_l1cby4_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_l1cby4_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_l1cby4_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_l1cby4_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_l1cby4_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createProperty_enni7w_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_l1cby4_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -58,9 +58,9 @@ public class MultipleEditorsTestEditorComponentChild_compactEditorComponent impl
     return editorCell;
   }
 
-  private EditorCell createConstant_enni7w_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_l1cby4_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_enni7w_b0");
+    editorCell.setCellId("Constant_l1cby4_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -71,7 +71,7 @@ public class MultipleEditorsTestEditorComponentChild_compactEditorComponent impl
     return editorCell;
   }
 
-  private EditorCell createProperty_enni7w_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_l1cby4_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("compactProperty");
     provider.setNoTargetText("<no compactProperty>");
@@ -89,9 +89,9 @@ public class MultipleEditorsTestEditorComponentChild_compactEditorComponent impl
     return editorCell;
   }
 
-  private EditorCell createConstant_enni7w_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_l1cby4_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_enni7w_d0");
+    editorCell.setCellId("Constant_l1cby4_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -102,9 +102,9 @@ public class MultipleEditorsTestEditorComponentChild_compactEditorComponent impl
     return editorCell;
   }
 
-  private EditorCell createConstant_enni7w_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_l1cby4_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_enni7w_e0");
+    editorCell.setCellId("Constant_l1cby4_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);

@@ -18,36 +18,36 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
-public class MultipleEditorsTestEditorComponentChild_EditorComponent implements ConceptEditorComponent {
+public class MultipleEditorsTestEditorComponentChild_default implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_ng32hu_a(editorContext, node);
+    return this.createCollection_py9i4r_a(editorContext, node);
   }
 
-  private EditorCell createCollection_ng32hu_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_py9i4r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ng32hu_a");
-    editorCell.addEditorCell(this.createConstant_ng32hu_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_ng32hu_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ng32hu_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ng32hu_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ng32hu_e0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_ng32hu_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ng32hu_g0(editorContext, node));
+    editorCell.setCellId("Collection_py9i4r_a");
+    editorCell.addEditorCell(this.createConstant_py9i4r_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_py9i4r_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_py9i4r_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_py9i4r_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_py9i4r_e0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_py9i4r_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_py9i4r_g0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_ng32hu_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_py9i4r_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child");
-    editorCell.setCellId("Constant_ng32hu_a0");
+    editorCell.setCellId("Constant_py9i4r_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_ng32hu_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_py9i4r_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -65,9 +65,9 @@ public class MultipleEditorsTestEditorComponentChild_EditorComponent implements 
     return editorCell;
   }
 
-  private EditorCell createConstant_ng32hu_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_py9i4r_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_ng32hu_c0");
+    editorCell.setCellId("Constant_py9i4r_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -76,9 +76,9 @@ public class MultipleEditorsTestEditorComponentChild_EditorComponent implements 
     return editorCell;
   }
 
-  private EditorCell createConstant_ng32hu_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_py9i4r_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default property");
-    editorCell.setCellId("Constant_ng32hu_d0");
+    editorCell.setCellId("Constant_py9i4r_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
@@ -86,9 +86,9 @@ public class MultipleEditorsTestEditorComponentChild_EditorComponent implements 
     return editorCell;
   }
 
-  private EditorCell createConstant_ng32hu_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_py9i4r_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_ng32hu_e0");
+    editorCell.setCellId("Constant_py9i4r_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -96,7 +96,7 @@ public class MultipleEditorsTestEditorComponentChild_EditorComponent implements 
     return editorCell;
   }
 
-  private EditorCell createProperty_ng32hu_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_py9i4r_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("defaultProperty");
     provider.setNoTargetText("<no defaultProperty>");
@@ -117,9 +117,9 @@ public class MultipleEditorsTestEditorComponentChild_EditorComponent implements 
     return editorCell;
   }
 
-  private EditorCell createConstant_ng32hu_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_py9i4r_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_ng32hu_g0");
+    editorCell.setCellId("Constant_py9i4r_g0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     editorCell.getStyle().putAll(style);

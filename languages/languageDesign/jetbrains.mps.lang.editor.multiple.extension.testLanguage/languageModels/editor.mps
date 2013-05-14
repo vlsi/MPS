@@ -35,7 +35,7 @@
     </node>
   </root>
   <root type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="1217012833662768584" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentChild_compactRichEditorComponent" />
+    <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentChild_compactRich" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.1217012833662065273" resolveInfo="MultipleEditorsTestEditorComponentChild" />
     <node role="contextHints" roleId="tpc2.7348800710862477686" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="1217012833662768683" nodeInfo="ig">
       <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="dfnz.5944657839017576565" resolveInfo="rich" />
