@@ -86,6 +86,7 @@
     <referencesSearch implementation="jetbrains.mps.idea.java.usages.MPSReferenceSearch"/>
     <referencesSearch implementation="jetbrains.mps.idea.java.usages.IdPrefixSearch"/>
     <java.elementFinder implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaClassFinder"/>
+    <java.elementFinder implementation="jetbrains.mps.idea.java.psi.impl.MPSPackageFinder"/>
     <java.shortNamesCache implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaShortNamesCache"/>
     <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.usages.MPSJavaDirectInheritorsSearcher"/>
      <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
