@@ -134,7 +134,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
     // i.e. a real directory wherein the model file lives
     // Needed for idea scope to work (see PsiSearchScopeUtil.isInScope)
     if (myNode == null || myNode.getModelReference() == null) return null;
-    SModelReference modelRef = myNode.getModelReference();
+    org.jetbrains.mps.openapi.model.SModelReference modelRef = myNode.getModelReference();
     if (modelRef.resolve(MPSModuleRepository.getInstance()) == null) {
       return null;
     }

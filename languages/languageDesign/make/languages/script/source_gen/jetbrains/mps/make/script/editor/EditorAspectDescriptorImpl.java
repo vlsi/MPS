@@ -4,48 +4,53 @@ package jetbrains.mps.make.script.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AdvanceWorkStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new AdvanceWorkStatement_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new AllWorkLeftExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new AllWorkLeftExpression_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new BeginWorkStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new BeginWorkStatement_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new ExpectedOption_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExpectedOption_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new FinishWorkStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new FinishWorkStatement_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new JobDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new JobDeclaration_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new Option_Editor());
+        return Collections.<ConceptEditor>singletonList(new Option_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new OptionExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new OptionExpression_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new OptionType_Editor());
+        return Collections.<ConceptEditor>singletonList(new OptionType_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new OutputResources_Editor());
+        return Collections.<ConceptEditor>singletonList(new OutputResources_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new QueryDefinition_Editor());
+        return Collections.<ConceptEditor>singletonList(new QueryDefinition_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new RelayQueryExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new RelayQueryExpression_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new ReportFeedbackStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReportFeedbackStatement_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new ResourceType_Editor());
+        return Collections.<ConceptEditor>singletonList(new ResourceType_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new ResultStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ResultStatement_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new Text_Editor());
+        return Collections.<ConceptEditor>singletonList(new Text_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

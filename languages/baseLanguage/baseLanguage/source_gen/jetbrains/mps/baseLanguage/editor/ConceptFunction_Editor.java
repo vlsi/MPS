@@ -25,8 +25,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_qilpva_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ConceptFunction_Component(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.ConceptFunction_Component");
     editorCell.setBig(true);
     return editorCell;
   }

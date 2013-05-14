@@ -4,44 +4,49 @@ package jetbrains.mps.make.facet.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new FacetDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new FacetDeclaration_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new FacetJavaClassExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new FacetJavaClassExpression_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new FacetReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new FacetReference_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new FacetReferenceExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new FacetReferenceExpression_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new ForeignParametersComponentExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ForeignParametersComponentExpression_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new ForeignParametersExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ForeignParametersExpression_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new LocalParametersComponentExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new LocalParametersComponentExpression_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new LocalParametersExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new LocalParametersExpression_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new ParametersDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParametersDeclaration_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new ResourceSpecificPropertiesExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ResourceSpecificPropertiesExpression_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new ResourceTypeDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ResourceTypeDeclaration_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new TargetDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new TargetDeclaration_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new TargetDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new TargetDependency_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new TargetReferenceExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new TargetReferenceExpression_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

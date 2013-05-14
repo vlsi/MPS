@@ -4,80 +4,99 @@ package jetbrains.mps.baseLanguage.math.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AbsExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbsExpression_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new ComplexLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new ComplexLiteral_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new DecimalBinaryOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new DecimalBinaryOperation_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new DivExpressionFraction_Editor());
+        return Collections.<ConceptEditor>singletonList(new DivExpressionFraction_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new ExponentialOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExponentialOperation_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new InIntervalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new InIntervalExpression_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new IntervalContainsExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new IntervalContainsExpression_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new IntervalLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new IntervalLiteral_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new IntervalType_Editor());
+        return Collections.<ConceptEditor>singletonList(new IntervalType_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new LinearSolveOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new LinearSolveOperation_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new LiteralI_Editor());
+        return Collections.<ConceptEditor>singletonList(new LiteralI_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new MathFuncExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new MathFuncExpression_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new MathSymbol_Editor());
+        return Collections.<ConceptEditor>singletonList(new MathSymbol_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new MathSymbolFromToIndex_Editor());
+        return Collections.<ConceptEditor>singletonList(new MathSymbolFromToIndex_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new MathSymbolIndex_Editor());
+        return Collections.<ConceptEditor>singletonList(new MathSymbolIndex_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new MathSymbolIndexReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new MathSymbolIndexReference_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new MathTypeCast_Editor());
+        return Collections.<ConceptEditor>singletonList(new MathTypeCast_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new MatrixConstructor_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatrixConstructor_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new MatrixElementAccessExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatrixElementAccessExpression_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new MatrixIndexWildcard_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatrixIndexWildcard_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new MatrixInitializer_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatrixInitializer_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new MatrixInitializerIndex_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatrixInitializerIndex_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new MatrixInitializerIndexReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatrixInitializerIndexReference_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new MatrixInverseOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatrixInverseOperation_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new MatrixNorm_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatrixNorm_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new MatrixType_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatrixType_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new MatrixUnit_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatrixUnit_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new MatrixZero_Editor());
+        return Collections.<ConceptEditor>singletonList(new MatrixZero_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new PowExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new PowExpression_Editor());
       case 29:
-        return Collections.<EditorAspect>singletonList(new VectorInitializer_Editor());
+        return Collections.<ConceptEditor>singletonList(new VectorInitializer_Editor());
       case 30:
-        return Collections.<EditorAspect>singletonList(new VectorType_Editor());
+        return Collections.<ConceptEditor>singletonList(new VectorType_Editor());
+      default:
+    }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("jetbrains.mps.baseLanguage.math.editor.ExponentOperation_Component".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new ExponentOperation_Component());
+        }
+        break;
+      case 1:
+        if ("jetbrains.mps.baseLanguage.math.editor.MathContextEditorPart".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new MathContextEditorPart());
+        }
+        break;
       default:
     }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.math.structure.AbsExpression", "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", "jetbrains.mps.baseLanguage.math.structure.IntervalType", "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", "jetbrains.mps.baseLanguage.math.structure.LiteralI", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", "jetbrains.mps.baseLanguage.math.structure.MathSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixNorm", "jetbrains.mps.baseLanguage.math.structure.MatrixType", "jetbrains.mps.baseLanguage.math.structure.MatrixUnit", "jetbrains.mps.baseLanguage.math.structure.MatrixZero", "jetbrains.mps.baseLanguage.math.structure.PowExpression", "jetbrains.mps.baseLanguage.math.structure.VectorInitializer", "jetbrains.mps.baseLanguage.math.structure.VectorType"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MathContext"};
 }

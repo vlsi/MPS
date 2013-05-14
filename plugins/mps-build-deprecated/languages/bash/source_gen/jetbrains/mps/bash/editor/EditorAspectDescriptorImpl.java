@@ -4,184 +4,213 @@ package jetbrains.mps.bash.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AbstractCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractCommand_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new AppendingOutputErrorRedirection_Editor());
+        return Collections.<ConceptEditor>singletonList(new AppendingOutputErrorRedirection_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new AppendingOutputRedirection_Editor());
+        return Collections.<ConceptEditor>singletonList(new AppendingOutputRedirection_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new Argument_Editor());
+        return Collections.<ConceptEditor>singletonList(new Argument_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new ArgumentList_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArgumentList_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new ArgumentListReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArgumentListReference_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new ArgumentReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArgumentReference_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new ArithmeticCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArithmeticCommand_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new ArithmeticExpansion_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArithmeticExpansion_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new AsyncTerminator_Editor());
+        return Collections.<ConceptEditor>singletonList(new AsyncTerminator_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new BaseAssingmentExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseAssingmentExpression_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new BaseCommandSubstitution_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseCommandSubstitution_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new BaseVariableAssingment_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseVariableAssingment_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new BasedIntegerLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new BasedIntegerLiteral_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new BasicParameterExpansion_Editor());
+        return Collections.<ConceptEditor>singletonList(new BasicParameterExpansion_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new BinaryArithmeticExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new BinaryArithmeticExpression_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new BinaryConditionalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new BinaryConditionalExpression_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new BracketConditionalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new BracketConditionalExpression_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new BracketExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new BracketExpression_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new CaseClause_Editor());
+        return Collections.<ConceptEditor>singletonList(new CaseClause_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new CaseCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new CaseCommand_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new CaseTerminator_Editor());
+        return Collections.<ConceptEditor>singletonList(new CaseTerminator_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new CombiningConditionalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new CombiningConditionalExpression_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new Command_Editor());
+        return Collections.<ConceptEditor>singletonList(new Command_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new CommandList_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommandList_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new CommandTerminator_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommandTerminator_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new CommentedCommandList_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommentedCommandList_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new CommentedFollowingCommandList_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommentedFollowingCommandList_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new CommentedText_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommentedText_Editor());
       case 29:
-        return Collections.<EditorAspect>singletonList(new ConditionalCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConditionalCommand_Editor());
       case 30:
-        return Collections.<EditorAspect>singletonList(new ConditionalOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConditionalOperation_Editor());
       case 31:
-        return Collections.<EditorAspect>singletonList(new DecimalConstant_Editor());
+        return Collections.<ConceptEditor>singletonList(new DecimalConstant_Editor());
       case 32:
-        return Collections.<EditorAspect>singletonList(new DuplicateInputFileDiscriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new DuplicateInputFileDiscriptor_Editor());
       case 33:
-        return Collections.<EditorAspect>singletonList(new DuplicateOutputFileDiscriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new DuplicateOutputFileDiscriptor_Editor());
       case 34:
-        return Collections.<EditorAspect>singletonList(new ElifCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new ElifCommand_Editor());
       case 35:
-        return Collections.<EditorAspect>singletonList(new ExternalCommandCall_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExternalCommandCall_Editor());
       case 36:
-        return Collections.<EditorAspect>singletonList(new ExternalCommandDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExternalCommandDeclaration_Editor());
       case 37:
-        return Collections.<EditorAspect>singletonList(new FollowingCommandList_Editor());
+        return Collections.<ConceptEditor>singletonList(new FollowingCommandList_Editor());
       case 38:
-        return Collections.<EditorAspect>singletonList(new FollowingPipeline_Editor());
+        return Collections.<ConceptEditor>singletonList(new FollowingPipeline_Editor());
       case 39:
-        return Collections.<EditorAspect>singletonList(new ForCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new ForCommand_Editor());
       case 40:
-        return Collections.<EditorAspect>singletonList(new ForeachCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new ForeachCommand_Editor());
       case 41:
-        return Collections.<EditorAspect>singletonList(new FreeCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new FreeCommand_Editor());
       case 42:
-        return Collections.<EditorAspect>singletonList(new FunctionCallCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new FunctionCallCommand_Editor());
       case 43:
-        return Collections.<EditorAspect>singletonList(new FunctionDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new FunctionDeclaration_Editor());
       case 44:
-        return Collections.<EditorAspect>singletonList(new GeneralizedWord_Editor());
+        return Collections.<ConceptEditor>singletonList(new GeneralizedWord_Editor());
       case 45:
-        return Collections.<EditorAspect>singletonList(new GroupingCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new GroupingCommand_Editor());
       case 46:
-        return Collections.<EditorAspect>singletonList(new HeadCommandList_Editor());
+        return Collections.<ConceptEditor>singletonList(new HeadCommandList_Editor());
       case 47:
-        return Collections.<EditorAspect>singletonList(new HeadPipeline_Editor());
+        return Collections.<ConceptEditor>singletonList(new HeadPipeline_Editor());
       case 48:
-        return Collections.<EditorAspect>singletonList(new HereDocumentRedirection_Editor());
+        return Collections.<ConceptEditor>singletonList(new HereDocumentRedirection_Editor());
       case 49:
-        return Collections.<EditorAspect>singletonList(new HereStringRedirection_Editor());
+        return Collections.<ConceptEditor>singletonList(new HereStringRedirection_Editor());
       case 50:
-        return Collections.<EditorAspect>singletonList(new HexIntegerLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new HexIntegerLiteral_Editor());
       case 51:
-        return Collections.<EditorAspect>singletonList(new IfCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new IfCommand_Editor());
       case 52:
-        return Collections.<EditorAspect>singletonList(new InputLines_Editor());
+        return Collections.<ConceptEditor>singletonList(new InputLines_Editor());
       case 53:
-        return Collections.<EditorAspect>singletonList(new InputRedirection_Editor());
+        return Collections.<ConceptEditor>singletonList(new InputRedirection_Editor());
       case 54:
-        return Collections.<EditorAspect>singletonList(new NotCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new NotCommand_Editor());
       case 55:
-        return Collections.<EditorAspect>singletonList(new Option_Editor());
+        return Collections.<ConceptEditor>singletonList(new Option_Editor());
       case 56:
-        return Collections.<EditorAspect>singletonList(new OptionReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new OptionReference_Editor());
       case 57:
-        return Collections.<EditorAspect>singletonList(new OptionSet_Editor());
+        return Collections.<ConceptEditor>singletonList(new OptionSet_Editor());
       case 58:
-        return Collections.<EditorAspect>singletonList(new OptionSetReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new OptionSetReference_Editor());
       case 59:
-        return Collections.<EditorAspect>singletonList(new OptionWithParam_Editor());
+        return Collections.<ConceptEditor>singletonList(new OptionWithParam_Editor());
       case 60:
-        return Collections.<EditorAspect>singletonList(new OptionWithParamReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new OptionWithParamReference_Editor());
       case 61:
-        return Collections.<EditorAspect>singletonList(new OutputErrorRedirection_Editor());
+        return Collections.<ConceptEditor>singletonList(new OutputErrorRedirection_Editor());
       case 62:
-        return Collections.<EditorAspect>singletonList(new OutputRedirection_Editor());
+        return Collections.<ConceptEditor>singletonList(new OutputRedirection_Editor());
       case 63:
-        return Collections.<EditorAspect>singletonList(new PostVariableExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new PostVariableExpression_Editor());
       case 64:
-        return Collections.<EditorAspect>singletonList(new PreVariableExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new PreVariableExpression_Editor());
       case 65:
-        return Collections.<EditorAspect>singletonList(new QuotedWord_Editor());
+        return Collections.<ConceptEditor>singletonList(new QuotedWord_Editor());
       case 66:
-        return Collections.<EditorAspect>singletonList(new QuotesCommandSubstitution_Editor());
+        return Collections.<ConceptEditor>singletonList(new QuotesCommandSubstitution_Editor());
       case 67:
-        return Collections.<EditorAspect>singletonList(new ReadingWritingRedirection_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReadingWritingRedirection_Editor());
       case 68:
-        return Collections.<EditorAspect>singletonList(new RedirectedCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new RedirectedCommand_Editor());
       case 69:
-        return Collections.<EditorAspect>singletonList(new SelectCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new SelectCommand_Editor());
       case 70:
-        return Collections.<EditorAspect>singletonList(new SemicolonTerminator_Editor());
+        return Collections.<ConceptEditor>singletonList(new SemicolonTerminator_Editor());
       case 71:
-        return Collections.<EditorAspect>singletonList(new ShellScript_Editor());
+        return Collections.<ConceptEditor>singletonList(new ShellScript_Editor());
       case 72:
-        return Collections.<EditorAspect>singletonList(new SimpleCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimpleCommand_Editor());
       case 73:
-        return Collections.<EditorAspect>singletonList(new SimpleWord_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimpleWord_Editor());
       case 74:
-        return Collections.<EditorAspect>singletonList(new StringConditionalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new StringConditionalExpression_Editor());
       case 75:
-        return Collections.<EditorAspect>singletonList(new TildeExpansion_Editor());
+        return Collections.<ConceptEditor>singletonList(new TildeExpansion_Editor());
       case 76:
-        return Collections.<EditorAspect>singletonList(new UnaryArithmeticExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnaryArithmeticExpression_Editor());
       case 77:
-        return Collections.<EditorAspect>singletonList(new UnaryConditionalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnaryConditionalExpression_Editor());
       case 78:
-        return Collections.<EditorAspect>singletonList(new UntilLoopCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new UntilLoopCommand_Editor());
       case 79:
-        return Collections.<EditorAspect>singletonList(new VariableNameDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new VariableNameDeclaration_Editor());
       case 80:
-        return Collections.<EditorAspect>singletonList(new VariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new VariableReference_Editor());
       case 81:
-        return Collections.<EditorAspect>singletonList(new WhileLoopCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new WhileLoopCommand_Editor());
       case 82:
-        return Collections.<EditorAspect>singletonList(new WordList_Editor());
+        return Collections.<ConceptEditor>singletonList(new WordList_Editor());
+      default:
+    }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("jetbrains.mps.bash.editor.CommentSymbol".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new CommentSymbol());
+        }
+        break;
+      case 1:
+        if ("jetbrains.mps.bash.editor.ExternalCommandDescription_EditorComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new ExternalCommandDescription_EditorComponent());
+        }
+        break;
+      case 2:
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c0a1, editorComponentId)) {
+          case 0:
+            return Collections.<ConceptEditorComponent>singletonList(new OptionDeclaration_EditorComponent());
+          case 1:
+            return Collections.<ConceptEditorComponent>singletonList(new Option_EditorComponent());
+          default:
+        }
+        break;
       default:
     }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.bash.structure.AbstractCommand", "jetbrains.mps.bash.structure.AppendingOutputErrorRedirection", "jetbrains.mps.bash.structure.AppendingOutputRedirection", "jetbrains.mps.bash.structure.Argument", "jetbrains.mps.bash.structure.ArgumentList", "jetbrains.mps.bash.structure.ArgumentListReference", "jetbrains.mps.bash.structure.ArgumentReference", "jetbrains.mps.bash.structure.ArithmeticCommand", "jetbrains.mps.bash.structure.ArithmeticExpansion", "jetbrains.mps.bash.structure.AsyncTerminator", "jetbrains.mps.bash.structure.BaseAssingmentExpression", "jetbrains.mps.bash.structure.BaseCommandSubstitution", "jetbrains.mps.bash.structure.BaseVariableAssingment", "jetbrains.mps.bash.structure.BasedIntegerLiteral", "jetbrains.mps.bash.structure.BasicParameterExpansion", "jetbrains.mps.bash.structure.BinaryArithmeticExpression", "jetbrains.mps.bash.structure.BinaryConditionalExpression", "jetbrains.mps.bash.structure.BracketConditionalExpression", "jetbrains.mps.bash.structure.BracketExpression", "jetbrains.mps.bash.structure.CaseClause", "jetbrains.mps.bash.structure.CaseCommand", "jetbrains.mps.bash.structure.CaseTerminator", "jetbrains.mps.bash.structure.CombiningConditionalExpression", "jetbrains.mps.bash.structure.Command", "jetbrains.mps.bash.structure.CommandList", "jetbrains.mps.bash.structure.CommandTerminator", "jetbrains.mps.bash.structure.CommentedCommandList", "jetbrains.mps.bash.structure.CommentedFollowingCommandList", "jetbrains.mps.bash.structure.CommentedText", "jetbrains.mps.bash.structure.ConditionalCommand", "jetbrains.mps.bash.structure.ConditionalOperation", "jetbrains.mps.bash.structure.DecimalConstant", "jetbrains.mps.bash.structure.DuplicateInputFileDiscriptor", "jetbrains.mps.bash.structure.DuplicateOutputFileDiscriptor", "jetbrains.mps.bash.structure.ElifCommand", "jetbrains.mps.bash.structure.ExternalCommandCall", "jetbrains.mps.bash.structure.ExternalCommandDeclaration", "jetbrains.mps.bash.structure.FollowingCommandList", "jetbrains.mps.bash.structure.FollowingPipeline", "jetbrains.mps.bash.structure.ForCommand", "jetbrains.mps.bash.structure.ForeachCommand", "jetbrains.mps.bash.structure.FreeCommand", "jetbrains.mps.bash.structure.FunctionCallCommand", "jetbrains.mps.bash.structure.FunctionDeclaration", "jetbrains.mps.bash.structure.GeneralizedWord", "jetbrains.mps.bash.structure.GroupingCommand", "jetbrains.mps.bash.structure.HeadCommandList", "jetbrains.mps.bash.structure.HeadPipeline", "jetbrains.mps.bash.structure.HereDocumentRedirection", "jetbrains.mps.bash.structure.HereStringRedirection", "jetbrains.mps.bash.structure.HexIntegerLiteral", "jetbrains.mps.bash.structure.IfCommand", "jetbrains.mps.bash.structure.InputLines", "jetbrains.mps.bash.structure.InputRedirection", "jetbrains.mps.bash.structure.NotCommand", "jetbrains.mps.bash.structure.Option", "jetbrains.mps.bash.structure.OptionReference", "jetbrains.mps.bash.structure.OptionSet", "jetbrains.mps.bash.structure.OptionSetReference", "jetbrains.mps.bash.structure.OptionWithParam", "jetbrains.mps.bash.structure.OptionWithParamReference", "jetbrains.mps.bash.structure.OutputErrorRedirection", "jetbrains.mps.bash.structure.OutputRedirection", "jetbrains.mps.bash.structure.PostVariableExpression", "jetbrains.mps.bash.structure.PreVariableExpression", "jetbrains.mps.bash.structure.QuotedWord", "jetbrains.mps.bash.structure.QuotesCommandSubstitution", "jetbrains.mps.bash.structure.ReadingWritingRedirection", "jetbrains.mps.bash.structure.RedirectedCommand", "jetbrains.mps.bash.structure.SelectCommand", "jetbrains.mps.bash.structure.SemicolonTerminator", "jetbrains.mps.bash.structure.ShellScript", "jetbrains.mps.bash.structure.SimpleCommand", "jetbrains.mps.bash.structure.SimpleWord", "jetbrains.mps.bash.structure.StringConditionalExpression", "jetbrains.mps.bash.structure.TildeExpansion", "jetbrains.mps.bash.structure.UnaryArithmeticExpression", "jetbrains.mps.bash.structure.UnaryConditionalExpression", "jetbrains.mps.bash.structure.UntilLoopCommand", "jetbrains.mps.bash.structure.VariableNameDeclaration", "jetbrains.mps.bash.structure.VariableReference", "jetbrains.mps.bash.structure.WhileLoopCommand", "jetbrains.mps.bash.structure.WordList"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0c0a1 = new String[]{"jetbrains.mps.bash.editor.OptionDeclaration_EditorComponent", "jetbrains.mps.bash.editor.Option_EditorComponent"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.bash.structure.IComment", "jetbrains.mps.bash.structure.IDescribedConcept", "jetbrains.mps.bash.structure.Option"};
 }

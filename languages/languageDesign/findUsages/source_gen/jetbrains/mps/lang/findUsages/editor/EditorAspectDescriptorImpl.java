@@ -4,32 +4,37 @@ package jetbrains.mps.lang.findUsages.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new CheckCancelledStatusStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new CheckCancelledStatusStatement_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new ExecuteFinderExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExecuteFinderExpression_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new ExecuteFindersGetSearchResults_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExecuteFindersGetSearchResults_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new FinderDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new FinderDeclaration_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new FinderReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new FinderReference_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new MakeResultProvider_Editor());
+        return Collections.<ConceptEditor>singletonList(new MakeResultProvider_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new NodeStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeStatement_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new ResultStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ResultStatement_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

@@ -5,7 +5,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-8kbwkwsxkzs059jlmagbtjq0yhtcnrp" />
-  <dep model="r:eb859fb0-1cb5-4829-a090-c7f47391d585(jetbrains.mps.lang.editor.multiple.testLanguage.structure)" hash="1laljdagpk0l93vn8xl8vwy3epsoasp" />
+  <dep model="r:eb859fb0-1cb5-4829-a090-c7f47391d585(jetbrains.mps.lang.editor.multiple.testLanguage.structure)" hash="-2a3rfuzoar63xbpj35fk5bvcji6uivp" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <common hash="-2izv8yprqhwfiiar6zs9iaf09etetfw" dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
@@ -17,6 +17,9 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BehaviorAspectDescriptor.java" />
     <file name="MultipleEditorsTestChild_BehaviorDescriptor.java" />
+    <file name="MultipleEditorsTestEditorComponentChildSubconcept_BehaviorDescriptor.java" />
+    <file name="MultipleEditorsTestEditorComponentChild_BehaviorDescriptor.java" />
+    <file name="MultipleEditorsTestEditorComponentRoot_BehaviorDescriptor.java" />
     <file name="MultipleEditorsTestMostSpecificChild_BehaviorDescriptor.java" />
     <file name="MultipleEditorsTestMostSpecificRoot_BehaviorDescriptor.java" />
     <file name="MultipleEditorsTestRefNodeListRoot_BehaviorDescriptor.java" />

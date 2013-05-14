@@ -25,5 +25,7 @@ import java.util.Collection;
  * Date: 4/8/13
  */
 public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
-  Collection<EditorAspect> getEditorAspects(ConceptDescriptor concept);
+  Collection<ConceptEditor> getEditors(ConceptDescriptor concept);
+
+  Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor concept, String editorComponentId);
 }

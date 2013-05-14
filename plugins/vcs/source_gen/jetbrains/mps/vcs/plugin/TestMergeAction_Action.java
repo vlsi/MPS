@@ -115,7 +115,7 @@ public class TestMergeAction_Action extends BaseAction {
               }
             });
           }
-          dialog.unregisterResultModel();
+          dialog.unregisterModels();
         }
       });
     } catch (Throwable t) {

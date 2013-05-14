@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ import java.util.Collection;
 
 /**
  * User: shatalin
- * Date: 10/2/12
+ * Date: 5/13/13
  */
-public interface EditorAspect {
+public interface BaseConceptEditor {
   /**
    * Used to specify collection of editor context hints this EditorAspect is applicable to.
    * Empty collection indicates default EditorAspect (applicable in any context). EditorAspect
@@ -40,6 +40,4 @@ public interface EditorAspect {
   Collection<String> getContextHints();
 
   EditorCell createEditorCell(EditorContext editorContext, SNode node);
-
-  EditorCell createInspectedCell(EditorContext editorContext, SNode node);
 }

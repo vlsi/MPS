@@ -4,76 +4,81 @@ package jetbrains.mps.baseLanguage.javadoc.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AuthorBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new AuthorBlockDocTag_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new BaseDocReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseDocReference_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new BaseInlineDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseInlineDocTag_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new BaseParameterReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseParameterReference_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new BaseVariableDocReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseVariableDocReference_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new ClassifierDocComment_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClassifierDocComment_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new ClassifierDocReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClassifierDocReference_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new CodeInlineDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new CodeInlineDocTag_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new CodeSnippet_Editor());
+        return Collections.<ConceptEditor>singletonList(new CodeSnippet_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new CommentLine_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommentLine_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new DeprecatedBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new DeprecatedBlockDocTag_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new DocMethodParameterReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new DocMethodParameterReference_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new DocTypeParameterReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new DocTypeParameterReference_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new FieldDocComment_Editor());
+        return Collections.<ConceptEditor>singletonList(new FieldDocComment_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new FieldDocReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new FieldDocReference_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new HTMLElement_Editor());
+        return Collections.<ConceptEditor>singletonList(new HTMLElement_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new InheritDocInlineDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new InheritDocInlineDocTag_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new InlineTagCommentLinePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new InlineTagCommentLinePart_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new LinkInlineDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new LinkInlineDocTag_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new MethodDocComment_Editor());
+        return Collections.<ConceptEditor>singletonList(new MethodDocComment_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new MethodDocReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new MethodDocReference_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new ParameterBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParameterBlockDocTag_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new ReturnBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReturnBlockDocTag_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new SeeBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new SeeBlockDocTag_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new SinceBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new SinceBlockDocTag_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new StaticFieldDocReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new StaticFieldDocReference_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new TextCommentLinePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new TextCommentLinePart_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new ThrowsBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new ThrowsBlockDocTag_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new ValueInlineDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new ValueInlineDocTag_Editor());
       case 29:
-        return Collections.<EditorAspect>singletonList(new VersionBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new VersionBlockDocTag_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

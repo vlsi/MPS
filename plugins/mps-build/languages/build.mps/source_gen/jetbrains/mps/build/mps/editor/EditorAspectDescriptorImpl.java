@@ -4,108 +4,113 @@ package jetbrains.mps.build.mps.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new BuildLayout_ToBinaryCopyProcessor_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_ToBinaryCopyProcessor_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new BuildMPSPlugin_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMPSPlugin_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new BuildMpsAspect_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMpsAspect_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new BuildMpsLayout_ModuleJars_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJars_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new BuildMpsLayout_ModuleSources_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleSources_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new BuildMpsLayout_ModuleXml_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new BuildMpsLayout_ModuleXml_CustomJarLocation_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_CustomJarLocation_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new BuildMpsLayout_Plugin_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_Plugin_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new BuildMpsLayout_PluginDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_PluginDescriptor_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new BuildMps_AbstractModule_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_AbstractModule_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new BuildMps_Branding_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Branding_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new BuildMps_BrandingHelp_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingHelp_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new BuildMps_BrandingUpdateSite_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingUpdateSite_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new BuildMps_DevKit_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKit_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new BuildMps_DevKitExport_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExport_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new BuildMps_DevKitExportLanguage_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportLanguage_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new BuildMps_DevKitExportSolution_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportSolution_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new BuildMps_DevKitRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitRef_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ExtractedModuleDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ExtractedModuleDependency_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new BuildMps_Generator_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Generator_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new BuildMps_Group_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Group_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new BuildMps_IdeaPlugin_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPlugin_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new BuildMps_IdeaPluginContent_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginContent_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new BuildMps_IdeaPluginDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginDependency_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new BuildMps_IdeaPluginGroup_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroup_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new BuildMps_IdeaPluginGroupCustomModule_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroupCustomModule_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new BuildMps_IdeaPluginModule_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginModule_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new BuildMps_IdeaPluginVendor_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginVendor_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new BuildMps_Language_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Language_Editor());
       case 29:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependency_Editor());
       case 30:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleDependencyExtendLanguage_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyExtendLanguage_Editor());
       case 31:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleDependencyJar_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyJar_Editor());
       case 32:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleDependencyOnDevKit_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnDevKit_Editor());
       case 33:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleDependencyOnJavaModule_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnJavaModule_Editor());
       case 34:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleDependencyOnModule_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnModule_Editor());
       case 35:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleDependencyUseLanguage_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyUseLanguage_Editor());
       case 36:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleJarRuntime_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJarRuntime_Editor());
       case 37:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleJavaSource_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJavaSource_Editor());
       case 38:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleModelRoot_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleModelRoot_Editor());
       case 39:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleRuntime_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleRuntime_Editor());
       case 40:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleSolutionRuntime_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSolutionRuntime_Editor());
       case 41:
-        return Collections.<EditorAspect>singletonList(new BuildMps_ModuleSource_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSource_Editor());
       case 42:
-        return Collections.<EditorAspect>singletonList(new BuildMps_Solution_Editor());
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Solution_Editor());
       case 43:
-        return Collections.<EditorAspect>singletonList(new GeneratorInternal_BuildMps_Module_Editor());
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildMps_Module_Editor());
       case 44:
-        return Collections.<EditorAspect>singletonList(new GeneratorInternal_BuildSourcePath_Editor());
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSourcePath_Editor());
       case 45:
-        return Collections.<EditorAspect>singletonList(new GeneratorInternal_String_Editor());
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_String_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

@@ -47,7 +47,7 @@ import java.awt.event.FocusEvent;
     ), Color.BLACK, 1));
 
     if (myChangeGroup.getChangeType() != ChangeType.ADD) {
-      BaseVersionEditorComponent baseEditor = new BaseVersionEditorComponent(myEditor.getOperationContext(), myChangeGroup);
+      BaseVersionEditorComponent baseEditor = new BaseVersionEditorComponent(myEditor.getEditorContext().getRepository(), myChangeGroup);
       add(baseEditor.getScrollPane(), BorderLayout.CENTER);
     }
   }

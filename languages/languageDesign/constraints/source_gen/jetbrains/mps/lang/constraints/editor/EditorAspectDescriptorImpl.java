@@ -4,28 +4,33 @@ package jetbrains.mps.lang.constraints.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new ConceptConstraints_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptConstraints_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new ConstraintFunction_ReferentSearchScope_AbstractBase_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConstraintFunction_ReferentSearchScope_AbstractBase_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new InheritedNodeScopeFactory_Editor());
+        return Collections.<ConceptEditor>singletonList(new InheritedNodeScopeFactory_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new NodeDefaultSearchScope_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeDefaultSearchScope_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new NodePropertyConstraint_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodePropertyConstraint_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new NodeReferentConstraint_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeReferentConstraint_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class OptionWithParam_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -110,8 +109,7 @@ public class OptionWithParam_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_3ybyml_e1a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ExternalCommandDescription_EditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.bash.editor.ExternalCommandDescription_EditorComponent");
     return editorCell;
   }
 }

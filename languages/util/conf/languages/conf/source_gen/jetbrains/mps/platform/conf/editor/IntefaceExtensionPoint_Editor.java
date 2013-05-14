@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class IntefaceExtensionPoint_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -118,8 +117,7 @@ public class IntefaceExtensionPoint_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_wfmmwk_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.platform.conf.editor.BaseConcept_brokenRefs");
     editorCell.setBig(true);
     return editorCell;
   }

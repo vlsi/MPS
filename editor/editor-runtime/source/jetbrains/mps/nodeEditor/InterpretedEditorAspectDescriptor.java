@@ -16,7 +16,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -45,35 +46,40 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
   private static Logger LOG = LogManager.getLogger(InterpretedEditorAspectDescriptor.class);
 
   private LanguageRuntime myLanguageRuntime;
-  private Map<String, EditorAspect> myEditorAspects = new HashMap<String, EditorAspect>();
+  private Map<String, ConceptEditor> myConceptEditors = new HashMap<String, ConceptEditor>();
 
   InterpretedEditorAspectDescriptor(LanguageRuntime runtime) {
     myLanguageRuntime = runtime;
   }
 
   @Override
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor abstractConcept) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor abstractConcept) {
     // TODO: check (assert) if passed concept is a part of associated language
     String conceptFQName = abstractConcept.getConceptFqName();
-    if (!myEditorAspects.containsKey(conceptFQName)) {
-      myEditorAspects.put(conceptFQName, loadEditor(abstractConcept));
+    if (!myConceptEditors.containsKey(conceptFQName)) {
+      myConceptEditors.put(conceptFQName, loadEditor(abstractConcept));
     }
-    EditorAspect editorAspect = myEditorAspects.get(conceptFQName);
-    return editorAspect != null ? Collections.singletonList(editorAspect) : Collections.<EditorAspect>emptyList();
+    ConceptEditor editorAspect = myConceptEditors.get(conceptFQName);
+    return editorAspect != null ? Collections.singletonList(editorAspect) : Collections.<ConceptEditor>emptyList();
   }
 
-  private EditorAspect loadEditor(ConceptDescriptor concept) {
+  @Override
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor concept, String editorComponentId) {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  private ConceptEditor loadEditor(ConceptDescriptor concept) {
     Language language = ModuleRepositoryFacade.getInstance().getModule(myLanguageRuntime.getNamespace(), Language.class);
     if (language == null) {
       return null;
     }
     String editorClassName = NameUtil.getAspectNodeFqName(concept.getConceptFqName(), LanguageAspect.EDITOR) + "_Editor";
-    Class<? extends EditorAspect> editorClass = ClassLoaderManager.getInstance().getClass(language, editorClassName);
+    Class<? extends ConceptEditor> editorClass = ClassLoaderManager.getInstance().getClass(language, editorClassName);
     if (editorClass == null) {
       return null;
     }
     try {
-      Constructor<? extends EditorAspect> cons = editorClass.getConstructor();
+      Constructor<? extends ConceptEditor> cons = editorClass.getConstructor();
       return cons.newInstance();
     } catch (NoSuchMethodException e) {
       LOG.error(null, e);

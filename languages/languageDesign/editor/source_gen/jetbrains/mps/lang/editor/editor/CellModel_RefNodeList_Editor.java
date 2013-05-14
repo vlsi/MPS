@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -64,8 +63,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_2v2794_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _OpenTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._OpenTag");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyTag(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -280,8 +278,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_2v2794_b1a2a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CellModelListWithRole_FoldedCellComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent");
     return editorCell;
   }
 
@@ -437,8 +434,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_2v2794_f0b2a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CellModelListWithRole_FoldedCellComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent");
     return editorCell;
   }
 
@@ -447,8 +443,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_2v2794_d0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _CloseTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyTag(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -470,8 +465,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_2v2794_a0_0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _CellModel_Common(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;
   }
 

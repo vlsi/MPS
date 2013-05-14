@@ -29,8 +29,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent;
 
 public class MathSymbol_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -266,8 +264,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_b0ego6_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ShortDescriptionEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent");
     return editorCell;
   }
 

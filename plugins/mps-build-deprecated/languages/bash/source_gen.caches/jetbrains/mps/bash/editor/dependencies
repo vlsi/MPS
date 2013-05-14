@@ -80,11 +80,9 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.editor.Argument_Editor" file="Argument_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.bash.editor.ExternalCommandDescription_EditorComponent" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -479,25 +477,23 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.bash.editor.CommentSymbol" file="CommentSymbol.java">
-    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.bash.editor.BashLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.bash.editor.CommentedCommandList_Editor" file="CommentedCommandList_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.bash.editor.BashLanguageStyle_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.bash.editor.CommentSymbol" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -510,9 +506,7 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.editor.CommentedFollowingCommandList_Editor" file="CommentedFollowingCommandList_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.bash.editor.CommentSymbol" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -525,10 +519,8 @@
   <dependency className="jetbrains.mps.bash.editor.CommentedText_Editor" file="CommentedText_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.bash.editor.BashLanguageStyle_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.bash.editor.CommentSymbol" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -649,6 +641,7 @@
     <classNode dependClassName="jetbrains.mps.bash.editor.CommandList_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.CommandTerminator_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.Command_Editor" />
+    <classNode dependClassName="jetbrains.mps.bash.editor.CommentSymbol" />
     <classNode dependClassName="jetbrains.mps.bash.editor.CommentedCommandList_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.CommentedFollowingCommandList_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.CommentedText_Editor" />
@@ -660,6 +653,7 @@
     <classNode dependClassName="jetbrains.mps.bash.editor.ElifCommand_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.ExternalCommandCall_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.ExternalCommandDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.bash.editor.ExternalCommandDescription_EditorComponent" />
     <classNode dependClassName="jetbrains.mps.bash.editor.FollowingCommandList_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.FollowingPipeline_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.ForCommand_Editor" />
@@ -678,12 +672,14 @@
     <classNode dependClassName="jetbrains.mps.bash.editor.InputLines_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.InputRedirection_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.NotCommand_Editor" />
+    <classNode dependClassName="jetbrains.mps.bash.editor.OptionDeclaration_EditorComponent" />
     <classNode dependClassName="jetbrains.mps.bash.editor.OptionReference_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.OptionSetReference_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.OptionSet_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.OptionWithParamReference_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.OptionWithParam_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.Option_Editor" />
+    <classNode dependClassName="jetbrains.mps.bash.editor.Option_EditorComponent" />
     <classNode dependClassName="jetbrains.mps.bash.editor.OutputErrorRedirection_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.OutputRedirection_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.PostVariableExpression_Editor" />
@@ -706,7 +702,8 @@
     <classNode dependClassName="jetbrains.mps.bash.editor.VariableReference_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.WhileLoopCommand_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.WordList_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
@@ -779,17 +776,16 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.editor.ExternalCommandDescription_EditorComponent" file="ExternalCommandDescription_EditorComponent.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.bash.editor.BashLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -798,7 +794,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.bash.editor.FollowingCommandList_Editor" file="FollowingCommandList_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1170,19 +1166,19 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.editor.OptionDeclaration_EditorComponent" file="OptionDeclaration_EditorComponent.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.bash.editor.OptionReference_Editor" file="OptionReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1262,11 +1258,9 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.editor.OptionWithParam_Editor" file="OptionWithParam_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.bash.editor.ExternalCommandDescription_EditorComponent" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -1280,11 +1274,9 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.editor.Option_Editor" file="Option_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.bash.editor.ExternalCommandDescription_EditorComponent" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -1298,17 +1290,17 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.editor.Option_EditorComponent" file="Option_EditorComponent.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.bash.editor.OutputErrorRedirection_Editor" file="OutputErrorRedirection_Editor.java">
     <classNode dependClassName="java.lang.Class" />

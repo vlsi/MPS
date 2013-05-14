@@ -32,7 +32,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class OldRefactoring_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -673,8 +672,7 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ivh5g9_m0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AffectedNodesClauseInParent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.refactoring.editor.AffectedNodesClauseInParent");
     return editorCell;
   }
 

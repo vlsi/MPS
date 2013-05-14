@@ -78,14 +78,14 @@
     <property name="name" nameId="tpck.1169194664001" value="ProjectionType" />
     <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="false" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7687090409437208773" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7687090409437208773" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="defaultEditor" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7687090409437208801" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7687090409437208801" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="rich" />
       <property name="internalValue" nameId="tpce.1083923523171" value="rich" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7687090409437208798" nodeInfo="ng">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7687090409437208798" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="compact" />
       <property name="internalValue" nameId="tpce.1083923523171" value="compact" />
     </node>
@@ -196,6 +196,66 @@
       <property name="role" nameId="tpce.1071599776563" value="mostSpecificChildren" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="8572332134193783053" resolveInfo="MultipleEditorsTestMostSpecificChild" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1217012833662041875" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentRoot" />
+    <property name="rootable" nameId="tpce.1096454100552" value="true" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1217012833662066878" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="defaultChildren" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1217012833662065273" resolveInfo="MultipleEditorsTestEditorComponentChild" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1217012833662078406" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="richChildren" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1217012833662065273" resolveInfo="MultipleEditorsTestEditorComponentChild" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1217012833662078412" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="richCompactChildren" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1217012833662065273" resolveInfo="MultipleEditorsTestEditorComponentChild" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6420745394459387140" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <property name="role" nameId="tpce.1071599776563" value="childSubconcepts" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6420745394459388008" resolveInfo="MultipleEditorsTestEditorComponentChildSubconcept" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1217012833662065273" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentChild" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1217012833662084051" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="defaultProperty" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1217012833662084052" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="compactProperty" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1217012833662084053" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="richProperty" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1217012833662084054" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="richCompactProperty" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1217012833662065447" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6420745394459388008" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentChildSubconcept" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1217012833662065273" resolveInfo="MultipleEditorsTestEditorComponentChild" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6420745394459648894" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="subconceptProperty" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
   </root>
 </model>

@@ -4,94 +4,99 @@ package jetbrains.mps.lang.actions.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AddMenuPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new AddMenuPart_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new ConceptRightTransformPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptRightTransformPart_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new ConceptSubstitutePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptSubstitutePart_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new ConceptsSubstituteMenuPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptsSubstituteMenuPart_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new CopyPasteHandlers_Editor());
+        return Collections.<ConceptEditor>singletonList(new CopyPasteHandlers_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new CopyPreProcessor_Editor());
+        return Collections.<ConceptEditor>singletonList(new CopyPreProcessor_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new GenerateCodeAction_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerateCodeAction_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new GenericSubstituteMenuPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenericSubstituteMenuPart_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new IncludeRightTransformForNodePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new IncludeRightTransformForNodePart_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new MenuPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new MenuPart_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new NF_Concept_NewInstance_Editor());
+        return Collections.<ConceptEditor>singletonList(new NF_Concept_NewInstance_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new NF_Model_CreateNewNodeOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new NF_Model_CreateNewNodeOperation_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new NF_Model_CreateNewRootNodeOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new NF_Model_CreateNewRootNodeOperation_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new NodeFactories_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeFactories_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new NodeFactory_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeFactory_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new NodeSubstituteActions_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeSubstituteActions_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new NodeSubstituteActionsBuilder_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeSubstituteActionsBuilder_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new ParameterizedSideTransformMenuPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParameterizedSideTransformMenuPart_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new ParameterizedSubstituteMenuPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParameterizedSubstituteMenuPart_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new PastePostProcessor_Editor());
+        return Collections.<ConceptEditor>singletonList(new PastePostProcessor_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new PasteWrapper_Editor());
+        return Collections.<ConceptEditor>singletonList(new PasteWrapper_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new PasteWrappers_Editor());
+        return Collections.<ConceptEditor>singletonList(new PasteWrappers_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new RemoveByConditionPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new RemoveByConditionPart_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new RemoveDefaultsPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new RemoveDefaultsPart_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new RemovePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new RemovePart_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new RemoveSTByConditionPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new RemoveSTByConditionPart_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new SNodeCreatorAndInitializer_Editor());
+        return Collections.<ConceptEditor>singletonList(new SNodeCreatorAndInitializer_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new SideTransformHintSubstituteActions_Editor());
+        return Collections.<ConceptEditor>singletonList(new SideTransformHintSubstituteActions_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new SideTransformHintSubstituteActionsBuilder_Editor());
+        return Collections.<ConceptEditor>singletonList(new SideTransformHintSubstituteActionsBuilder_Editor());
       case 29:
-        return Collections.<EditorAspect>singletonList(new SideTransformVariableDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new SideTransformVariableDeclaration_Editor());
       case 30:
-        return Collections.<EditorAspect>singletonList(new SideTransform_SimpleString_Editor());
+        return Collections.<ConceptEditor>singletonList(new SideTransform_SimpleString_Editor());
       case 31:
-        return Collections.<EditorAspect>singletonList(new SimpleItemSubstitutePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimpleItemSubstitutePart_Editor());
       case 32:
-        return Collections.<EditorAspect>singletonList(new SimpleSideTransformMenuPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimpleSideTransformMenuPart_Editor());
       case 33:
-        return Collections.<EditorAspect>singletonList(new SmartActionParameter_Editor());
+        return Collections.<ConceptEditor>singletonList(new SmartActionParameter_Editor());
       case 34:
-        return Collections.<EditorAspect>singletonList(new SmartActionParameterReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new SmartActionParameterReference_Editor());
       case 35:
-        return Collections.<EditorAspect>singletonList(new SmartEditorActions_Editor());
+        return Collections.<ConceptEditor>singletonList(new SmartEditorActions_Editor());
       case 36:
-        return Collections.<EditorAspect>singletonList(new SubstituteNodeBuilderVariableDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new SubstituteNodeBuilderVariableDeclaration_Editor());
       case 37:
-        return Collections.<EditorAspect>singletonList(new Substitute_SimpleString_Editor());
+        return Collections.<ConceptEditor>singletonList(new Substitute_SimpleString_Editor());
       case 38:
-        return Collections.<EditorAspect>singletonList(new WrapperSubstituteMenuPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new WrapperSubstituteMenuPart_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

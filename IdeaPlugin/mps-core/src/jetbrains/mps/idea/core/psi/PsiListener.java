@@ -37,6 +37,7 @@ public interface PsiListener {
     Iterable<PsiFileSystemItem> getCreated();
     Iterable<PsiFileSystemItem> getRemoved();
     Iterable<FSMove> getMoved();
+    Iterable<FSRename> getRenamed();
     Map<PsiFile,Set<PsiElement>> getChanged();
   }
 
@@ -49,6 +50,16 @@ public interface PsiListener {
       this.moved = moved;
       this.from = from;
       this.to = to;
+    }
+  }
+
+  public static class FSRename {
+    public final PsiFileSystemItem item;
+    public final String oldName;
+
+    public FSRename(PsiFileSystemItem item, String oldName) {
+      this.item = item;
+      this.oldName = oldName;
     }
   }
 }

@@ -1009,7 +1009,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (isDisposed()) return;
     clearModelDisposedTrace();
 
-    assert node == null || SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
+    assert node == null || node.getModel().getRepository() == null || SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
 
     if (myNode != null && notifiesCreation()) {
       notifyDisposal();
@@ -1438,12 +1438,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     updated yet.
    */
   private boolean isInvalid() {
-    return isInvalidLightweight() ||
-        //!getEditedNode().isInRepository();
-        // this is a very dirty hack, remove ASAP. This is because we have the only one module, which is not in repository, and it was
-        // treated normally before - DiffTemporaryModule
-        (!SNodeUtil.isAccessible(getEditedNode(), myRepository) && !(getEditedNode().getModel().getModule().getClass().getName().equals(
-            "jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule")));
+    return isInvalidLightweight() || !SNodeUtil.isAccessible(getEditedNode(), myRepository);
   }
 
   /*
