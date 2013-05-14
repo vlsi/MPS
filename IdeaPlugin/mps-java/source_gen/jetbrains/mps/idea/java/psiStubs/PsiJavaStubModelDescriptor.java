@@ -130,6 +130,9 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
         Set<PsiFileSystemItem> result = SetSequence.fromSet(new HashSet<PsiFileSystemItem>());
         SetSequence.fromSet(result).addSequence(Sequence.fromIterable((Iterable<PsiFileSystemItem>) event.getCreated()));
         SetSequence.fromSet(result).addSequence(Sequence.fromIterable((Iterable<PsiFile>) event.getChanged().keySet()));
+        for (PsiListener.FSRename rename : event.getRenamed()) {
+          SetSequence.fromSet(result).addElement(rename.item);
+        }
         return result;
       }
 
@@ -142,6 +145,10 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
 
       public Iterable<PsiListener.FSMove> getMoved() {
         return null;
+      }
+
+      public Iterable<PsiListener.FSRename> getRenamed() {
+        return event.getRenamed();
       }
 
       public Map<PsiFile, Set<PsiElement>> getChanged() {
@@ -159,7 +166,12 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
         }
       });
       MapSequence.fromMap(myRootsPerFile).removeKey(javaFile.getName());
-      myMps2PsiMapper.clearFile(javaFile);
+      myMps2PsiMapper.clearFile(javaFile.getName());
+    }
+
+    for (PsiListener.FSRename rename : madeUpEvent.getRenamed()) {
+      String oldName = rename.oldName;
+      myMps2PsiMapper.clearFile(oldName);
     }
 
     for (PsiFileSystemItem file : madeUpEvent.getCreated()) {
@@ -288,12 +300,12 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
 
 
 
-    /*package*/ void clearFile(PsiFile file) {
-      BiMap<SNode, PsiElement> mapForFile = MapSequence.fromMap(myMps2PsiMappings).get(file.getName());
+    /*package*/ void clearFile(String fileName) {
+      BiMap<SNode, PsiElement> mapForFile = MapSequence.fromMap(myMps2PsiMappings).get(fileName);
       if (mapForFile == null) {
         return;
       }
-      MapSequence.fromMap(myMps2PsiMappings).removeKey(file.getName());
+      MapSequence.fromMap(myMps2PsiMappings).removeKey(fileName);
       for (SNode node : mapForFile.keySet()) {
         MapSequence.fromMap(myGlobalMps2PsiMapping).removeKey(node);
       }
