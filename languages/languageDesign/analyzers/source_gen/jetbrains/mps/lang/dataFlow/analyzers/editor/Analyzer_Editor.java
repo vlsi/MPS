@@ -268,8 +268,11 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createComponent_590xoz_a0k0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new AliasEditorComponent(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
+      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("mergeFunction");
+      }
       return editorCell;
     }
   }
@@ -342,8 +345,11 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createComponent_590xoz_a0n0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new AliasEditorComponent(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
+      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("funFunction");
+      }
       return editorCell;
     }
   }
