@@ -41,7 +41,7 @@ public class MetadataUtil {
   public static SNode createModelRoot(SModel model) {
     SNode root = SConceptOperations.createNewNode("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", null);
     SPropertyOperations.set(root, "longname", SNodeOperations.getModelLongName(model.getModelDescriptor()));
-    SPropertyOperations.set(root, "uuid", model.getModelId() + "");
+    // <node> 
     SPropertyOperations.set(root, "version", "" + (model.getVersion()));
     if (model instanceof DefaultSModel) {
       SPropertyOperations.set(root, "donotgenerate", "" + (check_ca1g54_a0a0e0c(((DefaultSModel) model).getSModelHeader())));
