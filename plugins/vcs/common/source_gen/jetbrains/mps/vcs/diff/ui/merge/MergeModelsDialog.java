@@ -509,7 +509,6 @@ public class MergeModelsDialog extends DialogWrapper {
 
   private class MergeModelsTree extends DiffModelTree {
     private MergeModelsTree() {
-      super(DiffTemporaryModule.getOperationContext(myProject, myMergeSession.getResultModel()));
       addTreeSelectionListener(new TreeSelectionListener() {
         @Override
         public void valueChanged(TreeSelectionEvent event) {
