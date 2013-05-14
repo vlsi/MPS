@@ -10,8 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -21,9 +19,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.execution.settings.editor.PersistentPropertiesComponent;
-import jetbrains.mps.execution.settings.editor.EditorComponent;
-import jetbrains.mps.execution.settings.editor.PersistentMethodsComponent;
 
 public class RunConfiguration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -59,8 +54,7 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ryg3k0_a0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -180,8 +174,7 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ryg3k0_d0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new PersistentPropertiesComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.settings.editor.PersistentPropertiesComponent");
     return editorCell;
   }
 
@@ -196,8 +189,7 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ryg3k0_f0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new EditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.settings.editor.EditorComponent");
     return editorCell;
   }
 
@@ -212,8 +204,7 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ryg3k0_h0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new PersistentMethodsComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.settings.editor.PersistentMethodsComponent");
     return editorCell;
   }
 }

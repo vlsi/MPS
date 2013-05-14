@@ -266,103 +266,101 @@
     <unitInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.DeleteNoWait" />
   </root>
   <root nodeRef="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)/8923957828369515244">
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="30" startPosition="89" endLine="31" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="31" startPosition="96" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="34" startPosition="109" endLine="35" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="36" startPosition="5" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="36" startPosition="5" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="37" startPosition="80" endLine="38" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="37" startPosition="80" endLine="38" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="38" startPosition="82" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="42" startPosition="88" endLine="43" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="43" startPosition="91" endLine="44" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="44" startPosition="47" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="45" startPosition="34" endLine="46" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="46" startPosition="65" endLine="47" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="47" startPosition="40" endLine="48" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="48" startPosition="92" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="49" startPosition="34" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1188212207008" fileName="ParallelLoopVariable_Editor.java" startLine="53" startPosition="111" endLine="54" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="57" startPosition="87" endLine="58" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="58" startPosition="81" endLine="59" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="59" startPosition="29" endLine="60" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="60" startPosition="42" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="61" startPosition="26" endLine="62" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="62" startPosition="58" endLine="63" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="63" startPosition="73" endLine="64" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="64" startPosition="57" endLine="65" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="66" startPosition="35" endLine="67" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="67" startPosition="72" endLine="68" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="68" startPosition="78" endLine="69" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="70" startPosition="10" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="74" startPosition="89" endLine="75" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="75" startPosition="84" endLine="76" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="76" startPosition="69" endLine="77" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="77" startPosition="97" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="33" startPosition="28" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="33" startPosition="28" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1188212207006" fileName="ParallelLoopVariable_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_d89sde_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="65" startPosition="59" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_d89sde_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="42" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_d89sde_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="30" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_d89sde_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="57" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_d89sde_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" />
-    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="34" startPosition="109" endLine="35" endPosition="83" />
-    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="36" startPosition="5" endLine="37" endPosition="80" />
-    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="37" startPosition="80" endLine="38" endPosition="82" />
-    <scopeInfo nodeId="1188212207007" fileName="ParallelLoopVariable_Editor.java" startLine="53" startPosition="111" endLine="54" endPosition="59" />
-    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="28" startPosition="89" endLine="29" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="29" startPosition="96" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="30" startPosition="48" endLine="31" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="32" startPosition="109" endLine="33" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="34" startPosition="5" endLine="35" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="34" startPosition="5" endLine="35" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="35" startPosition="80" endLine="36" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="35" startPosition="80" endLine="36" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="36" startPosition="82" endLine="37" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="40" startPosition="88" endLine="41" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="41" startPosition="91" endLine="42" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="42" startPosition="47" endLine="43" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="43" startPosition="34" endLine="44" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="44" startPosition="65" endLine="45" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="45" startPosition="40" endLine="46" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="46" startPosition="92" endLine="47" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="47" startPosition="34" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188212207008" fileName="ParallelLoopVariable_Editor.java" startLine="51" startPosition="111" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="55" startPosition="87" endLine="56" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="56" startPosition="81" endLine="57" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="57" startPosition="29" endLine="58" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="58" startPosition="42" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="59" startPosition="26" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="60" startPosition="58" endLine="61" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="61" startPosition="73" endLine="62" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="62" startPosition="57" endLine="63" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="64" startPosition="35" endLine="65" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="65" startPosition="72" endLine="66" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="66" startPosition="78" endLine="67" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="68" startPosition="10" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="72" startPosition="89" endLine="73" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="73" startPosition="166" endLine="74" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="74" startPosition="97" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="31" startPosition="28" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="31" startPosition="28" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1188212207006" fileName="ParallelLoopVariable_Editor.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_d89sde_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="72" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_d89sde_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="63" startPosition="59" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="40" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_d89sde_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_d89sde_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="55" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_d89sde_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" />
+    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="32" startPosition="109" endLine="33" endPosition="83" />
+    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="34" startPosition="5" endLine="35" endPosition="80" />
+    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="35" startPosition="80" endLine="36" endPosition="82" />
+    <scopeInfo nodeId="1188212207007" fileName="ParallelLoopVariable_Editor.java" startLine="51" startPosition="111" endLine="52" endPosition="59" />
+    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="8923957828369515244" varName="editorContext" />
       <varInfo nodeId="8923957828369515244" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="33" startPosition="28" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="1188212207006" fileName="ParallelLoopVariable_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="31" startPosition="28" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="1188212207006" fileName="ParallelLoopVariable_Editor.java" startLine="51" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="1188212207006" varName="editorContext" />
       <varInfo nodeId="1188212207006" varName="node" />
       <varInfo nodeId="1188212207006" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="105">
+    <scopeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="64" startPosition="35" endLine="67" endPosition="105">
       <varInfo nodeId="1188212207012" varName="manager" />
       <varInfo nodeId="1188212207012" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="74" startPosition="89" endLine="78" endPosition="22">
+    <scopeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="72" startPosition="89" endLine="75" endPosition="22">
       <varInfo nodeId="1188212207013" varName="editorCell" />
-      <varInfo nodeId="1188212207013" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="74" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="72" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="1188212207013" varName="editorContext" />
       <varInfo nodeId="1188212207013" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="42" startPosition="88" endLine="50" endPosition="22">
+    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="40" startPosition="88" endLine="48" endPosition="22">
       <varInfo nodeId="8923957828369515244" varName="editorCell" />
       <varInfo nodeId="8923957828369515244" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="30" startPosition="89" endLine="39" endPosition="22">
+    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="28" startPosition="89" endLine="37" endPosition="22">
       <varInfo nodeId="8923957828369515244" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="42" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="40" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="8923957828369515244" varName="editorContext" />
       <varInfo nodeId="8923957828369515244" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="30" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="28" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="8923957828369515244" varName="editorContext" />
       <varInfo nodeId="8923957828369515244" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="57" startPosition="87" endLine="71" endPosition="22">
+    <scopeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="55" startPosition="87" endLine="69" endPosition="22">
       <varInfo nodeId="1188212207012" varName="attributeConcept" />
       <varInfo nodeId="1188212207012" varName="attributeKind" />
       <varInfo nodeId="1188212207012" varName="editorCell" />
       <varInfo nodeId="1188212207012" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="57" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="55" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="1188212207012" varName="editorContext" />
       <varInfo nodeId="1188212207012" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="25" startPosition="0" endLine="81" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.ParallelLoopVariable_Editor" />
+    <unitInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="23" startPosition="0" endLine="78" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.ParallelLoopVariable_Editor" />
   </root>
   <root nodeRef="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)/8923957828369554093">
     <nodeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

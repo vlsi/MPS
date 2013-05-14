@@ -188,20 +188,20 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.bash.editor.CommentSymbol".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new CommentSymbol(null));
+          return Collections.<ConceptEditorComponent>singletonList(new CommentSymbol());
         }
         break;
       case 1:
         if ("jetbrains.mps.bash.editor.ExternalCommandDescription_EditorComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ExternalCommandDescription_EditorComponent(null));
+          return Collections.<ConceptEditorComponent>singletonList(new ExternalCommandDescription_EditorComponent());
         }
         break;
       case 2:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c0a1, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new OptionDeclaration_EditorComponent(null));
+            return Collections.<ConceptEditorComponent>singletonList(new OptionDeclaration_EditorComponent());
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new Option_EditorComponent(null));
+            return Collections.<ConceptEditorComponent>singletonList(new Option_EditorComponent());
           default:
         }
         break;

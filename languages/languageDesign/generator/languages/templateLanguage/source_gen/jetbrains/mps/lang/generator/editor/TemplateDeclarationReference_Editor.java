@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class TemplateDeclarationReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -86,8 +85,7 @@ public class TemplateDeclarationReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_krqspc_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ITemplateCall_actualArguments(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments");
     return editorCell;
   }
 }

@@ -222,7 +222,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.build.editor.BuildLayout_containerElements".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new BuildLayout_containerElements(null));
+          return Collections.<ConceptEditorComponent>singletonList(new BuildLayout_containerElements());
         }
         break;
       default:

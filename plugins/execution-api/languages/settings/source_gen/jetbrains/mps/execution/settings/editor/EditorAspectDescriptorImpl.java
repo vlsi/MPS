@@ -63,11 +63,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new EditorComponent(null));
+            return Collections.<ConceptEditorComponent>singletonList(new EditorComponent());
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new PersistentMethodsComponent(null));
+            return Collections.<ConceptEditorComponent>singletonList(new PersistentMethodsComponent());
           case 2:
-            return Collections.<ConceptEditorComponent>singletonList(new PersistentPropertiesComponent(null));
+            return Collections.<ConceptEditorComponent>singletonList(new PersistentPropertiesComponent());
           default:
         }
         break;

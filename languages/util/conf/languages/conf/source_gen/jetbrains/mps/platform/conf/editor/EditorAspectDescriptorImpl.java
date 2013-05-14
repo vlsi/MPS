@@ -82,27 +82,27 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 1:
         if ("jetbrains.mps.platform.conf.editor.AbstractAction_properties".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new AbstractAction_properties(null));
+          return Collections.<ConceptEditorComponent>singletonList(new AbstractAction_properties());
         }
         break;
       case 0:
         if ("jetbrains.mps.platform.conf.editor.BaseConcept_brokenRefs".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new BaseConcept_brokenRefs(null));
+          return Collections.<ConceptEditorComponent>singletonList(new BaseConcept_brokenRefs());
         }
         break;
       case 2:
         if ("jetbrains.mps.platform.conf.editor.ConfigurationXmlNode_Header".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ConfigurationXmlNode_Header(null));
+          return Collections.<ConceptEditorComponent>singletonList(new ConfigurationXmlNode_Header());
         }
         break;
       case 3:
         if ("jetbrains.mps.platform.conf.editor.ConfigurationXmlRootNode_children".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ConfigurationXmlRootNode_children(null));
+          return Collections.<ConceptEditorComponent>singletonList(new ConfigurationXmlRootNode_children());
         }
         break;
       case 4:
         if ("jetbrains.mps.platform.conf.editor.Extension_name".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new Extension_name(null));
+          return Collections.<ConceptEditorComponent>singletonList(new Extension_name());
         }
         break;
       default:

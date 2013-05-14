@@ -74,7 +74,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.lang.structure.editor.AbstractConceptDeclaration_deprecatedStuff".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new AbstractConceptDeclaration_deprecatedStuff(null));
+          return Collections.<ConceptEditorComponent>singletonList(new AbstractConceptDeclaration_deprecatedStuff());
         }
         break;
       default:

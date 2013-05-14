@@ -22,7 +22,6 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ui.modeling.behavior.ContainerItemAdder_Behavior;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -122,8 +121,7 @@ public class ContainerItemAdder_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_fh5ymh_b3a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IAspectParameterHolder_Component(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.ui.modeling.editor.IAspectParameterHolder_Component");
     return editorCell;
   }
 

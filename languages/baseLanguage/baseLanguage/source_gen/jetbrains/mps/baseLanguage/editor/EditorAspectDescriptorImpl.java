@@ -329,74 +329,74 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new BaseMethodDeclaration_BodyComponent(null));
+            return Collections.<ConceptEditorComponent>singletonList(new BaseMethodDeclaration_BodyComponent());
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new BaseMethodDeclaration_NameCellComponent(null));
+            return Collections.<ConceptEditorComponent>singletonList(new BaseMethodDeclaration_NameCellComponent());
           default:
         }
         break;
       case 1:
         if ("jetbrains.mps.baseLanguage.editor.ClassifierMembers_Component".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ClassifierMembers_Component(null));
+          return Collections.<ConceptEditorComponent>singletonList(new ClassifierMembers_Component());
         }
         break;
       case 2:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c0a1, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new ConceptFunctionAliased_Component(null));
+            return Collections.<ConceptEditorComponent>singletonList(new ConceptFunctionAliased_Component());
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new ConceptFunction_Component(null));
+            return Collections.<ConceptEditorComponent>singletonList(new ConceptFunction_Component());
           case 2:
-            return Collections.<ConceptEditorComponent>singletonList(new ConceptFunction_Folded_Component(null));
+            return Collections.<ConceptEditorComponent>singletonList(new ConceptFunction_Folded_Component());
           default:
         }
         break;
       case 3:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d0a1, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new GenericDeclaration_FoldedCodeBlock_Component(null));
+            return Collections.<ConceptEditorComponent>singletonList(new GenericDeclaration_FoldedCodeBlock_Component());
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new _GenericDeclaration_TypeVariables_Component(null));
+            return Collections.<ConceptEditorComponent>singletonList(new _GenericDeclaration_TypeVariables_Component());
           default:
         }
         break;
       case 4:
         if ("jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new HasAnnotation_AnnotationComponent(null));
+          return Collections.<ConceptEditorComponent>singletonList(new HasAnnotation_AnnotationComponent());
         }
         break;
       case 5:
         if ("jetbrains.mps.baseLanguage.editor._DeprecatedPart".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new _DeprecatedPart(null));
+          return Collections.<ConceptEditorComponent>singletonList(new _DeprecatedPart());
         }
         break;
       case 6:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0g0a1, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new IMethodCall_actualArguments(null));
+            return Collections.<ConceptEditorComponent>singletonList(new IMethodCall_actualArguments());
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new IMethodCall_typeArguments(null));
+            return Collections.<ConceptEditorComponent>singletonList(new IMethodCall_typeArguments());
           default:
         }
         break;
       case 7:
         if ("jetbrains.mps.baseLanguage.editor._Component_Visibility".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new _Component_Visibility(null));
+          return Collections.<ConceptEditorComponent>singletonList(new _Component_Visibility());
         }
         break;
       case 8:
         if ("jetbrains.mps.baseLanguage.editor.TokensWithDots".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new TokensWithDots(null));
+          return Collections.<ConceptEditorComponent>singletonList(new TokensWithDots());
         }
         break;
       case 9:
         if ("jetbrains.mps.baseLanguage.editor.UnknownQualifiedName".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new UnknownQualifiedName(null));
+          return Collections.<ConceptEditorComponent>singletonList(new UnknownQualifiedName());
         }
         break;
       case 10:
         if ("jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new VariableDeclaration_NameCellComponent(null));
+          return Collections.<ConceptEditorComponent>singletonList(new VariableDeclaration_NameCellComponent());
         }
         break;
       default:

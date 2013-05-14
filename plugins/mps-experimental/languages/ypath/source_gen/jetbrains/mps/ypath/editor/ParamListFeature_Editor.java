@@ -41,7 +41,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class ParamListFeature_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -654,8 +653,7 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ldpt8g_c1b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IParamFeature_Properties(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.ypath.editor.IParamFeature_Properties");
     return editorCell;
   }
 

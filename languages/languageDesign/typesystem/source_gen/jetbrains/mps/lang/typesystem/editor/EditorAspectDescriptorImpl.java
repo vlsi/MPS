@@ -184,12 +184,12 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 1:
         if ("jetbrains.mps.lang.typesystem.editor.AbstractEquationInspector".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new AbstractEquationInspector(null));
+          return Collections.<ConceptEditorComponent>singletonList(new AbstractEquationInspector());
         }
         break;
       case 0:
         if ("jetbrains.mps.lang.typesystem.editor._NotInRules_Component".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new _NotInRules_Component(null));
+          return Collections.<ConceptEditorComponent>singletonList(new _NotInRules_Component());
         }
         break;
       default:

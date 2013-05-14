@@ -90,7 +90,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.ui.editor.common_UIObjectStatement".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new common_UIObjectStatement(null));
+          return Collections.<ConceptEditorComponent>singletonList(new common_UIObjectStatement());
         }
         break;
       default:

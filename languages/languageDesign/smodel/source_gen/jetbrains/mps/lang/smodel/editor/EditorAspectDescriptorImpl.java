@@ -284,15 +284,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.lang.smodel.editor.AliasComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new AliasComponent(null));
+          return Collections.<ConceptEditorComponent>singletonList(new AliasComponent());
         }
         break;
       case 1:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b0a1, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new ReplaceableAliasAndParms_Comp(null));
+            return Collections.<ConceptEditorComponent>singletonList(new ReplaceableAliasAndParms_Comp());
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new ReplaceableAlias_Comp(null));
+            return Collections.<ConceptEditorComponent>singletonList(new ReplaceableAlias_Comp());
           default:
         }
         break;

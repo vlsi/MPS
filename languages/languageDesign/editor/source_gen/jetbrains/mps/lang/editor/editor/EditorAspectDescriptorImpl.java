@@ -216,30 +216,30 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.lang.editor.editor.CellModelCollection_FoldedCellComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new CellModelCollection_FoldedCellComponent(null));
+          return Collections.<ConceptEditorComponent>singletonList(new CellModelCollection_FoldedCellComponent());
         }
         break;
       case 1:
         if ("jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new CellModelListWithRole_FoldedCellComponent(null));
+          return Collections.<ConceptEditorComponent>singletonList(new CellModelListWithRole_FoldedCellComponent());
         }
         break;
       case 2:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c0a1, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new Common_Component(null));
+            return Collections.<ConceptEditorComponent>singletonList(new Common_Component());
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new Style_Component(null));
+            return Collections.<ConceptEditorComponent>singletonList(new Style_Component());
           case 2:
-            return Collections.<ConceptEditorComponent>singletonList(new _CellKeyMapLnk_Component(null));
+            return Collections.<ConceptEditorComponent>singletonList(new _CellKeyMapLnk_Component());
           case 3:
-            return Collections.<ConceptEditorComponent>singletonList(new _CellModel_Common(null));
+            return Collections.<ConceptEditorComponent>singletonList(new _CellModel_Common());
           case 4:
-            return Collections.<ConceptEditorComponent>singletonList(new _CloseTag(null));
+            return Collections.<ConceptEditorComponent>singletonList(new _CloseTag());
           case 5:
-            return Collections.<ConceptEditorComponent>singletonList(new _FocusPolicy_Applicable(null));
+            return Collections.<ConceptEditorComponent>singletonList(new _FocusPolicy_Applicable());
           case 6:
-            return Collections.<ConceptEditorComponent>singletonList(new _OpenTag(null));
+            return Collections.<ConceptEditorComponent>singletonList(new _OpenTag());
           default:
         }
         break;

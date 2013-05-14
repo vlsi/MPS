@@ -31,9 +31,9 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new AliasEditorComponent(null));
+            return Collections.<ConceptEditorComponent>singletonList(new AliasEditorComponent());
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new ShortDescriptionEditorComponent(null));
+            return Collections.<ConceptEditorComponent>singletonList(new ShortDescriptionEditorComponent());
           default:
         }
         break;

@@ -60,21 +60,21 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.execution.configurations.editor.BeforeTasksComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new BeforeTasksComponent(null));
+          return Collections.<ConceptEditorComponent>singletonList(new BeforeTasksComponent());
         }
         break;
       case 1:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b0a1, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new ComplexCanRunAndDebug(null));
+            return Collections.<ConceptEditorComponent>singletonList(new ComplexCanRunAndDebug());
           case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new SimpleCanRunAndDebug(null));
+            return Collections.<ConceptEditorComponent>singletonList(new SimpleCanRunAndDebug());
           default:
         }
         break;
       case 2:
         if ("jetbrains.mps.execution.configurations.editor.StartProcessWithTool_Component".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new StartProcessWithTool_Component(null));
+          return Collections.<ConceptEditorComponent>singletonList(new StartProcessWithTool_Component());
         }
         break;
       default:

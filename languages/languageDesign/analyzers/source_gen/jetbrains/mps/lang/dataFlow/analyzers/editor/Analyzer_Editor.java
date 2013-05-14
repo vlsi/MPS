@@ -18,8 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -185,8 +183,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createComponent_590xoz_a0h0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new AliasEditorComponent(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
+      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
       return editorCell;
     }
   }
@@ -254,8 +251,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createComponent_590xoz_a0k0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new AliasEditorComponent(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
+      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
       return editorCell;
     }
   }
@@ -323,8 +319,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createComponent_590xoz_a0n0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new AliasEditorComponent(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
+      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
       return editorCell;
     }
   }
