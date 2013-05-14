@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.persistence.PersistenceRegistry;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -50,7 +50,7 @@ public class StubRootChooser implements Computable<List<String>> {
         }));
       }
     } else {
-      final List<String> modelRootTypes = ListSequence.fromListWithValues(new ArrayList<String>(), PersistenceRegistry.getInstance().getTypeIds());
+      final List<String> modelRootTypes = ListSequence.fromListWithValues(new ArrayList<String>(), PersistenceFacade.getInstance().getTypeIds());
       if (ListSequence.fromList(modelRootTypes).isEmpty()) {
         return result;
       }
@@ -66,7 +66,7 @@ public class StubRootChooser implements Computable<List<String>> {
         ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRootDescriptor>() {
           public ModelRootDescriptor select(String it) {
             String type = modelRootTypes.get(res);
-            ModelRoot root = PersistenceRegistry.getInstance().getModelRootFactory(type).create();
+            ModelRoot root = PersistenceFacade.getInstance().getModelRootFactory(type).create();
             if (root instanceof FolderModelRootBase) {
               ((FolderModelRootBase) root).setPath(it);
             }

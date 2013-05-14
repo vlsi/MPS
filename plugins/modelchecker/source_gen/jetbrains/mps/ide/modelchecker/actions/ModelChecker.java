@@ -11,7 +11,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -47,7 +47,7 @@ public class ModelChecker {
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          IModule module = modelDescriptor.getModule();
+          SModule module = modelDescriptor.getModule();
           Project project = myOperationContext.getProject();
 
           if (module == null) {
@@ -99,7 +99,7 @@ public class ModelChecker {
   }
 
   public class ModelCheckerOperationContext extends ModuleContext {
-    public ModelCheckerOperationContext(@NotNull Project project, @NotNull IModule module) {
+    public ModelCheckerOperationContext(@NotNull Project project, @NotNull SModule module) {
       super(module, project);
     }
 

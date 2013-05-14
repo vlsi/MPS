@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.List;
 
@@ -38,7 +38,7 @@ public class ModelPersistence7 extends ModelPersistence6 {
 
   @Override
   public IModelReader getModelReader() {
-    return new ModelReader7();
+    throw new UnsupportedOperationException("use sax reader");
   }
 
   @Override

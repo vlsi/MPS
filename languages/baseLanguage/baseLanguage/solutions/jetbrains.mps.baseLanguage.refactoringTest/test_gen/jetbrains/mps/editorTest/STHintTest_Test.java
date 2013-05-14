@@ -16,7 +16,7 @@ public class STHintTest_Test extends BaseTransformationTest4 {
 
   @Test
   public void test_STHintTest() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.STHintTest_Test$TestBody", "testMethod", false);
   }
 

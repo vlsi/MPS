@@ -4,7 +4,8 @@ package jetbrains.mps.transformation.test.inputLang.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,31 +15,31 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.ExpressionToReduceToStatement", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "expression to reduce to statement", "generator should produce clear warning", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.ExpressionToReduceToStatement").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("expression to reduce to statement", "generator should produce clear warning").staticScope(StaticScope.NONE).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.InputNode", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"inputChild"}, new boolean[]{true}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.InputNode").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"inputChild"}, new boolean[]{true}).abstract_().create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", "jetbrains.mps.transformation.test.inputLang.structure.InputNode", false, new String[]{"jetbrains.mps.transformation.test.inputLang.structure.InputNode"}, new String[]{"option"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.InputNode_A").super_("jetbrains.mps.transformation.test.inputLang.structure.InputNode").parents("jetbrains.mps.transformation.test.inputLang.structure.InputNode").properties("option").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.InputNode_B", "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", false, new String[]{"jetbrains.mps.transformation.test.inputLang.structure.InputNode_A"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.InputNode_B").super_("jetbrains.mps.transformation.test.inputLang.structure.InputNode_A").parents("jetbrains.mps.transformation.test.inputLang.structure.InputNode_A").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.InputNode_C", "jetbrains.mps.transformation.test.inputLang.structure.InputNode_B", false, new String[]{"jetbrains.mps.transformation.test.inputLang.structure.InputNode_B"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.InputNode_C").super_("jetbrains.mps.transformation.test.inputLang.structure.InputNode_B").parents("jetbrains.mps.transformation.test.inputLang.structure.InputNode_B").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.InputRoot", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"useInTest"}, new String[]{}, new String[]{"inputChild"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.InputRoot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("useInTest").children(new String[]{"inputChild"}, new boolean[]{true}).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"useInTest"}, new String[]{}, new String[]{"statementList"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("useInTest").children(new String[]{"statementList"}, new boolean[]{false}).create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.RefTestClass", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{"extends"}, new String[]{"methods"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.RefTestClass").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider").references("extends").children(new String[]{"methods"}, new boolean[]{true}).create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{}, new String[]{"params", "expressions"}, new boolean[]{true, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"params", "expressions"}, new boolean[]{true, true}).create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.RefTestMethodCall", "jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression", false, new String[]{"jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression"}, new String[]{}, new String[]{"method"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.RefTestMethodCall").super_("jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression").parents("jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression").references("method").create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.RefTestParam", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.RefTestParam").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.inputLang.structure.RefTestParamRef", "jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression", false, new String[]{"jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression"}, new String[]{}, new String[]{"declaration"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.RefTestParamRef").super_("jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression").parents("jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression").references("declaration").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

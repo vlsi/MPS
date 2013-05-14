@@ -4,7 +4,8 @@ package jetbrains.mps.core.properties.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,13 +15,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.properties.structure.PropertiesComment", "jetbrains.mps.core.properties.structure.PropertiesLine", false, new String[]{"jetbrains.mps.core.properties.structure.PropertiesLine"}, new String[]{"text"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "#", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.properties.structure.PropertiesComment").super_("jetbrains.mps.core.properties.structure.PropertiesLine").parents("jetbrains.mps.core.properties.structure.PropertiesLine").properties("text").alias("#", "").staticScope(StaticScope.NONE).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.properties.structure.PropertiesDeclaration", "jetbrains.mps.core.properties.structure.PropertiesLine", false, new String[]{"jetbrains.mps.core.properties.structure.PropertiesLine", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "property", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.properties.structure.PropertiesDeclaration").super_("jetbrains.mps.core.properties.structure.PropertiesLine").parents("jetbrains.mps.core.properties.structure.PropertiesLine", "jetbrains.mps.lang.core.structure.INamedConcept").properties("value").alias("property", "").create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.properties.structure.PropertiesFile", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.traceable.structure.UnitConcept"}, new String[]{}, new String[]{}, new String[]{"lines"}, new boolean[]{true}, false, false, "properties file", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.properties.structure.PropertiesFile").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.traceable.structure.UnitConcept").children(new String[]{"lines"}, new boolean[]{true}).alias("properties file", "").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.properties.structure.PropertiesLine", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "<empty line>", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.properties.structure.PropertiesLine").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").alias("<empty line>", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

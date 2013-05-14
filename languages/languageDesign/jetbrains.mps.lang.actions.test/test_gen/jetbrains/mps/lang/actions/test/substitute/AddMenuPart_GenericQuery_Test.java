@@ -18,7 +18,7 @@ public class AddMenuPart_GenericQuery_Test extends BaseTransformationTest4 {
 
   @Test
   public void test_AddMenuPart_GenericQuery() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
+    this.initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
     this.runTest("jetbrains.mps.lang.actions.test.substitute.AddMenuPart_GenericQuery_Test$TestBody", "testMethod", false);
   }
 

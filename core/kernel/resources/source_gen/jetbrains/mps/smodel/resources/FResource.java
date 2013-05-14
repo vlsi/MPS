@@ -5,16 +5,16 @@ package jetbrains.mps.smodel.resources;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class FResource extends MultiTuple._5<String, Map<String, Object>, Map<SNodeReference, String>, IModule, SModel> implements IFResource {
+public class FResource extends MultiTuple._5<String, Map<String, Object>, Map<SNodeReference, String>, SModule, SModel> implements IFResource {
   public FResource() {
     super();
   }
 
-  public FResource(String packageName, Map<String, Object> contents, Map<SNodeReference, String> rootNodeNames, IModule module, SModel model) {
+  public FResource(String packageName, Map<String, Object> contents, Map<SNodeReference, String> rootNodeNames, SModule module, SModel model) {
     super(packageName, contents, rootNodeNames, module, model);
   }
 
@@ -30,7 +30,7 @@ public class FResource extends MultiTuple._5<String, Map<String, Object>, Map<SN
     return super._2(value);
   }
 
-  public IModule module(IModule value) {
+  public SModule module(SModule value) {
     return super._3(value);
   }
 
@@ -50,7 +50,7 @@ public class FResource extends MultiTuple._5<String, Map<String, Object>, Map<SN
     return super._2();
   }
 
-  public IModule module() {
+  public SModule module() {
     return super._3();
   }
 
@@ -59,7 +59,7 @@ public class FResource extends MultiTuple._5<String, Map<String, Object>, Map<SN
   }
 
   @SuppressWarnings(value = "unchecked")
-  public FResource assignFrom(Tuples._5<String, Map<String, Object>, Map<SNodeReference, String>, IModule, SModel> from) {
+  public FResource assignFrom(Tuples._5<String, Map<String, Object>, Map<SNodeReference, String>, SModule, SModel> from) {
     return (FResource) super.assign(from);
   }
 

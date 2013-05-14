@@ -113,6 +113,7 @@ public class Generators {
         }
       }
       for (String modulePath : mpsCompiledInfo.keySet()) {
+        // todo: rewrite this code using ProjectPathUtil
         String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(modulePath) + "/" + AbstractModule.CLASSES_GEN;
         classesGenFolders.add(cgFolder);
       }

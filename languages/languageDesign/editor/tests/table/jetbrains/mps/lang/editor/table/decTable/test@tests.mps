@@ -13,7 +13,7 @@
       <property name="name" nameId="tpck.1169194664001" value="TableColumnsDefaultWrapping" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="7651593722933724220">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
     </node>
   </roots>
   <root id="7651593722933722504">

@@ -39,7 +39,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.resources.GResource;
@@ -528,7 +528,7 @@ public class Generate_Facet extends IFacet.Stub {
                   tracer.discardTracing();
                 }
               }
-              final Wrappers._T<Map<IModule, Iterable<SModel>>> retainedModels = new Wrappers._T<Map<IModule, Iterable<SModel>>>();
+              final Wrappers._T<Map<SModule, Iterable<SModel>>> retainedModels = new Wrappers._T<Map<SModule, Iterable<SModel>>>();
 
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {

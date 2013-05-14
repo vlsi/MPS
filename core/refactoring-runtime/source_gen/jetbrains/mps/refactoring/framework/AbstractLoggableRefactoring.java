@@ -4,7 +4,7 @@ package jetbrains.mps.refactoring.framework;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
@@ -50,7 +50,7 @@ public abstract class AbstractLoggableRefactoring {
     return true;
   }
 
-  public boolean isApplicableToModule(IModule module) {
+  public boolean isApplicableToModule(SModule module) {
     if (getRefactoringTarget() == RefactoringTarget.SOLUTION) {
       return module instanceof Solution;
     }
@@ -89,8 +89,8 @@ public abstract class AbstractLoggableRefactoring {
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
-    return new HashMap<IModule, List<SModel>>();
+  public Map<SModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
+    return new HashMap<SModule, List<SModel>>();
   }
 
   public List<SNode> getNodesToOpen(RefactoringContext refactoringContext) {

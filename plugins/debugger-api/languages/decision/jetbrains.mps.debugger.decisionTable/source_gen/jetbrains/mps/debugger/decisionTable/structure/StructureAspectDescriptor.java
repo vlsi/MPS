@@ -4,7 +4,8 @@ package jetbrains.mps.debugger.decisionTable.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,17 +15,17 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.decisionTable.structure.CaseExpression", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.decisionTable.structure.CaseExpression").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"expression"}, new boolean[]{false}).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.decisionTable.structure.DecideOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{}, new String[]{"x", "y"}, new boolean[]{false, false}, false, false, "decide", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.decisionTable.structure.DecideOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").children(new String[]{"x", "y"}, new boolean[]{false, false}).alias("decide", "").staticScope(StaticScope.NONE).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.decisionTable.structure.DecisionTable", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{}, new String[]{"caseX", "caseY", "content"}, new boolean[]{true, true, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.decisionTable.structure.DecisionTable").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"caseX", "caseY", "content"}, new boolean[]{true, true, true}).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.decisionTable.structure.DecisionTableType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "decisionTable", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.decisionTable.structure.DecisionTableType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("decisionTable", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.decisionTable.structure.XVariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "x", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.decisionTable.structure.XVariableReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.INamedConcept").alias("x", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.decisionTable.structure.YVariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "y", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.decisionTable.structure.YVariableReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.INamedConcept").alias("y", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

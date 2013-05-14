@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
@@ -53,16 +53,16 @@ public class SortUtil {
     return sortedModels;
   }
 
-  public static List<IModule> sortModules(Collection<IModule> modules) {
-    List<IModule> sortedModules = new ArrayList<IModule>(modules);
+  public static List<SModule> sortModules(Collection<SModule> modules) {
+    List<SModule> sortedModules = new ArrayList<SModule>(modules);
     Collections.sort(sortedModules, new Comparator() {
       @Override
       public int compare(Object o1, Object o2) {
         if (o1 == o2) {
           return 0;
         }
-        String name1 = ((IModule) o1).getModuleName();
-        String name2 = ((IModule) o2).getModuleName();
+        String name1 = ((SModule) o1).getModuleName();
+        String name2 = ((SModule) o2).getModuleName();
         return name1.compareTo(name2);
       }
     });

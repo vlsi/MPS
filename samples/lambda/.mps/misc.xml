@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/lambdaCalculus/jetbrains.mps.samples.lambdaCalculus.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/jetbrains.mps.samples.lambdaCalculus.sandbox.msd" folder="" />
+    </projectModules>
+    <genConfs />
+  </component>
+  <component name="ProjectRootManager" version="2" />
+  <component name="ProjectVersion">
+    <option name="version" value="2.5" />
+  </component>
+</project>
+

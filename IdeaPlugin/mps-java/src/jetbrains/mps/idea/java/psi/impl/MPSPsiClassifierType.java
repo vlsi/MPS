@@ -183,8 +183,10 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
 
       @Override
       public boolean isValid() {
-        resolveRef();
-        return resolved != null;
+        // not clear is this is how validity is decided
+//        resolveRef();
+//        return resolved != null;
+        return true;
       }
 
       @Override

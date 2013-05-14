@@ -18,7 +18,8 @@ package jetbrains.mps.idea.core.ui;
 
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.idea.core.MPSBundle;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -58,8 +59,8 @@ public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
         }
 
         List<SModelReference> result = new ArrayList<SModelReference>();
-        IModule module = myModelDescriptor.getModule();
-        for (SModel modelDescriptor : module.getScope().getModelDescriptors()) {
+        SModule module = myModelDescriptor.getModule();
+        for (SModel modelDescriptor : ((AbstractModule) module).getScope().getModelDescriptors()) {
             if (modelsToHide.contains(modelDescriptor.getReference())) {
                 continue;
             }

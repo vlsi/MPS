@@ -92,6 +92,31 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.dataFlow.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.BaseEmitJumpStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.BaseEmitVariableStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.BaseInstructionOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.DataFlowBuilderDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.EmitCodeForStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.EmitLabelStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.EmitMayBeUnreachable_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.EmitNopStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.EmitRetStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.EmitTryFinallyStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.EmitWriteStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.GetCodeForExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.InsertAfter_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.InsertBefore_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.LabelPosition_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.RelativePosition_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.editor.EmitCodeForStatement_Editor" file="EmitCodeForStatement_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />

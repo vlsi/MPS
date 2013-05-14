@@ -5,6 +5,11 @@ package jetbrains.mps.core.xml.sax.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.scope.SimpleRoleScope;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XMLSAXChildRule_Behavior {
   public static void init(SNode thisNode) {
@@ -15,6 +20,49 @@ public class XMLSAXChildRule_Behavior {
       return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName");
     }
     return SPropertyOperations.getString(thisNode, "tagName");
+  }
+
+  public static Scope call_getArgumentsScope_4720003541459735421(SNode thisNode, SNode kind) {
+    {
+      SNode concept_a0b;
+      concept_a0b = kind;
+      if (SConceptOperations.isSubConceptOf(concept_a0b, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+        return new EmptyScope();
+      }
+      if (SConceptOperations.isSubConceptOf(concept_a0b, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule")) {
+        return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(thisNode, "rule", false), SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
+      }
+    }
+    return null;
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (child != null && child.getRoleInParent().equals("actualArgument")) {
+      Scope argumentsScope = XMLSAXChildRule_Behavior.call_getArgumentsScope_4720003541459735421(thisNode, kind);
+      if (argumentsScope != null) {
+        return argumentsScope;
+      }
+    }
+    if (child == SLinkOperations.getTarget(thisNode, "condition", true)) {
+      {
+        SNode concept_a0b0c;
+        concept_a0b0c = kind;
+        if (SConceptOperations.isSubConceptOf(concept_a0b0c, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule")) {
+          return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(thisNode, "rule", false), SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
+        }
+      }
+    }
+    return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
+  }
+
+  public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    if (role.equals("actualArgument")) {
+      Scope argumentsScope = XMLSAXChildRule_Behavior.call_getArgumentsScope_4720003541459735421(thisNode, kind);
+      if (argumentsScope != null) {
+        return argumentsScope;
+      }
+    }
+    return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
   }
 
   public static boolean isNotEmpty_twisza_a0a0a0b(String str) {

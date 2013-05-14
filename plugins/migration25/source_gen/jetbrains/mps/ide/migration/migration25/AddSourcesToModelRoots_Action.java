@@ -10,7 +10,7 @@ import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.AbstractModule;
@@ -68,7 +68,7 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (IModule _module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModules())) {
+      for (SModule _module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModules())) {
         if (!(_module instanceof AbstractModule)) {
           continue;
         }

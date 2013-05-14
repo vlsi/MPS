@@ -18,7 +18,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ConvertAnonymousAbstractClassWithConstructorTest_Test extends BaseTransformationTest4 {
   @Test
   public void test_AbstractClassWithConstructorTest() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
+    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.ConvertAnonymousAbstractClassWithConstructorTest_Test$TestBody", "test_AbstractClassWithConstructorTest", true);
   }
 

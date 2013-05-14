@@ -814,7 +814,7 @@
     <nodeInfo nodeId="4372437818008128818" fileName="ConfStubSource.java" startLine="58" startPosition="51" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4372437818008128809" fileName="ConfStubSource.java" startLine="56" startPosition="124" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4372437818008128923" fileName="ConfStubSource.java" startLine="85" startPosition="7" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4372437818008128743" fileName="ConfStubSource.java" startLine="48" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadSModel#(Ljetbrains/mps/project/IModule;Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="4372437818008128743" fileName="ConfStubSource.java" startLine="48" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadSModel#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModel;" />
     <scopeInfo nodeId="4372437818008128983" fileName="ConfStubSource.java" startLine="99" startPosition="0" endLine="99" endPosition="33">
       <varInfo nodeId="4372437818008128984" varName="e" />
     </scopeInfo>

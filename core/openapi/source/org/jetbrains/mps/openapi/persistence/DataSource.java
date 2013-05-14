@@ -17,7 +17,7 @@ package org.jetbrains.mps.openapi.persistence;
 
 /**
  * Represents a source of data to build models from.
- * For implementation consider extending FileDataSource or DataSourceBase
+ * For implementation consider extending {@link jetbrains.mps.extapi.persistence.DataSourceBase}.
  */
 public interface DataSource {
   /**
@@ -31,7 +31,7 @@ public interface DataSource {
   /**
    * Retrieves the last modification timestamp.
    * The timestamp should reliably reflect all external changes to the data source.
-   * @return 0 if timestamp is not supported for the source, or -1 if the source is dead
+   * @return 0 if timestamp is not supported for the source, or -1 if the source is dead (like when file is deleted)
    */
   long getTimestamp();
 }

@@ -17,7 +17,7 @@
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
@@ -33,7 +33,7 @@ class NullOperationContext implements IOperationContext {
   }
 
   @Override
-  public IModule getModule() {
+  public SModule getModule() {
     return null;
   }
 

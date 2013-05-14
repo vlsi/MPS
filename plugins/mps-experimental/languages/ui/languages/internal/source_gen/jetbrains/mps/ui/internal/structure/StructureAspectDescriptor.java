@@ -4,7 +4,8 @@ package jetbrains.mps.ui.internal.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,29 +15,29 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.AuxObjectHandler", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"auxObjectTemplate"}, new String[]{}, new boolean[]{}, false, false, "auxObjectTemplate", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.internal.structure.AuxObjectHandler").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").references("auxObjectTemplate").alias("auxObjectTemplate", "").staticScope(StaticScope.NONE).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextBindingWrapper", "jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", false, new String[]{"jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper"}, new String[]{}, new String[]{"container"}, new String[]{"uiObject", "before", "childAspect"}, new boolean[]{false, false, true}, false, false, "bind", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.internal.structure.ContextBindingWrapper").super_("jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper").parents("jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper").references("container").children(new String[]{"uiObject", "before", "childAspect"}, new boolean[]{false, false, true}).alias("bind", "").staticScope(StaticScope.NONE).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", false, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{}, new String[]{"container"}, new String[]{}, new boolean[]{}, false, false, "compartment", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper").super_("jetbrains.mps.ui.internal.structure.ContextWrapper").parents("jetbrains.mps.ui.internal.structure.ContextWrapper").references("container").alias("compartment", "").staticScope(StaticScope.NONE).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextControllerWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", false, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{}, new String[]{}, new String[]{"controller"}, new boolean[]{false}, false, false, "controller", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.internal.structure.ContextControllerWrapper").super_("jetbrains.mps.ui.internal.structure.ContextWrapper").parents("jetbrains.mps.ui.internal.structure.ContextWrapper").children(new String[]{"controller"}, new boolean[]{false}).alias("controller", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextViewWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", false, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{}, new String[]{}, new String[]{"view"}, new boolean[]{false}, false, false, "view", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.internal.structure.ContextViewWrapper").super_("jetbrains.mps.ui.internal.structure.ContextWrapper").parents("jetbrains.mps.ui.internal.structure.ContextWrapper").children(new String[]{"view"}, new boolean[]{false}).alias("view", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{}, new String[]{}, new String[]{"body"}, new boolean[]{false}, false, false, "withContext", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.internal.structure.ContextWrapper").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.internal.structure.IContextWrapper").children(new String[]{"body"}, new boolean[]{false}).alias("withContext", "").staticScope(StaticScope.NONE).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextWrapperExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "withContext", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.internal.structure.ContextWrapperExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.ui.internal.structure.IContextWrapper").children(new String[]{"expression"}, new boolean[]{false}).alias("withContext", "").staticScope(StaticScope.NONE).create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ExpressionStub", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "expr_stub", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.internal.structure.ExpressionStub").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub").alias("expr_stub", "").staticScope(StaticScope.NONE).create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.GeometryHandler", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"geometry"}, new String[]{}, new boolean[]{}, false, false, "geometry", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.internal.structure.GeometryHandler").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").references("geometry").alias("geometry", "").staticScope(StaticScope.NONE).create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.IContextWrapper", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{"context"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.internal.structure.IContextWrapper").interface_().children(new String[]{"context"}, new boolean[]{false}).create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.StatementStub", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "stmt_stub", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.internal.structure.StatementStub").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub").alias("stmt_stub", "").staticScope(StaticScope.NONE).create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.TypeStub", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "type_stub", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.internal.structure.TypeStub").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub").alias("type_stub", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

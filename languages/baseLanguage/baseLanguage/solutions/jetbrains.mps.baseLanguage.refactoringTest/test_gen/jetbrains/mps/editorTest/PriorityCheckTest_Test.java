@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class PriorityCheckTest_Test extends BaseTransformationTest4 {
   @Test
   public void test_testRotation() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.PriorityCheckTest_Test$TestBody", "test_testRotation", true);
   }
 

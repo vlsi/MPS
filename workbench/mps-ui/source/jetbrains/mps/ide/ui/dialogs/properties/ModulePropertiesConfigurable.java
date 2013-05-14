@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
@@ -50,6 +51,7 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.IUsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -68,13 +70,14 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -101,7 +104,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableIte
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleDependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleUsedLangTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
-import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -138,12 +140,12 @@ import java.util.Map;
 
 public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   private ModuleDescriptor myModuleDescriptor;
-  private IModule myModule;
+  private AbstractModule myModule;
 
-  public ModulePropertiesConfigurable(IModule module, Project project) {
+  public ModulePropertiesConfigurable(SModule module, Project project) {
     super(project);
-    myModule = module;
-    myModuleDescriptor = module.getModuleDescriptor();
+    myModule = (AbstractModule) module;
+    myModuleDescriptor = myModule.getModuleDescriptor();
 
     addTab(new ModuleCommonTab());
     if(!(myModule instanceof DevKit)) {
@@ -212,6 +214,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
       else {
         myEntriesEditor = new ContentEntriesEditor(myModuleDescriptor);
+        Disposer.register(ModulePropertiesConfigurable.this, myEntriesEditor);
         return myEntriesEditor.getComponent();
       }
     }
@@ -244,7 +247,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     private String getGenOutPath() {
-      return FileUtil.getCanonicalPath(myModule.getGeneratorOutputPath());
+      IFile outputDir = myModule.getOutputPath();
+      return outputDir != null ? FileUtil.getCanonicalPath(outputDir.getPath()) : "";
     }
 
     @Override
@@ -342,7 +346,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected IScope getScope() {
-      return MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId()).getScope();
+      return ((AbstractModule) MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId())).getScope();
     }
 
     @Override
@@ -366,11 +370,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
           final SearchQuery[] query = new SearchQuery[1];
           final IResultProvider[] provider = new IResultProvider[1];
-          final IScope scope = (IScope) myModule.getModuleScope();
+          final IScope scope = myModule.getScope();
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
-              List<IModule> modules = new LinkedList<IModule>();
+              List<SModule> modules = new LinkedList<SModule>();
               for (int i : myTable.getSelectedRows()) {
                 Object value = myDependTableModel.getValueAt(i, myDependTableModel.getItemColumnIndex());
                 if(value instanceof SModuleReference){
@@ -381,7 +385,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                 }
               }
 
-              ModulesHolder modulesHolder = new ModulesHolder(modules, null){
+              ModulesHolder modulesHolder = new ModulesHolder((List) modules, null){
                 @Override
                 public void read(Element element, Project project) throws CantLoadSomethingException {}
                 @Override
@@ -393,9 +397,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                 public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
                   SearchResults searchResults = new SearchResults();
                   ModulesHolder modulesHolder = (ModulesHolder) query.getObjectHolder();
-                  for (IModule searchedModule : modulesHolder.getObject()) {
+                  for (SModule searchedModule : modulesHolder.getObject()) {
                     searchResults.getSearchedNodes().add(searchedModule);
-                    SearchQuery searchQuery = new SearchQuery(searchedModule, query.getScope());
+                    SearchQuery searchQuery = new SearchQuery((SModule) searchedModule, query.getScope());
                     searchResults.addAll(super.find(searchQuery,monitor));
                   }
 
@@ -567,7 +571,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       accessoriesTable.setModel(myAccessoriesModelsTableModel);
 
       accessoriesTable.setDefaultRenderer(SModelReference.class, new ModelTableCellRender(
-        MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId()).getScope()
+          ((AbstractModule) MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId())).getScope()
       ));
 
       ToolbarDecorator decoratorForAccessories = ToolbarDecorator.createDecorator(accessoriesTable);
@@ -659,7 +663,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           if(value instanceof SModelReference) {
             query[0] = new SearchQuery(
               SModelRepository.getInstance().getModelDescriptor(((jetbrains.mps.smodel.SModelReference) value).getModelId()),
-              new ModulesOnlyScope(Arrays.asList(myModule))
+              new ModulesScope(Arrays.asList(myModule))
             );
             provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
           }
@@ -857,11 +861,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     private boolean dependOnBL(ModuleUsedLangTableModel tableModel) {
-      IModule bl = MPSModuleRepository.getInstance().getModuleByFqName("jetbrains.mps.baseLanguage");
+      SModule bl = MPSModuleRepository.getInstance().getModuleByFqName("jetbrains.mps.baseLanguage");
       if(tableModel.getUsedLanguages().contains(bl.getModuleReference()))
         return true;
       for (SModuleReference reference : tableModel.getUsedDevkits()) {
-        IModule module = MPSModuleRepository.getInstance().getModuleById(reference.getModuleId());
+        SModule module = MPSModuleRepository.getInstance().getModuleById(reference.getModuleId());
         if(module instanceof DevKit && ((DevKit)module).getAllExportedLanguages().contains(bl))
           return true;
       }

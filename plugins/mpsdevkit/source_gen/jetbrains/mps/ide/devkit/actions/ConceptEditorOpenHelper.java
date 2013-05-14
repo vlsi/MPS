@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Language;
@@ -39,8 +39,8 @@ public class ConceptEditorOpenHelper {
     if (mainModelDescriptor == null) {
       return null;
     }
-    IModule baseModule = baseModelDesIcriptor.getModule();
-    IModule mainModule = mainModelDescriptor.getModule();
+    SModule baseModule = baseModelDesIcriptor.getModule();
+    SModule mainModule = mainModelDescriptor.getModule();
     if (mainModule instanceof Generator) {
       mainModule = ((Generator) mainModule).getSourceLanguage();
     }
@@ -89,8 +89,8 @@ public class ConceptEditorOpenHelper {
     if ((baseNode == null)) {
       return null;
     }
-    IModule baseNodeModule = SNodeOperations.getModel(baseNode).getModule();
-    IModule nodeModule = SNodeOperations.getModel(node).getModule();
+    SModule baseNodeModule = SNodeOperations.getModel(baseNode).getModule();
+    SModule nodeModule = SNodeOperations.getModel(node).getModule();
     if (nodeModule instanceof Generator) {
       nodeModule = ((Generator) nodeModule).getSourceLanguage();
     }

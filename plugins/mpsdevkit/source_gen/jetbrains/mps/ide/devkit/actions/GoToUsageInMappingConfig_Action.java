@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
@@ -48,7 +48,7 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
       return false;
     }
-    if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof Generator)) {
+    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof Generator)) {
       return false;
     }
     return true;
@@ -76,7 +76,7 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
@@ -94,7 +94,7 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MappingConfigFinder finder = new MappingConfigFinder(((Generator) ((IModule) MapSequence.fromMap(_params).get("module"))), SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))));
+      MappingConfigFinder finder = new MappingConfigFinder(((Generator) ((SModule) MapSequence.fromMap(_params).get("module"))), SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))));
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finder), new SearchQuery(null), false, false, false, "No usages found");
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

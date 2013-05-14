@@ -21,7 +21,7 @@ import com.intellij.ui.components.JBScrollPane;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.tree.TreePath;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -85,7 +85,7 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
     });
   }
 
-  public void setModules(List<IModule> modules) {
+  public void setModules(List<SModule> modules) {
     myLeftTree.setModules(modules);
     resetAll();
   }
@@ -95,26 +95,26 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
     myRightTree.resetDependencies();
     TreePath[] paths = myLeftTree.getSelectionPaths();
     if (paths != null) {
-      Map<List<IModule>, List<IModule>> dependencies = MapSequence.fromMap(new HashMap<List<IModule>, List<IModule>>());
-      Map<List<IModule>, List<IModule>> usedlanguages = MapSequence.fromMap(new HashMap<List<IModule>, List<IModule>>());
+      Map<List<SModule>, List<SModule>> dependencies = MapSequence.fromMap(new HashMap<List<SModule>, List<SModule>>());
+      Map<List<SModule>, List<SModule>> usedlanguages = MapSequence.fromMap(new HashMap<List<SModule>, List<SModule>>());
       for (TreePath path : paths) {
         Object o = path.getLastPathComponent();
         if (o instanceof ModuleDependencyNode) {
           ModuleDependencyNode node = (ModuleDependencyNode) o;
-          List<IModule> from = check_jxc64t_a0b0b0c0d0e(node.getFromNode());
+          List<SModule> from = check_jxc64t_a0b0b0c0d0e(node.getFromNode());
           if (from != null) {
-            Map<List<IModule>, List<IModule>> collection = (node.isUsedLanguage() ?
+            Map<List<SModule>, List<SModule>> collection = (node.isUsedLanguage() ?
               usedlanguages :
               dependencies
             );
             if (!(MapSequence.fromMap(collection).containsKey(from))) {
-              MapSequence.fromMap(collection).put(from, ListSequence.fromList(new ArrayList<IModule>()));
+              MapSequence.fromMap(collection).put(from, ListSequence.fromList(new ArrayList<SModule>()));
             }
             ListSequence.fromList(MapSequence.fromMap(collection).get(from)).addSequence(ListSequence.fromList(node.getModules()));
           }
         }
       }
-      for (List<IModule> key : SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(usedlanguages).keySet()))) {
+      for (List<SModule> key : SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(usedlanguages).keySet()))) {
         myRightTree.addDependency(key, MapSequence.fromMap(dependencies).get(key), MapSequence.fromMap(usedlanguages).get(key), myLeftTree.isShowRuntime());
       }
 
@@ -122,7 +122,7 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
       if (paths.length == 1 && paths[0].getLastPathComponent() instanceof ModuleDependencyNode.ULangDependencyNode) {
         ModuleDependencyNode.ULangDependencyNode node = (ModuleDependencyNode.ULangDependencyNode) paths[0].getLastPathComponent();
         if (node.isCyclic()) {
-          List<IModule> from = check_jxc64t_a0a0b0g0d0e(node.getFromNode());
+          List<SModule> from = check_jxc64t_a0a0b0g0d0e(node.getFromNode());
           if (from != null) {
             myRightTree.addDependency(node.getModules(), from, null, true);
           }
@@ -160,7 +160,7 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
   }
 
   public void showLoops(final ModuleDependencyNode node) {
-    final IModule module = ListSequence.fromList(node.getModules()).first();
+    final SModule module = ListSequence.fromList(node.getModules()).first();
     final MPSTree tree = node.getTree();
     // check if everything is already selected now 
     ModuleDependencyNode parent = node.getFromNode();
@@ -247,14 +247,14 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
     }
   }
 
-  private static List<IModule> check_jxc64t_a0b0b0c0d0e(ModuleDependencyNode checkedDotOperand) {
+  private static List<SModule> check_jxc64t_a0b0b0c0d0e(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModules();
     }
     return null;
   }
 
-  private static List<IModule> check_jxc64t_a0a0b0g0d0e(ModuleDependencyNode checkedDotOperand) {
+  private static List<SModule> check_jxc64t_a0a0b0g0d0e(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModules();
     }

@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NodeFactoryManager extends NodeFactoryManager_deprecated {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(NodeFactoryManager.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(NodeFactoryManager.class));
 
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
     SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());

@@ -187,6 +187,35 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.commands.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.CommandBuilderExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.CommandDebuggerOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.CommandDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.CommandParameterAssignment_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.CommandParameterReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.CommandPartLengthOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.CommandPartToListOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.CommandProcessType_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.CommandReferenceExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.CommandType_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.DebuggerSettingsCommandParameterDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.ExecuteCommandPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.ExplicitCommandParameterDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.KeyValueCommandPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.ListCommandPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.NewProcessBuilderExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.PropertyCommandPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.RedirectOutputExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.ReportErrorStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.editor.StartAndWaitOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.commands.editor.ExecuteCommandPart_Editor" file="ExecuteCommandPart_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />

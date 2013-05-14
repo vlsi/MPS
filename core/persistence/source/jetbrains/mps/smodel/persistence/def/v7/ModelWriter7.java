@@ -15,26 +15,25 @@
  */
 package jetbrains.mps.smodel.persistence.def.v7;
 
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Map;
 
 public class ModelWriter7 implements IModelWriter {
-  private WriteHelper myHelper;
-  private SModel myModel;
+  protected WriteHelper myHelper;
 
   protected int getModelPersistenceVersion() {
     return 7;
@@ -42,18 +41,17 @@ public class ModelWriter7 implements IModelWriter {
 
   @Override
   public Document saveModel(SModel sourceModel) {
-    myModel = sourceModel;
     myHelper = new WriteHelper(sourceModel.getReference());
 
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
 
-    int version = (myModel).getVersion();
+    int version = (sourceModel).getVersion();
     if (version >= 0) {
       rootElement.setAttribute(SModelHeader.VERSION, Integer.toString(version));
     }
-    if (myModel instanceof DefaultSModel) {
-      SModelHeader header = ((DefaultSModel) myModel).getSModelHeader();
+    if (sourceModel instanceof DefaultSModel) {
+      SModelHeader header = ((DefaultSModel) sourceModel).getSModelHeader();
       if (header.isDoNotGenerate()) {
         rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, "true");
       }
@@ -110,42 +108,39 @@ public class ModelWriter7 implements IModelWriter {
     }
 
     // roots
-    saveRootStubs(rootElement, sourceModel);   // only for quick roots access
+    saveModelNodes(rootElement, sourceModel);   // only for quick roots access
+    return new Document(rootElement);
+  }
+
+  protected void saveModelNodes(Element parent, SModel sourceModel) {
+    Element roots = new Element(ModelPersistence.ROOTS);
+    for (SNode root : sourceModel.getRootNodes()) {
+      Element childElement = new Element(ModelPersistence.NODE);
+      saveNode(childElement, root, false);
+      roots.addContent(childElement);
+    }
+    parent.addContent(roots);
     for (SNode root : sourceModel.getRootNodes()) {
       Element element = new Element(ModelPersistence.ROOT_CONTENT);
       element.setAttribute(ModelPersistence.ID, root.getNodeId().toString());
       for (SNode childNode : root.getChildren()) {
-        saveNode(element, childNode, true);
+        Element childElement = new Element(ModelPersistence.NODE);
+        saveNode(childElement, childNode, true);
+        element.addContent(childElement);
       }
-      rootElement.addContent(element);
+      parent.addContent(element);
     }
-
-    return new Document(rootElement);
   }
 
-  protected void saveRootStubs(Element parent, SModel model) {
-    Element roots = new Element(ModelPersistence.ROOTS);
-    for (SNode root : model.getRootNodes()) {
-      saveNode(roots, root, false);
-    }
-    parent.addContent(roots);
-  }
-
-  protected void saveNode(Element parentElement, SNode node, boolean saveChildren) {
-    Element element = new Element(ModelPersistence.NODE);
-
-    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, myHelper.genRole(node));
-    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE_ID, myHelper.genRoleId(node));
-    element.setAttribute(ModelPersistence.TYPE, myHelper.genType(node));
-    DocUtil.setNotNullAttribute(element, ModelPersistence.TYPE_ID, myHelper.genTypeId(node));
-    element.setAttribute(ModelPersistence.ID, node.getNodeId().toString());
+  protected void saveNode(Element nodeElement, SNode node, boolean saveChildren) {
+    saveNodeAttributes(nodeElement, node);
 
     for (String propertyName : node.getPropertyNames()) {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);
       propertyElement.setAttribute(ModelPersistence.NAME, myHelper.genName(node, propertyName));
       DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.NAME_ID, myHelper.genNameId(node, propertyName));
       DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getProperty(propertyName));
-      element.addContent(propertyElement);
+      nodeElement.addContent(propertyElement);
     }
 
     for (SReference reference : node.getReferences()) {
@@ -154,15 +149,23 @@ public class ModelWriter7 implements IModelWriter {
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence.ROLE_ID, myHelper.genRoleId(reference));
       linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, myHelper.genTarget(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, myHelper.genResolveInfo(reference));
-      element.addContent(linkElement);
+      nodeElement.addContent(linkElement);
     }
 
     if (saveChildren) {
       for (SNode childNode : node.getChildren()) {
-        saveNode(element, childNode, true);
+        Element childElement = new Element(ModelPersistence.NODE);
+        saveNode(childElement, childNode, true);
+        nodeElement.addContent(childElement);
       }
     }
+  }
 
-    parentElement.addContent(element);
+  protected void saveNodeAttributes(Element element, SNode node) {
+    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, myHelper.genRole(node));
+    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE_ID, myHelper.genRoleId(node));
+    element.setAttribute(ModelPersistence.TYPE, myHelper.genType(node));
+    DocUtil.setNotNullAttribute(element, ModelPersistence.TYPE_ID, myHelper.genTypeId(node));
+    element.setAttribute(ModelPersistence.ID, node.getNodeId().toString());
   }
 }

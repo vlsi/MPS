@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class CheckedModuleReference_Constraints extends BaseConstraintsDescriptor {
@@ -38,7 +38,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
             return original;
           }
           SModuleReference moduleReference = ModuleReference.fromString(original);
-          IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+          SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
           return (module != null ?
             module.getModuleName() :
             moduleReference.getModuleName()
@@ -55,7 +55,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
       public void setValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "moduleId";
         {
-          IModule module = MPSModuleRepository.getInstance().getModuleByFqName((SPropertyOperations.getString(propertyValue)));
+          SModule module = MPSModuleRepository.getInstance().getModuleByFqName((SPropertyOperations.getString(propertyValue)));
           SPropertyOperations.set(node, "moduleId", module.getModuleReference().toString());
         }
       }
@@ -69,7 +69,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "moduleId";
         {
-          IModule module = MPSModuleRepository.getInstance().getModuleByFqName((SPropertyOperations.getString(propertyValue)));
+          SModule module = MPSModuleRepository.getInstance().getModuleByFqName((SPropertyOperations.getString(propertyValue)));
           return module != null;
         }
       }

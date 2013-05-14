@@ -4,13 +4,13 @@ package jetbrains.mps.workbench.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
-import jetbrains.mps.persistence.PersistenceRegistry;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -20,7 +20,7 @@ import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.findUsages.FindUsagesUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
@@ -51,12 +51,12 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
 
   @Override
   public void initComponent() {
-    PersistenceRegistry.getInstance().addFindUsagesParticipant(this);
+    PersistenceFacade.getInstance().addFindUsagesParticipant(this);
   }
 
   @Override
   public void disposeComponent() {
-    PersistenceRegistry.getInstance().removeFindUsagesParticipant(this);
+    PersistenceFacade.getInstance().removeFindUsagesParticipant(this);
   }
 
   @NotNull
@@ -89,7 +89,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     }
 
     for (Map.Entry<SModel, Collection<SNode>> e : candidates.entrySet()) {
-      FindUsagesManager.collectUsages(e.getKey(), e.getValue(), consumer);
+      FindUsagesUtil.collectUsages(e.getKey(), e.getValue(), consumer);
     }
   }
 
@@ -104,7 +104,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
 
     MultiMap<SModel, SAbstractConcept> candidates = findCandidates(models, concepts, processedConsumer, null);
     for (Map.Entry<SModel, Collection<SAbstractConcept>> e : candidates.entrySet()) {
-      FindUsagesManager.collectInstances(e.getKey(), e.getValue(), consumer);
+      FindUsagesUtil.collectInstances(e.getKey(), e.getValue(), consumer);
     }
   }
 
@@ -122,7 +122,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       }
     });
     for (Map.Entry<SModel, Collection<SModelReference>> e : candidates.entrySet()) {
-      if (FindUsagesManager.hasModelUsages(e.getKey(), e.getValue())) {
+      if (FindUsagesUtil.hasModelUsages(e.getKey(), e.getValue())) {
         consumer.consume(e.getKey());
       }
     }

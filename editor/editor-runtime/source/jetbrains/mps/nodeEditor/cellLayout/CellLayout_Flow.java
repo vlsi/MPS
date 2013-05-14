@@ -39,7 +39,7 @@ import java.util.Set;
  */
 public class CellLayout_Flow extends AbstractCellLayout {
 
-  private static Logger LOG = Logger.getLogger(LogManager.getLogger(CellLayout_Flow.class));
+  private static Logger LOG = Logger.wrap(LogManager.getLogger(CellLayout_Flow.class));
 
   /*
          wStart

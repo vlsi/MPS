@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -34,7 +34,7 @@ public class RenameModel_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
+    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
       return true;
     }
     if (!(Language.isLanguageOwnedAccessoryModel(((SModel) MapSequence.fromMap(_params).get("model"))))) {

@@ -8,9 +8,9 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -56,9 +56,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.build.mps.util.ModuleChecker;
+import jetbrains.mps.build.mps.util.ModuleLoaderException;
 import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -90,7 +92,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       public void run() {
         SModel descriptor = getSModelDescriptor(new EmptyProgressIndicator());
 
-        addRequiredImports(descriptor, descriptor.getModule().getModuleDescriptor());
+        addRequiredImports(descriptor, ((AbstractModule) descriptor.getModule()).getModuleDescriptor());
 
         final EditableSModel targetModelDescriptor = ((EditableSModel) descriptor);
 
@@ -312,8 +314,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     visible.collect();
     for (SNode module : ListSequence.fromList(SNodeOperations.getDescendants(buildProject, "jetbrains.mps.build.mps.structure.BuildMps_Module", false, new String[]{}))) {
       try {
-        new ModuleLoader(module, visible, pathConverter, null).importRequired();
-      } catch (ModuleLoader.ModuleLoaderException ex) {
+        ModuleLoader.createModuleChecker(module, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
+      } catch (ModuleLoaderException ex) {
         if (LOG.isEnabledFor(Priority.ERROR)) {
           LOG.error(ex.getMessage());
         }
@@ -389,11 +391,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
   @Nullable
   private SNode createModuleNode(ModuleData moduleData) {
-    IModule module = moduleData.getModule();
+    SModule module = moduleData.getModule();
 
     SNode path;
     try {
-      path = createPathFromFullPath(module.getDescriptorFile().getPath());
+      path = createPathFromFullPath(((AbstractModule) module).getDescriptorFile().getPath());
     } catch (RelativePathHelper.PathException e) {
       if (LOG.isEnabledFor(Priority.WARN)) {
         LOG.warn("Can't make relative path from build model base directory to module " + module, e);

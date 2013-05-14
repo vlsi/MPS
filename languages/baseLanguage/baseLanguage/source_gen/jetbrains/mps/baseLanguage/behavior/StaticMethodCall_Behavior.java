@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
@@ -21,7 +21,7 @@ public class StaticMethodCall_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Object virtual_eval_1213877519769(SNode thisNode, @NotNull IModule module) {
+  public static Object virtual_eval_1213877519769(SNode thisNode, @NotNull SModule module) {
     Method method = BaseMethodDeclaration_Behavior.call_getMethod_1213877350393(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), module);
     Object[] actualArguments = BaseMethodCall_Behavior.call_getActualArguments_1213877339153(thisNode, module);
     return ReflectionUtil.staticInvoke(method, actualArguments);

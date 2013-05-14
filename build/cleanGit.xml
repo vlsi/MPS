@@ -6,4 +6,14 @@
       <arg value="-dfx"/>
     </exec>
   </target>
+
+  <target name="mpsFriendlyClean" description="Exclude 'classes_gen' from full clean">
+    <exec executable="git">
+      <arg value="clean"/>
+      <arg value="-df"/>
+      <arg value="--exclude=*classes_gen*"/>
+      <arg value="-x"/>
+    </exec>
+  </target>
+
 </project>

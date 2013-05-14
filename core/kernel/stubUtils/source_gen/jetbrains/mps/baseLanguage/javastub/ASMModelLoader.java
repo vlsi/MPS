@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -15,10 +15,10 @@ public class ASMModelLoader {
   private static final Logger LOG = LogManager.getLogger(ASMModelLoader.class);
   private final IClassPathItem myCpItem;
   private final SModel myModel;
-  private final IModule myModule;
+  private final SModule myModule;
   private final boolean mySkipPrivate;
 
-  public ASMModelLoader(IModule module, IClassPathItem classPathItem, SModel model, boolean skipPrivate) {
+  public ASMModelLoader(SModule module, IClassPathItem classPathItem, SModel model, boolean skipPrivate) {
     myModule = module;
     myCpItem = classPathItem;
     myModel = model;

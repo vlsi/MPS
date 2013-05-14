@@ -356,7 +356,7 @@
     <nodeInfo nodeId="4372437818008125235" fileName="GWTStubsSource.java" startLine="51" startPosition="106" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4372437818008125344" fileName="GWTStubsSource.java" startLine="79" startPosition="28" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4372437818008125336" fileName="GWTStubsSource.java" startLine="77" startPosition="7" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4372437818008125164" fileName="GWTStubsSource.java" startLine="42" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadSModel#(Ljetbrains/mps/project/IModule;Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="4372437818008125164" fileName="GWTStubsSource.java" startLine="42" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadSModel#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModel;" />
     <scopeInfo nodeId="4372437818008125405" fileName="GWTStubsSource.java" startLine="94" startPosition="0" endLine="94" endPosition="33">
       <varInfo nodeId="4372437818008125406" varName="e" />
     </scopeInfo>

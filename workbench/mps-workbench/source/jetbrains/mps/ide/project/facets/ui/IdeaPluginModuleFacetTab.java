@@ -32,7 +32,8 @@ import jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionOrLangChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.persistence.MementoImpl;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -141,7 +142,7 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
     ModuleFacetDescriptor facetDescriptor = new ModuleFacetDescriptor(
         ((ModuleFacetBase)myNewIdeaPluginModuleFacet).getFacetType(), memento);
 
-    ModuleDescriptor descriptor = ((IModule)((SModuleFacet)myIdeaPluginModuleFacet).getModule()).getModuleDescriptor();
+    ModuleDescriptor descriptor = ((AbstractModule)((SModuleFacet)myIdeaPluginModuleFacet).getModule()).getModuleDescriptor();
     Iterator<ModuleFacetDescriptor> iterator = descriptor.getModuleFacetDescriptors().iterator();
     while (iterator.hasNext()) {
       ModuleFacetDescriptor mfd = iterator.next();

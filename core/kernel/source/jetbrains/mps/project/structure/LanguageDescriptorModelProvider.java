@@ -19,7 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
@@ -54,28 +54,28 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   public LanguageDescriptorModelProvider(MPSModuleRepository repository, SModelRepository modelRepository) {
     repository.addModuleRepositoryListener(new ModuleRepositoryAdapter() {
       @Override
-      public void moduleAdded(IModule module) {
+      public void moduleAdded(SModule module) {
         if (module instanceof Language) {
           refreshModule((Language) module, false);
         }
       }
 
       @Override
-      public void moduleInitialized(IModule module) {
+      public void moduleInitialized(SModule module) {
         if (module instanceof Language) {
           refreshModule((Language) module, false);
         }
       }
 
       @Override
-      public void moduleChanged(IModule module) {
+      public void moduleChanged(SModule module) {
         if (module instanceof Language) {
           refreshModule((Language) module, false);
         }
       }
 
       @Override
-      public void moduleRemoved(IModule module) {
+      public void moduleRemoved(SModule module) {
         if (module instanceof Language) {
           refreshModule((Language) module, true);
         }
@@ -258,7 +258,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     }
 
     @Override
-    public IModule getModule() {
+    public SModule getModule() {
       return myModule;
     }
   }

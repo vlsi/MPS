@@ -4,7 +4,8 @@ package jetbrains.mps.baseLanguage.contracts.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,17 +15,17 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.Condition", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.Condition").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"expression"}, new boolean[]{false}).abstract_().create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "this", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("this", "").staticScope(StaticScope.NONE).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{"condition"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").children(new String[]{"condition"}, new boolean[]{true}).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.Postcondition", "jetbrains.mps.baseLanguage.contracts.structure.Condition", false, new String[]{"jetbrains.mps.baseLanguage.contracts.structure.Condition"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "postcondition", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.Postcondition").super_("jetbrains.mps.baseLanguage.contracts.structure.Condition").parents("jetbrains.mps.baseLanguage.contracts.structure.Condition").alias("postcondition", "").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.Precondition", "jetbrains.mps.baseLanguage.contracts.structure.Condition", false, new String[]{"jetbrains.mps.baseLanguage.contracts.structure.Condition"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "precondition", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.Precondition").super_("jetbrains.mps.baseLanguage.contracts.structure.Condition").parents("jetbrains.mps.baseLanguage.contracts.structure.Condition").alias("precondition", "").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.ResultExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "!result", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.ResultExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("!result", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

@@ -32,7 +32,8 @@ import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -55,7 +56,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
   private NonTypeSystemComponent myNonTypeSystemComponent;
 
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(IncrementalTypechecking.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(IncrementalTypechecking.class));
 
   private NodeTypeAccess myNodeTypeAccess = new NodeTypeAccess();
 

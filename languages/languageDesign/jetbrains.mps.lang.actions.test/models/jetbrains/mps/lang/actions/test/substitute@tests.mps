@@ -20,7 +20,7 @@
       <property name="name" nameId="tpck.1169194664001" value="DontSubstiuteByDefault" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="2550657305103528938">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
     </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6866660893594595018">
       <property name="description" nameId="tp5g.1883175908513350760" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild1 concept specified in corresponsing &quot;add concept&quot; substitute menu part" />

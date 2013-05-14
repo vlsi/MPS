@@ -22,7 +22,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
@@ -40,12 +40,12 @@ public class ModuleNodeData extends BaseNodeData {
     super(role,
       (isResult && nodeRepresentator != null) ?
         nodeRepresentator.getPresentation(result.getObject()) :
-        getCaption((IModule) result.getPathObject()),
+        getCaption((SModule) result.getPathObject()),
       "", true, isResult, resultsSection);
-    myModuleReference = ((IModule) result.getPathObject()).getModuleReference();
+    myModuleReference = ((SModule) result.getPathObject()).getModuleReference();
   }
 
-  public ModuleNodeData(PathItemRole role, IModule module, boolean isResult, boolean resultsSection) {
+  public ModuleNodeData(PathItemRole role, SModule module, boolean isResult, boolean resultsSection) {
     super(role, getCaption(module), "", true, isResult, resultsSection);
     myModuleReference = module.getModuleReference();
   }
@@ -54,7 +54,7 @@ public class ModuleNodeData extends BaseNodeData {
     read(element, project);
   }
 
-  private static String getCaption(IModule module) {
+  private static String getCaption(SModule module) {
     if (module instanceof Generator) {
       Generator generator = (Generator) module;
       String name = generator.getName();
@@ -70,12 +70,12 @@ public class ModuleNodeData extends BaseNodeData {
 
   @Override
   public Icon getIcon() {
-    IModule module = getModule();
+    SModule module = getModule();
     if (module == null) return null;
     return IconManager.getIconFor(module);
   }
 
-  public IModule getModule() {
+  public SModule getModule() {
     return MPSModuleRepository.getInstance().getModule(myModuleReference);
   }
 

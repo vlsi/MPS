@@ -162,6 +162,9 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_lnae77_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-G");
     editorCell.setCellId("Constant_lnae77_d0");
+    Style style = new StyleImpl();
+    structure_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -182,6 +185,9 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_lnae77_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not generate:");
     editorCell.setCellId("Constant_lnae77_a0");
+    Style style = new StyleImpl();
+    structure_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

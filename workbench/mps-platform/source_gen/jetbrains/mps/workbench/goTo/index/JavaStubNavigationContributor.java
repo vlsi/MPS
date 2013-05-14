@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 import com.intellij.openapi.components.ApplicationComponent;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.persistence.PersistenceRegistry;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -79,12 +79,12 @@ public class JavaStubNavigationContributor implements NavigationParticipant, App
 
   @Override
   public void initComponent() {
-    PersistenceRegistry.getInstance().addNavigationParticipant(this);
+    PersistenceFacade.getInstance().addNavigationParticipant(this);
   }
 
   @Override
   public void disposeComponent() {
-    PersistenceRegistry.getInstance().removeNavigationParticipant(this);
+    PersistenceFacade.getInstance().removeNavigationParticipant(this);
   }
 
   @NonNls

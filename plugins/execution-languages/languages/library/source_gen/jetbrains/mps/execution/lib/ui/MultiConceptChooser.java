@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -27,7 +27,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import java.util.Set;
 import java.util.Collections;
-import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ScopeOperations;
@@ -73,13 +72,13 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
   }
 
   @Override
-  protected List<SNode> findToChooseFromOnInit(final FindUsagesManager manager, final ProgressMonitor monitor) {
+  protected List<SNode> findToChooseFromOnInit(final FindUsagesFacade manager, final ProgressMonitor monitor) {
     return (List<SNode>) (ListSequence.fromList(myTargetConcepts).translate(new ITranslator2<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, SNode>() {
       public Iterable<SNode> translate(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         SNode targetConcept = it._0();
         final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
         SAbstractConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(targetConcept));
-        Set<SNode> instances = ((Set) manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor));
+        Set<SNode> instances = ((Set) manager.findInstances(myScope, Collections.singleton(concept), false, monitor));
         if (function == null) {
           return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
         } else {

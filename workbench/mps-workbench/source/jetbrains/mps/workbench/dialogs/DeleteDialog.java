@@ -34,16 +34,13 @@ public class DeleteDialog extends DialogWrapper {
     myOptions = options;
 
     setTitle(caption);
+    setOKButtonText("&Delete");
+    setCancelButtonText("Ca&ncel");
     init();
   }
 
   @Override
-  protected Action[] createActions() {
-    return new Action[]{getOKAction(), getCancelAction()};
-  }
-
-  @Override
-  protected JComponent createNorthPanel() {
+  protected JComponent createCenterPanel() {
     final JPanel panel = new JPanel(new GridBagLayout());
     final GridBagConstraints gbc = new GridBagConstraints();
 
@@ -72,11 +69,6 @@ public class DeleteDialog extends DialogWrapper {
     }
 
     return panel;
-  }
-
-  @Override
-  protected JComponent createCenterPanel() {
-    return null;
   }
 
   @Override

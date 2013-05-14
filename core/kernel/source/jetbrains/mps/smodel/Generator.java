@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.project.*;
+import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -193,7 +193,7 @@ public class Generator extends AbstractModule {
   public List<Generator> getReferencedGenerators() {
     List<Generator> result = new ArrayList<Generator>();
     for (SModuleReference guid : getReferencedGeneratorUIDs()) {
-      IModule module = MPSModuleRepository.getInstance().getModule(guid);
+      SModule module = MPSModuleRepository.getInstance().getModule(guid);
       if (module instanceof Generator) {
         result.add((Generator) module);
       }
@@ -232,11 +232,6 @@ public class Generator extends AbstractModule {
       }
     }
     return result;
-  }
-
-  @Override
-  public IFile getOutputPath() {
-    return mySourceLanguage.getOutputPath();
   }
 
   private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {

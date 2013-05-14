@@ -11,7 +11,7 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.classpath.ClassPathViewerTool;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -59,7 +59,7 @@ public class AnalyzeClasspath_Action extends BaseAction {
     try {
       ClassPathViewerTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(ClassPathViewerTool.class);
       tool.openToolLater(true);
-      tool.analyzeModule(((IModule) MapSequence.fromMap(_params).get("module")));
+      tool.analyzeModule(((SModule) MapSequence.fromMap(_params).get("module")));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "AnalyzeClasspath", t);

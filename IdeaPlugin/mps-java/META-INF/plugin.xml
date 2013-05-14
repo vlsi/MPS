@@ -36,6 +36,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.java.fastFind.JavaPsiStubsNavigationContributor</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.java.fastFind.EmptyJavaPsiStubsFindUsages</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -54,6 +57,9 @@
     <component>
       <implementation-class>jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.java.refactoring.MoveRenameBatch</implementation-class>
+    </component>
     <!--
     <component>
       <implementation-class>jetbrains.mps.idea.sourceStubs.ProjectJavaSourceImporter</implementation-class>
@@ -69,10 +75,9 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <mps.LanguageLibrary dir=""/>
     <mps.modelRootContributor className="jetbrains.mps.idea.sourceStubs.JavaSourceModelRootContributor"/>
     <mps.psiFactory implementation="jetbrains.mps.idea.java.psi.impl.JavaMPSPsiNodeFactory"/>
-    <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.psi.ClassStubPsiMapper"/>
+    <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.fastFind.ClassStubPsiMapper"/>
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.psiStubs.Mapper"/>
     <debugger.positionManagerFactory implementation="jetbrains.mps.idea.java.debugger.MpsPositionManagerFactory"/>
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
@@ -83,8 +88,7 @@
     <java.elementFinder implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaClassFinder"/>
     <java.shortNamesCache implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaShortNamesCache"/>
     <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.usages.MPSJavaDirectInheritorsSearcher"/>
-    <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
-    <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.java.refactoring.RefactoringListenerProvider"/>
+     <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSFQNameJavaClassIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaPackageIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSShortNameJavaClassIndex"/>

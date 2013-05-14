@@ -48,6 +48,7 @@
     <classNode dependClassName="com.intellij.openapi.vcs.versionBrowser.CommittedChangeList" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowManager" />
+    <classNode dependClassName="com.intellij.ui.ColorUtil" />
     <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
     <classNode dependClassName="com.intellij.util.ui.TextTransferrable" />
     <classNode dependClassName="java.awt.Color" />
@@ -92,6 +93,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.messageTargets.CellFinder" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />

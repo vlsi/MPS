@@ -20,7 +20,7 @@
       <property name="name" nameId="tpck.1169194664001" value="TestBlPriorities" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="418758558327350365">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
     </node>
   </roots>
   <root id="5936308221645772775">

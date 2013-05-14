@@ -56,6 +56,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   private Map<String, SNodeIdFactory> myNodeIdFactory = new HashMap<String, SNodeIdFactory>();
   private Set<FindUsagesParticipant> myFindUsagesParticipants = new LinkedHashSet<FindUsagesParticipant>();
   private Set<NavigationParticipant> myNavigationParticipants = new LinkedHashSet<NavigationParticipant>();
+  private ModelEnvironmentInfo myModelEnvironmentInfo = new ModelEnvironmentInfoImpl();
+
+  public static PersistenceRegistry getInstance() {
+    return (PersistenceRegistry) INSTANCE;
+  }
 
   @Override
   public ModelRootFactory getModelRootFactory(String type) {
@@ -191,6 +196,14 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   @Override
   public Set<NavigationParticipant> getNavigationParticipants() {
     return myNavigationParticipants;
+  }
+
+  public ModelEnvironmentInfo getModelEnvironmentInfo() {
+    return myModelEnvironmentInfo;
+  }
+
+  public void setModelEnvironmentInfo(ModelEnvironmentInfo modelEnvironmentInfo) {
+    myModelEnvironmentInfo = modelEnvironmentInfo != null ? modelEnvironmentInfo : new ModelEnvironmentInfoImpl();
   }
 
   @Override

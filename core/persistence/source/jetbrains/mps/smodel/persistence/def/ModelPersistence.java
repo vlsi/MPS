@@ -18,8 +18,6 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
@@ -31,6 +29,7 @@ import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
 import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
+import jetbrains.mps.smodel.persistence.def.v8.ModelPersistence8;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
@@ -40,12 +39,14 @@ import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.Consumer;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -75,6 +76,7 @@ public class ModelPersistence {
   public static final String NODE = "node";
   public static final String TYPE = "type";
   public static final String TYPE_ID = "typeId";
+  public static final String NODE_INFO = "nodeInfo";
   public static final String ID = "id";
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String MODEL = "model";
@@ -92,6 +94,7 @@ public class ModelPersistence {
   public static final String MODEL_UID = "modelUID";
   public static final String VERSION = "version";
   public static final String IMPLICIT = "implicit";
+  public static final String ROOT_NODE = "root";
   public static final String ROOTS = "roots";
   public static final String ROOT_CONTENT = "root";
 
@@ -101,7 +104,7 @@ public class ModelPersistence {
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
 
-  public static final int LAST_VERSION = 7;
+  public static final int LAST_VERSION = 8;
 
   private static final IModelPersistence[] myModelPersistenceFactory = {
       null,
@@ -111,7 +114,8 @@ public class ModelPersistence {
       new ModelPersistence4(),
       new ModelPersistence5(),
       new ModelPersistence6(),
-      new ModelPersistence7()
+      new ModelPersistence7(),
+      new ModelPersistence8()
   };
 
   @NotNull
@@ -251,7 +255,7 @@ public class ModelPersistence {
     LOG.debug("Saving model " + model.getReference() + " to " + source.getLocation());
 
     // (since 3.0) we do not support saving in old persistences (before 7)
-    persistenceVersion = Math.min(7, persistenceVersion);
+    persistenceVersion = Math.max(7, persistenceVersion);
 
     if (source.isReadOnly()) {
       throw new IOException("`" + source.getLocation() + "' is read-only");

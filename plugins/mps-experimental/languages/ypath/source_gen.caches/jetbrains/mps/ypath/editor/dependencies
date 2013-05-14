@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.ypath.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.FromOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.GenericFeature_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.GenericParamFeature_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.IterateOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.LambdaMethodParameter_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.LambdaMethod_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.ListFeature_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.MatchDefaultPropertyOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.MatchKindOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.MatchPropertyOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.NodeKindCase_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.NodeKindDefaultCase_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.NodeKindSpecificCase_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.ParamListFeature_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.ParamSequenceFeature_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.ParameterWrapper_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.SequenceFeature_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.SwitchNodeKindStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.TreeNodeKindOccurrence_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.TreeNodeKindProperty_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.TreeNodeKindReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.TreeNodeKind_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.TreePathAdapterExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.TreePathAspect_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.TreePathCreator_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.TreePathOperationExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.TreePathType_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.VisitBlock_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.VisitChildrenExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.VisitNodesStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.VisitParameterDeclarationList_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.VisitParameterDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.ypath.editor.WhereOperation_Editor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.ypath.editor.FromOperation_Editor" file="FromOperation_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />

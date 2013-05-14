@@ -5,14 +5,17 @@ package jetbrains.mps.plugin;
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.components.impl.stores.IProjectStore;
+import com.intellij.openapi.project.ex.ProjectEx;
 import java.io.File;
 import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.components.StorageScheme;
 import java.rmi.RemoteException;
 import java.rmi.Naming;
 import jetbrains.mps.ide.ThreadUtils;
 
 public class MPSPlugin {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(MPSPlugin.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(MPSPlugin.class));
   private static MPSPlugin ourInstance;
   private IMPSPlugin myPlugin = null;
   private boolean myMessageShown = false;
@@ -23,8 +26,12 @@ public class MPSPlugin {
   @Deprecated
   public IProjectHandler getProjectHandler(Project project) {
     MPSPlugin.assertNotInEDT();
+    IProjectStore projectStore = ((ProjectEx) project).getStateStore();
     File mpsProject = project.getComponent(MPSProject.class).getProjectFile();
-    File projectFile = mpsProject.getParentFile();
+    File projectFile = (projectStore.getStorageScheme() == StorageScheme.DEFAULT ?
+      mpsProject.getParentFile() :
+      mpsProject
+    );
     String projectPath = projectFile.getAbsolutePath();
     return getProjectHandler(projectPath);
   }

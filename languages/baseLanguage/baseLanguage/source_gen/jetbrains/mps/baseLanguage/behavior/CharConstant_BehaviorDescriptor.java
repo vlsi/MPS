@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class CharConstant_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public CharConstant_BehaviorDescriptor() {
@@ -14,7 +14,7 @@ public class CharConstant_BehaviorDescriptor extends Expression_BehaviorDescript
     return CharConstant_Behavior.virtual_constant_1262430001741498050(thisConcept);
   }
 
-  public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
+  public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return CharConstant_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
   }
 

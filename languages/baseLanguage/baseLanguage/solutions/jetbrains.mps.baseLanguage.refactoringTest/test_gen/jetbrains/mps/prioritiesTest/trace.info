@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)/5936308221645772775">
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="23" startPosition="61" endLine="24" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="24" startPosition="119" endLine="25" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="29" startPosition="73" endLine="30" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="30" startPosition="119" endLine="31" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="23" startPosition="61" endLine="24" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="24" startPosition="111" endLine="25" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="29" startPosition="73" endLine="30" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="30" startPosition="111" endLine="31" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1488872796929091156" fileName="TestBlPriorities_Test.java" startLine="36" startPosition="63" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5907049006927255008" fileName="TestBlPriorities_Test.java" startLine="40" startPosition="75" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8266208698961529534" fileName="TestBlPriorities_Test.java" startLine="44" startPosition="57" endLine="45" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

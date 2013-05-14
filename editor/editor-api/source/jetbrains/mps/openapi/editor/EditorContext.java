@@ -16,10 +16,11 @@
 package jetbrains.mps.openapi.editor;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -105,4 +106,6 @@ public interface EditorContext {
   void runWithContextCell(EditorCell contextCell, Runnable r);
 
   <T> T runWithContextCell(EditorCell contextCell, Computable<T> r);
+
+  EditorCellFactory getCellFactory();
 }

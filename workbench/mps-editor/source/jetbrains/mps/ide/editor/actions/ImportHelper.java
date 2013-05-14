@@ -22,7 +22,8 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -52,7 +53,7 @@ import java.util.List;
 import java.util.Set;
 
 public class ImportHelper {
-  public static void addModelImport(final Project project, final IModule module, final SModel model,
+  public static void addModelImport(final Project project, final SModule module, final SModel model,
                     @Nullable BaseAction parentAction) {
     BaseModelModel goToModelModel = new BaseModelModel(project) {
       @Override
@@ -100,7 +101,7 @@ public class ImportHelper {
     }, ModalityState.current(), true);
   }
 
-  public static void addLanguageImport(final Project project, final IModule contextModule, final SModel model,
+  public static void addLanguageImport(final Project project, final SModule contextModule, final SModel model,
                      @Nullable BaseAction parentAction) {
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
       @Override
@@ -140,10 +141,10 @@ public class ImportHelper {
 
   private static class AddLanguageItem extends BaseModuleItem {
     private Project myProject;
-    private IModule myContextModule;
+    private SModule myContextModule;
     private SModel myModel;
 
-    public AddLanguageItem(Project project, SModuleReference language, IModule contextModule, SModel model) {
+    public AddLanguageItem(Project project, SModuleReference language, SModule contextModule, SModel model) {
       super(language);
       myProject = project;
       myContextModule = contextModule;
@@ -191,8 +192,8 @@ public class ImportHelper {
         public void run() {
           boolean reload = false;
           for (SModuleReference ref : toImport) {
-            if (myContextModule.getScope().getLanguage(ref) == null) {
-              myContextModule.addUsedLanguage((SModuleReference) ref);
+            if (((AbstractModule)myContextModule).getScope().getLanguage(ref) == null) {
+              ((AbstractModule)myContextModule).addUsedLanguage((SModuleReference) ref);
               reload = true;
             }
             ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage((SModuleReference) ref);
@@ -212,7 +213,7 @@ public class ImportHelper {
     return dialog.getSelectedModules();
   }
 
-  public static void addModelImportByRoot(final Project project, final IModule contextModule, final SModel model,
+  public static void addModelImportByRoot(final Project project, final SModule contextModule, final SModel model,
                       String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
     BaseMPSChooseModel goToNodeModel = new RootChooseModel(project, new RootNodeNameIndex()) {
       @Override
@@ -257,9 +258,9 @@ public class ImportHelper {
   private static class AddModelItem extends BaseModelItem {
     private Project myProject;
     private SModel myModel;
-    private IModule myModule;
+    private SModule myModule;
 
-    public AddModelItem(Project project, SModel model, SModelReference modelToAdd, IModule currentModule) {
+    public AddModelItem(Project project, SModel model, SModelReference modelToAdd, SModule currentModule) {
       super(modelToAdd);
       myProject = project;
       myModel = model;
@@ -277,7 +278,7 @@ public class ImportHelper {
         public SModuleReference compute() {
           SModel md = SModelRepository.getInstance().getModelDescriptor(getModelReference());
           final SModuleReference moduleReference = md.getModule().getModuleReference();
-          if (myModule.getScope().getModelDescriptor(getModelReference()) == null) {
+          if (((AbstractModule)myModule).getScope().getModelDescriptor(getModelReference()) == null) {
             return moduleReference;
           }
           return null;
@@ -295,7 +296,7 @@ public class ImportHelper {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             @Override
             public void run() {
-              myModule.addDependency(moduleToImport, false);
+              ((AbstractModule)myModule).addDependency(moduleToImport, false);
               ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
             }
           });

@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -103,7 +103,7 @@ public class VariantsUtil {
   }
 
   public static String languageSuffix(final SModel _this) {
-    IModule module = _this.getModule();
+    SModule module = _this.getModule();
     return NameUtil.shortNameFromLongName(module.getModuleName());
   }
 

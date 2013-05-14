@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.generator.impl.RootTemplateAnnotator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
@@ -43,7 +44,9 @@ public class MPSGenerator extends ComponentPlugin {
     super.init();
     final SModelRepository modelRepository = MPSCore.getInstance().getModelRepository();
     final GlobalSModelEventsManager globalSModelEventsManager = MPSCore.getInstance().getGlobalSModelEventsManager();
+    final ClassLoaderManager classLoaderManager = ClassLoaderManager.getInstance();
 
+    init(new GeneratorsManager(classLoaderManager));
     init(new TraceInfoCache(modelRepository));
     init(new GenerationDependenciesCache(modelRepository));
     init(new GeneratorPathsComponent());

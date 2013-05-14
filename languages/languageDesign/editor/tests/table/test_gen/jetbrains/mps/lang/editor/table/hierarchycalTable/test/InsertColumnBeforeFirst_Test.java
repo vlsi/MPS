@@ -16,7 +16,7 @@ public class InsertColumnBeforeFirst_Test extends BaseTransformationTest4 {
 
   @Test
   public void test_InsertColumnBeforeFirst() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)");
+    this.initTest("${mps_home}", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)");
     this.runTest("jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnBeforeFirst_Test$TestBody", "testMethod", false);
   }
 

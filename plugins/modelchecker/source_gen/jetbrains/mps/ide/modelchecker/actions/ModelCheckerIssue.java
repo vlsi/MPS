@@ -7,7 +7,7 @@ import jetbrains.mps.ide.messages.Icons;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public abstract class ModelCheckerIssue {
@@ -42,7 +42,7 @@ public abstract class ModelCheckerIssue {
     return new SearchResult<ModelCheckerIssue>(issue, node, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }
 
-  public static SearchResult<ModelCheckerIssue> getSearchResultForModule(IModule module, String message, IModelCheckerFix fix, String severity, String issueType) {
+  public static SearchResult<ModelCheckerIssue> getSearchResultForModule(SModule module, String message, IModelCheckerFix fix, String severity, String issueType) {
     ModelCheckerIssue issue = new ModelCheckerIssue.ModuleIssue(message, fix);
     return new SearchResult<ModelCheckerIssue>(issue, module, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }

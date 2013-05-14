@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -42,6 +42,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Logger;
@@ -75,7 +76,7 @@ public class CopyPasteUtil {
       return PasteNodeData.emptyPasteNodeData(null);
     }
     SModel model = sourceNodes.get(0).getModel();
-    IModule module = model.getModule();
+    SModule module = model.getModule();
     List<SNode> result = new ArrayList<SNode>();
     Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
     Set<SReference> allReferences = new HashSet<SReference>();
@@ -98,7 +99,7 @@ public class CopyPasteUtil {
     return new PasteNodeData(result, null, module, necessaryLanguages, necessaryModels);
   }
 
-  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, IModule sourceModule, Set<SModuleReference> necessaryLanguages, Set<SModelReference> necessaryModels) {
+  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModule sourceModule, Set<SModuleReference> necessaryLanguages, Set<SModelReference> necessaryModels) {
     if (sourceNodes.isEmpty()) {
       return PasteNodeData.emptyPasteNodeData(null);
     }
@@ -288,7 +289,7 @@ public class CopyPasteUtil {
   }
 
   public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
-    IModule module = model.getModule();
+    SModule module = model.getModule();
     Transferable content = null;
     for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
       if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNode)) {
@@ -322,7 +323,7 @@ public class CopyPasteUtil {
   }
 
   @Nullable
-  public static Runnable addImportsWithDialog(final IModule sourceModule, final SModel targetModel, final Set<SModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
+  public static Runnable addImportsWithDialog(final SModule sourceModule, final SModel targetModel, final Set<SModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
     if (targetModel.getModule() == null) {
       return null;
     }
@@ -383,13 +384,13 @@ public class CopyPasteUtil {
           ((SModelInternal) targetModel).addLanguage(language);
         }
         //  model's module properties 
-        IModule targetModule = targetModel.getModule();
+        SModule targetModule = targetModel.getModule();
         if (targetModule == null) {
           return;
         }
 
         for (SModuleReference language : requiredLanguages) {
-          targetModule.addUsedLanguage(language);
+          ((AbstractModule) targetModule).addUsedLanguage(language);
         }
 
         for (SModelReference model : requiredImports) {
@@ -397,12 +398,12 @@ public class CopyPasteUtil {
           if (modelDescriptor == null) {
             continue;
           }
-          IModule module = modelDescriptor.getModule();
+          SModule module = modelDescriptor.getModule();
           if (module == null || module == targetModule) {
             continue;
           }
 
-          targetModule.addDependency(module.getModuleReference(), false);
+          ((AbstractModule) targetModule).addDependency(module.getModuleReference(), false);
         }
       }
     };

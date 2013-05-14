@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -41,10 +41,10 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
+    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
       return false;
     }
-    Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("module"));
+    Language language = (Language) ((SModule) MapSequence.fromMap(_params).get("module"));
     SModel structureModelDescriptor = language.getStructureModelDescriptor();
     if (structureModelDescriptor == null) {
       return false;
@@ -92,7 +92,7 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
     try {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
-      final IModule module = ((IModule) MapSequence.fromMap(_params).get("module"));
+      final SModule module = ((SModule) MapSequence.fromMap(_params).get("module"));
       final IScope scope = ((IScope) MapSequence.fromMap(_params).get("scope"));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

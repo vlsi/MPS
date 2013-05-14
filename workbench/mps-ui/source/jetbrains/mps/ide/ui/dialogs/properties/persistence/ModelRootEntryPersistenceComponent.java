@@ -30,7 +30,7 @@ public class ModelRootEntryPersistenceComponent implements ApplicationComponent 
 
     ModelRootEntryEP[] extensions = ModelRootEntryEP.EP_NAME.getExtensions();
     for (ModelRootEntryEP extension : extensions) {
-      registry.addModelRootEntry(extension.rootType, extension.getModelRootEntry().getClass());
+      registry.addModelRootEntry(extension.rootType, extension.getModelRootEntryFactory());
     }
   }
 

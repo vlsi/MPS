@@ -21,7 +21,10 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.InternalFlag;
 import java.util.HashSet;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class FileProcessor extends ReloadParticipant {
   private FileSystemListenersContainer listenersContainer;
@@ -35,6 +38,7 @@ public class FileProcessor extends ReloadParticipant {
   @Override
   public void update(ProgressMonitor monitor) {
     monitor.start("Reloading files... Please wait.", MapSequence.fromMap(dataMap).count() + 1);
+    long updateStartTime = System.currentTimeMillis();
     try {
       for (FileSystemListener listener : Sequence.fromIterable(sortedListeners())) {
         FileProcessor.ListenerData data = MapSequence.fromMap(dataMap).get(listener);
@@ -43,9 +47,12 @@ public class FileProcessor extends ReloadParticipant {
           continue;
         }
 
+        long listenerUpdateStartTime = System.currentTimeMillis();
         listener.update(monitor.subTask(1, SubProgressKind.AS_COMMENT), data);
+        printStat("update:" + listener, listenerUpdateStartTime);
         data.isNotified = true;
       }
+      long postNotifyBeginTime = System.currentTimeMillis();
       FileSystemListener listener;
       while ((listener = QueueSequence.fromQueue(postNotify).removeFirstElement()) != null) {
         FileProcessor.ListenerData data = MapSequence.fromMap(dataMap).get(listener);
@@ -55,7 +62,9 @@ public class FileProcessor extends ReloadParticipant {
         listener.update(monitor.subTask(0, SubProgressKind.AS_COMMENT), data);
         data.isNotified = true;
       }
+      printStat("post-notify", postNotifyBeginTime);
     } finally {
+      printStat("update", updateStartTime);
       monitor.done();
     }
   }
@@ -157,6 +166,15 @@ public class FileProcessor extends ReloadParticipant {
     });
   }
 
+  private void printStat(String name, long beginTime) {
+    // todo: ideal for AOP in MPS! 
+    if (InternalFlag.isInternalMode()) {
+      if (LOG.isInfoEnabled()) {
+        LOG.info("FileProcessor: " + name + " -> " + (System.currentTimeMillis() - beginTime) / 1000.0 + "s");
+      }
+    }
+  }
+
   private class ListenerData implements FileSystemListener.FileSystemEvent {
     private Set<IFile> added = new HashSet<IFile>();
     private Set<IFile> removed = new HashSet<IFile>();
@@ -186,4 +204,6 @@ public class FileProcessor extends ReloadParticipant {
       FileProcessor.this.notify(listener, this);
     }
   }
+
+  protected static Logger LOG = LogManager.getLogger(FileProcessor.class);
 }

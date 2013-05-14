@@ -21,6 +21,38 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguageInternal.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.ConstantValue_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.ExtractStatementListExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.ExtractStatementListInnerExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticInnerClassExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticMethodExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticMethod_CallExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.ExtractToConstantExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.ExtractToConstantRefExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalAnonymousClassCreator_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalAnonymousClass_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalClassCreator_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalClassExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalNewExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalPartialFieldReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalPartialInstanceMethodCall_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalStaticFieldReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalStaticMethodCall_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalSuperMethodCallOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalThisExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.InternalVariableReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.TypeHintExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.WeakClassReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.ExtractStatementListExpression_Editor" file="ExtractStatementListExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />

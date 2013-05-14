@@ -52,7 +52,7 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   @Override
-  protected SNode getNodeForTypechecking() {
-    return myNode == null ? null : myNode.getContainingRoot();
+  protected SNode getNodeForTypechecking(SNode editedNode) {
+    return editedNode == null ? null : editedNode.getContainingRoot();
   }
 }

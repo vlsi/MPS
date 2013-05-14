@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.plugins;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 
@@ -23,10 +23,10 @@ import java.util.*;
 
 public class PluginSorter {
   //todo for now, the cycle will be broken in unknown place
-  public static List<IModule> sortByDependencies(Collection<IModule> modules) {
+  public static List<SModule> sortByDependencies(Collection<SModule> modules) {
     List<Item> items = new ArrayList<Item>();
-    Map<IModule, Item> module2Item = new HashMap<IModule, Item>();
-    for (IModule module : modules) {
+    Map<SModule, Item> module2Item = new HashMap<SModule, Item>();
+    for (SModule module : modules) {
       Item item = new Item(module, -1);
       items.add(item);
       module2Item.put(module, item);
@@ -38,7 +38,7 @@ public class PluginSorter {
       }
     }
 
-    IModule[] result = new IModule[initIndex];
+    SModule[] result = new SModule[initIndex];
 
     for (Item item : items) {
       result[item.myInitIndex] = item.myModule;
@@ -46,9 +46,9 @@ public class PluginSorter {
     return Arrays.asList(result);
   }
 
-  private static int init(Item item, Map<IModule, Item> module2Item, int initIndex) {
+  private static int init(Item item, Map<SModule, Item> module2Item, int initIndex) {
     item.myInitIndex = -2;
-    for (IModule dependency : new GlobalModuleDependenciesManager(item.myModule).getModules(Deptype.VISIBLE)) {
+    for (SModule dependency : new GlobalModuleDependenciesManager(item.myModule).getModules(Deptype.VISIBLE)) {
       Item depItem = module2Item.get(dependency);
       if (depItem != null) {
         if (depItem.myInitIndex == -1) {
@@ -62,12 +62,12 @@ public class PluginSorter {
   }
 
   private static class Item {
-    private Item(IModule module, int initIndex) {
+    private Item(SModule module, int initIndex) {
       this.myModule = module;
       this.myInitIndex = initIndex;
     }
 
-    public IModule myModule;
+    public SModule myModule;
     public int myInitIndex;
   }
 }

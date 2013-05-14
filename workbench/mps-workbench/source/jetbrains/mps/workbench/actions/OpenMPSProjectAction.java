@@ -79,19 +79,13 @@ public class OpenMPSProjectAction extends BaseAction {
 
     descriptor.putUserData(FileChooserDialogImpl.PREFER_LAST_OVER_TO_SELECT, Boolean.TRUE);
 
-    FileChooser.chooseFilesWithSlideEffect(descriptor, currentProject, userHomeDir, new Consumer<VirtualFile[]>() {
-      @Override
-      public void consume(final VirtualFile[] files) {
-        VirtualFile virtualFile;
-        if (files.length == 0 ||
-            (virtualFile = OpenMPSProjectFileChooserDescriptor.getMPSProjectFile(files[0])) == null) return;
+    final VirtualFile virtualFile = FileChooser.chooseFile(descriptor, currentProject, userHomeDir);
+    if (virtualFile == null) return;
 
-        String filePath = virtualFile.getPath();
-        Project project = ProjectUtil.openProject(filePath, currentProject, false);
-        if (project != null) {
-          ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
-        }
-      }
-    });
+    String filePath = virtualFile.getPath();
+    Project project = ProjectUtil.openProject(filePath, currentProject, false);
+    if (project != null) {
+      ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
+    }
   }
 }

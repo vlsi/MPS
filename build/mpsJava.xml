@@ -166,7 +166,7 @@
   </target>
   
   <target name="cleanSources">
-    <delete dir="${mps_home}/plugins/mpsjava/basePlatform/source_gen" />
+    <delete dir="${mps_home}/plugins/mpsjava/source_gen" />
     <delete dir="${mps_home}/plugins/mpsjava/platform/source_gen" />
   </target>
 </project>

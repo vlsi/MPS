@@ -16,7 +16,7 @@ public class NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Tes
 
   @Test
   public void test_NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test$TestBody", "testMethod", false);
   }
 

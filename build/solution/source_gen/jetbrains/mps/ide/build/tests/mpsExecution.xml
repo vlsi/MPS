@@ -70,16 +70,16 @@
       <fileset dir="${basedir}/plugins/execution-languages/languages/tests" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.impl.tests.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-tests-models">
-      <fileset dir="${basedir}/plugins/execution-languages/languages/tests/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-tests-jetbrains">
       <fileset dir="${basedir}/plugins/execution-languages/languages/tests/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-tests-models">
+      <fileset dir="${basedir}/plugins/execution-languages/languages/tests/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.execution.impl.tests-src.jar">
       <zipfileset file="${basedir}/plugins/execution-languages/languages/tests/jetbrains.mps.execution.impl.tests.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-tests-models" prefix="module/models" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-tests-jetbrains" prefix="module/jetbrains" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-tests-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.execution.impl.tests.sandbox.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.execution.impl.tests.sandbox.jar/META-INF" />

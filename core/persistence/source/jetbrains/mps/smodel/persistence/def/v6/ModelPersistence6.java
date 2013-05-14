@@ -34,7 +34,7 @@ public class ModelPersistence6 extends ModelPersistence5 {
 
   @Override
   public IModelReader getModelReader() {
-    return new ModelReader6();
+    throw new UnsupportedOperationException("use sax reader");
   }
 
   @Override

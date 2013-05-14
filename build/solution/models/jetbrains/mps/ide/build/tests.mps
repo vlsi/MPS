@@ -339,6 +339,11 @@
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="ffeo.8939513996048535869" resolveInfo="jetbrains.mps.lang.editor" />
           </node>
         </node>
+        <node role="generator" roleId="kdzh.9200313594498201639" type="kdzh.BuildMps_Generator" typeId="kdzh.5507251971038816436" id="7487902802325848119">
+          <property name="name" nameId="tpck.1169194664001" value="testDefaultEditor#938834323431407324" />
+          <property name="uuid" nameId="kdzh.322010710375892619" value="6347035b-39ac-4ba2-a86e-006974863808" />
+          <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        </node>
       </node>
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="5833628797344916227">

@@ -99,6 +99,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.project.AbstractModule" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>

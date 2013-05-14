@@ -22,7 +22,7 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
@@ -36,7 +36,7 @@ import java.util.List;
 
 public class SModelsSubtree {
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
-    IModule module = operationContext.getModule();
+    SModule module = operationContext.getModule();
     assert module != null;
     create(rootTreeNode, operationContext, IterableUtil.asList(module.getModels()), false);
   }
@@ -67,7 +67,7 @@ public class SModelsSubtree {
 
     List<SModelTreeNode> regularModelNodes = getRootModelTreeNodes(regularModels, operationContext, isNeedBuildChildModels(rootTreeNode));
     if (!regularModelNodes.isEmpty()) {
-      IModule contextModule = operationContext.getModule();
+      SModule contextModule = operationContext.getModule();
       if (contextModule instanceof Language) {
         for (SModelTreeNode treeNode : regularModelNodes) {
           rootTreeNode.add(treeNode);

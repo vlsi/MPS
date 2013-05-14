@@ -47,6 +47,23 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.uiLanguage.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.ide.uiLanguage.editor.DialogDimensions_Editor" />
+    <classNode dependClassName="jetbrains.mps.ide.uiLanguage.editor.DialogExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.ide.uiLanguage.editor.DisposeDialogExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.ide.uiLanguage.editor.DisposeDialogStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ide.uiLanguage.editor.IDEDialogButton_Editor" />
+    <classNode dependClassName="jetbrains.mps.ide.uiLanguage.editor.IDEDialog_Editor" />
+    <classNode dependClassName="jetbrains.mps.ide.uiLanguage.editor.ReportErrorExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.ide.uiLanguage.editor.ReportErrorStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.uiLanguage.editor.IDEDialogButton_Editor" file="IDEDialogButton_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />

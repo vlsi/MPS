@@ -8,8 +8,8 @@ import java.io.IOException;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.smodel.persistence.RoleIdsComponent;
-import jetbrains.mps.vcs.core.mergedriver.MergerRoleIdsHandler;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.vcs.core.mergedriver.MergerModelEnvironmentInfoImpl;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -77,7 +77,7 @@ public class MergeData {
   }
 
   private boolean generateAndCheckResultData() throws ModelReadException {
-    RoleIdsComponent.setHandler(new MergerRoleIdsHandler());
+    PersistenceRegistry.getInstance().setModelEnvironmentInfo(new MergerModelEnvironmentInfoImpl());
 
     DefaultSModel baseModel = ModelPersistence.readModel(myBaseModelString, false);
     DefaultSModel mineModel = ModelPersistence.readModel(myMineModelString, false);
@@ -94,7 +94,8 @@ public class MergeData {
       session.applyChanges(Sequence.fromIterable(session.getAllChanges()).toListSequence());
       resultModelString = ModelPersistence.modelToString(session.getResultModel());
     }
-    RoleIdsComponent.setHandler(null);
+    PersistenceRegistry.getInstance().setModelEnvironmentInfo(null);
+
 
     String changesMineString = dumpChangeSet(session.getMyChangeSet(), session);
     String changesRepositoryString = dumpChangeSet(session.getRepositoryChangeSet(), session);

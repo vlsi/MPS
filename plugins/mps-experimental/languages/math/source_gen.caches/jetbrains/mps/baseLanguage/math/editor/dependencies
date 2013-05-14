@@ -80,6 +80,46 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.math.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.AbsExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.ComplexLiteral_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.DivExpressionFraction_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.ExponentialOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.InIntervalExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.IntervalContainsExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.IntervalType_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.LiteralI_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathFuncExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathSymbolFromToIndex_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndexReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndex_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathSymbol_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathTypeCast_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixConstructor_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixElementAccessExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixIndexWildcard_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndexReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndex_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializer_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixInverseOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixNorm_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixType_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixUnit_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixZero_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.PowExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.VectorInitializer_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.VectorType_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.editor.ExponentOperation_Component" file="ExponentOperation_Component.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />

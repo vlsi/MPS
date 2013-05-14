@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="11" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.StructureAspectDescriptor" />
   <root nodeRef="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)/1275214627099785401">
     <nodeInfo nodeId="1275214627099785401" fileName="VAlignment.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1275214627099785401" fileName="VAlignment.java" startLine="17" startPosition="27" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

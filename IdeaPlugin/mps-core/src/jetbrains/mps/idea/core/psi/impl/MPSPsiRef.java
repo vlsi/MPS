@@ -22,8 +22,6 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.IncorrectOperationException;
-import jetbrains.mps.idea.core.refactoring.MoveRenameBatch;
-import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
@@ -31,7 +29,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * evgeny, 1/25/13
@@ -54,12 +51,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     this.referenceText = referenceText;
   }
 
-  @Override
-  public PsiElement getParent() {
-    return super.getParent();
-  }
-
-  public String getContainingRole() {
+  public String getRole() {
     return role;
   }
 
@@ -102,82 +94,6 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     return new PsiReference[]{getReference()};
   }
 
-  @Override
-  public PsiReference getReference() {
-    return new PsiReference() {
-      @Override
-      public PsiElement getElement() {
-        // sort of hack: return the top-most element, but not PsiFile
-
-//        PsiElement e = MPSPsiRef.this;
-//        PsiElement p = null;
-//        do {
-//          if (p != null) e = p;
-//          p = e.getParent();
-//        } while (!(p instanceof PsiFile) && p != null);
-//
-//        return e;
-
-        return MPSPsiRef.this;
-      }
-
-      @Override
-      public TextRange getRangeInElement() {
-        return TextRange.EMPTY_RANGE;
-      }
-
-      @Nullable
-      @Override
-      public PsiElement resolve() {
-        return MPSPsiRef.this.resolve();
-      }
-
-      @NotNull
-      @Override
-      public String getCanonicalText() {
-        return null;
-      }
-
-      @Override
-      public PsiElement handleElementRename(final String newElementName) throws IncorrectOperationException {
-        recordUsage();
-        return MPSPsiRef.this;
-
-      }
-
-      @Override
-      public PsiElement bindToElement(@NotNull PsiElement element) throws IncorrectOperationException {
-        recordUsage();
-        return MPSPsiRef.this;
-      }
-
-      private void recordUsage() {
-        PsiElement parent = MPSPsiRef.this.getParent();
-        assert parent instanceof MPSPsiNode;
-        SNodeReference source = ((MPSPsiNode) parent).getSNodeReference();
-        getProject().getComponent(MoveRenameBatch.class).recordDefaultMPSUsage(new NodePtr(model, nodeId), source, role);
-      }
-
-      @Override
-      public boolean isReferenceTo(PsiElement element) {
-        PsiElement target = resolve();
-        // Just == ?
-        return target != null && target == element;
-      }
-
-      @NotNull
-      @Override
-      public Object[] getVariants() {
-        return new Object[0];
-      }
-
-      @Override
-      public boolean isSoft() {
-        return false;
-      }
-    };
-
-  }
 
   @Override
   public String toString() {
@@ -203,8 +119,62 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     return "";
   }
 
-  //  @Override
-//  public PsiFile getContainingFile() {
-//    return super.getContainingFile();
-//  }
+  @Override
+  public PsiReference getReference() {
+    return new MPSPsiReference();
+  }
+
+  public class MPSPsiReference implements PsiReference {
+    @Override
+    public PsiElement getElement() {
+      return MPSPsiRef.this;
+    }
+
+    @Override
+    public TextRange getRangeInElement() {
+      return TextRange.EMPTY_RANGE;
+    }
+
+    @Nullable
+    @Override
+    public PsiElement resolve() {
+      return MPSPsiRef.this.resolve();
+    }
+
+    @NotNull
+    @Override
+    public String getCanonicalText() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public PsiElement handleElementRename(String newElementName) throws IncorrectOperationException {
+      throw new IncorrectOperationException();
+
+    }
+
+    @Override
+    public PsiElement bindToElement(@NotNull PsiElement element) throws IncorrectOperationException {
+      throw new IncorrectOperationException();
+    }
+
+    @Override
+    public boolean isReferenceTo(PsiElement element) {
+      PsiElement target = resolve();
+      // Just == ?
+      return target != null && target == element;
+    }
+
+    @NotNull
+    @Override
+    public Object[] getVariants() {
+      return new Object[0];  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean isSoft() {
+      return false;
+    }
+  }
+
 }

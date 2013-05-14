@@ -44,7 +44,7 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 
 public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint, ILocationBreakpoint> implements ProjectComponent {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(BreakpointsUiComponent.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(BreakpointsUiComponent.class));
   private static final String BREAKPOINT_ELEMENT = "breakpoint";
   private static final String KIND_TAG = "kind";
   private final Project myProject;

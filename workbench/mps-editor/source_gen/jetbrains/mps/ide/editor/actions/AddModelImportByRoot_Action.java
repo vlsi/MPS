@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -65,7 +65,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
@@ -95,7 +95,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
         initialText.value = SPropertyOperations.getString(unresolvedReference, "resolveName");
       }
 
-      ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), initialText.value, AddModelImportByRoot_Action.this, new ImportHelper.ModelImportByRootCallback() {
+      ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), initialText.value, AddModelImportByRoot_Action.this, new ImportHelper.ModelImportByRootCallback() {
         public void importForRootAdded(String rootName) {
           String textToMatch = (rootName != null ?
             rootName :

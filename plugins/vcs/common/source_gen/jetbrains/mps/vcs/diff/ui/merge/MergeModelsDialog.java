@@ -62,7 +62,7 @@ import com.intellij.ui.SimpleTextAttributes;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class MergeModelsDialog extends DialogWrapper {
@@ -629,7 +629,7 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-  private static IModule check_3qqb0l_a0b0kb(SModelDescriptor checkedDotOperand) {
+  private static SModule check_3qqb0l_a0b0kb(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

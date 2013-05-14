@@ -4,7 +4,8 @@ package jetbrains.mps.baseLanguage.jdk7.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,7 +15,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement", "jetbrains.mps.baseLanguage.structure.SwitchStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.SwitchStatement"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "switch", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement").super_("jetbrains.mps.baseLanguage.structure.SwitchStatement").parents("jetbrains.mps.baseLanguage.structure.SwitchStatement").alias("switch", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

@@ -4,6 +4,9 @@ package jetbrains.mps.core.xml.sax.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.SimpleRoleScope;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +21,13 @@ public class XMLSAXNodeRule_Behavior {
       SLinkOperations.getTarget(thisNode, "type", true) :
       _quotation_createNode_odhxgg_a0a0a()
     );
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParam")) {
+      return SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "params"));
+    }
+    return null;
   }
 
   private static SNode _quotation_createNode_odhxgg_a0a0a() {

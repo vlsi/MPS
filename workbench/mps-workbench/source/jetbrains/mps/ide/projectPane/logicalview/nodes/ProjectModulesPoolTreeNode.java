@@ -20,7 +20,7 @@ import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.ProjectStructureModule;
@@ -65,11 +65,11 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
   }
 
   private void populate() {
-    List<IModule> modules = (List<IModule>) new FilteredGlobalScope().getVisibleModules();
+    List<SModule> modules = (List<SModule>) new FilteredGlobalScope().getVisibleModules();
     {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode solutions = new TextTreeNode("Solutions");
-      for (IModule s : modules) {
+      for (SModule s : modules) {
         if (s instanceof Solution || s instanceof ProjectStructureModule) {
           builder.addNode(ProjectModuleTreeNode.createFor(myProject, s, true));
         }

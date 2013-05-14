@@ -4,7 +4,8 @@ package org.jetbrains.mps.samples.IfAndUnless.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,15 +15,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow", "org.jetbrains.mps.samples.IfAndUnless.structure.Flow", false, new String[]{"org.jetbrains.mps.samples.IfAndUnless.structure.Flow"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow").super_("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").parents("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").create();
       case 1:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.Flow", "jetbrains.mps.baseLanguage.structure.StatementList", false, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").super_("jetbrains.mps.baseLanguage.structure.StatementList").parents("jetbrains.mps.baseLanguage.structure.StatementList").abstract_().create();
       case 2:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"condition", "body", "alternative"}, new boolean[]{false, false, false}, false, false, "my_if", "", "");
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"condition", "body", "alternative"}, new boolean[]{false, false, false}).alias("my_if", "").staticScope(StaticScope.NONE).create();
       case 3:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow", "org.jetbrains.mps.samples.IfAndUnless.structure.Flow", false, new String[]{"org.jetbrains.mps.samples.IfAndUnless.structure.Flow"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow").super_("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").parents("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").create();
       case 4:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"condition", "body"}, new boolean[]{false, false}, false, false, "unless", "", "");
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"condition", "body"}, new boolean[]{false, false}).alias("unless", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

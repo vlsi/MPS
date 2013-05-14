@@ -80,6 +80,11 @@
             <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="ffeo.8939513996048535435" resolveInfo="jetbrains.mps.baseLanguage" />
           </node>
         </node>
+        <node role="generator" roleId="kdzh.9200313594498201639" type="kdzh.BuildMps_Generator" typeId="kdzh.5507251971038816436" id="5117919484901322126">
+          <property name="name" nameId="tpck.1169194664001" value="org.jetbrains.mps.samples.Constants#1494751830319061782" />
+          <property name="uuid" nameId="kdzh.322010710375892619" value="e329cce7-da4b-4bfd-ad4e-2f360bbf1aa5" />
+          <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        </node>
       </node>
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="3090262383963783793">
         <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
@@ -107,6 +112,11 @@
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="8819170442303230753">
             <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="ffeo.8939513996048535435" resolveInfo="jetbrains.mps.baseLanguage" />
           </node>
+        </node>
+        <node role="generator" roleId="kdzh.9200313594498201639" type="kdzh.BuildMps_Generator" typeId="kdzh.5507251971038816436" id="5117919484901322145">
+          <property name="name" nameId="tpck.1169194664001" value="org.jetbrains.mps.samples.IfAndUnless#393299394024627256" />
+          <property name="uuid" nameId="kdzh.322010710375892619" value="a9b9fa8e-12f5-448d-b22d-5663c8206e2f" />
+          <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
         </node>
       </node>
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="3090262383963783808">
@@ -185,6 +195,11 @@
             <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="ffeo.8939513996048535435" resolveInfo="jetbrains.mps.baseLanguage" />
           </node>
         </node>
+        <node role="generator" roleId="kdzh.9200313594498201639" type="kdzh.BuildMps_Generator" typeId="kdzh.5507251971038816436" id="5117919484901322180">
+          <property name="name" nameId="tpck.1169194664001" value="org.jetbrains.mps.samples.Money#5447719361346496650" />
+          <property name="uuid" nameId="kdzh.322010710375892619" value="f5860f3e-6f54-465b-9172-8b2a11b1bb2e" />
+          <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        </node>
       </node>
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="3090262383963783863">
         <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
@@ -238,6 +253,11 @@
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="8819170442303230713">
             <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="ffeo.8939513996048535569" resolveInfo="jetbrains.mps.baseLanguage.collections" />
           </node>
+        </node>
+        <node role="generator" roleId="kdzh.9200313594498201639" type="kdzh.BuildMps_Generator" typeId="kdzh.5507251971038816436" id="5117919484901322199">
+          <property name="name" nameId="tpck.1169194664001" value="org.jetbrains.mps.samples.ParallelFor#8923957828369584137" />
+          <property name="uuid" nameId="kdzh.322010710375892619" value="dbbf0a76-172f-4191-a1bd-9b6beb1d70ea" />
+          <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
         </node>
       </node>
     </node>

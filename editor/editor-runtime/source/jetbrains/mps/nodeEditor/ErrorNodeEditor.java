@@ -19,11 +19,18 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.node.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collection;
+import java.util.Collections;
+
 public class ErrorNodeEditor implements EditorAspect {
+  @Override
+  public Collection<String> getContextHints() {
+    return Collections.emptyList();
+  }
 
   @Override
   public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {

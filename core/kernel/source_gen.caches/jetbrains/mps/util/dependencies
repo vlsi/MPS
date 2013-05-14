@@ -31,8 +31,8 @@
   </dependency>
   <dependency className="jetbrains.mps.util.ModuleNameUtil" file="ModuleNameUtil.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.util.SNodeCompare" file="SNodeCompare.java">
     <classNode dependClassName="java.lang.Object" />

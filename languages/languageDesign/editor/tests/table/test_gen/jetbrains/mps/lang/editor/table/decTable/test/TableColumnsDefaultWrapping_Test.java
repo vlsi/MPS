@@ -16,7 +16,7 @@ public class TableColumnsDefaultWrapping_Test extends BaseTransformationTest4 {
 
   @Test
   public void test_TableColumnsDefaultWrapping() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)");
+    this.initTest("${mps_home}", "r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)");
     this.runTest("jetbrains.mps.lang.editor.table.decTable.test.TableColumnsDefaultWrapping_Test$TestBody", "testMethod", false);
   }
 

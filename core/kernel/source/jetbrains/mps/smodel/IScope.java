@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -63,9 +63,9 @@ public interface IScope extends SearchScope {
 
   @Deprecated
   /*
-  Use ScopeOperations.getModules(SearchScope, IModule.class), but getModules() better
+  Use ScopeOperations.getModules(SearchScope, SModule.class), but getModules() better
    */
-  Iterable<IModule> getVisibleModules();
+  Iterable<SModule> getVisibleModules();
 
   @Deprecated
   /*

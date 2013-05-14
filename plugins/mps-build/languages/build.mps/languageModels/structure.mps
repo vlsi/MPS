@@ -285,17 +285,23 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="convert *.mps into *.mpb (binary format)" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.1330375798058820290" resolveInfo="BuildLayout_CopyProcessor" />
     </node>
+    <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="269707337715631379">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleSourcesKind" />
+      <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
+      <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2389279258782627672">
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleTestSource" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="test source" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547823" resolveInfo="BuildMps_ModuleSource" />
     </node>
-    <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="269707337715631379">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
-      <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleSourcesKind" />
-      <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
-      <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5507251971038816436">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildMps_Generator" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="generator" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149381388" resolveInfo="BuildMps_Module" />
     </node>
   </roots>
   <root id="5253498789149381388">
@@ -363,6 +369,12 @@
       <property name="role" nameId="tpce.1071599776563" value="runtime" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3189788309731903991" resolveInfo="BuildMps_ModuleRuntime" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="9200313594498201639">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="generator" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5507251971038816436" resolveInfo="BuildMps_Generator" />
     </node>
   </root>
   <root id="3189788309731903991" />
@@ -915,6 +927,20 @@
     </node>
   </root>
   <root id="1330375798066754656" />
+  <root id="269707337715631379">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="269707337715631442">
+      <property name="externalValue" nameId="tpce.1083923523172" value="sources" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="sources" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="269707337715631443">
+      <property name="externalValue" nameId="tpce.1083923523172" value="sources and tests" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="sources and tests" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="269707337715631452">
+      <property name="externalValue" nameId="tpce.1083923523172" value="tests" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="tests" />
+    </node>
+  </root>
   <root id="2389279258782627672">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7354447573577513025">
       <property name="name" nameId="tpck.1169194664001" value="isGenerated" />
@@ -930,18 +956,15 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3ior.2303926226081001727" resolveInfo="BuildInputSingleFolder" />
     </node>
   </root>
-  <root id="269707337715631379">
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="269707337715631442">
-      <property name="externalValue" nameId="tpce.1083923523172" value="sources" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="sources" />
+  <root id="5507251971038816436">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="868963075225252684">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="sourceLanguage" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3189788309731840248" resolveInfo="BuildMps_Language" />
     </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="269707337715631443">
-      <property name="externalValue" nameId="tpce.1083923523172" value="sources and tests" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="sources and tests" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="269707337715631452">
-      <property name="externalValue" nameId="tpce.1083923523172" value="tests" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="tests" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5507251971038817098">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
     </node>
   </root>
 </model>

@@ -4,7 +4,8 @@ package jetbrains.mps.lang.checkedName.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,11 +15,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy").interface_().create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.PropertyRefExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"propertyDeclaration"}, new String[]{"nodeExpr"}, new boolean[]{false}, false, false, "property/<node>,<role>/", "property reference", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.checkedName.structure.PropertyRefExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("propertyDeclaration").children(new String[]{"nodeExpr"}, new boolean[]{false}).alias("property/<node>,<role>/", "property reference").staticScope(StaticScope.NONE).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.PropertyRefType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "propRef", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.checkedName.structure.PropertyRefType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("propRef", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

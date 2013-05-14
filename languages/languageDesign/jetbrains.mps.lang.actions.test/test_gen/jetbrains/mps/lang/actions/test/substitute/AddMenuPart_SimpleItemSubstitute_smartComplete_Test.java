@@ -19,7 +19,7 @@ public class AddMenuPart_SimpleItemSubstitute_smartComplete_Test extends BaseTra
 
   @Test
   public void test_AddMenuPart_SimpleItemSubstitute_smartComplete() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
+    this.initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
     this.runTest("jetbrains.mps.lang.actions.test.substitute.AddMenuPart_SimpleItemSubstitute_smartComplete_Test$TestBody", "testMethod", false);
   }
 

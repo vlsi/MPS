@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Set;
 
-class TempModule extends AbstractModule implements SModule, MPSModuleOwner {
+public class TempModule extends AbstractModule implements SModule, MPSModuleOwner {
   private final ModuleDescriptor myDescriptor;
 
   public TempModule(Set<ModelRootDescriptor> modelRoots) {

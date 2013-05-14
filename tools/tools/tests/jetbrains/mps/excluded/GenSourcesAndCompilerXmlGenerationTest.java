@@ -78,7 +78,6 @@ public class GenSourcesAndCompilerXmlGenerationTest {
     allSources.addAll(sources.values());
     allSources.addAll(mpsModules.values());
 
-    boolean error = false;
     outer:
     for (File jFile : Utils.withExtension(".java", Utils.files(root))) {
       String cp = jFile.getCanonicalPath();
@@ -105,11 +104,11 @@ public class GenSourcesAndCompilerXmlGenerationTest {
       // this is a test for build labguage. Needs to be somehow distinguishable as test
       if (isUnder(cp, "/plugins/mps-build/languages/solutions/jetbrains.mps.build.sandbox/samples/")) continue;
 
-      error = true;
-      System.out.println("Java file " + cp + " is neither included in any MPS module, nor in any Idea source root");
-    }
+      // Models in the plugin project are generated into an excluded source_gen folder
+      if (isUnder(cp, "IdeaPlugin/mps-java/source_gen/")) continue;
 
-    Assert.assertFalse("failed, see log for details", error);
+      Assert.assertFalse("Java file " + cp + " is neither included in any MPS module, nor in any Idea source root", true);
+    }
   }
 
   private boolean isUnder(String child, String parent) throws IOException {

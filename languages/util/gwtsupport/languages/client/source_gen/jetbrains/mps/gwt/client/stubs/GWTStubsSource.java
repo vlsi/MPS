@@ -5,7 +5,7 @@ package jetbrains.mps.gwt.client.stubs;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -40,7 +40,7 @@ public class GWTStubsSource extends FolderSetDataSource implements StubModelData
   }
 
   @Override
-  public SModel loadSModel(IModule module, org.jetbrains.mps.openapi.model.SModel descriptor) {
+  public SModel loadSModel(SModule module, org.jetbrains.mps.openapi.model.SModel descriptor) {
     SModel model = new SModel(descriptor.getReference(), new ForeignNodeIdMap());
     SModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
     model.addLanguage(lang);

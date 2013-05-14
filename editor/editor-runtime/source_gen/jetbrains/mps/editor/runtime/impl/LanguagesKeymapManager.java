@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class LanguagesKeymapManager implements ApplicationComponent {
   private static final Logger LOG = LogManager.getLogger(LanguagesKeymapManager.class);
@@ -131,11 +131,11 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     }
 
     @Override
-    public void moduleInitialized(IModule module) {
+    public void moduleInitialized(SModule module) {
     }
 
     @Override
-    public void beforeModuleRemoved(IModule module) {
+    public void beforeModuleRemoved(SModule module) {
       if (module instanceof Language) {
         unregisterLanguageKeyMaps((Language) module);
       }

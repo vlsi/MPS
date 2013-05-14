@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
@@ -48,7 +48,7 @@ public class ReferenceUpdater {
   public void updateModuleReferences() {
     ModelAccess.assertLegalWrite();
 
-    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+    for (SModule m : MPSModuleRepository.getInstance().getAllModules()) {
       AbstractModule module = (AbstractModule) m;
 
       module.updateSModelReferences();

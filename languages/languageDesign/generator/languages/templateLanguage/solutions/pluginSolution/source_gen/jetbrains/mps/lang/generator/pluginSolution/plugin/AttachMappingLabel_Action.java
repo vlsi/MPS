@@ -23,7 +23,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.generator.GenerationFacade;
@@ -125,7 +125,7 @@ public class AttachMappingLabel_Action extends BaseAction {
     try {
       final SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
       IOperationContext operationContext = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext();
-      IModule module = operationContext.getModule();
+      SModule module = operationContext.getModule();
       List<SNode> mappings;
       if (module instanceof Generator) {
         mappings = (List<SNode>) GenerationFacade.getOwnMappings((Generator) module);
@@ -196,7 +196,7 @@ __switch__:
 
   protected static Logger LOG = LogManager.getLogger(AttachMappingLabel_Action.class);
 
-  private static IModule check_gwd6n9_a0a3a0(SModel checkedDotOperand) {
+  private static SModule check_gwd6n9_a0a3a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

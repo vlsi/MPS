@@ -4,7 +4,8 @@ package jetbrains.mps.debugger.api.lang.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,31 +15,31 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.BreakpointCreator", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"breakpointableConcepts"}, new boolean[]{true}, false, false, "breakpoint creators", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.BreakpointCreator").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"breakpointableConcepts"}, new boolean[]{true}).alias("breakpoint creators", "").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"isComplex"}, new String[]{"declaration"}, new String[]{"createBreakpoint", "isApplicable", "conceptsToCreateBreakpoint"}, new boolean[]{false, false, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("isComplex").references("declaration").children(new String[]{"createBreakpoint", "isApplicable", "conceptsToCreateBreakpoint"}, new boolean[]{false, false, true}).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"conceptDeclaration"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("conceptDeclaration").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Concept", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "concept", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Concept").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("concept", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Debug_Project", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "project", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Debug_Project").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("project", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_DebuggableNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "debuggableNode", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_DebuggableNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("debuggableNode", "").staticScope(StaticScope.NONE).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableToConcept", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "isApplicable", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableToConcept").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isApplicable", "").staticScope(StaticScope.NONE).create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{"kindName", "kindPresentation"}, new String[]{}, new String[]{"nodeExpression", "projectExpression"}, new boolean[]{false, false}, false, false, "create breakpoint", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").properties("kindName", "kindPresentation").children(new String[]{"nodeExpression", "projectExpression"}, new boolean[]{false, false}).alias("create breakpoint", "").staticScope(StaticScope.NONE).create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"debugger", "getSettings"}, new boolean[]{false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"debugger", "getSettings"}, new boolean[]{false, false}).create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.DebuggerReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"debuggerName"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "debugger", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.DebuggerReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("debuggerName").alias("debugger", "").staticScope(StaticScope.NONE).create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.DebuggerType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{"name"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "debugger type", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.DebuggerType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").properties("name").alias("debugger type", "").staticScope(StaticScope.NONE).create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.api.lang.structure.GetDebuggerSettings_Function", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "get debugger settings", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.GetDebuggerSettings_Function").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("get debugger settings", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
