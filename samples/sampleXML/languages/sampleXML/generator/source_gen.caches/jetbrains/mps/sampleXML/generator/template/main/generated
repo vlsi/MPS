@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9l23mme9gcej7eoe6cqlah5fzqfz0v1">
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="1ascupa1eofwhw4j3kbv4yj1b75ol5f" />
-  <common hash="e2sue1nvbams8fl0v756ck0uaw5qrg1">
+<dependencies version="2" modelHash="62ju769xwsnhj18cevhs74d2h9q5lh6">
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="-84wra3huiz5h5pyzthwhm6dgyzvyf0d" />
+  <common hash="-yolwp76fb77gn9oguxqxvyh5xtje4x">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1225240292353" name="mc_empty" hash="b8nbpr6lb2agqb8dl7ulaeo7etbkau4">
+  <source id="1225240292353" name="mc_empty" hash="-5ijtvz9ftmeemgltxax5t3jvczqffdw">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

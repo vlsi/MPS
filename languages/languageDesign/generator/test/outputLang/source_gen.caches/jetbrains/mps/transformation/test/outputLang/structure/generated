@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a36kzwpvq6lrya9alwanrjxghrta7r4">
+<dependencies version="2" modelHash="7fs9y035bwdjuurlnbo3jpisgd4myr2">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="bzwhscc44snkaqbcb0kkmlyif9kvete" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="5imvitjqsi0fj5c1fh2ttxqfrnitrkb">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <common hash="eod2mzjwixxzchban9sax0g1cc4xp4e">
     <dep root="1195164668463" />
     <dep root="1195165132070" />
     <dep root="1209604028561" />
@@ -22,25 +22,25 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1195164668463" name="OutputRoot" hash="998ftn9gicjvm0totzedmireeenvrxw">
+  <source id="1195164668463" name="OutputRoot" hash="11efuypz5qp57qt4oidj36w5tmysdfl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1195165132070" name="OutputNode" hash="1l6bj5688131o21l6rfsp95ayunvt7f">
+  <source id="1195165132070" name="OutputNode" hash="-eglmmlzbttoyg0ex9tx9balih8e54j5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1209604028561" name="OutputNode_forDontApplyReductionTwice_test" hash="-73x41xx2bu0ivvcm59g6vp46x8f28dh">
+  <source id="1209604028561" name="OutputNode_forDontApplyReductionTwice_test" hash="-6z03nh0litgjapdsrwmlcm893wooaur">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4146564171992368516" name="CustomRoot" hash="-cusc3cctvhg70peehhmdf6s0l1loydl">
+  <source id="4146564171992368516" name="CustomRoot" hash="-6usolethbzjt2n7mydetg42k3pstbjw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2681305894288486346" name="CustomStatement" hash="-bfawo0vfiqhtdyuw3vlor1i1at10m64">
+  <source id="2681305894288486346" name="CustomStatement" hash="-5ivitcozjvhsppskejc0q87zlt1z2dd">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2163819695913378074" name="CustomStatementRef" hash="-77ko3l60nys9pbzu8l096e10cvxfg3n">
+  <source id="2163819695913378074" name="CustomStatementRef" hash="bfe3tfyr5awyn75ahp4mnj9nkp3ne1o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6010543442198679048" name="TwoVarStatement" hash="-1yylf9l4ibkqyjvf4ex9gubrffnmbwg">
+  <source id="6010543442198679048" name="TwoVarStatement" hash="-bv9n117lyt44mddsjabl8w8pamsxuio">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

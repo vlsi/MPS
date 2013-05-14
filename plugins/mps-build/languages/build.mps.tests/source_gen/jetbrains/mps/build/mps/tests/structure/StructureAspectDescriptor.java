@@ -4,7 +4,8 @@ package jetbrains.mps.build.mps.tests.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,15 +15,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin", "jetbrains.mps.build.structure.BuildPlugin", false, new String[]{"jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildExternalDependency"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "module-tests", "adds ability to execute module tests to the project", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin").super_("jetbrains.mps.build.structure.BuildPlugin").parents("jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildExternalDependency").alias("module-tests", "adds ability to execute module tests to the project").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule", "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content", false, new String[]{"jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"}, new String[]{}, new String[]{"module"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule").super_("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content").parents("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content").references("module").staticScope(StaticScope.NONE).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup", "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content", false, new String[]{"jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"}, new String[]{}, new String[]{"group"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup").super_("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content").parents("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content").references("group").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules", "jetbrains.mps.build.structure.BuildAspect", false, new String[]{"jetbrains.mps.build.structure.BuildAspect", "jetbrains.mps.build.structure.BuildExternalDependency", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{}, new String[]{"modules"}, new boolean[]{true}, false, false, "test modules", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules").super_("jetbrains.mps.build.structure.BuildAspect").parents("jetbrains.mps.build.structure.BuildAspect", "jetbrains.mps.build.structure.BuildExternalDependency", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"modules"}, new boolean[]{true}).alias("test modules", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

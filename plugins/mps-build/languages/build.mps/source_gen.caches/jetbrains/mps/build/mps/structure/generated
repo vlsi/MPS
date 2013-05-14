@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c7ims8i3rqc7daxg57g2vd414k7eb44">
+<dependencies version="2" modelHash="dcl3p6xn8h6pa0umb0pue9c8c437dvg">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="bzwhscc44snkaqbcb0kkmlyif9kvete" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="-8cx8dtsisrani5churt4ergdx7gvr0q" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="7nm6dyddzlf5tj47jdtu7fm8mj6r0y1">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="-17fq7ayniqu3ik9c245uw9x66dje5x2" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <common hash="bwmhdkltvlx0b34ynmwvhqw4ssvyavd">
     <dep root="1265949165890536423" />
     <dep root="1330375798066754656" />
     <dep root="1500819558095907805" />
@@ -71,153 +71,159 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="5253498789149381388" name="BuildMps_Module" hash="at4q3rfktcwszdktt2u0gwt10drfkfa">
+  <source id="5253498789149381388" name="BuildMps_Module" hash="bkwr1v1opia6ijltim41xxepmw02sfj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5253498789149547703" name="BuildMps_ModuleDependency" hash="66vyspl0f1pzcgn1ul18nkjtdngtwzv">
+  <source id="5253498789149547703" name="BuildMps_ModuleDependency" hash="csx3konoy2uen7vr3ep88xip8oh5slm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5253498789149547823" name="BuildMps_ModuleSource" hash="-7x1tffgz8cp132umbtgh45bdrx3ny19">
+  <source id="5253498789149547823" name="BuildMps_ModuleSource" hash="-9x813so1579h8vdvkxjd73t8nkwgo3v">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5253498789149585690" name="BuildMps_ModuleDependencyOnModule" hash="4npnrib8l8av4i4h4148r3waofrcqyy">
+  <source id="5253498789149585690" name="BuildMps_ModuleDependencyOnModule" hash="3po52u9a1cjscwipz7fm51t9vgmqh1x">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5253498789149588970" name="BuildMps_ModuleJavaSource" hash="-1s9l6j86nhkeq5d56af1c7jaw8jnsie">
+  <source id="5253498789149588970" name="BuildMps_ModuleJavaSource" hash="-1x1uhh04dpn6ara75etabbaoll66j7e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3189788309731840247" name="BuildMps_Solution" hash="-50tjvjwoj99furo0p94dv4fca9bl881">
+  <source id="3189788309731840247" name="BuildMps_Solution" hash="-2ni4p2gf37a9q5vwzh6smf68ghkhmid">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3189788309731840248" name="BuildMps_Language" hash="b5i0bi9pfrxwfbtr4afem53doikbymv">
+  <source id="3189788309731840248" name="BuildMps_Language" hash="79ibnp0quiqrz2fjot4s0o415vjpkdg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3189788309731903991" name="BuildMps_ModuleRuntime" hash="-3f1h5cdhecwn34bhu5h5swwxlue30xz">
+  <source id="3189788309731903991" name="BuildMps_ModuleRuntime" hash="1umwj0nygvvg2y0esocmyqoeq26buzy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3189788309731922642" name="BuildMps_ModuleDependencyUseLanguage" hash="9oqo0vdm9aaa5ex1zk534cfptr03dzt">
+  <source id="3189788309731922642" name="BuildMps_ModuleDependencyUseLanguage" hash="dq4rlatp1z5hxlvnxbvevyzq1mqxs17">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3189788309731928315" name="BuildMps_ModuleDependencyOnJavaModule" hash="-67tj6wt76baegrnqv2nueu5b9a1d4jw">
+  <source id="3189788309731928315" name="BuildMps_ModuleDependencyOnJavaModule" hash="-bpr8av3r2ozx4v3ay9i7nja9dc84ba4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3189788309731981027" name="BuildMps_ModuleSolutionRuntime" hash="-2g0d64yn32h6k97xkioj5838xamlr3s">
+  <source id="3189788309731981027" name="BuildMps_ModuleSolutionRuntime" hash="-9ll31xdduqjkmhrg8qztv1cmvx5x10l">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4278635856200794926" name="BuildMps_ModuleDependencyExtendLanguage" hash="dk85a8zfshtri7ewr6v88jcb7riilic">
+  <source id="4278635856200794926" name="BuildMps_ModuleDependencyExtendLanguage" hash="d7o03x7hbpnf2pru7dpmwe8tlykpbmz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4278635856200804496" name="BuildMps_ModuleJarRuntime" hash="-39snxc3106wwg1nrcgo0umy15e2k766">
+  <source id="4278635856200804496" name="BuildMps_ModuleJarRuntime" hash="9jx06g287kfaesy02lhoj715c2m5sau">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4278635856200817744" name="BuildMps_ModuleModelRoot" hash="81vxup15y3hhgeyh6rp11951msznb0t">
+  <source id="4278635856200817744" name="BuildMps_ModuleModelRoot" hash="-ea6qn4ra2fjc1wx4vplodgu3rfl2ycy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4278635856200826393" name="BuildMps_ModuleDependencyJar" hash="-efnfh9302nhn77ljeid0xm41gp0jdjf">
+  <source id="4278635856200826393" name="BuildMps_ModuleDependencyJar" hash="wbaxi3ntsab24jh728f4vchwjbobkw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="322010710375794190" name="BuildMps_DevKit" hash="b1aa9x4km0d1c9pb29w6ftcgwvon4hv">
+  <source id="322010710375794190" name="BuildMps_DevKit" hash="epw5y0qpdg75l8vydjzoc8senkz01zg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="322010710375805242" name="BuildMps_DevKitRef" hash="-aayeqc3hshfr83d1ikb7rlf8n419k1x">
+  <source id="322010710375805242" name="BuildMps_DevKitRef" hash="7barnd7o22ovcre6l5i5hasb10x9n0y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="322010710375805251" name="BuildMps_DevKitExport" hash="-46s997wnej6ru3nfnjeiqleb8htygee">
+  <source id="322010710375805251" name="BuildMps_DevKitExport" hash="d7iy4grw3gzl5ngup8eqstwia6x55tc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="322010710375832938" name="BuildMps_DevKitExportLanguage" hash="4yqelxm79pe86p3vj968appp6xhsrze">
+  <source id="322010710375832938" name="BuildMps_DevKitExportLanguage" hash="-9zge9jg0bor1dk5xhgyqfch2urwj9tu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="322010710375832954" name="BuildMps_DevKitExportSolution" hash="-10f4uxl6f2fk2q20k7x51qzoze5bwc7">
+  <source id="322010710375832954" name="BuildMps_DevKitExportSolution" hash="-41chudju9fdz80e7vnait1c7mqm9ki3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="322010710375871467" name="BuildMps_AbstractModule" hash="b568lait0b6yh6noapoqskoerljf12b">
+  <source id="322010710375871467" name="BuildMps_AbstractModule" hash="78hiz6dwt61z4w4ab8hqcu9xti41ndl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="322010710376037449" name="BuildMps_ModuleDependencyOnDevKit" hash="e1mvz8pxvghxryzorw2yhwrm1xoiamb">
+  <source id="322010710376037449" name="BuildMps_ModuleDependencyOnDevKit" hash="3io2icw3ymk7rs7j8r72mydj3yy1zbn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1500819558095907805" name="BuildMps_Group" hash="7tw6c73hj4thete8x9ivizbk7vp512c">
+  <source id="1500819558095907805" name="BuildMps_Group" hash="-d2sxv8bf33krvzaqb6i8v405ooc5p2z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1692280246134781712" name="BuildMpsLayout_ModuleSources" hash="94bv8y48a8edzauowpnkanhmxy0cktm">
+  <source id="1692280246134781712" name="BuildMpsLayout_ModuleSources" hash="94kn650ra9pfz20i9qpr8zhc0wj6nvs">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7259033139236285166" name="BuildMps_ExtractedModuleDependency" hash="cmgmkaym0zuo7pzsh0sil37gl8t0xi8">
+  <source id="7259033139236285166" name="BuildMps_ExtractedModuleDependency" hash="d5s7nvot10q76badmm4ehhmkor8u17c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2105528055260548241" name="BuildMpsLayout_FolderWithSources" hash="3mmvhoaxkio44o1vtqpi0oche6vvc4r">
+  <source id="2105528055260548241" name="BuildMpsLayout_FolderWithSources" hash="-f83oa4xx8bvq4ubi8f79wncup27bxk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1265949165890536423" name="BuildMpsLayout_ModuleJars" hash="-1r2ypw02qda4nhioa31ac3aswxo9ngb">
+  <source id="1265949165890536423" name="BuildMpsLayout_ModuleJars" hash="3crv96qpx1v8krv36fvicgk1a9xin48">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="868032131020265945" name="BuildMPSPlugin" hash="-aoaudedw8eiydzkefxca1xs1prz74ys">
+  <source id="868032131020265945" name="BuildMPSPlugin" hash="-9nety9xe5o7xx7ilmtsiie4fd0ne6hu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7655580649838764660" name="BuildMpsLayout_ModuleXml" hash="-dwgjv5k6c8qheh4a8xkmluo9a86dab3">
+  <source id="7655580649838764660" name="BuildMpsLayout_ModuleXml" hash="-6oe7eu05gxz7435vau8udpvahlubx5d">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4356762679305675652" name="BuildMpsLayout_ModuleXml_CustomJarLocation" hash="aqpv9m2gyzxc27dsgzkcxu13haukv23">
+  <source id="4356762679305675652" name="BuildMpsLayout_ModuleXml_CustomJarLocation" hash="-f6j0aqeqjgm9uwllchg3vz30x7tqn3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7753544965996377997" name="BuildMps_Branding" hash="-8ybt2onip0oi9yz3haa142kcncajs0n">
+  <source id="7753544965996377997" name="BuildMps_Branding" hash="egfig4cql2ulfk31kegb5k3nju5z725">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7753544965996489991" name="BuildMps_BrandingUpdateSite" hash="-4n05b2vuf02a5dcisxto2ugr4wtewt0">
+  <source id="7753544965996489991" name="BuildMps_BrandingUpdateSite" hash="cfx8wcwchw1ie9d3xyktg8g37j1wocb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7753544965996489992" name="BuildMps_BrandingHelp" hash="4zpz11j7w590cpmqtz3z1awl8etilav">
+  <source id="7753544965996489992" name="BuildMps_BrandingHelp" hash="-e4lgte07i7dlbbet1a6emkmvxpigvei">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6592112598314498926" name="BuildMpsLayout_Plugin" hash="-783jb0dqa0mselh07lzz8vt6hxjpxll">
+  <source id="6592112598314498926" name="BuildMpsLayout_Plugin" hash="-bqxfu68uxsc60e00f11s4t7pit4usfm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6592112598314498932" name="BuildMps_IdeaPlugin" hash="9xpqchnrat27dxz9tpqrjp1j7dsvxgx">
+  <source id="6592112598314498932" name="BuildMps_IdeaPlugin" hash="-dfpieuxzrzpg0xo40gh3s9ncgsu64by">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6592112598314499027" name="BuildMps_IdeaPluginDependency" hash="2npimvo7dzrjy21bhzb7i4w6939bydj">
+  <source id="6592112598314499027" name="BuildMps_IdeaPluginDependency" hash="3zbxybefl7px5t86cu1ezfjrp8jcnbx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6592112598314499036" name="BuildMps_IdeaPluginModule" hash="5n6slsywsqj7vwe552yakfot8dwicec">
+  <source id="6592112598314499036" name="BuildMps_IdeaPluginModule" hash="1lp1wvnvy0a4iimnix45vrqwjknw15t">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6592112598314499051" name="BuildMps_IdeaPluginContent" hash="-dqkal7stdzn1mx73bnw08giykd4f9zq">
+  <source id="6592112598314499051" name="BuildMps_IdeaPluginContent" hash="-9rjz2ei6bt1dz4dwcatpekjhlftxzyv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6592112598314529916" name="qualifiedName" hash="88wnhuhddjtwl572ftuggzttqvlkn8n">
+  <source id="6592112598314529916" name="qualifiedName" hash="-2lhaod5596hzwndu4ppdypyy75f0zih">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="qualifiedName_PropertySupport.java" />
   </source>
-  <source id="6592112598314586625" name="BuildMps_IdeaPluginGroup" hash="aqyi66qla1ehox7qck38jbjil0mgeek">
+  <source id="6592112598314586625" name="BuildMps_IdeaPluginGroup" hash="c1smntjl4wh3379c4e039pi03ifow6x">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6592112598314795900" name="BuildMpsLayout_PluginDescriptor" hash="-3p435k66uytdb77ruecieg0bhpisfdz">
+  <source id="6592112598314795900" name="BuildMpsLayout_PluginDescriptor" hash="94msgptmadmji39ipa56izmmyl6k7rn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4034578608468929319" name="BuildMps_IdeaPluginGroupCustomModule" hash="5ga3b3hbdkbdef2ialkle0hklfobzea">
+  <source id="4034578608468929319" name="BuildMps_IdeaPluginGroupCustomModule" hash="e9ltvyvit4lvym6642mhrbh01fe4nng">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7832771629084799699" name="BuildMps_IdeaPluginVendor" hash="-wnxjodzg2iktwxlt4bph21c1slqxlg">
+  <source id="7832771629084799699" name="BuildMps_IdeaPluginVendor" hash="6tliw48n9m93nckdwh48i98vkmq20kz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6503355885715333289" name="BuildMpsAspect" hash="5y0noymkt6t61rsqueozt8tpcsluus7">
+  <source id="6503355885715333289" name="BuildMpsAspect" hash="-kbkkggjsucuf2wlxigmduqliaecaj8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4964617264469340766" name="GeneratorInternal_BuildSourcePath" hash="7k35k8teno7gm7kvj6snqyafxxbmzrf">
+  <source id="4964617264469340766" name="GeneratorInternal_BuildSourcePath" hash="c08zf0lg74gfwxf65aj101m1y3vul7c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4964617264469340623" name="GeneratorInternal_BuildMps_Module" hash="rvf6zpqqqfvzwrmdkzx30cpzhf1st5">
+  <source id="4964617264469340623" name="GeneratorInternal_BuildMps_Module" hash="-6vdqn854l16iat0srdixagt5hfh8cgf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="978600701690054692" name="GeneratorInternal_String" hash="3brhnz64zs1310khas5qhovk09t3pdf">
+  <source id="978600701690054692" name="GeneratorInternal_String" hash="-4471flbn8k05naoocgp7663nx6l2uyw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1330375798066754656" name="BuildLayout_ToBinaryCopyProcessor" hash="b1z191t1vx7eipdzr2yv7bpy2633x8y">
+  <source id="1330375798066754656" name="BuildLayout_ToBinaryCopyProcessor" hash="-bp4i5fee01wgcvzuzac0r5ng7grm8g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="269707337715631379" name="BuildMps_ModuleSourcesKind" hash="a1f9kbi7unwj2wxyg27w1269rb6capz">
+  <source id="5507251971038816436" name="BuildMps_Generator" hash="-enn2wl0xhidarjajpuq0a0paizxn72g">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2389279258782627672" name="BuildMps_ModuleTestSource" hash="-2zip1eoi1b3ghnjcys46uutu8rwnido">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="269707337715631379" name="BuildMps_ModuleSourcesKind" hash="-1aau25cx36v85r4vpvrqch14lgtbltx">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -227,12 +233,6 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BuildMps_ModuleSourcesKind.java" />
     <file name="BuildMps_ModuleSourcesKind_PropertySupport.java" />
-  </source>
-  <source id="2389279258782627672" name="BuildMps_ModuleTestSource" hash="ebhktakq39bd1rg0trjej66yeg1nhj7">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
-  <source id="5507251971038816436" name="BuildMps_Generator" hash="457oi7bpahq0hs2mlxsz3vec6s36ufj">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>
 

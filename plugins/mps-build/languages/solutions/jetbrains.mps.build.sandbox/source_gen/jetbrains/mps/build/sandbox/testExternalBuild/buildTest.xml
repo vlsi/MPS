@@ -44,7 +44,7 @@
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/sandbox/jetbrains.mps.build.sandbox-src.jar">
-      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/jetbrains.mps.build.sandbox/jetbrains.mps.build.sandbox.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.sandbox-models" prefix="module/models" />
     </jar>
@@ -247,7 +247,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
+        <path location="${basedir}/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
@@ -283,6 +283,6 @@
   </target>
   
   <target name="cleanSources">
-    <delete dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
+    <delete dir="${basedir}/source_gen" />
   </target>
 </project>

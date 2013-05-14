@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8gqnfvf0xh1lell89d88pb9p46uhbou">
+<dependencies version="2" modelHash="-9qtat3qdmqqab8b4uwf5h3kyds8rsq9">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <common hash="-4kmnk3zbyyw1ks399xklvrjl2wjqik4" />
-  <source id="878521226297927156" name="Script" hash="-anvfqfd4xz23hr6c3ltusc0xugv91rn">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <common hash="-1sik5ekg4gfiq1zvmcx8ddeqjnhjyq2" />
+  <source id="878521226297927156" name="Script" hash="8i2i5suk569qsons3gq24kjcb7o4gb1">
     <dep root="7910428321252780319" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Script.java" />
   </source>
-  <source id="878521226297928383" name="ScriptData" hash="8jdue2ti9rwq3wdu5p97qgwt4fd1bv2">
+  <source id="878521226297928383" name="ScriptData" hash="-4pthnn6l1qf7kshs37s5wqczfi0tuij">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ScriptData.java" />
   </source>
-  <source id="2546981710035421490" name="IMessageFormat" hash="-2r6qa5mkvpcuthbizmrstw47s5kk5wi">
+  <source id="2546981710035421490" name="IMessageFormat" hash="-56u6x1lg9agcciis3nho1ecwmyf4sot">
     <file name="IMessageFormat.java" />
   </source>
-  <source id="7910428321252775322" name="TeamCityMessageFormat" hash="168bcica8vx69slhy9yacad19ggacq7">
+  <source id="7910428321252775322" name="TeamCityMessageFormat" hash="-ulggyy54ol89xyrtq4bmomn0y917g8">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TeamCityMessageFormat.java" />
   </source>
-  <source id="7910428321252780319" name="ScriptProperties" hash="85wpxd7oivv7657kla6ikwrkmtnhp0p">
+  <source id="7910428321252780319" name="ScriptProperties" hash="5dh0naidpm4ekxwer8oxrfu1xhmpqck">
     <file name="ScriptProperties.java" />
   </source>
-  <source id="8797607015334522630" name="JDOMUtil" hash="a6qf5cwkddf1l7rqzvlrehq160xjivl">
+  <source id="8797607015334522630" name="JDOMUtil" hash="77mri91wc8mtiv0r6xpuqxzu6z8sxtq">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JDOMUtil.java" />
   </source>

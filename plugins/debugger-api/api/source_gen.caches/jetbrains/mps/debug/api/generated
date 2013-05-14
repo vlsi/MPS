@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-38hm3bm97u4xz8nmirrrc0p69gp9bsz">
+<dependencies version="2" modelHash="3stmer0aa38hwjqz6dm1c6ne2ku27iv">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -17,36 +17,36 @@
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.util(MPS.Platform/com.intellij.openapi.util@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-2pfgs5l9xgdeg3nuvw9wsk21zkjyohc" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-5qkh0mpu388oets3m8g893qmi77hv6t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b7efqpp988394i1ffiwgj2bp6kuza4w" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="e4aodjamafijmcm1ggq1itbjxjw4yyr" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
-  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="7hndjrlln3nwjwuqph2f216c17q4zd6" />
-  <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="2dwxf8w6oj5zpfbtgmdrreuj7n7ytal" />
-  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-58ocwuod1hpr2tjsask05cw1cxy8jv8" />
-  <dep model="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)" hash="-3ymvw83jreqox4t87vya3lk9hg7tbik" />
-  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-auqka64l2h08y8tiog25r7sj7tf1rmr" />
-  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="6pme6f8cr98yhjna02lpbqkg2n36ah5" />
-  <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="9sm93bgv1l8zoti75ozt0fcowbeyh8h" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="-c0qzqas4coy07hycgsbe11d30a3f1ig" />
-  <source id="4474271214082913032" name="Debuggers" hash="corg1y9w91cojrmb7347qdr0liq8ij8">
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b3wz0owxesi28bm1lrvljioj8jycged" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8xjteqk842ql8pbze16i68m1ajw21lk" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="59ea0wchjl1p3fmqjarzl02fje6rngu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="97bcp20rwvaujtt4z6d96fxd6ude8mm" />
+  <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="6lngotyf35uod105g6hfgzdi0hk082i" />
+  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="108m9frs6rdj82t6r1g3jbfyyzennzo" />
+  <dep model="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)" hash="77evr322z0lr3s9qyex6a1ecq2u6qak" />
+  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-72puvw17edzqo9qji6cugf26whp3ugs" />
+  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2ndxdy2yylqxt61razyif42s9aj25s9" />
+  <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="7fhvhxli6zczl3xsh8xg3sxut4g9nbf" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <common hash="bpl1dlrbfit20tnczuic7n5u1dagtim" />
+  <source id="4474271214082913032" name="Debuggers" hash="cjmz9zqutu2ohobjhk77rtvfgq8zl9y">
     <dep root="4474271214082912941" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Debuggers.java" />
   </source>
-  <source id="4474271214082913334" name="IDebuggerSettings" hash="crpnsczjqyqme0qlio6goip7xnh2bhx">
+  <source id="4474271214082913334" name="IDebuggerSettings" hash="-94fptbnxcwqnogotcwz4sv8m11vqfbe">
     <file name="IDebuggerSettings.java" />
   </source>
-  <source id="4474271214082913453" name="AbstractDebugSessionCreator" hash="-dfyxj23lbwccsfyz4qvhv70c9o6y7b6">
+  <source id="4474271214082913453" name="AbstractDebugSessionCreator" hash="bxdxcfw2nsv0wu01xc6t2dsxwfq3eci">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AbstractDebugSessionCreator.java" />
   </source>
-  <source id="4474271214082913515" name="DebuggableFramesSelector" hash="6yvk3d2drjih7ugr18ohurkaa25qrcj">
+  <source id="4474271214082913515" name="DebuggableFramesSelector" hash="-dul0r2mnr9viypfhiech7denqnsvkuz">
     <dep root="4474271214082912940" />
     <dep root="4474271214082913514" />
     <dep root="4474271214082914203" />
@@ -62,26 +62,26 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DebuggableFramesSelector.java" />
   </source>
-  <source id="4474271214082913702" name="DebugSessionManagerComponent" hash="-8irj23vcqfdu38u1nd1c88x0fz4hpa5">
+  <source id="4474271214082913702" name="DebugSessionManagerComponent" hash="-fh0sp8vfmuw3ud34au7sch9aid51xn">
     <dep root="4474271214082912940" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.process(MPS.Platform/com.intellij.execution.process@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.ui(MPS.Platform/com.intellij.execution.ui@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DebugSessionManagerComponent.java" />
   </source>
-  <source id="4474271214082914203" name="IDebuggableFramesSelector" hash="9xof7i0jekici6kjakbakodt1fgfzio">
+  <source id="4474271214082914203" name="IDebuggableFramesSelector" hash="-alymuqmgqte9opat11o05c13w4u7sok">
     <file name="IDebuggableFramesSelector.java" />
   </source>
-  <source id="4474271214082914260" name="BreakpointInfo" hash="-6f51pto1ddtkhly536geiaxl6h1oxwq">
+  <source id="4474271214082914260" name="BreakpointInfo" hash="-2qk9m7hepqsfe5dmb593dsctw7le6ju">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BreakpointInfo.java" />
   </source>
-  <source id="4474271214082913267" name="EmptyDebuggerSettings" hash="-7p3r2jeivz4s430vbjq3za574zuelgm">
+  <source id="4474271214082913267" name="EmptyDebuggerSettings" hash="ed2evzuh7er0k0n853r8mru3dv24mvy">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="EmptyDebuggerSettings.java" />
   </source>
-  <source id="4474271214082913514" name="AbstractUiState" hash="18dwr816gu3hpn5wmxhbdvvemf3wq5f">
+  <source id="4474271214082913514" name="AbstractUiState" hash="2xmqxdkjxj0a18r9l0p9sdrdfw7gkct">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -91,11 +91,11 @@
     <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" />
     <file name="AbstractUiState.java" />
   </source>
-  <source id="4474271214082914772" name="AbstractDebugger" hash="-duo9l2vcyrxb9ds581viotfaprttlmz">
+  <source id="4474271214082914772" name="AbstractDebugger" hash="-1ev7o5scpioofy7189bl13fvhv9away">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AbstractDebugger.java" />
   </source>
-  <source id="4474271214082914913" name="BreakpointCreatorsManager" hash="-7zyew4d0bu94pmeu8gfaw5dd7awwchx">
+  <source id="4474271214082914913" name="BreakpointCreatorsManager" hash="8om39kwv7mrq12u9ham49liry5nkkv7">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -125,16 +125,16 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BreakpointCreatorsManager.java" />
   </source>
-  <source id="4474271214082915164" name="DebuggerNotPresentException" hash="-2stk6p8h6y7uei4xtch5xzwc9gff9n6">
+  <source id="4474271214082915164" name="DebuggerNotPresentException" hash="emcffnzfx05iflsnwa3vvh9po9hb058">
     <file name="DebuggerNotPresentException.java" />
   </source>
-  <source id="4474271214082912941" name="IDebugger" hash="-ehnord2eu5v9ryqvgahmpclyzq9co8m">
+  <source id="4474271214082912941" name="IDebugger" hash="8yjotqc5i54ykynk7ugwqd29pvz3on0">
     <file name="IDebugger.java" />
   </source>
-  <source id="4474271214082915266" name="SessionChangeListener" hash="4e3aylvoa9gkk4mysmb5ccqop5xi9l7">
+  <source id="4474271214082915266" name="SessionChangeListener" hash="-bkue5sliozjg21azzpg4s39yxxn3pvb">
     <file name="SessionChangeListener.java" />
   </source>
-  <source id="4474271214082915303" name="BreakpointManagerComponent" hash="9i2lm291bwd2bhp393y3pg4fosy4yos">
+  <source id="4474271214082915303" name="BreakpointManagerComponent" hash="8xn0eqaw9q8p474geztz6kafzhk58mk">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -148,10 +148,10 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BreakpointManagerComponent.java" />
   </source>
-  <source id="4474271214082916323" name="SessionChangeAdapter" hash="-bo1p9ykb6a8mf46o0c200ejn3yf9lp9">
+  <source id="4474271214082916323" name="SessionChangeAdapter" hash="he8z11labzyed5z6t22el38bnjxvhq">
     <file name="SessionChangeAdapter.java" />
   </source>
-  <source id="4474271214082912940" name="AbstractDebugSession" hash="-9u8lad11d5r8ksaw5mi36ns6r44zmas">
+  <source id="4474271214082912940" name="AbstractDebugSession" hash="-86dy974vkbhotzjwrz751qc25ulzgia">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AbstractDebugSession.java" />
   </source>

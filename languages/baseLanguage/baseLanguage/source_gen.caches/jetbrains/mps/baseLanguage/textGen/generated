@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4mb59wis0oshxz3z4y2abvr0zy6tzg2">
+<dependencies version="2" modelHash="-ehm68ba2u8i98b497w4zdh4gt2cnhdr">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -9,31 +9,31 @@
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="4qb6hzq5n1c7ttn0ermxt0qnt48xuco" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-6ndj9nlttlyav4hvpcs073x2l1z2614" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-2pfgs5l9xgdeg3nuvw9wsk21zkjyohc" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="e04c1rxnqbqsa6flvn8w3de8x4phusg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
+  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-3gd1wjtanyuae8zlmappxzhsoyku4tj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="ggsqc6rgbf2p0m0z15dk8d5fjhmfbr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-5qkh0mpu388oets3m8g893qmi77hv6t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-arvbp4sk4s1cuy53bygk6ld5sghrjco" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b7efqpp988394i1ffiwgj2bp6kuza4w" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="1xdbhxbxgxcj0vz3o967fop4sb0ro25" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-z22oiu2i3virhyguef3oewaixjm9hi" />
-  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="7hndjrlln3nwjwuqph2f216c17q4zd6" />
-  <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" hash="1oieg0nih8h7eiy1sqqjnea5i6m0ge1" />
-  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="78ysfrpjuhuyadt3m03y6bbyt3b17tp" />
-  <dep model="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" hash="5mm6zdlgz7k6se0hju3pcz19korhc5x" />
-  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="-aqa9yj574wp22xbvu51uq3c4q80ubnq" />
-  <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" hash="95xae2mij6yhh2aq22y72fd4ic7gbe2" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="eaarideck6uggp8nn6bpyho4my5sjxz" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-73ksfiy89aqro33y9o3ksbsc4qnds4d" />
-  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-8cq86xejpysu3jsrz5wfru3k7zosme1" />
-  <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" hash="bjxhtcz3ye8rh3jicmeglayskc39u7u" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="-chm9upfwq1xqc1n3us9wfyaw4fiiigp" />
-  <source id="1234796104060" name="BaseLanguageTextGen" hash="6cpylbkh6dhf11t6hpb8qoaxq75yatk">
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b3wz0owxesi28bm1lrvljioj8jycged" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9iow8oinjz3flhnokp65cdgbcfbisw5" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="escnzqn0hifing8eemstueasix9gmse" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="97bcp20rwvaujtt4z6d96fxd6ude8mm" />
+  <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" hash="at9pl5r19jew6os4j6sg2p02hjergeb" />
+  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="6ggjsqv32zguzobb2exfu46t58nkiwn" />
+  <dep model="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" hash="-dmz5rkyy7rdh6en8e609auxqsbswuet" />
+  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="-99megwfgoed1qx4j4jrdybqcflrfwf9" />
+  <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" hash="3zfl2af2tjgxlreszu2svgw9p756u61" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="10mp51mbeql449vc6yd910xwfralj9l" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-75hld4xn0j0x620a2ffc7r1mui5k2kp" />
+  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-72puvw17edzqo9qji6cugf26whp3ugs" />
+  <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" hash="37dkgwd4humkym2gzwh3bz7gaeoaql8" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <common hash="-1xwzwgez2ncybquxkzpz9lyi33yc933" />
+  <source id="1234796104060" name="BaseLanguageTextGen" hash="2vxa8i7p15ypup7gn2ffzsjzo0kr1u1">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -59,14 +59,14 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BaseLanguageTextGen.java" />
   </source>
-  <source id="1234803609335" name="AndExpression_TextGen" hash="-2cuwo3w9s0j5eor59qblhitszwex4dz">
+  <source id="1234803609335" name="AndExpression_TextGen" hash="-9ozqlc8nbivapxx5psj1x40lbrov08z">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="AndExpression_TextGen.java" />
   </source>
-  <source id="1234886608901" name="Annotation_TextGen" hash="6kl9sp8n465071uygydu8hw1riavtrn">
+  <source id="1234886608901" name="Annotation_TextGen" hash="8u183aoj5nl5nrf3swqxyj483hctcg4">
     <dep root="1234796104060" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -91,7 +91,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Annotation_TextGen.java" />
   </source>
-  <source id="1234886915639" name="AnnotationInstance_TextGen" hash="ecqw7mp2gyuusm72paynso9lw10qxnx">
+  <source id="1234886915639" name="AnnotationInstance_TextGen" hash="33x75y7bbgvz1g9m78gnau710ce1p2b">
     <dep root="1234796104060" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -102,14 +102,14 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AnnotationInstance_TextGen.java" />
   </source>
-  <source id="1234887379769" name="AnnotationInstanceExpression_TextGen" hash="-2zl85gs8tzaanznzzlsx7bgyvdjn548">
+  <source id="1234887379769" name="AnnotationInstanceExpression_TextGen" hash="-ifyvrkfvp6i1p7z4681reax1kkxeyl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="AnnotationInstanceExpression_TextGen.java" />
   </source>
-  <source id="1234887419578" name="AnnotationInstanceValue_TextGen" hash="b16x0z2b9ryev86c2ok51u5tyyxzn61">
+  <source id="1234887419578" name="AnnotationInstanceValue_TextGen" hash="-7qxhy9sb9c9h5f5o5evh04y157unro2">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -118,7 +118,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="AnnotationInstanceValue_TextGen.java" />
   </source>
-  <source id="1234887488963" name="AnnotationMethodDeclaration_TextGen" hash="-4zkrby9rejzxbxa2010h2k9utcnkyj2">
+  <source id="1234887488963" name="AnnotationMethodDeclaration_TextGen" hash="40h4yzu4tohmh97klzqu61wou25q27m">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -136,7 +136,7 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="AnnotationMethodDeclaration_TextGen.java" />
   </source>
-  <source id="1234887555845" name="AnonymousClass_TextGen" hash="6gvwb9ariibrzonwy8ozqhwexiwxjwq">
+  <source id="1234887555845" name="AnonymousClass_TextGen" hash="-csf5sbf2u83v6i5qpxp8rmra156lai2">
     <dep root="1234796104060" />
     <dep root="3408882292339889057" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -154,21 +154,21 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AnonymousClass_TextGen.java" />
   </source>
-  <source id="1234888787417" name="AnonymousClassCreator_TextGen" hash="-7erwqlvxr9mkr07mjmq5cn8fiszx7l3">
+  <source id="1234888787417" name="AnonymousClassCreator_TextGen" hash="1ikggvicchgmy7q7ye1eu0n08mqgs88">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="AnonymousClassCreator_TextGen.java" />
   </source>
-  <source id="1234888829413" name="ArrayAccessExpression_TextGen" hash="-ch971smd4ub77xg8dn9h8o36fxrfock">
+  <source id="1234888829413" name="ArrayAccessExpression_TextGen" hash="7y5mxpuh229jioomb285anw5ambrnvt">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ArrayAccessExpression_TextGen.java" />
   </source>
-  <source id="1234888870976" name="ArrayCreator_TextGen" hash="64osb8n4xi93bx8dakn8h2juhpw1dvw">
+  <source id="1234888870976" name="ArrayCreator_TextGen" hash="cexbn0ejl7sphb1gjn18j58kdhpl91x">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -178,7 +178,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ArrayCreator_TextGen.java" />
   </source>
-  <source id="1234888916067" name="ArrayCreatorWithInitializer_TextGen" hash="cnwtmbga6z8bf1vnrwq8r08h44k7czg">
+  <source id="1234888916067" name="ArrayCreatorWithInitializer_TextGen" hash="-ccykp4pe3xxq5ylfiv8jcg8td79dd9i">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -188,12 +188,12 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ArrayCreatorWithInitializer_TextGen.java" />
   </source>
-  <source id="1234889016866" name="ArrayLengthOperation_TextGen" hash="-3bvjr0nf7v4qxo9mi99vfeaf74v20vt">
+  <source id="1234889016866" name="ArrayLengthOperation_TextGen" hash="chgr3rx1bxm7invt92xpgaj2izze3t2">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ArrayLengthOperation_TextGen.java" />
   </source>
-  <source id="1234889037948" name="ArrayLiteral_TextGen" hash="-5fbi4ptib0n6uwe2d9qrunlfqd42s5u">
+  <source id="1234889037948" name="ArrayLiteral_TextGen" hash="-35de9fi87yhmaswbgh5uommvf2k21lx">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -203,14 +203,14 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ArrayLiteral_TextGen.java" />
   </source>
-  <source id="1234890240213" name="ArrayType_TextGen" hash="2eks95t0vdq154806200bgbxtnmrvlp">
+  <source id="1234890240213" name="ArrayType_TextGen" hash="-5m1lh32pohjr704nmukof6vch1m2e6z">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ArrayType_TextGen.java" />
   </source>
-  <source id="1234890261494" name="AssertStatement_TextGen" hash="5nnuw5bvq4groexir3ba1dppf2rsds6">
+  <source id="1234890261494" name="AssertStatement_TextGen" hash="-58jebtxdr6jft7jozrmvxoq5ynmpasg">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -225,35 +225,35 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="AssertStatement_TextGen.java" />
   </source>
-  <source id="1234890392776" name="BitwiseAndExpression_TextGen" hash="-5xuo7iknxto5x4de0wkkd3uj8ez3wpw">
+  <source id="1234890392776" name="BitwiseAndExpression_TextGen" hash="awk3pn2jity12d1ppa9aignrj816iei">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="BitwiseAndExpression_TextGen.java" />
   </source>
-  <source id="1234890432474" name="BitwiseNotExpression_TextGen" hash="5ct1enlqc83puy2763mgj72ctuxtm0q">
+  <source id="1234890432474" name="BitwiseNotExpression_TextGen" hash="7m4r6tcsimc40t68dc3ptvgb27jyjeg">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="BitwiseNotExpression_TextGen.java" />
   </source>
-  <source id="1234890471522" name="BitwiseOrExpression_TextGen" hash="-r2c4ukd4sp1nfugrswasmb8j1lfq0a">
+  <source id="1234890471522" name="BitwiseOrExpression_TextGen" hash="-89fjr49u8302o4e2vwm3rint35qcgkc">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="BitwiseOrExpression_TextGen.java" />
   </source>
-  <source id="1234890501829" name="BitwiseXorExpression_TextGen" hash="adbi6bbl87vmz4dmj9bc4r6hgy12262">
+  <source id="1234890501829" name="BitwiseXorExpression_TextGen" hash="-avovuu6l5pe09f3r58my2q6mug865ej">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="BitwiseXorExpression_TextGen.java" />
   </source>
-  <source id="1234890557996" name="BlockStatement_TextGen" hash="-8vdrmma1n87t9l9pdem4kkam0111fmc">
+  <source id="1234890557996" name="BlockStatement_TextGen" hash="8ft0ka6x7tme9otzwc33qzh60rw9rke">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -268,7 +268,7 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="BlockStatement_TextGen.java" />
   </source>
-  <source id="1234890802087" name="BooleanConstant_TextGen" hash="-bfomnboxem3ikybb4tcqr95hak3bu45">
+  <source id="1234890802087" name="BooleanConstant_TextGen" hash="2q1ztla6v15sbjtozigq6hls2g638b6">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
@@ -278,12 +278,12 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="BooleanConstant_TextGen.java" />
   </source>
-  <source id="1234890826228" name="BooleanType_TextGen" hash="9mqquxywduntpu5g507r5nzizve62pj">
+  <source id="1234890826228" name="BooleanType_TextGen" hash="ebs4i750211e8he3zo3fplum8az9kh8">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="BooleanType_TextGen.java" />
   </source>
-  <source id="1234890841265" name="BreakStatement_TextGen" hash="-1e21zlkekmbx1pyrtn53edath2byqye">
+  <source id="1234890841265" name="BreakStatement_TextGen" hash="-6gqglyvmgcvxqafzqjtmbwqt0e8utae">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -301,19 +301,19 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BreakStatement_TextGen.java" />
   </source>
-  <source id="1234890924622" name="ByteType_TextGen" hash="9vmmppuqebphkt2yb46e6ilviem7eod">
+  <source id="1234890924622" name="ByteType_TextGen" hash="-anglf2wx4bqrhter1ecfwhbtaxzrqqk">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ByteType_TextGen.java" />
   </source>
-  <source id="1234890940910" name="CastExpression_TextGen" hash="-mfwytdxsvi7he6yy8x7p3phvwf2xqg">
+  <source id="1234890940910" name="CastExpression_TextGen" hash="aioyyzn04906xu2fe49o7670u2iuqjl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="CastExpression_TextGen.java" />
   </source>
-  <source id="1234890997638" name="CatchClause_TextGen" hash="20rv7wwevpes3rr5p9ewtu3askoas97">
+  <source id="1234890997638" name="CatchClause_TextGen" hash="-8ucibrqsh8hafhrcdfyyfulhg0m7yit">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -328,7 +328,7 @@
     <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" />
     <file name="CatchClause_TextGen.java" />
   </source>
-  <source id="1234891066969" name="CharConstant_TextGen" hash="-447b1zptsga3x7kv4sa8wyccacvuyhf">
+  <source id="1234891066969" name="CharConstant_TextGen" hash="-91cyt5y3ptajchq93voml0czhmhg30q">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -337,12 +337,12 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="CharConstant_TextGen.java" />
   </source>
-  <source id="1234891149163" name="CharType_TextGen" hash="3iz7z26rnh0bkfoopk3g6u59i7pph46">
+  <source id="1234891149163" name="CharType_TextGen" hash="-6hvn432w0th3jp2yotfm4t4i18atonl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="CharType_TextGen.java" />
   </source>
-  <source id="1234891178357" name="ClassConcept_TextGen" hash="-niv5k9j6r1h87el97xoxd6b9nw9drq">
+  <source id="1234891178357" name="ClassConcept_TextGen" hash="d7oj5dlkd6aoecxot20kwoa8sq1ruwy">
     <dep root="1234796104060" />
     <dep root="1234891338660" />
     <dep root="3408882292339889057" />
@@ -365,7 +365,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ClassConcept_TextGen.java" />
   </source>
-  <source id="1234891338660" name="GenericDeclarationTextGen2" hash="-7sdligjtbx6hj01xei38wv3nr3mpy3p">
+  <source id="1234891338660" name="GenericDeclarationTextGen2" hash="-ea4yukybhebitmkv23rnx4eikqnu5ic">
     <dep root="1234796104060" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -376,7 +376,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="GenericDeclarationTextGen2.java" />
   </source>
-  <source id="1234892337624" name="ClassCreator_TextGen" hash="8kvvclzh1xel5owmzsh5rvd5p5s5o3o">
+  <source id="1234892337624" name="ClassCreator_TextGen" hash="4603qjlaahn91yydle1acz6uo1e57g1">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -384,7 +384,7 @@
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ClassCreator_TextGen.java" />
   </source>
-  <source id="1234892420461" name="ClassifierClassExpression_TextGen" hash="6w2jirv2deci1tfxo7ta8bbrl43xerl">
+  <source id="1234892420461" name="ClassifierClassExpression_TextGen" hash="ch7rdb82qokhsyleljseaszwl96rt1h">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -392,7 +392,7 @@
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ClassifierClassExpression_TextGen.java" />
   </source>
-  <source id="1234892447096" name="ClassifierType_TextGen" hash="-5twdy3692785yph3i2iu7yxw8kv9am3">
+  <source id="1234892447096" name="ClassifierType_TextGen" hash="bu45zug6tqu7bn00g81yrosp0jwklxp">
     <dep root="1234796104060" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -403,7 +403,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ClassifierType_TextGen.java" />
   </source>
-  <source id="1234892549516" name="CommentedStatementsBlock_TextGen" hash="epyyoh8yjs3jhcmd22oemq099t4ulra">
+  <source id="1234892549516" name="CommentedStatementsBlock_TextGen" hash="-8pbaq745mg405xg3yyvrgf6b2rtivv0">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
@@ -419,7 +419,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CommentedStatementsBlock_TextGen.java" />
   </source>
-  <source id="1234892777974" name="ConceptFunctionParameter_TextGen" hash="8irvrjdbxpibcuzn5ml31g6fa2q5m48">
+  <source id="1234892777974" name="ConceptFunctionParameter_TextGen" hash="d3qlzmuc4299dqfmo1skphs6my7t3qn">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -429,28 +429,28 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ConceptFunctionParameter_TextGen.java" />
   </source>
-  <source id="1234892820096" name="GenericNewExpression_TextGen" hash="-4bz9oqpxic8zmspvpo95747r7s039m7">
+  <source id="1234892820096" name="GenericNewExpression_TextGen" hash="-9vx3uplftjr4dxbqnbjs16n9ro3icy0">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="GenericNewExpression_TextGen.java" />
   </source>
-  <source id="1235067626785" name="GreaterThanExpression_TextGen" hash="6lrrsk73ufwsg4mvd18mfnl2m3e07zd">
+  <source id="1235067626785" name="GreaterThanExpression_TextGen" hash="bew8a1m0nqf07rotjh824lvlw6u7l8c">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="GreaterThanExpression_TextGen.java" />
   </source>
-  <source id="1235067670076" name="GreaterThanOrEqualsExpression_TextGen" hash="-8w102y4vd0mf3ip8zlhivffsi3kmbzs">
+  <source id="1235067670076" name="GreaterThanOrEqualsExpression_TextGen" hash="-5pnzdswfjnbqcn6pu0ivwzgaul7jhgg">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="GreaterThanOrEqualsExpression_TextGen.java" />
   </source>
-  <source id="1235067710648" name="HexIntegerLiteral_TextGen" hash="dfy7bl8cyad4xuh3pk91gr99e4rfna3">
+  <source id="1235067710648" name="HexIntegerLiteral_TextGen" hash="-89eth2jhujdkvqkkg62wwmu9q8zcjsm">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -459,7 +459,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="HexIntegerLiteral_TextGen.java" />
   </source>
-  <source id="1235067749472" name="IfStatement_TextGen" hash="h5x6ryi2zdqs1vxua5bu7tdqfop3gm">
+  <source id="1235067749472" name="IfStatement_TextGen" hash="-zpwjtfo7ivkklb8rdlik5qmdr9di9k">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
@@ -476,20 +476,20 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="IfStatement_TextGen.java" />
   </source>
-  <source id="1235068025775" name="InstanceInitializer_TextGen" hash="doyus6i8uxtmfxgi1c8rvw8roqof2cv">
+  <source id="1235068025775" name="InstanceInitializer_TextGen" hash="-74sk78fi0a8cn87mprntkltoa62vl3p">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="InstanceInitializer_TextGen.java" />
   </source>
-  <source id="1235068084774" name="InstanceMethodCallOperation_TextGen" hash="bbx21xt3j57v9ocf5hwsj1phyihps0v">
+  <source id="1235068084774" name="InstanceMethodCallOperation_TextGen" hash="b70qebw2vupmfyq23yqg34kp9r9bxqe">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="InstanceMethodCallOperation_TextGen.java" />
   </source>
-  <source id="1235068110028" name="InstanceMethodDeclaration_TextGen" hash="-9swss35hdg5ce73bq2z4gci5i7yveeg">
+  <source id="1235068110028" name="InstanceMethodDeclaration_TextGen" hash="-l9uhb1hy4kirlqhmr1vx6q8u8g03se">
     <dep root="1234796104060" />
     <dep root="1234891338660" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -510,14 +510,14 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="InstanceMethodDeclaration_TextGen.java" />
   </source>
-  <source id="1235068603610" name="InstanceOfExpression_TextGen" hash="-9g0t90ah3g0dtb698u0gtd2f4g8q7cu">
+  <source id="1235068603610" name="InstanceOfExpression_TextGen" hash="-enk6ibh0u46z5nrvg90acj99th8au8c">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="InstanceOfExpression_TextGen.java" />
   </source>
-  <source id="1235068647697" name="IntegerConstant_TextGen" hash="vb0ggnx9r9csewvaua12610comb122">
+  <source id="1235068647697" name="IntegerConstant_TextGen" hash="1hcfjlw83i2y8q8r54j6nuy15xavc5o">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
@@ -527,12 +527,12 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="IntegerConstant_TextGen.java" />
   </source>
-  <source id="1235068672666" name="IntegerType_TextGen" hash="2jt4amxz1tex6bawgldyqzgrkn3fmbp">
+  <source id="1235068672666" name="IntegerType_TextGen" hash="56qt3tsn1j6d0x6i2c48oyxr2auztb4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="IntegerType_TextGen.java" />
   </source>
-  <source id="1235068684876" name="Interface_TextGen" hash="5ptfozoosnlg49re5yfpxmkq2hbvkyi">
+  <source id="1235068684876" name="Interface_TextGen" hash="99cfemhh5a1qr07qzgn8ot9v8x90lyj">
     <dep root="1234796104060" />
     <dep root="1234891338660" />
     <dep root="3408882292339889057" />
@@ -556,21 +556,21 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Interface_TextGen.java" />
   </source>
-  <source id="1235130112612" name="LessThanExpression_TextGen" hash="-b5lbsc2y6d1nrayeh9lyefkni3nf4bk">
+  <source id="1235130112612" name="LessThanExpression_TextGen" hash="452ztyqp6tcd5fdkp8ouj71c0phxyjv">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="LessThanExpression_TextGen.java" />
   </source>
-  <source id="1235130149678" name="LessThanOrEqualsExpression_TextGen" hash="8mhaudwz75xmhfyn75ekw699b7qljc0">
+  <source id="1235130149678" name="LessThanOrEqualsExpression_TextGen" hash="-6encpd4gvhujfe4907ra3g910cr52u2">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="LessThanOrEqualsExpression_TextGen.java" />
   </source>
-  <source id="1235130247219" name="LocalVariableDeclarationStatement_TextGen" hash="-5ws5wf8x9nev0xekjs93edbg3rvsqic">
+  <source id="1235130247219" name="LocalVariableDeclarationStatement_TextGen" hash="-ak5y95crwk6jdd62i31cf8qgeigjfj8">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -585,93 +585,93 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="LocalVariableDeclarationStatement_TextGen.java" />
   </source>
-  <source id="1235130339063" name="LongType_TextGen" hash="1un0r0uvxnuullumepwv9icva4lfv88">
+  <source id="1235130339063" name="LongType_TextGen" hash="dbojexe4pydcbuhn7vsut6u8wyzcvbl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="LongType_TextGen.java" />
   </source>
-  <source id="1235130354959" name="LowerBoundType_TextGen" hash="-7aw0ics7hrp5lpeppib0ouoznde3h0i">
+  <source id="1235130354959" name="LowerBoundType_TextGen" hash="-dxt5pdukhph3p7qtb4q9ujc3mvidmuk">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="LowerBoundType_TextGen.java" />
   </source>
-  <source id="1235130431827" name="MinusExpression_TextGen" hash="-hz9ig00px3m8q8m8ngaosby6qy28os">
+  <source id="1235130431827" name="MinusExpression_TextGen" hash="-4kyarxcnla883u75e019zbvonzmxg4x">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="MinusExpression_TextGen.java" />
   </source>
-  <source id="1235130467132" name="MulExpression_TextGen" hash="bbklfecz48g8kfr138q7ww2x1eu98me">
+  <source id="1235130467132" name="MulExpression_TextGen" hash="-edhbvht3w0wh09ycjfjmlmndv7xrx0b">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="MulExpression_TextGen.java" />
   </source>
-  <source id="1235130500647" name="NotEqualsExpression_TextGen" hash="-2t8jk9e4z4teeeef21t0m7v88mgwjqi">
+  <source id="1235130500647" name="NotEqualsExpression_TextGen" hash="a3d009chvtp9t8qqkvrp8lm18n99qp6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="NotEqualsExpression_TextGen.java" />
   </source>
-  <source id="1235130548876" name="NotExpression_TextGen" hash="-332r9pz3bvtoqk6xexofat67ofwaj38">
+  <source id="1235130548876" name="NotExpression_TextGen" hash="-6sk8zr3h1yif3lv63kahsac4thkxalx">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="NotExpression_TextGen.java" />
   </source>
-  <source id="1235130597164" name="NullLiteral_TextGen" hash="ds6fftj9m5g2oz01842mnugh49j0664">
+  <source id="1235130597164" name="NullLiteral_TextGen" hash="-92i97mt9oq6qezsbf162qs2bg2dw2cx">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="NullLiteral_TextGen.java" />
   </source>
-  <source id="1235130615183" name="OrExpression_TextGen" hash="-1khycjeyhihg1k462lpijjjs5na4qkc">
+  <source id="1235130615183" name="OrExpression_TextGen" hash="-854fvjsfsdtlyp1kwi15ujmvema3go3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="OrExpression_TextGen.java" />
   </source>
-  <source id="1235130646085" name="ParameterDeclaration_TextGen" hash="-4v12wmsjh3uxoaze4d1ohf68bj2003h">
+  <source id="1235130646085" name="ParameterDeclaration_TextGen" hash="-a502otttsx4hvr27b0izcc12pw4u473">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ParameterDeclaration_TextGen.java" />
   </source>
-  <source id="1235130699507" name="ParenthesizedExpression_TextGen" hash="a7e5andms6up3v9pebtez3cpm64ohhs">
+  <source id="1235130699507" name="ParenthesizedExpression_TextGen" hash="84xmuaiudbsktatad4ntbqbvqyuevyv">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ParenthesizedExpression_TextGen.java" />
   </source>
-  <source id="1235130778882" name="PlusExpression_TextGen" hash="-ew8isp6j35idury8wuny5bcxh96d783">
+  <source id="1235130778882" name="PlusExpression_TextGen" hash="bbaxytkx3jxr6hl4fr3donjemrp40hm">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="PlusExpression_TextGen.java" />
   </source>
-  <source id="1235130814902" name="PostfixDecrementExpression_TextGen" hash="-bpbcexm9enc11ztpbyqs3r8isn2pgpl">
+  <source id="1235130814902" name="PostfixDecrementExpression_TextGen" hash="1r7elwspta6af4137lqrtkppz67cuqn">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="PostfixDecrementExpression_TextGen.java" />
   </source>
-  <source id="1235130845453" name="PostfixIncrementExpression_TextGen" hash="-cu1ipvnw7n9b00vhy9py6zf1i7xqzom">
+  <source id="1235130845453" name="PostfixIncrementExpression_TextGen" hash="-asbo40vcvtiaxr998sxb1rrrcmzhl1q">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="PostfixIncrementExpression_TextGen.java" />
   </source>
-  <source id="1235130883519" name="RemarkStatement_TextGen" hash="8zpvyph0chb117mcjj5aerizzmby3qx">
+  <source id="1235130883519" name="RemarkStatement_TextGen" hash="-7mlgm5jrodupxfe3ul63s427im107u8">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -687,14 +687,14 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="RemarkStatement_TextGen.java" />
   </source>
-  <source id="1235130950225" name="RemExpression_TextGen" hash="-6n25o0l8pcveq4pgvs266ec8doo5ho0">
+  <source id="1235130950225" name="RemExpression_TextGen" hash="erxruqx0jp8zlc7z7v8slo0pxnr6uvz">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="RemExpression_TextGen.java" />
   </source>
-  <source id="1235130986968" name="ReturnStatement_TextGen" hash="-8j1sol9nsz41emwv57cxrvawh2edkvr">
+  <source id="1235130986968" name="ReturnStatement_TextGen" hash="-9an38n0kzqo5msgr2sojfh95y0xnw5h">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -708,26 +708,26 @@
     <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" />
     <file name="ReturnStatement_TextGen.java" />
   </source>
-  <source id="1235131071246" name="ShiftLeftExpression_TextGen" hash="8xwr9wx40cjblc7ff7q9eo8t8ryj7gr">
+  <source id="1235131071246" name="ShiftLeftExpression_TextGen" hash="ex3v67yoqazqtyd1mc6cqir19znauwc">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ShiftLeftExpression_TextGen.java" />
   </source>
-  <source id="1235131109350" name="ShiftRightExpression_TextGen" hash="axpghhlr2quwimus6tdqibit4bep7zz">
+  <source id="1235131109350" name="ShiftRightExpression_TextGen" hash="6s4qb21skxlrwnxlyqif55yla2o9or4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ShiftRightExpression_TextGen.java" />
   </source>
-  <source id="1235131150614" name="ShortType_TextGen" hash="-1mg44ar038o1zc4svgfqid0gm2fgq5s">
+  <source id="1235131150614" name="ShortType_TextGen" hash="-2r4ntqtxoucdp2bq18twwlnkkdk3fmw">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ShortType_TextGen.java" />
   </source>
-  <source id="1235131198738" name="StatementList_TextGen" hash="-7bop1bwiwqb8naboku26r9v0xswdv3h">
+  <source id="1235131198738" name="StatementList_TextGen" hash="-7k909m5wnlkny4xlg8bqab7hyjjliir">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
@@ -744,7 +744,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="StatementList_TextGen.java" />
   </source>
-  <source id="1235131598665" name="StaticFieldDeclaration_TextGen" hash="2ri22xprhqehsyb5yfvxg667zj1vbpp">
+  <source id="1235131598665" name="StaticFieldDeclaration_TextGen" hash="cvsh1j6jz3wfga27dpyjwvtjp1bm61b">
     <dep root="1234796104060" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
@@ -762,7 +762,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="StaticFieldDeclaration_TextGen.java" />
   </source>
-  <source id="1235131688885" name="StaticFieldReference_TextGen" hash="-3pu0f8ntkvdj45xaaztfi9xuwqa4c3o">
+  <source id="1235131688885" name="StaticFieldReference_TextGen" hash="-d13yxra1gco8cqi004xivcrq4dm4wwl">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -770,7 +770,7 @@
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="StaticFieldReference_TextGen.java" />
   </source>
-  <source id="1235131758155" name="StaticMethodCall_TextGen" hash="1akssz1h4k8t87l46686dxzgum2a8p5">
+  <source id="1235131758155" name="StaticMethodCall_TextGen" hash="7aje08jwbnyr3gvbyt6b0cz72dt4t3">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -778,7 +778,7 @@
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="StaticMethodCall_TextGen.java" />
   </source>
-  <source id="1235131802112" name="StaticMethodDeclaration_TextGen" hash="77gyo6vqg4pyc9jjyva9jg26nl22ifg">
+  <source id="1235131802112" name="StaticMethodDeclaration_TextGen" hash="20glnk7rfwlns3mor93lcmyekwbnzhg">
     <dep root="1234796104060" />
     <dep root="1234891338660" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -799,7 +799,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="StaticMethodDeclaration_TextGen.java" />
   </source>
-  <source id="1235132901797" name="StringLiteral_TextGen" hash="cpbivc4l0niji35qhowl8ok8z9i14l7">
+  <source id="1235132901797" name="StringLiteral_TextGen" hash="awmlpew7l5tdcklc6xuis9lubt1kz9n">
     <dep root="1236013739107" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -809,12 +809,12 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="StringLiteral_TextGen.java" />
   </source>
-  <source id="1235133002982" name="StringType_TextGen" hash="chxj2i9jojhrfszti8i5aexevkqefjg">
+  <source id="1235133002982" name="StringType_TextGen" hash="2sllsz2i47j3f9kacttf4854z72oqc1">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="StringType_TextGen.java" />
   </source>
-  <source id="1235133040740" name="SuperConstructorInvocation_TextGen" hash="-d5ec8rx1ano8yojajkmaitjwmh7bg8x">
+  <source id="1235133040740" name="SuperConstructorInvocation_TextGen" hash="-dcgvci3egdjvf15uyapj4qbssyxfv80">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
@@ -831,13 +831,13 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SuperConstructorInvocation_TextGen.java" />
   </source>
-  <source id="1235133147898" name="SuperMethodCall_TextGen" hash="7k6qwn47le2ry1g8a9egsnzco6rc44x">
+  <source id="1235133147898" name="SuperMethodCall_TextGen" hash="bvxxo6nibc3fxy64ujg1xb3ogehrtvs">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="SuperMethodCall_TextGen.java" />
   </source>
-  <source id="1235133163324" name="SwitchStatement_TextGen" hash="b4lao1nb8gmmgj4a9y8qawteetb4ih8">
+  <source id="1235133163324" name="SwitchStatement_TextGen" hash="cgqycnqpdf52fonr5m779bmh97cycr8">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -853,7 +853,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="SwitchStatement_TextGen.java" />
   </source>
-  <source id="1235133645843" name="SynchronizedStatement_TextGen" hash="dcnin3khz1ttatnvz26nuiudlzcm5nx">
+  <source id="1235133645843" name="SynchronizedStatement_TextGen" hash="ei87r3a7i22buhqagz524ndps8c1t5w">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -868,7 +868,7 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="SynchronizedStatement_TextGen.java" />
   </source>
-  <source id="1235133778848" name="TernaryOperatorExpression_TextGen" hash="-79extb1h87peikeqp0r0klg8smonc48">
+  <source id="1235133778848" name="TernaryOperatorExpression_TextGen" hash="6napyk6erqwyxghdikw0yi89iik7nxy">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -876,7 +876,7 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="TernaryOperatorExpression_TextGen.java" />
   </source>
-  <source id="1235133911716" name="ThisConstructorInvocation_TextGen" hash="d21qy2mmkz6341ze37knyvd1yer1n27">
+  <source id="1235133911716" name="ThisConstructorInvocation_TextGen" hash="-c4kruw5zqhuv6biewbf59m1dnkgr1w5">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
@@ -893,7 +893,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ThisConstructorInvocation_TextGen.java" />
   </source>
-  <source id="1235134015467" name="ThisExpression_TextGen" hash="9d8zrxbkr487yg312g17eg39sgicexn">
+  <source id="1235134015467" name="ThisExpression_TextGen" hash="-4zd9gaaf11ixz914voqeki7rjgbzawd">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -902,7 +902,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ThisExpression_TextGen.java" />
   </source>
-  <source id="1235134113124" name="ThrowStatement_TextGen" hash="-4q46n0c925obyzvcnzkvx2nokyeaqj8">
+  <source id="1235134113124" name="ThrowStatement_TextGen" hash="-3x69ekgl94ww3r76l7q9z43gb2h6bzk">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -916,7 +916,7 @@
     <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" />
     <file name="ThrowStatement_TextGen.java" />
   </source>
-  <source id="1235134154741" name="TryCatchStatement_TextGen" hash="-cqp3d2plz8xydl43hwrxge4xdt8oe22">
+  <source id="1235134154741" name="TryCatchStatement_TextGen" hash="catf6achz5nwxw3diaitb4kgxcogyll">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -931,7 +931,7 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="TryCatchStatement_TextGen.java" />
   </source>
-  <source id="1235134292973" name="TryStatement_TextGen" hash="-bkiu3if82wjhbwg301jmig363w2pn92">
+  <source id="1235134292973" name="TryStatement_TextGen" hash="43lewwii8fu1z7n8qi8tkmkukkbaomv">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -946,7 +946,7 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="TryStatement_TextGen.java" />
   </source>
-  <source id="1235148827560" name="TypeVariableDeclaration_TextGen" hash="-26hhnw3rqtt3kgx8ch026hzglqxrwn4">
+  <source id="1235148827560" name="TypeVariableDeclaration_TextGen" hash="-4u7g8l9zba2bau064emqnfsb795h6yj">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -955,53 +955,53 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="TypeVariableDeclaration_TextGen.java" />
   </source>
-  <source id="1235149154430" name="TypeVariableReference_TextGen" hash="-u4we17ti7ipivzawj8jka0fzp2f3lk">
+  <source id="1235149154430" name="TypeVariableReference_TextGen" hash="3zcgidplpb16s8tzf2wria9v1gorwwk">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="TypeVariableReference_TextGen.java" />
   </source>
-  <source id="1235149177249" name="UpperBoundType_TextGen" hash="64timsbq49rc7d2fy3p7s6sabmlr6pk">
+  <source id="1235149177249" name="UpperBoundType_TextGen" hash="e2r85r4unbw2ld8g1678m90adlkcyke">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="UpperBoundType_TextGen.java" />
   </source>
-  <source id="1235149213342" name="VariableArityType_TextGen" hash="-9kkxgrpy5xrxcbufdclcenryf7e4mq7">
+  <source id="1235149213342" name="VariableArityType_TextGen" hash="-1lhxhtu1kjmitt8xde7zwii5o106if9">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="VariableArityType_TextGen.java" />
   </source>
-  <source id="1235149266702" name="VariableDeclaration_TextGen" hash="4xwubqrk50ggchxjeh2r76yaxwq160u">
+  <source id="1235149266702" name="VariableDeclaration_TextGen" hash="57m2cbxo1bjqtb7y0vg9x166b4o700u">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="VariableDeclaration_TextGen.java" />
   </source>
-  <source id="1235149361338" name="VarType_TextGen" hash="-whdlgo1fps54he5v3wagp80tv7k1zd">
+  <source id="1235149361338" name="VarType_TextGen" hash="-2edhr5d93dr9et29yqjdd1fcszjxemb">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="VarType_TextGen.java" />
   </source>
-  <source id="1235149549592" name="Visibility_TextGen" hash="-b8bd5yxm6fpk63shwmv7y6hq2phccv4">
+  <source id="1235149549592" name="Visibility_TextGen" hash="-35pubfxclizx0wnrcm0w61a433m58yd">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="Visibility_TextGen.java" />
   </source>
-  <source id="1235149638269" name="VoidType_TextGen" hash="-71wh13mzblhytfiien55uydkxu7ci3v">
+  <source id="1235149638269" name="VoidType_TextGen" hash="5x8fwh0g3ppq4xda28u81lt2wiqa2jr">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="VoidType_TextGen.java" />
   </source>
-  <source id="1235149653150" name="WhileStatement_TextGen" hash="64k5m1tdhfhd3gptoru9jk93dqp7wru">
+  <source id="1235149653150" name="WhileStatement_TextGen" hash="cuyt32zw9lhwjknfo277ayblcdryz5n">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -1018,12 +1018,12 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="WhileStatement_TextGen.java" />
   </source>
-  <source id="1235149803040" name="WildCardType_TextGen" hash="6zc2civu1vj6f4oqryfc71zuqbopby0">
+  <source id="1235149803040" name="WildCardType_TextGen" hash="42ncg9dj8rd87u6tk4ix5j6m8ya7pu3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="WildCardType_TextGen.java" />
   </source>
-  <source id="1235567804739" name="EnumConstantReference_TextGen" hash="7qyjsczxdmktlb1ig9wuxvwti1v8d1d">
+  <source id="1235567804739" name="EnumConstantReference_TextGen" hash="-9f2tnmkxtjx9s4i2tqngvm156cq6nii">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -1031,14 +1031,14 @@
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="EnumConstantReference_TextGen.java" />
   </source>
-  <source id="1235567952587" name="FieldReferenceOperation_TextGen" hash="-39cu0bgn96z2c4u9j2r1oqhfq59uzoc">
+  <source id="1235567952587" name="FieldReferenceOperation_TextGen" hash="48nqsof2gpyaejf5jff6mz3hzj4wfbg">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="FieldReferenceOperation_TextGen.java" />
   </source>
-  <source id="1235570534877" name="EnumValueOfExpression_TextGen" hash="-6dhts11ijxv6b3m2wma1ftvsfrdr6c3">
+  <source id="1235570534877" name="EnumValueOfExpression_TextGen" hash="56bura0celngxc4lmjm2bxn7pngydlx">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -1046,7 +1046,7 @@
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="EnumValueOfExpression_TextGen.java" />
   </source>
-  <source id="1235570593532" name="EnumValuesExpression_TextGen" hash="-c3zlek899bvxzyjkiluzzpkk7nthrvx">
+  <source id="1235570593532" name="EnumValuesExpression_TextGen" hash="2hvh7mfnxpsihdbgy1y5hdlh94j7wuh">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -1054,7 +1054,7 @@
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="EnumValuesExpression_TextGen.java" />
   </source>
-  <source id="1235588368122" name="ExpressionStatement_TextGen" hash="-4c8u0bs3s6bcdfxo1ykuzhoa3z13cl6">
+  <source id="1235588368122" name="ExpressionStatement_TextGen" hash="-65d7a258fcmf93sjitanvbvlpd3oz33">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -1069,14 +1069,14 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="ExpressionStatement_TextGen.java" />
   </source>
-  <source id="1235590065729" name="DotExpression_TextGen" hash="3wqcs7aha8xo88crrg1hf3vag5o8e13">
+  <source id="1235590065729" name="DotExpression_TextGen" hash="3f85m7hbnbdd91fqmhgtzts4ixdy9az">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="DotExpression_TextGen.java" />
   </source>
-  <source id="1235739414982" name="ConstructorDeclaration_TextGen" hash="-b520gcgahcw4i6codkd6ib4qpqxktii">
+  <source id="1235739414982" name="ConstructorDeclaration_TextGen" hash="-e1svc45eylsmui5d2sb237jcwnvo3zs">
     <dep root="1234796104060" />
     <dep root="1234891338660" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1098,7 +1098,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ConstructorDeclaration_TextGen.java" />
   </source>
-  <source id="1235739850731" name="ContinueStatement_TextGen" hash="3livq90ygwh74n4pc5dpv22a1x4t88t">
+  <source id="1235739850731" name="ContinueStatement_TextGen" hash="774jvb2lou98hje146q1zso85clha71">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -1114,26 +1114,26 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ContinueStatement_TextGen.java" />
   </source>
-  <source id="1235740038236" name="DimensionExpression_TextGen" hash="c2oi5k5u6ygdct87d9ll7ibpzbfsp68">
+  <source id="1235740038236" name="DimensionExpression_TextGen" hash="-840cugg7nxj2aur56znn09oy8ks55as">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="DimensionExpression_TextGen.java" />
   </source>
-  <source id="1235740077306" name="DivExpression_TextGen" hash="-3a55tvke98inf3l8eee7yfgfwi20ple">
+  <source id="1235740077306" name="DivExpression_TextGen" hash="-nwuylezyocthqbkqo4w2qnqaxizg8l">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="DivExpression_TextGen.java" />
   </source>
-  <source id="1235740133835" name="DoubleType_TextGen" hash="vw5vb169jgz21jfynwkovmm4fnocft">
+  <source id="1235740133835" name="DoubleType_TextGen" hash="-bdygmzauiv1fcslmqpjzdiv12uc0r89">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="DoubleType_TextGen.java" />
   </source>
-  <source id="1235740153717" name="DoWhileStatement_TextGen" hash="-1onplpcgrl1h20gcvcxttb34uwbnyb0">
+  <source id="1235740153717" name="DoWhileStatement_TextGen" hash="-9sqn6oxasr9o7pfcbpx693kh19ahcvx">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -1150,14 +1150,14 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="DoWhileStatement_TextGen.java" />
   </source>
-  <source id="1235740434208" name="ElsifClause_TextGen" hash="4u2sj056fsqw2idiqb2bif4c1dhcm0e">
+  <source id="1235740434208" name="ElsifClause_TextGen" hash="askyp08e21p0vt7476fzdm98g62fczv">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ElsifClause_TextGen.java" />
   </source>
-  <source id="1235740524220" name="EnumClass_TextGen" hash="-coxuvv93bvcmqutqjmpdpjg1ww7snmo">
+  <source id="1235740524220" name="EnumClass_TextGen" hash="4fgw12836rjrficf2wvy0ulxkmxklmz">
     <dep root="1234796104060" />
     <dep root="3408882292339889057" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -1180,7 +1180,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="EnumClass_TextGen.java" />
   </source>
-  <source id="1235740896598" name="EnumConstantDeclaration_TextGen" hash="-4mm80h2zb27ofmxqe70wyo9wh6sa3s7">
+  <source id="1235740896598" name="EnumConstantDeclaration_TextGen" hash="-4m7coo8y33v9su4tbipp99mekzl2l25">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1195,14 +1195,14 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="EnumConstantDeclaration_TextGen.java" />
   </source>
-  <source id="1235741062707" name="EqualsExpression_TextGen" hash="-dl7sfoiabmjl00kx239t9poitbcynwg">
+  <source id="1235741062707" name="EqualsExpression_TextGen" hash="9ufdmd1qfdsuyayc4diw3qpaa62uez2">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="EqualsExpression_TextGen.java" />
   </source>
-  <source id="1235741237980" name="FieldDeclaration_TextGen" hash="6dwje74vnpwb027irbll23f8268n4yl">
+  <source id="1235741237980" name="FieldDeclaration_TextGen" hash="19vyxcq3kbivdos65ta4bqfjkfa3w6p">
     <dep root="1234796104060" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
@@ -1220,7 +1220,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="FieldDeclaration_TextGen.java" />
   </source>
-  <source id="1235741309022" name="FloatingPointConstant_TextGen" hash="-dcy0i2gp4vadkyg5meoptjf9hm8rn04">
+  <source id="1235741309022" name="FloatingPointConstant_TextGen" hash="-1lpvctk7b4ry3pfgsceb0x5ekdmm4sc">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -1228,12 +1228,12 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="FloatingPointConstant_TextGen.java" />
   </source>
-  <source id="1235741389634" name="FloatType_TextGen" hash="6xbjrwd1oa08l6ubszjbmcpl359jb1d">
+  <source id="1235741389634" name="FloatType_TextGen" hash="4lqiphoqpxip0o1znkmau2ph9acmoda">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="FloatType_TextGen.java" />
   </source>
-  <source id="1235741412435" name="ForeachStatement_TextGen" hash="-aux45faqt9x6kddklywjsqkmevjidcx">
+  <source id="1235741412435" name="ForeachStatement_TextGen" hash="-d09q235piidg97b6i2j7pm35bbtsx1y">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -1250,7 +1250,7 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="ForeachStatement_TextGen.java" />
   </source>
-  <source id="1235741566211" name="ForStatement_TextGen" hash="-cy33chicdcyypq1aaf3g1g2aopv7mep">
+  <source id="1235741566211" name="ForStatement_TextGen" hash="-2dspq8qrh2sacfyyrnok1kykyu9hnig">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
@@ -1269,13 +1269,13 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ForStatement_TextGen.java" />
   </source>
-  <source id="1235743565312" name="LocalVariableDeclaration_TextGen" hash="3gy4e4wx5uwq45d68esnz7gw6713pur">
+  <source id="1235743565312" name="LocalVariableDeclaration_TextGen" hash="-4bw6urqz2u4bwj63virfz00lpkmkomq">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="LocalVariableDeclaration_TextGen.java" />
   </source>
-  <source id="1236013739107" name="StringTextGen" hash="-eevuzrgeehie6uvt9clyhsrjwsqof7w">
+  <source id="1236013739107" name="StringTextGen" hash="-dfedaw421gwl5s5m1g1fh8t77t19atj">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -1283,7 +1283,7 @@
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="StringTextGen.java" />
   </source>
-  <source id="1237807733680" name="CommentedStatement_TextGen" hash="2gx3mqubriewcc23z4msvu6azuo6ybm">
+  <source id="1237807733680" name="CommentedStatement_TextGen" hash="-at2brq17cw7sdsc3bthyzwf3v4ocfb0">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -1298,21 +1298,21 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="CommentedStatement_TextGen.java" />
   </source>
-  <source id="1239710466732" name="PrefixDecrementExpression_TextGen" hash="38gfgektil26vc6glwdn5u84ffcf8w5">
+  <source id="1239710466732" name="PrefixDecrementExpression_TextGen" hash="-1tvh8ofgye6jmm8qfu55q22ahe67lry">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="PrefixDecrementExpression_TextGen.java" />
   </source>
-  <source id="1239710558961" name="PrefixIncrementExpression_TextGen" hash="-7n3tk3go9mcentcr97zqemxzxqmefhy">
+  <source id="1239710558961" name="PrefixIncrementExpression_TextGen" hash="-8t3edrqh1wh62na66f3qlw96w6j0rtb">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="PrefixIncrementExpression_TextGen.java" />
   </source>
-  <source id="4269842503727610175" name="LongLiteral_TextGen" hash="-33k4sm8rlo5ni9a38ndxsijfhi2fom2">
+  <source id="4269842503727610175" name="LongLiteral_TextGen" hash="-4kwgtmiyusuzay1w915x75d312qcgms">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -1320,7 +1320,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="LongLiteral_TextGen.java" />
   </source>
-  <source id="3409542372145539379" name="Statement_TextGen" hash="-bz6mrh6sj9hnexmks84jze9adrlbhmi">
+  <source id="3409542372145539379" name="Statement_TextGen" hash="-ajofvnpnnpz5hhhbz0l8ec8g44mx725">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -1336,14 +1336,14 @@
     <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" />
     <file name="Statement_TextGen.java" />
   </source>
-  <source id="8064396509828214712" name="UnaryMinus_TextGen" hash="7pbo5z9b0jwxxsfqihqf1ubx0q3zzo9">
+  <source id="8064396509828214712" name="UnaryMinus_TextGen" hash="9q1w3aywqlzejn94ibl61q336fgj0r6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="UnaryMinus_TextGen.java" />
   </source>
-  <source id="764900287025024925" name="FloatingPointFloatConstant_TextGen" hash="-d9mzkyzkc1hufaeflf45xwlb5gvb5p8">
+  <source id="764900287025024925" name="FloatingPointFloatConstant_TextGen" hash="954wk1jyi9npdbs159h9bxxq5kb8emi">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -1351,7 +1351,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="FloatingPointFloatConstant_TextGen.java" />
   </source>
-  <source id="6227066020986630956" name="PlaceholderMethodDeclaration_TextGen" hash="-a584k0ay8f4dm7pl0onszycrz65we2e">
+  <source id="6227066020986630956" name="PlaceholderMethodDeclaration_TextGen" hash="936mt7kqaahbndf7sx01bddd2y8pyro">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -1365,7 +1365,7 @@
     <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" />
     <file name="PlaceholderMethodDeclaration_TextGen.java" />
   </source>
-  <source id="3408882292339889057" name="BaseClassConceptTextGen" hash="7kiuncn4z8jxwfgu0mt60f7u59hm75d">
+  <source id="3408882292339889057" name="BaseClassConceptTextGen" hash="w2uzz4l7ku4i5z3km240pwd9fcuf3x">
     <dep root="1234796104060" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -1377,7 +1377,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BaseClassConceptTextGen.java" />
   </source>
-  <source id="6329021646629175165" name="SingleLineComment_TextGen" hash="-ekdzcwzshhbltxf3f8116ffanb3cv0u">
+  <source id="6329021646629175165" name="SingleLineComment_TextGen" hash="79yfsm0f684gqrdg2hb7k55uuokp2vk">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -1392,7 +1392,7 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="SingleLineComment_TextGen.java" />
   </source>
-  <source id="8803274112754353727" name="TextCommentPart_TextGen" hash="-7jo4mzgm5wdokqux94c3krjh6lnh5hd">
+  <source id="8803274112754353727" name="TextCommentPart_TextGen" hash="-7guu6nhon54u1bcdp5fwirrh1jr8cmh">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -1401,12 +1401,12 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="TextCommentPart_TextGen.java" />
   </source>
-  <source id="8803274112754355374" name="StatementCommentPart_TextGen" hash="-ei08ggmddpegot980rw0q7f8xyq33m8">
+  <source id="8803274112754355374" name="StatementCommentPart_TextGen" hash="-1e58mzv0g3vdgeby5cw14abiq0n23d4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="StatementCommentPart_TextGen.java" />
   </source>
-  <source id="7024111702304495342" name="BaseAssignmentExpression_TextGen" hash="-c3spj1r6bx8q1k8wod7brhcoppspgms">
+  <source id="7024111702304495342" name="BaseAssignmentExpression_TextGen" hash="-9hb2bzf0298mmnhwdd02aq23uy27zhb">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -1416,7 +1416,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="BaseAssignmentExpression_TextGen.java" />
   </source>
-  <source id="1830039279190474291" name="AdditionalForLoopVariable_TextGen" hash="a0hiz3s936sffnyosgc74akcn4d1n1w">
+  <source id="1830039279190474291" name="AdditionalForLoopVariable_TextGen" hash="94e07xt1mic5grqmjdbjz1dloh4bwcw">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -1425,21 +1425,21 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="AdditionalForLoopVariable_TextGen.java" />
   </source>
-  <source id="2580416627845806804" name="ImplicitAnnotationInstanceValue_TextGen" hash="6i1tbvmriyr2ywre2tno4bxx4fw3c0q">
+  <source id="2580416627845806804" name="ImplicitAnnotationInstanceValue_TextGen" hash="3f7zs8paiqtq5huzqeodmwv4o8ud1kx">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ImplicitAnnotationInstanceValue_TextGen.java" />
   </source>
-  <source id="4564374268190746435" name="PrimitiveClassExpression_TextGen" hash="-w5w7hz6bsbs325yzgbtati0ieayc8g">
+  <source id="4564374268190746435" name="PrimitiveClassExpression_TextGen" hash="9qd9tlj1ce2f82pcdznpp1naat3ri86">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="PrimitiveClassExpression_TextGen.java" />
   </source>
-  <source id="5245668348356342300" name="LastStatementUtil" hash="diywumeffw730l0k1if7luenq26e7n8">
+  <source id="5245668348356342300" name="LastStatementUtil" hash="2cc2bhvpp84u1gt8fkxza1lpve4otnp">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1451,35 +1451,35 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="LastStatementUtil.java" />
   </source>
-  <source id="5205855332950472840" name="ArrayCloneOperation_TextGen" hash="dsrn2nc0r3ugpp6qyxhv6bd4shg9lp1">
+  <source id="5205855332950472840" name="ArrayCloneOperation_TextGen" hash="-33c3btev25w4m7hs24yw0vzwd162kv4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ArrayCloneOperation_TextGen.java" />
   </source>
-  <source id="320030840061144158" name="ShiftRightUnsignedExpression_TextGen" hash="-8f5m7gtkk0cci87whbil7smjkr9gl27">
+  <source id="320030840061144158" name="ShiftRightUnsignedExpression_TextGen" hash="-en6k9l5l0grxukzi1sjrp8ibnbm8fp6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ShiftRightUnsignedExpression_TextGen.java" />
   </source>
-  <source id="1251851371723517310" name="ArrayClassExpression_TextGen" hash="ati46vkyz71te98r8onxkq37on91oe">
+  <source id="1251851371723517310" name="ArrayClassExpression_TextGen" hash="-7j8cogyqzgjp4e6h2gfxt03494t7zz5">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="ArrayClassExpression_TextGen.java" />
   </source>
-  <source id="1465982738277807934" name="PlaceholderMember_TextGen" hash="-bnaxulokv45jhpt8rl9fkunydbttd8d">
+  <source id="1465982738277807934" name="PlaceholderMember_TextGen" hash="-h7kbnvgo4e9d4xswq8jc3svncowm0c">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="PlaceholderMember_TextGen.java" />
   </source>
-  <source id="7671513720556341061" name="SimpleCache" hash="-evsi6htuwknze0x3ohddbnjmk6eelc1">
+  <source id="7671513720556341061" name="SimpleCache" hash="-5gtmrt2hlb1gs75zmjwzkyqlfbm4pnr">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SimpleCache.java" />
   </source>
-  <source id="2820489544401960245" name="DefaultClassCreator_TextGen" hash="-9xdqa3agyq2tq7ug06rc3rdyuidrob4">
+  <source id="2820489544401960245" name="DefaultClassCreator_TextGen" hash="di5k851ncf8c3q5mlkiwtdlj80iyf1i">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -1487,7 +1487,7 @@
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="DefaultClassCreator_TextGen.java" />
   </source>
-  <source id="6136230684045923685" name="ImportsContext" hash="-9yqpi0y9j4571l6h2q1fu7fhr07nngr">
+  <source id="6136230684045923685" name="ImportsContext" hash="8x2qivq9go5s87b78lql3gmy6smjifl">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -1496,20 +1496,20 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ImportsContext.java" />
   </source>
-  <source id="1465982738260537463" name="StaticInitializer_TextGen" hash="-57rzn2ag2d4hnrdisd1qursbnoso9cq">
+  <source id="1465982738260537463" name="StaticInitializer_TextGen" hash="4v8tr4m43j9jtd7213t9pe2p2amn8yo">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="StaticInitializer_TextGen.java" />
   </source>
-  <source id="7812454656619184158" name="LocalMethodCall_TextGen" hash="22c9yot9p40d2ddczkfddp7hdg2q9sm">
+  <source id="7812454656619184158" name="LocalMethodCall_TextGen" hash="-cc4nd2qyzxsre8bdeuvgg4ijj8rs8kd">
     <dep root="1234796104060" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <file name="LocalMethodCall_TextGen.java" />
   </source>
-  <source id="4571635105384638795" name="ContextClassifiersInRoot" hash="-4eqhdhlrdhdhn1pyrvf6b4odijcsoj">
+  <source id="4571635105384638795" name="ContextClassifiersInRoot" hash="bcfox7bsv4g4ratrp647vykfju3f6pm">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.tuples.runtime(MPS.Core/jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" />
@@ -1527,7 +1527,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="ContextClassifiersInRoot.java" />
   </source>
-  <source id="1214046978376812376" name="VariableReference_TextGen" hash="-lv8kps2okhrslpz53bstbgm08v3caq">
+  <source id="1214046978376812376" name="VariableReference_TextGen" hash="-atr7umffpdvu2enabpshkr1une5gnzf">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />

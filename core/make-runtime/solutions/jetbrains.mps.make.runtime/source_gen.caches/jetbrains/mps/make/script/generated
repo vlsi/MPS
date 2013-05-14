@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cgf3xk2vql5ko50ygfkwtgkw8br5b7j">
+<dependencies version="2" modelHash="2kg1utjedcylt03td5333y419ii6urr">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.messages(MPS.Core/jetbrains.mps.messages@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-2pfgs5l9xgdeg3nuvw9wsk21zkjyohc" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-5qkh0mpu388oets3m8g893qmi77hv6t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
-  <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" hash="d6h69lz4jlm2hkaom14gc3k10dkmp2w" />
-  <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" hash="-20irnrlkrio64s5vxpnu35x49m4zo1x" />
-  <dep model="r:8e0d2787-667a-41b8-9f98-9bb45c087fba(jetbrains.mps.internal.make.runtime.script)" hash="-dkv8zfqhs3o1lecxb384rnmd1hbj366" />
-  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="6pme6f8cr98yhjna02lpbqkg2n36ah5" />
-  <dep model="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" hash="d42l79dymoktlzmc17llh6q6qfv4z1k" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="-dkvty40m1zyeljbt0jw1svbzsr0f84x" />
-  <source id="6168415856807657202" name="IJob" hash="-vsl4i1x2bhtc5u8wsz5xcfpfdrd881">
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="59ea0wchjl1p3fmqjarzl02fje6rngu" />
+  <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" hash="-cbbs3jojn8a880mhg6f45ad4q1y7nm7" />
+  <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" hash="-8t0xcezn1sav7itf8ebch2p9jfkfrdv" />
+  <dep model="r:8e0d2787-667a-41b8-9f98-9bb45c087fba(jetbrains.mps.internal.make.runtime.script)" hash="5rzrhtr8ix9ngruaage72ntu632a0ve" />
+  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2ndxdy2yylqxt61razyif42s9aj25s9" />
+  <dep model="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" hash="-6ui9n3dvi7p28jvcg1wunau1i7fh98w" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <common hash="c47t1l6jhqhhtw93btjpn79u3bw7b8z" />
+  <source id="6168415856807657202" name="IJob" hash="af1c5yd41mt6b07ppvnbztbuqv2mnvi">
     <dep root="6168415856807657250" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
     <file name="IJob.java" />
   </source>
-  <source id="6168415856807657227" name="IScript" hash="-82jl6vchehnv0ooojn6958gtukjzmr8">
+  <source id="6168415856807657227" name="IScript" hash="cnsbju8go647wlkunt09rceckfu97c7">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.messages(MPS.Core/jetbrains.mps.messages@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
     <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" />
     <file name="IScript.java" />
   </source>
-  <source id="6168415856807657250" name="IJobMonitor" hash="-1931a55x67hm12fquxlgs0574u9i979">
+  <source id="6168415856807657250" name="IJobMonitor" hash="7wsudclbkbn3kbg3o2iccetly3boahm">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="IJobMonitor.java" />
   </source>
-  <source id="1291978361072214397" name="IResult" hash="-e5exuglkrlkox86v08ms0p0a2dvhn08">
+  <source id="1291978361072214397" name="IResult" hash="-dweg4eoc6b3rsl0qdgj83s146yd0fon">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
     <file name="IResult.java" />
   </source>
-  <source id="8486446835277348318" name="IQuery" hash="6zwm5r8pe19c5ogjh9tnpm5gv10xrbw">
+  <source id="8486446835277348318" name="IQuery" hash="-4puja023bfn76np2dlo5185our1sv2c">
     <file name="IQuery.java" />
   </source>
-  <source id="2551169102353043399" name="IOption" hash="-af55zoi5sfkc77q53hg7y0hqt5mvjh9">
+  <source id="2551169102353043399" name="IOption" hash="-1oz302zec8kqcaqivlevvd1en2b1u1o">
     <file name="IOption.java" />
   </source>
-  <source id="6872280991287216857" name="IPropertiesPool" hash="1040rzemzt7eklutfltmewzho3fxuiv">
+  <source id="6872280991287216857" name="IPropertiesPool" hash="7ztia8blaeouq4f34k237iiq4d9ilts">
     <file name="IPropertiesPool.java" />
   </source>
-  <source id="7797884084018455875" name="IFeedback" hash="-aj7xjbwj0iw86cxkdtsrvogi5sxp3cx">
+  <source id="7797884084018455875" name="IFeedback" hash="brwtfmfmw2mjfa5b8zh5d6ppuioujdb">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="IFeedback.java" />
   </source>
-  <source id="7797884084018559880" name="IProgress" hash="-63xguitp08oc7h5idjdkx8qy6jrrpci">
+  <source id="7797884084018559880" name="IProgress" hash="aive3cccb2fx9fes6scruvtm51xoyuo">
     <file name="IProgress.java" />
   </source>
-  <source id="8339029394034910088" name="IConfigMonitor" hash="3bjphdibes6vk58yxar0lc0lkdoyys">
+  <source id="8339029394034910088" name="IConfigMonitor" hash="doa52pr1tvtchy3ms2ha7ck6nurtdbj">
     <file name="IConfigMonitor.java" />
   </source>
-  <source id="8339029394035014655" name="IConfig" hash="25n4rju8pvi89r7tp80oqy7w0zgfs8z">
+  <source id="8339029394035014655" name="IConfig" hash="cs048nhod83c254z4p537edjsk29qw4">
     <file name="IConfig.java" />
   </source>
-  <source id="4648565975300663454" name="IScriptController" hash="bjmhdtnycaldpl7a3nlmh6rneejqrbp">
+  <source id="4648565975300663454" name="IScriptController" hash="-7t91qohw6wmx7b4ixt1jnl5j1ug43rn">
     <dep root="6168415856807657250" />
     <dep root="6872280991287216857" />
     <dep root="8339029394034910088" />
@@ -67,7 +67,7 @@
     <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" />
     <file name="IScriptController.java" />
   </source>
-  <source id="1479818508463261244" name="ScriptBuilder" hash="-erhq7wbp5a5ugiahqst69uaf6dtx3bi">
+  <source id="1479818508463261244" name="ScriptBuilder" hash="-arncstbgc3sgymdoh3bsuapk76l7v5i">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />

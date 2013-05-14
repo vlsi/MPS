@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-coduzri661783uufuw4jd3a80g4bsay">
+<dependencies version="2" modelHash="-1sard7v0362fowa5v11obwjx3mr4las">
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui.filechoosers.treefilechooser(MPS.Platform/jetbrains.mps.ide.ui.filechoosers.treefilechooser@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
-  <common hash="-1c0ddw4zmvcy9qbkzxsa4mle678npz9" />
-  <source id="1483465595852166755" name="JavaSourceStubModelRootSettingsEditor" hash="-eghvwemqdje21may3hzujlkj5i5ktp6">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <common hash="8fadulyfjpn3aptt0zyohr0j6oiwi5n" />
+  <source id="1483465595852166755" name="JavaSourceStubModelRootSettingsEditor" hash="7c1jrl39w154ps8nmpunm5qefdkfk6m">
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui.filechoosers.treefilechooser(MPS.Platform/jetbrains.mps.ide.ui.filechoosers.treefilechooser@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaSourceStubModelRootSettingsEditor.java" />
   </source>
-  <source id="1483465595852166869" name="JavaSourceStubModelRootSettingsProvider" hash="5py45ymyn03gxmmrqkffius7rlfn0xr">
+  <source id="1483465595852166869" name="JavaSourceStubModelRootSettingsProvider" hash="-96i582p7vlzlotz9ceaq9plk34a0rhi">
     <file name="JavaSourceStubModelRootSettingsProvider.java" />
   </source>
 </dependencies>
