@@ -16,7 +16,13 @@
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionPopupMenu;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.util.containers.SortedList;
@@ -28,8 +34,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -38,21 +42,37 @@ import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.action.ActionUtils;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
 import javax.swing.JPopupMenu;
 import javax.swing.SwingUtilities;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.NavigableSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * This class should be called in UI (EventDispatch) thread only
@@ -141,7 +161,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         }
       }
     });
-    if (MPSToolTipManager.getInstance() != null ) {
+    if (MPSToolTipManager.getInstance() != null) {
       MPSToolTipManager.getInstance().registerComponent(this);
     }
     editorComponent.addRebuildListener(new RebuildListener() {
@@ -206,7 +226,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     for (AbstractLeftColumn column : myLeftColumns) {
       column.dispose();
     }
-    if (MPSToolTipManager.getInstance() != null ) {
+    if (MPSToolTipManager.getInstance() != null) {
       MPSToolTipManager.getInstance().unregisterComponent(this);
     }
   }
@@ -290,11 +310,11 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         g.fillRect(clipBounds.x, selectedCellY, clipBounds.width, selectedCellHeight);
         // Drawing folding line
         UIUtil.drawVDottedLine(g2d, myFoldingLineX, clipBounds.y, selectedCellY, getBackground(),
-          EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
+            EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
         UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY, selectedCellY + selectedCellHeight, EditorComponent.CARET_ROW_COLOR,
-          EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
+            EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
         UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY + selectedCellHeight, clipBounds.y + clipBounds.height, getBackground(),
-          EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
+            EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
         return;
       }
     }
@@ -333,7 +353,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       column.paint(g);
       //  COLORS: find out where it is and remove hardcoded color
       UIUtil.drawVDottedLine((Graphics2D) g, myRightToLeft ? column.getX() : column.getX() + column.getWidth() - 1,
-        (int) clipBounds.getMinY(), (int) clipBounds.getMaxY(), getBackground(), Color.GRAY);
+          (int) clipBounds.getMinY(), (int) clipBounds.getMaxY(), getBackground(), Color.GRAY);
     }
   }
 
@@ -560,14 +580,20 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return anchorCell.getY() + anchorCell.getHeight() / 2 - renderer.getIcon().getIconHeight() / 2;
   }
 
-  private jetbrains.mps.openapi.editor.cells.EditorCell getAnchorCell(EditorMessageIconRenderer renderer) {
-    SNode rendererNode = renderer.getNode();
-    EditorCell nodeCell = myEditorComponent.findNodeCell(rendererNode);
-    if (nodeCell == null) {
-      // no cell for node?..
-      return null;
-    }
-    return renderer.getAnchorCell(nodeCell);
+  private jetbrains.mps.openapi.editor.cells.EditorCell getAnchorCell(final EditorMessageIconRenderer renderer) {
+    final jetbrains.mps.openapi.editor.cells.EditorCell[] cell = new jetbrains.mps.openapi.editor.cells.EditorCell[1];
+    MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SNode rendererNode = renderer.getNode();
+        EditorCell nodeCell = myEditorComponent.findNodeCell(rendererNode);
+        if (nodeCell != null) {
+          cell[0] = renderer.getAnchorCell(nodeCell);
+        }
+        // no cell for node?..
+      }
+    });
+    return cell[0];
   }
 
   @Override
@@ -636,7 +662,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       AnAction action = iconRenderer.getClickAction();
       if (e.getButton() == MouseEvent.BUTTON1 && action != null) {
         if (e.getID() == MouseEvent.MOUSE_CLICKED) {
-          AnActionEvent actionEvent = new AnActionEvent(e, new LeftEditorHighlighterDataContext(myEditorComponent, iconRenderer.getNode()), ICON_AREA, action.getTemplatePresentation(), ActionManager.getInstance(), e.getModifiers());
+          AnActionEvent actionEvent =
+              new AnActionEvent(e, new LeftEditorHighlighterDataContext(myEditorComponent, iconRenderer.getNode()), ICON_AREA, action.getTemplatePresentation(),
+                  ActionManager.getInstance(), e.getModifiers());
           action.update(actionEvent);
           action.actionPerformed(actionEvent);
         }
@@ -729,7 +757,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
           for (IconRendererLayoutConstraint constraint : layoutConstraints) {
             int x = constraint.getX();
             if (y <= mouseY && mouseY <= y + constraint.getIconRenderer().getIcon().getIconHeight() &&
-              x <= mouseX && mouseX <= x + constraint.getIconRenderer().getIcon().getIconWidth()) {
+                x <= mouseX && mouseX <= x + constraint.getIconRenderer().getIcon().getIconWidth()) {
               theRenderer[0] = constraint.getIconRenderer();
               return false;
             }
@@ -769,9 +797,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         EditorMessage editorMessage1 = (EditorMessage) renderer1;
         EditorMessage editorMessage2 = (EditorMessage) renderer2;
         assert false :
-          "Two EditorMessages with same type are attached to the same EditorCell: m1 = " +
-            editorMessage1 + ", m2 = " + editorMessage2 +
-            "; owner1 = " + editorMessage1.getOwner() + ", owner2 = " + editorMessage2.getOwner();
+            "Two EditorMessages with same type are attached to the same EditorCell: m1 = " +
+                editorMessage1 + ", m2 = " + editorMessage2 +
+                "; owner1 = " + editorMessage1.getOwner() + ", owner2 = " + editorMessage2.getOwner();
       }
       // [--] Debugging assertion
       if (anchorCell1 != null) {
