@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8ea9el0yohk8ktjiargh7r3ub98aee7">
+<dependencies version="2" modelHash="4f8ckblxsji9cnezmxvot9y7p5nivf7">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
@@ -161,7 +161,7 @@
   <source id="1097139242515" name="reduce_CellModel_Alternation" hash="-bffivna3ftejltoz8zhyx9ppq45u45z">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1097143944735" name="class_EditorComponentDeclaration" hash="bev3lk0wzdtkxx8d8qltgsz59tst8vm">
+  <source id="1097143944735" name="class_EditorComponentDeclaration" hash="-epk6068iswnsu3oblw7fsl1kogvyx1m">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1097151314077" name="reduce_CellModel_Constant" hash="dpz83swv4yo2u6kutuaa2rd6b0q3wpv">
@@ -176,7 +176,7 @@
   <source id="1097659173341" name="reduce_CellModel_RefNodeList" hash="-agtnggb946deog7qbtj8dtv1g82105n">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1097663873068" name="reduce_CellModel_Component" hash="-6lwr6mihyasc1ma5p7hh7ls2dgndoj4">
+  <source id="1097663873068" name="reduce_CellModel_Component" hash="2rg796yo8bdj0d18qzk21ooac7qbe63">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1097667551918" name="reduce_CellModel_ModelAccess" hash="8erhiry8c6cesya6wbwe0xclqp9jzk1">
@@ -383,7 +383,7 @@
   <source id="2548761562342008913" name="StyleClassItemQueryMethods" hash="-27gyw2pyrubr2nrmfjgu92zsvqt61qc">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="4644225720240136236" name="EditorAspectDescriptorImpl" hash="2d6jqyq9vvl64dtbtfijammvmqzuq0c">
+  <source id="4644225720240136236" name="EditorAspectDescriptorImpl" hash="d5gqm38dnonacqnhmhsfa2kbfixzu67">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="5950344441595452468" name="template_collectionCellChildCreation" hash="994vdirn8emidrlm6nydc43xrqmzwmy">
@@ -398,7 +398,7 @@
   <source id="5861024100074850862" name="CellProviderWithRoleInitializer" hash="2uvsmur8oav478vsy5sqmc1grez45kf">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2467262375112194488" name="EditorAspectDescriptorImpl_returnConceptEditorComponentColleciton" hash="-b3xaqhpj4l5wj1stui97fyx8v3tp8n9">
+  <source id="2467262375112194488" name="EditorAspectDescriptorImpl_returnConceptEditorComponentColleciton" hash="-57d57vhevo23wxmpd32o1x1nbi9zdqw">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

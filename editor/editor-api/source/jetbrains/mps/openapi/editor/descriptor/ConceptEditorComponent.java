@@ -15,24 +15,9 @@
  */
 package jetbrains.mps.openapi.editor.descriptor;
 
-import java.util.Collection;
-
 /**
  * User: shatalin
  * Date: 5/9/13
  */
-public interface ConceptEditorComponent {
-  /**
-   * Used to specify collection of editor context hints this EditorAspect is applicable to.
-   * Empty collection indicates default EditorAspect (applicable in any context). EditorAspect
-   * is applicable in particular context only if all specified context hints are available in
-   * this context.
-   * <p/>
-   * While creating new editor the most specific EditorAspect - having maximum number of context
-   * hints specified - will be used.
-   *
-   * @return collection of context hints
-   */
-  Collection<String> getContextHints();
-
+public interface ConceptEditorComponent extends BaseConceptEditor {
 }

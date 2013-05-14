@@ -241,8 +241,8 @@ public class QueriesGenerated {
     return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context);
   }
 
-  public static Object propertyMacro_GetPropertyValue_1767562947360483216(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "editorComponent", false));
+  public static Object propertyMacro_GetPropertyValue_112068740527405622(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "editorComponent", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1183057971782(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1068,12 +1068,12 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "contextHints_QueryMethod");
   }
 
-  public static Object referenceMacro_GetReferent_2467262375112577217(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass"))).first();
+  public static Object referenceMacro_GetReferent_6751246745108409544(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("editorComponents"))).first(), "generatedClass");
   }
 
-  public static Object referenceMacro_GetReferent_2467262375112320862(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("editorComponents"))).first(), "generatedClass"))).first();
+  public static Object referenceMacro_GetReferent_6751246745108424883(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass");
   }
 
   public static boolean ifMacro_Condition_7517620136073670748(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2215,7 +2215,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 
-  public static Iterable sourceNodesQuery_2467262375112433681(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_6751246745108424320(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ((Iterable<SNode>) _context.getVariable("editorComponents"));
   }
 

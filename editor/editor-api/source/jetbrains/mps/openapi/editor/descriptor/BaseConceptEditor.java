@@ -19,10 +19,25 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collection;
+
 /**
  * User: shatalin
- * Date: 5/9/13
+ * Date: 5/13/13
  */
-public interface ConceptEditor extends BaseConceptEditor {
-  EditorCell createInspectedCell(EditorContext editorContext, SNode node);
+public interface BaseConceptEditor {
+  /**
+   * Used to specify collection of editor context hints this EditorAspect is applicable to.
+   * Empty collection indicates default EditorAspect (applicable in any context). EditorAspect
+   * is applicable in particular context only if all specified context hints are available in
+   * this context.
+   * <p/>
+   * While creating new editor the most specific EditorAspect - having maximum number of context
+   * hints specified - will be used.
+   *
+   * @return collection of context hints
+   */
+  Collection<String> getContextHints();
+
+  EditorCell createEditorCell(EditorContext editorContext, SNode node);
 }
