@@ -84,7 +84,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
         tool.init(ideaProject);
         tool.register();
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
       myInitializedTools.add(tool);
     }
@@ -107,7 +107,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
       try {
         tool.dispose();
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
       tool.unregister();
     }
@@ -142,7 +142,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
         Element componentState = component.getState();
         state.myComponentsState.add(new ComponentState(component.getClass().getName(), componentState));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
     return state;
@@ -163,7 +163,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
           component.loadState(componentState.second);
         }
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }

@@ -43,9 +43,9 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
       LOG.warn("ObjectCollectedException: " + ex.getMessage());
       //  there's a chance to add a breakpoint when the class is prepared 
     } catch (InternalException ex) {
-      LOG.error(ex);
+      LOG.error(null, ex);
     } catch (Exception ex) {
-      LOG.error(ex);
+      LOG.error(null, ex);
     }
   }
 

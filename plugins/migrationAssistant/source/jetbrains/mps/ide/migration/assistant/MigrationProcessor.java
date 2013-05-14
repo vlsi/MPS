@@ -102,7 +102,7 @@ public class MigrationProcessor extends AbstractProjectComponent{
                 }
               }
               catch (Exception e) {
-                LOG.error(e);
+                LOG.error(null, e);
               }
               finally {
                 action.setExecuteOutsideCommand(oldFlag);
@@ -121,7 +121,7 @@ public class MigrationProcessor extends AbstractProjectComponent{
         try {
           latch.await();
         } catch (InterruptedException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
     } finally {

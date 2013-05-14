@@ -15,7 +15,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
@@ -71,7 +70,8 @@ public class NewSolution_Action extends BaseAction {
       if (s == null) {
         return;
       }
-      ModelAccess.instance().runWriteAction(new Runnable() {
+
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(s, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
             "" :
@@ -79,6 +79,7 @@ public class NewSolution_Action extends BaseAction {
           ));
         }
       });
+
       ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
       projectPane.rebuildTree();
       projectPane.selectModule(s, false);

@@ -28,14 +28,14 @@ public class ThreadUtils {
       try {
           r.run();
       } catch (Exception e) {
-        LOG.error(e);
+        LOG.error(null, e);
         return false;
       }
     } else {
       try {
         SwingUtilities.invokeAndWait(r);
       } catch (Exception e) {
-        LOG.error(e);
+        LOG.error(null, e);
         return false;
       }
     }
@@ -49,7 +49,7 @@ public class ThreadUtils {
       try {
         SwingUtilities.invokeLater(r);
       } catch (Exception e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     }
   }

@@ -1475,7 +1475,7 @@
     <nodeInfo nodeId="7429375960779058292" fileName="UpgradePersistence_Action.java" startLine="91" startPosition="0" endLine="92" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7429375960779084229" fileName="UpgradePersistence_Action.java" startLine="92" startPosition="40" endLine="93" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7429375960778969896" fileName="UpgradePersistence_Action.java" startLine="93" startPosition="56" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7429375960778405845" fileName="UpgradePersistence_Action.java" startLine="95" startPosition="36" endLine="96" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7429375960778405845" fileName="UpgradePersistence_Action.java" startLine="95" startPosition="36" endLine="96" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5948516512857665272" fileName="UpgradePersistence_Action.java" startLine="101" startPosition="45" endLine="102" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5948516512857665272" fileName="UpgradePersistence_Action.java" startLine="107" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5948516512857665272" fileName="UpgradePersistence_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1508,10 +1508,10 @@
     <scopeInfo nodeId="7429375960778035241" fileName="UpgradePersistence_Action.java" startLine="76" startPosition="95" endLine="77" endPosition="21" />
     <scopeInfo nodeId="7429375960778883438" fileName="UpgradePersistence_Action.java" startLine="83" startPosition="73" endLine="84" endPosition="23" />
     <scopeInfo nodeId="5948516512857665317" fileName="UpgradePersistence_Action.java" startLine="88" startPosition="33" endLine="89" endPosition="46" />
-    <scopeInfo nodeId="7429375960778304751" fileName="UpgradePersistence_Action.java" startLine="95" startPosition="0" endLine="96" endPosition="26">
+    <scopeInfo nodeId="7429375960778304751" fileName="UpgradePersistence_Action.java" startLine="95" startPosition="0" endLine="96" endPosition="32">
       <varInfo nodeId="7429375960778304753" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="7429375960778304757" fileName="UpgradePersistence_Action.java" startLine="95" startPosition="36" endLine="96" endPosition="26" />
+    <scopeInfo nodeId="7429375960778304757" fileName="UpgradePersistence_Action.java" startLine="95" startPosition="36" endLine="96" endPosition="32" />
     <scopeInfo nodeId="5948516512857665272" fileName="UpgradePersistence_Action.java" startLine="101" startPosition="45" endLine="102" endPosition="92" />
     <scopeInfo nodeId="5948516512857665272" fileName="UpgradePersistence_Action.java" startLine="31" startPosition="38" endLine="34" endPosition="41" />
     <scopeInfo nodeId="5948516512857665272" fileName="UpgradePersistence_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" />

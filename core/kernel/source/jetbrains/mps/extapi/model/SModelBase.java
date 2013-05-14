@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.extapi.model;
 
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.DisposedRepository;
 import jetbrains.mps.smodel.IllegalModelAccessError;
@@ -33,7 +32,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModelStateListener;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -88,8 +86,10 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public void detach() {
     synchronized (REPO_LOCK) {
-      for (org.jetbrains.mps.openapi.model.SNode node : getRootNodes()) {
-        node.detach();
+      if (isLoaded()) {
+        for (org.jetbrains.mps.openapi.model.SNode node : getRootNodes()) {
+          node.detach();
+        }
       }
       myRepository = DisposedRepository.INSTANCE;
     }

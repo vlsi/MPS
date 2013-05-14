@@ -140,8 +140,6 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
   }
 
   private Map<PsiJavaStubDataSource, SModel> getModelMap() {
-    // <node> 
-
     Map<PsiJavaStubDataSource, SModel> modelMap = MapSequence.fromMap(new HashMap<PsiJavaStubDataSource, SModel>());
 
     final VirtualFile[] sourceRoots = ModuleRootManager.getInstance(myIdeaModule).getSourceRoots(false);
@@ -152,7 +150,6 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
       addModelsForDir(dir, dir, modelMap);
     }
 
-    // <node> 
     return modelMap;
   }
 
@@ -298,6 +295,22 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
       if (move.to instanceof PsiDirectory) {
         handleFileCreate((PsiFile) move.moved, (PsiDirectory) move.to, newDirs, changes);
       }
+    }
+
+    for (PsiListener.FSRename rename : event.getRenamed()) {
+      PsiDirectory parent = (PsiDirectory) rename.item.getParent();
+
+      PsiJavaStubDataSource dataSource = MapSequence.fromMap(myDataSources).get(parent);
+      if (dataSource == null) {
+        continue;
+      }
+
+      PsiJavaStubModelRoot.PsiChange change = MapSequence.fromMap(changes).get(dataSource);
+      if (change == null) {
+        change = new PsiJavaStubModelRoot.PsiChange();
+        MapSequence.fromMap(changes).put(dataSource, change);
+      }
+      SetSequence.fromSet(change.renamed).addElement(rename);
     }
 
     for (PsiFileSystemItem item : event.getRemoved()) {
@@ -462,6 +475,10 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
       return event.getRemoved();
     }
 
+    public Iterable<PsiListener.FSRename> getRenamed() {
+      return event.getRenamed();
+    }
+
     public Map<PsiFile, Set<PsiElement>> getChanged() {
       Map<PsiFile, Set<PsiElement>> origMap = event.getChanged();
       for (PsiFileSystemItem fsItem : getCreated()) {
@@ -491,6 +508,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
   private static class PsiChange implements PsiListener.PsiEvent {
     private Set<PsiFileSystemItem> created = SetSequence.fromSet(new HashSet<PsiFileSystemItem>());
     private Set<PsiFileSystemItem> removed = SetSequence.fromSet(new HashSet<PsiFileSystemItem>());
+    private Set<PsiListener.FSRename> renamed = SetSequence.fromSet(new HashSet<PsiListener.FSRename>());
     private Map<PsiFile, Set<PsiElement>> changed = MapSequence.fromMap(new HashMap<PsiFile, Set<PsiElement>>());
 
     public PsiChange() {
@@ -515,6 +533,10 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     public Iterable<PsiListener.FSMove> getMoved() {
       // no moves tracked inside particular directory / datasource 
       return new ArrayList<PsiListener.FSMove>();
+    }
+
+    public Iterable<PsiListener.FSRename> getRenamed() {
+      return renamed;
     }
 
     public Map<PsiFile, Set<PsiElement>> getChanged() {

@@ -70,7 +70,7 @@ import java.util.concurrent.TimeUnit;
         try {
           Timed.disposeTimed();
         } catch (Throwable e) {
-          Timed.LOG.error(e);
+          Timed.LOG.error(null, e);
         }
       }
     }, 60, 60, TimeUnit.SECONDS);

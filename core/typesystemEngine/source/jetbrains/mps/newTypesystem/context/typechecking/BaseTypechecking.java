@@ -111,7 +111,7 @@ public class BaseTypechecking<STATE extends State, COMP extends SimpleTypechecki
     getTypecheckingComponent().setChecked();
   }
 
-  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
+  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors(boolean typesystemErrors) {
     Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypecheckingComponent().getNodesToErrorsMap();
     Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMap.keySet());
 

@@ -128,6 +128,12 @@ public abstract class JpsBuildTestCase extends UsefulTestCase {
     assertTrue("Cannot modify timestamp for " + file.getAbsolutePath(), updated);
   }
 
+  protected static void touch(String filePath) {
+    File file = new File(FileUtil.toSystemDependentName(filePath));
+    assertTrue("File " + file.getAbsolutePath() + " doesn't exist", file.exists());
+    setLastModified(file, System.currentTimeMillis());
+  }
+
   protected static void delete(String filePath) {
     File file = new File(FileUtil.toSystemDependentName(filePath));
     assertTrue("File " + file.getAbsolutePath() + " doesn't exist", file.exists());

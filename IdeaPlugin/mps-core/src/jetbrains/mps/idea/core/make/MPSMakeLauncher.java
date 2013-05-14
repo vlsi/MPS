@@ -62,7 +62,7 @@ public class MPSMakeLauncher {
     try {
       myCommandLine = buildCommandLine(collectClassPath());
     } catch (Exception e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return;
     }
     this.myValid = true;

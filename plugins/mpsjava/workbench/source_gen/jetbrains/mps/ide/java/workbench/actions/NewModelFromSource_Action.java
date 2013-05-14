@@ -25,7 +25,6 @@ import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import java.io.File;
@@ -110,10 +109,6 @@ public class NewModelFromSource_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
     return true;
   }
 
@@ -137,7 +132,7 @@ public class NewModelFromSource_Action extends BaseAction {
       modelAccess.runReadAction(new Runnable() {
         public void run() {
           String stereotype = NewModelFromSource_Action.this.getStereotype(_params);
-          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), NewModelFromSource_Action.this.getNamespace(_params), ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, NewModelFromSource_Action.this.isStrict(_params));
+          dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), (AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), NewModelFromSource_Action.this.getNamespace(_params), stereotype, NewModelFromSource_Action.this.isStrict(_params));
         }
       });
       dialog.value.show();

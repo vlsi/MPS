@@ -67,7 +67,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     try {
       return getFrame();
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
       return null;
     }
   }

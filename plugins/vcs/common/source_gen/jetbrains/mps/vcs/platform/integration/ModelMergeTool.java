@@ -75,7 +75,7 @@ public class ModelMergeTool extends MergeTool {
       }
       dialog.unregisterModels();
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
   }
 

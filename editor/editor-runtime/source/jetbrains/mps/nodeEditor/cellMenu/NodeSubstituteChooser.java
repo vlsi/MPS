@@ -803,7 +803,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           }
           myLeft.setIcon(icon);
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(null, t);
         }
       }
 
@@ -822,21 +822,21 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         }
 
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
 
       try {
         myLeft.setText(action.getVisibleMatchingText(pattern));
       } catch (Throwable t) {
         myLeft.setText("!Exception was thrown!");
-        LOG.error(t);
+        LOG.error(null, t);
       }
 
       try {
         myRight.setText(action.getDescriptionText(pattern));
       } catch (Throwable t) {
         myRight.setText("!Exception was thrown!");
-        LOG.error(t);
+        LOG.error(null, t);
       }
 
       if (isSelected) {

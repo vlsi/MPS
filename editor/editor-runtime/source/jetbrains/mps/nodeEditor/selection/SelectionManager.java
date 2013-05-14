@@ -123,7 +123,7 @@ public class SelectionManager {
         result.push(nextSelection.getSelectionInfo());
       }
     } catch (SelectionStoreException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       // unable to store selection - cleaning selection stack
       result.clear();
     }
@@ -195,7 +195,7 @@ public class SelectionManager {
       try {
         nextListener.selectionChanged(myEditorComponent, oldSelection, newSelection);
       } catch (Exception e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     }
   }

@@ -64,7 +64,7 @@ public class ClassloaderUtil {
       ClassloaderUtil.addIDEALibraries(classpathElements);
       ClassloaderUtil.addAdditionalClassPath(classpathElements);
     } catch (IllegalArgumentException e) {
-      ClassloaderUtil.getLogger().error(e);
+      ClassloaderUtil.getLogger().error(null, e);
       System.exit(1);
     } catch (MalformedURLException e) {
       ClassloaderUtil.getLogger().error(e.getMessage());
@@ -81,7 +81,7 @@ public class ClassloaderUtil {
       if (logger == null) {
         e.printStackTrace(System.err);
       } else {
-        logger.error(e);
+        logger.error(null, e);
       }
     }
     return newClassLoader;
@@ -154,7 +154,7 @@ public class ClassloaderUtil {
       final File antLib = new File(new File(libFolder, "ant"), "lib");
       ClassloaderUtil.addLibraries(classPath, antLib, selfRootUrl);
     } catch (MalformedURLException e) {
-      ClassloaderUtil.getLogger().error(e);
+      ClassloaderUtil.getLogger().error(null, e);
     }
   }
 
@@ -192,7 +192,7 @@ public class ClassloaderUtil {
         classPath.add(new File(pathItem).toURI().toURL());
       }
     } catch (MalformedURLException e) {
-      ClassloaderUtil.getLogger().error(e);
+      ClassloaderUtil.getLogger().error(null, e);
     }
   }
 
