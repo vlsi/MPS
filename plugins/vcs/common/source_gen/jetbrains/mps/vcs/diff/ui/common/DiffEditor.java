@@ -10,7 +10,7 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -39,16 +39,16 @@ public class DiffEditor implements EditorMessageOwner {
   private InspectorEditorComponent myInspector;
   private Map<ModelChange, List<ChangeEditorMessage>> myChangeToMessages = MapSequence.fromMap(new HashMap<ModelChange, List<ChangeEditorMessage>>());
 
-  public DiffEditor(IOperationContext context, SNode node, String contentTitle, boolean isLeftEditor) {
-    myMainEditorComponent = new DiffEditor.MainEditorComponent(context, isLeftEditor);
-    myInspector = new InspectorEditorComponent(context.getProject().getRepository(), isLeftEditor);
+  public DiffEditor(SRepository repository, SNode node, String contentTitle, boolean isLeftEditor) {
+    myMainEditorComponent = new DiffEditor.MainEditorComponent(repository, isLeftEditor);
+    myInspector = new InspectorEditorComponent(repository, isLeftEditor);
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
         ec.setNoVirtualFile(true);
       }
     });
 
-    myMainEditorComponent.editNode(node, myMainEditorComponent.getOperationContext());
+    myMainEditorComponent.editNode(node);
     myInspector.getExternalComponent().setPreferredSize(new Dimension());
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
@@ -75,12 +75,12 @@ public class DiffEditor implements EditorMessageOwner {
       model.getNode(rootId)
     );
     if (SNodeOperations.getParent(root) == null) {
-      getMainEditor().editNode(root, DiffTemporaryModule.getOperationContext(project, model));
+      getMainEditor().editNode(root);
     }
   }
 
   public void inspect(SNode node) {
-    myInspector.editNode(node, myMainEditorComponent.getOperationContext());
+    myInspector.editNode(node);
     myInspector.getHighlightManager().repaintAndRebuildEditorMessages();
   }
 
@@ -155,8 +155,8 @@ public class DiffEditor implements EditorMessageOwner {
   public class MainEditorComponent extends EditorComponent {
     private DiffFileEditor myDiffFileEditor;
 
-    public MainEditorComponent(IOperationContext operationContext, boolean rightToLeft) {
-      super(operationContext.getProject().getRepository(), false, rightToLeft);
+    public MainEditorComponent(SRepository repository, boolean rightToLeft) {
+      super(repository, false, rightToLeft);
       myDiffFileEditor = new DiffFileEditor(this);
     }
 

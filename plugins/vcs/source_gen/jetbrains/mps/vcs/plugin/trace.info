@@ -314,7 +314,7 @@
     <nodeInfo nodeId="7314351270975558155" fileName="TestMergeAction_Action.java" startLine="105" startPosition="40" endLine="106" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7314351270975558159" fileName="TestMergeAction_Action.java" startLine="108" startPosition="21" endLine="109" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5171773620270697118" fileName="TestMergeAction_Action.java" startLine="111" startPosition="57" endLine="112" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7766806608423573419" fileName="TestMergeAction_Action.java" startLine="117" startPosition="11" endLine="118" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7766806608423573419" fileName="TestMergeAction_Action.java" startLine="117" startPosition="11" endLine="118" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="122" startPosition="45" endLine="123" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="128" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="50" startPosition="27" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -394,7 +394,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7314351270975558138" fileName="TestMergeAction_Action.java" startLine="102" startPosition="0" endLine="116" endPosition="0" />
     <scopeInfo nodeId="7314351270975558123" fileName="TestMergeAction_Action.java" startLine="100" startPosition="31" endLine="116" endPosition="15" />
-    <scopeInfo nodeId="5047908084943708030" fileName="TestMergeAction_Action.java" startLine="81" startPosition="27" endLine="118" endPosition="41">
+    <scopeInfo nodeId="5047908084943708030" fileName="TestMergeAction_Action.java" startLine="81" startPosition="27" endLine="118" endPosition="36">
       <varInfo nodeId="7314351270975558036" varName="dialog" />
       <varInfo nodeId="7314351270975557961" varName="models" />
       <varInfo nodeId="5047908084943715240" varName="resFile" />

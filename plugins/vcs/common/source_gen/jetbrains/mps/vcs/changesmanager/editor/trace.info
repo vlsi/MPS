@@ -33,8 +33,8 @@
     <nodeInfo nodeId="1108966977729620253" fileName="ChangesStripActionsHelper.java" startLine="124" startPosition="67" endLine="125" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="1108966977729720582" fileName="ChangesStripActionsHelper.java" startLine="125" startPosition="31" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1994027965669710604" fileName="ChangesStripActionsHelper.java" startLine="126" startPosition="0" endLine="127" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1994027965669719099" fileName="ChangesStripActionsHelper.java" startLine="127" startPosition="113" endLine="128" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4953964883741978955" fileName="ChangesStripActionsHelper.java" startLine="128" startPosition="112" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1994027965669719099" fileName="ChangesStripActionsHelper.java" startLine="127" startPosition="113" endLine="128" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4953964883741978955" fileName="ChangesStripActionsHelper.java" startLine="128" startPosition="122" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1108966977729720580" fileName="ChangesStripActionsHelper.java" startLine="129" startPosition="0" endLine="130" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4953964883742112952" fileName="ChangesStripActionsHelper.java" startLine="133" startPosition="39" endLine="134" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4953964883742112967" fileName="ChangesStripActionsHelper.java" startLine="135" startPosition="51" endLine="136" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -420,8 +420,8 @@
     <nodeInfo nodeId="5109148457513120020" fileName="PopupPanel.java" startLine="41" startPosition="65" endLine="42" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6208564103581775273" fileName="PopupPanel.java" startLine="42" startPosition="66" endLine="43" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4477049948824794540" fileName="PopupPanel.java" startLine="47" startPosition="24" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4477049948824848374" fileName="PopupPanel.java" startLine="49" startPosition="58" endLine="50" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5109148457513120345" fileName="PopupPanel.java" startLine="50" startPosition="124" endLine="51" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4477049948824848374" fileName="PopupPanel.java" startLine="49" startPosition="58" endLine="50" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5109148457513120345" fileName="PopupPanel.java" startLine="50" startPosition="137" endLine="51" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3110655250282849320" fileName="PopupPanel.java" startLine="55" startPosition="44" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2486616746024237136" fileName="PopupPanel.java" startLine="59" startPosition="34" endLine="60" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2837442331563680850" fileName="PopupPanel.java" startLine="60" startPosition="71" endLine="61" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -512,11 +512,11 @@
   </root>
   <root nodeRef="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)/4477049948824855836">
     <nodeInfo nodeId="1455391539105549287" fileName="BaseVersionEditorComponent.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScrollPane" />
-    <nodeInfo nodeId="4477049948824882325" fileName="BaseVersionEditorComponent.java" startLine="34" startPosition="98" endLine="35" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4477049948824882337" fileName="BaseVersionEditorComponent.java" startLine="35" startPosition="57" endLine="36" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4477049948824882325" fileName="BaseVersionEditorComponent.java" startLine="34" startPosition="86" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4477049948824882337" fileName="BaseVersionEditorComponent.java" startLine="35" startPosition="22" endLine="36" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4477049948824882349" fileName="BaseVersionEditorComponent.java" startLine="36" startPosition="114" endLine="37" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4477049948824882381" fileName="BaseVersionEditorComponent.java" startLine="37" startPosition="108" endLine="38" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8064780802314627211" fileName="BaseVersionEditorComponent.java" startLine="38" startPosition="41" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4477049948824882381" fileName="BaseVersionEditorComponent.java" startLine="37" startPosition="108" endLine="38" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8064780802314627211" fileName="BaseVersionEditorComponent.java" startLine="38" startPosition="23" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8064780802314657931" fileName="BaseVersionEditorComponent.java" startLine="39" startPosition="0" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1455391539105552170" fileName="BaseVersionEditorComponent.java" startLine="40" startPosition="35" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3407638002087242026" fileName="BaseVersionEditorComponent.java" startLine="43" startPosition="70" endLine="44" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -548,7 +548,7 @@
     <nodeInfo nodeId="6786798249452830906" fileName="BaseVersionEditorComponent.java" startLine="56" startPosition="22" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="4477049948824882309" fileName="BaseVersionEditorComponent.java" startLine="75" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRootCell#(Ljava/util/List;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="3407638002087261679" fileName="BaseVersionEditorComponent.java" startLine="46" startPosition="7" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4477049948824882320" fileName="BaseVersionEditorComponent.java" startLine="34" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseVersionEditorComponent#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
+    <nodeInfo nodeId="4477049948824882320" fileName="BaseVersionEditorComponent.java" startLine="34" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseVersionEditorComponent#(Lorg/jetbrains/mps/openapi/module/SRepository;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
     <scopeInfo nodeId="3407638002087242025" fileName="BaseVersionEditorComponent.java" startLine="43" startPosition="70" endLine="44" endPosition="111" />
     <scopeInfo nodeId="3407638002087261687" fileName="BaseVersionEditorComponent.java" startLine="48" startPosition="51" endLine="49" endPosition="60" />
     <scopeInfo nodeId="3407638002087261697" fileName="BaseVersionEditorComponent.java" startLine="52" startPosition="49" endLine="53" endPosition="26" />
@@ -577,7 +577,7 @@
     <scopeInfo nodeId="4477049948824882309" fileName="BaseVersionEditorComponent.java" startLine="75" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="4477049948824882312" varName="events" />
     </scopeInfo>
-    <scopeInfo nodeId="4477049948824882324" fileName="BaseVersionEditorComponent.java" startLine="34" startPosition="98" endLine="72" endPosition="71">
+    <scopeInfo nodeId="4477049948824882324" fileName="BaseVersionEditorComponent.java" startLine="34" startPosition="86" endLine="72" endPosition="71">
       <varInfo nodeId="4477049948824882338" varName="baseModel" />
       <varInfo nodeId="4477049948824882350" varName="baseRoot" />
       <varInfo nodeId="3407638002087242016" varName="messages" />
@@ -587,7 +587,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4477049948824882320" fileName="BaseVersionEditorComponent.java" startLine="34" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="4477049948824882333" varName="changeGroup" />
-      <varInfo nodeId="4477049948824882326" varName="operationContext" />
+      <varInfo nodeId="4477049948824882326" varName="repository" />
     </scopeInfo>
     <unitInfo nodeId="3407638002087242024" fileName="BaseVersionEditorComponent.java" startLine="42" startPosition="107" endLine="46" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.editor.BaseVersionEditorComponent$1" />
     <unitInfo nodeId="3407638002087261686" fileName="BaseVersionEditorComponent.java" startLine="47" startPosition="71" endLine="51" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.editor.BaseVersionEditorComponent$2" />

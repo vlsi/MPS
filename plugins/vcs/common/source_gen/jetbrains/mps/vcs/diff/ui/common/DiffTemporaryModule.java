@@ -91,11 +91,7 @@ public class DiffTemporaryModule extends AbstractModule {
     return null;
   }
 
-  public static void createModuleForModel(SModel model, String version, Project project) {
-    createModuleForModel(model, version, project, false);
-  }
-
-  public static void createModuleForModel(SModel model, String version, Project project, boolean mergeResultModel) {
+  private static void createModuleForModel(SModel model, String version, Project project, boolean mergeResultModel) {
     SModelDescriptor md = model.getModelDescriptor();
     if (!(md instanceof SModel.FakeModelDescriptor)) {
       return;
@@ -114,7 +110,18 @@ public class DiffTemporaryModule extends AbstractModule {
     model.setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, model, mergeResultModel));
   }
 
-  public static void setSModelId(SModel model, String version) {
+  public static void createModuleAndRegister(SModel model, String version, Project project, boolean mergeResultModel) {
+    if (version != null) {
+      setSModelId(model, version);
+    }
+    createModuleForModel(model, (version == null ?
+      "module" :
+      version
+    ), project, mergeResultModel);
+    registerModel(model.getModelDescriptor(), project);
+  }
+
+  private static void setSModelId(SModel model, String version) {
     SModelReference modelRef = model.getReference();
     CopyUtil.changeModelReference(model.getModelDescriptor(), new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(modelRef.getModelName()), genMergeSModelId(modelRef.getModelId(), version)));
   }
@@ -125,7 +132,7 @@ public class DiffTemporaryModule extends AbstractModule {
     CopyUtil.changeModelReference(model, new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(modelRef.getModelName()), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getModelId())));
   }
 
-  public static void registerModel(org.jetbrains.mps.openapi.model.SModel model, MPSModuleOwner owner) {
+  private static void registerModel(org.jetbrains.mps.openapi.model.SModel model, MPSModuleOwner owner) {
     SModule module = model.getModule();
     MPSModuleRepository.getInstance().registerModule(module, owner);
     SModelRepository.getInstance().registerModelDescriptor(model, module);
@@ -133,9 +140,8 @@ public class DiffTemporaryModule extends AbstractModule {
 
   public static void unregisterModel(org.jetbrains.mps.openapi.model.SModel model, MPSModuleOwner owner) {
     SModule module = model.getModule();
-    MPSModuleRepository.getInstance().registerModule(module, owner);
     SModelRepository.getInstance().unRegisterModelDescriptor(model, module);
-
+    MPSModuleRepository.getInstance().unregisterModule(module, owner);
   }
 
   public static IOperationContext getOperationContext(com.intellij.openapi.project.Project project, SModel model) {
