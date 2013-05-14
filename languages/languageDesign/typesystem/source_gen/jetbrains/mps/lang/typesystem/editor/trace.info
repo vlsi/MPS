@@ -3631,55 +3631,55 @@
     <unitInfo nodeId="1176544315456" fileName="Node_TypeOperation_Editor.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.Node_TypeOperation_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b0(jetbrains.mps.lang.typesystem.editor)/1176544346178">
-    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="15" startPosition="79" endLine="16" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="19" startPosition="89" endLine="20" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="20" startPosition="97" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="21" startPosition="48" endLine="22" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="21" startPosition="48" endLine="22" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="22" startPosition="81" endLine="23" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="22" startPosition="81" endLine="23" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="23" startPosition="81" endLine="24" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="27" startPosition="88" endLine="28" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="28" startPosition="105" endLine="29" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="29" startPosition="47" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="30" startPosition="34" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="34" startPosition="88" endLine="35" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="35" startPosition="105" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="36" startPosition="47" endLine="37" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="37" startPosition="34" endLine="38" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="41" startPosition="47" endLine="42" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_rcqmfi_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_rcqmfi_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_rcqmfi_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="15" startPosition="79" endLine="16" endPosition="63" />
-    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="21" startPosition="48" endLine="22" endPosition="81" />
-    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="22" startPosition="81" endLine="23" endPosition="81" />
-    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="41" startPosition="47" endLine="42" endPosition="35" />
-    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="15" startPosition="47" endLine="16" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="23" startPosition="89" endLine="24" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="24" startPosition="97" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="25" startPosition="48" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="25" startPosition="48" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="26" startPosition="81" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="26" startPosition="81" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="27" startPosition="81" endLine="28" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="31" startPosition="88" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="32" startPosition="105" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="33" startPosition="47" endLine="34" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="34" startPosition="34" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="38" startPosition="88" endLine="39" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="39" startPosition="105" endLine="40" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="40" startPosition="47" endLine="41" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="41" startPosition="34" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_rcqmfi_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_rcqmfi_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_rcqmfi_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="15" startPosition="47" endLine="16" endPosition="35" />
+    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="19" startPosition="79" endLine="20" endPosition="63" />
+    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="25" startPosition="48" endLine="26" endPosition="81" />
+    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="26" startPosition="81" endLine="27" endPosition="81" />
+    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1176544346178" varName="editorContext" />
       <varInfo nodeId="1176544346178" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="27" startPosition="88" endLine="31" endPosition="22">
+    <scopeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="31" startPosition="88" endLine="35" endPosition="22">
       <varInfo nodeId="1176544388226" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="34" startPosition="88" endLine="38" endPosition="22">
+    <scopeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="38" startPosition="88" endLine="42" endPosition="22">
       <varInfo nodeId="1176544395384" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="19" startPosition="89" endLine="24" endPosition="22">
+    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="23" startPosition="89" endLine="28" endPosition="22">
       <varInfo nodeId="1176544346178" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="1176544388226" fileName="_NotInRules_Component.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1176544388226" varName="editorContext" />
       <varInfo nodeId="1176544388226" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="34" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1176544395384" fileName="_NotInRules_Component.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1176544395384" varName="editorContext" />
       <varInfo nodeId="1176544395384" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1176544346178" fileName="_NotInRules_Component.java" startLine="23" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1176544346178" varName="editorContext" />
       <varInfo nodeId="1176544346178" varName="node" />
     </scopeInfo>
@@ -9737,359 +9737,359 @@
     <unitInfo nodeId="1210784598250" fileName="TypesystemIntentionArgument_Editor.java" startLine="22" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypesystemIntentionArgument_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b0(jetbrains.mps.lang.typesystem.editor)/1212056578907">
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="31" startPosition="79" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="35" startPosition="89" endLine="36" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="36" startPosition="97" endLine="37" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="37" startPosition="48" endLine="38" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="37" startPosition="48" endLine="38" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="38" startPosition="83" endLine="39" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="38" startPosition="83" endLine="39" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="39" startPosition="83" endLine="40" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="39" startPosition="83" endLine="40" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="40" startPosition="81" endLine="41" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="40" startPosition="81" endLine="41" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="41" startPosition="83" endLine="42" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="41" startPosition="83" endLine="42" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="42" startPosition="81" endLine="43" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="42" startPosition="81" endLine="43" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="43" startPosition="83" endLine="44" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="43" startPosition="83" endLine="44" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="44" startPosition="84" endLine="45" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="48" startPosition="90" endLine="49" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="49" startPosition="99" endLine="50" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="50" startPosition="49" endLine="51" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="50" startPosition="49" endLine="51" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="51" startPosition="82" endLine="52" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="51" startPosition="82" endLine="52" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="52" startPosition="81" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="56" startPosition="89" endLine="57" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="57" startPosition="101" endLine="58" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="58" startPosition="48" endLine="59" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="59" startPosition="34" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="63" startPosition="88" endLine="64" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="64" startPosition="81" endLine="65" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="65" startPosition="36" endLine="66" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="66" startPosition="39" endLine="67" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="67" startPosition="26" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="68" startPosition="58" endLine="69" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="69" startPosition="73" endLine="70" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="70" startPosition="57" endLine="71" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="72" startPosition="35" endLine="73" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="73" startPosition="72" endLine="74" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="74" startPosition="78" endLine="75" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="76" startPosition="10" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="80" startPosition="90" endLine="81" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="81" startPosition="99" endLine="82" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="82" startPosition="49" endLine="83" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="82" startPosition="49" endLine="83" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="83" startPosition="82" endLine="84" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="83" startPosition="82" endLine="84" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="84" startPosition="81" endLine="85" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="88" startPosition="89" endLine="89" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="89" startPosition="100" endLine="90" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="90" startPosition="48" endLine="91" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="91" startPosition="34" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="95" startPosition="88" endLine="96" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="96" startPosition="81" endLine="97" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="97" startPosition="36" endLine="98" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="98" startPosition="49" endLine="99" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="99" startPosition="26" endLine="100" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="100" startPosition="58" endLine="101" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="101" startPosition="73" endLine="102" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="102" startPosition="57" endLine="103" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="104" startPosition="35" endLine="105" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="105" startPosition="72" endLine="106" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="106" startPosition="78" endLine="107" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="108" startPosition="10" endLine="109" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="112" startPosition="88" endLine="113" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="113" startPosition="86" endLine="114" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="114" startPosition="47" endLine="115" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="115" startPosition="34" endLine="116" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="116" startPosition="49" endLine="117" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="117" startPosition="40" endLine="118" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="118" startPosition="34" endLine="119" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="122" startPosition="90" endLine="123" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="123" startPosition="99" endLine="124" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="124" startPosition="49" endLine="125" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="125" startPosition="34" endLine="126" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="126" startPosition="49" endLine="127" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="127" startPosition="40" endLine="128" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="127" startPosition="40" endLine="128" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="128" startPosition="82" endLine="129" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="128" startPosition="82" endLine="129" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="129" startPosition="82" endLine="130" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="133" startPosition="89" endLine="134" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="134" startPosition="96" endLine="135" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="135" startPosition="48" endLine="136" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="136" startPosition="34" endLine="137" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="140" startPosition="89" endLine="141" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="141" startPosition="82" endLine="142" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="142" startPosition="34" endLine="143" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="143" startPosition="47" endLine="144" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="144" startPosition="26" endLine="145" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="145" startPosition="58" endLine="146" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="146" startPosition="47" endLine="147" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="147" startPosition="73" endLine="148" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="148" startPosition="57" endLine="149" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="150" startPosition="35" endLine="151" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="151" startPosition="72" endLine="152" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="152" startPosition="78" endLine="153" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="154" startPosition="10" endLine="155" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="158" startPosition="88" endLine="159" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="159" startPosition="86" endLine="160" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="160" startPosition="47" endLine="161" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="161" startPosition="34" endLine="162" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="162" startPosition="49" endLine="163" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="163" startPosition="40" endLine="164" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="164" startPosition="34" endLine="165" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="168" startPosition="90" endLine="169" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="169" startPosition="99" endLine="170" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="170" startPosition="49" endLine="171" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="171" startPosition="34" endLine="172" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="172" startPosition="49" endLine="173" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="173" startPosition="49" endLine="174" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="174" startPosition="40" endLine="175" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="174" startPosition="40" endLine="175" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="175" startPosition="82" endLine="176" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="179" startPosition="89" endLine="180" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="180" startPosition="108" endLine="181" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="181" startPosition="48" endLine="182" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="182" startPosition="34" endLine="183" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="186" startPosition="91" endLine="187" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="187" startPosition="147" endLine="188" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="188" startPosition="108" endLine="189" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="189" startPosition="57" endLine="190" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="190" startPosition="49" endLine="191" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="195" startPosition="108" endLine="196" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="199" startPosition="66" endLine="200" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="200" startPosition="41" endLine="201" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="204" startPosition="86" endLine="205" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="205" startPosition="80" endLine="206" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="206" startPosition="95" endLine="207" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="210" startPosition="68" endLine="211" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="211" startPosition="34" endLine="212" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="212" startPosition="55" endLine="213" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="213" startPosition="87" endLine="214" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="218" startPosition="96" endLine="219" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="220" startPosition="34" endLine="221" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="223" startPosition="131" endLine="224" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="230" startPosition="47" endLine="231" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="195" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="helginsIntentionListHandler_gj4y2c_g0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="219" startPosition="134" endLine="222" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="222" startPosition="9" endLine="225" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="230" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="199" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="204" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="56" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gj4y2c_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="71" startPosition="59" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="88" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gj4y2c_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="103" startPosition="59" endLine="109" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="133" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gj4y2c_a3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="149" startPosition="59" endLine="155" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="179" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gj4y2c_a5a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="210" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="48" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gj4y2c_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="80" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gj4y2c_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="186" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_gj4y2c_g0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="112" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gj4y2c_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="158" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gj4y2c_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="217" startPosition="132" endLine="226" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="122" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gj4y2c_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="168" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gj4y2c_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="217" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="35" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gj4y2c_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="63" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_gj4y2c_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="95" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_gj4y2c_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="140" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_gj4y2c_b3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="31" startPosition="79" endLine="32" endPosition="63" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="37" startPosition="48" endLine="38" endPosition="83" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="38" startPosition="83" endLine="39" endPosition="83" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="39" startPosition="83" endLine="40" endPosition="81" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="40" startPosition="81" endLine="41" endPosition="83" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="41" startPosition="83" endLine="42" endPosition="81" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="42" startPosition="81" endLine="43" endPosition="83" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="43" startPosition="83" endLine="44" endPosition="84" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="50" startPosition="49" endLine="51" endPosition="82" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="51" startPosition="82" endLine="52" endPosition="81" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="82" startPosition="49" endLine="83" endPosition="82" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="83" startPosition="82" endLine="84" endPosition="81" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="127" startPosition="40" endLine="128" endPosition="82" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="128" startPosition="82" endLine="129" endPosition="82" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="174" startPosition="40" endLine="175" endPosition="82" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="195" startPosition="108" endLine="196" endPosition="50" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="220" startPosition="34" endLine="221" endPosition="95" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="223" startPosition="131" endLine="224" endPosition="139" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="230" startPosition="47" endLine="231" endPosition="35" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="199" startPosition="66" endLine="201" endPosition="93">
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="31" startPosition="47" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="35" startPosition="79" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="39" startPosition="89" endLine="40" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="40" startPosition="97" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="41" startPosition="48" endLine="42" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="41" startPosition="48" endLine="42" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="42" startPosition="83" endLine="43" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="42" startPosition="83" endLine="43" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="43" startPosition="83" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="43" startPosition="83" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="44" startPosition="81" endLine="45" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="44" startPosition="81" endLine="45" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="45" startPosition="83" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="45" startPosition="83" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="46" startPosition="81" endLine="47" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="46" startPosition="81" endLine="47" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="47" startPosition="83" endLine="48" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="47" startPosition="83" endLine="48" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="48" startPosition="84" endLine="49" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="52" startPosition="90" endLine="53" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="53" startPosition="99" endLine="54" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="54" startPosition="49" endLine="55" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="54" startPosition="49" endLine="55" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="55" startPosition="82" endLine="56" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="55" startPosition="82" endLine="56" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="56" startPosition="81" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="60" startPosition="89" endLine="61" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="61" startPosition="101" endLine="62" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="62" startPosition="48" endLine="63" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="63" startPosition="34" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="67" startPosition="88" endLine="68" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="68" startPosition="81" endLine="69" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="69" startPosition="36" endLine="70" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="70" startPosition="39" endLine="71" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="71" startPosition="26" endLine="72" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="72" startPosition="58" endLine="73" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="73" startPosition="73" endLine="74" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="74" startPosition="57" endLine="75" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="76" startPosition="35" endLine="77" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="77" startPosition="72" endLine="78" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="78" startPosition="78" endLine="79" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="80" startPosition="10" endLine="81" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="84" startPosition="90" endLine="85" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="85" startPosition="99" endLine="86" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="86" startPosition="49" endLine="87" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="86" startPosition="49" endLine="87" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="87" startPosition="82" endLine="88" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="87" startPosition="82" endLine="88" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="88" startPosition="81" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="92" startPosition="89" endLine="93" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="93" startPosition="100" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="94" startPosition="48" endLine="95" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="95" startPosition="34" endLine="96" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="99" startPosition="88" endLine="100" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="100" startPosition="81" endLine="101" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="101" startPosition="36" endLine="102" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="102" startPosition="49" endLine="103" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="103" startPosition="26" endLine="104" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="104" startPosition="58" endLine="105" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="105" startPosition="73" endLine="106" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="106" startPosition="57" endLine="107" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="108" startPosition="35" endLine="109" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="109" startPosition="72" endLine="110" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="110" startPosition="78" endLine="111" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="112" startPosition="10" endLine="113" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="116" startPosition="88" endLine="117" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="117" startPosition="86" endLine="118" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="118" startPosition="47" endLine="119" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="119" startPosition="34" endLine="120" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="120" startPosition="49" endLine="121" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="121" startPosition="40" endLine="122" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="122" startPosition="34" endLine="123" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="126" startPosition="90" endLine="127" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="127" startPosition="99" endLine="128" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="128" startPosition="49" endLine="129" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="129" startPosition="34" endLine="130" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="130" startPosition="49" endLine="131" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="131" startPosition="40" endLine="132" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="131" startPosition="40" endLine="132" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="132" startPosition="82" endLine="133" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="132" startPosition="82" endLine="133" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="133" startPosition="82" endLine="134" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="137" startPosition="89" endLine="138" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="138" startPosition="96" endLine="139" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="139" startPosition="48" endLine="140" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="140" startPosition="34" endLine="141" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="144" startPosition="89" endLine="145" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="145" startPosition="82" endLine="146" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="146" startPosition="34" endLine="147" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="147" startPosition="47" endLine="148" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="148" startPosition="26" endLine="149" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="149" startPosition="58" endLine="150" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="150" startPosition="47" endLine="151" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="151" startPosition="73" endLine="152" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="152" startPosition="57" endLine="153" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="154" startPosition="35" endLine="155" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="155" startPosition="72" endLine="156" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="156" startPosition="78" endLine="157" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="158" startPosition="10" endLine="159" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="162" startPosition="88" endLine="163" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="163" startPosition="86" endLine="164" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="164" startPosition="47" endLine="165" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="165" startPosition="34" endLine="166" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="166" startPosition="49" endLine="167" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="167" startPosition="40" endLine="168" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="168" startPosition="34" endLine="169" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="172" startPosition="90" endLine="173" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="173" startPosition="99" endLine="174" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="174" startPosition="49" endLine="175" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="175" startPosition="34" endLine="176" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="176" startPosition="49" endLine="177" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="177" startPosition="49" endLine="178" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="178" startPosition="40" endLine="179" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="178" startPosition="40" endLine="179" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="179" startPosition="82" endLine="180" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="183" startPosition="89" endLine="184" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="184" startPosition="108" endLine="185" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="185" startPosition="48" endLine="186" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="186" startPosition="34" endLine="187" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="190" startPosition="91" endLine="191" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="191" startPosition="147" endLine="192" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="192" startPosition="108" endLine="193" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="193" startPosition="57" endLine="194" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="194" startPosition="49" endLine="195" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="199" startPosition="108" endLine="200" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="203" startPosition="66" endLine="204" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="204" startPosition="41" endLine="205" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="208" startPosition="86" endLine="209" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="209" startPosition="80" endLine="210" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="210" startPosition="95" endLine="211" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="214" startPosition="68" endLine="215" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="215" startPosition="34" endLine="216" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="216" startPosition="55" endLine="217" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="217" startPosition="87" endLine="218" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="222" startPosition="96" endLine="223" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="224" startPosition="34" endLine="225" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="227" startPosition="131" endLine="228" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="199" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="helginsIntentionListHandler_gj4y2c_g0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="223" startPosition="134" endLine="226" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="226" startPosition="9" endLine="229" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="203" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="208" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="60" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gj4y2c_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="75" startPosition="59" endLine="81" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="92" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gj4y2c_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="107" startPosition="59" endLine="113" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="137" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gj4y2c_a3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="153" startPosition="59" endLine="159" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="183" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gj4y2c_a5a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="214" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="52" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gj4y2c_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="84" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gj4y2c_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="190" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_gj4y2c_g0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="116" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gj4y2c_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="162" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gj4y2c_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="221" startPosition="132" endLine="230" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="126" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gj4y2c_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="172" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gj4y2c_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="221" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="39" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gj4y2c_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="67" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_gj4y2c_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="99" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_gj4y2c_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="144" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_gj4y2c_b3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="31" startPosition="47" endLine="32" endPosition="35" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="35" startPosition="79" endLine="36" endPosition="63" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="41" startPosition="48" endLine="42" endPosition="83" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="42" startPosition="83" endLine="43" endPosition="83" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="43" startPosition="83" endLine="44" endPosition="81" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="44" startPosition="81" endLine="45" endPosition="83" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="45" startPosition="83" endLine="46" endPosition="81" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="46" startPosition="81" endLine="47" endPosition="83" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="47" startPosition="83" endLine="48" endPosition="84" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="54" startPosition="49" endLine="55" endPosition="82" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="55" startPosition="82" endLine="56" endPosition="81" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="86" startPosition="49" endLine="87" endPosition="82" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="87" startPosition="82" endLine="88" endPosition="81" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="131" startPosition="40" endLine="132" endPosition="82" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="132" startPosition="82" endLine="133" endPosition="82" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="178" startPosition="40" endLine="179" endPosition="82" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="199" startPosition="108" endLine="200" endPosition="50" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="224" startPosition="34" endLine="225" endPosition="95" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="227" startPosition="131" endLine="228" endPosition="139" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="203" startPosition="66" endLine="205" endPosition="93">
       <varInfo nodeId="1212056578907" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1212056578907" varName="editorContext" />
       <varInfo nodeId="1212056578907" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="72" startPosition="35" endLine="75" endPosition="105">
+    <scopeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="76" startPosition="35" endLine="79" endPosition="105">
       <varInfo nodeId="1212056578912" varName="manager" />
       <varInfo nodeId="1212056578912" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="104" startPosition="35" endLine="107" endPosition="105">
+    <scopeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="108" startPosition="35" endLine="111" endPosition="105">
       <varInfo nodeId="1212056578915" varName="manager" />
       <varInfo nodeId="1212056578915" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="150" startPosition="35" endLine="153" endPosition="105">
+    <scopeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="154" startPosition="35" endLine="157" endPosition="105">
       <varInfo nodeId="1212056578919" varName="manager" />
       <varInfo nodeId="1212056578919" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="195" startPosition="0" endLine="198" endPosition="0">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="199" startPosition="0" endLine="202" endPosition="0">
       <varInfo nodeId="1212056578907" varName="childRole" />
       <varInfo nodeId="1212056578907" varName="context" />
       <varInfo nodeId="1212056578907" varName="ownerNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="204" startPosition="86" endLine="207" endPosition="25">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="208" startPosition="86" endLine="211" endPosition="25">
       <varInfo nodeId="1212056578907" varName="elementCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="230" startPosition="0" endLine="233" endPosition="0" />
-    <scopeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="56" startPosition="89" endLine="60" endPosition="22">
+    <scopeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="60" startPosition="89" endLine="64" endPosition="22">
       <varInfo nodeId="1212056578911" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="88" startPosition="89" endLine="92" endPosition="22">
+    <scopeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="92" startPosition="89" endLine="96" endPosition="22">
       <varInfo nodeId="1212056578914" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="133" startPosition="89" endLine="137" endPosition="22">
+    <scopeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="137" startPosition="89" endLine="141" endPosition="22">
       <varInfo nodeId="1212056578918" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="179" startPosition="89" endLine="183" endPosition="22">
+    <scopeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="183" startPosition="89" endLine="187" endPosition="22">
       <varInfo nodeId="1216204648697" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="199" startPosition="0" endLine="203" endPosition="0">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="203" startPosition="0" endLine="207" endPosition="0">
       <varInfo nodeId="1212056578907" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="210" startPosition="68" endLine="214" endPosition="23">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="214" startPosition="68" endLine="218" endPosition="23">
       <varInfo nodeId="1212056578907" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="48" startPosition="90" endLine="53" endPosition="22">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="52" startPosition="90" endLine="57" endPosition="22">
       <varInfo nodeId="1212056578907" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="80" startPosition="90" endLine="85" endPosition="22">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="84" startPosition="90" endLine="89" endPosition="22">
       <varInfo nodeId="1212056578907" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="186" startPosition="91" endLine="191" endPosition="22">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="190" startPosition="91" endLine="195" endPosition="22">
       <varInfo nodeId="1212056578907" varName="editorCell" />
       <varInfo nodeId="1212056578907" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="204" startPosition="0" endLine="209" endPosition="0">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="208" startPosition="0" endLine="213" endPosition="0">
       <varInfo nodeId="1212056578907" varName="editorContext" />
       <varInfo nodeId="1212056578907" varName="elementNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="56" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="1212056578911" fileName="AbstractEquationInspector.java" startLine="60" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1212056578911" varName="editorContext" />
       <varInfo nodeId="1212056578911" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="88" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="1212056578914" fileName="AbstractEquationInspector.java" startLine="92" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="1212056578914" varName="editorContext" />
       <varInfo nodeId="1212056578914" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="133" startPosition="0" endLine="139" endPosition="0">
+    <scopeInfo nodeId="1212056578918" fileName="AbstractEquationInspector.java" startLine="137" startPosition="0" endLine="143" endPosition="0">
       <varInfo nodeId="1212056578918" varName="editorContext" />
       <varInfo nodeId="1212056578918" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="179" startPosition="0" endLine="185" endPosition="0">
+    <scopeInfo nodeId="1216204648697" fileName="AbstractEquationInspector.java" startLine="183" startPosition="0" endLine="189" endPosition="0">
       <varInfo nodeId="1216204648697" varName="editorContext" />
       <varInfo nodeId="1216204648697" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="210" startPosition="0" endLine="216" endPosition="0">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="214" startPosition="0" endLine="220" endPosition="0">
       <varInfo nodeId="1212056578907" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="1212056578907" varName="editorContext" />
-      <varInfo nodeId="1212056578907" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="80" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="52" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="1212056578907" varName="editorContext" />
       <varInfo nodeId="1212056578907" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="112" startPosition="88" endLine="119" endPosition="22">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="84" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="1212056578907" varName="editorContext" />
+      <varInfo nodeId="1212056578907" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="116" startPosition="88" endLine="123" endPosition="22">
       <varInfo nodeId="1212056578916" varName="editorCell" />
       <varInfo nodeId="1212056578916" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="158" startPosition="88" endLine="165" endPosition="22">
+    <scopeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="162" startPosition="88" endLine="169" endPosition="22">
       <varInfo nodeId="1216204677888" varName="editorCell" />
       <varInfo nodeId="1216204677888" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="186" startPosition="0" endLine="193" endPosition="0">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="190" startPosition="0" endLine="197" endPosition="0">
       <varInfo nodeId="1212056578907" varName="editorContext" />
       <varInfo nodeId="1212056578907" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="218" startPosition="96" endLine="225" endPosition="9" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="122" startPosition="90" endLine="130" endPosition="22">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="222" startPosition="96" endLine="229" endPosition="9" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="126" startPosition="90" endLine="134" endPosition="22">
       <varInfo nodeId="1212056578907" varName="editorCell" />
       <varInfo nodeId="1212056578907" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="168" startPosition="90" endLine="176" endPosition="22">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="172" startPosition="90" endLine="180" endPosition="22">
       <varInfo nodeId="1212056578907" varName="editorCell" />
       <varInfo nodeId="1212056578907" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="112" startPosition="0" endLine="121" endPosition="0">
+    <scopeInfo nodeId="1212056578916" fileName="AbstractEquationInspector.java" startLine="116" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="1212056578916" varName="editorContext" />
       <varInfo nodeId="1212056578916" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="158" startPosition="0" endLine="167" endPosition="0">
+    <scopeInfo nodeId="1216204677888" fileName="AbstractEquationInspector.java" startLine="162" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="1216204677888" varName="editorContext" />
       <varInfo nodeId="1216204677888" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="217" startPosition="132" endLine="226" endPosition="7" />
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="35" startPosition="89" endLine="45" endPosition="22">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="221" startPosition="132" endLine="230" endPosition="7" />
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="39" startPosition="89" endLine="49" endPosition="22">
       <varInfo nodeId="1212056578907" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="122" startPosition="0" endLine="132" endPosition="0">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="126" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="1212056578907" varName="editorContext" />
       <varInfo nodeId="1212056578907" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="168" startPosition="0" endLine="178" endPosition="0">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="172" startPosition="0" endLine="182" endPosition="0">
       <varInfo nodeId="1212056578907" varName="editorContext" />
       <varInfo nodeId="1212056578907" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="217" startPosition="0" endLine="228" endPosition="0">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="221" startPosition="0" endLine="232" endPosition="0">
       <varInfo nodeId="1212056578907" varName="editorContext" />
       <varInfo nodeId="1212056578907" varName="elementCell" />
       <varInfo nodeId="1212056578907" varName="elementNode" />
       <varInfo nodeId="1212056578907" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="35" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="39" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1212056578907" varName="editorContext" />
       <varInfo nodeId="1212056578907" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="63" startPosition="88" endLine="77" endPosition="22">
+    <scopeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="67" startPosition="88" endLine="81" endPosition="22">
       <varInfo nodeId="1212056578912" varName="attributeConcept" />
       <varInfo nodeId="1212056578912" varName="attributeKind" />
       <varInfo nodeId="1212056578912" varName="editorCell" />
       <varInfo nodeId="1212056578912" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="95" startPosition="88" endLine="109" endPosition="22">
+    <scopeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="99" startPosition="88" endLine="113" endPosition="22">
       <varInfo nodeId="1212056578915" varName="attributeConcept" />
       <varInfo nodeId="1212056578915" varName="attributeKind" />
       <varInfo nodeId="1212056578915" varName="editorCell" />
       <varInfo nodeId="1212056578915" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="140" startPosition="89" endLine="155" endPosition="22">
+    <scopeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="144" startPosition="89" endLine="159" endPosition="22">
       <varInfo nodeId="1212056578919" varName="attributeConcept" />
       <varInfo nodeId="1212056578919" varName="attributeKind" />
       <varInfo nodeId="1212056578919" varName="editorCell" />
       <varInfo nodeId="1212056578919" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="63" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="1212056578912" fileName="AbstractEquationInspector.java" startLine="67" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="1212056578912" varName="editorContext" />
       <varInfo nodeId="1212056578912" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="95" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="1212056578915" fileName="AbstractEquationInspector.java" startLine="99" startPosition="0" endLine="115" endPosition="0">
       <varInfo nodeId="1212056578915" varName="editorContext" />
       <varInfo nodeId="1212056578915" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="140" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="1212056578919" fileName="AbstractEquationInspector.java" startLine="144" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="1212056578919" varName="editorContext" />
       <varInfo nodeId="1212056578919" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="194" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractEquationInspector$helginsIntentionListHandler_gj4y2c_g0" />
+    <unitInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="198" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractEquationInspector$helginsIntentionListHandler_gj4y2c_g0" />
     <unitInfo nodeId="1212056578907" fileName="AbstractEquationInspector.java" startLine="30" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractEquationInspector" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b0(jetbrains.mps.lang.typesystem.editor)/1212056593859">

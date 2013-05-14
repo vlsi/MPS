@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="MultipleEditorsTestChild_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestChild_BehaviorDescriptor" />
+  <unitInfo fileName="MultipleEditorsTestEditorComponentChild_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestEditorComponentChild_BehaviorDescriptor" />
+  <unitInfo fileName="MultipleEditorsTestEditorComponentRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestEditorComponentRoot_BehaviorDescriptor" />
   <unitInfo fileName="MultipleEditorsTestMostSpecificChild_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestMostSpecificChild_BehaviorDescriptor" />
   <unitInfo fileName="MultipleEditorsTestMostSpecificRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestMostSpecificRoot_BehaviorDescriptor" />
   <unitInfo fileName="MultipleEditorsTestRefNodeListRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestRefNodeListRoot_BehaviorDescriptor" />
