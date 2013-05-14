@@ -18,6 +18,7 @@ import java.net.MalformedURLException;
 import java.net.URLClassLoader;
 import java.lang.reflect.Method;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import org.apache.tools.ant.util.FileUtils;
 import org.apache.tools.ant.types.FilterSetCollection;
 import java.util.Vector;
@@ -69,6 +70,8 @@ public class ConvertToBinaryTask extends Copy {
       } catch (Throwable t) {
         if (t instanceof RuntimeException && t.getCause() instanceof IOException) {
           t = t.getCause();
+        } else if (t instanceof InvocationTargetException) {
+          t = ((InvocationTargetException) t).getTargetException();
         }
         String message = t.getMessage();
         if ((message == null || message.length() == 0)) {
