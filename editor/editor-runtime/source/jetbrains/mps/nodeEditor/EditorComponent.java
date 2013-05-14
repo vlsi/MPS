@@ -1001,7 +1001,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (isDisposed()) return;
     clearModelDisposedTrace();
 
-    assert node == null || SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
+    assert node == null || node.getRepository() == null || SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
 
     if (myNode != null && notifiesCreation()) {
       notifyDisposal();

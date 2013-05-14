@@ -125,7 +125,7 @@ public class ChangesStripActionsHelper {
     assert changeGroup != null;
 
     final SModel oldModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
-    DiffTemporaryModule.createModuleForModel(oldModel, "old", editorContext.getOperationContext().getProject());
+    DiffTemporaryModule.createModuleAndRegister(oldModel, "old", editorContext.getOperationContext().getProject(), false);
 
     // compute paths to root 
     Iterable<SNode> baseNodes = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, SNode>() {
