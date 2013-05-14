@@ -9,7 +9,6 @@ import com.intellij.openapi.util.Ref;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.util.ui.tree.TreeUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -45,7 +44,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   private List<DiffModelTree.RootTreeNode> myRootNodes;
   private Iterable<BaseAction> myActions;
 
-  public DiffModelTree(IOperationContext operationContext) {
+  public DiffModelTree() {
     rebuildNow();
     TreeUtil.expandAll(this);
     myActions = getRootActions();

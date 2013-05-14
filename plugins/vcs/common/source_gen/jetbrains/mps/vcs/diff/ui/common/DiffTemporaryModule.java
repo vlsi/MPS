@@ -25,15 +25,13 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.project.ModuleContext;
 
 public class DiffTemporaryModule extends AbstractModule {
   private SModel myModel;
@@ -144,22 +142,11 @@ public class DiffTemporaryModule extends AbstractModule {
     MPSModuleRepository.getInstance().unregisterModule(module, owner);
   }
 
-  public static IOperationContext getOperationContext(com.intellij.openapi.project.Project project, SModel model) {
-    org.jetbrains.mps.openapi.model.SModel md = model.getModelDescriptor();
-    assert md != null;
-    SModule module = md.getModule();
-    if (module instanceof DiffTemporaryModule) {
-      return ((DiffTemporaryModule) module).createContext();
-    } else {
-      return new ModuleContext(module, ProjectHelper.toMPSProject(project));
-    }
-  }
-
-  public static org.jetbrains.mps.openapi.model.SModelId genMergeSModelId(org.jetbrains.mps.openapi.model.SModelId modelId, String version) {
+  private static org.jetbrains.mps.openapi.model.SModelId genMergeSModelId(org.jetbrains.mps.openapi.model.SModelId modelId, String version) {
     return SModelId.foreign("merge_" + version + "#" + modelId.toString());
   }
 
-  public static org.jetbrains.mps.openapi.model.SModelId getOriginalSModelId(SModelId.ForeignSModelId modelId) {
+  private static org.jetbrains.mps.openapi.model.SModelId getOriginalSModelId(SModelId.ForeignSModelId modelId) {
     String id = modelId.getId();
     return SModelId.fromString(id.substring(id.indexOf("#") + 1));
   }

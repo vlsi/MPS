@@ -357,7 +357,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
 
   private class ModelDifferenceTree extends DiffModelTree {
     private ModelDifferenceTree() {
-      super(DiffTemporaryModule.getOperationContext(myProject, myChangeSet.getNewModel()));
     }
 
     @Override
