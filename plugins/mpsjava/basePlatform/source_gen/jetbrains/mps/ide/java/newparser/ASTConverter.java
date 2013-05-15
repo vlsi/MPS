@@ -564,11 +564,12 @@ public class ASTConverter {
         convertAnnotations(arg.annotations, par);
         SPropertyOperations.set(par, "name", new String(arg.name));
         SLinkOperations.setTarget(par, "type", childConverter.convertTypeReference(arg.type), true);
+        SPropertyOperations.set(par, "isFinal", "" + (flagSet(arg.modifiers, ClassFileConstants.AccFinal)));
         ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(par);
 
         // <node> 
-        check_rbndtb_a7a0a21a61(idBuilder, arg, this);
-        check_rbndtb_a8a0a21a61(idBuilder);
+        check_rbndtb_a8a0a21a61(idBuilder, arg, this);
+        check_rbndtb_a9a0a21a61(idBuilder);
       }
       // delete the last comma 
       if (x.arguments.length > 0) {
@@ -1205,21 +1206,21 @@ public class ASTConverter {
     return null;
   }
 
-  private static StringBuilder check_rbndtb_a0a6a0a21a61(StringBuilder checkedDotOperand, SNode par, ASTConverter checkedDotThisExpression) {
+  private static StringBuilder check_rbndtb_a0a7a0a21a61(StringBuilder checkedDotOperand, SNode par, ASTConverter checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(checkedDotThisExpression.getTypeName(SLinkOperations.getTarget(par, "type", true)));
     }
     return null;
   }
 
-  private static StringBuilder check_rbndtb_a7a0a21a61(StringBuilder checkedDotOperand, Argument arg, ASTConverter checkedDotThisExpression) {
+  private static StringBuilder check_rbndtb_a8a0a21a61(StringBuilder checkedDotOperand, Argument arg, ASTConverter checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(checkedDotThisExpression.typeReferenceId(arg.type));
     }
     return null;
   }
 
-  private static StringBuilder check_rbndtb_a8a0a21a61(StringBuilder checkedDotOperand) {
+  private static StringBuilder check_rbndtb_a9a0a21a61(StringBuilder checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(",");
     }
