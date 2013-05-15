@@ -6,7 +6,6 @@
   <import index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" version="2" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="kdzh" modelUID="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" version="1" implicit="yes" />
-  <import index="cxrd" modelUID="f:merge_mine#r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" version="-1" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5253498789149381388" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="name" nameId="tpck.1169194664001" value="BuildMps_Module" />
@@ -88,7 +87,7 @@
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149381388" resolveInfo="BuildMps_Module" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="269707337715731330" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="sourcesKind" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="cxrd.269707337715631379" resolveInfo="BuildMps_ModuleSourcesKind" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="269707337715631379" resolveInfo="BuildMps_ModuleSourcesKind" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3189788309731840248" nodeInfo="ig">
