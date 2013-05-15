@@ -51,6 +51,8 @@ public class BuildMpsLayout_TestModule_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -60,8 +62,12 @@ public class BuildMpsLayout_TestModule_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_jhv8ot_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "module");
       editorCell.setCellId("ReferencePresentation_jhv8ot_a0a0");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("module");
+      }
       return editorCell;
     }
   }
