@@ -39,6 +39,7 @@ import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
+import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import org.eclipse.jdt.internal.compiler.ast.ArrayAllocationExpression;
 import org.eclipse.jdt.internal.compiler.ast.ArrayInitializer;
@@ -162,7 +163,7 @@ public class FullASTConverter extends ASTConverter {
   @Override
   protected void handleMethodBody(SNode result, AbstractMethodDeclaration x) throws JavaParseException {
     addBlock(SLinkOperations.getTarget(result, "body", true), x.declarationSourceStart, x.declarationSourceEnd);
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(result, "body", true), "statement", true)).addSequence(ListSequence.fromList(convertStatements(x.statements)));
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(result, "body", true), "statement", true)).addSequence(ListSequence.fromList(convertStatementsOf(x, SLinkOperations.getTarget(result, "body", true))));
   }
 
 
@@ -202,7 +203,18 @@ public class FullASTConverter extends ASTConverter {
 
   public List<SNode> convertStatementsOf(AbstractMethodDeclaration x, SNode bodyInto) throws JavaParseException {
     addBlock(bodyInto, x.declarationSourceStart, x.declarationSourceEnd);
-    return convertStatements(x.statements);
+
+    List<SNode> stmts = convertStatements(x.statements);
+
+    if (x instanceof ConstructorDeclaration) {
+      ExplicitConstructorCall cntrCall = ((ConstructorDeclaration) x).constructorCall;
+      if (cntrCall != null) {
+        SNode firstCntrCall = convertStatement(cntrCall);
+        ListSequence.fromList(stmts).insertElement(0, firstCntrCall);
+      }
+    }
+
+    return stmts;
   }
 
   public SNode convertExpressionWrap(Expression expression) throws JavaParseException {

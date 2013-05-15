@@ -181,6 +181,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompoundAssignment" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ConditionalExpression" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ContinueStatement" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.DoStatement" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.EmptyStatement" />
