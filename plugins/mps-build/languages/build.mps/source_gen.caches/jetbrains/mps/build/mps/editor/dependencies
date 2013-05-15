@@ -911,6 +911,7 @@
     <classNode dependClassName="jetbrains.mps.build.mps.editor.GeneratorInternal_BuildMps_Module_Editor" />
     <classNode dependClassName="jetbrains.mps.build.mps.editor.GeneratorInternal_BuildSourcePath_Editor" />
     <classNode dependClassName="jetbrains.mps.build.mps.editor.GeneratorInternal_String_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

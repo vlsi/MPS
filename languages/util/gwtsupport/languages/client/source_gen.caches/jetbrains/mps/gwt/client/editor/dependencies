@@ -47,6 +47,7 @@
     <classNode dependClassName="jetbrains.mps.gwt.client.editor.PatternHolder_Editor" />
     <classNode dependClassName="jetbrains.mps.gwt.client.editor.Pattern_Editor" />
     <classNode dependClassName="jetbrains.mps.gwt.client.editor.RenameTo_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

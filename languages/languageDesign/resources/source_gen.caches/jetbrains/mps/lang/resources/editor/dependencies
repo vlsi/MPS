@@ -10,6 +10,7 @@
     <classNode dependClassName="jetbrains.mps.lang.resources.editor.IconResourceExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.editor.IconResourceReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.editor.IconResource_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

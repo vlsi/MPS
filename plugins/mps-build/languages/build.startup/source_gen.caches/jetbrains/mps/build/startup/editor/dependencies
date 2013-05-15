@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.build.startup.editor.SimpleVmOptions_Editor" />
     <classNode dependClassName="jetbrains.mps.build.startup.editor.TextFile_Editor" />
     <classNode dependClassName="jetbrains.mps.build.startup.editor.TextLine_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

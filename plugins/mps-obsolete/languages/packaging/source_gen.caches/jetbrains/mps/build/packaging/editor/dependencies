@@ -383,6 +383,7 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.Variable_Editor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.WelcomeScreen_Editor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.Zip_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

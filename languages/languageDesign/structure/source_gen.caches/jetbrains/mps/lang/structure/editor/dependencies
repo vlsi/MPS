@@ -310,6 +310,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.ReferenceConceptLink_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.StringConceptPropertyDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.StringConceptProperty_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

@@ -44,6 +44,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.blTypes.editor.FunctionType_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.blTypes.editor.PrimitiveTypeDescriptor_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.blTypes.editor.PrimitiveTypeRef_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

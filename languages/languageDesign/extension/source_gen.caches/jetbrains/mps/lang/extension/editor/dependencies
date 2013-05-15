@@ -12,6 +12,7 @@
     <classNode dependClassName="jetbrains.mps.lang.extension.editor.ExtensionPointExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.editor.ExtensionPointType_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.editor.GetExtensionObjectsOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

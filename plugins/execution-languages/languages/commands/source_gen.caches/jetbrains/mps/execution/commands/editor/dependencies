@@ -200,6 +200,7 @@
     <classNode dependClassName="jetbrains.mps.execution.commands.editor.RedirectOutputExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.editor.ReportErrorStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.editor.StartAndWaitOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

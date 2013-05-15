@@ -702,6 +702,7 @@
     <classNode dependClassName="jetbrains.mps.bash.editor.VariableReference_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.WhileLoopCommand_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.WordList_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

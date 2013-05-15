@@ -17,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.core.xml.sax.editor.XMLSAXNodeRule_Editor" />
     <classNode dependClassName="jetbrains.mps.core.xml.sax.editor.XMLSAXParser_Editor" />
     <classNode dependClassName="jetbrains.mps.core.xml.sax.editor.XMLSAXTextRule_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

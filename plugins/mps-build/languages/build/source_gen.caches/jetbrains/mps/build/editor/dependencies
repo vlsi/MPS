@@ -2032,6 +2032,7 @@
     <classNode dependClassName="jetbrains.mps.build.editor.GeneratorInternal_IWorkflowParticipantReference_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

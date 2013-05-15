@@ -49,6 +49,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ExportScopeNamespace_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ExportScopePublic_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

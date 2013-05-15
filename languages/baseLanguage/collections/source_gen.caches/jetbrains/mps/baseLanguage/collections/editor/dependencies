@@ -543,6 +543,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.ToIteratorOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.ToListOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.TreeSetCreator_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

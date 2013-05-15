@@ -76,6 +76,7 @@
     <classNode dependClassName="jetbrains.mps.execution.settings.editor.TemplateParameterReference_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.editor.TemplateParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.editor.TemplatePersistentConfigurationType_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

@@ -37,6 +37,7 @@
     <classNode dependClassName="jetbrains.mps.lang.access.editor.BaseExecuteCommandStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.access.editor.CommandClosureLiteral_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.access.editor.ExecuteCommandInEDTStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

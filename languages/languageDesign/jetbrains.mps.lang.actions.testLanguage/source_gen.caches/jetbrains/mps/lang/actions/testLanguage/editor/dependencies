@@ -194,6 +194,7 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestContainer_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultChild1_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultChild2_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

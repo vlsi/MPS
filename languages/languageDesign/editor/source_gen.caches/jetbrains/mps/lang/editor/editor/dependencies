@@ -1626,6 +1626,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor._CloseTag" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor._FocusPolicy_Applicable" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor._OpenTag" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

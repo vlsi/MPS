@@ -4,15 +4,22 @@ package jetbrains.mps.build.workflow.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
+import jetbrains.mps.openapi.editor.EditorContextHint;
+import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Collection<EditorContextHint> myHints;
+
+  {
+    myHints = Collections.emptyList();
+  }
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new BwfAntStatement_Editor());
       case 1:
@@ -78,5 +85,12 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.workflow.structure.BwfAntStatement", "jetbrains.mps.build.workflow.structure.BwfAntTaskBundleDeclaration", "jetbrains.mps.build.workflow.structure.BwfAntTaskDeclaration", "jetbrains.mps.build.workflow.structure.BwfCustomMacro", "jetbrains.mps.build.workflow.structure.BwfDependency", "jetbrains.mps.build.workflow.structure.BwfFileSet", "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", "jetbrains.mps.build.workflow.structure.BwfJavaDependency", "jetbrains.mps.build.workflow.structure.BwfJavaDescriptor", "jetbrains.mps.build.workflow.structure.BwfJavaLibrary", "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference", "jetbrains.mps.build.workflow.structure.BwfJavaModule", "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", "jetbrains.mps.build.workflow.structure.BwfMacro", "jetbrains.mps.build.workflow.structure.BwfMacroListImport", "jetbrains.mps.build.workflow.structure.BwfPathDeclaration", "jetbrains.mps.build.workflow.structure.BwfPathReference", "jetbrains.mps.build.workflow.structure.BwfProject", "jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.build.workflow.structure.BwfProjectPartStatement", "jetbrains.mps.build.workflow.structure.BwfStatement", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTaskLibrary", "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", "jetbrains.mps.build.workflow.structure.BwfTaskPart"};
+
+
+  public Collection<EditorContextHint> getHints() {
+    return myHints;
+  }
+
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.build.workflow.structure.BwfAntStatement", "jetbrains.mps.build.workflow.structure.BwfAntTaskBundleDeclaration", "jetbrains.mps.build.workflow.structure.BwfAntTaskDeclaration", "jetbrains.mps.build.workflow.structure.BwfCustomMacro", "jetbrains.mps.build.workflow.structure.BwfDependency", "jetbrains.mps.build.workflow.structure.BwfFileSet", "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", "jetbrains.mps.build.workflow.structure.BwfJavaDependency", "jetbrains.mps.build.workflow.structure.BwfJavaDescriptor", "jetbrains.mps.build.workflow.structure.BwfJavaLibrary", "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference", "jetbrains.mps.build.workflow.structure.BwfJavaModule", "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", "jetbrains.mps.build.workflow.structure.BwfMacro", "jetbrains.mps.build.workflow.structure.BwfMacroListImport", "jetbrains.mps.build.workflow.structure.BwfPathDeclaration", "jetbrains.mps.build.workflow.structure.BwfPathReference", "jetbrains.mps.build.workflow.structure.BwfProject", "jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.build.workflow.structure.BwfProjectPartStatement", "jetbrains.mps.build.workflow.structure.BwfStatement", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTaskLibrary", "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", "jetbrains.mps.build.workflow.structure.BwfTaskPart"};
 }

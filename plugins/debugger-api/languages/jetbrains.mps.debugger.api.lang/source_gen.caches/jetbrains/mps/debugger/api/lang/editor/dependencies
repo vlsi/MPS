@@ -161,6 +161,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.DebuggerConfiguration_Editor" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.DebuggerReference_Editor" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.DebuggerType_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

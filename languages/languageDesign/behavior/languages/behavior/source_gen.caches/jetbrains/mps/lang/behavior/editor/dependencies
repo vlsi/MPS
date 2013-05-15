@@ -139,6 +139,7 @@
     <classNode dependClassName="jetbrains.mps.lang.behavior.editor.StaticConceptMethodDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.editor.SuperNodeExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.editor.ThisNodeExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

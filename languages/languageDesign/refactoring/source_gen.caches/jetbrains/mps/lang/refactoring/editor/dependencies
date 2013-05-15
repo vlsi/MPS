@@ -204,6 +204,7 @@
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RequiredUserEnteredArgument_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.UpdateModelByDefaultOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.UpdateModelProcedure_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

@@ -129,6 +129,7 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.editor.PatternCondition_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.editor.RuleReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.analyzers.editor.Rule_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

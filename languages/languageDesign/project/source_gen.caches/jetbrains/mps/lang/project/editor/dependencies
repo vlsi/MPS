@@ -48,6 +48,7 @@
     <classNode dependClassName="jetbrains.mps.lang.project.editor.SourcePath_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.project.editor.StubEntry_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.project.editor.StubSolution_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

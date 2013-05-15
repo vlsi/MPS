@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:8a1d2e45-6905-4fdc-b23a-0d0611ab88a0(jetbrains.mps.debugger.decisionTable.editor)/5202024118203914173">
     <nodeInfo nodeId="5202024118203914173" fileName="YVariableReference_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5202024118203914175" fileName="YVariableReference_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

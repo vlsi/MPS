@@ -260,6 +260,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.editor.UnrestrictedFunctionType_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.editor.YieldAllStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.editor.YieldStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

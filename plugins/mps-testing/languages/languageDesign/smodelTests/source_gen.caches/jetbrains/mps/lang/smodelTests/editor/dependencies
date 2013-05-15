@@ -75,6 +75,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainerSubConcept_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodelTests.editor.ReferenceContainer_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodelTests.editor.Root_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

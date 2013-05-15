@@ -249,6 +249,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.ThrowsBlockDocTag_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.ValueInlineDocTag_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.VersionBlockDocTag_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

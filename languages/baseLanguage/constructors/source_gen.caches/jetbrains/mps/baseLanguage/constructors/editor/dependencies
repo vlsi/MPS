@@ -135,6 +135,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.editor.CustomConstructor_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.editor.ListArgumentsClause_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.editor.ListCustomParameter_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

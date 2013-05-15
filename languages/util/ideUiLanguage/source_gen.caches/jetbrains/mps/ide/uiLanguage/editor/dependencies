@@ -60,6 +60,7 @@
     <classNode dependClassName="jetbrains.mps.ide.uiLanguage.editor.IDEDialog_Editor" />
     <classNode dependClassName="jetbrains.mps.ide.uiLanguage.editor.ReportErrorExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.ide.uiLanguage.editor.ReportErrorStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

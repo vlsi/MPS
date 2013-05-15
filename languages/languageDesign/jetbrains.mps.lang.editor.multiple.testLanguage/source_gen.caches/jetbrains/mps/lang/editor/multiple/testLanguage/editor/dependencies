@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestRefNodeListRoot_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestRefNodeRoot_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestRoot_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

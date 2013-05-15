@@ -8,6 +8,7 @@
     <classNode dependClassName="jetbrains.mps.debug.sampleLanguage.editor.WannabeClass_Editor" />
     <classNode dependClassName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethodCall_Editor" />
     <classNode dependClassName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethod_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

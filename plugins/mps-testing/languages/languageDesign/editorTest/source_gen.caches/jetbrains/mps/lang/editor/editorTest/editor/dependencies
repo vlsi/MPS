@@ -93,6 +93,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationBlock_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.VerticalLayoutBlockList_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

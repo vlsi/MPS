@@ -53,6 +53,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.editor.UltimateContainer_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.editor.XElement_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.editor.YElement_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

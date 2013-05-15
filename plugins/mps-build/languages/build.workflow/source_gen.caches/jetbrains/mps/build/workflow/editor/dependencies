@@ -572,6 +572,7 @@
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTaskLibrary_Editor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTaskPart_Editor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTask_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

@@ -20,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.MakeResultProvider_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.NodeStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.ResultStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

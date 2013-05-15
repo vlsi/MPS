@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.lang.stubs.editor.LanguageRef_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.editor.ModelCreationSettings_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.editor.ModelManagerDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

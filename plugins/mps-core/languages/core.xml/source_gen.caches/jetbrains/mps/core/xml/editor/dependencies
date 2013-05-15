@@ -30,6 +30,7 @@
     <classNode dependClassName="jetbrains.mps.core.xml.editor.XmlText_Editor" />
     <classNode dependClassName="jetbrains.mps.core.xml.editor.XmlValuePart_Editor" />
     <classNode dependClassName="jetbrains.mps.core.xml.editor.XmlWhitespace_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
