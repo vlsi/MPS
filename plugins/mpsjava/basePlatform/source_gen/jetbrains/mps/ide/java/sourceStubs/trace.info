@@ -480,5 +480,59 @@
     <unitInfo nodeId="5592980646743658996" fileName="JavaSourceStubModelRootFactory.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRootFactory" />
   </root>
   <root nodeRef="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)/5592980646743690876" />
+  <root nodeRef="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)/9207707776056494296">
+    <nodeInfo nodeId="9207707776056494487" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="27" startPosition="136" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9207707776056494489" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="28" startPosition="60" endLine="29" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9207707776056494328" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="31" startPosition="59" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9207707776056494491" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="37" startPosition="141" endLine="38" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9207707776056494493" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="41" startPosition="143" endLine="42" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9207707776056494372" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="45" startPosition="31" endLine="46" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9207707776056494382" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="49" startPosition="34" endLine="50" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9207707776056494394" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="55" startPosition="36" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9207707776056494301" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EmptyJavaSourcetubsFindUsages#()V" />
+    <nodeInfo nodeId="9207707776056494322" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="30" startPosition="33" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9207707776056494338" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findInstances#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+    <nodeInfo nodeId="9207707776056494354" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModelUsages#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+    <nodeInfo nodeId="9207707776056494370" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="9207707776056494380" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="9207707776056494319" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="29" startPosition="64" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9207707776056494390" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="53" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9207707776056494305" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="27" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findUsages#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+    <scopeInfo nodeId="9207707776056494303" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="24" startPosition="42" endLine="24" endPosition="42" />
+    <scopeInfo nodeId="9207707776056494327" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="31" startPosition="59" endLine="32" endPosition="41" />
+    <scopeInfo nodeId="9207707776056494351" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="37" startPosition="141" endLine="38" endPosition="66" />
+    <scopeInfo nodeId="9207707776056494367" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="41" startPosition="143" endLine="42" endPosition="66" />
+    <scopeInfo nodeId="9207707776056494371" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="45" startPosition="31" endLine="46" endPosition="67" />
+    <scopeInfo nodeId="9207707776056494381" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="49" startPosition="34" endLine="50" endPosition="70" />
+    <scopeInfo nodeId="9207707776056494393" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="55" startPosition="36" endLine="56" endPosition="57" />
+    <scopeInfo nodeId="9207707776056494301" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="9207707776056494321" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="30" startPosition="33" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="9207707776056494338" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="9207707776056494339" varName="collection" />
+      <varInfo nodeId="9207707776056494345" varName="consumer" />
+      <varInfo nodeId="9207707776056494348" varName="consumer1" />
+      <varInfo nodeId="9207707776056494342" varName="set" />
+    </scopeInfo>
+    <scopeInfo nodeId="9207707776056494354" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="9207707776056494355" varName="collection" />
+      <varInfo nodeId="9207707776056494361" varName="consumer" />
+      <varInfo nodeId="9207707776056494364" varName="consumer1" />
+      <varInfo nodeId="9207707776056494358" varName="set" />
+    </scopeInfo>
+    <scopeInfo nodeId="9207707776056494370" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="9207707776056494380" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="9207707776056494319" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="29" startPosition="64" endLine="34" endPosition="5">
+      <varInfo nodeId="9207707776056494332" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="9207707776056494390" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="53" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="9207707776056494318" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="27" startPosition="136" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="9207707776056494305" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="27" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="9207707776056494312" varName="consumer" />
+      <varInfo nodeId="9207707776056494306" varName="models" />
+      <varInfo nodeId="9207707776056494315" varName="processedConsumer" />
+      <varInfo nodeId="9207707776056494309" varName="set" />
+    </scopeInfo>
+    <unitInfo nodeId="9207707776056494296" fileName="EmptyJavaSourcetubsFindUsages.java" startLine="19" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.java.sourceStubs.EmptyJavaSourcetubsFindUsages" />
+  </root>
 </debugInfo>
 
