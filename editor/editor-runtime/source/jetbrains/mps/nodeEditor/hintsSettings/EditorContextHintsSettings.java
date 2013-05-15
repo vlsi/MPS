@@ -13,20 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.descriptor;
+package jetbrains.mps.nodeEditor.hintsSettings;
 
 import jetbrains.mps.openapi.editor.EditorContextHint;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 
-import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
- * User: shatalin
- * Date: 4/8/13
+ * Semen Alperovich
+ * 05 15, 2013
  */
-public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
-  Collection<ConceptEditor> getEditors(ConceptDescriptor concept);
-  Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor concept, String editorComponentId);
-  Collection<EditorContextHint> getHints();
+public class EditorContextHintsSettings {
+  private Map<String, Map<EditorContextHint, Boolean>> mySettings = new HashMap<String, Map<EditorContextHint, Boolean>>();
+  public Map<String, Map<EditorContextHint, Boolean>> getSettings() {
+    return mySettings;
+  }
+
+  public void setSettings(Map<String, Map<EditorContextHint, Boolean>> settings) {
+    mySettings = settings;
+  }
+  public Set<EditorContextHint> getHints(String name) {
+    return getSettings().get(name).keySet();
+  }
 }

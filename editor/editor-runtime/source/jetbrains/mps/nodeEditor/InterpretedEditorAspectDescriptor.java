@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.openapi.editor.EditorContextHint;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
@@ -99,4 +100,8 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
     return null;
   }
 
+  @Override
+  public Collection<EditorContextHint> getHints() {
+    return Collections.emptyList();
+  }
 }

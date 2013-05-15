@@ -13,20 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.descriptor;
+package jetbrains.mps.openapi.editor;
 
-import jetbrains.mps.openapi.editor.EditorContextHint;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
-
-import java.util.Collection;
 
 /**
- * User: shatalin
- * Date: 4/8/13
+ * Semen Alperovich
+ * 05 15, 2013
  */
-public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
-  Collection<ConceptEditor> getEditors(ConceptDescriptor concept);
-  Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor concept, String editorComponentId);
-  Collection<EditorContextHint> getHints();
+public class EditorContextHint {
+  private final String myId;
+  private final String myPresentation;
+
+  public EditorContextHint(String id, String presentation) {
+    myId = id;
+    myPresentation = presentation;
+
+  }
+
+  public String getId() {
+    return myId;
+  }
+  public String getPresentation() {
+    return myPresentation;
+  }
 }
