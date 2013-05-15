@@ -440,7 +440,7 @@ public class ModuleChecker {
     }
     String genPath = null;
     if (!(SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) || (BuildMps_Solution_Behavior.call_hasSources_7354447573576714831(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) && hasModels)) {
-      IFile genPathFile = ProjectPathUtil.getGeneratorOutputPath(myModuleSourceDir.getParent(), myModuleDescriptor);
+      IFile genPathFile = ProjectPathUtil.getGeneratorOutputPath(myModuleSourceDir, myModuleDescriptor);
       if (genPathFile != null) {
         genPath = genPathFile.getPath();
         res.add(genPath);

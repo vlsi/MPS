@@ -95,7 +95,7 @@
       <fileset dir="${mps_home}/plugins/mpsjava/migration/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/mps-java/languages/jetbrains.mps.ide.java.migration-src.jar">
-      <fileset dir="${mps_home}/plugins/mpsjava/source_gen" includes="**/*.java" />
+      <fileset dir="${mps_home}/plugins/mpsjava/migration/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mpsjava/migration/jetbrains.mps.ide.java.migration.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-migration-models" prefix="module/models" />
     </jar>
@@ -496,7 +496,7 @@
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.java.migration" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mpsjava/source_gen" />
+        <path location="${mps_home}/plugins/mpsjava/migration/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -527,12 +527,12 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.ide.java.migration">
-      <fileset dir="${mps_home}/plugins/mpsjava/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mpsjava/migration/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
   <target name="cleanSources">
     <delete dir="${mps_home}/plugins/mpsjava/workbench/source_gen" />
-    <delete dir="${mps_home}/plugins/mpsjava/source_gen" />
+    <delete dir="${mps_home}/plugins/mpsjava/migration/source_gen" />
   </target>
 </project>
