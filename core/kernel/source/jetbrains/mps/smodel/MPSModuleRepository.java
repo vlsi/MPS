@@ -368,5 +368,10 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     public void executeUndoTransparentCommand(Runnable r) {
       throw new UnsupportedOperationException();
     }
+
+    @Override
+    public boolean isCommandAction() {
+      return jetbrains.mps.smodel.ModelAccess.instance().isInsideCommand();
+    }
   }
 }

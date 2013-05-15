@@ -136,5 +136,10 @@ public class ProjectRepository extends SRepositoryBase {
     public void executeUndoTransparentCommand(Runnable r) {
       jetbrains.mps.smodel.ModelAccess.instance().runUndoTransparentCommand(r, project);
     }
+
+    @Override
+    public boolean isCommandAction() {
+      return jetbrains.mps.smodel.ModelAccess.instance().isInsideCommand();
+    }
   }
 }

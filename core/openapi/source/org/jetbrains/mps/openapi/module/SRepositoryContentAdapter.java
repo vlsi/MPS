@@ -106,11 +106,11 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
     }
 
     repository.addRepositoryListener(this);
-    for (SRepository r = repository; r != null; r = r.getParent()) {
-      for (SModule module : r.getModules()) {
-        startListening(module);
-      }
-
+    for (SModule module : repository.getModules()) {
+      startListening(module);
+    }
+    if (repository.getModelAccess().isCommandAction()) {
+      commandStack.push(repository);
     }
   }
 
@@ -122,12 +122,11 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
       unsubscribeFrom(parent);
     }
 
-    for (SRepository r = repository; r != null; r = r.getParent()) {
-      for (SModule module : r.getModules()) {
-        stopListening(module);
-      }
+    for (SModule module : repository.getModules()) {
+      stopListening(module);
     }
     repository.removeRepositoryListener(this);
+    commandStack.clear();
   }
 
   @Override

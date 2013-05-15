@@ -100,6 +100,11 @@ public class DisposedRepository implements SRepository {
       public void executeUndoTransparentCommand(Runnable r) {
 
       }
+
+      @Override
+      public boolean isCommandAction() {
+        return false;
+      }
     };
   }
 
