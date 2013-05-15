@@ -838,7 +838,7 @@
     <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleTestSource" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="test source" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="cxrd.5253498789149547823" resolveInfo="BuildMps_ModuleSource" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547823" resolveInfo="BuildMps_ModuleSource" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7354447573577513025" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="isGenerated" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
