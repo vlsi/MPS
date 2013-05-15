@@ -403,7 +403,7 @@
     <nodeInfo nodeId="8597743085639790175" fileName="ProjectTestHelper.java" startLine="373" startPosition="0" endLine="374" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerationWarnings" />
     <nodeInfo nodeId="8597743085639790707" fileName="ProjectTestHelper.java" startLine="382" startPosition="43" endLine="383" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8597743085639790712" fileName="ProjectTestHelper.java" startLine="383" startPosition="53" endLine="384" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8597743085639790721" fileName="ProjectTestHelper.java" startLine="384" startPosition="72" endLine="385" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8597743085639790721" fileName="ProjectTestHelper.java" startLine="384" startPosition="72" endLine="385" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8597743085639790699" fileName="ProjectTestHelper.java" startLine="386" startPosition="18" endLine="387" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8597743085639790730" fileName="ProjectTestHelper.java" startLine="388" startPosition="11" endLine="389" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="8597743085639790734" fileName="ProjectTestHelper.java" startLine="390" startPosition="21" endLine="391" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -612,7 +612,7 @@
     <scopeInfo nodeId="3224166544242268084" fileName="ProjectTestHelper.java" startLine="327" startPosition="0" endLine="330" endPosition="0">
       <varInfo nodeId="3224166544242268083" varName="fileName" />
     </scopeInfo>
-    <scopeInfo nodeId="8597743085639790706" fileName="ProjectTestHelper.java" startLine="382" startPosition="43" endLine="385" endPosition="66">
+    <scopeInfo nodeId="8597743085639790706" fileName="ProjectTestHelper.java" startLine="382" startPosition="43" endLine="385" endPosition="89">
       <varInfo nodeId="8597743085639790708" varName="writer" />
     </scopeInfo>
     <scopeInfo nodeId="8597743085639790187" fileName="ProjectTestHelper.java" startLine="399" startPosition="0" endLine="402" endPosition="0" />

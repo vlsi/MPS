@@ -382,7 +382,7 @@ public class ProjectTestHelper {
           if (msg.getException() != null) {
             StringWriter writer = new StringWriter();
             msg.getException().printStackTrace(new PrintWriter(writer));
-            myGenerationErrors.add(writer.getBuffer().toString());
+            myGenerationErrors.add(msg.getText() + ": " + writer.getBuffer().toString());
           } else {
             myGenerationErrors.add(msg.getText());
           }
