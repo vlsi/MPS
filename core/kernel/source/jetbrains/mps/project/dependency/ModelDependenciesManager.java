@@ -15,17 +15,23 @@
  */
 package jetbrains.mps.project.dependency;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.DevKit;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -38,6 +44,7 @@ public class ModelDependenciesManager {
 
   private static final Logger LOG = LogManager.getLogger(ModelDependenciesManager.class);
 
+  private final SRepository myRepository;
   private SModel myModel;
   private MySModelWatcher mySModelWatcher;
   private MyModuleWatcher myModuleWatcher;
@@ -48,6 +55,7 @@ public class ModelDependenciesManager {
   private CountDownLatch myCacheInitGuard = new CountDownLatch(1);
 
   public ModelDependenciesManager(SModel model) {
+    myRepository = MPSModuleRepository.getInstance();
     myModel = model;
     myModuleWatcher = new MyModuleWatcher();
   }
@@ -161,21 +169,16 @@ public class ModelDependenciesManager {
     }
   }
 
-  private class MyModuleWatcher extends ModuleRepositoryAdapter {
+  private class MyModuleWatcher extends SRepositoryContentAdapter {
 
     private ConcurrentHashSet<SModule> myWatchedModules = new ConcurrentHashSet<SModule>(4);
 
     private MyModuleWatcher() {
-      registerSelf();
+      subscribeTo(myRepository);
     }
 
     @Override
-    public void moduleRemoved(SModule module) {
-      invalidateIfWatching(module);
-    }
-
-    @Override
-    public void moduleInitialized(SModule module) {
+    public void beforeModuleRemoved(SModule module) {
       invalidateIfWatching(module);
     }
 
@@ -187,7 +190,7 @@ public class ModelDependenciesManager {
     @Override
     public void repositoryChanged() {
       invalidate();
-      unregisterSelf();
+      unsubscribeFrom(myRepository);
     }
 
     private void watchDevKit(@NotNull DevKit devKit) {
@@ -201,7 +204,7 @@ public class ModelDependenciesManager {
     private void invalidateIfWatching(SModule module) {
       if (myWatchedModules.contains(module)) {
         invalidate();
-        unregisterSelf();
+        unsubscribeFrom(myRepository);
       }
     }
 
@@ -211,15 +214,7 @@ public class ModelDependenciesManager {
 
     private void dispose() {
       clear();
-      unregisterSelf();
-    }
-
-    private void registerSelf() {
-      MPSModuleRepository.getInstance().addModuleRepositoryListener(this);
-    }
-
-    private void unregisterSelf() {
-      MPSModuleRepository.getInstance().removeModuleRepositoryListener(this);
+      unsubscribeFrom(myRepository);
     }
   }
 }

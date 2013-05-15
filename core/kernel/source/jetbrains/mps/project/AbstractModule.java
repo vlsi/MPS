@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.IModule.ModelAdjuster;
-import org.jetbrains.mps.openapi.module.SModule;
-
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.IModule.ModelAdjuster;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
@@ -43,7 +42,6 @@ import jetbrains.mps.smodel.DisposedRepository;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IllegalModelAccessError;
-import jetbrains.mps.smodel.IllegalModelChangeError;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -51,7 +49,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
-import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
@@ -72,12 +69,11 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SModuleListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
@@ -97,7 +93,7 @@ import java.util.Set;
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
-public abstract class AbstractModule implements SModule, EditableSModule, FileSystemListener {
+public abstract class AbstractModule extends SModuleBase implements EditableSModule, FileSystemListener {
   private static final Logger LOG = LogManager.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
@@ -547,16 +543,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
     types.add(JavaModuleFacet.FACET_TYPE);
   }
 
-  @Override
-  public void addModuleListener(SModuleListener listener) {
-
-  }
-
-  @Override
-  public void removeModuleListener(SModuleListener listener) {
-
-  }
-
   protected ModuleFacetBase setupFacet(ModuleFacetBase facet, Memento memento) {
     if (!facet.setModule(this)) {
       return null;
@@ -717,8 +703,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
 
   public void updateModelsSet() {
     doUpdateModelsSet();
-    // TODO why here?
-    fireModuleInitialized();
   }
 
   protected Iterable<ModelRoot> loadRoots() {
@@ -775,10 +759,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
     for (ModelRoot modelRoot : toUpdate) {
       ((ModelRootBase) modelRoot).update();
     }
-  }
-
-  private void fireModuleInitialized() {
-    MPSModuleRepository.getInstance().fireModuleInitialized(this);
   }
 
   @Deprecated

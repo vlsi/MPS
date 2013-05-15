@@ -15,14 +15,13 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
-
 /**
- * Change listener is always invoked after a real change
+ * This interface can be implemented to track write access of individual nodes in the model.
+ * <p/>
+ * All notifications are delivered inside a write lock on the repository <b>after</b> a real change.
  */
-public interface SModelChangeListener{
+public interface SModelChangeListener {
+
   void nodeAdded(SNode node, String role, SNode child);
 
   void nodeRemoved(SNode node, String role, SNode child);

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
@@ -26,7 +27,7 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
 /**
  * evgeny, 5/9/13
  */
-public class ProjectRepository implements SRepository {
+public class ProjectRepository extends SRepositoryBase {
 
   private final Project project;
   private final ProjectModelAccess myProjectModelAccess;

@@ -15,31 +15,26 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.mps.openapi.module.SModule;
-
 /**
- * Receives notifications whenever a repository gets updated
+ * Receives notifications whenever a repository gets updated.
  */
 public interface SRepositoryListener {
+
   void moduleAdded(SModule module);
 
   void beforeModuleRemoved(SModule module);
 
-  //todo module ref
-  void moduleRemoved(SModule module);
+  void moduleRemoved(SModuleReference module);
 
-  //todo remove or move to module listener
-  void moduleInitialized(SModule module);
+  void commandStarted();
 
-  //todo remove or move to module listener
-  void moduleChanged(SModule module);
+  void commandFinished();
 
-  /**
-   * Reports changes to the owners schema of a module. It gets invoked when a module gets detached from an owner, but is still used
-   * by at least one other owner and so cannot be removed completely.
-   *
-   * @deprecated To remove in 3.0 since modules can now only have one owner
-   */
-  @Deprecated
-  void repositoryChanged();
+  void updateStarted();
+
+  void updateFinished();
+
+  void repositoryCommandStarted();
+
+  void repositoryCommandFinished();
 }

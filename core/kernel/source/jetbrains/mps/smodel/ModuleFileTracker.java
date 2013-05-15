@@ -15,25 +15,24 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
-
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ModuleFileTracker implements CoreComponent {
   private static ModuleFileTracker INSTANCE;
-  private MPSModuleRepository myRepo;
-  private final ModuleRepositoryAdapter myListener = new MyModuleRepositoryListener();
+  private SRepository myRepo;
+  private final SRepositoryListener myListener = new MyModuleRepositoryListener();
 
   public ModuleFileTracker(MPSModuleRepository repo) {
     myRepo = repo;
@@ -49,14 +48,14 @@ public class ModuleFileTracker implements CoreComponent {
       throw new IllegalStateException("double initialization");
     }
 
-    myRepo.addModuleRepositoryListener(myListener);
+    myRepo.addRepositoryListener(myListener);
     INSTANCE = this;
   }
 
   @Override
   public void dispose() {
     INSTANCE = null;
-    myRepo.removeModuleRepositoryListener(myListener);
+    myRepo.removeRepositoryListener(myListener);
   }
 
   private Map<String, SModule> myCanonicalFileToModuleMap = new ConcurrentHashMap<String, SModule>();
@@ -83,20 +82,10 @@ public class ModuleFileTracker implements CoreComponent {
     }
   }
 
-  public List<SModule> findModulesUnderDir(String dirPath) {
-    List<SModule> result = new ArrayList<SModule>();
-    for (String path : myCanonicalFileToModuleMap.keySet()) {
-      if (path.startsWith(dirPath)) {
-        result.add(myCanonicalFileToModuleMap.get(path));
-      }
-    }
-    return result;
-  }
-
-  private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+  private class MyModuleRepositoryListener extends SRepositoryAdapter {
     @Override
     public void beforeModuleRemoved(SModule module) {
-      IFile file = ((AbstractModule)module).getDescriptorFile();
+      IFile file = ((AbstractModule) module).getDescriptorFile();
       if (file == null) return;
       removeModuleFile(file);
       removeModuleFile(ModulesMiner.getRealDescriptorFile(module));
@@ -104,7 +93,7 @@ public class ModuleFileTracker implements CoreComponent {
 
     @Override
     public void moduleAdded(SModule module) {
-      IFile file = ((AbstractModule)module).getDescriptorFile();
+      IFile file = ((AbstractModule) module).getDescriptorFile();
       if (file == null) return;
       addCanonicalFile(file, module);
       addCanonicalFile(ModulesMiner.getRealDescriptorFile(module), module);

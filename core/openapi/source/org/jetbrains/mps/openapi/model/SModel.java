@@ -15,8 +15,8 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -152,7 +152,7 @@ public interface SModel {
     }
 
     /**
-     * Returns whether it was a save or load problem. Save problems can arise when AST content
+     * Returns whether it was a save or load problem. Save problems can arise when an AST content
      * doesn't fit into the persistence format.
      */
     Kind getKind();
