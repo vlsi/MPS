@@ -210,7 +210,9 @@ public class FullASTConverter extends ASTConverter {
       ExplicitConstructorCall cntrCall = ((ConstructorDeclaration) x).constructorCall;
       if (cntrCall != null) {
         SNode firstCntrCall = convertStatement(cntrCall);
-        ListSequence.fromList(stmts).insertElement(0, firstCntrCall);
+        if (firstCntrCall != null) {
+          ListSequence.fromList(stmts).insertElement(0, firstCntrCall);
+        }
       }
     }
 
