@@ -582,6 +582,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   private static <T> T runLoPrioRead(final Computable<T> computable) {
+    assert !ModelAccess.instance().canRead():"Lo-prio read with acquired read can be a reason of a deadlock";
     T result;
     do {
       while (IMakeService.INSTANCE.isSessionActive()) {
