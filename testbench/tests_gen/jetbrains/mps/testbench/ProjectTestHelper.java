@@ -118,8 +118,6 @@ public class ProjectTestHelper {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
     Testbench.initLibs();
-    Testbench.makeAll();
-    Testbench.reloadAll();
     boolean isParallel = System.getProperty("parallel.generation") != null && Boolean.parseBoolean(System.getProperty("parallel.generation"));
     GenerationSettings.getInstance().setParallelGenerator(isParallel);
     GenerationSettings.getInstance().setStrictMode(isParallel);
