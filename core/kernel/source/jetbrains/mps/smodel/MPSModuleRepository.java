@@ -32,7 +32,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -45,6 +44,17 @@ import java.util.concurrent.ConcurrentHashMap;
 public class MPSModuleRepository extends SRepositoryBase implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(MPSModuleRepository.class));
   private final MPSModuleRepository.GlobalModelAccess myGlobalModelAccess;
+  private final ModelAccessListener myCommandListener = new ModelAccessListener() {
+    @Override
+    public void commandStarted() {
+      fireCommandStarted();
+    }
+
+    @Override
+    public void commandFinished() {
+      fireCommandFinished();
+    }
+  };
 
   private Set<SModule> myModules = new LinkedHashSet<SModule>();
   private Map<String, SModule> myFqNameToModulesMap = new ConcurrentHashMap<String, SModule>();
@@ -61,10 +71,12 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   @Override
   public void init() {
+    ModelAccess.instance().addCommandListener(myCommandListener);
   }
 
   @Override
   public void dispose() {
+    ModelAccess.instance().removeCommandListener(myCommandListener);
   }
 
   //-----------------register/unregister-merge-----------
@@ -108,15 +120,12 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   public void unregisterModules(Collection<SModule> modules, MPSModuleOwner owner) {
     Collection<SModule> modulesToDispose = new ArrayList<SModule>();
-    boolean repositoryChanged = false;
     for (SModule module : modules) {
       if (doUnregisterModule(module, owner)) {
         modulesToDispose.add(module);
-      } else {
-        repositoryChanged = true;
       }
     }
-    if (modulesToDispose.isEmpty() && !repositoryChanged) {
+    if (modulesToDispose.isEmpty()) {
       return;
     }
     invalidateCaches();

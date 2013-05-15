@@ -22,12 +22,16 @@ import org.jetbrains.mps.openapi.model.SModelStateListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
+import java.util.Stack;
+
 /**
  * This class serves as a convenient implementation of all repository listeners at once.
- * In addition, it tracks all objects (modules, models and nodes) as they come and leave the repository.
+ * In addition it tracks all objects (modules, models and nodes) as they come and leave the repository.
  */
 public class SRepositoryContentAdapter extends SModuleAdapter implements SModelChangeListener, SModelAccessListener,
     SModelStateListener, SModuleListener, SRepositoryListener {
+
+  private Stack<SRepository> commandStack = new Stack<SRepository>();
 
   protected SRepositoryContentAdapter() {
   }
@@ -38,13 +42,12 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
 
   @Override
   public void moduleAdded(SModule module) {
-    if (!isIncluded(module)) return;
-    module.addModuleListener(this);
+    startListening(module);
   }
 
   @Override
   public void beforeModuleRemoved(SModule module) {
-    module.removeModuleListener(this);
+    stopListening(module);
   }
 
   @Override
@@ -53,27 +56,39 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   }
 
   @Override
-  public void commandStarted() {
+  public void commandStarted(SRepository repository) {
+    commandStack.push(repository);
   }
 
   @Override
-  public void commandFinished() {
+  public void commandFinished(SRepository repository) {
+    SRepository last = commandStack.pop();
+    assert last == repository;
   }
 
   @Override
-  public void updateStarted() {
+  public void updateStarted(SRepository repository) {
   }
 
   @Override
-  public void updateFinished() {
+  public void updateFinished(SRepository repository) {
   }
 
   @Override
-  public void repositoryCommandStarted() {
+  public void repositoryCommandStarted(SRepository repository) {
   }
 
   @Override
-  public void repositoryCommandFinished() {
+  public void repositoryCommandFinished(SRepository repository) {
+  }
+
+  protected void startListening(SModule module) {
+    if (!isIncluded(module)) return;
+    module.addModuleListener(this);
+  }
+
+  protected void stopListening(SModule module) {
+    module.removeModuleListener(this);
   }
 
   protected void startListening(SModel model) {
@@ -83,15 +98,36 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   }
 
   public void subscribeTo(SRepository repository) {
+    repository.getModelAccess().checkReadAccess();
+
+    SRepository parent = repository.getParent();
+    if (parent != null) {
+      subscribeTo(parent);
+    }
+
+    repository.addRepositoryListener(this);
     for (SRepository r = repository; r != null; r = r.getParent()) {
-      r.addRepositoryListener(this);
+      for (SModule module : r.getModules()) {
+        startListening(module);
+      }
+
     }
   }
 
   public void unsubscribeFrom(SRepository repository) {
-    for (SRepository r = repository; r != null; r = r.getParent()) {
-      r.removeRepositoryListener(this);
+    repository.getModelAccess().checkReadAccess();
+
+    SRepository parent = repository.getParent();
+    if (parent != null) {
+      unsubscribeFrom(parent);
     }
+
+    for (SRepository r = repository; r != null; r = r.getParent()) {
+      for (SModule module : r.getModules()) {
+        stopListening(module);
+      }
+    }
+    repository.removeRepositoryListener(this);
   }
 
   @Override

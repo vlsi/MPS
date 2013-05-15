@@ -44,6 +44,7 @@ public class UnregisteredNodes {
 
   public void disable() {
     myDisabled = true;
+    clear();
   }
 
   private UnregisteredNodes() {

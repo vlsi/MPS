@@ -80,4 +80,26 @@ public abstract class SRepositoryBase implements SRepository {
       }
     }
   }
+
+  protected final void fireCommandStarted() {
+    ModelAccess.assertLegalWrite();
+    for (SRepositoryListener listener : myListeners) {
+      try {
+        listener.commandStarted(this);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  protected final void fireCommandFinished() {
+    ModelAccess.assertLegalWrite();
+    for (SRepositoryListener listener : myListeners) {
+      try {
+        listener.commandFinished(this);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
 }

@@ -33,26 +33,26 @@ public class SRepositoryAdapter implements SRepositoryListener {
   }
 
   @Override
-  public void commandStarted() {
+  public void commandStarted(SRepository repository) {
   }
 
   @Override
-  public void commandFinished() {
+  public void commandFinished(SRepository repository) {
   }
 
   @Override
-  public void updateStarted() {
+  public void updateStarted(SRepository repository) {
   }
 
   @Override
-  public void updateFinished() {
+  public void updateFinished(SRepository repository) {
   }
 
   @Override
-  public void repositoryCommandStarted() {
+  public void repositoryCommandStarted(SRepository repository) {
   }
 
   @Override
-  public void repositoryCommandFinished() {
+  public void repositoryCommandFinished(SRepository repository) {
   }
 }

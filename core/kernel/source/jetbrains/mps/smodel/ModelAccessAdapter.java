@@ -23,11 +23,6 @@ public class ModelAccessAdapter implements ModelAccessListener {
   }
 
   @Override
-  public void beforeCommandFinished() {
-
-  }
-
-  @Override
   public void commandFinished() {
 
   }

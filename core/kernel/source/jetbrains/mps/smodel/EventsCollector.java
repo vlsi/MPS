@@ -240,7 +240,7 @@ public class EventsCollector {
     }
 
     @Override
-    public void beforeCommandFinished() {
+    public void commandFinished() {
       if (myDisposed) {
         return;
       }

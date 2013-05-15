@@ -26,15 +26,15 @@ public interface SRepositoryListener {
 
   void moduleRemoved(SModuleReference module);
 
-  void commandStarted();
+  void commandStarted(SRepository repository);
 
-  void commandFinished();
+  void commandFinished(SRepository repository);
 
-  void updateStarted();
+  void updateStarted(SRepository repository);
 
-  void updateFinished();
+  void updateFinished(SRepository repository);
 
-  void repositoryCommandStarted();
+  void repositoryCommandStarted(SRepository repository);
 
-  void repositoryCommandFinished();
+  void repositoryCommandFinished(SRepository repository);
 }

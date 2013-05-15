@@ -163,7 +163,9 @@ public class ModuleRepositoryComponent {
     }
 
     @Override
-    public void commandFinished() {
+    public void commandFinished(SRepository repository) {
+      super.commandFinished(repository);
+
       if (!myDeferredUpdate) return;
 
       myDeferredUpdate = false;

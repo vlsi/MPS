@@ -769,15 +769,6 @@ public class WorkbenchModelAccess extends ModelAccess {
     synchronized (myListenersLock) {
       listeners = new ArrayList<ModelAccessListener>(myListeners);
     }
-
-    for (ModelAccessListener l : listeners) {
-      try {
-        l.beforeCommandFinished();
-      } catch (Throwable t) {
-        LOG.error(null, t);
-      }
-    }
-
     for (ModelAccessListener l : listeners) {
       try {
         l.commandFinished();

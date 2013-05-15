@@ -35,8 +35,6 @@ import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.references.CommandNodesCleaner;
-import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleFileTracker;
@@ -50,6 +48,7 @@ import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.InterpretedLanguageAspectsRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
@@ -101,7 +100,6 @@ public class MPSCore extends ComponentPlugin {
     init(new LibraryInitializer(myModuleRepository, classLoaderManager));
     init(new GlobalScope(myModuleRepository, myModelRepository));
     init(new ImmatureReferences(myModelRepository));
-    init(new CommandNodesCleaner());
 
     init(new QueryMethodGenerated(classLoaderManager));
     ConceptRegistry conceptRegistry = init(new ConceptRegistry());
