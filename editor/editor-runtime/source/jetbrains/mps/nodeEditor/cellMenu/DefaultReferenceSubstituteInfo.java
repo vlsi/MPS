@@ -33,13 +33,11 @@ import java.util.List;
 
 public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   private SNode mySourceNode;
-  private SNode myLinkDeclaration;
   private DefaultReferenceSubstituteInfoActionsFactory myActionFactory;
 
   public DefaultReferenceSubstituteInfo(final SNode sourceNode, final SNode linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
     mySourceNode = sourceNode;
-    myLinkDeclaration = linkDeclaration;
 
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
@@ -75,9 +73,5 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   @Override
   public List<SubstituteAction> createActions() {
     return myActionFactory.createActions();
-  }
-
-  protected SNode getLinkDeclaration() {
-    return myLinkDeclaration;
   }
 }

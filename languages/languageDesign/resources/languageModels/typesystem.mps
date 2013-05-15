@@ -30,7 +30,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8974276187400030202" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8974276187400030202" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="icon" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="1oap.8974276187400029891" resolveInfo="IconResourceExpression" />
     </node>
@@ -61,7 +61,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8974276187400030214" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8974276187400030214" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ird" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="1oap.8974276187400029888" resolveInfo="IconResourceDeclaration" />
     </node>
@@ -86,7 +86,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8974276187400030224" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8974276187400030224" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="irr" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="1oap.8974276187400029895" resolveInfo="IconResourceReference" />
     </node>

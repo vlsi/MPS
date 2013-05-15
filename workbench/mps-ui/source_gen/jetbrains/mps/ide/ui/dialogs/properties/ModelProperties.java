@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
@@ -25,6 +24,7 @@ import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Collections;
@@ -102,35 +102,31 @@ public class ModelProperties {
     if (!(myModelDescriptor instanceof EditableSModel)) {
       return;
     }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      @Override
-      public void run() {
-        addNewModels();
-        removeUnusedModels();
-        addNewLanguages();
-        removeUnusedLanguages();
-        addNewDevKits();
-        removeUnusedDevKits();
-        addNewEngagedOnGenerationLanguages();
-        removeUnusedEngagedOnGenerationLanguages();
-        if (myModelDescriptor instanceof GeneratableSModel) {
-          GeneratableSModel dmd = (GeneratableSModel) myModelDescriptor;
-          if (dmd.isDoNotGenerate() != myDoNotGenerate) {
-            dmd.setDoNotGenerate(myDoNotGenerate);
-          }
-        }
-        if (myModelDescriptor instanceof DefaultSModelDescriptor) {
-          DefaultSModel dm = ((DefaultSModelDescriptor) myModelDescriptor).getSModelInternal();
-          if (myGenerateIntoModelFolder) {
-            dm.getSModelHeader().setOptionalProperty(USE_MODEL_FOLDER_FOR_GENERATION, Boolean.TRUE.toString());
-          } else {
-            dm.getSModelHeader().removeOptionalProperty(USE_MODEL_FOLDER_FOR_GENERATION);
-          }
-        }
 
-        ((EditableSModel) myModelDescriptor).save();
+    addNewModels();
+    removeUnusedModels();
+    addNewLanguages();
+    removeUnusedLanguages();
+    addNewDevKits();
+    removeUnusedDevKits();
+    addNewEngagedOnGenerationLanguages();
+    removeUnusedEngagedOnGenerationLanguages();
+    if (myModelDescriptor instanceof GeneratableSModel) {
+      GeneratableSModel dmd = (GeneratableSModel) myModelDescriptor;
+      if (dmd.isDoNotGenerate() != myDoNotGenerate) {
+        dmd.setDoNotGenerate(myDoNotGenerate);
       }
-    });
+    }
+    if (myModelDescriptor instanceof DefaultSModelDescriptor) {
+      DefaultSModel dm = ((DefaultSModelDescriptor) myModelDescriptor).getSModelInternal();
+      if (myGenerateIntoModelFolder) {
+        dm.getSModelHeader().setOptionalProperty(USE_MODEL_FOLDER_FOR_GENERATION, Boolean.TRUE.toString());
+      } else {
+        dm.getSModelHeader().removeOptionalProperty(USE_MODEL_FOLDER_FOR_GENERATION);
+      }
+    }
+
+    ((EditableSModel) myModelDescriptor).save();
     MissingDependenciesFixer.fixDependencies(myModelDescriptor);
   }
 

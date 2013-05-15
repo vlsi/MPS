@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * This class implement complex operations on the node structure.
@@ -26,6 +27,26 @@ import org.jetbrains.mps.openapi.language.SConcept;
  * e.g. replacing a node with a root node from another model
  */
 public class SNodeUtil {
+
+  /**
+   * Returns whether the given node belongs to the repository (or to one of its parent repositories).
+   */
+  public static boolean isAccessible(SNode node, SRepository inRepository) {
+    inRepository.getModelAccess().checkReadAccess();
+
+    SModel model = node.getModel();
+    if (model == null) return false;
+
+    SRepository mrep = model.getRepository();
+    if (mrep == null) return false;
+
+    SRepository repository = inRepository;
+    while (repository != null && repository != mrep) {
+      repository = repository.getParent();
+    }
+    return repository != null;
+  }
+
   public static boolean isInstanceOf(@Nullable SNode node, @NotNull SAbstractConcept concept) {
     if (node == null) return false;
     SConcept c = node.getConcept();
@@ -80,8 +101,7 @@ public class SNodeUtil {
       if (role != null) {
         nameText = '"' + role + '"';
       } else {
-        boolean linkDecl = jetbrains.mps.smodel.SNodeUtil.concept_LinkDeclaration.equals(node.getConcept().getId());
-        nameText = linkDecl ? "<no role>" : "<no name>";
+        nameText = "<no ref>";
       }
 
       nameText = nameText + "[" + node.getNodeId() + "]";

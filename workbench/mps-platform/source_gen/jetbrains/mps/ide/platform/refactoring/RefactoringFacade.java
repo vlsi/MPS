@@ -11,7 +11,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.progress.ProgressManager;
@@ -92,15 +92,15 @@ public class RefactoringFacade {
 
   private void doExecuteWithDialog(final RefactoringContext refactoringContext) {
     final IRefactoring refactoring = refactoringContext.getRefactoring();
-    final Project ideaProject = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
+    final Project project = refactoringContext.getCurrentOperationContext().getProject();
+    final com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
     final List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
         final boolean cancelled = RefactoringAccess.getInstance().showRefactoringDialog(ideaProject, refactoringContext, refactoring, !(modelsToGenerate.isEmpty()));
         if (!(cancelled)) {
-          ModelAccess.instance().runWriteInEDT(new Runnable() {
-            @Override
+          project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
             public void run() {
               executeSimple(refactoringContext);
             }
@@ -143,7 +143,7 @@ public class RefactoringFacade {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         try {
-          jetbrains.mps.project.Project project = refactoringContext.getSelectedProject();
+          Project project = refactoringContext.getSelectedProject();
           refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
           IRefactoring refactoring = refactoringContext.getRefactoring();
           result.value = refactoring.getAffectedNodes(refactoringContext);
@@ -151,7 +151,7 @@ public class RefactoringFacade {
             result.value = new SearchResults();
           }
         } catch (Throwable t) {
-          myLog.error(t);
+          myLog.error(null, t);
         }
       }
     });

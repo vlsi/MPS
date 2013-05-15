@@ -19,6 +19,9 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
+import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
@@ -28,12 +31,10 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.ModuleNameUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -45,22 +46,35 @@ public class PluginUtil {
   private static final Logger LOG = LogManager.getLogger(PluginUtil.class);
 
   public static final String IDE_MODULE_ID = "jetbrains.mps.ide";
-  public static final String IDE_MODULE_PROJECTPLUGIN = "jetbrains.mps.ide.actions.Ide_ProjectPlugin"; // FIXME Ide_ProjectPlugin.class.getName();
-  public static final String IDE_MODULE_APPPLUGIN = "jetbrains.mps.ide.actions.Ide_ApplicationPlugin";// FIXME  Ide_ApplicationPlugin.class.getName();
+  public static final String IDE_MODULE_PROJECTPLUGIN = Ide_ProjectPlugin.class.getName();
+  public static final String IDE_MODULE_APPPLUGIN = Ide_ApplicationPlugin.class.getName();
+
+  // todo: move to ClassLoaderManager module?
+  public static boolean isPluginModule(SModule module) {
+    //todo this line should be removed as long as we move plugins out from languages
+    if (module instanceof Language) return true;
+
+    if (module instanceof Solution) {
+      SolutionKind kind = ((Solution) module).getKind();
+      if (kind == SolutionKind.NONE) {
+        return false;
+      }
+      if (kind == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode() && IdeMain.getTestMode() != TestMode.UI_TEST) {
+        return false;
+      }
+      return true;
+    }
+
+    return false;
+  }
 
   public static Set<SModule> collectPluginModules() {
     Set<SModule> modules = new HashSet<SModule>();
-
-    //todo this line should be removed as long as we move plugins out from languages
-    modules.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Language.class));
-
-    for (Solution s : (List<Solution>) ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
-      if (s.getKind() == SolutionKind.NONE) continue;
-      if (s.getKind() == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode()
-          && IdeMain.getTestMode() != TestMode.UI_TEST) continue;
-      modules.add(s);
+    for (SModule module : MPSModuleRepository.getInstance().getModules()) {
+      if (isPluginModule(module)) {
+        modules.add(module);
+      }
     }
-
     return modules;
   }
 
@@ -89,7 +103,7 @@ public class PluginUtil {
 
       return pluginClass.newInstance();
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
       return null;
     }
   }

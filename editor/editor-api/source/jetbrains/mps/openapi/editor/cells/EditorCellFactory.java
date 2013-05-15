@@ -24,6 +24,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 public interface EditorCellFactory {
   EditorCell createEditorCell(SNode node, boolean isInspector);
 
+  EditorCell createEditorComponentCell(SNode node, String editorComponentId);
+
   /**
    * Retrieve current EditorCellContext
    *

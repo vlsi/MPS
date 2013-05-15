@@ -20,21 +20,23 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.event.SModelEvent;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.List;
 
 public class InspectorEditorComponent extends EditorComponent {
-  public InspectorEditorComponent() {
-    this(false);
+  public InspectorEditorComponent(@NotNull SRepository p) {
+    this(p, false);
   }
 
-  public InspectorEditorComponent(boolean rightToLeft) {
-    super(null, false, rightToLeft);
+  public InspectorEditorComponent(@NotNull SRepository repository, boolean rightToLeft) {
+    super(repository, false, rightToLeft);
     myNode = null;
     myNodePointer = null;
     setNoVirtualFile(true);
-    setEditorContext(new EditorContext(this, null, null));
+    setEditorContext(new EditorContext(this, null, repository));
     rebuildEditorContent();
   }
 

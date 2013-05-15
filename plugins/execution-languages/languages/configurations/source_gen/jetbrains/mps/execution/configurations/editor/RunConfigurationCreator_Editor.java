@@ -69,6 +69,8 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -85,6 +87,10 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("configuration");
+      }
       Style style = new StyleImpl();
       ExecutionSettings_StyleSheet.applyPersistentConfigurationRef(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -127,6 +133,8 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -143,6 +151,10 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("configuration");
+      }
       Style style = new StyleImpl();
       ExecutionSettings_StyleSheet.applyPersistentConfigurationRefDeprecated(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -178,6 +190,9 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no configurationName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("configurationName");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

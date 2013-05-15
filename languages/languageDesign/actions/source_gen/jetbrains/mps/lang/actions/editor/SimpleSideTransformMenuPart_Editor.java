@@ -126,6 +126,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("matchingText");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -169,6 +172,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("descriptionText");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -248,6 +254,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("icon");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -291,6 +300,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("iconNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -334,6 +346,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("actionType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -377,6 +392,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("handler");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

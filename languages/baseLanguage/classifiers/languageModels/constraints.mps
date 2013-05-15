@@ -58,7 +58,7 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CoerceStatement" typeId="tpd4.1176558773329" id="1213104844351" nodeInfo="nn">
-            <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1213104844352" nodeInfo="ng">
+            <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1213104844352" nodeInfo="ig">
               <property name="name" nameId="tpck.1169194664001" value="nodeType" />
               <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1205752813637" resolveInfo="BaseClassifierType" />
             </node>

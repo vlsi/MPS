@@ -94,6 +94,9 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no dimensions>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("dimensions");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -172,6 +175,9 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no contentPane>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("contentPane");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

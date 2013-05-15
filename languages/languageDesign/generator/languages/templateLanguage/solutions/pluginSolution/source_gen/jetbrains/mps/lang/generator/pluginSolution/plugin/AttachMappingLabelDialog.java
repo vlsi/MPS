@@ -18,8 +18,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -79,6 +79,7 @@ public class AttachMappingLabelDialog extends DialogWrapper {
   }
 
   @Override
+  @NotNull
   protected Action[] createActions() {
     return new Action[]{new DialogWrapper.DialogWrapperAction("Attach label") {
       @Override
@@ -90,7 +91,7 @@ public class AttachMappingLabelDialog extends DialogWrapper {
   }
 
   protected void doAttachMappingLabel() {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    myEditorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SNode mappingLabel = MappingLabelUtil.findOrCreateMappingLabelForName(AttachMappingLabelDialog.this.myTemplateNode, AttachMappingLabelDialog.this.myResultLabelName);
         SNode existingMacro = ListSequence.fromList(AttributeOperations.getAttributeList(AttachMappingLabelDialog.this.myTemplateNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")))).last();

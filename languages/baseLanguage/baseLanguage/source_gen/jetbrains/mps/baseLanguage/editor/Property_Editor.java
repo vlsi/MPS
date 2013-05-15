@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -56,8 +55,7 @@ public class Property_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_d21pjf_a0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _Component_Visibility(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._Component_Visibility");
     return editorCell;
   }
 
@@ -67,6 +65,9 @@ public class Property_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("type");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -116,6 +117,9 @@ public class Property_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no propertyImplementation>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("propertyImplementation");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -151,8 +155,7 @@ public class Property_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_d21pjf_a0a_0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _Component_Visibility(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._Component_Visibility");
     return editorCell;
   }
 
@@ -162,6 +165,9 @@ public class Property_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("type");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -211,6 +217,9 @@ public class Property_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no propertyImplementation>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("propertyImplementation");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

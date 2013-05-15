@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1k0f1vrg3j71nyddj51d6dj4jnzebno">
+<dependencies version="2" modelHash="-9xr71kzhqtd6kd6khsajeumz0otg2o9">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
   <common hash="egvxkfpaf0kzqwlfbr67cir482slm46" />
@@ -18,7 +18,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CachingAppender.java" />
   </source>
-  <source id="5294483648489410732" name="CachingPrintStream" hash="-696csypfjkdddq1mg9f9q3hsc2efmx5">
+  <source id="5294483648489410732" name="CachingPrintStream" hash="-8r0jo7qo8o3ql3dkpvp6snn56k6ncss">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CachingPrintStream.java" />

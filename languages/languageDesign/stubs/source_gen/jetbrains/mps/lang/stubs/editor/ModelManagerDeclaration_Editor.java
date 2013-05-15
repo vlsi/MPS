@@ -148,6 +148,9 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no descriptorsFunc>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("descriptorsFunc");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -172,6 +175,9 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<Can't create models>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("createBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

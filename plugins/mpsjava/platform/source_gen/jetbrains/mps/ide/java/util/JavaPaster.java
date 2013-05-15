@@ -72,7 +72,7 @@ public class JavaPaster {
       } catch (UnsupportedFlavorException ex) {
         return null;
       } catch (IOException ex) {
-        LOG.error(ex);
+        LOG.error(null, ex);
       }
     }
     return null;

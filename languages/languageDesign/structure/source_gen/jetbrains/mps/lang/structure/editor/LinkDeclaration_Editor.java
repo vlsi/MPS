@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -81,7 +80,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
               return it.invoke(editorContext, node, oldValue, newValue);
             }
           }))) {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
               public void run() {
                 SPropertyOperations.set(node, "role", newValue);
               }
@@ -180,6 +179,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -196,6 +197,10 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("target");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyConceptName(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -353,6 +358,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -369,6 +376,10 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("specializedLink");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

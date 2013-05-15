@@ -23,12 +23,14 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdesktop.beansbinding.AutoBinding;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,15 +43,14 @@ import java.util.List;
 
 public abstract class BaseBindedDialog extends DialogWrapper implements IBindedDialog {
   private static final Logger LOG = LogManager.getLogger(BaseBindedDialog.class);
+  private final Project myProject;
 
-  protected IOperationContext myOperationContext;
   private List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
 
-  protected BaseBindedDialog(String text, IOperationContext operationContext) throws HeadlessException {
-    super(ProjectHelper.toIdeaProject(operationContext.getProject()));
+  protected BaseBindedDialog(String text, Project project) throws HeadlessException {
+    super(ProjectHelper.toIdeaProject(project));
+    myProject = project;
     setTitle(text);
-
-    myOperationContext = operationContext;
   }
 
   @Override
@@ -62,7 +63,7 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
 
   @Override
   public IOperationContext getOperationContext() {
-    return myOperationContext;
+    return new ProjectOperationContext(getProject());
   }
 
   @Override
@@ -72,7 +73,12 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
 
   @Override
   public IScope getProjectScope() {
-    return getOperationContext().getProject().getScope();
+    return getProject().getScope();
+  }
+
+  @Override
+  public Project getProject() {
+    return myProject;
   }
 
   public void addNotify() {
@@ -115,7 +121,7 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
     final boolean[] closeDialog = new boolean[]{true};
 
     //to save changes in all models before reload not to lose them
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
       @Override
       public void run() {
         SModelRepository.getInstance().saveAll();
@@ -129,7 +135,7 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
       }
     });
 
-    ProgressManager.getInstance().run(new Modal(ProjectHelper.toIdeaProject(getOperationContext().getProject()), "Applying changes", false) {
+    ProgressManager.getInstance().run(new Modal(ProjectHelper.toIdeaProject(getProject()), "Applying changes", false) {
       @Override
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
@@ -141,7 +147,7 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
             }
           });
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(null, t);
         }
       }
     });
@@ -153,7 +159,7 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
 
   @Override
   protected final void doOKAction() {
-    if(saveChanges())
+    if (saveChanges())
       super.doOKAction();
   }
 
@@ -182,19 +188,22 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
         c.weightx = 0;
         c.weighty = 0;
         return c;
-      }},
+      }
+    },
     FIELD {
       @Override
       public GridBagConstraints create(int x, int y) {
         GridBagConstraints c = LIST.create(x, y);
         c.weighty = 0;
         return c;
-      }},
+      }
+    },
     LIST {
       @Override
       public GridBagConstraints create(int x, int y) {
         return new GridBagConstraints(x, y, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
-      }};
+      }
+    };
 
     public GridBagConstraints create(int y) {
       return create(0, y);

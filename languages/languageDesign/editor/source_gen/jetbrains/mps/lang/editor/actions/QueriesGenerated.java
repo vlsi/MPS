@@ -23,10 +23,13 @@ import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior;
+import jetbrains.mps.scope.Scope;
+import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -666,8 +669,19 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            SNode container = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent", true, false);
-            return BaseEditorComponent_Behavior.call_getApplicableComponents_1213877372457(container, operationContext.getScope());
+            Scope scope = Scope.getScope(_context.getParentNode(), _context.getCurrentTargetNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"));
+            if (scope == null) {
+              return Collections.emptyList();
+            }
+            return Sequence.fromIterable(scope.getAvailableElements("")).select(new ISelector<SNode, SNode>() {
+              public SNode select(SNode it) {
+                return SNodeOperations.as(it, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
+              }
+            }).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return it != null;
+              }
+            });
           }
         }.compute();
         if (queryResult != null) {

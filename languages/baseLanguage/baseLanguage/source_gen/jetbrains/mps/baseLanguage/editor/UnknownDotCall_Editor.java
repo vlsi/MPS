@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -35,8 +34,7 @@ public class UnknownDotCall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_hkcaw7_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new UnknownQualifiedName(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.UnknownQualifiedName");
     return editorCell;
   }
 
@@ -69,8 +67,7 @@ public class UnknownDotCall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_hkcaw7_d0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IMethodCall_actualArguments(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     return editorCell;
   }
 }

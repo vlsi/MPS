@@ -41,7 +41,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class GenericParamFeature_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -200,6 +199,9 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no parameterType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("parameterType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -407,6 +409,8 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -423,6 +427,10 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("opposite");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -583,6 +591,9 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no parameterQueryFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("parameterQueryFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -641,6 +652,9 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no toStringFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("toStringFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -653,8 +667,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_a19ihi_c1b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IParamFeature_Properties(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.ypath.editor.IParamFeature_Properties");
     return editorCell;
   }
 
@@ -754,6 +767,9 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getter>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("getter");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

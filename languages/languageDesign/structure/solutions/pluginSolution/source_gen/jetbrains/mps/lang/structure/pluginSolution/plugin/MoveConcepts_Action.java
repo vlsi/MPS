@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -123,8 +122,9 @@ public class MoveConcepts_Action extends BaseAction {
       if (targetModel == null) {
         return;
       }
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        @Override
+
+
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadInEDT(new Runnable() {
         public void run() {
           for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target")))) {
             if (!(((SNode) node).getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(node)) {
@@ -138,8 +138,6 @@ public class MoveConcepts_Action extends BaseAction {
           RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MoveConcepts", Arrays.asList("targetModel"), Arrays.asList(targetModel), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
         }
       });
-
-
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MoveConcepts", t);
@@ -150,7 +148,7 @@ public class MoveConcepts_Action extends BaseAction {
   private boolean init(final Map<String, Object> _params) {
     final Wrappers._boolean canRefactor = new Wrappers._boolean(false);
     final Wrappers._boolean hasGenerator = new Wrappers._boolean(false);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         final SModel model = SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first());
         canRefactor.value = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).all(new IWhereFilter<SNode>() {

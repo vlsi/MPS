@@ -33,12 +33,10 @@ import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
 import javax.swing.JLabel;
@@ -61,11 +59,7 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
     super("Idea Plugin", Nodes.Plugin, "Idea Plugin Properties");
 
     myIdeaPluginModuleFacet = moduleFacet;
-    Memento memento = new MementoImpl();
-    ((SModuleFacet) myIdeaPluginModuleFacet).save(memento);
-
-    myNewIdeaPluginModuleFacet = new IdeaPluginModuleFacetImpl();
-    ((SModuleFacet)myNewIdeaPluginModuleFacet).load(memento);
+    myNewIdeaPluginModuleFacet = cloneFacet(moduleFacet);
 
     init();
   }
@@ -75,11 +69,13 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
     JPanel panel = new JPanel(new GridLayoutManager(2, 2, MPSPropertiesConfigurable.INSETS, -1, -1));
 
     panel.add(new JLabel("Plugin ID:"),
-        new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+            GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
     myTextField = new JTextField(myIdeaPluginModuleFacet.getPluginId());
     panel.add(myTextField,
-        new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL,
+            GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
     final JBTable modulesTable = new JBTable();
     modulesTable.setShowHorizontalLines(false);
@@ -98,7 +94,7 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
       @Override
       public void run(AnActionButton anActionButton) {
         List<SModuleReference> list = (new SolutionOrLangChooser()).compute();
-        for(SModuleReference reference : list)
+        for (SModuleReference reference : list)
           myTableModel.addItem(reference);
       }
     }).setRemoveAction(new AnActionButtonRunnable() {
@@ -133,26 +129,39 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
 
   @Override
   public void apply() {
-    ((IdeaPluginModuleFacetImpl)myNewIdeaPluginModuleFacet).setPluginId(myTextField.getText());
+    ((IdeaPluginModuleFacetImpl) myNewIdeaPluginModuleFacet).setPluginId(myTextField.getText());
     myTableModel.apply();
 
     Memento memento = new MementoImpl();
-    ((SModuleFacet) myNewIdeaPluginModuleFacet).save(memento);
+    myNewIdeaPluginModuleFacet.save(memento);
 
     ModuleFacetDescriptor facetDescriptor = new ModuleFacetDescriptor(
-        ((ModuleFacetBase)myNewIdeaPluginModuleFacet).getFacetType(), memento);
+        ((ModuleFacetBase) myNewIdeaPluginModuleFacet).getFacetType(), memento);
 
-    ModuleDescriptor descriptor = ((AbstractModule)((SModuleFacet)myIdeaPluginModuleFacet).getModule()).getModuleDescriptor();
+    ModuleDescriptor descriptor = ((AbstractModule) myIdeaPluginModuleFacet.getModule()).getModuleDescriptor();
     Iterator<ModuleFacetDescriptor> iterator = descriptor.getModuleFacetDescriptors().iterator();
     while (iterator.hasNext()) {
       ModuleFacetDescriptor mfd = iterator.next();
-      if(mfd.getType().equals(facetDescriptor.getType())) {
+      if (mfd.getType().equals(facetDescriptor.getType())) {
         iterator.remove();
         break;
       }
     }
 
-    if(!myNewIdeaPluginModuleFacet.getPluginId().isEmpty() || !myNewIdeaPluginModuleFacet.getContainedModules().isEmpty())
+    if (!myNewIdeaPluginModuleFacet.getPluginId().isEmpty() || !myNewIdeaPluginModuleFacet.getContainedModules().isEmpty())
       descriptor.getModuleFacetDescriptors().add(facetDescriptor);
+  }
+
+  private static <T extends SModuleFacet> T cloneFacet(T original) {
+    Memento memento = new MementoImpl();
+    original.save(memento);
+
+    try {
+      T clone = (T) original.getClass().newInstance();
+      clone.load(memento);
+      return clone;
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
   }
 }

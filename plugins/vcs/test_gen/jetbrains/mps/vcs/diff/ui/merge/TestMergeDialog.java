@@ -139,7 +139,7 @@ public class TestMergeDialog {
             }
           }
         });
-        dialog.unregisterResultModel();
+        dialog.unregisterModels();
         dialog.close(0);
         Disposer.dispose(TestMergeDialog.myParentDisposable);
         System.exit(0);

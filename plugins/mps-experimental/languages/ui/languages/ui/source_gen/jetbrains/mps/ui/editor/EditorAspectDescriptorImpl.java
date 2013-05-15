@@ -4,86 +4,100 @@ package jetbrains.mps.ui.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AccessUIPropertyOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new AccessUIPropertyOperation_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new AppendUIObjectStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new AppendUIObjectStatement_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new BeanPropertyView_Editor());
+        return Collections.<ConceptEditor>singletonList(new BeanPropertyView_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new CallUIActionOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new CallUIActionOperation_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new ChildAspect_Editor());
+        return Collections.<ConceptEditor>singletonList(new ChildAspect_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new ClearCompartmentStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClearCompartmentStatement_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new CompartmentProviderStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new CompartmentProviderStatement_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new CompartmentReferenceExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new CompartmentReferenceExpression_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new ContainerCompartment_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContainerCompartment_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new ContainerType_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContainerType_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new Controller_Editor());
+        return Collections.<ConceptEditor>singletonList(new Controller_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new ControllerBinding_Editor());
+        return Collections.<ConceptEditor>singletonList(new ControllerBinding_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new CreateUIObjectStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new CreateUIObjectStatement_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new EnclosingContextCompartmentExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new EnclosingContextCompartmentExpression_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new EventPropertyAccessOp_Editor());
+        return Collections.<ConceptEditor>singletonList(new EventPropertyAccessOp_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new EventType_Editor());
+        return Collections.<ConceptEditor>singletonList(new EventType_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new ExpressionView_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExpressionView_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new ForceLayoutStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ForceLayoutStatement_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new FunctionParameterDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new FunctionParameterDeclaration_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new InlineController_Editor());
+        return Collections.<ConceptEditor>singletonList(new InlineController_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new InsertUIObjectStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new InsertUIObjectStatement_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new IterateContentsStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new IterateContentsStatement_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new IterateContentsVariable_Editor());
+        return Collections.<ConceptEditor>singletonList(new IterateContentsVariable_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new IterateContentsVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new IterateContentsVariableReference_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new RemoveUIObjectStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new RemoveUIObjectStatement_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new UIObjectProviderStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIObjectProviderStatement_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new UIObjectReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIObjectReference_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new UIObjectStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIObjectStatement_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new UIObjectType_Editor());
+        return Collections.<ConceptEditor>singletonList(new UIObjectType_Editor());
       case 29:
-        return Collections.<EditorAspect>singletonList(new ValidateBlock_Editor());
+        return Collections.<ConceptEditor>singletonList(new ValidateBlock_Editor());
       case 30:
-        return Collections.<EditorAspect>singletonList(new ValidatingView_Editor());
+        return Collections.<ConceptEditor>singletonList(new ValidatingView_Editor());
       case 31:
-        return Collections.<EditorAspect>singletonList(new Validator_Editor());
+        return Collections.<ConceptEditor>singletonList(new Validator_Editor());
       case 32:
-        return Collections.<EditorAspect>singletonList(new View_Editor());
+        return Collections.<ConceptEditor>singletonList(new View_Editor());
       case 33:
-        return Collections.<EditorAspect>singletonList(new ViewBinding_Editor());
+        return Collections.<ConceptEditor>singletonList(new ViewBinding_Editor());
+      default:
+    }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("jetbrains.mps.ui.editor.common_UIObjectStatement".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new common_UIObjectStatement());
+        }
+        break;
       default:
     }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.ui.structure.AccessUIPropertyOperation", "jetbrains.mps.ui.structure.AppendUIObjectStatement", "jetbrains.mps.ui.structure.BeanPropertyView", "jetbrains.mps.ui.structure.CallUIActionOperation", "jetbrains.mps.ui.structure.ChildAspect", "jetbrains.mps.ui.structure.ClearCompartmentStatement", "jetbrains.mps.ui.structure.CompartmentProviderStatement", "jetbrains.mps.ui.structure.CompartmentReferenceExpression", "jetbrains.mps.ui.structure.ContainerCompartment", "jetbrains.mps.ui.structure.ContainerType", "jetbrains.mps.ui.structure.Controller", "jetbrains.mps.ui.structure.ControllerBinding", "jetbrains.mps.ui.structure.CreateUIObjectStatement", "jetbrains.mps.ui.structure.EnclosingContextCompartmentExpression", "jetbrains.mps.ui.structure.EventPropertyAccessOp", "jetbrains.mps.ui.structure.EventType", "jetbrains.mps.ui.structure.ExpressionView", "jetbrains.mps.ui.structure.ForceLayoutStatement", "jetbrains.mps.ui.structure.FunctionParameterDeclaration", "jetbrains.mps.ui.structure.InlineController", "jetbrains.mps.ui.structure.InsertUIObjectStatement", "jetbrains.mps.ui.structure.IterateContentsStatement", "jetbrains.mps.ui.structure.IterateContentsVariable", "jetbrains.mps.ui.structure.IterateContentsVariableReference", "jetbrains.mps.ui.structure.RemoveUIObjectStatement", "jetbrains.mps.ui.structure.UIObjectProviderStatement", "jetbrains.mps.ui.structure.UIObjectReference", "jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.ui.structure.UIObjectType", "jetbrains.mps.ui.structure.ValidateBlock", "jetbrains.mps.ui.structure.ValidatingView", "jetbrains.mps.ui.structure.Validator", "jetbrains.mps.ui.structure.View", "jetbrains.mps.ui.structure.ViewBinding"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.ui.structure.UIObjectStatement"};
 }

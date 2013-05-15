@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -26,8 +25,7 @@ public class Node_GetContainingLinkOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_5d67ir_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ReplaceableAlias_Comp(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp");
     editorCell.setBig(true);
     return editorCell;
   }

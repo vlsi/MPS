@@ -12,8 +12,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ActionReference_Editor extends DefaultNodeEditor {
@@ -57,6 +55,8 @@ public class ActionReference_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -66,8 +66,11 @@ public class ActionReference_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createComponent_ld3k57_a0a0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new AliasEditorComponent(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
+      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("action");
+      }
       return editorCell;
     }
   }
@@ -95,6 +98,8 @@ public class ActionReference_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -111,6 +116,10 @@ public class ActionReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_id");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("action");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -124,8 +133,7 @@ public class ActionReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ld3k57_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.platform.conf.editor.BaseConcept_brokenRefs");
     editorCell.setBig(true);
     return editorCell;
   }

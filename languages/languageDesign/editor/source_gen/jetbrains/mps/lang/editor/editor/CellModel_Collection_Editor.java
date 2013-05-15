@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -118,8 +117,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_a0a0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _OpenTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._OpenTag");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyTag(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -225,8 +223,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_b2a0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CellModelCollection_FoldedCellComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.CellModelCollection_FoldedCellComponent");
     return editorCell;
   }
 
@@ -252,8 +249,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_a3a0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _CloseTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyTag(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -281,8 +277,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_a1a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _OpenTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._OpenTag");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyTag(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -339,8 +334,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_c1a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CellModelCollection_FoldedCellComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.CellModelCollection_FoldedCellComponent");
     return editorCell;
   }
 
@@ -349,8 +343,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_d1a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _CloseTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyTag(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -375,8 +368,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_a0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _OpenTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._OpenTag");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyTag(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, CellModel_Collection_Editor._StyleParameter_QueryFunction_cvgoyj_a0a0a((editorCell == null ?
@@ -440,8 +432,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_c0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CellModelCollection_FoldedCellComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.CellModelCollection_FoldedCellComponent");
     return editorCell;
   }
 
@@ -450,8 +441,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_d0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _CloseTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyTag(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, CellModel_Collection_Editor._StyleParameter_QueryFunction_cvgoyj_a0d0a((editorCell == null ?
@@ -496,8 +486,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _CellModel_Common(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;
   }
 
@@ -565,6 +554,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no layout>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("cellLayout");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -700,6 +692,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no usesFoldingCondition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("usesFoldingCondition");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -739,6 +734,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no addHints>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("addHints");
+    }
     CellModel_Collection_AddHint_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -779,6 +777,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no removeHints>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("removeHints");
+    }
     CellModel_Collection_RemoveHint_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

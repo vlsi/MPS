@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -58,8 +57,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_gkr2rl_a0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new BaseMappingRule_premise(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.BaseMappingRule_premise");
     return editorCell;
   }
 
@@ -111,6 +109,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -127,6 +127,10 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("labelDeclaration");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
       editorCell.getStyle().putAll(style);
@@ -169,6 +173,9 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no ruleConsequence>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ruleConsequence");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -219,6 +226,9 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no context node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("contextNodeQuery");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -317,6 +327,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -333,6 +345,10 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("labelDeclaration");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
       editorCell.getStyle().putAll(style);

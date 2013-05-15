@@ -18,6 +18,7 @@ package jetbrains.mps.ide.vfs;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.util.io.StreamUtil;
+import com.intellij.openapi.vfs.SafeWriteRequestor;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.ide.ThreadUtils;
@@ -43,7 +44,7 @@ import java.util.Set;
 /**
  * @author Evgeny Gerashchenko
  */
-public class IdeaFileSystemProvider implements FileSystemProvider {
+public class IdeaFileSystemProvider implements FileSystemProvider, SafeWriteRequestor {
   static final Logger LOG = LogManager.getLogger(IdeaFileSystemProvider.class);
 
   private FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
@@ -102,7 +103,7 @@ public class IdeaFileSystemProvider implements FileSystemProvider {
             out = file.openOutputStream();
             out.write(content);
           } catch (IOException e) {
-            LOG.error(e);
+            LOG.error(null, e);
           } finally {
             FileUtil.closeFileSafe(out);
           }

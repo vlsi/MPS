@@ -79,6 +79,8 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -95,6 +97,10 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_externalValue");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("enumMember");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

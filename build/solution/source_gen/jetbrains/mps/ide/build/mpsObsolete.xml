@@ -608,7 +608,6 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
-      <library file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.bash.jar" />
       <library file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.startup.jar" />
       <library file="${artifacts.mpsCore}/mps-core/languages/gtext/jetbrains.mps.gtext.jar" />
       <library file="${artifacts.mpsCore}/mps-core/languages/gtext/jetbrains.mps.gtext.runtime.jar" />
@@ -903,7 +902,6 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
-        <fileset file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.bash.jar" />
         <fileset file="${artifacts.mpsDeprecatedBuildlanguage}/mps-build-deprecated/languages/build/jetbrains.mps.build.generictasks.jar" />
         <fileset file="${artifacts.mpsDeprecatedBuildlanguage}/mps-build-deprecated/languages/build/jetbrains.mps.build.property.jar" />
         <fileset file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.startup.jar" />
@@ -967,7 +965,6 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
-        <fileset file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.bash.jar" />
         <fileset file="${artifacts.mpsDeprecatedBuildlanguage}/mps-build-deprecated/languages/build/jetbrains.mps.build.generictasks.jar" />
         <fileset file="${artifacts.mpsDeprecatedBuildlanguage}/mps-build-deprecated/languages/build/jetbrains.mps.build.property.jar" />
         <fileset file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.startup.jar" />

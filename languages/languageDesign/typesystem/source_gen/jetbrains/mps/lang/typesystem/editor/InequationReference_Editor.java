@@ -60,6 +60,8 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -71,6 +73,10 @@ public class InequationReference_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_boi5ax_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
       editorCell.setCellId("Collection_boi5ax_a0a0");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("inequation");
+      }
       editorCell.addEditorCell(this.createModelAccess_boi5ax_a0a0a(editorContext, node));
       editorCell.addEditorCell(this.createProperty_boi5ax_b0a0a(editorContext, node));
       return editorCell;
@@ -92,6 +98,10 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ModelAccess_boi5ax_a0a0a");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("inequation");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, false);
       editorCell.getStyle().putAll(style);
@@ -107,6 +117,10 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_label");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("inequation");
+      }
       Style style = new StyleImpl();
       TypesystemStyles_StyleSheet.applyInequationLabel(style, editorCell);
       style.set(StyleAttributes.EDITABLE, false);

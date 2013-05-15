@@ -38,7 +38,6 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -365,6 +364,8 @@ public class ListFeature_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -381,6 +382,10 @@ public class ListFeature_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("opposite");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -442,8 +447,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_hr3usq_a1b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IFeature_Properties(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.ypath.editor.IFeature_Properties");
     return editorCell;
   }
 
@@ -545,6 +549,9 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("getFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -603,6 +610,9 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no sizeFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("sizeFunction");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

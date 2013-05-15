@@ -4,6 +4,7 @@ package jetbrains.mps.testbench.junit;
 
 import org.apache.log4j.Level;
 import com.intellij.openapi.diagnostic.Logger;
+import java.util.regex.Pattern;
 import jetbrains.mps.testbench.util.CachingPrintStream;
 import jetbrains.mps.testbench.util.CachingAppender;
 import java.util.Map;
@@ -20,6 +21,7 @@ import org.junit.runner.notification.Failure;
 public class WatchingRunNotifier extends DelegatingRunNotifier {
   private static final Level WATCH_LEVEL = Level.ERROR;
   private static final Logger[] IGNORED_LOGGERS = new Logger[]{Logger.getInstance("#com.intellij.openapi.application.impl.LaterInvocator"), Logger.getInstance("#com.intellij.application.impl.ApplicationImpl")};
+  private static final Pattern[] IGNORED_OUTPUT_PATTERNS = new Pattern[]{Pattern.compile("(\\d)* ms execution limit failed for:[^,]*,(\\d*)(\\s)*")};
   private Level oldLevel;
   private CachingPrintStream cacheOut;
   private CachingPrintStream cacheErr;
@@ -38,7 +40,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     System.out.flush();
     System.err.flush();
     System.setOut(this.cacheOut = new CachingPrintStream(System.out, "output"));
-    System.setErr(this.cacheErr = new CachingPrintStream(System.err, "error"));
+    System.setErr(this.cacheErr = new CachingPrintStream(System.err, "error", IGNORED_OUTPUT_PATTERNS));
     cacheOut.clear();
     cacheOut.startCaching();
     cacheErr.clear();

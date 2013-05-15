@@ -90,7 +90,6 @@ public class GenSourcesAndCompilerXmlGenerationTest {
       if (isUnder(cp, "/plugins/mps-obsolete/languages/generictasks/tests/")) continue;
       if (isUnder(cp, "/plugins/mpsjava/tests/")) continue;
       if (isUnder(cp, "/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/")) continue;
-      if (isUnder(cp, "/testbench/modules/testMake/solutions/jetbrains.mps.testModels/")) continue;
       if (isUnder(cp, "/testbench/modules/testRefactoring/languages/testRefactoring/")) continue;
       if (isUnder(cp, "/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/")) continue;
 
@@ -105,7 +104,7 @@ public class GenSourcesAndCompilerXmlGenerationTest {
       if (isUnder(cp, "/plugins/mps-build/languages/solutions/jetbrains.mps.build.sandbox/samples/")) continue;
 
       // Models in the plugin project are generated into an excluded source_gen folder
-      if (isUnder(cp, "IdeaPlugin/mps-java/source_gen/")) continue;
+      if (isUnder(cp, "/IdeaPlugin/mps-java/source_gen/")) continue;
 
       Assert.assertFalse("Java file " + cp + " is neither included in any MPS module, nor in any Idea source root", true);
     }

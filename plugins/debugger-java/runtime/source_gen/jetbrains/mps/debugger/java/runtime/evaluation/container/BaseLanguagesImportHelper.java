@@ -27,6 +27,9 @@ public abstract class BaseLanguagesImportHelper {
 
   public abstract SNode createVariableReference(SNode variable);
 
+  public BaseLanguagesImportHelper() {
+  }
+
   public void tryToImport(SNode container, List<SNodeReference> nodesToImport) {
     List<SNode> nodes = CopyUtil.copy(ListSequence.fromList(nodesToImport).select(new ISelector<SNodeReference, SNode>() {
       public SNode select(SNodeReference it) {
@@ -42,7 +45,7 @@ public abstract class BaseLanguagesImportHelper {
         continue;
       }
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression")) {
-        SNode clone = _quotation_createNode_5vd2f2_a0a0b0b0c(node);
+        SNode clone = _quotation_createNode_5vd2f2_a0a0b0b0d(node);
         transformNode(clone, SNodeOperations.getModel(container));
         ListSequence.fromList(SLinkOperations.getTargets(container, "statement", true)).addElement(clone);
       } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement")) {
@@ -55,9 +58,9 @@ public abstract class BaseLanguagesImportHelper {
   private void replaceStubReferences(SNode node, SModel containerModel) {
     for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
       SModel targetModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(reference));
-      if (neq_5vd2f2_a0b0a0d(targetModel, containerModel)) {
+      if (neq_5vd2f2_a0b0a0e(targetModel, containerModel)) {
         SModel scopeModel = GlobalScope.getInstance().getModelDescriptor(targetModel.getReference());
-        if (scopeModel != null && neq_5vd2f2_a0a1a1a0a3(scopeModel, targetModel)) {
+        if (scopeModel != null && neq_5vd2f2_a0a1a1a0a4(scopeModel, targetModel)) {
           String resolveInfo = SLinkOperations.getResolveInfo(reference);
           if ((resolveInfo == null || resolveInfo.length() == 0)) {
             resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(SLinkOperations.getTargetNode(reference));
@@ -71,7 +74,7 @@ public abstract class BaseLanguagesImportHelper {
   private void transformNodeToProperVariableReference(SNode node, SModel containerModel) {
     if ((int) ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1) {
       SReference reference = ListSequence.fromList(SNodeOperations.getReferences(node)).first();
-      if (neq_5vd2f2_a0a1a0a4(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), containerModel) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept")) {
+      if (neq_5vd2f2_a0a1a0a5(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), containerModel) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept")) {
         SNode matchingVar = findVariable(reference);
         if (matchingVar != null) {
           SNodeOperations.replaceWithAnother(node, createVariableReference(matchingVar));
@@ -97,7 +100,7 @@ public abstract class BaseLanguagesImportHelper {
     }
   }
 
-  private static SNode _quotation_createNode_5vd2f2_a0a0b0b0c(Object parameter_1) {
+  private static SNode _quotation_createNode_5vd2f2_a0a0b0b0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -109,21 +112,21 @@ public abstract class BaseLanguagesImportHelper {
     return quotedNode_2;
   }
 
-  private static boolean neq_5vd2f2_a0b0a0d(Object a, Object b) {
+  private static boolean neq_5vd2f2_a0b0a0e(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean neq_5vd2f2_a0a1a1a0a3(Object a, Object b) {
+  private static boolean neq_5vd2f2_a0a1a1a0a4(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean neq_5vd2f2_a0a1a0a4(Object a, Object b) {
+  private static boolean neq_5vd2f2_a0a1a0a5(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

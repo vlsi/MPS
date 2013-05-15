@@ -46,6 +46,9 @@ public class BuildMps_ModuleTestSource_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no folder>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("folder");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

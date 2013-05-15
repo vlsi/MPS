@@ -177,7 +177,7 @@ public abstract class TypeCheckingContext {
 
   public abstract Set<Pair<SNode, List<IErrorReporter>>> checkRootAndGetErrors(boolean refreshTypes);
 
-  public abstract Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors();
+  public abstract Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors(boolean typesystemErrors);
 
   public abstract boolean isCheckedRoot(boolean considerNonTypesystemRules);
 

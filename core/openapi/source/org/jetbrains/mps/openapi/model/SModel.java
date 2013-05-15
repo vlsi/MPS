@@ -30,9 +30,6 @@ public interface SModel {
 
   SRepository getRepository();
 
-  // TODO remove (bad name)  [Mihail Muhin: SModule has a same method]
-  boolean isInRepository();
-
   /**
    * Returns the id of the model valid within the containing module.
    */

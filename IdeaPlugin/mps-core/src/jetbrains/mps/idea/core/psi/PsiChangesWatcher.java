@@ -23,6 +23,7 @@ import com.intellij.psi.*;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.idea.core.psi.PsiListener.FSMove;
+import jetbrains.mps.idea.core.psi.PsiListener.FSRename;
 import jetbrains.mps.idea.core.psi.PsiListener.PsiEvent;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.project.MPSProject;
@@ -174,6 +175,17 @@ public class PsiChangesWatcher implements ProjectComponent {
       reschedule();
     }
 
+    @Override
+    public void propertyChanged(@NotNull PsiTreeChangeEvent event) {
+      if (!(event.getElement() instanceof PsiFileSystemItem)
+        || !(event.getPropertyName().equals(PsiTreeChangeEvent.PROP_FILE_NAME))) {
+        return;
+      }
+
+      FSRename rename = new FSRename((PsiFileSystemItem) event.getElement(), (String) event.getOldValue());
+      myCollectedData.renamed.add(rename);
+    }
+
     private boolean isFromMPSPsiProvider(PsiTreeChangeEvent event) {
       PsiElement parent = event.getParent();
       return (parent instanceof MPSPsiNodeBase);
@@ -199,6 +211,7 @@ public class PsiChangesWatcher implements ProjectComponent {
     Set<PsiFileSystemItem> created = new HashSet<PsiFileSystemItem>();
     Set<PsiFileSystemItem> removed = new HashSet<PsiFileSystemItem>();
     Set<FSMove> moved = new HashSet<FSMove>();
+    Set<FSRename> renamed = new HashSet<FSRename>();
     Map<PsiFile, Set<PsiElement>> changed = new HashMap<PsiFile, Set<PsiElement>>();
 
     @Override
@@ -214,6 +227,11 @@ public class PsiChangesWatcher implements ProjectComponent {
     @Override
     public Iterable<FSMove> getMoved() {
       return moved;
+    }
+
+    @Override
+    public Iterable<FSRename> getRenamed() {
+      return renamed;
     }
 
     @Override

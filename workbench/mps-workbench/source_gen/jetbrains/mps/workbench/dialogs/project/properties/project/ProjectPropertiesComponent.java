@@ -78,6 +78,10 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
       @Override
       public void run(AnActionButton button) {
         Path path = new ModulePathChooser(new IBindedDialog() {
+          public jetbrains.mps.project.Project getProject() {
+            return null;
+          }
+
           @Override
           public JComponent getMainComponent() {
             return null;

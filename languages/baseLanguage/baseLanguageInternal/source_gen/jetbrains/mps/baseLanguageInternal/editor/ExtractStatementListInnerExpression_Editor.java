@@ -31,6 +31,9 @@ public class ExtractStatementListInnerExpression_Editor extends DefaultNodeEdito
     provider.setNoTargetText("<no inner>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("inner");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

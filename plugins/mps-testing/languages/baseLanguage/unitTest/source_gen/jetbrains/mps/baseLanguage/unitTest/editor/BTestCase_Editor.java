@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -32,7 +30,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.baseLanguage.editor.GenericDeclaration_FoldedCodeBlock_Component;
 
 public class BTestCase_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -56,8 +53,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_lq4ak4_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new HasAnnotation_AnnotationComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent");
     return editorCell;
   }
 
@@ -119,6 +115,9 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("superclass");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -335,6 +334,9 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<<before test>>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("beforeTest");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -355,6 +357,9 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<<after test>>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("afterTest");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -386,6 +391,9 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no testMethodList>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("testMethodList");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -484,8 +492,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_lq4ak4_a6a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new GenericDeclaration_FoldedCodeBlock_Component(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.GenericDeclaration_FoldedCodeBlock_Component");
     return editorCell;
   }
 }

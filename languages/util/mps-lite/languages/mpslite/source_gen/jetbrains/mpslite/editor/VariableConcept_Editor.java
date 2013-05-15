@@ -102,6 +102,9 @@ public class VariableConcept_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no extends>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("extends");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -214,6 +217,9 @@ public class VariableConcept_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no typeConcept>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("typeConcept");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -325,6 +331,9 @@ public class VariableConcept_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no concreteSyntax>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("concreteSyntax");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);

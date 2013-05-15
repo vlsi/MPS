@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class Node_InferTypeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -27,8 +26,7 @@ public class Node_InferTypeOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ljpfyw_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _NotInRules_Component(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.typesystem.editor._NotInRules_Component");
     editorCell.setBig(true);
     return editorCell;
   }

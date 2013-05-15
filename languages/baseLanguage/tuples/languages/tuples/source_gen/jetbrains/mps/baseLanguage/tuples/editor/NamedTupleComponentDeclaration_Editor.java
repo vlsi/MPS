@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -50,8 +48,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_nmve34_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new HasAnnotation_AnnotationComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent");
     return editorCell;
   }
 
@@ -76,6 +73,9 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("type");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);

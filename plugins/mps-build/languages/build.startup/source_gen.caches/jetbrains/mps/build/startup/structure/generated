@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3f430g9amdjybv3c3o36miz0otjvwsa">
+<dependencies version="2" modelHash="-5q81ej8g4z9xi8cs9ddtynjfzm2c7oh">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <common hash="6s2860ukb6nn4tsw2d5skabbz9lrxyy">
+    <dep root="1731640411964205180" />
+    <dep root="1731640411964205218" />
     <dep root="3885435385580582152" />
     <dep root="3885435385580582153" />
     <dep root="3885435385580582157" />
@@ -19,16 +21,22 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="3885435385580582152" name="MpsStartupScript" hash="ruos1f4y4uxpz5tytdes1731dg9k5u">
+  <source id="3885435385580582152" name="MpsStartupScript" hash="-csmjgy2luk89uciw6aymxkoglnnnkwv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3885435385580582153" name="ClassPathItem" hash="5i0wjgwkq66u6ui5unm6wh79rrl5yhs">
+  <source id="3885435385580582153" name="ClassPathItem" hash="aqabang9v2i6rfvia7113v1e12doce9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3885435385580582157" name="VmOptions" hash="-98us67uz6vhbartgvhvu5pvsa58r2z">
+  <source id="3885435385580582157" name="VmOptions" hash="938tq5ssobilxxleoz4uftad41cwtux">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3885435385580582732" name="SimpleVmOptions" hash="cleuvhmmg8wjazufkm9t0dl44ezpis4">
+  <source id="3885435385580582732" name="SimpleVmOptions" hash="azpu7q1zy1o6g5g06upllf7jj08l5p6">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1731640411964205180" name="TextFile" hash="4x6g808glskf9w35d9qkuueyjruse5">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1731640411964205218" name="TextLine" hash="-7ucw71gbsv6jmdn5taflw0svcuf7vw8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

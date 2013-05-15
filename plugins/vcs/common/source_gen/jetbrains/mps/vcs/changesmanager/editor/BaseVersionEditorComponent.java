@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.changesmanager.editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import javax.swing.JScrollPane;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -31,11 +31,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 public class BaseVersionEditorComponent extends EditorComponent implements EditorMessageOwner {
   private JScrollPane myScrollPane;
 
-  public BaseVersionEditorComponent(IOperationContext operationContext, ChangeGroup changeGroup) {
-    super(operationContext);
+  public BaseVersionEditorComponent(SRepository repository, ChangeGroup changeGroup) {
+    super(repository);
     final SModel baseModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
     SNode baseRoot = baseModel.getNode(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
-    editNode(baseRoot, operationContext);
+    editNode(baseRoot);
 
     setBackground(CARET_ROW_COLOR);
 

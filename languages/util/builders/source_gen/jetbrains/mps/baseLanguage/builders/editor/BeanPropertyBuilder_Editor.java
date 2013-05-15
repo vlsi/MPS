@@ -55,6 +55,8 @@ public class BeanPropertyBuilder_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -64,8 +66,12 @@ public class BeanPropertyBuilder_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_pd8zqj_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "setter");
       editorCell.setCellId("ReferencePresentation_pd8zqj_a0a0");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("setter");
+      }
       return editorCell;
     }
   }
@@ -83,6 +89,9 @@ public class BeanPropertyBuilder_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no value>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("value");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

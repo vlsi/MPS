@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -43,8 +42,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_fs6ae3_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _OpenTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._OpenTag");
     return editorCell;
   }
 
@@ -114,8 +112,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_fs6ae3_c0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _CloseTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
     return editorCell;
   }
 
@@ -134,8 +131,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_fs6ae3_a0_0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _CellModel_Common(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;
   }
 
@@ -169,6 +165,9 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no modelAccessor>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("modelAccessor");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

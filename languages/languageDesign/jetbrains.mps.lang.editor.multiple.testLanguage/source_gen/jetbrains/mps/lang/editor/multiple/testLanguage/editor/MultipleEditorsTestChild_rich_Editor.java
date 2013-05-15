@@ -121,11 +121,11 @@ public class MultipleEditorsTestChild_rich_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_3qkmki_b1a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("diagramProperty");
-    provider.setNoTargetText("<no diagramProperty>");
+    provider.setRole("richProperty");
+    provider.setNoTargetText("<no richProperty>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_diagramProperty");
+    editorCell.setCellId("property_richProperty");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

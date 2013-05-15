@@ -110,6 +110,9 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("-\u221e");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("start");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(0)));
     editorCell.getStyle().putAll(style);
@@ -140,6 +143,9 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("+\u221e");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("end");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(0)));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, false);

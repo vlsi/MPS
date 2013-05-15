@@ -49,6 +49,9 @@ public class NotOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no leftOperand>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("leftOperand");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

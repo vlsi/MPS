@@ -7,7 +7,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7980748436587788162" nodeInfo="ng">
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7980748436587788162" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="GeneratedForeach" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp2q.1153943597977" resolveInfo="ForEachStatement" />

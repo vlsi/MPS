@@ -92,6 +92,9 @@ public class BuildVariableMacro_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no initialValue>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("initialValue");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

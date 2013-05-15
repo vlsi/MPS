@@ -31,6 +31,9 @@ public class BuildLayout_AbstractCopy_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no fileset>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("fileset");
+    }
     delete_Layout_Node.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

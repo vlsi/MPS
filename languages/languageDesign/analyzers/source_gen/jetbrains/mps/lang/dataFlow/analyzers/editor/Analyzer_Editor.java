@@ -18,8 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -101,6 +99,9 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no direction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("direction");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -128,6 +129,9 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no latticeElementType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("latticeElementType");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -176,6 +180,8 @@ public class Analyzer_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -185,8 +191,11 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createComponent_590xoz_a0h0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new AliasEditorComponent(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
+      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("initialFunction");
+      }
       return editorCell;
     }
   }
@@ -197,6 +206,9 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no initialFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("initialFunction");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -245,6 +257,8 @@ public class Analyzer_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -254,8 +268,11 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createComponent_590xoz_a0k0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new AliasEditorComponent(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
+      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("mergeFunction");
+      }
       return editorCell;
     }
   }
@@ -266,6 +283,9 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no mergeFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("mergeFunction");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -314,6 +334,8 @@ public class Analyzer_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -323,8 +345,11 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createComponent_590xoz_a0n0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new AliasEditorComponent(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
+      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("funFunction");
+      }
       return editorCell;
     }
   }
@@ -335,6 +360,9 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no funFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("funFunction");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

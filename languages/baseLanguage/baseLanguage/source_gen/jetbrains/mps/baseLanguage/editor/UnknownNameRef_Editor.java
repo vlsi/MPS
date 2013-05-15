@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class UnknownNameRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -14,8 +13,7 @@ public class UnknownNameRef_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_19tet3_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new UnknownQualifiedName(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.UnknownQualifiedName");
     editorCell.setBig(true);
     return editorCell;
   }

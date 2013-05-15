@@ -14,7 +14,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 
 public class Expression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -58,8 +57,7 @@ public class Expression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_1ltshm_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     return editorCell;
   }
 }

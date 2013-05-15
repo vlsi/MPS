@@ -11,8 +11,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -67,8 +65,7 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_g3syp0_b0a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     return editorCell;
   }
 
@@ -78,6 +75,9 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no before>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("before");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -115,6 +115,8 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -131,6 +133,10 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("uiObject");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -151,8 +157,7 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_g3syp0_f0a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new common_UIObjectStatement(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.ui.editor.common_UIObjectStatement");
     return editorCell;
   }
 }

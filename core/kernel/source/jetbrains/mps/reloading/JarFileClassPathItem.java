@@ -97,27 +97,23 @@ public class JarFileClassPathItem extends RealClassPathItem {
       inp = zf.getInputStream(entry);
       if (inp == null) return null;
 
-      byte[] result = new byte[(int) entry.getSize()];
-
-      ReadUtil.read(result, inp);
-
-      return result;
+      return ReadUtil.read(inp);
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return null;
     } finally {
       if (zf != null) {
         try {
           zf.close();
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
       if (inp != null) {
         try {
           inp.close();
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
     }
@@ -136,21 +132,21 @@ public class JarFileClassPathItem extends RealClassPathItem {
       inp = zf.getInputStream(entry);
       return ClassifierKind.getClassifierKind(inp);
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return null;
     } finally {
       if (inp != null) {
         try {
           inp.close();
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
       if (zf != null) {
         try {
           zf.close();
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
     }
@@ -165,17 +161,17 @@ public class JarFileClassPathItem extends RealClassPathItem {
       if (zf.getEntry(name) == null) return null;
       return new URL(myPrefix + name);
     } catch (MalformedURLException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return null;
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return null;
     } finally {
       if (zf != null) {
         try {
           zf.close();
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
     }
@@ -252,14 +248,14 @@ public class JarFileClassPathItem extends RealClassPathItem {
       assert entry != null : path;
       return entry.getTime();
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return 0;
     } finally {
       if (zf != null) {
         try {
           zf.close();
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
     }
@@ -316,7 +312,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
         try {
           zf.close();
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
     }

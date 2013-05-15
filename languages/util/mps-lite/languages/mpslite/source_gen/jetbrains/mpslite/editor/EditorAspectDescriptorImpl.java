@@ -4,54 +4,59 @@ package jetbrains.mpslite.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AbstractConceptReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractConceptReference_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new BinaryOperationConcept_Editor());
+        return Collections.<ConceptEditor>singletonList(new BinaryOperationConcept_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new BlockBodyPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new BlockBodyPart_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new BlockConcept_Editor());
+        return Collections.<ConceptEditor>singletonList(new BlockConcept_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new ConceptContainer_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptContainer_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new ConcreteChildPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConcreteChildPart_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new ConcretePropertyPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConcretePropertyPart_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new ConcreteReferencePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConcreteReferencePart_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new ConstantLinePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConstantLinePart_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new ExpressionConcept_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExpressionConcept_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new IndentLinePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new IndentLinePart_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new Line_Editor());
+        return Collections.<ConceptEditor>singletonList(new Line_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new LineList_Editor());
+        return Collections.<ConceptEditor>singletonList(new LineList_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new MPSLiteConceptDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new MPSLiteConceptDeclaration_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new NamePropertyNamePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new NamePropertyNamePart_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new OptionalPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new OptionalPart_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new StatementConcept_Editor());
+        return Collections.<ConceptEditor>singletonList(new StatementConcept_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new TypePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new TypePart_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new VariableConcept_Editor());
+        return Collections.<ConceptEditor>singletonList(new VariableConcept_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

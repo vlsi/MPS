@@ -1,5 +1,7 @@
 package jetbrains.mps.psiTest2;
 
+import jetbrains.mps.psiTest.Container;
+
 /**
  * Created with IntelliJ IDEA.
  * User: danilla
@@ -9,5 +11,7 @@ package jetbrains.mps.psiTest2;
  */
 public class ClassInPsiTest2 {
     public ClassInPsiTest2(int param) {
+
+        Container<String> zzz = new Container<String>("Hello");
     }
 }

@@ -4,8 +4,9 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
@@ -18,14 +19,17 @@ import jetbrains.mps.ide.project.ProjectHelper;
 
 public class CommitUtil {
   public static void refactorRenameNode(final IOperationContext context, final SNode node, final String newName) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    final Project project = context.getProject();
+    final SRepository repository = project.getRepository();
+    ModelAccess modelAccess = repository.getModelAccess();
+
+    modelAccess.executeCommand(new Runnable() {
       public void run() {
-        SModelRepository.getInstance().saveAll();
+        repository.saveAll();
       }
     });
 
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      @Override
+    modelAccess.runReadInEDT(new Runnable() {
       public void run() {
         IRefactoring refactoring;
         SNode refactoringNode = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration") ?
@@ -46,16 +50,11 @@ public class CommitUtil {
           return;
         }
 
-        final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
+        final RefactoringContext refactoringContext = new RefactoringContext(project, refactoring);
         refactoringContext.setCurrentOperationContext(context);
         refactoringContext.setSelectedNode(node);
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            refactoringContext.setSelectedModel(SNodeOperations.getModel(node));
-          }
-        });
+        refactoringContext.setSelectedModel(SNodeOperations.getModel(node));
         refactoringContext.setSelectedModule(context.getModule());
-        refactoringContext.setSelectedProject(context.getProject());
 
         // set new name parameter for refactoring to skip initial dialog 
         refactoringContext.setParameter("newName", newName);

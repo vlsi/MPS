@@ -107,7 +107,7 @@ public class StubResolver {
 
     int cnt = StubResolver.resolveReferences(toResolve, models, context);
 
-    new OptimizeImportsHelper(context).optimizeModelImports(model);
+    new OptimizeImportsHelper().optimizeModelImports(model);
     if (LOG.isInfoEnabled()) {
       LOG.info(cnt + " stub references were re-resolved in model " + SModelOperations.getModelName(model) + ". (" + ListSequence.fromList(toResolve).count() + ")");
     }

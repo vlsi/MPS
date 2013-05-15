@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b0s176qja7svgobpy7rugf38xl0j3bs">
+<dependencies version="2" modelHash="-53cv2r77b7e869t4g5bzfh7yqw3ofzc">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <common hash="-2krnb5kyhlzs14c3hmvrxwvsvi017nb">
     <dep root="3374946611454212811" />
@@ -19,16 +19,16 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="6825241477451043705" name="PrivateFieldReferenceOperation" hash="c3eqhaf6ci359g4ihfbxysrhn6cjqwq">
+  <source id="6825241477451043705" name="PrivateFieldReferenceOperation" hash="-bor74rx5vczfkghlgo0mojusrw7rqoo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6825241477451051014" name="PrivateInstanceMethodCallOperation" hash="62q2rk4ogh9viu48i30hr5nk1cvmsk0">
+  <source id="6825241477451051014" name="PrivateInstanceMethodCallOperation" hash="-aq7jhdz2m8zv3du246pncw5068u5e5o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4107550939057698505" name="PrivateStaticFieldReference" hash="-ayvzt402zqbgiqqzqdinf5ugberva24">
+  <source id="4107550939057698505" name="PrivateStaticFieldReference" hash="9mia0pco0pa1heqs9v9x7cywk4g85c1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3374946611454212811" name="PrivateStaticMethodCall" hash="3jsfylmomom2gszqj2z9b1inob3r2s">
+  <source id="3374946611454212811" name="PrivateStaticMethodCall" hash="-3460ob8nfqvu43fs274ronl8epqwcks">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

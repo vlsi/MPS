@@ -848,7 +848,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8923564134258348475" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8923564134258348476" nodeInfo="nn">
         <node role="statement" roleId="tpee.1068581517665" type="tpd4.CoerceStatement" typeId="tpd4.1176558773329" id="8923564134258345486" nodeInfo="nn">
-          <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8923564134258348465" nodeInfo="ng">
+          <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8923564134258348465" nodeInfo="ig">
             <property name="name" nameId="tpck.1169194664001" value="ct" />
             <link role="concept" roleId="tpd4.1174642800329" targetNodeId="fb0y.5776545240963923425" resolveInfo="ContainerType" />
           </node>

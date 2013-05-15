@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import javax.swing.tree.TreeNode;
@@ -57,6 +57,10 @@ public class CreateNewRoot_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
@@ -64,7 +68,8 @@ public class CreateNewRoot_Action extends BaseAction {
     try {
       // Deprecated action should be removed in MPS 3.0 
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
-      ModelAccess.instance().runReadAction(new Runnable() {
+
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           ActionGroup group = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))).getQuickCreateGroup(false);
 
@@ -76,6 +81,7 @@ public class CreateNewRoot_Action extends BaseAction {
           }
         }
       });
+
       if (popup.value == null) {
         return;
       }

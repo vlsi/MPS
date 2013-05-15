@@ -68,7 +68,7 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware 
     } catch (ClassNotFoundException e){
       //do nothing - class is not there anymore
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
     } 
 
     return FileEditorState.INSTANCE;

@@ -1298,7 +1298,7 @@
       <link role="mappingScript" roleId="tpf8.1195502167610" targetNodeId="1117643560963147795" resolveInfo="import_libraries" />
     </node>
     <node role="patternReductionRule" roleId="tpf8.1805153994416813171" type="tpf8.PatternReduction_MappingRule" typeId="tpf8.1805153994416516020" id="6647099934207260021" nodeInfo="ng">
-      <node role="pattern" roleId="tpf8.1805153994416556314" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="6647099934207260022" nodeInfo="nn">
+      <node role="pattern" roleId="tpf8.1805153994416556314" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="6647099934207260022" nodeInfo="in">
         <node role="patternNode" roleId="tp3t.1136720037778" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934207260024" nodeInfo="ng">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="src" />
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934207260025" nodeInfo="ng">
@@ -1364,7 +1364,7 @@
       </node>
     </node>
     <node role="patternReductionRule" roleId="tpf8.1805153994416813171" type="tpf8.PatternReduction_MappingRule" typeId="tpf8.1805153994416516020" id="8654221991637509675" nodeInfo="ng">
-      <node role="pattern" roleId="tpf8.1805153994416556314" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="8654221991637509676" nodeInfo="nn">
+      <node role="pattern" roleId="tpf8.1805153994416556314" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="8654221991637509676" nodeInfo="in">
         <node role="patternNode" roleId="tp3t.1136720037778" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8654221991637509677" nodeInfo="ng">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8654221991637509678" nodeInfo="ng">
@@ -1430,7 +1430,7 @@
       </node>
     </node>
     <node role="patternReductionRule" roleId="tpf8.1805153994416813171" type="tpf8.PatternReduction_MappingRule" typeId="tpf8.1805153994416516020" id="7926701909975860432" nodeInfo="ng">
-      <node role="pattern" roleId="tpf8.1805153994416556314" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="7926701909975860433" nodeInfo="nn">
+      <node role="pattern" roleId="tpf8.1805153994416556314" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="7926701909975860433" nodeInfo="in">
         <node role="patternNode" roleId="tp3t.1136720037778" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975860434" nodeInfo="ng">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="classpath" />
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975860435" nodeInfo="ng">
@@ -1496,7 +1496,7 @@
       </node>
     </node>
     <node role="patternReductionRule" roleId="tpf8.1805153994416813171" type="tpf8.PatternReduction_MappingRule" typeId="tpf8.1805153994416516020" id="7926701909975928828" nodeInfo="ng">
-      <node role="pattern" roleId="tpf8.1805153994416556314" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="7926701909975928829" nodeInfo="nn">
+      <node role="pattern" roleId="tpf8.1805153994416556314" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="7926701909975928829" nodeInfo="in">
         <node role="patternNode" roleId="tp3t.1136720037778" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975928830" nodeInfo="ng">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="classpath" />
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975928831" nodeInfo="ng">

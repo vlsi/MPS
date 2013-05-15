@@ -32,7 +32,15 @@ public class CellModel_ReferencePresentation_Constraints extends BaseConstraints
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.editor.structure.CellModel_RefCell", true, false) != null);
+    SNode ancestorRef = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.editor.structure.CellModel_RefCell", true, false);
+    SNode ancestorList = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole", true, false);
+    if ((ancestorRef == null)) {
+      return false;
+    }
+    if ((ancestorList == null)) {
+      return true;
+    }
+    return jetbrains.mps.util.SNodeOperations.isAncestor(ancestorList, ancestorRef);
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "625126330682991630");

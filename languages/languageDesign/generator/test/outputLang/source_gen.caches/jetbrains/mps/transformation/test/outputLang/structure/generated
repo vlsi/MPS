@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7fs9y035bwdjuurlnbo3jpisgd4myr2">
+<dependencies version="2" modelHash="13tedwsk42i59ff1qtj3fam1fcluvb5">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <common hash="eod2mzjwixxzchban9sax0g1cc4xp4e">
     <dep root="1195164668463" />
@@ -22,25 +22,25 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1195164668463" name="OutputRoot" hash="11efuypz5qp57qt4oidj36w5tmysdfl">
+  <source id="1195164668463" name="OutputRoot" hash="-c01ar6ggggdg4hir48c2i6uz8ufmcvr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1195165132070" name="OutputNode" hash="-eglmmlzbttoyg0ex9tx9balih8e54j5">
+  <source id="1195165132070" name="OutputNode" hash="-4gqvsy36hzn1y5mla8ghhb08zl2nasx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1209604028561" name="OutputNode_forDontApplyReductionTwice_test" hash="-6z03nh0litgjapdsrwmlcm893wooaur">
+  <source id="1209604028561" name="OutputNode_forDontApplyReductionTwice_test" hash="5pcy9ssi34i8smk91xw1nlgxmuesd1y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4146564171992368516" name="CustomRoot" hash="-6usolethbzjt2n7mydetg42k3pstbjw">
+  <source id="4146564171992368516" name="CustomRoot" hash="-43dirrx5gommy4drb86okpvozm1weh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2681305894288486346" name="CustomStatement" hash="-5ivitcozjvhsppskejc0q87zlt1z2dd">
+  <source id="2681305894288486346" name="CustomStatement" hash="9udkpg5k3wk22mv2m7j9qhxrs0fcxat">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2163819695913378074" name="CustomStatementRef" hash="bfe3tfyr5awyn75ahp4mnj9nkp3ne1o">
+  <source id="2163819695913378074" name="CustomStatementRef" hash="45ugmpun0j7dhry037y7cu6jnc0c33o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6010543442198679048" name="TwoVarStatement" hash="-bv9n117lyt44mddsjabl8w8pamsxuio">
+  <source id="6010543442198679048" name="TwoVarStatement" hash="-87x9qci5bkyng8ionesuefgxv90bb4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

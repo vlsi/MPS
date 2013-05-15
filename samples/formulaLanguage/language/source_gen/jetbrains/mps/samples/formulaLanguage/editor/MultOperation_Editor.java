@@ -41,6 +41,9 @@ public class MultOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no leftOperand>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("leftOperand");
+    }
     Operation_leftOperand_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -80,6 +83,9 @@ public class MultOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rightOperand>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("rightOperand");
+    }
     Operation_rightOperand_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

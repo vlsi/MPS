@@ -44,6 +44,9 @@ public class TestNode_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no nodeToCheck>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("nodeToCheck");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BRACKETS, true);
     editorCell.getStyle().putAll(style);

@@ -30,9 +30,7 @@ import jetbrains.mps.newTypesystem.context.component.TypeSystemComponent;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -40,6 +38,9 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
@@ -222,12 +223,16 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
   //--------------------------------------------------
   @Override
-  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
+  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors(boolean typesystemErrors) {
+    if (typesystemErrors) {
+      return new THashSet<Pair<SNode, List<IErrorReporter>>>(super.getNodesWithErrors(typesystemErrors));
+    }
+
+    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>();
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
     Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMapNT.keySet());
     keySet.addAll(nodesToErrorsMapNT.keySet());
 
-    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(super.getNodesWithErrors());
     for (SNode key : keySet) {
       List<IErrorReporter> reporters = getErrors(key);
       if (reporters.isEmpty()) continue;
@@ -366,7 +371,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
      * We do not check for duplicated nodes
      */
     void track(SNode node) {
-      if (!node.isInRepository()) return;
+      if (!org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return;
 
       SModel sm = node.getModel();
       if (!myNodesCount.containsKey(sm)) {

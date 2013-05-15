@@ -53,6 +53,8 @@ public class ExtensionFieldReference_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -69,6 +71,10 @@ public class ExtensionFieldReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("declaration");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
       editorCell.getStyle().putAll(style);

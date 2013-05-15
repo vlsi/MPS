@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -75,8 +74,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_nnob7w_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new NodeMacro_postfix(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.NodeMacro_postfix");
     return editorCell;
   }
 
@@ -230,6 +228,8 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -246,6 +246,10 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("mappingLabel");
+      }
       Style style = new StyleImpl();
       Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -299,6 +303,9 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<current input node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("sourceNodeQuery");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -386,6 +393,8 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -402,6 +411,10 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("template");
+      }
       Style style = new StyleImpl();
       Styles_StyleSheet.applyReference(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -418,8 +431,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_nnob7w_b2e2a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ITemplateCall_actualArguments(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments");
     return editorCell;
   }
 }

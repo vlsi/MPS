@@ -16,14 +16,15 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.IErrorReporter;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -36,11 +37,11 @@ public class GoToTypeErrorRuleUtil {
   public GoToTypeErrorRuleUtil() {
   }
 
-  public static void goToTypeErrorRule(final IOperationContext context, IErrorReporter error) {
-    goToRuleById(context, new Pair<String, String>(error.getRuleModel(), error.getRuleId()));
+  public static void goToTypeErrorRule(Project project, IErrorReporter error) {
+    goToRuleById(project, new Pair<String, String>(error.getRuleModel(), error.getRuleId()));
   }
 
-  public static void goToRuleById(IOperationContext context, Pair<String, String> ruleModelAndId) {
+  public static void goToRuleById(Project project, Pair<String, String> ruleModelAndId) {
     ModelAccess.assertLegalWrite();
 
     String ruleModel = ruleModelAndId.o1;
@@ -66,6 +67,6 @@ public class GoToTypeErrorRuleUtil {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
       return;
     }
-    NavigationSupport.getInstance().openNode(context, rule, false, true);
+    NavigationSupport.getInstance().openNode(new ProjectOperationContext(project), rule, false, true);
   }
 }

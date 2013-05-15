@@ -39,6 +39,9 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no condition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("condition");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -67,6 +70,9 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no ifTrue>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifTrue");
+    }
     TernaryOperator_Delete.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -96,6 +102,9 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no ifFalse>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifFalse");
+    }
     TernaryOperator_Delete.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

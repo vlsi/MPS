@@ -20,11 +20,11 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -85,26 +85,36 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
   public ModelDifferenceDialog(final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
     super(diffRequest.getProject());
     myProject = diffRequest.getProject();
+    myEditable = newModel.getModelDescriptor() instanceof EditableSModel && SModelRepository.getInstance().getModelDescriptor(newModel.getReference()) == newModel.getModelDescriptor();
     final jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
-    DiffTemporaryModule.createModuleForModel(oldModel, "old", p);
-    DiffTemporaryModule.createModuleForModel(newModel, "new", p);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        if (!(myEditable)) {
+          DiffTemporaryModule.createModuleAndRegister(newModel, "new", p, false);
+        }
+        DiffTemporaryModule.createModuleAndRegister(oldModel, "old", p, false);
+      }
+    });
     myContentTitles = diffRequest.getContentTitles();
     assert myContentTitles.length == 2;
-    myEditable = newModel.getModelDescriptor() instanceof EditableSModel && SModelRepository.getInstance().getModelDescriptor(newModel.getReference()) == newModel.getModelDescriptor();
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         setTitle("Difference for model: " + oldModel.getModelDescriptor().getModelName());
         myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
-        if (Sequence.fromIterable(myChangeSet.getChangesForRoot(null)).isNotEmpty()) {
-          SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel);
-          SModel newMetaModel = MetadataUtil.createMetadataModel(newModel);
-          DiffTemporaryModule.createModuleForModel(oldMetaModel, "old", p);
-          DiffTemporaryModule.createModuleForModel(newMetaModel, "new", p, true);
-          myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel, newMetaModel, true);
-        }
       }
     });
+    if (Sequence.fromIterable(myChangeSet.getChangesForRoot(null)).isNotEmpty()) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel);
+          SModel newMetaModel = MetadataUtil.createMetadataModel(newModel);
+          DiffTemporaryModule.createModuleAndRegister(newMetaModel, "new", p, myEditable);
+          DiffTemporaryModule.createModuleAndRegister(oldMetaModel, "old", p, false);
+          myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel, newMetaModel, true);
+        }
+      });
+    }
 
     myActionGroup = ActionUtils.groupFromActions(new InvokeTextDiffAction("View as Text", "View model difference using as text difference of XML contents", this, diffRequest, DiffManager.getInstance().getIdeaDiffTool()));
 
@@ -114,6 +124,18 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
       @Override
       public void windowClosed(WindowEvent event) {
         syncMetadataChanges();
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            if (myMetadataChangeSet != null) {
+              DiffTemporaryModule.unregisterModel(myMetadataChangeSet.getOldModel().getModelDescriptor(), p);
+              DiffTemporaryModule.unregisterModel(myMetadataChangeSet.getNewModel().getModelDescriptor(), p);
+            }
+            DiffTemporaryModule.unregisterModel(myChangeSet.getOldModel().getModelDescriptor(), p);
+            if (!(myEditable)) {
+              DiffTemporaryModule.unregisterModel(myChangeSet.getNewModel().getModelDescriptor(), p);
+            }
+          }
+        });
         getWindow().removeWindowListener(this);
       }
     });
@@ -233,16 +255,16 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     syncMetadataChanges();
 
     myRootId = rootId;
-    final ModelChangeSet changeSet = (rootId == null ?
-      myMetadataChangeSet :
-      myChangeSet
-    );
-    final SNodeId nodeId = (rootId == null ?
-      ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) myMetadataChangeSet.getOldModel().getModelDescriptor()), null)).first().getNodeId() :
-      rootId
-    );
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        ModelChangeSet changeSet = (rootId == null ?
+          myMetadataChangeSet :
+          myChangeSet
+        );
+        SNodeId nodeId = (rootId == null ?
+          ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) myMetadataChangeSet.getOldModel().getModelDescriptor()), null)).first().getNodeId() :
+          rootId
+        );
         if (myRootDifferencePane == null) {
           myRootDifferencePane = new RootDifferencePane(myProject, changeSet, nodeId, myTree.getNameForRoot(rootId), myContentTitles, myEditable, myStatusBar);
           DefaultActionGroup actionGroup = new DefaultActionGroup();
@@ -335,7 +357,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
 
   private class ModelDifferenceTree extends DiffModelTree {
     private ModelDifferenceTree() {
-      super(DiffTemporaryModule.getOperationContext(myProject, myChangeSet.getNewModel()));
     }
 
     @Override

@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class ModuleTarget_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -73,6 +72,9 @@ public class ModuleTarget_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no moduleType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("moduleType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -95,8 +97,7 @@ public class ModuleTarget_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_5pqt0n_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new RefactoringTarget(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.refactoring.editor.RefactoringTarget");
     return editorCell;
   }
 }

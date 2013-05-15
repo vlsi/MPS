@@ -18,7 +18,8 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -69,12 +70,16 @@ public class AddAccessoryModel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
     if (MapSequence.fromMap(_params).get("treeNode") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -84,7 +89,9 @@ public class AddAccessoryModel_Action extends BaseAction {
     try {
       final Language language = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
       final List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           List<SModel> descriptors = SModelRepository.getInstance().getModelDescriptors();
           ListSequence.fromList(models).addSequence(ListSequence.fromList(descriptors).select(new ISelector<SModel, SModelReference>() {
@@ -94,11 +101,12 @@ public class AddAccessoryModel_Action extends BaseAction {
           }));
         }
       });
-      final SModelReference result = CommonChoosers.showDialogModelChooser(((Project) MapSequence.fromMap(_params).get("project")), models, null);
+      final SModelReference result = CommonChoosers.showDialogModelChooser(((Project) MapSequence.fromMap(_params).get("ideaProject")), models, null);
       if (result == null) {
         return;
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      modelAccess.executeCommand(new Runnable() {
         public void run() {
           LanguageDescriptor descriptor;
           descriptor = language.getModuleDescriptor();

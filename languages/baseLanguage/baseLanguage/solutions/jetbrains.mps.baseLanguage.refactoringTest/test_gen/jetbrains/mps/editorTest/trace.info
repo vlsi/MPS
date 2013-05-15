@@ -1668,39 +1668,39 @@
     <unitInfo nodeId="2322823743453985855" fileName="WrappingCellShouldntBeSelectable_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.WrappingCellShouldntBeSelectable_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2345623147105465521">
-    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="24" startPosition="68" endLine="25" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="25" startPosition="107" endLine="26" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="35" startPosition="51" endLine="36" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="36" startPosition="99" endLine="37" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8262891670217997174" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="37" startPosition="99" endLine="38" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="297555905489768634" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="40" startPosition="27" endLine="41" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="297555905489768638" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="41" startPosition="153" endLine="42" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="297555905489768646" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="42" startPosition="112" endLine="43" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SmartReferenseUpdateOnChange_Test#()V" />
-    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="31" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_SmartReferenseUpdateOnChange#()V" />
-    <nodeInfo nodeId="297555905489768628" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="297555905489768627" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="38" startPosition="108" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="34" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="20" startPosition="46" endLine="20" endPosition="46" />
-    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="31" startPosition="23" endLine="31" endPosition="23" />
-    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="24" startPosition="68" endLine="26" endPosition="109" />
-    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="31" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="297555905489768629" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="40" startPosition="27" endLine="43" endPosition="96">
+    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="23" startPosition="68" endLine="24" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="24" startPosition="107" endLine="25" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="34" startPosition="51" endLine="35" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="35" startPosition="99" endLine="36" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8262891670217997174" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="36" startPosition="99" endLine="37" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="297555905489768634" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="39" startPosition="27" endLine="40" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="297555905489768638" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="40" startPosition="153" endLine="41" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="297555905489768646" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="41" startPosition="112" endLine="42" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SmartReferenseUpdateOnChange_Test#()V" />
+    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_SmartReferenseUpdateOnChange#()V" />
+    <nodeInfo nodeId="5938312768538925726" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5938312768538909431" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="37" startPosition="108" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="33" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="19" startPosition="46" endLine="19" endPosition="46" />
+    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="30" startPosition="23" endLine="30" endPosition="23" />
+    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="23" startPosition="68" endLine="25" endPosition="109" />
+    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="5938312768538925727" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="39" startPosition="27" endLine="42" endPosition="96">
       <varInfo nodeId="297555905489768639" varName="editorCell" />
       <varInfo nodeId="297555905489768635" varName="testNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="297555905489768628" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="35" startPosition="51" endLine="45" endPosition="9">
+    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="5938312768538925726" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="34" startPosition="51" endLine="44" endPosition="9">
       <varInfo nodeId="2345623147105465521" varName="editor" />
       <varInfo nodeId="2345623147105465521" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="34" startPosition="0" endLine="47" endPosition="0" />
-    <unitInfo nodeId="297555905489768628" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="39" startPosition="47" endLine="45" endPosition="7" unitName="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$1" />
-    <unitInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="29" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody" />
-    <unitInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test" />
+    <scopeInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="33" startPosition="0" endLine="46" endPosition="0" />
+    <unitInfo nodeId="5938312768538925726" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="38" startPosition="83" endLine="44" endPosition="7" unitName="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$1" />
+    <unitInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="28" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody" />
+    <unitInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2671731496587878888">
     <nodeInfo nodeId="2671731496587878888" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="20" startPosition="69" endLine="21" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

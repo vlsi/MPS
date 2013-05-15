@@ -150,4 +150,8 @@ public interface EditorCell {
   void setCellContext(EditorCellContext cellContext);
 
   EditorCellContext getCellContext();
+
+  void setReferenceCell(boolean isReference);
+
+  boolean isReferenceCell();
 }

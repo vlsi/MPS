@@ -6,7 +6,6 @@
     <classNode dependClassName="jetbrains.mps.ide.properties.DevkitProperties" />
     <classNode dependClassName="jetbrains.mps.project.DevKit" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.properties.DevkitProperties" file="DevkitProperties.java">
@@ -42,7 +41,6 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.GeneratorDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.properties.LanguageProperties" file="LanguageProperties.java">
@@ -68,7 +66,6 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.properties.LibraryProperties" file="LibraryProperties.java">
@@ -159,7 +156,6 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionKind" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.properties.StandardComponents" file="StandardComponents.java">

@@ -44,7 +44,7 @@ public class PresentationManager {
     try {
       return SNodeUtil.getDetailedPresentation(type);
     } catch (RuntimeException t) {
-      LOG.error(t);
+      LOG.error(null, t);
       return "[can't calculate presentation : " + t.getMessage() + "]";
     }
   }

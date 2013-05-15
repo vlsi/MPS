@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.List;
 
@@ -29,6 +30,8 @@ import java.util.List;
  * evgeny, 11/17/11
  */
 public interface EditorContext {
+
+  SRepository getRepository();
 
   SNode getSelectedNode();
 

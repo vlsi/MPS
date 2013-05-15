@@ -4,32 +4,37 @@ package jetbrains.mps.baseLanguage.extensionMethods.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new ExtensionMethodCall_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionMethodCall_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new ExtensionMethodDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionMethodDeclaration_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new ExtensionStaticFieldDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldDeclaration_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new ExtensionStaticFieldReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldReference_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new LocalExtendedMethodCall_Editor());
+        return Collections.<ConceptEditor>singletonList(new LocalExtendedMethodCall_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new SimpleExtensionMethodsContainer_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimpleExtensionMethodsContainer_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new ThisExtensionExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ThisExtensionExpression_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new TypeExtension_Editor());
+        return Collections.<ConceptEditor>singletonList(new TypeExtension_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

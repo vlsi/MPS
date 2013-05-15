@@ -104,7 +104,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1196352592962" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1196352592962" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="quotation" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.1196350785113" resolveInfo="Quotation" />
     </node>
@@ -133,7 +133,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1196863835661" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1196863835661" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.1196350785112" resolveInfo="Antiquotation" />
     </node>
@@ -162,7 +162,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1196864098677" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1196864098677" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.1196350785117" resolveInfo="ReferenceAntiquotation" />
     </node>
@@ -193,7 +193,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1196864120834" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1196864120834" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.1196350785118" resolveInfo="ListAntiquotation" />
     </node>
@@ -222,7 +222,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1196866827114" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1196866827114" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.1196866233735" resolveInfo="PropertyAntiquotation" />
     </node>
@@ -250,7 +250,7 @@
           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="1202840729911" nodeInfo="nn" />
         </node>
         <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="1202840723685" nodeInfo="ng">
-          <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202840736272" nodeInfo="ng">
+          <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202840736272" nodeInfo="ig">
             <property name="name" nameId="tpck.1169194664001" value="quotation" />
             <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.1196350785113" resolveInfo="Quotation" />
           </node>
@@ -284,7 +284,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202840495508" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202840495508" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="antiquotation" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.1196350785112" resolveInfo="Antiquotation" />
     </node>
@@ -312,7 +312,7 @@
           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="1202840835243" nodeInfo="nn" />
         </node>
         <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="1202840835245" nodeInfo="ng">
-          <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202840835246" nodeInfo="ng">
+          <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202840835246" nodeInfo="ig">
             <property name="name" nameId="tpck.1169194664001" value="quotation" />
             <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.1196350785113" resolveInfo="Quotation" />
           </node>
@@ -346,7 +346,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202840800197" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202840800197" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="listAntiquotation" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.1196350785118" resolveInfo="ListAntiquotation" />
     </node>
@@ -510,7 +510,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8182547171709513210" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8182547171709513210" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="node" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.5455284157993863840" resolveInfo="NodeBuilderNode" />
     </node>
@@ -627,7 +627,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8182547171709873353" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8182547171709873353" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="aq" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.8182547171709752110" resolveInfo="NodeBuilderExpression" />
     </node>
@@ -778,7 +778,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8182547171709952574" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8182547171709952574" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="list" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.8182547171709738802" resolveInfo="NodeBuilderList" />
     </node>
@@ -820,7 +820,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5455284157993989834" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5455284157993989834" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="qlight" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.5455284157993863837" resolveInfo="NodeBuilder" />
     </node>
@@ -929,7 +929,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8182547171709456982" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8182547171709456982" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="val" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.5455284157994012186" resolveInfo="NodeBuilderInitLink" />
     </node>
@@ -985,7 +985,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8182547171709457806" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8182547171709457806" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="val" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp3r.5455284157993911077" resolveInfo="NodeBuilderInitProperty" />
     </node>

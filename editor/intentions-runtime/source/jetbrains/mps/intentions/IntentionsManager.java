@@ -204,14 +204,14 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
           List<Intention> parameterizedIntentions = (List<Intention>) method.invoke(null, arguments);
           result.addAll(parameterizedIntentions);
         } catch (NoSuchMethodException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         } catch (IllegalAccessException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         } catch (InvocationTargetException e) {
           if (e.getTargetException() instanceof RuntimeInterruptedException) {
             throw (RuntimeInterruptedException) e.getTargetException();
           }
-          LOG.error(e);
+          LOG.error(null, e);
         }
       } else {
         result.add(intention);

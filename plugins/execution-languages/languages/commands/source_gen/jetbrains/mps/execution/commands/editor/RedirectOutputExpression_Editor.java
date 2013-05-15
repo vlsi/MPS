@@ -34,6 +34,9 @@ public class RedirectOutputExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no processHandler>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("processHandler");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -58,6 +61,9 @@ public class RedirectOutputExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no listener>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("listener");
+    }
     RedirectOutputExpression.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

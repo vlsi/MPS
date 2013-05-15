@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -61,6 +60,9 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("type");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -73,8 +75,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_n7yf1e_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ActionParameter_NameCellComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.plugin.editor.ActionParameter_NameCellComponent");
     return editorCell;
   }
 
@@ -164,8 +165,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_n7yf1e_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ActionParameter_Hint(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.plugin.editor.ActionParameter_Hint");
     editorCell.setBig(true);
     return editorCell;
   }

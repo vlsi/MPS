@@ -3797,7 +3797,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.OrExpression" typeId="tpee.1080223426719" id="2380149729653777892" nodeInfo="nn">
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2380149729653777893" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="2380149729653777894" nodeInfo="nn">
-                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2380149729653777895" nodeInfo="ng">
+                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2380149729653777895" nodeInfo="ig">
                     <property name="name" nameId="tpck.1169194664001" value="primitiveType" />
                     <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1164118113764" resolveInfo="PrimitiveType" />
                   </node>
@@ -3812,7 +3812,7 @@
               </node>
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2380149729653777900" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="2380149729653777901" nodeInfo="nn">
-                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2380149729653777902" nodeInfo="ng">
+                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2380149729653777902" nodeInfo="ig">
                     <property name="name" nameId="tpck.1169194664001" value="stringType" />
                     <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1225271177708" resolveInfo="StringType" />
                   </node>
@@ -3914,7 +3914,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.OrExpression" typeId="tpee.1080223426719" id="2380149729653777880" nodeInfo="nn">
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2380149729653777875" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="2380149729653744980" nodeInfo="nn">
-                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2380149729653777874" nodeInfo="ng">
+                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2380149729653777874" nodeInfo="ig">
                     <property name="name" nameId="tpck.1169194664001" value="primitiveType" />
                     <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1164118113764" resolveInfo="PrimitiveType" />
                   </node>
@@ -3929,7 +3929,7 @@
               </node>
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2380149729653777883" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="2380149729653777884" nodeInfo="nn">
-                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2380149729653777885" nodeInfo="ng">
+                  <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2380149729653777885" nodeInfo="ig">
                     <property name="name" nameId="tpck.1169194664001" value="stringType" />
                     <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1225271177708" resolveInfo="StringType" />
                   </node>
@@ -4042,7 +4042,7 @@
                               <property name="asCast" nameId="tp25.1238684351431" value="true" />
                               <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                               <node role="leftExpression" roleId="tp25.1140138123956" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="44444360532631849" nodeInfo="nn">
-                                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="44444360532631858" nodeInfo="ng">
+                                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="44444360532631858" nodeInfo="ig">
                                   <property name="name" nameId="tpck.1169194664001" value="classifierType" />
                                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                                 </node>

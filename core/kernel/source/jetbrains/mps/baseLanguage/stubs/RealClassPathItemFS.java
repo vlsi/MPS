@@ -109,7 +109,7 @@ public abstract class RealClassPathItemFS extends AbstractClassPathItem {
       try {
         return call.perform(inp);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
         return null;
       }
     } catch (IOException e) {
@@ -119,7 +119,7 @@ public abstract class RealClassPathItemFS extends AbstractClassPathItem {
         try {
           inp.close();
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
     }

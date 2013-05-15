@@ -9,8 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
@@ -42,7 +42,7 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
 
   public void applyRule(final SNode editorDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Language containingLanguage = as_e0tm27_a0a0a1(SNodeOperations.getModel(editorDeclaration).getModule(), Language.class);
-    if (containingLanguage == null) {
+    if (containingLanguage == null || SLinkOperations.getTarget(editorDeclaration, "conceptDeclaration", false) == null) {
       return;
     }
 

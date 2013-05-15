@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import java.util.List;
 import java.util.ArrayList;
@@ -22,19 +21,18 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.components.ShowImplementationComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.util.Computable;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Point;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -83,7 +81,7 @@ public class ShowImplementations_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -125,21 +123,20 @@ public class ShowImplementations_Action extends BaseAction {
           ListSequence.fromList(nodes).addElement(foundNode);
         }
       }
-      final Project project = ((Project) MapSequence.fromMap(_params).get("project"));
-      ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
+      final ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+      modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
           String title = "Definition of " + ((SNode) MapSequence.fromMap(_params).get("node")).getPresentation();
           final ShowImplementationComponent component = new ShowImplementationComponent(nodes, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
 
-          JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPrefferedFocusableComponent()).setRequestFocus(true).setProject(((Project) MapSequence.fromMap(_params).get("project"))).setMovable(true).setResizable(true).setTitle(title).setCancelCallback(new Computable<Boolean>() {
+          JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPrefferedFocusableComponent()).setRequestFocus(true).setProject(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project")))).setMovable(true).setResizable(true).setTitle(title).setCancelCallback(new Computable<Boolean>() {
             @Override
             public Boolean compute() {
-              ModelAccess.instance().runCommandInEDT(new Runnable() {
-                @Override
+              modelAccess.executeCommandInEDT(new Runnable() {
                 public void run() {
                   component.dispose();
                 }
-              }, ProjectHelper.toMPSProject(project));
+              });
               return Boolean.TRUE;
             }
           }).createPopup();
@@ -147,10 +144,7 @@ public class ShowImplementations_Action extends BaseAction {
           component.getPrefferedFocusableComponent().setRequestFocusEnabled(true);
           component.setPopup(popup);
         }
-      }, (project != null ?
-        project.getComponent(MPSProject.class) :
-        null
-      ));
+      });
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowImplementations", t);

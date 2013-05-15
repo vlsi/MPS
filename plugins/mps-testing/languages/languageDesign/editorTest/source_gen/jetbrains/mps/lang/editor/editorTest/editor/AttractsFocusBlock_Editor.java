@@ -42,6 +42,9 @@ public class AttractsFocusBlock_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no child>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("child");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }

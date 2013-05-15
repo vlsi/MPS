@@ -116,6 +116,8 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -125,8 +127,12 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_qc0q19_a0b0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "checkingReference");
       editorCell.setCellId("ReferencePresentation_qc0q19_a0b0");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("checkingReference");
+      }
       return editorCell;
     }
   }

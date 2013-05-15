@@ -64,7 +64,7 @@ public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
           int value = field.getInt(null);
           ourJavaKeyCodesMap.put(value, name);
         } catch (IllegalAccessException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
     }

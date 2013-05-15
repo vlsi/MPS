@@ -45,9 +45,9 @@ import java.lang.reflect.Method;
       try {
         method.invoke(null, node, sampleNode);
       } catch (IllegalAccessException e) {
-        LOG.error(e);
+        LOG.error(null, e);
       } catch (InvocationTargetException e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
       return;
     }
@@ -58,9 +58,9 @@ import java.lang.reflect.Method;
       try {
         method.invoke(null, node);
       } catch (IllegalAccessException e) {
-        LOG.error(e);
+        LOG.error(null, e);
       } catch (InvocationTargetException e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     }
   }

@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class UnknownConsCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -64,8 +63,7 @@ public class UnknownConsCall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_bnhthl_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IMethodCall_actualArguments(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     return editorCell;
   }
 }

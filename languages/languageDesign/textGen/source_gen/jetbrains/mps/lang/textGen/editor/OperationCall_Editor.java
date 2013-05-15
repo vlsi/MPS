@@ -68,6 +68,8 @@ public class OperationCall_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -84,6 +86,10 @@ public class OperationCall_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_operationName");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("function");
+      }
       Style style = new StyleImpl();
       TextGenStyles_StyleSheet.applyTextGenOperation(style, editorCell);
       editorCell.getStyle().putAll(style);

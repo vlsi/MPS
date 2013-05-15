@@ -68,6 +68,8 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -84,6 +86,10 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_externalValue");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("member");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);
       editorCell.getStyle().putAll(style);

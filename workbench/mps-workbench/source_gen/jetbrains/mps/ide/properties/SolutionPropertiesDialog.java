@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import com.intellij.openapi.util.Disposer;
 
@@ -56,15 +55,15 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
     if (!(checkValidity())) {
       return false;
     }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      @Override
+
+    getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SolutionDescriptor solutionDescriptor = mySolution.getModuleDescriptor();
         myProperties.saveTo(solutionDescriptor);
         mySolution.setSolutionDescriptor(solutionDescriptor, true);
         mySolution.save();
       }
-    }, getOperationContext().getProject());
+    });
     return true;
   }
 

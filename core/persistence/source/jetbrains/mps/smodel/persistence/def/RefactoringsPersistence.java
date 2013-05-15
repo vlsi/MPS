@@ -79,17 +79,17 @@ public class RefactoringsPersistence {
     } catch (SAXParseException e) {
       LOG.warn(refactoringsFile.getPath() + " line " + e.getLineNumber());
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (SAXException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } catch (ParserConfigurationException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     } finally {
       if (in != null) {
         try {
           in.close();
         } catch (IOException e) {
-          LOG.error(e);
+          LOG.error(null, e);
         }
       }
     }

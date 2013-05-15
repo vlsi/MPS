@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -54,8 +53,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_53xyyk_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IMethodCall_typeArguments(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_typeArguments");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -88,6 +86,8 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -97,8 +97,12 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_53xyyk_a0b0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "baseMethodDeclaration");
       editorCell.setCellId("ReferencePresentation_53xyyk_a0b0");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("baseMethodDeclaration");
+      }
       return editorCell;
     }
   }
@@ -201,8 +205,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_53xyyk_d0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IMethodCall_actualArguments(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);

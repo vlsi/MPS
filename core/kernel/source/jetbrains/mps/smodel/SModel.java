@@ -74,6 +74,7 @@ public class SModel implements SModelData {
 
   private boolean myDisposed;
 
+  private final Object FAST_FINDER_LOCK = new Object();
   private FastNodeFinder myFastNodeFinder;
 
   private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
@@ -307,7 +308,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.devkitAdded(new SModelDevKitEvent(getDescriptorChecked(), ref, true));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -318,7 +319,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.devkitRemoved(new SModelDevKitEvent(getDescriptorChecked(), ref, false));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -329,7 +330,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.languageAdded(new SModelLanguageEvent(getDescriptorChecked(), ref, true));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -340,7 +341,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.languageRemoved(new SModelLanguageEvent(getDescriptorChecked(), ref, false));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -351,7 +352,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.importAdded(new SModelImportEvent(getDescriptorChecked(), modelReference, true));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -362,7 +363,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.importAdded(new SModelImportEvent(getDescriptorChecked(), modelReference, false));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -373,7 +374,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.rootAdded(new SModelRootEvent(getDescriptorChecked(), root, true));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -384,7 +385,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.rootRemoved(new SModelRootEvent(getDescriptorChecked(), root, false));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -395,7 +396,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.propertyChanged(new SModelPropertyEvent(getDescriptorChecked(), property, node, oldValue, newValue));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -407,7 +408,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.childAdded(new SModelChildEvent(getDescriptorChecked(), true, parent, role, childIndex, child));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -419,7 +420,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.childRemoved(new SModelChildEvent(getDescriptorChecked(), false, parent, role, childIndex, child));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -431,7 +432,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.beforeChildRemoved(new SModelChildEvent(getDescriptorChecked(), false, parent, role, childIndex, child));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -442,7 +443,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.referenceAdded(new SModelReferenceEvent(getDescriptorChecked(), reference, true));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -453,7 +454,7 @@ public class SModel implements SModelData {
       try {
         sModelListener.referenceRemoved(new SModelReferenceEvent(getDescriptorChecked(), reference, false));
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }
@@ -461,12 +462,14 @@ public class SModel implements SModelData {
   //---------fast node finder--------
 
   //todo this is an external functionality. Should be implemented externally
-  public final synchronized FastNodeFinder getFastNodeFinder() {
-    if (myFastNodeFinder == null) {
-      myFastNodeFinder = createFastNodeFinder();
+  public final FastNodeFinder getFastNodeFinder() {
+    synchronized (FAST_FINDER_LOCK) {
+      if (myFastNodeFinder == null) {
+        myFastNodeFinder = createFastNodeFinder();
+      }
+      fireModelNodesReadAccess();
+      return myFastNodeFinder;
     }
-    fireModelNodesReadAccess();
-    return myFastNodeFinder;
   }
 
   protected FastNodeFinder createFastNodeFinder() {
@@ -480,10 +483,12 @@ public class SModel implements SModelData {
   }
 
   //todo this is an external functionality. Should be implemented externally
-  public synchronized void disposeFastNodeFinder() {
-    if (myFastNodeFinder != null) {
-      myFastNodeFinder.dispose();
-      myFastNodeFinder = null;
+  public void disposeFastNodeFinder() {
+    synchronized (FAST_FINDER_LOCK) {
+      if (myFastNodeFinder != null) {
+        myFastNodeFinder.dispose();
+        myFastNodeFinder = null;
+      }
     }
   }
 
@@ -1170,11 +1175,6 @@ public class SModel implements SModelData {
     @Override
     public SRepository getRepository() {
       return null;
-    }
-
-    @Override
-    public boolean isInRepository() {
-      return false;
     }
 
     @Override

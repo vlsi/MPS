@@ -152,6 +152,9 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no terminateType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("terminateType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -277,6 +280,9 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no resultType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("resultType");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

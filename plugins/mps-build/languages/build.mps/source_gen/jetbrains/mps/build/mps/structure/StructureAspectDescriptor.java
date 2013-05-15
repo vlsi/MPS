@@ -103,7 +103,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 43:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_ModuleSource").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 44:
-        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource").super_("jetbrains.mps.build.mps.structure.BuildMps_ModuleSource").parents("jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("isGenerated").children(new String[]{"folder"}, new boolean[]{false}).alias("test source", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.lang.core.structure.BaseConcept").properties("isGenerated").children(new String[]{"folder"}, new boolean[]{false}).alias("test source", "").create();
       case 45:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_Solution").super_("jetbrains.mps.build.mps.structure.BuildMps_Module").parents("jetbrains.mps.build.mps.structure.BuildMps_Module").properties("sourcesKind").alias("solution", "").create();
       case 46:

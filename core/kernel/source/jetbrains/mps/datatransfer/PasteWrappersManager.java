@@ -122,7 +122,7 @@ public class PasteWrappersManager implements CoreComponent {
           addWrapper(w);
         }
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }

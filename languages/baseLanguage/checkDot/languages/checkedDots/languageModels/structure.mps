@@ -5,7 +5,7 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4079382982702596667" nodeInfo="ng">
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4079382982702596667" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="CheckedDotExpression" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />

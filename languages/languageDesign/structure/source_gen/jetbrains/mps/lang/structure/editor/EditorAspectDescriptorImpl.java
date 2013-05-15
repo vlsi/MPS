@@ -4,70 +4,84 @@ package jetbrains.mps.lang.structure.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AggregationConceptLink_Editor());
+        return Collections.<ConceptEditor>singletonList(new AggregationConceptLink_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new AggregationConceptLinkDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new AggregationConceptLinkDeclaration_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new AnnotationLinkDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new AnnotationLinkDeclaration_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new BooleanConceptProperty_Editor());
+        return Collections.<ConceptEditor>singletonList(new BooleanConceptProperty_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new BooleanConceptPropertyDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new BooleanConceptPropertyDeclaration_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new ConceptDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptDeclaration_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new ConceptLink_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptLink_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new ConceptLinkDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptLinkDeclaration_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new ConceptProperty_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptProperty_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new ConceptPropertyDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptPropertyDeclaration_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new ConstrainedDataTypeDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConstrainedDataTypeDeclaration_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new DeprecatedNodeAnnotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new DeprecatedNodeAnnotation_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new EnumerationDataTypeDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new EnumerationDataTypeDeclaration_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new EnumerationMemberDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new EnumerationMemberDeclaration_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new IntegerConceptProperty_Editor());
+        return Collections.<ConceptEditor>singletonList(new IntegerConceptProperty_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new IntegerConceptPropertyDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new IntegerConceptPropertyDeclaration_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new InterfaceConceptDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new InterfaceConceptDeclaration_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new InterfaceConceptReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new InterfaceConceptReference_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new LinkDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new LinkDeclaration_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new MigratedToMethodAnnotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new MigratedToMethodAnnotation_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new PrimitiveDataTypeDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new PrimitiveDataTypeDeclaration_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new PropertyDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertyDeclaration_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new ReferenceConceptLink_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReferenceConceptLink_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new ReferenceConceptLinkDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReferenceConceptLinkDeclaration_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new StringConceptProperty_Editor());
+        return Collections.<ConceptEditor>singletonList(new StringConceptProperty_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new StringConceptPropertyDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new StringConceptPropertyDeclaration_Editor());
+      default:
+    }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("jetbrains.mps.lang.structure.editor.AbstractConceptDeclaration_deprecatedStuff".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new AbstractConceptDeclaration_deprecatedStuff());
+        }
+        break;
       default:
     }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.structure.structure.AggregationConceptLink", "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", "jetbrains.mps.lang.structure.structure.BooleanConceptProperty", "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConceptLink", "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConceptProperty", "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.IntegerConceptProperty", "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation", "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceConceptLink", "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.StringConceptProperty", "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"};
 }

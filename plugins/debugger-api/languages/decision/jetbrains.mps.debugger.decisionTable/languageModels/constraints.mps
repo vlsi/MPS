@@ -342,7 +342,7 @@
             </node>
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5202024118204000854" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="5202024118204000830" nodeInfo="nn">
-                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5202024118204000833" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5202024118204000833" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="decisionTableType" />
                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="91vv.6409088484822290058" resolveInfo="DecisionTableType" />
                 </node>

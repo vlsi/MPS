@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.InternalFlag;
 
 public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
@@ -317,6 +316,9 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<contents>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("contents");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -351,8 +353,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_bepn0t_b4b1a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ModificationsEditor(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.plugin.editor.ModificationsEditor");
     return editorCell;
   }
 

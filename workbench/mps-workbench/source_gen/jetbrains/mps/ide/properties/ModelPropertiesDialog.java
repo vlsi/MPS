@@ -114,8 +114,8 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
 
   public JComponent createInfoComponent() {
     final StringBuilder messageText = new StringBuilder();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
+
+    getProject().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         int references = 0;
         int properties = 0;
@@ -156,7 +156,11 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
 
   @Override
   protected boolean doSaveChanges() {
-    myPresenter.saveChanges();
+    getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
+      public void run() {
+        myPresenter.saveChanges();
+      }
+    });
     return true;
   }
 

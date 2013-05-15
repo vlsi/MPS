@@ -427,7 +427,7 @@
   </void>
   <void method="put">
    <string>public java.lang.Object jetbrains.mps.smodel.SNode.getUserObject(java.lang.Object)</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public java.lang.String jetbrains.mps.smodel.SNode.getConceptFqName()</string>
@@ -590,19 +590,11 @@
     <int>3</int>
   </void>
   <void method="put">
-    <string>public boolean jetbrains.mps.smodel.SNode.isInRepository()</string>
-    <int>0</int>
-  </void>
-  <void method="put">
     <string>public void jetbrains.mps.smodel.SNode.attach(org.jetbrains.mps.openapi.module.SRepository)</string>
     <int>0</int>
   </void>
   <void method="put">
     <string>public void jetbrains.mps.smodel.SNode.detach()</string>
-    <int>0</int>
-  </void>
-  <void method="put">
-    <string>public org.jetbrains.mps.openapi.module.SRepository jetbrains.mps.smodel.SNode.getRepository()</string>
     <int>0</int>
   </void>
  </object>

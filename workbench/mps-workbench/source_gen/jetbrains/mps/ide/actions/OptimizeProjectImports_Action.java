@@ -11,10 +11,8 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.OptimizeImportsHelper;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -53,20 +51,16 @@ public class OptimizeProjectImports_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     return true;
@@ -75,15 +69,17 @@ public class OptimizeProjectImports_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<String> report = new Wrappers._T<String>();
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
-          report.value = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context"))).optimizeProjectImports(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+          report.value = new OptimizeImportsHelper().optimizeProjectImports(((MPSProject) MapSequence.fromMap(_params).get("project")));
           SModelRepository.getInstance().saveAll();
           MPSModuleRepository.getInstance().saveAll();
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         }
       });
-      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), report.value, "Optimize Imports", Messages.getInformationIcon());
+
+      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), report.value, "Optimize Imports", Messages.getInformationIcon());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "OptimizeProjectImports", t);

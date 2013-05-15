@@ -62,6 +62,8 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -78,6 +80,10 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("persistentConfiguration");
+      }
       Style style = new StyleImpl();
       ExecutionSettings_StyleSheet.applyPersistentConfigurationRef(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -120,6 +126,8 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -136,6 +144,10 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("persistentConfiguration");
+      }
       Style style = new StyleImpl();
       ExecutionSettings_StyleSheet.applyPersistentConfigurationRefDeprecated(style, editorCell);
       editorCell.getStyle().putAll(style);

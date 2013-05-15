@@ -42,6 +42,9 @@ public class DeleteFeatureOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no feature>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("feature");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -4,44 +4,49 @@ package jetbrains.mps.samples.lambdaCalculus.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new BinaryOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new BinaryOperation_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new FunctionType_Editor());
+        return Collections.<ConceptEditor>singletonList(new FunctionType_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new LambdaAbstraction_Editor());
+        return Collections.<ConceptEditor>singletonList(new LambdaAbstraction_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new LambdaApplication_Editor());
+        return Collections.<ConceptEditor>singletonList(new LambdaApplication_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new LetExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new LetExpression_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new MultipleExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new MultipleExpression_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new NumberType_Editor());
+        return Collections.<ConceptEditor>singletonList(new NumberType_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new NumericConstant_Editor());
+        return Collections.<ConceptEditor>singletonList(new NumericConstant_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new ParenthesisExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParenthesisExpression_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new Program_Editor());
+        return Collections.<ConceptEditor>singletonList(new Program_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new StringConstant_Editor());
+        return Collections.<ConceptEditor>singletonList(new StringConstant_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new StringType_Editor());
+        return Collections.<ConceptEditor>singletonList(new StringType_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new Variable_Editor());
+        return Collections.<ConceptEditor>singletonList(new Variable_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new VariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new VariableReference_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

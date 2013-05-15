@@ -16,10 +16,9 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.java.platform.refactorings.LocalVariableIntroducer;
 import java.awt.Frame;
-import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -69,8 +68,8 @@ public class IntroduceVariable_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("component", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
@@ -90,13 +89,13 @@ public class IntroduceVariable_Action extends BaseAction {
 
       final IntroduceLocalVariableRefactoring refactoring = new IntroduceLocalVariableRefactoring();
       final Wrappers._T<String> error = new Wrappers._T<String>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           error.value = refactoring.init(((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("component")));
         }
       });
       if (error.value == null) {
-        final LocalVariableIntroducer introducer = new LocalVariableIntroducer(((Frame) MapSequence.fromMap(_params).get("frame")), refactoring, ((EditorComponent) MapSequence.fromMap(_params).get("component")), ((EditorContext) MapSequence.fromMap(_params).get("context")));
+        final LocalVariableIntroducer introducer = new LocalVariableIntroducer(((Frame) MapSequence.fromMap(_params).get("frame")), refactoring, ((EditorComponent) MapSequence.fromMap(_params).get("component")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
         introducer.invoke(event.getDataContext());
       } else {
         JOptionPane.showMessageDialog(((EditorComponent) MapSequence.fromMap(_params).get("component")), error.value, "Error", JOptionPane.ERROR_MESSAGE);

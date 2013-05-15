@@ -4,46 +4,51 @@ package jetbrains.mps.lang.editor.tableTests.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new ContentElement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContentElement_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new DataCell_Editor());
+        return Collections.<ConceptEditor>singletonList(new DataCell_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new Event_Editor());
+        return Collections.<ConceptEditor>singletonList(new Event_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new EventReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new EventReference_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new HierarchycalTable_Editor());
+        return Collections.<ConceptEditor>singletonList(new HierarchycalTable_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new LightWeightDecisionTable_Editor());
+        return Collections.<ConceptEditor>singletonList(new LightWeightDecisionTable_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new Matrix_Editor());
+        return Collections.<ConceptEditor>singletonList(new Matrix_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new State_Editor());
+        return Collections.<ConceptEditor>singletonList(new State_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new StateMachine_Editor());
+        return Collections.<ConceptEditor>singletonList(new StateMachine_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new StateReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new StateReference_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new Table_Editor());
+        return Collections.<ConceptEditor>singletonList(new Table_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new Transition_Editor());
+        return Collections.<ConceptEditor>singletonList(new Transition_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new UltimateContainer_Editor());
+        return Collections.<ConceptEditor>singletonList(new UltimateContainer_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new XElement_Editor());
+        return Collections.<ConceptEditor>singletonList(new XElement_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new YElement_Editor());
+        return Collections.<ConceptEditor>singletonList(new YElement_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

@@ -4,40 +4,45 @@ package jetbrains.mps.core.xml.sax.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new XMLSAXAttributeReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new XMLSAXAttributeReference_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new XMLSAXAttributeRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new XMLSAXAttributeRule_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new XMLSAXBreakStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new XMLSAXBreakStatement_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new XMLSAXChildRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new XMLSAXChildRule_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new XMLSAXFieldDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new XMLSAXFieldDeclaration_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new XMLSAXFieldReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new XMLSAXFieldReference_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new XMLSAXLocatorExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new XMLSAXLocatorExpression_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new XMLSAXNodeRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRule_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new XMLSAXNodeRuleParam_Editor());
+        return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRuleParam_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new XMLSAXNodeRuleParamRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRuleParamRef_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new XMLSAXParser_Editor());
+        return Collections.<ConceptEditor>singletonList(new XMLSAXParser_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new XMLSAXTextRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new XMLSAXTextRule_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

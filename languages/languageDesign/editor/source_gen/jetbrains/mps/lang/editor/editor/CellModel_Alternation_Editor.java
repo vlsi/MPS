@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
@@ -51,8 +50,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_zgm7s3_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _OpenTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._OpenTag");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -114,6 +112,9 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no cell model>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifTrueCellModel");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -155,6 +156,9 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifFalseCellModel");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -224,6 +228,9 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no cell model>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifTrueCellModel");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -265,6 +272,9 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no cell model>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ifFalseCellModel");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -280,8 +290,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_zgm7s3_d0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _CloseTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -303,8 +312,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_zgm7s3_a0_0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _CellModel_Common(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;
   }
 
@@ -408,6 +416,9 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no alternationCondition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("alternationCondition");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);

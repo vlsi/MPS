@@ -15,16 +15,15 @@
  */
 package jetbrains.mps.ide.project.facets;
 
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.Collection;
-import java.util.List;
 import java.util.Set;
 
 /**
  * evgeny, 2/28/13
  */
-public interface IdeaPluginModuleFacet {
+public interface IdeaPluginModuleFacet extends SModuleFacet {
 
   String getPluginId();
 

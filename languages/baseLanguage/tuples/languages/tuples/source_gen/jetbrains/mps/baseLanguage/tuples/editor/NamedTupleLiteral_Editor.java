@@ -218,6 +218,8 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -234,6 +236,10 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_nestedName");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("tupleDeclaration");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -290,6 +296,8 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -301,6 +309,10 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_ulpguu_a0b1a(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_ulpguu_a0b1a");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("tupleDeclaration");
+      }
       editorCell.addEditorCell(this.createRefNodeList_ulpguu_a0a1b0(editorContext, node));
       return editorCell;
     }
@@ -309,6 +321,10 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       AbstractCellListHandler handler = new NamedTupleLiteral_Editor._Inline_ulpguu_a1b0.componentListHandler_ulpguu_a0a1b0(node, "component", editorContext);
       EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
       editorCell.setCellId("refNodeList_component");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("tupleDeclaration");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
       editorCell.getStyle().putAll(style);

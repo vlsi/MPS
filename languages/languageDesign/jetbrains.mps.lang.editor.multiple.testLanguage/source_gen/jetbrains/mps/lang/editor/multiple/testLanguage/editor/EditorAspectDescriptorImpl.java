@@ -4,22 +4,53 @@ package jetbrains.mps.lang.editor.multiple.testLanguage.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Arrays.asList(new EditorAspect[]{new MultipleEditorsTestChild_Editor(), new MultipleEditorsTestChild_compact_Editor(), new MultipleEditorsTestChild_rich_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new MultipleEditorsTestChild_Editor(), new MultipleEditorsTestChild_compact_Editor(), new MultipleEditorsTestChild_rich_Editor()});
       case 1:
-        return Collections.<EditorAspect>singletonList(new MultipleEditorsTestRoot_Editor());
+        return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestEditorComponentChild_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestEditorComponentRoot_Editor());
+      case 3:
+        return Arrays.asList(new ConceptEditor[]{new MultipleEditorsTestMostSpecificChild_Editor(), new MultipleEditorsTestMostSpecificChild_compact_Editor(), new MultipleEditorsTestMostSpecificChild_rich_Editor()});
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestMostSpecificRoot_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRefNodeListRoot_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRefNodeRoot_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRoot_Editor());
       default:
     }
     return Collections.emptyList();
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot"};
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_default".equals(editorComponentId)) {
+          return Arrays.asList(new ConceptEditorComponent[]{new MultipleEditorsTestEditorComponentChild_compact(), new MultipleEditorsTestEditorComponentChild_default(), new MultipleEditorsTestEditorComponentChild_rich()});
+        }
+        break;
+      case 1:
+        if ("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_default".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent());
+        }
+        break;
+      default:
+    }
+    return Collections.emptyList();
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentRoot", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificRoot", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeListRoot", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeRoot", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentChildSubconcept"};
 }

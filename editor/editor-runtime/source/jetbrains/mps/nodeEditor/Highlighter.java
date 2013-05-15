@@ -41,15 +41,17 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -277,7 +279,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         attemptCounter--;
       }
     } catch (InterruptedException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
   }
 
@@ -426,47 +428,52 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     return runUpdateMessagesAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        final SNode editedNode = component.getEditedNode();
-        if (editedNode != null && editedNode.isInRepository()) {
-          final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
-          boolean rootWasCheckedOnce = wasCheckedOnce(component);
-          if (!rootWasCheckedOnce) {
-            checkersToRecheck.addAll(checkers);
-          } else {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              @Override
-              public void run() {
-                if (myStopThread) {
-                  return;
-                }
-                for (BaseEditorChecker checker : checkers) {
-                  if (checker.hasDramaticalEventProtected(events) && (!essentialOnly || checker.isEssentialProtected())) {
-                    checkersToRecheck.add(checker);
+        return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            final SNode editedNode = component.getEditedNode();
+            if (editedNode != null && org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance())) {
+              final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
+              boolean rootWasCheckedOnce = wasCheckedOnce(component);
+              if (!rootWasCheckedOnce) {
+                checkersToRecheck.addAll(checkers);
+              } else {
+                ModelAccess.instance().runReadAction(new Runnable() {
+                  @Override
+                  public void run() {
+                    if (myStopThread) {
+                      return;
+                    }
+                    for (BaseEditorChecker checker : checkers) {
+                      if (checker.hasDramaticalEventProtected(events) && (!essentialOnly || checker.isEssentialProtected())) {
+                        checkersToRecheck.add(checker);
+                      }
+                    }
                   }
-                }
+                });
               }
-            });
-          }
 
-          if ((checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) || myStopThread) {
+              if ((checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) || myStopThread) {
+                return false;
+              }
+              List<BaseEditorChecker> checkersToRecheckList = new ArrayList<BaseEditorChecker>(checkersToRecheck);
+              Collections.sort(checkersToRecheckList, new PriorityComparator());
+
+              boolean recreateInspectorMessages = mainEditorMessagesChanged || !myInspectorMessagesCreated;
+              if (component instanceof InspectorEditorComponent) {
+                myInspectorMessagesCreated = true;
+              } else {
+                myCheckedOnceEditors.add(component);
+              }
+
+
+              if (updateEditor(component, events, rootWasCheckedOnce, checkersToRecheckList, checkersToRemove, recreateInspectorMessages)) {
+                return true;
+              }
+            }
             return false;
           }
-          List<BaseEditorChecker> checkersToRecheckList = new ArrayList<BaseEditorChecker>(checkersToRecheck);
-          Collections.sort(checkersToRecheckList, new PriorityComparator());
-
-          boolean recreateInspectorMessages = mainEditorMessagesChanged || !myInspectorMessagesCreated;
-          if (component instanceof InspectorEditorComponent) {
-            myInspectorMessagesCreated = true;
-          } else {
-            myCheckedOnceEditors.add(component);
-          }
-
-
-          if (updateEditor(component, events, rootWasCheckedOnce, checkersToRecheckList, checkersToRemove, recreateInspectorMessages)) {
-            return true;
-          }
-        }
-        return false;
+        });
       }
     });
   }
@@ -513,7 +520,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           SNode node = editor.getEditedNode();
           if (node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isDisposed(node))
             return false;
-          if (!node.isInRepository()) {
+          if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
             // asking runLoPrioRead() implementation to re-execute this task later:
             // editor was not updated in accordance with last modelReload event yet.
             return null;
@@ -646,7 +653,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             myCommandWatcher.resetGracePeriod();
           }
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(null, t);
         }
       }
     }

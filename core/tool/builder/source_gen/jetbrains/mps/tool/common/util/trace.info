@@ -691,7 +691,7 @@
     <nodeInfo nodeId="5198178184416573599" fileName="Timed.java" startLine="58" startPosition="16" endLine="59" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5198178184416573613" fileName="Timed.java" startLine="65" startPosition="10" endLine="66" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5198178184416573645" fileName="Timed.java" startLine="70" startPosition="13" endLine="71" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5198178184416573637" fileName="Timed.java" startLine="72" startPosition="31" endLine="73" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5198178184416573637" fileName="Timed.java" startLine="72" startPosition="31" endLine="73" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1985651486980520379" fileName="Timed.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Timed#()V" />
     <nodeInfo nodeId="5198178184416573597" fileName="Timed.java" startLine="58" startPosition="14" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5198178184416573545" fileName="Timed.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLocked#()Z" />
@@ -713,10 +713,10 @@
     <scopeInfo nodeId="5198178184416573607" fileName="Timed.java" startLine="56" startPosition="91" endLine="57" endPosition="26" />
     <scopeInfo nodeId="5198178184416573598" fileName="Timed.java" startLine="58" startPosition="16" endLine="59" endPosition="63" />
     <scopeInfo nodeId="5198178184416573644" fileName="Timed.java" startLine="70" startPosition="13" endLine="71" endPosition="31" />
-    <scopeInfo nodeId="5198178184416573635" fileName="Timed.java" startLine="72" startPosition="0" endLine="73" endPosition="29">
+    <scopeInfo nodeId="5198178184416573635" fileName="Timed.java" startLine="72" startPosition="0" endLine="73" endPosition="35">
       <varInfo nodeId="5198178184416573642" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5198178184416573636" fileName="Timed.java" startLine="72" startPosition="31" endLine="73" endPosition="29" />
+    <scopeInfo nodeId="5198178184416573636" fileName="Timed.java" startLine="72" startPosition="31" endLine="73" endPosition="35" />
     <scopeInfo nodeId="1985651486980520379" fileName="Timed.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="5198178184416573521" fileName="Timed.java" startLine="34" startPosition="22" endLine="36" endPosition="22" />
     <scopeInfo nodeId="5198178184416573535" fileName="Timed.java" startLine="40" startPosition="33" endLine="42" endPosition="21" />

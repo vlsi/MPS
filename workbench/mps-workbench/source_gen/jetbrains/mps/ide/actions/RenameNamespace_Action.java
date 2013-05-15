@@ -11,16 +11,16 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -30,7 +30,7 @@ public class RenameNamespace_Action extends BaseAction {
   public RenameNamespace_Action() {
     super("Rename", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @Override
@@ -60,10 +60,6 @@ public class RenameNamespace_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
@@ -81,18 +77,23 @@ public class RenameNamespace_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NamespaceTextNode node = ((NamespaceTextNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode")));
-      String newFolder = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter New Folder", node.getName());
-      if (newFolder == null) {
+      final NamespaceTextNode node = ((NamespaceTextNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode")));
+      final Wrappers._T<String> newFolder = new Wrappers._T<String>(JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter New Folder", node.getName()));
+      if (newFolder.value == null) {
         return;
       }
-      if (newFolder.equals("")) {
-        newFolder = null;
+      if (newFolder.value.equals("")) {
+        newFolder.value = null;
       }
-      for (SModule module : ListSequence.fromList(node.getModulesUnder())) {
-        ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(module, newFolder);
-      }
-      RenameNamespace_Action.this.getProjectPane(_params).rebuild();
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+      modelAccess.executeCommandInEDT(new Runnable() {
+        public void run() {
+          for (SModule module : ListSequence.fromList(node.getModulesUnder())) {
+            ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(module, newFolder.value);
+          }
+          RenameNamespace_Action.this.getProjectPane(_params).rebuild();
+        }
+      });
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "RenameNamespace", t);
@@ -101,7 +102,7 @@ public class RenameNamespace_Action extends BaseAction {
   }
 
   private ProjectPane getProjectPane(final Map<String, Object> _params) {
-    return ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
+    return ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")));
   }
 
   protected static Logger LOG = LogManager.getLogger(RenameNamespace_Action.class);

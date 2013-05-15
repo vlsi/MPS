@@ -139,8 +139,6 @@ public class FileUtil {
   }
 
   public static void copyFileChecked(File f, File to) throws IOException {
-    byte[] bytes = new byte[(int) f.length()];
-
     FileInputStream is = new FileInputStream(f);
 
     File target;
@@ -155,9 +153,7 @@ public class FileUtil {
     }
 
     OutputStream os = new FileOutputStream(target);
-
-    ReadUtil.read(bytes, is);
-    os.write(bytes);
+    os.write(ReadUtil.read(is));
 
     is.close();
     os.close();

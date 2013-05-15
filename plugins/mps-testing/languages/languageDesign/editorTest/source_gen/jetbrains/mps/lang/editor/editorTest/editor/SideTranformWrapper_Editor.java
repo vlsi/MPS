@@ -52,6 +52,9 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no child>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("child");
+    }
     SideTransformWrapperActionMap.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

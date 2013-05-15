@@ -21,8 +21,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -120,6 +118,9 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no leftExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("leftExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -132,8 +133,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_mi4qyq_d0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CreateEquationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_mi4qyq_a0d0a()}));
     return editorCell;
   }
@@ -153,6 +153,9 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rightExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("rightExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -208,6 +211,9 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no leftExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("leftExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -220,8 +226,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_mi4qyq_b1a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CreateEquationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_mi4qyq_a0b1a()}));
     return editorCell;
   }
@@ -241,6 +246,9 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rightExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("rightExpression");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -275,8 +283,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_mi4qyq_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AbstractEquationInspector(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.typesystem.editor.AbstractEquationInspector");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

@@ -301,7 +301,7 @@
                       <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1107535924139" />
                     </node>
                     <node role="operand" roleId="tpee.1197027771414" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="7704855178166487663" nodeInfo="nn">
-                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7704855178166490360" nodeInfo="ng">
+                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7704855178166490360" nodeInfo="ig">
                         <property name="name" nameId="tpck.1169194664001" value="classifierType" />
                         <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                       </node>

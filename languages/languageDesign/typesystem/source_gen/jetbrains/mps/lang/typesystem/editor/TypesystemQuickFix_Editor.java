@@ -223,6 +223,9 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no descriptionBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("descriptionBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -250,6 +253,9 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no executeBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("executeBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

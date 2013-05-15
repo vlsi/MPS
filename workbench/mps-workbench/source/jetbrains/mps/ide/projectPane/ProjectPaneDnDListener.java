@@ -105,10 +105,10 @@ public class ProjectPaneDnDListener implements DropTargetListener {
         return;
       }
     } catch (UnsupportedFlavorException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       dtde.rejectDrop();
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       dtde.rejectDrop();
     }
 

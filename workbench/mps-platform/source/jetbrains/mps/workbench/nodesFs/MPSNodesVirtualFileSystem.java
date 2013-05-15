@@ -255,8 +255,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     public void visitRootEvent(SModelRootEvent event) {
       if (!event.isRemoved()) return;
 
-      SNode root = event.getRoot();
-      SNodeReference rootNodePointer = new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), root.getNodeId());
+      SNodeReference rootNodePointer = event.getRootRef();
       MPSNodeVirtualFile vf = myVirtualFiles.get(rootNodePointer);
       if (vf != null) {
         myDeletedFiles.add(vf);

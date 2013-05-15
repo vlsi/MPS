@@ -7,12 +7,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.editor._DeprecatedPart;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -21,7 +18,6 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -48,8 +44,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ml6tu4_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _DeprecatedPart(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._DeprecatedPart");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -57,8 +52,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ml6tu4_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new HasAnnotation_AnnotationComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent");
     return editorCell;
   }
 
@@ -94,8 +88,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ml6tu4_e0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new BaseMethodDeclaration_BodyComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent");
     return editorCell;
   }
 

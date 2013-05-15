@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.MPSExtentions;
@@ -42,7 +42,7 @@ public class BuildGeneratorUtil {
     return model.value;
   }
 
-  public static Solution createSolution(MPSProject mpsProject, String solutionName, IFile solutionBaseDirFile) {
+  public static Solution createSolution(Project mpsProject, String solutionName, IFile solutionBaseDirFile) {
     String solutionBaseDirPath = solutionBaseDirFile.getPath();
     if (!(BuildGeneratorUtil.isValidSolutionDir(solutionBaseDirFile))) {
       int i = 0;
@@ -82,7 +82,7 @@ public class BuildGeneratorUtil {
     return !(baseDirFile.getDescendant(Solution.SOLUTION_MODELS).exists()) || baseDirFile.getDescendant(Solution.SOLUTION_MODELS).getChildren().isEmpty();
   }
 
-  public static Solution createSolutionFromFile(final MPSProject mpsProject, String solutionName, final IFile solutionDescriptorFile) {
-    return NewModuleUtil.createSolution(solutionName, solutionDescriptorFile.getParent().getPath(), mpsProject);
+  public static Solution createSolutionFromFile(final Project project, String solutionName, final IFile solutionDescriptorFile) {
+    return NewModuleUtil.createSolution(solutionName, solutionDescriptorFile.getParent().getPath(), project);
   }
 }

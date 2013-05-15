@@ -10,6 +10,8 @@ import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
@@ -19,7 +21,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -63,7 +64,11 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -72,19 +77,21 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Finding Usages", true) {
+      final ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+
+      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Finding Usages", true) {
         @Override
         public void run(@NotNull ProgressIndicator p0) {
           final Wrappers._T<SearchResults<SNode>> concepts = new Wrappers._T<SearchResults<SNode>>();
           final Wrappers._T<List<SearchResult<SNode>>> results = new Wrappers._T<List<SearchResult<SNode>>>();
 
-          ModelAccess.instance().runReadAction(new Runnable() {
+          modelAccess.runReadAction(new Runnable() {
             public void run() {
               concepts.value = FindUtils.getSearchResults(new EmptyProgressMonitor(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
               results.value = ListSequence.fromList(((List<SearchResult<SNode>>) concepts.value.getSearchResults())).where(new IWhereFilter<SearchResult<SNode>>() {
                 public boolean accept(SearchResult<SNode> it) {
                   SNode node = (SNode) it.getObject();
-                  return SPropertyOperations.getBoolean(node, "rootable") && isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a3a0a0a0a0a0a5(SPropertyOperations.getString(node, "iconPath"));
+                  return SPropertyOperations.getBoolean(node, "rootable") && isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a3a0a0a0a2a0a5(SPropertyOperations.getString(node, "iconPath"));
                 }
               }).toListSequence();
             }
@@ -96,7 +103,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
 
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-              RefactoringAccess.getInstance().showRefactoringView(((Project) MapSequence.fromMap(_params).get("project")), new RefactoringViewAction() {
+              RefactoringAccess.getInstance().showRefactoringView(((Project) MapSequence.fromMap(_params).get("ideaProject")), new RefactoringViewAction() {
                 @Override
                 public void performAction(RefactoringViewItem refactoringViewItem) {
                   refactoringViewItem.close();
@@ -115,7 +122,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(FindRootableConceptsWithoutIcons_Action.class);
 
-  public static boolean isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a3a0a0a0a0a0a5(String str) {
+  public static boolean isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a3a0a0a0a2a0a5(String str) {
     return str == null || str.length() == 0;
   }
 }

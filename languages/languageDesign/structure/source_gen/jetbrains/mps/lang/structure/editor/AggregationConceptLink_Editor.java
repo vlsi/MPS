@@ -62,6 +62,8 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -78,6 +80,10 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("conceptLinkDeclaration");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -106,6 +112,9 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("target");
+    }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new AggregationConceptLink_Editor.AggregationConceptLink_target_cellMenu_ivlr8m_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

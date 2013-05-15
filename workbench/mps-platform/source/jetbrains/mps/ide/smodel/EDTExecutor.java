@@ -172,7 +172,7 @@ class EDTExecutor {
           }
         }
       } catch (Exception e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     }
 

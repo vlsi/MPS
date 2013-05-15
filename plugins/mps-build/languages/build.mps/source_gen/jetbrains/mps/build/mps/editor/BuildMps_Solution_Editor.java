@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet;
@@ -65,8 +63,7 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ju7sd7_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyProjectPartKeyword(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
@@ -191,6 +188,9 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no path>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("path");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -255,8 +255,7 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ju7sd7_c4a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new SourcesKindComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.mps.editor.SourcesKindComponent");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -524,8 +523,7 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ju7sd7_c1a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new SourcesKindComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.mps.editor.SourcesKindComponent");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

@@ -7,10 +7,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.ui.modeling.editor.IPartiallyDefinedStub_Component;
 
 public class ExpressionStub_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -29,8 +26,7 @@ public class ExpressionStub_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_yrkldf_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     return editorCell;
   }
 
@@ -42,8 +38,7 @@ public class ExpressionStub_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_yrkldf_c0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IPartiallyDefinedStub_Component(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.ui.modeling.editor.IPartiallyDefinedStub_Component");
     return editorCell;
   }
 

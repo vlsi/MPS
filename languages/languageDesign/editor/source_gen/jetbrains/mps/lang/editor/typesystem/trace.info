@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/1179766709016">
     <nodeInfo nodeId="1179766709018" fileName="typeof_CellKeyMap_FunctionParm_selectedNode_InferenceRule.java" startLine="22" startPosition="149" endLine="23" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1223982086188" fileName="typeof_CellKeyMap_FunctionParm_selectedNode_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1458,9 +1458,56 @@
     </scopeInfo>
     <unitInfo nodeId="6050628152418936547" fileName="typeof_AbstractOperationArguments_InferenceRule.java" startLine="24" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.typeof_AbstractOperationArguments_InferenceRule" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/608335627140201033">
+    <nodeInfo nodeId="608335627140522865" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="21" startPosition="122" endLine="22" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="608335627140219021" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="23" startPosition="108" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="608335627140284576" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="27" startPosition="7" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="608335627140284576" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="28" startPosition="60" endLine="29" endPosition="346" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="34" startPosition="46" endLine="35" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="39" startPosition="5" endLine="40" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="40" startPosition="126" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="45" startPosition="30" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_EditorComponentDeclaration_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="608335627140203169" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="22" startPosition="151" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="608335627140284576" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="26" startPosition="142" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="38" startPosition="68" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="608335627140222843" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="25" startPosition="5" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="18" startPosition="63" endLine="18" endPosition="63" />
+    <scopeInfo nodeId="608335627140203172" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="23" startPosition="108" endLine="24" endPosition="13" />
+    <scopeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="34" startPosition="46" endLine="35" endPosition="85" />
+    <scopeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="45" startPosition="30" endLine="46" endPosition="17" />
+    <scopeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="608335627140284576" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="27" startPosition="7" endLine="29" endPosition="346">
+      <varInfo nodeId="608335627140284576" varName="_reporter_2309309498" />
+      <varInfo nodeId="608335627140284576" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="39" startPosition="5" endLine="41" endPosition="45">
+      <varInfo nodeId="608335627140201033" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="608335627140222846" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="26" startPosition="142" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="38" startPosition="68" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="608335627140201033" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="608335627140201034" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="21" startPosition="122" endLine="31" endPosition="5">
+      <varInfo nodeId="608335627140522866" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="608335627140201033" varName="reference" />
+      <varInfo nodeId="608335627140201033" varName="status" />
+      <varInfo nodeId="608335627140201033" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="608335627140201033" fileName="check_EditorComponentDeclaration_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.check_EditorComponentDeclaration_NonTypesystemRule" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/6246554009624637045">
     <nodeInfo nodeId="6246554009627622992" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="43" startPosition="130" endLine="44" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6246554009627929533" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="45" startPosition="37" endLine="46" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6246554009627929533" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="45" startPosition="122" endLine="46" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5944657839030075227" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="47" startPosition="5" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6246554009627050246" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="50" startPosition="7" endLine="51" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6246554009627050246" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="51" startPosition="60" endLine="52" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1520,7 +1567,7 @@
     <nodeInfo nodeId="6246554009625688225" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="6246554009624637045" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="43" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="6246554009624637045" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="40" startPosition="83" endLine="40" endPosition="83" />
-    <scopeInfo nodeId="6246554009627911880" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="45" startPosition="37" endLine="46" endPosition="13" />
+    <scopeInfo nodeId="6246554009627911880" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="45" startPosition="122" endLine="46" endPosition="13" />
     <scopeInfo nodeId="6246554009628995223" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="59" startPosition="37" endLine="60" endPosition="60" />
     <scopeInfo nodeId="6246554009626402555" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="82" startPosition="43" endLine="83" endPosition="182" />
     <scopeInfo nodeId="6246554009628608089" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="88" startPosition="45" endLine="89" endPosition="68" />

@@ -13,12 +13,12 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.platform.refactoring.StringChooserDialog;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
@@ -82,18 +82,21 @@ public class ConvertAnonymousClass_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+
       final Wrappers._T<String> classifierName = new Wrappers._T<String>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           classifierName.value = SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) MapSequence.fromMap(_params).get("target")), "classifier", false), "name");
         }
       });
+
       final String newName = StringChooserDialog.getString(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), "Convert Anonymous Class", "Class Name", "My" + classifierName.value);
 
       if (newName == null) {
         return;
       }
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      modelAccess.runReadInEDT(new Runnable() {
         @Override
         public void run() {
           SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));

@@ -110,10 +110,10 @@ public class SelectionInfo {
       Constructor<Selection> constructor = selectionClass.getConstructor(EditorComponent.class, Map.class, CellInfo.class);
       return constructor.newInstance(editorComponent, myProperties, myCellInfo);
     } catch (ClassNotFoundException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return null;
     } catch (NoSuchMethodException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return null;
     } catch (InvocationTargetException e) {
       if (e.getTargetException() instanceof SelectionRestoreException) {
@@ -125,13 +125,13 @@ public class SelectionInfo {
          */
         return null;
       }
-      LOG.error(e);
+      LOG.error(null, e);
       return null;
     } catch (InstantiationException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return null;
     } catch (IllegalAccessException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return null;
     }
   }

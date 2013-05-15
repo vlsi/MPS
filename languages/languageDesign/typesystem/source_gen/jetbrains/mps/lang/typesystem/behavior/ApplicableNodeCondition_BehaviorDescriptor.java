@@ -4,10 +4,11 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public abstract class ApplicableNodeCondition_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+public abstract class ApplicableNodeCondition_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public ApplicableNodeCondition_BehaviorDescriptor() {
   }
 

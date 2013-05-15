@@ -103,6 +103,9 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no compositePart>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("compositePart");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);

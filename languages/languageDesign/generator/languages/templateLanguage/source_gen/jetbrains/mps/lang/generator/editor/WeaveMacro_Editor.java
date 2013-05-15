@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -76,8 +75,7 @@ public class WeaveMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_1n0h5d_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new NodeMacro_postfix(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.NodeMacro_postfix");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);
@@ -233,6 +231,8 @@ public class WeaveMacro_Editor extends DefaultNodeEditor {
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -249,6 +249,10 @@ public class WeaveMacro_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("mappingLabel");
+      }
       Style style = new StyleImpl();
       Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -302,6 +306,9 @@ public class WeaveMacro_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<current source node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("nodesToWeaveQuery");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
@@ -354,6 +361,9 @@ public class WeaveMacro_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ruleConsequence");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

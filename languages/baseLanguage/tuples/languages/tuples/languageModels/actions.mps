@@ -42,7 +42,7 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="1239725636039" nodeInfo="nn" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="1239725636040" nodeInfo="nn" />
                 </node>
-                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239725636041" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1239725636041" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="indexedTupleType" />
                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="cx9y.1238852151516" resolveInfo="IndexedTupleType" />
                 </node>

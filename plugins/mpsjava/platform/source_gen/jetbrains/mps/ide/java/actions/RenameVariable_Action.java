@@ -15,12 +15,12 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
-import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -86,9 +86,10 @@ public class RenameVariable_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.rename");
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
       final Wrappers._T<SNode> varDeclNode = new Wrappers._T<SNode>();
       final Wrappers._T<String> oldName = new Wrappers._T<String>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           varDeclNode.value = SLinkOperations.getTarget(((SNode) MapSequence.fromMap(_params).get("node")), "variableDeclaration", false);
           oldName.value = SPropertyOperations.getString(varDeclNode.value, "name");
@@ -98,7 +99,7 @@ public class RenameVariable_Action extends BaseAction {
       if (newName == null) {
         return;
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      modelAccess.executeCommand(new Runnable() {
         public void run() {
           SPropertyOperations.set(varDeclNode.value, "name", newName);
         }

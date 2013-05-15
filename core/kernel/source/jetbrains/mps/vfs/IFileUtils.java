@@ -37,12 +37,11 @@ public class IFileUtils {
     try {
       in = new BufferedInputStream(oldFile.openInputStream());
       out = newFile.openOutputStream();
-      byte[] bytes = new byte[(int) oldFile.length()];
-      ReadUtil.read(bytes, in);
+      byte[] bytes = ReadUtil.read(in);
       out.write(bytes);
       return true;
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return false;
     } finally {
       FileUtil.closeFileSafe(in);
