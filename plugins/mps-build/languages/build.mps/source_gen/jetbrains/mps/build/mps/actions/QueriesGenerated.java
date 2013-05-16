@@ -200,7 +200,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_Solution_269707337717102164(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    String sourcesKind = SPropertyOperations.getString(_context.getSourceNode(), "sourcesKind");
+    String sourcesKind = SPropertyOperations.getString_def(_context.getSourceNode(), "sourcesKind", null);
     return (sourcesKind == null || sourcesKind.length() == 0) || sourcesKind.equals("sources");
   }
 

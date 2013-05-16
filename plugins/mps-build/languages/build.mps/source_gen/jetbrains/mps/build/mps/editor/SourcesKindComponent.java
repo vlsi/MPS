@@ -64,7 +64,7 @@ public class SourcesKindComponent implements ConceptEditorComponent {
   }
 
   private static boolean renderingCondition_qubgco_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_qubgco_a0a0a4(SPropertyOperations.getString(node, "sourcesKind")) && !(SPropertyOperations.getString(node, "sourcesKind").equals("sources"));
+    return isNotEmpty_qubgco_a0a0a4(SPropertyOperations.getString_def(node, "sourcesKind", null)) && !(SPropertyOperations.getString_def(node, "sourcesKind", null).equals("sources"));
   }
 
   public static class BuildMps_Solution_generic_cellMenu_qubgco_a0a0 extends AbstractCellMenuPart_Generic_Group {

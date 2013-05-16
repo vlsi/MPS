@@ -8984,7 +8984,7 @@
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="61" startPosition="82" endLine="62" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="61" startPosition="82" endLine="62" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="62" startPosition="82" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7354447573576732021" fileName="SourcesKindComponent.java" startLine="66" startPosition="111" endLine="67" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7354447573576732021" fileName="SourcesKindComponent.java" startLine="66" startPosition="111" endLine="67" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7354447573576732040" fileName="SourcesKindComponent.java" startLine="74" startPosition="134" endLine="75" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7354447573576732036" fileName="SourcesKindComponent.java" startLine="78" startPosition="162" endLine="79" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7354447573576732045" fileName="SourcesKindComponent.java" startLine="82" startPosition="163" endLine="83" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -9049,7 +9049,7 @@
     <scopeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="59" startPosition="209" endLine="60" endPosition="82" />
     <scopeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="60" startPosition="82" endLine="61" endPosition="82" />
     <scopeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="61" startPosition="82" endLine="62" endPosition="82" />
-    <scopeInfo nodeId="7354447573576732020" fileName="SourcesKindComponent.java" startLine="66" startPosition="111" endLine="67" endPosition="163" />
+    <scopeInfo nodeId="7354447573576732020" fileName="SourcesKindComponent.java" startLine="66" startPosition="111" endLine="67" endPosition="183" />
     <scopeInfo nodeId="7354447573576732039" fileName="SourcesKindComponent.java" startLine="74" startPosition="134" endLine="75" endPosition="179" />
     <scopeInfo nodeId="7354447573576732036" fileName="SourcesKindComponent.java" startLine="78" startPosition="162" endLine="79" endPosition="107" />
     <scopeInfo nodeId="7354447573576732044" fileName="SourcesKindComponent.java" startLine="82" startPosition="163" endLine="83" endPosition="75" />
