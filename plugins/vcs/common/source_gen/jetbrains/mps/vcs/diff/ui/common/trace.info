@@ -2396,10 +2396,10 @@
     <nodeInfo nodeId="2058237795965520307" fileName="DiffTemporaryModule.java" startLine="112" startPosition="26" endLine="113" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5376186798192304279" fileName="DiffTemporaryModule.java" startLine="118" startPosition="34" endLine="119" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7766806608423562414" fileName="DiffTemporaryModule.java" startLine="122" startPosition="65" endLine="123" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7766806608423562421" fileName="DiffTemporaryModule.java" startLine="123" startPosition="52" endLine="124" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7766806608423562421" fileName="DiffTemporaryModule.java" startLine="123" startPosition="52" endLine="124" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="101314801351914455" fileName="DiffTemporaryModule.java" startLine="127" startPosition="82" endLine="128" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="101314801351914462" fileName="DiffTemporaryModule.java" startLine="128" startPosition="52" endLine="129" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="101314801351914468" fileName="DiffTemporaryModule.java" startLine="129" startPosition="69" endLine="130" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="101314801351914468" fileName="DiffTemporaryModule.java" startLine="129" startPosition="69" endLine="130" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7766806608423562435" fileName="DiffTemporaryModule.java" startLine="133" startPosition="105" endLine="134" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7766806608423562444" fileName="DiffTemporaryModule.java" startLine="134" startPosition="39" endLine="135" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7766806608423562450" fileName="DiffTemporaryModule.java" startLine="135" startPosition="68" endLine="136" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2409,30 +2409,32 @@
     <nodeInfo nodeId="1493963027547713911" fileName="DiffTemporaryModule.java" startLine="145" startPosition="142" endLine="146" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="435039135931625642" fileName="DiffTemporaryModule.java" startLine="149" startPosition="113" endLine="150" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="435039135931625762" fileName="DiffTemporaryModule.java" startLine="150" startPosition="32" endLine="151" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748339872" fileName="DiffTemporaryModule.java" startLine="159" startPosition="48" endLine="160" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748339879" fileName="DiffTemporaryModule.java" startLine="160" startPosition="72" endLine="161" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748339884" fileName="DiffTemporaryModule.java" startLine="161" startPosition="71" endLine="162" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748339891" fileName="DiffTemporaryModule.java" startLine="162" startPosition="116" endLine="163" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748339898" fileName="DiffTemporaryModule.java" startLine="167" startPosition="55" endLine="168" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748339911" fileName="DiffTemporaryModule.java" startLine="172" startPosition="86" endLine="173" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748339918" fileName="DiffTemporaryModule.java" startLine="178" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
-    <nodeInfo nodeId="4652592318748339921" fileName="DiffTemporaryModule.java" startLine="179" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditable" />
-    <nodeInfo nodeId="4652592318748339935" fileName="DiffTemporaryModule.java" startLine="181" startPosition="82" endLine="182" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4652592318748339941" fileName="DiffTemporaryModule.java" startLine="182" startPosition="34" endLine="183" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748339945" fileName="DiffTemporaryModule.java" startLine="183" startPosition="24" endLine="184" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748339949" fileName="DiffTemporaryModule.java" startLine="184" startPosition="23" endLine="185" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748339967" fileName="DiffTemporaryModule.java" startLine="189" startPosition="32" endLine="190" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748339978" fileName="DiffTemporaryModule.java" startLine="195" startPosition="68" endLine="196" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748339991" fileName="DiffTemporaryModule.java" startLine="197" startPosition="14" endLine="198" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748340003" fileName="DiffTemporaryModule.java" startLine="211" startPosition="65" endLine="212" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4652592318748340017" fileName="DiffTemporaryModule.java" startLine="216" startPosition="33" endLine="217" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3385379368278680465" fileName="DiffTemporaryModule.java" startLine="225" startPosition="32" endLine="226" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="833385511312378321" fileName="DiffTemporaryModule.java" startLine="234" startPosition="36" endLine="235" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6673009040134439944" fileName="DiffTemporaryModule.java" startLine="239" startPosition="37" endLine="240" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748340057" fileName="DiffTemporaryModule.java" startLine="245" startPosition="33" endLine="246" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4652592318748340064" fileName="DiffTemporaryModule.java" startLine="250" startPosition="32" endLine="251" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748339863" fileName="DiffTemporaryModule.java" startLine="155" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffModuleScope#()V" />
-    <nodeInfo nodeId="4652592318748339989" fileName="DiffTemporaryModule.java" startLine="197" startPosition="12" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7192084647231933938" fileName="DiffTemporaryModule.java" startLine="154" startPosition="73" endLine="155" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7192084647231959036" fileName="DiffTemporaryModule.java" startLine="158" startPosition="60" endLine="159" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748339872" fileName="DiffTemporaryModule.java" startLine="167" startPosition="48" endLine="168" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748339879" fileName="DiffTemporaryModule.java" startLine="168" startPosition="72" endLine="169" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748339884" fileName="DiffTemporaryModule.java" startLine="169" startPosition="71" endLine="170" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748339891" fileName="DiffTemporaryModule.java" startLine="170" startPosition="116" endLine="171" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748339898" fileName="DiffTemporaryModule.java" startLine="175" startPosition="55" endLine="176" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748339911" fileName="DiffTemporaryModule.java" startLine="180" startPosition="86" endLine="181" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748339918" fileName="DiffTemporaryModule.java" startLine="186" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
+    <nodeInfo nodeId="4652592318748339921" fileName="DiffTemporaryModule.java" startLine="187" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditable" />
+    <nodeInfo nodeId="4652592318748339935" fileName="DiffTemporaryModule.java" startLine="189" startPosition="82" endLine="190" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4652592318748339941" fileName="DiffTemporaryModule.java" startLine="190" startPosition="34" endLine="191" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748339945" fileName="DiffTemporaryModule.java" startLine="191" startPosition="24" endLine="192" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748339949" fileName="DiffTemporaryModule.java" startLine="192" startPosition="23" endLine="193" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748339967" fileName="DiffTemporaryModule.java" startLine="197" startPosition="32" endLine="198" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748339978" fileName="DiffTemporaryModule.java" startLine="203" startPosition="68" endLine="204" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748339991" fileName="DiffTemporaryModule.java" startLine="205" startPosition="14" endLine="206" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748340003" fileName="DiffTemporaryModule.java" startLine="219" startPosition="65" endLine="220" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4652592318748340017" fileName="DiffTemporaryModule.java" startLine="224" startPosition="33" endLine="225" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3385379368278680465" fileName="DiffTemporaryModule.java" startLine="233" startPosition="32" endLine="234" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="833385511312378321" fileName="DiffTemporaryModule.java" startLine="242" startPosition="36" endLine="243" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6673009040134439944" fileName="DiffTemporaryModule.java" startLine="247" startPosition="37" endLine="248" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748340057" fileName="DiffTemporaryModule.java" startLine="253" startPosition="33" endLine="254" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4652592318748340064" fileName="DiffTemporaryModule.java" startLine="258" startPosition="32" endLine="259" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748339863" fileName="DiffTemporaryModule.java" startLine="163" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffModuleScope#()V" />
+    <nodeInfo nodeId="4652592318748339989" fileName="DiffTemporaryModule.java" startLine="205" startPosition="12" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4652592318748340157" fileName="DiffTemporaryModule.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createContext#()Ljetbrains/mps/vcs/diff/ui/common/DiffTemporaryModule/DiffModuleContext;" />
     <nodeInfo nodeId="4652592318748340168" fileName="DiffTemporaryModule.java" startLine="65" startPosition="87" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4652592318748340198" fileName="DiffTemporaryModule.java" startLine="70" startPosition="37" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2443,45 +2445,47 @@
     <nodeInfo nodeId="4652592318748339782" fileName="DiffTemporaryModule.java" startLine="104" startPosition="0" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6041845732926234204" fileName="DiffTemporaryModule.java" startLine="111" startPosition="119" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1493963027547713889" fileName="DiffTemporaryModule.java" startLine="145" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="genMergeSModelId#(Lorg/jetbrains/mps/openapi/model/SModelId;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModelId;" />
-    <nodeInfo nodeId="4933738972388389168" fileName="DiffTemporaryModule.java" startLine="202" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFromSource#()V" />
-    <nodeInfo nodeId="4933738972388389162" fileName="DiffTemporaryModule.java" startLine="206" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateTimestamp#()V" />
-    <nodeInfo nodeId="4652592318748340020" fileName="DiffTemporaryModule.java" startLine="220" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setChanged#(Z)V" />
-    <nodeInfo nodeId="4652592318748340043" fileName="DiffTemporaryModule.java" startLine="229" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="save#()V" />
-    <nodeInfo nodeId="4652592318748340053" fileName="DiffTemporaryModule.java" startLine="245" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffModuleContext#()V" />
+    <nodeInfo nodeId="7192084647231923653" fileName="DiffTemporaryModule.java" startLine="154" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="genMergeSModelName#(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7192084647231948947" fileName="DiffTemporaryModule.java" startLine="158" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOriginalSModelName#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4933738972388389168" fileName="DiffTemporaryModule.java" startLine="210" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFromSource#()V" />
+    <nodeInfo nodeId="4933738972388389162" fileName="DiffTemporaryModule.java" startLine="214" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateTimestamp#()V" />
+    <nodeInfo nodeId="4652592318748340020" fileName="DiffTemporaryModule.java" startLine="228" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setChanged#(Z)V" />
+    <nodeInfo nodeId="4652592318748340043" fileName="DiffTemporaryModule.java" startLine="237" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="save#()V" />
+    <nodeInfo nodeId="4652592318748340053" fileName="DiffTemporaryModule.java" startLine="253" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffModuleContext#()V" />
     <nodeInfo nodeId="4652592318748340133" fileName="DiffTemporaryModule.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
     <nodeInfo nodeId="8165092175940278329" fileName="DiffTemporaryModule.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModels#()Ljava/util/List;" />
     <nodeInfo nodeId="4652592318748340150" fileName="DiffTemporaryModule.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#()Ljetbrains/mps/project/AbstractModule/ModuleScope;" />
     <nodeInfo nodeId="5376186798192303068" fileName="DiffTemporaryModule.java" startLine="114" startPosition="5" endLine="118" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3385379368278690014" fileName="DiffTemporaryModule.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setSModelId#(Ljetbrains/mps/smodel/SModel;Ljava/lang/String;)V" />
     <nodeInfo nodeId="1493963027547713958" fileName="DiffTemporaryModule.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOriginalSModelId#(Ljetbrains/mps/smodel/SModelId/ForeignSModelId;)Lorg/jetbrains/mps/openapi/model/SModelId;" />
-    <nodeInfo nodeId="4652592318748339893" fileName="DiffTemporaryModule.java" startLine="166" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInitialUsedLanguages#()Ljava/util/Set;" />
-    <nodeInfo nodeId="4134613690550668559" fileName="DiffTemporaryModule.java" startLine="171" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="4652592318748339963" fileName="DiffTemporaryModule.java" startLine="188" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
-    <nodeInfo nodeId="4652592318748339995" fileName="DiffTemporaryModule.java" startLine="210" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rename#(Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="4652592318748340013" fileName="DiffTemporaryModule.java" startLine="215" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReadOnly#()Z" />
-    <nodeInfo nodeId="4652592318748340029" fileName="DiffTemporaryModule.java" startLine="224" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isChanged#()Z" />
-    <nodeInfo nodeId="833385511312378314" fileName="DiffTemporaryModule.java" startLine="233" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModel#()Ljetbrains/mps/smodel/SModel;" />
-    <nodeInfo nodeId="6673009040134439937" fileName="DiffTemporaryModule.java" startLine="238" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="needsReloading#()Z" />
-    <nodeInfo nodeId="4652592318748340060" fileName="DiffTemporaryModule.java" startLine="249" startPosition="0" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
+    <nodeInfo nodeId="4652592318748339893" fileName="DiffTemporaryModule.java" startLine="174" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInitialUsedLanguages#()Ljava/util/Set;" />
+    <nodeInfo nodeId="4134613690550668559" fileName="DiffTemporaryModule.java" startLine="179" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="4652592318748339963" fileName="DiffTemporaryModule.java" startLine="196" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
+    <nodeInfo nodeId="4652592318748339995" fileName="DiffTemporaryModule.java" startLine="218" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rename#(Ljava/lang/String;Z)V" />
+    <nodeInfo nodeId="4652592318748340013" fileName="DiffTemporaryModule.java" startLine="223" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReadOnly#()Z" />
+    <nodeInfo nodeId="4652592318748340029" fileName="DiffTemporaryModule.java" startLine="232" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isChanged#()Z" />
+    <nodeInfo nodeId="833385511312378314" fileName="DiffTemporaryModule.java" startLine="241" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModel#()Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="6673009040134439937" fileName="DiffTemporaryModule.java" startLine="246" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="needsReloading#()Z" />
+    <nodeInfo nodeId="4652592318748340060" fileName="DiffTemporaryModule.java" startLine="257" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
     <nodeInfo nodeId="4652592318748340073" fileName="DiffTemporaryModule.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffTemporaryModule#(Ljetbrains/mps/smodel/SModel;Ljava/lang/String;Ljetbrains/mps/project/Project;)V" />
     <nodeInfo nodeId="101314801351914445" fileName="DiffTemporaryModule.java" startLine="127" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resetSModelId#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
     <nodeInfo nodeId="7766806608423562399" fileName="DiffTemporaryModule.java" startLine="133" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="registerModel#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/MPSModuleOwner;)V" />
     <nodeInfo nodeId="101314801351914500" fileName="DiffTemporaryModule.java" startLine="139" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="unregisterModel#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/MPSModuleOwner;)V" />
-    <nodeInfo nodeId="4652592318748339976" fileName="DiffTemporaryModule.java" startLine="194" startPosition="91" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748339976" fileName="DiffTemporaryModule.java" startLine="202" startPosition="91" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4652592318748340213" fileName="DiffTemporaryModule.java" startLine="74" startPosition="72" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4652592318748340235" fileName="DiffTemporaryModule.java" startLine="82" startPosition="73" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4652592318748339757" fileName="DiffTemporaryModule.java" startLine="97" startPosition="26" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748339925" fileName="DiffTemporaryModule.java" startLine="181" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffSModelDescriptor#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/smodel/SModel;Z)V" />
-    <nodeInfo nodeId="4652592318748339867" fileName="DiffTemporaryModule.java" startLine="158" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInitialModules#()Ljava/util/Set;" />
-    <nodeInfo nodeId="4652592318748339970" fileName="DiffTemporaryModule.java" startLine="193" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveModel#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="4652592318748339925" fileName="DiffTemporaryModule.java" startLine="189" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffSModelDescriptor#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/smodel/SModel;Z)V" />
+    <nodeInfo nodeId="4652592318748339867" fileName="DiffTemporaryModule.java" startLine="166" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInitialModules#()Ljava/util/Set;" />
+    <nodeInfo nodeId="4652592318748339970" fileName="DiffTemporaryModule.java" startLine="201" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveModel#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SModel;" />
     <nodeInfo nodeId="5376186798192282592" fileName="DiffTemporaryModule.java" startLine="111" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModuleAndRegister#(Ljetbrains/mps/smodel/SModel;Ljava/lang/String;Ljetbrains/mps/project/Project;Z)V" />
     <nodeInfo nodeId="4652592318748339740" fileName="DiffTemporaryModule.java" startLine="92" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModuleForModel#(Ljetbrains/mps/smodel/SModel;Ljava/lang/String;Ljetbrains/mps/project/Project;Z)V" />
     <nodeInfo nodeId="4652592318748340164" fileName="DiffTemporaryModule.java" startLine="65" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModel#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <scopeInfo nodeId="4652592318748339866" fileName="DiffTemporaryModule.java" startLine="155" startPosition="31" endLine="155" endPosition="31" />
-    <scopeInfo nodeId="4933738972388389173" fileName="DiffTemporaryModule.java" startLine="203" startPosition="36" endLine="203" endPosition="36" />
-    <scopeInfo nodeId="4933738972388389167" fileName="DiffTemporaryModule.java" startLine="207" startPosition="35" endLine="207" endPosition="35" />
-    <scopeInfo nodeId="4652592318748340025" fileName="DiffTemporaryModule.java" startLine="221" startPosition="39" endLine="221" endPosition="39" />
-    <scopeInfo nodeId="4652592318748340046" fileName="DiffTemporaryModule.java" startLine="230" startPosition="24" endLine="230" endPosition="24" />
+    <scopeInfo nodeId="4652592318748339866" fileName="DiffTemporaryModule.java" startLine="163" startPosition="31" endLine="163" endPosition="31" />
+    <scopeInfo nodeId="4933738972388389173" fileName="DiffTemporaryModule.java" startLine="211" startPosition="36" endLine="211" endPosition="36" />
+    <scopeInfo nodeId="4933738972388389167" fileName="DiffTemporaryModule.java" startLine="215" startPosition="35" endLine="215" endPosition="35" />
+    <scopeInfo nodeId="4652592318748340025" fileName="DiffTemporaryModule.java" startLine="229" startPosition="39" endLine="229" endPosition="39" />
+    <scopeInfo nodeId="4652592318748340046" fileName="DiffTemporaryModule.java" startLine="238" startPosition="24" endLine="238" endPosition="24" />
     <scopeInfo nodeId="4652592318748340136" fileName="DiffTemporaryModule.java" startLine="47" startPosition="28" endLine="48" endPosition="27" />
     <scopeInfo nodeId="8165092175940278334" fileName="DiffTemporaryModule.java" startLine="52" startPosition="67" endLine="53" endPosition="107" />
     <scopeInfo nodeId="4652592318748340153" fileName="DiffTemporaryModule.java" startLine="57" startPosition="54" endLine="58" endPosition="53" />
@@ -2495,28 +2499,30 @@
     <scopeInfo nodeId="4652592318748339783" fileName="DiffTemporaryModule.java" startLine="105" startPosition="25" endLine="106" endPosition="64" />
     <scopeInfo nodeId="6041845732926234207" fileName="DiffTemporaryModule.java" startLine="112" startPosition="26" endLine="113" endPosition="34" />
     <scopeInfo nodeId="1493963027547713892" fileName="DiffTemporaryModule.java" startLine="145" startPosition="142" endLine="146" endPosition="75" />
-    <scopeInfo nodeId="4652592318748339897" fileName="DiffTemporaryModule.java" startLine="167" startPosition="55" endLine="168" endPosition="117" />
-    <scopeInfo nodeId="4134613690550668567" fileName="DiffTemporaryModule.java" startLine="172" startPosition="86" endLine="173" endPosition="73" />
-    <scopeInfo nodeId="4652592318748339966" fileName="DiffTemporaryModule.java" startLine="189" startPosition="32" endLine="190" endPosition="22" />
-    <scopeInfo nodeId="4652592318748339977" fileName="DiffTemporaryModule.java" startLine="195" startPosition="68" endLine="196" endPosition="69" />
-    <scopeInfo nodeId="4652592318748339990" fileName="DiffTemporaryModule.java" startLine="197" startPosition="14" endLine="198" endPosition="45" />
-    <scopeInfo nodeId="4652592318748340002" fileName="DiffTemporaryModule.java" startLine="211" startPosition="65" endLine="212" endPosition="48" />
-    <scopeInfo nodeId="4652592318748340016" fileName="DiffTemporaryModule.java" startLine="216" startPosition="33" endLine="217" endPosition="27" />
-    <scopeInfo nodeId="4652592318748340032" fileName="DiffTemporaryModule.java" startLine="225" startPosition="32" endLine="226" endPosition="19" />
-    <scopeInfo nodeId="833385511312378317" fileName="DiffTemporaryModule.java" startLine="234" startPosition="36" endLine="235" endPosition="48" />
-    <scopeInfo nodeId="6673009040134439942" fileName="DiffTemporaryModule.java" startLine="239" startPosition="37" endLine="240" endPosition="19" />
-    <scopeInfo nodeId="4652592318748340056" fileName="DiffTemporaryModule.java" startLine="245" startPosition="33" endLine="246" endPosition="49" />
-    <scopeInfo nodeId="4652592318748340063" fileName="DiffTemporaryModule.java" startLine="250" startPosition="32" endLine="251" endPosition="38" />
-    <scopeInfo nodeId="3385379368278690017" fileName="DiffTemporaryModule.java" startLine="122" startPosition="65" endLine="124" endPosition="204">
+    <scopeInfo nodeId="7192084647231923656" fileName="DiffTemporaryModule.java" startLine="154" startPosition="73" endLine="155" endPosition="32" />
+    <scopeInfo nodeId="7192084647231948950" fileName="DiffTemporaryModule.java" startLine="158" startPosition="60" endLine="159" endPosition="52" />
+    <scopeInfo nodeId="4652592318748339897" fileName="DiffTemporaryModule.java" startLine="175" startPosition="55" endLine="176" endPosition="117" />
+    <scopeInfo nodeId="4134613690550668567" fileName="DiffTemporaryModule.java" startLine="180" startPosition="86" endLine="181" endPosition="73" />
+    <scopeInfo nodeId="4652592318748339966" fileName="DiffTemporaryModule.java" startLine="197" startPosition="32" endLine="198" endPosition="22" />
+    <scopeInfo nodeId="4652592318748339977" fileName="DiffTemporaryModule.java" startLine="203" startPosition="68" endLine="204" endPosition="69" />
+    <scopeInfo nodeId="4652592318748339990" fileName="DiffTemporaryModule.java" startLine="205" startPosition="14" endLine="206" endPosition="45" />
+    <scopeInfo nodeId="4652592318748340002" fileName="DiffTemporaryModule.java" startLine="219" startPosition="65" endLine="220" endPosition="48" />
+    <scopeInfo nodeId="4652592318748340016" fileName="DiffTemporaryModule.java" startLine="224" startPosition="33" endLine="225" endPosition="27" />
+    <scopeInfo nodeId="4652592318748340032" fileName="DiffTemporaryModule.java" startLine="233" startPosition="32" endLine="234" endPosition="19" />
+    <scopeInfo nodeId="833385511312378317" fileName="DiffTemporaryModule.java" startLine="242" startPosition="36" endLine="243" endPosition="48" />
+    <scopeInfo nodeId="6673009040134439942" fileName="DiffTemporaryModule.java" startLine="247" startPosition="37" endLine="248" endPosition="19" />
+    <scopeInfo nodeId="4652592318748340056" fileName="DiffTemporaryModule.java" startLine="253" startPosition="33" endLine="254" endPosition="49" />
+    <scopeInfo nodeId="4652592318748340063" fileName="DiffTemporaryModule.java" startLine="258" startPosition="32" endLine="259" endPosition="38" />
+    <scopeInfo nodeId="3385379368278690017" fileName="DiffTemporaryModule.java" startLine="122" startPosition="65" endLine="124" endPosition="233">
       <varInfo nodeId="7766806608423562415" varName="modelRef" />
     </scopeInfo>
     <scopeInfo nodeId="1493963027547713961" fileName="DiffTemporaryModule.java" startLine="149" startPosition="113" endLine="151" endPosition="66">
       <varInfo nodeId="435039135931625643" varName="id" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748339863" fileName="DiffTemporaryModule.java" startLine="155" startPosition="0" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="4652592318748339863" fileName="DiffTemporaryModule.java" startLine="163" startPosition="0" endLine="165" endPosition="0" />
     <scopeInfo nodeId="4652592318748340082" fileName="DiffTemporaryModule.java" startLine="40" startPosition="78" endLine="43" endPosition="24" />
     <scopeInfo nodeId="4652592318748340157" fileName="DiffTemporaryModule.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="101314801351914448" fileName="DiffTemporaryModule.java" startLine="127" startPosition="82" endLine="130" endPosition="204">
+    <scopeInfo nodeId="101314801351914448" fileName="DiffTemporaryModule.java" startLine="127" startPosition="82" endLine="130" endPosition="227">
       <varInfo nodeId="101314801351914456" varName="modelRef" />
     </scopeInfo>
     <scopeInfo nodeId="7766806608423562402" fileName="DiffTemporaryModule.java" startLine="133" startPosition="105" endLine="136" endPosition="74">
@@ -2529,13 +2535,20 @@
       <varInfo nodeId="1493963027547713907" varName="modelId" />
       <varInfo nodeId="7766806608423417223" varName="version" />
     </scopeInfo>
-    <scopeInfo nodeId="4933738972388389168" fileName="DiffTemporaryModule.java" startLine="202" startPosition="0" endLine="205" endPosition="0" />
-    <scopeInfo nodeId="4933738972388389162" fileName="DiffTemporaryModule.java" startLine="206" startPosition="0" endLine="209" endPosition="0" />
-    <scopeInfo nodeId="4652592318748340020" fileName="DiffTemporaryModule.java" startLine="220" startPosition="0" endLine="223" endPosition="0">
+    <scopeInfo nodeId="7192084647231923653" fileName="DiffTemporaryModule.java" startLine="154" startPosition="0" endLine="157" endPosition="0">
+      <varInfo nodeId="7192084647231933528" varName="name" />
+      <varInfo nodeId="7192084647231933954" varName="version" />
+    </scopeInfo>
+    <scopeInfo nodeId="7192084647231948947" fileName="DiffTemporaryModule.java" startLine="158" startPosition="0" endLine="161" endPosition="0">
+      <varInfo nodeId="7192084647231949630" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="4933738972388389168" fileName="DiffTemporaryModule.java" startLine="210" startPosition="0" endLine="213" endPosition="0" />
+    <scopeInfo nodeId="4933738972388389162" fileName="DiffTemporaryModule.java" startLine="214" startPosition="0" endLine="217" endPosition="0" />
+    <scopeInfo nodeId="4652592318748340020" fileName="DiffTemporaryModule.java" startLine="228" startPosition="0" endLine="231" endPosition="0">
       <varInfo nodeId="4652592318748340023" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748340043" fileName="DiffTemporaryModule.java" startLine="229" startPosition="0" endLine="232" endPosition="0" />
-    <scopeInfo nodeId="4652592318748340053" fileName="DiffTemporaryModule.java" startLine="245" startPosition="0" endLine="248" endPosition="0" />
+    <scopeInfo nodeId="4652592318748340043" fileName="DiffTemporaryModule.java" startLine="237" startPosition="0" endLine="240" endPosition="0" />
+    <scopeInfo nodeId="4652592318748340053" fileName="DiffTemporaryModule.java" startLine="253" startPosition="0" endLine="256" endPosition="0" />
     <scopeInfo nodeId="4652592318748340133" fileName="DiffTemporaryModule.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="8165092175940278329" fileName="DiffTemporaryModule.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="4652592318748340150" fileName="DiffTemporaryModule.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
@@ -2555,24 +2568,24 @@
     <scopeInfo nodeId="1493963027547713958" fileName="DiffTemporaryModule.java" startLine="149" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="1493963027547713976" varName="modelId" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748339871" fileName="DiffTemporaryModule.java" startLine="159" startPosition="48" endLine="163" endPosition="20">
+    <scopeInfo nodeId="4652592318748339871" fileName="DiffTemporaryModule.java" startLine="167" startPosition="48" endLine="171" endPosition="20">
       <varInfo nodeId="4652592318748339873" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748339893" fileName="DiffTemporaryModule.java" startLine="166" startPosition="0" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="4134613690550668559" fileName="DiffTemporaryModule.java" startLine="171" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="4652592318748339893" fileName="DiffTemporaryModule.java" startLine="174" startPosition="0" endLine="178" endPosition="0" />
+    <scopeInfo nodeId="4134613690550668559" fileName="DiffTemporaryModule.java" startLine="179" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="4134613690550668563" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748339934" fileName="DiffTemporaryModule.java" startLine="181" startPosition="82" endLine="185" endPosition="28" />
-    <scopeInfo nodeId="4652592318748339963" fileName="DiffTemporaryModule.java" startLine="188" startPosition="0" endLine="192" endPosition="0" />
-    <scopeInfo nodeId="4652592318748339995" fileName="DiffTemporaryModule.java" startLine="210" startPosition="0" endLine="214" endPosition="0">
+    <scopeInfo nodeId="4652592318748339934" fileName="DiffTemporaryModule.java" startLine="189" startPosition="82" endLine="193" endPosition="28" />
+    <scopeInfo nodeId="4652592318748339963" fileName="DiffTemporaryModule.java" startLine="196" startPosition="0" endLine="200" endPosition="0" />
+    <scopeInfo nodeId="4652592318748339995" fileName="DiffTemporaryModule.java" startLine="218" startPosition="0" endLine="222" endPosition="0">
       <varInfo nodeId="4652592318748340000" varName="changeFile" />
       <varInfo nodeId="4652592318748339998" varName="newModelName" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748340013" fileName="DiffTemporaryModule.java" startLine="215" startPosition="0" endLine="219" endPosition="0" />
-    <scopeInfo nodeId="4652592318748340029" fileName="DiffTemporaryModule.java" startLine="224" startPosition="0" endLine="228" endPosition="0" />
-    <scopeInfo nodeId="833385511312378314" fileName="DiffTemporaryModule.java" startLine="233" startPosition="0" endLine="237" endPosition="0" />
-    <scopeInfo nodeId="6673009040134439937" fileName="DiffTemporaryModule.java" startLine="238" startPosition="0" endLine="242" endPosition="0" />
-    <scopeInfo nodeId="4652592318748340060" fileName="DiffTemporaryModule.java" startLine="249" startPosition="0" endLine="253" endPosition="0" />
+    <scopeInfo nodeId="4652592318748340013" fileName="DiffTemporaryModule.java" startLine="223" startPosition="0" endLine="227" endPosition="0" />
+    <scopeInfo nodeId="4652592318748340029" fileName="DiffTemporaryModule.java" startLine="232" startPosition="0" endLine="236" endPosition="0" />
+    <scopeInfo nodeId="833385511312378314" fileName="DiffTemporaryModule.java" startLine="241" startPosition="0" endLine="245" endPosition="0" />
+    <scopeInfo nodeId="6673009040134439937" fileName="DiffTemporaryModule.java" startLine="246" startPosition="0" endLine="250" endPosition="0" />
+    <scopeInfo nodeId="4652592318748340060" fileName="DiffTemporaryModule.java" startLine="257" startPosition="0" endLine="261" endPosition="0" />
     <scopeInfo nodeId="4652592318748340073" fileName="DiffTemporaryModule.java" startLine="40" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="4652592318748340074" varName="model" />
       <varInfo nodeId="4652592318748340078" varName="project" />
@@ -2589,21 +2602,21 @@
       <varInfo nodeId="101314801351914508" varName="model" />
       <varInfo nodeId="101314801351914510" varName="owner" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748339975" fileName="DiffTemporaryModule.java" startLine="194" startPosition="91" endLine="199" endPosition="7" />
+    <scopeInfo nodeId="4652592318748339975" fileName="DiffTemporaryModule.java" startLine="202" startPosition="91" endLine="207" endPosition="7" />
     <scopeInfo nodeId="4652592318748340213" fileName="DiffTemporaryModule.java" startLine="74" startPosition="72" endLine="80" endPosition="5">
       <varInfo nodeId="4652592318748340214" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748340235" fileName="DiffTemporaryModule.java" startLine="82" startPosition="73" endLine="88" endPosition="5">
       <varInfo nodeId="4652592318748340236" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748339925" fileName="DiffTemporaryModule.java" startLine="181" startPosition="0" endLine="187" endPosition="0">
+    <scopeInfo nodeId="4652592318748339925" fileName="DiffTemporaryModule.java" startLine="189" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="4652592318748339930" varName="editable" />
       <varInfo nodeId="4652592318748339928" varName="model" />
       <varInfo nodeId="4652592318748339926" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748339867" fileName="DiffTemporaryModule.java" startLine="158" startPosition="0" endLine="165" endPosition="0" />
+    <scopeInfo nodeId="4652592318748339867" fileName="DiffTemporaryModule.java" startLine="166" startPosition="0" endLine="173" endPosition="0" />
     <scopeInfo nodeId="5376186798192282595" fileName="DiffTemporaryModule.java" startLine="111" startPosition="119" endLine="119" endPosition="55" />
-    <scopeInfo nodeId="4652592318748339970" fileName="DiffTemporaryModule.java" startLine="193" startPosition="0" endLine="201" endPosition="0">
+    <scopeInfo nodeId="4652592318748339970" fileName="DiffTemporaryModule.java" startLine="201" startPosition="0" endLine="209" endPosition="0">
       <varInfo nodeId="4652592318748339973" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="5376186798192282592" fileName="DiffTemporaryModule.java" startLine="111" startPosition="0" endLine="121" endPosition="0">
@@ -2629,10 +2642,10 @@
     <scopeInfo nodeId="4652592318748340164" fileName="DiffTemporaryModule.java" startLine="65" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="4652592318748340257" varName="reference" />
     </scopeInfo>
-    <unitInfo nodeId="4652592318748340050" fileName="DiffTemporaryModule.java" startLine="244" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule$DiffModuleContext" />
-    <unitInfo nodeId="4652592318748339860" fileName="DiffTemporaryModule.java" startLine="154" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule$DiffModuleScope" />
-    <unitInfo nodeId="4652592318748339915" fileName="DiffTemporaryModule.java" startLine="177" startPosition="0" endLine="243" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule$DiffSModelDescriptor" />
-    <unitInfo nodeId="4652592318748339723" fileName="DiffTemporaryModule.java" startLine="36" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule" />
+    <unitInfo nodeId="4652592318748340050" fileName="DiffTemporaryModule.java" startLine="252" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule$DiffModuleContext" />
+    <unitInfo nodeId="4652592318748339860" fileName="DiffTemporaryModule.java" startLine="162" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule$DiffModuleScope" />
+    <unitInfo nodeId="4652592318748339915" fileName="DiffTemporaryModule.java" startLine="185" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule$DiffSModelDescriptor" />
+    <unitInfo nodeId="4652592318748339723" fileName="DiffTemporaryModule.java" startLine="36" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule" />
   </root>
   <root nodeRef="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)/4652592318748340259">
     <nodeInfo nodeId="4652592318748340260" fileName="FoldingAreaButton.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroup" />
