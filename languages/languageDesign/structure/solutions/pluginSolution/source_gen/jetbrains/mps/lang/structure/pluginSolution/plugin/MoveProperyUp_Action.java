@@ -14,9 +14,9 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.refactoring.MoveUpDialog;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.refactoring.MoveUpDialog;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
@@ -81,7 +81,9 @@ public class MoveProperyUp_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<SNode> concept = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           concept.value = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("target")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
         }
@@ -94,8 +96,7 @@ public class MoveProperyUp_Action extends BaseAction {
       if (targetConcept == null) {
         return;
       }
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        @Override
+      modelAccess.runReadInEDT(new Runnable() {
         public void run() {
           SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
           if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {

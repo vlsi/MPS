@@ -106,6 +106,10 @@ public class MigratedToMethodAnnotation_Editor extends DefaultNodeEditor {
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_ykmn9g_a0b0a");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("method");
+      }
       return editorCell;
     }
   }

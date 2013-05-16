@@ -88,7 +88,7 @@ public class BaseQuickFixProvider implements QuickFixProvider {
       myQuickFixTaken = true;
       return quickFix;
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
       myQuickFixTaken = true;
       return null;
     }

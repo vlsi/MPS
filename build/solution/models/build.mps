@@ -4,13 +4,11 @@
   <language namespace="798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)" />
   <language namespace="0cf935df-4699-4e9c-a132-fa109541cba3(jetbrains.mps.build.mps)" />
   <language namespace="d5033cee-f632-44b6-b308-89d4fbde34ff(jetbrains.mps.build.startup)" />
-  <language namespace="a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)" />
   <import index="ffeo" modelUID="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" version="2" implicit="yes" />
   <import index="kdzh" modelUID="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" version="1" implicit="yes" />
   <import index="s7om" modelUID="r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)" version="-1" implicit="yes" />
-  <import index="tpih" modelUID="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" version="0" implicit="yes" />
   <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="7926701909975931624" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="mpsBootstrapCore" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsBootstrapCore.xml" />
@@ -15523,58 +15521,6 @@
           </node>
         </node>
       </node>
-      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="5875180246329134189" nodeInfo="ng">
-        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.bash" />
-        <property name="uuid" nameId="kdzh.322010710375892619" value="4a1e4a24-105b-44ed-959c-6586fc957db3" />
-        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
-        <node role="generator" roleId="kdzh.9200313594498201639" type="kdzh.BuildMps_Generator" typeId="kdzh.5507251971038816436" id="9200313594506461032" nodeInfo="ng">
-          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.bash#6382090206697067824" />
-          <property name="uuid" nameId="kdzh.322010710375892619" value="a9772ef0-5f51-48a7-8cb0-e217639912db" />
-          <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="2488570609612485684" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="2488570609612485683" nodeInfo="ng">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="2182758403694705590" resolveInfo="MPS.Core" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="2488570609612485686" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="2488570609612485685" nodeInfo="ng">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="2182758403694705599" resolveInfo="MPS.Editor" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="2488570609612485726" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="2488570609612485725" nodeInfo="ng">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8189062720279434723" resolveInfo="jetbrains.mps.gtext" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="7995564545160445511" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="7995564545160445512" nodeInfo="ng">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="8939513996048536584" resolveInfo="jetbrains.mps.runtime" />
-          </node>
-        </node>
-        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="8964634788539787268" nodeInfo="ng">
-          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="8524659923334108611" resolveInfo="mps_home" />
-          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8964634788539787269" nodeInfo="nn">
-            <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
-            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8964634788539787270" nodeInfo="nn">
-              <property name="head" nameId="3ior.8618885170173601779" value="mps-build" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8964634788539787271" nodeInfo="nn">
-                <property name="head" nameId="3ior.8618885170173601779" value="languages" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8964634788539787272" nodeInfo="nn">
-                  <property name="head" nameId="3ior.8618885170173601779" value="bash" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8964634788539787273" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.bash.mpl" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="7229589869652182814" nodeInfo="ng">
         <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.startup" />
@@ -15588,16 +15534,6 @@
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="1777692044379767935" nodeInfo="nn">
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="1777692044379767936" nodeInfo="ng">
             <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="5875180246328869238" resolveInfo="jetbrains.mps.core.xml" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="1777692044379767937" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="1777692044379767938" nodeInfo="ng">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="5875180246329134189" resolveInfo="jetbrains.mps.bash" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="1777692044379767939" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="1777692044379767940" nodeInfo="ng">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8189062720279434723" resolveInfo="jetbrains.mps.gtext" />
           </node>
         </node>
         <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="8964634788539787274" nodeInfo="ng">
@@ -23631,668 +23567,6 @@
       <property name="options" nameId="s7om.3885435385580582733" value="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" />
     </node>
   </root>
-  <root type="tpih.GDocument" typeId="tpih.1184639540818" id="716066598061903449" nodeInfo="ng">
-    <property name="extension" nameId="tpih.1184639664013" value="nsi" />
-    <property name="documentName" nameId="tpih.1184639635512" value="installer" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.data" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903450" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903451" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="#************************************ Definitions *********************************************************#" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903452" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903453" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define PRODUCT_NAME &quot;MPS&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903454" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903455" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define PRODUCT_VERSION &quot;$build$&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903456" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903457" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define PRODUCT_MAJOR_VERSION &quot;$version$&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903458" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903459" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define PRODUCT_PUBLISHER &quot;JetBrains&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903460" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903461" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define PRODUCT_WEB_SITE &quot;http://www.jetbrains.com/mps&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903462" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903463" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define APP_NAME &quot;JetBrains MPS $version$&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903464" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903465" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903466" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="#************************************ Registry ************************************************************#" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903467" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903468" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define PRODUCT_UNINST_KEY &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903469" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903470" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define PRODUCT_UNINST_ROOT_KEY &quot;HKLM&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903471" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903472" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903473" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="#************************************ Shortcuts ***********************************************************#" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903474" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903475" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define MAIN_MENU_FOLDER &quot;$SMPROGRAMS\${PRODUCT_NAME}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903476" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903477" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define PROGRAM_LINK &quot;${MAIN_MENU_FOLDER}\${APP_NAME}.lnk&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903478" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903479" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define WEB_SITE_LINK &quot;${MAIN_MENU_FOLDER}\${PRODUCT_NAME} Home Page.lnk&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903480" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903481" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define UNINSTALL_LINK &quot;${MAIN_MENU_FOLDER}\Uninstall ${APP_NAME}.lnk&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903482" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903483" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define DESKTOP_LINK &quot;$DESKTOP\${APP_NAME}.lnk&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903484" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903485" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define QL_LINK &quot;$QUICKLAUNCH\${APP_NAME}.lnk&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903486" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903487" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903488" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="#************************************ Include Headers *****************************************************#" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903489" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903490" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!include MUI.nsh" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903491" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903492" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903493" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="#************************************ Installation Properties *********************************************#" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903494" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903495" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Name &quot;${APP_NAME}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903496" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903497" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="OutFile &quot;" />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903498" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="${PRODUCT_VERSION}-" />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903499" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="windows.exe&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903500" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903501" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="InstallDir &quot;$PROGRAMFILES\" />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903502" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="${PRODUCT_PUBLISHER}\" />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903503" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="${PRODUCT_NAME}" />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903504" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value=" ${PRODUCT_MAJOR_VERSION}" />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903505" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903506" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903507" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="ShowInstDetails show" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903508" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903509" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="ShowUnInstDetails show" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903510" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903511" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define MUI_WELCOMEPAGE_TEXT &quot;This wizard will guide you through the installation of ${APP_NAME}" />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903512" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value=" (build ${PRODUCT_VERSION})" />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903513" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value=".\n\nClick Next to continue.&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903514" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903515" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define MUI_ICON &quot;installer.ico&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903516" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903517" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define MUI_UNICON &quot;uninstaller.ico&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903518" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903519" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!define MUI_COMPONENTSPAGE_NODESC" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903520" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903521" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903522" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="#************************************ Install *************************************************************#" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903523" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903524" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="; Welcome page" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903525" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903526" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!insertmacro MUI_PAGE_WELCOME" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903527" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903528" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="; License page" />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903529" nodeInfo="ng" />
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903530" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!insertmacro MUI_PAGE_LICENSE &quot;license.txt&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903531" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903532" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="; Directory page" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903533" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903534" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!insertmacro MUI_PAGE_DIRECTORY" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903535" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903536" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="; Components Page" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903537" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903538" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!insertmacro MUI_PAGE_COMPONENTS" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903539" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903540" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="; Instfiles page" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903541" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903542" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!insertmacro MUI_PAGE_INSTFILES" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903543" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903544" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="; Finish page" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903545" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903546" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!insertmacro MUI_PAGE_FINISH" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903547" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903548" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="; Uninstaller pages" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903549" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903550" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!insertmacro MUI_UNPAGE_INSTFILES" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903551" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903552" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="; Language files" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903553" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903554" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!insertmacro MUI_LANGUAGE &quot;English&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903555" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903556" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903557" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Section &quot;Main Application&quot; secMain" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903558" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903559" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903560" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="SectionIn RO" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903561" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903562" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903563" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="SetOutPath '$INSTDIR'" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903564" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903565" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903566" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!include install.nsh" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903567" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903568" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903569" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="WriteUninstaller &quot;$INSTDIR\Uninstall.exe&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903570" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903571" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="SectionEnd" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903572" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903573" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903574" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Section &quot;Start Menu Folder&quot; setStartMenuFolder" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903575" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903576" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903577" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="SetOutPath $INSTDIR" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903578" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903579" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903580" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="CreateDirectory &quot;${MAIN_MENU_FOLDER}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903581" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903582" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903583" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="CreateShortCut &quot;${PROGRAM_LINK}&quot; &quot;$INSTDIR\mps.bat" />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903584" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="&quot; &quot;&quot; &quot;$INSTDIR\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903585" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903586" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903587" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="WriteIniStr &quot;$INSTDIR\${PRODUCT_NAME}.url&quot; &quot;InternetShortcut&quot; &quot;URL&quot; &quot;${PRODUCT_WEB_SITE}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903588" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903589" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903590" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="CreateShortCut &quot;${WEB_SITE_LINK}&quot; &quot;$INSTDIR\${PRODUCT_NAME}.url&quot; &quot;&quot; &quot;$INSTDIR\homepage.ico&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903591" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903592" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903593" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="CreateShortCut &quot;${UNINSTALL_LINK}&quot; &quot;$INSTDIR\Uninstall.exe&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903594" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903595" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="SectionEnd" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903596" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903597" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903598" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Section &quot;Desktop Shortcut&quot; secDesktop" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903599" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903600" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903601" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="CreateShortCut &quot;${DESKTOP_LINK}&quot; &quot;$INSTDIR\mps.bat" />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903602" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="&quot; &quot;&quot; &quot;$INSTDIR\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903603" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903604" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="SectionEnd" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903605" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903606" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903607" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Section &quot;Quick Launch Shortcut&quot; secQuickLaunch" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903608" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903609" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903610" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="CreateShortCut &quot;${QL_LINK}&quot; &quot;$INSTDIR\mps.bat" />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903611" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="&quot; &quot;&quot; &quot;$INSTDIR\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903612" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903613" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="SectionEnd" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903614" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903615" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903616" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Section -Post" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903617" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903618" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903619" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;DisplayName&quot; &quot;${APP_NAME}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903620" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903621" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903622" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;UninstallString&quot; &quot;$INSTDIR\Uninstall.exe&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903623" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903624" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903625" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;DisplayVersion&quot; &quot;${PRODUCT_VERSION}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903626" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903627" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903628" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;URLInfoAbout&quot; &quot;${PRODUCT_WEB_SITE}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903629" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903630" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903631" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;Publisher&quot; &quot;${PRODUCT_PUBLISHER}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903632" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903633" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="SectionEnd" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903634" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903635" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903636" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Function .onInit" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903637" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903638" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="FunctionEnd" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903639" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903640" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903641" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Function .onInstSuccess" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903642" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903643" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="FunctionEnd" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903644" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903645" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903646" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="#************************************ Uninstall ***********************************************************#" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903647" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903648" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Function UN.onUninstSuccess" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903649" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903650" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903651" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="HideWindow" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903652" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903653" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903654" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="MessageBox MB_ICONINFORMATION|MB_OK &quot;${APP_NAME} was successfully uninstalled.&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903655" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903656" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="FunctionEnd" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903657" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903658" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903659" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Section -UN.Install" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903660" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903661" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903662" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="SectionIn RO" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903663" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903664" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903665" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Delete &quot;$INSTDIR\${PRODUCT_NAME}.url&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903666" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903667" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903668" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Delete &quot;${PROGRAM_LINK}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903669" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903670" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903671" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Delete &quot;${WEB_SITE_LINK}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903672" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903673" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903674" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Delete &quot;${UNINSTALL_LINK}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903675" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903676" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903677" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="RmDir  &quot;${MAIN_MENU_FOLDER}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903678" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903679" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903680" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Delete &quot;${QL_LINK}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903681" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903682" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903683" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Delete &quot;${DESKTOP_LINK}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903684" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903685" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903686" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="; delete Uninstaller" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903687" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903688" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903689" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Delete &quot;$INSTDIR\Uninstall.exe&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903690" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903691" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903692" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="!include uninstall.nsh" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903693" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903694" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903695" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="RmDir &quot;$INSTDIR&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903696" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903697" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903698" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="DeleteRegKey ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot;" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903699" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903700" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="SectionEnd" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GNewLine" typeId="tpih.1164413172275" id="716066598061903701" nodeInfo="ng" />
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903702" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903703" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Function UN.onInit" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903704" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903705" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903706" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="MessageBox MB_ICONQUESTION|MB_YESNO|MB_DEFBUTTON2 &quot;Are you sure you want to uninstall ${APP_NAME}?&quot; IDYES +2" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903707" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903708" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="    " />
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903709" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="Abort" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="716066598061903710" nodeInfo="ng">
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903711" nodeInfo="ng">
-        <property name="text" nameId="tpih.1164413036326" value="FunctionEnd" />
-      </node>
-    </node>
-    <node role="item" roleId="tpih.1184639733180" type="tpih.GText" typeId="tpih.1164412789837" id="716066598061903712" nodeInfo="ng">
-      <property name="text" nameId="tpih.1164413036326" value="    " />
-    </node>
-  </root>
   <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4197214709894135186" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="mpsObsolete" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsObsolete.xml" />
@@ -27210,6 +26484,58 @@
           </node>
         </node>
       </node>
+      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="5875180246329134189" nodeInfo="ng">
+        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.bash" />
+        <property name="uuid" nameId="kdzh.322010710375892619" value="4a1e4a24-105b-44ed-959c-6586fc957db3" />
+        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        <node role="generator" roleId="kdzh.9200313594498201639" type="kdzh.BuildMps_Generator" typeId="kdzh.5507251971038816436" id="9200313594506461032" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.bash#6382090206697067824" />
+          <property name="uuid" nameId="kdzh.322010710375892619" value="a9772ef0-5f51-48a7-8cb0-e217639912db" />
+          <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="2488570609612485684" nodeInfo="nn">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="2488570609612485683" nodeInfo="ng">
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="2182758403694705590" resolveInfo="MPS.Core" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="2488570609612485686" nodeInfo="nn">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="2488570609612485685" nodeInfo="ng">
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="2182758403694705599" resolveInfo="MPS.Editor" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="2488570609612485726" nodeInfo="nn">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="2488570609612485725" nodeInfo="ng">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8189062720279434723" resolveInfo="jetbrains.mps.gtext" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="7995564545160445511" nodeInfo="nn">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="7995564545160445512" nodeInfo="ng">
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="8939513996048536584" resolveInfo="jetbrains.mps.runtime" />
+          </node>
+        </node>
+        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="8964634788539787268" nodeInfo="ng">
+          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4416206207494300583" resolveInfo="mps_home" />
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8964634788539787269" nodeInfo="nn">
+            <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8964634788539787270" nodeInfo="nn">
+              <property name="head" nameId="3ior.8618885170173601779" value="mps-build-deprecated" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8964634788539787271" nodeInfo="nn">
+                <property name="head" nameId="3ior.8618885170173601779" value="languages" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8964634788539787272" nodeInfo="nn">
+                  <property name="head" nameId="3ior.8618885170173601779" value="bash" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8964634788539787273" nodeInfo="nn">
+                    <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.bash.mpl" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="4416206207494300554" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="xml" />
@@ -28434,6 +27760,338 @@
     <node role="plugins" roleId="3ior.6647099934206700656" type="kdzh.BuildMPSPlugin" typeId="kdzh.868032131020265945" id="618786790401842393" nodeInfo="ng" />
     <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="618786790403759049" nodeInfo="ng">
       <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
+    </node>
+  </root>
+  <root type="s7om.TextFile" typeId="s7om.1731640411964205180" id="1731640411968857441" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.data" />
+    <property name="name" nameId="tpck.1169194664001" value="installer.nsi" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867221" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="#**********************************************************************************************************#" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411972315662" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="#************************************ JetBrains MPS Installer Script **************************************#" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411972289677" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="#************************************ Generated by MPS ****************************************************#" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411972289796" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411972289323" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="#************************************ Definitions *********************************************************#" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867223" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define PRODUCT_NAME &quot;MPS&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867226" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define PRODUCT_VERSION &quot;$build$&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867230" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define PRODUCT_MAJOR_VERSION &quot;$version$&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867235" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define PRODUCT_PUBLISHER &quot;JetBrains&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867241" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define PRODUCT_WEB_SITE &quot;http://www.jetbrains.com/mps&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867248" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define APP_NAME &quot;JetBrains MPS $version$&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867256" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867265" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="#************************************ Registry ************************************************************#" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867275" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define PRODUCT_UNINST_KEY &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867308" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define PRODUCT_UNINST_ROOT_KEY &quot;HKLM&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867344" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867357" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="#************************************ Shortcuts ***********************************************************#" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867371" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define MAIN_MENU_FOLDER &quot;$SMPROGRAMS\${PRODUCT_NAME}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867386" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define PROGRAM_LINK &quot;${MAIN_MENU_FOLDER}\${APP_NAME}.lnk&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867402" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define WEB_SITE_LINK &quot;${MAIN_MENU_FOLDER}\${PRODUCT_NAME} Home Page.lnk&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867419" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define UNINSTALL_LINK &quot;${MAIN_MENU_FOLDER}\Uninstall ${APP_NAME}.lnk&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867437" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define DESKTOP_LINK &quot;$DESKTOP\${APP_NAME}.lnk&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867456" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define QL_LINK &quot;$QUICKLAUNCH\${APP_NAME}.lnk&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867476" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867497" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="#************************************ Include Headers *****************************************************#" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867519" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!include MUI.nsh" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867542" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867566" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="#************************************ Installation Properties *********************************************#" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867591" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="Name &quot;${APP_NAME}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968867621" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="OutFile &quot;${PRODUCT_VERSION}-windows.exe&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968886983" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="InstallDir &quot;$PROGRAMFILES\${PRODUCT_PUBLISHER}\${PRODUCT_NAME} ${PRODUCT_MAJOR_VERSION}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968896652" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="ShowInstDetails show" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968915965" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="ShowUnInstDetails show" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968925638" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define MUI_WELCOMEPAGE_TEXT &quot;This wizard will guide you through the installation of ${APP_NAME} (build ${PRODUCT_VERSION}).\n\nClick Next to continue.&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968935313" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define MUI_ICON &quot;installer.ico&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968944990" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define MUI_UNICON &quot;uninstaller.ico&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968954669" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!define MUI_COMPONENTSPAGE_NODESC" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968964350" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968964385" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="#************************************ Install *************************************************************#" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968983719" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="; Welcome page" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411968993406" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!insertmacro MUI_PAGE_WELCOME" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969003095" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="; License page" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969012786" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!insertmacro MUI_PAGE_LICENSE &quot;license.txt&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969022479" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="; Directory page" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969032174" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!insertmacro MUI_PAGE_DIRECTORY" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969041871" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="; Components Page" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969051570" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!insertmacro MUI_PAGE_COMPONENTS" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969061271" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="; Instfiles page" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969070974" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!insertmacro MUI_PAGE_INSTFILES" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969080679" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="; Finish page" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969090386" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!insertmacro MUI_PAGE_FINISH" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969100095" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="; Uninstaller pages" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969109806" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!insertmacro MUI_UNPAGE_INSTFILES" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969119519" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="; Language files" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969129234" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="!insertmacro MUI_LANGUAGE &quot;English&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969138951" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969139004" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="Section &quot;Main Application&quot; secMain" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969148725" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    SectionIn RO" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969158448" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    SetOutPath '$INSTDIR'" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969168173" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    !include install.nsh" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969177900" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    WriteUninstaller &quot;$INSTDIR\Uninstall.exe&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969187629" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="SectionEnd" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969207394" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969207454" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="Section &quot;Start Menu Folder&quot; setStartMenuFolder" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969217189" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    SetOutPath $INSTDIR" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969226926" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    CreateDirectory &quot;${MAIN_MENU_FOLDER}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969236665" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    CreateShortCut &quot;${PROGRAM_LINK}&quot; &quot;$INSTDIR\mps.bat&quot; &quot;&quot; &quot;$INSTDIR\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969246406" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    WriteIniStr &quot;$INSTDIR\${PRODUCT_NAME}.url&quot; &quot;InternetShortcut&quot; &quot;URL&quot; &quot;${PRODUCT_WEB_SITE}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969256149" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    CreateShortCut &quot;${WEB_SITE_LINK}&quot; &quot;$INSTDIR\${PRODUCT_NAME}.url&quot; &quot;&quot; &quot;$INSTDIR\homepage.ico&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969265894" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    CreateShortCut &quot;${UNINSTALL_LINK}&quot; &quot;$INSTDIR\Uninstall.exe&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969275641" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="SectionEnd" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969285390" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969285459" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="Section &quot;Desktop Shortcut&quot; secDesktop" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969304895" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    CreateShortCut &quot;${DESKTOP_LINK}&quot; &quot;$INSTDIR\mps.bat&quot; &quot;&quot; &quot;$INSTDIR\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969314650" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="SectionEnd" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969324407" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969324480" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="Section &quot;Quick Launch Shortcut&quot; secQuickLaunch" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969343928" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    CreateShortCut &quot;${QL_LINK}&quot; &quot;$INSTDIR\mps.bat&quot; &quot;&quot; &quot;$INSTDIR\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969353691" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="SectionEnd" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969363456" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969363533" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="Section -Post" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969382993" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;DisplayName&quot; &quot;${APP_NAME}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969392764" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;UninstallString&quot; &quot;$INSTDIR\Uninstall.exe&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969402537" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;DisplayVersion&quot; &quot;${PRODUCT_VERSION}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969412312" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;URLInfoAbout&quot; &quot;${PRODUCT_WEB_SITE}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969422089" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot; &quot;Publisher&quot; &quot;${PRODUCT_PUBLISHER}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969431868" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="SectionEnd" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969441649" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969441734" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="Function .onInit" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969461218" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="FunctionEnd" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969471005" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969471093" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="Function .onInstSuccess" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969490586" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="FunctionEnd" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969500379" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969500470" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="#************************************ Uninstall ***********************************************************#" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969519972" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="Function UN.onUninstSuccess" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969529771" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    HideWindow" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969539572" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    MessageBox MB_ICONINFORMATION|MB_OK &quot;${APP_NAME} was successfully uninstalled.&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969549375" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="FunctionEnd" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969559180" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969559277" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="Section -UN.Install" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969578797" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    SectionIn RO" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969588608" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    Delete &quot;$INSTDIR\${PRODUCT_NAME}.url&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969598421" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    Delete &quot;${PROGRAM_LINK}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969608236" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    Delete &quot;${WEB_SITE_LINK}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969618053" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    Delete &quot;${UNINSTALL_LINK}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969627872" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    RmDir  &quot;${MAIN_MENU_FOLDER}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969637693" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    Delete &quot;${QL_LINK}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969647516" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    Delete &quot;${DESKTOP_LINK}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969657341" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    ; delete Uninstaller" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969667168" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    Delete &quot;$INSTDIR\Uninstall.exe&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969676997" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    !include uninstall.nsh" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969686828" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    RmDir &quot;$INSTDIR&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969696661" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    DeleteRegKey ${PRODUCT_UNINST_ROOT_KEY} &quot;${PRODUCT_UNINST_KEY}&quot;" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969706496" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="SectionEnd" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969716333" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969716446" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="Function UN.onInit" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969736014" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    MessageBox MB_ICONQUESTION|MB_YESNO|MB_DEFBUTTON2 &quot;Are you sure you want to uninstall ${APP_NAME}?&quot; IDYES +2" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969745857" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="    Abort" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="1731640411969755702" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="FunctionEnd" />
     </node>
   </root>
 </model>

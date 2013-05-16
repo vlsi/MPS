@@ -41,6 +41,9 @@ public class PeriodConstant_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no count>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("count");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -112,6 +115,10 @@ public class PeriodConstant_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_pluralForm");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("dateTimeProperty");
+      }
       Style style = new StyleImpl();
       Dates_StyleSheet.applyDateProperty(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -166,6 +173,10 @@ public class PeriodConstant_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("dateTimeProperty");
+      }
       Style style = new StyleImpl();
       Dates_StyleSheet.applyDateProperty(style, editorCell);
       editorCell.getStyle().putAll(style);

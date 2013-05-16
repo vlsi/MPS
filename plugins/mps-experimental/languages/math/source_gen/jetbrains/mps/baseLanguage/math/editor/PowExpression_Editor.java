@@ -50,6 +50,9 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no base>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("base");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -67,6 +70,9 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no exponent>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("exponent");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
     editorCell.getStyle().putAll(style);

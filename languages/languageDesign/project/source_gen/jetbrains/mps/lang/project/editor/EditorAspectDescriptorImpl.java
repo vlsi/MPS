@@ -4,50 +4,55 @@ package jetbrains.mps.lang.project.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new DevKit_Editor());
+        return Collections.<ConceptEditor>singletonList(new DevKit_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new Generator_Editor());
+        return Collections.<ConceptEditor>singletonList(new Generator_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new Language_Editor());
+        return Collections.<ConceptEditor>singletonList(new Language_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new MappingConfigExternalRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new MappingConfigExternalRef_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new MappingConfigNormalRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new MappingConfigNormalRef_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new MappingConfigRefAllGlobal_Editor());
+        return Collections.<ConceptEditor>singletonList(new MappingConfigRefAllGlobal_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new MappingConfigRefAllLocal_Editor());
+        return Collections.<ConceptEditor>singletonList(new MappingConfigRefAllLocal_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new MappingConfigRefSet_Editor());
+        return Collections.<ConceptEditor>singletonList(new MappingConfigRefSet_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new MappingPriorityRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new MappingPriorityRule_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new ModelReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModelReference_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new ModelRoot_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModelRoot_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new ModuleDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModuleDependency_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new ModuleReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModuleReference_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new Solution_Editor());
+        return Collections.<ConceptEditor>singletonList(new Solution_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new SourcePath_Editor());
+        return Collections.<ConceptEditor>singletonList(new SourcePath_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new StubEntry_Editor());
+        return Collections.<ConceptEditor>singletonList(new StubEntry_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new StubSolution_Editor());
+        return Collections.<ConceptEditor>singletonList(new StubSolution_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -18,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateReferenceAntiquotation_Intention implements IntentionFactory {
@@ -59,16 +59,11 @@ public class CreateReferenceAntiquotation_Intention implements IntentionFactory 
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
+    if (!(selectedCell.isReferenceCell())) {
+      return false;
+    }
     SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
-    SNode linkNode = ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).getLinkDeclaration();
-    if (!(SNodeOperations.isInstanceOf(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
-      return false;
-    }
     if (contextNode == null) {
-      return false;
-    }
-    SNode link = SNodeOperations.cast(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-    if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
       return false;
     }
     return true;
@@ -99,19 +94,14 @@ public class CreateReferenceAntiquotation_Intention implements IntentionFactory 
 
     public void execute(final SNode node, final EditorContext editorContext) {
       EditorCell selectedCell = editorContext.getSelectedCell();
-      SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
-      SNode linkNode = ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).getLinkDeclaration();
-      if (!(SNodeOperations.isInstanceOf(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
+      if (!(selectedCell.isReferenceCell())) {
         return;
       }
+      SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
       if (contextNode == null) {
         return;
       }
-      SNode link = SNodeOperations.cast(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-      if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
-        return;
-      }
-      String role = SPropertyOperations.getString(link, "role");
+      String role = selectedCell.getRole();
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")) {
         SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
         assert attributedNode != null;

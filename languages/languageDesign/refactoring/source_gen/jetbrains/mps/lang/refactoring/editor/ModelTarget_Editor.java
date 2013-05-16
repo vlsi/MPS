@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class ModelTarget_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -38,8 +37,7 @@ public class ModelTarget_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_e6o8mx_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new RefactoringTarget(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.refactoring.editor.RefactoringTarget");
     return editorCell;
   }
 }

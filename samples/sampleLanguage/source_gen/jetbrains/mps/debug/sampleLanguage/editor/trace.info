@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:384e57ce-4d4c-47a2-afd9-84eefcee3d73(jetbrains.mps.debug.sampleLanguage.editor)/1816315258006256019">
     <nodeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -94,38 +94,40 @@
     <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="136" startPosition="29" endLine="137" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="137" startPosition="42" endLine="138" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="138" startPosition="26" endLine="139" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="139" startPosition="58" endLine="140" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="140" startPosition="73" endLine="141" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="141" startPosition="57" endLine="142" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="143" startPosition="35" endLine="144" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="144" startPosition="72" endLine="145" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="145" startPosition="78" endLine="146" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="147" startPosition="10" endLine="148" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="151" startPosition="88" endLine="152" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="152" startPosition="86" endLine="153" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="153" startPosition="47" endLine="154" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="154" startPosition="34" endLine="155" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="158" startPosition="88" endLine="159" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="159" startPosition="86" endLine="160" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="160" startPosition="47" endLine="161" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="161" startPosition="34" endLine="162" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="140" startPosition="39" endLine="141" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="142" startPosition="5" endLine="143" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="143" startPosition="73" endLine="144" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="144" startPosition="57" endLine="145" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="146" startPosition="35" endLine="147" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="147" startPosition="72" endLine="148" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="148" startPosition="78" endLine="149" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="150" startPosition="10" endLine="151" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="154" startPosition="88" endLine="155" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="155" startPosition="86" endLine="156" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="156" startPosition="47" endLine="157" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="157" startPosition="34" endLine="158" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="161" startPosition="88" endLine="162" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="162" startPosition="86" endLine="163" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="163" startPosition="47" endLine="164" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="164" startPosition="34" endLine="165" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="139" startPosition="58" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1816315258006256044" fileName="WannabeMethod_Editor.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_7k1qaw_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256057" fileName="WannabeMethod_Editor.java" startLine="49" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_7k1qaw_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256059" fileName="WannabeMethod_Editor.java" startLine="65" startPosition="59" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1816315258006256029" fileName="WannabeMethod_Editor.java" startLine="95" startPosition="59" endLine="101" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1816315258006256031" fileName="WannabeMethod_Editor.java" startLine="104" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_7k1qaw_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256037" fileName="WannabeMethod_Editor.java" startLine="111" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_7k1qaw_c1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="142" startPosition="59" endLine="148" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="151" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_7k1qaw_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="158" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_7k1qaw_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="145" startPosition="59" endLine="151" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="154" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_7k1qaw_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="161" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_7k1qaw_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="38" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_7k1qaw_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="118" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_7k1qaw_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="26" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_7k1qaw_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="74" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_7k1qaw_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="134" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_7k1qaw_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256059" fileName="WannabeMethod_Editor.java" startLine="56" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_7k1qaw_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256029" fileName="WannabeMethod_Editor.java" startLine="86" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_7k1qaw_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="134" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_7k1qaw_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" />
     <scopeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="29" startPosition="28" endLine="30" endPosition="83" />
     <scopeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="30" startPosition="83" endLine="31" endPosition="83" />
@@ -139,6 +141,7 @@
     <scopeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="81" startPosition="82" endLine="82" endPosition="82" />
     <scopeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="123" startPosition="40" endLine="124" endPosition="84" />
     <scopeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="124" startPosition="84" endLine="125" endPosition="81" />
+    <scopeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="140" startPosition="39" endLine="141" endPosition="33" />
     <scopeInfo nodeId="1816315258006256044" fileName="WannabeMethod_Editor.java" startLine="129" startPosition="91" endLine="131" endPosition="22">
       <varInfo nodeId="1816315258006256044" varName="editorCell" />
     </scopeInfo>
@@ -154,7 +157,7 @@
       <varInfo nodeId="1816315258006256029" varName="manager" />
       <varInfo nodeId="1816315258006256029" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="143" startPosition="35" endLine="146" endPosition="105">
+    <scopeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="146" startPosition="35" endLine="149" endPosition="105">
       <varInfo nodeId="1816315258006256048" varName="manager" />
       <varInfo nodeId="1816315258006256048" varName="opContext" />
     </scopeInfo>
@@ -171,10 +174,10 @@
       <varInfo nodeId="1816315258006256044" varName="editorContext" />
       <varInfo nodeId="1816315258006256044" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="151" startPosition="88" endLine="155" endPosition="22">
+    <scopeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="154" startPosition="88" endLine="158" endPosition="22">
       <varInfo nodeId="1816315258006256105" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="158" startPosition="88" endLine="162" endPosition="22">
+    <scopeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="161" startPosition="88" endLine="165" endPosition="22">
       <varInfo nodeId="1816315258006256107" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1816315258006256057" fileName="WannabeMethod_Editor.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
@@ -189,11 +192,11 @@
       <varInfo nodeId="1816315258006256037" varName="editorContext" />
       <varInfo nodeId="1816315258006256037" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="151" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="1816315258006256105" fileName="WannabeMethod_Editor.java" startLine="154" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="1816315258006256105" varName="editorContext" />
       <varInfo nodeId="1816315258006256105" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="158" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="1816315258006256107" fileName="WannabeMethod_Editor.java" startLine="161" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="1816315258006256107" varName="editorContext" />
       <varInfo nodeId="1816315258006256107" varName="node" />
     </scopeInfo>
@@ -228,12 +231,6 @@
       <varInfo nodeId="1816315258006256019" varName="editorContext" />
       <varInfo nodeId="1816315258006256019" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="134" startPosition="88" endLine="148" endPosition="22">
-      <varInfo nodeId="1816315258006256048" varName="attributeConcept" />
-      <varInfo nodeId="1816315258006256048" varName="attributeKind" />
-      <varInfo nodeId="1816315258006256048" varName="editorCell" />
-      <varInfo nodeId="1816315258006256048" varName="provider" />
-    </scopeInfo>
     <scopeInfo nodeId="1816315258006256059" fileName="WannabeMethod_Editor.java" startLine="56" startPosition="89" endLine="71" endPosition="22">
       <varInfo nodeId="1816315258006256059" varName="attributeConcept" />
       <varInfo nodeId="1816315258006256059" varName="attributeKind" />
@@ -246,10 +243,6 @@
       <varInfo nodeId="1816315258006256029" varName="editorCell" />
       <varInfo nodeId="1816315258006256029" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="134" startPosition="0" endLine="150" endPosition="0">
-      <varInfo nodeId="1816315258006256048" varName="editorContext" />
-      <varInfo nodeId="1816315258006256048" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1816315258006256059" fileName="WannabeMethod_Editor.java" startLine="56" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1816315258006256059" varName="editorContext" />
       <varInfo nodeId="1816315258006256059" varName="node" />
@@ -258,7 +251,17 @@
       <varInfo nodeId="1816315258006256029" varName="editorContext" />
       <varInfo nodeId="1816315258006256029" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="21" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethod_Editor" />
+    <scopeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="134" startPosition="88" endLine="151" endPosition="22">
+      <varInfo nodeId="1816315258006256048" varName="attributeConcept" />
+      <varInfo nodeId="1816315258006256048" varName="attributeKind" />
+      <varInfo nodeId="1816315258006256048" varName="editorCell" />
+      <varInfo nodeId="1816315258006256048" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="134" startPosition="0" endLine="153" endPosition="0">
+      <varInfo nodeId="1816315258006256048" varName="editorContext" />
+      <varInfo nodeId="1816315258006256048" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="21" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethod_Editor" />
   </root>
   <root nodeRef="r:384e57ce-4d4c-47a2-afd9-84eefcee3d73(jetbrains.mps.debug.sampleLanguage.editor)/1816315258006256063">
     <nodeInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -295,32 +298,35 @@
     <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="68" startPosition="33" endLine="69" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="69" startPosition="28" endLine="70" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="70" startPosition="60" endLine="71" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="71" startPosition="44" endLine="72" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="72" startPosition="75" endLine="73" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="73" startPosition="59" endLine="74" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="75" startPosition="37" endLine="76" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="76" startPosition="74" endLine="77" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="77" startPosition="80" endLine="78" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="79" startPosition="12" endLine="80" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="84" startPosition="88" endLine="85" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="85" startPosition="87" endLine="86" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="86" startPosition="47" endLine="87" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="87" startPosition="34" endLine="88" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="91" startPosition="88" endLine="92" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="92" startPosition="87" endLine="93" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="93" startPosition="47" endLine="94" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="94" startPosition="34" endLine="95" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="72" startPosition="41" endLine="73" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="73" startPosition="42" endLine="74" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="75" startPosition="7" endLine="76" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="76" startPosition="75" endLine="77" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="77" startPosition="59" endLine="78" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="79" startPosition="37" endLine="80" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="80" startPosition="74" endLine="81" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="81" startPosition="80" endLine="82" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="83" startPosition="12" endLine="84" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="88" startPosition="88" endLine="89" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="89" startPosition="87" endLine="90" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="90" startPosition="47" endLine="91" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="91" startPosition="34" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="95" startPosition="88" endLine="96" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="96" startPosition="87" endLine="97" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="97" startPosition="47" endLine="98" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="98" startPosition="34" endLine="99" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256069" fileName="WannabeMethodCall_Editor.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_6urdah_a0a#()V" />
     <nodeInfo nodeId="1816315258006256069" fileName="WannabeMethodCall_Editor.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256069" fileName="WannabeMethodCall_Editor.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="71" startPosition="44" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="42" startPosition="59" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="74" startPosition="61" endLine="80" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="84" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6urdah_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="91" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6urdah_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="78" startPosition="61" endLine="84" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="88" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6urdah_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="95" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6urdah_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="23" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_6urdah_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="33" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_6urdah_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="64" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_6urdah_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="64" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_6urdah_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" />
     <scopeInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="26" startPosition="28" endLine="27" endPosition="80" />
     <scopeInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="27" startPosition="80" endLine="28" endPosition="81" />
@@ -328,6 +334,7 @@
     <scopeInfo nodeId="1816315258006256069" fileName="WannabeMethodCall_Editor.java" startLine="52" startPosition="33" endLine="53" endPosition="14" />
     <scopeInfo nodeId="1816315258006256069" fileName="WannabeMethodCall_Editor.java" startLine="56" startPosition="69" endLine="57" endPosition="67" />
     <scopeInfo nodeId="1816315258006256069" fileName="WannabeMethodCall_Editor.java" startLine="60" startPosition="81" endLine="61" endPosition="66" />
+    <scopeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="72" startPosition="41" endLine="74" endPosition="37" />
     <scopeInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1816315258006256063" varName="editorContext" />
       <varInfo nodeId="1816315258006256063" varName="node" />
@@ -344,21 +351,21 @@
       <varInfo nodeId="1816315258006256069" varName="editorContext" />
       <varInfo nodeId="1816315258006256069" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="75" startPosition="37" endLine="78" endPosition="107">
+    <scopeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="79" startPosition="37" endLine="82" endPosition="107">
       <varInfo nodeId="1816315258006256071" varName="manager" />
       <varInfo nodeId="1816315258006256071" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="84" startPosition="88" endLine="88" endPosition="22">
+    <scopeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="88" startPosition="88" endLine="92" endPosition="22">
       <varInfo nodeId="1816315258006256073" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="91" startPosition="88" endLine="95" endPosition="22">
+    <scopeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="95" startPosition="88" endLine="99" endPosition="22">
       <varInfo nodeId="1816315258006256078" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="84" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="1816315258006256073" fileName="WannabeMethodCall_Editor.java" startLine="88" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="1816315258006256073" varName="editorContext" />
       <varInfo nodeId="1816315258006256073" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="91" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="1816315258006256078" fileName="WannabeMethodCall_Editor.java" startLine="95" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="1816315258006256078" varName="editorContext" />
       <varInfo nodeId="1816315258006256078" varName="node" />
     </scopeInfo>
@@ -375,22 +382,22 @@
       <varInfo nodeId="1816315258006256063" varName="editorCell" />
       <varInfo nodeId="1816315258006256063" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="64" startPosition="92" endLine="80" endPosition="24">
+    <scopeInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="33" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1816315258006256063" varName="editorContext" />
+      <varInfo nodeId="1816315258006256063" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="64" startPosition="92" endLine="84" endPosition="24">
       <varInfo nodeId="1816315258006256071" varName="attributeConcept" />
       <varInfo nodeId="1816315258006256071" varName="attributeKind" />
       <varInfo nodeId="1816315258006256071" varName="editorCell" />
       <varInfo nodeId="1816315258006256071" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="33" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="1816315258006256063" varName="editorContext" />
-      <varInfo nodeId="1816315258006256063" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="64" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="1816315258006256071" fileName="WannabeMethodCall_Editor.java" startLine="64" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="1816315258006256071" varName="editorContext" />
       <varInfo nodeId="1816315258006256071" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1816315258006256069" fileName="WannabeMethodCall_Editor.java" startLine="51" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethodCall_Editor$_Inline_6urdah_a0a" />
-    <unitInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="18" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethodCall_Editor" />
+    <unitInfo nodeId="1816315258006256069" fileName="WannabeMethodCall_Editor.java" startLine="51" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethodCall_Editor$_Inline_6urdah_a0a" />
+    <unitInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="18" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethodCall_Editor" />
   </root>
   <root nodeRef="r:384e57ce-4d4c-47a2-afd9-84eefcee3d73(jetbrains.mps.debug.sampleLanguage.editor)/1816315258006256081">
     <nodeInfo nodeId="1816315258006256081" fileName="WannabeClass_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

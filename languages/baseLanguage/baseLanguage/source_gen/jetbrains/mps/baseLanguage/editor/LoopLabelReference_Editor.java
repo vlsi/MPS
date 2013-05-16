@@ -68,6 +68,10 @@ public class LoopLabelReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("loopLabel");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
       editorCell.getStyle().putAll(style);

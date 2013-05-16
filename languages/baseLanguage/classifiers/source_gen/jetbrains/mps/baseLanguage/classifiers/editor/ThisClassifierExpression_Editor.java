@@ -93,6 +93,10 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("classifier");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
       editorCell.getStyle().putAll(style);

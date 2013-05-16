@@ -61,6 +61,9 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no throwable>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("throwable");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -99,6 +102,9 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no catchBody>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("catchBody");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.POSITION_CHILDREN, "indented");
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

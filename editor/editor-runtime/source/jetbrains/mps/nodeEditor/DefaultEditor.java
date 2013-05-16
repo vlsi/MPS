@@ -229,23 +229,28 @@ public class DefaultEditor extends DefaultNodeEditor {
       addLabel("<no target>");
       return;
     }
-    AbstractCellProvider inlineComponent = new MyAbstractCellProvider();
+    AbstractCellProvider inlineComponent = new MyAbstractCellProvider(role);
     inlineComponent.setSNode(referentNode);
 
     EditorCell cell = ((jetbrains.mps.nodeEditor.EditorContext) myEditorContext).createReferentCell(inlineComponent, mySNode, referentNode, role);
     setSemanticNodeToCells(cell, mySNode);
     if (cell.getRole() == null) {
       cell.setRole(role);
+      cell.setReferenceCell(true);
     }
     addCell(cell);
   }
 
   private void addRefCellForNonNullConcept(String role) {
     CellProviderWithRole provider = new RefCellCellProvider(mySNode, myEditorContext);
-    provider.setAuxiliaryCellProvider(new MyAbstractCellProvider());
+    provider.setAuxiliaryCellProvider(new MyAbstractCellProvider(role));
     provider.setRole(role);
     provider.setNoTargetText("<no " + role + ">");
     EditorCell editorCell = provider.createEditorCell(myEditorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole(role);
+      editorCell.setReferenceCell(true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     addCell(editorCell);
   }
@@ -497,9 +502,16 @@ public class DefaultEditor extends DefaultNodeEditor {
   }
 
   private static class MyAbstractCellProvider extends AbstractCellProvider {
+
+    private final String myRole;
+
+    public MyAbstractCellProvider(String role) {
+      myRole = role;
+    }
+
     @Override
     public EditorCell createEditorCell(EditorContext editorContext) {
-      return EditorCell_Property.create(editorContext, new ModelAccessor() {
+      EditorCell_Property result = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
           String name = getSNode().getName();
           if (name != null) {
@@ -515,6 +527,11 @@ public class DefaultEditor extends DefaultNodeEditor {
           return EqualUtil.equals(s, getText());
         }
       }, getSNode());
+      if (result.getRole() != null) {
+        result.setRole(myRole);
+      }
+
+      return result;
     }
   }
 }

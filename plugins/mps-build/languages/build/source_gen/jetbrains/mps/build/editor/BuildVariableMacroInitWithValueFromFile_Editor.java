@@ -76,6 +76,9 @@ public class BuildVariableMacroInitWithValueFromFile_Editor extends DefaultNodeE
     provider.setNoTargetText("<no fileName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("fileName");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

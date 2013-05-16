@@ -60,6 +60,9 @@ public class MathSymbolIndex_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no iterable>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("iterable");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

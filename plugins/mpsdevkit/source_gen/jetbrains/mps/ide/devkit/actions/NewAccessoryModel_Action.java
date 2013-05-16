@@ -19,11 +19,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -60,20 +58,16 @@ public class NewAccessoryModel_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
@@ -90,14 +84,15 @@ public class NewAccessoryModel_Action extends BaseAction {
       }
 
       final Language language = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
-      NewModelDialog d = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), language.getModuleName(), ((IOperationContext) MapSequence.fromMap(_params).get("context")), SModelStereotype.NONE, true);
+      NewModelDialog d = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), language.getModuleName(), SModelStereotype.NONE, true);
       d.show();
       final SModel result = d.getResult();
 
       if (result == null) {
         return;
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           LanguageDescriptor descriptor = language.getModuleDescriptor();
           descriptor.getAccessoryModels().add(result.getReference());

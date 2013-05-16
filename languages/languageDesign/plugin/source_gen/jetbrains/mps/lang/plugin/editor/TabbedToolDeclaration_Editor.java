@@ -349,6 +349,9 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no toolIcon>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("toolIcon");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -478,6 +481,9 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no toolInitBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("toolInitBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -502,6 +508,9 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no toolDisposeBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("toolDisposeBlock");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

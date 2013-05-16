@@ -10,18 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent;
-import jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent;
-import jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent;
-import jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector;
 
 public class LibraryFolder_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -59,8 +53,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_6uq7kh_a0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     Style style = new StyleImpl();
     PackagingStyles_StyleSheet.applyProjectComponent(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -73,6 +66,9 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no libraryName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("libraryName");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -100,6 +96,9 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no title>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("title");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -127,6 +126,9 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no sourcePath>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("sourcePath");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -139,20 +141,17 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_6uq7kh_g0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IncludeExcludeEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent");
     return editorCell;
   }
 
   private EditorCell createComponent_6uq7kh_h0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ConfigurationReferencesEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent");
     return editorCell;
   }
 
   private EditorCell createComponent_6uq7kh_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CompositecomponentEntriesEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent");
     return editorCell;
   }
 
@@ -166,14 +165,12 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_6uq7kh_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IncludeExcludeInInspector(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector");
     return editorCell;
   }
 
   private EditorCell createComponent_6uq7kh_b0_0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ConfigurationReferencesEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent");
     return editorCell;
   }
 }

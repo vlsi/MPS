@@ -111,6 +111,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -237,14 +238,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNode>>();
+  private WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNode>> myCellsToNodesToDependOnMap =
+      new WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNode>>();
 
-  private WeakHashMap<SNode, WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell>> myNodesToBigCellsMap = new WeakHashMap<SNode, WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell>>();
+  private WeakHashMap<SNode, WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell>> myNodesToBigCellsMap =
+      new WeakHashMap<SNode, WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell>>();
 
-  private WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNodeReference>> myCellsToRefTargetsToDependOnMap = new WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNodeReference>>();
-  private HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell_Property>>();
-  private HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>>();
-  private HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>> myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap = new HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>>();
+  private WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNodeReference>> myCellsToRefTargetsToDependOnMap =
+      new WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNodeReference>>();
+  private HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap =
+      new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell_Property>>();
+  private HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap =
+      new HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>>();
+  private HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>>
+      myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap =
+      new HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>>();
 
   private Set<EditorCell> myFoldedCells = new HashSet<EditorCell>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
@@ -1001,7 +1009,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (isDisposed()) return;
     clearModelDisposedTrace();
 
-    assert node == null || SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
+    assert node == null || node.getModel().getRepository() == null || SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
 
     if (myNode != null && notifiesCreation()) {
       notifyDisposal();
@@ -1174,6 +1182,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public IOperationContext getOperationContext() {
+    EditorContext editorContext = getEditorContext();
+    if (editorContext != null) return editorContext.getOperationContext();
+
     jetbrains.mps.project.Project p = ProjectHelper.getProject(myRepository);
     return p == null ? null : new ProjectOperationContext(p);
   }
@@ -1427,12 +1438,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     updated yet.
    */
   private boolean isInvalid() {
-    return isInvalidLightweight() ||
-        //!getEditedNode().isInRepository();
-        // this is a very dirty hack, remove ASAP. This is because we have the only one module, which is not in repository, and it was
-        // treated normally before - DiffTemporaryModule
-        (!getEditedNode().isInRepository() && !(getEditedNode().getModel().getModule().getClass().getName().equals(
-            "jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule")));
+    return isInvalidLightweight() || !SNodeUtil.isAccessible(getEditedNode(), myRepository);
   }
 
   /*
@@ -1502,7 +1508,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && myNode.isInRepository()) {
+    if (myNode != null && SNodeUtil.isAccessible(myNode, myRepository)) {
       assert myModelDescriptorsWithListener.contains(
           myNode.getModel()) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
     }
@@ -2813,6 +2819,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected void setEditorContext(EditorContext editorContext) {
+    assert editorContext == null || myRepository == editorContext.getRepository();
     myEditorContext = editorContext;
   }
 
@@ -2884,9 +2891,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       });
     }
     if (dataId.equals(MPSEditorDataKeys.CONTEXT_MODULE.getName())) {
-      IOperationContext operationContext = getOperationContext();
-      if (operationContext == null) return null;
-      return operationContext.getModule();
+      // todo: copy-paste
+      return runRead(new Computable() {
+        @Override
+        public Object compute() {
+          SNode node = getRootCell().getSNode();
+          if (node == null) return null;
+          SModel model = node.getModel();
+          if (model == null) return null; //removed model
+          return model.getModule();
+        }
+      });
     }
     if (dataId.equals(MPSEditorDataKeys.OPERATION_CONTEXT.getName())) return getOperationContext();
     if (dataId.equals(MPSEditorDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();

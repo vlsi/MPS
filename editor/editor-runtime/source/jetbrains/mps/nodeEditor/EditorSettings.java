@@ -169,7 +169,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
       try {
         l.settingsChanged();
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }

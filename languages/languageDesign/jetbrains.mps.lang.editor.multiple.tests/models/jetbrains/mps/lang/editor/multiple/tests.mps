@@ -912,7 +912,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6355695904178436203" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="MostSpecificEditor" />
-    <property name="description" nameId="tp5g.1883175908513350760" value="Editing MultipleEditorsTestMostSpecificChild child concept instance using editor applicable to both compact &amp; rich context hints. This editor is specified ina sub-language + there are &quot;less-specific&quot; editors specified for &quot;rich&quot; or &quot;compact&quot; hints" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Editing MultipleEditorsTestMostSpecificChild child concept instance using editor applicable to both compact &amp; rich context hints. This editor is specified in a sub-language + there are &quot;less-specific&quot; editors specified for &quot;rich&quot; or &quot;compact&quot; hints" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="jap4.MultipleEditorsTestMostSpecificRoot" typeId="jap4.8572332134193782048" id="6355695904178436590" nodeInfo="ng">
       <node role="mostSpecificChildren" roleId="jap4.8572332134193783193" type="jap4.MultipleEditorsTestMostSpecificChild" typeId="jap4.8572332134193783053" id="6355695904178436835" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="RichCompactChild" />

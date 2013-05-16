@@ -151,7 +151,7 @@ public class RefactoringFacade {
             result.value = new SearchResults();
           }
         } catch (Throwable t) {
-          myLog.error(t);
+          myLog.error(null, t);
         }
       }
     });

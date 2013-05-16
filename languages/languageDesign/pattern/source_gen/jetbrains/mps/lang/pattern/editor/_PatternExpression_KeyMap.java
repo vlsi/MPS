@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class _PatternExpression_KeyMap extends KeyMapImpl {
   public _PatternExpression_KeyMap() {
@@ -404,18 +403,13 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = selectedCell.getSNode();
-      SNode linkNode = ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).getLinkDeclaration();
-      if (!(SNodeOperations.isInstanceOf(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
-        return;
-      }
       if (contextNode == null) {
         return;
       }
-      SNode link = SNodeOperations.cast(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-      if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
+      if (!(selectedCell.isReferenceCell())) {
         return;
       }
-      String role = SPropertyOperations.getString(link, "role");
+      String role = selectedCell.getRole();
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")) {
         SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
         assert attributedNode != null;

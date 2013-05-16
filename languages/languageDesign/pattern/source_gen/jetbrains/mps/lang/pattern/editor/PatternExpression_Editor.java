@@ -55,6 +55,9 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no patternNode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("patternNode");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BRACKETS, false);
     style.set(StyleAttributes.DRAW_BORDER, true);

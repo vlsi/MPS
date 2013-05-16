@@ -99,6 +99,10 @@ public class ComponentInstance_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("componentDeclaration");
+      }
       Style style = new StyleImpl();
       Stylesheet_StyleSheet.applyComponent(style, editorCell);
       editorCell.getStyle().putAll(style);

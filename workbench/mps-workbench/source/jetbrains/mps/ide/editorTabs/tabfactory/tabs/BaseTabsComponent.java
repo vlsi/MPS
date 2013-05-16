@@ -249,7 +249,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected boolean isDisposedNode() {
     SNode node = myBaseNode.resolve(MPSModuleRepository.getInstance());
     if (node == null) return true;
-    assert node.isInRepository();
     return false;
   }
 

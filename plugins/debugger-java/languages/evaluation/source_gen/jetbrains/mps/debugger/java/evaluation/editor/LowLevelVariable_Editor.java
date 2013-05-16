@@ -79,6 +79,10 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_f5bzsg_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_f5bzsg_a0a0");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("type");
+      }
       editorCell.addEditorCell(this.createRefNode_f5bzsg_a0a0a(editorContext, node));
       return editorCell;
     }
@@ -89,6 +93,9 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
       provider.setNoTargetText("<no highType>");
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("highType");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -177,6 +184,10 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_f5bzsg_a0b2a(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_f5bzsg_a0b2a");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("type");
+      }
       editorCell.addEditorCell(this.createRefNode_f5bzsg_a0a1c0(editorContext, node));
       return editorCell;
     }
@@ -187,6 +198,9 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
       provider.setNoTargetText("<no lowType>");
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("lowType");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

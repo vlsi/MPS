@@ -44,7 +44,6 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -523,8 +522,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_7v1nzk_k1c0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AbstractConceptDeclaration_deprecatedStuff(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.structure.editor.AbstractConceptDeclaration_deprecatedStuff");
     return editorCell;
   }
 

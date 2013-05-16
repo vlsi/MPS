@@ -41,7 +41,7 @@ public class IFileUtils {
       out.write(bytes);
       return true;
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return false;
     } finally {
       FileUtil.closeFileSafe(in);

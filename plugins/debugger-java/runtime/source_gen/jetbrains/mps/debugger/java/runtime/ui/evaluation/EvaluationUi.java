@@ -82,7 +82,7 @@ public abstract class EvaluationUi extends JPanel {
             setFailure(e, null, model);
           } catch (Throwable t) {
             setFailure(t, null, model);
-            LOG.error(t);
+            LOG.error(null, t);
           }
         }
       }, thread);
@@ -90,12 +90,12 @@ public abstract class EvaluationUi extends JPanel {
       setFailure(e.getCause(), null, model);
     } catch (InvocationTargetEvaluationException e) {
       setFailure(e.getCause(), null, model);
-      LOG.error(e.getCause());
+      LOG.error(null, e.getCause());
     } catch (EvaluationException e) {
       setFailure(e, null, model);
     } catch (Throwable t) {
       setFailure(t, null, model);
-      LOG.error(t);
+      LOG.error(null, t);
     }
   }
 

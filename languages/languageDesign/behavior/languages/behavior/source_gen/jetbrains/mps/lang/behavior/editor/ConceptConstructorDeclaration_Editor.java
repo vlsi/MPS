@@ -18,8 +18,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.editor.ConceptFunction_Folded_Component;
 
 public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -77,6 +75,9 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no body>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("body");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -103,8 +104,7 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_6lfqqa_a1a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ConceptFunction_Folded_Component(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.ConceptFunction_Folded_Component");
     return editorCell;
   }
 }

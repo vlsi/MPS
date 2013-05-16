@@ -46,6 +46,9 @@ public class MatchRegexpOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no regexp>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("regexp");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

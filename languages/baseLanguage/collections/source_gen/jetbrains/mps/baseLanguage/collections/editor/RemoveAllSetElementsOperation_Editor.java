@@ -76,6 +76,9 @@ public class RemoveAllSetElementsOperation_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no argument>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("argument");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }

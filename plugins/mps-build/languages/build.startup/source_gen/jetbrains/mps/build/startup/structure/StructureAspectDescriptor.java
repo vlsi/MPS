@@ -20,11 +20,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.startup.structure.SimpleVmOptions").super_("jetbrains.mps.build.startup.structure.VmOptions").parents("jetbrains.mps.build.startup.structure.VmOptions").properties("options", "commented").create();
       case 3:
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.startup.structure.TextFile").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"lines"}, new boolean[]{true}).create();
+      case 4:
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.startup.structure.TextLine").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("text").create();
+      case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.startup.structure.VmOptions").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.build.startup.structure.ClassPathItem", "jetbrains.mps.build.startup.structure.MpsStartupScript", "jetbrains.mps.build.startup.structure.SimpleVmOptions", "jetbrains.mps.build.startup.structure.VmOptions"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.build.startup.structure.ClassPathItem", "jetbrains.mps.build.startup.structure.MpsStartupScript", "jetbrains.mps.build.startup.structure.SimpleVmOptions", "jetbrains.mps.build.startup.structure.TextFile", "jetbrains.mps.build.startup.structure.TextLine", "jetbrains.mps.build.startup.structure.VmOptions"};
 }

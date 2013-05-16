@@ -50,7 +50,7 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
     for (String jar : ListSequence.fromList(myWhatToDo.getLibraryJars())) {
       MapSequence.fromMap(libraries).put(jar, new File(jar));
     }
-    environment.init(myWhatToDo.getMacro(), false, libraries, myWhatToDo.getLogLevel(), new MpsWorker.MyMessageHandlerAppender());
+    environment.init(myWhatToDo.getMacro(), false, libraries, myWhatToDo.getLogLevel(), null);
     setEnvironment(environment);
 
     setupEnvironment();

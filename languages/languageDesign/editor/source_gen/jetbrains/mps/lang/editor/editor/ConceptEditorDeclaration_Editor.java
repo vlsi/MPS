@@ -186,6 +186,10 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("conceptDeclaration");
+      }
       Style style = new StyleImpl();
       SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
       style.set(StyleAttributes.DRAW_BORDER, true);
@@ -263,6 +267,9 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<choose cell model>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("cellModel");
+    }
     editorCell.addKeyMap(new EditorCellModel_KeyMap());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -347,6 +354,9 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<choose cell model>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("inspectedCellModel");
+    }
     editorCell.addKeyMap(new EditorCellModel_KeyMap());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

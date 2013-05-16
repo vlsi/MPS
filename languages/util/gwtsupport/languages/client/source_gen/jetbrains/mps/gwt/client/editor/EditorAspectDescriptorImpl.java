@@ -4,40 +4,45 @@ package jetbrains.mps.gwt.client.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new CaseSensitive_Editor());
+        return Collections.<ConceptEditor>singletonList(new CaseSensitive_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new DefaultExcludes_Editor());
+        return Collections.<ConceptEditor>singletonList(new DefaultExcludes_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new EntryPoint_Editor());
+        return Collections.<ConceptEditor>singletonList(new EntryPoint_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new Excludes_Editor());
+        return Collections.<ConceptEditor>singletonList(new Excludes_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new GWTModule_Editor());
+        return Collections.<ConceptEditor>singletonList(new GWTModule_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new Includes_Editor());
+        return Collections.<ConceptEditor>singletonList(new Includes_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new Inherits_Editor());
+        return Collections.<ConceptEditor>singletonList(new Inherits_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new Path_Editor());
+        return Collections.<ConceptEditor>singletonList(new Path_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new Pattern_Editor());
+        return Collections.<ConceptEditor>singletonList(new Pattern_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new PatternFilter_Editor());
+        return Collections.<ConceptEditor>singletonList(new PatternFilter_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new PatternHolder_Editor());
+        return Collections.<ConceptEditor>singletonList(new PatternHolder_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new RenameTo_Editor());
+        return Collections.<ConceptEditor>singletonList(new RenameTo_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

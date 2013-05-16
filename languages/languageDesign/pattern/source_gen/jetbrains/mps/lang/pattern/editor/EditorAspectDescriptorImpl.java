@@ -4,52 +4,57 @@ package jetbrains.mps.lang.pattern.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new ActionAsPattern_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionAsPattern_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new AsPattern_Editor());
+        return Collections.<ConceptEditor>singletonList(new AsPattern_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new GeneratorInternal_ChildDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ChildDescriptor_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new GeneratorInternal_PropertyDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_PropertyDescriptor_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new GeneratorInternal_ReferenceDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ReferenceDescriptor_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new InsertAfterPosition_Editor());
+        return Collections.<ConceptEditor>singletonList(new InsertAfterPosition_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new InsertBeforePosition_Editor());
+        return Collections.<ConceptEditor>singletonList(new InsertBeforePosition_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new LinkPatternVariableDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new LinkPatternVariableDeclaration_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new ListPattern_Editor());
+        return Collections.<ConceptEditor>singletonList(new ListPattern_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new OrPattern_Editor());
+        return Collections.<ConceptEditor>singletonList(new OrPattern_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new OrPatternClause_Editor());
+        return Collections.<ConceptEditor>singletonList(new OrPatternClause_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new OrPatternVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new OrPatternVariableReference_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new Pattern_Editor());
+        return Collections.<ConceptEditor>singletonList(new Pattern_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new PatternExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new PatternExpression_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new PatternVariableDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new PatternVariableDeclaration_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new PatternVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new PatternVariableReference_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new PropertyPatternVariableDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableDeclaration_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new WildcardPattern_Editor());
+        return Collections.<ConceptEditor>singletonList(new WildcardPattern_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

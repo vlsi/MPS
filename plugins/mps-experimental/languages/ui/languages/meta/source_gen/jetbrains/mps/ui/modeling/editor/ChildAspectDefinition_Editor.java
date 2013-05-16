@@ -51,6 +51,9 @@ public class ChildAspectDefinition_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no aspectType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("aspectType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

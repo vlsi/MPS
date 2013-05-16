@@ -28,8 +28,6 @@ import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments;
 
 public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -89,6 +87,10 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("concept");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -154,6 +156,10 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("baseMethodDeclaration");
+      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyMPSMethodCall(style, editorCell);
       style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
@@ -193,8 +199,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_fn54i1_d0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IMethodCall_actualArguments(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     return editorCell;
   }
 }

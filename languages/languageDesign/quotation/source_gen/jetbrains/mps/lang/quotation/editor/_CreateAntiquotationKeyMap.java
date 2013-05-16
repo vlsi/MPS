@@ -190,18 +190,13 @@ public class _CreateAntiquotationKeyMap extends KeyMapImpl {
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
-      SNode linkNode = ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).getLinkDeclaration();
-      if (!(SNodeOperations.isInstanceOf(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
-        return;
-      }
       if (contextNode == null) {
         return;
       }
-      SNode link = SNodeOperations.cast(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-      if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
+      if (!(selectedCell.isReferenceCell())) {
         return;
       }
-      String role = SPropertyOperations.getString(link, "role");
+      String role = selectedCell.getRole();
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")) {
         SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
         assert attributedNode != null;

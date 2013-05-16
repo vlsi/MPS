@@ -42,14 +42,14 @@ public class TypesEditorChecker extends AbstractTypesystemEditorChecker {
             myMessagesChanged = true;
             context.checkIfNotChecked(rootNode, false);
           } catch (Throwable t) {
-            LOG.error(t);
+            LOG.error(null, t);
             typesComponent.setCheckedTypesystem();
             return;
           }
         }
 
         // highlight nodes with errors
-        collectMessagesForNodesWithErrors(context, editorContext, messages);
+        collectMessagesForNodesWithErrors(context, editorContext, messages, true);
       }
     });
   }

@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="drfk18s1nd0xrf15opvkwusronyqkze">
   <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" hash="exlooapenc0d8feyx607g3wz2f687nh" />
-  <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" hash="-9mn32015og8xdca2di4flj1zg7zci5j" />
-  <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="-3dj8w0ev6pth7mse3vaq6nz8kvqmu6r" />
+  <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" hash="-5vsqpq2pjztpu6r1cwgci4s1y3sjhhh" />
   <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" hash="-7fv7lx077z5fz1vtlpwkqm1t2iju72m" />
   <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
-  <dep model="r:9eaefcec-a5af-4365-b04c-b6940eebe416(jetbrains.mps.build.startup.generator.template.main@generator)" hash="-dczj4zkwl18d4njrv4uj2hd97o8b1ly" />
-  <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
-  <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" hash="e1aftwva2wqq2p2lda0m6nhpb0mjboc" />
+  <dep model="r:9eaefcec-a5af-4365-b04c-b6940eebe416(jetbrains.mps.build.startup.generator.template.main@generator)" hash="-4hulncg3juy290mmx4ahjzww3d3mkpz" />
   <common hash="3xjd6czgjqbhmm4ykr5d64wx2v9v96b" />
   <source id="3885435385580582779" name="mps" hash="2fovyq1zxxi06ahcec6m4rbegmbf9nu">
-    <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <dep model="r:9eaefcec-a5af-4365-b04c-b6940eebe416(jetbrains.mps.build.startup.generator.template.main@generator)" />
-    <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
-    <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
     <file name="Info.plist.xml" />
     <file name="mps.bat" />
     <file name="mps.sh" />

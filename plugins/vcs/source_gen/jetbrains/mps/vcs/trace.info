@@ -21,7 +21,7 @@
     <nodeInfo nodeId="3613324658897711615" fileName="MPSVcsManager.java" startLine="79" startPosition="33" endLine="80" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3613324658897711617" fileName="MPSVcsManager.java" startLine="81" startPosition="5" endLine="82" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3613324658897711634" fileName="MPSVcsManager.java" startLine="83" startPosition="9" endLine="84" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711626" fileName="MPSVcsManager.java" startLine="85" startPosition="30" endLine="86" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711626" fileName="MPSVcsManager.java" startLine="85" startPosition="30" endLine="86" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3613324658897711644" fileName="MPSVcsManager.java" startLine="87" startPosition="5" endLine="88" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5015601397717990845" fileName="MPSVcsManager.java" startLine="92" startPosition="31" endLine="93" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7860944453394967816" fileName="MPSVcsManager.java" startLine="94" startPosition="88" endLine="95" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -122,10 +122,10 @@
     <scopeInfo nodeId="3613324658897711586" fileName="MPSVcsManager.java" startLine="73" startPosition="22" endLine="74" endPosition="19" />
     <scopeInfo nodeId="3613324658897711614" fileName="MPSVcsManager.java" startLine="79" startPosition="33" endLine="80" endPosition="19" />
     <scopeInfo nodeId="3613324658897711633" fileName="MPSVcsManager.java" startLine="83" startPosition="9" endLine="84" endPosition="125" />
-    <scopeInfo nodeId="3613324658897711624" fileName="MPSVcsManager.java" startLine="85" startPosition="0" endLine="86" endPosition="19">
+    <scopeInfo nodeId="3613324658897711624" fileName="MPSVcsManager.java" startLine="85" startPosition="0" endLine="86" endPosition="25">
       <varInfo nodeId="3613324658897711631" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711625" fileName="MPSVcsManager.java" startLine="85" startPosition="30" endLine="86" endPosition="19" />
+    <scopeInfo nodeId="3613324658897711625" fileName="MPSVcsManager.java" startLine="85" startPosition="30" endLine="86" endPosition="25" />
     <scopeInfo nodeId="7860944453394967333" fileName="MPSVcsManager.java" startLine="94" startPosition="88" endLine="95" endPosition="13" />
     <scopeInfo nodeId="7794712048471487318" fileName="MPSVcsManager.java" startLine="101" startPosition="45" endLine="102" endPosition="59" />
     <scopeInfo nodeId="5678297231090798652" fileName="MPSVcsManager.java" startLine="106" startPosition="40" endLine="107" endPosition="58" />

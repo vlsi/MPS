@@ -68,6 +68,10 @@ public class DurationTypeReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("durationType");
+      }
       Style style = new StyleImpl();
       Dates_StyleSheet.applyDateProperty(style, editorCell);
       editorCell.getStyle().putAll(style);

@@ -121,7 +121,7 @@ public class GenerateTaskFilesCreationTest {
   }
 
   private void assertGeneratorGenerated(String projectName, String languageName, File destdir) {
-    File queriesGeneratedFile = new File(getLanguageSourceFolderPath(destdir, projectName, languageName)
+    File queriesGeneratedFile = new File(getGeneratorSourceFolderPath(destdir, projectName, languageName)
       + "generator" + File.separator
       + "template" + File.separator
       + "main" + File.separator
@@ -175,6 +175,11 @@ public class GenerateTaskFilesCreationTest {
 
   private String getLanguageSourceFolderPath(File destdir, String projectName, String languageName) {
     return getLanguagePath(destdir, projectName, languageName) + File.separator
+      + "source_gen" + File.separator + languageName + File.separator;
+  }
+
+  private String getGeneratorSourceFolderPath(File destdir, String projectName, String languageName) {
+    return getLanguagePath(destdir, projectName, languageName) + File.separator + "generator" + File.separator
       + "source_gen" + File.separator + languageName + File.separator;
   }
 

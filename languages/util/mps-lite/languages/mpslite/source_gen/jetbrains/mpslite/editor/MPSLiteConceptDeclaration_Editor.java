@@ -128,6 +128,9 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no extends>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("extends");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -162,6 +165,9 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no lineList>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("lineList");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

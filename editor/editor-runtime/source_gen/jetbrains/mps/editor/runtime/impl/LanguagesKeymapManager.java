@@ -97,7 +97,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
             }
           }
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(null, t);
         }
       }
     } else {

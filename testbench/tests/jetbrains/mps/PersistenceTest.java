@@ -71,7 +71,7 @@ public class PersistenceTest extends BaseMPSTest {
               public void run() {
                 try {
                   DefaultSModelDescriptor testModel = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
-                  assertTrue(testModel.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
+                  assertEquals(START_PERSISTENCE_TEST_VERSION, testModel.getPersistenceVersion());
                   SModel model = testModel;
                   for (int i = START_PERSISTENCE_TEST_VERSION; i <= ModelPersistence.LAST_VERSION; ++i) {
                     try { // errors about not found attributes are expected for old models
@@ -122,7 +122,7 @@ public class PersistenceTest extends BaseMPSTest {
                     public DefaultSModelDescriptor compute() {
                       DefaultSModelDescriptor modelDescr = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
                       modelDescr.reloadFromSource();   // no way to remove model from repository, so reloading
-                      assertTrue(modelDescr.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
+                      assertEquals(START_PERSISTENCE_TEST_VERSION, modelDescr.getPersistenceVersion());
                       return modelDescr;
                     }
                   });
@@ -220,10 +220,10 @@ public class PersistenceTest extends BaseMPSTest {
         modelDescriptor.reloadFromSource();
       } catch (ModelReadException e) {
         // This hardly can happend, unreadable model should be already filtered out
-        LOG.error(e);
+        LOG.error(null, e);
         fail();
       } catch (IOException e) {
-        LOG.error(e);
+        LOG.error(null, e);
         fail();
       }
     }

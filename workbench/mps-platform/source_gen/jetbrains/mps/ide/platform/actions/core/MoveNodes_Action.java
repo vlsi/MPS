@@ -17,10 +17,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -88,12 +88,14 @@ public class MoveNodes_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<SModel> targetModelDescriptor = new Wrappers._T<SModel>();
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
 
-      ModelAccess.instance().runReadAction(new Runnable() {
+      modelAccess.runReadAction(new Runnable() {
         public void run() {
           targetModelDescriptor.value = SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first());
         }
       });
+
       final Object newLocation = MoveNodesDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), targetModelDescriptor.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {
         @Override
         public boolean check(Object selectedObject, SModel model) {
@@ -103,7 +105,8 @@ public class MoveNodes_Action extends BaseAction {
       if (newLocation == null) {
         return;
       }
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+
+      modelAccess.runReadInEDT(new Runnable() {
         @Override
         public void run() {
           for (SNode n : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target")))) {

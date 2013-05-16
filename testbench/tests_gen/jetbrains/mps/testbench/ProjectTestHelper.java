@@ -118,8 +118,6 @@ public class ProjectTestHelper {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
     Testbench.initLibs();
-    Testbench.makeAll();
-    Testbench.reloadAll();
     boolean isParallel = System.getProperty("parallel.generation") != null && Boolean.parseBoolean(System.getProperty("parallel.generation"));
     GenerationSettings.getInstance().setParallelGenerator(isParallel);
     GenerationSettings.getInstance().setStrictMode(isParallel);
@@ -382,7 +380,7 @@ public class ProjectTestHelper {
           if (msg.getException() != null) {
             StringWriter writer = new StringWriter();
             msg.getException().printStackTrace(new PrintWriter(writer));
-            myGenerationErrors.add(writer.getBuffer().toString());
+            myGenerationErrors.add(msg.getText() + ": " + writer.getBuffer().toString());
           } else {
             myGenerationErrors.add(msg.getText());
           }

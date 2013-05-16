@@ -248,36 +248,6 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myNode;
   }
 
-  @Override
-  public SNode getSNodeWRTReference() {
-    SNode target = getStyle().get(StyleAttributes.NAVIGATABLE_NODE);
-    if (target != null) {
-      return target;
-    }
-    SNode node = getSNode();
-    SNode operationNode = null;
-    SNode linkDeclaration = SModelUtil.getGenuineLinkDeclaration(getLinkDeclaration());
-    if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
-      SNode referentNode = node.getReferenceTarget(SModelUtil.getLinkDeclarationRole(linkDeclaration));
-      if (referentNode != null) {
-        operationNode = referentNode;
-      }
-    }
-
-    if (operationNode == null) operationNode = node;
-    return operationNode;
-  }
-
-  @Override
-  public String getCellRole() {
-    SNode linkDeclaration = getLinkDeclaration();
-    if (linkDeclaration != null) {
-      return SModelUtil.getGenuineLinkRole(linkDeclaration);
-    } else {//try legacy technique
-      return getRole();
-    }
-  }
-
   public final void setSNode(SNode node) {
     myNode = node;
   }
@@ -398,6 +368,10 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public String getRole() {
+    String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
+    if (role != null) {
+      return role;
+    }
     return myRole;
   }
 
@@ -429,11 +403,6 @@ public abstract class EditorCell_Basic implements EditorCell {
       return ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role);
     }
     return myLinkDeclarationPointer != null ? myLinkDeclarationPointer.resolve(MPSModuleRepository.getInstance()) : null;
-  }
-
-  @Override
-  public boolean isReferenceCell() {
-    return myIsReferenceCell;
   }
 
   @Override
@@ -704,6 +673,15 @@ public abstract class EditorCell_Basic implements EditorCell {
   @Override
   public boolean isBig() {
     return myBig;
+  }
+
+  public void setReferenceCell(boolean isReference) {
+    myIsReferenceCell = isReference;
+  }
+
+  @Override
+  public boolean isReferenceCell() {
+    return myIsReferenceCell;
   }
 
   @Override

@@ -48,6 +48,9 @@ public class MergeNodeWithAnotherNodeExpression_Editor extends DefaultNodeEditor
     provider.setNoTargetText("<no whatToMove>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("whatToMove");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -75,6 +78,9 @@ public class MergeNodeWithAnotherNodeExpression_Editor extends DefaultNodeEditor
     provider.setNoTargetText("<no destination>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("destination");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

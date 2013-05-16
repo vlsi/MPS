@@ -105,6 +105,10 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("conceptDeclaration");
+      }
       Style style = new StyleImpl();
       SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -174,6 +178,10 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("linkDeclaration");
+      }
       Style style = new StyleImpl();
       SharedStyles_StyleSheet.applyReferenceOnConceptualFeature(style, editorCell);
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

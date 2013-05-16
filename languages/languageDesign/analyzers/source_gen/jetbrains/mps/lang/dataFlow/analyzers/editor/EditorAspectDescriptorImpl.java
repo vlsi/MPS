@@ -4,46 +4,51 @@ package jetbrains.mps.lang.dataFlow.analyzers.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AnalysisDirection_Editor());
+        return Collections.<ConceptEditor>singletonList(new AnalysisDirection_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new Analyzer_Editor());
+        return Collections.<ConceptEditor>singletonList(new Analyzer_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new AnalyzerRunnerAnalyzeOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new AnalyzerRunnerAnalyzeOperation_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new AnalyzerRunnerCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new AnalyzerRunnerCreator_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new ApplicableNodeReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ApplicableNodeReference_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new ConceptCondition_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptCondition_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new EmitInstruction_Editor());
+        return Collections.<ConceptEditor>singletonList(new EmitInstruction_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new InsertPosition_Editor());
+        return Collections.<ConceptEditor>singletonList(new InsertPosition_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new Instruction_Editor());
+        return Collections.<ConceptEditor>singletonList(new Instruction_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new InstructionParameter_Editor());
+        return Collections.<ConceptEditor>singletonList(new InstructionParameter_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new InstructionReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new InstructionReference_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new IsOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new IsOperation_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new PatternCondition_Editor());
+        return Collections.<ConceptEditor>singletonList(new PatternCondition_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new Rule_Editor());
+        return Collections.<ConceptEditor>singletonList(new Rule_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new RuleReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new RuleReference_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

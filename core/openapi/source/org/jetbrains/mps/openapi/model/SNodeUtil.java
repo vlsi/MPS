@@ -32,6 +32,8 @@ public class SNodeUtil {
    * Returns whether the given node belongs to the repository (or to one of its parent repositories).
    */
   public static boolean isAccessible(SNode node, SRepository inRepository) {
+    inRepository.getModelAccess().checkReadAccess();
+
     SModel model = node.getModel();
     if (model == null) return false;
 
@@ -99,8 +101,7 @@ public class SNodeUtil {
       if (role != null) {
         nameText = '"' + role + '"';
       } else {
-        boolean linkDecl = jetbrains.mps.smodel.SNodeUtil.concept_LinkDeclaration.equals(node.getConcept().getId());
-        nameText = linkDecl ? "<no role>" : "<no name>";
+        nameText = "<no ref>";
       }
 
       nameText = nameText + "[" + node.getNodeId() + "]";

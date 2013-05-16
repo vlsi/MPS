@@ -4,324 +4,410 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AbstractClassifierReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractClassifierReference_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new AbstractCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractCreator_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new AbstractOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractOperation_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new AdditionalForLoopVariable_Editor());
+        return Collections.<ConceptEditor>singletonList(new AdditionalForLoopVariable_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new Annotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new Annotation_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new AnnotationInstance_Editor());
+        return Collections.<ConceptEditor>singletonList(new AnnotationInstance_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new AnnotationInstanceExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new AnnotationInstanceExpression_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new AnnotationInstanceValue_Editor());
+        return Collections.<ConceptEditor>singletonList(new AnnotationInstanceValue_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new AnnotationMethodDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new AnnotationMethodDeclaration_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new AnonymousClass_Editor());
+        return Collections.<ConceptEditor>singletonList(new AnonymousClass_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new AnonymousClassCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new AnonymousClassCreator_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new ArrayAccessExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArrayAccessExpression_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new ArrayClassExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArrayClassExpression_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new ArrayCloneOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArrayCloneOperation_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new ArrayCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArrayCreator_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new ArrayCreatorWithInitializer_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArrayCreatorWithInitializer_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new ArrayLengthOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArrayLengthOperation_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new ArrayLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArrayLiteral_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new ArrayType_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArrayType_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new AsExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new AsExpression_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new AssertStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new AssertStatement_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new BLBottomType_Editor());
+        return Collections.<ConceptEditor>singletonList(new BLBottomType_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new BaseAssignmentExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseAssignmentExpression_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new BaseVariableDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseVariableDeclaration_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new BaseVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new BaseVariableReference_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new BinaryOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new BinaryOperation_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new BitwiseNotExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new BitwiseNotExpression_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new BlockStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new BlockStatement_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new BooleanConstant_Editor());
+        return Collections.<ConceptEditor>singletonList(new BooleanConstant_Editor());
       case 29:
-        return Collections.<EditorAspect>singletonList(new BreakStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new BreakStatement_Editor());
       case 30:
-        return Collections.<EditorAspect>singletonList(new CastExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new CastExpression_Editor());
       case 31:
-        return Collections.<EditorAspect>singletonList(new CatchClause_Editor());
+        return Collections.<ConceptEditor>singletonList(new CatchClause_Editor());
       case 32:
-        return Collections.<EditorAspect>singletonList(new CharConstant_Editor());
+        return Collections.<ConceptEditor>singletonList(new CharConstant_Editor());
       case 33:
-        return Collections.<EditorAspect>singletonList(new ClassConcept_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClassConcept_Editor());
       case 34:
-        return Collections.<EditorAspect>singletonList(new ClassCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClassCreator_Editor());
       case 35:
-        return Collections.<EditorAspect>singletonList(new ClassifierClassExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClassifierClassExpression_Editor());
       case 36:
-        return Collections.<EditorAspect>singletonList(new ClassifierType_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClassifierType_Editor());
       case 37:
-        return Collections.<EditorAspect>singletonList(new ClosureParameter_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClosureParameter_Editor());
       case 38:
-        return Collections.<EditorAspect>singletonList(new ClosureParameterReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClosureParameterReference_Editor());
       case 39:
-        return Collections.<EditorAspect>singletonList(new CommentedStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommentedStatement_Editor());
       case 40:
-        return Collections.<EditorAspect>singletonList(new CommentedStatementsBlock_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommentedStatementsBlock_Editor());
       case 41:
-        return Collections.<EditorAspect>singletonList(new ConceptFunction_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptFunction_Editor());
       case 42:
-        return Collections.<EditorAspect>singletonList(new ConceptFunctionParameter_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptFunctionParameter_Editor());
       case 43:
-        return Collections.<EditorAspect>singletonList(new ConstructorDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConstructorDeclaration_Editor());
       case 44:
-        return Collections.<EditorAspect>singletonList(new ContinueStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContinueStatement_Editor());
       case 45:
-        return Collections.<EditorAspect>singletonList(new CustomPropertyImplementation_Editor());
+        return Collections.<ConceptEditor>singletonList(new CustomPropertyImplementation_Editor());
       case 46:
-        return Collections.<EditorAspect>singletonList(new DefaultClassCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new DefaultClassCreator_Editor());
       case 47:
-        return Collections.<EditorAspect>singletonList(new DefaultGetAccessor_Editor());
+        return Collections.<ConceptEditor>singletonList(new DefaultGetAccessor_Editor());
       case 48:
-        return Collections.<EditorAspect>singletonList(new DefaultPropertyImplementation_Editor());
+        return Collections.<ConceptEditor>singletonList(new DefaultPropertyImplementation_Editor());
       case 49:
-        return Collections.<EditorAspect>singletonList(new DefaultSetAccessor_Editor());
+        return Collections.<ConceptEditor>singletonList(new DefaultSetAccessor_Editor());
       case 50:
-        return Collections.<EditorAspect>singletonList(new DimensionExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new DimensionExpression_Editor());
       case 51:
-        return Collections.<EditorAspect>singletonList(new DoWhileStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new DoWhileStatement_Editor());
       case 52:
-        return Collections.<EditorAspect>singletonList(new DotExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new DotExpression_Editor());
       case 53:
-        return Collections.<EditorAspect>singletonList(new ElsifClause_Editor());
+        return Collections.<ConceptEditor>singletonList(new ElsifClause_Editor());
       case 54:
-        return Collections.<EditorAspect>singletonList(new EnumClass_Editor());
+        return Collections.<ConceptEditor>singletonList(new EnumClass_Editor());
       case 55:
-        return Collections.<EditorAspect>singletonList(new EnumConstantDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new EnumConstantDeclaration_Editor());
       case 56:
-        return Collections.<EditorAspect>singletonList(new EnumConstantReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new EnumConstantReference_Editor());
       case 57:
-        return Collections.<EditorAspect>singletonList(new EnumValueOfExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new EnumValueOfExpression_Editor());
       case 58:
-        return Collections.<EditorAspect>singletonList(new EnumValuesExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new EnumValuesExpression_Editor());
       case 59:
-        return Collections.<EditorAspect>singletonList(new EscapeOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new EscapeOperation_Editor());
       case 60:
-        return Collections.<EditorAspect>singletonList(new Expression_Editor());
+        return Collections.<ConceptEditor>singletonList(new Expression_Editor());
       case 61:
-        return Collections.<EditorAspect>singletonList(new ExpressionStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExpressionStatement_Editor());
       case 62:
-        return Collections.<EditorAspect>singletonList(new FieldDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new FieldDeclaration_Editor());
       case 63:
-        return Collections.<EditorAspect>singletonList(new FieldReferenceOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new FieldReferenceOperation_Editor());
       case 64:
-        return Collections.<EditorAspect>singletonList(new FloatingPointConstant_Editor());
+        return Collections.<ConceptEditor>singletonList(new FloatingPointConstant_Editor());
       case 65:
-        return Collections.<EditorAspect>singletonList(new FloatingPointFloatConstant_Editor());
+        return Collections.<ConceptEditor>singletonList(new FloatingPointFloatConstant_Editor());
       case 66:
-        return Collections.<EditorAspect>singletonList(new ForStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ForStatement_Editor());
       case 67:
-        return Collections.<EditorAspect>singletonList(new ForeachStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ForeachStatement_Editor());
       case 68:
-        return Collections.<EditorAspect>singletonList(new GenericNewExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenericNewExpression_Editor());
       case 69:
-        return Collections.<EditorAspect>singletonList(new GetAccessor_Editor());
+        return Collections.<ConceptEditor>singletonList(new GetAccessor_Editor());
       case 70:
-        return Collections.<EditorAspect>singletonList(new HexIntegerLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new HexIntegerLiteral_Editor());
       case 71:
-        return Collections.<EditorAspect>singletonList(new IfStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new IfStatement_Editor());
       case 72:
-        return Collections.<EditorAspect>singletonList(new ImplicitAnnotationInstanceValue_Editor());
+        return Collections.<ConceptEditor>singletonList(new ImplicitAnnotationInstanceValue_Editor());
       case 73:
-        return Collections.<EditorAspect>singletonList(new IncompleteMemberDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new IncompleteMemberDeclaration_Editor());
       case 74:
-        return Collections.<EditorAspect>singletonList(new InstanceInitializer_Editor());
+        return Collections.<ConceptEditor>singletonList(new InstanceInitializer_Editor());
       case 75:
-        return Collections.<EditorAspect>singletonList(new InstanceMethodCallOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new InstanceMethodCallOperation_Editor());
       case 76:
-        return Collections.<EditorAspect>singletonList(new InstanceMethodDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new InstanceMethodDeclaration_Editor());
       case 77:
-        return Collections.<EditorAspect>singletonList(new InstanceOfExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new InstanceOfExpression_Editor());
       case 78:
-        return Collections.<EditorAspect>singletonList(new IntegerConstant_Editor());
+        return Collections.<ConceptEditor>singletonList(new IntegerConstant_Editor());
       case 79:
-        return Collections.<EditorAspect>singletonList(new Interface_Editor());
+        return Collections.<ConceptEditor>singletonList(new Interface_Editor());
       case 80:
-        return Collections.<EditorAspect>singletonList(new JavaImport_Editor());
+        return Collections.<ConceptEditor>singletonList(new JavaImport_Editor());
       case 81:
-        return Collections.<EditorAspect>singletonList(new JavaImports_Editor());
+        return Collections.<ConceptEditor>singletonList(new JavaImports_Editor());
       case 82:
-        return Collections.<EditorAspect>singletonList(new LocalMethodCall_Editor());
+        return Collections.<ConceptEditor>singletonList(new LocalMethodCall_Editor());
       case 83:
-        return Collections.<EditorAspect>singletonList(new LocalPropertyReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new LocalPropertyReference_Editor());
       case 84:
-        return Collections.<EditorAspect>singletonList(new LocalVariableDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new LocalVariableDeclaration_Editor());
       case 85:
-        return Collections.<EditorAspect>singletonList(new LocalVariableDeclarationStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new LocalVariableDeclarationStatement_Editor());
       case 86:
-        return Collections.<EditorAspect>singletonList(new LongLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new LongLiteral_Editor());
       case 87:
-        return Collections.<EditorAspect>singletonList(new LoopLabel_Editor());
+        return Collections.<ConceptEditor>singletonList(new LoopLabel_Editor());
       case 88:
-        return Collections.<EditorAspect>singletonList(new LoopLabelReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new LoopLabelReference_Editor());
       case 89:
-        return Collections.<EditorAspect>singletonList(new LowerBoundType_Editor());
+        return Collections.<ConceptEditor>singletonList(new LowerBoundType_Editor());
       case 90:
-        return Collections.<EditorAspect>singletonList(new NotExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new NotExpression_Editor());
       case 91:
-        return Collections.<EditorAspect>singletonList(new NullLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new NullLiteral_Editor());
       case 92:
-        return Collections.<EditorAspect>singletonList(new Number_Editor());
+        return Collections.<ConceptEditor>singletonList(new Number_Editor());
       case 93:
-        return Collections.<EditorAspect>singletonList(new ParameterDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParameterDeclaration_Editor());
       case 94:
-        return Collections.<EditorAspect>singletonList(new ParenthesizedExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParenthesizedExpression_Editor());
       case 95:
-        return Collections.<EditorAspect>singletonList(new PlaceholderMember_Editor());
+        return Collections.<ConceptEditor>singletonList(new PlaceholderMember_Editor());
       case 96:
-        return Collections.<EditorAspect>singletonList(new PlaceholderMethodDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new PlaceholderMethodDeclaration_Editor());
       case 97:
-        return Collections.<EditorAspect>singletonList(new PostfixDecrementExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new PostfixDecrementExpression_Editor());
       case 98:
-        return Collections.<EditorAspect>singletonList(new PostfixIncrementExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new PostfixIncrementExpression_Editor());
       case 99:
-        return Collections.<EditorAspect>singletonList(new PrefixDecrementExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new PrefixDecrementExpression_Editor());
       case 100:
-        return Collections.<EditorAspect>singletonList(new PrefixIncrementExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new PrefixIncrementExpression_Editor());
       case 101:
-        return Collections.<EditorAspect>singletonList(new PrimitiveClassExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new PrimitiveClassExpression_Editor());
       case 102:
-        return Collections.<EditorAspect>singletonList(new Property_Editor());
+        return Collections.<ConceptEditor>singletonList(new Property_Editor());
       case 103:
-        return Collections.<EditorAspect>singletonList(new PropertyReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertyReference_Editor());
       case 104:
-        return Collections.<EditorAspect>singletonList(new RemarkStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new RemarkStatement_Editor());
       case 105:
-        return Collections.<EditorAspect>singletonList(new ReturnStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReturnStatement_Editor());
       case 106:
-        return Collections.<EditorAspect>singletonList(new SetAccessor_Editor());
+        return Collections.<ConceptEditor>singletonList(new SetAccessor_Editor());
       case 107:
-        return Collections.<EditorAspect>singletonList(new SingleLineComment_Editor());
+        return Collections.<ConceptEditor>singletonList(new SingleLineComment_Editor());
       case 108:
-        return Collections.<EditorAspect>singletonList(new Statement_Editor());
+        return Collections.<ConceptEditor>singletonList(new Statement_Editor());
       case 109:
-        return Collections.<EditorAspect>singletonList(new StatementCommentPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new StatementCommentPart_Editor());
       case 110:
-        return Collections.<EditorAspect>singletonList(new StatementList_Editor());
+        return Collections.<ConceptEditor>singletonList(new StatementList_Editor());
       case 111:
-        return Collections.<EditorAspect>singletonList(new StaticFieldDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new StaticFieldDeclaration_Editor());
       case 112:
-        return Collections.<EditorAspect>singletonList(new StaticFieldReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new StaticFieldReference_Editor());
       case 113:
-        return Collections.<EditorAspect>singletonList(new StaticInitializer_Editor());
+        return Collections.<ConceptEditor>singletonList(new StaticInitializer_Editor());
       case 114:
-        return Collections.<EditorAspect>singletonList(new StaticMethodCall_Editor());
+        return Collections.<ConceptEditor>singletonList(new StaticMethodCall_Editor());
       case 115:
-        return Collections.<EditorAspect>singletonList(new StaticMethodDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new StaticMethodDeclaration_Editor());
       case 116:
-        return Collections.<EditorAspect>singletonList(new StringBooleanOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new StringBooleanOperation_Editor());
       case 117:
-        return Collections.<EditorAspect>singletonList(new StringLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new StringLiteral_Editor());
       case 118:
-        return Collections.<EditorAspect>singletonList(new StringToken_Editor());
+        return Collections.<ConceptEditor>singletonList(new StringToken_Editor());
       case 119:
-        return Collections.<EditorAspect>singletonList(new StubStatementList_Editor());
+        return Collections.<ConceptEditor>singletonList(new StubStatementList_Editor());
       case 120:
-        return Collections.<EditorAspect>singletonList(new SubstringExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new SubstringExpression_Editor());
       case 121:
-        return Collections.<EditorAspect>singletonList(new SuperConstructorInvocation_Editor());
+        return Collections.<ConceptEditor>singletonList(new SuperConstructorInvocation_Editor());
       case 122:
-        return Collections.<EditorAspect>singletonList(new SuperMethodCall_Editor());
+        return Collections.<ConceptEditor>singletonList(new SuperMethodCall_Editor());
       case 123:
-        return Collections.<EditorAspect>singletonList(new SwitchCase_Editor());
+        return Collections.<ConceptEditor>singletonList(new SwitchCase_Editor());
       case 124:
-        return Collections.<EditorAspect>singletonList(new SwitchStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new SwitchStatement_Editor());
       case 125:
-        return Collections.<EditorAspect>singletonList(new SynchronizedStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new SynchronizedStatement_Editor());
       case 126:
-        return Collections.<EditorAspect>singletonList(new TernaryOperatorExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new TernaryOperatorExpression_Editor());
       case 127:
-        return Collections.<EditorAspect>singletonList(new TextCommentPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new TextCommentPart_Editor());
       case 128:
-        return Collections.<EditorAspect>singletonList(new ThisConstructorInvocation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ThisConstructorInvocation_Editor());
       case 129:
-        return Collections.<EditorAspect>singletonList(new ThisExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ThisExpression_Editor());
       case 130:
-        return Collections.<EditorAspect>singletonList(new ThrowStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ThrowStatement_Editor());
       case 131:
-        return Collections.<EditorAspect>singletonList(new TrimOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new TrimOperation_Editor());
       case 132:
-        return Collections.<EditorAspect>singletonList(new TryCatchStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new TryCatchStatement_Editor());
       case 133:
-        return Collections.<EditorAspect>singletonList(new TryStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new TryStatement_Editor());
       case 134:
-        return Collections.<EditorAspect>singletonList(new Type_Editor());
+        return Collections.<ConceptEditor>singletonList(new Type_Editor());
       case 135:
-        return Collections.<EditorAspect>singletonList(new TypeVariableDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new TypeVariableDeclaration_Editor());
       case 136:
-        return Collections.<EditorAspect>singletonList(new TypeVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new TypeVariableReference_Editor());
       case 137:
-        return Collections.<EditorAspect>singletonList(new UnaryMinus_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnaryMinus_Editor());
       case 138:
-        return Collections.<EditorAspect>singletonList(new UndefinedType_Editor());
+        return Collections.<ConceptEditor>singletonList(new UndefinedType_Editor());
       case 139:
-        return Collections.<EditorAspect>singletonList(new UnknownConsCall_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnknownConsCall_Editor());
       case 140:
-        return Collections.<EditorAspect>singletonList(new UnknownDotCall_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnknownDotCall_Editor());
       case 141:
-        return Collections.<EditorAspect>singletonList(new UnknownLocalCall_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnknownLocalCall_Editor());
       case 142:
-        return Collections.<EditorAspect>singletonList(new UnknownNameRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnknownNameRef_Editor());
       case 143:
-        return Collections.<EditorAspect>singletonList(new UnknownNew_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnknownNew_Editor());
       case 144:
-        return Collections.<EditorAspect>singletonList(new UnresolvedNameReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new UnresolvedNameReference_Editor());
       case 145:
-        return Collections.<EditorAspect>singletonList(new UpperBoundType_Editor());
+        return Collections.<ConceptEditor>singletonList(new UpperBoundType_Editor());
       case 146:
-        return Collections.<EditorAspect>singletonList(new UsingStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new UsingStatement_Editor());
       case 147:
-        return Collections.<EditorAspect>singletonList(new ValueParameter_Editor());
+        return Collections.<ConceptEditor>singletonList(new ValueParameter_Editor());
       case 148:
-        return Collections.<EditorAspect>singletonList(new VariableArityType_Editor());
+        return Collections.<ConceptEditor>singletonList(new VariableArityType_Editor());
       case 149:
-        return Collections.<EditorAspect>singletonList(new VariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new VariableReference_Editor());
       case 150:
-        return Collections.<EditorAspect>singletonList(new Visibility_Editor());
+        return Collections.<ConceptEditor>singletonList(new Visibility_Editor());
       case 151:
-        return Collections.<EditorAspect>singletonList(new WhileStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new WhileStatement_Editor());
       case 152:
-        return Collections.<EditorAspect>singletonList(new WildCardType_Editor());
+        return Collections.<ConceptEditor>singletonList(new WildCardType_Editor());
+      default:
+    }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1, editorComponentId)) {
+          case 0:
+            return Collections.<ConceptEditorComponent>singletonList(new BaseMethodDeclaration_BodyComponent());
+          case 1:
+            return Collections.<ConceptEditorComponent>singletonList(new BaseMethodDeclaration_NameCellComponent());
+          default:
+        }
+        break;
+      case 1:
+        if ("jetbrains.mps.baseLanguage.editor.ClassifierMembers_Component".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new ClassifierMembers_Component());
+        }
+        break;
+      case 2:
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c0a1, editorComponentId)) {
+          case 0:
+            return Collections.<ConceptEditorComponent>singletonList(new ConceptFunctionAliased_Component());
+          case 1:
+            return Collections.<ConceptEditorComponent>singletonList(new ConceptFunction_Component());
+          case 2:
+            return Collections.<ConceptEditorComponent>singletonList(new ConceptFunction_Folded_Component());
+          default:
+        }
+        break;
+      case 3:
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d0a1, editorComponentId)) {
+          case 0:
+            return Collections.<ConceptEditorComponent>singletonList(new GenericDeclaration_FoldedCodeBlock_Component());
+          case 1:
+            return Collections.<ConceptEditorComponent>singletonList(new _GenericDeclaration_TypeVariables_Component());
+          default:
+        }
+        break;
+      case 4:
+        if ("jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new HasAnnotation_AnnotationComponent());
+        }
+        break;
+      case 5:
+        if ("jetbrains.mps.baseLanguage.editor._DeprecatedPart".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new _DeprecatedPart());
+        }
+        break;
+      case 6:
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0g0a1, editorComponentId)) {
+          case 0:
+            return Collections.<ConceptEditorComponent>singletonList(new IMethodCall_actualArguments());
+          case 1:
+            return Collections.<ConceptEditorComponent>singletonList(new IMethodCall_typeArguments());
+          default:
+        }
+        break;
+      case 7:
+        if ("jetbrains.mps.baseLanguage.editor._Component_Visibility".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new _Component_Visibility());
+        }
+        break;
+      case 8:
+        if ("jetbrains.mps.baseLanguage.editor.TokensWithDots".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new TokensWithDots());
+        }
+        break;
+      case 9:
+        if ("jetbrains.mps.baseLanguage.editor.UnknownQualifiedName".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new UnknownQualifiedName());
+        }
+        break;
+      case 10:
+        if ("jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new VariableDeclaration_NameCellComponent());
+        }
+        break;
       default:
     }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", "jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.structure.AbstractOperation", "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", "jetbrains.mps.baseLanguage.structure.Annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", "jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", "jetbrains.mps.baseLanguage.structure.ArrayClassExpression", "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation", "jetbrains.mps.baseLanguage.structure.ArrayCreator", "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", "jetbrains.mps.baseLanguage.structure.ArrayLiteral", "jetbrains.mps.baseLanguage.structure.ArrayType", "jetbrains.mps.baseLanguage.structure.AsExpression", "jetbrains.mps.baseLanguage.structure.AssertStatement", "jetbrains.mps.baseLanguage.structure.BLBottomType", "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.baseLanguage.structure.BaseVariableReference", "jetbrains.mps.baseLanguage.structure.BinaryOperation", "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression", "jetbrains.mps.baseLanguage.structure.BlockStatement", "jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.BreakStatement", "jetbrains.mps.baseLanguage.structure.CastExpression", "jetbrains.mps.baseLanguage.structure.CatchClause", "jetbrains.mps.baseLanguage.structure.CharConstant", "jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.ClassCreator", "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", "jetbrains.mps.baseLanguage.structure.ClassifierType", "jetbrains.mps.baseLanguage.structure.ClosureParameter", "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", "jetbrains.mps.baseLanguage.structure.CommentedStatement", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "jetbrains.mps.baseLanguage.structure.ContinueStatement", "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation", "jetbrains.mps.baseLanguage.structure.DefaultClassCreator", "jetbrains.mps.baseLanguage.structure.DefaultGetAccessor", "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", "jetbrains.mps.baseLanguage.structure.DefaultSetAccessor", "jetbrains.mps.baseLanguage.structure.DimensionExpression", "jetbrains.mps.baseLanguage.structure.DoWhileStatement", "jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.baseLanguage.structure.ElsifClause", "jetbrains.mps.baseLanguage.structure.EnumClass", "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", "jetbrains.mps.baseLanguage.structure.EnumConstantReference", "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", "jetbrains.mps.baseLanguage.structure.EscapeOperation", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ExpressionStatement", "jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "jetbrains.mps.baseLanguage.structure.FloatingPointConstant", "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", "jetbrains.mps.baseLanguage.structure.ForStatement", "jetbrains.mps.baseLanguage.structure.ForeachStatement", "jetbrains.mps.baseLanguage.structure.GenericNewExpression", "jetbrains.mps.baseLanguage.structure.GetAccessor", "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral", "jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration", "jetbrains.mps.baseLanguage.structure.InstanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.InstanceOfExpression", "jetbrains.mps.baseLanguage.structure.IntegerConstant", "jetbrains.mps.baseLanguage.structure.Interface", "jetbrains.mps.baseLanguage.structure.JavaImport", "jetbrains.mps.baseLanguage.structure.JavaImports", "jetbrains.mps.baseLanguage.structure.LocalMethodCall", "jetbrains.mps.baseLanguage.structure.LocalPropertyReference", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", "jetbrains.mps.baseLanguage.structure.LongLiteral", "jetbrains.mps.baseLanguage.structure.LoopLabel", "jetbrains.mps.baseLanguage.structure.LoopLabelReference", "jetbrains.mps.baseLanguage.structure.LowerBoundType", "jetbrains.mps.baseLanguage.structure.NotExpression", "jetbrains.mps.baseLanguage.structure.NullLiteral", "jetbrains.mps.baseLanguage.structure.Number", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", "jetbrains.mps.baseLanguage.structure.PlaceholderMember", "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", "jetbrains.mps.baseLanguage.structure.Property", "jetbrains.mps.baseLanguage.structure.PropertyReference", "jetbrains.mps.baseLanguage.structure.RemarkStatement", "jetbrains.mps.baseLanguage.structure.ReturnStatement", "jetbrains.mps.baseLanguage.structure.SetAccessor", "jetbrains.mps.baseLanguage.structure.SingleLineComment", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.StatementCommentPart", "jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.StaticInitializer", "jetbrains.mps.baseLanguage.structure.StaticMethodCall", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StringBooleanOperation", "jetbrains.mps.baseLanguage.structure.StringLiteral", "jetbrains.mps.baseLanguage.structure.StringToken", "jetbrains.mps.baseLanguage.structure.StubStatementList", "jetbrains.mps.baseLanguage.structure.SubstringExpression", "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "jetbrains.mps.baseLanguage.structure.SuperMethodCall", "jetbrains.mps.baseLanguage.structure.SwitchCase", "jetbrains.mps.baseLanguage.structure.SwitchStatement", "jetbrains.mps.baseLanguage.structure.SynchronizedStatement", "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", "jetbrains.mps.baseLanguage.structure.TextCommentPart", "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "jetbrains.mps.baseLanguage.structure.ThisExpression", "jetbrains.mps.baseLanguage.structure.ThrowStatement", "jetbrains.mps.baseLanguage.structure.TrimOperation", "jetbrains.mps.baseLanguage.structure.TryCatchStatement", "jetbrains.mps.baseLanguage.structure.TryStatement", "jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableReference", "jetbrains.mps.baseLanguage.structure.UnaryMinus", "jetbrains.mps.baseLanguage.structure.UndefinedType", "jetbrains.mps.baseLanguage.structure.UnknownConsCall", "jetbrains.mps.baseLanguage.structure.UnknownDotCall", "jetbrains.mps.baseLanguage.structure.UnknownLocalCall", "jetbrains.mps.baseLanguage.structure.UnknownNameRef", "jetbrains.mps.baseLanguage.structure.UnknownNew", "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference", "jetbrains.mps.baseLanguage.structure.UpperBoundType", "jetbrains.mps.baseLanguage.structure.UsingStatement", "jetbrains.mps.baseLanguage.structure.ValueParameter", "jetbrains.mps.baseLanguage.structure.VariableArityType", "jetbrains.mps.baseLanguage.structure.VariableReference", "jetbrains.mps.baseLanguage.structure.Visibility", "jetbrains.mps.baseLanguage.structure.WhileStatement", "jetbrains.mps.baseLanguage.structure.WildCardType"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1 = new String[]{"jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent", "jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_NameCellComponent"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0c0a1 = new String[]{"jetbrains.mps.baseLanguage.editor.ConceptFunctionAliased_Component", "jetbrains.mps.baseLanguage.editor.ConceptFunction_Component", "jetbrains.mps.baseLanguage.editor.ConceptFunction_Folded_Component"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0d0a1 = new String[]{"jetbrains.mps.baseLanguage.editor.GenericDeclaration_FoldedCodeBlock_Component", "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0g0a1 = new String[]{"jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments", "jetbrains.mps.baseLanguage.editor.IMethodCall_typeArguments"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.Classifier", "jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.baseLanguage.structure.HasAnnotation", "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "jetbrains.mps.baseLanguage.structure.IMethodCall", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.baseLanguage.structure.Tokens", "jetbrains.mps.baseLanguage.structure.UnknownNameRef", "jetbrains.mps.baseLanguage.structure.VariableDeclaration"};
 }

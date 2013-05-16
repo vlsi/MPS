@@ -4,30 +4,35 @@ package jetbrains.mps.nanoj.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new MinusExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new MinusExpression_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new NanoClass_Editor());
+        return Collections.<ConceptEditor>singletonList(new NanoClass_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new NanoExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new NanoExpression_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new NanoStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new NanoStatement_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new NanoStatementList_Editor());
+        return Collections.<ConceptEditor>singletonList(new NanoStatementList_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new VarDecl_Editor());
+        return Collections.<ConceptEditor>singletonList(new VarDecl_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new VarDeclReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new VarDeclReference_Editor());
       default:
     }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
 

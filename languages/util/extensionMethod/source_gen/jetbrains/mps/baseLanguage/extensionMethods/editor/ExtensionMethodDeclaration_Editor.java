@@ -15,8 +15,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -35,7 +33,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent;
 
 public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -72,6 +69,9 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("/*package*/");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("visibility");
+    }
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
@@ -88,8 +88,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_1i2int_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _GenericDeclaration_TypeVariables_Component(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component");
     return editorCell;
   }
 
@@ -103,6 +102,9 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no returnType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("returnType");
+    }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
@@ -346,6 +348,9 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no extendedType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("extendedType");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -358,8 +363,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_1i2int_j0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new BaseMethodDeclaration_BodyComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent");
     return editorCell;
   }
 

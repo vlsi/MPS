@@ -35,7 +35,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
@@ -209,7 +209,7 @@ public class RootDifferencePane {
   }
 
   private DiffEditor addEditor(int index, SModel model, String title) {
-    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myProject, model), model.getNode(myRootId), title, index == 0);
+    final DiffEditor result = new DiffEditor(ProjectHelper.toMPSProject(myProject).getRepository(), model.getNode(myRootId), title, index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :

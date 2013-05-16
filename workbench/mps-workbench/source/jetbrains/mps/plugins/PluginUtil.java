@@ -103,7 +103,7 @@ public class PluginUtil {
 
       return pluginClass.newInstance();
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
       return null;
     }
   }

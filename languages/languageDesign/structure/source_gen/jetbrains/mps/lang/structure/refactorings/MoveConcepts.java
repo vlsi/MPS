@@ -6,7 +6,6 @@ import jetbrains.mps.refactoring.framework.BaseLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.lang.core.refactorings.MoveNodes;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -57,7 +56,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
   }
 
   public boolean init(final RefactoringContext refactoringContext) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    refactoringContext.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         SModel model = SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first());
         refactoringContext.setParameter("sourceModel", model);

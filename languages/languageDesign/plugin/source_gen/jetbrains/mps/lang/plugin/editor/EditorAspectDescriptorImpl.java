@@ -4,146 +4,170 @@ package jetbrains.mps.lang.plugin.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new ActionAccessOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionAccessOperation_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new ActionConstructionParameterDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionConstructionParameterDeclaration_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new ActionConstructorParameterReferenceOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionConstructorParameterReferenceOperation_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new ActionDataParameterDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionDataParameterDeclaration_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new ActionDataParameterReferenceOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionDataParameterReferenceOperation_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new ActionDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionDeclaration_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new ActionGroupDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionGroupDeclaration_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new ActionGroupRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionGroupRef_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new ActionInstance_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionInstance_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new ActionParameterDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionParameterDeclaration_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new ActionParameterReferenceOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionParameterReferenceOperation_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new ActionReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionReference_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new ActionType_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionType_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new AddElementStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new AddElementStatement_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new AddKeystrokeStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new AddKeystrokeStatement_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new AddStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new AddStatement_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new AddTabOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new AddTabOperation_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new ButtonCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new ButtonCreator_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new CloseTabOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new CloseTabOperation_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new ConceptCondition_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptCondition_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new CreateTabBlock_Editor());
+        return Collections.<ConceptEditor>singletonList(new CreateTabBlock_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new EditableModel_Editor());
+        return Collections.<ConceptEditor>singletonList(new EditableModel_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new EditorTab_Editor());
+        return Collections.<ConceptEditor>singletonList(new EditorTab_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new EditorTabReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new EditorTabReference_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new ElementListContents_Editor());
+        return Collections.<ConceptEditor>singletonList(new ElementListContents_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new EverywhereActionPlace_Editor());
+        return Collections.<ConceptEditor>singletonList(new EverywhereActionPlace_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new GetGroupOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new GetGroupOperation_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new GetSelectedTabOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new GetSelectedTabOperation_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new GroupAccessOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new GroupAccessOperation_Editor());
       case 29:
-        return Collections.<EditorAspect>singletonList(new GroupAnchor_Editor());
+        return Collections.<ConceptEditor>singletonList(new GroupAnchor_Editor());
       case 30:
-        return Collections.<EditorAspect>singletonList(new GroupType_Editor());
+        return Collections.<ConceptEditor>singletonList(new GroupType_Editor());
       case 31:
-        return Collections.<EditorAspect>singletonList(new IdeaActionsDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new IdeaActionsDescriptor_Editor());
       case 32:
-        return Collections.<EditorAspect>singletonList(new IdeaConfigurationXml_Editor());
+        return Collections.<ConceptEditor>singletonList(new IdeaConfigurationXml_Editor());
       case 33:
-        return Collections.<EditorAspect>singletonList(new IdeaInitializerDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new IdeaInitializerDescriptor_Editor());
       case 34:
-        return Collections.<EditorAspect>singletonList(new IdeaPluginDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new IdeaPluginDependency_Editor());
       case 35:
-        return Collections.<EditorAspect>singletonList(new InterfaceExtentionPoint_Editor());
+        return Collections.<ConceptEditor>singletonList(new InterfaceExtentionPoint_Editor());
       case 36:
-        return Collections.<EditorAspect>singletonList(new InterfaceGroup_Editor());
+        return Collections.<ConceptEditor>singletonList(new InterfaceGroup_Editor());
       case 37:
-        return Collections.<EditorAspect>singletonList(new KeyMapKeystroke_Editor());
+        return Collections.<ConceptEditor>singletonList(new KeyMapKeystroke_Editor());
       case 38:
-        return Collections.<EditorAspect>singletonList(new KeyStrokeType_Editor());
+        return Collections.<ConceptEditor>singletonList(new KeyStrokeType_Editor());
       case 39:
-        return Collections.<EditorAspect>singletonList(new KeymapChangesDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new KeymapChangesDeclaration_Editor());
       case 40:
-        return Collections.<EditorAspect>singletonList(new KeymapRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new KeymapRef_Editor());
       case 41:
-        return Collections.<EditorAspect>singletonList(new MPSPluginDependency_Editor());
+        return Collections.<ConceptEditor>singletonList(new MPSPluginDependency_Editor());
       case 42:
-        return Collections.<EditorAspect>singletonList(new ModificationStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModificationStatement_Editor());
       case 43:
-        return Collections.<EditorAspect>singletonList(new NonDumbAwareActions_Editor());
+        return Collections.<ConceptEditor>singletonList(new NonDumbAwareActions_Editor());
       case 44:
-        return Collections.<EditorAspect>singletonList(new Order_Editor());
+        return Collections.<ConceptEditor>singletonList(new Order_Editor());
       case 45:
-        return Collections.<EditorAspect>singletonList(new OrderReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new OrderReference_Editor());
       case 46:
-        return Collections.<EditorAspect>singletonList(new ParameterizedShortcutChange_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParameterizedShortcutChange_Editor());
       case 47:
-        return Collections.<EditorAspect>singletonList(new PersistentPropertyDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new PersistentPropertyDeclaration_Editor());
       case 48:
-        return Collections.<EditorAspect>singletonList(new PersistentPropertyReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new PersistentPropertyReference_Editor());
       case 49:
-        return Collections.<EditorAspect>singletonList(new PopupCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new PopupCreator_Editor());
       case 50:
-        return Collections.<EditorAspect>singletonList(new PreferencePage_Editor());
+        return Collections.<ConceptEditor>singletonList(new PreferencePage_Editor());
       case 51:
-        return Collections.<EditorAspect>singletonList(new PreferencesComponentDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new PreferencesComponentDeclaration_Editor());
       case 52:
-        return Collections.<EditorAspect>singletonList(new PreferencesComponentType_Editor());
+        return Collections.<ConceptEditor>singletonList(new PreferencesComponentType_Editor());
       case 53:
-        return Collections.<EditorAspect>singletonList(new RequiredCondition_Editor());
+        return Collections.<ConceptEditor>singletonList(new RequiredCondition_Editor());
       case 54:
-        return Collections.<EditorAspect>singletonList(new Separator_Editor());
+        return Collections.<ConceptEditor>singletonList(new Separator_Editor());
       case 55:
-        return Collections.<EditorAspect>singletonList(new SimpleShortcutChange_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimpleShortcutChange_Editor());
       case 56:
-        return Collections.<EditorAspect>singletonList(new SmartDisposeClosureParameterDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new SmartDisposeClosureParameterDeclaration_Editor());
       case 57:
-        return Collections.<EditorAspect>singletonList(new TabbedToolDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new TabbedToolDeclaration_Editor());
       case 58:
-        return Collections.<EditorAspect>singletonList(new ToolDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ToolDeclaration_Editor());
       case 59:
-        return Collections.<EditorAspect>singletonList(new ToolInstanceExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ToolInstanceExpression_Editor());
       case 60:
-        return Collections.<EditorAspect>singletonList(new ToolTab_Editor());
+        return Collections.<ConceptEditor>singletonList(new ToolTab_Editor());
       case 61:
-        return Collections.<EditorAspect>singletonList(new ToolType_Editor());
+        return Collections.<ConceptEditor>singletonList(new ToolType_Editor());
       case 62:
-        return Collections.<EditorAspect>singletonList(new ToolbarCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new ToolbarCreator_Editor());
       case 63:
-        return Collections.<EditorAspect>singletonList(new UpdateGroupBlock_Editor());
+        return Collections.<ConceptEditor>singletonList(new UpdateGroupBlock_Editor());
+      default:
+    }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("jetbrains.mps.lang.plugin.editor.ModificationsEditor".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new ModificationsEditor());
+        }
+        break;
+      case 1:
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b0a1, editorComponentId)) {
+          case 0:
+            return Collections.<ConceptEditorComponent>singletonList(new ActionParameter_Hint());
+          case 1:
+            return Collections.<ConceptEditorComponent>singletonList(new ActionParameter_NameCellComponent());
+          default:
+        }
+        break;
       default:
     }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.plugin.structure.ActionAccessOperation", "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupRef", "jetbrains.mps.lang.plugin.structure.ActionInstance", "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionReference", "jetbrains.mps.lang.plugin.structure.ActionType", "jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement", "jetbrains.mps.lang.plugin.structure.AddStatement", "jetbrains.mps.lang.plugin.structure.AddTabOperation", "jetbrains.mps.lang.plugin.structure.ButtonCreator", "jetbrains.mps.lang.plugin.structure.CloseTabOperation", "jetbrains.mps.lang.plugin.structure.ConceptCondition", "jetbrains.mps.lang.plugin.structure.CreateTabBlock", "jetbrains.mps.lang.plugin.structure.EditableModel", "jetbrains.mps.lang.plugin.structure.EditorTab", "jetbrains.mps.lang.plugin.structure.EditorTabReference", "jetbrains.mps.lang.plugin.structure.ElementListContents", "jetbrains.mps.lang.plugin.structure.EverywhereActionPlace", "jetbrains.mps.lang.plugin.structure.GetGroupOperation", "jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation", "jetbrains.mps.lang.plugin.structure.GroupAccessOperation", "jetbrains.mps.lang.plugin.structure.GroupAnchor", "jetbrains.mps.lang.plugin.structure.GroupType", "jetbrains.mps.lang.plugin.structure.IdeaActionsDescriptor", "jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml", "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.plugin.structure.IdeaPluginDependency", "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.InterfaceGroup", "jetbrains.mps.lang.plugin.structure.KeyMapKeystroke", "jetbrains.mps.lang.plugin.structure.KeyStrokeType", "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration", "jetbrains.mps.lang.plugin.structure.KeymapRef", "jetbrains.mps.lang.plugin.structure.MPSPluginDependency", "jetbrains.mps.lang.plugin.structure.ModificationStatement", "jetbrains.mps.lang.plugin.structure.NonDumbAwareActions", "jetbrains.mps.lang.plugin.structure.Order", "jetbrains.mps.lang.plugin.structure.OrderReference", "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange", "jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration", "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference", "jetbrains.mps.lang.plugin.structure.PopupCreator", "jetbrains.mps.lang.plugin.structure.PreferencePage", "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", "jetbrains.mps.lang.plugin.structure.PreferencesComponentType", "jetbrains.mps.lang.plugin.structure.RequiredCondition", "jetbrains.mps.lang.plugin.structure.Separator", "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration", "jetbrains.mps.lang.plugin.structure.ToolDeclaration", "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", "jetbrains.mps.lang.plugin.structure.ToolTab", "jetbrains.mps.lang.plugin.structure.ToolType", "jetbrains.mps.lang.plugin.structure.ToolbarCreator", "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b0a1 = new String[]{"jetbrains.mps.lang.plugin.editor.ActionParameter_Hint", "jetbrains.mps.lang.plugin.editor.ActionParameter_NameCellComponent"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.plugin.structure.ActionParameter"};
 }

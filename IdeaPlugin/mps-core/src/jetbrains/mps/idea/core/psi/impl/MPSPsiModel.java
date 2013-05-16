@@ -27,6 +27,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiFileSystemItem;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.search.PsiElementProcessor;
+import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.DynamicReference;
@@ -50,8 +51,11 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.File;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Deque;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -94,6 +98,25 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   @Override
   public String toString() {
     return "Model:" + myModelReference.toString();
+  }
+
+  public MPSPsiNode[] getRootNodes() {
+    return getRootNodesOfType(MPSPsiNode.class);
+  }
+
+  public <T extends PsiElement> T[] getRootNodesOfType(Class<T> aClass) {
+
+    PsiElement[] surrogateRoots = getChildren();
+    List<T> result = new ArrayList<T>();
+    for (PsiElement r : surrogateRoots) {
+      assert r instanceof MPSPsiRootNode; // a layer between model and real root
+      for (PsiElement c : r.getChildren()) {
+        if (aClass.isInstance(c)) {
+          result.add((T) c);
+        }
+      }
+    }
+    return ArrayUtil.toObjectArray(result, aClass);
   }
 
   /* PsiFile */

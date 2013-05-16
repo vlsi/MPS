@@ -143,6 +143,9 @@ public class AbstractFunctionType_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no resultType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("resultType");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);

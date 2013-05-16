@@ -95,6 +95,10 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("template");
+      }
       Style style = new StyleImpl();
       ExecutionSettings_StyleSheet.applyPersistentConfigurationRef(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -153,6 +157,10 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("template");
+      }
       Style style = new StyleImpl();
       ExecutionSettings_StyleSheet.applyPersistentConfigurationRefDeprecated(style, editorCell);
       editorCell.getStyle().putAll(style);

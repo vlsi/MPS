@@ -28,6 +28,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
@@ -36,6 +37,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -241,7 +243,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
     assert isValid() : "createOperationContext() was called for MPSFileNodeEditor with invalid file: " + myFile;
     SNode node = myFile.getNode();
-    if (node == null || !node.isInRepository()) {
+    if (node == null || !SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
       myIsValid = false;
       return null;
     }

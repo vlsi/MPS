@@ -145,7 +145,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     try {
       matchingText = getMatchingText(pattern);
     } catch (Exception e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
     if (matchingText == null || matchingText.length() == 0) return false;
     // first char must be the same

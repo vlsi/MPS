@@ -88,6 +88,10 @@ public class FixedLocaleFormatToken_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("locale");
+      }
       Style style = new StyleImpl();
       Dates_StyleSheet.applyDateProperty(style, editorCell);
       style.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
@@ -163,6 +167,10 @@ public class FixedLocaleFormatToken_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("dateFormat");
+      }
       Style style = new StyleImpl();
       Dates_StyleSheet.applyDateFormat(style, editorCell);
       editorCell.getStyle().putAll(style);

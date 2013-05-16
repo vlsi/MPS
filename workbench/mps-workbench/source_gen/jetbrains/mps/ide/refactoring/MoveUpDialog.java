@@ -9,8 +9,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.hierarchy.ChildHierarchyTreeNode;
 import javax.swing.JOptionPane;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 
@@ -32,19 +30,14 @@ public class MoveUpDialog extends RefactoringDialog {
 
   @Override
   protected void doRefactoringAction() {
-    final Object treeNode = this.myPanel.getSelectedObject();
+    Object treeNode = this.myPanel.getSelectedObject();
     if (treeNode == null || !(treeNode instanceof ChildHierarchyTreeNode)) {
       JOptionPane.showMessageDialog(this.myPanel, "Choose Concept or Interface", this.myNodeType + " can't be moved", JOptionPane.INFORMATION_MESSAGE);
       return;
     }
-    final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        result.value = ((ChildHierarchyTreeNode) treeNode).getNode();
-      }
-    });
+    SNode result = ((ChildHierarchyTreeNode) treeNode).getNode();
 
-    this.myConcept = (SNode) result.value;
+    this.myConcept = (SNode) result;
     super.doRefactoringAction();
   }
 

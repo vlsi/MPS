@@ -214,7 +214,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     try {
       onRemove();
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
     }
     myAdded = false;
     if (!isInitialized()) {
@@ -234,7 +234,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     try {
       onAdd();
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
     }
     myAdded = true;
     if (!isInitialized()) {

@@ -10,8 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.editor.runtime.style.Padding;
@@ -53,8 +51,7 @@ public class Zip_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_921cn9_a0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     Style style = new StyleImpl();
     PackagingStyles_StyleSheet.applyProjectComponent(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -67,6 +64,9 @@ public class Zip_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no title>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("title");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
@@ -82,20 +82,17 @@ public class Zip_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_921cn9_c0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IncludeExcludeEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent");
     return editorCell;
   }
 
   private EditorCell createComponent_921cn9_d0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ConfigurationReferencesEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent");
     return editorCell;
   }
 
   private EditorCell createComponent_921cn9_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CompositecomponentEntriesEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent");
     return editorCell;
   }
 
@@ -111,14 +108,12 @@ public class Zip_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_921cn9_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IncludeExcludeInInspector(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector");
     return editorCell;
   }
 
   private EditorCell createComponent_921cn9_b0_0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ConfigurationReferencesEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent");
     return editorCell;
   }
 

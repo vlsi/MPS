@@ -45,8 +45,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -168,6 +166,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0b0a");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("classifier");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, false);
       editorCell.getStyle().putAll(style);
@@ -405,6 +407,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_nestedName");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("classifier");
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -451,6 +457,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_2ojjgh_a0c0a(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
       editorCell.setCellId("Collection_2ojjgh_a0c0a");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("classifier");
+      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.SELECTABLE, false);
       editorCell.getStyle().putAll(style);
@@ -461,8 +471,11 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createComponent_2ojjgh_a0a2a0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new _GenericDeclaration_TypeVariables_Component(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
+      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("classifier");
+      }
       return editorCell;
     }
 
@@ -546,6 +559,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0b1a");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("classifier");
+      }
       return editorCell;
     }
   }

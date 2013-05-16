@@ -182,6 +182,9 @@ __switch__:
     provider.setNoTargetText("<no loopLabelReference>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("loopLabelReference");
+    }
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
     editorCell.getStyle().putAll(style);

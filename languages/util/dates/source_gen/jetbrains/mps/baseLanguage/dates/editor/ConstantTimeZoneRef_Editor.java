@@ -73,6 +73,10 @@ public class ConstantTimeZoneRef_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("zone");
+      }
       Style style = new StyleImpl();
       DatesInternal_StyleSheet.applySimpleText(style, editorCell);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);

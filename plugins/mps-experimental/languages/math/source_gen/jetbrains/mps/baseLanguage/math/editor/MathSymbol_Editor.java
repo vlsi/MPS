@@ -29,8 +29,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent;
 
 public class MathSymbol_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -98,6 +96,9 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no upperBound>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("upperBound");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
@@ -149,6 +150,9 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no var>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("var");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
@@ -180,6 +184,9 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no precondition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("precondition");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
@@ -200,6 +207,9 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no expression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("expression");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.BASE_LINE_CELL, true);
     editorCell.getStyle().putAll(style);
@@ -254,8 +264,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_b0ego6_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ShortDescriptionEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent");
     return editorCell;
   }
 
@@ -265,6 +274,9 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no precondition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("precondition");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

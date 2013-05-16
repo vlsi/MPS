@@ -126,6 +126,9 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no debuggerConfiguration>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("debuggerConfiguration");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -298,6 +301,9 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no debuggerParameter>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("debuggerParameter");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

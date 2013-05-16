@@ -45,6 +45,9 @@ public class BuildSource_JavaLibraryExternalJarFolder_Editor extends DefaultNode
     provider.setNoTargetText("<no extFolder>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("extFolder");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

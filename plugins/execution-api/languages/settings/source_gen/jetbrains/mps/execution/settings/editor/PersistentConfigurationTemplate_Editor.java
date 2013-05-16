@@ -10,8 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -65,8 +63,7 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_85j21_a0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -192,8 +189,7 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_85j21_c0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new PersistentPropertiesComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.settings.editor.PersistentPropertiesComponent");
     return editorCell;
   }
 
@@ -208,8 +204,7 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_85j21_e0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new EditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.settings.editor.EditorComponent");
     return editorCell;
   }
 
@@ -224,8 +219,7 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_85j21_g0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new PersistentMethodsComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.settings.editor.PersistentMethodsComponent");
     return editorCell;
   }
 }

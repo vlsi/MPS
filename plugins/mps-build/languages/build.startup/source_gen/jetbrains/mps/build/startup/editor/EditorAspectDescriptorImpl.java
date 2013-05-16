@@ -4,24 +4,33 @@ package jetbrains.mps.build.startup.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new ClassPathItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClassPathItem_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new MpsStartupScript_Editor());
+        return Collections.<ConceptEditor>singletonList(new MpsStartupScript_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new SimpleVmOptions_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimpleVmOptions_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new TextFile_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new TextLine_Editor());
       default:
     }
     return Collections.emptyList();
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.startup.structure.ClassPathItem", "jetbrains.mps.build.startup.structure.MpsStartupScript", "jetbrains.mps.build.startup.structure.SimpleVmOptions"};
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    return Collections.emptyList();
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.startup.structure.ClassPathItem", "jetbrains.mps.build.startup.structure.MpsStartupScript", "jetbrains.mps.build.startup.structure.SimpleVmOptions", "jetbrains.mps.build.startup.structure.TextFile", "jetbrains.mps.build.startup.structure.TextLine"};
 }

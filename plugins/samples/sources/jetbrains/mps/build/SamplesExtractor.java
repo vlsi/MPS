@@ -176,7 +176,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
       }
       FileUtil.delete(tmpDir);
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
   }
 

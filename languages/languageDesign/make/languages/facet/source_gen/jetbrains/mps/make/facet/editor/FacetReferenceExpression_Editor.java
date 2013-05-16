@@ -49,6 +49,9 @@ public class FacetReferenceExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no reference>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("reference");
+    }
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);
     editorCell.getStyle().putAll(style);

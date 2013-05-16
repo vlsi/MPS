@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -17,7 +15,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
@@ -40,8 +37,7 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ipnr5b_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new HasAnnotation_AnnotationComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent");
     return editorCell;
   }
 
@@ -61,6 +57,9 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("type");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -73,8 +72,7 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ipnr5b_d0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new VariableDeclaration_NameCellComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -97,6 +95,9 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no initializer>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("initializer");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.AUTO_DELETABLE, false);
     editorCell.getStyle().putAll(style);

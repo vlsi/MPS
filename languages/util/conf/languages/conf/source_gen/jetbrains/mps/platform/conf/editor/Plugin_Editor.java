@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -44,8 +43,7 @@ public class Plugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_o3c6bg_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ConfigurationXmlNode_Header(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.platform.conf.editor.ConfigurationXmlNode_Header");
     return editorCell;
   }
 
@@ -231,6 +229,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no vendor>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("vendor");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -248,6 +249,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no ideaVersion>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ideaVersion");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -265,6 +269,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no helpset>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("helpset");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -393,8 +400,7 @@ public class Plugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_o3c6bg_d0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ConfigurationXmlRootNode_children(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.platform.conf.editor.ConfigurationXmlRootNode_children");
     return editorCell;
   }
 }

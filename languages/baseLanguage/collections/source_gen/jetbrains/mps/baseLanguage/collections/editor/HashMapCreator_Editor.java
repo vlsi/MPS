@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class HashMapCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -14,8 +13,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_pwna47_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new HashMapCreator_editorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.collections.editor.HashMapCreator_editorComponent");
     editorCell.setBig(true);
     return editorCell;
   }

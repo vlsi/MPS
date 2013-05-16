@@ -61,6 +61,9 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rows>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("rows");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
@@ -96,6 +99,9 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no columns>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("columns");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
@@ -168,6 +174,9 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no rows>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("rows");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -195,6 +204,9 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no columns>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("columns");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

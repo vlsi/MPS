@@ -39,7 +39,7 @@ public class QueriesGenerated {
           SLinkOperations.setTarget(_context.getSourceNode(), "threadPool", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null), true);
           SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), "threadPool", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", candidate, false);
         }
-        return null;
+        return SLinkOperations.getTarget(_context.getSourceNode(), "threadPool", true);
       }
 
       public String getMatchingText(String pattern) {
@@ -68,7 +68,7 @@ public class QueriesGenerated {
           SLinkOperations.setTarget(_context.getSourceNode(), "threadPool", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null), true);
           SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), "threadPool", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", candidate, false);
         }
-        return null;
+        return SLinkOperations.getTarget(_context.getSourceNode(), "threadPool", true);
       }
 
       public String getMatchingText(String pattern) {

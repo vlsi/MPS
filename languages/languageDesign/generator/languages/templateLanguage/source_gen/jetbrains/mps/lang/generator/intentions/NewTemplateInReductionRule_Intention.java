@@ -67,9 +67,6 @@ public class NewTemplateInReductionRule_Intention implements IntentionFactory {
     if (editorCell == null) {
       return false;
     }
-    if (((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).getLinkDeclaration() != SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "ruleConsequence")) {
-      return false;
-    }
     return SLinkOperations.getTarget(node, "ruleConsequence", true) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "ruleConsequence", true)), "jetbrains.mps.lang.generator.structure.RuleConsequence");
   }
 

@@ -63,11 +63,14 @@ public abstract class MPSAppenderBase extends AppenderSkeleton {
       // hate null strings
       renderedMessage = "";
     }
+    Throwable throwable = null;
     if (throwableInformation != null) {
-      append(event.level, event.categoryName, renderedMessage, throwableInformation.getThrowable(), message);
-    } else {
-      append(event.level, event.categoryName, renderedMessage, null, message);
+      throwable = throwableInformation.getThrowable();
+    } else if (message instanceof Throwable) {
+      throwable = (Throwable) message;
     }
+
+    append(event.level, event.categoryName, renderedMessage, throwable, message);
   }
 
   @Override

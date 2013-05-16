@@ -25,7 +25,7 @@ public abstract class BaseCustomApplicationPlugin {
     try {
       doInit();
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
     }
   }
 
@@ -33,7 +33,7 @@ public abstract class BaseCustomApplicationPlugin {
     try {
       doDispose();
     } catch (Throwable t) {
-      LOG.error(t);
+      LOG.error(null, t);
     }
   }
 

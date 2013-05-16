@@ -8,9 +8,8 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -60,9 +59,6 @@ public class CreateTypesystemIntention_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (((EditorCell) editorContext.getSelectedCell()).getLinkDeclaration() != SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.typesystem.structure.MessageStatement", "helginsIntention")) {
-      return false;
-    }
     return ListSequence.fromList(SLinkOperations.getTargets(node, "helginsIntention", true)).isEmpty();
   }
 

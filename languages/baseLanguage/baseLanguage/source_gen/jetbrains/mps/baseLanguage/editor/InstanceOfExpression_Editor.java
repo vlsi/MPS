@@ -37,6 +37,9 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no leftExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("leftExpression");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
@@ -67,6 +70,9 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no classType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("classType");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);

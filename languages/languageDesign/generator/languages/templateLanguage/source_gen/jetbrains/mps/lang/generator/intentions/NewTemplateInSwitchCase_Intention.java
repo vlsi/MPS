@@ -67,9 +67,6 @@ public class NewTemplateInSwitchCase_Intention implements IntentionFactory {
     if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)), "jetbrains.mps.lang.generator.structure.TemplateSwitch"))) {
       return false;
     }
-    if (((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).getLinkDeclaration() != SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "ruleConsequence")) {
-      return false;
-    }
     return SLinkOperations.getTarget(node, "ruleConsequence", true) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "ruleConsequence", true)), "jetbrains.mps.lang.generator.structure.RuleConsequence");
   }
 

@@ -4,118 +4,147 @@ package jetbrains.mps.lang.generator.editor;
 
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import java.util.Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
+  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<EditorAspect>singletonList(new AbandonInput_RuleConsequence_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbandonInput_RuleConsequence_Editor());
       case 1:
-        return Collections.<EditorAspect>singletonList(new CopySrcListMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new CopySrcListMacro_Editor());
       case 2:
-        return Collections.<EditorAspect>singletonList(new CopySrcNodeMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new CopySrcNodeMacro_Editor());
       case 3:
-        return Collections.<EditorAspect>singletonList(new CreateRootRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new CreateRootRule_Editor());
       case 4:
-        return Collections.<EditorAspect>singletonList(new DismissTopMappingRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new DismissTopMappingRule_Editor());
       case 5:
-        return Collections.<EditorAspect>singletonList(new DropRootRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new DropRootRule_Editor());
       case 6:
-        return Collections.<EditorAspect>singletonList(new GeneratorDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new GeneratorDescriptor_Editor());
       case 7:
-        return Collections.<EditorAspect>singletonList(new GeneratorMessage_Editor());
+        return Collections.<ConceptEditor>singletonList(new GeneratorMessage_Editor());
       case 8:
-        return Collections.<EditorAspect>singletonList(new GeneratorParameterReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new GeneratorParameterReference_Editor());
       case 9:
-        return Collections.<EditorAspect>singletonList(new IfMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new IfMacro_Editor());
       case 10:
-        return Collections.<EditorAspect>singletonList(new IncludeMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new IncludeMacro_Editor());
       case 11:
-        return Collections.<EditorAspect>singletonList(new InlineSwitch_Case_Editor());
+        return Collections.<ConceptEditor>singletonList(new InlineSwitch_Case_Editor());
       case 12:
-        return Collections.<EditorAspect>singletonList(new InlineSwitch_RuleConsequence_Editor());
+        return Collections.<ConceptEditor>singletonList(new InlineSwitch_RuleConsequence_Editor());
       case 13:
-        return Collections.<EditorAspect>singletonList(new InlineTemplateWithContext_RuleConsequence_Editor());
+        return Collections.<ConceptEditor>singletonList(new InlineTemplateWithContext_RuleConsequence_Editor());
       case 14:
-        return Collections.<EditorAspect>singletonList(new InlineTemplate_RuleConsequence_Editor());
+        return Collections.<ConceptEditor>singletonList(new InlineTemplate_RuleConsequence_Editor());
       case 15:
-        return Collections.<EditorAspect>singletonList(new InsertMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new InsertMacro_Editor());
       case 16:
-        return Collections.<EditorAspect>singletonList(new LabelMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new LabelMacro_Editor());
       case 17:
-        return Collections.<EditorAspect>singletonList(new LoopMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new LoopMacro_Editor());
       case 18:
-        return Collections.<EditorAspect>singletonList(new MapSrcListMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new MapSrcListMacro_Editor());
       case 19:
-        return Collections.<EditorAspect>singletonList(new MapSrcNodeMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new MapSrcNodeMacro_Editor());
       case 20:
-        return Collections.<EditorAspect>singletonList(new MappingConfiguration_Editor());
+        return Collections.<ConceptEditor>singletonList(new MappingConfiguration_Editor());
       case 21:
-        return Collections.<EditorAspect>singletonList(new MappingLabelDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new MappingLabelDeclaration_Editor());
       case 22:
-        return Collections.<EditorAspect>singletonList(new MappingScript_Editor());
+        return Collections.<ConceptEditor>singletonList(new MappingScript_Editor());
       case 23:
-        return Collections.<EditorAspect>singletonList(new MappingScriptReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new MappingScriptReference_Editor());
       case 24:
-        return Collections.<EditorAspect>singletonList(new NodeMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeMacro_Editor());
       case 25:
-        return Collections.<EditorAspect>singletonList(new PatternReduction_MappingRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new PatternReduction_MappingRule_Editor());
       case 26:
-        return Collections.<EditorAspect>singletonList(new PropertyMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new PropertyMacro_Editor());
       case 27:
-        return Collections.<EditorAspect>singletonList(new Reduction_MappingRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new Reduction_MappingRule_Editor());
       case 28:
-        return Collections.<EditorAspect>singletonList(new ReferenceMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReferenceMacro_Editor());
       case 29:
-        return Collections.<EditorAspect>singletonList(new RootTemplateAnnotation_Editor());
+        return Collections.<ConceptEditor>singletonList(new RootTemplateAnnotation_Editor());
       case 30:
-        return Collections.<EditorAspect>singletonList(new Root_MappingRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new Root_MappingRule_Editor());
       case 31:
-        return Collections.<EditorAspect>singletonList(new RuleConsequence_Editor());
+        return Collections.<ConceptEditor>singletonList(new RuleConsequence_Editor());
       case 32:
-        return Collections.<EditorAspect>singletonList(new SwitchMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new SwitchMacro_Editor());
       case 33:
-        return Collections.<EditorAspect>singletonList(new TemplateArgumentLinkPatternRefExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateArgumentLinkPatternRefExpression_Editor());
       case 34:
-        return Collections.<EditorAspect>singletonList(new TemplateArgumentParameterExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateArgumentParameterExpression_Editor());
       case 35:
-        return Collections.<EditorAspect>singletonList(new TemplateArgumentPatternVarRefExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateArgumentPatternVarRefExpression_Editor());
       case 36:
-        return Collections.<EditorAspect>singletonList(new TemplateArgumentPropertyPatternRefExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateArgumentPropertyPatternRefExpression_Editor());
       case 37:
-        return Collections.<EditorAspect>singletonList(new TemplateArgumentQueryExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateArgumentQueryExpression_Editor());
       case 38:
-        return Collections.<EditorAspect>singletonList(new TemplateCallMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateCallMacro_Editor());
       case 39:
-        return Collections.<EditorAspect>singletonList(new TemplateDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateDeclaration_Editor());
       case 40:
-        return Collections.<EditorAspect>singletonList(new TemplateDeclarationReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateDeclarationReference_Editor());
       case 41:
-        return Collections.<EditorAspect>singletonList(new TemplateFragment_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateFragment_Editor());
       case 42:
-        return Collections.<EditorAspect>singletonList(new TemplateParameterDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateParameterDeclaration_Editor());
       case 43:
-        return Collections.<EditorAspect>singletonList(new TemplateSwitch_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateSwitch_Editor());
       case 44:
-        return Collections.<EditorAspect>singletonList(new TemplateSwitchReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new TemplateSwitchReference_Editor());
       case 45:
-        return Collections.<EditorAspect>singletonList(new TraceMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new TraceMacro_Editor());
       case 46:
-        return Collections.<EditorAspect>singletonList(new VarMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new VarMacro_Editor());
       case 47:
-        return Collections.<EditorAspect>singletonList(new WeaveEach_RuleConsequence_Editor());
+        return Collections.<ConceptEditor>singletonList(new WeaveEach_RuleConsequence_Editor());
       case 48:
-        return Collections.<EditorAspect>singletonList(new WeaveMacro_Editor());
+        return Collections.<ConceptEditor>singletonList(new WeaveMacro_Editor());
       case 49:
-        return Collections.<EditorAspect>singletonList(new Weaving_MappingRule_Editor());
+        return Collections.<ConceptEditor>singletonList(new Weaving_MappingRule_Editor());
+      default:
+    }
+    return Collections.emptyList();
+  }
+
+  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("jetbrains.mps.lang.generator.editor.BaseMappingRule_premise".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new BaseMappingRule_premise());
+        }
+        break;
+      case 1:
+        if ("jetbrains.mps.lang.generator.editor.CopyScrNodeMacro_inspector".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new CopyScrNodeMacro_inspector());
+        }
+        break;
+      case 2:
+        if ("jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new ITemplateCall_actualArguments());
+        }
+        break;
+      case 3:
+        if ("jetbrains.mps.lang.generator.editor.NodeMacro_postfix".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new NodeMacro_postfix());
+        }
+        break;
       default:
     }
     return Collections.emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence", "jetbrains.mps.lang.generator.structure.CopySrcListMacro", "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", "jetbrains.mps.lang.generator.structure.CreateRootRule", "jetbrains.mps.lang.generator.structure.DismissTopMappingRule", "jetbrains.mps.lang.generator.structure.DropRootRule", "jetbrains.mps.lang.generator.structure.GeneratorDescriptor", "jetbrains.mps.lang.generator.structure.GeneratorMessage", "jetbrains.mps.lang.generator.structure.GeneratorParameterReference", "jetbrains.mps.lang.generator.structure.IfMacro", "jetbrains.mps.lang.generator.structure.IncludeMacro", "jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InsertMacro", "jetbrains.mps.lang.generator.structure.LabelMacro", "jetbrains.mps.lang.generator.structure.LoopMacro", "jetbrains.mps.lang.generator.structure.MapSrcListMacro", "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", "jetbrains.mps.lang.generator.structure.MappingConfiguration", "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration", "jetbrains.mps.lang.generator.structure.MappingScript", "jetbrains.mps.lang.generator.structure.MappingScriptReference", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", "jetbrains.mps.lang.generator.structure.Root_MappingRule", "jetbrains.mps.lang.generator.structure.RuleConsequence", "jetbrains.mps.lang.generator.structure.SwitchMacro", "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression", "jetbrains.mps.lang.generator.structure.TemplateCallMacro", "jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", "jetbrains.mps.lang.generator.structure.TemplateFragment", "jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration", "jetbrains.mps.lang.generator.structure.TemplateSwitch", "jetbrains.mps.lang.generator.structure.TemplateSwitchReference", "jetbrains.mps.lang.generator.structure.TraceMacro", "jetbrains.mps.lang.generator.structure.VarMacro", "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", "jetbrains.mps.lang.generator.structure.WeaveMacro", "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule", "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", "jetbrains.mps.lang.generator.structure.ITemplateCall", "jetbrains.mps.lang.generator.structure.NodeMacro"};
 }

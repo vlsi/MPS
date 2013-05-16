@@ -68,6 +68,10 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_fullName");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("configuration");
+      }
       Style style = new StyleImpl();
       PackagingStyles_StyleSheet.applyConfiguration(style, editorCell);
       editorCell.getStyle().putAll(style);

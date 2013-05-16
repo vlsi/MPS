@@ -55,6 +55,9 @@ public class ModuleSuite_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no moduleRef>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("moduleRef");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

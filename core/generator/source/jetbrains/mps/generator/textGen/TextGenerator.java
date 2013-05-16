@@ -176,7 +176,7 @@ public class TextGenerator {
           g.generateCache(status, streamHandler);
         }
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(null, t);
       }
     }
   }

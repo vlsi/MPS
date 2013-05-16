@@ -80,8 +80,12 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_ulfewq_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "group");
       editorCell.setCellId("ReferencePresentation_ulfewq_a0a0");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("group");
+      }
       return editorCell;
     }
   }

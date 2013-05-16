@@ -129,7 +129,7 @@ public class SideTransformUtil {
       try {
         return (Boolean) QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, actionsBuilder, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "call_getPreconditionQueryMethodName_1220279571415", new Object[]{}), context, new SideTransformPreconditionContext(node), SNodeOperations.getModel(actionsBuilder));
       } catch (Exception e) {
-        LOG.error(e);
+        LOG.error(null, e);
       }
     }
 
@@ -140,7 +140,7 @@ public class SideTransformUtil {
     try {
       QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, removeByCondition, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "call_getQueryMethodName_1220279474449", new Object[]{}), context, new RemoveSideTransformActionByConditionContext(actions, node), SNodeOperations.getModel(removeByCondition));
     } catch (Exception e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
   }
 
@@ -148,7 +148,7 @@ public class SideTransformUtil {
     try {
       return (List<SubstituteAction>) QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, actionsBuilder, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "call_getBuilderQueryMethodName_1220279234749", new Object[]{}), context, new SideTransformActionsBuilderContext(node, SNodeOperations.getModel(node), cellSide, null), SNodeOperations.getModel(actionsBuilder));
     } catch (Exception e) {
-      LOG.error(e);
+      LOG.error(null, e);
       return Collections.emptyList();
     }
   }

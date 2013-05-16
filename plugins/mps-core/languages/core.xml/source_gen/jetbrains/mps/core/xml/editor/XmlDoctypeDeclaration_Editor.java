@@ -127,6 +127,9 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("externalId");
+    }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlDoctypeDeclaration_Editor.XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a(), new XmlDoctypeDeclaration_Editor.XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_b0c1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

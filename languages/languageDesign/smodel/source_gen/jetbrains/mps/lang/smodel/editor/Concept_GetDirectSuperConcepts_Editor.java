@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class Concept_GetDirectSuperConcepts_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -23,8 +22,7 @@ public class Concept_GetDirectSuperConcepts_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_k3ew3b_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ReplaceableAliasAndParms_Comp(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp");
     return editorCell;
   }
 }

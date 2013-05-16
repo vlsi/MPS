@@ -41,15 +41,17 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -111,12 +113,13 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     @Override
     public void modelsReplaced(Set<SModel> replacedModels) {
       for (SModel modelDescriptor : replacedModels) {
-        if (!jetbrains.mps.util.SNodeOperations.isRegistered(modelDescriptor)){
+        if (!jetbrains.mps.util.SNodeOperations.isRegistered(modelDescriptor)) {
           continue;
         }
         for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
           SNode sNode = editorComponent.getEditedNode();
-          if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) && sNode.getModel().getReference().equals(modelDescriptor.getReference())) {
+          if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) &&
+              sNode.getModel().getReference().equals(modelDescriptor.getReference())) {
             myCheckedOnceEditors.remove(editorComponent);
           }
         }
@@ -131,7 +134,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
    * MPSProject was used as a parameter of this constructor because corresponding component should be initialised after
    * MPSProject and un-initialized before it.
    */
-  public Highlighter(MPSProject mpsProject, Project project, ProjectManager projectManager, FileEditorManager fileEditorManager, InspectorTool inspector, MPSCoreComponents coreComponents) {
+  public Highlighter(MPSProject mpsProject, Project project, ProjectManager projectManager, FileEditorManager fileEditorManager, InspectorTool inspector,
+      MPSCoreComponents coreComponents) {
     myProject = project;
     myFileEditorManager = fileEditorManager;
     myGlobalSModelEventsManager = coreComponents.getGlobalSModelEventsManager();
@@ -277,7 +281,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         attemptCounter--;
       }
     } catch (InterruptedException e) {
-      LOG.error(e);
+      LOG.error(null, e);
     }
   }
 
@@ -422,51 +426,51 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  private boolean updateEditorComponent(final EditorComponent component, final List<SModelEvent> events, final Set<BaseEditorChecker> checkers, final Set<BaseEditorChecker> checkersToRemove, final boolean mainEditorMessagesChanged, final boolean essentialOnly) {
+  private boolean updateEditorComponent(final EditorComponent component, final List<SModelEvent> events, final Set<BaseEditorChecker> checkers,
+      final Set<BaseEditorChecker> checkersToRemove, final boolean mainEditorMessagesChanged, final boolean essentialOnly) {
     return runUpdateMessagesAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        final SNode editedNode = component.getEditedNode();
-        if (editedNode != null && editedNode.isInRepository()) {
-          final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
-          boolean rootWasCheckedOnce = wasCheckedOnce(component);
-          if (!rootWasCheckedOnce) {
-            checkersToRecheck.addAll(checkers);
-          } else {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              @Override
-              public void run() {
-                if (myStopThread) {
-                  return;
-                }
-                for (BaseEditorChecker checker : checkers) {
-                  if (checker.hasDramaticalEventProtected(events) && (!essentialOnly || checker.isEssentialProtected())) {
-                    checkersToRecheck.add(checker);
-                  }
+        boolean needsUpdate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            final SNode editedNode = component.getEditedNode();
+            return editedNode != null && SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance());
+          }
+        });
+        if (!needsUpdate) return false;
+
+        final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
+        boolean rootWasCheckedOnce = wasCheckedOnce(component);
+        if (!rootWasCheckedOnce) {
+          checkersToRecheck.addAll(checkers);
+        } else {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
+            public void run() {
+              if (myStopThread) return;
+              for (BaseEditorChecker checker : checkers) {
+                if (checker.hasDramaticalEventProtected(events) && (!essentialOnly || checker.isEssentialProtected())) {
+                  checkersToRecheck.add(checker);
                 }
               }
-            });
-          }
-
-          if ((checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) || myStopThread) {
-            return false;
-          }
-          List<BaseEditorChecker> checkersToRecheckList = new ArrayList<BaseEditorChecker>(checkersToRecheck);
-          Collections.sort(checkersToRecheckList, new PriorityComparator());
-
-          boolean recreateInspectorMessages = mainEditorMessagesChanged || !myInspectorMessagesCreated;
-          if (component instanceof InspectorEditorComponent) {
-            myInspectorMessagesCreated = true;
-          } else {
-            myCheckedOnceEditors.add(component);
-          }
-
-
-          if (updateEditor(component, events, rootWasCheckedOnce, checkersToRecheckList, checkersToRemove, recreateInspectorMessages)) {
-            return true;
-          }
+            }
+          });
         }
-        return false;
+
+        if ((checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) || myStopThread) return false;
+
+        List<BaseEditorChecker> checkersToRecheckList = new ArrayList<BaseEditorChecker>(checkersToRecheck);
+        Collections.sort(checkersToRecheckList, new PriorityComparator());
+
+        boolean recreateInspectorMessages = mainEditorMessagesChanged || !myInspectorMessagesCreated;
+        if (component instanceof InspectorEditorComponent) {
+          myInspectorMessagesCreated = true;
+        } else {
+          myCheckedOnceEditors.add(component);
+        }
+
+        return updateEditor(component, events, rootWasCheckedOnce, checkersToRecheckList, checkersToRemove, recreateInspectorMessages);
       }
     });
   }
@@ -498,7 +502,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     });
   }
 
-  private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce, List<BaseEditorChecker> checkersToRecheck, Set<BaseEditorChecker> checkersToRemove, boolean recreateInspectorMessages) {
+  private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce,
+      List<BaseEditorChecker> checkersToRecheck, Set<BaseEditorChecker> checkersToRemove, boolean recreateInspectorMessages) {
     if (editor == null || editor.getRootCell() == null) return false;
 
     final NodeHighlightManager highlightManager = editor.getHighlightManager();
@@ -513,7 +518,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           SNode node = editor.getEditedNode();
           if (node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isDisposed(node))
             return false;
-          if (!node.isInRepository()) {
+          if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
             // asking runLoPrioRead() implementation to re-execute this task later:
             // editor was not updated in accordance with last modelReload event yet.
             return null;
@@ -577,6 +582,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   private static <T> T runLoPrioRead(final Computable<T> computable) {
+    assert !ModelAccess.instance().canRead():"Lo-prio read with acquired read can be a reason of a deadlock";
     T result;
     do {
       while (IMakeService.INSTANCE.isSessionActive()) {
@@ -619,7 +625,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             }
             while (dumbService.isDumb()) {
               if (myStopThread) return;
-              Thread.sleep(DEFAULT_GRACE_PERIOD*3);
+              Thread.sleep(DEFAULT_GRACE_PERIOD * 3);
             }
             if (!myCommandWatcher.isGracePeriodExpired()) {
               Thread.sleep(myCommandWatcher.timeToExpiration());
@@ -646,7 +652,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             myCommandWatcher.resetGracePeriod();
           }
         } catch (Throwable t) {
-          LOG.error(t);
+          LOG.error(null, t);
         }
       }
     }
@@ -655,7 +661,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   /**
    * Thread safe.
    */
-  private static class CommandWatcher extends ModelAccessAdapter{
+  private static class CommandWatcher extends ModelAccessAdapter {
     private AtomicLong myLastCommandStarted = new AtomicLong(System.currentTimeMillis());
     private AtomicLong myLastCommandFinished = new AtomicLong(System.currentTimeMillis());
     private AtomicLong myGracePeriod = new AtomicLong(DEFAULT_GRACE_PERIOD);
@@ -671,18 +677,18 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
     boolean isLargerGracePeriodExpired() {
       final long time = System.currentTimeMillis();
-      if (time - myLastCommandFinished.get() - 2*DEFAULT_GRACE_PERIOD >= myGracePeriod.get()) {
+      if (time - myLastCommandFinished.get() - 2 * DEFAULT_GRACE_PERIOD >= myGracePeriod.get()) {
         return true;
       }
       return false;
     }
 
-    void resetGracePeriod () {
+    void resetGracePeriod() {
       myGracePeriod.set(DEFAULT_GRACE_PERIOD);
       myCurrentMultiplier.set(4);
     }
 
-    long timeToExpiration () {
+    long timeToExpiration() {
       final long time = System.currentTimeMillis();
       final long delta = time - myLastCommandFinished.get();
       final long left = myGracePeriod.get() - delta;
@@ -697,7 +703,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       if (delta < myGracePeriod.get()) {
         final int mult = myCurrentMultiplier.get();
         myGracePeriod.getAndAdd(delta * mult);
-        myCurrentMultiplier.set(mult/2);
+        myCurrentMultiplier.set(mult / 2);
       }
     }
 
