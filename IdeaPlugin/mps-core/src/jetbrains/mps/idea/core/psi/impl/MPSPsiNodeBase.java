@@ -23,6 +23,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiInvalidElementAccessException;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiReference;
+import com.intellij.psi.SyntheticElement;
 import com.intellij.psi.impl.light.LightElement;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.SmartList;
@@ -38,7 +39,7 @@ import java.util.NoSuchElementException;
 /**
  * evgeny, 1/25/13
  */
-public abstract class MPSPsiNodeBase extends LightElement {
+public abstract class MPSPsiNodeBase extends LightElement implements SyntheticElement {
 
   private NodeList children;
   private NodeList.Entry listEntry;
