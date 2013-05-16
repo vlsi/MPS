@@ -20,10 +20,6 @@ import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.AnActionButton;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser;
-import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
-import org.jdesktop.beansbinding.AutoBinding;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import com.intellij.ui.IdeBorderFactory;
@@ -77,35 +73,7 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     decorator.setAddAction(new AnActionButtonRunnable() {
       @Override
       public void run(AnActionButton button) {
-        Path path = new ModulePathChooser(new IBindedDialog() {
-          public jetbrains.mps.project.Project getProject() {
-            return null;
-          }
-
-          @Override
-          public JComponent getMainComponent() {
-            return null;
-          }
-
-          @Override
-          public IOperationContext getOperationContext() {
-            return null;
-          }
-
-          @Override
-          public IScope getModuleScope() {
-            return null;
-          }
-
-          @Override
-          public IScope getProjectScope() {
-            return null;
-          }
-
-          @Override
-          public void addBinding(AutoBinding p0) {
-          }
-        }).compute();
+        Path path = new ModulePathChooser().compute();
         if (path != null) {
           for (Path p : ((ProjectPropertiesComponent.PathsListModel) list.getModel()).getPaths()) {
             if (p.isSamePath(path)) {
