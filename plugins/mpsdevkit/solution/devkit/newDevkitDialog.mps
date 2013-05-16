@@ -104,10 +104,10 @@
         </node>
       </node>
       <node role="dimensions" roleId="tprh.1226850487634" type="tprh.DialogDimensions" typeId="tprh.1226850367300" id="1226850922626" nodeInfo="ng">
-        <property name="height" nameId="tprh.1226850388991" value="200" />
-        <property name="width" nameId="tprh.1226850387521" value="600" />
-        <property name="left" nameId="tprh.1226850380566" value="100" />
-        <property name="top" nameId="tprh.1226850405617" value="100" />
+        <property name="height" nameId="tprh.1226850388991" value="100" />
+        <property name="width" nameId="tprh.1226850387521" value="400" />
+        <property name="left" nameId="tprh.1226850380566" value="-1" />
+        <property name="top" nameId="tprh.1226850405617" value="-1" />
       </node>
     </node>
   </root>

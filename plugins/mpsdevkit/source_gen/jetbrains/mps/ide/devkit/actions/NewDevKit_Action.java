@@ -14,7 +14,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog;
-import java.awt.Frame;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.ModelAccess;
@@ -71,9 +70,9 @@ public class NewDevKit_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NewDevKitDialog dialog = new NewDevKitDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
+      NewDevKitDialog dialog = new NewDevKitDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
       dialog.setProject(((MPSProject) MapSequence.fromMap(_params).get("project")));
-      dialog.showDialog();
+      dialog.show();
       final DevKit devkit = dialog.getResult();
       if (devkit == null) {
         return;

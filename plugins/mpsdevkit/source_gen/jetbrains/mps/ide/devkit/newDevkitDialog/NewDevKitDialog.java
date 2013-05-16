@@ -4,12 +4,13 @@ package jetbrains.mps.ide.devkit.newDevkitDialog;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import java.awt.Frame;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import javax.swing.JComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.ide.dialogs.BaseDialog;
 import org.jetbrains.annotations.Nullable;
+import java.awt.Dimension;
 import javax.swing.Action;
 import java.util.List;
 import java.util.ArrayList;
@@ -18,22 +19,29 @@ import java.awt.event.ActionEvent;
 public class NewDevKitDialog extends DialogWrapper {
   public NewDevKitDialogContentPane myContentPane;
 
+  /**
+   * Use constructor <code>DialogClass(Project)</code> instead 
+   * 
+   * @param frame unused - stay for compatibility after migration from BaseDialog
+   */
+  @Deprecated
   public NewDevKitDialog(Frame frame) {
-    super(true);
+    this((Project) null);
+  }
+
+  public NewDevKitDialog(Project project) {
+    super(project);
     setTitle("New Dev Kit");
     init();
   }
 
+  @Deprecated
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(100, 100, 600, 200);
+    return new DialogDimensionsSettings.DialogDimensions(-1, -1, 400, 100);
   }
 
   public JComponent getMainComponent() {
-    if (this.myContentPane == null) {
-      this.myContentPane = new NewDevKitDialogContentPane();
-      this.myContentPane.setDialog(this);
-    }
-    return this.myContentPane;
+    return this.createCenterPanel();
   }
 
   public boolean stretchMainComponent() {
@@ -80,21 +88,12 @@ public class NewDevKitDialog extends DialogWrapper {
     this.myContentPane.setResult(newValue);
   }
 
-  @BaseDialog.Button(name = "_OK", position = 0, defaultButton = true)
-  public void buttonMethod_a0() {
-    myContentPane.onOk();
-  }
-
-  @BaseDialog.Button(name = "_Cancel", position = 1, defaultButton = false)
-  public void buttonMethod_b0() {
-    myContentPane.onCancel();
-  }
-
   @Nullable
   protected JComponent createCenterPanel() {
     if (this.myContentPane == null) {
       this.myContentPane = new NewDevKitDialogContentPane();
       this.myContentPane.setDialog(this);
+      this.myContentPane.setPreferredSize(new Dimension(400, 100));
     }
     return this.myContentPane;
   }

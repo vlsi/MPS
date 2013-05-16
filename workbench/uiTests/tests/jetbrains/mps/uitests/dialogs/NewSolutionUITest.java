@@ -18,26 +18,25 @@ package jetbrains.mps.uitests.dialogs;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.common.PathField;
-import jetbrains.mps.ide.newSolutionDialog.NewSolutionDialog;
+import jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import junit.extensions.jfcunit.eventdata.StringEventData;
 
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-import java.awt.Frame;
 import java.lang.reflect.InvocationTargetException;
 
 public class NewSolutionUITest extends NewDialogsUITestsBase {
   public void testSolutionCreation() throws InvocationTargetException, InterruptedException {
-    Frame frame = MPSCommonDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
-    assertNotNull("Main frame not found", frame);
+    Project project = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
+    assertNotNull("Main project not found", project);
 
-    final NewSolutionDialog dialog = new NewSolutionDialog(frame);
-    dialog.setProject(myCreatedProject);
+    final NewSolutionDialog dialog = new NewSolutionDialog(project);
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        dialog.showDialog();
+        dialog.show();
       }
     });
     flushAWT();
@@ -52,7 +51,7 @@ public class NewSolutionUITest extends NewDialogsUITestsBase {
     pressButton(dialog, "OK");
     flushAWT();
 
-    final Solution s = dialog.getResult();
+    final Solution s = dialog.getSolution();
     assertNotNull("Solution is not created", s);
 
     boolean isImported = myCreatedProject.getProjectModules(Solution.class).contains(s);
