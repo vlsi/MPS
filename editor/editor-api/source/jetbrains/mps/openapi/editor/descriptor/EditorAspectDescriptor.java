@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.openapi.editor.descriptor;
 
-import jetbrains.mps.openapi.editor.EditorContextHint;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 
@@ -28,5 +27,5 @@ import java.util.Collection;
 public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
   Collection<ConceptEditor> getEditors(ConceptDescriptor concept);
   Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor concept, String editorComponentId);
-  Collection<EditorContextHint> getHints();
+  Collection<ConceptEditorHint> getHints();
 }

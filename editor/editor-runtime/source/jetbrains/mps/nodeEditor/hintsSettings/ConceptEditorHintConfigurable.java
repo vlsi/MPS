@@ -28,11 +28,11 @@ import javax.swing.JComponent;
  * Semen Alperovich
  * 05 15, 2013
  */
-public class EditorContextHintsConfigurable implements SearchableConfigurable {
-  private EditorContextHintsPreferencesPage myPage;
+public class ConceptEditorHintConfigurable implements SearchableConfigurable {
+  private ConceptEditorHintPreferencesPage myPage;
   private final Project myProject;
 
-  public EditorContextHintsConfigurable(Project project) {
+  public ConceptEditorHintConfigurable(Project project) {
     myProject = project;
   }
 
@@ -66,9 +66,9 @@ public class EditorContextHintsConfigurable implements SearchableConfigurable {
     return getPage().getComponent();
   }
 
-  public EditorContextHintsPreferencesPage getPage() {
+  public ConceptEditorHintPreferencesPage getPage() {
     if (myPage == null) {
-      myPage = new EditorContextHintsPreferencesPage(EditorContextHintsSettingsComponent.getInstance(myProject).getState());
+      myPage = new ConceptEditorHintPreferencesPage(ConceptEditorHintSettingsComponent.getInstance(myProject).getState());
     }
     return myPage;
   }

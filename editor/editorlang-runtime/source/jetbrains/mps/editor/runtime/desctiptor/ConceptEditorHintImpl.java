@@ -13,18 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor;
+package jetbrains.mps.editor.runtime.desctiptor;
 
+
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
 /**
  * Semen Alperovich
  * 05 15, 2013
  */
-public class EditorContextHint {
+public class ConceptEditorHintImpl implements ConceptEditorHint {
   private final String myId;
   private final String myPresentation;
 
-  public EditorContextHint(String id, String presentation) {
+  public ConceptEditorHintImpl(String id, String presentation) {
     myId = id;
     myPresentation = presentation;
 

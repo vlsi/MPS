@@ -20,7 +20,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.openapi.editor.EditorContextHint;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
@@ -37,7 +37,7 @@ import java.util.Map;
  */
 
 @State(
-    name = "EditorContextHintsSettings",
+    name = "ConceptEditorHintSettings",
     storages = {
         @Storage(
             id = "other",
@@ -45,12 +45,12 @@ import java.util.Map;
         )
     }
 )
-public class EditorContextHintsSettingsComponent implements PersistentStateComponent<EditorContextHintsSettings>, ProjectComponent {
-  private EditorContextHintsSettings myState;
+public class ConceptEditorHintSettingsComponent implements PersistentStateComponent<ConceptEditorHintSettings>, ProjectComponent {
+  private ConceptEditorHintSettings myState;
   private Project myProject;
   private LanguageRegistryListener myListener;
 
-  public EditorContextHintsSettingsComponent(Project project) {
+  public ConceptEditorHintSettingsComponent(Project project) {
     myProject = project;
   }
 
@@ -70,12 +70,12 @@ public class EditorContextHintsSettingsComponent implements PersistentStateCompo
 
   @Nullable
   @Override
-  public EditorContextHintsSettings getState() {
+  public ConceptEditorHintSettings getState() {
     return myState;
   }
 
   @Override
-  public void loadState(EditorContextHintsSettings state) {
+  public void loadState(ConceptEditorHintSettings state) {
     if (myState == null) {
       myState = state;
     }
@@ -84,8 +84,8 @@ public class EditorContextHintsSettingsComponent implements PersistentStateCompo
   @Override
   public void projectOpened() {
     if (myState == null) {
-      myState = new EditorContextHintsSettings();
-      myState.setSettings(new HashMap<String, Map<EditorContextHint, Boolean>>());
+      myState = new ConceptEditorHintSettings();
+      myState.setSettings(new HashMap<String, Map<ConceptEditorHint, Boolean>>());
     }
     myListener = new LanguageRegistryListener() {
       @Override
@@ -113,13 +113,13 @@ public class EditorContextHintsSettingsComponent implements PersistentStateCompo
       if (!myState.getSettings().containsKey(namespace)) {
         continue;
       }
-      for (EditorContextHint hint : myState.getHints(namespace)) {
+      for (ConceptEditorHint hint : myState.getHints(namespace)) {
         if (editorDescriptor.getHints().contains(hint)) {
           myState.getSettings().get(namespace).remove(hint);
         }
       }
 
-      for (EditorContextHint hint : editorDescriptor.getHints()) {
+      for (ConceptEditorHint hint : editorDescriptor.getHints()) {
         if (myState.getSettings().get(namespace).containsKey(hint)) {
           myState.getSettings().get(namespace).remove(hint);
         }
@@ -135,15 +135,15 @@ public class EditorContextHintsSettingsComponent implements PersistentStateCompo
       }
       String namespace = language.getNamespace();
       if(!myState.getSettings().containsKey(namespace)) {
-        myState.getSettings().put(namespace, new HashMap<EditorContextHint, Boolean>());
+        myState.getSettings().put(namespace, new HashMap<ConceptEditorHint, Boolean>());
       }
-      for (EditorContextHint hint : myState.getHints(namespace)) {
+      for (ConceptEditorHint hint : myState.getHints(namespace)) {
         if (!editorDescriptor.getHints().contains(hint)) {
           myState.getSettings().get(namespace).remove(hint);
         }
       }
 
-      for (EditorContextHint hint : editorDescriptor.getHints()) {
+      for (ConceptEditorHint hint : editorDescriptor.getHints()) {
         if (!myState.getSettings().get(namespace).containsKey(hint)) {
           myState.getSettings().get(namespace).put(hint, false);
         }
@@ -156,7 +156,7 @@ public class EditorContextHintsSettingsComponent implements PersistentStateCompo
     LanguageRegistry.getInstance().removeRegistryListener(myListener);
   }
 
-  public static EditorContextHintsSettingsComponent getInstance(Project project) {
-    return project.getComponent(EditorContextHintsSettingsComponent.class);
+  public static ConceptEditorHintSettingsComponent getInstance(Project project) {
+    return project.getComponent(ConceptEditorHintSettingsComponent.class);
   }
 }

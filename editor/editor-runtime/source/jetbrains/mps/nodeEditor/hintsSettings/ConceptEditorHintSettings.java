@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.hintsSettings;
 
-import jetbrains.mps.openapi.editor.EditorContextHint;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,16 +25,16 @@ import java.util.Set;
  * Semen Alperovich
  * 05 15, 2013
  */
-public class EditorContextHintsSettings {
-  private Map<String, Map<EditorContextHint, Boolean>> mySettings = new HashMap<String, Map<EditorContextHint, Boolean>>();
-  public Map<String, Map<EditorContextHint, Boolean>> getSettings() {
+public class ConceptEditorHintSettings {
+  private Map<String, Map<ConceptEditorHint, Boolean>> mySettings = new HashMap<String, Map<ConceptEditorHint, Boolean>>();
+  public Map<String, Map<ConceptEditorHint, Boolean>> getSettings() {
     return mySettings;
   }
 
-  public void setSettings(Map<String, Map<EditorContextHint, Boolean>> settings) {
+  public void setSettings(Map<String, Map<ConceptEditorHint, Boolean>> settings) {
     mySettings = settings;
   }
-  public Set<EditorContextHint> getHints(String name) {
+  public Set<ConceptEditorHint> getHints(String name) {
     return getSettings().get(name).keySet();
   }
 }
