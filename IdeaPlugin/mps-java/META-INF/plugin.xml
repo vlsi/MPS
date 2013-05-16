@@ -98,6 +98,8 @@
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.ForeignIdReferenceIndex"/>
     <projectService serviceInterface="jetbrains.mps.idea.java.psi.ForeignIdReferenceCache"
                     serviceImplementation="jetbrains.mps.idea.java.psi.impl.ForeignIdReferenceCacheImpl"/>
+    <findUsagesHandlerFactory implementation="jetbrains.mps.idea.java.usages.MPSFindUsagesHandlerFactory" id="mps"
+                              order="before java"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">
