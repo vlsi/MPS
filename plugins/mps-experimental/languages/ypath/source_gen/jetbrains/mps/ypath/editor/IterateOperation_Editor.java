@@ -170,8 +170,6 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -353,8 +351,6 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     public _Inline_wgzfn3_a1b0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

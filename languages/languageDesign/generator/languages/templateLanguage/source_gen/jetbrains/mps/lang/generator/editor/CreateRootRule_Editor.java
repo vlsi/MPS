@@ -123,8 +123,6 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -193,8 +191,6 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     public _Inline_7t32xl_a4a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -331,8 +327,6 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     public _Inline_7t32xl_a2c0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

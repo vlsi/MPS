@@ -202,8 +202,6 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -352,8 +350,6 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
     public _Inline_o2w2pr_a1c0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

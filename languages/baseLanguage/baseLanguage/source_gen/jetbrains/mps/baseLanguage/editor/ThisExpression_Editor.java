@@ -84,8 +84,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -197,8 +195,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     public _Inline_xaaxob_a1a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

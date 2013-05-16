@@ -91,8 +91,6 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -177,8 +175,6 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     public _Inline_hr8njl_a1a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

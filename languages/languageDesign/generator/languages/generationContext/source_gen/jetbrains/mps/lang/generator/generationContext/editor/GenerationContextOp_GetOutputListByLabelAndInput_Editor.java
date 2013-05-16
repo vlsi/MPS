@@ -74,8 +74,6 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

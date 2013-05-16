@@ -103,8 +103,6 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -55,8 +55,6 @@ public class ActionDataParameterReferenceOperation_Editor extends DefaultNodeEdi
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

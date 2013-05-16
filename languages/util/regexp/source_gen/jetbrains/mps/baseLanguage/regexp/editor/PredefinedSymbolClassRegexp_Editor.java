@@ -62,8 +62,6 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -148,8 +146,6 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
     public _Inline_5lunhw_a1a0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

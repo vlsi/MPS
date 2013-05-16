@@ -79,8 +79,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -142,8 +140,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
     public _Inline_e5b6m9_a1a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

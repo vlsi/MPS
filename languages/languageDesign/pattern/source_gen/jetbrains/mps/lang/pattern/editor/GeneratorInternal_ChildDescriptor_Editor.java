@@ -95,8 +95,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -157,8 +155,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     public _Inline_s0kiw8_a5a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -190,8 +190,6 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -352,8 +350,6 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
     public _Inline_ivh5g9_a2b1b0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

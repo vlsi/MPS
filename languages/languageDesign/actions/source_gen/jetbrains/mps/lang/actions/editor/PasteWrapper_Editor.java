@@ -79,8 +79,6 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -142,8 +140,6 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     public _Inline_eyosg6_a3a0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

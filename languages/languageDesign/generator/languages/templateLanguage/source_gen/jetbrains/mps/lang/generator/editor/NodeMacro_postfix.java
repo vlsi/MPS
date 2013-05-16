@@ -127,8 +127,6 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -59,8 +59,6 @@ public class GeneratorInternal_BuildSource_JavaJar_Editor extends DefaultNodeEdi
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

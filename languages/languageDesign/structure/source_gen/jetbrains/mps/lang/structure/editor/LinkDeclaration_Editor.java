@@ -179,8 +179,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -357,8 +355,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     public _Inline_6h6dhy_a1f2a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

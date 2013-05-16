@@ -229,8 +229,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -306,8 +304,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     public _Inline_z637q5_a1d1c0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

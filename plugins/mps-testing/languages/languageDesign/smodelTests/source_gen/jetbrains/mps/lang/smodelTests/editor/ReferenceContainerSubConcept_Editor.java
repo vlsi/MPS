@@ -144,8 +144,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -219,8 +217,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -293,8 +289,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
     public _Inline_j13i3b_a1c1b0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

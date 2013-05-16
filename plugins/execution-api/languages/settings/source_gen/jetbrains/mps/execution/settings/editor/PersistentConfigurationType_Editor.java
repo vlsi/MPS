@@ -63,8 +63,6 @@ public class PersistentConfigurationType_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -129,8 +127,6 @@ public class PersistentConfigurationType_Editor extends DefaultNodeEditor {
     public _Inline_c5arh5_a1a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

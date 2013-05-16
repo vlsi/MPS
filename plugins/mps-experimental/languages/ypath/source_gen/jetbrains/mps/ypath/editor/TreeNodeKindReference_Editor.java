@@ -77,8 +77,6 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -142,8 +140,6 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
     public _Inline_g2eo62_a4a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

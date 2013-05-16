@@ -74,8 +74,6 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

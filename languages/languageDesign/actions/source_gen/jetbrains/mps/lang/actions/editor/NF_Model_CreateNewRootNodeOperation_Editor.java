@@ -83,8 +83,6 @@ public class NF_Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEdito
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

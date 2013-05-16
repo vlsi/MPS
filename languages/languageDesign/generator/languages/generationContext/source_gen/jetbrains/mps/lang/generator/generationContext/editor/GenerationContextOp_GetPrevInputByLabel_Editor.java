@@ -67,8 +67,6 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

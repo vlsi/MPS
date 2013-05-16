@@ -105,8 +105,6 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -222,8 +220,6 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
     public _Inline_i53w7s_a9a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

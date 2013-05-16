@@ -71,8 +71,6 @@ public class DefaultGenerationParameterId_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -142,8 +140,6 @@ public class DefaultGenerationParameterId_Editor extends DefaultNodeEditor {
     public _Inline_38ix8g_a3a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
