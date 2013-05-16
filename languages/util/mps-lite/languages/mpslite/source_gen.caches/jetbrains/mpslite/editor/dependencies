@@ -177,9 +177,9 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode dependClassName="jetbrains.mpslite.editor.AbstractConceptReference_Editor" />
     <classNode dependClassName="jetbrains.mpslite.editor.BinaryOperationConcept_Editor" />

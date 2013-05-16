@@ -143,9 +143,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.StringLiteralRegexp_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.UnicodeCharacterRegexp_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>

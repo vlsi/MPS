@@ -12,9 +12,9 @@
     <classNode dependClassName="jetbrains.mps.lang.pattern.testLang.editor.TestPropertyVariableReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.testLang.editor.TestVariableReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.testLang.editor.VariableValue_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContextHint" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
