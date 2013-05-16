@@ -20,6 +20,13 @@ public class EditorComponentDeclaration_Behavior {
     SLinkOperations.setTarget(thisNode, "conceptDeclaration", baseConcept, false);
   }
 
+  public static SNode virtual_getConceptDeclaration_7055725856388417603(SNode thisNode) {
+    return (SLinkOperations.getTarget(thisNode, "conceptDeclaration", false) != null ?
+      SLinkOperations.getTarget(thisNode, "conceptDeclaration", false) :
+      BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "overridenEditorComponent", true), "editorComponent", false), "virtual_getConceptDeclaration_7055725856388417603", new Object[]{})
+    );
+  }
+
   @Deprecated
   public static SNode call_getBaseConcept_5270353093116097898(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});

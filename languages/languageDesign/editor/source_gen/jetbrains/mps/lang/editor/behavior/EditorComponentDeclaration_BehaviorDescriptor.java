@@ -22,6 +22,10 @@ public class EditorComponentDeclaration_BehaviorDescriptor extends BaseEditorCom
     return EditorComponentDeclaration_Behavior.virtual_getBaseConcept_2621449412040133768(thisNode);
   }
 
+  public SNode virtual_getConceptDeclaration_7055725856388417603(SNode thisNode) {
+    return EditorComponentDeclaration_Behavior.virtual_getConceptDeclaration_7055725856388417603(thisNode);
+  }
+
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }

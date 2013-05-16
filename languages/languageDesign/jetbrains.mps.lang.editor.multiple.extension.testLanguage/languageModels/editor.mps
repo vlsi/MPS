@@ -36,7 +36,6 @@
   </root>
   <root type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="1217012833662768584" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="MultipleEditorsTestEditorComponentChild_compactRich" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.1217012833662065273" resolveInfo="MultipleEditorsTestEditorComponentChild" />
     <node role="contextHints" roleId="tpc2.7348800710862477686" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="1217012833662768683" nodeInfo="ig">
       <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="dfnz.5944657839017576565" resolveInfo="rich" />
     </node>
@@ -44,7 +43,7 @@
       <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="dfnz.5944657839017576567" resolveInfo="compact" />
     </node>
     <node role="overridenEditorComponent" roleId="tpc2.7033942394258392116" type="tpc2.EditorComponentDeclarationReference" typeId="tpc2.7033942394256351208" id="1217012833662768679" nodeInfo="ng">
-      <link role="editorComponent" roleId="tpc2.7033942394256351817" targetNodeId="dfnz.1217012833662085066" resolveInfo="MultipleEditorsTestEditorComponentChild_EditorComponent" />
+      <link role="editorComponent" roleId="tpc2.7033942394256351817" targetNodeId="dfnz.1217012833662085066" resolveInfo="MultipleEditorsTestEditorComponentChild_default" />
     </node>
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1217012833662768752" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1217012833662768753" nodeInfo="ng">
