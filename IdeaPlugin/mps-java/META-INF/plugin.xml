@@ -37,7 +37,7 @@
       <implementation-class>jetbrains.mps.idea.java.fastFind.JavaPsiStubsNavigationContributor</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.java.fastFind.EmptyJavaPsiStubsFindUsages</implementation-class>
+      <implementation-class>jetbrains.mps.idea.java.fastFind.EmptyJavaStubsFindUsages</implementation-class>
     </component>
   </application-components>
 
