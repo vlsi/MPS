@@ -219,7 +219,7 @@ public class ClassifierResolveUtils {
   }
 
   public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, IScope moduleScope, ModelPlusImportedScope modelsPlusImported, boolean includeAncestors) {
-    // The algororithm: 
+    // The algorithm: 
     // - split refText into tokens A.B.C (separated by dot) 
     // - look for the first token A among the following classifiers and models, in this order: 
     // ourselves 
@@ -230,10 +230,9 @@ public class ClassifierResolveUtils {
     //   if yes, use it 
     //   if no, only then traverse all appropriate models 
 
-    SModel oldModel = contextNode.getModel();
-    SModel contextNodeModel = (oldModel == null ?
+    SModel contextNodeModel = (contextNode == null ?
       null :
-      oldModel
+      SNodeOperations.getModel(contextNode)
     );
 
     StringTokenizer tokenizer = new StringTokenizer(refText, ".");
@@ -385,7 +384,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<SModule> visibleModules = check_8z6r2b_a0a06a21(((AbstractModule) check_8z6r2b_a0a0a0ic0m(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<SModule> visibleModules = check_8z6r2b_a0a95a21(((AbstractModule) check_8z6r2b_a0a0a0hc0m(SNodeOperations.getModel(contextNode)))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
@@ -659,14 +658,14 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IScope check_8z6r2b_a0a06a21(AbstractModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0a95a21(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static SModule check_8z6r2b_a0a0a0ic0m(SModel checkedDotOperand) {
+  private static SModule check_8z6r2b_a0a0a0hc0m(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
