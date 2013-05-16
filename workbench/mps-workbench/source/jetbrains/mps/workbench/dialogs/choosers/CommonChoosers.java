@@ -25,14 +25,14 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
+/**
+ * Will be removed after 3.0
+ * */
 @Deprecated
 public class CommonChoosers {
 

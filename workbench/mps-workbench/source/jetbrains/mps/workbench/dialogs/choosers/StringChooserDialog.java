@@ -38,6 +38,9 @@ import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Will be removed after 3.0
+ * */
 @Deprecated
 class StringChooserDialog extends BaseDialog {
   private List<String> myValues = new ArrayList<String>();
