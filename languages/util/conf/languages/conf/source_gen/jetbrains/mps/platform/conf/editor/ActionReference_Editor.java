@@ -55,8 +55,6 @@ public class ActionReference_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -97,8 +95,6 @@ public class ActionReference_Editor extends DefaultNodeEditor {
     public _Inline_ld3k57_a1a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

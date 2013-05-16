@@ -59,8 +59,6 @@ public class GeneratorInternal_BuildSource_JavaLibrary_Editor extends DefaultNod
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

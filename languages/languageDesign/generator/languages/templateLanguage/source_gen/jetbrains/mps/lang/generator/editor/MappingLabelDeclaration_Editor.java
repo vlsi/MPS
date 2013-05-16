@@ -99,8 +99,6 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -165,8 +163,6 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     public _Inline_sexq64_a5a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

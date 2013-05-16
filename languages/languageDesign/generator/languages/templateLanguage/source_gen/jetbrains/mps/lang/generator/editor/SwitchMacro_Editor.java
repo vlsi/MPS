@@ -228,8 +228,6 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -384,8 +382,6 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     public _Inline_31t0mi_a2e2a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

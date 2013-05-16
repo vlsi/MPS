@@ -50,8 +50,6 @@ public class ActionConstructorParameterReferenceOperation_Editor extends Default
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -128,8 +128,6 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -319,8 +317,6 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     public _Inline_7zoim2_a3a0_0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -133,8 +133,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -393,8 +391,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -449,8 +445,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     public _Inline_2ojjgh_a2a0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -530,8 +524,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     public _Inline_2ojjgh_a1b0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

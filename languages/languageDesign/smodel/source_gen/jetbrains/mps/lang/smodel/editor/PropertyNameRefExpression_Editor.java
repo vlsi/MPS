@@ -89,8 +89,6 @@ public class PropertyNameRefExpression_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -163,8 +161,6 @@ public class PropertyNameRefExpression_Editor extends DefaultNodeEditor {
     public _Inline_x4eqv4_a4a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

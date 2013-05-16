@@ -121,8 +121,6 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

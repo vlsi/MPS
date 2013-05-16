@@ -63,8 +63,6 @@ public class PathHolder_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -160,8 +158,6 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     public _Inline_o0ejdp_a0a_0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

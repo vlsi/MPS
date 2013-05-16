@@ -68,8 +68,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -174,8 +172,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     public _Inline_f5bzsg_a1c0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

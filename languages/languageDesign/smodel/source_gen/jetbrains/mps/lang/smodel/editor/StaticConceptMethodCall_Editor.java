@@ -71,8 +71,6 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -141,8 +139,6 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
     public _Inline_fn54i1_a2a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

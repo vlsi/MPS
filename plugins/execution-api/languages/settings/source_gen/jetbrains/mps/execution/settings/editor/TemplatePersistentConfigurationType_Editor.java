@@ -62,8 +62,6 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -125,8 +123,6 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
     public _Inline_1clvom_a1a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

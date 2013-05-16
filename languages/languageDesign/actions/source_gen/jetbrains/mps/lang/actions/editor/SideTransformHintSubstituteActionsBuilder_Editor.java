@@ -116,8 +116,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

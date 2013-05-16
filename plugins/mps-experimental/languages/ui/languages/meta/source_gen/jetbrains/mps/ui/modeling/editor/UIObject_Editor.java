@@ -139,8 +139,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -298,8 +296,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
     public _Inline_c5f0a4_a2e0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

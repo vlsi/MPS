@@ -106,8 +106,6 @@ public class Service_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -169,8 +167,6 @@ public class Service_Editor extends DefaultNodeEditor {
     public _Inline_m4h17_a3b0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -65,8 +65,6 @@ public class IPartiallyDefinedStub_Component implements ConceptEditorComponent {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -122,8 +120,6 @@ public class IPartiallyDefinedStub_Component implements ConceptEditorComponent {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -178,8 +174,6 @@ public class IPartiallyDefinedStub_Component implements ConceptEditorComponent {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -233,8 +227,6 @@ public class IPartiallyDefinedStub_Component implements ConceptEditorComponent {
     public _Inline_qot6m0_a3a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

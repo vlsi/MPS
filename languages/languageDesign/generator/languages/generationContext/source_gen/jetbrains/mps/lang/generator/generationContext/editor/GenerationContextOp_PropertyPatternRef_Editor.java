@@ -56,8 +56,6 @@ public class GenerationContextOp_PropertyPatternRef_Editor extends DefaultNodeEd
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

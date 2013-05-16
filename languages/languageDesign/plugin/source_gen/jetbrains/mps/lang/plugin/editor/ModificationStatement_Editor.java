@@ -61,8 +61,6 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -124,8 +122,6 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
     public _Inline_9t39jw_a3a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -112,8 +112,6 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -319,8 +317,6 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -385,8 +381,6 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     public _Inline_pxqe0v_a3a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -510,8 +504,6 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     public _Inline_pxqe0v_a1c0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
