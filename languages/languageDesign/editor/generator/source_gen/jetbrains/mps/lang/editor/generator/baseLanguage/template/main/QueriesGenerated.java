@@ -2229,7 +2229,10 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_907051507539218519(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration")).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "conceptDeclaration", false);
+        return (SLinkOperations.getTarget(it, "conceptDeclaration", false) != null ?
+          SLinkOperations.getTarget(it, "conceptDeclaration", false) :
+          SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(it, "overridenEditorComponent", true), "editorComponent", false), "conceptDeclaration", false)
+        );
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -2273,7 +2276,10 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_907051507539322081(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "conceptDeclaration", false) == _context.getNode();
+        return (SLinkOperations.getTarget(it, "conceptDeclaration", false) != null ?
+          SLinkOperations.getTarget(it, "conceptDeclaration", false) == _context.getNode() :
+          SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(it, "overridenEditorComponent", true), "editorComponent", false), "conceptDeclaration", false) == _context.getNode()
+        );
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
