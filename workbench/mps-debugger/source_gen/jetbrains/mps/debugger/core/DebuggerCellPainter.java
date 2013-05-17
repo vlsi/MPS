@@ -108,7 +108,6 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
   private EditorCell getNodeCell(final EditorComponent editorComponent) {
     final jetbrains.mps.nodeEditor.cells.EditorCell[] cell = new jetbrains.mps.nodeEditor.cells.EditorCell[1];
     MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
-      @Override
       public void run() {
         SNode node = getSNode();
         if (node != null) {
