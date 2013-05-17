@@ -73,7 +73,7 @@ public class NewLanguageDialog extends DialogWrapper {
 
     super.doOKAction();
 
-    NewModuleUtil.runModuleCreation(ProjectHelper.toIdeaProject(myProject), new _FunctionTypes._void_P0_E0() {
+    NewModuleUtil.runModuleCreation(myProject, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         Language language = NewModuleUtil.createLanguage(myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation(), (MPSProject) myProject);
         ((StandaloneMPSProject) myProject).setFolderFor(language, myVirtualFolder);

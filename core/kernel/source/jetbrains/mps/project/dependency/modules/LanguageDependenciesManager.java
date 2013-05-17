@@ -16,21 +16,12 @@
 package jetbrains.mps.project.dependency.modules;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleUtil;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryAdapter;
-import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class LanguageDependenciesManager {
 //  private MyModuleWatcher myModuleWatcher;

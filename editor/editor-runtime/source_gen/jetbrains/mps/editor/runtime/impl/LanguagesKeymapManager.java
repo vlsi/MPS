@@ -12,7 +12,7 @@ import java.util.List;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
@@ -26,8 +26,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Collections;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ModuleRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class LanguagesKeymapManager implements ApplicationComponent {
@@ -40,7 +41,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   };
   private Map<Language, List<KeyMap>> myLanguagesToKeyMaps = MapSequence.fromMap(new HashMap<Language, List<KeyMap>>());
   private LanguagesKeymapManager.MyModuleRepositoryListener myListener = new LanguagesKeymapManager.MyModuleRepositoryListener();
-  private MPSModuleRepository myRepository;
+  private SRepository myRepository;
   private ClassLoaderManager myClassLoaderManager;
 
   public LanguagesKeymapManager(MPSCoreComponents coreComponents) {
@@ -58,7 +59,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   @Override
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadHandler);
-    myRepository.addModuleRepositoryListener(myListener);
+    myRepository.addRepositoryListener(myListener);
   }
 
   @NonNls
@@ -70,7 +71,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
   @Override
   public void disposeComponent() {
-    myRepository.removeModuleRepositoryListener(myListener);
+    myRepository.removeRepositoryListener(myListener);
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
@@ -126,12 +127,8 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(LanguagesKeymapManager.class);
   }
 
-  private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+  private class MyModuleRepositoryListener extends SRepositoryAdapter {
     private MyModuleRepositoryListener() {
-    }
-
-    @Override
-    public void moduleInitialized(SModule module) {
     }
 
     @Override

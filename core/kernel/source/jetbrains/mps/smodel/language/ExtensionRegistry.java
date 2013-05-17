@@ -19,22 +19,19 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -45,7 +42,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
 
   private Map<SModule, String> myModuleToNamespace = new HashMap<SModule, String>();
   private HashMap<String, ExtensionDescriptor> myExtensionDescriptors = new HashMap<String, ExtensionDescriptor>();
-  private ModuleRepositoryAdapter myListener = new MyModuleRepositoryAdapter();
+  private SRepositoryListener myListener = new MyModuleRepositoryAdapter();
   @Nullable
   private ClassLoaderManager myClm;
   @Nullable
@@ -77,7 +74,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
       throw new IllegalStateException("double initialization");
     }
     if (myRepo != null) {
-      myRepo.addModuleRepositoryListener(myListener);
+      myRepo.addRepositoryListener(myListener);
     }
     if (myClm != null) {
       myClm.addClassesHandler(myHandler);
@@ -92,7 +89,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
       myClm.removeClassesHandler(myHandler);
     }
     if (myRepo != null) {
-      myRepo.addModuleRepositoryListener(myListener);
+      myRepo.removeRepositoryListener(myListener);
     }
   }
 
@@ -124,7 +121,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   }
 
   @SuppressWarnings("unchecked")
-    /*package for tests*/ void registerExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
+  /*package for tests*/ void registerExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
     registerExtensions(extensionDescriptor.getExtensions());
     registerExtensionPoints(extensionDescriptor.getExtensionPoints());
   }
@@ -197,14 +194,14 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     return null;
   }
 
-  private class MyModuleRepositoryAdapter extends ModuleRepositoryAdapter {
+  private class MyModuleRepositoryAdapter extends SRepositoryAdapter {
     @Override
     public void moduleAdded(SModule module) {
       // awaiting next classes reload?
     }
 
     @Override
-    public void moduleRemoved(SModule module) {
+    public void beforeModuleRemoved(SModule module) {
       String namespace = myModuleToNamespace.get(module);
       if (namespace == null) return;
 

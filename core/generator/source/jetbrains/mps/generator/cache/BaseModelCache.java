@@ -19,9 +19,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.smodel.SModelRepositoryListener;
-import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.util.containers.BidirectionalMap;
@@ -29,6 +26,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.List;

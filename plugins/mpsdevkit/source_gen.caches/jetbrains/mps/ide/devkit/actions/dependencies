@@ -863,6 +863,7 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.ide.moduleRepositoryViewer.ModuleRepositoryComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.tools.CloseAction" />
     <classNode extendsClassName="jetbrains.mps.plugins.tool.GeneratedTool" />
   </dependency>

@@ -13,22 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -58,8 +57,6 @@ public class DevKit extends AbstractModule {
   public void setDevKitDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
     super.setModuleDescriptor(descriptor, reloadClasses);
 
-    MPSModuleRepository moduleRepo = MPSModuleRepository.getInstance();
-
     myDescriptor = descriptor;
 
     if (myDescriptor.getNamespace() != null) {
@@ -68,7 +65,7 @@ public class DevKit extends AbstractModule {
     }
 
     reloadAfterDescriptorChange();
-    moduleRepo.fireModuleChanged(this);
+    fireChanged();
 
     if (reloadClasses) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());

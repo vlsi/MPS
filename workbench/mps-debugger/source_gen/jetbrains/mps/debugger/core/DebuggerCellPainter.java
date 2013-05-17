@@ -10,6 +10,7 @@ import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.Rectangle;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
@@ -104,12 +105,17 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
   }
 
   @Nullable
-  private EditorCell getNodeCell(EditorComponent editorComponent) {
-    SNode node = getSNode();
-    if (node != null) {
-      return editorComponent.getBigValidCellForNode(node);
-    }
-    return null;
+  private EditorCell getNodeCell(final EditorComponent editorComponent) {
+    final jetbrains.mps.nodeEditor.cells.EditorCell[] cell = new jetbrains.mps.nodeEditor.cells.EditorCell[1];
+    MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        SNode node = getSNode();
+        if (node != null) {
+          cell[0] = editorComponent.getBigValidCellForNode(node);
+        }
+      }
+    });
+    return cell[0];
   }
 
   @Nullable

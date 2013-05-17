@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
@@ -154,8 +155,14 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
             }
 
             if (selectedCell instanceof EditorCell_Label) {
-              EditorCell_Label cell_label = (EditorCell_Label) selectedCell;
-              restoreCaretPosition = jetbrains.mps.util.SNodeOperations.isAncestor(quickFixNode, cell_label.getSNode());
+              final EditorCell_Label cell_label = (EditorCell_Label) selectedCell;
+              //todo it is illegal to pass SNodes between reads
+              restoreCaretPosition = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+                @Override
+                public Boolean compute() {
+                  return jetbrains.mps.util.SNodeOperations.isAncestor(quickFixNode, cell_label.getSNode());
+                }
+              });
               caretX = cell_label.getCaretX();
               caretY = cell_label.getBaseline();
               boolean last = cell_label.getCaretPosition() == cell_label.getText().length();

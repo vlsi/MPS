@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" file="NewModuleUtil.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vfs.VfsUtil" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />

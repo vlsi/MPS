@@ -65,7 +65,7 @@
     <scopeInfo nodeId="3926595287075250710" fileName="NewSolutionDialog.java" startLine="42" startPosition="37" endLine="57" endPosition="8" />
     <scopeInfo nodeId="3926595287074937862" fileName="NewSolutionDialog.java" startLine="41" startPosition="41" endLine="59" endPosition="30" />
     <scopeInfo nodeId="3926595287074937857" fileName="NewSolutionDialog.java" startLine="40" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="5049856602248792141" fileName="NewSolutionDialog.java" startLine="70" startPosition="80" endLine="74" endPosition="5" unitName="jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog$2" />
+    <unitInfo nodeId="5049856602248792141" fileName="NewSolutionDialog.java" startLine="70" startPosition="51" endLine="74" endPosition="5" unitName="jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog$2" />
     <unitInfo nodeId="3978024352677247755" fileName="NewSolutionDialog.java" startLine="43" startPosition="31" endLine="57" endPosition="7" unitName="jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog$1" />
     <unitInfo nodeId="3926595287074919987" fileName="NewSolutionDialog.java" startLine="19" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog" />
   </root>
@@ -164,7 +164,7 @@
     <scopeInfo nodeId="8412685000766913500" fileName="NewLanguageDialog.java" startLine="69" startPosition="31" endLine="99" endPosition="7" />
     <scopeInfo nodeId="8412685000766913496" fileName="NewLanguageDialog.java" startLine="68" startPosition="0" endLine="101" endPosition="0" />
     <unitInfo nodeId="8412685000767387014" fileName="NewLanguageDialog.java" startLine="49" startPosition="31" endLine="63" endPosition="7" unitName="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog$1" />
-    <unitInfo nodeId="8412685000766942569" fileName="NewLanguageDialog.java" startLine="76" startPosition="80" endLine="99" endPosition="5" unitName="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog$2" />
+    <unitInfo nodeId="8412685000766942569" fileName="NewLanguageDialog.java" startLine="76" startPosition="51" endLine="99" endPosition="5" unitName="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog$2" />
     <unitInfo nodeId="8412685000766424914" fileName="NewLanguageDialog.java" startLine="25" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog" />
   </root>
 </debugInfo>

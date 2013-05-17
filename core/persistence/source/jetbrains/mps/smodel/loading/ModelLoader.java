@@ -19,7 +19,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.InterfaceSNode;
 import jetbrains.mps.smodel.LazySNode;
-import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -41,7 +40,6 @@ public class ModelLoader {
   }
 
   public void update() {
-    UnregisteredNodes.instance().clear();
     int nodesCountBefore = myModel.getNodesCount();
     for (SNode root : myModel.getRootNodes()) {
       if (root instanceof LazySNode) {

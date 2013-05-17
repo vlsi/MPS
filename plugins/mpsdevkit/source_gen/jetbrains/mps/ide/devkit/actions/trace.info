@@ -277,46 +277,46 @@
     <unitInfo nodeId="1212767491070836962" fileName="ShowModuleRepository_Action.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ShowModuleRepository_Action" />
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1212767491070836979">
-    <nodeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="1212767491070837015" fileName="ModuleRepository_Tool.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
-    <nodeInfo nodeId="1212767491070837018" fileName="ModuleRepository_Tool.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="24" startPosition="49" endLine="25" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="28" startPosition="37" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7779150961553184041" fileName="ModuleRepository_Tool.java" startLine="29" startPosition="24" endLine="30" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7779150961553184048" fileName="ModuleRepository_Tool.java" startLine="30" startPosition="77" endLine="31" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7779150961553184057" fileName="ModuleRepository_Tool.java" startLine="31" startPosition="72" endLine="32" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7779150961553184069" fileName="ModuleRepository_Tool.java" startLine="32" startPosition="119" endLine="33" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7779150961553184074" fileName="ModuleRepository_Tool.java" startLine="33" startPosition="56" endLine="34" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7779150961553184081" fileName="ModuleRepository_Tool.java" startLine="34" startPosition="59" endLine="35" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7779150961553184092" fileName="ModuleRepository_Tool.java" startLine="35" startPosition="124" endLine="36" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212767491070836983" fileName="ModuleRepository_Tool.java" startLine="39" startPosition="31" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212767491070836987" fileName="ModuleRepository_Tool.java" startLine="40" startPosition="26" endLine="41" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212767491070836997" fileName="ModuleRepository_Tool.java" startLine="45" startPosition="33" endLine="46" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212767491070837001" fileName="ModuleRepository_Tool.java" startLine="46" startPosition="28" endLine="47" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212767491070837011" fileName="ModuleRepository_Tool.java" startLine="50" startPosition="36" endLine="51" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleRepository_Tool#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1212767491070836980" fileName="ModuleRepository_Tool.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makeAvailable#()V" />
-    <nodeInfo nodeId="1212767491070836994" fileName="ModuleRepository_Tool.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makeUnavailable#()V" />
-    <nodeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
-    <scopeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="24" startPosition="49" endLine="25" endPosition="89" />
-    <scopeInfo nodeId="1212767491070837010" fileName="ModuleRepository_Tool.java" startLine="50" startPosition="36" endLine="51" endPosition="46" />
-    <scopeInfo nodeId="1212767491070836982" fileName="ModuleRepository_Tool.java" startLine="39" startPosition="31" endLine="41" endPosition="53" />
-    <scopeInfo nodeId="1212767491070836996" fileName="ModuleRepository_Tool.java" startLine="45" startPosition="33" endLine="47" endPosition="55" />
-    <scopeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+    <nodeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="1212767491070837015" fileName="ModuleRepository_Tool.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="1212767491070837018" fileName="ModuleRepository_Tool.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="25" startPosition="49" endLine="26" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="29" startPosition="37" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7779150961553184041" fileName="ModuleRepository_Tool.java" startLine="30" startPosition="24" endLine="31" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7779150961553184048" fileName="ModuleRepository_Tool.java" startLine="31" startPosition="112" endLine="32" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7779150961553184057" fileName="ModuleRepository_Tool.java" startLine="32" startPosition="72" endLine="33" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7779150961553184069" fileName="ModuleRepository_Tool.java" startLine="33" startPosition="119" endLine="34" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7779150961553184074" fileName="ModuleRepository_Tool.java" startLine="34" startPosition="56" endLine="35" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7779150961553184081" fileName="ModuleRepository_Tool.java" startLine="35" startPosition="59" endLine="36" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7779150961553184092" fileName="ModuleRepository_Tool.java" startLine="36" startPosition="124" endLine="37" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212767491070836983" fileName="ModuleRepository_Tool.java" startLine="40" startPosition="31" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212767491070836987" fileName="ModuleRepository_Tool.java" startLine="41" startPosition="26" endLine="42" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212767491070836997" fileName="ModuleRepository_Tool.java" startLine="46" startPosition="33" endLine="47" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212767491070837001" fileName="ModuleRepository_Tool.java" startLine="47" startPosition="28" endLine="48" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212767491070837011" fileName="ModuleRepository_Tool.java" startLine="51" startPosition="36" endLine="52" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleRepository_Tool#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="1212767491070836980" fileName="ModuleRepository_Tool.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makeAvailable#()V" />
+    <nodeInfo nodeId="1212767491070836994" fileName="ModuleRepository_Tool.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makeUnavailable#()V" />
+    <nodeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="29" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
+    <scopeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="25" startPosition="49" endLine="26" endPosition="89" />
+    <scopeInfo nodeId="1212767491070837010" fileName="ModuleRepository_Tool.java" startLine="51" startPosition="36" endLine="52" endPosition="46" />
+    <scopeInfo nodeId="1212767491070836982" fileName="ModuleRepository_Tool.java" startLine="40" startPosition="31" endLine="42" endPosition="53" />
+    <scopeInfo nodeId="1212767491070836996" fileName="ModuleRepository_Tool.java" startLine="46" startPosition="33" endLine="48" endPosition="55" />
+    <scopeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1212767491070836979" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1212767491070836980" fileName="ModuleRepository_Tool.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1212767491070836994" fileName="ModuleRepository_Tool.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="28" startPosition="37" endLine="36" endPosition="71">
+    <scopeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1212767491070836980" fileName="ModuleRepository_Tool.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1212767491070836994" fileName="ModuleRepository_Tool.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="29" startPosition="37" endLine="37" endPosition="71">
       <varInfo nodeId="7779150961553184070" varName="group" />
       <varInfo nodeId="7779150961553184082" varName="toolbar" />
     </scopeInfo>
-    <scopeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="29" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="1212767491070836979" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ModuleRepository_Tool" />
+    <unitInfo nodeId="1212767491070836979" fileName="ModuleRepository_Tool.java" startLine="20" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ModuleRepository_Tool" />
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1212767491070837084">
     <nodeInfo nodeId="1212767491070837084" fileName="ModelRepository_Tool.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

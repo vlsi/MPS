@@ -367,7 +367,7 @@
       <varInfo nodeId="4015801747712977595" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="1204027050087" fileName="NewDevKitDialogContentPane.java" startLine="181" startPosition="0" endLine="195" endPosition="0" />
-    <unitInfo nodeId="5049856602248834948" fileName="NewDevKitDialogContentPane.java" startLine="189" startPosition="74" endLine="193" endPosition="5" unitName="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialogContentPane$2" />
+    <unitInfo nodeId="5049856602248834948" fileName="NewDevKitDialogContentPane.java" startLine="189" startPosition="61" endLine="193" endPosition="5" unitName="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialogContentPane$2" />
   </root>
 </debugInfo>
 

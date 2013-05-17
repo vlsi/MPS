@@ -21,7 +21,7 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import java.io.File;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
@@ -135,7 +135,7 @@ public class NewGeneratorDialog extends DialogWrapper {
       return;
     }
     dispose();
-    Project project = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    jetbrains.mps.project.Project project = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
     assert project != null;
     final Wrappers._T<Generator> newGenerator = new Wrappers._T<Generator>(null);
     NewModuleUtil.runModuleCreation(project, new _FunctionTypes._void_P0_E0() {

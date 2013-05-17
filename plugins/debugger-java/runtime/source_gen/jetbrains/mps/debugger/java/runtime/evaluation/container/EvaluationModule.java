@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
@@ -58,7 +57,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
       SetSequence.fromSet(myClassPaths).addElement(path);
       myDescriptor.getAdditionalJavaStubPaths().add(path);
     }
-    MPSModuleRepository.getInstance().fireModuleChanged(this);
+    fireChanged();
     return path;
   }
 

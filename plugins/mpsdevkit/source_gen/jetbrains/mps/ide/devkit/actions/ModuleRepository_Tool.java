@@ -9,6 +9,7 @@ import jetbrains.mps.ide.moduleRepositoryViewer.ModuleRepositoryComponent;
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.tools.CloseAction;
@@ -27,7 +28,7 @@ public class ModuleRepository_Tool extends GeneratedTool {
 
   public void init(Project project) {
     super.init(project);
-    ModuleRepository_Tool.this.myComponent = new ModuleRepositoryComponent();
+    ModuleRepository_Tool.this.myComponent = new ModuleRepositoryComponent(ProjectHelper.toMPSProject(project));
     ModuleRepository_Tool.this.myPanel = new JPanel(new BorderLayout());
     ModuleRepository_Tool.this.myPanel.add(ModuleRepository_Tool.this.myComponent.getComponent(), BorderLayout.CENTER);
     DefaultActionGroup group = new DefaultActionGroup();

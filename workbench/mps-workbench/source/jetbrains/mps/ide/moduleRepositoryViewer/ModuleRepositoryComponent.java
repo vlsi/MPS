@@ -26,10 +26,15 @@ import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
@@ -39,8 +44,10 @@ public class ModuleRepositoryComponent {
   private MPSTree myTree = new MyTree();
   private JScrollPane myComponent = ScrollPaneFactory.createScrollPane(myTree);
   private DeferringEventHandler myDeferringEventHandler = new DeferringEventHandler();
+  private SRepository myRepository;
 
-  public ModuleRepositoryComponent() {
+  public ModuleRepositoryComponent(Project project) {
+    myRepository = project.getRepository();
   }
 
   public JComponent getComponent() {
@@ -54,11 +61,11 @@ public class ModuleRepositoryComponent {
         myTree.rebuildNow();
       }
     });
-    myDeferringEventHandler.installListeners();
+    myDeferringEventHandler.subscribeTo(myRepository);
   }
 
   public void uninstall() {
-    myDeferringEventHandler.unInstallListeners();
+    myDeferringEventHandler.unsubscribeFrom(myRepository);
   }
 
   private class MyTree extends MPSTree {
@@ -66,7 +73,7 @@ public class ModuleRepositoryComponent {
     protected MPSTreeNode rebuild() {
       final TextTreeNode[] root = new TextTreeNode[1];
 
-      ModelAccess.instance().runReadAction(new Runnable() {
+      myRepository.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
           root[0] = new TextTreeNode("Loaded Modules") {
@@ -135,29 +142,13 @@ public class ModuleRepositoryComponent {
     }
   }
 
-  private class DeferringEventHandler extends ModelAccessAdapter {
+  private class DeferringEventHandler extends SRepositoryContentAdapter {
     private boolean myDeferredUpdate = false;
-    private final ModuleRepositoryAdapter myRepositoryListener;
 
     private DeferringEventHandler() {
-      myRepositoryListener = new ModuleRepositoryAdapter() {
-        @Override
-        public void repositoryChanged() {
-          DeferringEventHandler.this.repositoryChanged();
-        }
-      };
     }
 
-    public void installListeners() {
-      ModelAccess.instance().addCommandListener(this);
-      MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
-    }
-
-    public void unInstallListeners() {
-      MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
-      ModelAccess.instance().removeCommandListener(this);
-    }
-
+    @Override
     public void repositoryChanged() {
       if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
         myDeferredUpdate = true;
@@ -172,7 +163,9 @@ public class ModuleRepositoryComponent {
     }
 
     @Override
-    public void commandFinished() {
+    public void commandFinished(SRepository repository) {
+      super.commandFinished(repository);
+
       if (!myDeferredUpdate) return;
 
       myDeferredUpdate = false;

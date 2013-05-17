@@ -67,4 +67,6 @@ public interface ModelAccess {
   void executeCommandInEDT(Runnable r);
 
   void executeUndoTransparentCommand(Runnable r);
+
+  boolean isCommandAction();
 }

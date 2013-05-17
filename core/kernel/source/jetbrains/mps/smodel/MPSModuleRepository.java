@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.EditableSModule;
+import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
@@ -31,22 +32,29 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
 
-public class MPSModuleRepository implements CoreComponent, SRepository {
+public class MPSModuleRepository extends SRepositoryBase implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(MPSModuleRepository.class));
   private final MPSModuleRepository.GlobalModelAccess myGlobalModelAccess;
-  private List<SRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<SRepositoryListener>();
+  private final ModelAccessListener myCommandListener = new ModelAccessListener() {
+    @Override
+    public void commandStarted() {
+      fireCommandStarted();
+    }
+
+    @Override
+    public void commandFinished() {
+      fireCommandFinished();
+    }
+  };
 
   private Set<SModule> myModules = new LinkedHashSet<SModule>();
   private Map<String, SModule> myFqNameToModulesMap = new ConcurrentHashMap<String, SModule>();
@@ -63,10 +71,12 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
 
   @Override
   public void init() {
+    ModelAccess.instance().addCommandListener(myCommandListener);
   }
 
   @Override
   public void dispose() {
+    ModelAccess.instance().removeCommandListener(myCommandListener);
   }
 
   //-----------------register/unregister-merge-----------
@@ -101,7 +111,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     myModules.add(module);
 
-    ((AbstractModule)module).attach();
+    ((AbstractModule) module).attach();
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
     fireModuleAdded(module);
@@ -110,25 +120,19 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
 
   public void unregisterModules(Collection<SModule> modules, MPSModuleOwner owner) {
     Collection<SModule> modulesToDispose = new ArrayList<SModule>();
-    boolean repositoryChanged = false;
     for (SModule module : modules) {
       if (doUnregisterModule(module, owner)) {
         modulesToDispose.add(module);
-      } else {
-        repositoryChanged = true;
       }
     }
-    if (modulesToDispose.isEmpty() && !repositoryChanged) {
+    if (modulesToDispose.isEmpty()) {
       return;
     }
     invalidateCaches();
     for (SModule module : modulesToDispose) {
-      fireModuleRemoved(module);
+      fireModuleRemoved(module.getModuleReference());
       ((AbstractModule) module).dispose();
       module.detach();
-    }
-    if (repositoryChanged) {
-      fireRepositoryChanged();
     }
   }
 
@@ -138,11 +142,9 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     boolean moduleRemoved = doUnregisterModule(module, owner);
     invalidateCaches();
     if (moduleRemoved) {
-      fireModuleRemoved(module);
+      fireModuleRemoved(module.getModuleReference());
       ((AbstractModule) module).dispose();
       module.detach();
-    } else {
-      fireRepositoryChanged();
     }
   }
 
@@ -278,80 +280,6 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
 
   //------------------listeners--------------------
 
-  public void addModuleRepositoryListener(SRepositoryListener listener) {
-    myModuleListeners.add(listener);
-  }
-
-  public void removeModuleRepositoryListener(SRepositoryListener listener) {
-    myModuleListeners.remove(listener);
-  }
-
-  private void fireRepositoryChanged() {
-    for (SRepositoryListener listener : myModuleListeners) {
-      try {
-        listener.repositoryChanged();
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireModuleAdded(SModule module) {
-    ModelAccess.assertLegalWrite();
-    for (SRepositoryListener listener : myModuleListeners) {
-      try {
-        listener.moduleAdded(module);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireBeforeModuleRemoved(SModule module) {
-    ModelAccess.assertLegalWrite();
-    for (SRepositoryListener listener : myModuleListeners) {
-      try {
-        listener.beforeModuleRemoved(module);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireModuleRemoved(SModule module) {
-    ModelAccess.assertLegalWrite();
-    for (SRepositoryListener listener : myModuleListeners) {
-      try {
-        listener.moduleRemoved(module);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  //todo public?
-  public void fireModuleChanged(SModule m) {
-    ModelAccess.assertLegalWrite();
-    if (!myModules.contains(m)) return;
-
-    for (SRepositoryListener l : myModuleListeners) {
-      try {
-        l.moduleChanged(m);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  //todo public?
-  public void fireModuleInitialized(SModule module) {
-    assertCanRead();
-
-    for (SRepositoryListener listener : myModuleListeners) {
-      listener.moduleInitialized(module);
-    }
-  }
-
   @Override
   public void saveAll() {
     getModelAccess().checkWriteAccess();
@@ -366,16 +294,6 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     }
 
     SModelRepository.getInstance().saveAll();
-  }
-
-  @Override
-  public void addRepositoryListener(SRepositoryListener listener) {
-
-  }
-
-  @Override
-  public void removeRepositoryListener(SRepositoryListener listener) {
-
   }
 
   public void moduleFqNameChanged(SModule module, String oldName) {
@@ -449,6 +367,11 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     @Override
     public void executeUndoTransparentCommand(Runnable r) {
       throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean isCommandAction() {
+      return jetbrains.mps.smodel.ModelAccess.instance().isInsideCommand();
     }
   }
 }

@@ -22,11 +22,14 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.module.SModuleAdapter;
+import org.jetbrains.mps.openapi.module.SModuleListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
@@ -76,30 +79,20 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   private static ProjectStructureModule INSTANCE;
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner() {
   };
+  private final SModuleListener myModuleListener = new SModuleAdapter() {
+
+  };
   private final SRepositoryListener myListener = new SRepositoryAdapter() {
     @Override
     public void moduleAdded(SModule module) {
       refreshModule(module, false);
+      module.addModuleListener(myModuleListener);
     }
 
     @Override
-    public void moduleRemoved(SModule module) {
+    public void beforeModuleRemoved(SModule module) {
+      module.removeModuleListener(myModuleListener);
       refreshModule(module, true);
-    }
-
-    @Override
-    public void moduleInitialized(SModule module) {
-      refreshModule(module, false);
-    }
-
-    @Override
-    public void moduleChanged(SModule module) {
-      refreshModule(module, false);
-    }
-
-    @Override
-    public void repositoryChanged() {
-      refresh();
     }
   };
 
@@ -176,7 +169,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
 
     INSTANCE = this;
-    MPSModuleRepository.getInstance().addModuleRepositoryListener(myListener);
+    MPSModuleRepository.getInstance().addRepositoryListener(myListener);
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
@@ -197,7 +190,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
         MPSModuleRepository.getInstance().unregisterModule(ProjectStructureModule.this, myOwner);
       }
     });
-    MPSModuleRepository.getInstance().removeModuleRepositoryListener(myListener);
+    MPSModuleRepository.getInstance().removeRepositoryListener(myListener);
   }
 
   public void clearAll() {

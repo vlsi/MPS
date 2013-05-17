@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.components;
 
+import jetbrains.mps.smodel.ModelAccess;
+
 import java.util.LinkedList;
 
 /**
@@ -29,14 +31,24 @@ public class ComponentPlugin {
   }
 
   public void dispose() {
-    while (!myComponents.isEmpty()) {
-      dispose(myComponents.pop());
-    }
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        while (!myComponents.isEmpty()) {
+          dispose(myComponents.pop());
+        }
+      }
+    });
   }
 
-  protected <T extends CoreComponent> T init(T component) {
+  protected <T extends CoreComponent> T init(final T component) {
     try {
-      component.init();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          component.init();
+        }
+      });
       myComponents.push(component);
     } catch (Exception th) {
       throw new RuntimeException("component initialization error", th);

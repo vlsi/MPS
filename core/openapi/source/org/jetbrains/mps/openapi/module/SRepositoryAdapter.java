@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.module;
 
 /**
- * A convenience empty implementation of the SRepositoryListener interface.
+ * A convenient empty implementation of the SRepositoryListener interface.
  */
 public class SRepositoryAdapter implements SRepositoryListener {
 
@@ -29,18 +29,30 @@ public class SRepositoryAdapter implements SRepositoryListener {
   }
 
   @Override
-  public void moduleRemoved(SModule module) {
+  public void moduleRemoved(SModuleReference module) {
   }
 
   @Override
-  public void moduleInitialized(SModule module) {
+  public void commandStarted(SRepository repository) {
   }
 
   @Override
-  public void moduleChanged(SModule module) {
+  public void commandFinished(SRepository repository) {
   }
 
   @Override
-  public void repositoryChanged() {
+  public void updateStarted(SRepository repository) {
+  }
+
+  @Override
+  public void updateFinished(SRepository repository) {
+  }
+
+  @Override
+  public void repositoryCommandStarted(SRepository repository) {
+  }
+
+  @Override
+  public void repositoryCommandFinished(SRepository repository) {
   }
 }
