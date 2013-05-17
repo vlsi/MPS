@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.StaticReference;
+import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
@@ -42,6 +43,9 @@ public class ClassCreator_Behavior {
     }
 
     SModel targetModel = ((StaticReference) cRef).getTargetSModel();
+    if (targetModel == null) {
+      return Collections.emptyList();
+    }
     SNodeId targetId = cRef.getTargetNodeId();
     if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(jetbrains.mps.util.SNodeOperations.getModelStereotype(targetModel)) && targetId != null) {
       String constructorId = targetId.toString();
