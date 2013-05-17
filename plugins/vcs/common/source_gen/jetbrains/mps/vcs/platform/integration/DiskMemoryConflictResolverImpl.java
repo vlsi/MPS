@@ -14,6 +14,7 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModelAccess;
+import javax.swing.JOptionPane;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
@@ -76,16 +77,18 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   }
 
   private static boolean showDeletedFromDiskQuestion(SModel inMemory, File backupFile) {
-    int result = Messages.showYesNoDialog("Model file for model " + inMemory + " was externally deleted from disk.\n" + "Backup of it was saved to \"" + backupFile.getAbsolutePath() + "\"\nDo you wish to restore it?", "Model Deleted Externally", Messages.getQuestionIcon());
+    // <node> 
+    int result = JOptionPane.showConfirmDialog(null, "Model file for model \n" + inMemory + "\n was externally deleted from disk.\n" + "Backup of it was saved to \"" + backupFile.getAbsolutePath() + "\"\nDo you wish to restore it?", "Model Deleted Externally", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, Messages.getQuestionIcon());
     return result == 0;
   }
 
   private static boolean showDiskMemoryQuestion(IFile modelFile, SModel inMemory, File backupFile) {
-    String message = "Changes have been made to " + inMemory + " model in memory and on disk.\n" + "Backup of both versions was saved to \"" + backupFile.getAbsolutePath() + "\"\n" + "Which version to use?";
+    String message = "Changes have been made to \n" + inMemory + "\n model in memory and on disk.\n" + "Backup of both versions was saved to \"" + backupFile.getAbsolutePath() + "\"\n" + "Which version to use?";
     String title = "Model Versions Conflict";
-    String[] options = {"Load &File System Version", "Save &Memory Version", "Show &Difference"};
+    String[] options = {"Load File System Version", "Save Memory Version", "Show Difference"};
     while (true) {
-      int result = Messages.showDialog(message, title, options, 0, Messages.getQuestionIcon());
+      // <node> 
+      int result = JOptionPane.showOptionDialog(null, message, title, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, Messages.getQuestionIcon(), options, null);
       switch (result) {
         case 0:
           // disk version 
