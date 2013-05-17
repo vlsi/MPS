@@ -380,7 +380,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myRepository = repository;
     setEditorContext(new EditorContext(this, null, repository));
 
-    setBackground(StyleRegistry.getInstance().getEditorBackground());
+    //TODO: fix problem with NPE
+    setBackground(StyleRegistry.getInstance() == null ? Color.white : StyleRegistry.getInstance().getEditorBackground());
 
     setFocusCycleRoot(true);
     setFocusTraversalPolicy(new FocusTraversalPolicy() {
