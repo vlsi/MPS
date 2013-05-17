@@ -8640,14 +8640,14 @@
     <nodeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="62" startPosition="61" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9024276490549192683" fileName="DeleteModels_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9024276490549192692" fileName="DeleteModels_Action.java" startLine="70" startPosition="109" endLine="71" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575273646046443839" fileName="DeleteModels_Action.java" startLine="71" startPosition="111" endLine="72" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575273646046443863" fileName="DeleteModels_Action.java" startLine="72" startPosition="199" endLine="73" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9024276490549192692" fileName="DeleteModels_Action.java" startLine="70" startPosition="109" endLine="71" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575273646046443839" fileName="DeleteModels_Action.java" startLine="71" startPosition="105" endLine="72" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575273646046443863" fileName="DeleteModels_Action.java" startLine="72" startPosition="186" endLine="73" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3575273646046443869" fileName="DeleteModels_Action.java" startLine="74" startPosition="29" endLine="75" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="944342063932953790" fileName="DeleteModels_Action.java" startLine="76" startPosition="7" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="944342063932984452" fileName="DeleteModels_Action.java" startLine="77" startPosition="0" endLine="78" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3575273646046443955" fileName="DeleteModels_Action.java" startLine="82" startPosition="96" endLine="83" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3575273646046443883" fileName="DeleteModels_Action.java" startLine="84" startPosition="13" endLine="85" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575273646046443883" fileName="DeleteModels_Action.java" startLine="84" startPosition="13" endLine="85" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="90" startPosition="45" endLine="91" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="96" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -8697,7 +8697,7 @@
     <scopeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="52" startPosition="5" endLine="56" endPosition="5" />
     <scopeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="56" startPosition="5" endLine="60" endPosition="5" />
     <scopeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="60" startPosition="5" endLine="64" endPosition="5" />
-    <scopeInfo nodeId="3575273646046443882" fileName="DeleteModels_Action.java" startLine="81" startPosition="115" endLine="85" endPosition="215" />
+    <scopeInfo nodeId="3575273646046443882" fileName="DeleteModels_Action.java" startLine="81" startPosition="115" endLine="85" endPosition="199" />
     <scopeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="3575273646046443877" fileName="DeleteModels_Action.java" startLine="80" startPosition="27" endLine="86" endPosition="11">
       <varInfo nodeId="3575273646046443878" varName="model" />
