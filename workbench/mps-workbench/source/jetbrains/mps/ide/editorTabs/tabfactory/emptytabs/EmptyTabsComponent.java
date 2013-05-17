@@ -34,7 +34,7 @@ public class EmptyTabsComponent implements TabsComponent {
 
   @Override
   public RelationDescriptor getCurrentTabAspect() {
-    throw new UnsupportedOperationException();
+    return null;
   }
 
   @Override
