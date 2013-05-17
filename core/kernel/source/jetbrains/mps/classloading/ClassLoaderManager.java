@@ -23,6 +23,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.SModelRootClassesListener;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionKind;
@@ -57,6 +58,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 // Make some doModuleChangeAction({ => }) method in ClassLoaderManager?
 // Main paint: modules && modules repository knows nothing about classloading
 // Maybe add invalidation listener or module dependencies change AND show warning if we change module dependencies while module loaded here?
+// todo: move to workbench
 public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ClassLoaderManager.class));
 
@@ -147,7 +149,7 @@ public class ClassLoaderManager implements CoreComponent {
       }
     }
 
-    ModuleClassLoader classLoader = getClassLoader(module);
+    ClassLoader classLoader = getClassLoader(module);
     if (classLoader == null) {
       // todo: illegal state?
       return null;
@@ -166,10 +168,26 @@ public class ClassLoaderManager implements CoreComponent {
 
   // main internal method. use getClass instead
   @Nullable
-  public synchronized ModuleClassLoader getClassLoader(SModule module) {
+  public synchronized ClassLoader getClassLoader(SModule module) {
+    NonReloadableModuleFacet nonReloadableModuleFacet = module.getFacet(NonReloadableModuleFacet.class);
+    if (nonReloadableModuleFacet != null) {
+      if (nonReloadableModuleFacet.isLoadedIntoMps()) {
+        return nonReloadableModuleFacet.getClassLoader();
+      } else {
+        // todo!
+        return null;
+      }
+    }
+
     if (!ModuleClassLoaderSupport.canCreate(module)) {
       throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
     }
+    if (!module.getFacet(JavaModuleFacet.class).isCompileInMps()) {
+      // core module
+      LOG.warning("Module " + module.getModuleName() + " is not compiled in mps and doesn't have nonreloadable facet");
+      return ClassLoaderManager.class.getClassLoader();
+    }
+
     if (myClassLoaders.containsKey(module)) {
       return myClassLoaders.get(module);
     }

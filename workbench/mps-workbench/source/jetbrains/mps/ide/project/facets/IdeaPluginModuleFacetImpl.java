@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.project.facets;
 
+import com.intellij.ide.plugins.PluginManager;
+import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -31,9 +33,6 @@ import java.util.Set;
  * evgeny, 2/28/13
  */
 public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPluginModuleFacet {
-
-  public static final String FACET_TYPE = "ideaPlugin";
-
   private String pluginId;
   private Set<SModuleReference> myModules = new LinkedHashSet<SModuleReference>();
 
@@ -92,5 +91,15 @@ public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPl
       }
       myModules.add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(ref));
     }
+  }
+
+  @Override
+  public boolean isLoadedIntoMps() {
+    return PluginManager.getPlugin(PluginId.getId(getPluginId())) != null;
+  }
+
+  @Override
+  public ClassLoader getClassLoader() {
+    return PluginManager.getPlugin(PluginId.getId(getPluginId())).getPluginClassLoader();
   }
 }

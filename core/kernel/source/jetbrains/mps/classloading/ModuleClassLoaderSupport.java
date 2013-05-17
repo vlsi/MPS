@@ -43,25 +43,19 @@ public class ModuleClassLoaderSupport {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     assert facet != null;
 
-    if (facet.isCompileInMps()) {
-      classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
-    } else {
-      // simple classpath without anything
-      // this module doesn't provide anything
-      classPathItem = new CompositeClassPathItem(false);
-    }
+    assert facet.isCompileInMps();
+    classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
+
     compileDependencies = new HashSet<SModule>();
     for (SModule dependency : new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE)) {
-      if (canCreate(dependency)) {
-        compileDependencies.add(dependency);
-      }
+      compileDependencies.add(dependency);
     }
   }
 
   // ext point possible here
   public static boolean canCreate(SModule module) {
     // todo: + check is module compiled?
-    return module.getFacet(JavaModuleFacet.class) != null;
+    return module.getFacet(JavaModuleFacet.class) != null && module.getFacet(NonReloadableModuleFacet.class) == null;
   }
 
   public static ModuleClassLoaderSupport create(SModule module) {

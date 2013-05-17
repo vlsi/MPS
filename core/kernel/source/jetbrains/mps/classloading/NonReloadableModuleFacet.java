@@ -13,20 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.project.facets;
+package jetbrains.mps.classloading;
 
-import jetbrains.mps.classloading.NonReloadableModuleFacet;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 
-import java.util.Set;
+public interface NonReloadableModuleFacet extends SModuleFacet {
+  public boolean isLoadedIntoMps();
 
-/**
- * evgeny, 2/28/13
- */
-public interface IdeaPluginModuleFacet extends NonReloadableModuleFacet {
-  public static final String FACET_TYPE = "ideaPlugin";
-
-  String getPluginId();
-
-  Set<SModuleReference> getContainedModules();
+  public ClassLoader getClassLoader();
 }
