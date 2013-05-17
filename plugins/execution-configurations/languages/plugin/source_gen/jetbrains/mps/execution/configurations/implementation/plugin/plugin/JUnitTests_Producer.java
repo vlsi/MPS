@@ -163,9 +163,12 @@ public class JUnitTests_Producer {
     protected JUnitTests_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
       SNode method = TestNodeWrapperFactory.findWrappableAncestor(source, false);
-      if (method != null && TestNodeWrapperFactory.tryToWrap(method) != null) {
-        // we check if we are inside a test method; do not run the whole test case if we are 
-        return null;
+      if (method != null) {
+        ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(method);
+        if (wrapper != null && !(wrapper.isTestCase())) {
+          // we check if we are inside a test method; do not run the whole test case if we are 
+          return null;
+        }
       }
       SNode testNode = SNodeOperations.cast(TestNodeWrapperFactory.findWrappableAncestor(source, true), "jetbrains.mps.lang.core.structure.INamedConcept");
       if (testNode == null) {
