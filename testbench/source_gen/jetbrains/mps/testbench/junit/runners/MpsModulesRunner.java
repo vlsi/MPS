@@ -19,6 +19,7 @@ import java.io.IOException;
 
 public class MpsModulesRunner extends MPSOpenProjectRunner {
   private static final String PROPERTY_LIBRARY = "mps.libraries";
+  private static final String MISC_XML = "misc.xml";
   private GeneratedTestEnvironment myEnvironment;
 
 
@@ -90,7 +91,7 @@ public class MpsModulesRunner extends MPSOpenProjectRunner {
               File projectFile = lastProject.getProjectFile();
               lastProject.dispose();
               if (projectFile != null) {
-                projectFile.delete();
+                FileUtil.delete(projectFile);
               }
             }
           });
@@ -104,9 +105,13 @@ public class MpsModulesRunner extends MPSOpenProjectRunner {
     }
 
     private File createDummyProjectFile() {
-      File projectFile = FileUtil.createTmpFile();
+      File projectDir = FileUtil.createTmpDir();
+      File dotMps = new File(projectDir, ".mps");
+      dotMps.mkdir();
+      File projectFile = new File(dotMps, MISC_XML);
       try {
-        InputStream input = MpsModulesRunner.this.getClass().getResourceAsStream("Dummy.mpr.xml");
+        projectFile.createNewFile();
+        InputStream input = MpsModulesRunner.this.getClass().getResourceAsStream(MISC_XML);
         FileOutputStream stream = new FileOutputStream(projectFile);
         stream.write(ReadUtil.read(input));
         stream.close();
@@ -115,7 +120,7 @@ public class MpsModulesRunner extends MPSOpenProjectRunner {
         e.printStackTrace();
         return null;
       }
-      return projectFile;
+      return projectDir;
     }
   }
 }

@@ -9,7 +9,6 @@
     <classNode dependClassName="org.junit.runners.model.MultipleFailureException" />
     <classNode extendsClassName="org.junit.runners.model.Statement" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.Dummy.mpr" file="Dummy.mpr.xml" />
   <dependency className="jetbrains.mps.testbench.junit.runners.FilepathParameterized" file="FilepathParameterized.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassCastException" />
@@ -325,5 +324,6 @@
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.WatchingSuite" />
   </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.runners.misc" file="misc.xml" />
 </dependenciesRoot>
 
