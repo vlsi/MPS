@@ -320,6 +320,10 @@ public class ClassLoaderManager implements CoreComponent {
       if (!myClassLoaders.containsKey(module) && ModuleClassLoaderSupport.canCreate(module)) {
         modulesToLoad.add(module);
       }
+      // todo: tmp hack
+      if (!myClassLoaders.containsKey(module) && module.getFacet(NonReloadableModuleFacet.class) != null) {
+        modulesToLoad.add(module);
+      }
     }
     loadClasses(modulesToLoad, monitor);
   }
