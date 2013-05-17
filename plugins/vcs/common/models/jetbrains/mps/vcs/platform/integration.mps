@@ -2438,7 +2438,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7600798193338888748" nodeInfo="nn" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7600798193335856035" nodeInfo="nn">
           <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="7600798193335856036" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="^" resolveInfo="isApplicationInUnitTestOrHeadless" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7600798193336885859" resolveInfo="isApplicationInUnitTestOrHeadless" />
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="7600798193335856038" nodeInfo="nn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7600798193335856039" nodeInfo="nn">
@@ -2451,7 +2451,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7600798193330633559" resolveInfo="ourTestImplementation" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7600798193335856046" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="^" resolveInfo="show" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h13.~TestDialog%dshow(java%dlang%dString)%cint" resolveInfo="show" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7600798193338147006" nodeInfo="nn">
                       <property name="value" nameId="tpee.1070475926801" value="" />
                     </node>
@@ -3330,7 +3330,7 @@
             <property name="name" nameId="tpck.1169194664001" value="application" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7600798193332294796" nodeInfo="nn">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="mepb.~ApplicationManager" resolveInfo="ApplicationManager" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="^" resolveInfo="getApplication" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mepb.~ApplicationManager%dgetApplication()%ccom%dintellij%dopenapi%dapplication%dApplication" resolveInfo="getApplication" />
             </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7600798193332294768" nodeInfo="in">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mepb.~Application" resolveInfo="Application" />
@@ -3404,7 +3404,7 @@
             <property name="name" nameId="tpck.1169194664001" value="application" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7600798193336885880" nodeInfo="nn">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="mepb.~ApplicationManager" resolveInfo="ApplicationManager" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="^" resolveInfo="getApplication" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mepb.~ApplicationManager%dgetApplication()%ccom%dintellij%dopenapi%dapplication%dApplication" resolveInfo="getApplication" />
             </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7600798193336885863" nodeInfo="in">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mepb.~Application" resolveInfo="Application" />
@@ -3426,7 +3426,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7600798193336885861" resolveInfo="application" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7600798193336885888" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="^" resolveInfo="isHeadlessEnvironment" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mepb.~Application%disHeadlessEnvironment()%cboolean" resolveInfo="isHeadlessEnvironment" />
                   </node>
                 </node>
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7600798193336885883" nodeInfo="nn">
@@ -3434,7 +3434,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7600798193336885861" resolveInfo="application" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7600798193336885884" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="^" resolveInfo="isUnitTestMode" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mepb.~Application%disUnitTestMode()%cboolean" resolveInfo="isUnitTestMode" />
                   </node>
                 </node>
               </node>
