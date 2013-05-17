@@ -1,0 +1,11 @@
+<project version="4">
+  <!--Dummy project for testing-->
+  <component name="MPSProject">
+    <projectModules />
+    <genConfs />
+  </component>
+  <component name="ProjectRootManager" version="2" />
+  <component name="ProjectVersion">
+    <option name="version" value="2.5" />
+  </component>
+</project>

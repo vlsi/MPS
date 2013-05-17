@@ -1,323 +1,375 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:3698f065-b2dd-473a-b072-dd8355238238(testAntTask.unpackAndTest)">
   <persistence version="8" />
-  <language namespace="0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)" />
-  <language namespace="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
+  <language namespace="479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="tpsk" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" implicit="yes" />
-  <import index="adh8" modelUID="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" version="-1" implicit="yes" />
-  <import index="ddum" modelUID="r:1e7ada09-c25e-41ea-a9b5-398e142ef533(jetbrains.mps.build.generictasks.structure)" version="22" implicit="yes" />
-  <root type="tpsk.Project" typeId="tpsk.1196851066733" id="1135661017237151385" nodeInfo="ng">
+  <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="2" implicit="yes" />
+  <root type="iuxj.XmlFile" typeId="iuxj.6666499814681515200" id="~unpackAndTest" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="unpackAndTest" />
-    <node role="property" roleId="tpsk.1200425668297" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="4366872349797381690" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="mps.zip.path" />
-      <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4366872349797381694" nodeInfo="ng">
-        <property name="value" nameId="tpsk.1196861024475" value="artifacts" />
-      </node>
-      <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="4366872349797381693" nodeInfo="nn" />
-    </node>
-    <node role="property" roleId="tpsk.1200425668297" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1317587536323737871" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="projectsdir" />
-      <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="1317587536323737874" nodeInfo="nn" />
-      <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1135661017237151485" nodeInfo="ng">
-        <property name="value" nameId="tpsk.1196861024475" value="${basedir}/../../../projects" />
-      </node>
-    </node>
-    <node role="property" roleId="tpsk.1200425668297" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1135661017237151461" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="mps.ant.workdir" />
-      <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="1135661017237151464" nodeInfo="nn" />
-      <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1135661017237151466" nodeInfo="ng">
-        <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1135661017237151465" nodeInfo="ng">
-          <property name="value" nameId="tpsk.1196861024475" value="${java.io.tmpdir}" />
-        </node>
-        <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1135661017237151469" nodeInfo="ng">
-          <property name="value" nameId="tpsk.1196861024475" value="/mps.ant.workdir" />
-        </node>
-      </node>
-    </node>
-    <node role="property" roleId="tpsk.1200425668297" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1135661017237151414" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="tmpdir" />
-      <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="1135661017237151417" nodeInfo="nn" />
-      <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1135661017237151471" nodeInfo="ng">
-        <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1135661017237151474" nodeInfo="ng">
-          <property name="value" nameId="tpsk.1196861024475" value="/testproject" />
-        </node>
-        <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1135661017237151470" nodeInfo="ng">
-          <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1135661017237151461" resolveInfo="mps.ant.workdir" />
-        </node>
-      </node>
-    </node>
-    <node role="property" roleId="tpsk.1200425668297" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1317587536323738423" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="mps.zip" />
-      <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323738427" nodeInfo="ng">
-        <property name="value" nameId="tpsk.1196861024475" value="${mps_home}/${mps.zip.path}/${build.number}.zip" />
-      </node>
-      <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="1317587536323738426" nodeInfo="nn" />
-    </node>
-    <node role="property" roleId="tpsk.1200425668297" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1317587536323738430" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="mps.build.dir" />
-      <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1317587536323738475" nodeInfo="ng">
-        <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323738552" nodeInfo="ng">
-          <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1135661017237151461" resolveInfo="mps.ant.workdir" />
-        </node>
-        <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323738434" nodeInfo="ng">
-          <property name="value" nameId="tpsk.1196861024475" value="/MPS ${version}" />
-        </node>
-      </node>
-      <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="1317587536323738433" nodeInfo="nn" />
-    </node>
-    <node role="target" roleId="tpsk.1196851079482" type="tpsk.TargetDeclaration" typeId="tpsk.1196851099544" id="1317587536323738395" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="init" />
-      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1317587536323738398" nodeInfo="ng">
-        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802813085" resolveInfo="fail" />
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738399" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802813092" resolveInfo="unless" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323738420" nodeInfo="ng">
-            <property name="value" nameId="tpsk.1196861024475" value="mps_home" />
+    <node role="document" roleId="iuxj.6666499814681515201" type="iuxj.XmlDocument" typeId="iuxj.6786756355279841993" id="3963878070711232251" nodeInfo="ng">
+      <node role="rootElement" roleId="iuxj.6666499814681299055" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232252" nodeInfo="ng">
+        <property name="tagName" nameId="iuxj.6666499814681415862" value="project" />
+        <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="false" />
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlComment" typeId="iuxj.6666499814681299064" id="3963878070711438492" nodeInfo="nn">
+          <node role="lines" roleId="iuxj.1622293396949036151" type="iuxj.XmlCommentLine" typeId="iuxj.1622293396949036126" id="3963878070711438616" nodeInfo="nn">
+            <property name="text" nameId="iuxj.1622293396949036127" value="Generated by MPS" />
           </node>
         </node>
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738402" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802813088" resolveInfo="message" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323738404" nodeInfo="ng">
-            <property name="value" nameId="tpsk.1196861024475" value="mps_home undefined" />
+        <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232253" nodeInfo="ng">
+          <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+          <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232254" nodeInfo="ng">
+            <property name="text" nameId="iuxj.6666499814681541920" value="unpackAndTest" />
           </node>
         </node>
-      </node>
-      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1317587536323738406" nodeInfo="ng">
-        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802813085" resolveInfo="fail" />
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738407" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802813092" resolveInfo="unless" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323738408" nodeInfo="ng">
-            <property name="value" nameId="tpsk.1196861024475" value="build.number" />
+        <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232255" nodeInfo="ng">
+          <property name="attrName" nameId="iuxj.6666499814681447926" value="default" />
+          <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232256" nodeInfo="ng">
+            <property name="text" nameId="iuxj.6666499814681541920" value="default" />
           </node>
         </node>
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738409" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802813088" resolveInfo="message" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323738411" nodeInfo="ng">
-            <property name="value" nameId="tpsk.1196861024475" value="build.number undefined" />
+        <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232257" nodeInfo="ng">
+          <property name="attrName" nameId="iuxj.6666499814681447926" value="basedir" />
+          <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232258" nodeInfo="ng">
+            <property name="text" nameId="iuxj.6666499814681541920" value="../../../../../.." />
           </node>
         </node>
-      </node>
-      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1317587536323738413" nodeInfo="ng">
-        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802813085" resolveInfo="fail" />
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738414" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802813092" resolveInfo="unless" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323738415" nodeInfo="ng">
-            <property name="value" nameId="tpsk.1196861024475" value="version" />
-          </node>
-        </node>
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738416" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802813088" resolveInfo="message" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323738418" nodeInfo="ng">
-            <property name="value" nameId="tpsk.1196861024475" value="version undefined" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="target" roleId="tpsk.1196851079482" type="tpsk.TargetDeclaration" typeId="tpsk.1196851099544" id="1317587536323737781" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="clean" />
-      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1317587536323737783" nodeInfo="ng">
-        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802812660" resolveInfo="delete" />
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323737784" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802812669" resolveInfo="dir" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323738770" nodeInfo="ng">
-            <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1135661017237151461" resolveInfo="mps.ant.workdir" />
-          </node>
-        </node>
-      </node>
-      <node role="depends" roleId="tpsk.1196853776690" type="tpsk.TargetReference" typeId="tpsk.1196852921336" id="1317587536323738436" nodeInfo="ng">
-        <link role="targetDeclaration" roleId="tpsk.1196852953065" targetNodeId="1317587536323738395" resolveInfo="init" />
-      </node>
-    </node>
-    <node role="target" roleId="tpsk.1196851079482" type="tpsk.TargetDeclaration" typeId="tpsk.1196851099544" id="1135661017237151394" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="unpack" />
-      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1135661017237151406" nodeInfo="ng">
-        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802814434" resolveInfo="mkdir" />
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1135661017237151407" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814435" resolveInfo="dir" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323737779" nodeInfo="ng">
-            <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1135661017237151414" resolveInfo="tmpdir" />
-          </node>
-        </node>
-      </node>
-      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1135661017237151400" nodeInfo="ng">
-        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802815734" resolveInfo="unzip" />
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1135661017237151403" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802815735" resolveInfo="dest" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323737780" nodeInfo="ng">
-            <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1135661017237151414" resolveInfo="tmpdir" />
-          </node>
-        </node>
-        <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1135661017237151478" nodeInfo="ng">
-          <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802813175" resolveInfo="fileset" />
-          <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323737722" nodeInfo="ng">
-            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811531" resolveInfo="dir" />
-            <node role="value" roleId="ddum.353793545802643468" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1135661017237151483" nodeInfo="ng">
-              <node role="value" roleId="tpsk.1199031757132" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323737875" nodeInfo="ng">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1317587536323737871" resolveInfo="projectsdir" />
-              </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232259" nodeInfo="ng">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232260" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232261" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="build.distribution" />
             </node>
           </node>
-          <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1135661017237151479" nodeInfo="ng">
-            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811542" resolveInfo="includes" />
-            <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323737724" nodeInfo="ng">
-              <property name="value" nameId="tpsk.1196861024475" value="*.zip" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232262" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="location" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232263" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="build/artifacts/mpsDistribution" />
             </node>
           </node>
         </node>
-      </node>
-      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1317587536323738438" nodeInfo="ng">
-        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802815734" resolveInfo="unzip" />
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738439" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802815735" resolveInfo="dest" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323738697" nodeInfo="ng">
-            <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1135661017237151461" resolveInfo="mps.ant.workdir" />
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232264" nodeInfo="ng">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="loadproperties" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232265" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="srcfile" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232266" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="${build.distribution}/build.properties" />
+            </node>
           </node>
         </node>
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738444" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802815741" resolveInfo="src" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323738446" nodeInfo="ng">
-            <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1317587536323738423" resolveInfo="mps.zip" />
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232267" nodeInfo="ng">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232268" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232269" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="mps.zip" />
+            </node>
+          </node>
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232270" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="location" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232271" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="${build.distribution}/${mps.build.number}.zip" />
+            </node>
           </node>
         </node>
-      </node>
-      <node role="depends" roleId="tpsk.1196853776690" type="tpsk.TargetReference" typeId="tpsk.1196852921336" id="1317587536323737817" nodeInfo="ng">
-        <link role="targetDeclaration" roleId="tpsk.1196852953065" targetNodeId="1317587536323737781" resolveInfo="clean" />
-      </node>
-    </node>
-    <node role="target" roleId="tpsk.1196851079482" type="tpsk.TargetDeclaration" typeId="tpsk.1196851099544" id="1317587536323737612" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="test" />
-      <node role="depends" roleId="tpsk.1196853776690" type="tpsk.TargetReference" typeId="tpsk.1196852921336" id="1317587536323737615" nodeInfo="ng">
-        <link role="targetDeclaration" roleId="tpsk.1196852953065" targetNodeId="1135661017237151394" resolveInfo="unpack" />
-      </node>
-      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1317587536323737853" nodeInfo="ng">
-        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802811753" resolveInfo="ant" />
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323737854" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811754" resolveInfo="antfile" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1317587536323737857" nodeInfo="ng">
-            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1317587536323737863" nodeInfo="ng">
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323737860" nodeInfo="ng">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1135661017237151414" resolveInfo="tmpdir" />
-              </node>
-              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323737876" nodeInfo="ng">
-                <property name="value" nameId="tpsk.1196861024475" value="/TestMPSAntTask/generate.xml" />
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232272" nodeInfo="ng">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232273" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232274" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="mps.ant.workdir" />
+            </node>
+          </node>
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232275" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="value" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232276" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="${java.io.tmpdir}/mps.ant.workdir" />
+            </node>
+          </node>
+        </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232277" nodeInfo="ng">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232278" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232279" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="tmpdir" />
+            </node>
+          </node>
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232280" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="value" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232281" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="${mps.ant.workdir}/testproject" />
+            </node>
+          </node>
+        </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="3963878070711232282" nodeInfo="nn">
+          <property name="value" nameId="iuxj.1622293396948953704" value="" />
+        </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232283" nodeInfo="ng">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232284" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232285" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="mps_build_home" />
+            </node>
+          </node>
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232286" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="location" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232287" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="${mps.ant.workdir}/MPS ${mpsBootstrapCore.version}" />
+            </node>
+          </node>
+        </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="3963878070711232288" nodeInfo="nn">
+          <property name="value" nameId="iuxj.1622293396948953704" value="" />
+        </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232289" nodeInfo="ng">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232290" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232291" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="projectsdir" />
+            </node>
+          </node>
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232292" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="value" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232293" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="${ant.file.unpackAndTest}/../../../../projects" />
+            </node>
+          </node>
+        </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="3963878070711232294" nodeInfo="nn">
+          <property name="value" nameId="iuxj.1622293396948953704" value="" />
+        </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232295" nodeInfo="ng">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="target" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="false" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232296" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232297" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="clean" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232298" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="delete" />
+            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232299" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232300" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${mps.ant.workdir}" />
               </node>
             </node>
           </node>
         </node>
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323737942" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811756" resolveInfo="dir" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1317587536323737944" nodeInfo="ng">
-            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1317587536323737945" nodeInfo="ng">
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323737946" nodeInfo="ng">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1135661017237151414" resolveInfo="tmpdir" />
-              </node>
-              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323737947" nodeInfo="ng">
-                <property name="value" nameId="tpsk.1196861024475" value="/TestMPSAntTask" />
-              </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="3963878070711232301" nodeInfo="nn">
+          <property name="value" nameId="iuxj.1622293396948953704" value="" />
+        </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232302" nodeInfo="ng">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="target" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="false" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232303" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232304" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="unpack" />
             </node>
           </node>
-        </node>
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323737877" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811758" resolveInfo="inheritall" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.BooleanLiteral" typeId="tpsk.1196865966685" id="1317587536323737879" nodeInfo="ng">
-            <property name="value" nameId="tpsk.1196866040780" value="false" />
-          </node>
-        </node>
-        <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1317587536323737892" nodeInfo="ng">
-          <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802814750" resolveInfo="property" />
-          <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323737897" nodeInfo="ng">
-            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814759" resolveInfo="name" />
-            <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323737898" nodeInfo="ng">
-              <property name="value" nameId="tpsk.1196861024475" value="mps_build" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232305" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="depends" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232306" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="clean" />
             </node>
           </node>
-          <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323737899" nodeInfo="ng">
-            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814771" resolveInfo="value" />
-            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323738479" nodeInfo="ng">
-              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1317587536323738430" resolveInfo="mps.build.dir" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1317587536323738031" nodeInfo="ng">
-        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802811753" resolveInfo="ant" />
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738032" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811754" resolveInfo="antfile" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1317587536323738033" nodeInfo="ng">
-            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1317587536323738034" nodeInfo="ng">
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323738035" nodeInfo="ng">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1135661017237151414" resolveInfo="tmpdir" />
-              </node>
-              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323738036" nodeInfo="ng">
-                <property name="value" nameId="tpsk.1196861024475" value="/TestMPSAntTask/test.xml" />
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232307" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="mkdir" />
+            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232308" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232309" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${tmpdir}" />
               </node>
             </node>
           </node>
-        </node>
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738037" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811756" resolveInfo="dir" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1317587536323738038" nodeInfo="ng">
-            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1317587536323738039" nodeInfo="ng">
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323738040" nodeInfo="ng">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1135661017237151414" resolveInfo="tmpdir" />
-              </node>
-              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323738041" nodeInfo="ng">
-                <property name="value" nameId="tpsk.1196861024475" value="/TestMPSAntTask" />
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232310" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="unzip" />
+            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="false" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232311" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="dest" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232312" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${tmpdir}" />
               </node>
             </node>
-          </node>
-        </node>
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738042" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811758" resolveInfo="inheritall" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.BooleanLiteral" typeId="tpsk.1196865966685" id="1317587536323738043" nodeInfo="ng">
-            <property name="value" nameId="tpsk.1196866040780" value="false" />
-          </node>
-        </node>
-        <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1317587536323738044" nodeInfo="ng">
-          <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802814750" resolveInfo="property" />
-          <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738045" nodeInfo="ng">
-            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814759" resolveInfo="name" />
-            <node role="value" roleId="ddum.353793545802643468" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323738046" nodeInfo="ng">
-              <property name="value" nameId="tpsk.1196861024475" value="mps_build" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232313" nodeInfo="ng">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232314" nodeInfo="ng">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232315" nodeInfo="ng">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="${projectsdir}" />
+                </node>
+              </node>
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232316" nodeInfo="ng">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="includes" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232317" nodeInfo="ng">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="*.zip" />
+                </node>
+              </node>
             </node>
           </node>
-          <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738047" nodeInfo="ng">
-            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814771" resolveInfo="value" />
-            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323738844" nodeInfo="ng">
-              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1317587536323738430" resolveInfo="mps.build.dir" />
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232318" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="unzip" />
+            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232319" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="dest" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232320" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${mps.ant.workdir}" />
+              </node>
+            </node>
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232321" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="src" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232322" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${mps.zip}" />
+              </node>
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node role="target" roleId="tpsk.1196851079482" type="tpsk.TargetDeclaration" typeId="tpsk.1196851099544" id="1135661017237151386" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="default" />
-      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1317587536323738098" nodeInfo="ng">
-        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802812660" resolveInfo="delete" />
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738099" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802812669" resolveInfo="dir" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1317587536323738771" nodeInfo="ng">
-            <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1135661017237151461" resolveInfo="mps.ant.workdir" />
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="3963878070711232323" nodeInfo="nn">
+          <property name="value" nameId="iuxj.1622293396948953704" value="" />
+        </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232324" nodeInfo="ng">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="target" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="false" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232325" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232326" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="test" />
+            </node>
+          </node>
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232327" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="depends" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232328" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="unpack" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232329" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="ant" />
+            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="false" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232330" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="antfile" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232331" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${tmpdir}/TestMPSAntTask/generate.xml" />
+              </node>
+            </node>
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232332" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232333" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${tmpdir}/TestMPSAntTask" />
+              </node>
+            </node>
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232334" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="inheritall" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232335" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="false" />
+              </node>
+            </node>
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232336" nodeInfo="ng">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232337" nodeInfo="ng">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232338" nodeInfo="ng">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="mps_build" />
+                </node>
+              </node>
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232339" nodeInfo="ng">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="value" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232340" nodeInfo="ng">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="${mps_build_home}" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232341" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="ant" />
+            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="false" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232342" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="antfile" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232343" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${tmpdir}/TestMPSAntTask/test.xml" />
+              </node>
+            </node>
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232344" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232345" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${tmpdir}/TestMPSAntTask" />
+              </node>
+            </node>
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232346" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="inheritall" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232347" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="false" />
+              </node>
+            </node>
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232348" nodeInfo="ng">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232349" nodeInfo="ng">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232350" nodeInfo="ng">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="mps_build" />
+                </node>
+              </node>
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232351" nodeInfo="ng">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="value" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232352" nodeInfo="ng">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="${mps_build_home}" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
-        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1317587536323738101" nodeInfo="ng">
-          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802812666" resolveInfo="deleteonexit" />
-          <node role="value" roleId="ddum.353793545802643468" type="tpsk.BooleanLiteral" typeId="tpsk.1196865966685" id="1317587536323738103" nodeInfo="ng">
-            <property name="value" nameId="tpsk.1196866040780" value="true" />
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="3963878070711232353" nodeInfo="nn">
+          <property name="value" nameId="iuxj.1622293396948953704" value="" />
+        </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232354" nodeInfo="ng">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="target" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="false" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232355" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232356" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="default" />
+            </node>
+          </node>
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232357" nodeInfo="ng">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="depends" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232358" nodeInfo="ng">
+              <property name="text" nameId="iuxj.6666499814681541920" value="test" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3963878070711232359" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="delete" />
+            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232360" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232361" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="${mps.ant.workdir}" />
+              </node>
+            </node>
+            <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3963878070711232362" nodeInfo="ng">
+              <property name="attrName" nameId="iuxj.6666499814681447926" value="deleteonexit" />
+              <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3963878070711232363" nodeInfo="ng">
+                <property name="text" nameId="iuxj.6666499814681541920" value="true" />
+              </node>
+            </node>
           </node>
         </node>
-      </node>
-      <node role="depends" roleId="tpsk.1196853776690" type="tpsk.TargetReference" typeId="tpsk.1196852921336" id="1317587536323737616" nodeInfo="ng">
-        <link role="targetDeclaration" roleId="tpsk.1196852953065" targetNodeId="1317587536323737612" resolveInfo="test" />
-      </node>
-    </node>
-    <node role="default" roleId="tpsk.1196859969927" type="tpsk.TargetReference" typeId="tpsk.1196852921336" id="1135661017237151387" nodeInfo="ng">
-      <link role="targetDeclaration" roleId="tpsk.1196852953065" targetNodeId="1135661017237151386" resolveInfo="default" />
-    </node>
-    <node role="basedir" roleId="tpsk.1199036079290" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1135661017237151481" nodeInfo="ng">
-      <node role="value" roleId="tpsk.1199031757132" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1135661017237151482" nodeInfo="ng">
-        <property name="value" nameId="tpsk.1196861024475" value="." />
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="3963878070711232364" nodeInfo="nn" />
       </node>
     </node>
   </root>

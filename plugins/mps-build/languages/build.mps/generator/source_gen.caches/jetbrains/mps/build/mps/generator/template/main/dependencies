@@ -23,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.build.mps.util.MPSModulesClosure" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.MPSModulesPartitioner" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleChecker" />
+    <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleFinder" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoader" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.PathConverter" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.RequiredPlugins" />

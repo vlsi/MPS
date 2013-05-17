@@ -22,6 +22,7 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourceArchiveRelativePath_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaContentFolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildVariableMacroInitValue_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.generator.util.JavaExternalLibraryHelper" />
