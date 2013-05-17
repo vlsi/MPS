@@ -8,17 +8,13 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConvertIfConditionToTernaryOperator_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -58,7 +54,13 @@ public class ConvertIfConditionToTernaryOperator_Intention implements IntentionF
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (IntentionUtils.getExpressionFromNode(SLinkOperations.getTarget(node, "ifTrue", true)) != null) && (IntentionUtils.getExpressionFromNode(SLinkOperations.getTarget(node, "ifFalseStatement", true)) != null) && ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isEmpty();
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
+      return false;
+    }
+
+    SNode s1 = IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifTrue", true));
+    SNode s2 = IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+    return (s1 != null) && (s2 != null) && IntentionUtils.areSimilarStatements(s1, s2);
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -85,34 +87,12 @@ public class ConvertIfConditionToTernaryOperator_Intention implements IntentionF
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode ternaryOperator = _quotation_createNode_78c6t8_a0a0a(SLinkOperations.getTarget(node, "condition", true), IntentionUtils.getExpressionFromNode(SLinkOperations.getTarget(node, "ifTrue", true)), IntentionUtils.getExpressionFromNode(SLinkOperations.getTarget(node, "ifFalseStatement", true)));
-      SNodeOperations.replaceWithAnother(node, ternaryOperator);
+      SNode result = IntentionUtils.getCommonStatement(IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifTrue", true)), IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifFalseStatement", true)), SLinkOperations.getTarget(node, "condition", true));
+      SNodeOperations.replaceWithAnother(node, result);
     }
 
     public IntentionDescriptor getDescriptor() {
       return ConvertIfConditionToTernaryOperator_Intention.this;
     }
-  }
-
-  private static SNode _quotation_createNode_78c6t8_a0a0a(Object parameter_1, Object parameter_2, Object parameter_3) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_4 = null;
-    SNode quotedNode_5 = null;
-    SNode quotedNode_6 = null;
-    SNode quotedNode_7 = null;
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5 = (SNode) parameter_1;
-    if (quotedNode_5 != null) {
-      quotedNode_4.addChild("condition", HUtil.copyIfNecessary(quotedNode_5));
-    }
-    quotedNode_6 = (SNode) parameter_2;
-    if (quotedNode_6 != null) {
-      quotedNode_4.addChild("ifTrue", HUtil.copyIfNecessary(quotedNode_6));
-    }
-    quotedNode_7 = (SNode) parameter_3;
-    if (quotedNode_7 != null) {
-      quotedNode_4.addChild("ifFalse", HUtil.copyIfNecessary(quotedNode_7));
-    }
-    return quotedNode_4;
   }
 }
