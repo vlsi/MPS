@@ -270,7 +270,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3118313698925873542" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3118313698925873543">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="3118313698925921479">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2vhq.~BaseSpecialModelDescriptor%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodel%dSModelReference)" resolveInfo="BaseSpecialModelDescriptor" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~BaseSpecialModelDescriptor%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodel%dSModelReference)" resolveInfo="BaseSpecialModelDescriptor" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3118313698925922548">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3118313698925920044" resolveInfo="modelRef" />
           </node>
@@ -2040,8 +2040,13 @@
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tp2q.MapElement" typeId="tp2q.1197932370469" id="383345101799767584">
-              <node role="key" roleId="tp2q.1197932525128" type="tpee.VariableReference" typeId="tpee.1068498886296" id="383345101799767585">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3609737829744618605" resolveInfo="file" />
+              <node role="key" roleId="tp2q.1197932525128" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5988856750136429490">
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5988856750136456400">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yj1f.~PsiFileSystemItem%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="383345101799767585">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3609737829744618605" resolveInfo="file" />
+                </node>
               </node>
               <node role="map" roleId="tp2q.1197932505799" type="tpee.VariableReference" typeId="tpee.1068498886296" id="383345101799767586">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3609737829697227052" resolveInfo="myMps2PsiMappings" />
@@ -2194,8 +2199,13 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7414633741301930817">
               <property name="name" nameId="tpck.1169194664001" value="mapForFile" />
               <node role="initializer" roleId="tpee.1068431790190" type="tp2q.MapElement" typeId="tp2q.1197932370469" id="7414633741301960085">
-                <node role="key" roleId="tp2q.1197932525128" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7414633741301960929">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414633741301853252" resolveInfo="file" />
+                <node role="key" roleId="tp2q.1197932525128" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5988856750136359738">
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5988856750136389254">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yj1f.~PsiFileSystemItem%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7414633741301960929">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414633741301853252" resolveInfo="file" />
+                  </node>
                 </node>
                 <node role="map" roleId="tp2q.1197932505799" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7414633741301935767">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3609737829697227052" resolveInfo="myMps2PsiMappings" />
