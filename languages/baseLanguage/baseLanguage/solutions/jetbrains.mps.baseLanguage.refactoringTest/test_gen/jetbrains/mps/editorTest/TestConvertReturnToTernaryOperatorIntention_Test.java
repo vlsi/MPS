@@ -27,7 +27,7 @@ public class TestConvertReturnToTernaryOperatorIntention_Test extends BaseTransf
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("7737741562085666382", "7737741562085693578");
+      final Editor editor = TestBody.this.initEditor("3268653019227632962", "3268653019227648733");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.invokeIntention("jetbrains.mps.baseLanguage.intentions.ConvertIfConditionToTernaryOperator_Intention", editor, this.myStart.getNode());
     }
