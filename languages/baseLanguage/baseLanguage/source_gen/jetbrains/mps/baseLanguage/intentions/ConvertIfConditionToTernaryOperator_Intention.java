@@ -60,7 +60,7 @@ public class ConvertIfConditionToTernaryOperator_Intention implements IntentionF
 
     SNode s1 = IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifTrue", true));
     SNode s2 = IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
-    return (s1 != null) && (s2 != null) && IntentionUtils.areSimilarStatements(s1, s2);
+    return (s1 != null) && (s2 != null) && IntentionUtils.canBeConvertedToTernary(s1, s2);
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -87,8 +87,10 @@ public class ConvertIfConditionToTernaryOperator_Intention implements IntentionF
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode result = IntentionUtils.getCommonStatement(IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifTrue", true)), IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifFalseStatement", true)), SLinkOperations.getTarget(node, "condition", true));
-      SNodeOperations.replaceWithAnother(node, result);
+      SNode result = IntentionUtils.convertToTernary(IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifTrue", true)), IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifFalseStatement", true)), SLinkOperations.getTarget(node, "condition", true));
+      if (result != null) {
+        SNodeOperations.replaceWithAnother(node, result);
+      }
     }
 
     public IntentionDescriptor getDescriptor() {
