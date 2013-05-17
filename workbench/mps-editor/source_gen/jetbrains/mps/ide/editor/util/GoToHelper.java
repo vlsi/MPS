@@ -39,6 +39,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import javax.swing.Icon;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -169,8 +170,14 @@ public class GoToHelper {
     }
 
     @Override
-    protected Icon getIcon(NodeNavigatable element) {
-      return IconManager.getIconFor(getLabelNode(element));
+    protected Icon getIcon(final NodeNavigatable element) {
+      final Wrappers._T<Icon> res = new Wrappers._T<Icon>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          res.value = IconManager.getIconFor(getLabelNode(element));
+        }
+      });
+      return res.value;
     }
 
     protected SNode getLabelNode(NodeNavigatable element) {

@@ -5,10 +5,10 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -32,20 +32,23 @@ public class OverrideConceptMethodsAction {
   }
 
   public void run() {
-    final SNode contextClass = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
-    final SNode contextMethod = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", true, false);
-    final SNodeReference[] methods = ModelAccess.instance().runReadAction(new Computable<SNodeReference[]>() {
-      @Override
-      public SNodeReference[] compute() {
+    final Wrappers._T<SNode> contextClass = new Wrappers._T<SNode>();
+    final Wrappers._T<SNode> contextMethod = new Wrappers._T<SNode>();
+    final Wrappers._T<SNodeReference[]> methods = new Wrappers._T<SNodeReference[]>();
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        contextClass.value = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
+        contextMethod.value = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", true, false);
         List<SNode> methodsToOverride = (myIsOverride ?
-          BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) :
-          BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})
+          BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass.value, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) :
+          BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass.value, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})
         );
-        return OverrideConceptMethodsDialog.toNodePointers(OverrideConceptMethodsDialog.sortMethods(contextClass, methodsToOverride));
+        methods.value = OverrideConceptMethodsDialog.toNodePointers(OverrideConceptMethodsDialog.sortMethods(contextClass.value, methodsToOverride));
       }
     });
 
-    final OverrideConceptMethodsDialog dialog = new OverrideConceptMethodsDialog(methods, ProjectHelper.toIdeaProject(myProject)) {
+    final OverrideConceptMethodsDialog dialog = new OverrideConceptMethodsDialog(methods.value, ProjectHelper.toIdeaProject(myProject)) {
       @Override
       protected boolean showInsertOverride() {
         return myIsOverride;
@@ -68,8 +71,7 @@ public class OverrideConceptMethodsAction {
               return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
             }
           }).toListSequence();
-
-          OverrideConceptMethodsHelper helper = new OverrideConceptMethodsHelper(myProject, contextClass, contextMethod, dialog.isRemoveAttributes(), dialog.isAddReturn());
+          OverrideConceptMethodsHelper helper = new OverrideConceptMethodsHelper(myProject, contextClass.value, contextMethod.value, dialog.isRemoveAttributes(), dialog.isAddReturn());
           List<SNode> insertedMethods = helper.insertMethods(selection);
           if (insertedMethods.isEmpty()) {
             return;

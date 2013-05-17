@@ -24,6 +24,7 @@ import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 
@@ -226,9 +227,9 @@ class EditorSettingsPreferencesPage {
 
 
   private EditorComponent createBlinkingDemo() {
-    return new EditorComponent(null) {
+     return new EditorComponent(MPSModuleRepository.getInstance()) {
       {
-        setEditorContext(new EditorContext(this, null, null));
+        setEditorContext(new EditorContext(this, null, MPSModuleRepository.getInstance()));
         CaretBlinker.getInstance().unregisterEditor(this);
         ModelAccess.instance().runReadInEDT(new Runnable() {
           @Override

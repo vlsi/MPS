@@ -54,7 +54,6 @@ public class MPSFilesSaver implements ApplicationComponent {
         Runnable saveAllRunnable = new Runnable() {
           @Override
           public void run() {
-            SModelRepository.getInstance().saveAll();
             MPSModuleRepository.getInstance().saveAll();
           }
         };

@@ -60,8 +60,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-/*
+/**
  *  @Deprecated use DialogWrapper
+ *  Will be removed after 3.0
  */
 @Deprecated
 public abstract class BaseDialog extends JDialog {

@@ -268,7 +268,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
     if (file == null) {
       return null;
     }
-    BiMap<SNode, PsiElement> mapping = MapSequence.fromMap(myMps2PsiMappings).get(file);
+    BiMap<SNode, PsiElement> mapping = MapSequence.fromMap(myMps2PsiMappings).get(file.getName());
     if (mapping == null) {
       return null;
     }
@@ -284,7 +284,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
       PsiElement element = pair.o2;
       MapSequence.fromMap(myGlobalMps2PsiMapping).put(node, element);
       PsiFile file = element.getContainingFile();
-      BiMap<SNode, PsiElement> mapForFile = MapSequence.fromMap(myMps2PsiMappings).get(file);
+      BiMap<SNode, PsiElement> mapForFile = MapSequence.fromMap(myMps2PsiMappings).get(file.getName());
       if (mapForFile == null) {
         mapForFile = HashBiMap.create();
         MapSequence.fromMap(myMps2PsiMappings).put(file.getName(), mapForFile);

@@ -4,23 +4,16 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.creators;
 
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.structure.project.Path;
-import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.vfs.IFile;
 
 public class ModulePathChooser implements Computable<Path> {
-  private final IBindedDialog myOwner;
-
-  public ModulePathChooser(IBindedDialog owner) {
-    myOwner = owner;
-  }
-
   @Override
   public Path compute() {
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setExtensionFileFilter(MPSExtentions.DOT_LANGUAGE, MPSExtentions.DOT_SOLUTION, MPSExtentions.DOT_LIBRARY, MPSExtentions.DOT_DEVKIT);
-    IFile file = chooser.showDialog(myOwner.getMainComponent());
+    IFile file = chooser.showDialog();
     if (file == null) {
       return null;
     }

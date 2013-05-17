@@ -21,11 +21,13 @@
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesContext" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesContext" file="FindInstancesContext.java">
@@ -100,7 +102,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
+    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
@@ -192,7 +194,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
+    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementQueryAction_Action" file="ReplacementQueryAction_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />

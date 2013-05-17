@@ -19,7 +19,6 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.Project;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.properties.StandardDialogs;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -93,11 +92,6 @@ public class ModelProperties_Action extends BaseAction {
           configurableEditor.show();
         }
       });
-
-
-      /*
-        StandardDialogs.createModelPropertiesDialog(((SModel) MapSequence.fromMap(_params).get("model"))).show();
-      */
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ModelProperties", t);
