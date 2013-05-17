@@ -11,19 +11,23 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor;
+import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class EmptyJavaPsiStubsFindUsages implements FindUsagesParticipant, ApplicationComponent {
+/**
+ * Suppressing searching in psi and class file stubs
+ */
+public class EmptyJavaStubsFindUsages implements FindUsagesParticipant, ApplicationComponent {
   public void findUsages(Collection<SModel> models, Set<SNode> set, Consumer<SReference> consumer, Consumer<SModel> processedConsumer) {
 
     // just skipping java psi stub models from find usages 
     // usages in java should be found via idea ReferenceSearch 
     for (SModel model : models) {
-      if (model instanceof PsiJavaStubModelDescriptor) {
+      if (model instanceof PsiJavaStubModelDescriptor || model instanceof JavaClassStubModelDescriptor) {
         processedConsumer.consume(model);
       }
     }
