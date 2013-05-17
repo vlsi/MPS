@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8l0jno9305ibp6gnna02md6tn60qkqu">
+<dependencies version="2" modelHash="50t0bgri8nm1hfo6i91vv5p54ci6tpe">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-er04ynwwc0babx4ug54abz4i80ig26i" />
-  <common hash="569ri3j9d1c101x21b1qc16vyicdwci" />
-  <source id="6420745394459121798" name="DefultEditorComponent" hash="6bjp9vntm3jw44qtg06zdw8uu14uoas" dependsOnNodes="true">
+  <common hash="atny195n4lx5ya2z10m5tcwxwaderq6" />
+  <source id="6420745394459121798" name="DefultEditorComponent" hash="-it4lrmk9i2vwn0zfb3lu72izjl5g5q" dependsOnNodes="true">
     <dep root="5950344441601613251" />
     <dep root="6420745394459130152" />
     <dep root="6420745394459130264" />
@@ -14,10 +14,10 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="DefultEditorComponent_Test.java" />
   </source>
-  <source id="5950344441601613251" hash="-7zw4sid1f1nac5tientkpp2iseu0n6c">
+  <source id="5950344441601613251" hash="c8534edxbtef61i0rsvwo2e9mdu5vr7">
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6420745394459130152" name="EditorComponentSpecifiedBy_context_hint" hash="3g4dpx30hxk1a8eb1qulkhgi1kc3txw" dependsOnNodes="true">
+  <source id="6420745394459130152" name="EditorComponentSpecifiedBy_context_hint" hash="1fvyatg5q7uhc4z5muei48drhjfco6p" dependsOnNodes="true">
     <dep root="5950344441601613251" />
     <dep root="6420745394459121798" />
     <dep root="6420745394459130264" />
@@ -27,7 +27,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="EditorComponentSpecifiedBy_context_hint_Test.java" />
   </source>
-  <source id="6420745394459130264" name="MostSpecificEditorComponent" hash="2b621h3xmatgh97v5sq37ggl4h4rgzj" dependsOnNodes="true">
+  <source id="6420745394459130264" name="MostSpecificEditorComponent" hash="-dwj90rqidstho8oms3rxdjdt22dlnd5" dependsOnNodes="true">
     <dep root="5950344441601613251" />
     <dep root="6420745394459121798" />
     <dep root="6420745394459130152" />
@@ -37,7 +37,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="MostSpecificEditorComponent_Test.java" />
   </source>
-  <source id="6420745394459902267" name="OverridenEditorComponent" hash="5yv1opsbxvfskyytj8hxuqg0kpmqtwy" dependsOnNodes="true">
+  <source id="6420745394459902267" name="OverridenEditorComponent" hash="-74tzutft0lb2o0ejumlxxaugw3twmgg" dependsOnNodes="true">
     <dep root="5950344441601613251" />
     <dep root="6420745394459121798" />
     <dep root="6420745394459130152" />
