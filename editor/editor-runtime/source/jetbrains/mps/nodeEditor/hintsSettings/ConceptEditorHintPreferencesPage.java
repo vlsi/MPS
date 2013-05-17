@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.hintsSettings;
 
+import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
 import javax.swing.Box;
@@ -22,8 +23,6 @@ import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.UIManager;
-import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.Component;
@@ -52,7 +51,6 @@ public class ConceptEditorHintPreferencesPage {
   }
 
   public boolean isModified() {
-    long begin = System.currentTimeMillis();
     if (registrySettings.size() != currentSettings.size()) {
       return true;
     }
@@ -66,7 +64,6 @@ public class ConceptEditorHintPreferencesPage {
         }
       }
     }
-    System.out.println((System.currentTimeMillis() - begin)/1000.0);
     return false;
   }
 
@@ -74,7 +71,6 @@ public class ConceptEditorHintPreferencesPage {
     myPreferencesPanel.removeAll();
     syncSettings(registrySettings, currentSettings);
     myPreferencesPanel.setLayout(new BoxLayout(myPreferencesPanel, BoxLayout.Y_AXIS));
-    myPreferencesPanel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
     ArrayList<String> names = new ArrayList<String>(currentSettings.getLanguagesNames());
     Collections.sort(names);
     for (String langName : names) {
@@ -82,8 +78,7 @@ public class ConceptEditorHintPreferencesPage {
         JPanel languagePanel = new JPanel();
         languagePanel.setLayout(new BoxLayout(languagePanel, BoxLayout.Y_AXIS));
         languagePanel.add(Box.createHorizontalGlue());
-        languagePanel.setBorder(new TitledBorder(langName));
-        languagePanel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
+        languagePanel.setBorder(IdeBorderFactory.createTitledBorder(langName, false));
         languagePanel.setAlignmentX(Component.CENTER_ALIGNMENT);
         for (ConceptEditorHint hint : currentSettings.getHints(langName)) {
           addHintCheckbox(languagePanel, langName, hint, currentSettings.get(langName, hint));
@@ -102,7 +97,6 @@ public class ConceptEditorHintPreferencesPage {
 
   private void addHintCheckbox(JPanel panel, final String lang, final ConceptEditorHint hint, boolean state) {
     JCheckBox item = new JCheckBox(hint.getId() + ": " + hint.getPresentation());
-    item.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
     item.setSelected(state);
     panel.add(item);
     item.addChangeListener(new ChangeListener() {
