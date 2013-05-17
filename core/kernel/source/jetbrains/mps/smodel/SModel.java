@@ -164,7 +164,7 @@ public class SModel implements SModelData {
       performUndoableAction(new Computable<SNodeUndoableAction>() {
         @Override
         public SNodeUndoableAction compute() {
-          return new RemoveRootUndoableAction(node);
+          return new RemoveRootUndoableAction(node, myModelDescriptor);
         }
       });
       fireRootRemovedEvent(sn);
