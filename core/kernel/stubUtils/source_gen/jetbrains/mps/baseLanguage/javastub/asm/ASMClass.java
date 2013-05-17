@@ -27,7 +27,12 @@ public class ASMClass {
 
   public ASMClass(ClassReader reader) {
     myNode = new ClassNode();
-    reader.accept(myNode, ClassReader.SKIP_CODE & ClassReader.SKIP_DEBUG & ClassReader.SKIP_FRAMES);
+    try {
+      reader.accept(myNode, ClassReader.SKIP_CODE & ClassReader.SKIP_DEBUG & ClassReader.SKIP_FRAMES);
+    } catch (RuntimeException e) {
+      // see MPS-17590 
+      return;
+    }
     if (myNode.signature != null) {
       SignatureReader signReader = new SignatureReader(myNode.signature);
       signReader.accept(new SignatureVisitorAdapter() {
