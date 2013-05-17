@@ -12,11 +12,16 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class IntentionUtils {
   private IntentionUtils() {
@@ -105,16 +110,12 @@ public class IntentionUtils {
     );
   }
 
-  /*package*/ static boolean isDiffCanBeConvertedToTernary(final Tuples._2<SNode, SNode> diff) {
+  /*package*/ static boolean isDiffCanBeConvertedToTernary(Tuples._2<SNode, SNode> diff) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(diff._0()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       return false;
     }
-
-    SNode linkDeclaration = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(diff._0())), "linkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return eq_k79hya_a0a0a0a0a0a0c0f(SPropertyOperations.getString(it, "role"), diff._0().getRoleInParent()) && SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference");
-      }
-    });
+    // todo: i don't think that this code is true 
+    SNode linkDeclaration = SNodeOperations.as(new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(diff._0()))).getLinkDeclarationByRole(diff._0().getRoleInParent()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     return SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDeclaration, "target", false), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
   }
 
@@ -125,30 +126,32 @@ public class IntentionUtils {
     }
     SNode concept = SNodeOperations.getConceptDeclaration(node1);
 
-    for (SNode property : ListSequence.fromList(SLinkOperations.getTargets(concept, "propertyDeclaration", true))) {
-      if (neq_k79hya_a0a0d0g(node1.getProperty(SPropertyOperations.getString(property, "name")), node2.getProperty(SPropertyOperations.getString(property, "name")))) {
+    // todo: rewrite logic with property/role names collecting! 
+    Set<String> propertyNames = SetSequence.fromSet(new HashSet<String>());
+    collectPropertyNames(propertyNames, node1);
+    collectPropertyNames(propertyNames, node2);
+    for (String property : SetSequence.fromSet(propertyNames)) {
+      if (neq_k79hya_a0a0h0g(node1.getProperty(property), node2.getProperty(property))) {
         return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
 
-    for (SNode refLink : ListSequence.fromList(SLinkOperations.getTargets(concept, "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");
-      }
-    })) {
-      if (node1.getReference(SPropertyOperations.getString(refLink, "role")).getTargetNode() != node2.getReference(SPropertyOperations.getString(refLink, "role")).getTargetNode()) {
+    Set<String> refNames = SetSequence.fromSet(new HashSet<String>());
+    collectReferenceNames(refNames, node1);
+    collectReferenceNames(refNames, node2);
+    for (String refLink : SetSequence.fromSet(refNames)) {
+      if (node1.getReferenceTarget(refLink) != node2.getReferenceTarget(refLink)) {
         return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
 
     Tuples._2<SNode, SNode> currentResult = null;
-    for (SNode childLink : ListSequence.fromList(SLinkOperations.getTargets(concept, "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference");
-      }
-    })) {
-      List<SNode> children1 = IterableUtil.asList(node1.getChildren(SPropertyOperations.getString(childLink, "role")));
-      List<SNode> children2 = IterableUtil.asList(node2.getChildren(SPropertyOperations.getString(childLink, "role")));
+    Set<String> childNames = SetSequence.fromSet(new HashSet<String>());
+    collectChildNames(childNames, node1);
+    collectChildNames(childNames, node2);
+    for (String childLink : SetSequence.fromSet(childNames)) {
+      List<SNode> children1 = IterableUtil.asList(node1.getChildren(childLink));
+      List<SNode> children2 = IterableUtil.asList(node2.getChildren(childLink));
 
       if (children1.size() != children2.size()) {
         return MultiTuple.<SNode,SNode>from(node1, node2);
@@ -177,40 +180,22 @@ public class IntentionUtils {
     return currentResult;
   }
 
-  /*package*/ static SNode getReturnedExpression(SNode node) {
-    {
-      SNode matchedNode_k79hya_a0h = optimizeNode(node);
-      {
-        boolean matches_k79hya_a0a7 = false;
-        {
-          SNode matchingNode_k79hya_a0a7 = optimizeNode(node);
-          if (matchingNode_k79hya_a0a7 != null) {
-            matches_k79hya_a0a7 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_a0a7.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.ReturnStatement");
-          }
-        }
-        if (matches_k79hya_a0a7) {
-          return SLinkOperations.getTarget(matchedNode_k79hya_a0h, "expression", true);
-        } else
-        return null;
-      }
+
+
+  /*package*/ static void collectPropertyNames(Set<String> propertyNames, SNode node) {
+    SetSequence.fromSet(propertyNames).addSequence(Sequence.fromIterable(node.getPropertyNames()));
+  }
+
+  /*package*/ static void collectReferenceNames(Set<String> referenceNames, SNode node) {
+    for (SReference ref : Sequence.fromIterable(node.getReferences())) {
+      SetSequence.fromSet(referenceNames).addElement(ref.getRole());
     }
   }
 
-  /*package*/ static SNode getExpressionFromNode(SNode node) {
-    {
-      SNode matchedNode_k79hya_a0i = optimizeNode(node);
-      {
-        boolean matches_k79hya_a0a8 = false;
-        {
-          SNode matchingNode_k79hya_a0a8 = optimizeNode(node);
-          if (matchingNode_k79hya_a0a8 != null) {
-            matches_k79hya_a0a8 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_a0a8.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
-          }
-        }
-        if (matches_k79hya_a0a8) {
-          return SLinkOperations.getTarget(matchedNode_k79hya_a0i, "expression", true);
-        } else
-        return null;
+  /*package*/ static void collectChildNames(Set<String> childNames, SNode node) {
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+      if ((child != null)) {
+        SetSequence.fromSet(childNames).addElement(child.getRoleInParent());
       }
     }
   }
@@ -230,13 +215,6 @@ public class IntentionUtils {
     }).first(), "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
-  private static boolean eq_k79hya_a0a0a0a0a0a0c0f(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
   private static boolean neq_k79hya_a0a0g(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
@@ -244,7 +222,7 @@ public class IntentionUtils {
     ));
   }
 
-  private static boolean neq_k79hya_a0a0d0g(Object a, Object b) {
+  private static boolean neq_k79hya_a0a0h0g(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
