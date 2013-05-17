@@ -50,8 +50,8 @@ public class FetchDependenciesProcessor {
   }
 
   private class RequiredDependenciesBuilderImpl implements RequiredDependenciesBuilder {
-    private final VisibleArtifacts artifacts;
-    private final SNode dep;
+    protected final VisibleArtifacts artifacts;
+    protected final SNode dep;
     private final UnpackHelper helper;
 
     public RequiredDependenciesBuilderImpl(VisibleArtifacts artifacts, SNode dep, UnpackHelper helper) {
@@ -84,7 +84,7 @@ public class FetchDependenciesProcessor {
       helper.add(node, true, null);
     }
 
-    private boolean check(SNode node) {
+    protected boolean check(SNode node) {
       if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
         genContext.showErrorMessage(dep, "returned dependency in transient model: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
         return false;
@@ -96,7 +96,7 @@ public class FetchDependenciesProcessor {
       return true;
     }
 
-    private boolean checkArtifactId(Object artifactId) {
+    protected boolean checkArtifactId(Object artifactId) {
       if (artifactId instanceof SNode && ((SNode) artifactId).getModel().getModule() instanceof TransientModelsModule) {
         genContext.showErrorMessage(dep, "cannot register artifact in transient model " + jetbrains.mps.util.SNodeOperations.getDebugText(((SNode) artifactId)));
         return false;

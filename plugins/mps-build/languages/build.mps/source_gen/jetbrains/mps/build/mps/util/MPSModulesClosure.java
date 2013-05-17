@@ -287,6 +287,17 @@ public class MPSModulesClosure {
     return this;
   }
 
+  public MPSModulesClosure designtimeClosure() {
+    for (SNode m : Sequence.fromIterable(initialModules)) {
+      for (SNode lang : getUsedLanguages(m)) {
+        collectAllDependencies(lang, false, false);
+      }
+      collectAllDependencies(m, false, false);
+    }
+    modules.removeAll(Sequence.fromIterable(initialModules).toListSequence());
+    return this;
+  }
+
   public MPSModulesClosure generationDependenciesClosure() {
     for (SNode m : Sequence.fromIterable(initialModules)) {
       for (SNode lang : getUsedLanguages(m)) {

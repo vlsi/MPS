@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.util.GenerationUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
@@ -38,6 +39,13 @@ public class RequiredPlugins {
     myDependency = GenerationUtil.<SNode>getSessionSet(SNodeOperations.as(myRoot, "jetbrains.mps.build.structure.BuildProject"), genContext, KEY);
   }
 
+  public RequiredPlugins(TemplateQueryContext genContext, SNode root, Iterable<SNode> initialPlugins) {
+    myContext = genContext;
+    ListSequence.fromList(myPlugins).addSequence(Sequence.fromIterable(initialPlugins));
+    myRoot = root;
+    myDependency = GenerationUtil.<SNode>getSessionSet(SNodeOperations.as(myRoot, "jetbrains.mps.build.structure.BuildProject"), genContext, KEY);
+  }
+
   public void collectDependencies() {
     Set<SNode> visited = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (SNode plugin : ListSequence.fromList(myPlugins)) {
@@ -48,6 +56,18 @@ public class RequiredPlugins {
         return (it != null);
       }
     }).toListSequence());
+  }
+
+  public Iterable<SNode> returnDependencies() {
+    Set<SNode> visited = SetSequence.fromSet(new LinkedHashSet<SNode>());
+    for (SNode plugin : ListSequence.fromList(myPlugins)) {
+      collectDependencies(plugin, visited);
+    }
+    return SetSequence.fromSet(visited).subtract(ListSequence.fromList(myPlugins)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it != null);
+      }
+    }).toListSequence();
   }
 
   private void collectDependencies(SNode plugin, Set<SNode> visited) {
@@ -68,5 +88,9 @@ public class RequiredPlugins {
 
   public Iterable<SNode> getDependency() {
     return myDependency;
+  }
+
+  public Iterable<SNode> getDependencyInsideCurrent() {
+    return myPlugins;
   }
 }

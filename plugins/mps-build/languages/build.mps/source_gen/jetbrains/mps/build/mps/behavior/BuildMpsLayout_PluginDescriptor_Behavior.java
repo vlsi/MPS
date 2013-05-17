@@ -17,6 +17,7 @@ public class BuildMpsLayout_PluginDescriptor_Behavior {
     if (artifactId instanceof jetbrains.mps.smodel.SNode) {
       SNode node = (SNode) artifactId;
       // todo (in 3.0+) plugin should be exported by folder, not by xml 
+      // weeeeell? 
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin")) {
         return SLinkOperations.getTarget(thisNode, "plugin", false) == node;
       }
@@ -28,7 +29,7 @@ public class BuildMpsLayout_PluginDescriptor_Behavior {
     if (artifactId instanceof jetbrains.mps.smodel.SNode) {
       SNode node = (SNode) artifactId;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin")) {
-        return helper.locations().get(thisNode) + "/../../..";
+        return helper.locations().get(thisNode) + "/../..";
       }
     }
     return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.build.structure.BuildLayout_Node", "virtual_location_7117056644539862594", new Object[]{helper, artifactId});

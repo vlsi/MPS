@@ -13,53 +13,63 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<project name="test" default="default">
-  <property name="mps.zip.path" value="artifacts"/>
-  <property name="mps.zip" value="${build.number}.zip"/>
-  <target name="default">
-    <property name="dest" value="${mps_home}/build/temp.dst" />
-    <fail unless="mps_home" message="Property mps_home unspecified."/>
-    <unzip src="${mps_home}/${mps.zip.path}/${mps.zip}" dest="${dest}" />
+<project name="test" default="default" basedir="../">
+  <property name="build.dir" location="build"/>
+  <property name="build.tmp" location="${build.dir}/tmp/tests"/>
+  <property name="build.distribution" location="${build.dir}/artifacts/mpsDistribution"/>
+  <loadproperties srcfile="${build.distribution}/build.properties"/>
+  <property name="mps.zip" location="${build.distribution}/${mps.build.number}.zip"/>
+  <property name="mps_build_home" location="${build.tmp}/MPS ${mpsBootstrapCore.version}"/>
 
-    <mkdir dir="${dest}/buildtests.tmp"/>
+  <target name="unpack">
+    <unzip src="${mps.zip}" dest="${build.tmp}"/>
+  </target>
+
+  <target name="check-project-structure" depends="unpack">
+    <mkdir dir="${build.tmp}/buildtests.tmp"/>
     <path id="tests.classpath">
-      <fileset dir="${dest}/MPS ${version}/lib">
+      <fileset dir="${mps_build_home}/lib">
         <include name="**/*.jar"/>
       </fileset>
-      <path path="${dest}/MPS ${version}/lib/mps-backend.jar"/>
-      <path path="${dest}/MPS ${version}/lib/jdom.jar"/>
+      <path path="${mps_build_home}/lib/mps-backend.jar"/>
+      <path path="${mps_build_home}/lib/jdom.jar"/>
     </path>
-    <javac classpathref="tests.classpath" destdir="${dest}/buildtests.tmp" fork="true" includeantruntime="false"
+    <javac classpathref="tests.classpath" destdir="${build.tmp}/buildtests.tmp" fork="true" includeantruntime="false"
            memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${mps_home}/testbench/tests"/>
-        <path path="${mps_home}/testbench/tests_gen"/>
+        <path path="testbench/tests"/>
+        <path path="testbench/tests_gen"/>
       </src>
     </javac>
-    <jar destfile="${dest}/MPS ${version}/lib/mpstests.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${dest}/buildtests.tmp"/>
+    <jar destfile="${mps_build_home}/lib/mpstests.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${build.tmp}/buildtests.tmp"/>
     </jar>
-    <delete dir="${dest}/buildtests.tmp"/>
+    <delete dir="${build.tmp}/buildtests.tmp"/>
 
-    <junit fork="true" dir="${dest}/MPS ${version}" haltonfailure="true">
+    <junit fork="true" dir="${mps_build_home}">
       <jvmarg value="-ea"/>
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1200m"/>
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
-      <!--<jvmarg value="-Xdebug"/>-->
-      <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>-->
       <test name="CheckProjectStructure"/>
-      <formatter type="brief" usefile="false"/>
+      <formatter type="xml"/>
       <classpath>
-        <fileset dir="${dest}/MPS ${version}/lib">
+        <fileset dir="${mps_build_home}/lib">
           <include name="*.jar"/>
         </fileset>
       </classpath>
     </junit>
-<!--
-    <ant antfile="${mps_home}/languages/util/gwtsupport/solutions/gwtsupport.buildtest/build.xml">
-      <property name="mps.home" value="${dest}/MPS ${version}"/>
-    </ant> -->
   </target>
+
+  <target name="module-tests" depends="unpack">
+    <ant antfile="build/tests/mpsExecution.xml" inheritAll="true" useNativeBasedir="true">
+      <property name="mps_home" value="${mps_build_home}"/>
+    </ant>
+    <ant antfile="build/tests/mpsEditor.xml" inheritAll="true" useNativeBasedir="true">
+      <property name="mps_home" value="${mps_build_home}"/>
+    </ant>
+  </target>
+
+  <target name="default" depends="check-project-structure, module-tests"/>
 </project>
