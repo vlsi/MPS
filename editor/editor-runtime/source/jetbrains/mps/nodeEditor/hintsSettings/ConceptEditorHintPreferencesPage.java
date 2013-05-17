@@ -17,14 +17,19 @@ package jetbrains.mps.nodeEditor.hintsSettings;
 
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.awt.Component;
 import java.awt.GridBagLayout;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Semen Alperovich
@@ -37,30 +42,9 @@ public class ConceptEditorHintPreferencesPage {
 
   public ConceptEditorHintPreferencesPage(ConceptEditorHintSettings state) {
     myPreferencesPanel = new JPanel(new GridBagLayout());
-    if (state != null) {
-      registrySettings = state;
-    } else {
-      registrySettings = new ConceptEditorHintSettings();
-    }
-//    for (LanguageRuntime language : LanguageRegistry.getInstance().getAvailableLanguages()) {
-//      EditorAspectDescriptor editor = language.getAspectDescriptor(EditorAspectDescriptor.class);
-//      if (editor == null) {
-//        continue;
-//      }
-//      for (ConceptEditorHint hint : editor.getHints()) {
-//
-//        if (!registrySettings.containsKey(editor) || !registrySettings.get(editor).containsKey(hint)) {
-//          if(!currentSettings.containsKey(editor)) {
-//            currentSettings.put(editor, new HashMap<ConceptEditorHint, Boolean>());
-//          }
-//          currentSettings.get(editor).put(hint, false);
-//          addHintCheckbox(editor, hint, false);
-//        }
-//      }
-//    }
+    registrySettings = state != null ? state : new ConceptEditorHintSettings();
 
-
-     updateCheckBox();
+    update();
   }
 
   public JComponent getComponent() {
@@ -68,62 +52,64 @@ public class ConceptEditorHintPreferencesPage {
   }
 
   public boolean isModified() {
-    Map<String, Map<ConceptEditorHint, Boolean>> registryMap = registrySettings.getSettings();
-    Map<String, Map<ConceptEditorHint, Boolean>> currentMap = currentSettings.getSettings();
-    if (registryMap.size() != currentMap.size()) {
+    long begin = System.currentTimeMillis();
+    if (registrySettings.size() != currentSettings.size()) {
       return true;
     }
-    for (String namespace : currentMap.keySet()) {
-      Map<ConceptEditorHint, Boolean> registryMapForEditor = registryMap.get(namespace);
-      if (!currentMap.containsKey(namespace)) {
-        return true;
-      }
-      Map<ConceptEditorHint, Boolean> currentMapForEditor = currentMap.get(namespace);
-      if (registryMapForEditor.size() != currentMapForEditor.size()) {
-        return true;
-      }
-      for (ConceptEditorHint hint : registryMapForEditor.keySet()) {
-        if (!currentMapForEditor.containsKey(hint) || !registryMapForEditor.get(hint).equals(currentMapForEditor.get(hint))) {
+    for (String langName : currentSettings.getLanguagesNames()) {
+      assert registrySettings.containsLang(langName);
+      assert registrySettings.sizeForLang(langName) == currentSettings.sizeForLang(langName);
+      for (ConceptEditorHint hint : registrySettings.getHints(langName)) {
+        assert currentSettings.containsKey(langName, hint);
+        if (!registrySettings.get(langName, hint).equals(currentSettings.get(langName, hint))) {
           return true;
         }
       }
     }
-
+    System.out.println((System.currentTimeMillis() - begin)/1000.0);
     return false;
   }
 
   public void update() {
     myPreferencesPanel.removeAll();
     syncSettings(registrySettings, currentSettings);
-    updateCheckBox();
-  }
-
-  private void syncSettings(ConceptEditorHintSettings from, ConceptEditorHintSettings where) {
-    where.getSettings().clear();
-    for(String namespace : from.getSettings().keySet()) {
-      where.getSettings().put(namespace, new HashMap<ConceptEditorHint, Boolean>());
-      where.getSettings().get(namespace).putAll(from.getSettings().get(namespace));
-    }
-  }
-
-  private void updateCheckBox() {
-    myPreferencesPanel.removeAll();
-    for (String namespace : currentSettings.getSettings().keySet()) {
-      for (ConceptEditorHint hint : currentSettings.getSettings().get(namespace).keySet()) {
-        addHintCheckbox(namespace, hint, currentSettings.getSettings().get(namespace).get(hint));
+    myPreferencesPanel.setLayout(new BoxLayout(myPreferencesPanel, BoxLayout.Y_AXIS));
+    myPreferencesPanel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
+    ArrayList<String> names = new ArrayList<String>(currentSettings.getLanguagesNames());
+    Collections.sort(names);
+    for (String langName : names) {
+      if (langName != null) {
+        JPanel languagePanel = new JPanel();
+        languagePanel.setLayout(new BoxLayout(languagePanel, BoxLayout.Y_AXIS));
+        languagePanel.add(Box.createHorizontalGlue());
+        languagePanel.setBorder(new TitledBorder(langName));
+        languagePanel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
+        languagePanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        for (ConceptEditorHint hint : currentSettings.getHints(langName)) {
+          addHintCheckbox(languagePanel, langName, hint, currentSettings.get(langName, hint));
+        }
+        myPreferencesPanel.add(languagePanel);
       }
     }
   }
 
-  private void addHintCheckbox(final String namespace, final ConceptEditorHint hint, boolean state) {
-    JCheckBox item = new JCheckBox(hint.getId());
+  private void syncSettings(ConceptEditorHintSettings from, ConceptEditorHintSettings where) {
+    where.clear();
+    where.putAll(from);
+  }
+
+
+
+  private void addHintCheckbox(JPanel panel, final String lang, final ConceptEditorHint hint, boolean state) {
+    JCheckBox item = new JCheckBox(hint.getId() + ": " + hint.getPresentation());
+    item.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
     item.setSelected(state);
-    myPreferencesPanel.add(item);
+    panel.add(item);
     item.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent e) {
-        Map<ConceptEditorHint, Boolean> mapForEditor = currentSettings.getSettings().get(namespace);
-        mapForEditor.put(hint, !mapForEditor.get(hint));
+        assert currentSettings.containsKey(lang, hint);
+        currentSettings.put(lang, hint, !currentSettings.get(lang, hint));
       }
     });
   }

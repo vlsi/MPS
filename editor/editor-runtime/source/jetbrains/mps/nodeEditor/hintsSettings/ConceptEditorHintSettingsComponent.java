@@ -22,6 +22,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -103,52 +104,48 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
     updateHintsFromLanguages(LanguageRegistry.getInstance().getAvailableLanguages());
   }
 
-  private void removeHintsFromUnloadedLanguages(Iterable<LanguageRuntime> languages) {
-    for (LanguageRuntime language : languages) {
-      EditorAspectDescriptor editorDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
-      if (editorDescriptor == null) {
-        continue;
-      }
-      String namespace = language.getNamespace();
-      if (!myState.getSettings().containsKey(namespace)) {
-        continue;
-      }
-      for (ConceptEditorHint hint : myState.getHints(namespace)) {
-        if (editorDescriptor.getHints().contains(hint)) {
-          myState.getSettings().get(namespace).remove(hint);
+  private void removeHintsFromUnloadedLanguages(final Iterable<LanguageRuntime> languages) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (LanguageRuntime language : languages) {
+          EditorAspectDescriptor editorDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
+          if (editorDescriptor == null) {
+            continue;
+          }
+          String lang = language.getNamespace();
+          if (!myState.containsLang(lang)) {
+            continue;
+          }
+          for (ConceptEditorHint hint : editorDescriptor.getHints()) {
+            myState.remove(lang, hint);
+          }
         }
-      }
 
-      for (ConceptEditorHint hint : editorDescriptor.getHints()) {
-        if (myState.getSettings().get(namespace).containsKey(hint)) {
-          myState.getSettings().get(namespace).remove(hint);
-        }
       }
-    }
+    });
   }
 
-  private void updateHintsFromLanguages(Iterable<LanguageRuntime> languages) {
-    for (LanguageRuntime language : languages) {
-      EditorAspectDescriptor editorDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
-      if (editorDescriptor == null || editorDescriptor.getHints().isEmpty()) {
-        continue;
-      }
-      String namespace = language.getNamespace();
-      if(!myState.getSettings().containsKey(namespace)) {
-        myState.getSettings().put(namespace, new HashMap<ConceptEditorHint, Boolean>());
-      }
-      for (ConceptEditorHint hint : myState.getHints(namespace)) {
-        if (!editorDescriptor.getHints().contains(hint)) {
-          myState.getSettings().get(namespace).remove(hint);
-        }
-      }
+  private void updateHintsFromLanguages(final Iterable<LanguageRuntime> languages) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (LanguageRuntime language : languages) {
+          EditorAspectDescriptor editorDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
+          if (editorDescriptor == null || editorDescriptor.getHints().isEmpty()) {
+            continue;
+          }
+          String lang = language.getNamespace();
+          for (ConceptEditorHint hint : myState.getHints(lang)) {
+            myState.remove(lang, hint);
+          }
 
-      for (ConceptEditorHint hint : editorDescriptor.getHints()) {
-        if (!myState.getSettings().get(namespace).containsKey(hint)) {
-          myState.getSettings().get(namespace).put(hint, false);
+          for (ConceptEditorHint hint : editorDescriptor.getHints()) {
+              myState.put(lang, hint, false);
+          }
         }
       }
-    }
+    });
   }
 
   @Override
