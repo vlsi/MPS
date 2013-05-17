@@ -29,6 +29,8 @@ import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.util.ModelVersion;
+import com.intellij.openapi.ui.TestDialog;
+import com.intellij.openapi.application.Application;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -78,6 +80,10 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
 
   private static boolean showDeletedFromDiskQuestion(SModel inMemory, File backupFile) {
     // <node> 
+
+    if (isApplicationInUnitTestOrHeadless()) {
+      return ourTestImplementation.show("") == 0;
+    }
     int result = JOptionPane.showConfirmDialog(null, "Model file for model \n" + inMemory + "\n was externally deleted from disk.\n" + "Backup of it was saved to \"" + backupFile.getAbsolutePath() + "\"\nDo you wish to restore it?", "Model Deleted Externally", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, Messages.getQuestionIcon());
     return result == 0;
   }
@@ -88,6 +94,9 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     String[] options = {"Load File System Version", "Save Memory Version", "Show Difference"};
     while (true) {
       // <node> 
+      if (isApplicationInUnitTestOrHeadless()) {
+        return ourTestImplementation.show("") == 1;
+      }
       int result = JOptionPane.showOptionDialog(null, message, title, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, Messages.getQuestionIcon(), options, null);
       switch (result) {
         case 0:
@@ -157,6 +166,24 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     public String getSuffix() {
       return mySuffix;
     }
+  }
+
+
+  private static TestDialog ourTestImplementation = TestDialog.DEFAULT;
+
+  public static TestDialog setTestDialog(TestDialog newValue) {
+    Application application = ApplicationManager.getApplication();
+    if (application != null) {
+      assert application.isUnitTestMode() : "This method is available for tests only";
+    }
+    TestDialog oldValue = ourTestImplementation;
+    ourTestImplementation = newValue;
+    return oldValue;
+  }
+
+  private static boolean isApplicationInUnitTestOrHeadless() {
+    final Application application = ApplicationManager.getApplication();
+    return application != null && (application.isUnitTestMode() || application.isHeadlessEnvironment());
   }
 
   protected static Logger LOG = LogManager.getLogger(DiskMemoryConflictResolverImpl.class);
