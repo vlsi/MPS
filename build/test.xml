@@ -63,10 +63,13 @@
   </target>
 
   <target name="module-tests" depends="unpack">
-    <ant antfile="build/tests/mpsExecution.xml" inheritAll="true" useNativeBasedir="true">
+    <ant antfile="build/tests/mpsEditor.xml" inheritAll="true" useNativeBasedir="true">
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
-    <ant antfile="build/tests/mpsEditor.xml" inheritAll="true" useNativeBasedir="true">
+    <ant antfile="build/tests/mpsBaseLanguage.xml" inheritAll="true" useNativeBasedir="true">
+      <property name="mps_home" value="${mps_build_home}"/>
+    </ant>
+    <ant antfile="build/tests/mpsExecution.xml" inheritAll="true" useNativeBasedir="true">
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
   </target>

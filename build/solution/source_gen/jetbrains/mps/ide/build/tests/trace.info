@@ -6,5 +6,8 @@
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/5833628797344916224">
     <unitInfo nodeId="5833628797344916224" fileName="mpsEditor.xml" startLine="1" startPosition="0" endLine="1153" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsEditor" />
   </root>
+  <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/7210153263370654627">
+    <unitInfo nodeId="7210153263370654627" fileName="mpsBaseLanguage.xml" startLine="1" startPosition="0" endLine="318" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsBaseLanguage" />
+  </root>
 </debugInfo>
 
