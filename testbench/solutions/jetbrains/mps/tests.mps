@@ -6,8 +6,8 @@
   <import index="7v87" modelUID="r:a1e6d46a-5cab-40b1-8baa-74b09e2c51bc(jetbrains.mps.asTest)" version="-1" />
   <import index="hbb4" modelUID="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)" version="-1" />
   <import index="tpej" modelUID="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)" version="-1" />
-  <import index="tp67" modelUID="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)" version="-1" />
-  <import index="1tja" modelUID="r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test)" version="-1" />
+  <import index="tp67" modelUID="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)" version="-1" />
+  <import index="1tja" modelUID="r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)" version="-1" />
   <import index="tp5v" modelUID="r:00000000-0000-4000-0000-011c895903bf(jetbrains.mps.baseLanguage.collections.unittest.generics_test)" version="-1" />
   <import index="tp7g" modelUID="r:00000000-0000-4000-0000-011c895903c0(jetbrains.mps.baseLanguage.collections.unittest.query_operations)" version="-1" />
   <import index="tp7i" modelUID="r:00000000-0000-4000-0000-011c895903c2(jetbrains.mps.baseLanguage.collections.unittest.simple_operations)" version="-1" />
