@@ -4,7 +4,7 @@
     <unitInfo nodeId="3474133302908391407" fileName="mpsExecution.xml" startLine="1" startPosition="0" endLine="443" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsExecution" />
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/5833628797344916224">
-    <unitInfo nodeId="5833628797344916224" fileName="mpsEditor.xml" startLine="1" startPosition="0" endLine="1029" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsEditor" />
+    <unitInfo nodeId="5833628797344916224" fileName="mpsEditor.xml" startLine="1" startPosition="0" endLine="1153" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsEditor" />
   </root>
 </debugInfo>
 

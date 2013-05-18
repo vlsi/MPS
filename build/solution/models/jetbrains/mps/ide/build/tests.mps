@@ -391,6 +391,36 @@
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="5833628797344916235" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="editor-tests" />
+      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="1833573227830094598" nodeInfo="ng">
+        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.lang.editor.multiple.extension.testLanguage" />
+        <property name="uuid" nameId="kdzh.322010710375892619" value="2a136e2a-e48f-4b7a-bcbc-7b2a11f3bbeb" />
+        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="1833573227830094599" nodeInfo="ng">
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1833573227830094600" nodeInfo="nn">
+            <property name="head" nameId="3ior.8618885170173601779" value="languages" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1833573227830094601" nodeInfo="nn">
+              <property name="head" nameId="3ior.8618885170173601779" value="languageDesign" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1833573227830094602" nodeInfo="nn">
+                <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.lang.editor.multiple.extension.testLanguage" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1833573227830094603" nodeInfo="nn">
+                  <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.lang.editor.multiple.extension.testLanguage.mpl" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="generator" roleId="kdzh.9200313594498201639" type="kdzh.BuildMps_Generator" typeId="kdzh.5507251971038816436" id="1833573227830094604" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.lang.editor.multiple.extension.testLanguage#6822301196699110738" />
+          <property name="uuid" nameId="kdzh.322010710375892619" value="e5e59881-5506-41a5-b870-4b4703455d4c" />
+          <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="1833573227830096161" nodeInfo="nn">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="1833573227830096162" nodeInfo="ng">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="5328150611113966927" resolveInfo="jetbrains.mps.lang.editor.multiple.testLanguage" />
+          </node>
+        </node>
+      </node>
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="5833628797344916236" nodeInfo="ng">
         <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.lang.editor.table.tests" />
@@ -603,6 +633,9 @@
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="5328150611113981445" nodeInfo="ng">
           <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="5328150611113966927" resolveInfo="jetbrains.mps.lang.editor.multiple.testLanguage" />
+        </node>
+        <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="1833573227830145963" nodeInfo="ng">
+          <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="1833573227830094598" resolveInfo="jetbrains.mps.lang.editor.multiple.extension.testLanguage" />
         </node>
       </node>
       <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="5833628797344941082" nodeInfo="ng">
