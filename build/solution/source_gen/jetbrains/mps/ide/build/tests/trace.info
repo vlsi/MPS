@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/3197190366568000187">
+    <unitInfo nodeId="3197190366568000187" fileName="mpsBuild.xml" startLine="1" startPosition="0" endLine="325" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsBuild" />
+  </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/3474133302908391407">
     <unitInfo nodeId="3474133302908391407" fileName="mpsExecution.xml" startLine="1" startPosition="0" endLine="443" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsExecution" />
   </root>
