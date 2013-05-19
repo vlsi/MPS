@@ -20,8 +20,6 @@ import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
 import java.util.Iterator;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class IntentionUtils {
@@ -135,12 +133,12 @@ public class IntentionUtils {
       }
     }
 
-    Set<String> refNames = SetSequence.fromSet(new HashSet<String>());
-    collectReferenceNames(refNames, node1);
-    collectReferenceNames(refNames, node2);
-    for (String refLink : SetSequence.fromSet(refNames)) {
-      if (node1.getReferenceTarget(refLink) != node2.getReferenceTarget(refLink)) {
-        return MultiTuple.<SNode,SNode>from(node1, node2);
+    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden())) {
+      SNode linkDeclaration = (SNode) _link;
+      if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "reference", "reference")) {
+        if (SLinkOperations.getTargetNode(SNodeOperations.getReference(node1, linkDeclaration)) != SLinkOperations.getTargetNode(SNodeOperations.getReference(node2, linkDeclaration))) {
+          return MultiTuple.<SNode,SNode>from(node1, node2);
+        }
       }
     }
 
@@ -177,14 +175,6 @@ public class IntentionUtils {
     }
 
     return currentResult;
-  }
-
-
-
-  /*package*/ static void collectReferenceNames(Set<String> referenceNames, SNode node) {
-    for (SReference ref : Sequence.fromIterable(node.getReferences())) {
-      SetSequence.fromSet(referenceNames).addElement(ref.getRole());
-    }
   }
 
   /*package*/ static void collectChildNames(Set<String> childNames, SNode node) {
