@@ -13,14 +13,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
 import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class IntentionUtils {
@@ -127,11 +128,9 @@ public class IntentionUtils {
     SNode concept = SNodeOperations.getConceptDeclaration(node1);
 
     // todo: rewrite logic with property/role names collecting! 
-    Set<String> propertyNames = SetSequence.fromSet(new HashSet<String>());
-    collectPropertyNames(propertyNames, node1);
-    collectPropertyNames(propertyNames, node2);
-    for (String property : SetSequence.fromSet(propertyNames)) {
-      if (neq_k79hya_a0a0h0g(node1.getProperty(property), node2.getProperty(property))) {
+    for (SNode _property : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations())) {
+      SNode property = ((SNode) _property);
+      if (neq_k79hya_a0b0e0g(node1.getProperty(SPropertyOperations.getString(property, "name")), node2.getProperty(SPropertyOperations.getString(property, "name")))) {
         return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
@@ -182,10 +181,6 @@ public class IntentionUtils {
 
 
 
-  /*package*/ static void collectPropertyNames(Set<String> propertyNames, SNode node) {
-    SetSequence.fromSet(propertyNames).addSequence(Sequence.fromIterable(node.getPropertyNames()));
-  }
-
   /*package*/ static void collectReferenceNames(Set<String> referenceNames, SNode node) {
     for (SReference ref : Sequence.fromIterable(node.getReferences())) {
       SetSequence.fromSet(referenceNames).addElement(ref.getRole());
@@ -222,7 +217,7 @@ public class IntentionUtils {
     ));
   }
 
-  private static boolean neq_k79hya_a0a0h0g(Object a, Object b) {
+  private static boolean neq_k79hya_a0b0e0g(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
