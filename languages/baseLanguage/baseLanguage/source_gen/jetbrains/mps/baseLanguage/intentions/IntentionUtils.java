@@ -14,11 +14,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import java.util.List;
-import jetbrains.mps.util.IterableUtil;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -125,7 +121,7 @@ public class IntentionUtils {
     }
     SNode concept = SNodeOperations.getConceptDeclaration(node1);
 
-    // todo: rewrite logic with property/role names collecting! 
+    // todo: use ConceptRegistry/SConcept when it will possible 
     for (SNode _property : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations())) {
       SNode property = ((SNode) _property);
       if (neq_k79hya_a0b0e0g(node1.getProperty(SPropertyOperations.getString(property, "name")), node2.getProperty(SPropertyOperations.getString(property, "name")))) {
@@ -143,31 +139,32 @@ public class IntentionUtils {
     }
 
     Tuples._2<SNode, SNode> currentResult = null;
-    Set<String> childNames = SetSequence.fromSet(new HashSet<String>());
-    collectChildNames(childNames, node1);
-    collectChildNames(childNames, node2);
-    for (String childLink : SetSequence.fromSet(childNames)) {
-      List<SNode> children1 = IterableUtil.asList(node1.getChildren(childLink));
-      List<SNode> children2 = IterableUtil.asList(node2.getChildren(childLink));
+    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden())) {
+      SNode linkDeclaration = (SNode) _link;
 
-      if (children1.size() != children2.size()) {
-        return MultiTuple.<SNode,SNode>from(node1, node2);
-      }
+      if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference")) {
+        List<SNode> children1 = SNodeOperations.getChildren(node1, linkDeclaration);
+        List<SNode> children2 = SNodeOperations.getChildren(node2, linkDeclaration);
 
-      {
-        Iterator<SNode> child1_it = ListSequence.fromList(children1).iterator();
-        Iterator<SNode> child2_it = ListSequence.fromList(children2).iterator();
-        SNode child1_var;
-        SNode child2_var;
-        while (child1_it.hasNext() && child2_it.hasNext()) {
-          child1_var = child1_it.next();
-          child2_var = child2_it.next();
-          Tuples._2<SNode, SNode> currentChildDiff = getDiffNodes(child1_var, child2_var);
-          if (currentChildDiff != null) {
-            if (currentResult == null) {
-              currentResult = currentChildDiff;
-            } else {
-              return MultiTuple.<SNode,SNode>from(node1, node2);
+        if (ListSequence.fromList(children1).count() != ListSequence.fromList(children2).count()) {
+          return MultiTuple.<SNode,SNode>from(node1, node2);
+        }
+
+        {
+          Iterator<SNode> child1_it = ListSequence.fromList(children1).iterator();
+          Iterator<SNode> child2_it = ListSequence.fromList(children2).iterator();
+          SNode child1_var;
+          SNode child2_var;
+          while (child1_it.hasNext() && child2_it.hasNext()) {
+            child1_var = child1_it.next();
+            child2_var = child2_it.next();
+            Tuples._2<SNode, SNode> currentChildDiff = getDiffNodes(child1_var, child2_var);
+            if (currentChildDiff != null) {
+              if (currentResult == null) {
+                currentResult = currentChildDiff;
+              } else {
+                return MultiTuple.<SNode,SNode>from(node1, node2);
+              }
             }
           }
         }
@@ -175,14 +172,6 @@ public class IntentionUtils {
     }
 
     return currentResult;
-  }
-
-  /*package*/ static void collectChildNames(Set<String> childNames, SNode node) {
-    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-      if ((child != null)) {
-        SetSequence.fromSet(childNames).addElement(child.getRoleInParent());
-      }
-    }
   }
 
 
