@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.misc.ObjectCache;
-import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -37,8 +35,7 @@ import java.util.regex.Pattern;
 public class NameUtil {
   private static final Pattern VALID_IDENTIFIER_PATTERN = Pattern.compile("[a-zA-Z[_]][a-zA-Z0-9[_]]*");
 
-  public static final String STRUCTURE = "structure";
-  private static final String DOT_STRUCTURE_DOT = "." + STRUCTURE + ".";
+  private static final String DOT_STRUCTURE_DOT = "." + "structure" + ".";
 
   private static final HashSet<String> PREPOSITIONS;
   private static final HashSet<String> PARTICLES;
@@ -328,46 +325,6 @@ public class NameUtil {
     return fqName.substring(0, offset);
   }
 
-  public static String removeStructureFromFqName(@NotNull String fqName) {
-    // todo: replace by getAspectNodeFqName?
-    String namespace = namespaceFromLongName(fqName);
-    String shortName = shortNameFromLongName(fqName);
-    if (namespace.endsWith("." + STRUCTURE)) {
-      namespace = namespace.substring(0, namespace.length() - ("." + STRUCTURE).length());
-    }
-    final StringBuilder builder = StringBuilderSpinAllocator.alloc();
-    try {
-      builder.append(namespace);
-      builder.append('.');
-      builder.append(shortName);
-      return builder.toString();
-    } finally {
-      StringBuilderSpinAllocator.dispose(builder);
-    }
-  }
-
-  public static String getAspectNodeFqName(@NotNull String conceptFqName, LanguageAspect languageAspect) {
-    String namespace = namespaceFromLongName(conceptFqName);
-    String shortName = shortNameFromLongName(conceptFqName);
-    if (namespace.endsWith("." + STRUCTURE)) {
-      namespace = namespace.substring(0, namespace.length() - ("." + STRUCTURE).length());
-    } else {
-      throw new IllegalArgumentException("Not a concept fq name");
-    }
-
-    StringBuilder builder = StringBuilderSpinAllocator.alloc();
-    try {
-      builder.append(namespace);
-      builder.append('.');
-      builder.append(languageAspect.getName());
-      builder.append('.');
-      builder.append(shortName);
-      return builder.toString();
-    } finally {
-      StringBuilderSpinAllocator.dispose(builder);
-    }
-  }
-
   public static String namespaceFromConceptFQName(String fqName) {
     if (fqName == null) return null;
     int offset = fqName.lastIndexOf(DOT_STRUCTURE_DOT);
@@ -396,7 +353,7 @@ public class NameUtil {
     SModel model = node.getModel();
     if (model == null) return name;
 
-    return SNodeOperations.getModelLongName(model) + "." + name;
+    return getModelLongName(model) + "." + name;
   }
 
   public static String compactNodeFQName(SNode node) {
@@ -408,7 +365,16 @@ public class NameUtil {
     if (model == null) {
       return name;
     }
-    return compactNamespace(SNodeOperations.getModelLongName(model)) + "." + name;
+    return compactNamespace(getModelLongName(model)) + "." + name;
+  }
+
+  public static String getModelLongName(SModel model) {
+    String name = model.getModelName();
+    int index = name.indexOf("@");
+    return (index == -1 ?
+        name :
+        name.substring(0, index)
+    );
   }
 
   public static String compactModelName(SModelReference ref) {
