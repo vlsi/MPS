@@ -68,7 +68,7 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable {
 
   public ConceptEditorHintPreferencesPage getPage() {
     if (myPage == null) {
-      myPage = new ConceptEditorHintPreferencesPage(ConceptEditorHintSettingsComponent.getInstance(myProject).getState());
+      myPage = new ConceptEditorHintPreferencesPage(ConceptEditorHintSettingsComponent.getInstance(myProject).getSettings());
     }
     return myPage;
   }

@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.MyState;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
@@ -29,8 +30,8 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Semen Alperovich
@@ -42,17 +43,17 @@ import java.util.Map;
     storages = {
         @Storage(
             id = "other",
-            file = "$PROJECT_FILE$"
+            file = "$WORKSPACE_FILE$"
         )
     }
 )
-public class ConceptEditorHintSettingsComponent implements PersistentStateComponent<ConceptEditorHintSettings>, ProjectComponent {
-  private ConceptEditorHintSettings myState;
-  private Project myProject;
+public class ConceptEditorHintSettingsComponent implements PersistentStateComponent<MyState>, ProjectComponent {
+  private MyState myPersistenceState = new MyState();
+  private MyState myCurrentState = new MyState();
+  private ConceptEditorHintSettings mySettings;
   private LanguageRegistryListener myListener;
 
   public ConceptEditorHintSettingsComponent(Project project) {
-    myProject = project;
   }
 
   @Override
@@ -69,61 +70,64 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
     return "Editor Context Hints Configurable";
   }
 
+  public ConceptEditorHintSettings getSettings() {
+    return mySettings;
+  }
+
   @Nullable
   @Override
-  public ConceptEditorHintSettings getState() {
-    return myState;
+  public MyState getState() {
+    myPersistenceState.setEnabledHints(mySettings.getEnabledHints());
+    return myPersistenceState;
   }
 
   @Override
-  public void loadState(ConceptEditorHintSettings state) {
-    if (myState == null) {
-      myState = state;
+  public void loadState(MyState state) {
+    myCurrentState.getEnabledHints().clear();
+    myCurrentState.addEnabledHints(state.getEnabledHints());
+    if (mySettings != null) {
+      mySettings.updateSettings(myCurrentState.myEnabledHints);
     }
   }
 
   @Override
   public void projectOpened() {
-    if (myState == null) {
-      myState = new ConceptEditorHintSettings();
-      myState.setSettings(new HashMap<String, Map<ConceptEditorHint, Boolean>>());
+    if (mySettings == null) {
+      mySettings = new ConceptEditorHintSettings();
     }
     myListener = new LanguageRegistryListener() {
       @Override
       public void languagesLoaded(Iterable<LanguageRuntime> languages) {
         updateHintsFromLanguages(languages);
-
+        mySettings.updateSettings(myCurrentState.getEnabledHints());
       }
 
       @Override
       public void languagesUnloaded(Iterable<LanguageRuntime> languages) {
+        myCurrentState.addEnabledHints(mySettings.getEnabledHints());
         removeHintsFromUnloadedLanguages(languages);
       }
     };
     LanguageRegistry.getInstance().addRegistryListener(myListener);
     updateHintsFromLanguages(LanguageRegistry.getInstance().getAvailableLanguages());
+    mySettings.updateSettings(myCurrentState.myEnabledHints);
+
   }
 
   private void removeHintsFromUnloadedLanguages(final Iterable<LanguageRuntime> languages) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        for (LanguageRuntime language : languages) {
-          EditorAspectDescriptor editorDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
-          if (editorDescriptor == null) {
-            continue;
-          }
-          String lang = language.getNamespace();
-          if (!myState.containsLang(lang)) {
-            continue;
-          }
-          for (ConceptEditorHint hint : editorDescriptor.getHints()) {
-            myState.remove(lang, hint);
-          }
-        }
-
+    for (LanguageRuntime language : languages) {
+      EditorAspectDescriptor editorDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
+      if (editorDescriptor == null) {
+        continue;
       }
-    });
+      String lang = language.getNamespace();
+      if (!mySettings.containsLang(lang)) {
+        continue;
+      }
+      for (ConceptEditorHint hint : editorDescriptor.getHints()) {
+        mySettings.remove(lang, hint);
+      }
+    }
   }
 
   private void updateHintsFromLanguages(final Iterable<LanguageRuntime> languages) {
@@ -136,12 +140,12 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
             continue;
           }
           String lang = language.getNamespace();
-          for (ConceptEditorHint hint : myState.getHints(lang)) {
-            myState.remove(lang, hint);
+          for (ConceptEditorHint hint : mySettings.getHints(lang)) {
+            mySettings.remove(lang, hint);
           }
 
           for (ConceptEditorHint hint : editorDescriptor.getHints()) {
-              myState.put(lang, hint, false);
+              mySettings.put(lang, hint, false);
           }
         }
       }
@@ -155,5 +159,22 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
 
   public static ConceptEditorHintSettingsComponent getInstance(Project project) {
     return project.getComponent(ConceptEditorHintSettingsComponent.class);
+  }
+
+
+  public static class MyState {
+    private Set<String> myEnabledHints = new HashSet<String>();
+
+    public Set<String> getEnabledHints() {
+      return myEnabledHints;
+    }
+
+    public void setEnabledHints(Set<String> enabledHints) {
+      myEnabledHints = enabledHints;
+    }
+
+    public void addEnabledHints(Set<String> enabledHints) {
+      myEnabledHints.addAll(enabledHints);
+    }
   }
 }

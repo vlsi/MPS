@@ -15,30 +15,51 @@
  */
 package jetbrains.mps.nodeEditor.hintsSettings;
 
-import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Semen Alperovich
  * 05 15, 2013
  */
 public class ConceptEditorHintSettings {
-  @MapAnnotation(surroundWithTag = false, entryTagName = "hintMap", keyAttributeName = "name", valueAttributeName = "value")
-  public Map<String, Map<ConceptEditorHint, Boolean>> mySettings = Collections.synchronizedMap(new HashMap<String, Map<ConceptEditorHint, Boolean>>());
-  public Map<String, Map<ConceptEditorHint, Boolean>> getSettings() {
-    return mySettings;
+  private Map<String, Map<ConceptEditorHint, Boolean>> mySettings = Collections.synchronizedMap(new HashMap<String, Map<ConceptEditorHint, Boolean>>());
+
+  public ConceptEditorHintSettings() {
   }
 
-  public void setSettings(Map<String, Map<ConceptEditorHint, Boolean>> settings) {
-    mySettings = settings;
+
+  public Set<String> getEnabledHints() {
+    Set<String> enabledHints = new HashSet<String>();
+    for (String lang : getLanguagesNames()) {
+      for (ConceptEditorHint hint : getHints(lang)) {
+        if (get(lang, hint)) {
+          enabledHints.add(lang + "." + hint.getId());
+        }
+      }
+    }
+    return enabledHints;
   }
+
+  public synchronized void updateSettings(Set<String> enabledHints) {
+    for (String hintFQName : enabledHints) {
+      int index = hintFQName.lastIndexOf('.');
+      String lang = hintFQName.substring(0, index);
+      String hintId = hintFQName.substring(index + 1);
+      for (ConceptEditorHint hint : getHints(lang)) {
+        if (hint.getId().equals(hintId)) {
+          put(lang, hint, true);
+        }
+      }
+    }
+  }
+
   public Set<ConceptEditorHint> getHints(String lang) {
     if (!mySettings.containsKey(lang)) {
       return Collections.emptySet();
@@ -55,8 +76,6 @@ public class ConceptEditorHintSettings {
       mySettings.put(lang, Collections.synchronizedMap(new LinkedHashMap<ConceptEditorHint, Boolean>()));
     }
     return mySettings.get(lang).put(hint, value);
-
-
   }
 
   public synchronized void putAll(ConceptEditorHintSettings settings) {
