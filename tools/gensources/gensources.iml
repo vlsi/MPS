@@ -1067,7 +1067,8 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/languages/solutions/pluginSolution/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testActions">
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testActions/tests_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testActions/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testActions/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testActions/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testAntTask">
