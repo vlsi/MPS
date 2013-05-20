@@ -4,5 +4,6 @@
   <dependency className="jetbrains.mps.ide.build.tests.mpsBuild" file="mpsBuild.xml" />
   <dependency className="jetbrains.mps.ide.build.tests.mpsEditor" file="mpsEditor.xml" />
   <dependency className="jetbrains.mps.ide.build.tests.mpsExecution" file="mpsExecution.xml" />
+  <dependency className="jetbrains.mps.ide.build.tests.mpsGenerator" file="mpsGenerator.xml" />
 </dependenciesRoot>
 
