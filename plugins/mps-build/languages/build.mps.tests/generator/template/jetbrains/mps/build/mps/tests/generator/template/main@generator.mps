@@ -393,12 +393,6 @@
             <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="7459197473272841016" nodeInfo="ng">
               <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7459197473272841020" nodeInfo="ng">
                 <property name="tagName" nameId="iuxj.6666499814681415862" value="junit" />
-                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7459197473272948806" nodeInfo="ng">
-                  <property name="attrName" nameId="iuxj.6666499814681447926" value="haltonfailure" />
-                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7459197473272953974" nodeInfo="ng">
-                    <property name="text" nameId="iuxj.6666499814681541920" value="true" />
-                  </node>
-                </node>
                 <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7459197473272964315" nodeInfo="ng">
                   <property name="attrName" nameId="iuxj.6666499814681447926" value="showoutput" />
                   <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7459197473272964319" nodeInfo="ng">
