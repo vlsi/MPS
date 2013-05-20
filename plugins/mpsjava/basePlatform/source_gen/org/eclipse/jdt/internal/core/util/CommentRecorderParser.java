@@ -202,7 +202,7 @@ nextComment:
    */
   public int[][] getCommentsPositions() {
     int[][] positions = new int[this.commentPtr + 1][2];
-    for (int i = 0, max = this.commentPtr; i <= max; i++) {
+    for (int i = 0; i <= this.commentPtr; i++) {
       positions[i][0] = this.commentStarts[i];
       positions[i][1] = this.commentStops[i];
     }
