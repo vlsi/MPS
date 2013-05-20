@@ -69,7 +69,7 @@
     <ant antfile="build/tests/mpsGenerator.xml" inheritAll="true" useNativeBasedir="true">
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
-    <ant antfile="build/tests/mpsTracing.xml" inheritAll="true" useNativeBasedir="true">
+    <ant antfile="build/tests/mpsSModel.xml" inheritAll="true" useNativeBasedir="true">
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
     <ant antfile="build/tests/mpsBaseLanguage.xml" inheritAll="true" useNativeBasedir="true">
