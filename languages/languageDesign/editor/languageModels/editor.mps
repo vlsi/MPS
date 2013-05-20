@@ -10566,12 +10566,6 @@
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.5944657839012629576" resolveInfo="presentation" />
       </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="168363875802087280" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="Show in UI preference page:" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="168363875802106843" nodeInfo="ng">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.168363875802087287" resolveInfo="showInUI" />
-      </node>
     </node>
     <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5944657839017644711" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5944657839017676604" nodeInfo="nn">
@@ -10637,11 +10631,10 @@
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="168363875802106905" nodeInfo="nn">
-          <property name="text" nameId="tpc2.1073389577007" value="Show in UI preference page:" />
+          <property name="text" nameId="tpc2.1073389577007" value="Can be used as a default hint" />
         </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="168363875802106906" nodeInfo="nn">
-          <property name="text" nameId="tpc2.1073389577007" value="Can be used as default hint" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="168363875802106907" nodeInfo="nn" />
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="168363875806578972" nodeInfo="ng">
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.168363875802087287" resolveInfo="showInUI" />
         </node>
       </node>
     </node>
