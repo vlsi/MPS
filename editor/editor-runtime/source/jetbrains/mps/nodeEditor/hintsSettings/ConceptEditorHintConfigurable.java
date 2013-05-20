@@ -85,7 +85,7 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable {
 
   @Override
   public void reset() {
-    myPage.update();
+    myPage.reset();
   }
 
   @Override

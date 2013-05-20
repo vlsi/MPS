@@ -22,6 +22,7 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -50,15 +51,40 @@ public class ConceptEditorHintPreferencesPage {
     return myPreferencesPanel;
   }
 
-  public boolean isModified() {
+  private boolean isRegistryChanged() {
     if (registrySettings.size() != currentSettings.size()) {
       return true;
     }
     for (String langName : currentSettings.getLanguagesNames()) {
-      assert registrySettings.containsLang(langName);
-      assert registrySettings.sizeForLang(langName) == currentSettings.sizeForLang(langName);
+      if (!registrySettings.containsLang(langName)) {
+        return true;
+      }
+      if (registrySettings.sizeForLang(langName) != currentSettings.sizeForLang(langName)) {
+        return true;
+      }
       for (ConceptEditorHint hint : registrySettings.getHints(langName)) {
-        assert currentSettings.containsKey(langName, hint);
+         if (!currentSettings.containsKey(langName, hint)) {
+           return true;
+         }
+      }
+      for (ConceptEditorHint hint : currentSettings.getHints(langName)) {
+        if (!registrySettings.containsKey(langName, hint)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  public boolean isModified() {
+    if (isRegistryChanged()) {
+      return true;
+    }
+    for (String langName : currentSettings.getLanguagesNames()) {
+      for (ConceptEditorHint hint : currentSettings.getHints(langName)) {
+        if (!registrySettings.containsKey(langName, hint)) {
+          continue;
+        }
         if (!registrySettings.get(langName, hint).equals(currentSettings.get(langName, hint))) {
           return true;
         }
@@ -67,7 +93,14 @@ public class ConceptEditorHintPreferencesPage {
     return false;
   }
 
-  public void update() {
+  public void reset() {
+    if (showReloadedLanguagesMessage()) {
+      return;
+    }
+    update();
+  }
+
+  private void update() {
     myPreferencesPanel.removeAll();
     syncSettings(registrySettings, currentSettings);
     myPreferencesPanel.setLayout(new BoxLayout(myPreferencesPanel, BoxLayout.Y_AXIS));
@@ -109,7 +142,18 @@ public class ConceptEditorHintPreferencesPage {
   }
 
   public void commit() {
+    if (showReloadedLanguagesMessage()){
+      return;
+    }
     syncSettings(currentSettings, registrySettings);
+  }
+
+  private boolean showReloadedLanguagesMessage() {
+    if (isRegistryChanged()) {
+      JOptionPane.showMessageDialog(myPreferencesPanel, "Some languages have been reloaded.\nPlease reopen settings page", "Error", JOptionPane.ERROR_MESSAGE);
+      return true;
+    }
+    return false;
   }
 
 }
