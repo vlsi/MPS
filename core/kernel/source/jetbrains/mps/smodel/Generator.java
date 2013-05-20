@@ -15,21 +15,37 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SModel;
-
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.SDependencyAdapter;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.project.structure.modules.mappingpriorities.*;
-import jetbrains.mps.vfs.IFile;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Generator extends AbstractModule {
   public static final Logger LOG = LogManager.getLogger(Generator.class);
