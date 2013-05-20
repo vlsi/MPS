@@ -22,6 +22,7 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
+import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -954,7 +955,7 @@ public class SModel implements SModelData {
       if (module != null) {
         SModuleReference newRef = module.getModuleReference();
         refs.set(i, newRef);
-        changed = changed || jetbrains.mps.project.structure.modules.ModuleReference.differs(ref, newRef);
+        changed = changed || RefUpdateUtil.differs(ref, newRef);
       }
     }
     return changed;

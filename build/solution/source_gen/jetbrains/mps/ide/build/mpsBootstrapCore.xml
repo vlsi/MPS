@@ -3027,6 +3027,7 @@
     </jar>
     <jar destfile="${build.tmp}/antTasks/mps-core.jar">
       <fileset dir="${build.tmp}/java/out/mps-core" />
+      <fileset dir="${build.tmp}/java/out/mps-smodel" />
       <fileset dir="${build.tmp}/java/out/mps-persistence" />
     </jar>
     <jar destfile="${build.tmp}/antTasks/mps-tool.jar">
