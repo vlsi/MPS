@@ -265,7 +265,7 @@ public class SModel implements SModelData {
 
   protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
     if (!canFireEvent()) return;
-    if (!UndoHelper.getInstance().needRegisterUndo(getModelDescriptor())) return;
+    if (!UndoHelper.getInstance().needRegisterUndo()) return;
     UndoHelper.getInstance().addUndoableAction(action.compute());
   }
 

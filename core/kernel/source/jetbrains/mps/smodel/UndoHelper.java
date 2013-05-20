@@ -63,8 +63,8 @@ public class UndoHelper {
     }
   }
 
-  public boolean needRegisterUndo(SModel model) {
-    return myHandler.needRegisterUndo(model);
+  public boolean needRegisterUndo() {
+    return myHandler.needRegisterUndo();
   }
 
   public boolean isInsideUndoableCommand() {
