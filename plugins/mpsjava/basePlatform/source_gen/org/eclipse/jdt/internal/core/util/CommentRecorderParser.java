@@ -12,9 +12,20 @@ import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.problem.ProblemSeverities;
 
 /**
+ * *******************************************************************************
+ * * Copyright (c) 2000, 2012 IBM Corporation and others.
+ * * All rights reserved. This program and the accompanying materials
+ * * are made available under the terms of the Eclipse Public License v1.0
+ * * which accompanies this distribution, and is available at
+ * * http://www.eclipse.org/legal/epl-v10.html
+ * *
+ * * Contributors:
+ * *     IBM Corporation - initial API and implementation
+ * *******************************************************************************
  * 
+ * Internal parser used for parsing source to create DOM AST nodes.
  * 
- * 
+ * @since 3.0
  */
 public class CommentRecorderParser extends Parser {
   /*package*/ int[] commentStops = new int[10];
@@ -22,10 +33,6 @@ public class CommentRecorderParser extends Parser {
   /*package*/ int commentPtr = -1;
   protected static final int CommentIncrement = 100;
 
-  /**
-   * 
-   * 
-   */
   public CommentRecorderParser(ProblemReporter problemReporter, boolean optimizeStringLiterals) {
     super(problemReporter, optimizeStringLiterals);
   }
@@ -77,21 +84,33 @@ nextComment:
     }
   }
 
+  /**
+   * @see org.eclipse.jdt.internal.compiler.parser.Parser#consumeClassHeader()
+   */
   protected void consumeClassHeader() {
     pushOnCommentsStack(0, this.scanner.commentPtr);
     super.consumeClassHeader();
   }
 
+  /**
+   * @see org.eclipse.jdt.internal.compiler.parser.Parser#consumeEmptyTypeDeclaration()
+   */
   protected void consumeEmptyTypeDeclaration() {
     pushOnCommentsStack(0, this.scanner.commentPtr);
     super.consumeEmptyTypeDeclaration();
   }
 
+  /**
+   * @see org.eclipse.jdt.internal.compiler.parser.Parser#consumeInterfaceHeader()
+   */
   protected void consumeInterfaceHeader() {
     pushOnCommentsStack(0, this.scanner.commentPtr);
     super.consumeInterfaceHeader();
   }
 
+  /**
+   * @see org.eclipse.jdt.internal.compiler.parser.Parser#endParse(int)
+   */
   protected CompilationUnitDeclaration endParse(int act) {
     CompilationUnitDeclaration unit = super.endParse(act);
     if (unit.comments == null) {
@@ -101,6 +120,10 @@ nextComment:
     return unit;
   }
 
+  /**
+   * Save all source comments currently stored before flushing them.
+   * @see org.eclipse.jdt.internal.compiler.parser.Parser#flushCommentsDefinedPriorTo(int)
+   */
   public int flushCommentsDefinedPriorTo(int position) {
     int lastCommentIndex = this.scanner.commentPtr;
     if (lastCommentIndex < 0) {
@@ -173,6 +196,10 @@ nextComment:
     return position;
   }
 
+  /**
+   * Build a n*2 matrix of comments positions.
+   * For each position, 0 is for start position and 1 for end position of the comment.
+   */
   public int[][] getCommentsPositions() {
     int[][] positions = new int[this.commentPtr + 1][2];
     for (int i = 0, max = this.commentPtr; i <= max; i++) {
@@ -182,16 +209,26 @@ nextComment:
     return positions;
   }
 
+  /**
+   * @see org.eclipse.jdt.internal.compiler.parser.Parser#initialize()
+   */
   public void initialize(boolean initializeNLS) {
     super.initialize(initializeNLS);
     this.commentPtr = -1;
   }
 
+  /**
+   * @see org.eclipse.jdt.internal.compiler.parser.Parser#initialize()
+   */
   public void initialize() {
     super.initialize();
     this.commentPtr = -1;
   }
 
+  /**
+   * Create and store a specific comment recorder scanner.
+   * @see org.eclipse.jdt.internal.compiler.parser.Parser#initializeScanner()
+   */
   public void initializeScanner() {
     // comment 
     // whitespace 
@@ -203,6 +240,9 @@ nextComment:
     this.scanner = new Scanner(false, false, this.options.getSeverity(CompilerOptions.NonExternalizedString) != ProblemSeverities.Ignore, this.options.sourceLevel, this.options.taskTags, this.options.taskPriorities, this.options.isTaskCaseSensitive);
   }
 
+  /**
+   * Push all stored comments in stack.
+   */
   private void pushOnCommentsStack(int start, int end) {
     for (int i = start; i <= end; i++) {
       // First see if comment hasn't been already stored 
@@ -229,6 +269,11 @@ nextComment:
     }
   }
 
+  /**
+   * Save all source comments currently stored before flushing them.
+   * this.scanner.commentPtr is expected *not* yet being reset before calling this method.
+   * @see org.eclipse.jdt.internal.compiler.parser.Parser#resetModifiers()
+   */
   protected void resetModifiers() {
     pushOnCommentsStack(0, this.scanner.commentPtr);
     super.resetModifiers();
