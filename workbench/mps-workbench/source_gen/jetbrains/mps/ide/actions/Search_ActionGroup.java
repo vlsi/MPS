@@ -15,9 +15,9 @@ public class Search_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Find_Action");
-      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindNext_Action");
-      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindPrevious_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.Find_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.FindNext_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.FindPrevious_Action");
       Search_ActionGroup.this.addSeparator();
       Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FastFindNodeUsages_Action");
       Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindConceptInstances_Action");
