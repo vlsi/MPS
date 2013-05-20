@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="e9hwtd8in25sej3nnzlf63g82p45hu1">
+<dependencies version="2" modelHash="-18yvhyugczc0ehmwa2h57fuaq7ol8nm">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.eclipse.jdt.internal.compiler.classfmt(MPS.Core/org.eclipse.jdt.internal.compiler.classfmt@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.eclipse.jdt.internal.compiler.impl(MPS.Core/org.eclipse.jdt.internal.compiler.impl@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.eclipse.jdt.internal.compiler.problem(MPS.Core/org.eclipse.jdt.internal.compiler.problem@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <common hash="-ck32wrcvo1xqdvn4dxw6tdvs2jto8k8" />
-  <source id="1218034168005181764" name="CommentRecorderParser" hash="-4bksmu3mboqvgbd27l38rahhs6k5yo4">
+  <common hash="-8jv0f2isanlzm8o920nc9iolyhvauz9" />
+  <source id="1218034168005181764" name="CommentRecorderParser" hash="em6q4qb9o3nqkpiy2fbhrou9lqfjcad">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.eclipse.jdt.internal.compiler.classfmt(MPS.Core/org.eclipse.jdt.internal.compiler.classfmt@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.eclipse.jdt.internal.compiler.impl(MPS.Core/org.eclipse.jdt.internal.compiler.impl@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.eclipse.jdt.internal.compiler.problem(MPS.Core/org.eclipse.jdt.internal.compiler.problem@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CommentRecorderParser.java" />
   </source>
-  <source id="1218034168005183012" name="RecordedParsingInformation" hash="-cjusmv7k171xginz3j18fil8h9pht9x">
+  <source id="1218034168005183012" name="RecordedParsingInformation" hash="-5uww37n8kckxb6ru3snm3zy0l2tvfpl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="RecordedParsingInformation.java" />
   </source>
-  <source id="1218034168005183146" name="CodeSnippetParsingUtil" hash="-b7kd647maeow3nowtc8ccgeq5ouf7x7">
+  <source id="1218034168005183146" name="CodeSnippetParsingUtil" hash="8ksnhj0tn2m925ud4t6bat7d45qnwsa">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CodeSnippetParsingUtil.java" />
   </source>
