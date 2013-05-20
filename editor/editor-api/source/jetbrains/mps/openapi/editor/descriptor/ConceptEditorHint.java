@@ -7,4 +7,5 @@ package jetbrains.mps.openapi.editor.descriptor;
 public interface ConceptEditorHint {
   public String getId();
   public String getPresentation();
+  public boolean showInUI();
 }

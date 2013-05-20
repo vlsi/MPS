@@ -650,6 +650,7 @@
     <node role="hints" roleId="tpc2.5944657839000877563" type="tpc2.ConceptEditorHintDeclaration" typeId="tpc2.5944657839003601246" id="5944657839017576567" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="compact" />
       <property name="presentation" nameId="tpc2.5944657839012629576" value="Use compact presentation of child nodes" />
+      <property name="showInUI" nameId="tpc2.168363875802087287" value="true" />
     </node>
     <node role="hints" roleId="tpc2.5944657839000877563" type="tpc2.ConceptEditorHintDeclaration" typeId="tpc2.5944657839003601246" id="2601164129532817776" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="unsupported" />

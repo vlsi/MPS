@@ -25,11 +25,12 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 public class ConceptEditorHintImpl implements ConceptEditorHint {
   private final String myId;
   private final String myPresentation;
+  private final boolean myShowInUI;
 
-  public ConceptEditorHintImpl(String id, String presentation) {
+  public ConceptEditorHintImpl(String id, String presentation, boolean showInUI) {
     myId = id;
     myPresentation = presentation;
-
+    myShowInUI = showInUI;
   }
 
   public String getId() {
@@ -37,5 +38,9 @@ public class ConceptEditorHintImpl implements ConceptEditorHint {
   }
   public String getPresentation() {
     return myPresentation;
+  }
+
+  public boolean showInUI() {
+    return myShowInUI;
   }
 }
