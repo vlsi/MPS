@@ -144,7 +144,6 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     }
     if (isNotEmpty_p90f5h_a0b0t(this.getModule())) {
       this.getJUnitSettings().setModule(this.getModule());
-
       this.setModule(null);
     }
     if (this.getTestCases() != null && !(this.getTestCases().isEmpty())) {
