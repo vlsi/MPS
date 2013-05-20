@@ -250,8 +250,14 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-tool-common-models" prefix="modules/jetbrains.mps.tool.common/models" />
     </jar>
     <mkdir dir="${build.layout}/lib/ant/lib" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-tool-ant-models">
+      <fileset dir="${mps_home}/core/tool/ant/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/lib/ant/lib/ant-mps.jar">
       <fileset dir="${build.tmp}/java/out/ant-mps" />
+      <zipfileset file="${mps_home}/core/tool/ant/jetbrains.mps.tool.ant.msd" prefix="modules/jetbrains.mps.tool.ant" />
+      <zipfileset dir="${mps_home}/core/tool/ant" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.tool.ant" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-tool-ant-models" prefix="modules/jetbrains.mps.tool.ant/models" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/workbench-mps-platform-models">
       <fileset dir="${mps_home}/workbench/mps-platform/models" includes="**/*.mps, **/*.metadata, **/*.history" />

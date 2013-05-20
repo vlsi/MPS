@@ -12,6 +12,9 @@
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/617882099353312053">
     <unitInfo nodeId="617882099353312053" fileName="mpsGenerator.xml" startLine="1" startPosition="0" endLine="310" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsGenerator" />
   </root>
+  <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/617882099353331886">
+    <unitInfo nodeId="617882099353331886" fileName="mpsJava.xml" startLine="1" startPosition="0" endLine="235" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsJava" />
+  </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/7210153263370654627">
     <unitInfo nodeId="7210153263370654627" fileName="mpsBaseLanguage.xml" startLine="1" startPosition="0" endLine="398" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsBaseLanguage" />
   </root>

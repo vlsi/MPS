@@ -1274,6 +1274,16 @@
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="7841036633979412831" nodeInfo="ng">
               <link role="module" roleId="3ior.2591537044435828006" targetNodeId="7841036633979383098" resolveInfo="ant-mps" />
             </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4489231056858520042" nodeInfo="ng">
+              <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4489231056858520044" nodeInfo="ng">
+                <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4489231056858520049" nodeInfo="ng">
+                  <property name="text" nameId="3ior.4903714810883755350" value="modules" />
+                </node>
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="4489231056858529557" nodeInfo="ng">
+                <link role="module" roleId="kdzh.1692280246134781713" targetNodeId="8939513996048536515" resolveInfo="jetbrains.mps.tool.ant" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="1277685309310599447" nodeInfo="ng">
@@ -26845,25 +26855,6 @@
                   <property name="head" nameId="3ior.8618885170173601779" value="platform" />
                   <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8834614375447840159" nodeInfo="nn">
                     <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="sources" roleId="3ior.7389400916848073826" type="3ior.BuildSource_JavaFiles" typeId="3ior.1500819558096177282" id="5558047255860923072" nodeInfo="ng">
-        <node role="resset" roleId="3ior.1500819558096177283" type="3ior.BuildInputSingleFolder" typeId="3ior.2303926226081001727" id="5558047255860923066" nodeInfo="ng">
-          <node role="path" roleId="3ior.2303926226081001728" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="5558047255860923092" nodeInfo="ng">
-            <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="7401958389406903727" resolveInfo="mps_home" />
-            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5558047255860923088" nodeInfo="nn">
-              <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5558047255860923090" nodeInfo="nn">
-                <property name="head" nameId="3ior.8618885170173601779" value="mpsjava" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5558047255860923084" nodeInfo="nn">
-                  <property name="head" nameId="3ior.8618885170173601779" value="basePlatform" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5558047255860923086" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="source" />
                   </node>
                 </node>
               </node>
