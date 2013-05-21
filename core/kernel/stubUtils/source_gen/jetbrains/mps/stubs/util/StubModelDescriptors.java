@@ -14,7 +14,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -65,7 +65,7 @@ public abstract class StubModelDescriptors {
           }
         } else {
           BaseStubModelDescriptor desc = new BaseStubModelDescriptor(smref, createStubsSource(path), module);
-          SModelRepository.getInstance().registerModelDescriptor(desc, (AbstractModule) module);
+          ((SModuleBase) module).registerModel(desc);
           SetSequence.fromSet(result).addElement(desc);
         }
       }

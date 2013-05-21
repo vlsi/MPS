@@ -73,7 +73,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     return myModule == null ? null : myModule.getRepository();
   }
 
-  @Override
   public void attach(SRepository repo) {
     if (myRepository == repo) return;
     synchronized (REPO_LOCK) {
@@ -83,8 +82,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     }
   }
 
-  @Override
-  public void detach() {
+  private void detach() {
     synchronized (REPO_LOCK) {
       if (isLoaded()) {
         for (org.jetbrains.mps.openapi.model.SNode node : getRootNodes()) {
@@ -125,6 +123,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     return myModelReference;
   }
 
+  @NotNull
   @Override
   public SModelId getModelId() {
     assertCanRead();
@@ -149,6 +148,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     myModule = module;
   }
 
+  /** TODO make final */
   @Override
   @Nullable
   public SModule getModule() {
@@ -224,11 +224,8 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   }
 
-  public void attach() {
-
-  }
-
   public void dispose() {
+    detach();
     ModelAccess.assertLegalWrite();
   }
 

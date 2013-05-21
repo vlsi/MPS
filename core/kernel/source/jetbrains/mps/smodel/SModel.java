@@ -228,10 +228,6 @@ public class SModel implements SModelData {
     return getModelDescriptor().resolveModel(reference);
   }
 
-  public void setModule(SModule container) {
-    getModelDescriptor().setModule(container);
-  }
-
   public void addModelListener(@NotNull SModelListener listener) {
     getModelDescriptor().addModelListener(listener);
   }
@@ -1216,15 +1212,6 @@ public class SModel implements SModelData {
     @Override
     public SModel getSModelInternal() {
       return myModel;
-    }
-
-    @Override
-    public void attach() {
-      throw new UnsupportedOperationException();
-    }
-
-    public void detach() {
-      throw new UnsupportedOperationException();
     }
 
     @Override

@@ -24,7 +24,8 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.extapi.module.SModuleBase;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
@@ -127,7 +128,9 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
             SModule module = smodel.getModule();
             try {
               binaryFactory.save(newModel, new FileDataSource(newFile));
-              SModelRepository.getInstance().removeModelDescriptor(smodel);
+              if (module != null) {
+                ((SModuleBase) module).unregisterModel((SModelBase) smodel);
+              }
               oldFile.delete();
               ((AbstractModule) module).updateModelsSet();
             } catch (IOException ex) {

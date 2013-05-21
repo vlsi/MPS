@@ -21,6 +21,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.util.List;
@@ -38,14 +39,28 @@ public abstract class SRepositoryBase implements SRepository {
   protected SRepositoryBase() {
   }
 
-  @Override
-  public void addRepositoryListener(SRepositoryListener listener) {
-    myListeners.add(listener);
+  protected void init() {
+    SRepositoryRegistry.getInstance().addRepository(this);
   }
 
   @Override
-  public void removeRepositoryListener(SRepositoryListener listener) {
+  public final void addRepositoryListener(SRepositoryListener listener) {
+    myListeners.add(listener);
+    if (listener instanceof SRepositoryContentAdapter) {
+      ((SRepositoryContentAdapter) listener).startListening(this);
+    }
+  }
+
+  @Override
+  public final void removeRepositoryListener(SRepositoryListener listener) {
+    if (listener instanceof SRepositoryContentAdapter) {
+      ((SRepositoryContentAdapter) listener).stopListening(this);
+    }
     myListeners.remove(listener);
+  }
+
+  public void dispose() {
+    SRepositoryRegistry.getInstance().removeRepository(this);
   }
 
   protected final void fireModuleAdded(SModule module) {

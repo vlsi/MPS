@@ -14,6 +14,7 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.psi.PsiJavaFile;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -65,7 +66,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   }
 
   @Override
-  public void attach() {
+  public void attach(SRepository repository) {
     myDataSource.addListener(this);
   }
 

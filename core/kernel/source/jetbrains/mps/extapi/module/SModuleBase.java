@@ -15,23 +15,85 @@
  */
 package jetbrains.mps.extapi.module;
 
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.DisposedRepository;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleListener;
+import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class SModuleBase implements SModule {
 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModuleBase.class));
 
+  private volatile SRepository myRepository = null;
+
   private List<SModuleListener> myListeners = new CopyOnWriteArrayList<SModuleListener>();
 
+  private final Object LOCK = new Object();
+  private final Set<SModelBase> myModels = new LinkedHashSet<SModelBase>();
+  private final ConcurrentMap<SModelId, SModel> myIdToModelMap = new ConcurrentHashMap<SModelId, SModel>();
+
   protected SModuleBase() {
+  }
+
+  @Override
+  public final SRepository getRepository() {
+    SRepository repository = myRepository;
+    if (repository != null) {
+      repository.getModelAccess().checkReadAccess();
+    }
+    return repository;
+  }
+
+  @Override
+  public final List<SModel> getModels() {
+//    TODO assertCanRead();
+
+    synchronized (LOCK) {
+      return new ArrayList<SModel>(myModels);
+    }
+  }
+
+  public void attach(@NotNull SRepository repo) {
+    synchronized (LOCK) {
+      if (myRepository != null) {
+        throw new IllegalStateException("Already attached.");
+      }
+
+      repo.getModelAccess().checkWriteAccess();
+
+      myRepository = repo;
+      for (SModelBase m : myModels) {
+        m.attach(repo);
+      }
+    }
+  }
+
+  public void dispose() {
+    synchronized (LOCK) {
+      assert myRepository != null;
+      assertCanChange();
+
+      for (SModelBase m : myModels) {
+        m.dispose();
+      }
+      myModels.clear();
+      myRepository = DisposedRepository.INSTANCE;
+    }
   }
 
   @Override
@@ -45,7 +107,7 @@ public abstract class SModuleBase implements SModule {
   }
 
   protected final void fireChanged() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     for (SModuleListener listener : myListeners) {
       try {
@@ -56,8 +118,8 @@ public abstract class SModuleBase implements SModule {
     }
   }
 
-  protected final void fireModelAdded(SModel model) {
-    ModelAccess.assertLegalRead();
+  private void fireModelAdded(SModel model) {
+    assertCanRead();
 
     for (SModuleListener listener : myListeners) {
       try {
@@ -68,4 +130,84 @@ public abstract class SModuleBase implements SModule {
     }
   }
 
+  private void fireBeforeModelRemoved(SModel model) {
+    assertCanChange();
+
+    for (SModuleListener listener : myListeners) {
+      try {
+        listener.beforeModelRemoved(this, model);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  private void fireModelRemoved(SModelReference model) {
+    assertCanChange();
+
+    for (SModuleListener listener : myListeners) {
+      try {
+        listener.modelRemoved(this, model);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  @Override
+  public final SModel getModel(SModelId id) {
+    assertCanRead();
+
+    return myIdToModelMap.get(id);
+  }
+
+  public void registerModel(SModelBase model) {
+    assertCanRead();
+    if (model.getModule() != null && model.getModule() != this) {
+      throw new IllegalArgumentException("Model `" + model.getModelName() + "' is already registered elsewhere");
+    }
+
+    synchronized (LOCK) {
+      myModels.add(model);
+      myIdToModelMap.put(model.getModelId(), model);
+
+      if (myRepository != null) {
+        model.attach(myRepository);
+      }
+      model.setModule(this);
+    }
+    fireModelAdded(model);
+  }
+
+  public void unregisterModel(SModelBase model) {
+    assertCanChange();
+    if (model.getModule() != this) {
+      throw new IllegalArgumentException("Model `" + model.getModelName() + "' is registered elsewhere.");
+    }
+
+    fireBeforeModelRemoved(model);
+    SModelReference reference = model.getReference();
+    synchronized (LOCK) {
+      myIdToModelMap.remove(reference.getModelId());
+      myModels.remove(model);
+      model.dispose();
+
+    }
+    fireModelRemoved(reference);
+  }
+
+  protected void assertCanRead() {
+// TODO enable
+//    SRepository repository = myRepository;
+//    if (repository != null) {
+//      repository.getModelAccess().checkReadAccess();
+//    }
+  }
+
+  protected void assertCanChange() {
+    SRepository repository = myRepository;
+    if (repository != null) {
+      repository.getModelAccess().checkWriteAccess();
+    }
+  }
 }
