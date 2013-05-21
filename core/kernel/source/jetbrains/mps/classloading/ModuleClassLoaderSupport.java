@@ -19,9 +19,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.net.URL;
@@ -55,7 +53,7 @@ public class ModuleClassLoaderSupport {
   // ext point possible here
   public static boolean canCreate(SModule module) {
     // todo: + check is module compiled?
-    return module.getFacet(JavaModuleFacet.class) != null && module.getFacet(NonReloadableModuleFacet.class) == null;
+    return module.getFacet(JavaModuleFacet.class) != null && module.getFacet(CustomClassLoadingFacet.class) == null;
   }
 
   public static ModuleClassLoaderSupport create(SModule module) {

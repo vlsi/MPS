@@ -41,8 +41,8 @@ public class MPSWorkbenchComponents implements ApplicationComponent {
         return new IdeaPluginModuleFacetImpl();
       }
     });
-    // todo: register on PLUGIN_KIND != NONE ?
-    FacetsFacade.getInstance().registerLanguageFacet(BootstrapLanguages.BASE_LANGUAGE.getModuleName(), IdeaPluginModuleFacet.FACET_TYPE);
+//    // todo: register on PLUGIN_KIND != NONE ?
+//    FacetsFacade.getInstance().registerLanguageFacet(BootstrapLanguages.BASE_LANGUAGE.getModuleName(), IdeaPluginModuleFacet.FACET_TYPE);
   }
 
   @Override

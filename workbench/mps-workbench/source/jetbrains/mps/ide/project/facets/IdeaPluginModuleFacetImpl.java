@@ -94,7 +94,7 @@ public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPl
   }
 
   @Override
-  public boolean isLoadedIntoMps() {
+  public boolean isValid() {
     return PluginManager.getPlugin(PluginId.getId(getPluginId())) != null;
   }
 

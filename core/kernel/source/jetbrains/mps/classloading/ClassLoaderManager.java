@@ -169,10 +169,10 @@ public class ClassLoaderManager implements CoreComponent {
   // main internal method. use getClass instead
   @Nullable
   public synchronized ClassLoader getClassLoader(SModule module) {
-    NonReloadableModuleFacet nonReloadableModuleFacet = module.getFacet(NonReloadableModuleFacet.class);
-    if (nonReloadableModuleFacet != null) {
-      if (nonReloadableModuleFacet.isLoadedIntoMps()) {
-        return nonReloadableModuleFacet.getClassLoader();
+    CustomClassLoadingFacet customClassLoadingFacet = module.getFacet(CustomClassLoadingFacet.class);
+    if (customClassLoadingFacet != null) {
+      if (customClassLoadingFacet.isValid()) {
+        return customClassLoadingFacet.getClassLoader();
       } else {
         // todo!
         return null;
@@ -321,7 +321,7 @@ public class ClassLoaderManager implements CoreComponent {
         modulesToLoad.add(module);
       }
       // todo: tmp hack
-      if (!myClassLoaders.containsKey(module) && module.getFacet(NonReloadableModuleFacet.class) != null) {
+      if (!myClassLoaders.containsKey(module) && module.getFacet(CustomClassLoadingFacet.class) != null) {
         modulesToLoad.add(module);
       }
     }

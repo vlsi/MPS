@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.project.facets;
 
-import jetbrains.mps.classloading.NonReloadableModuleFacet;
+import jetbrains.mps.classloading.CustomClassLoadingFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Set;
@@ -23,7 +23,7 @@ import java.util.Set;
 /**
  * evgeny, 2/28/13
  */
-public interface IdeaPluginModuleFacet extends NonReloadableModuleFacet {
+public interface IdeaPluginModuleFacet extends CustomClassLoadingFacet {
   public static final String FACET_TYPE = "ideaPlugin";
 
   String getPluginId();

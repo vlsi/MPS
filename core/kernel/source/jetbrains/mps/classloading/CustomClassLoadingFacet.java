@@ -17,8 +17,8 @@ package jetbrains.mps.classloading;
 
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
-public interface NonReloadableModuleFacet extends SModuleFacet {
-  public boolean isLoadedIntoMps();
+public interface CustomClassLoadingFacet extends SModuleFacet {
+  public boolean isValid();
 
   public ClassLoader getClassLoader();
 }
