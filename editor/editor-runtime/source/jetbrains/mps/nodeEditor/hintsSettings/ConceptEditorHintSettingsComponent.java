@@ -145,7 +145,9 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
           }
 
           for (ConceptEditorHint hint : editorDescriptor.getHints()) {
+            if (hint.showInUI()) {
               mySettings.put(lang, hint, false);
+            }
           }
         }
       }
