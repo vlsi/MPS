@@ -68,6 +68,7 @@
       <fileset dir="${basedir}/testbench/modules/testActions/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.testActions-src.jar">
+      <fileset dir="${basedir}/testbench/modules/testActions/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/testbench/modules/testActions/jetbrains.mps.testActions.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testActions-models" prefix="module/models" />
     </jar>
@@ -173,7 +174,10 @@
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.testActions" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.testActions" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${basedir}/testbench/modules/testActions/test_gen/" />
+      <src>
+        <path location="${basedir}/testbench/modules/testActions/source_gen" />
+        <pathelement path="${basedir}/testbench/modules/testActions/test_gen/" />
+      </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
@@ -213,6 +217,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.testActions">
+      <fileset dir="${basedir}/testbench/modules/testActions/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${basedir}/testbench/modules/testActions/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
@@ -314,6 +319,7 @@
   </target>
   
   <target name="cleanSources">
+    <delete dir="${basedir}/testbench/modules/testActions/source_gen" />
     <delete dir="${basedir}/testbench/modules/testActions/test_gen" />
   </target>
 </project>

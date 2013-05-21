@@ -1695,7 +1695,7 @@
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.testActions" />
       <property name="uuid" nameId="kdzh.322010710375892619" value="ae6cedf1-e261-45d9-972d-e8cfbc5e7f52" />
       <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
-      <property name="sourcesKind" nameId="kdzh.269707337715731330" value="tests" />
+      <property name="sourcesKind" nameId="kdzh.269707337715731330" value="sources and tests" />
       <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="6238501899265295062" nodeInfo="ng">
         <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6238501899265295067" nodeInfo="nn">
           <property name="head" nameId="3ior.8618885170173601779" value="testbench" />
