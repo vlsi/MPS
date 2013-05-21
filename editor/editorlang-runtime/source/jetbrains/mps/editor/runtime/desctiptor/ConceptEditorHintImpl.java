@@ -26,16 +26,19 @@ public class ConceptEditorHintImpl implements ConceptEditorHint {
   private final String myId;
   private final String myPresentation;
   private final boolean myShowInUI;
+  private final String myFQName;
 
-  public ConceptEditorHintImpl(String id, String presentation) {
+  public ConceptEditorHintImpl(String id, String presentation, boolean showInUI, String fqName) {
     myId = id;
     myPresentation = presentation;
     myShowInUI = false;
+    myFQName = fqName;
   }
 
   public ConceptEditorHintImpl(String id, String presentation, boolean showInUI) {
     myId = id;
     myPresentation = presentation;
+    myFQName = "";
     myShowInUI = showInUI;
   }
 
@@ -48,5 +51,9 @@ public class ConceptEditorHintImpl implements ConceptEditorHint {
 
   public boolean showInUI() {
     return myShowInUI;
+  }
+
+  public String getFQName() {
+    return myFQName;
   }
 }
