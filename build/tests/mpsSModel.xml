@@ -128,6 +128,7 @@
       <fileset dir="${basedir}/testbench/modules/testRead/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.testRead-src.jar">
+      <fileset dir="${basedir}/testbench/modules/testRead/resources" includes="**/*.java" />
       <zipfileset file="${basedir}/testbench/modules/testRead/jetbrains.mps.testRead.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testRead-models" prefix="module/models" />
     </jar>
@@ -332,7 +333,10 @@
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.testRead" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.testRead" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${basedir}/testbench/modules/testRead/test_gen/" />
+      <src>
+        <path location="${basedir}/testbench/modules/testRead/resources" />
+        <pathelement path="${basedir}/testbench/modules/testRead/test_gen/" />
+      </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
@@ -378,6 +382,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.testRead">
+      <fileset dir="${basedir}/testbench/modules/testRead/resources" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${basedir}/testbench/modules/testRead/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>

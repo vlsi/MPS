@@ -359,19 +359,26 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8167646940337254908" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8167646940337254909" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="stream" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8167646940337254910" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg8.~FileInputStream" resolveInfo="FileInputStream" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7464961892693493473" nodeInfo="in">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg8.~InputStream" resolveInfo="InputStream" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8167646940337254911" nodeInfo="nn">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8167646940337254912" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg8.~FileInputStream%d&lt;init&gt;(java%dlang%dString)" resolveInfo="FileInputStream" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8167646940337254913" nodeInfo="nn">
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8167646940337254914" nodeInfo="nn">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyp.~PathManager" resolveInfo="PathManager" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyp.~PathManager%dgetHomePath()%cjava%dlang%dString" resolveInfo="getHomePath" />
-                  </node>
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8167646940337254915" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="/testbench/modules/testRead/SNodeMethodReads.xml" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7464961892693462047" nodeInfo="nn">
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7464961892693493238" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lc.~Class%dgetResourceAsStream(java%dlang%dString)%cjava%dio%dInputStream" resolveInfo="getResourceAsStream" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7464961892693493390" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1070475926801" value="/SNodeMethodReads.xml" />
+                </node>
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7464961892693444157" nodeInfo="nn">
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7464961892693460753" nodeInfo="nn">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lc.~Object%dgetClass()%cjava%dlang%dClass" resolveInfo="getClass" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7464961892693427929" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7464961892693444010" nodeInfo="nn">
+                    <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7464961892693444019" nodeInfo="in">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lc.~Object" resolveInfo="Object" />
+                    </node>
+                    <node role="expression" roleId="tpee.1070534934092" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7464961892693402488" nodeInfo="nn" />
                   </node>
                 </node>
               </node>
@@ -429,7 +436,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8167646940337254909" resolveInfo="stream" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8167646940337254935" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg8.~FileInputStream%dclose()%cvoid" resolveInfo="close" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg8.~InputStream%dclose()%cvoid" resolveInfo="close" />
             </node>
           </node>
         </node>
@@ -458,19 +465,26 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2151646185623029914" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2151646185623029915" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="stream" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2151646185623029916" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg8.~FileInputStream" resolveInfo="FileInputStream" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7464961892693621525" nodeInfo="in">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg8.~InputStream" resolveInfo="InputStream" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2151646185623029917" nodeInfo="nn">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2151646185623029918" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg8.~FileInputStream%d&lt;init&gt;(java%dlang%dString)" resolveInfo="FileInputStream" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2151646185623029919" nodeInfo="nn">
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2151646185623029920" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyp.~PathManager%dgetHomePath()%cjava%dlang%dString" resolveInfo="getHomePath" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyp.~PathManager" resolveInfo="PathManager" />
-                  </node>
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2151646185623029921" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="/testbench/modules/testRead/SNodeContract.xml" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7464961892693617480" nodeInfo="nn">
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7464961892693617481" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lc.~Class%dgetResourceAsStream(java%dlang%dString)%cjava%dio%dInputStream" resolveInfo="getResourceAsStream" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7464961892693617482" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1070475926801" value="/SNodeContract.xml" />
+                </node>
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7464961892693617483" nodeInfo="nn">
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7464961892693617484" nodeInfo="nn">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lc.~Object%dgetClass()%cjava%dlang%dClass" resolveInfo="getClass" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7464961892693617485" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7464961892693617486" nodeInfo="nn">
+                    <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7464961892693617487" nodeInfo="in">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lc.~Object" resolveInfo="Object" />
+                    </node>
+                    <node role="expression" roleId="tpee.1070534934092" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7464961892693617488" nodeInfo="nn" />
                   </node>
                 </node>
               </node>
@@ -532,7 +546,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2151646185623029915" resolveInfo="stream" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2151646185623030162" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg8.~FileInputStream%dclose()%cvoid" resolveInfo="close" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg8.~InputStream%dclose()%cvoid" resolveInfo="close" />
             </node>
           </node>
         </node>

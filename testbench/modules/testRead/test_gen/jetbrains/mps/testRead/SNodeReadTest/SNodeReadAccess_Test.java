@@ -25,8 +25,7 @@ import java.lang.reflect.Modifier;
 import jetbrains.mps.util.Pair;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.FileInputStream;
-import jetbrains.mps.util.PathManager;
+import java.io.InputStream;
 import java.beans.XMLDecoder;
 import java.util.HashSet;
 
@@ -441,7 +440,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
     }
 
     public Map<String, Integer> getReadAccessMap() throws FileNotFoundException, IOException {
-      FileInputStream stream = new FileInputStream(PathManager.getHomePath() + "/testbench/modules/testRead/SNodeMethodReads.xml");
+      InputStream stream = ((Object) this).getClass().getResourceAsStream("/SNodeMethodReads.xml");
       XMLDecoder xmlDecoder = new XMLDecoder(stream);
       Map<String, Integer> map = (Map<String, Integer>) xmlDecoder.readObject();
       stream.close();
@@ -450,7 +449,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
     }
 
     public Set<String> getPreviousISNodeMethodsNames() throws FileNotFoundException, IOException {
-      FileInputStream stream = new FileInputStream(PathManager.getHomePath() + "/testbench/modules/testRead/SNodeContract.xml");
+      InputStream stream = ((Object) this).getClass().getResourceAsStream("/SNodeContract.xml");
       XMLDecoder xmlDecoder = new XMLDecoder(stream);
       Set<String> set = (Set<String>) xmlDecoder.readObject();
       xmlDecoder.close();

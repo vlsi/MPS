@@ -2,11 +2,12 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test" file="SNodeReadAccess_Test.java">
     <classNode dependClassName="java.beans.XMLDecoder" />
-    <classNode dependClassName="java.io.FileInputStream" />
     <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.StackTraceElement" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -30,7 +31,6 @@
     <classNode dependClassName="jetbrains.mps.testRead.SNodeReadTest.StatCountNodeReadAccessInEditorListener" />
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
-    <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
