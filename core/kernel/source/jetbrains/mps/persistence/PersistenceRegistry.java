@@ -22,10 +22,12 @@ import jetbrains.mps.project.structure.ProjectStructureModelRoot;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -152,6 +154,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
       return null;
     }
     return factory.create(text.substring(colon + 1));
+  }
+
+  @Override
+  public SNodeReference createNodeReference(String text) {
+    return SNodePointer.deserialize(text);
   }
 
   @Override

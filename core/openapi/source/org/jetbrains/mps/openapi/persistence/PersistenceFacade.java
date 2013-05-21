@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Set;
@@ -115,6 +116,8 @@ public abstract class PersistenceFacade {
    * @throws IllegalArgumentException if the text does not contain a parsable <code>SNodeId</code>.
    */
   public abstract SNodeId createNodeId(String text);
+
+  public abstract SNodeReference createNodeReference(String text);
 
   /**
    * Registers the factory with the node id type, overwriting potential earlier registration.
