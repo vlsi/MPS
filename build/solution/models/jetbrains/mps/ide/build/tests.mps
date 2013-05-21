@@ -1145,7 +1145,7 @@
         <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.traceInfo.testWeaving" />
         <property name="uuid" nameId="kdzh.322010710375892619" value="dc080be0-da6e-4885-aed0-7d999c120619" />
-        <property name="sourcesKind" nameId="kdzh.269707337715731330" value="tests" />
+        <property name="sourcesKind" nameId="kdzh.269707337715731330" value="sources and tests" />
         <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
         <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4074183641147997491" nodeInfo="ng">
           <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4074183641147997496" nodeInfo="nn">
