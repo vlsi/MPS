@@ -13,7 +13,7 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("rich", "Use colourful presentation of child nodes"), new ConceptEditorHintImpl("compact", "Use compact presentation of child nodes"), new ConceptEditorHintImpl("unsupported", "Use presentation which is not supported in testLanguage"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("rich", "Use colourful presentation of child nodes", false), new ConceptEditorHintImpl("compact", "Use compact presentation of child nodes", true), new ConceptEditorHintImpl("unsupported", "Use presentation which is not supported in testLanguage", false));
 
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {

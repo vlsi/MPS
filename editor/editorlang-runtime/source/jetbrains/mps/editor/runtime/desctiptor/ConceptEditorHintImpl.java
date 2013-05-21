@@ -27,6 +27,12 @@ public class ConceptEditorHintImpl implements ConceptEditorHint {
   private final String myPresentation;
   private final boolean myShowInUI;
 
+  public ConceptEditorHintImpl(String id, String presentation) {
+    myId = id;
+    myPresentation = presentation;
+    myShowInUI = false;
+  }
+
   public ConceptEditorHintImpl(String id, String presentation, boolean showInUI) {
     myId = id;
     myPresentation = presentation;
