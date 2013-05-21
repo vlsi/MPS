@@ -586,6 +586,7 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
 
     Set<String> types = new HashSet<String>();
     collectFacetTypes(types);
+    types.addAll(config.keySet());
 
     for (String facetType : types) {
       FacetFactory factory = FacetsFacade.getInstance().getFacetFactory(facetType);
