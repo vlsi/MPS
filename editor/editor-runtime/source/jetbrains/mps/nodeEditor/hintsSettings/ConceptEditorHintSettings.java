@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 /**
@@ -40,7 +41,7 @@ public class ConceptEditorHintSettings {
     for (String lang : getLanguagesNames()) {
       for (ConceptEditorHint hint : getHints(lang)) {
         if (get(lang, hint)) {
-          enabledHints.add(lang + "." + hint.getId());
+          enabledHints.add(hint.getFQName());
         }
       }
     }
@@ -48,12 +49,9 @@ public class ConceptEditorHintSettings {
   }
 
   public synchronized void updateSettings(Set<String> enabledHints) {
-    for (String hintFQName : enabledHints) {
-      int index = hintFQName.lastIndexOf('.');
-      String lang = hintFQName.substring(0, index);
-      String hintId = hintFQName.substring(index + 1);
+    for (String lang : getLanguagesNames()) {
       for (ConceptEditorHint hint : getHints(lang)) {
-        if (hint.getId().equals(hintId)) {
+        if (enabledHints.contains(hint.getFQName())) {
           put(lang, hint, true);
         }
       }
