@@ -13,7 +13,7 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("rich", "Use colourful presentation of child nodes", false, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich"), new ConceptEditorHintImpl("compact", "Use compact presentation of child nodes", true, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact"), new ConceptEditorHintImpl("unsupported", "Use presentation which is not supported in testLanguage", false, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.unsupported"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("rich", "Use colourful presentation of child nodes", true, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich"), new ConceptEditorHintImpl("compact", "Use compact presentation of child nodes", true, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact"), new ConceptEditorHintImpl("unsupported", "Use presentation which is not supported in testLanguage", true, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.unsupported"));
 
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
