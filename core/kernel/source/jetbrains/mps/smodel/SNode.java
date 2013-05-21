@@ -289,6 +289,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (myModelForUndo != null) {
       myModelForUndo.performUndoableAction(computable);
     } else {
+      if (!UndoHelper.getInstance().needRegisterUndo()) return;
+
       UndoHelper.getInstance().addUndoableAction(computable.compute());
     }
   }
