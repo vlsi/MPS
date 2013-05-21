@@ -1014,6 +1014,9 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2684968190509543952" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="msle.4045247515868358877" resolveInfo="TestTemporalPaths" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7464961892695270897" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="msle.5368511706901688070" resolveInfo="TestRelativePathHelper_Test" />
+    </node>
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4246614868164057750" nodeInfo="ng">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="4246614868164057751" nodeInfo="ig">
