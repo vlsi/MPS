@@ -10,7 +10,7 @@ import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.List;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -61,7 +61,7 @@ public class ForcedSaveAll_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Iterable<SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModules();
+      Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
       List<EditableSModel> allModels = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
         public Iterable<SModel> translate(SModule it) {
           return it.getModels();

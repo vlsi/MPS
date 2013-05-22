@@ -67,8 +67,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -136,8 +134,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     public _Inline_igv5hf_a2a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

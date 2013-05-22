@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="3l9yfgitezuwirxtwnqpwpy7llrau4h">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="dgtel9s427vm37iaz9u6ikq38xnt1eq" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-er04ynwwc0babx4ug54abz4i80ig26i" />
+  <common hash="d678ncf1lffvybgb77me6zmhid0i2bi" />
+  <source id="3197704031717961581" name="ActionsTest" hash="-ayegfcll7lggv1moz4gv4ivvnzp2iyj" dependsOnNodes="true">
+    <dep root="4484885613884465103" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="ActionsTest_Test.java" />
+  </source>
+  <source id="4484885613884465103" hash="3v76o7rynotph6o6e33mea7gxn95kat">
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+  </source>
+</dependencies>
+

@@ -16,11 +16,18 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class RefUpdateUtil {
   public static boolean updateModelRefs(Collection<SModelReference> refs) {
@@ -47,10 +54,10 @@ public class RefUpdateUtil {
     Set<SModuleReference> add = new LinkedHashSet<SModuleReference>();
 
     for (SModuleReference ref : refs) {
-      SModuleReference newRef = jetbrains.mps.project.structure.modules.ModuleReference.update(ref);
-      if (jetbrains.mps.project.structure.modules.ModuleReference.differs(ref, newRef)) {
+      SModuleReference newRef = update(ref);
+      if (differs(ref, newRef)) {
         remove.add(ref);
-        add.add((SModuleReference) newRef);
+        add.add(newRef);
       }
     }
 
@@ -64,10 +71,10 @@ public class RefUpdateUtil {
     boolean changed = false;
     for (Dependency dep : deps) {
       SModuleReference ref = dep.getModuleRef();
-      @NotNull SModuleReference newRef = jetbrains.mps.project.structure.modules.ModuleReference.update(ref);
-      if (jetbrains.mps.project.structure.modules.ModuleReference.differs(ref, newRef)) {
+      @NotNull SModuleReference newRef = update(ref);
+      if (differs(ref, newRef)) {
         changed = true;
-        dep.setModuleRef((SModuleReference) newRef);
+        dep.setModuleRef(newRef);
       }
     }
     return changed;
@@ -88,5 +95,19 @@ public class RefUpdateUtil {
       if (v) changed = true;
     }
     return changed;
+  }
+
+  public static SModuleReference update(SModuleReference reference) {
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(reference);
+    if (module == null) return reference;
+    return module.getModuleReference();
+  }
+
+  public static boolean differs(SModuleReference ref1, SModuleReference ref2) {
+    if (ref1 == null || ref2 == null) {
+      return ref1 != ref2;
+    }
+    // both not null
+    return !(EqualUtil.equals(ref1.getModuleId(), ref2.getModuleId()) && EqualUtil.equals(ref1.getModuleName(), ref2.getModuleName()));
   }
 }

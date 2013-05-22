@@ -22,7 +22,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -34,6 +33,7 @@ import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -52,6 +52,12 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     @Override
     protected Set<String> initialValue() {
       return new HashSet<String>();
+    }
+  };
+  private SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
+    @Override
+    public void repositoryChanged() {
+      invalidateDescriptors();
     }
   };
 
@@ -91,12 +97,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     }
 
     INSTANCE = this;
-    MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryAdapter() {
-      @Override
-      public void repositoryChanged() {
-        invalidateDescriptors();
-      }
-    });
+    myListener.subscribeTo(MPSModuleRepository.getInstance());
 
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
       @Override
@@ -111,6 +112,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
 
   @Override
   public void dispose() {
+    myListener.unsubscribeFrom(MPSModuleRepository.getInstance());
     // TODO unregister listeners?
     INSTANCE = null;
   }

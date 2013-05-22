@@ -186,7 +186,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     }
 
     myThis.getDialog().dispose();
-    NewModuleUtil.runModuleCreation(myThis.getProject().getProject(), new _FunctionTypes._void_P0_E0() {
+    NewModuleUtil.runModuleCreation(myThis.getProject(), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         myThis.setResult(NewModuleUtil.createDevKit(myThis.getDevkitName(), myThis.getDevkitDir(), myThis.getProject()));
       }

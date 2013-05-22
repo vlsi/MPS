@@ -64,6 +64,7 @@
   <import index="vvvw" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
+  <import index="l077" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" version="-1" implicit="yes" />
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="878521226300902860" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MakeWorker" />
     <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
@@ -9716,7 +9717,7 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="878521226301297499" resolveInfo="gen" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="878521226301297498" nodeInfo="nn">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetModels()%cjava%dutil%dList" resolveInfo="getModels" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="l077.~SModuleBase%dgetModels()%cjava%dutil%dList" resolveInfo="getModels" />
                                   </node>
                                 </node>
                               </node>

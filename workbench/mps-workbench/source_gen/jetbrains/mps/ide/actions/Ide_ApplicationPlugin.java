@@ -52,12 +52,9 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FastFindNodeUsages_Action());
     addAction(new FindConceptInstances_Action());
     addAction(new FindModelUsages_Action());
-    addAction(new FindNext_Action());
-    addAction(new FindPrevious_Action());
     addAction(new FindRootableConceptsWithoutIcons_Action());
     addAction(new FindSpecificNodeUsages_Action());
     addAction(new FindUnusedAndDeprecatedConcepts_Action());
-    addAction(new Find_Action());
     addAction(new ForcedSaveAll_Action());
     addAction(new GoByCurrentReferenceToIDEA_Action());
     addAction(new GoToModel_Action());

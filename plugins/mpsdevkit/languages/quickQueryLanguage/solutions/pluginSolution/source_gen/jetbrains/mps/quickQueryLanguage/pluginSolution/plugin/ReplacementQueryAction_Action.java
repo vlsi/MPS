@@ -80,7 +80,7 @@ public class ReplacementQueryAction_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ReplaceDialog dialog = new ReplaceDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((SModule) MapSequence.fromMap(_params).get("langModule")));
-      dialog.showDialog();
+      dialog.show();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ReplacementQueryAction", t);

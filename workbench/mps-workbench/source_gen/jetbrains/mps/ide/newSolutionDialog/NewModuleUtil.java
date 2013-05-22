@@ -15,7 +15,6 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.application.ApplicationManager;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.ide.NewModuleCheckUtil;
@@ -46,6 +45,7 @@ import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -107,8 +107,8 @@ public class NewModuleUtil {
 
 
 
-  public static void runModuleCreation(com.intellij.openapi.project.Project p, final _FunctionTypes._void_P0_E0 r) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+  public static void runModuleCreation(Project p, final _FunctionTypes._void_P0_E0 r) {
+    p.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().assertWriteAccessAllowed();
         r.invoke();

@@ -18,6 +18,7 @@ import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
@@ -45,7 +46,7 @@ import java.util.*;
  * User: fyodor
  * Date: Aug 19, 2010
  */
-@RunWith(WatchingParameterized.class)
+@RunWith(WatchingParameterizedWithMake.class)
 public class ProjectTest {
 
   private static ProjectTestHelper HELPER;
@@ -132,17 +133,6 @@ public class ProjectTest {
   }
 
   private final Fixture fixture;
-
-  @BeforeClass
-  public static void make() throws Exception {
-    new MpsMakeHelper().make();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        IdeEventQueue.getInstance().flushQueue();
-        System.gc();
-      }
-    });
-  }
 
   @AfterClass
   public static void disposeProject() {

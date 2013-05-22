@@ -15,22 +15,23 @@
  */
 package jetbrains.mps.smodel.language;
 
-import jetbrains.mps.components.CoreComponent;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -41,20 +42,20 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
 
   private Map<SModule, String> myModuleToNamespace = new HashMap<SModule, String>();
   private HashMap<String, ExtensionDescriptor> myExtensionDescriptors = new HashMap<String, ExtensionDescriptor>();
-  private ModuleRepositoryAdapter myListener = new MyModuleRepositoryAdapter();
+  private SRepositoryListener myListener = new MyModuleRepositoryAdapter();
   @Nullable
   private ClassLoaderManager myClm;
   @Nullable
   private MPSModuleRepository myRepo;
-  private final ReloadAdapter myHandler = new ReloadAdapter() {
+  private final MPSClassesListener myHandler = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
-      unloadExtensionDescriptors();
+    public void onClassesUnload(Set<SModule> unloadedModules) {
+      unloadExtensionDescriptors(unloadedModules);
     }
 
     @Override
-    public void onAfterReload() {
-      loadExtensionDescriptors();
+    public void onClassesLoad(Set<SModule> loadedModules) {
+      loadExtensionDescriptors(loadedModules);
     }
   };
 
@@ -73,10 +74,10 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
       throw new IllegalStateException("double initialization");
     }
     if (myRepo != null) {
-      myRepo.addModuleRepositoryListener(myListener);
+      myRepo.addRepositoryListener(myListener);
     }
     if (myClm != null) {
-      myClm.addReloadHandler(myHandler);
+      myClm.addClassesHandler(myHandler);
     }
     INSTANCE = this;
   }
@@ -85,43 +86,42 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   public void dispose() {
     INSTANCE = null;
     if (myClm != null) {
-      myClm.removeReloadHandler(myHandler);
+      myClm.removeClassesHandler(myHandler);
     }
     if (myRepo != null) {
-      myRepo.addModuleRepositoryListener(myListener);
+      myRepo.removeRepositoryListener(myListener);
     }
   }
 
-  private void unloadExtensionDescriptors() {
-    for (ExtensionDescriptor desc : myExtensionDescriptors.values()) {
-      unregisterExtensionDescriptor(desc);
+  private void unloadExtensionDescriptors(Collection<SModule> unloadedModules) {
+    for (SModule module : unloadedModules) {
+      final ExtensionDescriptor desc = myExtensionDescriptors.remove(module.getModuleName());
+      if (desc != null) {
+        unregisterExtensionDescriptor(desc);
+      }
     }
-    myExtensionDescriptors.clear();
   }
 
-  private void loadExtensionDescriptors() {
-    Set<SModule> existing = new HashSet<SModule>(myModuleToNamespace.keySet());
-    for (SModule mod : MPSModuleRepository.getInstance().getModules()) {
-      String namespace = mod.getModuleName();
+  private void loadExtensionDescriptors(Collection<SModule> loadedModules) {
+    for (SModule module : loadedModules) {
+      String namespace = myModuleToNamespace.get(module);
+      if (namespace == null) {
+        namespace = module.getModuleName();
+      }
 
-      // duplicate module, ignore
-      if (myExtensionDescriptors.containsKey(namespace)) continue;
-
-      existing.remove(mod);
-      ExtensionDescriptor desc = findExtensionDescriptor(mod);
-      if (desc == null) continue;
-
-      myModuleToNamespace.put(mod, namespace);
-      myExtensionDescriptors.put(namespace, desc);
-      registerExtensionDescriptor(desc);
-    }
-    for (SModule mod : existing) {
-      myModuleToNamespace.remove(mod);
+      ExtensionDescriptor desc = findExtensionDescriptor(module);
+      if (desc != null) {
+        myModuleToNamespace.put(module, namespace);
+        myExtensionDescriptors.put(namespace, desc);
+        registerExtensionDescriptor(desc);
+      } else {
+        myModuleToNamespace.remove(namespace);
+      }
     }
   }
 
   @SuppressWarnings("unchecked")
-    /*package for tests*/ void registerExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
+  /*package for tests*/ void registerExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
     registerExtensions(extensionDescriptor.getExtensions());
     registerExtensionPoints(extensionDescriptor.getExtensionPoints());
   }
@@ -194,14 +194,14 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     return null;
   }
 
-  private class MyModuleRepositoryAdapter extends ModuleRepositoryAdapter {
+  private class MyModuleRepositoryAdapter extends SRepositoryAdapter {
     @Override
     public void moduleAdded(SModule module) {
       // awaiting next classes reload?
     }
 
     @Override
-    public void moduleRemoved(SModule module) {
+    public void beforeModuleRemoved(SModule module) {
       String namespace = myModuleToNamespace.get(module);
       if (namespace == null) return;
 

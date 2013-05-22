@@ -51,8 +51,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-    <classNode extendsClassName="jetbrains.mps.smodel.ModuleRepositoryAdapter" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.module.SRepositoryAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.editor.runtime.impl.LayoutConstraints" file="LayoutConstraints.java">
     <classNode dependClassName="java.lang.String" />

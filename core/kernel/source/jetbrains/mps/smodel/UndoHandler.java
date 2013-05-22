@@ -24,7 +24,7 @@ public interface UndoHandler {
 
   public <T> T runNonUndoableAction(Computable<T> t);
 
-  boolean needRegisterUndo(@NotNull SModel model);
+  boolean needRegisterUndo();
 
   boolean isInsideUndoableCommand();
 

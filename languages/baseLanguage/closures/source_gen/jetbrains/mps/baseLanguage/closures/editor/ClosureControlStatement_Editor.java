@@ -77,8 +77,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -168,8 +166,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     public _Inline_2saq3j_a1b0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -18,14 +18,22 @@ package jetbrains.mps.ide.findusages.view.treeholder.tree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessAdapter;
+import jetbrains.mps.smodel.ModelAccessListener;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 
 import java.util.HashSet;
 import java.util.List;
@@ -68,7 +76,7 @@ public class DataTreeChangesNotifier {
 
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myModelListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
-    MPSModuleRepository.getInstance().addModuleRepositoryListener(myModuleRepositoryListener);
+    MPSModuleRepository.getInstance().addRepositoryListener(myModuleRepositoryListener);
   }
 
   public void stopListening() {
@@ -80,7 +88,7 @@ public class DataTreeChangesNotifier {
 
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myModelListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
-    MPSModuleRepository.getInstance().removeModuleRepositoryListener(myModuleRepositoryListener);
+    MPSModuleRepository.getInstance().removeRepositoryListener(myModuleRepositoryListener);
   }
 
   private class MyModelCommandListener implements SModelCommandListener {
@@ -99,7 +107,8 @@ public class DataTreeChangesNotifier {
           }
         } else if (event instanceof SModelChildEvent) {
           SModelChildEvent modelChildEvent = (SModelChildEvent) event;
-          SNodeReference childPointer = new jetbrains.mps.smodel.SNodePointer(modelChildEvent.getModel().getReference(), modelChildEvent.getChild().getNodeId());
+          SNodeReference childPointer = new jetbrains.mps.smodel.SNodePointer(modelChildEvent.getModel().getReference(),
+              modelChildEvent.getChild().getNodeId());
           if (modelChildEvent.isRemoved() && myNodes.contains(childPointer)) {
             myChanged = true;
             return;
@@ -126,10 +135,10 @@ public class DataTreeChangesNotifier {
     }
   }
 
-  private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+  private class MyModuleRepositoryListener extends SRepositoryAdapter {
     @Override
-    public void moduleRemoved(SModule module) {
-      if (!myModules.contains(module.getModuleReference())) return;
+    public void moduleRemoved(SModuleReference module) {
+      if (!myModules.contains(module)) return;
       myChanged = true;
     }
   }

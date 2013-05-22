@@ -100,26 +100,31 @@ public class DisposedRepository implements SRepository {
       public void executeUndoTransparentCommand(Runnable r) {
 
       }
+
+      @Override
+      public boolean isCommandAction() {
+        return false;
+      }
     };
   }
 
   @Override
   public RepositoryAccess getRepositoryAccess() {
-    return null;
+    throw new IllegalStateException();
   }
 
   @Override
   public void saveAll() {
-
+    throw new IllegalStateException();
   }
 
   @Override
   public void addRepositoryListener(SRepositoryListener listener) {
-
+    throw new IllegalStateException();
   }
 
   @Override
   public void removeRepositoryListener(SRepositoryListener listener) {
-
+    throw new IllegalStateException();
   }
 }

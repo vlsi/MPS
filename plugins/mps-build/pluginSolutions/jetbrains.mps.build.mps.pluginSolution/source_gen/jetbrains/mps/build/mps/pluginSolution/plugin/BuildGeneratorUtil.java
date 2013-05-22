@@ -8,7 +8,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -35,7 +35,7 @@ public class BuildGeneratorUtil {
         public void run() {
           model.value = solution.getModelRoots().iterator().next().createModel(modelName);
           ((EditableSModel) model.value).setChanged(true);
-          SModelRepository.getInstance().registerModelDescriptor(model.value, solution);
+          solution.registerModel((SModelBase) model.value);
         }
       });
     }

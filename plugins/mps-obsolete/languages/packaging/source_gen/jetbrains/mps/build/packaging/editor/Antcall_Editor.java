@@ -88,8 +88,6 @@ public class Antcall_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -151,8 +149,6 @@ public class Antcall_Editor extends DefaultNodeEditor {
     public _Inline_xq8xtf_a3a0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

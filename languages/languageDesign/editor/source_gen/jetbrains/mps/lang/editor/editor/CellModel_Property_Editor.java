@@ -124,8 +124,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -301,8 +299,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     public _Inline_adk1cf_a1a3a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

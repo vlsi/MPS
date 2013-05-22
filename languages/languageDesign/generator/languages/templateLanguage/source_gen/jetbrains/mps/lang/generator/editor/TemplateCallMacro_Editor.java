@@ -228,8 +228,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -392,8 +390,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     public _Inline_nnob7w_a0c4c0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

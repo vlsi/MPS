@@ -109,8 +109,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -326,8 +324,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     public _Inline_gkr2rl_a1c0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

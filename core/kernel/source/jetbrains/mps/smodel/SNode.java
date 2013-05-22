@@ -268,11 +268,9 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       myProperties[index + 1] = propertyValue;
     }
 
-    if (myModelForUndo == null) return;
-
     final String finalPropertyValue = propertyValue;
     final String finalPropertyName = propertyName;
-    myModelForUndo.performUndoableAction(new Computable<SNodeUndoableAction>() {
+    performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
         return new PropertyChangeUndoableAction(SNode.this, finalPropertyName, oldValue, finalPropertyValue);
@@ -285,6 +283,16 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       myModel.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
     }
     propertyChanged(propertyName, oldValue, propertyValue);
+  }
+
+  private void performUndoableAction(Computable<SNodeUndoableAction> computable) {
+    if (myModelForUndo != null) {
+      myModelForUndo.performUndoableAction(computable);
+    } else {
+      if (!UndoHelper.getInstance().needRegisterUndo()) return;
+
+      UndoHelper.getInstance().addUndoableAction(computable.compute());
+    }
   }
 
   @Override
@@ -366,17 +374,15 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     wasChild.setRoleInParent(null);
     wasChild.unRegisterFromModel();
 
-    if (myModelForUndo != null) {
-      myModelForUndo.performUndoableAction(new Computable<SNodeUndoableAction>() {
-        @Override
-        public SNodeUndoableAction compute() {
-          return new RemoveChildUndoableAction(SNode.this, anchor, wasRole, wasChild);
-        }
-      });
-
-      if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
-        myModel.fireChildRemovedEvent(this, wasRole, wasChild, anchor);
+    performUndoableAction(new Computable<SNodeUndoableAction>() {
+      @Override
+      public SNodeUndoableAction compute() {
+        return new RemoveChildUndoableAction(SNode.this, anchor, wasRole, wasChild);
       }
+    });
+
+    if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
+      myModel.fireChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
     nodeRemoved(child, wasRole);
   }
@@ -563,18 +569,16 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       schild.registerInModel(myModel);
     }
 
-    if (myModelForUndo != null) {
-      final String finalRole = role;
-      myModelForUndo.performUndoableAction(new Computable<SNodeUndoableAction>() {
-        @Override
-        public SNodeUndoableAction compute() {
-          return new InsertChildAtUndoableAction(SNode.this, anchor, finalRole, schild);
-        }
-      });
-
-      if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
-        myModel.fireChildAddedEvent(this, role, schild, ((SNode) anchor));
+    final String finalRole = role;
+    performUndoableAction(new Computable<SNodeUndoableAction>() {
+      @Override
+      public SNodeUndoableAction compute() {
+        return new InsertChildAtUndoableAction(SNode.this, anchor, finalRole, schild);
       }
+    });
+
+    if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
+      myModel.fireChildAddedEvent(this, role, schild, ((SNode) anchor));
     }
     nodeAdded(role, child);
   }
@@ -1010,9 +1014,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     newArray[oldLen] = reference;
     myReferences = newArray;
 
-    if (myModelForUndo == null) return;
-
-    myModelForUndo.performUndoableAction(new Computable<SNodeUndoableAction>() {
+    performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
         return new InsertReferenceAtUndoableAction(SNode.this, reference);
@@ -1045,9 +1047,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     System.arraycopy(myReferences, index + 1, newArray, index, myReferences.length - index - 1);
     myReferences = newArray;
 
-    if (myModelForUndo == null) return;
-
-    myModelForUndo.performUndoableAction(new Computable<SNodeUndoableAction>() {
+    performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
         return new RemoveReferenceAtUndoableAction(SNode.this, ref);

@@ -61,8 +61,6 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -147,8 +145,6 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     public _Inline_u0vlk9_a1a0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

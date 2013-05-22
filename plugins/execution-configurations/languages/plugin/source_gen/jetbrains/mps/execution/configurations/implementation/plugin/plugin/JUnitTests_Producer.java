@@ -57,7 +57,7 @@ public class JUnitTests_Producer {
         return null;
       }
       String name = source.getModelName();
-      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setRunType(JUnitRunTypes2.MODEL);
       configuration.getJUnitSettings().setModel(source.getModelName());
       return configuration;
@@ -83,7 +83,7 @@ public class JUnitTests_Producer {
       // commented out due to perfomance problems 
       // <node> 
       String name = source.getModuleName();
-      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setRunType(JUnitRunTypes2.MODULE);
       configuration.getJUnitSettings().setModule(source.getModuleName());
       return configuration;
@@ -108,7 +108,7 @@ public class JUnitTests_Producer {
       setSourceElement(new MPSPsiElement(source));
       // commented out due to perfomance problems 
       // <node> 
-      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("All Tests in Project", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "All Tests in Project", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setRunType(JUnitRunTypes2.PROJECT);
       return configuration;
     }
@@ -139,7 +139,7 @@ public class JUnitTests_Producer {
         return null;
       }
 
-      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration(wrapper.getName(), (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + wrapper.getName(), (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setRunType(JUnitRunTypes2.METHOD);
       configuration.getJUnitSettings().setTestMethods(TestUtils.nodeToCloneableList(method));
       return configuration;
@@ -163,9 +163,12 @@ public class JUnitTests_Producer {
     protected JUnitTests_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
       SNode method = TestNodeWrapperFactory.findWrappableAncestor(source, false);
-      if (method != null && TestNodeWrapperFactory.tryToWrap(method) != null) {
-        // we check if we are inside a test method; do not run the whole test case if we are 
-        return null;
+      if (method != null) {
+        ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(method);
+        if (wrapper != null && !(wrapper.isTestCase())) {
+          // we check if we are inside a test method; do not run the whole test case if we are 
+          return null;
+        }
       }
       SNode testNode = SNodeOperations.cast(TestNodeWrapperFactory.findWrappableAncestor(source, true), "jetbrains.mps.lang.core.structure.INamedConcept");
       if (testNode == null) {
@@ -177,7 +180,7 @@ public class JUnitTests_Producer {
         return null;
       }
 
-      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration(SPropertyOperations.getString(testNode, "name"), (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + SPropertyOperations.getString(testNode, "name"), (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setRunType(JUnitRunTypes2.NODE);
       configuration.getJUnitSettings().setTestCases(TestUtils.nodeToCloneableList(testNode));
       return configuration;
@@ -219,7 +222,7 @@ public class JUnitTests_Producer {
         return null;
       }
 
-      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration(SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(source).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(source).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setRunType(JUnitRunTypes2.NODE);
       configuration.getJUnitSettings().setTestCases(TestUtils.nodesToCloneableList(source));
       return configuration;
@@ -250,7 +253,7 @@ public class JUnitTests_Producer {
 
     protected JUnitTests_Configuration doCreateConfiguration(final List<SNode> source) {
       setSourceElement(new MPSPsiElement(source));
-      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration(BehaviorReflection.invokeVirtual(String.class, ListSequence.fromList(source).first(), "virtual_getTestName_1216136419751", new Object[]{}) + ",...", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + BehaviorReflection.invokeVirtual(String.class, ListSequence.fromList(source).first(), "virtual_getTestName_1216136419751", new Object[]{}) + ",...", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setRunType(JUnitRunTypes2.METHOD);
       configuration.getJUnitSettings().setTestMethods(TestUtils.nodesToCloneableList(source));
       return configuration;

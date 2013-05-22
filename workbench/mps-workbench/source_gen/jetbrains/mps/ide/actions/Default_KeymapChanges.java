@@ -26,10 +26,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.FastFindNodeUsages_Action", getShortcut("alt F7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindConceptInstances_Action", getShortcut("alt F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindModelUsages_Action", getShortcut("alt F7"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.FindNext_Action", getShortcut(" F3"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.FindPrevious_Action", getShortcut("shift F3"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action", getShortcut("ctrl alt shift F7"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.Find_Action", getShortcut("ctrl F"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action", getShortcut("ctrl shift B"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToModel_Action", getShortcut("ctrl alt shift M"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToModule_Action", getShortcut("ctrl alt shift S"));
@@ -63,8 +60,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addComplexShortcut("jetbrains.mps.ide.actions.GoToFile_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl shift N")));
     addComplexShortcut("jetbrains.mps.ide.actions.GoToNamedNode_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift N")));
     // complex 
-    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Default_KeymapChanges.GoToBookmark_ShortcutChange_qjewi8_vb());
-    addComplexShortcut("jetbrains.mps.ide.actions.SetBookmark_Action", new Default_KeymapChanges.SetBookmark_ShortcutChange_qjewi8_wb());
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Default_KeymapChanges.GoToBookmark_ShortcutChange_qjewi8_sb());
+    addComplexShortcut("jetbrains.mps.ide.actions.SetBookmark_Action", new Default_KeymapChanges.SetBookmark_ShortcutChange_qjewi8_tb());
   }
 
   public String getScheme() {
@@ -75,8 +72,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);
   }
 
-  public class GoToBookmark_ShortcutChange_qjewi8_vb extends BaseKeymapChanges.ComplexShortcut {
-    public GoToBookmark_ShortcutChange_qjewi8_vb() {
+  public class GoToBookmark_ShortcutChange_qjewi8_sb extends BaseKeymapChanges.ComplexShortcut {
+    public GoToBookmark_ShortcutChange_qjewi8_sb() {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {
@@ -86,8 +83,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     }
   }
 
-  public class SetBookmark_ShortcutChange_qjewi8_wb extends BaseKeymapChanges.ComplexShortcut {
-    public SetBookmark_ShortcutChange_qjewi8_wb() {
+  public class SetBookmark_ShortcutChange_qjewi8_tb extends BaseKeymapChanges.ComplexShortcut {
+    public SetBookmark_ShortcutChange_qjewi8_tb() {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {

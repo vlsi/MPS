@@ -391,8 +391,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -693,8 +691,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     public _Inline_gmtuod_a1e0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

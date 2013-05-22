@@ -30,11 +30,15 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IllegalModelAccessError;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessListener;
+import jetbrains.mps.smodel.TimeOutRuntimeException;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -223,7 +227,8 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runWriteActionWithProgressSynchronously(@NotNull final RunnableWithProgress process, final String progressTitle, final boolean canBeCanceled, final jetbrains.mps.project.Project project) {
+  public void runWriteActionWithProgressSynchronously(@NotNull final RunnableWithProgress process, final String progressTitle, final boolean canBeCanceled,
+      final jetbrains.mps.project.Project project) {
     if (!ApplicationManager.getApplication().isDispatchThread()) {
       throw new IllegalStateException("should be event dispatch thread");
     }
@@ -539,9 +544,9 @@ public class WorkbenchModelAccess extends ModelAccess {
     };
 
     CommandProcessor.getInstance().executeCommand(
-      ProjectHelper.toIdeaProject(project),
-      new TryWriteActionRunnable(commandRunnable),
-      "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+        ProjectHelper.toIdeaProject(project),
+        new TryWriteActionRunnable(commandRunnable),
+        "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 
     return res[0];
   }
@@ -574,9 +579,9 @@ public class WorkbenchModelAccess extends ModelAccess {
     };
 
     CommandProcessor.getInstance().executeCommand(
-      ProjectHelper.toIdeaProject(project),
-      new TryWriteActionRunnable(commandRunnable),
-      "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+        ProjectHelper.toIdeaProject(project),
+        new TryWriteActionRunnable(commandRunnable),
+        "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 
     return res[0];
   }
@@ -586,7 +591,8 @@ public class WorkbenchModelAccess extends ModelAccess {
     if (project == null) {
       project = CurrentProjectAccessUtil.getMPSProjectFromUI();
     }
-    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new CommandRunnable(r, project), "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new CommandRunnable(r, project), "", null,
+        UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
   @Override
@@ -628,7 +634,8 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
-    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new CommandRunnable(r, project), name, groupId, requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new CommandRunnable(r, project), name, groupId,
+        requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
   @Override
@@ -648,7 +655,13 @@ public class WorkbenchModelAccess extends ModelAccess {
       throw new IllegalStateException("undo transparent action cannot be invoked in a command");
     }
 
-    CommandProcessor.getInstance().runUndoTransparentAction(new CommandRunnable(r, CurrentProjectAccessUtil.getMPSProjectFromUI()));
+    int cmd = myCommandLevel;
+    try {
+      myCommandLevel = 0;
+      CommandProcessor.getInstance().runUndoTransparentAction(new CommandRunnable(r, CurrentProjectAccessUtil.getMPSProjectFromUI()));
+    } finally {
+      myCommandLevel = cmd;
+    }
   }
 
   @Override
@@ -657,7 +670,13 @@ public class WorkbenchModelAccess extends ModelAccess {
       throw new IllegalStateException("undo transparent action cannot be invoked in a command");
     }
 
-    CommandProcessor.getInstance().runUndoTransparentAction(new CommandRunnable(r, project));
+    int cmd = myCommandLevel;
+    try {
+      myCommandLevel = 0;
+      CommandProcessor.getInstance().runUndoTransparentAction(new CommandRunnable(r, project));
+    } finally {
+      myCommandLevel = cmd;
+    }
   }
 
   @Override
@@ -769,15 +788,6 @@ public class WorkbenchModelAccess extends ModelAccess {
     synchronized (myListenersLock) {
       listeners = new ArrayList<ModelAccessListener>(myListeners);
     }
-
-    for (ModelAccessListener l : listeners) {
-      try {
-        l.beforeCommandFinished();
-      } catch (Throwable t) {
-        LOG.error(null, t);
-      }
-    }
-
     for (ModelAccessListener l : listeners) {
       try {
         l.commandFinished();

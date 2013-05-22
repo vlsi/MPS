@@ -96,8 +96,6 @@ public class Component_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -159,8 +157,6 @@ public class Component_Editor extends DefaultNodeEditor {
     public _Inline_3k4y3b_a4a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -42,6 +42,7 @@ public class NewLanguageSettings extends JPanel {
 
     this.add(new JLabel("Language name:"), Util.getGridConstraints(0));
     myLanguageName = new JTextField("NewLanguage");
+    myLanguageName.setName("Name");
     myLanguageName.addCaretListener(new CaretListener() {
       public void caretUpdate(CaretEvent p0) {
         updateLanguageLocation();
@@ -50,6 +51,7 @@ public class NewLanguageSettings extends JPanel {
     this.add(myLanguageName, Util.getGridConstraints(1));
 
     myLanguageLocation = new JTextField();
+    myLanguageLocation.setName("Path");
     final FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
     InsertPathAction.addTo(myLanguageLocation, descriptor);
     BrowseFilesListener listener = new BrowseFilesListener(myLanguageLocation, "Choose Language Location Folder", "", descriptor);

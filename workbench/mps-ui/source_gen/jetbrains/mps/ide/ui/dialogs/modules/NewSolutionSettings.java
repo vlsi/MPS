@@ -37,6 +37,7 @@ public class NewSolutionSettings extends JPanel {
 
     this.add(new JLabel("Solution name:"), Util.getGridConstraints(0));
     mySolutionName = new JTextField("NewSolution");
+    mySolutionName.setName("Name");
     mySolutionName.addCaretListener(new CaretListener() {
       public void caretUpdate(CaretEvent p0) {
         updateSolutionLocation();
@@ -45,6 +46,7 @@ public class NewSolutionSettings extends JPanel {
     this.add(mySolutionName, Util.getGridConstraints(1));
 
     mySolutionLocation = new JTextField();
+    mySolutionLocation.setName("Path");
     final FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
     InsertPathAction.addTo(mySolutionLocation, descriptor);
     BrowseFilesListener listener = new BrowseFilesListener(mySolutionLocation, "Choose Solution Location Folder", "", descriptor);

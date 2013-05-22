@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.testRead" uuid="3d09e340-55d4-4ddc-8195-a92c0c5cf603" pluginKind="PLUGIN_OTHER" compileInMPS="true">
+<solution name="jetbrains.mps.testRead" uuid="3d09e340-55d4-4ddc-8195-a92c0c5cf603" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
   </models>
-  <sourcePath />
+  <sourcePath>
+    <source path="${module}/resources" />
+  </sourcePath>
   <dependencies>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>

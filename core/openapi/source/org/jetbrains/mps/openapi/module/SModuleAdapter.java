@@ -20,38 +20,40 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class SModuleAdapter implements SModuleListener {
-  @Override
-  public void modelAdded(SModel model) {
 
+  @Override
+  public void modelAdded(SModule module, SModel model) {
   }
 
   @Override
-  public void beforeModelRemoved(SModel model) {
-
+  public void beforeModelRemoved(SModule module, SModel model) {
   }
 
   @Override
-  public void modelRemoved(SModelReference ref) {
-
+  public void modelRemoved(SModule module, SModelReference ref) {
   }
 
   @Override
-  public void dependencyAdded(SDependency dep) {
-
+  public void dependencyAdded(SModule module, SDependency dep) {
+    moduleChanged(module);
   }
 
   @Override
-  public void dependencyRemoved(SDependency dep) {
-
+  public void dependencyRemoved(SModule module, SDependency dep) {
+    moduleChanged(module);
   }
 
   @Override
-  public void languageAdded(SLanguage lang) {
-
+  public void languageAdded(SModule module, SLanguage lang) {
+    moduleChanged(module);
   }
 
   @Override
-  public void languageRemoved(SLanguage lang) {
+  public void languageRemoved(SModule module, SLanguage lang) {
+    moduleChanged(module);
+  }
 
+  @Override
+  public void moduleChanged(SModule module) {
   }
 }

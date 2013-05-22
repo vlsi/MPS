@@ -15,18 +15,20 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
+
+import java.util.Collections;
 
 /**
  * evgeny, 5/9/13
  */
-public class ProjectRepository implements SRepository {
+public class ProjectRepository extends SRepositoryBase {
 
   private final Project project;
   private final ProjectModelAccess myProjectModelAccess;
@@ -34,6 +36,7 @@ public class ProjectRepository implements SRepository {
   public ProjectRepository(Project project) {
     this.project = project;
     myProjectModelAccess = new ProjectModelAccess();
+    init();
   }
 
   public Project getProject() {
@@ -52,7 +55,7 @@ public class ProjectRepository implements SRepository {
 
   @Override
   public Iterable<SModule> getModules() {
-    return MPSModuleRepository.getInstance().getModules();
+    return Collections.emptyList();
   }
 
   @Override
@@ -68,16 +71,6 @@ public class ProjectRepository implements SRepository {
   @Override
   public void saveAll() {
     MPSModuleRepository.getInstance().saveAll();
-  }
-
-  @Override
-  public void addRepositoryListener(SRepositoryListener listener) {
-    MPSModuleRepository.getInstance().addRepositoryListener(listener);
-  }
-
-  @Override
-  public void removeRepositoryListener(SRepositoryListener listener) {
-    MPSModuleRepository.getInstance().removeRepositoryListener(listener);
   }
 
   private class ProjectModelAccess implements ModelAccess {
@@ -134,6 +127,11 @@ public class ProjectRepository implements SRepository {
     @Override
     public void executeUndoTransparentCommand(Runnable r) {
       jetbrains.mps.smodel.ModelAccess.instance().runUndoTransparentCommand(r, project);
+    }
+
+    @Override
+    public boolean isCommandAction() {
+      return jetbrains.mps.smodel.ModelAccess.instance().isInsideCommand();
     }
   }
 }

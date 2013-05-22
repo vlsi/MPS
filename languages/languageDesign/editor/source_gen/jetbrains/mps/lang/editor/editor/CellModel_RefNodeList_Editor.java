@@ -172,8 +172,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -352,8 +350,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     public _Inline_2v2794_a1a1c0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -558,8 +554,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     public _Inline_2v2794_a1a3a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -1194,8 +1188,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     public _Inline_2v2794_a1l3a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

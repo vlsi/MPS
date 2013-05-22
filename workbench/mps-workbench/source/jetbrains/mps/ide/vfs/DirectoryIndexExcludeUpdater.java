@@ -30,9 +30,10 @@ import com.intellij.openapi.vfs.VirtualFileAdapter;
 import com.intellij.openapi.vfs.VirtualFileEvent;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.util.messages.MessageBus;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ import java.util.List;
  *         Date: 30 June 11
  */
 public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
-  private MyModuleRepositoryListener myModuleRepositoryListener = new MyModuleRepositoryListener();
+  private MyModuleRepositoryListener myRepositoryListener = new MyModuleRepositoryListener();
   private MessageBus myMessageBus;
   private VirtualFileAdapter myVirtualFileListener = new MyVirtualFileListener();
   private DirectoryIndexExcludePolicy[] myExcludePolicies;
@@ -77,7 +78,13 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
 
   @Override
   public void initComponent() {
-    MPSModuleRepository.getInstance().addModuleRepositoryListener(myModuleRepositoryListener);
+    final SRepository repository = ProjectHelper.toMPSProject(myProject).getRepository();
+    repository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        myRepositoryListener.subscribeTo(repository);
+      }
+    });
     VirtualFileManager.getInstance().addVirtualFileListener(myVirtualFileListener);
     ApplicationManager.getApplication().addApplicationListener(myListener);
   }
@@ -86,7 +93,13 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
   public void disposeComponent() {
     ApplicationManager.getApplication().removeApplicationListener(myListener);
     VirtualFileManager.getInstance().removeVirtualFileListener(myVirtualFileListener);
-    MPSModuleRepository.getInstance().removeModuleRepositoryListener(myModuleRepositoryListener);
+    final SRepository repository = ProjectHelper.toMPSProject(myProject).getRepository();
+    repository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        myRepositoryListener.unsubscribeFrom(repository);
+      }
+    });
   }
 
   private void notifyRootsChanged(boolean async) {
@@ -119,7 +132,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
     }
   }
 
-  private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+  private class MyModuleRepositoryListener extends SRepositoryContentAdapter {
     @Override
     public void moduleAdded(SModule module) {
       notifyRootsChanged(true);

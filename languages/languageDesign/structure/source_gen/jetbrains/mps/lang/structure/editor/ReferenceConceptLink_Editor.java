@@ -58,8 +58,6 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -124,8 +122,6 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     public _Inline_3r32uy_a2a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

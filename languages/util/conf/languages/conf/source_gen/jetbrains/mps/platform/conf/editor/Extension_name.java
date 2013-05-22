@@ -55,8 +55,6 @@ public class Extension_name implements ConceptEditorComponent {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

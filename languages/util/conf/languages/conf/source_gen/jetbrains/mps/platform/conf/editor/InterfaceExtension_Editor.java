@@ -62,8 +62,6 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -136,8 +134,6 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
     public _Inline_4lf1wj_a1b0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

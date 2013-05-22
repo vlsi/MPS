@@ -81,8 +81,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -221,8 +219,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     public _Inline_g00aa7_a1a3a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

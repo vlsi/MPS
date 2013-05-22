@@ -113,8 +113,6 @@ public class Common_Component implements ConceptEditorComponent {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -197,8 +195,6 @@ public class Common_Component implements ConceptEditorComponent {
     public _Inline_tf8r10_a1b1a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

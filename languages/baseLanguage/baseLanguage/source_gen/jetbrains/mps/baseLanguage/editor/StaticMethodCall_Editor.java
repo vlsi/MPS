@@ -69,8 +69,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -159,8 +157,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     public _Inline_a4wjjz_a0d0() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

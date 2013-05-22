@@ -13,6 +13,8 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -49,6 +51,10 @@ public class FindInstancesByCondition_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("langModule", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
+    if (MapSequence.fromMap(_params).get("langModule") == null) {
+      return false;
+    }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
@@ -66,8 +72,8 @@ public class FindInstancesByCondition_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      FindInstancesDialog testDialog = new FindInstancesDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getModule());
-      testDialog.showDialog();
+      FindInstancesDialog testDialog = new FindInstancesDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((SModule) MapSequence.fromMap(_params).get("langModule")));
+      testDialog.show();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindInstancesByCondition", t);

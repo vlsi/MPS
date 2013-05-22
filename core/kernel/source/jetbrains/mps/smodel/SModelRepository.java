@@ -15,32 +15,33 @@
  */
 package jetbrains.mps.smodel;
 
-import gnu.trove.THashMap;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.module.SModuleBase;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
+import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -49,115 +50,63 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SModelRepository implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelRepository.class));
 
-  public static SModelRepository getInstance() {
-    return MPSCore.getInstance().getModelRepository();
-  }
-
-  private final Map<org.jetbrains.mps.openapi.model.SModelId, SModel> myIdToModelDescriptorMap = new ConcurrentHashMap<org.jetbrains.mps.openapi.model.SModelId, SModel>();
+  private final Object myModelsLock = new Object();
+  private final List<SModel> myAllModels = new ArrayList<SModel>();
+  private final Map<SModelId, SModel> myIdToModelDescriptorMap = new ConcurrentHashMap<SModelId, SModel>();
   private final Map<String, SModel> myFqNameToModelDescriptorMap = new ConcurrentHashMap<String, SModel>();
 
-  private final Object myModelsLock = new Object();
-  private final Map<SModel, SModule> myModelOwner = new THashMap<SModel, SModule>();
-  private final Map<SModule, Set<SModel>> myModelsByOwner = new THashMap<SModule, Set<SModel>>();
 
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
 
   private final MultiMap<SModel, SModel> myReloadingDescriptorMap = new MultiMap<SModel, SModel>();
 
-  private SModelListener myModelsListener = new ModelChangeListener();
+  private final GlobalRepositoriesListener myRepositoriesListener = new GlobalRepositoriesListener();
+  private final SModelListener myModelsListener = new ModelChangeListener();
 
-  @SuppressWarnings("UnusedParameters")
+  private static SModelRepository INSTANCE;
+
+  public static SModelRepository getInstance() {
+    return INSTANCE;
+  }
+
   public SModelRepository() {
-
   }
 
   @Override
   public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+    SRepositoryRegistry.getInstance().addGlobalListener(myRepositoriesListener);
   }
 
   @Override
   public void dispose() {
+    SRepositoryRegistry.getInstance().removeGlobalListener(myRepositoriesListener);
+    INSTANCE = null;
   }
 
-  //--------------------register/unregister----------------------
-
-  /**
-   * NOTE: use only through ModelRootBase.register
-   */
-  public void registerModelDescriptor(SModel modelDescriptor, SModule container) {
-    synchronized (myModelsLock) {
-      SModule prevModule = myModelOwner.get(modelDescriptor);
-      if (prevModule != null) {
-        if (prevModule != container) {
-          LOG.error(
-              "Model \"" + modelDescriptor.getModelName() + "\" is already registered by another module: existing=" + prevModule + ", new=" + container);
-        }
-        return;
-      }
-
-      modelDescriptor.attach(MPSModuleRepository.getInstance());
-
-      SModelReference modelReference = modelDescriptor.getReference();
-      SModel registeredModel = getModelDescriptor(modelReference);
-
-      LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
-          "Another model \"" + modelReference + "\" is already registered");
-
-      Set<SModel> ownerModels = myModelsByOwner.get(container);
-      if (ownerModels == null) {
-        ownerModels = new HashSet<SModel>();
-        myModelsByOwner.put(container, ownerModels);
-      }
-
-      ownerModels.add(modelDescriptor);
-      myModelOwner.put(modelDescriptor, container);
-      ((SModelInternal) modelDescriptor).setModule(container);
-
-      assert modelReference.getModelId() != null : "can't add model w/o model id";
-      myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
-
-      if (modelReference.getModelName() != null) {
-        myFqNameToModelDescriptorMap.put(modelReference.getModelName(), modelDescriptor);
-      }
-      ((SModelBase) modelDescriptor).attach();
-      ((SModelInternal) modelDescriptor).addModelListener(myModelsListener);
-    }
-    fireModelAdded(modelDescriptor);
+  @Deprecated
+  public void registerModelDescriptor(SModel model, SModule container) {
+    ((SModuleBase) container).registerModel((SModelBase) model);
   }
 
+  @Deprecated
   public void unRegisterModelDescriptor(SModel md, SModule forModule) {
     synchronized (myModelsLock) {
-      SModule owner = myModelOwner.get(md);
+      SModule owner = md.getModule();
       if (owner != forModule) throw new IllegalStateException();
-      removeModelDescriptor(md);
+      ((SModuleBase) forModule).unregisterModel((SModelBase) md);
     }
   }
 
-  public void removeModelDescriptor(SModel md) {
-    synchronized (myModelsLock) {
-      fireBeforeModelRemoved(md);
-      SModule owner = myModelOwner.remove(md);
-      if (owner == null) throw new IllegalStateException();
-      Set<SModel> ownerModels = myModelsByOwner.get(owner);
-      if (!ownerModels.remove(md)) throw new IllegalStateException();
-
-      if (md.getReference().getModelId() != null) {
-        myIdToModelDescriptorMap.remove(md.getReference().getModelId());
-        ((SModelInternal) md).setModule(null);
-      }
-      myFqNameToModelDescriptorMap.remove(md.getReference().getModelName());
-      ((SModelInternal) md).removeModelListener(myModelsListener);
-      fireModelRemoved(md);
-      ((SModelBase) md).dispose();
-      md.detach();
-    }
-  }
-
-  public void unRegisterModelDescriptors(SModule module) {
-    for (SModel sm : getModelDescriptors(module)) {
-      unRegisterModelDescriptor(sm, module);
-    }
+  public void removeModelDescriptor(SModel model) {
+    SModule module = model.getModule();
+    if (module == null) return;
+    ((SModuleBase) module).unregisterModel((SModelBase) model);
   }
 
   public void deleteModel(SModel d) {
@@ -182,7 +131,7 @@ public class SModelRepository implements CoreComponent {
 
   public List<SModel> getModelDescriptors() {
     synchronized (myModelsLock) {
-      return new ArrayList<SModel>(myModelOwner.keySet());
+      return new ArrayList<SModel>(myAllModels);
     }
   }
 
@@ -211,17 +160,13 @@ public class SModelRepository implements CoreComponent {
   }
 
   public List<SModel> getModelDescriptors(SModule module) {
-    synchronized (myModelsLock) {
-      Set<SModel> result = myModelsByOwner.get(module);
-      if (result == null || result.size() == 0) return Collections.emptyList();
-      return new ArrayList<SModel>(result);
-    }
+    Iterable<SModel> models = module.getModels();
+    if (models instanceof List) return (List) models;
+    return IterableUtil.copyToList(models);
   }
 
   public SModule getOwner(SModel modelDescriptor) {
-    synchronized (myModelsLock) {
-      return myModelOwner.get(modelDescriptor);
-    }
+    return modelDescriptor.getModule();
   }
 
   //----------------------------stuff-----------------------------
@@ -229,7 +174,7 @@ public class SModelRepository implements CoreComponent {
 
   private List<EditableSModel> getModelsToSave() {
     List<EditableSModel> modelsToSave = new ArrayList<EditableSModel>();
-    for (SModel md : myModelOwner.keySet()) {
+    for (SModel md : getModelDescriptors()) {
       if (!(md instanceof EditableSModel)) continue;
 
       EditableSModel emd = ((EditableSModel) md);
@@ -452,6 +397,41 @@ public class SModelRepository implements CoreComponent {
 
       CleanupManager.getInstance().cleanup();
       MPSModuleRepository.getInstance().invalidateCaches();
+    }
+  }
+
+  private class GlobalRepositoriesListener extends SRepositoryContentAdapter {
+
+    @Override
+    protected void startListening(SModel model) {
+      String modelName = model.getModelName();
+      if (modelName != null) {
+        myFqNameToModelDescriptorMap.put(modelName, model);
+      }
+      SModelId modelId = model.getModelId();
+      if (modelId.isGloballyUnique()) {
+        myIdToModelDescriptorMap.put(modelId, model);
+      }
+      ((SModelInternal) model).addModelListener(myModelsListener);
+      synchronized (myModelsLock) {
+        myAllModels.add(model);
+      }
+      fireModelAdded(model);
+    }
+
+    @Override
+    protected void stopListening(SModel model) {
+      fireBeforeModelRemoved(model);
+      synchronized (myModelsLock) {
+        myAllModels.remove(model);
+      }
+      ((SModelInternal) model).removeModelListener(myModelsListener);
+      myIdToModelDescriptorMap.remove(model.getModelId());
+      String modelName = model.getModelName();
+      if (modelName != null) {
+        myFqNameToModelDescriptorMap.remove(modelName);
+      }
+      fireModelRemoved(model);
     }
   }
 }

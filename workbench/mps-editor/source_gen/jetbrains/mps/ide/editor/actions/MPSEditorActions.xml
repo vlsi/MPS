@@ -62,6 +62,15 @@
     <action id="jetbrains.mps.ide.editor.actions.ExtractComponent_Action" class="jetbrains.mps.ide.editor.actions.ExtractComponent_Action">
       <keyboard-shortcut first-keystroke="ctrl alt C" keymap="$default" />
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.FindNext_Action" class="jetbrains.mps.ide.editor.actions.FindNext_Action">
+      <keyboard-shortcut first-keystroke=" F3" keymap="$default" />
+    </action>
+    <action id="jetbrains.mps.ide.editor.actions.FindPrevious_Action" class="jetbrains.mps.ide.editor.actions.FindPrevious_Action">
+      <keyboard-shortcut first-keystroke="shift F3" keymap="$default" />
+    </action>
+    <action id="jetbrains.mps.ide.editor.actions.Find_Action" class="jetbrains.mps.ide.editor.actions.Find_Action">
+      <keyboard-shortcut first-keystroke="ctrl F" keymap="$default" />
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.FoldSelection_Action" class="jetbrains.mps.ide.editor.actions.FoldSelection_Action">
       <keyboard-shortcut first-keystroke="ctrl PERIOD" keymap="$default" />
     </action>
@@ -218,6 +227,9 @@
       <reference ref="jetbrains.mps.ide.editor.actions.SelectPrevious_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.SelectRight_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.SelectUp_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.Find_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.FindNext_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.FindPrevious_Action" />
       <add-to-group group-id="EditorActions" anchor="last" />
     </group>
     <group id="jetbrains.mps.ide.editor.actions.IDE_Edit_ActionGroup">

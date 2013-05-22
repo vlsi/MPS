@@ -8,16 +8,18 @@ import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModel;
-import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import java.util.Map;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -40,7 +42,6 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
 
   private SModelReference myModelRef;
   private SModel myModel;
-  private MultiStreamDataSource myDataSource;
   private String myJavaPackage;
   private Map<String, Set<SNode>> myRootsPerFile = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
   private Map<SNodeId, SNode> myRootsById = MapSequence.fromMap(new HashMap<SNodeId, SNode>());
@@ -50,7 +51,6 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
   public JavaSourceStubModelDescriptor(SModelReference modelRef, MultiStreamDataSource dataSource, String javaPackage) {
     super(modelRef, dataSource);
     myModelRef = modelRef;
-    myDataSource = dataSource;
     myJavaPackage = javaPackage;
   }
 
@@ -58,22 +58,24 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
 
   private SModel createModel() {
     SModel model = new SModel(myModelRef);
-    processStreams(myDataSource.getAvailableStreams(), model);
+    processStreams(getSource().getAvailableStreams(), model);
     return model;
   }
 
 
 
   @Override
-  public void attach() {
-    myDataSource.addListener(this);
+  public void attach(SRepository repository) {
+    getSource().addListener(this);
+    super.attach(repository);
   }
 
 
 
   @Override
   public void dispose() {
-    myDataSource.removeListener(this);
+    super.dispose();
+    getSource().removeListener(this);
   }
 
 
@@ -81,15 +83,13 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
   @Override
   @NotNull
   public MultiStreamDataSource getSource() {
-    return myDataSource;
+    return (MultiStreamDataSource) super.getSource();
   }
-
 
 
 
   @Override
   public void changed(DataSource source, Iterable<String> changedItems) {
-
     // FIXME it works, but is not incremental and is ugly 
 
     ModelAccess.assertLegalWrite();
@@ -114,6 +114,13 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
 
 
   @Override
+  protected void processChanged(ProgressMonitor monitor) {
+    // ignore 
+  }
+
+
+
+  @Override
   public void changed(DataSource source) {
     // ignore 
   }
@@ -127,7 +134,7 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
       try {
         Set<SNode> oldNodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(myRootsPerFile).get(fileName));
 
-        InputStream is = myDataSource.openInputStream(fileName);
+        InputStream is = getSource().openInputStream(fileName);
         // we've come from event and file has been deleted 
         if (is == null) {
           SetSequence.fromSet(oldNodes).visitAll(new IVisitor<SNode>() {
@@ -241,6 +248,6 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
   }
 
   public void reloadFromDiskSafe() {
-    changed(myDataSource, myDataSource.getAvailableStreams());
+    changed(getSource(), getSource().getAvailableStreams());
   }
 }

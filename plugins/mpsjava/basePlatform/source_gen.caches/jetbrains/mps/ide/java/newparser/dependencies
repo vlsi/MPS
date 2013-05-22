@@ -105,6 +105,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.FeatureKind" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
@@ -114,6 +115,7 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
@@ -181,6 +183,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompoundAssignment" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ConditionalExpression" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ContinueStatement" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.DoStatement" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.EmptyStatement" />

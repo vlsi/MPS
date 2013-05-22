@@ -180,6 +180,9 @@
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.MpsModulesRunner" file="MpsModulesRunner.java">
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileOutputStream" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
@@ -193,7 +196,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.testbench.GeneratedTestEnvironment" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.Environment" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode extendsClassName="jetbrains.mps.ProjectContainer" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.MPSOpenProjectRunner" />
@@ -320,5 +324,6 @@
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.WatchingSuite" />
   </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.runners.misc" file="misc.xml" />
 </dependenciesRoot>
 

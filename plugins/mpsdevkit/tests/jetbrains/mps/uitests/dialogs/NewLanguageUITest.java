@@ -17,8 +17,9 @@ package jetbrains.mps.uitests.dialogs;
 
 import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.common.PathField;
-import jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialog;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.Computable;
@@ -27,20 +28,18 @@ import junit.extensions.jfcunit.eventdata.StringEventData;
 
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-import java.awt.Frame;
 import java.lang.reflect.InvocationTargetException;
 
 public class NewLanguageUITest extends NewDialogsUITestsBase {
   public void testLanguageCreation() throws InvocationTargetException, InterruptedException {
-    Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
-    assertNotNull("Main frame not found", frame);
+    Project project = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
+    assertNotNull("Main project not found", project);
 
-    final NewLanguageDialog dialog = new NewLanguageDialog(frame);
-    dialog.setProject(myCreatedProject);
+    final NewLanguageDialog dialog = new NewLanguageDialog(project, null);
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        dialog.showDialog();
+        dialog.show();
       }
     });
     flushAWT();
@@ -69,7 +68,7 @@ public class NewLanguageUITest extends NewDialogsUITestsBase {
       }
     });
 
-    final Language l = dialog.getResult();
+    final Language l = dialog.getLangauge();
     assertNotNull("Language is not created", l);
 
     boolean isImported = myCreatedProject.getProjectModules(Language.class).contains(l);

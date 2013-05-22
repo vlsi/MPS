@@ -150,21 +150,26 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   @Override
-  public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
-    if (getNode() == null) return null;
-    if (editor instanceof InspectorEditorComponent) {
-      return null;
-    }
-    SNode parent = getNode().getParent();
-    EditorCell result = null;
-    while (parent != null) {
-      result = editor.getBigValidCellForNode(parent);
-      if (result != null) {
+  public EditorCell getCellForParentNodeInMainEditor(final EditorComponent editor) {
+    return ModelAccess.instance().runReadAction(new Computable<EditorCell>() {
+      @Override
+      public EditorCell compute() {
+        if (getNode() == null) return null;
+        if (editor instanceof InspectorEditorComponent) {
+          return null;
+        }
+        SNode parent = getNode().getParent();
+        EditorCell result = null;
+        while (parent != null) {
+          result = editor.getBigValidCellForNode(parent);
+          if (result != null) {
+            return result;
+          }
+          parent = parent.getParent();
+        }
         return result;
       }
-      parent = parent.getParent();
-    }
-    return result;
+    });
   }
 
   @Override

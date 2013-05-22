@@ -4,6 +4,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
+  <language namespace="f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)" />
   <import index="wvgn" modelUID="r:e32ada56-1876-4524-85c0-29075cbd8d32(jetbrains.mps.idea.java.psiStubs)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
@@ -24,6 +25,7 @@
   <import index="i3hw" modelUID="f:java_stub#~IDEA IC#com.intellij.psi.search(IDEA IC/com.intellij.psi.search@java_stub)" version="-1" />
   <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="9ql3" modelUID="f:java_stub#~IDEA IC#com.intellij.openapi.project(IDEA IC/com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="1wcc" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence.java.library(MPS.Core/jetbrains.mps.persistence.java.library@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
@@ -44,6 +46,7 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="ta48" modelUID="f:java_stub#~IDEA IC#com.intellij.navigation(IDEA IC/com.intellij.navigation@java_stub)" version="-1" implicit="yes" />
   <import index="k7g5" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(1.6/java.util@java_stub)" version="-1" implicit="yes" />
+  <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3335509261457006477">
       <property name="name" nameId="tpck.1169194664001" value="JavaPsiStubsNavigationContributor" />
@@ -52,7 +55,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ClassStubPsiMapper" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2601455755478036261">
-      <property name="name" nameId="tpck.1169194664001" value="EmptyJavaPsiStubsFindUsages" />
+      <property name="name" nameId="tpck.1169194664001" value="EmptyJavaStubsFindUsages" />
     </node>
   </roots>
   <root id="3335509261457006477">
@@ -951,12 +954,22 @@
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="2601455755478084850">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="2601455755478062245">
-              <node role="condition" roleId="tpee.1068580123160" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="2601455755478064470">
-                <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2601455755478086444">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2601455755478084853" resolveInfo="model" />
+              <node role="condition" roleId="tpee.1068580123160" type="tpee.OrExpression" typeId="tpee.1080223426719" id="4017469143766525245">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="4017469143766536662">
+                  <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4017469143766525275">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2601455755478084853" resolveInfo="model" />
+                  </node>
+                  <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4017469143766999413">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1wcc.~JavaClassStubModelDescriptor" resolveInfo="JavaClassStubModelDescriptor" />
+                  </node>
                 </node>
-                <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2601455755478064473">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wvgn.3118313698925873538" resolveInfo="PsiJavaStubModelDescriptor" />
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="2601455755478064470">
+                  <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2601455755478086444">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2601455755478084853" resolveInfo="model" />
+                  </node>
+                  <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2601455755478064473">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wvgn.3118313698925873538" resolveInfo="PsiJavaStubModelDescriptor" />
+                  </node>
                 </node>
               </node>
               <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2601455755478062246">
@@ -1151,6 +1164,13 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2601455755478093270">
             <property name="value" nameId="tpee.1070475926801" value="Empty PSI java stub find usages participant" />
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="7594047106745769248">
+      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="7594047106745769249">
+        <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="7594047106745769250">
+          <property name="text" nameId="m373.8970989240999019144" value="Suppressing searching in psi and class file stubs" />
         </node>
       </node>
     </node>

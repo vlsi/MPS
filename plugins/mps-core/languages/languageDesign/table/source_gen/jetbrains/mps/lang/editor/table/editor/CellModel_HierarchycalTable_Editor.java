@@ -99,8 +99,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -201,8 +199,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -290,8 +286,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     public _Inline_cqolwn_a1b1a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -19,8 +19,6 @@ import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
@@ -107,15 +105,14 @@ public class TestModule extends AbstractModule {
   }
 
   public void publish(SModel descr) {
-    SModelRepository.getInstance().registerModelDescriptor(descr, this);
+    registerModel((SModelBase) descr);
   }
 
   public String toString() {
     return "Test Transient models";
   }
 
-  @Override
-  public List<SModel> getModels() {
+  public List<SModel> getTestModels() {
     return new ArrayList<SModel>(myModels.values());
   }
 
@@ -127,7 +124,7 @@ public class TestModule extends AbstractModule {
   @Override
   public ModuleDescriptor getModuleDescriptor() {
     // todo: is it ok?
-    return ((AbstractModule)myPeer).getModuleDescriptor();
+    return ((AbstractModule) myPeer).getModuleDescriptor();
   }
 
   public SModule getPeer() {
@@ -159,11 +156,6 @@ public class TestModule extends AbstractModule {
       super(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
       myLongName = SModelStereotype.withoutStereotype(modelName);
       myToCopy = toCopy;
-    }
-
-    @Override
-    public SModule getModule() {
-      return TestModule.this;
     }
 
     @Override

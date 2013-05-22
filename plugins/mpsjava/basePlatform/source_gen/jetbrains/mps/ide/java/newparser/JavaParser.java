@@ -207,8 +207,10 @@ public class JavaParser {
           ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).insertElement(pos++, commentLine);
         }
       } else {
-        // FIXME 
-        LOG.warn("cannot find a place to import comment from " + "<Main type name>" + ":\n" + new String(content, linestart, Math.abs(comment[1]) - linestart));
+        // no place to insert comment 
+        // this is most likely because the comment is not a javadoc and is between declarations 
+        // (not inside statement list) 
+        // we could issue a warning... 
       }
     }
   }

@@ -50,8 +50,6 @@ public class TemplateArgumentParameterExpression_Editor extends DefaultNodeEdito
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

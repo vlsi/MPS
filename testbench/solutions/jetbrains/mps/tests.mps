@@ -963,15 +963,6 @@
       <property name="moduleID" nameId="pop3.1280144168199506910" value="7b15492d-a198-43e2-91e3-4a7e9116ce2b" />
       <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.execution.impl.tests" />
     </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8989032736195149097" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="7fn4.8128243960970298959" resolveInfo="SplitCommandInParts_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7120092006645362350" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="7fn4.8128243960970298224" resolveInfo="JUnitCommand" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7120092006645362352" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="7fn4.8128243960970298272" resolveInfo="JavaCommand" />
-    </node>
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="5934496548013521234" nodeInfo="ng">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="5934496548013521236" nodeInfo="ig">
@@ -1013,9 +1004,9 @@
     </node>
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2684968190509519315" nodeInfo="ng">
-    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2684968190509519317" nodeInfo="ig">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="3197190366567974119" nodeInfo="ig">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.build.tests" />
       <property name="moduleID" nameId="pop3.1280144168199506910" value="39742b07-848c-43a7-be0a-845055dd3333" />
-      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.buildScript.tests" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2684968190509543950" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="msle.193602448594327346" resolveInfo="MacroTest" />
@@ -1023,17 +1014,18 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2684968190509543952" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="msle.4045247515868358877" resolveInfo="TestTemporalPaths" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7464961892695270897" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="msle.5368511706901688070" resolveInfo="TestRelativePathHelper_Test" />
+    </node>
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2684968190509519317" nodeInfo="ig">
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="39742b07-848c-43a7-be0a-845055dd3333" />
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.buildScript.tests" />
+    </node>
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4246614868164057750" nodeInfo="ng">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="4246614868164057751" nodeInfo="ig">
       <property name="moduleID" nameId="pop3.1280144168199506910" value="6cbb1052-4510-427f-926c-3476bfd7e801" />
       <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.execution.impl.tests.sandbox" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164057752" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="u9u1.8128243960970299078" resolveInfo="SimpleBTestCase_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164057753" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="u9u1.7120092006645143730" resolveInfo="FailedBTestCase_Test" />
     </node>
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4246614868164057746" nodeInfo="ng">

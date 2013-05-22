@@ -531,7 +531,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "source", true);
   }
 
-  public static SNode sourceNodeQuery_6519221734259310277(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5825295716508143446(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator"), "configurationName", true);
   }
 

@@ -94,8 +94,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -278,8 +276,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -366,8 +362,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -413,8 +407,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       public _Inline_lfsepz_a0a0b1d0() {
         super();
       }
-
-
 
       public EditorCell createEditorCell(EditorContext editorContext) {
         return this.createEditorCell(editorContext, this.getSNode());

@@ -17,24 +17,25 @@ package jetbrains.mps.project.structure;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelFqName;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -51,17 +52,15 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
   private Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
 
-  public LanguageDescriptorModelProvider(MPSModuleRepository repository, SModelRepository modelRepository) {
-    repository.addModuleRepositoryListener(new ModuleRepositoryAdapter() {
+  public LanguageDescriptorModelProvider() {
+  }
+
+  @Override
+  public void init() {
+    MPSModuleRepository.getInstance().addRepositoryListener(new SRepositoryContentAdapter() {
       @Override
       public void moduleAdded(SModule module) {
-        if (module instanceof Language) {
-          refreshModule((Language) module, false);
-        }
-      }
-
-      @Override
-      public void moduleInitialized(SModule module) {
+        super.moduleAdded(module);
         if (module instanceof Language) {
           refreshModule((Language) module, false);
         }
@@ -75,7 +74,8 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       }
 
       @Override
-      public void moduleRemoved(SModule module) {
+      public void beforeModuleRemoved(SModule module) {
+        super.beforeModuleRemoved(module);
         if (module instanceof Language) {
           refreshModule((Language) module, true);
         }
@@ -86,16 +86,8 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
         refresh();
       }
     });
-  }
 
-  @Override
-  public void init() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        refresh();
-      }
-    });
+    refresh();
   }
 
   @Override
@@ -167,7 +159,9 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
   private void removeModel(SModel md) {
     if (myModels.remove(md.getReference()) != null) {
-      SModelRepository.getInstance().removeModelDescriptor(md);
+      SModuleBase module = (SModuleBase) md.getModule();
+      if (module == null) return;
+      module.unregisterModel((SModelBase) md);
     }
   }
 
@@ -175,7 +169,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     LanguageModelDescriptor result = new LanguageModelDescriptor(getSModelReference(module), module);
 
     myModels.put(result.getSModelReference(), result);
-    SModelRepository.getInstance().registerModelDescriptor(result, module);
+    module.registerModel(result);
     return result;
   }
 
@@ -255,11 +249,6 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
     public void invalidate() {
       myHash = null;
-    }
-
-    @Override
-    public SModule getModule() {
-      return myModule;
     }
   }
 }

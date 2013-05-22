@@ -35,13 +35,17 @@ public class MPSModulesPartitioner {
   private Iterable<SNode> external;
 
   public MPSModulesPartitioner(TemplateQueryContext genContext, SNode project) {
-    this.genContext = genContext;
-    this.project = project;
-    this.modules = ListSequence.fromList(Sequence.fromIterable(getModules(project)).sort(new ISelector<SNode, String>() {
+    this(genContext, project, ListSequence.fromList(Sequence.fromIterable(getModules(project)).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");
       }
-    }, true).toListSequence()).asUnmodifiable();
+    }, true).toListSequence()).asUnmodifiable());
+  }
+
+  public MPSModulesPartitioner(TemplateQueryContext genContext, SNode project, List<SNode> modules) {
+    this.genContext = genContext;
+    this.project = project;
+    this.modules = modules;
   }
 
   public void buildChunks() {

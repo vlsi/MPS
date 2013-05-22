@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.IModule.ModelAdjuster;
-import org.jetbrains.mps.openapi.module.SModule;
-
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.IModule.ModelAdjuster;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
@@ -39,11 +38,9 @@ import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
-import jetbrains.mps.smodel.DisposedRepository;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IllegalModelAccessError;
-import jetbrains.mps.smodel.IllegalModelChangeError;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -51,7 +48,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
-import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
@@ -72,12 +68,10 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SModuleListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
@@ -97,7 +91,7 @@ import java.util.Set;
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
-public abstract class AbstractModule implements SModule, EditableSModule, FileSystemListener {
+public abstract class AbstractModule extends SModuleBase implements EditableSModule, FileSystemListener {
   private static final Logger LOG = LogManager.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
@@ -111,9 +105,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   private ModuleScope myScope = createScope();
 
   protected boolean myChanged = false;
-
-  private final Object REPO_LOCK = new Object();
-  private SRepository myRepository = null;
 
   private static Set<String> ourErroredModules = new ConcurrentHashSet<String>();
 
@@ -138,34 +129,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   public String getModuleName() {
     assertCanRead();
     return myModuleReference.getModuleName();
-  }
-
-  @Override
-  public void attach(SRepository repo) {
-    synchronized (REPO_LOCK) {
-      assert myRepository == null;
-      myRepository = repo;
-      for (SModel m : getOwnModelDescriptors()) {
-        m.attach(repo);
-      }
-    }
-  }
-
-  @Override
-  public void detach() {
-    synchronized (REPO_LOCK) {
-      assert myRepository != null;
-      for (SModel m : getOwnModelDescriptors()) {
-        m.detach();
-      }
-      myRepository = DisposedRepository.INSTANCE;
-    }
-  }
-
-  @Override
-  public SRepository getRepository() {
-    assertCanRead();
-    return myRepository;
   }
 
   @Override
@@ -235,13 +198,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
     assertCanRead();
     // TODO: implement something more meaningful
     return SModelRepository.getInstance().getModelDescriptor(ref);
-  }
-
-  @Override
-  public SModel getModel(org.jetbrains.mps.openapi.model.SModelId id) {
-    assertCanRead();
-    // TODO API (implement)
-    return null;
   }
 
   protected void setModuleReference(@NotNull SModuleReference reference) {
@@ -547,16 +503,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
     types.add(JavaModuleFacet.FACET_TYPE);
   }
 
-  @Override
-  public void addModuleListener(SModuleListener listener) {
-
-  }
-
-  @Override
-  public void removeModuleListener(SModuleListener listener) {
-
-  }
-
   protected ModuleFacetBase setupFacet(ModuleFacetBase facet, Memento memento) {
     if (!facet.setModule(this)) {
       return null;
@@ -630,12 +576,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
     return getModels();
   }
 
-  @Override
-  public List<SModel> getModels() {
-    assertCanRead();
-    return SModelRepository.getInstance().getModelDescriptors(this);
-  }
-
   /**
    * Module sources folder
    * In case of working on sources == dir with module descriptor
@@ -696,6 +636,7 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
     }
   }
 
+  @Override
   public void dispose() {
     assertCanChange();
     FileSystem.getInstance().removeListener(this);
@@ -707,7 +648,7 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
       ((ModelRootBase) m).dispose();
     }
     mySModelRoots.clear();
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    super.dispose();
   }
 
   public List<String> getSourcePaths() {
@@ -717,8 +658,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
 
   public void updateModelsSet() {
     doUpdateModelsSet();
-    // TODO why here?
-    fireModuleInitialized();
   }
 
   protected Iterable<ModelRoot> loadRoots() {
@@ -775,10 +714,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
     for (ModelRoot modelRoot : toUpdate) {
       ((ModelRootBase) modelRoot).update();
     }
-  }
-
-  private void fireModuleInitialized() {
-    MPSModuleRepository.getInstance().fireModuleInitialized(this);
   }
 
   @Deprecated
@@ -1036,43 +971,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   @Deprecated
   public final IFile getClassesGen() {
     return getJavaFacet(this).getClassesGen();
-  }
-
-  protected void assertCanRead() {
-//    if (myRepository == null) return;
-//    if (myRepository instanceof DisposedRepository) {
-//      showDisposedMessage();
-//      return;
-//    }
-//
-//    synchronized (REPO_LOCK) {
-//      if (myRepository == null) return;
-//      if (myRepository instanceof DisposedRepository) {
-//        showDisposedMessage();
-//        return;
-//      }
-//      myRepository.getModelAccess().checkReadAccess();
-//    }
-  }
-
-  protected void assertCanChange() {
-//    if (myRepository == null) return;
-//    if (myRepository instanceof DisposedRepository) {
-//      showDisposedMessage();
-//      return;
-//    }
-//
-//    synchronized (REPO_LOCK) {
-//      if (myRepository == null) return;
-//      if (myRepository instanceof DisposedRepository) {
-//        showDisposedMessage();
-//        return;
-//      }
-//      myRepository.getModelAccess().checkWriteAccess();
-//      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
-//        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
-//      }
-//    }
   }
 
   private void showDisposedMessage() {

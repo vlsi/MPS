@@ -15,6 +15,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
@@ -84,51 +86,63 @@ public class DirParser {
 
   }
 
-  public void addSourceFromDirectory(File dir) throws JavaParseException {
+  public void addSourceFromDirectory(final File dir) throws JavaParseException {
     assert dir.isDirectory();
 
     // packages which match the directory 
     // in the proper case: there should be only one 
-    String pkg = null;
-    boolean wasDefaultPkg = false;
+    final Wrappers._T<String> pkg = new Wrappers._T<String>(null);
+    final Wrappers._T<JavaParseException> javaParseException = new Wrappers._T<JavaParseException>(null);
+    final Wrappers._boolean wasDefaultPkg = new Wrappers._boolean(false);
     final List<SNode> roots = new ArrayList<SNode>();
 
-    for (File file : dir.listFiles()) {
+    for (final File file : dir.listFiles()) {
       if (file.isDirectory()) {
         addSourceFromDirectory(file);
 
       } else if (file.getName().endsWith(".java")) {
+        MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            try {
+              JavaParser.JavaParseResult parseRes = parseFile(file);
+              String p = parseRes.getPackage();
 
-        JavaParser.JavaParseResult parseRes = parseFile(file);
-        String p = parseRes.getPackage();
+              if (p == null) {
+                // default package (i.e. none), bad 
+                if (!(wasDefaultPkg.value)) {
+                  LOG.error("default package is not supported in java source directory input (first such file in dir: " + file.getName() + ")");
+                  wasDefaultPkg.value = true;
+                }
+                return;
+              }
+              if (pkg.value == null) {
+                if (DirParser.checkPackageMatchesSourceDirectory(p, dir)) {
+                  pkg.value = p;
+                } else {
+                  LOG.error("package " + p + " doesn't match directory " + dir.getAbsolutePath() + " (in file " + file.getName() + ")");
+                  return;
+                }
 
-        if (p == null) {
-          // default package (i.e. none), bad 
-          if (!(wasDefaultPkg)) {
-            LOG.error("default package is not supported in java source directory input (first such file in dir: " + file.getName() + ")");
-            wasDefaultPkg = true;
+              } else if (!(pkg.value.equals(p))) {
+                LOG.error("different packages in directory " + dir.getAbsolutePath() + ", namely " + pkg.value + " and " + p);
+                return;
+              }
+              ListSequence.fromList(roots).addSequence(ListSequence.fromList(parseRes.getNodes()));
+            } catch (JavaParseException e) {
+              javaParseException.value = e;
+            }
           }
-          continue;
-        }
-        if (pkg == null) {
-          if (DirParser.checkPackageMatchesSourceDirectory(p, dir)) {
-            pkg = p;
-          } else {
-            LOG.error("package " + p + " doesn't match directory " + dir.getAbsolutePath() + " (in file " + file.getName() + ")");
-            continue;
-          }
+        });
 
-        } else if (!(pkg.equals(p))) {
-          LOG.error("different packages in directory " + dir.getAbsolutePath() + ", namely " + pkg + " and " + p);
-          continue;
+        if (javaParseException.value != null) {
+          throw new JavaParseException(javaParseException.value);
         }
-        ListSequence.fromList(roots).addSequence(ListSequence.fromList(parseRes.getNodes()));
       }
     }
 
     // do model stuff 
-    final String finalPkg = pkg;
-    if (pkg != null && ListSequence.fromList(roots).count() > 0) {
+    final String finalPkg = pkg.value;
+    if (pkg.value != null && ListSequence.fromList(roots).count() > 0) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         @Override
         public void run() {

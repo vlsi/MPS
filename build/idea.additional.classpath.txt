@@ -4,7 +4,7 @@ core/openapi/classes
 core/analyzers/classes
 core/kernel/classes
 core/persistence/classes
-core/runtime/classes
+core/smodel/classes
 core/findUsages-runtime/classes
 core/refactoring-runtime/classes
 core/typesystemEngine/classes

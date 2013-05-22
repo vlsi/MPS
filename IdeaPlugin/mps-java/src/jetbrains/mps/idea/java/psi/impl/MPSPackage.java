@@ -55,7 +55,7 @@ public class MPSPackage extends MPSPsiNodeBase implements PsiPackage {
 
   @Override
   public boolean isValid() {
-    return true;
+    return myPsiModel.isValid();
   }
 
   @Override

@@ -15,8 +15,16 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.model.SModel;
-
+/**
+ * This interface can be implemented to track model state.
+ */
 public interface SModelStateListener {
-  void modelProblemsChanged(SModel model);
+
+  void modelLoaded(SModel model);
+
+  void modelReplaced(SModel model);
+
+  void modelUnloaded(SModel model);
+
+  void modelSaved(SModel model);
 }

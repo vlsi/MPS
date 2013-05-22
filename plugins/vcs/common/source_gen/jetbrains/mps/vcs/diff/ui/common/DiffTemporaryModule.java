@@ -8,9 +8,8 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.ModuleId;
-import java.util.List;
-import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -25,6 +24,8 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.extapi.module.SModuleBase;
+import jetbrains.mps.extapi.model.SModelBase;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -46,11 +47,6 @@ public class DiffTemporaryModule extends AbstractModule {
   @Override
   public String toString() {
     return getModuleName();
-  }
-
-  @Override
-  public List<org.jetbrains.mps.openapi.model.SModel> getModels() {
-    return Collections.<org.jetbrains.mps.openapi.model.SModel>singletonList(myModel.getModelDescriptor());
   }
 
   @Override
@@ -121,24 +117,24 @@ public class DiffTemporaryModule extends AbstractModule {
 
   private static void setSModelId(SModel model, String version) {
     SModelReference modelRef = model.getReference();
-    CopyUtil.changeModelReference(model.getModelDescriptor(), new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(modelRef.getModelName()), genMergeSModelId(modelRef.getModelId(), version)));
+    CopyUtil.changeModelReference(model.getModelDescriptor(), new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(genMergeSModelName(modelRef.getModelName(), version)), genMergeSModelId(modelRef.getModelId(), version)));
   }
 
   public static void resetSModelId(org.jetbrains.mps.openapi.model.SModel model) {
     SModelReference modelRef = model.getReference();
     assert modelRef.getModelId() instanceof SModelId.ForeignSModelId;
-    CopyUtil.changeModelReference(model, new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(modelRef.getModelName()), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getModelId())));
+    CopyUtil.changeModelReference(model, new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(getOriginalSModelName(modelRef.getModelName())), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getModelId())));
   }
 
   private static void registerModel(org.jetbrains.mps.openapi.model.SModel model, MPSModuleOwner owner) {
     SModule module = model.getModule();
     MPSModuleRepository.getInstance().registerModule(module, owner);
-    SModelRepository.getInstance().registerModelDescriptor(model, module);
+    ((SModuleBase) module).registerModel((SModelBase) model);
   }
 
   public static void unregisterModel(org.jetbrains.mps.openapi.model.SModel model, MPSModuleOwner owner) {
     SModule module = model.getModule();
-    SModelRepository.getInstance().unRegisterModelDescriptor(model, module);
+    ((SModuleBase) module).unregisterModel((SModelBase) model);
     MPSModuleRepository.getInstance().unregisterModule(module, owner);
   }
 
@@ -149,6 +145,14 @@ public class DiffTemporaryModule extends AbstractModule {
   private static org.jetbrains.mps.openapi.model.SModelId getOriginalSModelId(SModelId.ForeignSModelId modelId) {
     String id = modelId.getId();
     return SModelId.fromString(id.substring(id.indexOf("#") + 1));
+  }
+
+  private static String genMergeSModelName(String name, String version) {
+    return name + "@" + version;
+  }
+
+  private static String getOriginalSModelName(String name) {
+    return name.substring(0, name.lastIndexOf("@"));
   }
 
   private class DiffModuleScope extends AbstractModule.ModuleScope {

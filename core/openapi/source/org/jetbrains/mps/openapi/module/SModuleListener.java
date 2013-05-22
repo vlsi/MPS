@@ -18,20 +18,28 @@ package org.jetbrains.mps.openapi.module;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SDependency;
 
+/**
+ * To implement this interface, consider extending {@link SModuleAdapter}.
+ */
 public interface SModuleListener {
-  void modelAdded(SModel model);
 
-  void beforeModelRemoved(SModel model);
+  void modelAdded(SModule module, SModel model);
 
-  void modelRemoved(SModelReference ref);
+  void beforeModelRemoved(SModule module, SModel model);
 
-  void dependencyAdded(SDependency dep);
+  void modelRemoved(SModule module, SModelReference ref);
 
-  void dependencyRemoved(SDependency dep);
+  void dependencyAdded(SModule module, SDependency dep);
 
-  void languageAdded(SLanguage lang);
+  void dependencyRemoved(SModule module, SDependency dep);
 
-  void languageRemoved(SLanguage lang);
+  void languageAdded(SModule module, SLanguage lang);
+
+  void languageRemoved(SModule module, SLanguage lang);
+
+  /**
+   * Any change that doesn't affect the dependencies and used languages.
+   */
+  void moduleChanged(SModule module);
 }

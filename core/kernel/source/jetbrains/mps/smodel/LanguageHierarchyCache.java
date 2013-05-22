@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
-
-import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -23,15 +21,35 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.InternAwareStringSet;
+import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LanguageHierarchyCache implements CoreComponent {
   private static LanguageHierarchyCache INSTANCE;
+  private SRepositoryContentAdapter myRepositoryListener = new SRepositoryContentAdapter() {
+    @Override
+    public void repositoryChanged() {
+      invalidateCache();
+    }
+  };
 
   public static LanguageHierarchyCache getInstance() {
     return INSTANCE;
@@ -65,12 +83,7 @@ public class LanguageHierarchyCache implements CoreComponent {
     }
 
     INSTANCE = this;
-    MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryAdapter() {
-      @Override
-      public void repositoryChanged() {
-        invalidateCache();
-      }
-    });
+    myRepositoryListener.subscribeTo(MPSModuleRepository.getInstance());
 
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
       @Override
@@ -86,6 +99,7 @@ public class LanguageHierarchyCache implements CoreComponent {
   @Override
   public void dispose() {
     // TODO unregister listeners?
+    myRepositoryListener.unsubscribeFrom(MPSModuleRepository.getInstance());
     myCacheChangeListeners.clear();
     myCacheReadAccessListener = null;
     INSTANCE = null;
@@ -308,9 +322,9 @@ public class LanguageHierarchyCache implements CoreComponent {
           SModel structureDescriptor = language.getStructureModelDescriptor();
           if (structureDescriptor == null) continue;
           Iterable<SNode> iterable =
-            new ConditionalIterable<SNode>(
-              structureDescriptor.getRootNodes(),
-              new IsInstanceCondition(SNodeUtil.concept_AbstractConceptDeclaration));
+              new ConditionalIterable<SNode>(
+                  structureDescriptor.getRootNodes(),
+                  new IsInstanceCondition(SNodeUtil.concept_AbstractConceptDeclaration));
           for (SNode root : iterable) {
             addToCache(NameUtil.nodeFQName(root));
           }

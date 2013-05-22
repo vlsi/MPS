@@ -30,13 +30,17 @@ import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.util.Condition;
 
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -58,14 +62,14 @@ public abstract class ProjectTreeFindHelper {
 
   protected ProjectModuleTreeNode findModuleTreeNodeInProject(final @NotNull SModule module) {
     return (ProjectModuleTreeNode) findTreeNode(getTree().getRootNode(),
-      new ModuleInProjectCondition(),
-      new NodeForModuleCondition(module));
+        new ModuleInProjectCondition(),
+        new NodeForModuleCondition(module));
   }
 
   protected ProjectModuleTreeNode findModuleTreeNodeAnywhere(@NotNull SModule module) {
     return (ProjectModuleTreeNode) findTreeNode(getTree().getRootNode(),
-      new ModuleEverywhereCondition(),
-      new NodeForModuleCondition(module));
+        new ModuleEverywhereCondition(),
+        new NodeForModuleCondition(module));
   }
 
   public SModelTreeNode findMostSuitableModelTreeNode(@NotNull SModel model) {
@@ -112,21 +116,21 @@ public abstract class ProjectTreeFindHelper {
       if (!currentTreeNode.isInitialized() && !currentTreeNode.hasInfiniteSubtree()) currentTreeNode.init();
 
       currentTreeNode = findTreeNode(finalCurrentTreeNode,
-        new Condition<MPSTreeNode>() {
-          @Override
-          public boolean met(MPSTreeNode object) {
-            if (object == finalCurrentTreeNode) return true;
-            if (!(object instanceof PackageNode)) return false;
-            String pack = ((PackageNode) object).getFullPackage();
-            String vp = node.getContainingRoot().getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
-            return vp != null && vp.startsWith(pack);
+          new Condition<MPSTreeNode>() {
+            @Override
+            public boolean met(MPSTreeNode object) {
+              if (object == finalCurrentTreeNode) return true;
+              if (!(object instanceof PackageNode)) return false;
+              String pack = ((PackageNode) object).getFullPackage();
+              String vp = node.getContainingRoot().getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
+              return vp != null && vp.startsWith(pack);
+            }
+          }, new Condition<MPSTreeNode>() {
+            @Override
+            public boolean met(MPSTreeNode tNode) {
+              return (tNode instanceof SNodeTreeNode) && (((SNodeTreeNode) tNode).getSNode() == anc);
+            }
           }
-        }, new Condition<MPSTreeNode>() {
-        @Override
-        public boolean met(MPSTreeNode tNode) {
-          return (tNode instanceof SNodeTreeNode) && (((SNodeTreeNode) tNode).getSNode() == anc);
-        }
-      }
       );
       if (currentTreeNode == null) return null;
     }
@@ -310,6 +314,7 @@ public abstract class ProjectTreeFindHelper {
   private static SModule getModuleForModel(MPSProject project, SModel model) {
     //language's and solution's own models (+generator models in language)
     SModule owner = model.getModule();
+    if (owner == null) return null;
     SModule mainModule = owner instanceof Generator ? ((Generator) owner).getSourceLanguage() : owner;
     if (project.isProjectModule(mainModule)) return owner;
 

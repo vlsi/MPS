@@ -69,6 +69,7 @@ public class ParallelFor_Behavior {
       if (SNodeOperations.isInstanceOf(prevSibling, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement") && SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(prevSibling, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_1tdh13_a0a0a0b0h(), "classifier", false)) {
         return SLinkOperations.getTarget(SNodeOperations.cast(prevSibling, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
       }
+      prevSibling = SNodeOperations.getPrevSibling(prevSibling);
     }
     return null;
   }

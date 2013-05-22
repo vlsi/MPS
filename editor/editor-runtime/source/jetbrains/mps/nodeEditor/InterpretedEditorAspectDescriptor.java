@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -74,7 +73,7 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
     if (language == null) {
       return null;
     }
-    String editorClassName = NameUtil.getAspectNodeFqName(concept.getConceptFqName(), LanguageAspect.EDITOR) + "_Editor";
+    String editorClassName = LanguageAspect.getAspectNodeFqName(concept.getConceptFqName(), LanguageAspect.EDITOR) + "_Editor";
     Class<? extends ConceptEditor> editorClass = ClassLoaderManager.getInstance().getClass(language, editorClassName);
     if (editorClass == null) {
       return null;

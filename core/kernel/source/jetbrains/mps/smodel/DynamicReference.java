@@ -79,8 +79,8 @@ public class DynamicReference extends SReferenceBase {
 
   @Override
   protected SNode getTargetNode_internal() {
-    // seems like getTargetNode() doesn't make sense if target node is detached
-    assert mySourceNode.getModel() != null;
+    // seems like getTargetNode() doesn't make sense if source node is detached
+    assert mySourceNode.getModel() != null : "Taking target node of dynamic reference whose source node is not in a model";
 
     final Set<DynamicReference> currentRefs = currentlyResolved.get();
     if (currentRefs.contains(this)) {

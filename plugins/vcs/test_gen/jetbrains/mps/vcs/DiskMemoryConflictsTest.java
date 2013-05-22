@@ -28,6 +28,7 @@ import java.io.FileNotFoundException;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.TestDialog;
+import jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl;
 import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -232,6 +233,24 @@ public class DiskMemoryConflictsTest {
         }
       }
     });
+    DiskMemoryConflictResolverImpl.setTestDialog(new TestDialog() {
+      @Override
+      public int show(String message) {
+        dialogWasInvoked[0] = true;
+        if (DiskMemoryConflictsTest.DiskModification.DELETE == diskModification) {
+          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ?
+            0 :
+            1
+          );
+        } else {
+          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ?
+            1 :
+            0
+          );
+        }
+      }
+    });
+
     if (DiskMemoryConflictsTest.Action.SAVE == action) {
       //  save conflicting model 
       ModelAccess.instance().runCommandInEDT(new Runnable() {

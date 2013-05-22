@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.execution.impl.tests" uuid="7b15492d-a198-43e2-91e3-4a7e9116ce2b" pluginKind="PLUGIN_OTHER" compileInMPS="true">
+<solution name="jetbrains.mps.execution.impl.tests" uuid="7b15492d-a198-43e2-91e3-4a7e9116ce2b" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${mps_home}/plugins/execution-configurations/languages/plugin/classes" type="java_classes" />
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
       <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
-  <stubModelEntries>
-    <stubModelEntry path="${mps_home}/plugins/execution-configurations/languages/plugin/classes" />
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>

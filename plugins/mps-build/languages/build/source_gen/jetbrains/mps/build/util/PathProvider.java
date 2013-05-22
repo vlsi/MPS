@@ -88,6 +88,12 @@ public class PathProvider {
         case '$':
           sb.append("_dl_");
           break;
+        case '{':
+          sb.append("_lbrace_");
+          break;
+        case '}':
+          sb.append("_rbrace_");
+          break;
         default:
           sb.append(c);
       }

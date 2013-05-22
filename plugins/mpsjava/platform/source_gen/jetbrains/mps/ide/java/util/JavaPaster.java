@@ -138,7 +138,7 @@ public class JavaPaster {
     if ((parent == null)) {
       return false;
     }
-    anchor = SNodeOperations.getAncestor(anchor, NameUtil.nodeFQName(SLinkOperations.getTarget(role, "target", false)), false, false);
+    anchor = SNodeOperations.getAncestor(anchor, NameUtil.nodeFQName(SLinkOperations.getTarget(role, "target", false)), true, false);
     if ((anchor == null) || SNodeOperations.getParent(anchor) != parent) {
       parent.addChild(SPropertyOperations.getString(role, "role"), node);
     } else {

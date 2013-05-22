@@ -85,6 +85,10 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="solution" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149381388" resolveInfo="BuildMps_Module" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="269707337715731330" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="sourcesKind" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="269707337715631379" resolveInfo="BuildMps_ModuleSourcesKind" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3189788309731840248" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="BuildMps_Language" />
@@ -827,6 +831,43 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5507251971038817098" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2389279258782627672" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleTestSource" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="test source" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547823" resolveInfo="BuildMps_ModuleSource" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7354447573577513025" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="isGenerated" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2389279258782628330" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2389279258782632528" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="folder" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3ior.2303926226081001727" resolveInfo="BuildInputSingleFolder" />
+    </node>
+  </root>
+  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="269707337715631379" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
+    <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleSourcesKind" />
+    <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
+    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="269707337715631442" nodeInfo="ig">
+      <property name="externalValue" nameId="tpce.1083923523172" value="sources" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="sources" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="269707337715631443" nodeInfo="ig">
+      <property name="externalValue" nameId="tpce.1083923523172" value="sources and tests" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="sources and tests" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="269707337715631452" nodeInfo="ig">
+      <property name="externalValue" nameId="tpce.1083923523172" value="tests" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="tests" />
     </node>
   </root>
 </model>

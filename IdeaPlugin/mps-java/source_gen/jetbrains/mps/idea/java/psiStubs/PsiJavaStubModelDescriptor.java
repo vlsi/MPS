@@ -13,8 +13,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import com.intellij.psi.PsiElement;
-import com.google.common.collect.BiMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.psi.PsiJavaFile;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -37,7 +37,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.util.Pair;
-import com.google.common.collect.HashBiMap;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor implements PsiListener, DataSourceListener {
@@ -50,7 +49,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   /**
    * todo simplify: make it map(string,set(SNode)) 
    */
-  private Map<String, BiMap<SNode, PsiElement>> myMps2PsiMappings = MapSequence.fromMap(new HashMap<String, BiMap<SNode, PsiElement>>());
+  private Map<String, Set<SNode>> myMps2PsiMappings = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
   private PsiJavaStubModelDescriptor.MyMps2PsiMapper myMps2PsiMapper = new PsiJavaStubModelDescriptor.MyMps2PsiMapper();
 
 
@@ -67,7 +66,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   }
 
   @Override
-  public void attach() {
+  public void attach(SRepository repository) {
     myDataSource.addListener(this);
   }
 
@@ -263,18 +262,6 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
     return MapSequence.fromMap(myGlobalMps2PsiMapping).get(node);
   }
 
-  public SNode getMPSNode(PsiElement element) {
-    PsiFile file = element.getContainingFile();
-    if (file == null) {
-      return null;
-    }
-    BiMap<SNode, PsiElement> mapping = MapSequence.fromMap(myMps2PsiMappings).get(file);
-    if (mapping == null) {
-      return null;
-    }
-    return mapping.inverse().get(element);
-  }
-
 
 
   private class MyMps2PsiMapper implements Consumer<Pair<SNode, PsiElement>> {
@@ -284,12 +271,12 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
       PsiElement element = pair.o2;
       MapSequence.fromMap(myGlobalMps2PsiMapping).put(node, element);
       PsiFile file = element.getContainingFile();
-      BiMap<SNode, PsiElement> mapForFile = MapSequence.fromMap(myMps2PsiMappings).get(file);
+      Set<SNode> mapForFile = MapSequence.fromMap(myMps2PsiMappings).get(file.getName());
       if (mapForFile == null) {
-        mapForFile = HashBiMap.create();
+        mapForFile = SetSequence.fromSet(new HashSet<SNode>());
         MapSequence.fromMap(myMps2PsiMappings).put(file.getName(), mapForFile);
       }
-      mapForFile.put(node, element);
+      SetSequence.fromSet(mapForFile).addElement(node);
     }
 
 
@@ -305,12 +292,12 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
         MapSequence.fromMap(myRootsPerFile).removeKey(fileName);
       }
 
-      BiMap<SNode, PsiElement> mapForFile = MapSequence.fromMap(myMps2PsiMappings).get(fileName);
+      Set<SNode> mapForFile = MapSequence.fromMap(myMps2PsiMappings).get(fileName);
       if (mapForFile == null) {
         return;
       }
       MapSequence.fromMap(myMps2PsiMappings).removeKey(fileName);
-      for (SNode node : mapForFile.keySet()) {
+      for (SNode node : mapForFile) {
         MapSequence.fromMap(myGlobalMps2PsiMapping).removeKey(node);
       }
     }

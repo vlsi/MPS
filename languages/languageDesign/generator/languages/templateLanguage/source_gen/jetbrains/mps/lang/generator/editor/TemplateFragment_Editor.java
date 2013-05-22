@@ -82,8 +82,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       super();
     }
 
-
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -245,8 +243,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     public _Inline_73o0fl_a2a2a() {
       super();
     }
-
-
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

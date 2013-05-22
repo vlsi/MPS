@@ -43,7 +43,7 @@ public class Java_Producer {
       if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), source, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getMainMethod_1213877355884", new Object[]{}) == null)) {
         return null;
       }
-      Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("Class " + SPropertyOperations.getString(source, "name"), (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("" + "Class " + SPropertyOperations.getString(source, "name"), (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(source);
       return configuration;
     }
@@ -72,7 +72,7 @@ public class Java_Producer {
       if ((classifier == null)) {
         return null;
       }
-      Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("Class " + SPropertyOperations.getString(classifier, "name"), (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("" + "Class " + SPropertyOperations.getString(classifier, "name"), (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(classifier);
       return configuration;
     }
@@ -101,7 +101,7 @@ public class Java_Producer {
         SPropertyOperations.getString(SNodeOperations.cast(source, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") :
         BehaviorReflection.invokeVirtual(String.class, source, "virtual_getUnitName_4666195181811081431", new Object[]{})
       );
-      Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("Node " + name, (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("" + "Node " + name, (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(source);
       return configuration;
     }

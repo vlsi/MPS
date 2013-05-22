@@ -8,10 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/workbench/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/platform/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/platform/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/basePlatform/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/basePlatform/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/jetbrains.mps.ide.java.tests/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/migration/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/testsol/classes_gen" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -40,6 +38,7 @@
     <orderEntry type="module" module-name="mps-ui" />
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="module" module-name="basePlatform" />
   </component>
 </module>
 

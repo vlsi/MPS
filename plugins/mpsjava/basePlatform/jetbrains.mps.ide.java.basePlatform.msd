@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide.java.basePlatform" uuid="65557aaa-5381-435d-b705-3f8d546e0f40" compileInMPS="false">
+<solution name="jetbrains.mps.ide.java.basePlatform" uuid="65557aaa-5381-435d-b705-3f8d546e0f40" pluginKind="PLUGIN_OTHER" compileInMPS="false">
   <models>
-    <modelRoot path="${mps_home}/plugins/mpsjava/classes" type="java_classes" />
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>

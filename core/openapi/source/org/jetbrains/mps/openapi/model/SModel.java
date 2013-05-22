@@ -15,8 +15,8 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -33,6 +33,7 @@ public interface SModel {
   /**
    * Returns the id of the model valid within the containing module.
    */
+  @NotNull
   SModelId getModelId();
 
   /**
@@ -55,10 +56,6 @@ public interface SModel {
    * TODO: fix remove SModule!
    */
   SModule getModule();
-
-  void attach(SRepository repo);
-
-  void detach();
 
   /**
    * Returns a collection of root nodes. Root nodes are all nodes added to model using addRootNode.
@@ -152,7 +149,7 @@ public interface SModel {
     }
 
     /**
-     * Returns whether it was a save or load problem. Save problems can arise when AST content
+     * Returns whether it was a save or load problem. Save problems can arise when an AST content
      * doesn't fit into the persistence format.
      */
     Kind getKind();
