@@ -14,7 +14,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.resolve.ScopeResolver;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -86,10 +86,13 @@ public class FixBrokenReferences_Action extends BaseAction {
     try {
       ScopeResolver resolver = new ScopeResolver();
 
-      List<IModule> modulelist = null;
+      List<SModule> modulelist = (((List<SModule>) MapSequence.fromMap(_params).get("modules")) == null ?
+        ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators() :
+        ((List<SModule>) MapSequence.fromMap(_params).get("modules"))
+      );
       List<SModel> modellist = (List<SModel>) ((((List<SModel>) MapSequence.fromMap(_params).get("models")) == null || ((List<SModel>) MapSequence.fromMap(_params).get("models")).isEmpty() ?
-        ListSequence.fromList(modulelist).translate(new ITranslator2<IModule, SModel>() {
-          public Iterable<SModel> translate(IModule it) {
+        ListSequence.fromList(modulelist).translate(new ITranslator2<SModule, SModel>() {
+          public Iterable<SModel> translate(SModule it) {
             return it.getModels();
           }
         }).where(new IWhereFilter<SModel>() {

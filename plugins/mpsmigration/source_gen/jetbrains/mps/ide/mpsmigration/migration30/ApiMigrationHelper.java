@@ -6,7 +6,7 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IScope;
 import java.util.Set;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -40,14 +40,14 @@ public class ApiMigrationHelper {
   private MPSProject p;
   private Project ip;
   private IScope scope;
-  private Set<IModule> scopeModules = SetSequence.fromSet(new HashSet<IModule>());
+  private Set<SModule> scopeModules = SetSequence.fromSet(new HashSet<SModule>());
 
   public ApiMigrationHelper(MPSProject p, Project ip, IScope scope) {
     // todo: I think scope passed here is wrong. Should be ProjectScope from find usages 
     this.p = p;
     this.ip = ip;
     this.scope = scope;
-    //SetSequence.fromSet(scopeModules).addSequence(ListSequence.fromList(p.getModulesWithGenerators()));
+    SetSequence.fromSet(scopeModules).addSequence(ListSequence.fromList(p.getModulesWithGenerators()));
   }
 
   public void migrateSNodeId() {
