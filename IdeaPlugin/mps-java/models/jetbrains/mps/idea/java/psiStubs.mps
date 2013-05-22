@@ -76,8 +76,8 @@
   <import index="avh0" modelUID="f:java_stub#~IDEA IC#com.intellij.facet(IDEA IC/com.intellij.facet@java_stub)" version="-1" implicit="yes" />
   <import index="uw7k" modelUID="f:java_stub#~IDEA IC#com.intellij.util.xml(IDEA IC/com.intellij.util.xml@java_stub)" version="-1" implicit="yes" />
   <import index="aya8" modelUID="f:java_stub#~IDEA IC#com.intellij.openapi.roots(IDEA IC/com.intellij.openapi.roots@java_stub)" version="-1" implicit="yes" />
-  <import index="k7g5" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(1.6/java.util@java_stub)" version="-1" implicit="yes" />
-  <import index="e2ld" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(1.6/java.lang@java_stub)" version="-1" implicit="yes" />
+  <import index="k7g5" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" implicit="yes" />
+  <import index="e2ld" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="9ql4" modelUID="f:java_stub#~IDEA IC#com.intellij.openapi.project(IDEA IC/com.intellij.openapi.project@java_stub)" version="-1" implicit="yes" />
   <import index="9614" modelUID="f:java_stub#82c058c0-76db-4a07-8330-9d805cd11426#jetbrains.mps.ide.java.sourceStubs(jetbrains.mps.ide.java.sourceStubs@java_stub)" version="-1" implicit="yes" />
   <import index="z8df" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" version="-1" implicit="yes" />
