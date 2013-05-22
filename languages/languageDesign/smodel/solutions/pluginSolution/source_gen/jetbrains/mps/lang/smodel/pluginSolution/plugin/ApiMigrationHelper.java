@@ -38,7 +38,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.refactoring.RefactoringViewItemImpl;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
@@ -333,8 +335,13 @@ public class ApiMigrationHelper {
 
     ip.getComponent(RefactoringView.class).showRefactoringView(ip, new RefactoringViewAction() {
       @Override
-      public void performAction(RefactoringViewItem refactoringViewItem) {
-        final List<SNodeReference> included = ((RefactoringViewItemImpl) refactoringViewItem).getUsagesView().getIncludedResultNodes();
+      public void performAction(final RefactoringViewItem refactoringViewItem) {
+        final Wrappers._T<List<SNodeReference>> included = new Wrappers._T<List<SNodeReference>>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            included.value = ((RefactoringViewItemImpl) refactoringViewItem).getUsagesView().getIncludedResultNodes();
+          }
+        });
         refactoringViewItem.close();
         p.getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
@@ -345,7 +352,7 @@ public class ApiMigrationHelper {
                   continue;
                 }
                 SNodeReference np = new SNodePointer(known);
-                if (ListSequence.fromList(included).contains(np)) {
+                if (ListSequence.fromList(included.value).contains(np)) {
                   transformer.invoke(known);
                 }
               }
