@@ -73,8 +73,10 @@ public class CommonPaths {
         addEditorJars(result);
       } else if (type == ClassType.IDEA_PLATFORM) {
         addRepackedIdeaJars(result);
-      } else if (type == ClassType.PLATFORM) {
+      } else if (type == ClassType.IDEA) {
         addIdeaJars(result);
+      } else if (type == ClassType.PLATFORM) {
+        addPlatformJars(result);
       } else if (type == ClassType.UI) {
         addUIJars(result);
       } else if (type == ClassType.WORKBENCH) {
@@ -168,6 +170,7 @@ public class CommonPaths {
     CompositeClassPathItem result = new CompositeClassPathItem();
     addCoreJars(result);
     addEditorJars(result);
+    addPlatformJars(result);
     addIdeaJars(result);
     addUIJars(result);
     addWorkbenchJars(result);
@@ -208,12 +211,15 @@ public class CommonPaths {
 
   private static void addIdeaJars(CompositeClassPathItem result) {
     addRepackedIdeaJars(result);
-    addIfExists(result, "/lib/mps-platform.jar");
     addIfExists(result, "/lib/sanselan-0.98-snapshot.jar");
     addIfExists(result, "/lib/util.jar");
     addIfExists(result, "/lib/extensions.jar");
     addIfExists(result, "/lib/picocontainer.jar");
     addIfExists(result, "/lib/forms_rt.jar");
+  }
+
+  private static void addPlatformJars(CompositeClassPathItem result) {
+    addIfExists(result, "/lib/mps-platform.jar");
   }
 
   private static void addUIJars(CompositeClassPathItem result) {
