@@ -11,6 +11,9 @@
     <modelRoot path="${module}/lib/jmock-2.5.1/objenesis-1.0.jar" type="java_classes" />
     <modelRoot path="${mps_home}/lib/junit-4.10.jar" type="java_classes" />
   </models>
+  <facets>
+    <facet pluginId="com.intellij" type="ideaPlugin" />
+  </facets>
   <stubModelEntries>
     <stubModelEntry path="${module}/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <stubModelEntry path="${module}/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
