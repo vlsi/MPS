@@ -121,7 +121,7 @@ public class ClassLoaderManager implements CoreComponent {
     if (module instanceof Language || module instanceof Generator) {
       return true;
     }
-    if (!ModuleClassLoaderSupport.canCreate(module)) {
+    if (module.getFacet(JavaModuleFacet.class) == null) {
       return false;
     }
 
