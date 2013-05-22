@@ -5408,6 +5408,9 @@
                         <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1237048644264" nodeInfo="nn">
                           <property name="value" nameId="tpee.1070475926801" value="-Xmx1024m" />
                         </node>
+                        <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2760354900506170158" nodeInfo="nn">
+                          <property name="value" nameId="tpee.1070475926801" value="-XX:PermSize=256m" />
+                        </node>
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp2q.UnionOperation" typeId="tp2q.1176903168877" id="6572468330877292462" nodeInfo="nn">
