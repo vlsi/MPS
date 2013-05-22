@@ -66,6 +66,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "path");
   }
 
+  public static Object propertyMacro_GetPropertyValue_8568272520041595726(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + "-" + SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_4005526075832899342(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getTemplateValue() + "." + SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -85,7 +89,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_3944198881066888502(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        return createGeneratorInternal_String_x583g4_a0a0a0a0l(it);
+        return createGeneratorInternal_String_x583g4_a0a0a0a0m(it);
       }
     });
   }
@@ -101,7 +105,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_7459197473276626316(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        return createGeneratorInternal_String_x583g4_a0a0a0a0n(it);
+        return createGeneratorInternal_String_x583g4_a0a0a0a0o(it);
       }
     });
   }
@@ -156,14 +160,14 @@ public class QueriesGenerated {
     }, true).toGenericArray(String.class);
   }
 
-  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0l(Object p0) {
+  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0m(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, GlobalScope.getInstance(), false);
     n1.setProperty("path", (String) p0);
     return n1;
   }
 
-  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0n(Object p0) {
+  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0o(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, GlobalScope.getInstance(), false);
     n1.setProperty("path", (String) p0);

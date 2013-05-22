@@ -313,7 +313,7 @@
       <sysproperty key="mps.libraries" value="${mps.libraries.path.string}" />
       <sysproperty key="mps.test.modules" value="${mps.tests.path.string}" />
       
-      <test name="jetbrains.mps.testbench.junit.suites.ModuleTestSuite" />
+      <test name="jetbrains.mps.testbench.junit.suites.ModuleTestSuite" outfile="TEST-jetbrains.mps.testbench.junit.suites.ModuleTestSuite-actions" />
       <formatter type="xml" />
     </junit>
   </target>
