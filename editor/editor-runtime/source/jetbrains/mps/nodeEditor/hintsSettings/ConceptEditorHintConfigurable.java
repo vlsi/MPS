@@ -15,9 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.hintsSettings;
 
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.editor.util.EditorComponentUtil;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -31,9 +35,12 @@ import javax.swing.JComponent;
 public class ConceptEditorHintConfigurable implements SearchableConfigurable {
   private ConceptEditorHintPreferencesPage myPage;
   private final Project myProject;
+  private final FileEditorManager myFileEditorManager;
 
-  public ConceptEditorHintConfigurable(Project project) {
+
+  public ConceptEditorHintConfigurable(Project project, FileEditorManager fileEditorManager) {
     myProject = project;
+    myFileEditorManager = fileEditorManager;
   }
 
   @NotNull
@@ -81,6 +88,14 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable {
   @Override
   public void apply() throws ConfigurationException {
     myPage.commit();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (EditorComponent component : EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true)) {
+          component.rebuildEditorContent();
+        }
+      }
+    });
   }
 
   @Override
