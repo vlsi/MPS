@@ -77,7 +77,9 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
   @Nullable
   @Override
   public MyState getState() {
-    myPersistenceState.setEnabledHints(mySettings.getEnabledHints());
+    if (mySettings != null) {
+      myPersistenceState.setEnabledHints(mySettings.getEnabledHints());
+    }
     return myPersistenceState;
   }
 
