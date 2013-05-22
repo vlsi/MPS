@@ -60,6 +60,12 @@ public class UnregisteredNodes {
     }
   }
 
+  public boolean contains(SNode node){
+    synchronized (myLock){
+      return myMap.values().contains(node);
+    }
+  }
+
   public void put(SNode node) {
     if (myDisabled || node.getNodeId() == null) return;
     add(node.getModel().getReference(), node.getNodeId(), node);
