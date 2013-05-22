@@ -109,7 +109,12 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
       }
     };
     LanguageRegistry.getInstance().addRegistryListener(myListener);
-    updateHintsFromLanguages(LanguageRegistry.getInstance().getAvailableLanguages());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        updateHintsFromLanguages(LanguageRegistry.getInstance().getAvailableLanguages());
+      }
+    });
     mySettings.updateSettings(myCurrentState.myEnabledHints);
 
   }
@@ -131,27 +136,23 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
   }
 
   private void updateHintsFromLanguages(final Iterable<LanguageRuntime> languages) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        for (LanguageRuntime language : languages) {
-          EditorAspectDescriptor editorDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
-          if (editorDescriptor == null || editorDescriptor.getHints().isEmpty()) {
-            continue;
-          }
-          String lang = language.getNamespace();
-          for (ConceptEditorHint hint : mySettings.getHints(lang)) {
-            mySettings.remove(lang, hint);
-          }
+    for (LanguageRuntime language : languages) {
+      EditorAspectDescriptor editorDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
+      if (editorDescriptor == null || editorDescriptor.getHints().isEmpty()) {
+        continue;
+      }
+      String lang = language.getNamespace();
+      for (ConceptEditorHint hint : mySettings.getHints(lang)) {
+        mySettings.remove(lang, hint);
+      }
 
-          for (ConceptEditorHint hint : editorDescriptor.getHints()) {
-            if (hint.showInUI()) {
-              mySettings.put(lang, hint, false);
-            }
-          }
+      for (ConceptEditorHint hint : editorDescriptor.getHints()) {
+        if (hint.showInUI()) {
+          mySettings.put(lang, hint, false);
         }
       }
-    });
+    }
+
   }
 
   @Override
