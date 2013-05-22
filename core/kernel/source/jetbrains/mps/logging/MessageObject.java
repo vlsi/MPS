@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.logging;
 
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -42,7 +44,13 @@ public class MessageObject {
     }
     String hint = "";
     if (myHintObject instanceof SNode) {
-      hint = "[node " + ((SNode) myHintObject).getPresentation() + "]";
+      String nodePresentation = ModelAccess.instance().runReadAction(new Computable<String>() {
+        @Override
+        public String compute() {
+          return ((SNode) myHintObject).getPresentation();
+        }
+      });
+      hint = "[node " + nodePresentation + "]";
     } else if (myHintObject instanceof SModel) {
       hint = "[model " + ((SModel) myHintObject).getReference() + "]";
     } else if (myHintObject instanceof SModule) {

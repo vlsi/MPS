@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
@@ -68,9 +69,9 @@ public abstract class ReloadableSModelBase extends SModelBase {
   }
 
   @Override
-  public void attach() {
+  public void attach(SRepository repository) {
     getSource().addListener(mySourceListener);
-    super.attach();
+    super.attach(repository);
   }
 
   @Override

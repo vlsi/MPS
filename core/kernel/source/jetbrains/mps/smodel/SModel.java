@@ -22,6 +22,7 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
+import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -227,10 +228,6 @@ public class SModel implements SModelData {
     return getModelDescriptor().resolveModel(reference);
   }
 
-  public void setModule(SModule container) {
-    getModelDescriptor().setModule(container);
-  }
-
   public void addModelListener(@NotNull SModelListener listener) {
     getModelDescriptor().addModelListener(listener);
   }
@@ -264,7 +261,7 @@ public class SModel implements SModelData {
 
   protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
     if (!canFireEvent()) return;
-    if (!UndoHelper.getInstance().needRegisterUndo(getModelDescriptor())) return;
+    if (!UndoHelper.getInstance().needRegisterUndo()) return;
     UndoHelper.getInstance().addUndoableAction(action.compute());
   }
 
@@ -954,7 +951,7 @@ public class SModel implements SModelData {
       if (module != null) {
         SModuleReference newRef = module.getModuleReference();
         refs.set(i, newRef);
-        changed = changed || jetbrains.mps.project.structure.modules.ModuleReference.differs(ref, newRef);
+        changed = changed || RefUpdateUtil.differs(ref, newRef);
       }
     }
     return changed;
@@ -1215,15 +1212,6 @@ public class SModel implements SModelData {
     @Override
     public SModel getSModelInternal() {
       return myModel;
-    }
-
-    @Override
-    public void attach() {
-      throw new UnsupportedOperationException();
-    }
-
-    public void detach() {
-      throw new UnsupportedOperationException();
     }
 
     @Override

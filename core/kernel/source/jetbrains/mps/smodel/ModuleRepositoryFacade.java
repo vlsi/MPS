@@ -18,19 +18,26 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.DevKit;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import org.jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.util.Condition;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 public class ModuleRepositoryFacade implements CoreComponent {
   private static ModuleRepositoryFacade INSTANCE;
@@ -131,6 +138,13 @@ public class ModuleRepositoryFacade implements CoreComponent {
 
   public Set<MPSModuleOwner> getModuleOwners(SModule module) {
     return new HashSet<MPSModuleOwner>(REPO.getOwners(module));
+  }
+
+  public static SModuleReference createReference(String moduleName) {
+    // TODO use SRepository?
+    SModuleReference ref = new ModuleReference(moduleName);
+    SModule module = getInstance().getModule(ref);
+    return module != null ? module.getModuleReference() : ref;
   }
 
   public static SModule createModule(ModuleHandle handle, MPSModuleOwner owner) {

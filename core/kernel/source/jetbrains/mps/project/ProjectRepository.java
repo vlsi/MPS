@@ -22,7 +22,8 @@ import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
+
+import java.util.Collections;
 
 /**
  * evgeny, 5/9/13
@@ -35,6 +36,7 @@ public class ProjectRepository extends SRepositoryBase {
   public ProjectRepository(Project project) {
     this.project = project;
     myProjectModelAccess = new ProjectModelAccess();
+    init();
   }
 
   public Project getProject() {
@@ -53,7 +55,7 @@ public class ProjectRepository extends SRepositoryBase {
 
   @Override
   public Iterable<SModule> getModules() {
-    return MPSModuleRepository.getInstance().getModules();
+    return Collections.emptyList();
   }
 
   @Override
@@ -69,16 +71,6 @@ public class ProjectRepository extends SRepositoryBase {
   @Override
   public void saveAll() {
     MPSModuleRepository.getInstance().saveAll();
-  }
-
-  @Override
-  public void addRepositoryListener(SRepositoryListener listener) {
-    MPSModuleRepository.getInstance().addRepositoryListener(listener);
-  }
-
-  @Override
-  public void removeRepositoryListener(SRepositoryListener listener) {
-    MPSModuleRepository.getInstance().removeRepositoryListener(listener);
   }
 
   private class ProjectModelAccess implements ModelAccess {

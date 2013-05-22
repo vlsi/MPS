@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -182,6 +183,7 @@ public abstract class Project implements MPSModuleOwner {
   }
 
   public void dispose() {
+    ((SRepositoryBase)myRepository).dispose();
     isDisposed = true;
   }
 

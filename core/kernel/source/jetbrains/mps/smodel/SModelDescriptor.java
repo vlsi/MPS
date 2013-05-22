@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
 /**
@@ -40,13 +41,6 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * @Deprecated in 3.0
    */
   SModule getModule();
-
-  @Deprecated
-  /**
-   * Cast to SModelInternal in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  void setModule(SModule container);
 
 
   @Deprecated

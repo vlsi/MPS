@@ -13,17 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.SModuleOperations;
-import org.jetbrains.mps.openapi.model.SModel;
-
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 public enum LanguageAspect {
   STRUCTURE("structure") {
@@ -213,6 +218,28 @@ public enum LanguageAspect {
 
   LanguageAspect(String name) {
     myName = name;
+  }
+
+  public static String getAspectNodeFqName(@NotNull String conceptFqName, LanguageAspect languageAspect) {
+    String namespace = NameUtil.namespaceFromLongName(conceptFqName);
+    String shortName = NameUtil.shortNameFromLongName(conceptFqName);
+    if (namespace.endsWith("." + STRUCTURE.getName())) {
+      namespace = namespace.substring(0, namespace.length() - ("." + STRUCTURE.getName()).length());
+    } else {
+      throw new IllegalArgumentException("Not a concept fq name");
+    }
+
+    StringBuilder builder = StringBuilderSpinAllocator.alloc();
+    try {
+      builder.append(namespace);
+      builder.append('.');
+      builder.append(languageAspect.getName());
+      builder.append('.');
+      builder.append(shortName);
+      return builder.toString();
+    } finally {
+      StringBuilderSpinAllocator.dispose(builder);
+    }
   }
 
   public boolean is(org.jetbrains.mps.openapi.model.SModel sm) {

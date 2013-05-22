@@ -144,11 +144,10 @@ public abstract class ModuleRuntimeLibrariesImporter {
 
     private void collectRuntimeDependencies(SModule module, Set<SModule> result) {
       // todo: extract some other methods in GlobalModuleDependenciesManager. Like getDependencies(Iterable<> addedModules, Iterable<> addedUsedModules, Deptype)
-
       if (result.contains(module)) {
         return;
       }
-
+      result.add(module);
       for (SModule usedModule : GlobalModuleDependenciesManager.directlyUsedModules(module, Deptype.EXECUTE.reexportAll, Deptype.EXECUTE.runtimes)) {
         collectRuntimeDependencies(usedModule, result);
       }

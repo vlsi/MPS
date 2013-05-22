@@ -39,7 +39,7 @@ public class BuildScript_Producer {
       setSourceElement(new MPSPsiElement(source));
       SNode containingRoot = SNodeOperations.getContainingRoot(source);
       if (SNodeOperations.isInstanceOf(containingRoot, "jetbrains.mps.build.structure.BuildProject") && !(SNodeOperations.getModel(containingRoot).getModule().isPackaged())) {
-        BuildScript_Configuration configuration = ((BuildScript_Configuration) getConfigurationFactory().createConfiguration(SPropertyOperations.getString(SNodeOperations.cast(containingRoot, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), (BuildScript_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+        BuildScript_Configuration configuration = ((BuildScript_Configuration) getConfigurationFactory().createConfiguration("" + SPropertyOperations.getString(SNodeOperations.cast(containingRoot, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), (BuildScript_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
         configuration.getNode().setNode(containingRoot);
         return configuration;
       }

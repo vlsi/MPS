@@ -60,10 +60,6 @@ public interface SModule {
    */
   SRepository getRepository();
 
-  void attach(SRepository repo);
-
-  void detach();
-
   /**
    * All dependencies on modules of all kinds.
    * Includes only dependencies declared in this model. See also GlobalModuleDependenciesManager [not yet in API]

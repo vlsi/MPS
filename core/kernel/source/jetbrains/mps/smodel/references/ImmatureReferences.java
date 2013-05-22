@@ -16,8 +16,6 @@
 package jetbrains.mps.smodel.references;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelAccessAdapter;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;

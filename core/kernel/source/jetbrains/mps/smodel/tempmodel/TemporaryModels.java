@@ -16,12 +16,12 @@
 package jetbrains.mps.smodel.tempmodel;
 
 import gnu.trove.THashMap;
+import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Map;
 
@@ -43,15 +43,14 @@ public class TemporaryModels {
 
   //singleton part end
 
-  private Map<TempModel,TempModuleOptions> myCreatedModels = new THashMap<TempModel, TempModuleOptions>();
+  private Map<TempModel, TempModuleOptions> myCreatedModels = new THashMap<TempModel, TempModuleOptions>();
 
-  public SModel create(boolean readOnly,@NotNull TempModuleOptions mp) {
-    SModule module = mp.createModule();
+  public SModel create(boolean readOnly, @NotNull TempModuleOptions mp) {
+    SModuleBase module = (SModuleBase) mp.createModule();
 
     TempModel model = new TempModel(readOnly);
-    myCreatedModels.put(model,mp);
-    SModelRepository.getInstance().registerModelDescriptor(model, module);
-
+    myCreatedModels.put(model, mp);
+    module.registerModel(model);
     return model;
   }
 
@@ -67,11 +66,14 @@ public class TemporaryModels {
     assert model instanceof TempModel : "TemporaryModels is asked to handle non-temporary model " + model.getModelName();
     TempModuleOptions module = myCreatedModels.remove(model);
 
-    SModelRepository.getInstance().removeModelDescriptor(model);
+    SModuleBase modelModule = (SModuleBase) model.getModule();
+    if (modelModule != null) {
+      modelModule.unregisterModel((SModelBase) model);
+    }
     module.disposeModule();
   }
 
-  public static boolean isTemporary(SModel model){
+  public static boolean isTemporary(SModel model) {
     return model instanceof TempModel;
   }
 }

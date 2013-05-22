@@ -20,11 +20,9 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHandler;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -56,7 +54,7 @@ public class WorkbenchUndoHandler implements UndoHandler {
   }
 
   @Override
-  public boolean needRegisterUndo(@NotNull SModel model) {
+  public boolean needRegisterUndo() {
     return isInsideUndoableCommand();
   }
 

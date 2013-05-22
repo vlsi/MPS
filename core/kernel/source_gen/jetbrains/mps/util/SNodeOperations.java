@@ -319,12 +319,7 @@ public class SNodeOperations {
   }
 
   public static String getModelLongName(SModel model) {
-    String name = model.getModelName();
-    int index = name.indexOf("@");
-    return (index == -1 ?
-      name :
-      name.substring(0, index)
-    );
+    return NameUtil.getModelLongName(model);
   }
 
   public static List<SModuleReference> getUsedLanguages(SModel model) {

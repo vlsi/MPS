@@ -5,10 +5,10 @@ package jetbrains.mps.ide.java.actions;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -32,8 +32,16 @@ public class OverrideImplementMethodAction {
   }
 
   public void run() {
-    final SNode contextClass = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
-    final SNode contextMethod = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
+    final SNode contextClass = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      public SNode compute() {
+        return SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
+      }
+    });
+    final SNode contextMethod = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      public SNode compute() {
+        return SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
+      }
+    });
     final SNodeReference[] methods = ModelAccess.instance().runReadAction(new Computable<SNodeReference[]>() {
       @Override
       public SNodeReference[] compute() {

@@ -252,7 +252,8 @@ public class PsiChangesWatcher implements ProjectComponent {
     public void run() {
       // notify our listeners
 
-      ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+      Runnable notify = new Runnable() {
+        @Override
         public void run() {
           try {
             for (PsiListener l : myListeners) {
@@ -262,10 +263,14 @@ public class PsiChangesWatcher implements ProjectComponent {
             myCollectedData = new PsiChangeData();
             myTimerTask = null;
           }
-        }
-      }, myMPSProject);
 
+        }
+      };
+      if (ModelAccess.instance().isInsideCommand()) {
+        notify.run();
+      } else {
+        ModelAccess.instance().runUndoTransparentCommand(notify);
+      }
     }
   }
-
 }
