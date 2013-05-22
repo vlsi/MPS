@@ -230,7 +230,7 @@ class EditorSettingsPreferencesPage {
 
 
   private EditorComponent createBlinkingDemo() {
-     return new EditorComponent(MPSModuleRepository.getInstance()) {
+    EditorComponent blinking = new EditorComponent(MPSModuleRepository.getInstance()) {
       {
         setEditorContext(new EditorContext(this, null, MPSModuleRepository.getInstance()));
         CaretBlinker.getInstance().unregisterEditor(this);
