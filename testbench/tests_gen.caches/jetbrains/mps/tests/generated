@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c7u6b5tvlqul8ejxltbu05a15x66q4x">
+<dependencies version="2" modelHash="2dh2yqkjtfcjtmzduc0hlp3kn1a0oyx">
   <dep model="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)" hash="b3bn1zrj9f016meeko892qzcyup1w30" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
   <dep model="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)" hash="-edrpi4g1nz54vcbjbc3p8llla4ztpre" />
   <dep model="r:00000000-0000-4000-0000-011c895903bf(jetbrains.mps.baseLanguage.collections.unittest.generics_test)" hash="9zhntk9k8xxpayiufkqaz1vq4f77emj" />
   <dep model="r:00000000-0000-4000-0000-011c895903c0(jetbrains.mps.baseLanguage.collections.unittest.query_operations)" hash="apfb9flb0utl8y317fifa6bf95v1f41" />
@@ -23,11 +24,10 @@
   <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" hash="8u67q1sd7sh9mf98brg7toamz3cfjpk" />
   <dep model="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)" hash="-77t68stfgsjn96uwez4iraegfkykhi9" />
   <dep model="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" hash="-2tvceccwpur27k5scgalrjxo0jhe89v" />
-  <dep model="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" hash="-4ihauqn1uy6992zv1187y3ikm4c5ip" />
   <dep model="r:2d0fbdb5-e73c-4db3-b9e8-fb2e93925820(graphTest)" hash="3417ha7affngffziggrtnkw88w7cte9" />
   <dep model="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" hash="4cdizuxikh2jn9ebrpwf4kd7z12es5s" />
   <dep model="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)" hash="-c3jckmrjwm55tvvddjqq52ydlov20m9" />
-  <dep model="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" hash="c3o449nkbtr8yv4q6bf90smj61vuyyp" />
+  <dep model="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" hash="3wdnd3ceu0a1fh6kovk4kq0nn74akqx" />
   <dep model="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)" hash="97krucvlompd1dazlw2p43xaqzlp00v" />
   <dep model="r:3b7facd9-99b3-46c2-934e-19c743ff560f(jetbrains.mps.testbench.junit.util)" hash="40k6w4ly1y2me4n8abjuuvaurjdxm14" />
   <dep model="r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)" hash="-ce3rvbnti2gty2317mezvuvcn41vogd" />
@@ -74,7 +74,7 @@
   <dep model="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)" hash="-263hcpnh5nip3htuzc7gkmmcmeaxebg" />
   <dep model="r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)" hash="50t0bgri8nm1hfo6i91vv5p54ci6tpe" />
   <dep model="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)" hash="-5c04oy3l19mjq929hl7ozvobc46ofiy" />
-  <common hash="-8gidb515rdnvpnugdhbugq7550gbfxa" />
+  <common hash="-ci6s716i12i0a8oyk1u7j43452q7ze5" />
   <source id="2712670354707832463" name="closures.test" hash="8v8adu6q5v8c3mracaszpqldyu2md69">
     <dep model="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)" />
     <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" />
@@ -86,6 +86,7 @@
     <file name="TestModule_jetbrains_mps_baseLanguage_closures_unittest.java" />
   </source>
   <source id="2712670354707832483" name="collections_unittest" hash="2f75f2chzpygkb25eb59su6k4uzpbac">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895903bf(jetbrains.mps.baseLanguage.collections.unittest.generics_test)" />
     <dep model="r:00000000-0000-4000-0000-011c895903c0(jetbrains.mps.baseLanguage.collections.unittest.query_operations)" />
     <dep model="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)" />
@@ -241,7 +242,7 @@
     <dep model="r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)" />
     <file name="TestModule_jetbrains_mps_generator_tests.java" />
   </source>
-  <source id="2684968190509519315" name="jetbrains.mps.build.tests" hash="1y1bpqrml6197lm4194s1g76rydocov">
+  <source id="2684968190509519315" name="jetbrains.mps.build.tests" hash="bwr9boruqy4igchlaphti1h6xp0ecxo">
     <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" />
     <dep model="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" />
     <file name="TestModule_jetbrains_mps_build_tests.java" />
@@ -281,7 +282,6 @@
   <source id="4246614868164094814" name="jetbrains.mps.baseLanguage.unittest" hash="81lfnnyq535vl5nk33r2eas23lcqhbu">
     <dep model="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)" />
     <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" />
-    <dep model="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" />
     <file name="TestModule_jetbrains_mps_baseLanguage_unittest.java" />
   </source>
   <source id="7092489630493754343" name="jetbrains.mps.ide.java.tests" hash="yd3odf1obh1i67iwz8875v9kgar499">
