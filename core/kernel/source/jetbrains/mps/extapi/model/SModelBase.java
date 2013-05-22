@@ -70,7 +70,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public SRepository getRepository() {
     assertCanRead();
-    return myModule == null ? null : myModule.getRepository();
+    return myRepository;
   }
 
   public void attach(SRepository repo) {
@@ -82,8 +82,11 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     }
   }
 
-  private void detach() {
+  @Override
+  public void dispose() {
+    ModelAccess.assertLegalWrite();
     synchronized (REPO_LOCK) {
+      // TODO isLoaded is not enough
       if (isLoaded()) {
         for (org.jetbrains.mps.openapi.model.SNode node : getRootNodes()) {
           node.detach();
@@ -148,7 +151,9 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     myModule = module;
   }
 
-  /** TODO make final */
+  /**
+   * TODO make final
+   */
   @Override
   @Nullable
   public SModule getModule() {
@@ -222,11 +227,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public void unload() {
 
-  }
-
-  public void dispose() {
-    detach();
-    ModelAccess.assertLegalWrite();
   }
 
   @Override
@@ -344,5 +344,10 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     if (ourErroredModels.add(modelName)) {
       LOG.error(new IllegalModelAccessError("Accessing disposed model " + modelName));
     }
+  }
+
+  @Override
+  public final boolean isDisposed() {
+    return myRepository instanceof DisposedRepository;
   }
 }

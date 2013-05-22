@@ -328,11 +328,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   }
 
   @Override
-  public final boolean isDisposed() {
-    return getRepository() instanceof DisposedRepository;
-  }
-
-  @Override
   public final void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
     getSModelInternal().setModelDescriptor(modelDescriptor);
   }
