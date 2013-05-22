@@ -34,7 +34,6 @@ import java.util.Set;
  */
 public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPluginModuleFacet {
   private String pluginId;
-  private Set<SModuleReference> myModules = new LinkedHashSet<SModuleReference>();
 
   @Override
   public String getFacetType() {
@@ -60,37 +59,14 @@ public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPl
   }
 
   @Override
-  public Set<SModuleReference> getContainedModules() {
-    return Collections.unmodifiableSet(myModules);
-  }
-
-  public void setContainedModules(Collection<SModuleReference> modules) {
-    checkNotRegistered();
-    myModules.clear();
-    myModules.addAll(modules);
-  }
-
-  @Override
   public void save(Memento memento) {
     memento.put("pluginId", pluginId);
-    for (SModuleReference m : myModules) {
-      Memento mm = memento.createChild("module");
-      mm.put("ref", m.toString());
-    }
   }
 
   @Override
   public void load(Memento memento) {
     checkNotRegistered();
     pluginId = memento.get("pluginId");
-    myModules.clear();
-    for (Memento mm : memento.getChildren("module")) {
-      String ref = mm.get("ref");
-      if (ref == null) {
-        continue;
-      }
-      myModules.add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(ref));
-    }
   }
 
   @Override

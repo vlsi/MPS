@@ -27,6 +27,4 @@ public interface IdeaPluginModuleFacet extends CustomClassLoadingFacet {
   public static final String FACET_TYPE = "ideaPlugin";
 
   String getPluginId();
-
-  Set<SModuleReference> getContainedModules();
 }
