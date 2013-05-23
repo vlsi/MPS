@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:1a659806-a410-4fea-ba0c-f99d25b23f6d(jetbrains.mps.web.actions)/3802916001757770307">
+  <root nodeRef="r:1a659806-a410-4fea-ba0c-f99d25b23f6d(jetbrains.mps.web.core.actions)/3802916001757770307">
     <nodeInfo nodeId="3802916001757770307" fileName="TestJsonSerialization_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="3802916001757770307" fileName="TestJsonSerialization_Action.java" startLine="21" startPosition="41" endLine="22" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3802916001757770307" fileName="TestJsonSerialization_Action.java" startLine="22" startPosition="41" endLine="23" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -69,30 +69,28 @@
       <varInfo nodeId="3802916001757770307" varName="_params" />
       <varInfo nodeId="3802916001757770307" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="3802916001757770307" fileName="TestJsonSerialization_Action.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.web.actions.TestJsonSerialization_Action" />
+    <unitInfo nodeId="3802916001757770307" fileName="TestJsonSerialization_Action.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.web.core.actions.TestJsonSerialization_Action" />
   </root>
-  <root nodeRef="r:1a659806-a410-4fea-ba0c-f99d25b23f6d(jetbrains.mps.web.actions)/6062354340811716969">
+  <root nodeRef="r:1a659806-a410-4fea-ba0c-f99d25b23f6d(jetbrains.mps.web.core.actions)/6062354340811716969">
     <nodeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="13" startPosition="34" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="14" startPosition="27" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="15" startPosition="30" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062354340811717027" fileName="TestGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062354340811717027" fileName="TestGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="16" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestGroup_ActionGroup#()V" />
-    <scopeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="101" />
+    <scopeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="106" />
     <scopeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
       <varInfo nodeId="6062354340811716969" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
     <scopeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="13" startPosition="34" endLine="21" endPosition="5" />
     <scopeInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" />
-    <unitInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.web.actions.TestGroup_ActionGroup" />
+    <unitInfo nodeId="6062354340811716969" fileName="TestGroup_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.web.core.actions.TestGroup_ActionGroup" />
   </root>
-  <root nodeRef="r:1a659806-a410-4fea-ba0c-f99d25b23f6d(jetbrains.mps.web.actions)/6652714296827317679" />
-  <root nodeRef="r:1a659806-a410-4fea-ba0c-f99d25b23f6d(jetbrains.mps.web.actions)/6652714296827320184" />
-  <root nodeRef="r:1a659806-a410-4fea-ba0c-f99d25b23f6d(jetbrains.mps.web.actions)/6652714296827884334">
+  <root nodeRef="r:1a659806-a410-4fea-ba0c-f99d25b23f6d(jetbrains.mps.web.core.actions)/6652714296827884334">
     <nodeInfo nodeId="6652714296827884334" fileName="Core_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="6652714296827884334" fileName="Core_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6652714296827884334" fileName="Core_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -112,9 +110,9 @@
     <scopeInfo nodeId="6652714296827884334" fileName="Core_ApplicationPlugin.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="6652714296827884334" fileName="Core_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="23" endPosition="42" />
     <scopeInfo nodeId="6652714296827884334" fileName="Core_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="25" endPosition="0" />
-    <unitInfo nodeId="6652714296827884334" fileName="Core_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.web.actions.Core_ApplicationPlugin" />
+    <unitInfo nodeId="6652714296827884334" fileName="Core_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.web.core.actions.Core_ApplicationPlugin" />
   </root>
-  <root nodeRef="r:1a659806-a410-4fea-ba0c-f99d25b23f6d(jetbrains.mps.web.actions)/6652714296827884335">
+  <root nodeRef="r:1a659806-a410-4fea-ba0c-f99d25b23f6d(jetbrains.mps.web.core.actions)/6652714296827884335">
     <nodeInfo nodeId="6652714296827884335" fileName="Core_PluginInitializer.java" startLine="17" startPosition="51" endLine="18" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6652714296827884335" fileName="Core_PluginInitializer.java" startLine="19" startPosition="9" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6652714296827884335" fileName="Core_PluginInitializer.java" startLine="27" startPosition="36" endLine="28" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -139,9 +137,9 @@
     </scopeInfo>
     <scopeInfo nodeId="6652714296827884335" fileName="Core_PluginInitializer.java" startLine="13" startPosition="35" endLine="22" endPosition="7" />
     <scopeInfo nodeId="6652714296827884335" fileName="Core_PluginInitializer.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
-    <unitInfo nodeId="6652714296827884335" fileName="Core_PluginInitializer.java" startLine="14" startPosition="54" endLine="22" endPosition="5" unitName="jetbrains.mps.web.actions.Core_PluginInitializer$1" />
-    <unitInfo nodeId="6652714296827884335" fileName="Core_PluginInitializer.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.web.actions.Core_PluginInitializer" />
-    <unitInfo nodeId="6652714296827884335" fileName="plugin.xml" startLine="1" startPosition="0" endLine="17" endPosition="14" unitName="jetbrains.mps.web.actions.plugin" />
+    <unitInfo nodeId="6652714296827884335" fileName="Core_PluginInitializer.java" startLine="14" startPosition="54" endLine="22" endPosition="5" unitName="jetbrains.mps.web.core.actions.Core_PluginInitializer$1" />
+    <unitInfo nodeId="6652714296827884335" fileName="Core_PluginInitializer.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.web.core.actions.Core_PluginInitializer" />
+    <unitInfo nodeId="6652714296827884335" fileName="plugin.xml" startLine="1" startPosition="0" endLine="17" endPosition="14" unitName="jetbrains.mps.web.core.actions.plugin" />
   </root>
 </debugInfo>
 

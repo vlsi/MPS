@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.web.actions.Core_ApplicationPlugin" file="Core_ApplicationPlugin.java">
+  <dependency className="jetbrains.mps.web.core.actions.Core_ApplicationPlugin" file="Core_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.web.actions.TestGroup_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.web.actions.TestJsonSerialization_Action" />
+    <classNode dependClassName="jetbrains.mps.web.core.actions.TestGroup_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.web.core.actions.TestJsonSerialization_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.web.actions.Core_PluginInitializer" file="Core_PluginInitializer.java">
+  <dependency className="jetbrains.mps.web.core.actions.Core_PluginInitializer" file="Core_PluginInitializer.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="jetbrains.mps.plugins.AbstractPluginFactory" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginFactoriesRegistry" />
     <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.web.actions.Core_ApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.web.core.actions.Core_ApplicationPlugin" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.web.actions.TestGroup_ActionGroup" file="TestGroup_ActionGroup.java">
+  <dependency className="jetbrains.mps.web.core.actions.TestGroup_ActionGroup" file="TestGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.web.actions.TestJsonSerialization_Action" file="TestJsonSerialization_Action.java">
+  <dependency className="jetbrains.mps.web.core.actions.TestJsonSerialization_Action" file="TestJsonSerialization_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -45,6 +45,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.web.actions.plugin" file="plugin.xml" />
+  <dependency className="jetbrains.mps.web.core.actions.plugin" file="plugin.xml" />
 </dependenciesRoot>
 
