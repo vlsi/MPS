@@ -14,14 +14,15 @@ $(function () {
     }
 
     function setContext(project, module_, model, root) {
+        var bc = $('.mbreadcrumb');
         if (project === null) {
-            $('.mbreadcrumb').hide()
+            bc.hide()
             $('#go-to-root').hide();
         } else {
             $('#go-to-root').show();
-            $('.mbreadcrumb').css("visibility", "visible");
-            $('.mbreadcrumb').show();
-            $('.mbreadcrumb').empty();
+            bc.css("visibility", "visible");
+            bc.show();
+            bc.empty();
             addBreadcrumb(project, module_ != null ? "#" + project + "/view" : null);
             if (module_ != null) {
                 addBreadcrumb(module_, model !== null ? "#" + project + "/module/" + module_ : null);
@@ -88,7 +89,7 @@ $(function () {
         $.each(children, function (index, child) {
             var span = $('<span/>').css("class", "treeitem");
             var li = $('<li/>').append(span);
-            span.append($('<span class="icon_any" style="background-image: url(\'/img/folder.png\')"></span>'));
+            span.append($('<span class="icon_any"/>').css('background-image', 'url(\'' + child.icon + '\')'));
             if ($.isArray(child.children)) {
                 span.append($('<a/>').text(child.name));
                 var childNode = $('<ul/>');
