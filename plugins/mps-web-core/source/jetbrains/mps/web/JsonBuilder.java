@@ -107,15 +107,42 @@ public class JsonBuilder {
   }
 
   private String escape(String value) {
-    value = value.replaceAll("\\\\", "\\\\");
-    value = value.replaceAll("/", "\\/");
-    value = value.replaceAll("\\u0008", "\\b");
-    value = value.replaceAll("\f", "\\f");
-    value = value.replaceAll("\n", "\\n");
-    value = value.replaceAll("\r", "\\r");
-    value = value.replaceAll("\t", "\\t");
-    value = value.replaceAll("\"", "\\\"");
-    return value.replaceAll("'", "\\'");
+    StringBuilder result = new StringBuilder();
+    char[] chars = value.toCharArray();
+    for (char nextChar : chars) {
+      switch (nextChar) {
+        case '\\':
+          result.append("\\\\");
+          break;
+        case '/':
+          result.append("\\/");
+          break;
+        case '\u0008':
+          result.append("\\b");
+          break;
+        case '\f':
+          result.append("\\f");
+          break;
+        case '\n':
+          result.append("\\n");
+          break;
+        case '\r':
+          result.append("\\r");
+          break;
+        case '\t':
+          result.append("\\t");
+          break;
+        case '"':
+          result.append("\\\"");
+          break;
+        case '\'':
+          result.append("\\'");
+          break;
+        default:
+          result.append(nextChar);
+      }
+    }
+    return result.toString();
   }
 
   private JsonBuilder() {
