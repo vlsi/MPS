@@ -5,6 +5,10 @@ package jetbrains.mps.web.viewer.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
+import java.util.List;
+import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Viewer_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.web.viewer");
@@ -25,5 +29,15 @@ public class Viewer_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(TestGroup_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_debug);
+  }
+
+  public List<BaseCustomApplicationPlugin> initCustomParts() {
+    List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
+    {
+      BaseCustomApplicationPlugin plugin = new WebViewerHttpHandlers_CustomApplicationPlugin();
+      ListSequence.fromList(res).addElement(plugin);
+      plugin.init();
+    }
+    return res;
   }
 }

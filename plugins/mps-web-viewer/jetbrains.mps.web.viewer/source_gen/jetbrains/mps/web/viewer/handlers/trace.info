@@ -1,3 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/7481782646737023365">
+    <nodeInfo nodeId="7481782646737054417" fileName="ProjectNameHandler.java" startLine="11" startPosition="98" endLine="12" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7481782646737054334" fileName="ProjectNameHandler.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
+    <scopeInfo nodeId="7481782646737054345" fileName="ProjectNameHandler.java" startLine="11" startPosition="98" endLine="12" endPosition="92" />
+    <scopeInfo nodeId="7481782646737054334" fileName="ProjectNameHandler.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="7481782646737054343" varName="exchange" />
+      <varInfo nodeId="7481782646737054341" varName="project" />
+      <varInfo nodeId="7481782646737054339" varName="requestUrl" />
+    </scopeInfo>
+    <unitInfo nodeId="7481782646737023365" fileName="ProjectNameHandler.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.ProjectNameHandler" />
+  </root>
+  <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/7481782646737166605" />
+</debugInfo>
 

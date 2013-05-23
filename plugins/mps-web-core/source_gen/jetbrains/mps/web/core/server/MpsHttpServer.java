@@ -25,6 +25,7 @@ import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import org.apache.log4j.Priority;
 import java.net.InetSocketAddress;
+import com.intellij.openapi.application.ApplicationManager;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -162,6 +163,12 @@ public class MpsHttpServer implements ApplicationComponent {
     if (server != null) {
       server.stop(0);
     }
+  }
+
+
+
+  public static MpsHttpServer getInstance() {
+    return ApplicationManager.getApplication().getComponent(MpsHttpServer.class);
   }
 
 

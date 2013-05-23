@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5n9rwu6345khof88024dcnw3tlqs23">
-  <common />
+<dependencies version="2" modelHash="-bea5a50qyk0dqiwhgowb85704nudsbq">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <common hash="32ozob30kll5hzk6a9ig93l4wzy1nvv" />
+  <source id="7481782646737023365" name="ProjectNameHandler" hash="23czjftf7a80liza3lkyw0t9ximjhsl">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ProjectNameHandler.java" />
+  </source>
 </dependencies>
 

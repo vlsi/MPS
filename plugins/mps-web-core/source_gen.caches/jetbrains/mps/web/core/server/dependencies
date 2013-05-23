@@ -23,6 +23,7 @@
   <dependency className="jetbrains.mps.web.core.server.MpsHttpServer" file="MpsHttpServer.java">
     <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptor" />
     <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />
     <classNode dependClassName="com.sun.net.httpserver.HttpHandler" />
     <classNode dependClassName="com.sun.net.httpserver.HttpServer" />
