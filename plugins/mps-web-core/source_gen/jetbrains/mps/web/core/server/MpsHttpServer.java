@@ -18,14 +18,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.io.FileNotFoundException;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import org.apache.log4j.Priority;
 import java.net.InetSocketAddress;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.NonNls;
@@ -49,7 +49,7 @@ public class MpsHttpServer implements ApplicationComponent {
           if (uri.startsWith("/rest/projects.json")) {
             handleProjectsListRequest(exchange);
           } else if (uri.startsWith("/rest/p/")) {
-            handleProjectRequest(exchange);
+            handleProjectRequest(uri, exchange);
           } else if ((uri == null || uri.length() == 0) || uri.equals("/")) {
             // redirect on the knee 
             handleStaticRequest("/index.html", exchange);
@@ -79,7 +79,33 @@ public class MpsHttpServer implements ApplicationComponent {
 
 
 
-    public void handleProjectRequest(HttpExchange exchange) {
+    public void handleProjectRequest(String rawUri, HttpExchange exchange) throws Exception {
+      String uri = rawUri.substring("/rest/p/".length());
+      if (!(uri.contains("/"))) {
+        HttpUtil.doResponse("uri doesnt't contains \"/\" after project name", "text/plain", 404, exchange);
+        return;
+      }
+      final String projectId = uri.substring(0, uri.indexOf("/"));
+      String requestUri = uri.substring(uri.indexOf("/"));
+
+      Project project = Sequence.fromIterable(Sequence.fromArray(ProjectManager.getInstance().getOpenProjects())).findFirst(new IWhereFilter<Project>() {
+        public boolean accept(Project it) {
+          return it.getName().equals(projectId);
+        }
+      });
+      if (project == null) {
+        HttpUtil.doResponse("project " + projectId + " wasn't opened", "text/plain", 404, exchange);
+        return;
+      }
+
+      for (String prefix : SetSequence.fromSet(MapSequence.fromMap(handlers).keySet())) {
+        if (requestUri.startsWith(prefix)) {
+          MapSequence.fromMap(handlers).get(prefix).handle(requestUri, project, exchange);
+          return;
+        }
+      }
+
+      HttpUtil.doResponse("project handler doesn't found for request \"" + requestUri + "\" with source uri: " + rawUri, "text/plain", 404, exchange);
     }
 
 
@@ -137,6 +163,11 @@ public class MpsHttpServer implements ApplicationComponent {
 
 
 
+  /**
+   * 
+   * 
+   * @param prefix something like "/nodeId"
+   */
   public void registerHandler(String prefix, Handler handler) {
     MapSequence.fromMap(handlers).put(prefix, handler);
   }

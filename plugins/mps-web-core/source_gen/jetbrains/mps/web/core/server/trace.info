@@ -115,7 +115,7 @@
     <nodeInfo nodeId="2641474643395040283" fileName="MpsHttpServer.java" startLine="43" startPosition="50" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2641474643395194086" fileName="MpsHttpServer.java" startLine="45" startPosition="34" endLine="46" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2641474643395154100" fileName="MpsHttpServer.java" startLine="49" startPosition="54" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643395161696" fileName="MpsHttpServer.java" startLine="51" startPosition="50" endLine="52" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643395161696" fileName="MpsHttpServer.java" startLine="51" startPosition="50" endLine="52" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7642594517371605591" fileName="MpsHttpServer.java" startLine="53" startPosition="77" endLine="54" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7642594517371603416" fileName="MpsHttpServer.java" startLine="54" startPosition="36" endLine="55" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7642594517371555134" fileName="MpsHttpServer.java" startLine="56" startPosition="18" endLine="57" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -126,109 +126,129 @@
     <nodeInfo nodeId="2641474643396020112" fileName="MpsHttpServer.java" startLine="63" startPosition="26" endLine="64" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2641474643395768543" fileName="MpsHttpServer.java" startLine="73" startPosition="42" endLine="74" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2641474643395995701" fileName="MpsHttpServer.java" startLine="76" startPosition="23" endLine="77" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4818466489185422590" fileName="MpsHttpServer.java" startLine="88" startPosition="31" endLine="89" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4818466489185433775" fileName="MpsHttpServer.java" startLine="89" startPosition="104" endLine="90" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5767254038727102879" fileName="MpsHttpServer.java" startLine="92" startPosition="31" endLine="93" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5767254038727140557" fileName="MpsHttpServer.java" startLine="94" startPosition="7" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5767254038726751742" fileName="MpsHttpServer.java" startLine="96" startPosition="32" endLine="97" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5767254038727289902" fileName="MpsHttpServer.java" startLine="98" startPosition="7" endLine="99" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5767254038726569281" fileName="MpsHttpServer.java" startLine="104" startPosition="31" endLine="105" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5767254038727036475" fileName="MpsHttpServer.java" startLine="107" startPosition="45" endLine="108" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5767254038727140847" fileName="MpsHttpServer.java" startLine="110" startPosition="12" endLine="111" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5767254038727021151" fileName="MpsHttpServer.java" startLine="113" startPosition="47" endLine="114" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5767254038727002872" fileName="MpsHttpServer.java" startLine="117" startPosition="5" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2641474643394579319" fileName="MpsHttpServer.java" startLine="119" startPosition="9" endLine="120" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643394578458" fileName="MpsHttpServer.java" startLine="120" startPosition="65" endLine="121" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643394578463" fileName="MpsHttpServer.java" startLine="121" startPosition="45" endLine="122" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643394781102" fileName="MpsHttpServer.java" startLine="124" startPosition="45" endLine="125" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643394624239" fileName="MpsHttpServer.java" startLine="133" startPosition="25" endLine="134" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643394634073" fileName="MpsHttpServer.java" startLine="140" startPosition="63" endLine="141" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643394685902" fileName="MpsHttpServer.java" startLine="148" startPosition="40" endLine="149" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2641474643394766025" fileName="MpsHttpServer.java" startLine="153" startPosition="36" endLine="154" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7527841852583045200" fileName="MpsHttpServer.java" startLine="163" startPosition="36" endLine="164" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7527841852582992287" fileName="MpsHttpServer.java" startLine="167" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="882642151257510765" fileName="MpsHttpServer.java" startLine="82" startPosition="93" endLine="83" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1190122077106852943" fileName="MpsHttpServer.java" startLine="84" startPosition="33" endLine="85" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1190122077106872470" fileName="MpsHttpServer.java" startLine="85" startPosition="107" endLine="86" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1190122077106873183" fileName="MpsHttpServer.java" startLine="87" startPosition="7" endLine="88" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1190122077106920832" fileName="MpsHttpServer.java" startLine="88" startPosition="66" endLine="89" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1190122077106972078" fileName="MpsHttpServer.java" startLine="89" startPosition="58" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1190122077107184541" fileName="MpsHttpServer.java" startLine="92" startPosition="43" endLine="93" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1190122077107190607" fileName="MpsHttpServer.java" startLine="96" startPosition="28" endLine="97" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1190122077107190613" fileName="MpsHttpServer.java" startLine="97" startPosition="100" endLine="98" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1190122077107200631" fileName="MpsHttpServer.java" startLine="99" startPosition="7" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1190122077107257865" fileName="MpsHttpServer.java" startLine="102" startPosition="44" endLine="103" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1190122077107505443" fileName="MpsHttpServer.java" startLine="103" startPosition="90" endLine="104" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1190122077107527960" fileName="MpsHttpServer.java" startLine="106" startPosition="7" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1190122077107529144" fileName="MpsHttpServer.java" startLine="107" startPosition="0" endLine="108" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4818466489185422590" fileName="MpsHttpServer.java" startLine="114" startPosition="31" endLine="115" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4818466489185433775" fileName="MpsHttpServer.java" startLine="115" startPosition="104" endLine="116" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5767254038727102879" fileName="MpsHttpServer.java" startLine="118" startPosition="31" endLine="119" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5767254038727140557" fileName="MpsHttpServer.java" startLine="120" startPosition="7" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5767254038726751742" fileName="MpsHttpServer.java" startLine="122" startPosition="32" endLine="123" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5767254038727289902" fileName="MpsHttpServer.java" startLine="124" startPosition="7" endLine="125" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5767254038726569281" fileName="MpsHttpServer.java" startLine="130" startPosition="31" endLine="131" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5767254038727036475" fileName="MpsHttpServer.java" startLine="133" startPosition="45" endLine="134" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5767254038727140847" fileName="MpsHttpServer.java" startLine="136" startPosition="12" endLine="137" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5767254038727021151" fileName="MpsHttpServer.java" startLine="139" startPosition="47" endLine="140" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5767254038727002872" fileName="MpsHttpServer.java" startLine="143" startPosition="5" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2641474643394579319" fileName="MpsHttpServer.java" startLine="145" startPosition="9" endLine="146" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643394578458" fileName="MpsHttpServer.java" startLine="146" startPosition="65" endLine="147" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643394578463" fileName="MpsHttpServer.java" startLine="147" startPosition="45" endLine="148" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643394781102" fileName="MpsHttpServer.java" startLine="150" startPosition="45" endLine="151" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643394624239" fileName="MpsHttpServer.java" startLine="159" startPosition="25" endLine="160" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643394634073" fileName="MpsHttpServer.java" startLine="171" startPosition="63" endLine="172" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643394685902" fileName="MpsHttpServer.java" startLine="179" startPosition="40" endLine="180" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2641474643394766025" fileName="MpsHttpServer.java" startLine="184" startPosition="36" endLine="185" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7527841852583045200" fileName="MpsHttpServer.java" startLine="194" startPosition="36" endLine="195" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7527841852582992287" fileName="MpsHttpServer.java" startLine="198" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7642594517371556098" fileName="MpsHttpServer.java" startLine="56" startPosition="16" endLine="58" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2641474643394935528" fileName="MpsHttpServer.java" startLine="82" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleProjectRequest#(Lcom/sun/net/httpserver/HttpExchange;)V" />
     <nodeInfo nodeId="2641474643395194086" fileName="MpsHttpServer.java" startLine="44" startPosition="57" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2641474643395194086" fileName="MpsHttpServer.java" startLine="44" startPosition="57" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2641474643395768541" fileName="MpsHttpServer.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/Project;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5767254038727085807" fileName="MpsHttpServer.java" startLine="91" startPosition="7" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5767254038726728308" fileName="MpsHttpServer.java" startLine="95" startPosition="0" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5767254038727036475" fileName="MpsHttpServer.java" startLine="106" startPosition="25" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5767254038727036475" fileName="MpsHttpServer.java" startLine="106" startPosition="25" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5767254038727021151" fileName="MpsHttpServer.java" startLine="112" startPosition="35" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5767254038727021151" fileName="MpsHttpServer.java" startLine="112" startPosition="35" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2641474643394781102" fileName="MpsHttpServer.java" startLine="123" startPosition="29" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2641474643394781102" fileName="MpsHttpServer.java" startLine="123" startPosition="29" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2641474643394787950" fileName="MpsHttpServer.java" startLine="132" startPosition="34" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2641474643394482701" fileName="MpsHttpServer.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerHandler#(Ljava/lang/String;Ljetbrains/mps/web/core/server/Handler;)V" />
-    <nodeInfo nodeId="2641474643394685133" fileName="MpsHttpServer.java" startLine="148" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="2641474643394764955" fileName="MpsHttpServer.java" startLine="153" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4818466489185394625" fileName="MpsHttpServer.java" startLine="87" startPosition="101" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1190122077107184539" fileName="MpsHttpServer.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/Project;)Z" />
+    <nodeInfo nodeId="5767254038727085807" fileName="MpsHttpServer.java" startLine="117" startPosition="7" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5767254038726728308" fileName="MpsHttpServer.java" startLine="121" startPosition="0" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5767254038727036475" fileName="MpsHttpServer.java" startLine="132" startPosition="25" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5767254038727036475" fileName="MpsHttpServer.java" startLine="132" startPosition="25" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5767254038727021151" fileName="MpsHttpServer.java" startLine="138" startPosition="35" endLine="141" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5767254038727021151" fileName="MpsHttpServer.java" startLine="138" startPosition="35" endLine="141" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2641474643394781102" fileName="MpsHttpServer.java" startLine="149" startPosition="29" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2641474643394781102" fileName="MpsHttpServer.java" startLine="149" startPosition="29" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2641474643394787950" fileName="MpsHttpServer.java" startLine="158" startPosition="34" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2641474643394685133" fileName="MpsHttpServer.java" startLine="179" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2641474643394764955" fileName="MpsHttpServer.java" startLine="184" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1190122077106830475" fileName="MpsHttpServer.java" startLine="83" startPosition="57" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1190122077107184730" fileName="MpsHttpServer.java" startLine="95" startPosition="9" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1190122077107233051" fileName="MpsHttpServer.java" startLine="101" startPosition="89" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4818466489185394625" fileName="MpsHttpServer.java" startLine="113" startPosition="101" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2641474643395768531" fileName="MpsHttpServer.java" startLine="71" startPosition="66" endLine="76" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5767254038727003494" fileName="MpsHttpServer.java" startLine="111" startPosition="54" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7527841852583039972" fileName="MpsHttpServer.java" startLine="132" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="2641474643394709685" fileName="MpsHttpServer.java" startLine="146" startPosition="56" endLine="151" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2641474643394718491" fileName="MpsHttpServer.java" startLine="151" startPosition="24" endLine="156" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7527841852583039978" fileName="MpsHttpServer.java" startLine="161" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5767254038727036483" fileName="MpsHttpServer.java" startLine="110" startPosition="10" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1190122077106974692" fileName="MpsHttpServer.java" startLine="90" startPosition="0" endLine="95" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5767254038727003494" fileName="MpsHttpServer.java" startLine="137" startPosition="54" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7527841852583039972" fileName="MpsHttpServer.java" startLine="158" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="2641474643394709685" fileName="MpsHttpServer.java" startLine="177" startPosition="56" endLine="182" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2641474643394718491" fileName="MpsHttpServer.java" startLine="182" startPosition="24" endLine="187" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7527841852583039978" fileName="MpsHttpServer.java" startLine="192" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1190122077107201693" fileName="MpsHttpServer.java" startLine="100" startPosition="0" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5767254038727036483" fileName="MpsHttpServer.java" startLine="136" startPosition="10" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2641474643394935452" fileName="MpsHttpServer.java" startLine="71" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleProjectsListRequest#(Lcom/sun/net/httpserver/HttpExchange;)V" />
-    <nodeInfo nodeId="2641474643394619230" fileName="MpsHttpServer.java" startLine="118" startPosition="0" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2641474643394482701" fileName="MpsHttpServer.java" startLine="166" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerHandler#(Ljava/lang/String;Ljetbrains/mps/web/core/server/Handler;)V" />
+    <nodeInfo nodeId="2641474643394619230" fileName="MpsHttpServer.java" startLine="144" startPosition="0" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2641474643395080229" fileName="MpsHttpServer.java" startLine="48" startPosition="13" endLine="58" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5767254038727031119" fileName="MpsHttpServer.java" startLine="105" startPosition="135" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2641474643394482818" fileName="MpsHttpServer.java" startLine="146" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterHandler#(Ljetbrains/mps/web/core/server/Handler;)V" />
-    <nodeInfo nodeId="2641474643394935632" fileName="MpsHttpServer.java" startLine="87" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleStaticRequest#(Ljava/lang/String;Lcom/sun/net/httpserver/HttpExchange;)V" />
+    <nodeInfo nodeId="5767254038727031119" fileName="MpsHttpServer.java" startLine="131" startPosition="135" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2641474643394482818" fileName="MpsHttpServer.java" startLine="177" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterHandler#(Ljetbrains/mps/web/core/server/Handler;)V" />
+    <nodeInfo nodeId="2641474643394935632" fileName="MpsHttpServer.java" startLine="113" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleStaticRequest#(Ljava/lang/String;Lcom/sun/net/httpserver/HttpExchange;)V" />
     <nodeInfo nodeId="2641474643395803572" fileName="MpsHttpServer.java" startLine="47" startPosition="9" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2641474643394940549" fileName="MpsHttpServer.java" startLine="42" startPosition="57" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7527841852583039966" fileName="MpsHttpServer.java" startLine="104" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="7527841852583039966" fileName="MpsHttpServer.java" startLine="130" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
     <nodeInfo nodeId="2641474643394614303" fileName="MpsHttpServer.java" startLine="41" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Lcom/sun/net/httpserver/HttpExchange;)V" />
-    <nodeInfo nodeId="2641474643394596296" fileName="MpsHttpServer.java" startLine="40" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="httpHandler" />
-    <scopeInfo nodeId="2641474643394935531" fileName="MpsHttpServer.java" startLine="82" startPosition="61" endLine="82" endPosition="61" />
+    <nodeInfo nodeId="2641474643394935528" fileName="MpsHttpServer.java" startLine="82" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleProjectRequest#(Ljava/lang/String;Lcom/sun/net/httpserver/HttpExchange;)V" />
+    <nodeInfo nodeId="2641474643394596296" fileName="MpsHttpServer.java" startLine="40" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="httpHandler" />
     <scopeInfo nodeId="2641474643395194086" fileName="MpsHttpServer.java" startLine="45" startPosition="34" endLine="46" endPosition="44" />
     <scopeInfo nodeId="2641474643395080232" fileName="MpsHttpServer.java" startLine="49" startPosition="54" endLine="50" endPosition="48" />
-    <scopeInfo nodeId="2641474643395117370" fileName="MpsHttpServer.java" startLine="51" startPosition="50" endLine="52" endPosition="43" />
+    <scopeInfo nodeId="2641474643395117370" fileName="MpsHttpServer.java" startLine="51" startPosition="50" endLine="52" endPosition="48" />
     <scopeInfo nodeId="7642594517371556099" fileName="MpsHttpServer.java" startLine="56" startPosition="18" endLine="57" endPosition="47" />
     <scopeInfo nodeId="2641474643395768542" fileName="MpsHttpServer.java" startLine="73" startPosition="42" endLine="74" endPosition="99" />
-    <scopeInfo nodeId="5767254038727085810" fileName="MpsHttpServer.java" startLine="92" startPosition="31" endLine="93" endPosition="42" />
-    <scopeInfo nodeId="5767254038726728311" fileName="MpsHttpServer.java" startLine="96" startPosition="32" endLine="97" endPosition="31" />
-    <scopeInfo nodeId="5767254038727036475" fileName="MpsHttpServer.java" startLine="107" startPosition="45" endLine="108" endPosition="98" />
-    <scopeInfo nodeId="5767254038727021151" fileName="MpsHttpServer.java" startLine="113" startPosition="47" endLine="114" endPosition="120" />
-    <scopeInfo nodeId="2641474643394781102" fileName="MpsHttpServer.java" startLine="124" startPosition="45" endLine="125" endPosition="67" />
-    <scopeInfo nodeId="2641474643394787953" fileName="MpsHttpServer.java" startLine="133" startPosition="25" endLine="134" endPosition="21" />
-    <scopeInfo nodeId="2641474643394482704" fileName="MpsHttpServer.java" startLine="140" startPosition="63" endLine="141" endPosition="55" />
-    <scopeInfo nodeId="2641474643394685134" fileName="MpsHttpServer.java" startLine="148" startPosition="40" endLine="149" endPosition="64" />
-    <scopeInfo nodeId="2641474643394764956" fileName="MpsHttpServer.java" startLine="153" startPosition="36" endLine="154" endPosition="52" />
-    <scopeInfo nodeId="7527841852583040097" fileName="MpsHttpServer.java" startLine="163" startPosition="36" endLine="164" endPosition="41" />
+    <scopeInfo nodeId="1190122077107184540" fileName="MpsHttpServer.java" startLine="92" startPosition="43" endLine="93" endPosition="48" />
+    <scopeInfo nodeId="5767254038727085810" fileName="MpsHttpServer.java" startLine="118" startPosition="31" endLine="119" endPosition="42" />
+    <scopeInfo nodeId="5767254038726728311" fileName="MpsHttpServer.java" startLine="122" startPosition="32" endLine="123" endPosition="31" />
+    <scopeInfo nodeId="5767254038727036475" fileName="MpsHttpServer.java" startLine="133" startPosition="45" endLine="134" endPosition="98" />
+    <scopeInfo nodeId="5767254038727021151" fileName="MpsHttpServer.java" startLine="139" startPosition="47" endLine="140" endPosition="120" />
+    <scopeInfo nodeId="2641474643394781102" fileName="MpsHttpServer.java" startLine="150" startPosition="45" endLine="151" endPosition="67" />
+    <scopeInfo nodeId="2641474643394787953" fileName="MpsHttpServer.java" startLine="159" startPosition="25" endLine="160" endPosition="21" />
+    <scopeInfo nodeId="2641474643394482704" fileName="MpsHttpServer.java" startLine="171" startPosition="63" endLine="172" endPosition="55" />
+    <scopeInfo nodeId="2641474643394685134" fileName="MpsHttpServer.java" startLine="179" startPosition="40" endLine="180" endPosition="64" />
+    <scopeInfo nodeId="2641474643394764956" fileName="MpsHttpServer.java" startLine="184" startPosition="36" endLine="185" endPosition="52" />
+    <scopeInfo nodeId="7527841852583040097" fileName="MpsHttpServer.java" startLine="194" startPosition="36" endLine="195" endPosition="41" />
     <scopeInfo nodeId="7642594517371555133" fileName="MpsHttpServer.java" startLine="53" startPosition="77" endLine="55" endPosition="57" />
-    <scopeInfo nodeId="2641474643394935528" fileName="MpsHttpServer.java" startLine="82" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="2641474643394935552" varName="exchange" />
-    </scopeInfo>
-    <scopeInfo nodeId="4818466489185394628" fileName="MpsHttpServer.java" startLine="88" startPosition="31" endLine="90" endPosition="15" />
+    <scopeInfo nodeId="1190122077106830478" fileName="MpsHttpServer.java" startLine="84" startPosition="33" endLine="86" endPosition="15" />
+    <scopeInfo nodeId="1190122077107184733" fileName="MpsHttpServer.java" startLine="96" startPosition="28" endLine="98" endPosition="15" />
+    <scopeInfo nodeId="1190122077107233052" fileName="MpsHttpServer.java" startLine="102" startPosition="44" endLine="104" endPosition="17" />
+    <scopeInfo nodeId="4818466489185394628" fileName="MpsHttpServer.java" startLine="114" startPosition="31" endLine="116" endPosition="15" />
     <scopeInfo nodeId="2641474643395194086" fileName="MpsHttpServer.java" startLine="44" startPosition="57" endLine="47" endPosition="9" />
     <scopeInfo nodeId="2641474643395768541" fileName="MpsHttpServer.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="2641474643395768541" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5767254038727031122" fileName="MpsHttpServer.java" startLine="106" startPosition="25" endLine="109" endPosition="7" />
-    <scopeInfo nodeId="5767254038727036475" fileName="MpsHttpServer.java" startLine="106" startPosition="25" endLine="109" endPosition="7" />
-    <scopeInfo nodeId="5767254038727003497" fileName="MpsHttpServer.java" startLine="112" startPosition="35" endLine="115" endPosition="9" />
-    <scopeInfo nodeId="5767254038727021151" fileName="MpsHttpServer.java" startLine="112" startPosition="35" endLine="115" endPosition="9" />
-    <scopeInfo nodeId="2641474643394619231" fileName="MpsHttpServer.java" startLine="119" startPosition="9" endLine="122" endPosition="21" />
-    <scopeInfo nodeId="2641474643394619232" fileName="MpsHttpServer.java" startLine="123" startPosition="0" endLine="126" endPosition="7">
+    <scopeInfo nodeId="1190122077107184539" fileName="MpsHttpServer.java" startLine="92" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1190122077107184539" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5767254038727031122" fileName="MpsHttpServer.java" startLine="132" startPosition="25" endLine="135" endPosition="7" />
+    <scopeInfo nodeId="5767254038727036475" fileName="MpsHttpServer.java" startLine="132" startPosition="25" endLine="135" endPosition="7" />
+    <scopeInfo nodeId="5767254038727003497" fileName="MpsHttpServer.java" startLine="138" startPosition="35" endLine="141" endPosition="9" />
+    <scopeInfo nodeId="5767254038727021151" fileName="MpsHttpServer.java" startLine="138" startPosition="35" endLine="141" endPosition="9" />
+    <scopeInfo nodeId="2641474643394619231" fileName="MpsHttpServer.java" startLine="145" startPosition="9" endLine="148" endPosition="21" />
+    <scopeInfo nodeId="2641474643394619232" fileName="MpsHttpServer.java" startLine="149" startPosition="0" endLine="152" endPosition="7">
       <varInfo nodeId="2641474643394619233" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2641474643394619235" fileName="MpsHttpServer.java" startLine="123" startPosition="29" endLine="126" endPosition="7" />
-    <scopeInfo nodeId="2641474643394781102" fileName="MpsHttpServer.java" startLine="123" startPosition="29" endLine="126" endPosition="7" />
-    <scopeInfo nodeId="7527841852583039977" fileName="MpsHttpServer.java" startLine="132" startPosition="34" endLine="135" endPosition="5" />
-    <scopeInfo nodeId="2641474643394482701" fileName="MpsHttpServer.java" startLine="140" startPosition="0" endLine="143" endPosition="0">
-      <varInfo nodeId="2641474643394518515" varName="handler" />
-      <varInfo nodeId="2641474643394518519" varName="prefix" />
-    </scopeInfo>
-    <scopeInfo nodeId="2641474643394685133" fileName="MpsHttpServer.java" startLine="148" startPosition="0" endLine="151" endPosition="0">
+    <scopeInfo nodeId="2641474643394619235" fileName="MpsHttpServer.java" startLine="149" startPosition="29" endLine="152" endPosition="7" />
+    <scopeInfo nodeId="2641474643394781102" fileName="MpsHttpServer.java" startLine="149" startPosition="29" endLine="152" endPosition="7" />
+    <scopeInfo nodeId="7527841852583039977" fileName="MpsHttpServer.java" startLine="158" startPosition="34" endLine="161" endPosition="5" />
+    <scopeInfo nodeId="2641474643394685133" fileName="MpsHttpServer.java" startLine="179" startPosition="0" endLine="182" endPosition="0">
       <varInfo nodeId="2641474643394685133" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2641474643394764955" fileName="MpsHttpServer.java" startLine="153" startPosition="0" endLine="156" endPosition="0">
+    <scopeInfo nodeId="2641474643394764955" fileName="MpsHttpServer.java" startLine="184" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="2641474643394764955" varName="it" />
     </scopeInfo>
+    <scopeInfo nodeId="1190122077107201699" fileName="MpsHttpServer.java" startLine="101" startPosition="89" endLine="105" endPosition="9" />
     <scopeInfo nodeId="2641474643395803575" fileName="MpsHttpServer.java" startLine="59" startPosition="0" endLine="64" endPosition="78">
       <varInfo nodeId="2641474643395803577" varName="e" />
     </scopeInfo>
@@ -236,45 +256,63 @@
       <varInfo nodeId="2641474643395949177" varName="printer" />
       <varInfo nodeId="2641474643395821502" varName="writer" />
     </scopeInfo>
-    <scopeInfo nodeId="7527841852583039972" fileName="MpsHttpServer.java" startLine="132" startPosition="0" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="7527841852583039978" fileName="MpsHttpServer.java" startLine="161" startPosition="0" endLine="166" endPosition="0" />
+    <scopeInfo nodeId="7527841852583039972" fileName="MpsHttpServer.java" startLine="158" startPosition="0" endLine="163" endPosition="0" />
+    <scopeInfo nodeId="7527841852583039978" fileName="MpsHttpServer.java" startLine="192" startPosition="0" endLine="197" endPosition="0" />
     <scopeInfo nodeId="2641474643394935455" fileName="MpsHttpServer.java" startLine="71" startPosition="66" endLine="77" endPosition="54">
       <varInfo nodeId="2641474643395768532" varName="projectsJson" />
     </scopeInfo>
-    <scopeInfo nodeId="5767254038727036484" fileName="MpsHttpServer.java" startLine="110" startPosition="12" endLine="116" endPosition="7" />
+    <scopeInfo nodeId="1190122077107201693" fileName="MpsHttpServer.java" startLine="100" startPosition="0" endLine="106" endPosition="7">
+      <varInfo nodeId="1190122077107201695" varName="prefix" />
+    </scopeInfo>
+    <scopeInfo nodeId="5767254038727036484" fileName="MpsHttpServer.java" startLine="136" startPosition="12" endLine="142" endPosition="7" />
     <scopeInfo nodeId="2641474643394935452" fileName="MpsHttpServer.java" startLine="71" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="2641474643394935469" varName="exchange" />
     </scopeInfo>
+    <scopeInfo nodeId="2641474643394482701" fileName="MpsHttpServer.java" startLine="166" startPosition="0" endLine="174" endPosition="0">
+      <varInfo nodeId="2641474643394518515" varName="handler" />
+      <varInfo nodeId="2641474643394518519" varName="prefix" />
+    </scopeInfo>
     <scopeInfo nodeId="2641474643395803574" fileName="MpsHttpServer.java" startLine="48" startPosition="13" endLine="58" endPosition="11" />
-    <scopeInfo nodeId="2641474643394482821" fileName="MpsHttpServer.java" startLine="146" startPosition="56" endLine="156" endPosition="7">
+    <scopeInfo nodeId="2641474643394482821" fileName="MpsHttpServer.java" startLine="177" startPosition="56" endLine="187" endPosition="7">
       <varInfo nodeId="2641474643394709688" varName="prefixesToRemove" />
     </scopeInfo>
-    <scopeInfo nodeId="2641474643394935635" fileName="MpsHttpServer.java" startLine="87" startPosition="101" endLine="99" endPosition="92" />
-    <scopeInfo nodeId="2641474643394482818" fileName="MpsHttpServer.java" startLine="146" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="2641474643394935635" fileName="MpsHttpServer.java" startLine="113" startPosition="101" endLine="125" endPosition="92" />
+    <scopeInfo nodeId="2641474643394482818" fileName="MpsHttpServer.java" startLine="177" startPosition="0" endLine="189" endPosition="0">
       <varInfo nodeId="2641474643394518529" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="2641474643394935632" fileName="MpsHttpServer.java" startLine="87" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="2641474643394935632" fileName="MpsHttpServer.java" startLine="113" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="2641474643394935670" varName="exchange" />
       <varInfo nodeId="5767254038726357513" varName="uri" />
     </scopeInfo>
     <scopeInfo nodeId="2641474643394940554" fileName="MpsHttpServer.java" startLine="43" startPosition="50" endLine="65" endPosition="9">
       <varInfo nodeId="2641474643395040284" varName="uri" />
     </scopeInfo>
-    <scopeInfo nodeId="7527841852583039971" fileName="MpsHttpServer.java" startLine="104" startPosition="31" endLine="127" endPosition="5">
+    <scopeInfo nodeId="7527841852583039971" fileName="MpsHttpServer.java" startLine="130" startPosition="31" endLine="153" endPosition="5">
       <varInfo nodeId="5767254038726569282" varName="plugin" />
     </scopeInfo>
     <scopeInfo nodeId="2641474643394614310" fileName="MpsHttpServer.java" startLine="41" startPosition="66" endLine="66" endPosition="7">
       <varInfo nodeId="2641474643394940544" varName="requestMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="7527841852583039966" fileName="MpsHttpServer.java" startLine="104" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="7527841852583039966" fileName="MpsHttpServer.java" startLine="130" startPosition="0" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="2641474643394935531" fileName="MpsHttpServer.java" startLine="82" startPosition="93" endLine="108" endPosition="150">
+      <varInfo nodeId="1190122077106974693" varName="project" />
+      <varInfo nodeId="1190122077106873186" varName="projectId" />
+      <varInfo nodeId="1190122077106920835" varName="requestUri" />
+      <varInfo nodeId="882642151257510768" varName="uri" />
+    </scopeInfo>
     <scopeInfo nodeId="2641474643394614303" fileName="MpsHttpServer.java" startLine="41" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="2641474643394614307" varName="exchange" />
     </scopeInfo>
+    <scopeInfo nodeId="2641474643394935528" fileName="MpsHttpServer.java" startLine="82" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="2641474643394935552" varName="exchange" />
+      <varInfo nodeId="1190122077106650064" varName="rawUri" />
+    </scopeInfo>
     <unitInfo nodeId="2641474643395768541" fileName="MpsHttpServer.java" startLine="72" startPosition="170" endLine="76" endPosition="7" unitName="jetbrains.mps.web.core.server.MpsHttpServer$2" />
-    <unitInfo nodeId="2641474643394685133" fileName="MpsHttpServer.java" startLine="147" startPosition="106" endLine="151" endPosition="5" unitName="jetbrains.mps.web.core.server.MpsHttpServer$2" />
-    <unitInfo nodeId="2641474643394764955" fileName="MpsHttpServer.java" startLine="152" startPosition="57" endLine="156" endPosition="5" unitName="jetbrains.mps.web.core.server.MpsHttpServer$3" />
-    <unitInfo nodeId="2641474643394614301" fileName="MpsHttpServer.java" startLine="40" startPosition="46" endLine="101" endPosition="3" unitName="jetbrains.mps.web.core.server.MpsHttpServer$1" />
-    <unitInfo nodeId="7527841852582992287" fileName="MpsHttpServer.java" startLine="36" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.web.core.server.MpsHttpServer" />
+    <unitInfo nodeId="1190122077107184539" fileName="MpsHttpServer.java" startLine="91" startPosition="128" endLine="95" endPosition="7" unitName="jetbrains.mps.web.core.server.MpsHttpServer$2" />
+    <unitInfo nodeId="2641474643394685133" fileName="MpsHttpServer.java" startLine="178" startPosition="106" endLine="182" endPosition="5" unitName="jetbrains.mps.web.core.server.MpsHttpServer$2" />
+    <unitInfo nodeId="2641474643394764955" fileName="MpsHttpServer.java" startLine="183" startPosition="57" endLine="187" endPosition="5" unitName="jetbrains.mps.web.core.server.MpsHttpServer$3" />
+    <unitInfo nodeId="2641474643394614301" fileName="MpsHttpServer.java" startLine="40" startPosition="46" endLine="127" endPosition="3" unitName="jetbrains.mps.web.core.server.MpsHttpServer$1" />
+    <unitInfo nodeId="7527841852582992287" fileName="MpsHttpServer.java" startLine="36" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.web.core.server.MpsHttpServer" />
   </root>
 </debugInfo>
 
