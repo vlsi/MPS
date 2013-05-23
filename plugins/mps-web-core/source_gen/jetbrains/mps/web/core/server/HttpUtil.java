@@ -7,11 +7,15 @@ import com.sun.net.httpserver.Headers;
 import java.io.IOException;
 import org.apache.log4j.Priority;
 import java.io.OutputStream;
+import org.jetbrains.annotations.NotNull;
+import java.io.File;
+import java.io.FileNotFoundException;
+import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class HttpUtil {
-  public static void printContent(String content, String contentType, int responseCode, HttpExchange exchange) {
+  public static void doResponse(String content, String contentType, int responseCode, HttpExchange exchange) {
     Headers responseHeaders = exchange.getResponseHeaders();
     responseHeaders.set("Content-Type", contentType);
     try {
@@ -38,6 +42,37 @@ public class HttpUtil {
         }
       }
     }
+  }
+
+  public static void doResponse(@NotNull File file, HttpExchange exchange) throws FileNotFoundException {
+    if (!(file.exists())) {
+      throw new FileNotFoundException(file.getAbsolutePath());
+    }
+    String content = FileUtil.read(file);
+    HttpUtil.doResponse(content, getContentType(file), 200, exchange);
+  }
+
+  public static void doJsonResponse(String json, HttpExchange exchange) {
+    doResponse(json, "application/json", 200, exchange);
+  }
+
+  public static String getContentType(File file) {
+    if (file.getPath().endsWith(".js")) {
+      return "application/javascript";
+    }
+    if (file.getPath().endsWith(".json")) {
+      return "application/json";
+    }
+    if (file.getPath().endsWith(".css")) {
+      return "text/css";
+    }
+    if (file.getPath().endsWith(".html")) {
+      return "text/html";
+    }
+    if (file.getPath().endsWith(".png")) {
+      return "image/png";
+    }
+    return "application/octet-stream";
   }
 
   protected static Logger LOG = LogManager.getLogger(HttpUtil.class);

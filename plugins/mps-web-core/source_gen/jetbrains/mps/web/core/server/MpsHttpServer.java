@@ -4,6 +4,7 @@ package jetbrains.mps.web.core.server;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.sun.net.httpserver.HttpServer;
+import java.io.File;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -17,8 +18,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.Project;
-import java.net.InetSocketAddress;
+import java.io.FileNotFoundException;
+import com.intellij.ide.plugins.IdeaPluginDescriptor;
+import com.intellij.ide.plugins.PluginManager;
 import org.apache.log4j.Priority;
+import java.net.InetSocketAddress;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -31,6 +35,7 @@ import org.apache.log4j.LogManager;
 
 public class MpsHttpServer implements ApplicationComponent {
   private HttpServer server;
+  private File htmlFolder;
   private final Map<String, Handler> handlers = MapSequence.fromMap(new HashMap<String, Handler>());
   private final HttpHandler httpHandler = new HttpHandler() {
     public void handle(HttpExchange exchange) throws IOException {
@@ -41,19 +46,19 @@ public class MpsHttpServer implements ApplicationComponent {
           LOG.info("was given uri: " + uri);
         }
         try {
-          if (uri.startsWith("/projects")) {
+          if (uri.startsWith("/rest/projects")) {
             handleProjectsListRequest(exchange);
-          } else if (uri.startsWith("/p/")) {
+          } else if (uri.startsWith("/rest/p/")) {
             handleProjectRequest(exchange);
           } else {
-            handleStaticRequest(exchange);
+            handleStaticRequest(uri, exchange);
           }
         } catch (Exception e) {
           StringWriter writer = new StringWriter();
           PrintWriter printer = new PrintWriter(writer);
           e.printStackTrace(printer);
           printer.flush();
-          HttpUtil.printContent(writer.toString(), "text/plain", 500, exchange);
+          HttpUtil.doResponse(writer.toString(), "text/plain", 500, exchange);
         }
       }
     }
@@ -66,7 +71,7 @@ public class MpsHttpServer implements ApplicationComponent {
           return String.format("{\"name\" : \"%s\", \"id\" : \"%s\"}", it.getName(), it.getName());
         }
       }), ", ") + "]";
-      HttpUtil.printContent(projectsJson, "application/json", 200, exchange);
+      HttpUtil.doJsonResponse(projectsJson, exchange);
     }
 
 
@@ -76,12 +81,34 @@ public class MpsHttpServer implements ApplicationComponent {
 
 
 
-    public void handleStaticRequest(HttpExchange exchange) {
+    public void handleStaticRequest(String uri, HttpExchange exchange) throws FileNotFoundException {
+      if (htmlFolder == null) {
+        throw new FileNotFoundException();
+      }
+
+      if (uri.startsWith("/")) {
+        uri = uri.substring(1);
+      }
+      HttpUtil.doResponse(new File(htmlFolder, uri.replace("/", File.separator)), exchange);
     }
   };
 
 
   public void initComponent() {
+    IdeaPluginDescriptor plugin = PluginManager.getPlugin(PluginManager.getPluginByClassName(MpsHttpServer.this.getClass().getName()));
+    if (plugin == null) {
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Can not find plugin by class name " + MpsHttpServer.this.getClass().getName());
+      }
+    } else {
+      htmlFolder = new File(plugin.getPath(), "html");
+      if (!(htmlFolder.exists())) {
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Can not return static content: html folder was not found by path " + htmlFolder.getAbsolutePath());
+        }
+      }
+    }
+
     try {
       server = HttpServer.create(new InetSocketAddress(8080), 0);
       server.createContext("/", httpHandler);

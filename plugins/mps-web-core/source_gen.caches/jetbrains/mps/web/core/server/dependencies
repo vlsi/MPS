@@ -9,17 +9,25 @@
   <dependency className="jetbrains.mps.web.core.server.HttpUtil" file="HttpUtil.java">
     <classNode dependClassName="com.sun.net.httpserver.Headers" />
     <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.web.core.server.MpsHttpServer" file="MpsHttpServer.java">
+    <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptor" />
+    <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
     <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />
     <classNode dependClassName="com.sun.net.httpserver.HttpHandler" />
     <classNode dependClassName="com.sun.net.httpserver.HttpServer" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.PrintWriter" />
     <classNode dependClassName="java.io.StringWriter" />
