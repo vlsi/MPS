@@ -16,12 +16,10 @@
 package jetbrains.mps.web;
 
 import jetbrains.mps.util.misc.hash.LinkedHashMap;
-import org.intellij.plugins.relaxNG.compact.RngCompactLanguage.MyNamesValidator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -33,27 +31,27 @@ public class JsonBuilder {
   private Map<String, JsonBuilder> myProperties = new LinkedHashMap<String, JsonBuilder>();
   protected Object myValue;
 
-  public static JsonBuilder stringValue (String value) {
+  public static JsonBuilder stringValue(String value) {
     return new StringJsonBuilder(value);
   }
 
-  public static JsonBuilder intValue (int value) {
+  public static JsonBuilder intValue(int value) {
     return new IntJsonBuilder(value);
   }
 
-  public static JsonBuilder boolValue (boolean value) {
+  public static JsonBuilder boolValue(boolean value) {
     return new BoolJsonBuilder(value);
   }
 
-  public static JsonBuilder collection (JsonBuilder... elements) {
+  public static JsonBuilder collection(JsonBuilder... elements) {
     return new CollectionJsonBuilder(Arrays.asList(elements));
   }
 
-  public static JsonBuilder collection (Collection<JsonBuilder> elements) {
+  public static JsonBuilder collection(Collection<JsonBuilder> elements) {
     return new CollectionJsonBuilder(elements);
   }
 
-  public static JsonBuilder object () {
+  public static JsonBuilder object() {
     return new JsonBuilder();
   }
 
@@ -108,16 +106,16 @@ public class JsonBuilder {
     return "\"" + value + "\"";
   }
 
-  private JsonBuilder () {
+  private JsonBuilder() {
     this.myValue = this;
   }
 
-  protected JsonBuilder (Object value) {
+  protected JsonBuilder(Object value) {
     myValue = value;
   }
 
   private static class StringJsonBuilder extends JsonBuilder {
-    private StringJsonBuilder (String value) {
+    private StringJsonBuilder(String value) {
       super(value);
     }
 
@@ -128,7 +126,7 @@ public class JsonBuilder {
   }
 
   private static class IntJsonBuilder extends JsonBuilder {
-    private IntJsonBuilder (int value) {
+    private IntJsonBuilder(int value) {
       super(value);
     }
 
@@ -139,9 +137,10 @@ public class JsonBuilder {
   }
 
   private static class BoolJsonBuilder extends JsonBuilder {
-    private BoolJsonBuilder (boolean value) {
+    private BoolJsonBuilder(boolean value) {
       super(value);
     }
+
     @Override
     protected StringBuilder dump(String prefix, StringBuilder builder) {
       return builder.append(escapeValue(String.valueOf(myValue)));
@@ -149,9 +148,10 @@ public class JsonBuilder {
   }
 
   private static class CollectionJsonBuilder extends JsonBuilder {
-    private CollectionJsonBuilder (Collection<JsonBuilder> elements) {
+    private CollectionJsonBuilder(Collection<JsonBuilder> elements) {
       super(new ArrayList<JsonBuilder>(elements));
     }
+
     @Override
     protected StringBuilder dump(String prefix, StringBuilder builder) {
       builder.append("[\n");
