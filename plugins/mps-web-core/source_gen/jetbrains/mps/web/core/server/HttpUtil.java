@@ -9,13 +9,17 @@ import org.apache.log4j.Priority;
 import java.io.OutputStream;
 import org.jetbrains.annotations.NotNull;
 import java.io.File;
-import java.io.FileNotFoundException;
-import jetbrains.mps.util.FileUtil;
+import java.io.FileInputStream;
+import com.intellij.openapi.util.io.FileUtilRt;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class HttpUtil {
   public static void doResponse(String content, String contentType, int responseCode, HttpExchange exchange) {
+    doResponse(content.getBytes(), contentType, responseCode, exchange);
+  }
+
+  public static void doResponse(byte[] content, String contentType, int responseCode, HttpExchange exchange) {
     Headers responseHeaders = exchange.getResponseHeaders();
     responseHeaders.set("Content-Type", contentType);
     try {
@@ -28,7 +32,7 @@ public class HttpUtil {
 
     OutputStream responseBody = exchange.getResponseBody();
     try {
-      responseBody.write(content.getBytes());
+      responseBody.write(content);
     } catch (IOException e) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("Could not write response", e);
@@ -44,13 +48,18 @@ public class HttpUtil {
     }
   }
 
-  public static void doResponse(@NotNull File file, HttpExchange exchange) throws FileNotFoundException {
+  public static void doResponse(@NotNull File file, HttpExchange exchange) throws IOException {
     if (!(file.exists())) {
       doResponse("file not found: " + file.getAbsolutePath(), "text/plain", 404, exchange);
       return;
     }
-    String content = FileUtil.read(file);
-    HttpUtil.doResponse(content, getContentType(file), 200, exchange);
+    FileInputStream inputStream = new FileInputStream(file);
+    try {
+      byte[] content = FileUtilRt.loadBytes(inputStream);
+      HttpUtil.doResponse(content, getContentType(file), 200, exchange);
+    } finally {
+      inputStream.close();
+    }
   }
 
   public static void doJsonResponse(String json, HttpExchange exchange) {
