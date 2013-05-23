@@ -4,3 +4,36 @@
     text-align: center;
     padding-top: 1em;
 }
+
+#projects-list {
+    padding-top: 10px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+#projects-list td:first-child {
+    width: 2cm;
+}
+
+.mbreadcrumb {
+    padding: 10px 15px;
+    margin: 0 0 0 -5px;
+    list-style: none;
+    display: block;
+    float: left;
+}
+
+.mbreadcrumb > li {
+    display: inline;
+}
+
+.mbreadcrumb > li > .divider {
+    padding: 0 5px;
+    color: #ccc;
+}
+
+.mbreadcrumb > .active {
+    color: #999999;
+}
