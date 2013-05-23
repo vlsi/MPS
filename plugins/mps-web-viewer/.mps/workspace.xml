@@ -12,17 +12,7 @@
     </option>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffdfd234-087a-4cea-aa39-7e503155654f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.mps/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.mps/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jetbrains.mps.web.viewer/models/jetbrains/mps/web/viewer/handlers.mps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jetbrains.mps.web.viewer/jetbrains.mps.web.viewer.msd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.mps/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.mps/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.mps/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.mps/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/plugins/mps-web-core/META-INF/plugin.xml" afterPath="$APPLICATION_HOME_DIR$/plugins/mps-web-core/META-INF/plugin.xml" />
-    </list>
+    <list default="true" id="ffdfd234-087a-4cea-aa39-7e503155654f" name="Default" comment="" />
     <ignored path="mps-web-viewer.iws" />
     <ignored path=".mps/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />

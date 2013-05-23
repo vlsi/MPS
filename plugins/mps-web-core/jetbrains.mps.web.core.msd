@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.web.core" uuid="9f006f2b-d74f-413d-bc37-74436e70efd3" compileInMPS="false">
+<solution name="jetbrains.mps.web.core" uuid="9f006f2b-d74f-413d-bc37-74436e70efd3" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="./models" />
@@ -9,6 +9,9 @@
   <facets>
     <facet pluginId="jetbrains.mps.web.core" type="ideaPlugin" />
   </facets>
+  <stubModelEntries>
+    <stubModelEntry path="${module}/classes" />
+  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)</dependency>
