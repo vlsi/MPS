@@ -1,9 +1,59 @@
 {
     "options": [
-        "InterfaceConcept",
-        "Interface",
-        "Class",
-        "Classifier",
-        "Enumeration"
+        {
+            "class": "root",
+            "node-name": "ClassifierScopes",
+            "node-id": "8483743094179640481",
+            "model-name": "jetbrains.mps.baseLanguage.scopes",
+            "model-id": "r:89c0fb70-0977-4113-a076-5906f9d8630f",
+            "module-name": "jetbrains.mps.baseLanguage.scopes",
+            "module-id": "e39e4a59-8cb6-498e-860e-8fa8361c0d90"
+        },
+
+        {
+            "class": "root",
+            "node-name": "DebugSession",
+            "node-id": "4352118152439824931",
+            "model-name": "jetbrains.mps.debugger.java.runtime.state",
+            "model-id": "r:63e7a653-1334-49d4-8e81-fd72b84fb4ff",
+            "module-name": "jetbrains.mps.debugger.java.runtime",
+            "module-id": "fcffe3cf-3ebc-4d3d-989b-2f30533bc904"
+        },
+
+        {
+            "class": "model",
+            "model-name": "jetbrains.mps.baseLanguage.scopes",
+            "model-id": "r:89c0fb70-0977-4113-a076-5906f9d8630f",
+            "module-name": "jetbrains.mps.baseLanguage.scopes",
+            "module-id": "e39e4a59-8cb6-498e-860e-8fa8361c0d90"
+        },
+
+        {
+            "class": "model",
+            "model-name": "jetbrains.mps.debugger.java.runtime.state",
+            "model-id": "r:63e7a653-1334-49d4-8e81-fd72b84fb4ff",
+            "module-name": "jetbrains.mps.debugger.java.runtime",
+            "module-id": "fcffe3cf-3ebc-4d3d-989b-2f30533bc904"
+        },
+
+        {
+            "class": "model stub",
+            "model-name": "jetbrains.mps",
+            "model-id": "MPS.Core",
+            "module-name": "MPS.Core",
+            "module-id": "6ed54515-acc8-4d1e-a16c-9fd6cfe951ea"
+        },
+
+        {
+            "class": "module solution",
+            "module-name": "jetbrains.mps.baseLanguage.scopes",
+            "module-id": "e39e4a59-8cb6-498e-860e-8fa8361c0d90"
+        },
+
+        {
+            "class": "module solution",
+            "module-name": "jetbrains.mps.debugger.java.runtime",
+            "module-id": "fcffe3cf-3ebc-4d3d-989b-2f30533bc904"
+        }
     ]
 }
