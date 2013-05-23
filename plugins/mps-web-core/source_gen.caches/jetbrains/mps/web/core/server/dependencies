@@ -2,25 +2,45 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.web.core.server.Handler" file="Handler.java">
     <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+  </dependency>
+  <dependency className="jetbrains.mps.web.core.server.HttpUtil" file="HttpUtil.java">
+    <classNode dependClassName="com.sun.net.httpserver.Headers" />
+    <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
   </dependency>
   <dependency className="jetbrains.mps.web.core.server.MpsHttpServer" file="MpsHttpServer.java">
     <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />
     <classNode dependClassName="com.sun.net.httpserver.HttpHandler" />
     <classNode dependClassName="com.sun.net.httpserver.HttpServer" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.PrintWriter" />
+    <classNode dependClassName="java.io.StringWriter" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.net.InetSocketAddress" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.ProjectManager" />
     <classNode dependClassName="jetbrains.mps.web.core.server.Handler" />
+    <classNode dependClassName="jetbrains.mps.web.core.server.HttpUtil" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />

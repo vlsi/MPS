@@ -10,6 +10,13 @@ import java.util.HashMap;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpExchange;
 import java.io.IOException;
+import java.io.StringWriter;
+import java.io.PrintWriter;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.ProjectManager;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.Project;
 import java.net.InetSocketAddress;
 import org.apache.log4j.Priority;
 import java.util.List;
@@ -27,13 +34,56 @@ public class MpsHttpServer implements ApplicationComponent {
   private final Map<String, Handler> handlers = MapSequence.fromMap(new HashMap<String, Handler>());
   private final HttpHandler httpHandler = new HttpHandler() {
     public void handle(HttpExchange exchange) throws IOException {
+      String requestMethod = exchange.getRequestMethod();
+      if (requestMethod.equalsIgnoreCase("GET")) {
+        String uri = exchange.getRequestURI().toString();
+        if (LOG.isInfoEnabled()) {
+          LOG.info("was given uri: " + uri);
+        }
+        try {
+          if (uri.startsWith("/projects")) {
+            handleProjectsListRequest(exchange);
+          } else if (uri.startsWith("/p/")) {
+            handleProjectRequest(exchange);
+          } else {
+            handleStaticRequest(exchange);
+          }
+        } catch (Exception e) {
+          StringWriter writer = new StringWriter();
+          PrintWriter printer = new PrintWriter(writer);
+          e.printStackTrace(printer);
+          printer.flush();
+          HttpUtil.printContent(writer.toString(), "text/plain", 500, exchange);
+        }
+      }
+    }
+
+
+
+    public void handleProjectsListRequest(HttpExchange exchange) {
+      String projectsJson = "[" + IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(ProjectManager.getInstance().getOpenProjects())).select(new ISelector<Project, String>() {
+        public String select(Project it) {
+          return String.format("{\"name\" : \"%s\", \"id\" : \"%s\"}", it.getName(), it.getName());
+        }
+      }), ", ") + "]";
+      HttpUtil.printContent(projectsJson, "application/json", 200, exchange);
+    }
+
+
+
+    public void handleProjectRequest(HttpExchange exchange) {
+    }
+
+
+
+    public void handleStaticRequest(HttpExchange exchange) {
     }
   };
 
 
   public void initComponent() {
     try {
-      server = HttpServer.create(new InetSocketAddress(80), 0);
+      server = HttpServer.create(new InetSocketAddress(8080), 0);
       server.createContext("/", httpHandler);
       server.start();
     } catch (IOException e) {

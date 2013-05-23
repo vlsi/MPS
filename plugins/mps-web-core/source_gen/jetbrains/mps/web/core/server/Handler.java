@@ -6,5 +6,5 @@ import jetbrains.mps.project.Project;
 import com.sun.net.httpserver.HttpExchange;
 
 public interface Handler {
-  public void handle(String requestUrl, Project project, HttpExchange exchange);
+  public void handle(String requestUrl, Project project, HttpExchange exchange) throws Exception;
 }

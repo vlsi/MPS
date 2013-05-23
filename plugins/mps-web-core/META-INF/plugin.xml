@@ -14,6 +14,9 @@
 
   <application-components>
     <component>
+      <implementation-class>jetbrains.mps.web.core.server.MpsHttpServer</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.web.core.actions.Core_PluginInitializer</implementation-class>
     </component>
   </application-components>
