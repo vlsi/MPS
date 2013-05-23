@@ -85,6 +85,10 @@ public class MpsHttpServer implements ApplicationComponent {
 
 
     public void handleStaticRequest(String uri, HttpExchange exchange) throws FileNotFoundException {
+      if (uri.contains("..")) {
+        HttpUtil.doResponse(uri + " contains prohibited substring \"..\"", "text/plain", 403, exchange);
+        return;
+      }
       if (htmlFolder == null) {
         throw new FileNotFoundException();
       }
