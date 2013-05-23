@@ -1,0 +1,1 @@
+http://localhost:8080/rest/p/MPS/view/r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)/8483743094179640481.html
