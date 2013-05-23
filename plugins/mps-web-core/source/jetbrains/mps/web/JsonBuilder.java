@@ -67,7 +67,11 @@ public class JsonBuilder {
   }
 
   public void addProperty(String name, Collection<JsonBuilder> children) {
-    if (!children.isEmpty()) {
+    addProperty(name, children, false);
+  }
+
+  public void addProperty(String name, Collection<JsonBuilder> children, boolean addIfEmpty) {
+    if (addIfEmpty || !children.isEmpty()) {
       myProperties.put(name, collection(children));
     }
   }

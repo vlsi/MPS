@@ -142,21 +142,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7976131990197900911">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7976131990197903136">
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7976131990197903188">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.DefaultClassCreator" typeId="tpee.2820489544401957797" id="7976131990197990311">
-                <link role="classifier" roleId="tpee.2820489544401957798" targetNodeId="p0tl.7976131990197880387" resolveInfo="ProjectStructureHandler" />
-              </node>
-            </node>
-            <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7976131990197900905">
-              <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="6087360391925964629">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="7976131990197900051" resolveInfo="projectStructure" />
-              </node>
-              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7976131990197900908" />
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6087360391925924500">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6087360391925925913">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6087360391925925965">
@@ -217,14 +202,22 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7976131990197990944">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7976131990197990945">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pmm0.2641474643394482701" resolveInfo="registerHandler" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7976131990197990946">
-                <property name="value" nameId="tpee.1070475926801" value="/structure.json" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5037960186195772936">
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="p0tl.7976131990197880387" resolveInfo="ProjectStructureHandler" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="p0tl.5037960186195743179" resolveInfo="PREFIX" />
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7976131990197990947">
-                <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="6087360391925965123">
-                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="7976131990197900051" resolveInfo="projectStructure" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5037960186195774434">
+                <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7976131990197990947">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="6087360391925965123">
+                    <link role="member" roleId="tp4f.1205756909548" targetNodeId="7976131990197900051" resolveInfo="projectStructure" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7976131990197990948" />
                 </node>
-                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7976131990197990948" />
+                <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5037960186195774677">
+                  <node role="creator" roleId="tpee.1145553007750" type="tpee.DefaultClassCreator" typeId="tpee.2820489544401957797" id="5037960186195774678">
+                    <link role="classifier" roleId="tpee.2820489544401957798" targetNodeId="p0tl.7976131990197880387" resolveInfo="ProjectStructureHandler" />
+                  </node>
+                </node>
               </node>
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7976131990197990950">

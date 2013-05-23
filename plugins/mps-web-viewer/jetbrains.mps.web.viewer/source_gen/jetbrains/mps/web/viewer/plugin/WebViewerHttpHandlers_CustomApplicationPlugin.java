@@ -5,10 +5,10 @@ package jetbrains.mps.web.viewer.plugin;
 import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.web.core.server.Handler;
 import jetbrains.mps.web.viewer.handlers.ProjectNameHandler;
-import jetbrains.mps.web.viewer.handlers.ProjectStructureHandler;
 import jetbrains.mps.web.viewer.handlers.ProjectVcsRevisionHandler;
 import jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler;
 import jetbrains.mps.web.core.server.MpsHttpServer;
+import jetbrains.mps.web.viewer.handlers.ProjectStructureHandler;
 
 public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private Handler projectNameHandler;
@@ -22,13 +22,12 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
   public void doInit() {
     // create handlers 
     WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler = new ProjectNameHandler();
-    WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure = new ProjectStructureHandler();
     WebViewerHttpHandlers_CustomApplicationPlugin.this.projectRevisionHandler = new ProjectVcsRevisionHandler();
     WebViewerHttpHandlers_CustomApplicationPlugin.this.nodeToHtmlHandler = new NodeToHtmlHandler();
 
     // register handlers 
     MpsHttpServer.getInstance().registerHandler("/name.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler);
-    MpsHttpServer.getInstance().registerHandler("/structure.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure);
+    MpsHttpServer.getInstance().registerHandler(ProjectStructureHandler.PREFIX, WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure = new ProjectStructureHandler());
     MpsHttpServer.getInstance().registerHandler("/revision.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectRevisionHandler);
     MpsHttpServer.getInstance().registerHandler("/view/", WebViewerHttpHandlers_CustomApplicationPlugin.this.nodeToHtmlHandler);
   }

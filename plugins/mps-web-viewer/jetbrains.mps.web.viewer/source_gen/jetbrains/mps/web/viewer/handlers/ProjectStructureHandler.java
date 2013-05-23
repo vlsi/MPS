@@ -6,52 +6,139 @@ import jetbrains.mps.web.core.server.Handler;
 import jetbrains.mps.project.Project;
 import com.sun.net.httpserver.HttpExchange;
 import jetbrains.mps.project.StandaloneMPSProject;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.web.JsonBuilder;
-import java.util.ArrayList;
 import jetbrains.mps.web.core.server.HttpUtil;
+import jetbrains.mps.project.ModuleId;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.web.JsonBuilder;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collection;
 
 public class ProjectStructureHandler implements Handler {
-  public void handle(String requestUrl, Project project, HttpExchange exchange) throws Exception {
+  public static final String PREFIX = "/structure.json";
+  private static final String MODULE_PREFIX = "/module/";
+  private static final String MODEL_PREFIX = "/model/";
+
+
+  public void handleInRead(String requestUrl, Project project, HttpExchange exchange) throws Exception {
     StandaloneMPSProject standaloneProject = (StandaloneMPSProject) project;
-    VirtualFolder projectRoot = new VirtualFolder(project.getName());
-    for (SModule nextModule : ListSequence.fromList(standaloneProject.getModules())) {
-      projectRoot.getSubfolder(standaloneProject.getFolderFor(nextModule)).addModule(nextModule);
+    String suffix = requestUrl.substring(PREFIX.length());
+    if ((suffix == null || suffix.length() == 0)) {
+      HttpUtil.doJsonResponse(dumpProjectStructure(standaloneProject), exchange);
+      return;
     }
-
-    JsonBuilder builder = JsonBuilder.object();
-    builder.addProperty("elements", ListSequence.fromListAndArray(new ArrayList<JsonBuilder>(), dumpFolder(projectRoot)));
-
-    HttpUtil.doJsonResponse(builder.toString(), exchange);
+    if (suffix.startsWith(MODULE_PREFIX)) {
+      String moduleIDString = suffix.substring(MODULE_PREFIX.length());
+      ModuleId moduleId = ModuleId.fromString(moduleIDString);
+      SModule module = standaloneProject.getRepository().getModule(moduleId);
+      if (module != null) {
+        HttpUtil.doJsonResponse(dumpModuleStructure(module, standaloneProject), exchange);
+        return;
+      }
+      HttpUtil.doJsonResponse("Module not found: " + moduleIDString, exchange);
+      return;
+    }
+    if (suffix.startsWith(MODEL_PREFIX)) {
+      String modelReferenceString = suffix.substring(MODEL_PREFIX.length());
+      SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelReferenceString);
+      SModel model = modelReference.resolve(project.getRepository());
+      if (model != null) {
+        HttpUtil.doJsonResponse(dumpModelStructure(model), exchange);
+        return;
+      }
+      HttpUtil.doJsonResponse("Model not found: " + modelReferenceString, exchange);
+      return;
+    }
+    HttpUtil.doJsonResponse("Invalid suffix: " + suffix, exchange);
   }
 
+  private String dumpModelStructure(SModel model) {
+    JsonBuilder builder = JsonBuilder.object();
+    List<JsonBuilder> nodes = ListSequence.fromList(new ArrayList<JsonBuilder>());
+    for (SNode node : Sequence.fromIterable(model.getRootNodes())) {
+      ListSequence.fromList(nodes).addElement(dumpNode(node));
+    }
+    builder.addProperty("elements", nodes, true);
+    return builder.toString();
+  }
 
+  private JsonBuilder dumpNode(SNode node) {
+    JsonBuilder builder = JsonBuilder.object();
+    builder.addProperty("name", node.getName());
+    builder.addProperty("icon", "img/folder.png");
+    return builder;
+  }
 
-  private JsonBuilder dumpFolder(VirtualFolder folder) {
+  private String dumpModuleStructure(SModule module, StandaloneMPSProject project) {
+    JsonBuilder builder = JsonBuilder.object();
+    List<JsonBuilder> children = ListSequence.fromList(new ArrayList<JsonBuilder>());
+    for (SModel model : Sequence.fromIterable(module.getModels())) {
+      JsonBuilder modelBuilder = JsonBuilder.object();
+      modelBuilder.addProperty("name", model.getModelName());
+      modelBuilder.addProperty("icon", "img/folder.png");
+      String modelReference = model.getReference().toString();
+      if (modelReference.indexOf("#") < 0) {
+        modelBuilder.addProperty("children", "/rest/p/" + project.getName() + PREFIX + MODEL_PREFIX + modelReference);
+      }
+      ListSequence.fromList(children).addElement(modelBuilder);
+    }
+    builder.addProperty("elements", children, true);
+    return builder.toString();
+  }
+
+  private String dumpProjectStructure(StandaloneMPSProject project) {
+    VirtualFolder projectRoot = new VirtualFolder(project.getName());
+    for (SModule nextModule : ListSequence.fromList(project.getModules())) {
+      projectRoot.getSubfolder(project.getFolderFor(nextModule)).addModule(nextModule);
+    }
+    JsonBuilder builder = JsonBuilder.object();
+    builder.addProperty("elements", ListSequence.fromListAndArray(new ArrayList<JsonBuilder>(), dumpFolder(projectRoot, project)), true);
+    return builder.toString();
+  }
+
+  private JsonBuilder dumpFolder(VirtualFolder folder, StandaloneMPSProject project) {
     JsonBuilder builder = JsonBuilder.object();
     builder.addProperty("name", folder.getName());
     builder.addProperty("icon", "img/folder.png");
-    List<JsonBuilder> children = ListSequence.fromListWithValues(new ArrayList<JsonBuilder>(), dumpSubfolders(folder));
+    List<JsonBuilder> children = ListSequence.fromListWithValues(new ArrayList<JsonBuilder>(), dumpSubfolders(folder, project));
     for (SModule module : folder.getModules()) {
       JsonBuilder child = JsonBuilder.object();
       child.addProperty("name", module.getModuleName());
       child.addProperty("icon", "img/folder.png");
+      child.addProperty("children", "/rest/p/" + project.getName() + PREFIX + MODULE_PREFIX + module.getModuleId().toString());
       ListSequence.fromList(children).addElement(child);
     }
     builder.addProperty("children", children);
     return builder;
   }
 
-  private Collection<JsonBuilder> dumpSubfolders(VirtualFolder folder) {
+  private Collection<JsonBuilder> dumpSubfolders(VirtualFolder folder, StandaloneMPSProject project) {
     List<JsonBuilder> children = ListSequence.fromList(new ArrayList<JsonBuilder>());
     for (VirtualFolder subfolder : folder.getSubfolders()) {
-      ListSequence.fromList(children).addElement(dumpFolder(subfolder));
+      ListSequence.fromList(children).addElement(dumpFolder(subfolder, project));
     }
     return children;
   }
 
-
+  public void handle(final String requestUrl, final Project project, final HttpExchange exchange) throws Exception {
+    final Exception[] ex = new Exception[]{null};
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        try {
+          handleInRead(requestUrl, project, exchange);
+        } catch (Exception e) {
+          ex[0] = e;
+        }
+      }
+    });
+    if (ex[0] != null) {
+      throw ex[0];
+    }
+  }
 }
