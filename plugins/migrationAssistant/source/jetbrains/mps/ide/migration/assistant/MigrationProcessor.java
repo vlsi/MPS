@@ -151,9 +151,9 @@ public class MigrationProcessor extends AbstractProjectComponent{
     if (myInit.compareAndSet(false, true)) {
       AnAction group = ActionManager.getInstance().getAction("jetbrains.mps.ide.mpsmigration.migration30.Migrations30_ActionGroup");
       if (group instanceof DefaultActionGroup) {
-        AnAction[] actionsOrStubs = ((DefaultActionGroup) group).getChildActionsOrStubs();
-        for (int i = 0; i < actionsOrStubs.length; i++) {
-          AnAction action = actionsOrStubs[i];
+        AnAction[] actions = ((DefaultActionGroup) group).getChildren(null);
+        for (int i = 0; i < actions.length; i++) {
+          AnAction action = actions[i];
           if (action instanceof BaseAction && !(action instanceof LabelledAnchor)) {
             myActions.add((BaseAction)action);
           }
