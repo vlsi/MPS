@@ -1,9 +1,9 @@
-.vertical_layout {
+.vertical-layout {
 }
-.horizontal_layout {
+.horizontal-layout {
     float: left;
 }
-.indent_layout {
+.indent-layout {
     position: relative;
     padding-left: 10px;
 }
@@ -19,18 +19,18 @@
 .indent-layout-new-line-children {
 
 }
-div.indent_layout > :first-child, div.indent-layout-new-line-children > div {
+div.indent-layout > :first-child, div.indent-layout-new-line-children > div {
     /*position: relative;*/
     margin-left: -10px;
 }
-.key_word {
+.key-word {
     color: blue;
 }
 .indent-layout-indent {
     padding-left: 10px;
 }
-div.indent_layout > div {float: left;}
-div.horizontal_layout > div {float: left}
-/*div {
-    border: 1px solid black;
-}*/
+div.indent-layout > div {float: left;}
+div.horizontal-layout > div {float: left}
+/*div {*/
+    /*border: 1px solid black;*/
+/*}*/
