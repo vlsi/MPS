@@ -123,7 +123,7 @@ $(function () {
         setContext(this.params['projectId'], null, null, null);
         var content = $("#content");
         content.html('<h2>Code</h2>');
-        content.append('<ul class="tree-root" data-source="fake/tree.json"></ul>');
+        content.append('<ul class="tree-root" data-source="/rest/p/' + currentProject + '/structure.json"></ul>');
         loadTree($('.tree-root'));
     });
 
