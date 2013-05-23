@@ -14,6 +14,7 @@
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeReferenceOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeReferenceOpenAPI_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSReferenceOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSReferenceOpenAPI_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.RemoveConceptProperties_Action" class="jetbrains.mps.ide.mpsmigration.migration30.RemoveConceptProperties_Action"></action>
+    <action id="jetbrains.mps.ide.mpsmigration.migration30.UpgradePersistence_Action" class="jetbrains.mps.ide.mpsmigration.migration30.UpgradePersistence_Action"></action>
     <group id="jetbrains.mps.ide.mpsmigration.migration30.Migrations30_ActionGroup" text="Migrations 3.0 (auto)" popup="true">
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeMethods_Action" />
@@ -29,6 +30,7 @@
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleReferenceOpenAPI_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleIdOpenAPI_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.RemoveConceptProperties_Action" />
+      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.UpgradePersistence_Action" />
       <add-to-group group-id="ToolsMenu" anchor="last" />
     </group>
   </actions>
