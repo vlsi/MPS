@@ -74,34 +74,39 @@ $(function () {
         } else {
             li.attr("data-collapsed", li.attr("data-collapsed") !== "true");
         }
-        event.stopImmediatePropagation();
+        event.preventDefault();
     }
 
     function applyTree(node, children, collapsed) {
         node.removeAttr("data-source");
         node.empty();
-        node.parent().attr('data-collapsed', 'false');
+        if (children.length) {
+            node.parent().attr('data-collapsed', 'false');
+        } else {
+            node.parent().removeAttr('data-collapsed');
+        }
         $.each(children, function (index, child) {
             var span = $('<span/>').css("class", "treeitem");
-            var li = $('<li/>').append("<i class='icon-spinner icon-spin'/>").append(span);
+            var li = $('<li/>').append(span);
+            span.append($('<span class="icon_any" style="background-image: url(\'/img/folder.png\')"></span>'));
             if ($.isArray(child.children)) {
                 span.append($('<a/>').text(child.name));
                 var childNode = $('<ul/>');
                 childNode.attr('class', 'tree-content');
                 li.append(childNode);
                 applyTree(childNode, child.children, true);
-                span.on("click", "a", treeToggle);
+                span.on("click", treeToggle);
+                li.attr("data-collapsed", collapsed);
             } else if (child.children) {
                 span.append($('<a/>').text(child.name));
                 var childNode = $('<ul/>').attr("data-source", child.children);
                 childNode.attr('class', 'tree-content');
                 li.append(childNode);
-                span.on("click", "a", treeToggle);
+                span.on("click", treeToggle);
+                li.attr("data-collapsed", collapsed);
             } else {
                 span.append($('<a/>').attr("href", child.link).text(child.name));
             }
-
-            li.attr("data-collapsed", collapsed);
             node.append(li);
         });
     }
