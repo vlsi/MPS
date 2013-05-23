@@ -165,7 +165,7 @@
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2641474643395111574">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dstartsWith(java%dlang%dString)%cboolean" resolveInfo="startsWith" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2641474643395113039">
-                                <property name="value" nameId="tpee.1070475926801" value="/rest/projects" />
+                                <property name="value" nameId="tpee.1070475926801" value="/rest/projects.json" />
                               </node>
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2641474643395088235">
@@ -365,7 +365,7 @@
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2641474643395768533">
                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2641474643395768534">
                         <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2641474643395768535">
-                          <property name="value" nameId="tpee.1070475926801" value="[" />
+                          <property name="value" nameId="tpee.1070475926801" value="{ \&quot;projects\&quot;: [" />
                         </node>
                         <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2641474643395768536">
                           <node role="operation" roleId="tpee.1197027833540" type="tp2q.JoinOperation" typeId="tp2q.1240687580870" id="2641474643395768537">
@@ -426,7 +426,7 @@
                         </node>
                       </node>
                       <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2641474643395768559">
-                        <property name="value" nameId="tpee.1070475926801" value="]" />
+                        <property name="value" nameId="tpee.1070475926801" value="]}" />
                       </node>
                     </node>
                   </node>

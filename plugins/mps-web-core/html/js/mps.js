@@ -36,7 +36,7 @@ Path.map("#projects").to(function () {
     $("#content").append("<div id='projects-list'></div>");
 
     $.ajax({
-        url: "fake/projects.json",
+        url: "rest/projects.json",
         type: 'get',
         dataType: 'json',
         success: function (json) {

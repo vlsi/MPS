@@ -46,7 +46,7 @@ public class MpsHttpServer implements ApplicationComponent {
           LOG.info("was given uri: " + uri);
         }
         try {
-          if (uri.startsWith("/rest/projects")) {
+          if (uri.startsWith("/rest/projects.json")) {
             handleProjectsListRequest(exchange);
           } else if (uri.startsWith("/rest/p/")) {
             handleProjectRequest(exchange);
@@ -69,11 +69,11 @@ public class MpsHttpServer implements ApplicationComponent {
 
 
     public void handleProjectsListRequest(HttpExchange exchange) {
-      String projectsJson = "[" + IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(ProjectManager.getInstance().getOpenProjects())).select(new ISelector<Project, String>() {
+      String projectsJson = "{ \"projects\": [" + IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(ProjectManager.getInstance().getOpenProjects())).select(new ISelector<Project, String>() {
         public String select(Project it) {
           return String.format("{\"name\" : \"%s\", \"id\" : \"%s\"}", it.getName(), it.getName());
         }
-      }), ", ") + "]";
+      }), ", ") + "]}";
       HttpUtil.doJsonResponse(projectsJson, exchange);
     }
 
