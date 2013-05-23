@@ -68,6 +68,9 @@ import java.util.Set;
  * danilla 2/13/13
  */
 
+// NOTE: It should be invoked by Idea only for classes and fields
+// For methods MethodReferenceSearch is used.
+// Local variables shouldn't bother us since we can't reference java code's local vars
 public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, ReferencesSearch.SearchParameters> {
   @Override
   public void processQuery(@NotNull SearchParameters queryParameters, final @NotNull Processor<PsiReference> consumer) {

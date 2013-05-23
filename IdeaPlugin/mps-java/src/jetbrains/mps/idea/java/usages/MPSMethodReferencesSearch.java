@@ -69,6 +69,7 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
         try {
           results = FindUtils.makeProvider(finder).getResults(query, null);
         }
+        // Q: is it nedeed now? it used to be very slow due to a bug, but now...
         catch (ProcessCanceledException e) {
           return;
         }
