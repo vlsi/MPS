@@ -9,13 +9,13 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class Web_PluginInitializer implements ApplicationComponent {
-  public Web_PluginInitializer() {
+public class Core_PluginInitializer implements ApplicationComponent {
+  public Core_PluginInitializer() {
     PluginFactoriesRegistry.registerPluginFactory(new AbstractPluginFactory() {
       @SuppressWarnings("unchecked")
       public <T> T create(Class<T> klass) {
         if (BaseApplicationPlugin.class == klass) {
-          return (T) new Web_ApplicationPlugin();
+          return (T) new Core_ApplicationPlugin();
         }
         return null;
       }

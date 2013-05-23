@@ -10,7 +10,7 @@
   
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.web.actions.Web_PluginInitializer</implementation-class>
+      <implementation-class>jetbrains.mps.web.actions.Core_PluginInitializer</implementation-class>
     </component>
   </application-components>
   

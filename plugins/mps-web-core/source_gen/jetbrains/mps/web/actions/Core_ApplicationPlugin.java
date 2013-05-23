@@ -6,10 +6,10 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 
-public class Web_ApplicationPlugin extends BaseApplicationPlugin {
-  private PluginId myId = PluginId.getId("jetbrains.mps.web");
+public class Core_ApplicationPlugin extends BaseApplicationPlugin {
+  private PluginId myId = PluginId.getId("jetbrains.mps.web.core");
 
-  public Web_ApplicationPlugin() {
+  public Core_ApplicationPlugin() {
   }
 
   public PluginId getId() {

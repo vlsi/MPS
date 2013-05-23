@@ -344,7 +344,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/jetbrains.mps.xmlUnitTest.mpl" folder="languages.xml" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/jetbrains.mps.xmlUnitTest.runtime.msd" folder="languages.xml" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/util/xmlUnitTest/solutions/jetbrains.mps.xmlUnitTest.sandbox/jetbrains.mps.xmlUnitTest.sandbox.msd" folder="languages.xml" />
-      <modulePath path="$PROJECT_DIR$/plugins/mps-web/solution/jetbrains.mps.web.msd" folder="plugins" />
+      <modulePath path="$PROJECT_DIR$/plugins/mps-web-core/solution/jetbrains.mps.web.core.msd" folder="plugins" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/jetbrains.mps.ide.mpsdevkit.msd" folder="plugins" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.mpl" folder="core.language-design" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" folder="core.language-design" />
