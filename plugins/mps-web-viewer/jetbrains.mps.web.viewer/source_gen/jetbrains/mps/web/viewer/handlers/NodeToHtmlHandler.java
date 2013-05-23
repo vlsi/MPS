@@ -23,8 +23,8 @@ public class NodeToHtmlHandler implements Handler {
   public void handle(String requestUrl, final Project project, HttpExchange exchange) throws Exception {
     // /view/nodeId 
     final Wrappers._T<String> nodeId = new Wrappers._T<String>(requestUrl.substring("/view/".length()));
-    if (nodeId.value.endsWith(".json")) {
-      nodeId.value = nodeId.value.substring(0, nodeId.value.length() - ".json".length());
+    if (nodeId.value.endsWith(".html")) {
+      nodeId.value = nodeId.value.substring(0, nodeId.value.length() - ".html".length());
     }
     String html = ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
