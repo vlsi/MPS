@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -33,16 +34,15 @@ import java.util.Set;
  */
 public class SnodeToJsonConverter {
   public String convert(SNode node) {
-    StringBuilder sb = new StringBuilder();
-    serializeNode(node, sb);
-    return sb.toString();
+    JsonBuilder builder = serializeNode(node);
+    return builder.toString();
   }
 
-  private void serializeNode(SNode node, StringBuilder builder) {
-    builder.append("{");
+  private JsonBuilder serializeNode(SNode node) {
+    JsonBuilder builder = JsonBuilder.object();
     SConcept nodeConcept = node.getConcept();
-    builder.append("\n\"concept\": \"").append(nodeConcept.getQualifiedName()).append("\"");
-    builder.append(",\n\"nodeId\":\"").append(node.getNodeId().toString()).append("\"");
+    builder.addProperty("concept", nodeConcept.getQualifiedName());
+    builder.addProperty("nodeID", node.getNodeId().toString());
     for (SAbstractConcept nextConcept : getAllSuperConcepts(nodeConcept)) {
       for (SProperty property : nextConcept.getProperties()) {
         serializeProperty(node, property.getName(), builder);
@@ -57,40 +57,30 @@ public class SnodeToJsonConverter {
         }
       }
     }
-    builder.append("\n}");
+    return builder;
   }
 
-  private void serializeReference(SNode node, SLink link, StringBuilder builder) {
+  private void serializeReference(SNode node, SLink link, JsonBuilder builder) {
     SReference target = node.getReference(link.getRole());
     if (target != null && target.getTargetNode() != null) {
       SNode targetNode = target.getTargetNode();
-      builder.append(",\n\"").append(link.getRole()).append("\":{");
-      builder.append("\n\"modelID\":\"").append(targetNode.getModel().getModelName()).append("\"");
-      builder.append(",\n\"nodeID\":\"").append(targetNode.getNodeId().toString()).append("\"");
-      builder.append("\n}");
+      JsonBuilder reference = JsonBuilder.object();
+      reference.addProperty("modelID", targetNode.getModel().getModelName());
+      reference.addProperty("nodeID", targetNode.getNodeId().toString());
+      builder.addProperty(link.getRole(), reference);
     }
   }
 
-  private void serializeChildren(SNode node, SLink link, StringBuilder builder) {
-    StringBuilder result = new StringBuilder();
+  private void serializeChildren(SNode node, SLink link, JsonBuilder builder) {
+    ArrayList<JsonBuilder> children = new ArrayList<JsonBuilder>();
     for (SNode child : node.getChildren(link.getRole())) {
-      if (result.length() != 0) {
-        result.append(",\n");
-      }
-      serializeNode(child, result);
+      children.add(serializeNode(child));
     }
-    if (result.length() > 0) {
-      builder.append(",\n\"").append(link.getRole()).append("\":[").append(result).append("]");
-    }
+    builder.addProperty(link.getRole(), children);
   }
 
-  private void serializeProperty(SNode node, String propertyName, StringBuilder builder) {
-    String propertyValue = node.getProperty(propertyName);
-    if (propertyValue != null) {
-      builder.append(",\n");
-      builder.append("\"").append(propertyName).append("\":");
-      builder.append("\"").append(propertyValue).append("\"");
-    }
+  private void serializeProperty(SNode node, String propertyName, JsonBuilder builder) {
+    builder.addProperty(propertyName, node.getProperty(propertyName));
   }
 
   private Iterable<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept) {
