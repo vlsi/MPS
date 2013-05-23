@@ -4,28 +4,166 @@
     <title>The best example!</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <style type="text/css">
-        .line
-        {
-            display:inline;
-            vertical-align: top;
+        .vertical_layout {
         }
-        .keyWord
-        {
+        .horizontal_layout {
+            float: left;
+        }
+        .indent_layout {
+            position: relative;
+            padding-left: 10px;
+        }
+        .indent-layout-new-line {
+
+        }
+        .indent-layout-on-new-line, .indent-layout-new-line + div, div.indent-layout-new-line-children > div {
+            clear: left;
+            /*position: relative;*/
+            margin-left: -10px;
+        }
+
+        .indent-layout-new-line-children {
+
+        }
+        div.indent_layout > :first-child, div.indent-layout-new-line-children > div {
+            /*position: relative;*/
+            margin-left: -10px;
+        }
+        .key_word {
             color: blue;
         }
+        .indent-layout-indent {
+            padding-left: 10px;
+        }
+        div.indent_layout > div {float: left;}
+        div.horizontal_layout > div {float: left}
+        /*div {
+            border: 1px solid black;
+        }*/
     </style>
 </head>
 <body>
-    <div class="line keyWord">if</div>
-    <div class="line">(</div>
-    <div class="line">1</div>
-    <div class="line">==</div>
-    <div class="line">2</div>
-    <div class="line">)</div>
-    <div class="line">{</div>
-    <div/>
-    <div class="line keyWord offset1">return</div>
-    <div class="line">0</div>
-    <div class="line">;</div>
+    <div class="indent_layout">
+        <div class="key_word">if</div>
+        <div>(</div>
+        <div>1</div>
+        <div>==</div>
+        <div>2</div>
+        <div>)</div>
+        <div class="indent-layout-new-line">{</div>
+        <div class="indent_layout indent-layout-new-line">
+            <div class="key_word indent-layout-indent">return</div>
+            <div>0</div>
+            <div>;</div>
+        </div>
+        <div>}</div>
+
+        <div class="indent_layout">
+            <div>else</div>
+            <div class="indent-layout-new-line">{</div>
+            <div class=" indent_layout indent-layout-indent indent-layout-new-line-children">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div class="indent_layout indent-layout-indent">
+                    <div>int</div>
+                    <div>i</div>
+                    <div>=</div>
+                    <div>0</div>
+                    <div>;</div>
+                </div>
+                <div class="indent_layout indent-layout-on-new-line">
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                    <div>QWERTY</div>
+                </div>
+            </div>
+            <div class="indent-layout-on-new-line">}</div>
+        </div>
+    </div>
 </body>
 </html>
