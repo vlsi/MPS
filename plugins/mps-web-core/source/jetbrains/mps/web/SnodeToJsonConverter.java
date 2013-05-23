@@ -15,9 +15,17 @@
  */
 package jetbrains.mps.web;
 
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * User: shatalin
@@ -32,16 +40,21 @@ public class SnodeToJsonConverter {
 
   private void serializeNode(SNode node, StringBuilder builder) {
     builder.append("{");
-    builder.append("\nconcept: \"").append(node.getConcept().getQualifiedName()).append("\"");
-    for (String propertyName : node.getPropertyNames()) {
-      builder.append(",\n");
-      serializeProperty(node, propertyName, builder);
+    SConcept nodeConcept = node.getConcept();
+    builder.append("\nconcept: \"").append(nodeConcept.getQualifiedName()).append("\"");
+    builder.append("\nnodeId:\"").append(node.getNodeId().toString()).append("\"");
+    for (SAbstractConcept nextConcept : getAllSuperConcepts(nodeConcept)) {
+      for (SProperty property : nextConcept.getProperties()) {
+        serializeProperty(node, property.getName(), builder);
+      }
     }
-    for (SLink link : node.getConcept().getLinks()) {
-      if (link.isReference()) {
-        serializeReference(node, link, builder);
-      } else {
-        serializeChildren(node, link, builder);
+    for (SAbstractConcept nextConcept : getAllSuperConcepts(nodeConcept)) {
+      for (SLink link : nextConcept.getLinks()) {
+        if (link.isReference()) {
+          serializeReference(node, link, builder);
+        } else {
+          serializeChildren(node, link, builder);
+        }
       }
     }
     builder.append("}");
@@ -50,7 +63,7 @@ public class SnodeToJsonConverter {
   private void serializeReference(SNode node, SLink link, StringBuilder builder) {
     SReference target = node.getReference(link.getRole());
     if (target != null && target.getTargetNode() != null) {
-      builder.append(",\n\"").append(link.getRole()).append("\":\"").append(target.getTargetNode().getNodeId().toString()).append("\"");
+      builder.append(",\n\"").append(link.getRole()).append("\":\"").append(target.getTargetNode().getReference().toString()).append("\"");
     }
   }
 
@@ -68,7 +81,40 @@ public class SnodeToJsonConverter {
   }
 
   private void serializeProperty(SNode node, String propertyName, StringBuilder builder) {
-    builder.append("\"").append(propertyName).append("\":");
-    builder.append("\"").append(node.getProperty(propertyName)).append("\"");
+    String propertyValue = node.getProperty(propertyName);
+    if (propertyValue != null) {
+      builder.append(",\n");
+      builder.append("\"").append(propertyName).append("\":");
+      builder.append("\"").append(propertyValue).append("\"");
+    }
+  }
+
+  private Iterable<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept) {
+    Set<SAbstractConcept> result = new LinkedHashSet<SAbstractConcept>();
+    LinkedList<SAbstractConcept> queue = new LinkedList<SAbstractConcept>();
+    queue.addLast(concept);
+    while (!queue.isEmpty()) {
+      SAbstractConcept nextConcept = queue.removeFirst();
+      if (!result.contains(nextConcept)) {
+        result.add(nextConcept);
+        if (nextConcept instanceof SConcept) {
+          SConcept sConcept = (SConcept) nextConcept;
+          if (sConcept.getSuperConcept() != null) {
+            queue.addLast(sConcept.getSuperConcept());
+          }
+          for (SInterfaceConcept interfaceConcept : sConcept.getSuperInterfaces()) {
+            queue.addLast(interfaceConcept);
+          }
+        } else if (nextConcept instanceof SInterfaceConcept) {
+          SInterfaceConcept iConcept = (SInterfaceConcept) nextConcept;
+          for (SInterfaceConcept interfaceConcept : iConcept.getSuperInterfaces()) {
+            queue.addLast(interfaceConcept);
+          }
+        } else {
+          throw new IllegalStateException("Not supported SAbstractConcept successor: " + nextConcept.getClass().getName());
+        }
+      }
+    }
+    return result;
   }
 }
