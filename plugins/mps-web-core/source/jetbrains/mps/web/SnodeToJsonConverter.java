@@ -41,8 +41,8 @@ public class SnodeToJsonConverter {
   private void serializeNode(SNode node, StringBuilder builder) {
     builder.append("{");
     SConcept nodeConcept = node.getConcept();
-    builder.append("\nconcept: \"").append(nodeConcept.getQualifiedName()).append("\"");
-    builder.append("\nnodeId:\"").append(node.getNodeId().toString()).append("\"");
+    builder.append("\n\"concept\": \"").append(nodeConcept.getQualifiedName()).append("\"");
+    builder.append(",\n\"nodeId\":\"").append(node.getNodeId().toString()).append("\"");
     for (SAbstractConcept nextConcept : getAllSuperConcepts(nodeConcept)) {
       for (SProperty property : nextConcept.getProperties()) {
         serializeProperty(node, property.getName(), builder);
@@ -57,13 +57,17 @@ public class SnodeToJsonConverter {
         }
       }
     }
-    builder.append("}");
+    builder.append("\n}");
   }
 
   private void serializeReference(SNode node, SLink link, StringBuilder builder) {
     SReference target = node.getReference(link.getRole());
     if (target != null && target.getTargetNode() != null) {
-      builder.append(",\n\"").append(link.getRole()).append("\":\"").append(target.getTargetNode().getReference().toString()).append("\"");
+      SNode targetNode = target.getTargetNode();
+      builder.append(",\n\"").append(link.getRole()).append("\":{");
+      builder.append("\n\"modelID\":\"").append(targetNode.getModel().getModelName()).append("\"");
+      builder.append(",\n\"nodeID\":\"").append(targetNode.getNodeId().toString()).append("\"");
+      builder.append("\n}");
     }
   }
 
