@@ -86,7 +86,7 @@ public class JsonBuilder {
     String sep = "";
     for (Entry<String, JsonBuilder> entry : myProperties.entrySet()) {
       String incPrefix = incPrefix(prefix);
-      builder.append(sep).append(incPrefix).append(escapeName(entry.getKey())).append(":");
+      builder.append(sep).append(incPrefix).append(formatName(entry.getKey())).append(":");
       entry.getValue().dump(incPrefix, builder);
       sep = ",\n";
     }
@@ -98,12 +98,24 @@ public class JsonBuilder {
     return prefix + "    ";
   }
 
-  private String escapeName(String name) {
-    return "\"" + name + "\"";
+  private String formatName(String name) {
+    return "\"" + escape(name) + "\"";
   }
 
-  protected String escapeValue(String value) {
-    return "\"" + value + "\"";
+  protected String formatValue(String value) {
+    return "\"" + escape(value) + "\"";
+  }
+
+  private String escape(String value) {
+    value = value.replaceAll("\\\\", "\\\\");
+    value = value.replaceAll("/", "\\/");
+    value = value.replaceAll("\\u0008", "\\b");
+    value = value.replaceAll("\f", "\\f");
+    value = value.replaceAll("\n", "\\n");
+    value = value.replaceAll("\r", "\\r");
+    value = value.replaceAll("\t", "\\t");
+    value = value.replaceAll("\"", "\\\"");
+    return value.replaceAll("'", "\\'");
   }
 
   private JsonBuilder() {
@@ -121,7 +133,7 @@ public class JsonBuilder {
 
     @Override
     protected StringBuilder dump(String prefix, StringBuilder builder) {
-      return builder.append(escapeValue(String.valueOf(myValue)));
+      return builder.append(formatValue(String.valueOf(myValue)));
     }
   }
 
@@ -132,7 +144,7 @@ public class JsonBuilder {
 
     @Override
     protected StringBuilder dump(String prefix, StringBuilder builder) {
-      return builder.append(escapeValue(String.valueOf(myValue)));
+      return builder.append(formatValue(String.valueOf(myValue)));
     }
   }
 
@@ -143,7 +155,7 @@ public class JsonBuilder {
 
     @Override
     protected StringBuilder dump(String prefix, StringBuilder builder) {
-      return builder.append(escapeValue(String.valueOf(myValue)));
+      return builder.append(formatValue(String.valueOf(myValue)));
     }
   }
 
