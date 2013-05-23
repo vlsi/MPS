@@ -6,14 +6,13 @@
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="g7qw" modelUID="f:java_stub#9f006f2b-d74f-413d-bc37-74436e70efd3#jetbrains.mps.web(jetbrains.mps.web.core/jetbrains.mps.web@java_stub)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="5xh9" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" version="-1" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" implicit="yes" />
-  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
-  <import index="tgbt" modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="1" implicit="yes" />
   <import index="g7qx" modelUID="f:java_stub#9f006f2b-d74f-413d-bc37-74436e70efd3#jetbrains.mps.web(jetbrains.mps.web/jetbrains.mps.web@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3802916001757770307">
@@ -22,17 +21,6 @@
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6062354340811716969">
       <property name="name" nameId="tpck.1169194664001" value="TestGroup" />
-    </node>
-    <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="6652714296827884334" />
-    <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6652714296827884335">
-      <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.web.core" />
-      <property name="name" nameId="tpck.1169194664001" value="JetBrains Web Core" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Web core for JetBrains MPS" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="1.0" />
-      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains s.r.o" />
-      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://jetbrains.com" />
-      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="jb logo" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="12.0" />
     </node>
   </roots>
   <root id="3802916001757770307">
@@ -91,11 +79,9 @@
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="6062354340811717052">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991215587" resolveInfo="NodeActions" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1234869968490316272" resolveInfo="debug" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991215587" resolveInfo="NodeActions" />
     </node>
   </root>
-  <root id="6652714296827884334" />
-  <root id="6652714296827884335" />
 </model>
 
