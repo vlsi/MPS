@@ -27,7 +27,6 @@ import org.jetbrains.mps.openapi.model.SReference;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -112,7 +111,7 @@ public class FixBrokenReferences_Action extends BaseAction {
           LOG.warn("processing model " + SModelOperations.getModelName(model));
         }
         for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
-          for (final SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
+          for (final SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
             if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
               SNodePointer nptr = new SNodePointer(ref.getTargetSModelReference(), ref.getTargetNodeId());
               MapSequence.fromMap(counterR).put(nptr, (MapSequence.fromMap(counterR).get(nptr) == null ?
@@ -123,7 +122,7 @@ public class FixBrokenReferences_Action extends BaseAction {
                 LOG.warn(" reference =" + FixBrokenReferences_Action.this.refInfo(ref, _params));
               }
               boolean r = resolver.resolve(ref, node, new GlobalOperationContext());
-              SReference rref = Sequence.fromIterable(SNodeOperations.getReferences(node)).findFirst(new IWhereFilter<SReference>() {
+              SReference rref = ListSequence.fromList(SNodeOperations.getReferences(node)).findFirst(new IWhereFilter<SReference>() {
                 public boolean accept(SReference r) {
                   return eq_g50bqp_a0a0a0a0a0a4a0a0a1a9a0a5(SLinkOperations.getRole(r), SLinkOperations.getRole(ref));
                 }
