@@ -7,12 +7,14 @@ import jetbrains.mps.web.core.server.Handler;
 import jetbrains.mps.web.viewer.handlers.ProjectNameHandler;
 import jetbrains.mps.web.viewer.handlers.ProjectStructureHandler;
 import jetbrains.mps.web.viewer.handlers.ProjectVcsRevisionHandler;
+import jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler;
 import jetbrains.mps.web.core.server.MpsHttpServer;
 
 public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private Handler projectNameHandler;
   private Handler projectStructure;
   private Handler projectRevisionHandler;
+  private Handler nodeToHtmlHandler;
 
   public WebViewerHttpHandlers_CustomApplicationPlugin() {
   }
@@ -22,16 +24,19 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
     WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler = new ProjectNameHandler();
     WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure = new ProjectStructureHandler();
     WebViewerHttpHandlers_CustomApplicationPlugin.this.projectRevisionHandler = new ProjectVcsRevisionHandler();
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.nodeToHtmlHandler = new NodeToHtmlHandler();
 
     // register handlers 
     MpsHttpServer.getInstance().registerHandler("/name.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler);
     MpsHttpServer.getInstance().registerHandler("/structure.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure);
     MpsHttpServer.getInstance().registerHandler("/revision.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectRevisionHandler);
+    MpsHttpServer.getInstance().registerHandler("/view/", WebViewerHttpHandlers_CustomApplicationPlugin.this.nodeToHtmlHandler);
   }
 
   public void doDispose() {
     MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler);
     MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure);
     MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.projectRevisionHandler);
+    MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.nodeToHtmlHandler);
   }
 }

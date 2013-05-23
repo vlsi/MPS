@@ -42,6 +42,58 @@
     </scopeInfo>
     <unitInfo nodeId="6087360391925491751" fileName="ProjectVcsRevisionHandler.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.ProjectVcsRevisionHandler" />
   </root>
+  <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/6087360391926012886">
+    <nodeInfo nodeId="6087360391926018960" fileName="NodeToHtmlHandler.java" startLine="23" startPosition="104" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6087360391926021248" fileName="NodeToHtmlHandler.java" startLine="24" startPosition="20" endLine="25" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6087360391926131286" fileName="NodeToHtmlHandler.java" startLine="26" startPosition="41" endLine="27" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6087360391926058221" fileName="NodeToHtmlHandler.java" startLine="30" startPosition="31" endLine="31" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6087360391926068866" fileName="NodeToHtmlHandler.java" startLine="33" startPosition="7" endLine="34" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6087360391926571120" fileName="NodeToHtmlHandler.java" startLine="41" startPosition="67" endLine="42" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6087360391926604324" fileName="NodeToHtmlHandler.java" startLine="44" startPosition="6" endLine="45" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6087360391926275513" fileName="NodeToHtmlHandler.java" startLine="45" startPosition="99" endLine="46" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6087360391926275520" fileName="NodeToHtmlHandler.java" startLine="46" startPosition="124" endLine="47" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6087360391926275433" fileName="NodeToHtmlHandler.java" startLine="52" startPosition="84" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6087360391926122986" fileName="NodeToHtmlHandler.java" startLine="25" startPosition="104" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6087360391926058205" fileName="NodeToHtmlHandler.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6087360391926565677" fileName="NodeToHtmlHandler.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRootCell#(Ljava/util/List;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6087360391926274176" fileName="NodeToHtmlHandler.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHtmlForCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6087360391926044235" fileName="NodeToHtmlHandler.java" startLine="28" startPosition="5" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6087360391926520042" fileName="NodeToHtmlHandler.java" startLine="39" startPosition="61" endLine="44" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6087360391926020319" fileName="NodeToHtmlHandler.java" startLine="39" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHtmlForNode#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6087360391926018494" fileName="NodeToHtmlHandler.java" startLine="23" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
+    <scopeInfo nodeId="6087360391926122989" fileName="NodeToHtmlHandler.java" startLine="26" startPosition="41" endLine="27" endPosition="89" />
+    <scopeInfo nodeId="6087360391926058206" fileName="NodeToHtmlHandler.java" startLine="30" startPosition="31" endLine="31" endPosition="122" />
+    <scopeInfo nodeId="6087360391926565684" fileName="NodeToHtmlHandler.java" startLine="41" startPosition="67" endLine="42" endPosition="20" />
+    <scopeInfo nodeId="6087360391926274179" fileName="NodeToHtmlHandler.java" startLine="52" startPosition="84" endLine="53" endPosition="18" />
+    <scopeInfo nodeId="6087360391926058205" fileName="NodeToHtmlHandler.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="6087360391926565677" fileName="NodeToHtmlHandler.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="6087360391926565681" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="6087360391926274176" fileName="NodeToHtmlHandler.java" startLine="52" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="6087360391926275417" varName="cell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6087360391926020322" fileName="NodeToHtmlHandler.java" startLine="39" startPosition="61" endLine="47" endPosition="32">
+      <varInfo nodeId="6087360391926275512" varName="cell" />
+      <varInfo nodeId="6087360391926520043" varName="component" />
+      <varInfo nodeId="6087360391926604325" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="6087360391926020319" fileName="NodeToHtmlHandler.java" startLine="39" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="6087360391926020343" varName="node" />
+      <varInfo nodeId="6087360391926332072" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="6087360391926018505" fileName="NodeToHtmlHandler.java" startLine="23" startPosition="104" endLine="34" endPosition="58">
+      <varInfo nodeId="6087360391926044238" varName="html" />
+      <varInfo nodeId="6087360391926021251" varName="nodeId" />
+    </scopeInfo>
+    <scopeInfo nodeId="6087360391926018494" fileName="NodeToHtmlHandler.java" startLine="23" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="6087360391926018503" varName="exchange" />
+      <varInfo nodeId="6087360391926018501" varName="project" />
+      <varInfo nodeId="6087360391926018499" varName="requestUrl" />
+    </scopeInfo>
+    <unitInfo nodeId="6087360391926058205" fileName="NodeToHtmlHandler.java" startLine="29" startPosition="59" endLine="33" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler$1" />
+    <unitInfo nodeId="6087360391926565481" fileName="NodeToHtmlHandler.java" startLine="40" startPosition="36" endLine="44" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler$2" />
+    <unitInfo nodeId="6087360391926012886" fileName="NodeToHtmlHandler.java" startLine="22" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler" />
+  </root>
   <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/7481782646737023365">
     <nodeInfo nodeId="7481782646737054417" fileName="ProjectNameHandler.java" startLine="11" startPosition="98" endLine="12" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7481782646737054334" fileName="ProjectNameHandler.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
