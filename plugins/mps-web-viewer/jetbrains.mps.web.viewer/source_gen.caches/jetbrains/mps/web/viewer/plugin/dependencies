@@ -43,6 +43,7 @@
     <classNode dependClassName="jetbrains.mps.web.core.server.MpsHttpServer" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ProjectNameHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ProjectStructureHandler" />
+    <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ProjectVcsRevisionHandler" />
     <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
   </dependency>
 </dependenciesRoot>

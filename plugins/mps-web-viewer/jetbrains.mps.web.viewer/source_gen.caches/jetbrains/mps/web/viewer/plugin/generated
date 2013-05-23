@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="25mj8n21tvzvd2blwdjohp2mu7rnk8q">
+<dependencies version="2" modelHash="-bjsknql3rzzxsyz7sxaq7kpxnbbsvry">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -21,7 +21,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="97bcp20rwvaujtt4z6d96fxd6ude8mm" />
   <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="2mamrgi52jwacrdbb41avncvaeef2tx" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
-  <common hash="2junoivmrmd9v6ckpjroz3k91jjhaak" />
+  <common hash="5kf7fon4sntzywl85zjv0cog5cj0vt2" />
   <source id="8451422937403852098" hash="-44jyb78dsb4twcq5u4nc7pt9a0kvxvn">
     <dep root="7481782646737166605" />
     <dep root="8451422937403852099" />
@@ -47,7 +47,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <file name="TestGroup_ActionGroup.java" />
   </source>
-  <source id="8451422937403852103" name="TestJsonSerialization" hash="-aedpaj5m9emqg2r6amqqhzoil3ehlt9">
+  <source id="8451422937403852103" name="TestJsonSerialization" hash="2ydxmgohy3uox8le5y1e03cgwvndwka">
     <dep root="7481782646737166605" />
     <dep root="8451422937403852098" />
     <dep root="8451422937403852099" />
@@ -65,7 +65,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TestJsonSerialization_Action.java" />
   </source>
-  <source id="7481782646737166605" name="WebViewerHttpHandlers" hash="bcotvbmtmktbx2ntbr3l7ov85fwjdmo">
+  <source id="7481782646737166605" name="WebViewerHttpHandlers" hash="awtnb632zlthr0203tg8k8u4zyl8ox3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" />

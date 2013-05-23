@@ -6,11 +6,13 @@ import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.web.core.server.Handler;
 import jetbrains.mps.web.viewer.handlers.ProjectNameHandler;
 import jetbrains.mps.web.viewer.handlers.ProjectStructureHandler;
+import jetbrains.mps.web.viewer.handlers.ProjectVcsRevisionHandler;
 import jetbrains.mps.web.core.server.MpsHttpServer;
 
 public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private Handler projectNameHandler;
   private Handler projectStructure;
+  private Handler projectRevisionHandler;
 
   public WebViewerHttpHandlers_CustomApplicationPlugin() {
   }
@@ -19,14 +21,17 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
     // create handlers 
     WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler = new ProjectNameHandler();
     WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure = new ProjectStructureHandler();
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.projectRevisionHandler = new ProjectVcsRevisionHandler();
 
     // register handlers 
-    MpsHttpServer.getInstance().registerHandler("/name", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler);
+    MpsHttpServer.getInstance().registerHandler("/name.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler);
     MpsHttpServer.getInstance().registerHandler("/structure", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure);
+    MpsHttpServer.getInstance().registerHandler("/revision.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectRevisionHandler);
   }
 
   public void doDispose() {
     MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler);
     MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure);
+    MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.projectRevisionHandler);
   }
 }
