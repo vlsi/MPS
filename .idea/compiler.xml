@@ -510,6 +510,8 @@
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/util/xmlUnitTest/solutions/jetbrains.mps.xmlUnitTest.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/util/xmlUnitTest/solutions/jetbrains.mps.xmlUnitTest.sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-web-viewer/jetbrains.mps.web.viewer/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-web-viewer/jetbrains.mps.web.viewer/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/test_gen" includeSubdirectories="true" />
