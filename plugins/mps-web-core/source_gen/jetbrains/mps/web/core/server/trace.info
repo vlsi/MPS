@@ -10,102 +10,118 @@
     <unitInfo nodeId="2641474643394483675" fileName="Handler.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.web.core.server.Handler" />
   </root>
   <root nodeRef="r:60bbba2b-948c-474b-ba6b-c8a13b682579(jetbrains.mps.web.core.server)/2641474643395982674">
-    <nodeInfo nodeId="2641474643395189537" fileName="HttpUtil.java" startLine="18" startPosition="110" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2641474643395189545" fileName="HttpUtil.java" startLine="19" startPosition="60" endLine="20" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643395189553" fileName="HttpUtil.java" startLine="21" startPosition="9" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643395513152" fileName="HttpUtil.java" startLine="24" startPosition="45" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643395440918" fileName="HttpUtil.java" startLine="27" startPosition="5" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2641474643395266778" fileName="HttpUtil.java" startLine="28" startPosition="0" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2641474643395266812" fileName="HttpUtil.java" startLine="30" startPosition="9" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643395384159" fileName="HttpUtil.java" startLine="33" startPosition="45" endLine="34" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643395266807" fileName="HttpUtil.java" startLine="37" startPosition="11" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2641474643395436146" fileName="HttpUtil.java" startLine="40" startPosition="47" endLine="41" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1190122077106414080" fileName="HttpUtil.java" startLine="48" startPosition="27" endLine="49" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1190122077106502133" fileName="HttpUtil.java" startLine="49" startPosition="91" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5767254038727198310" fileName="HttpUtil.java" startLine="51" startPosition="5" endLine="52" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5767254038727202555" fileName="HttpUtil.java" startLine="52" startPosition="41" endLine="53" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5767254038727340706" fileName="HttpUtil.java" startLine="56" startPosition="73" endLine="57" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5767254038727420531" fileName="HttpUtil.java" startLine="61" startPosition="41" endLine="62" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5767254038727421090" fileName="HttpUtil.java" startLine="64" startPosition="43" endLine="65" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5767254038727421928" fileName="HttpUtil.java" startLine="67" startPosition="42" endLine="68" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5767254038727421998" fileName="HttpUtil.java" startLine="70" startPosition="43" endLine="71" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5767254038727422095" fileName="HttpUtil.java" startLine="73" startPosition="42" endLine="74" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5767254038727423437" fileName="HttpUtil.java" startLine="75" startPosition="5" endLine="76" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2641474643395982674" fileName="HttpUtil.java" startLine="79" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="2641474643395513152" fileName="HttpUtil.java" startLine="23" startPosition="29" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2641474643395513152" fileName="HttpUtil.java" startLine="23" startPosition="29" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2641474643395384159" fileName="HttpUtil.java" startLine="32" startPosition="29" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2641474643395384159" fileName="HttpUtil.java" startLine="32" startPosition="29" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2641474643395436146" fileName="HttpUtil.java" startLine="39" startPosition="31" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2641474643395436146" fileName="HttpUtil.java" startLine="39" startPosition="31" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5767254038727340425" fileName="HttpUtil.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doJsonResponse#(Ljava/lang/String;Lcom/sun/net/httpserver/HttpExchange;)V" />
-    <nodeInfo nodeId="5767254038727420289" fileName="HttpUtil.java" startLine="60" startPosition="50" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5767254038727421088" fileName="HttpUtil.java" startLine="63" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5767254038727421926" fileName="HttpUtil.java" startLine="66" startPosition="5" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5767254038727421996" fileName="HttpUtil.java" startLine="69" startPosition="5" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5767254038727422093" fileName="HttpUtil.java" startLine="72" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5767254038726910735" fileName="HttpUtil.java" startLine="47" startPosition="105" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2641474643395513059" fileName="HttpUtil.java" startLine="20" startPosition="53" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2641474643395410060" fileName="HttpUtil.java" startLine="36" startPosition="15" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5767254038727219912" fileName="HttpUtil.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doResponse#(Ljava/io/File;Lcom/sun/net/httpserver/HttpExchange;)V" />
-    <nodeInfo nodeId="2641474643395374316" fileName="HttpUtil.java" startLine="29" startPosition="59" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="5767254038727219565" fileName="HttpUtil.java" startLine="60" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getContentType#(Ljava/io/File;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2641474643395258520" fileName="HttpUtil.java" startLine="18" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doResponse#(Ljava/lang/String;Ljava/lang/String;ILcom/sun/net/httpserver/HttpExchange;)V" />
-    <scopeInfo nodeId="2641474643395513060" fileName="HttpUtil.java" startLine="21" startPosition="9" endLine="22" endPosition="52" />
-    <scopeInfo nodeId="2641474643395513152" fileName="HttpUtil.java" startLine="24" startPosition="45" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="2641474643395374317" fileName="HttpUtil.java" startLine="30" startPosition="9" endLine="31" endPosition="45" />
-    <scopeInfo nodeId="2641474643395384159" fileName="HttpUtil.java" startLine="33" startPosition="45" endLine="34" endPosition="49" />
-    <scopeInfo nodeId="2641474643395410061" fileName="HttpUtil.java" startLine="37" startPosition="11" endLine="38" endPosition="29" />
-    <scopeInfo nodeId="2641474643395436146" fileName="HttpUtil.java" startLine="40" startPosition="47" endLine="41" endPosition="51" />
-    <scopeInfo nodeId="5767254038727340428" fileName="HttpUtil.java" startLine="56" startPosition="73" endLine="57" endPosition="56" />
-    <scopeInfo nodeId="5767254038727420290" fileName="HttpUtil.java" startLine="61" startPosition="41" endLine="62" endPosition="38" />
-    <scopeInfo nodeId="5767254038727421089" fileName="HttpUtil.java" startLine="64" startPosition="43" endLine="65" endPosition="32" />
-    <scopeInfo nodeId="5767254038727421927" fileName="HttpUtil.java" startLine="67" startPosition="42" endLine="68" endPosition="24" />
-    <scopeInfo nodeId="5767254038727421997" fileName="HttpUtil.java" startLine="70" startPosition="43" endLine="71" endPosition="25" />
-    <scopeInfo nodeId="5767254038727422094" fileName="HttpUtil.java" startLine="73" startPosition="42" endLine="74" endPosition="25" />
-    <scopeInfo nodeId="5767254038726910738" fileName="HttpUtil.java" startLine="48" startPosition="27" endLine="50" endPosition="13" />
-    <scopeInfo nodeId="2641474643395513061" fileName="HttpUtil.java" startLine="23" startPosition="0" endLine="26" endPosition="7">
+    <nodeInfo nodeId="6087360391926950007" fileName="HttpUtil.java" startLine="18" startPosition="110" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643395189537" fileName="HttpUtil.java" startLine="22" startPosition="110" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2641474643395189545" fileName="HttpUtil.java" startLine="23" startPosition="60" endLine="24" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643395189553" fileName="HttpUtil.java" startLine="25" startPosition="9" endLine="26" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643395513152" fileName="HttpUtil.java" startLine="28" startPosition="45" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643395440918" fileName="HttpUtil.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2641474643395266778" fileName="HttpUtil.java" startLine="32" startPosition="0" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2641474643395266812" fileName="HttpUtil.java" startLine="34" startPosition="9" endLine="35" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643395384159" fileName="HttpUtil.java" startLine="37" startPosition="45" endLine="38" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643395266807" fileName="HttpUtil.java" startLine="41" startPosition="11" endLine="42" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2641474643395436146" fileName="HttpUtil.java" startLine="44" startPosition="47" endLine="45" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1190122077106414080" fileName="HttpUtil.java" startLine="52" startPosition="27" endLine="53" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1190122077106502133" fileName="HttpUtil.java" startLine="53" startPosition="91" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6087360391926880583" fileName="HttpUtil.java" startLine="55" startPosition="5" endLine="56" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6087360391926878850" fileName="HttpUtil.java" startLine="57" startPosition="9" endLine="58" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5767254038727202555" fileName="HttpUtil.java" startLine="58" startPosition="57" endLine="59" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6087360391926898594" fileName="HttpUtil.java" startLine="60" startPosition="15" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5767254038727340706" fileName="HttpUtil.java" startLine="65" startPosition="73" endLine="66" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5767254038727420531" fileName="HttpUtil.java" startLine="70" startPosition="41" endLine="71" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5767254038727421090" fileName="HttpUtil.java" startLine="73" startPosition="43" endLine="74" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5767254038727421928" fileName="HttpUtil.java" startLine="76" startPosition="42" endLine="77" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5767254038727421998" fileName="HttpUtil.java" startLine="79" startPosition="43" endLine="80" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5767254038727422095" fileName="HttpUtil.java" startLine="82" startPosition="42" endLine="83" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5767254038727423437" fileName="HttpUtil.java" startLine="84" startPosition="5" endLine="85" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2641474643395982674" fileName="HttpUtil.java" startLine="88" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6087360391926921302" fileName="HttpUtil.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doResponse#(Ljava/lang/String;Ljava/lang/String;ILcom/sun/net/httpserver/HttpExchange;)V" />
+    <nodeInfo nodeId="2641474643395513152" fileName="HttpUtil.java" startLine="27" startPosition="29" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2641474643395513152" fileName="HttpUtil.java" startLine="27" startPosition="29" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2641474643395384159" fileName="HttpUtil.java" startLine="36" startPosition="29" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2641474643395384159" fileName="HttpUtil.java" startLine="36" startPosition="29" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2641474643395436146" fileName="HttpUtil.java" startLine="43" startPosition="31" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2641474643395436146" fileName="HttpUtil.java" startLine="43" startPosition="31" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5767254038727340425" fileName="HttpUtil.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doJsonResponse#(Ljava/lang/String;Lcom/sun/net/httpserver/HttpExchange;)V" />
+    <nodeInfo nodeId="5767254038727420289" fileName="HttpUtil.java" startLine="69" startPosition="50" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5767254038727421088" fileName="HttpUtil.java" startLine="72" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5767254038727421926" fileName="HttpUtil.java" startLine="75" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5767254038727421996" fileName="HttpUtil.java" startLine="78" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5767254038727422093" fileName="HttpUtil.java" startLine="81" startPosition="5" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5767254038726910735" fileName="HttpUtil.java" startLine="51" startPosition="95" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6087360391926909998" fileName="HttpUtil.java" startLine="56" startPosition="60" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="2641474643395513059" fileName="HttpUtil.java" startLine="24" startPosition="53" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2641474643395410060" fileName="HttpUtil.java" startLine="40" startPosition="15" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5767254038727219912" fileName="HttpUtil.java" startLine="51" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doResponse#(Ljava/io/File;Lcom/sun/net/httpserver/HttpExchange;)V" />
+    <nodeInfo nodeId="2641474643395374316" fileName="HttpUtil.java" startLine="33" startPosition="59" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="5767254038727219565" fileName="HttpUtil.java" startLine="69" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getContentType#(Ljava/io/File;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2641474643395258520" fileName="HttpUtil.java" startLine="22" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doResponse#([BLjava/lang/String;ILcom/sun/net/httpserver/HttpExchange;)V" />
+    <scopeInfo nodeId="6087360391926921304" fileName="HttpUtil.java" startLine="18" startPosition="110" endLine="19" endPosition="72" />
+    <scopeInfo nodeId="2641474643395513060" fileName="HttpUtil.java" startLine="25" startPosition="9" endLine="26" endPosition="52" />
+    <scopeInfo nodeId="2641474643395513152" fileName="HttpUtil.java" startLine="28" startPosition="45" endLine="29" endPosition="56" />
+    <scopeInfo nodeId="2641474643395374317" fileName="HttpUtil.java" startLine="34" startPosition="9" endLine="35" endPosition="34" />
+    <scopeInfo nodeId="2641474643395384159" fileName="HttpUtil.java" startLine="37" startPosition="45" endLine="38" endPosition="49" />
+    <scopeInfo nodeId="2641474643395410061" fileName="HttpUtil.java" startLine="41" startPosition="11" endLine="42" endPosition="29" />
+    <scopeInfo nodeId="2641474643395436146" fileName="HttpUtil.java" startLine="44" startPosition="47" endLine="45" endPosition="51" />
+    <scopeInfo nodeId="6087360391926910001" fileName="HttpUtil.java" startLine="60" startPosition="15" endLine="61" endPosition="26" />
+    <scopeInfo nodeId="5767254038727340428" fileName="HttpUtil.java" startLine="65" startPosition="73" endLine="66" endPosition="56" />
+    <scopeInfo nodeId="5767254038727420290" fileName="HttpUtil.java" startLine="70" startPosition="41" endLine="71" endPosition="38" />
+    <scopeInfo nodeId="5767254038727421089" fileName="HttpUtil.java" startLine="73" startPosition="43" endLine="74" endPosition="32" />
+    <scopeInfo nodeId="5767254038727421927" fileName="HttpUtil.java" startLine="76" startPosition="42" endLine="77" endPosition="24" />
+    <scopeInfo nodeId="5767254038727421997" fileName="HttpUtil.java" startLine="79" startPosition="43" endLine="80" endPosition="25" />
+    <scopeInfo nodeId="5767254038727422094" fileName="HttpUtil.java" startLine="82" startPosition="42" endLine="83" endPosition="25" />
+    <scopeInfo nodeId="5767254038726910738" fileName="HttpUtil.java" startLine="52" startPosition="27" endLine="54" endPosition="13" />
+    <scopeInfo nodeId="6087360391926910000" fileName="HttpUtil.java" startLine="57" startPosition="9" endLine="59" endPosition="72">
+      <varInfo nodeId="6087360391926878853" varName="content" />
+    </scopeInfo>
+    <scopeInfo nodeId="6087360391926921302" fileName="HttpUtil.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="6087360391926921370" varName="content" />
+      <varInfo nodeId="6087360391926921372" varName="contentType" />
+      <varInfo nodeId="6087360391926921376" varName="exchange" />
+      <varInfo nodeId="6087360391926921374" varName="responseCode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2641474643395513061" fileName="HttpUtil.java" startLine="27" startPosition="0" endLine="30" endPosition="7">
       <varInfo nodeId="2641474643395513062" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2641474643395513064" fileName="HttpUtil.java" startLine="23" startPosition="29" endLine="26" endPosition="7" />
-    <scopeInfo nodeId="2641474643395513152" fileName="HttpUtil.java" startLine="23" startPosition="29" endLine="26" endPosition="7" />
-    <scopeInfo nodeId="2641474643395374319" fileName="HttpUtil.java" startLine="32" startPosition="0" endLine="35" endPosition="7">
+    <scopeInfo nodeId="2641474643395513064" fileName="HttpUtil.java" startLine="27" startPosition="29" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="2641474643395513152" fileName="HttpUtil.java" startLine="27" startPosition="29" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="2641474643395374319" fileName="HttpUtil.java" startLine="36" startPosition="0" endLine="39" endPosition="7">
       <varInfo nodeId="2641474643395374320" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2641474643395374322" fileName="HttpUtil.java" startLine="32" startPosition="29" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="2641474643395384159" fileName="HttpUtil.java" startLine="32" startPosition="29" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="2641474643395410062" fileName="HttpUtil.java" startLine="39" startPosition="0" endLine="42" endPosition="9">
+    <scopeInfo nodeId="2641474643395374322" fileName="HttpUtil.java" startLine="36" startPosition="29" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="2641474643395384159" fileName="HttpUtil.java" startLine="36" startPosition="29" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="2641474643395410062" fileName="HttpUtil.java" startLine="43" startPosition="0" endLine="46" endPosition="9">
       <varInfo nodeId="2641474643395410063" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2641474643395410065" fileName="HttpUtil.java" startLine="39" startPosition="31" endLine="42" endPosition="9" />
-    <scopeInfo nodeId="2641474643395436146" fileName="HttpUtil.java" startLine="39" startPosition="31" endLine="42" endPosition="9" />
-    <scopeInfo nodeId="5767254038727340425" fileName="HttpUtil.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="2641474643395410065" fileName="HttpUtil.java" startLine="43" startPosition="31" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="2641474643395436146" fileName="HttpUtil.java" startLine="43" startPosition="31" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="5767254038727340425" fileName="HttpUtil.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="5767254038727340676" varName="exchange" />
       <varInfo nodeId="5767254038727340670" varName="json" />
     </scopeInfo>
-    <scopeInfo nodeId="5767254038727219915" fileName="HttpUtil.java" startLine="47" startPosition="105" endLine="53" endPosition="70">
-      <varInfo nodeId="5767254038727198311" varName="content" />
+    <scopeInfo nodeId="2641474643395374318" fileName="HttpUtil.java" startLine="40" startPosition="15" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="5767254038727219915" fileName="HttpUtil.java" startLine="51" startPosition="95" endLine="62" endPosition="5">
+      <varInfo nodeId="6087360391926880584" varName="inputStream" />
     </scopeInfo>
-    <scopeInfo nodeId="2641474643395374318" fileName="HttpUtil.java" startLine="36" startPosition="15" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="5767254038727219912" fileName="HttpUtil.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="5767254038727219912" fileName="HttpUtil.java" startLine="51" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="5767254038727220097" varName="exchange" />
       <varInfo nodeId="5767254038727220088" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5767254038727219568" fileName="HttpUtil.java" startLine="60" startPosition="50" endLine="76" endPosition="38" />
-    <scopeInfo nodeId="5767254038727219565" fileName="HttpUtil.java" startLine="60" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="5767254038727219568" fileName="HttpUtil.java" startLine="69" startPosition="50" endLine="85" endPosition="38" />
+    <scopeInfo nodeId="5767254038727219565" fileName="HttpUtil.java" startLine="69" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="5767254038727219732" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="2641474643395258523" fileName="HttpUtil.java" startLine="18" startPosition="110" endLine="44" endPosition="5">
+    <scopeInfo nodeId="2641474643395258523" fileName="HttpUtil.java" startLine="22" startPosition="110" endLine="48" endPosition="5">
       <varInfo nodeId="2641474643395266779" varName="responseBody" />
       <varInfo nodeId="2641474643395189538" varName="responseHeaders" />
     </scopeInfo>
-    <scopeInfo nodeId="2641474643395258520" fileName="HttpUtil.java" startLine="18" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="2641474643395258520" fileName="HttpUtil.java" startLine="22" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="2641474643395262230" varName="content" />
       <varInfo nodeId="2641474643395263696" varName="contentType" />
       <varInfo nodeId="2641474643395265169" varName="exchange" />
       <varInfo nodeId="2641474643395447101" varName="responseCode" />
     </scopeInfo>
-    <unitInfo nodeId="2641474643395982674" fileName="HttpUtil.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.web.core.server.HttpUtil" />
+    <unitInfo nodeId="2641474643395982674" fileName="HttpUtil.java" startLine="17" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.web.core.server.HttpUtil" />
   </root>
   <root nodeRef="r:60bbba2b-948c-474b-ba6b-c8a13b682579(jetbrains.mps.web.core.server)/7527841852582992287">
     <nodeInfo nodeId="2641474643394579142" fileName="MpsHttpServer.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="server" />
@@ -184,7 +200,7 @@
     <nodeInfo nodeId="1190122077106830475" fileName="MpsHttpServer.java" startLine="84" startPosition="57" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1190122077107184730" fileName="MpsHttpServer.java" startLine="96" startPosition="9" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1190122077107233051" fileName="MpsHttpServer.java" startLine="102" startPosition="89" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4818466489185394625" fileName="MpsHttpServer.java" startLine="114" startPosition="101" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4818466489185394625" fileName="MpsHttpServer.java" startLine="114" startPosition="91" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2641474643395768531" fileName="MpsHttpServer.java" startLine="72" startPosition="66" endLine="77" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1190122077106974692" fileName="MpsHttpServer.java" startLine="91" startPosition="0" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5767254038727003494" fileName="MpsHttpServer.java" startLine="141" startPosition="54" endLine="146" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -286,7 +302,7 @@
     <scopeInfo nodeId="2641474643394482818" fileName="MpsHttpServer.java" startLine="187" startPosition="0" endLine="199" endPosition="0">
       <varInfo nodeId="2641474643394518529" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="2641474643394935635" fileName="MpsHttpServer.java" startLine="114" startPosition="101" endLine="129" endPosition="92" />
+    <scopeInfo nodeId="2641474643394935635" fileName="MpsHttpServer.java" startLine="114" startPosition="91" endLine="129" endPosition="92" />
     <scopeInfo nodeId="2641474643394935632" fileName="MpsHttpServer.java" startLine="114" startPosition="0" endLine="131" endPosition="0">
       <varInfo nodeId="2641474643394935670" varName="exchange" />
       <varInfo nodeId="5767254038726357513" varName="uri" />

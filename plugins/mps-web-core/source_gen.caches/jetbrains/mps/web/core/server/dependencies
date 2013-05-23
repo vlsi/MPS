@@ -7,14 +7,14 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
   </dependency>
   <dependency className="jetbrains.mps.web.core.server.HttpUtil" file="HttpUtil.java">
+    <classNode dependClassName="com.intellij.openapi.util.io.FileUtilRt" />
     <classNode dependClassName="com.sun.net.httpserver.Headers" />
     <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FileNotFoundException" />
+    <classNode dependClassName="java.io.FileInputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
