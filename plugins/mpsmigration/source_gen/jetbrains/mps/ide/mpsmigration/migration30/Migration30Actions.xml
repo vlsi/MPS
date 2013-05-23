@@ -1,6 +1,7 @@
 <components>
   <actions>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action" class="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action"></action>
+    <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateCondition_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateCondition_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeAccess_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeAccess_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeMethods_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeMethods_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelDescriptorOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelDescriptorOpenAPI_Action"></action>
@@ -8,6 +9,7 @@
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelOpenAPI_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelReferenceOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelReferenceOpenAPI_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleIdOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleIdOpenAPI_Action"></action>
+    <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleOpenAPI_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleReferenceOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleReferenceOpenAPI_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeIdOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeIdOpenAPI_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeOpenAPI_Action"></action>
@@ -29,6 +31,8 @@
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelReferenceOpenAPI_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleReferenceOpenAPI_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleIdOpenAPI_Action" />
+      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleOpenAPI_Action" />
+      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateCondition_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.RemoveConceptProperties_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.UpgradePersistence_Action" />
       <add-to-group group-id="ToolsMenu" anchor="last" />
