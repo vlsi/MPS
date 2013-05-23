@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/mps.css" rel="stylesheet">
     <style>
         body {
             padding-top: 60px;
@@ -29,25 +30,23 @@
             <a class="brand" href="#">MPS</a>
 
             <div class="nav-collapse collapse">
-                <form class="navbar-form pull-right">
-                    <input class="span4 search-query" type="text" placeholder="Search root by name">
+                <form class="navbar-form pull-right" id="go-to-root">
+                    <input name="search" class="span4 search-query roots-search" type="text" placeholder="Search root by name" data-link="fake/roots.json">
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container" id="content">
 
-    <h1>Web-based code viewer</h1>
-    <br/>
-
-    <p>Start typing in the search box, and you'll instantly see a list of available roots.</p>
+    <div class="loading">Loading...</div>
 
 </div>
 
 <script src="js/jquery-2.0.0.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/path.js"></script>
 <script src="js/mps.js"></script>
 </body>
 </html>

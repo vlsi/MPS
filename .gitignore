@@ -35,4 +35,4 @@ plugins/cvsIntegration/lib/*
 plugins/git4idea/lib/*.jar
 plugins/svn4idea/lib/*
 .mps/workspace.xml
-plugins/mps-web/html/.idea/workspace.xml
+plugins/mps-web-core/html/.idea/workspace.xml
