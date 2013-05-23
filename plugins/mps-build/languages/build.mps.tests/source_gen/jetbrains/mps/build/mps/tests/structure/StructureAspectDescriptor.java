@@ -15,7 +15,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin").super_("jetbrains.mps.build.structure.BuildPlugin").parents("jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildExternalDependency").alias("module-tests", "adds ability to execute module tests to the project").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin").super_("jetbrains.mps.build.structure.BuildPlugin").parents("jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildExternalDependency").alias("module-testing", "adds ability to execute module tests to the project").create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule").super_("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content").parents("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content").references("module").staticScope(StaticScope.NONE).create();
       case 2:

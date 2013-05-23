@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.model;
 
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
@@ -22,7 +23,6 @@ import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.DiskMemoryConflictResolver;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelRootUtil;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
@@ -77,7 +77,10 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     ModelAccess.assertLegalWrite();
 
     if (getSource().getTimestamp() == -1) {
-      SModelRepository.getInstance().removeModelDescriptor(this);
+      SModuleBase module = (SModuleBase) getModule();
+      if (module != null) {
+        module.unregisterModel(this);
+      }
       return;
     }
 

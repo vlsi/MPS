@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
@@ -28,6 +26,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -88,14 +88,14 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   public void removeAll() {
-    Collection<SModel> models = this.getModels();
+    Collection<SModel> models = this.getTransientModels();
     for (SModel model : models) {
       removeModel(model);
     }
   }
 
   public void clearUnused() {
-    Collection<SModel> models = this.getModels();
+    Collection<SModel> models = this.getTransientModels();
     for (SModel model : models) {
       if (!myModelsToKeep.contains(model.getReference().toString())) {
         removeModel(model);
@@ -139,7 +139,7 @@ public class TransientModelsModule extends AbstractModule {
   public boolean publishTransientModel(SModel model) {
     if (myModels.containsKey(model.getModelName())) {
       if (myPublished.add(model)) {
-        SModelRepository.getInstance().registerModelDescriptor(model, this);
+        registerModel((SModelBase) model);
         return true;
       }
     }
@@ -149,7 +149,7 @@ public class TransientModelsModule extends AbstractModule {
   public void removeModel(SModel md) {
     if (myModels.remove(md.getModelName()) != null) {
       if (myPublished.remove(md)) {
-        SModelRepository.getInstance().removeModelDescriptor(md);
+        unregisterModel((SModelBase) md);
       }
       if (md instanceof TransientSModelDescriptor) {
         ((TransientSModelDescriptor) md).dropModel();
@@ -170,7 +170,7 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   public void publishAll() {
-    Collection<SModel> models = this.getModels();
+    Collection<SModel> models = this.getTransientModels();
     for (SModel model : models) {
       publishTransientModel(model);
     }
@@ -194,8 +194,7 @@ public class TransientModelsModule extends AbstractModule {
     return getModuleName();
   }
 
-  @Override
-  public List<SModel> getModels() {
+  public List<SModel> getTransientModels() {
     return new ArrayList<SModel>(myModels.values());
   }
 

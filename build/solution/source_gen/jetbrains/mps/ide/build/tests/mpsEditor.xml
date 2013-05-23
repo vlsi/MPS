@@ -258,16 +258,16 @@
     </echoxml>
     <jar destfile="${build.layout}/tests/jetbrains.mps.baseLanguage.test.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" />
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.test.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-baseLanguage-solutions-jetbrains.mps.baseLanguage.refactoringTest-jetbrains">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-baseLanguage-solutions-jetbrains.mps.baseLanguage.test-jetbrains">
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.baseLanguage.test-src.jar">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/source_gen" includes="**/*.java" />
-      <zipfileset file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.test.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-baseLanguage-solutions-jetbrains.mps.baseLanguage.refactoringTest-jetbrains" prefix="module/jetbrains" />
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/source_gen" includes="**/*.java" />
+      <zipfileset file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/jetbrains.mps.baseLanguage.test.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-baseLanguage-solutions-jetbrains.mps.baseLanguage.test-jetbrains" prefix="module/jetbrains" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.actions.test.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.actions.test.jar/META-INF" />
@@ -474,7 +474,7 @@
         <module file="" />
       </chunk>
       <chunk>
-        <module file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.test.msd" />
+        <module file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/jetbrains.mps.baseLanguage.test.msd" />
         <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.test/jetbrains.mps.lang.actions.test.msd" />
         <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.tests/jetbrains.mps.lang.editor.multiple.tests.msd" />
         <module file="${basedir}/languages/languageDesign/editor/tests/table/jetbrains.mps.lang.editor.table.tests.msd" />
@@ -901,8 +901,8 @@
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/source_gen" />
-        <pathelement path="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/test_gen/" />
+        <path location="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/source_gen" />
+        <pathelement path="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/test_gen/" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
@@ -959,8 +959,8 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1104,7 +1104,7 @@
       <pathelement location="${build.layout}/tests/jetbrains.mps.lang.editor.table.tests.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
-    <junit haltonfailure="true" showoutput="true" fork="true">
+    <junit showoutput="true" fork="true">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss1024k" />
       <jvmarg value="-Xmx1024m" />
@@ -1130,7 +1130,7 @@
       <sysproperty key="mps.libraries" value="${mps.libraries.path.string}" />
       <sysproperty key="mps.test.modules" value="${mps.tests.path.string}" />
       
-      <test name="jetbrains.mps.testbench.junit.suites.ModuleTestSuite" />
+      <test name="jetbrains.mps.testbench.junit.suites.ModuleTestSuite" outfile="TEST-jetbrains.mps.testbench.junit.suites.ModuleTestSuite-editor" />
       <formatter type="xml" />
     </junit>
   </target>
@@ -1144,9 +1144,9 @@
     <delete dir="${basedir}/languages/languageDesign/editor/languages/tableTests/source_gen" />
     <delete dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" />
     <delete dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/source_gen" />
-    <delete dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/source_gen" />
+    <delete dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.tests/source_gen" />
-    <delete dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/test_gen" />
+    <delete dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/test_gen" />
     <delete dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.test/test_gen" />
     <delete dir="${basedir}/languages/languageDesign/editor/tests/table/test_gen" />
   </target>

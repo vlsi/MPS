@@ -5,6 +5,9 @@
       <sourceRoot location="." />
     </modelRoot>
   </models>
+  <facets>
+    <facet pluginId="com.intellij" type="ideaPlugin" />
+  </facets>
   <sourcePath />
   <usedLanguages>
     <usedLanguage>a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)</usedLanguage>

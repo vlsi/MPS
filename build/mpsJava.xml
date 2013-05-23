@@ -138,7 +138,6 @@
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mpsjava/platform/source_gen" />
-        <path location="${mps_home}/plugins/mpsjava/basePlatform/source" />
         <path location="${mps_home}/plugins/mpsjava/basePlatform/source_gen" />
       </src>
       <classpath>

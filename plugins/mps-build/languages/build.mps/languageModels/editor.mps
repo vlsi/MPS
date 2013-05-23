@@ -3180,6 +3180,9 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="7464961892694664480" nodeInfo="nn">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
+        </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5328150611114264269" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="sources" />
@@ -3209,7 +3212,7 @@
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5328150611114975553" nodeInfo="nn">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5328150611114975554" nodeInfo="nn">
                   <node role="expression" roleId="tpee.1068580123156" type="tp25.SEnumOperationInvocation" typeId="tp25.1240930118027" id="5328150611114975555" nodeInfo="nn">
-                    <link role="enumDeclaration" roleId="tp25.1240930118028" targetNodeId="3ior.5248329904288265463" resolveInfo="BuildSource_JavaContentFolderKind" />
+                    <link role="enumDeclaration" roleId="tp25.1240930118028" targetNodeId="kdzh.269707337715631379" resolveInfo="BuildMps_ModuleSourcesKind" />
                     <node role="operation" roleId="tp25.1240930317927" type="tp25.SEnum_MembersOperation" typeId="tp25.1240930444980" id="5328150611114975556" nodeInfo="ng" />
                   </node>
                 </node>
@@ -3253,6 +3256,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="7464961892694666006" nodeInfo="nn">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7354447573576732014" nodeInfo="nn">

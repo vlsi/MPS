@@ -6,7 +6,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class IntentionUtils {
@@ -39,49 +48,130 @@ public class IntentionUtils {
           }
           if (matches_k79hya_b0a1) {
             return optimizeNode(SLinkOperations.getTarget(matchedNode_k79hya_a0b, "statements", true));
-          } else
-          return node;
+          } else {
+            boolean matches_k79hya_c0a1 = false;
+            {
+              SNode matchingNode_k79hya_c0a1 = node;
+              if (matchingNode_k79hya_c0a1 != null) {
+                matches_k79hya_c0a1 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_c0a1.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.Statement");
+              }
+            }
+            if (matches_k79hya_c0a1) {
+              return matchedNode_k79hya_a0b;
+            } else
+            return null;
+          }
         }
       }
     }
   }
 
-  /*package*/ static SNode getReturnedExpression(SNode node) {
-    {
-      SNode matchedNode_k79hya_a0c = optimizeNode(node);
-      {
-        boolean matches_k79hya_a0a2 = false;
-        {
-          SNode matchingNode_k79hya_a0a2 = optimizeNode(node);
-          if (matchingNode_k79hya_a0a2 != null) {
-            matches_k79hya_a0a2 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_a0a2.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.ReturnStatement");
-          }
-        }
-        if (matches_k79hya_a0a2) {
-          return SLinkOperations.getTarget(matchedNode_k79hya_a0c, "expression", true);
-        } else
-        return null;
-      }
-    }
+  /*package*/ static boolean canBeConvertedToTernary(SNode statement1, SNode statement2) {
+    return getAppreciateDiffNodes(statement1, statement2) != null;
   }
 
-  /*package*/ static SNode getExpressionFromNode(SNode node) {
-    {
-      SNode matchedNode_k79hya_a0d = optimizeNode(node);
-      {
-        boolean matches_k79hya_a0a3 = false;
-        {
-          SNode matchingNode_k79hya_a0a3 = optimizeNode(node);
-          if (matchingNode_k79hya_a0a3 != null) {
-            matches_k79hya_a0a3 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_a0a3.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
-          }
-        }
-        if (matches_k79hya_a0a3) {
-          return SLinkOperations.getTarget(matchedNode_k79hya_a0d, "expression", true);
-        } else
-        return null;
+  /*package*/ static SNode convertToTernary(SNode statement1, SNode statement2, SNode condition) {
+    Tuples._2<SNode, SNode> diff = getAppreciateDiffNodes(statement1, statement2);
+    if (diff == null) {
+      return null;
+    }
+
+    SNode ternaryOperator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null);
+    SLinkOperations.setTarget(ternaryOperator, "condition", (SNode) CopyUtil.copy(condition), true);
+    SLinkOperations.setTarget(ternaryOperator, "ifTrue", (SNode) CopyUtil.copy(diff._0()), true);
+    SLinkOperations.setTarget(ternaryOperator, "ifFalse", (SNode) CopyUtil.copy(diff._1()), true);
+
+    SNodeOperations.replaceWithAnother(diff._0(), ternaryOperator);
+    return statement1;
+  }
+
+  @Nullable
+  /*package*/ static Tuples._2<SNode, SNode> getAppreciateDiffNodes(SNode node1, SNode node2) {
+    Tuples._2<SNode, SNode> currentDiff = getDiffNodes(node1, node2);
+    if (currentDiff == null) {
+      return null;
+    }
+
+    while (currentDiff._0() != node1) {
+      if (isDiffCanBeConvertedToTernary(currentDiff)) {
+        return currentDiff;
+      }
+      currentDiff = MultiTuple.<SNode,SNode>from(SNodeOperations.getParent(currentDiff._0()), SNodeOperations.getParent(currentDiff._1()));
+    }
+
+    return (isDiffCanBeConvertedToTernary(currentDiff) ?
+      currentDiff :
+      null
+    );
+  }
+
+  /*package*/ static boolean isDiffCanBeConvertedToTernary(Tuples._2<SNode, SNode> diff) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(diff._0()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+      return false;
+    }
+    // todo: i don't think that this code is true 
+    SNode linkDeclaration = SNodeOperations.as(new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(diff._0()))).getLinkDeclarationByRole(diff._0().getRoleInParent()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    return SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDeclaration, "target", false), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
+  }
+
+  @Nullable
+  /*package*/ static Tuples._2<SNode, SNode> getDiffNodes(SNode node1, SNode node2) {
+    if (neq_k79hya_a0a0g(SNodeOperations.getConceptDeclaration(node1), SNodeOperations.getConceptDeclaration(node2))) {
+      return MultiTuple.<SNode,SNode>from(node1, node2);
+    }
+    SNode concept = SNodeOperations.getConceptDeclaration(node1);
+
+    // todo: use ConceptRegistry/SConcept when it will possible 
+    for (SNode _property : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations())) {
+      SNode property = ((SNode) _property);
+      if (neq_k79hya_a0b0e0g(node1.getProperty(SPropertyOperations.getString(property, "name")), node2.getProperty(SPropertyOperations.getString(property, "name")))) {
+        return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
+
+    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden())) {
+      SNode linkDeclaration = (SNode) _link;
+      if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "reference", "reference")) {
+        if (SLinkOperations.getTargetNode(SNodeOperations.getReference(node1, linkDeclaration)) != SLinkOperations.getTargetNode(SNodeOperations.getReference(node2, linkDeclaration))) {
+          return MultiTuple.<SNode,SNode>from(node1, node2);
+        }
+      }
+    }
+
+    Tuples._2<SNode, SNode> currentResult = null;
+    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden())) {
+      SNode linkDeclaration = (SNode) _link;
+
+      if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference")) {
+        List<SNode> children1 = SNodeOperations.getChildren(node1, linkDeclaration);
+        List<SNode> children2 = SNodeOperations.getChildren(node2, linkDeclaration);
+
+        if (ListSequence.fromList(children1).count() != ListSequence.fromList(children2).count()) {
+          return MultiTuple.<SNode,SNode>from(node1, node2);
+        }
+
+        {
+          Iterator<SNode> child1_it = ListSequence.fromList(children1).iterator();
+          Iterator<SNode> child2_it = ListSequence.fromList(children2).iterator();
+          SNode child1_var;
+          SNode child2_var;
+          while (child1_it.hasNext() && child2_it.hasNext()) {
+            child1_var = child1_it.next();
+            child2_var = child2_it.next();
+            Tuples._2<SNode, SNode> currentChildDiff = getDiffNodes(child1_var, child2_var);
+            if (currentChildDiff != null) {
+              if (currentResult == null) {
+                currentResult = currentChildDiff;
+              } else {
+                return MultiTuple.<SNode,SNode>from(node1, node2);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    return currentResult;
   }
 
 
@@ -97,5 +187,19 @@ public class IntentionUtils {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Expression");
       }
     }).first(), "jetbrains.mps.baseLanguage.structure.Expression");
+  }
+
+  private static boolean neq_k79hya_a0a0g(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
+
+  private static boolean neq_k79hya_a0b0e0g(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 }

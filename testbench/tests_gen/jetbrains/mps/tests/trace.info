@@ -19,10 +19,10 @@
     <unitInfo nodeId="2622946712629076727" fileName="TestModule_jetbrains_mps_lang_extension_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_extension_tests" />
   </root>
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/2684968190509519315">
-    <nodeInfo nodeId="2684968190509519315" fileName="TestModule_jetbrains_mps_buildScript_tests.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_buildScript_tests#()V" />
-    <scopeInfo nodeId="2684968190509519315" fileName="TestModule_jetbrains_mps_buildScript_tests.java" startLine="12" startPosition="55" endLine="12" endPosition="55" />
-    <scopeInfo nodeId="2684968190509519315" fileName="TestModule_jetbrains_mps_buildScript_tests.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <unitInfo nodeId="2684968190509519315" fileName="TestModule_jetbrains_mps_buildScript_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_buildScript_tests" />
+    <nodeInfo nodeId="2684968190509519315" fileName="TestModule_jetbrains_mps_build_tests.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_build_tests#()V" />
+    <scopeInfo nodeId="2684968190509519315" fileName="TestModule_jetbrains_mps_build_tests.java" startLine="12" startPosition="49" endLine="12" endPosition="49" />
+    <scopeInfo nodeId="2684968190509519315" fileName="TestModule_jetbrains_mps_build_tests.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <unitInfo nodeId="2684968190509519315" fileName="TestModule_jetbrains_mps_build_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_build_tests" />
   </root>
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/2712670354707832463">
     <nodeInfo nodeId="2712670354707832463" fileName="TestModule_closures_test.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_closures_test#()V" />

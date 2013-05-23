@@ -48,7 +48,7 @@ public class GeneratedTestEnvironment extends Environment {
 
 
   public void dispose() {
-    super.dispose();
+    // <node> 
     for (int i = 0; i < 3; i++) {
       try {
         SwingUtilities.invokeAndWait(new Runnable() {

@@ -21,6 +21,7 @@ import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
@@ -32,23 +33,16 @@ import java.util.*;
  */
 public class FacetsRegistry extends FacetsFacade implements CoreComponent {
 
-  private Map<String, Object> myLanguageToFacetTypes = new HashMap<String, Object>();
+  private MultiMap<String, String> myLanguageToFacetTypes = new MultiMap<String, String>();
 
   private Map<FacetFactory, String> myFactoryType = new HashMap<FacetFactory, String>();
   private Map<String, FacetFactory> myFacetsByType = new HashMap<String, FacetFactory>();
-
 
   @Override
   public Set<String> getApplicableFacetTypes(Iterable<String> usedLanguages) {
     Set<String> result = new LinkedHashSet<String>();
     for (String lang : usedLanguages) {
-      Object o = myLanguageToFacetTypes.get(lang);
-      if (o instanceof List) {
-        result.addAll((List<String>) o);
-      }
-      if (o != null) {
-        result.add((String) o);
-      }
+      result.addAll(myLanguageToFacetTypes.get(lang));
     }
     return result;
   }
@@ -58,31 +52,12 @@ public class FacetsRegistry extends FacetsFacade implements CoreComponent {
     if (!(myFacetsByType.containsKey(facetType))) {
       throw new IllegalArgumentException("unknown facet type");
     }
-    Object o = myLanguageToFacetTypes.get(language);
-    if (o == null) {
-      myLanguageToFacetTypes.put(language, facetType);
-    } else if (o instanceof String) {
-      List<String> l = new ArrayList<String>();
-      l.add((String) o);
-      l.add(facetType);
-      myLanguageToFacetTypes.put(language, l);
-    } else {
-      ((List) o).add(facetType);
-    }
-
+    myLanguageToFacetTypes.putValue(language, facetType);
   }
 
   @Override
   public void unregisterLanguageFacet(String language, String facetType) {
-    Object o = myLanguageToFacetTypes.get(language);
-    if (o == facetType) {
-      myLanguageToFacetTypes.remove(language);
-    } else if (o instanceof List) {
-      ((List) o).remove(facetType);
-      if (((List) o).isEmpty()) {
-        myLanguageToFacetTypes.remove(language);
-      }
-    }
+    myLanguageToFacetTypes.removeValue(language, facetType);
   }
 
   @Nullable

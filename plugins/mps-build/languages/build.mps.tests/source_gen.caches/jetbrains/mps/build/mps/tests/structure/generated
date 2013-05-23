@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4zkgqlry0t6k4it1laeh9bmsge7hgwg">
+<dependencies version="2" modelHash="o5bgcqc3ywikh1uiljzixg4rwr6082">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
@@ -22,19 +22,19 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="4560297596904469355" name="BuildMpsLayout_TestModuleGroup" hash="-51zmd3i63hxvac9ractfyho009dcwc7">
+  <source id="4560297596904469355" name="BuildMpsLayout_TestModuleGroup" hash="-5pxj65emwoxnxvy56utucvbwoznzjmq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4560297596904469357" name="BuildMpsLayout_TestModules" hash="9jn9anmtp2lv0qc6kal9svszgg4c4f9">
+  <source id="4560297596904469357" name="BuildMpsLayout_TestModules" hash="-eojvtuz7y32a5m3c9s40jf9m8svjpuk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4560297596904469361" name="BuildMpsLayout_TestModules_Content" hash="-7lm9b6kxf4abpsct3hvpay78tkcm5pv">
+  <source id="4560297596904469361" name="BuildMpsLayout_TestModules_Content" hash="7qvqepza9ciqc8tkims6yuflviv0v2m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4560297596904469362" name="BuildMpsLayout_TestModule" hash="-6v689lobjnfpijqb4mi3uilrj18hfa9">
+  <source id="4560297596904469362" name="BuildMpsLayout_TestModule" hash="3qtke16onu9hn5sp8tb2745vfoka241">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4005526075820600484" name="BuildModuleTestsPlugin" hash="2kxirtksv8wvonrhwl1veb32id120g7">
+  <source id="4005526075820600484" name="BuildModuleTestsPlugin" hash="-8ha3q12yv2j7wxxbxz4qt9coxmh174i">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

@@ -159,6 +159,7 @@ public class SModel implements SModelData {
     ModelChange.assertLegalNodeUnRegistration(getModelDescriptor(), node);
     enforceFullLoad();
     if (myRoots.contains(node)) {
+      fireBeforeRootRemovedEvent(node);
       myRoots.remove(node);
       SNode sn = (SNode) node;
       sn.unRegisterFromModel();
@@ -228,10 +229,6 @@ public class SModel implements SModelData {
     return getModelDescriptor().resolveModel(reference);
   }
 
-  public void setModule(SModule container) {
-    getModelDescriptor().setModule(container);
-  }
-
   public void addModelListener(@NotNull SModelListener listener) {
     getModelDescriptor().addModelListener(listener);
   }
@@ -265,7 +262,7 @@ public class SModel implements SModelData {
 
   protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
     if (!canFireEvent()) return;
-    if (!UndoHelper.getInstance().needRegisterUndo(getModelDescriptor())) return;
+    if (!UndoHelper.getInstance().needRegisterUndo()) return;
     UndoHelper.getInstance().addUndoableAction(action.compute());
   }
 
@@ -385,6 +382,17 @@ public class SModel implements SModelData {
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.rootRemoved(new SModelRootEvent(getDescriptorChecked(), root, false));
+      } catch (Throwable t) {
+        LOG.error(null, t);
+      }
+    }
+  }
+
+  private void fireBeforeRootRemovedEvent(org.jetbrains.mps.openapi.model.SNode node) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.beforeRootRemoved(new SModelRootEvent(getDescriptorChecked(), node, false));
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -1216,15 +1224,6 @@ public class SModel implements SModelData {
     @Override
     public SModel getSModelInternal() {
       return myModel;
-    }
-
-    @Override
-    public void attach() {
-      throw new UnsupportedOperationException();
-    }
-
-    public void detach() {
-      throw new UnsupportedOperationException();
     }
 
     @Override

@@ -22,7 +22,8 @@ import org.jetbrains.mps.openapi.model.SModelStateListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
-import java.util.Stack;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * This class serves as a convenient implementation of all repository listeners at once.
@@ -31,7 +32,7 @@ import java.util.Stack;
 public class SRepositoryContentAdapter extends SModuleAdapter implements SModelChangeListener, SModelAccessListener,
     SModelStateListener, SModuleListener, SRepositoryListener {
 
-  private Stack<SRepository> commandStack = new Stack<SRepository>();
+  private final Set<SRepository> commandStack = new HashSet<SRepository>();
 
   protected SRepositoryContentAdapter() {
   }
@@ -57,13 +58,13 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
 
   @Override
   public void commandStarted(SRepository repository) {
-    commandStack.push(repository);
+    commandStack.add(repository);
   }
 
   @Override
   public void commandFinished(SRepository repository) {
-    SRepository last = commandStack.pop();
-    assert last == repository;
+    assert commandStack.contains(repository);
+    commandStack.remove(repository);
   }
 
   @Override
@@ -85,9 +86,15 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   protected void startListening(SModule module) {
     if (!isIncluded(module)) return;
     module.addModuleListener(this);
+    for (SModel model : module.getModels()) {
+      startListening(model);
+    }
   }
 
   protected void stopListening(SModule module) {
+    for (SModel model : module.getModels()) {
+      stopListening(model);
+    }
     module.removeModuleListener(this);
   }
 
@@ -106,27 +113,38 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
     }
 
     repository.addRepositoryListener(this);
+  }
+
+  public void startListening(SRepository repository) {
     for (SModule module : repository.getModules()) {
       startListening(module);
     }
     if (repository.getModelAccess().isCommandAction()) {
-      commandStack.push(repository);
+      // TODO forbid attaching listeners in commands
+      synchronized (commandStack) {
+        commandStack.add(repository);
+      }
     }
   }
 
   public void unsubscribeFrom(SRepository repository) {
     repository.getModelAccess().checkReadAccess();
 
+    repository.removeRepositoryListener(this);
+
     SRepository parent = repository.getParent();
     if (parent != null) {
       unsubscribeFrom(parent);
     }
+  }
 
+  public void stopListening(SRepository repository) {
     for (SModule module : repository.getModules()) {
       stopListening(module);
     }
-    repository.removeRepositoryListener(this);
-    commandStack.clear();
+    synchronized (commandStack) {
+      commandStack.remove(repository);
+    }
   }
 
   @Override

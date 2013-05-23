@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="Testbench" uuid="920eaa0e-ecca-46bc-bee7-4e5c59213dd6" compileInMPS="false">
   <models />
+  <facets>
+    <facet pluginId="com.intellij" type="ideaPlugin" />
+  </facets>
   <sourcePath />
   <dependencies>
     <dependency reexport="true">847a3235-09f9-403c-b6a9-1c294a212e92(Ant)</dependency>

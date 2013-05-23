@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.EditableSModule;
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
@@ -71,12 +72,14 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   @Override
   public void init() {
+    super.init();
     ModelAccess.instance().addCommandListener(myCommandListener);
   }
 
   @Override
   public void dispose() {
     ModelAccess.instance().removeCommandListener(myCommandListener);
+    super.dispose();
   }
 
   //-----------------register/unregister-merge-----------
@@ -106,7 +109,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       myFqNameToModulesMap.put(moduleFqName, module);
     }
 
-    module.attach(this);
+    ((SModuleBase) module).attach(this);
 
     myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     myModules.add(module);
@@ -131,8 +134,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     invalidateCaches();
     for (SModule module : modulesToDispose) {
       fireModuleRemoved(module.getModuleReference());
-      ((AbstractModule) module).dispose();
-      module.detach();
+      ((SModuleBase) module).dispose();
     }
   }
 
@@ -143,8 +145,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     invalidateCaches();
     if (moduleRemoved) {
       fireModuleRemoved(module.getModuleReference());
-      ((AbstractModule) module).dispose();
-      module.detach();
+      ((SModuleBase) module).dispose();
     }
   }
 
