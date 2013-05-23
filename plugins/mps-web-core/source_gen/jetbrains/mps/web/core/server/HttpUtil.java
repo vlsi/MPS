@@ -46,7 +46,8 @@ public class HttpUtil {
 
   public static void doResponse(@NotNull File file, HttpExchange exchange) throws FileNotFoundException {
     if (!(file.exists())) {
-      throw new FileNotFoundException(file.getAbsolutePath());
+      doResponse("file not found: " + file.getAbsolutePath(), "text/plain", 404, exchange);
+      return;
     }
     String content = FileUtil.read(file);
     HttpUtil.doResponse(content, getContentType(file), 200, exchange);
