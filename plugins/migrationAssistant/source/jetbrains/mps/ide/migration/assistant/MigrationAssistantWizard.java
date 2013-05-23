@@ -125,7 +125,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   public MigrationAssistantWizard(Project project) {
     super("Migration Assistant Wizard", project, Arrays.asList(
       new InitialStep(project),
-      new OldPersistenceDetectedStep(project),
+//      new OldPersistenceDetectedStep(project),
       new MigrationsActionsStep(project),
       new MigrationsProgressStep(project),
       new MigrationsFinishedStep(project),
