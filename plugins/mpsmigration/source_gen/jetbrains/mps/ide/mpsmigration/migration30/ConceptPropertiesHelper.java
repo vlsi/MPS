@@ -11,7 +11,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -21,8 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -43,10 +40,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Iterator;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
-import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
-import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -78,14 +71,13 @@ public class ConceptPropertiesHelper {
 
 
   public void migrate() {
-    final Set<SNode> conceptPropertyUsages = SetSequence.fromSet(new HashSet<SNode>());
-    final Set<SNode> conceptPropertyDeclarationUsages = SetSequence.fromSet(new HashSet<SNode>());
-    final Set<SNode> accessUsages = SetSequence.fromSet(new HashSet<SNode>());
-    final Set<SNode> cellUsages = SetSequence.fromSet(new HashSet<SNode>());
-    final Set<SNode> conceptLinkUsages = SetSequence.fromSet(new HashSet<SNode>());
-    final Set<SNode> conceptLinkDeclarationUsages = SetSequence.fromSet(new HashSet<SNode>());
-    final Set<SNode> linkAccessUsages = SetSequence.fromSet(new HashSet<SNode>());
-    final Set<SearchResult<SNode>> allUsages = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
+    Set<SNode> conceptPropertyUsages = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> conceptPropertyDeclarationUsages = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> accessUsages = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> cellUsages = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> conceptLinkUsages = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> conceptLinkDeclarationUsages = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> linkAccessUsages = SetSequence.fromSet(new HashSet<SNode>());
     Collection<SNode> usages = ((Collection) FindUsagesFacade.getInstance().findInstances(scope, nodesToFind(), false, new EmptyProgressMonitor()));
 
     boolean usageIsFound;
@@ -101,34 +93,25 @@ public class ConceptPropertiesHelper {
         SetSequence.fromSet(conceptLinkUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"));
       } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(usage, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess"), "conceptLinkDeclaration", false), "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration")) {
         SetSequence.fromSet(linkAccessUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess"));
-      } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration") && needToMigrate(usage) && (AttributeOperations.getAttribute(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation"))) == null) && neq_azpnkk_a0a4b0l0n(SNodeOperations.getAncestor(usage, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"))) {
+      } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration") && needToMigrate(usage) && (AttributeOperations.getAttribute(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation"))) == null) && neq_azpnkk_a0a4b0k0n(SNodeOperations.getAncestor(usage, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"))) {
         SetSequence.fromSet(conceptPropertyDeclarationUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"));
       } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration") && needToMigrate(usage) && (AttributeOperations.getAttribute(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation"))) == null)) {
         SetSequence.fromSet(conceptLinkDeclarationUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"));
       } else {
         usageIsFound = false;
       }
-      if (usageIsFound) {
-        SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(usage, ""));
-      }
     }
     Set<SNode> searchedNodes = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(searchedNodes).addSequence(SetSequence.fromSet(conceptPropertyDeclarationUsages));
     SetSequence.fromSet(searchedNodes).addSequence(SetSequence.fromSet(conceptLinkDeclarationUsages));
 
-
-    final SearchResults searchResults = new SearchResults<SNode>(searchedNodes, SetSequence.fromSet(allUsages).toListSequence());
-    showRefactoringView(new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        doMigrate(conceptPropertyDeclarationUsages, conceptLinkDeclarationUsages, cellUsages, accessUsages, conceptPropertyUsages, linkAccessUsages, conceptLinkUsages);
-        for (SNode conceptProperty : SetSequence.fromSet(conceptPropertyUsages)) {
-          SNodeOperations.deleteNode(conceptProperty);
-        }
-        for (SNode conceptLink : SetSequence.fromSet(conceptLinkUsages)) {
-          SNodeOperations.deleteNode(conceptLink);
-        }
-      }
-    }, searchResults);
+    doMigrate(conceptPropertyDeclarationUsages, conceptLinkDeclarationUsages, cellUsages, accessUsages, conceptPropertyUsages, linkAccessUsages, conceptLinkUsages);
+    for (SNode conceptProperty : SetSequence.fromSet(conceptPropertyUsages)) {
+      SNodeOperations.deleteNode(conceptProperty);
+    }
+    for (SNode conceptLink : SetSequence.fromSet(conceptLinkUsages)) {
+      SNodeOperations.deleteNode(conceptLink);
+    }
   }
 
   private Set<SAbstractConcept> nodesToFind() {
@@ -628,27 +611,6 @@ public class ConceptPropertiesHelper {
     }
     SPropertyOperations.set(modelComponent, "attractsFocus", "" + (SPropertyOperations.getInteger_def(cell, "attractsFocus", "0")));
     SNodeOperations.replaceWithAnother(cell, modelComponent);
-  }
-
-
-
-  private void showRefactoringView(final _FunctionTypes._void_P0_E0 refactor, SearchResults searchResults) {
-    RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
-      @Override
-      public void performAction(final RefactoringViewItem refactoringViewItem) {
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
-          @Override
-          public void run() {
-            refactoringViewItem.close();
-            refactor.invoke();
-          }
-        }, project);
-      }
-    }, searchResults, false, getTitle());
-  }
-
-  private String getTitle() {
-    return "Migration: migrate and remove concept properties and links";
   }
 
   protected static Logger LOG = LogManager.getLogger(ConceptPropertiesHelper.class);
@@ -1364,7 +1326,7 @@ public class ConceptPropertiesHelper {
     return quotedNode_3;
   }
 
-  private static boolean neq_azpnkk_a0a4b0l0n(Object a, Object b) {
+  private static boolean neq_azpnkk_a0a4b0k0n(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
