@@ -5,10 +5,12 @@ package jetbrains.mps.web.viewer.plugin;
 import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.web.core.server.Handler;
 import jetbrains.mps.web.viewer.handlers.ProjectNameHandler;
+import jetbrains.mps.web.viewer.handlers.ProjectStructureHandler;
 import jetbrains.mps.web.core.server.MpsHttpServer;
 
 public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private Handler projectNameHandler;
+  private Handler projectStructure;
 
   public WebViewerHttpHandlers_CustomApplicationPlugin() {
   }
@@ -16,12 +18,15 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
   public void doInit() {
     // create handlers 
     WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler = new ProjectNameHandler();
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure = new ProjectStructureHandler();
 
     // register handlers 
     MpsHttpServer.getInstance().registerHandler("/name", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler);
+    MpsHttpServer.getInstance().registerHandler("/structure", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure);
   }
 
   public void doDispose() {
     MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler);
+    MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure);
   }
 }

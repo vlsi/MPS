@@ -38,24 +38,12 @@
     <classNode dependClassName="jetbrains.mps.web.viewer.plugin.WebViewerHttpHandlers_CustomApplicationPlugin" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.web.viewer.plugin.Viewer_ProjectPlugin" file="Viewer_ProjectPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.custom.BaseCustomProjectPlugin" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.web.viewer.plugin.WebViewerPlugin_CustomProjectPlugin" />
-    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
-  </dependency>
   <dependency className="jetbrains.mps.web.viewer.plugin.WebViewerHttpHandlers_CustomApplicationPlugin" file="WebViewerHttpHandlers_CustomApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.web.core.server.Handler" />
     <classNode dependClassName="jetbrains.mps.web.core.server.MpsHttpServer" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ProjectNameHandler" />
+    <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ProjectStructureHandler" />
     <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
-  </dependency>
-  <dependency className="jetbrains.mps.web.viewer.plugin.WebViewerPlugin_CustomProjectPlugin" file="WebViewerPlugin_CustomProjectPlugin.java">
-    <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomProjectPlugin" />
   </dependency>
 </dependenciesRoot>
 
