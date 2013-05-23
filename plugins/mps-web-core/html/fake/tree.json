@@ -1,0 +1,19 @@
+{
+    "elements": [
+        {
+            "name": "MPS",
+            "icon": "/img/folder.png",
+            "children": [
+                {
+                    "name": "baseLanguage",
+                    "icon": "/img/folder.png",
+                    "children": "/fake/tree.json"
+                },
+                {
+                    "name": "File1.jpg",
+                    "link": "/file1.jpg"
+                }
+            ]
+        }
+    ]
+}

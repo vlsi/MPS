@@ -37,3 +37,11 @@ h1 {
 .mbreadcrumb > .active {
     color: #999999;
 }
+
+.tree-content > li > span {
+    cursor:pointer;
+}
+
+li[data-collapsed="true"] > ul.tree-content {
+    display: none;
+}

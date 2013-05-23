@@ -65,9 +65,66 @@ $(function () {
         $("#content").text("Content of " + this.params['rootId'] + " is expected here.");
     });
 
+    function treeToggle(event) {
+        var li = $(event.delegateTarget).parent();
+        var node = li.children("ul");
+
+        if (node.attr("data-source")) {
+            loadTree(node);
+        } else {
+            li.attr("data-collapsed", li.attr("data-collapsed") !== "true");
+        }
+        event.stopImmediatePropagation();
+    }
+
+    function applyTree(node, children, collapsed) {
+        node.removeAttr("data-source");
+        node.empty();
+        node.parent().attr('data-collapsed', 'false');
+        $.each(children, function (index, child) {
+            var span = $('<span/>').css("class", "treeitem");
+            var li = $('<li/>').append("<i class='icon-spinner icon-spin'/>").append(span);
+            if ($.isArray(child.children)) {
+                span.append($('<a/>').text(child.name));
+                var childNode = $('<ul/>');
+                childNode.attr('class', 'tree-content');
+                li.append(childNode);
+                applyTree(childNode, child.children, true);
+                span.on("click", "a", treeToggle);
+            } else if (child.children) {
+                span.append($('<a/>').text(child.name));
+                var childNode = $('<ul/>').attr("data-source", child.children);
+                childNode.attr('class', 'tree-content');
+                li.append(childNode);
+                span.on("click", "a", treeToggle);
+            } else {
+                span.append($('<a/>').attr("href", child.link).text(child.name));
+            }
+
+            li.attr("data-collapsed", collapsed);
+            node.append(li);
+        });
+    }
+
+    function loadTree(node) {
+        node.empty();
+        node.append("<li>Loading....</li>");
+        $.ajax({
+            url: node.data("source"),
+            type: 'get',
+            dataType: 'json',
+            success: function (json) {
+                return typeof json.elements == 'undefined' ? false : applyTree(node, json.elements, false);
+            }
+        });
+    }
+
     Path.map("#:projectId/view").to(function () {
         setContext(this.params['projectId'], null, null, null);
-        $("#content").text("Project tree of " + currentProject + " is expected here.");
+        var content = $("#content");
+        content.html('<h2>Code</h2>');
+        content.append('<ul class="tree-root" data-source="fake/tree.json"></ul>');
+        loadTree($('.tree-root'));
     });
 
     Path.map("#projects").to(function () {
