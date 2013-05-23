@@ -50,6 +50,9 @@ public class MpsHttpServer implements ApplicationComponent {
             handleProjectsListRequest(exchange);
           } else if (uri.startsWith("/rest/p/")) {
             handleProjectRequest(exchange);
+          } else if ((uri == null || uri.length() == 0) || uri.equals("/")) {
+            // redirect on the knee 
+            handleStaticRequest("/index.html", exchange);
           } else {
             handleStaticRequest(uri, exchange);
           }
