@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.web.core" uuid="9f006f2b-d74f-413d-bc37-74436e70efd3" compileInMPS="false" generatorOutputPath="${mps_home}/plugins/mps-web-core/source_gen">
+<solution name="jetbrains.mps.web.core" uuid="9f006f2b-d74f-413d-bc37-74436e70efd3" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="./models" />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/mps-web-core/classes" type="java_classes" />
+    <modelRoot path="${module}/classes" type="java_classes" />
   </models>
   <sourcePath />
   <dependencies>

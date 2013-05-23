@@ -24,14 +24,14 @@
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="6652714296827884334" />
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6652714296827884335">
-      <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.web" />
-      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.web" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="jetbrains.mps.web" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="jetbrains.mps.web" />
-      <property name="vendor" nameId="tp4k.5023285075122009371" value="jetbrains.mps.web" />
-      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="jetbrains.mps.web" />
-      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="jetbrains.mps.web" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="jetbrains.mps.web" />
+      <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.web.core" />
+      <property name="name" nameId="tpck.1169194664001" value="JetBrains Web Core" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Web core for JetBrains MPS" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="1.0" />
+      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains s.r.o" />
+      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://jetbrains.com" />
+      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="jb logo" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="12.0" />
     </node>
   </roots>
   <root id="3802916001757770307">
