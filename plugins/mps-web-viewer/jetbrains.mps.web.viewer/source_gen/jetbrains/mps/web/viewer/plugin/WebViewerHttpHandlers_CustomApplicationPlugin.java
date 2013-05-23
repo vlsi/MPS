@@ -25,7 +25,7 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
 
     // register handlers 
     MpsHttpServer.getInstance().registerHandler("/name.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler);
-    MpsHttpServer.getInstance().registerHandler("/structure", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure);
+    MpsHttpServer.getInstance().registerHandler("/structure.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure);
     MpsHttpServer.getInstance().registerHandler("/revision.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectRevisionHandler);
   }
 
