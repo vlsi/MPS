@@ -122,6 +122,9 @@ public class MpsHttpServer implements ApplicationComponent {
       if (uri.startsWith("/")) {
         uri = uri.substring(1);
       }
+      if (uri.contains("?")) {
+        uri = uri.substring(0, uri.indexOf("?"));
+      }
       HttpUtil.doResponse(new File(htmlFolder, uri.replace("/", File.separator)), exchange);
     }
   };
