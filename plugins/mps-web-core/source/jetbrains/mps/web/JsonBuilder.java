@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.web;
 
-import jetbrains.mps.util.misc.hash.LinkedHashMap;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -28,7 +27,7 @@ import java.util.Map.Entry;
  * Date: 5/23/13
  */
 public class JsonBuilder {
-  private Map<String, JsonBuilder> myProperties = new LinkedHashMap<String, JsonBuilder>();
+  private Map<String, JsonBuilder> myProperties = new HashMap<String, JsonBuilder>();
   protected Object myValue;
 
   public static JsonBuilder stringValue(String value) {

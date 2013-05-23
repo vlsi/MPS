@@ -30,8 +30,11 @@ public class VirtualFolder {
   }
 
   public VirtualFolder getSubfolder(String relativeName) {
+    if (relativeName == null) {
+      return this;
+    }
     VirtualFolder result = this;
-    for (String segment : relativeName.split("\\.\\z")) {
+    for (String segment : relativeName.split("\\.")) {
       result = result.primGetSubfolder(segment);
     }
     return result;
