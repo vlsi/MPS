@@ -27,6 +27,7 @@ import java.util.Iterator;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
@@ -254,6 +255,14 @@ public class NodeToHtmlHandler implements Handler {
 
   private void appendOpenDiv(StringBuilder builder, jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     StringBuilder div = new StringBuilder("<div");
+    addClasses(cell, div);
+    addColor(cell, div);
+    addTargetNodeId(cell, div);
+    div.append(">");
+    builder.append(div);
+  }
+
+  private void addClasses(jetbrains.mps.openapi.editor.cells.EditorCell cell, StringBuilder div) {
     String classes = "";
     if (cell instanceof EditorCell_Collection) {
       classes = classes + getClassesForCollection(((EditorCell_Collection) cell));
@@ -264,15 +273,38 @@ public class NodeToHtmlHandler implements Handler {
       div.append(classes);
       div.append("\"");
     }
+  }
+
+  private void addColor(jetbrains.mps.openapi.editor.cells.EditorCell cell, StringBuilder div) {
     if (cell instanceof EditorCell_Label) {
       Color color = cell.getStyle().get(StyleAttributes.TEXT_COLOR);
       String strColor = Integer.toHexString(color.getRGB());
       strColor = strColor.substring(2, strColor.length());
       div.append(" style=\"color:#" + strColor + ";\"");
     }
-    div.append(">");
-    builder.append(div);
   }
+
+
+
+  private void addTargetNodeId(jetbrains.mps.openapi.editor.cells.EditorCell cell, StringBuilder div) {
+    if (cell instanceof EditorCell_Label) {
+      SNode targetNode = APICellAdapter.getSNodeWRTReference(cell);
+      if (targetNode == null) {
+        return;
+      }
+      if (targetNode == cell.getSNode()) {
+        return;
+      }
+      String targetNodeId = " target-node-id = \"" + targetNode.getNodeId() + "\"";
+      String targetModelId = " target-model-id = \"" + targetNode.getModel().getModelId() + "\"";
+      String targetModuleId = " target-module-id = \"" + targetNode.getModel().getModule().getModuleId() + "\"";
+      div.append(targetNodeId);
+      div.append(targetModelId);
+      div.append(targetModuleId);
+    }
+  }
+
+
 
   private String getClassesForCollection(EditorCell_Collection collection) {
     StringBuilder clazz = new StringBuilder();
