@@ -1,6 +1,37 @@
 $(function () {
     var currentProject = null;
 
+    var nameFetcher = {
+        getModuleName: function (moduleId) {
+            // todo: if doesn't contains
+            return nameFetcher.moduleNames[moduleId];
+        },
+
+        getModelName: function (modelId) {
+            // todo: if doesn't contains
+            return nameFetcher.modelNames[modelId];
+        },
+
+        getNodeName: function (nodeId) {
+            // todo: if doesn't contains
+            return nameFetcher.nodeNames[nodeId];
+        },
+
+        updateWithCompletionResult: function (completionResult) {
+            completionResult.forEach(function (item) {
+                ["module", "model", "node"].forEach(function (type) {
+                    if (typeof item[type + "-id"] != 'undefined') {
+                        nameFetcher[type + "Names"][item[type + "-id"]] = item[type + "-name"];
+                    }
+                });
+            });
+        },
+
+        moduleNames: {},
+        modelNames: {},
+        nodeNames: {}
+    };
+
     function addBreadcrumb(title, link) {
         var li = $('<li/>');
         if (link === null) {
@@ -13,7 +44,7 @@ $(function () {
         $('.mbreadcrumb').append(li);
     }
 
-    function setContext(project, module_, model, root) {
+    function setContext(project, module_id, model_id, root_id) {
         var bc = $('.mbreadcrumb');
         if (project === null) {
             bc.hide()
@@ -23,13 +54,13 @@ $(function () {
             bc.css("visibility", "visible");
             bc.show();
             bc.empty();
-            addBreadcrumb(project, module_ != null ? "#" + project + "/view" : null);
-            if (module_ != null) {
-                addBreadcrumb(module_, model !== null ? "#" + project + "/module/" + module_ : null);
-                if (model != null) {
-                    addBreadcrumb(model, root !== null ? "#" + project + "/model/" + model : null);
-                    if (root != null) {
-                        addBreadcrumb(root, null);
+            addBreadcrumb(project, module_id != null ? "#" + project + "/view" : null);
+            if (module_id != null) {
+                addBreadcrumb(nameFetcher.getModuleName(module_id), model_id !== null ? "#" + project + "/module/" + module_id : null);
+                if (model_id != null) {
+                    addBreadcrumb(nameFetcher.getModelName(model_id), root_id !== null ? "#" + project + "/model/" + model_id : null);
+                    if (root_id != null) {
+                        addBreadcrumb(nameFetcher.getNodeName(root_id), null);
                     }
                 }
             }
@@ -45,7 +76,15 @@ $(function () {
                 data: {query: query},
                 dataType: 'json',
                 success: function (json) {
-                    return typeof json.options == 'undefined' ? false : process(json.options.map(function(item) {return JSON.stringify(item);}));
+                    if (typeof json.options == 'undefined') {
+                        return false;
+                    }
+
+                    nameFetcher.updateWithCompletionResult(json.options);
+
+                    return process(json.options.map(function (item) {
+                        return JSON.stringify(item);
+                    }));
                 }
             });
         },
@@ -103,7 +142,12 @@ $(function () {
 
     Path.map("#:projectId/node/:moduleId/:modelId/:rootId").to(function () {
         setContext(this.params['projectId'], this.params['moduleId'], this.params['modelId'], this.params['rootId']);
-        $("#content").text("Content of node " + this.params['rootId'] + " is expected here.");
+        $("#content").text("Content of node " + this.params['rootId'] + " is loading...");
+        $.get("/rest/p/" + currentProject + "/view/" + this.params["modelId"] + "(" + nameFetcher.getModelName(this.params["modelId"]) + ")" + "/" + this.params["rootId"],
+            function (data) {
+                $('#content').text("");
+                $('#content').append(data);
+            }, "html");
     });
     Path.map("#:projectId/model/:moduleId/:modelId").to(function () {
         setContext(this.params['projectId'], this.params['moduleId'], this.params['modelId']);
