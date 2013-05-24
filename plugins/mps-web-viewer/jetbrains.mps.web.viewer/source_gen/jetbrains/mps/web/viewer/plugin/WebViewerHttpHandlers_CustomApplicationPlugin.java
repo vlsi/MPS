@@ -7,7 +7,7 @@ import java.util.List;
 import jetbrains.mps.web.core.server.Handler;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.web.viewer.handlers.IconHandler;
+import jetbrains.mps.web.viewer.handlers.IconHelper;
 import jetbrains.mps.web.core.server.MpsHttpServer;
 import jetbrains.mps.web.viewer.handlers.ProjectNameHandler;
 import jetbrains.mps.web.viewer.handlers.ProjectStructureHandler;
@@ -19,7 +19,7 @@ import java.util.Iterator;
 
 public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private List<Handler> handlers = ListSequence.fromList(new ArrayList<Handler>());
-  private IconHandler iconHandler;
+  private IconHelper iconHelper;
 
   public WebViewerHttpHandlers_CustomApplicationPlugin() {
   }
@@ -34,9 +34,8 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
     MpsHttpServer.getInstance().registerHandler("/goto.json", ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new GoToHandler()));
     MpsHttpServer.getInstance().registerHandler(NodeStructureHandler.PREFIX, ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new NodeStructureHandler()));
 
-    WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHandler = new IconHandler();
-    WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHandler.init();
-    MpsHttpServer.getInstance().registerHandler("/icons", WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHandler);
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHelper = new IconHelper();
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHelper.init();
   }
 
   public void doDispose() {
@@ -49,7 +48,6 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
       }
     }
 
-    MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHandler);
-    WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHandler.dispose();
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHelper.dispose();
   }
 }

@@ -289,7 +289,7 @@ function createIconSpan(icon_json) {
     icon_json = JSON.parse(icon_json);
     var element = $("<span/>");
     element.addClass("icon_any");
-    element.css('background-image', 'url(\'' + icon_json["icon_url"] + '\')');
+    element.css('background-image', 'url(\'data:image/png;base64,' + icon_json["base64"] + '\')');
     element.css('width', icon_json.width);
     element.css('height', icon_json.height);
     return element;

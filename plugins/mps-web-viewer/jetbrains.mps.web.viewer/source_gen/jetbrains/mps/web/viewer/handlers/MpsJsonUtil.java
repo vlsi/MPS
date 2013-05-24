@@ -67,7 +67,7 @@ public class MpsJsonUtil {
   public static String createIconJson(Project project, Icon icon) {
     JsonBuilder builder = JsonBuilder.object();
 
-    builder.addProperty("icon_url", IconHandler.getPathForIcon(project, icon));
+    builder.addProperty("base64", IconHelper.encodeIconIntoBase64(icon));
     builder.addProperty("width", JsonBuilder.intValue(icon.getIconWidth()));
     builder.addProperty("height", JsonBuilder.intValue(icon.getIconHeight()));
 
