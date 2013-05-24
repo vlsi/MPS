@@ -45,25 +45,74 @@ $(function () {
                 data: {query: query},
                 dataType: 'json',
                 success: function (json) {
-                    return typeof json.options == 'undefined' ? false : process(json.options);
+                    return typeof json.options == 'undefined' ? false : process(json.options.map(function(item) {return JSON.stringify(item);}));
                 }
             });
         },
-        updater: function (selection) {
-            $('#go-to-root input').val(selection);
+        matcher: function (item) {
+            return itemPresentation(item).toLowerCase().indexOf(this.query.trim().toLowerCase()) != -1;
+        },
+        sorter: function (items) {
+            return items.sort(function (item1, item2) {
+                return itemPresentation(item1).localeCompare(itemPresentation(item2));
+            });
+        },
+        highlighter: function (item) {
+            var regex = new RegExp('(' + this.query + ')', 'gi');
+            return itemPresentation(item).replace(regex, "<strong>$1</strong>");
+        },
+        updater: function (item) {
+            $('#go-to-root input[name="search"]').val(itemPresentation(item));
+
+            item = JSON.parse(item);
+            $('#go-to-root input[name="search-type"]').val(item["type"]);
+            $('#go-to-root input[name="search-module-id"]').val(item["module-id"]);
+            if (item["type"] == "model" || item["type"] == "node") {
+                $('#go-to-root input[name="search-model-id"]').val(item["model-id"]);
+            }
+            if (item["type"] == "node") {
+                $('#go-to-root input[name="search-node-id"]').val(item["node-id"]);
+            }
+
             $('#go-to-root').submit();
-            return "";
+            return itemPresentation(item);
         }
     });
 
+    function itemPresentation(item) {
+        item = JSON.parse(item);
+        return item[item["type"] + "-name"];
+    }
+
     $('#go-to-root').submit(function () {
-        window.location = "#" + currentProject + "/node/module1/model1/" + $('#go-to-root input').val();
+        var type = $('#go-to-root input[name="search-type"]').val();
+        if (type == "node") {
+            window.location = "#" + currentProject + "/node" +
+                "/" + $('#go-to-root input[name="search-module-id"]').val() +
+                "/" + $('#go-to-root input[name="search-model-id"]').val() +
+                "/" + $('#go-to-root input[name="search-node-id"]').val();
+        } else if (type == "model") {
+            window.location = "#" + currentProject + "/model" +
+                "/" + $('#go-to-root input[name="search-module-id"]').val() +
+                "/" + $('#go-to-root input[name="search-model-id"]').val();
+        } else if (type == "module") {
+            window.location = "#" + currentProject + "/module" +
+                "/" + $('#go-to-root input[name="search-module-id"]').val();
+        }
         return false;
     });
 
     Path.map("#:projectId/node/:moduleId/:modelId/:rootId").to(function () {
         setContext(this.params['projectId'], this.params['moduleId'], this.params['modelId'], this.params['rootId']);
-        $("#content").text("Content of " + this.params['rootId'] + " is expected here.");
+        $("#content").text("Content of node " + this.params['rootId'] + " is expected here.");
+    });
+    Path.map("#:projectId/model/:moduleId/:modelId").to(function () {
+        setContext(this.params['projectId'], this.params['moduleId'], this.params['modelId']);
+        $("#content").text("Content of model " + this.params['modelId'] + " is expected here.");
+    });
+    Path.map("#:projectId/module/:moduleId").to(function () {
+        setContext(this.params['projectId'], this.params['moduleId']);
+        $("#content").text("Content of module " + this.params['moduleId'] + " is expected here.");
     });
 
     function treeToggle(event) {
