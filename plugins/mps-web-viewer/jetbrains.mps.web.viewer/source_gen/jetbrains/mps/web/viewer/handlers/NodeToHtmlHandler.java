@@ -18,7 +18,6 @@ import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.Collections;
-import org.apache.log4j.Priority;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -31,8 +30,6 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NodeToHtmlHandler implements Handler {
   public void handle(String requestUrl, final Project project, HttpExchange exchange) throws Exception {
@@ -59,11 +56,7 @@ public class NodeToHtmlHandler implements Handler {
     };
     EditorContext context = new EditorContext(component, node.getModel(), project.getRepository());
     jetbrains.mps.openapi.editor.cells.EditorCell cell = context.createRootCell(node, Collections.<SModelEvent>emptyList());
-    String htmlForCell = getHtmlForCell(cell);
-    if (LOG.isEnabledFor(Priority.ERROR)) {
-      LOG.error(htmlForCell);
-    }
-    return htmlForCell;
+    return getHtmlForCell(cell);
   }
 
 
@@ -354,6 +347,4 @@ public class NodeToHtmlHandler implements Handler {
     }
     return clazz.toString();
   }
-
-  protected static Logger LOG = LogManager.getLogger(NodeToHtmlHandler.class);
 }
