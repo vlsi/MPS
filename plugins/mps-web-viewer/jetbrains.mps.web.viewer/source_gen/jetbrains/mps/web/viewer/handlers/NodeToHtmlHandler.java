@@ -157,6 +157,7 @@ public class NodeToHtmlHandler implements Handler {
     if (startMain != collection.firstCell()) {
       builder.append("<div class = \"");
       builder.append("indent-layout ");
+      builder.append("n-list ");
       if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
         builder.append("indent-layout-indent ");
       }
@@ -177,6 +178,11 @@ public class NodeToHtmlHandler implements Handler {
     jetbrains.mps.openapi.editor.cells.EditorCell current = startMain;
     builder.append("<div class = \"");
     builder.append("indent-layout ");
+    if (startMain != collection.firstCell()) {
+      builder.append("n-listpart ");
+    } else {
+      builder.append("n-list ");
+    }
     if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
       builder.append("indent-layout-indent ");
     }
@@ -205,6 +211,7 @@ public class NodeToHtmlHandler implements Handler {
     current = startLast;
     builder.append("<div class = \"");
     builder.append("indent-layout ");
+    builder.append("n-listpart ");
     if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
       builder.append("indent-layout-indent ");
     }
