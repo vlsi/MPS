@@ -23,11 +23,6 @@
     overflow: hidden;
 }
 
-.nodes .indent-layout:not(.indent-layout-new-line-children) > div:not(.n-pright):not(.indent-layout-new-line) + div:not(.n-pleft):not(.indent-layout-on-new-line):before {
-    content: '\00a0';
-    float: left;
-}
-
 .nodes .indent-layout-on-new-line, .indent-layout-new-line + div, .indent-layout-new-line-children > div, .vertical-layout > div {
     clear: left;
     /*position: relative;*/
@@ -45,7 +40,7 @@
 
 
 
-div {float: left;}
+#content div {float: left;}
 
 .nodes .selected-cell {
     color: white;
@@ -59,9 +54,6 @@ div {float: left;}
     float: left;
 }
 
-.nodes .horizontal-layout > :not(:first-child):before {
-    content: '\00a0';
-}
 
 /*
 .n-leaf {}
@@ -78,4 +70,15 @@ div {float: left;}
     visibility: visible;
     border-right: none;
     width: 0;
+}
+
+/* spaces between cells */
+
+.nodes .horizontal-layout > :not(:first-child):before {
+    content: '\00a0';
+}
+
+.nodes .indent-layout:not(.indent-layout-new-line-children) > div:not(.n-pright):not(.indent-layout-new-line) + div:not(.n-pleft):not(.indent-layout-on-new-line):before {
+    content: '\00a0';
+    float: left;
 }
