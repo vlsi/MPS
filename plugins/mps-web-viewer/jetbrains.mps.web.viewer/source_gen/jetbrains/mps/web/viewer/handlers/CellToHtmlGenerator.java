@@ -44,13 +44,13 @@ public class CellToHtmlGenerator {
       return "";
     }
     if (cell instanceof EditorCell_Collection && ((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Indent) {
-      builder.append(getHtmlForIndent(((EditorCell_Collection) cell), selectedNode));
+      builder.append(getHtmlForIndent(((EditorCell_Collection) cell)));
       return builder.toString();
     }
-    appendOpenDiv(builder, cell, selectedNode);
+    appendOpenDiv(builder, cell);
 
     if (cell instanceof EditorCell_Table) {
-      getHtmlForTable(builder, cell, selectedNode);
+      getHtmlForTable(builder, cell);
     } else if (cell instanceof EditorCell_Collection) {
       for (EditorCell child : Sequence.fromIterable(((EditorCell_Collection) cell))) {
         builder.append(getHtmlForCell(child)).append('\n');
@@ -68,7 +68,7 @@ public class CellToHtmlGenerator {
 
 
 
-  private void getHtmlForTable(StringBuilder builder, EditorCell cell, SNode selectedNode) {
+  private void getHtmlForTable(StringBuilder builder, EditorCell cell) {
     builder.append("<table border=\"1\">");
     for (Iterator<EditorCell> rowsIterator = ((EditorCell_Table) cell).iterator(); rowsIterator.hasNext();) {
       EditorCell nextRow = rowsIterator.next();
@@ -145,7 +145,7 @@ public class CellToHtmlGenerator {
 
 
 
-  private String getHtmlForIndent(EditorCell_Collection collection, SNode selectedNode) {
+  private String getHtmlForIndent(EditorCell_Collection collection) {
     StringBuilder builder = new StringBuilder();
     EditorCell startMain;
     EditorCell startLast;
@@ -156,7 +156,7 @@ public class CellToHtmlGenerator {
     }
     startLast = findLastNewLine(collection);
     if (startMain == null) {
-      appendOpenDiv(builder, collection, selectedNode);
+      appendOpenDiv(builder, collection);
       appendClosingDiv(builder);
     }
     Iterator<EditorCell> iterator = collection.iterator();
@@ -281,9 +281,9 @@ public class CellToHtmlGenerator {
 
 
 
-  private void appendOpenDiv(StringBuilder builder, EditorCell cell, SNode selectedNode) {
+  private void appendOpenDiv(StringBuilder builder, EditorCell cell) {
     StringBuilder div = new StringBuilder("<div");
-    addClasses(cell, div, selectedNode);
+    addClasses(cell, div);
     addTextAttributes(cell, div);
     addTargetNodeId(cell, div);
     div.append(">");
@@ -292,9 +292,7 @@ public class CellToHtmlGenerator {
 
 
 
-
-
-  private void addClasses(EditorCell cell, StringBuilder div, SNode selectedNode) {
+  private void addClasses(EditorCell cell, StringBuilder div) {
     String classes = "";
     if (cell instanceof EditorCell_Collection) {
       classes = classes + getClassesForCollection(((EditorCell_Collection) cell));
@@ -332,7 +330,7 @@ public class CellToHtmlGenerator {
         builder.append("border: solid 1px;");
       }
 
-      if (isNotEmpty_je17c5_a0k0a0bb(builder.toString())) {
+      if (isNotEmpty_je17c5_a0k0a0z(builder.toString())) {
         div.append(" style=\"" + builder.toString() + "\"");
       }
     }
@@ -342,7 +340,6 @@ public class CellToHtmlGenerator {
     String strColor = Integer.toHexString(color.getRGB());
     return strColor.substring(2, strColor.length());
   }
-
 
 
 
@@ -426,7 +423,7 @@ public class CellToHtmlGenerator {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT))) {
         clazz.append("n-pright ");
       }
-      if (isEmpty_je17c5_a0d0f0kb(((EditorCell_Label) cell).getText())) {
+      if (isEmpty_je17c5_a0d0f0hb(((EditorCell_Label) cell).getText())) {
         clazz.append("n-empty");
       }
     }
@@ -434,13 +431,11 @@ public class CellToHtmlGenerator {
     return clazz.toString();
   }
 
-
-
-  public static boolean isNotEmpty_je17c5_a0k0a0bb(String str) {
+  public static boolean isNotEmpty_je17c5_a0k0a0z(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_je17c5_a0d0f0kb(String str) {
+  public static boolean isEmpty_je17c5_a0d0f0hb(String str) {
     return str == null || str.length() == 0;
   }
 }
