@@ -46,21 +46,21 @@ public class GoToHandler implements Handler {
 
 
 
-  private static Iterable<String> getModulesJson(Project project, final String query) {
+  private static Iterable<String> getModulesJson(final Project project, final String query) {
     return Sequence.fromIterable(((Iterable<? extends SModule>) project.getModules())).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule module) {
         return module.getModuleName().contains(query);
       }
     }).select(new ISelector<SModule, String>() {
       public String select(SModule module) {
-        return MpsJsonUtil.dumpModuleReference(module).toString();
+        return MpsJsonUtil.dumpModuleReference(project, module).toString();
       }
     });
   }
 
 
 
-  private static Iterable<String> getModelsJson(Project project, final String query) {
+  private static Iterable<String> getModelsJson(final Project project, final String query) {
     return Sequence.fromIterable(((Iterable<? extends SModule>) project.getModules())).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule module) {
         return module.getModels();
@@ -71,14 +71,14 @@ public class GoToHandler implements Handler {
       }
     }).select(new ISelector<SModel, String>() {
       public String select(SModel model) {
-        return MpsJsonUtil.dumpModelReference(model).toString();
+        return MpsJsonUtil.dumpModelReference(project, model).toString();
       }
     });
   }
 
 
 
-  private static Iterable<String> getNodesJson(Project project, final String query) {
+  private static Iterable<String> getNodesJson(final Project project, final String query) {
     Collection<NavigationParticipant.NavigationTarget> nodes = GotoNavigationUtil.getNavigationTargets(NavigationParticipant.TargetKind.ROOT, new ProjectScope(project), new EmptyProgressMonitor());
     return Sequence.fromIterable(((Iterable<NavigationParticipant.NavigationTarget>) nodes)).where(new IWhereFilter<NavigationParticipant.NavigationTarget>() {
       public boolean accept(NavigationParticipant.NavigationTarget it) {
@@ -87,7 +87,7 @@ public class GoToHandler implements Handler {
     }).take(100).select(new ISelector<NavigationParticipant.NavigationTarget, String>() {
       public String select(NavigationParticipant.NavigationTarget it) {
         SNode node = it.getNodeReference().resolve(MPSModuleRepository.getInstance());
-        return MpsJsonUtil.dumpNodeReference(node).toString();
+        return MpsJsonUtil.dumpNodeReference(project, node).toString();
       }
     });
   }

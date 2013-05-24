@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.web.core.server.Handler;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.web.viewer.handlers.IconHandler;
 import jetbrains.mps.web.core.server.MpsHttpServer;
 import jetbrains.mps.web.viewer.handlers.ProjectNameHandler;
 import jetbrains.mps.web.viewer.handlers.ProjectStructureHandler;
@@ -18,6 +19,7 @@ import java.util.Iterator;
 
 public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private List<Handler> handlers = ListSequence.fromList(new ArrayList<Handler>());
+  private IconHandler iconHandler;
 
   public WebViewerHttpHandlers_CustomApplicationPlugin() {
   }
@@ -29,9 +31,12 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
     MpsHttpServer.getInstance().registerHandler(ProjectStructureHandler.PREFIX, ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new ProjectStructureHandler()));
     MpsHttpServer.getInstance().registerHandler("/revision.json", ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new ProjectVcsRevisionHandler()));
     MpsHttpServer.getInstance().registerHandler("/view/", ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new NodeToHtmlHandler()));
-    // todo: rename /roots to /goto 
-    MpsHttpServer.getInstance().registerHandler("/goto.json", new GoToHandler());
+    MpsHttpServer.getInstance().registerHandler("/goto.json", ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new GoToHandler()));
     MpsHttpServer.getInstance().registerHandler(NodeStructureHandler.PREFIX, ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new NodeStructureHandler()));
+
+    IconHandler iconHandler = new IconHandler();
+    iconHandler.init();
+    MpsHttpServer.getInstance().registerHandler("/icons", iconHandler);
   }
 
   public void doDispose() {
@@ -43,5 +48,8 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
         MpsHttpServer.getInstance().unregisterHandler(nextHandler_var);
       }
     }
+
+    MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHandler);
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHandler.dispose();
   }
 }

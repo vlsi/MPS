@@ -54,7 +54,7 @@ public class ProjectStructureHandler implements Handler {
       SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelReferenceString);
       SModel model = modelReference.resolve(project.getRepository());
       if (model != null) {
-        HttpUtil.doJsonResponse(dumpModelStructure(model), exchange);
+        HttpUtil.doJsonResponse(dumpModelStructure(project, model), exchange);
         return;
       }
       HttpUtil.doJsonResponse("Model not found: " + modelReferenceString, exchange);
@@ -81,7 +81,7 @@ public class ProjectStructureHandler implements Handler {
       SModelId smodelId = PersistenceFacade.getInstance().createModelId(match.group(2));
       SModel model = module.getModel(smodelId);
       if (model != null) {
-        HttpUtil.doJsonResponse(dumpModelStructure(model), exchange);
+        HttpUtil.doJsonResponse(dumpModelStructure(standaloneProject, model), exchange);
         return true;
       }
       HttpUtil.doJsonResponse("Model not found: " + match.group(2), exchange);
@@ -105,22 +105,22 @@ public class ProjectStructureHandler implements Handler {
     return false;
   }
 
-  private String dumpModelStructure(SModel model) {
+  private String dumpModelStructure(Project project, SModel model) {
     JsonBuilder builder = JsonBuilder.object();
     List<JsonBuilder> nodes = ListSequence.fromList(new ArrayList<JsonBuilder>());
     for (SNode node : Sequence.fromIterable(model.getRootNodes())) {
-      ListSequence.fromList(nodes).addElement(MpsJsonUtil.dumpNodeReference(node));
+      ListSequence.fromList(nodes).addElement(MpsJsonUtil.dumpNodeReference(project, node));
     }
     builder.addProperty("elements", nodes, true);
     return builder.toString();
   }
 
   private String dumpModuleStructure(SModule module, StandaloneMPSProject project) {
-    JsonBuilder builder = MpsJsonUtil.dumpModuleReference(module);
+    JsonBuilder builder = MpsJsonUtil.dumpModuleReference(project, module);
     builder.addProperty("isStructure", "true");
     List<JsonBuilder> children = ListSequence.fromList(new ArrayList<JsonBuilder>());
     for (SModel model : Sequence.fromIterable(module.getModels())) {
-      JsonBuilder modelBuilder = MpsJsonUtil.dumpModelReference(model);
+      JsonBuilder modelBuilder = MpsJsonUtil.dumpModelReference(project, model);
       modelBuilder.addProperty("isStructure", "true");
       ListSequence.fromList(children).addElement(modelBuilder);
     }
@@ -142,7 +142,7 @@ public class ProjectStructureHandler implements Handler {
     JsonBuilder builder = MpsJsonUtil.dumpFolderReference(folder);
     List<JsonBuilder> children = ListSequence.fromListWithValues(new ArrayList<JsonBuilder>(), dumpSubfolders(folder, project));
     for (SModule module : folder.getModules()) {
-      JsonBuilder child = MpsJsonUtil.dumpModuleReference(module);
+      JsonBuilder child = MpsJsonUtil.dumpModuleReference(project, module);
       child.addProperty("isStructure", "true");
       ListSequence.fromList(children).addElement(child);
     }
