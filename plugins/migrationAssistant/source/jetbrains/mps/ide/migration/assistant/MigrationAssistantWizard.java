@@ -125,7 +125,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   public MigrationAssistantWizard(Project project) {
     super("Migration Assistant Wizard", project, Arrays.asList(
       new InitialStep(project),
-//      new OldPersistenceDetectedStep(project),
+      new OldPersistenceDetectedStep(project),
       new MigrationsActionsStep(project),
       new MigrationsProgressStep(project),
       new MigrationsFinishedStep(project),
@@ -317,7 +317,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     @Override
     public Object getNextStepId() {
-      if (hasModelsInOldPersistence()) return super.getNextStepId();
+      // if (hasModelsInOldPersistence()) return super.getNextStepId();
       return mySelectActions.isSelected() ? super.getSkipNextStepId(1) : super.getSkipNextStepId(2);
     }
 
