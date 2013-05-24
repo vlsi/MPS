@@ -10,7 +10,7 @@
 .indent-layout-new-line {
 
 }
-.indent-layout-on-new-line, .indent-layout-new-line + div, div.indent-layout-new-line-children > div {
+.indent-layout-on-new-line, .indent-layout-new-line + div, div.indent-layout-new-line-children > div, div.vertical-layout > div {
     clear: left;
     /*position: relative;*/
     /*margin-left: -10px;*/
