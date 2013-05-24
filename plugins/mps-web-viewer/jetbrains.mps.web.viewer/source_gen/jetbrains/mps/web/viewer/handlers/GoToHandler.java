@@ -59,7 +59,7 @@ public class GoToHandler implements Handler {
   private static Iterable<String> getModulesJson(final Project project, final String query) {
     return Sequence.fromIterable(((Iterable<? extends SModule>) project.getModules())).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule module) {
-        return module.getModuleName().contains(query);
+        return module.getModuleName().toLowerCase().contains(query.toLowerCase());
       }
     }).select(new ISelector<SModule, String>() {
       public String select(SModule module) {
@@ -77,7 +77,7 @@ public class GoToHandler implements Handler {
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel model) {
-        return model.getModelName().contains(query);
+        return model.getModelName().toLowerCase().contains(query.toLowerCase());
       }
     }).select(new ISelector<SModel, String>() {
       public String select(SModel model) {

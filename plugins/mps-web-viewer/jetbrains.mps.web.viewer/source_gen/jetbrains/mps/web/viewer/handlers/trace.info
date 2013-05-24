@@ -99,10 +99,10 @@
     <nodeInfo nodeId="4671236541319509693" fileName="GoToHandler.java" startLine="49" startPosition="80" endLine="50" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4671236541319509589" fileName="GoToHandler.java" startLine="52" startPosition="7" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4671236541319511175" fileName="GoToHandler.java" startLine="53" startPosition="0" endLine="54" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671236541321588928" fileName="GoToHandler.java" startLine="61" startPosition="45" endLine="62" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671236541321588928" fileName="GoToHandler.java" startLine="61" startPosition="45" endLine="62" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671236541319977115" fileName="GoToHandler.java" startLine="65" startPosition="44" endLine="66" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671236541320428985" fileName="GoToHandler.java" startLine="75" startPosition="57" endLine="76" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4671236541321588571" fileName="GoToHandler.java" startLine="79" startPosition="43" endLine="80" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671236541321588571" fileName="GoToHandler.java" startLine="79" startPosition="43" endLine="80" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671236541320365979" fileName="GoToHandler.java" startLine="83" startPosition="42" endLine="84" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671236541321793537" fileName="GoToHandler.java" startLine="93" startPosition="71" endLine="94" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4671236541321681781" fileName="GoToHandler.java" startLine="94" startPosition="86" endLine="95" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -123,10 +123,10 @@
     <nodeInfo nodeId="4671236541319466418" fileName="GoToHandler.java" startLine="73" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelsJson#(Ljetbrains/mps/project/Project;Ljava/lang/String;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="4671236541319389222" fileName="GoToHandler.java" startLine="32" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
     <scopeInfo nodeId="4671236541329704530" fileName="GoToHandler.java" startLine="35" startPosition="31" endLine="36" endPosition="13" />
-    <scopeInfo nodeId="4671236541320103856" fileName="GoToHandler.java" startLine="61" startPosition="45" endLine="62" endPosition="54" />
+    <scopeInfo nodeId="4671236541320103856" fileName="GoToHandler.java" startLine="61" startPosition="45" endLine="62" endPosition="82" />
     <scopeInfo nodeId="4671236541319915824" fileName="GoToHandler.java" startLine="65" startPosition="44" endLine="66" endPosition="75" />
     <scopeInfo nodeId="4671236541320428984" fileName="GoToHandler.java" startLine="75" startPosition="57" endLine="76" endPosition="34" />
-    <scopeInfo nodeId="4671236541320496129" fileName="GoToHandler.java" startLine="79" startPosition="43" endLine="80" endPosition="52" />
+    <scopeInfo nodeId="4671236541320496129" fileName="GoToHandler.java" startLine="79" startPosition="43" endLine="80" endPosition="80" />
     <scopeInfo nodeId="4671236541320365943" fileName="GoToHandler.java" startLine="83" startPosition="42" endLine="84" endPosition="73" />
     <scopeInfo nodeId="4671236541321681472" fileName="GoToHandler.java" startLine="93" startPosition="71" endLine="95" endPosition="71">
       <varInfo nodeId="4671236541321793540" varName="node" />
