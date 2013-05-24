@@ -8,6 +8,7 @@ import jetbrains.mps.web.core.server.Handler;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.web.viewer.handlers.IconHelper;
+import jetbrains.mps.web.viewer.handlers.GoToNodeIndexer;
 import jetbrains.mps.web.core.server.MpsHttpServer;
 import jetbrains.mps.web.viewer.handlers.ProjectNameHandler;
 import jetbrains.mps.web.viewer.handlers.ProjectStructureHandler;
@@ -20,6 +21,7 @@ import java.util.Iterator;
 public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private List<Handler> handlers = ListSequence.fromList(new ArrayList<Handler>());
   private IconHelper iconHelper;
+  private GoToNodeIndexer goToNodeIndexer;
 
   public WebViewerHttpHandlers_CustomApplicationPlugin() {
   }
@@ -36,6 +38,9 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
 
     WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHelper = new IconHelper();
     WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHelper.init();
+
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.goToNodeIndexer = new GoToNodeIndexer();
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.goToNodeIndexer.init();
   }
 
   public void doDispose() {
@@ -49,5 +54,6 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
     }
 
     WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHelper.dispose();
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.goToNodeIndexer.dispose();
   }
 }

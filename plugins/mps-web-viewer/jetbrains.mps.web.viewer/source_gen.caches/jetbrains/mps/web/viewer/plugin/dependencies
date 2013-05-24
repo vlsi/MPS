@@ -46,6 +46,7 @@
     <classNode dependClassName="jetbrains.mps.web.core.server.Handler" />
     <classNode dependClassName="jetbrains.mps.web.core.server.MpsHttpServer" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.GoToHandler" />
+    <classNode dependClassName="jetbrains.mps.web.viewer.handlers.GoToNodeIndexer" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.IconHelper" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.NodeStructureHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler" />

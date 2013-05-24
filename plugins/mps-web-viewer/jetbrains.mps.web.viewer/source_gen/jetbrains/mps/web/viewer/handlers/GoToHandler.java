@@ -20,11 +20,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
-import java.util.Collection;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
-import jetbrains.mps.workbench.goTo.navigation.GotoNavigationUtil;
-import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
@@ -92,13 +88,8 @@ public class GoToHandler implements Handler {
 
 
 
-  private static Iterable<String> getNodesJson(final Project project, final String query) {
-    Collection<NavigationParticipant.NavigationTarget> nodes = GotoNavigationUtil.getNavigationTargets(NavigationParticipant.TargetKind.ROOT, new ProjectScope(project), new EmptyProgressMonitor());
-    return Sequence.fromIterable(((Iterable<NavigationParticipant.NavigationTarget>) nodes)).where(new IWhereFilter<NavigationParticipant.NavigationTarget>() {
-      public boolean accept(NavigationParticipant.NavigationTarget it) {
-        return it.getPresentation().contains(query);
-      }
-    }).take(100).select(new ISelector<NavigationParticipant.NavigationTarget, String>() {
+  private static Iterable<String> getNodesJson(final Project project, String query) {
+    return ListSequence.fromList(GoToNodeIndexer.INSTANCE.getTargets(project, query)).take(100).select(new ISelector<NavigationParticipant.NavigationTarget, String>() {
       public String select(NavigationParticipant.NavigationTarget it) {
         SNode node = it.getNodeReference().resolve(MPSModuleRepository.getInstance());
         return MpsJsonUtil.dumpNodeReference(project, node).toString();
