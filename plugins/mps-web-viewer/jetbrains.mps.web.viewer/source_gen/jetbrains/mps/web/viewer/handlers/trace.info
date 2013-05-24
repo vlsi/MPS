@@ -890,36 +890,33 @@
     <nodeInfo nodeId="6947201579629144289" fileName="ReflectiveNodeRendererBuilder.java" startLine="74" startPosition="24" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5202725479554816172" fileName="ReflectiveNodeRendererBuilder.java" startLine="78" startPosition="74" endLine="79" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5202725479553479489" fileName="ReflectiveNodeRendererBuilder.java" startLine="79" startPosition="45" endLine="80" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479545501451" fileName="ReflectiveNodeRendererBuilder.java" startLine="80" startPosition="91" endLine="81" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5202725479545531248" fileName="ReflectiveNodeRendererBuilder.java" startLine="81" startPosition="44" endLine="82" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479545798794" fileName="ReflectiveNodeRendererBuilder.java" startLine="82" startPosition="81" endLine="83" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479553694641" fileName="ReflectiveNodeRendererBuilder.java" startLine="83" startPosition="127" endLine="84" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479554897928" fileName="ReflectiveNodeRendererBuilder.java" startLine="87" startPosition="62" endLine="88" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5202725479553786689" fileName="ReflectiveNodeRendererBuilder.java" startLine="88" startPosition="33" endLine="89" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479546266520" fileName="ReflectiveNodeRendererBuilder.java" startLine="89" startPosition="83" endLine="90" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5202725479546266528" fileName="ReflectiveNodeRendererBuilder.java" startLine="90" startPosition="35" endLine="91" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479546266539" fileName="ReflectiveNodeRendererBuilder.java" startLine="91" startPosition="81" endLine="92" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479553877958" fileName="ReflectiveNodeRendererBuilder.java" startLine="92" startPosition="138" endLine="93" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479554998689" fileName="ReflectiveNodeRendererBuilder.java" startLine="96" startPosition="66" endLine="97" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5202725479553811765" fileName="ReflectiveNodeRendererBuilder.java" startLine="97" startPosition="33" endLine="98" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479551019448" fileName="ReflectiveNodeRendererBuilder.java" startLine="98" startPosition="83" endLine="99" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5202725479559149037" fileName="ReflectiveNodeRendererBuilder.java" startLine="99" startPosition="36" endLine="100" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479557380208" fileName="ReflectiveNodeRendererBuilder.java" startLine="100" startPosition="81" endLine="101" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479551019483" fileName="ReflectiveNodeRendererBuilder.java" startLine="101" startPosition="99" endLine="102" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479557718103" fileName="ReflectiveNodeRendererBuilder.java" startLine="102" startPosition="180" endLine="103" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479553917057" fileName="ReflectiveNodeRendererBuilder.java" startLine="103" startPosition="74" endLine="104" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479542717706" fileName="ReflectiveNodeRendererBuilder.java" startLine="108" startPosition="37" endLine="109" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5202725479542736456" fileName="ReflectiveNodeRendererBuilder.java" startLine="109" startPosition="90" endLine="110" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5202725479543009081" fileName="ReflectiveNodeRendererBuilder.java" startLine="110" startPosition="98" endLine="111" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479543151252" fileName="ReflectiveNodeRendererBuilder.java" startLine="112" startPosition="59" endLine="113" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5202725479543220468" fileName="ReflectiveNodeRendererBuilder.java" startLine="114" startPosition="71" endLine="115" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479543276530" fileName="ReflectiveNodeRendererBuilder.java" startLine="116" startPosition="52" endLine="117" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5202725479543321103" fileName="ReflectiveNodeRendererBuilder.java" startLine="118" startPosition="53" endLine="119" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479543418496" fileName="ReflectiveNodeRendererBuilder.java" startLine="121" startPosition="107" endLine="122" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479543472891" fileName="ReflectiveNodeRendererBuilder.java" startLine="124" startPosition="68" endLine="125" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5202725479543528575" fileName="ReflectiveNodeRendererBuilder.java" startLine="126" startPosition="107" endLine="127" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479549704133" fileName="ReflectiveNodeRendererBuilder.java" startLine="131" startPosition="7" endLine="132" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479542708232" fileName="ReflectiveNodeRendererBuilder.java" startLine="133" startPosition="5" endLine="134" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3958914249094167229" fileName="ReflectiveNodeRendererBuilder.java" startLine="80" startPosition="91" endLine="81" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479553694641" fileName="ReflectiveNodeRendererBuilder.java" startLine="81" startPosition="130" endLine="82" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479554897928" fileName="ReflectiveNodeRendererBuilder.java" startLine="85" startPosition="62" endLine="86" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5202725479553786689" fileName="ReflectiveNodeRendererBuilder.java" startLine="86" startPosition="33" endLine="87" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3958914249094566276" fileName="ReflectiveNodeRendererBuilder.java" startLine="87" startPosition="83" endLine="88" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479553877958" fileName="ReflectiveNodeRendererBuilder.java" startLine="88" startPosition="122" endLine="89" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479554998689" fileName="ReflectiveNodeRendererBuilder.java" startLine="92" startPosition="66" endLine="93" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5202725479553811765" fileName="ReflectiveNodeRendererBuilder.java" startLine="93" startPosition="33" endLine="94" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479551019448" fileName="ReflectiveNodeRendererBuilder.java" startLine="94" startPosition="83" endLine="95" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5202725479559149037" fileName="ReflectiveNodeRendererBuilder.java" startLine="95" startPosition="36" endLine="96" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479557380208" fileName="ReflectiveNodeRendererBuilder.java" startLine="96" startPosition="81" endLine="97" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3958914249094885502" fileName="ReflectiveNodeRendererBuilder.java" startLine="97" startPosition="93" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5202725479551019483" fileName="ReflectiveNodeRendererBuilder.java" startLine="98" startPosition="0" endLine="99" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479557718103" fileName="ReflectiveNodeRendererBuilder.java" startLine="99" startPosition="180" endLine="100" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479553917057" fileName="ReflectiveNodeRendererBuilder.java" startLine="100" startPosition="68" endLine="101" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479542717706" fileName="ReflectiveNodeRendererBuilder.java" startLine="105" startPosition="37" endLine="106" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5202725479542736456" fileName="ReflectiveNodeRendererBuilder.java" startLine="106" startPosition="90" endLine="107" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5202725479543009081" fileName="ReflectiveNodeRendererBuilder.java" startLine="107" startPosition="98" endLine="108" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479543151252" fileName="ReflectiveNodeRendererBuilder.java" startLine="109" startPosition="59" endLine="110" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5202725479543220468" fileName="ReflectiveNodeRendererBuilder.java" startLine="111" startPosition="71" endLine="112" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479543276530" fileName="ReflectiveNodeRendererBuilder.java" startLine="113" startPosition="52" endLine="114" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5202725479543321103" fileName="ReflectiveNodeRendererBuilder.java" startLine="115" startPosition="53" endLine="116" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479543418496" fileName="ReflectiveNodeRendererBuilder.java" startLine="118" startPosition="107" endLine="119" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479543472891" fileName="ReflectiveNodeRendererBuilder.java" startLine="121" startPosition="68" endLine="122" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5202725479543528575" fileName="ReflectiveNodeRendererBuilder.java" startLine="123" startPosition="107" endLine="124" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479549704133" fileName="ReflectiveNodeRendererBuilder.java" startLine="128" startPosition="7" endLine="129" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5202725479542708232" fileName="ReflectiveNodeRendererBuilder.java" startLine="130" startPosition="5" endLine="131" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5202725479545049503" fileName="ReflectiveNodeRendererBuilder.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="5202725479545068642" fileName="ReflectiveNodeRendererBuilder.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/language/SProperty;)V" />
     <nodeInfo nodeId="5202725479544971294" fileName="ReflectiveNodeRendererBuilder.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
@@ -928,21 +925,21 @@
     <nodeInfo nodeId="5202725479545223280" fileName="ReflectiveNodeRendererBuilder.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="5202725479545223270" fileName="ReflectiveNodeRendererBuilder.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/language/SLink;)Z" />
     <nodeInfo nodeId="5202725479545223260" fileName="ReflectiveNodeRendererBuilder.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/language/SLink;)V" />
-    <nodeInfo nodeId="5202725479543294204" fileName="ReflectiveNodeRendererBuilder.java" startLine="117" startPosition="59" endLine="120" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5202725479543375610" fileName="ReflectiveNodeRendererBuilder.java" startLine="120" startPosition="13" endLine="123" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5202725479543497263" fileName="ReflectiveNodeRendererBuilder.java" startLine="125" startPosition="77" endLine="128" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5202725479543294204" fileName="ReflectiveNodeRendererBuilder.java" startLine="114" startPosition="59" endLine="117" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5202725479543375610" fileName="ReflectiveNodeRendererBuilder.java" startLine="117" startPosition="13" endLine="120" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5202725479543497263" fileName="ReflectiveNodeRendererBuilder.java" startLine="122" startPosition="77" endLine="125" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6947201579628874026" fileName="ReflectiveNodeRendererBuilder.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReflectiveNodeRendererBuilder#(Lorg/jetbrains/mps/openapi/language/SConcept;Ljetbrains/mps/web/ConceptIdDispatcher;)V" />
-    <nodeInfo nodeId="5202725479544682117" fileName="ReflectiveNodeRendererBuilder.java" startLine="78" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="renderProperty#(Lorg/jetbrains/mps/openapi/language/SProperty;Ljava/lang/StringBuilder;)V" />
-    <nodeInfo nodeId="5202725479545140483" fileName="ReflectiveNodeRendererBuilder.java" startLine="87" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="renderLink#(Lorg/jetbrains/mps/openapi/language/SLink;Ljava/lang/StringBuilder;)V" />
+    <nodeInfo nodeId="5202725479544682117" fileName="ReflectiveNodeRendererBuilder.java" startLine="78" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="renderProperty#(Lorg/jetbrains/mps/openapi/language/SProperty;Ljava/lang/StringBuilder;)V" />
+    <nodeInfo nodeId="5202725479545140483" fileName="ReflectiveNodeRendererBuilder.java" startLine="85" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="renderLink#(Lorg/jetbrains/mps/openapi/language/SLink;Ljava/lang/StringBuilder;)V" />
     <nodeInfo nodeId="5202725479545055784" fileName="ReflectiveNodeRendererBuilder.java" startLine="37" startPosition="45" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479545176260" fileName="ReflectiveNodeRendererBuilder.java" startLine="96" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="renderChildern#(Lorg/jetbrains/mps/openapi/language/SLink;Ljava/lang/StringBuilder;)V" />
+    <nodeInfo nodeId="5202725479545176260" fileName="ReflectiveNodeRendererBuilder.java" startLine="92" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="renderChildern#(Lorg/jetbrains/mps/openapi/language/SLink;Ljava/lang/StringBuilder;)V" />
     <nodeInfo nodeId="5202725479544936894" fileName="ReflectiveNodeRendererBuilder.java" startLine="46" startPosition="7" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5202725479545223257" fileName="ReflectiveNodeRendererBuilder.java" startLine="59" startPosition="7" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5202725479543243930" fileName="ReflectiveNodeRendererBuilder.java" startLine="115" startPosition="66" endLine="129" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5202725479543159173" fileName="ReflectiveNodeRendererBuilder.java" startLine="113" startPosition="95" endLine="130" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5202725479543049473" fileName="ReflectiveNodeRendererBuilder.java" startLine="111" startPosition="61" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="5202725479542700393" fileName="ReflectiveNodeRendererBuilder.java" startLine="107" startPosition="76" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5202725479542607940" fileName="ReflectiveNodeRendererBuilder.java" startLine="107" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllSuperConcepts#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="5202725479543243930" fileName="ReflectiveNodeRendererBuilder.java" startLine="112" startPosition="66" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5202725479543159173" fileName="ReflectiveNodeRendererBuilder.java" startLine="110" startPosition="95" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5202725479543049473" fileName="ReflectiveNodeRendererBuilder.java" startLine="108" startPosition="61" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="5202725479542700393" fileName="ReflectiveNodeRendererBuilder.java" startLine="104" startPosition="76" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5202725479542607940" fileName="ReflectiveNodeRendererBuilder.java" startLine="104" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllSuperConcepts#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="6947201579629002097" fileName="ReflectiveNodeRendererBuilder.java" startLine="33" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildRenderer#()Ljava/lang/StringBuilder;" />
     <scopeInfo nodeId="5202725479545049504" fileName="ReflectiveNodeRendererBuilder.java" startLine="39" startPosition="65" endLine="40" endPosition="34" />
     <scopeInfo nodeId="5202725479545068643" fileName="ReflectiveNodeRendererBuilder.java" startLine="43" startPosition="39" endLine="44" endPosition="36" />
@@ -952,9 +949,9 @@
     <scopeInfo nodeId="5202725479545223281" fileName="ReflectiveNodeRendererBuilder.java" startLine="61" startPosition="61" endLine="62" endPosition="29" />
     <scopeInfo nodeId="5202725479545223271" fileName="ReflectiveNodeRendererBuilder.java" startLine="65" startPosition="39" endLine="66" endPosition="35" />
     <scopeInfo nodeId="5202725479545223261" fileName="ReflectiveNodeRendererBuilder.java" startLine="69" startPosition="35" endLine="70" endPosition="36" />
-    <scopeInfo nodeId="5202725479543294207" fileName="ReflectiveNodeRendererBuilder.java" startLine="118" startPosition="53" endLine="119" endPosition="88" />
-    <scopeInfo nodeId="5202725479543375616" fileName="ReflectiveNodeRendererBuilder.java" startLine="121" startPosition="107" endLine="122" endPosition="76" />
-    <scopeInfo nodeId="5202725479543497269" fileName="ReflectiveNodeRendererBuilder.java" startLine="126" startPosition="107" endLine="127" endPosition="76" />
+    <scopeInfo nodeId="5202725479543294207" fileName="ReflectiveNodeRendererBuilder.java" startLine="115" startPosition="53" endLine="116" endPosition="88" />
+    <scopeInfo nodeId="5202725479543375616" fileName="ReflectiveNodeRendererBuilder.java" startLine="118" startPosition="107" endLine="119" endPosition="76" />
+    <scopeInfo nodeId="5202725479543497269" fileName="ReflectiveNodeRendererBuilder.java" startLine="123" startPosition="107" endLine="124" endPosition="76" />
     <scopeInfo nodeId="6947201579628874030" fileName="ReflectiveNodeRendererBuilder.java" startLine="28" startPosition="99" endLine="30" endPosition="48" />
     <scopeInfo nodeId="5202725479545049503" fileName="ReflectiveNodeRendererBuilder.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="5202725479545049503" varName="it" />
@@ -980,56 +977,54 @@
     <scopeInfo nodeId="5202725479545223260" fileName="ReflectiveNodeRendererBuilder.java" startLine="69" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="5202725479545223260" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5202725479543375610" fileName="ReflectiveNodeRendererBuilder.java" startLine="120" startPosition="13" endLine="123" endPosition="13">
+    <scopeInfo nodeId="5202725479543375610" fileName="ReflectiveNodeRendererBuilder.java" startLine="117" startPosition="13" endLine="120" endPosition="13">
       <varInfo nodeId="5202725479543375612" varName="superInterface" />
     </scopeInfo>
-    <scopeInfo nodeId="5202725479543497263" fileName="ReflectiveNodeRendererBuilder.java" startLine="125" startPosition="77" endLine="128" endPosition="13">
+    <scopeInfo nodeId="5202725479543497263" fileName="ReflectiveNodeRendererBuilder.java" startLine="122" startPosition="77" endLine="125" endPosition="13">
       <varInfo nodeId="5202725479543497265" varName="superInterface" />
     </scopeInfo>
     <scopeInfo nodeId="6947201579628874026" fileName="ReflectiveNodeRendererBuilder.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="6947201579629006772" varName="concept" />
       <varInfo nodeId="5202725479542268956" varName="conceptIdDispatcher" />
     </scopeInfo>
-    <scopeInfo nodeId="5202725479543258799" fileName="ReflectiveNodeRendererBuilder.java" startLine="124" startPosition="68" endLine="128" endPosition="13">
+    <scopeInfo nodeId="5202725479544682120" fileName="ReflectiveNodeRendererBuilder.java" startLine="78" startPosition="74" endLine="82" endPosition="26">
+      <varInfo nodeId="5202725479554816173" varName="propertyName" />
+    </scopeInfo>
+    <scopeInfo nodeId="5202725479545140487" fileName="ReflectiveNodeRendererBuilder.java" startLine="85" startPosition="62" endLine="89" endPosition="26">
+      <varInfo nodeId="5202725479554897929" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="5202725479543258799" fileName="ReflectiveNodeRendererBuilder.java" startLine="121" startPosition="68" endLine="125" endPosition="13">
       <varInfo nodeId="5202725479543472892" varName="iConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="5202725479544682120" fileName="ReflectiveNodeRendererBuilder.java" startLine="78" startPosition="74" endLine="84" endPosition="26">
-      <varInfo nodeId="5202725479554816173" varName="propertyName" />
-      <varInfo nodeId="5202725479545501454" varName="varName" />
-    </scopeInfo>
-    <scopeInfo nodeId="5202725479545140487" fileName="ReflectiveNodeRendererBuilder.java" startLine="87" startPosition="62" endLine="93" endPosition="26">
-      <varInfo nodeId="5202725479554897929" varName="role" />
-      <varInfo nodeId="5202725479546266521" varName="varName" />
-    </scopeInfo>
-    <scopeInfo nodeId="5202725479543243933" fileName="ReflectiveNodeRendererBuilder.java" startLine="116" startPosition="52" endLine="123" endPosition="13">
-      <varInfo nodeId="5202725479543276531" varName="sConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="5202725479544682117" fileName="ReflectiveNodeRendererBuilder.java" startLine="78" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="5202725479544682117" fileName="ReflectiveNodeRendererBuilder.java" startLine="78" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="5202725479544760869" varName="builder" />
       <varInfo nodeId="5202725479544748333" varName="property" />
     </scopeInfo>
-    <scopeInfo nodeId="5202725479545140483" fileName="ReflectiveNodeRendererBuilder.java" startLine="87" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="5202725479545140483" fileName="ReflectiveNodeRendererBuilder.java" startLine="85" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="5202725479545159983" varName="builder" />
       <varInfo nodeId="5202725479545159979" varName="link" />
     </scopeInfo>
-    <scopeInfo nodeId="5202725479545176263" fileName="ReflectiveNodeRendererBuilder.java" startLine="96" startPosition="66" endLine="104" endPosition="26">
+    <scopeInfo nodeId="5202725479543243933" fileName="ReflectiveNodeRendererBuilder.java" startLine="113" startPosition="52" endLine="120" endPosition="13">
+      <varInfo nodeId="5202725479543276531" varName="sConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="5202725479545176263" fileName="ReflectiveNodeRendererBuilder.java" startLine="92" startPosition="66" endLine="101" endPosition="26">
       <varInfo nodeId="5202725479554998690" varName="role" />
       <varInfo nodeId="5202725479551019449" varName="varName" />
     </scopeInfo>
-    <scopeInfo nodeId="5202725479545176260" fileName="ReflectiveNodeRendererBuilder.java" startLine="96" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="5202725479545176260" fileName="ReflectiveNodeRendererBuilder.java" startLine="92" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="5202725479545176266" varName="builder" />
       <varInfo nodeId="5202725479545176264" varName="link" />
     </scopeInfo>
-    <scopeInfo nodeId="5202725479543159176" fileName="ReflectiveNodeRendererBuilder.java" startLine="114" startPosition="71" endLine="129" endPosition="11" />
-    <scopeInfo nodeId="5202725479543049477" fileName="ReflectiveNodeRendererBuilder.java" startLine="112" startPosition="59" endLine="130" endPosition="9">
+    <scopeInfo nodeId="5202725479543159176" fileName="ReflectiveNodeRendererBuilder.java" startLine="111" startPosition="71" endLine="126" endPosition="11" />
+    <scopeInfo nodeId="5202725479543049477" fileName="ReflectiveNodeRendererBuilder.java" startLine="109" startPosition="59" endLine="127" endPosition="9">
       <varInfo nodeId="5202725479543151253" varName="abstractConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="5202725479542700394" fileName="ReflectiveNodeRendererBuilder.java" startLine="108" startPosition="37" endLine="132" endPosition="72">
+    <scopeInfo nodeId="5202725479542700394" fileName="ReflectiveNodeRendererBuilder.java" startLine="105" startPosition="37" endLine="129" endPosition="72">
       <varInfo nodeId="5202725479542736457" varName="queue" />
       <varInfo nodeId="5202725479542717709" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5202725479542607944" fileName="ReflectiveNodeRendererBuilder.java" startLine="107" startPosition="76" endLine="134" endPosition="30" />
-    <scopeInfo nodeId="5202725479542607940" fileName="ReflectiveNodeRendererBuilder.java" startLine="107" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="5202725479542607944" fileName="ReflectiveNodeRendererBuilder.java" startLine="104" startPosition="76" endLine="131" endPosition="30" />
+    <scopeInfo nodeId="5202725479542607940" fileName="ReflectiveNodeRendererBuilder.java" startLine="104" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="5202725479542654164" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="6947201579629002102" fileName="ReflectiveNodeRendererBuilder.java" startLine="33" startPosition="40" endLine="75" endPosition="19">
@@ -1044,7 +1039,7 @@
     <unitInfo nodeId="5202725479545223280" fileName="ReflectiveNodeRendererBuilder.java" startLine="60" startPosition="72" endLine="64" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.ReflectiveNodeRendererBuilder$6" />
     <unitInfo nodeId="5202725479545223270" fileName="ReflectiveNodeRendererBuilder.java" startLine="64" startPosition="17" endLine="68" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.ReflectiveNodeRendererBuilder$7" />
     <unitInfo nodeId="5202725479545223260" fileName="ReflectiveNodeRendererBuilder.java" startLine="68" startPosition="20" endLine="72" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.ReflectiveNodeRendererBuilder$8" />
-    <unitInfo nodeId="6947201579628845939" fileName="ReflectiveNodeRendererBuilder.java" startLine="22" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.ReflectiveNodeRendererBuilder" />
+    <unitInfo nodeId="6947201579628845939" fileName="ReflectiveNodeRendererBuilder.java" startLine="22" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.ReflectiveNodeRendererBuilder" />
   </root>
   <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/7481782646737023365">
     <nodeInfo nodeId="7481782646737054417" fileName="ProjectNameHandler.java" startLine="11" startPosition="98" endLine="12" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

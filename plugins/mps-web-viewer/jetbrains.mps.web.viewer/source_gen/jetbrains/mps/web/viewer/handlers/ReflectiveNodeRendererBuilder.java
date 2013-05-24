@@ -78,18 +78,14 @@ public class ReflectiveNodeRendererBuilder {
   private void renderProperty(SProperty property, StringBuilder builder) {
     String propertyName = property.getName();
     builder.append("if (typeof node.").append(propertyName).append(" != 'undefined') {\n");
-    String varName = "prop_" + propertyName;
-    builder.append("var ").append(varName).append(" = r.append($('<div/>'));\n");
-    builder.append(varName).append(".append('").append(propertyName).append(": ' + node.").append(propertyName).append(");\n");
+    builder.append("r.append($('<div>").append(propertyName).append(": ' + node.").append(propertyName).append("+ '</div>'));\n");
     builder.append("}\n");
   }
 
   private void renderLink(SLink link, StringBuilder builder) {
     String role = link.getRole();
     builder.append("if (typeof node.").append(role).append(" != 'undefined') {\n");
-    String varName = "lnk_" + role;
-    builder.append("var ").append(varName).append(" = r.append($('<div/>'));\n");
-    builder.append(varName).append(".append($('<div/>')).append('").append(role).append(": ' + node.").append(role).append(".nodeID);\n");
+    builder.append("r.append($('<div>").append(role).append(": ' + node.").append(role).append(".nodeID + '</div>'));\n");
     builder.append("}\n");
   }
 
@@ -98,9 +94,10 @@ public class ReflectiveNodeRendererBuilder {
     builder.append("if (typeof node.").append(role).append(" != 'undefined') {\n");
     String varName = "chld_" + role;
     builder.append("var ").append(varName).append(" = r.append($('<div/>'));\n");
-    builder.append(varName).append(".append($('<div/>')).append('").append(role).append(" {');\n");
+    builder.append(varName).append(".append($('<div>").append(role).append(" {</div>'));\n");
+
     builder.append("$.each(node.").append(role).append(", function (index, value) {\n").append(varName).append(".append(window.registry['render_' + value.conceptID](value))});\n");
-    builder.append(varName).append(".append($('<div/>')).append('}');\n");
+    builder.append(varName).append(".append($('<div>}</div>'));\n");
     builder.append("}\n");
   }
 
