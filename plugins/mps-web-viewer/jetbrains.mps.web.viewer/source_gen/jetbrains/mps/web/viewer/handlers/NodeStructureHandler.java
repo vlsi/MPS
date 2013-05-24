@@ -5,10 +5,23 @@ package jetbrains.mps.web.viewer.handlers;
 import jetbrains.mps.web.core.server.Handler;
 import jetbrains.mps.project.Project;
 import com.sun.net.httpserver.HttpExchange;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.web.JsonBuilder;
+import jetbrains.mps.web.SnodeToJsonConverter;
+import jetbrains.mps.web.core.server.HttpUtil;
 
 public class NodeStructureHandler implements Handler {
   public static final String PREFIX = "/node/";
 
-  public void handle(String requestUrl, Project project, HttpExchange exchange) throws Exception {
+  public void handle(String requestUrl, final Project project, HttpExchange exchange) throws Exception {
+    final SNodeReference nodeReference = SNodePointer.deserialize(requestUrl.substring(PREFIX.length()));
+    final JsonBuilder[] result = new JsonBuilder[]{null};
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        result[0] = new SnodeToJsonConverter().serializeNode(nodeReference.resolve(project.getRepository()));
+      }
+    });
+    HttpUtil.doJsonResponse(result[0].toString(), exchange);
   }
 }

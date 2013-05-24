@@ -38,7 +38,7 @@ public class SnodeToJsonConverter {
     return builder.toString();
   }
 
-  private JsonBuilder serializeNode(SNode node) {
+  public JsonBuilder serializeNode(SNode node) {
     JsonBuilder builder = JsonBuilder.object();
     SConcept nodeConcept = node.getConcept();
     builder.addProperty("concept", nodeConcept.getQualifiedName());
