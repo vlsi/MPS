@@ -34,9 +34,9 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
     MpsHttpServer.getInstance().registerHandler("/goto.json", ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new GoToHandler()));
     MpsHttpServer.getInstance().registerHandler(NodeStructureHandler.PREFIX, ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new NodeStructureHandler()));
 
-    IconHandler iconHandler = new IconHandler();
-    iconHandler.init();
-    MpsHttpServer.getInstance().registerHandler("/icons", iconHandler);
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHandler = new IconHandler();
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHandler.init();
+    MpsHttpServer.getInstance().registerHandler("/icons", WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHandler);
   }
 
   public void doDispose() {

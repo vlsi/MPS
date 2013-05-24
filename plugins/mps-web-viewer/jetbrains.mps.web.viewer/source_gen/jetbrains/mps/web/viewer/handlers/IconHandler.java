@@ -7,13 +7,13 @@ import java.util.Map;
 import javax.swing.Icon;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import org.apache.log4j.Priority;
 import jetbrains.mps.project.Project;
 import com.sun.net.httpserver.HttpExchange;
 import jetbrains.mps.web.core.server.HttpUtil;
 import java.lang.reflect.Field;
 import com.sun.istack.internal.NotNull;
 import java.util.Arrays;
-import org.apache.log4j.Priority;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 import java.io.ByteArrayOutputStream;
@@ -34,12 +34,22 @@ public class IconHandler implements Handler {
     // todo: classes leaks in iconToPath field 
     // todo: need application handler for IconHandler, not ProjectHandler... 
     // iconId == requestUrl for handler like /icons/{hash}.png 
+    if (INSTANCE != null) {
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("INSTANCE is not null while init()", new Throwable());
+      }
+    }
     INSTANCE = this;
   }
 
 
 
   public void dispose() {
+    if (INSTANCE == null) {
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("INSTANCE is null while dispose()", new Throwable());
+      }
+    }
     INSTANCE = null;
   }
 
