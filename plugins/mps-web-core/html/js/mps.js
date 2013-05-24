@@ -204,7 +204,9 @@ $(function () {
                 span.on("click", treeToggle);
                 li.attr("data-collapsed", collapsed);
             } else {
-                span.append($('<a/>').attr("href", child.link).text(child.name));
+                nameFetcher.updateWithCompletionResult([child]);
+                var url = "/#" + currentProject + "/node/" + child["module-id"] + "/" + child["model-id"] + "/" + child["node-id"];
+                span.append($('<a/>').attr("href", url).text(child[child["type"] + "-name"]));
             }
             node.append(li);
         });
