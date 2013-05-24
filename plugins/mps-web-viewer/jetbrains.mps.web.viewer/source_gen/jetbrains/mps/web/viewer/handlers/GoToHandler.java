@@ -18,6 +18,14 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.web.JsonBuilder;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
+import jetbrains.mps.workbench.goTo.navigation.GotoNavigationUtil;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GoToHandler implements Handler {
   private static final String QUERY_PARAM_NAME = "?query=";
@@ -31,7 +39,7 @@ public class GoToHandler implements Handler {
       public void run() {
         ListSequence.fromList(items).addSequence(Sequence.fromIterable(getModulesJson(project, query)));
         ListSequence.fromList(items).addSequence(Sequence.fromIterable(getModelsJson(project, query)));
-        ListSequence.fromList(items).addSequence(ListSequence.fromList(getNodesJson(project, query)));
+        ListSequence.fromList(items).addSequence(Sequence.fromIterable(getNodesJson(project, query)));
       }
     });
 
@@ -43,7 +51,7 @@ public class GoToHandler implements Handler {
   private static Iterable<String> getModulesJson(Project project, final String query) {
     return Sequence.fromIterable(((Iterable<? extends SModule>) project.getModules())).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule module) {
-        return matches(module, query);
+        return module.getModuleName().contains(query);
       }
     }).select(new ISelector<SModule, String>() {
       public String select(SModule module) {
@@ -57,10 +65,6 @@ public class GoToHandler implements Handler {
     });
   }
 
-  private static boolean matches(SModule module, String query) {
-    return module.getModuleName().contains(query);
-  }
-
 
 
   private static Iterable<String> getModelsJson(Project project, final String query) {
@@ -70,7 +74,7 @@ public class GoToHandler implements Handler {
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel model) {
-        return matches(model, query);
+        return model.getModelName().contains(query);
       }
     }).select(new ISelector<SModel, String>() {
       public String select(SModel model) {
@@ -86,17 +90,32 @@ public class GoToHandler implements Handler {
     });
   }
 
-  private static boolean matches(SModel model, String query) {
-    return model.getModelName().contains(query);
+
+
+  private static Iterable<String> getNodesJson(Project project, final String query) {
+    Collection<NavigationParticipant.NavigationTarget> nodes = GotoNavigationUtil.getNavigationTargets(NavigationParticipant.TargetKind.ROOT, new ProjectScope(project), new EmptyProgressMonitor());
+    return Sequence.fromIterable(((Iterable<NavigationParticipant.NavigationTarget>) nodes)).where(new IWhereFilter<NavigationParticipant.NavigationTarget>() {
+      public boolean accept(NavigationParticipant.NavigationTarget it) {
+        return it.getPresentation().contains(query);
+      }
+    }).take(100).select(new ISelector<NavigationParticipant.NavigationTarget, String>() {
+      public String select(NavigationParticipant.NavigationTarget it) {
+        SNode node = it.getNodeReference().resolve(MPSModuleRepository.getInstance());
+
+        JsonBuilder nodeJson = JsonBuilder.object();
+        nodeJson.addProperty("type", "node");
+        nodeJson.addProperty("icon", IconUtil.getIconForNode(node));
+        nodeJson.addProperty("node-name", it.getPresentation());
+        nodeJson.addProperty("node-id", node.getNodeId().toString());
+        SModel model = SNodeOperations.getModel(node);
+        nodeJson.addProperty("model-name", model.getModelName());
+        nodeJson.addProperty("model-id", model.getModelId().toString());
+        nodeJson.addProperty("module-name", model.getModule().getModuleName());
+        nodeJson.addProperty("module-id", model.getModule().getModuleId().toString());
+        return nodeJson.toString();
+      }
+    });
   }
-
-
-
-  private static List<String> getNodesJson(Project project, String query) {
-    return ListSequence.fromList(new ArrayList<String>());
-  }
-
-
 
   public static String trim_g7q2vn_a0a0a2(String str) {
     return (str == null ?
