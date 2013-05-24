@@ -50,7 +50,7 @@ public class CellToHtmlGenerator {
       generateHtmlForIndent(((EditorCell_Collection) cell), indention);
       return;
     }
-    appendOpenDiv(cell);
+    appendOpeningDiv(cell, indention);
 
     if (cell instanceof EditorCell_Table) {
       generateHtmlForTable(cell);
@@ -115,8 +115,18 @@ public class CellToHtmlGenerator {
 
 
   private void generateHtmlForIndent(EditorCell_Collection collection, int indention) {
+    boolean needWrapper = (indention == 0);
+    if (needWrapper) {
+      appendOpeningDiv(collection, indention);
+    }
+    if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
+      indention++;
+    }
     for (EditorCell child : Sequence.fromIterable(collection)) {
       generateHtmlForCell(child, indention);
+    }
+    if (needWrapper) {
+      appendClosingDiv();
     }
   }
 
@@ -124,6 +134,11 @@ public class CellToHtmlGenerator {
     if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
       return true;
     }
+
+    if (cell.getParent() != null && cell.getParent().getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) {
+      return true;
+    }
+
     EditorCell prevCell = CellTraversalUtil.getPrevSibling(cell);
     if (prevCell != null) {
       return isOnNewLineRightChild(prevCell);
@@ -161,22 +176,22 @@ public class CellToHtmlGenerator {
 
 
 
-  private void appendOpenDiv(EditorCell cell) {
+  private void appendOpeningDiv(EditorCell cell, int indention) {
     builder.append("<div");
-    addClasses(cell);
-    addTextAttributes(cell);
+    addClasses(cell, indention);
+    addTextAttributes(cell, indention);
     addTargetNodeId(cell);
     builder.append(">");
   }
 
 
 
-  private void addClasses(EditorCell cell) {
+  private void addClasses(EditorCell cell, int indention) {
     String classes = "";
     if (cell instanceof EditorCell_Collection) {
       classes = classes + getClassesForCollection(((EditorCell_Collection) cell));
     }
-    classes += getClassesForCell(cell);
+    classes += getClassesForCell(cell, indention);
     if (cell.getSNode().equals(selectedNode) && SNodeOperations.getContainingRoot(selectedNode) != selectedNode) {
       classes += " selected-cell";
     }
@@ -187,11 +202,11 @@ public class CellToHtmlGenerator {
     }
   }
 
-  private void addTextAttributes(EditorCell cell) {
+  private void addTextAttributes(EditorCell cell, int indention) {
+    StringBuilder temp = new StringBuilder();
     if (cell instanceof EditorCell_Label) {
       Color fg = cell.getStyle().get(StyleAttributes.TEXT_COLOR);
       Color bg = cell.getStyle().get(StyleAttributes.TEXT_BACKGROUND_COLOR);
-      StringBuilder temp = new StringBuilder();
       if (fg != null && fg != Color.BLACK) {
         temp.append("color:#" + colorToHEX(fg) + ";");
       }
@@ -209,9 +224,13 @@ public class CellToHtmlGenerator {
         temp.append("border: solid 1px;");
       }
 
-      if (isNotEmpty_je17c5_a0k0a0y(temp.toString())) {
-        builder.append(" style=\"" + temp.toString() + "\"");
-      }
+    }
+    if (isOnNewLine(cell)) {
+      temp.append("padding-left:" + indention * 2 + "em;");
+    }
+
+    if (isNotEmpty_je17c5_a0e0y(temp.toString())) {
+      builder.append(" style=\"" + temp.toString() + "\"");
     }
   }
 
@@ -251,11 +270,6 @@ public class CellToHtmlGenerator {
       clazz.append("horizontal-layout ");
     } else if (collection.getCellLayout() instanceof CellLayout_Vertical) {
       clazz.append("vertical-layout ");
-    } else if (collection.getCellLayout() instanceof CellLayout_Indent) {
-      clazz.append("indent-layout ");
-    }
-    if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) {
-      clazz.append("indent-layout-new-line-children ");
     }
     if (getStyleForLast(StyleAttributes.INDENT_LAYOUT_NEW_LINE, collection)) {
       clazz.append("indent-layout-new-line ");
@@ -282,7 +296,7 @@ public class CellToHtmlGenerator {
     }
   }
 
-  private String getClassesForCell(EditorCell cell) {
+  private String getClassesForCell(EditorCell cell, int indention) {
     StringBuilder clazz = new StringBuilder();
     if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
       clazz.append("indent-layout-new-line ");
@@ -290,8 +304,9 @@ public class CellToHtmlGenerator {
     if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
       clazz.append("indent-layout-on-new-line ");
     }
-    if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
-      clazz.append("indent-layout-indent ");
+
+    if (isOnNewLine(cell)) {
+      clazz.append("");
     }
 
     if (cell instanceof EditorCell_Label) {
@@ -302,7 +317,7 @@ public class CellToHtmlGenerator {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT))) {
         clazz.append("n-pright ");
       }
-      if (isEmpty_je17c5_a0d0f0gb(((EditorCell_Label) cell).getText())) {
+      if (isEmpty_je17c5_a0d0g0gb(((EditorCell_Label) cell).getText())) {
         clazz.append("n-empty");
       }
     }
@@ -310,11 +325,11 @@ public class CellToHtmlGenerator {
     return clazz.toString();
   }
 
-  public static boolean isNotEmpty_je17c5_a0k0a0y(String str) {
+  public static boolean isNotEmpty_je17c5_a0e0y(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_je17c5_a0d0f0gb(String str) {
+  public static boolean isEmpty_je17c5_a0d0g0gb(String str) {
     return str == null || str.length() == 0;
   }
 }
