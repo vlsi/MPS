@@ -126,6 +126,7 @@ public class MpsHttpServer implements ApplicationComponent {
       if (uri.contains("?")) {
         uri = uri.substring(0, uri.indexOf("?"));
       }
+      exchange.getResponseHeaders().set("Cache-Control", "max-age=300");
       HttpUtil.doResponse(new File(htmlFolder, uri.replace("/", File.separator)), exchange);
     }
   };
