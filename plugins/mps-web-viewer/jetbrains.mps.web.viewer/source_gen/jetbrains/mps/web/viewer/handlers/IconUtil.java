@@ -4,14 +4,24 @@ package jetbrains.mps.web.viewer.handlers;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.icons.IconManager;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
 import java.lang.reflect.Field;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class IconUtil {
   public static String getIconForModule(SModule module) {
-    return getIconPath(IconManager.getIconFor(module));
+    try {
+      return getIconPath(IconManager.getIconFor(module));
+    } catch (IllegalArgumentException e) {
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("can't load icon for " + module.getModuleName(), e);
+      }
+      return getIconForFolder();
+    }
   }
 
 
@@ -24,7 +34,14 @@ public class IconUtil {
 
 
   public static String getIconForModel(SModel model) {
-    return getIconPath(IconManager.getIconFor(model));
+    try {
+      return getIconPath(IconManager.getIconFor(model));
+    } catch (IllegalArgumentException e) {
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("can't load icon for " + model.getModelName(), e);
+      }
+      return getIconForFolder();
+    }
   }
 
 
@@ -51,4 +68,6 @@ public class IconUtil {
       throw new RuntimeException(e);
     }
   }
+
+  protected static Logger LOG = LogManager.getLogger(IconUtil.class);
 }

@@ -8,6 +8,7 @@ import com.sun.net.httpserver.HttpExchange;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.web.core.server.HttpUtil;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
@@ -15,18 +16,24 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.web.JsonBuilder;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class GoToHandler implements Handler {
   private static final String QUERY_PARAM_NAME = "?query=";
 
 
-  public void handle(String requestUrl, Project project, HttpExchange exchange) throws Exception {
-    String query = trim_g7q2vn_a0a0a2(requestUrl.substring(requestUrl.indexOf(QUERY_PARAM_NAME) + QUERY_PARAM_NAME.length()));
+  public void handle(String requestUrl, final Project project, HttpExchange exchange) throws Exception {
+    final String query = trim_g7q2vn_a0a0a2(requestUrl.substring(requestUrl.indexOf(QUERY_PARAM_NAME) + QUERY_PARAM_NAME.length()));
 
-    List<String> items = ListSequence.fromList(new ArrayList<String>());
-    ListSequence.fromList(items).addSequence(Sequence.fromIterable(getModulesJson(project, query)));
-    ListSequence.fromList(items).addSequence(ListSequence.fromList(getModelsJson(project, query)));
-    ListSequence.fromList(items).addSequence(ListSequence.fromList(getNodesJson(project, query)));
+    final List<String> items = ListSequence.fromList(new ArrayList<String>());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        ListSequence.fromList(items).addSequence(Sequence.fromIterable(getModulesJson(project, query)));
+        ListSequence.fromList(items).addSequence(Sequence.fromIterable(getModelsJson(project, query)));
+        ListSequence.fromList(items).addSequence(ListSequence.fromList(getNodesJson(project, query)));
+      }
+    });
 
     HttpUtil.doJsonResponse("{ \"options\": [" + IterableUtils.join(ListSequence.fromList(items), ", ") + "] }", exchange);
   }
@@ -35,16 +42,16 @@ public class GoToHandler implements Handler {
 
   private static Iterable<String> getModulesJson(Project project, final String query) {
     return Sequence.fromIterable(((Iterable<? extends SModule>) project.getModules())).where(new IWhereFilter<SModule>() {
-      public boolean accept(SModule it) {
-        return matches(it, query);
+      public boolean accept(SModule module) {
+        return matches(module, query);
       }
     }).select(new ISelector<SModule, String>() {
-      public String select(SModule it) {
+      public String select(SModule module) {
         JsonBuilder moduleJson = JsonBuilder.object();
         moduleJson.addProperty("type", "module");
-        moduleJson.addProperty("icon", IconUtil.getIconForModule(it));
-        moduleJson.addProperty("module-name", it.getModuleName());
-        moduleJson.addProperty("module-id", it.getModuleId().toString());
+        moduleJson.addProperty("icon", IconUtil.getIconForModule(module));
+        moduleJson.addProperty("module-name", module.getModuleName());
+        moduleJson.addProperty("module-id", module.getModuleId().toString());
         return moduleJson.toString();
       }
     });
@@ -56,8 +63,31 @@ public class GoToHandler implements Handler {
 
 
 
-  private static List<String> getModelsJson(Project project, String query) {
-    return ListSequence.fromList(new ArrayList<String>());
+  private static Iterable<String> getModelsJson(Project project, final String query) {
+    return Sequence.fromIterable(((Iterable<? extends SModule>) project.getModules())).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule module) {
+        return module.getModels();
+      }
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel model) {
+        return matches(model, query);
+      }
+    }).select(new ISelector<SModel, String>() {
+      public String select(SModel model) {
+        JsonBuilder modelJson = JsonBuilder.object();
+        modelJson.addProperty("type", "model");
+        modelJson.addProperty("icon", IconUtil.getIconForModel(model));
+        modelJson.addProperty("model-name", model.getModelName());
+        modelJson.addProperty("model-id", model.getModelId().toString());
+        modelJson.addProperty("module-name", model.getModule().getModuleName());
+        modelJson.addProperty("module-id", model.getModule().getModuleId().toString());
+        return modelJson.toString();
+      }
+    });
+  }
+
+  private static boolean matches(SModel model, String query) {
+    return model.getModelName().contains(query);
   }
 
 
