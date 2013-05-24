@@ -18,13 +18,19 @@ import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.Collections;
+import org.apache.log4j.Priority;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import java.util.Iterator;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NodeToHtmlHandler implements Handler {
   public void handle(String requestUrl, final Project project, HttpExchange exchange) throws Exception {
@@ -51,13 +57,21 @@ public class NodeToHtmlHandler implements Handler {
     };
     EditorContext context = new EditorContext(component, node.getModel(), project.getRepository());
     jetbrains.mps.openapi.editor.cells.EditorCell cell = context.createRootCell(node, Collections.<SModelEvent>emptyList());
-    return getHtmlForCell(cell);
+    String htmlForCell = getHtmlForCell(cell);
+    if (LOG.isEnabledFor(Priority.ERROR)) {
+      LOG.error(htmlForCell);
+    }
+    return htmlForCell;
   }
 
 
 
   public String getHtmlForCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     StringBuilder builder = new StringBuilder();
+    if (cell instanceof EditorCell_Collection && ((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Indent) {
+      builder.append(getHtmlForIndent(((EditorCell_Collection) cell)));
+      return builder.toString();
+    }
     appendOpenDiv(builder, cell);
     if (cell instanceof EditorCell_Collection) {
       for (jetbrains.mps.openapi.editor.cells.EditorCell child : Sequence.fromIterable(((EditorCell_Collection) cell))) {
@@ -70,6 +84,164 @@ public class NodeToHtmlHandler implements Handler {
     return builder.toString();
   }
 
+
+
+  private jetbrains.mps.openapi.editor.cells.EditorCell findFirstNewLine(EditorCell_Collection collection) {
+    Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator = collection.iterator();
+    while (iterator.hasNext()) {
+      jetbrains.mps.openapi.editor.cells.EditorCell cell = iterator.next();
+      if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
+        return cell;
+      }
+      if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
+        if (iterator.hasNext()) {
+          return iterator.next();
+        }
+      }
+    }
+    return collection.firstCell();
+
+  }
+
+  private jetbrains.mps.openapi.editor.cells.EditorCell findLastNewLine(EditorCell_Collection collection) {
+    Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator = collection.reverseIterator();
+    while (iterator.hasNext()) {
+      jetbrains.mps.openapi.editor.cells.EditorCell cell = iterator.next();
+      if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
+        return CellTraversalUtil.getNextSibling(cell);
+      }
+      if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
+        if (iterator.hasNext()) {
+          return cell;
+        }
+      }
+    }
+    return null;
+  }
+
+
+
+  public String getHtmlForIndent(EditorCell_Collection collection) {
+    StringBuilder builder = new StringBuilder();
+    jetbrains.mps.openapi.editor.cells.EditorCell startMain;
+    jetbrains.mps.openapi.editor.cells.EditorCell startLast;
+    if (isOnNewLine(collection)) {
+      startMain = collection.firstCell();
+    } else {
+      startMain = findFirstNewLine(collection);
+    }
+    startLast = findLastNewLine(collection);
+    if (startMain == null) {
+      appendOpenDiv(builder, collection);
+      appendClosingDiv(builder);
+    }
+    Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator = collection.iterator();
+    if (startMain != collection.firstCell()) {
+      builder.append("<div class = \"");
+      builder.append("indent-layout ");
+      if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
+        builder.append("indent-layout-indent ");
+      }
+      builder.append("indent-layout-new-line ");
+      builder.append("\">");
+
+      while (iterator.hasNext()) {
+        jetbrains.mps.openapi.editor.cells.EditorCell currentCell = iterator.next();
+        if (currentCell == startMain) {
+          break;
+        }
+        builder.append(getHtmlForCell(currentCell));
+
+      }
+      builder.append("</div>");
+    }
+
+    jetbrains.mps.openapi.editor.cells.EditorCell current = startMain;
+    builder.append("<div class = \"");
+    builder.append("indent-layout ");
+    if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
+      builder.append("indent-layout-indent ");
+    }
+    if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
+      builder.append("indent-layout-on-new-line ");
+    }
+    if (startLast == null) {
+      if (getStyleForLast(StyleAttributes.INDENT_LAYOUT_NEW_LINE, collection)) {
+        builder.append("indent-layout-new-line ");
+      }
+    }
+
+    builder.append("\">");
+    while (current != null && current != startLast) {
+      builder.append(getHtmlForCell(current));
+      current = CellTraversalUtil.getNextSibling(current);
+    }
+    builder.append("</div>");
+
+    if (startLast == null) {
+      return builder.toString();
+    }
+    current = startLast;
+    builder.append("<div class = \"");
+    builder.append("indent-layout ");
+    if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
+      builder.append("indent-layout-indent ");
+    }
+    if (getStyleForLast(StyleAttributes.INDENT_LAYOUT_NEW_LINE, collection)) {
+      builder.append("indent-layout-new-line ");
+    }
+    builder.append("indent-layout-on-new-line ");
+
+
+    builder.append("\">");
+    while (current != null) {
+      builder.append(getHtmlForCell(current));
+      current = CellTraversalUtil.getNextSibling(current);
+    }
+    builder.append("</div>");
+
+
+
+
+    return builder.toString();
+
+  }
+
+  private boolean isOnNewLine(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
+      return true;
+    }
+    jetbrains.mps.openapi.editor.cells.EditorCell prevCell = CellTraversalUtil.getPrevSibling(cell);
+    if (prevCell != null) {
+      return isOnNewLineRightChild(prevCell);
+    } else {
+      jetbrains.mps.openapi.editor.cells.EditorCell parentCell = cell.getParent();
+      while (parentCell != null) {
+        if (isOnNewLine(parentCell)) {
+          return true;
+        }
+        parentCell = parentCell.getParent();
+      }
+    }
+    return true;
+  }
+
+  private boolean isOnNewLineRightChild(jetbrains.mps.openapi.editor.cells.EditorCell prevCell) {
+    if (prevCell == null) {
+      return false;
+    }
+    if (prevCell.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
+      return true;
+    }
+    if (prevCell instanceof EditorCell_Collection) {
+      jetbrains.mps.openapi.editor.cells.EditorCell rightChild = ((EditorCell_Collection) prevCell).lastCell();
+      return isOnNewLineRightChild(rightChild);
+    }
+    return false;
+  }
+
+
+
   private void appendClosingDiv(StringBuilder builder) {
     builder.append("</div>");
   }
@@ -77,12 +249,18 @@ public class NodeToHtmlHandler implements Handler {
 
 
   private void appendOpenDiv(StringBuilder builder, jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    StringBuilder div = new StringBuilder("<div class = \"");
-    div.append(getClassesForCell(cell));
+    StringBuilder div = new StringBuilder("<div");
+    String classes = "";
     if (cell instanceof EditorCell_Collection) {
-      div.append(getClassesForCollection(((EditorCell_Collection) cell)));
+      classes = classes + getClassesForCollection(((EditorCell_Collection) cell));
     }
-    div.append("\">");
+    classes += getClassesForCell(cell);
+    if ((classes != null && classes.length() > 0)) {
+      div.append(" class = \"");
+      div.append(classes);
+      div.append("\"");
+    }
+    div.append(">");
     builder.append(div);
   }
 
@@ -98,10 +276,28 @@ public class NodeToHtmlHandler implements Handler {
     if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) {
       clazz.append("indent-layout-new-line-children ");
     }
+    if (getStyleForLast(StyleAttributes.INDENT_LAYOUT_NEW_LINE, collection)) {
+      clazz.append("indent-layout-new-line ");
+    }
     return clazz.toString();
   }
 
 
+
+  private Boolean getStyleForLast(StyleAttribute<Boolean> style, jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    if (cell == null) {
+      return false;
+    }
+    Boolean result = cell.getStyle().get(style);
+    if (result) {
+      return result;
+    }
+    if (cell instanceof jetbrains.mps.nodeEditor.cells.EditorCell_Collection) {
+      return getStyleForLast(style, ((EditorCell_Collection) cell).lastCell());
+    } else {
+      return false;
+    }
+  }
 
   private String getClassesForCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     StringBuilder clazz = new StringBuilder();
@@ -116,4 +312,6 @@ public class NodeToHtmlHandler implements Handler {
     }
     return clazz.toString();
   }
+
+  protected static Logger LOG = LogManager.getLogger(NodeToHtmlHandler.class);
 }

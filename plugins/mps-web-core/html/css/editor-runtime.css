@@ -4,8 +4,8 @@
     float: left;
 }
 .indent-layout {
-    position: relative;
-    padding-left: 10px;
+    /*position: relative;*/
+    /*padding-left: 10px;*/
 }
 .indent-layout-new-line {
 
@@ -13,7 +13,7 @@
 .indent-layout-on-new-line, .indent-layout-new-line + div, div.indent-layout-new-line-children > div {
     clear: left;
     /*position: relative;*/
-    margin-left: -10px;
+    /*margin-left: -10px;*/
 }
 
 .indent-layout-new-line-children {
@@ -21,7 +21,7 @@
 }
 div.indent-layout > :first-child, div.indent-layout-new-line-children > div {
     /*position: relative;*/
-    margin-left: -10px;
+    /*margin-left: -10px;*/
 }
 .key-word {
     color: blue;
@@ -30,7 +30,9 @@ div.indent-layout > :first-child, div.indent-layout-new-line-children > div {
     padding-left: 10px;
 }
 div.indent-layout > div {float: left;}
+/*div {float: left;}*/
 div.horizontal-layout > div {float: left}
+div {margin-left: 2px}
 /*div {*/
     /*border: 1px solid black;*/
 /*}*/
