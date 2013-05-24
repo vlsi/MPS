@@ -11,7 +11,6 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -22,7 +21,7 @@ public class RemoveConceptProperties_Action extends BaseAction {
   public RemoveConceptProperties_Action() {
     super("Get rid of concept properties and links", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   @Override
@@ -65,12 +64,7 @@ public class RemoveConceptProperties_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        @Override
-        public void run() {
-          new ConceptPropertiesHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).migrate();
-        }
-      });
+      new ConceptPropertiesHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).migrate();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "RemoveConceptProperties", t);
