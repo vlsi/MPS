@@ -7306,15 +7306,100 @@
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7048996341244993238">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7048996341245006299">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7048996341245006301">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7048996341240023561" resolveInfo="getPathForIcon" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7904041625768638487" resolveInfo="IconHandler" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7048996341245006302">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7048996341245003075" resolveInfo="project" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7048996341245450273">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7048996341245450274">
+            <property name="name" nameId="tpck.1169194664001" value="builder" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7048996341245450275">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="g7qx.~JsonBuilder" resolveInfo="JsonBuilder" />
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7048996341245037754">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7048996341244993496" resolveInfo="icon" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7048996341245450276">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="g7qx.~JsonBuilder" resolveInfo="JsonBuilder" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g7qx.~JsonBuilder%dobject()%cjetbrains%dmps%dweb%dJsonBuilder" resolveInfo="object" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7048996341245450277" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7048996341245450278">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7048996341245450279">
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7048996341245450280">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g7qx.~JsonBuilder%daddProperty(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="addProperty" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7048996341245450281">
+                <property name="value" nameId="tpee.1070475926801" value="icon_url" />
+              </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7048996341245460031">
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7904041625768638487" resolveInfo="IconHandler" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7048996341240023561" resolveInfo="getPathForIcon" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7048996341245460032">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7048996341245003075" resolveInfo="project" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7048996341245460033">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7048996341244993496" resolveInfo="icon" />
+                </node>
+              </node>
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7048996341245450283">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7048996341245450274" resolveInfo="builder" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7048996341245450284">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7048996341245450285">
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7048996341245450286">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g7qx.~JsonBuilder%daddProperty(java%dlang%dString,jetbrains%dmps%dweb%dJsonBuilder)%cvoid" resolveInfo="addProperty" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7048996341245450287">
+                <property name="value" nameId="tpee.1070475926801" value="width" />
+              </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7048996341245780134">
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="g7qx.~JsonBuilder" resolveInfo="JsonBuilder" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g7qx.~JsonBuilder%dintValue(int)%cjetbrains%dmps%dweb%dJsonBuilder" resolveInfo="intValue" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7048996341245780434">
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7048996341245785196">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~Icon%dgetIconWidth()%cint" resolveInfo="getIconWidth" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7048996341245780160">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7048996341244993496" resolveInfo="icon" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7048996341245450291">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7048996341245450274" resolveInfo="builder" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7048996341245450292">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7048996341245450293">
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7048996341245450294">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g7qx.~JsonBuilder%daddProperty(java%dlang%dString,jetbrains%dmps%dweb%dJsonBuilder)%cvoid" resolveInfo="addProperty" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7048996341245450295">
+                <property name="value" nameId="tpee.1070475926801" value="height" />
+              </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7048996341245788456">
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="g7qx.~JsonBuilder" resolveInfo="JsonBuilder" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g7qx.~JsonBuilder%dintValue(int)%cjetbrains%dmps%dweb%dJsonBuilder" resolveInfo="intValue" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7048996341245788457">
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7048996341245788458">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~Icon%dgetIconHeight()%cint" resolveInfo="getIconHeight" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7048996341245788459">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7048996341244993496" resolveInfo="icon" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7048996341245450299">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7048996341245450274" resolveInfo="builder" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7048996341245450302" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7048996341245450303">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7048996341245556953">
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7048996341245563614">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g7qx.~JsonBuilder%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7048996341245450304">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7048996341245450274" resolveInfo="builder" />
             </node>
           </node>
         </node>

@@ -65,6 +65,12 @@ public class MpsJsonUtil {
 
 
   public static String createIconJson(Project project, Icon icon) {
-    return IconHandler.getPathForIcon(project, icon);
+    JsonBuilder builder = JsonBuilder.object();
+
+    builder.addProperty("icon_url", IconHandler.getPathForIcon(project, icon));
+    builder.addProperty("width", JsonBuilder.intValue(icon.getIconWidth()));
+    builder.addProperty("height", JsonBuilder.intValue(icon.getIconHeight()));
+
+    return builder.toString();
   }
 }

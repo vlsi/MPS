@@ -148,19 +148,23 @@
     <nodeInfo nodeId="4671236541324831998" fileName="MpsJsonUtil.java" startLine="59" startPosition="57" endLine="60" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4671236541324832028" fileName="MpsJsonUtil.java" startLine="60" startPosition="80" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4671236541324832091" fileName="MpsJsonUtil.java" startLine="61" startPosition="0" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7048996341245006299" fileName="MpsJsonUtil.java" startLine="67" startPosition="67" endLine="68" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7048996341244993235" fileName="MpsJsonUtil.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createIconJson#(Ljetbrains/mps/project/Project;Ljavax/swing/Icon;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7048996341245450273" fileName="MpsJsonUtil.java" startLine="67" startPosition="67" endLine="68" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7048996341245450277" fileName="MpsJsonUtil.java" startLine="68" startPosition="47" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7048996341245450278" fileName="MpsJsonUtil.java" startLine="69" startPosition="0" endLine="70" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7048996341245450284" fileName="MpsJsonUtil.java" startLine="70" startPosition="79" endLine="71" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7048996341245450292" fileName="MpsJsonUtil.java" startLine="71" startPosition="76" endLine="72" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7048996341245450302" fileName="MpsJsonUtil.java" startLine="72" startPosition="78" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7048996341245450303" fileName="MpsJsonUtil.java" startLine="73" startPosition="0" endLine="74" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671236541324831650" fileName="MpsJsonUtil.java" startLine="55" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="dumpFolderReference#(Ljetbrains/mps/project/Project;Ljetbrains/mps/web/viewer/handlers/VirtualFolder;)Ljetbrains/mps/web/JsonBuilder;" />
+    <nodeInfo nodeId="7048996341244993235" fileName="MpsJsonUtil.java" startLine="67" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createIconJson#(Ljetbrains/mps/project/Project;Ljavax/swing/Icon;)Ljava/lang/String;" />
     <nodeInfo nodeId="4671236541324267624" fileName="MpsJsonUtil.java" startLine="44" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="dumpModuleReference#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/web/JsonBuilder;" />
     <nodeInfo nodeId="4671236541324172586" fileName="MpsJsonUtil.java" startLine="31" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="dumpModelReference#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/web/JsonBuilder;" />
     <nodeInfo nodeId="4671236541324045187" fileName="MpsJsonUtil.java" startLine="15" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="dumpNodeReference#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/web/JsonBuilder;" />
-    <scopeInfo nodeId="7048996341244993238" fileName="MpsJsonUtil.java" startLine="67" startPosition="67" endLine="68" endPosition="53" />
-    <scopeInfo nodeId="7048996341244993235" fileName="MpsJsonUtil.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="7048996341244993496" varName="icon" />
-      <varInfo nodeId="7048996341245003075" varName="project" />
-    </scopeInfo>
     <scopeInfo nodeId="4671236541324831653" fileName="MpsJsonUtil.java" startLine="55" startPosition="88" endLine="62" endPosition="19">
       <varInfo nodeId="4671236541324831981" varName="builder" />
+    </scopeInfo>
+    <scopeInfo nodeId="7048996341244993238" fileName="MpsJsonUtil.java" startLine="67" startPosition="67" endLine="74" endPosition="30">
+      <varInfo nodeId="7048996341245450274" varName="builder" />
     </scopeInfo>
     <scopeInfo nodeId="4671236541324267625" fileName="MpsJsonUtil.java" startLine="44" startPosition="82" endLine="52" endPosition="22">
       <varInfo nodeId="4671236541324316014" varName="moduleJson" />
@@ -168,6 +172,10 @@
     <scopeInfo nodeId="4671236541324831650" fileName="MpsJsonUtil.java" startLine="55" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="4671236541324831880" varName="folder" />
       <varInfo nodeId="7048996341245182252" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="7048996341244993235" fileName="MpsJsonUtil.java" startLine="67" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="7048996341244993496" varName="icon" />
+      <varInfo nodeId="7048996341245003075" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="4671236541324172587" fileName="MpsJsonUtil.java" startLine="31" startPosition="79" endLine="41" endPosition="21">
       <varInfo nodeId="4671236541324173094" varName="modelJson" />
@@ -188,7 +196,7 @@
       <varInfo nodeId="4671236541324052563" varName="node" />
       <varInfo nodeId="7048996341241761234" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="4671236541324035489" fileName="MpsJsonUtil.java" startLine="14" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.MpsJsonUtil" />
+    <unitInfo nodeId="4671236541324035489" fileName="MpsJsonUtil.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.MpsJsonUtil" />
   </root>
   <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/6087360391925491751">
     <nodeInfo nodeId="6087360391925739246" fileName="ProjectVcsRevisionHandler.java" startLine="16" startPosition="98" endLine="17" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
