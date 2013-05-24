@@ -4,17 +4,17 @@ $(function () {
     var nameFetcher = {
         getModuleName: function (moduleId) {
             // todo: if doesn't contains
-            return nameFetcher.moduleNames[moduleId];
+            return nameFetcher.moduleNames[moduleId] ? nameFetcher.moduleNames[moduleId] : moduleId;
         },
 
         getModelName: function (modelId) {
             // todo: if doesn't contains
-            return nameFetcher.modelNames[modelId];
+            return nameFetcher.modelNames[modelId] ? nameFetcher.modelNames[modelId] : modelId;
         },
 
         getNodeName: function (nodeId) {
             // todo: if doesn't contains
-            return nameFetcher.nodeNames[nodeId];
+            return nameFetcher.nodeNames[nodeId] ? nameFetcher.nodeNames[nodeId] : nodeId;
         },
 
         updateWithCompletionResult: function (completionResult) {
@@ -63,6 +63,12 @@ $(function () {
                         addBreadcrumb(nameFetcher.getNodeName(root_id), null);
                     }
                 }
+            }
+            var index = 1;
+            var li = $('.mbreadcrumb li');
+            while($('.mbreadcrumb').width() > $('.mbreadcrumb-container').width() && index < li.size() - 1) {
+                $(li.get(index)).children("a").text("...");
+                index++;
             }
         }
         currentProject = project;
@@ -138,8 +144,8 @@ $(function () {
         setContext(this.params['projectId'], this.params['moduleId'], this.params['modelId'], this.params['rootId']);
         $("#content").text("Content of node " + this.params['rootId'] + " is loading...");
         fetchNodeAsHtml(currentProject, this.params["modelId"], this.params['rootId'], nameFetcher, function (data) {
-            $('#content').text("");
-            $('#content').append(data);
+            $('#content').empty();
+            $('#content').append($('<div/>').attr('class', 'nodes').append(data));
             $('#content div[target-node-id]').click(function (e) {
                 window.location = "#" + currentProject + "/node" +
                     "/" + $(e.target).attr("target-module-id") +
@@ -147,14 +153,6 @@ $(function () {
                     "/" + $(e.target).attr("target-node-id");
             })
         });
-    });
-    Path.map("#:projectId/model/:moduleId/:modelId").to(function () {
-        setContext(this.params['projectId'], this.params['moduleId'], this.params['modelId']);
-        $("#content").text("Content of model " + this.params['modelId'] + " is expected here.");
-    });
-    Path.map("#:projectId/module/:moduleId").to(function () {
-        setContext(this.params['projectId'], this.params['moduleId']);
-        $("#content").text("Content of module " + this.params['moduleId'] + " is expected here.");
     });
 
     function treeToggle(event) {
@@ -180,7 +178,7 @@ $(function () {
         $.each(children, function (index, child) {
             var span = $('<span/>').css("class", "treeitem");
             var li = $('<li/>').append(span);
-            span.append($('<span class="icon"/>').css('background-image', 'url(\'' + child.icon + '\')'));
+            span.append($('<span class="icon_any"/>').css('background-image', 'url(\'' + child.icon + '\')'));
             nameFetcher.updateWithCompletionResult([child]);
             if ($.isArray(child.children)) {
                 span.append($('<a/>').text(child[child["type"] + "-name"]));
@@ -218,12 +216,26 @@ $(function () {
         });
     }
 
-    Path.map("#:projectId/view").to(function () {
-        setContext(this.params['projectId'], null, null, null);
+    function showTree(project_id, module_id, model_id) {
+        setContext(project_id, module_id, model_id, null);
         var content = $("#content");
         content.html('<h2>Code</h2>');
-        content.append('<ul class="tree-root" data-source="/rest/p/' + currentProject + '/structure.json"></ul>');
+        var link = module_id === null ? '/rest/p/' + currentProject + '/structure.json' :
+            model_id === null ? '/rest/p/' + currentProject + '/structure.json/module/' + module_id :
+                '/rest/p/' + currentProject + '/structure.json/model/' + model_id + "(hack!)";
+        content.append('<ul class="tree-root" data-source="' + link + '"></ul>');
         loadTree($('.tree-root'));
+    }
+
+    Path.map("#:projectId/model/:moduleId/:modelId").to(function () {
+        showTree(this.params['projectId'], this.params['moduleId'], this.params['modelId']);
+    });
+    Path.map("#:projectId/module/:moduleId").to(function () {
+        showTree(this.params['projectId'], this.params['moduleId'], null);
+    });
+
+    Path.map("#:projectId/view").to(function () {
+        showTree(this.params['projectId'], null, null);
     });
 
     Path.map("#projects").to(function () {
@@ -232,16 +244,21 @@ $(function () {
         content.append("<div id='projects-list'></div>");
         setContext(null, null, null, null);
 
-        fetchProjects(function (json) {
-            return typeof json.projects == 'undefined' ? false : (function () {
-                var table = $('<table class="table table-hover"><thead><tr><th>#</th><th>Name</th></tr></thead></table>');
-                $.each(json.projects, function (index, value) {
-                    table.append($('<tr/>')
-                        .append($('<td/>').text(index + 1))
-                        .append($('<td/>').append($('<a/>').attr("href", "#" + value.id + "/view").text(value.name))));
-                });
-                $("#projects-list").html(table);
-            }());
+        $.ajax({
+            url: "rest/projects.json",
+            type: 'get',
+            dataType: 'json',
+            success: function (json) {
+                return typeof json.projects == 'undefined' ? false : (function () {
+                    var table = $('<table class="table table-hover"><thead><tr><th>#</th><th>Name</th></tr></thead></table>');
+                    $.each(json.projects, function (index, value) {
+                        table.append($('<tr/>')
+                            .append($('<td/>').text(index + 1))
+                            .append($('<td/>').append($('<a/>').attr("href", "#" + value.id + "/view").text(value.name))));
+                    });
+                    $("#projects-list").html(table);
+                }());
+            }
         });
     });
 
