@@ -17,13 +17,28 @@ h1 {
     width: 2cm;
 }
 
+.mbreadcrumb-container {
+    padding: 10px 10px;
+}
+
 .mbreadcrumb {
-    padding: 10px 15px;
-    margin: 0 0 0 -5px;
+    height: 19px;
+    white-space:nowrap;
+    line-height: 19px;
+    overflow: hidden;
+    padding: 0px;
     list-style: none;
     display: block;
     float: left;
+    margin: 0px 0px 0px -5px;
     font-size: 12px;
+}
+
+.nodes {
+    cursor: text;
+    font-family: Menlo, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
+    font-size: 12px;
+    line-height: 18px;
 }
 
 .mbreadcrumb > li {
@@ -71,7 +86,7 @@ li[data-collapsed="true"] > ul.tree-content {
     line-height: 1.618;
 }
 
-.icon {
+.icon_any {
     position: relative;
     display: inline-block;
     top: 1px;

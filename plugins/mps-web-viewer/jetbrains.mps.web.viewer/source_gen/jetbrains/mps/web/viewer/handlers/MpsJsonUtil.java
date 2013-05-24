@@ -13,7 +13,7 @@ public class MpsJsonUtil {
 
     nodeJson.addProperty("type", "node");
     nodeJson.addProperty("icon", IconUtil.getIconForNode(node));
-    nodeJson.addProperty("node-name", node.getName());
+    nodeJson.addProperty("node-name", node.getPresentation());
     nodeJson.addProperty("node-id", node.getNodeId().toString());
     SModel model = node.getModel();
     nodeJson.addProperty("model-name", model.getModelName());
