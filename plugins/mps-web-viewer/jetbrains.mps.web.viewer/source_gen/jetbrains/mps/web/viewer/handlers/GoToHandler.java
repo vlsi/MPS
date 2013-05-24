@@ -34,16 +34,13 @@ public class GoToHandler implements Handler {
 
 
   public void handle(String requestUrl, final Project project, HttpExchange exchange) throws Exception {
-    Pattern pattern = Pattern.compile(".*\\?query=(.+)&nodesSlice=(\\d+)&modelsSlice=(\\d+)&modulesSlice=(\\d+)");
+    Pattern pattern = Pattern.compile(".*\\?query=(.+)");
     Matcher matcher = pattern.matcher(requestUrl);
     if (!(matcher.matches())) {
       return;
     }
     MatchResult toMatchResult = matcher.toMatchResult();
     final String query = toMatchResult.group(1);
-    final int nodesSlice = Integer.parseInt(toMatchResult.group(2));
-    final int modelsSlice = Integer.parseInt(toMatchResult.group(3));
-    final int modulesSlice = Integer.parseInt(toMatchResult.group(4));
 
     final List<String> items = ListSequence.fromList(new ArrayList<String>());
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -52,19 +49,9 @@ public class GoToHandler implements Handler {
         Iterable<String> models = getModelsJson(project, query);
         Iterable<String> nodes = getNodesJson(project, query);
 
-        ListSequence.fromList(items).addSequence(Sequence.fromIterable(modules).page(modulesSlice * ITEMS_COUNT, (modulesSlice + 1) * ITEMS_COUNT));
-        if (Sequence.fromIterable(modules).take(ITEMS_COUNT + 1).count() > ITEMS_COUNT) {
-          ListSequence.fromList(items).addElement(MpsJsonUtil.dumpFetchMore("modules", modulesSlice + 1).toString());
-        }
-        ListSequence.fromList(items).addSequence(Sequence.fromIterable(models).page(modelsSlice * ITEMS_COUNT, (modelsSlice + 1) * ITEMS_COUNT));
-        if (Sequence.fromIterable(models).take(ITEMS_COUNT + 1).count() > ITEMS_COUNT) {
-          ListSequence.fromList(items).addElement(MpsJsonUtil.dumpFetchMore("models", modelsSlice + 1).toString());
-        }
-        ListSequence.fromList(items).addSequence(Sequence.fromIterable(nodes).page(nodesSlice * ITEMS_COUNT, (nodesSlice + 1) * ITEMS_COUNT));
-        if (Sequence.fromIterable(nodes).take(ITEMS_COUNT + 1).count() > ITEMS_COUNT) {
-          ListSequence.fromList(items).addElement(MpsJsonUtil.dumpFetchMore("nodes", nodesSlice + 1).toString());
-        }
-
+        ListSequence.fromList(items).addSequence(Sequence.fromIterable(modules));
+        ListSequence.fromList(items).addSequence(Sequence.fromIterable(models));
+        ListSequence.fromList(items).addSequence(Sequence.fromIterable(nodes));
       }
     });
 

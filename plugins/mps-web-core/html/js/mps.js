@@ -1,37 +1,37 @@
-$(function () {
-    var currentProject = null;
+var currentProject = null;
 
-    var nameFetcher = {
-        getModuleName: function (moduleId) {
-            // todo: if doesn't contains
-            return nameFetcher.moduleNames[moduleId] ? nameFetcher.moduleNames[moduleId] : moduleId;
-        },
+var nameFetcher = {
+    getModuleName: function (moduleId) {
+        // todo: if doesn't contains
+        return nameFetcher.moduleNames[moduleId] ? nameFetcher.moduleNames[moduleId] : moduleId;
+    },
 
-        getModelName: function (modelId) {
-            // todo: if doesn't contains
-            return nameFetcher.modelNames[modelId] ? nameFetcher.modelNames[modelId] : modelId;
-        },
+    getModelName: function (modelId) {
+        // todo: if doesn't contains
+        return nameFetcher.modelNames[modelId] ? nameFetcher.modelNames[modelId] : modelId;
+    },
 
-        getNodeName: function (nodeId) {
-            // todo: if doesn't contains
-            return nameFetcher.nodeNames[nodeId] ? nameFetcher.nodeNames[nodeId] : nodeId;
-        },
+    getNodeName: function (nodeId) {
+        // todo: if doesn't contains
+        return nameFetcher.nodeNames[nodeId] ? nameFetcher.nodeNames[nodeId] : nodeId;
+    },
 
-        updateWithCompletionResult: function (completionResult) {
-            completionResult.forEach(function (item) {
-                ["module", "model", "node"].forEach(function (type) {
-                    if (typeof item[type + "-id"] != 'undefined') {
-                        nameFetcher[type + "Names"][item[type + "-id"]] = item[type + "-name"];
-                    }
-                });
+    updateWithCompletionResult: function (completionResult) {
+        completionResult.forEach(function (item) {
+            ["module", "model", "node"].forEach(function (type) {
+                if (typeof item[type + "-id"] != 'undefined') {
+                    nameFetcher[type + "Names"][item[type + "-id"]] = item[type + "-name"];
+                }
             });
-        },
+        });
+    },
 
-        moduleNames: {},
-        modelNames: {},
-        nodeNames: {}
-    };
+    moduleNames: {},
+    modelNames: {},
+    nodeNames: {}
+};
 
+$(function () {
     function addBreadcrumb(title, link) {
         var li = $('<li/>');
         if (link === null) {
@@ -66,135 +66,69 @@ $(function () {
             }
             var index = 1;
             var li = $('.mbreadcrumb li');
-            while ($('.mbreadcrumb').width() > $('.mbreadcrumb-container').width() && index < li.size() - 1) {
-                $(li.get(index)).children("a").text("...");
+            while ($('.mbreadcrumb').width() > $('.mbreadcrumb-container').width() && index < li.length - 1) {
+                var children = $(li.get(index)).children("a");
+                children.tooltip({
+                    title: children.text(), placement: 'bottom'
+                }).text("...");
                 index++;
             }
         }
         currentProject = project;
     }
 
-    var nodesSlice = 0;
-    var modulesSlice = 0;
-    var modelsSlice = 0;
-    var lastQuery = "";
-    $('.roots-search').typeahead({
-        items: 20,
-        source: function (query, process) {
-            console.info(query, lastQuery, nodesSlice, modelsSlice, modulesSlice);
-            if (lastQuery != query) {
-                nodesSlice = 0;
-                modulesSlice = 0;
-                modelsSlice = 0;
-            }
-            console.info(query, lastQuery, nodesSlice, modelsSlice, modulesSlice);
-            $.ajax({
-                url: "/rest/p/" + currentProject + "/goto.json",
-                type: 'get',
-                data: {query: query, nodesSlice: nodesSlice, modelsSlice: modelsSlice, modulesSlice: modulesSlice},
-                dataType: 'json',
-                success: function (json) {
-                    if (typeof json.options == 'undefined') {
-                        return false;
-                    }
-
-                    nameFetcher.updateWithCompletionResult(json.options);
-
-                    return process(json.options.map(function (item) {
-                        return JSON.stringify(item);
-                    }));
-                }
-            });
-        },
-        matcher: function (item) {
-            if (JSON.parse(item)["type"].indexOf("fetch") != -1) {
-                return true;
-            }
-            return itemPresentation(item).toLowerCase().indexOf(this.query.trim().toLowerCase()) != -1;
-        },
-        sorter: function (items) {
-            return items.sort(function (item1, item2) {
-                var item1_json = JSON.parse(item1);
-                var item2_json = JSON.parse(item2);
-
-                if (item1_json["type"] == item2_json["type"]) {
-                    return itemPresentation(item1).localeCompare(itemPresentation(item2));
-                }
-                var typesOrder = {"node": 1, "fetch-nodes": 2, "model": 3, "fetch-models": 4, "module": 5, "fetch-modules": 6};
-                return typesOrder[item1_json["type"]] - typesOrder[item2_json["type"]];
-            });
-        },
-        highlighter: function (item) {
-            return completionItemTemplate(JSON.parse(item), this.query);
-        },
-        updater: function (item) {
-            var item_json = JSON.parse(item);
-            if (item_json["type"].indexOf("fetch") != -1) {
-                if (item_json["type"] == "fetch-nodes") {
-                    nodesSlice = item_json["slice"];
-                } else if (item_json["type"] == "fetch-models") {
-                    modelsSlice = item_json["slice"];
-                } else if (item_json["type"] == "fetch-modules") {
-                    modulesSlice = item_json["slice"];
-                }
-                lastQuery = this.query;
-                console.info(item_json);
-                this.lookup("event");
-                return this.query;
-            }
-
-            $('#go-to-root input[name="search"]').val(itemPresentation(item));
-
-            $('#go-to-root input[name="search-type"]').val(item_json["type"]);
-            $('#go-to-root input[name="search-module-id"]').val(item_json["module-id"]);
-            if (item_json["type"] == "model" || item_json["type"] == "node") {
-                $('#go-to-root input[name="search-model-id"]').val(item_json["model-id"]);
-            }
-            if (item_json["type"] == "node") {
-                $('#go-to-root input[name="search-node-id"]').val(item_json["node-id"]);
-            }
-
-            $('#go-to-root').submit();
-            return "";
+    function nextLeaf(node, back) {
+        var all = $('.nodes .n-leaf');
+        if (all.length == 0) {
+            return null;
         }
-    });
+        var index = node == null ? (back ? all.length - 1 : 0) : all.index(node);
+        if (index == -1) {
+            return null;
+        }
 
-    function itemPresentation(item) {
-        item = JSON.parse(item);
-        return item[item["type"] + "-name"];
+        if (back) {
+            return index > 0 ? $(all.get(index - 1)) : null;
+        } else {
+            return index + 1 < all.length ? $(all.get(index + 1)) : null;
+        }
     }
 
-    $('#go-to-root').submit(function () {
-        var type = $('#go-to-root input[name="search-type"]').val();
-        if (type == "node") {
-            window.location = "#" + currentProject + "/node" +
-                "/" + $('#go-to-root input[name="search-module-id"]').val() +
-                "/" + $('#go-to-root input[name="search-model-id"]').val() +
-                "/" + $('#go-to-root input[name="search-node-id"]').val();
-        } else if (type == "model") {
-            window.location = "#" + currentProject + "/model" +
-                "/" + $('#go-to-root input[name="search-module-id"]').val() +
-                "/" + $('#go-to-root input[name="search-model-id"]').val();
-        } else if (type == "module") {
-            window.location = "#" + currentProject + "/module" +
-                "/" + $('#go-to-root input[name="search-module-id"]').val();
+    function setCursor() {
+        var c = $('.n-cursor');
+        var curr = nextLeaf(null, false);
+        c.data("cursor-anchor", curr);
+        if (curr == null) {
+            alert("null");
+        } else {
+            c.offset(curr.offset());
         }
-        return false;
-    });
+    }
+
+    function updateCursor(back) {
+        var c = $('.n-cursor');
+        var curr = nextLeaf(c.data("cursor-anchor"), back);
+        c.data("cursor-anchor", curr);
+        c.offset(curr.offset());
+    }
 
     Path.map("#:projectId/node/:moduleId/:modelId/:rootId").to(function () {
         setContext(this.params['projectId'], this.params['moduleId'], this.params['modelId'], this.params['rootId']);
         $("#content").text("Content of node " + this.params['rootId'] + " is loading...");
-        fetchNodeAsHtml(currentProject, this.params["modelId"], this.params['rootId'], nameFetcher, function (data) {
-            $('#content').empty();
-            $('#content').append($('<div/>').attr('class', 'nodes').append(data));
-            $('#content div[target-node-id]').click(function (e) {
-                window.location = "#" + currentProject + "/node" +
-                    "/" + $(e.target).attr("target-module-id") +
-                    "/" + $(e.target).attr("target-model-id") +
-                    "/" + $(e.target).attr("target-node-id");
-            })
-        });
+        $.get("/rest/p/" + currentProject + "/view/" + escape(this.params["modelId"]) + "(" + nameFetcher.getModelName(this.params["modelId"]) + ")" + "/" + this.params['rootId'],
+            function (data) {
+                var content = $('#content');
+                content.empty();
+                content.append($('<div/>').toggleClass('n-cursor').html("&nbsp;"));
+                content.append($('<div/>').attr('class', 'nodes').append(data));
+                setCursor();
+                content.find('div[target-node-id]').click(function (e) {
+                    window.location = "#" + currentProject + "/node" +
+                        "/" + $(e.target).attr("target-module-id") +
+                        "/" + $(e.target).attr("target-model-id") +
+                        "/" + $(e.target).attr("target-node-id");
+                });
+            }, "html");
     });
 
     function treeToggle(event) {
@@ -318,6 +252,68 @@ $(function () {
     Path.root("#projects");
 
     Path.listen();
+
+    var keyNames = {27: "Esc", 33: "PageUp", 34: "PageDown", 35: "End", 36: "Home", 37: "Left", 38: "Up", 39: "Right", 40: "Down",
+        63276: "PageUp", 63277: "PageDown", 63275: "End", 63273: "Home", 63234: "Left", 63232: "Up", 63235: "Right", 63233: "Down"};
+    (function () {
+        for (var i = 0; i < 10; i++) keyNames[i + 48] = String(i);
+        for (var i = 65; i <= 90; i++) keyNames[i] = String.fromCharCode(i);
+    })();
+    var opera = /Opera\//.test(navigator.userAgent);
+    var ios = /AppleWebKit/.test(navigator.userAgent) && /Mobile\/\w+/.test(navigator.userAgent);
+    var webkit = /WebKit\//.test(navigator.userAgent);
+    var qtwebkit = webkit && /Qt\/\d+\.\d+/.test(navigator.userAgent);
+    var mac = ios || /Mac/.test(navigator.platform);
+    var opera_version = opera && navigator.userAgent.match(/Version\/(\d*\.\d*)/);
+    if (opera_version) opera_version = Number(opera_version[1]);
+    var flipCtrlCmd = mac && (qtwebkit || opera && (opera_version == null || opera_version < 12.11));
+
+
+    $('body').keydown(function (event) {
+        if ($(event.target).closest('.navbar').length != 0) {
+            return;
+        }
+        var name = keyNames[event.keyCode];
+        if (name == null || event.altGraphKey) return;
+
+        var oneChar = name.length == 1;
+
+        if (event.altKey) name = "Alt-" + name;
+        if (flipCtrlCmd ? event.metaKey : event.ctrlKey) name = "Ctrl-" + name;
+        if (flipCtrlCmd ? event.ctrlKey : event.metaKey) name = "Cmd-" + name;
+        if (event.shiftKey) name = "Shift-" + name;
+
+        if (oneChar && name.length > 1) {
+            var ch = String.fromCharCode(event.keyCode);
+            if (ch !== "B" && ch !== "N") {
+                return;
+            }
+        }
+
+        if (name === "Esc" || name === "Ctrl-N" || name === "Cmd-N") {
+            $('#go-to-root').find('input[name="search"]').focus();
+            return;
+        }
+
+        if (name === "Ctrl-B" || name === "Cmd-B") {
+            alert("Go to link!");
+            return;
+        }
+
+        if (name === "Down" || name === "Up") {
+            updateCursor(name === "Up");
+            return;
+        }
+
+        //alert(name);
+    });
+
+    $('#go-to-root').find('input[name="search"]').keydown(function (event) {
+        if (event.keyCode === 27 || event.keyCode == 9) {
+            $(this).blur();
+            event.preventDefault();
+        }
+    });
 });
 
 function createIconSpan(icon_json) {

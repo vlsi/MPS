@@ -1,50 +1,79 @@
-.vertical-layout {
+/*http://www.evotech.net/blog/2007/04/named-html-entities-in-numeric-order/*/
+
+.nodes div {
+    margin: 0;
+    padding: 0;
 }
-.horizontal-layout {
-    float: left;
-}
-.indent-layout {
+
+.nodes .indent-layout {
     /*position: relative;*/
     /*padding-left: 10px;*/
 }
-.indent-layout-new-line {
 
+.nodes .indent-layout-indent {
+    padding-left: 2em;
 }
-.indent-layout-on-new-line, .indent-layout-new-line + div, div.indent-layout-new-line-children > div, div.vertical-layout > div {
+
+.nodes .indent-layout > div {
+    float: left;
+}
+
+.nodes .n-empty {
+    width: 1px;
+    overflow: hidden;
+}
+
+.nodes .indent-layout:not(.indent-layout-new-line-children) > div:not(.n-pright):not(.indent-layout-new-line) + div:not(.n-pleft):not(.indent-layout-on-new-line):before {
+    content: '\00a0';
+    float: left;
+}
+
+.nodes .indent-layout-on-new-line, .indent-layout-new-line + div, .indent-layout-new-line-children > div, .vertical-layout > div {
     clear: left;
     /*position: relative;*/
     /*margin-left: -10px;*/
 }
 
-.indent-layout-new-line-children {
+.nodes .indent-layout-new-line-children {
 
 }
-div.indent-layout > :first-child, div.indent-layout-new-line-children > div {
+
+.nodes .indent-layout > :first-child, div.indent-layout-new-line-children > div {
     /*position: relative;*/
     /*margin-left: -10px;*/
 }
-.key-word {
-    color: blue;
-}
-/*.indent-layout-indent {*/
-    /*padding-left: 10px;*/
-/*}*/
-/*div.indent-layout > div {float: left;}*/
-div {float: left;}
-div.horizontal-layout > div {float: left}
-div {margin-left: 2px}
-/*div {*/
-    /*border: 1px solid black;*/
-/*}*/
 
-div.selected-cell {
+
+
+.nodes .selected-cell {
     color: white;
     background-color: darkcyan;
 }
 
+.nodes .vertical-layout {
+}
+
+.nodes .horizontal-layout, .nodes .horizontal-layout > div {
+    float: left;
+}
+
+.nodes .horizontal-layout > :not(:first-child):before {
+    content: '\00a0';
+}
+
+/*
 .n-leaf {}
 .n-list {}
 .n-listpart {}
 .n-pleft {}
 .n-pright {}
-.n-empty {}
+*/
+
+.n-cursor {
+    border-left: 1px solid black;
+    z-index: 10;
+    position: absolute;
+    visibility: visible;
+    border-right: none;
+    width: 0;
+}
