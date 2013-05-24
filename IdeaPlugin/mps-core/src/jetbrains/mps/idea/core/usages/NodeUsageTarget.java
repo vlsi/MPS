@@ -16,13 +16,18 @@
 
 package jetbrains.mps.idea.core.usages;
 
+import com.intellij.find.FindManager;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
+import com.intellij.usages.PsiElementUsageTarget;
 import com.intellij.usages.UsageTarget;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
@@ -32,20 +37,29 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.annotations.NotNull;
 
-public class NodeUsageTarget extends NodeNavigatable implements UsageTarget {
+public class NodeUsageTarget extends NodeNavigatable implements UsageTarget, PsiElementUsageTarget {
 
   public NodeUsageTarget(@NotNull SNodeReference node, @NotNull Project project) {
     super(node, project);
   }
 
   @Override
-  public void findUsages() {
+  public PsiElement getElement() {
+    return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
+      @Override
+      public PsiElement compute() {
+        return MPSPsiProvider.getInstance(myProject).getPsi(myNode);
+      }
+    });
+  }
 
+  @Override
+  public void findUsages() {
+    // apparently never called at all
   }
 
   @Override
   public void findUsagesInEditor(@NotNull FileEditor fileEditor) {
-
   }
 
   @Override
