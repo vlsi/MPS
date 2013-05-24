@@ -62,20 +62,10 @@ public class ProjectStructureHandler implements Handler {
     JsonBuilder builder = JsonBuilder.object();
     List<JsonBuilder> nodes = ListSequence.fromList(new ArrayList<JsonBuilder>());
     for (SNode node : Sequence.fromIterable(model.getRootNodes())) {
-      ListSequence.fromList(nodes).addElement(dumpNode(node));
+      ListSequence.fromList(nodes).addElement(MpsJsonUtil.dumpNodeReference(node));
     }
     builder.addProperty("elements", nodes, true);
     return builder.toString();
-  }
-
-  private JsonBuilder dumpNode(SNode node) {
-    JsonBuilder builder = JsonBuilder.object();
-    builder.addProperty("name", node.getName());
-    builder.addProperty("icon", IconUtil.getIconForNode(node));
-    builder.addProperty("nodeId", node.getNodeId().toString());
-    builder.addProperty("modelId", node.getModel().getModelId().toString());
-    builder.addProperty("moduleId", node.getModel().getModule().getModuleId().toString());
-    return builder;
   }
 
   private String dumpModuleStructure(SModule module, StandaloneMPSProject project) {

@@ -115,6 +115,7 @@
     <classNode dependClassName="jetbrains.mps.web.JsonBuilder" />
     <classNode dependClassName="jetbrains.mps.web.core.server.HttpUtil" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.IconUtil" />
+    <classNode dependClassName="jetbrains.mps.web.viewer.handlers.MpsJsonUtil" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.VirtualFolder" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
