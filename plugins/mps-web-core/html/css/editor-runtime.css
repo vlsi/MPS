@@ -45,6 +45,8 @@
 
 
 
+div {float: left;}
+
 .nodes .selected-cell {
     color: white;
     background-color: darkcyan;
