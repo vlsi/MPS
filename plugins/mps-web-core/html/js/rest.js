@@ -18,6 +18,6 @@ function fetchProjects(onSuccess) {
 }
 
 function fetchNodeAsHtml(project, modelId, rootId, nameFetcher, onSuccess) {
-    $.get("/rest/p/" + project + "/view/" + modelId + "(" + nameFetcher.getModelName(modelId) + ")" + "/" + rootId,
+    $.get("/rest/p/" + project + "/view/" + escape(modelId) + "(" + nameFetcher.getModelName(modelId) + ")" + "/" + rootId,
         onSuccess, "html");
 }
