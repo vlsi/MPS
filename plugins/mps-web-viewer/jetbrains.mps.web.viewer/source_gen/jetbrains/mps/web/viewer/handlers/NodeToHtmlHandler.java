@@ -92,6 +92,8 @@ public class NodeToHtmlHandler implements Handler {
     return builder.toString();
   }
 
+
+
   private void getHtmlForTable(StringBuilder builder, jetbrains.mps.openapi.editor.cells.EditorCell cell, SNode selectedNode) {
     builder.append("<table border=\"1\">");
     for (Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> rowsIterator = ((EditorCell_Table) cell).iterator(); rowsIterator.hasNext();) {
@@ -356,7 +358,7 @@ public class NodeToHtmlHandler implements Handler {
         builder.append("border: solid 1px;");
       }
 
-      if (isNotEmpty_9d126p_a0k0a0w(builder.toString())) {
+      if (isNotEmpty_9d126p_a0k0a0y(builder.toString())) {
         div.append(" style=\"" + builder.toString() + "\"");
       }
     }
@@ -450,7 +452,7 @@ public class NodeToHtmlHandler implements Handler {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT))) {
         clazz.append("n-pright ");
       }
-      if (isEmpty_9d126p_a0d0f0fb(((EditorCell_Label) cell).getText())) {
+      if (isEmpty_9d126p_a0d0f0hb(((EditorCell_Label) cell).getText())) {
         clazz.append("n-empty");
       }
     }
@@ -458,11 +460,11 @@ public class NodeToHtmlHandler implements Handler {
     return clazz.toString();
   }
 
-  public static boolean isNotEmpty_9d126p_a0k0a0w(String str) {
+  public static boolean isNotEmpty_9d126p_a0k0a0y(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_9d126p_a0d0f0fb(String str) {
+  public static boolean isEmpty_9d126p_a0d0f0hb(String str) {
     return str == null || str.length() == 0;
   }
 }
