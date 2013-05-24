@@ -190,9 +190,9 @@ $(function () {
                 applyTree(childNode, child.children, true);
                 span.on("click", treeToggle);
                 li.attr("data-collapsed", collapsed);
-            } else if (child.children) {
+            } else if (child["isStructure"] == "true") {
                 span.append($('<a/>').text(child[child["type"] + "-name"]));
-                var childNode = $('<ul/>').attr("data-source", child.children);
+                var childNode = $('<ul/>').attr("data-source", getStructureUrl(currentProject, child));
                 childNode.attr('class', 'tree-content');
                 li.append(childNode);
                 span.on("click", treeToggle);
