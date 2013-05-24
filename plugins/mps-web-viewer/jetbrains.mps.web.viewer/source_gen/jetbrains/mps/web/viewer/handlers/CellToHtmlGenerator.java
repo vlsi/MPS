@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import java.util.Iterator;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.awt.Color;
@@ -36,27 +38,27 @@ public class CellToHtmlGenerator {
 
   public String generate() {
     builder = new StringBuilder();
-    generateHtmlForCell(rootCell, 0);
+    generateHtmlForCell(rootCell, 0, true);
     return builder.toString();
   }
 
 
 
-  private void generateHtmlForCell(EditorCell cell, int indention) {
+  private void generateHtmlForCell(EditorCell cell, int indention, boolean isOnNewLine) {
     if (cell instanceof EditorCell_Collection && isEmptyCollection((EditorCell_Collection) cell)) {
       return;
     }
     if (cell instanceof EditorCell_Collection && ((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Indent) {
-      generateHtmlForIndent(((EditorCell_Collection) cell), indention);
+      generateHtmlForIndent(((EditorCell_Collection) cell), indention, isOnNewLine);
       return;
     }
-    appendOpeningDiv(cell, indention);
+    appendOpeningDiv(cell, indention, isOnNewLine);
 
     if (cell instanceof EditorCell_Table) {
       generateHtmlForTable(cell);
     } else if (cell instanceof EditorCell_Collection) {
       for (EditorCell child : Sequence.fromIterable(((EditorCell_Collection) cell))) {
-        generateHtmlForCell(child, 0);
+        generateHtmlForCell(child, 0, false);
         builder.append('\n');
       }
     } else if (cell instanceof EditorCell_Label) {
@@ -87,7 +89,7 @@ public class CellToHtmlGenerator {
         }
 
         builder.append("<td>");
-        generateHtmlForCell(nextCell, 0);
+        generateHtmlForCell(nextCell, 0, true);
         builder.append('\n');
         builder.append("</td>");
       }
@@ -114,23 +116,31 @@ public class CellToHtmlGenerator {
 
 
 
-  private void generateHtmlForIndent(EditorCell_Collection collection, int indention) {
-    boolean needWrapper = (indention == 0);
+  private void generateHtmlForIndent(EditorCell_Collection collection, int indention, boolean isOnNewLine) {
+    boolean needWrapper = (collection.getParent() == null || !(collection.getParent().getCellLayout() instanceof CellLayout_Indent));
     if (needWrapper) {
-      appendOpeningDiv(collection, indention);
+      appendOpeningDiv(collection, indention, false);
     }
     if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
       indention++;
     }
     for (EditorCell child : Sequence.fromIterable(collection)) {
-      generateHtmlForCell(child, indention);
+      boolean isOnNewLineChild = isOnNewLine(child);
+      generateHtmlForCell(child, indention, isOnNewLine || isOnNewLineChild);
+      if (CellFinderUtil.findChildByCondition(child, new Condition<EditorCell>() {
+        public boolean met(EditorCell cell) {
+          return !(cell instanceof EditorCell_Collection);
+        }
+      }, true, true) != null) {
+        isOnNewLine = child.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE) || collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
+      }
     }
     if (needWrapper) {
       appendClosingDiv();
     }
   }
 
-  private boolean isOnNewLine(EditorCell cell) {
+  private boolean isOnNewLine_Old(EditorCell cell) {
     if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
       return true;
     }
@@ -145,7 +155,7 @@ public class CellToHtmlGenerator {
     } else {
       EditorCell parentCell = cell.getParent();
       while (parentCell != null) {
-        if (isOnNewLine(parentCell)) {
+        if (isOnNewLine_Old(parentCell)) {
           return true;
         }
         parentCell = parentCell.getParent();
@@ -176,24 +186,27 @@ public class CellToHtmlGenerator {
 
 
 
-  private void appendOpeningDiv(EditorCell cell, int indention) {
+  private void appendOpeningDiv(EditorCell cell, int indention, boolean isOnNewLine) {
     builder.append("<div");
-    addClasses(cell, indention);
-    addTextAttributes(cell, indention);
+    addClasses(cell, indention, isOnNewLine);
+    addTextAttributes(cell, indention, isOnNewLine);
     addTargetNodeId(cell);
     builder.append(">");
   }
 
 
 
-  private void addClasses(EditorCell cell, int indention) {
+  private void addClasses(EditorCell cell, int indention, boolean isOnNewLine) {
     String classes = "";
-    if (cell instanceof EditorCell_Collection) {
+    if (cell instanceof EditorCell_Collection && !(((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Indent)) {
       classes = classes + getClassesForCollection(((EditorCell_Collection) cell));
     }
     classes += getClassesForCell(cell, indention);
     if (cell.getSNode().equals(selectedNode) && SNodeOperations.getContainingRoot(selectedNode) != selectedNode) {
       classes += " selected-cell";
+    }
+    if (isOnNewLine) {
+      classes += "indent-layout-on-new-line ";
     }
     if ((classes != null && classes.length() > 0)) {
       builder.append(" class = \"");
@@ -202,7 +215,7 @@ public class CellToHtmlGenerator {
     }
   }
 
-  private void addTextAttributes(EditorCell cell, int indention) {
+  private void addTextAttributes(EditorCell cell, int indention, boolean isOnNewLine) {
     StringBuilder temp = new StringBuilder();
     if (cell instanceof EditorCell_Label) {
       Color fg = cell.getStyle().get(StyleAttributes.TEXT_COLOR);
@@ -223,9 +236,11 @@ public class CellToHtmlGenerator {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.DRAW_BORDER))) {
         temp.append("border: solid 1px;");
       }
-
+      if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
+        indention++;
+      }
     }
-    if (isOnNewLine(cell)) {
+    if (isOnNewLine) {
       temp.append("padding-left:" + indention * 2 + "em;");
     }
 
@@ -271,12 +286,26 @@ public class CellToHtmlGenerator {
     } else if (collection.getCellLayout() instanceof CellLayout_Vertical) {
       clazz.append("vertical-layout ");
     }
-    if (getStyleForLast(StyleAttributes.INDENT_LAYOUT_NEW_LINE, collection)) {
-      clazz.append("indent-layout-new-line ");
-    }
     clazz.append("n-list ");
 
     return clazz.toString();
+  }
+
+
+
+  private boolean isOnNewLine(EditorCell cell) {
+    for (EditorCell current = cell; current != null; current = current.getParent()) {
+      if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
+        return true;
+      }
+      if (current.getParent() == null || current.getParent().firstCell() != current) {
+        return false;
+      }
+      if (!(current.getParent().getCellLayout() instanceof CellLayout_Indent)) {
+        return false;
+      }
+    }
+    return false;
   }
 
 
@@ -298,14 +327,8 @@ public class CellToHtmlGenerator {
 
   private String getClassesForCell(EditorCell cell, int indention) {
     StringBuilder clazz = new StringBuilder();
-    if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
-      clazz.append("indent-layout-new-line ");
-    }
-    if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
-      clazz.append("indent-layout-on-new-line ");
-    }
 
-    if (isOnNewLine(cell)) {
+    if (isOnNewLine_Old(cell)) {
       clazz.append("");
     }
 
@@ -317,8 +340,8 @@ public class CellToHtmlGenerator {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT))) {
         clazz.append("n-pright ");
       }
-      if (isEmpty_je17c5_a0d0g0gb(((EditorCell_Label) cell).getText())) {
-        clazz.append("n-empty");
+      if (isEmpty_je17c5_a0d0e0ib(((EditorCell_Label) cell).getText())) {
+        clazz.append("n-empty ");
       }
     }
 
@@ -329,7 +352,7 @@ public class CellToHtmlGenerator {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_je17c5_a0d0g0gb(String str) {
+  public static boolean isEmpty_je17c5_a0d0e0ib(String str) {
     return str == null || str.length() == 0;
   }
 }

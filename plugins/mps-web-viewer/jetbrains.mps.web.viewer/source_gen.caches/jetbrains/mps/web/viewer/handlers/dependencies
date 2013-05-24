@@ -16,12 +16,14 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.APICellAdapter" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellTraversalUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleAttribute" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
   </dependency>
   <dependency className="jetbrains.mps.web.viewer.handlers.GoToHandler" file="GoToHandler.java">
     <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />

@@ -26,9 +26,9 @@ div.indent-layout > :first-child, div.indent-layout-new-line-children > div {
 .key-word {
     color: blue;
 }
-.indent-layout-indent {
-    padding-left: 10px;
-}
+/*.indent-layout-indent {*/
+    /*padding-left: 10px;*/
+/*}*/
 /*div.indent-layout > div {float: left;}*/
 div {float: left;}
 div.horizontal-layout > div {float: left}
