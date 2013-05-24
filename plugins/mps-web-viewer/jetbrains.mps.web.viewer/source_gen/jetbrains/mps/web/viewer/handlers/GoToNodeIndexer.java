@@ -74,7 +74,7 @@ public class GoToNodeIndexer {
     List<NavigationParticipant.NavigationTarget> targets = ListSequence.fromList(new ArrayList<NavigationParticipant.NavigationTarget>());
     for (SModule module : Sequence.fromIterable(project.getModules())) {
       for (IMapping<String, NavigationParticipant.NavigationTarget> item : MapSequence.fromMap(MapSequence.fromMap(moduleToNodePresentationToNodeReference).get(module))) {
-        if (item.key().contains(query)) {
+        if (item.key().toLowerCase().contains(query.toLowerCase())) {
           ListSequence.fromList(targets).addElement(item.value());
         }
       }
