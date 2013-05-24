@@ -11,14 +11,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class IconUtil {
   public static String getIconForModule(SModule module) {
+    // <node> 
     if (module instanceof Language) {
-      return "img/language.png";
+      return "img/icons/nodes/language.png";
     }
     if (module instanceof Solution) {
-      return "img/solution.png";
+      return "img/icons/nodes/solution.png";
     }
     if (module instanceof DevKit) {
-      return "img/devkit.png";
+      return "img/icons/nodes/devkit.png";
     }
     throw new IllegalArgumentException();
   }
@@ -26,18 +27,19 @@ public class IconUtil {
 
 
   public static String getIconForFolder() {
+    // todo: ! 
     return "img/folder.png";
   }
 
 
 
   public static String getIconForModel(SModel model) {
-    return "img/model.png";
+    return "img/icons/nodes/model.png";
   }
 
 
 
   public static String getIconForNode(SNode node) {
-    return "img/node.png";
+    return "img/icons/nodes/node.png";
   }
 }
