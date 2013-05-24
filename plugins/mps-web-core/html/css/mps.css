@@ -114,9 +114,16 @@ li[data-collapsed="true"] > ul.tree-content {
 
 /*node/model/module completion stuff*/
 .goto {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: Menlo, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
     font-size: 12px;
     margin-left: -8px;
+}
+
+.goto-origin {
+    font-family: Menlo, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
+    font-size: 12px;
+    float: right;
+    color: gray;
 }
 
 /*node click stuff*/

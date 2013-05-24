@@ -9,5 +9,11 @@ function completionItemTemplate(completion_item, query) {
     }
     span.append(name_with_selection);
 
+    if (completion_item["type"] != "module") {
+        // origin
+        var origin = $('<span/>').addClass("goto-origin").append(completion_item["module-name"]);
+        span.append(origin);
+    }
+
     return span;
 }
