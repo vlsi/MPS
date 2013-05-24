@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5oleljt5k15726soqbn1erooiee3ehw">
+<dependencies version="2" modelHash="a9vodiuo492izfr4rxdcqzs1cxdnxzf">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.net.httpserver(JDK/com.sun.net.httpserver@java_stub)" />
@@ -183,7 +183,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="GoToHandler.java" />
   </source>
-  <source id="4671236541324035489" name="MpsJsonUtil" hash="db785e6rq4iolvln6zwmfovk3sm3f6e">
+  <source id="4671236541324035489" name="MpsJsonUtil" hash="1tlhcu9hyve0vnqu3x9er8lfwpjaw5l">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MpsJsonUtil.java" />
   </source>
