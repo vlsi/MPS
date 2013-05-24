@@ -139,7 +139,7 @@ public class ProjectStructureHandler implements Handler {
   }
 
   private JsonBuilder dumpFolder(VirtualFolder folder, StandaloneMPSProject project) {
-    JsonBuilder builder = MpsJsonUtil.dumpFolderReference(folder);
+    JsonBuilder builder = MpsJsonUtil.dumpFolderReference(project, folder);
     List<JsonBuilder> children = ListSequence.fromListWithValues(new ArrayList<JsonBuilder>(), dumpSubfolders(folder, project));
     for (SModule module : folder.getModules()) {
       JsonBuilder child = MpsJsonUtil.dumpModuleReference(project, module);

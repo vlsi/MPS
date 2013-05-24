@@ -8,13 +8,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import com.intellij.icons.AllIcons;
+import javax.swing.Icon;
 
 public class MpsJsonUtil {
   public static JsonBuilder dumpNodeReference(Project project, SNode node) {
     JsonBuilder nodeJson = JsonBuilder.object();
 
     nodeJson.addProperty("type", "node");
-    nodeJson.addProperty("icon", IconHandler.getPathForIcon(project, IconManager.getIconFor(node)));
+    nodeJson.addProperty("icon", createIconJson(project, IconManager.getIconFor(node)));
     nodeJson.addProperty("node-name", node.getPresentation());
     nodeJson.addProperty("node-id", node.getNodeId().toString());
     SModel model = node.getModel();
@@ -30,7 +32,7 @@ public class MpsJsonUtil {
     JsonBuilder modelJson = JsonBuilder.object();
 
     modelJson.addProperty("type", "model");
-    modelJson.addProperty("icon", IconHandler.getPathForIcon(project, IconManager.getIconFor(model)));
+    modelJson.addProperty("icon", createIconJson(project, IconManager.getIconFor(model)));
     modelJson.addProperty("model-name", model.getModelName());
     modelJson.addProperty("model-id", model.getModelId().toString());
     modelJson.addProperty("module-name", model.getModule().getModuleName());
@@ -43,21 +45,26 @@ public class MpsJsonUtil {
     JsonBuilder moduleJson = JsonBuilder.object();
 
     moduleJson.addProperty("type", "module");
-    moduleJson.addProperty("icon", IconHandler.getPathForIcon(project, IconManager.getIconFor(module)));
+    moduleJson.addProperty("icon", createIconJson(project, IconManager.getIconFor(module)));
     moduleJson.addProperty("module-name", module.getModuleName());
     moduleJson.addProperty("module-id", module.getModuleId().toString());
 
     return moduleJson;
   }
 
-  public static JsonBuilder dumpFolderReference(VirtualFolder folder) {
+  public static JsonBuilder dumpFolderReference(Project project, VirtualFolder folder) {
     JsonBuilder builder = JsonBuilder.object();
 
     builder.addProperty("type", "folder");
     builder.addProperty("folder-name", folder.getName());
-    // todo: use IconManager 
-    builder.addProperty("icon", "img/folder.png");
+    builder.addProperty("icon", createIconJson(project, AllIcons.Nodes.Folder));
 
     return builder;
+  }
+
+
+
+  public static String createIconJson(Project project, Icon icon) {
+    return IconHandler.getPathForIcon(project, icon);
   }
 }
