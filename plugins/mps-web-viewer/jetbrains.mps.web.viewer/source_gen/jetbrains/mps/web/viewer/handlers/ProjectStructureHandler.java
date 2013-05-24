@@ -69,12 +69,10 @@ public class ProjectStructureHandler implements Handler {
   }
 
   private String dumpModuleStructure(SModule module, StandaloneMPSProject project) {
-    JsonBuilder builder = JsonBuilder.object();
+    JsonBuilder builder = MpsJsonUtil.dumpModuleReference(module);
     List<JsonBuilder> children = ListSequence.fromList(new ArrayList<JsonBuilder>());
     for (SModel model : Sequence.fromIterable(module.getModels())) {
-      JsonBuilder modelBuilder = JsonBuilder.object();
-      modelBuilder.addProperty("name", model.getModelName());
-      modelBuilder.addProperty("icon", IconUtil.getIconForModel(model));
+      JsonBuilder modelBuilder = MpsJsonUtil.dumpModelReference(model);
       String modelReference = model.getReference().toString();
       if (modelReference.indexOf("#") < 0) {
         modelBuilder.addProperty("children", "/rest/p/" + project.getName() + PREFIX + MODEL_PREFIX + modelReference);
@@ -96,14 +94,10 @@ public class ProjectStructureHandler implements Handler {
   }
 
   private JsonBuilder dumpFolder(VirtualFolder folder, StandaloneMPSProject project) {
-    JsonBuilder builder = JsonBuilder.object();
-    builder.addProperty("name", folder.getName());
-    builder.addProperty("icon", IconUtil.getIconForFolder());
+    JsonBuilder builder = MpsJsonUtil.dumpFolderReference(folder);
     List<JsonBuilder> children = ListSequence.fromListWithValues(new ArrayList<JsonBuilder>(), dumpSubfolders(folder, project));
     for (SModule module : folder.getModules()) {
-      JsonBuilder child = JsonBuilder.object();
-      child.addProperty("name", module.getModuleName());
-      child.addProperty("icon", IconUtil.getIconForModule(module));
+      JsonBuilder child = MpsJsonUtil.dumpModuleReference(module);
       child.addProperty("children", "/rest/p/" + project.getName() + PREFIX + MODULE_PREFIX + module.getModuleId().toString());
       ListSequence.fromList(children).addElement(child);
     }

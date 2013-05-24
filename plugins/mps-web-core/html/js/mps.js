@@ -188,8 +188,9 @@ $(function () {
             var span = $('<span/>').css("class", "treeitem");
             var li = $('<li/>').append(span);
             span.append($('<span class="icon"/>').css('background-image', 'url(\'' + child.icon + '\')'));
+            nameFetcher.updateWithCompletionResult([child]);
             if ($.isArray(child.children)) {
-                span.append($('<a/>').text(child.name));
+                span.append($('<a/>').text(child[child["type"] + "-name"]));
                 var childNode = $('<ul/>');
                 childNode.attr('class', 'tree-content');
                 li.append(childNode);
@@ -197,14 +198,13 @@ $(function () {
                 span.on("click", treeToggle);
                 li.attr("data-collapsed", collapsed);
             } else if (child.children) {
-                span.append($('<a/>').text(child.name));
+                span.append($('<a/>').text(child[child["type"] + "-name"]));
                 var childNode = $('<ul/>').attr("data-source", child.children);
                 childNode.attr('class', 'tree-content');
                 li.append(childNode);
                 span.on("click", treeToggle);
                 li.attr("data-collapsed", collapsed);
             } else {
-                nameFetcher.updateWithCompletionResult([child]);
                 var url = "/#" + currentProject + "/node/" + child["module-id"] + "/" + child["model-id"] + "/" + child["node-id"];
                 span.append($('<a/>').attr("href", url).text(child[child["type"] + "-name"]));
             }

@@ -47,4 +47,14 @@ public class MpsJsonUtil {
 
     return moduleJson;
   }
+
+  public static JsonBuilder dumpFolderReference(VirtualFolder folder) {
+    JsonBuilder builder = JsonBuilder.object();
+
+    builder.addProperty("type", "folder");
+    builder.addProperty("folder-name", folder.getName());
+    builder.addProperty("icon", IconUtil.getIconForFolder());
+
+    return builder;
+  }
 }
