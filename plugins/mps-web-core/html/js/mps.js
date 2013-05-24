@@ -147,6 +147,12 @@ $(function () {
             function (data) {
                 $('#content').text("");
                 $('#content').append(data);
+                $('#content div[target-node-id]').click(function(e) {
+                    window.location = "#" + currentProject + "/node" +
+                        "/" + $(e.target).attr("target-module-id") +
+                        "/" + $(e.target).attr("target-model-id") +
+                        "/" + $(e.target).attr("target-node-id");
+                })
             }, "html");
     });
     Path.map("#:projectId/model/:moduleId/:modelId").to(function () {
