@@ -26,6 +26,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import java.util.Iterator;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
@@ -162,6 +163,9 @@ public class NodeToHtmlHandler implements Handler {
     if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
       builder.append("indent-layout-indent ");
     }
+    if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) {
+      builder.append("indent-layout-new-line-children ");
+    }
     if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
       builder.append("indent-layout-on-new-line ");
     }
@@ -259,6 +263,12 @@ public class NodeToHtmlHandler implements Handler {
       div.append(" class = \"");
       div.append(classes);
       div.append("\"");
+    }
+    if (cell instanceof EditorCell_Label) {
+      Color color = cell.getStyle().get(StyleAttributes.TEXT_COLOR);
+      String strColor = Integer.toHexString(color.getRGB());
+      strColor = strColor.substring(2, strColor.length());
+      div.append(" style=\"color:#" + strColor + ";\"");
     }
     div.append(">");
     builder.append(div);
