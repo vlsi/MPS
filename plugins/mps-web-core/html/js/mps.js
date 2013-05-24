@@ -58,7 +58,7 @@ $(function () {
             if (module_id != null) {
                 addBreadcrumb(nameFetcher.getModuleName(module_id), model_id !== null ? "#" + project + "/module/" + module_id : null);
                 if (model_id != null) {
-                    addBreadcrumb(nameFetcher.getModelName(model_id), root_id !== null ? "#" + project + "/model/" + model_id : null);
+                    addBreadcrumb(nameFetcher.getModelName(model_id), root_id !== null ? "#" + project + "/model/" + module_id + "/" + model_id : null);
                     if (root_id != null) {
                         addBreadcrumb(nameFetcher.getNodeName(root_id), null);
                     }
@@ -220,9 +220,9 @@ $(function () {
         setContext(project_id, module_id, model_id, null);
         var content = $("#content");
         content.html('<h2>Code</h2>');
-        var link = module_id === null ? '/rest/p/' + currentProject + '/structure.json' :
-            model_id === null ? '/rest/p/' + currentProject + '/structure.json/module/' + module_id :
-                '/rest/p/' + currentProject + '/structure.json/model/' + model_id + "(hack!)";
+        var link = '/rest/p/' + currentProject + '/structure.json';
+        link = module_id === null ? link : link + '/' + module_id;
+        link = model_id === null ? link : link + '/' + model_id;
         content.append('<ul class="tree-root" data-source="' + link + '"></ul>');
         loadTree($('.tree-root'));
     }
