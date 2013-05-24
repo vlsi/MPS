@@ -4,7 +4,9 @@ function completionItemTemplate(completion_item, query) {
     var name_with_selection = name.replace(regex, "<strong>$1</strong>");
 
     var span = $('<span/>').addClass("goto").addClass(completion_item["type"]);
-    span.append(createIconSpan(completion_item.icon));
+    if (completion_item["type"].indexOf("fetch") == -1) {
+        span.append(createIconSpan(completion_item.icon));
+    }
     span.append(name_with_selection);
 
     return span;

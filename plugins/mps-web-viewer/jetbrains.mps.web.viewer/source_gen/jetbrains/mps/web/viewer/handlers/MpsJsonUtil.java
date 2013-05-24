@@ -73,4 +73,18 @@ public class MpsJsonUtil {
 
     return builder.toString();
   }
+
+
+
+  public static JsonBuilder dumpFetchMore(String type, int slice) {
+    JsonBuilder builder = JsonBuilder.object();
+
+    builder.addProperty("type", "fetch-" + type);
+    builder.addProperty("fetch-" + type + "-name", "...");
+    builder.addProperty("slice", "" + slice);
+
+    return builder;
+  }
+
+
 }

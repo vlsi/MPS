@@ -74,21 +74,42 @@ $(function () {
         currentProject = project;
     }
 
+    var nodesSlice = 0;
+    var modulesSlice = 0;
+    var modelsSlice = 0;
+    var lastQuery = "";
     $('.roots-search').typeahead({
+        items: 20,
         source: function (query, process) {
-            fetchGotoList(currentProject, query, function (json) {
-                if (typeof json.options == 'undefined') {
-                    return false;
+            console.info(query, lastQuery, nodesSlice, modelsSlice, modulesSlice);
+            if (lastQuery != query) {
+                nodesSlice = 0;
+                modulesSlice = 0;
+                modelsSlice = 0;
+            }
+            console.info(query, lastQuery, nodesSlice, modelsSlice, modulesSlice);
+            $.ajax({
+                url: "/rest/p/" + currentProject + "/goto.json",
+                type: 'get',
+                data: {query: query, nodesSlice: nodesSlice, modelsSlice: modelsSlice, modulesSlice: modulesSlice},
+                dataType: 'json',
+                success: function (json) {
+                    if (typeof json.options == 'undefined') {
+                        return false;
+                    }
+
+                    nameFetcher.updateWithCompletionResult(json.options);
+
+                    return process(json.options.map(function (item) {
+                        return JSON.stringify(item);
+                    }));
                 }
-
-                nameFetcher.updateWithCompletionResult(json.options);
-
-                return process(json.options.map(function (item) {
-                    return JSON.stringify(item);
-                }));
-            })
+            });
         },
         matcher: function (item) {
+            if (JSON.parse(item)["type"].indexOf("fetch") != -1) {
+                return true;
+            }
             return itemPresentation(item).toLowerCase().indexOf(this.query.trim().toLowerCase()) != -1;
         },
         sorter: function (items) {
@@ -99,7 +120,7 @@ $(function () {
                 if (item1_json["type"] == item2_json["type"]) {
                     return itemPresentation(item1).localeCompare(itemPresentation(item2));
                 }
-                var typesOrder = {"node": 1, "model": 2, "module": 3};
+                var typesOrder = {"node": 1, "fetch-nodes": 2, "model": 3, "fetch-models": 4, "module": 5, "fetch-modules": 6};
                 return typesOrder[item1_json["type"]] - typesOrder[item2_json["type"]];
             });
         },
@@ -107,16 +128,30 @@ $(function () {
             return completionItemTemplate(JSON.parse(item), this.query);
         },
         updater: function (item) {
+            var item_json = JSON.parse(item);
+            if (item_json["type"].indexOf("fetch") != -1) {
+                if (item_json["type"] == "fetch-nodes") {
+                    nodesSlice = item_json["slice"];
+                } else if (item_json["type"] == "fetch-models") {
+                    modelsSlice = item_json["slice"];
+                } else if (item_json["type"] == "fetch-modules") {
+                    modulesSlice = item_json["slice"];
+                }
+                lastQuery = this.query;
+                console.info(item_json);
+                this.lookup("event");
+                return this.query;
+            }
+
             $('#go-to-root input[name="search"]').val(itemPresentation(item));
 
-            item = JSON.parse(item);
-            $('#go-to-root input[name="search-type"]').val(item["type"]);
-            $('#go-to-root input[name="search-module-id"]').val(item["module-id"]);
-            if (item["type"] == "model" || item["type"] == "node") {
-                $('#go-to-root input[name="search-model-id"]').val(item["model-id"]);
+            $('#go-to-root input[name="search-type"]').val(item_json["type"]);
+            $('#go-to-root input[name="search-module-id"]').val(item_json["module-id"]);
+            if (item_json["type"] == "model" || item_json["type"] == "node") {
+                $('#go-to-root input[name="search-model-id"]').val(item_json["model-id"]);
             }
-            if (item["type"] == "node") {
-                $('#go-to-root input[name="search-node-id"]').val(item["node-id"]);
+            if (item_json["type"] == "node") {
+                $('#go-to-root input[name="search-node-id"]').val(item_json["node-id"]);
             }
 
             $('#go-to-root').submit();

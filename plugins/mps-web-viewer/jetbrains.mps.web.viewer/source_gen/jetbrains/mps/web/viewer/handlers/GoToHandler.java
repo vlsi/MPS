@@ -5,6 +5,9 @@ package jetbrains.mps.web.viewer.handlers;
 import jetbrains.mps.web.core.server.Handler;
 import jetbrains.mps.project.Project;
 import com.sun.net.httpserver.HttpExchange;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.regex.MatchResult;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -27,17 +30,41 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class GoToHandler implements Handler {
   private static final String QUERY_PARAM_NAME = "?query=";
+  private static final int ITEMS_COUNT = 4;
 
 
   public void handle(String requestUrl, final Project project, HttpExchange exchange) throws Exception {
-    final String query = trim_g7q2vn_a0a0a2(requestUrl.substring(requestUrl.indexOf(QUERY_PARAM_NAME) + QUERY_PARAM_NAME.length()));
+    Pattern pattern = Pattern.compile(".*\\?query=(.+)&nodesSlice=(\\d+)&modelsSlice=(\\d+)&modulesSlice=(\\d+)");
+    Matcher matcher = pattern.matcher(requestUrl);
+    if (!(matcher.matches())) {
+      return;
+    }
+    MatchResult toMatchResult = matcher.toMatchResult();
+    final String query = toMatchResult.group(1);
+    final int nodesSlice = Integer.parseInt(toMatchResult.group(2));
+    final int modelsSlice = Integer.parseInt(toMatchResult.group(3));
+    final int modulesSlice = Integer.parseInt(toMatchResult.group(4));
 
     final List<String> items = ListSequence.fromList(new ArrayList<String>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ListSequence.fromList(items).addSequence(Sequence.fromIterable(getModulesJson(project, query)));
-        ListSequence.fromList(items).addSequence(Sequence.fromIterable(getModelsJson(project, query)));
-        ListSequence.fromList(items).addSequence(Sequence.fromIterable(getNodesJson(project, query)));
+        Iterable<String> modules = getModulesJson(project, query);
+        Iterable<String> models = getModelsJson(project, query);
+        Iterable<String> nodes = getNodesJson(project, query);
+
+        ListSequence.fromList(items).addSequence(Sequence.fromIterable(modules).page(modulesSlice * ITEMS_COUNT, (modulesSlice + 1) * ITEMS_COUNT));
+        if (Sequence.fromIterable(modules).take(ITEMS_COUNT + 1).count() > ITEMS_COUNT) {
+          ListSequence.fromList(items).addElement(MpsJsonUtil.dumpFetchMore("modules", modulesSlice + 1).toString());
+        }
+        ListSequence.fromList(items).addSequence(Sequence.fromIterable(models).page(modelsSlice * ITEMS_COUNT, (modelsSlice + 1) * ITEMS_COUNT));
+        if (Sequence.fromIterable(models).take(ITEMS_COUNT + 1).count() > ITEMS_COUNT) {
+          ListSequence.fromList(items).addElement(MpsJsonUtil.dumpFetchMore("models", modelsSlice + 1).toString());
+        }
+        ListSequence.fromList(items).addSequence(Sequence.fromIterable(nodes).page(nodesSlice * ITEMS_COUNT, (nodesSlice + 1) * ITEMS_COUNT));
+        if (Sequence.fromIterable(nodes).take(ITEMS_COUNT + 1).count() > ITEMS_COUNT) {
+          ListSequence.fromList(items).addElement(MpsJsonUtil.dumpFetchMore("nodes", nodesSlice + 1).toString());
+        }
+
       }
     });
 
@@ -90,12 +117,5 @@ public class GoToHandler implements Handler {
         return MpsJsonUtil.dumpNodeReference(project, node).toString();
       }
     });
-  }
-
-  public static String trim_g7q2vn_a0a0a2(String str) {
-    return (str == null ?
-      null :
-      str.trim()
-    );
   }
 }
