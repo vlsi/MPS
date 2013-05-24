@@ -666,115 +666,115 @@
     <nodeInfo nodeId="6886375483014843077" fileName="ProjectStructureHandler.java" startLine="71" startPosition="44" endLine="72" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6886375483014876321" fileName="ProjectStructureHandler.java" startLine="72" startPosition="47" endLine="73" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6886375483014876329" fileName="ProjectStructureHandler.java" startLine="73" startPosition="48" endLine="74" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6886375483014852045" fileName="ProjectStructureHandler.java" startLine="74" startPosition="63" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5037960186198502974" fileName="ProjectStructureHandler.java" startLine="78" startPosition="84" endLine="79" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5037960186198309963" fileName="ProjectStructureHandler.java" startLine="79" startPosition="47" endLine="80" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5037960186197840444" fileName="ProjectStructureHandler.java" startLine="81" startPosition="68" endLine="82" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5037960186198161555" fileName="ProjectStructureHandler.java" startLine="82" startPosition="54" endLine="83" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5037960186198278315" fileName="ProjectStructureHandler.java" startLine="83" startPosition="61" endLine="84" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6886375483015416770" fileName="ProjectStructureHandler.java" startLine="84" startPosition="72" endLine="85" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5037960186198623985" fileName="ProjectStructureHandler.java" startLine="86" startPosition="44" endLine="87" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5037960186198368511" fileName="ProjectStructureHandler.java" startLine="88" startPosition="7" endLine="89" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5037960186197907787" fileName="ProjectStructureHandler.java" startLine="90" startPosition="5" endLine="91" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5037960186196378154" fileName="ProjectStructureHandler.java" startLine="91" startPosition="52" endLine="92" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7976131990198546347" fileName="ProjectStructureHandler.java" startLine="95" startPosition="69" endLine="96" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7976131990198619963" fileName="ProjectStructureHandler.java" startLine="97" startPosition="76" endLine="98" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7976131990198642826" fileName="ProjectStructureHandler.java" startLine="99" startPosition="5" endLine="100" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7976131990198925489" fileName="ProjectStructureHandler.java" startLine="100" startPosition="47" endLine="101" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5037960186196686834" fileName="ProjectStructureHandler.java" startLine="101" startPosition="137" endLine="102" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7976131990199061387" fileName="ProjectStructureHandler.java" startLine="105" startPosition="86" endLine="106" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7976131990199061391" fileName="ProjectStructureHandler.java" startLine="106" startPosition="47" endLine="107" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7976131990199061399" fileName="ProjectStructureHandler.java" startLine="107" startPosition="50" endLine="108" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7976131990199199627" fileName="ProjectStructureHandler.java" startLine="108" startPosition="61" endLine="109" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7976131990198905246" fileName="ProjectStructureHandler.java" startLine="110" startPosition="48" endLine="111" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7976131990198905250" fileName="ProjectStructureHandler.java" startLine="111" startPosition="47" endLine="112" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7976131990198905258" fileName="ProjectStructureHandler.java" startLine="112" startPosition="56" endLine="113" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5037960186197383374" fileName="ProjectStructureHandler.java" startLine="113" startPosition="67" endLine="114" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7976131990198905271" fileName="ProjectStructureHandler.java" startLine="114" startPosition="127" endLine="115" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7976131990199061405" fileName="ProjectStructureHandler.java" startLine="116" startPosition="5" endLine="117" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7976131990199085457" fileName="ProjectStructureHandler.java" startLine="117" startPosition="46" endLine="118" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7976131990198653132" fileName="ProjectStructureHandler.java" startLine="121" startPosition="102" endLine="122" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7976131990198864154" fileName="ProjectStructureHandler.java" startLine="123" startPosition="60" endLine="124" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7976131990198837553" fileName="ProjectStructureHandler.java" startLine="125" startPosition="5" endLine="126" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6886375483014165263" fileName="ProjectStructureHandler.java" startLine="129" startPosition="116" endLine="130" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6886375483014154492" fileName="ProjectStructureHandler.java" startLine="133" startPosition="13" endLine="134" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6886375483014303692" fileName="ProjectStructureHandler.java" startLine="135" startPosition="31" endLine="136" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6886375483014458188" fileName="ProjectStructureHandler.java" startLine="140" startPosition="24" endLine="141" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4671236541323705065" fileName="ProjectStructureHandler.java" startLine="74" startPosition="63" endLine="75" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671236541323853954" fileName="ProjectStructureHandler.java" startLine="75" startPosition="63" endLine="76" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671236541323854005" fileName="ProjectStructureHandler.java" startLine="76" startPosition="76" endLine="77" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6886375483014852045" fileName="ProjectStructureHandler.java" startLine="77" startPosition="90" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5037960186198502974" fileName="ProjectStructureHandler.java" startLine="81" startPosition="84" endLine="82" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5037960186198309963" fileName="ProjectStructureHandler.java" startLine="82" startPosition="47" endLine="83" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5037960186197840444" fileName="ProjectStructureHandler.java" startLine="84" startPosition="68" endLine="85" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5037960186198161555" fileName="ProjectStructureHandler.java" startLine="85" startPosition="54" endLine="86" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5037960186198278315" fileName="ProjectStructureHandler.java" startLine="86" startPosition="61" endLine="87" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6886375483015416770" fileName="ProjectStructureHandler.java" startLine="87" startPosition="72" endLine="88" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5037960186198623985" fileName="ProjectStructureHandler.java" startLine="89" startPosition="44" endLine="90" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5037960186198368511" fileName="ProjectStructureHandler.java" startLine="91" startPosition="7" endLine="92" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5037960186197907787" fileName="ProjectStructureHandler.java" startLine="93" startPosition="5" endLine="94" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5037960186196378154" fileName="ProjectStructureHandler.java" startLine="94" startPosition="52" endLine="95" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7976131990198546347" fileName="ProjectStructureHandler.java" startLine="98" startPosition="69" endLine="99" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7976131990198619963" fileName="ProjectStructureHandler.java" startLine="100" startPosition="76" endLine="101" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7976131990198642826" fileName="ProjectStructureHandler.java" startLine="102" startPosition="5" endLine="103" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7976131990198925489" fileName="ProjectStructureHandler.java" startLine="103" startPosition="47" endLine="104" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5037960186196686834" fileName="ProjectStructureHandler.java" startLine="104" startPosition="137" endLine="105" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7976131990199061387" fileName="ProjectStructureHandler.java" startLine="108" startPosition="86" endLine="109" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7976131990199061391" fileName="ProjectStructureHandler.java" startLine="109" startPosition="47" endLine="110" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7976131990199061399" fileName="ProjectStructureHandler.java" startLine="110" startPosition="50" endLine="111" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7976131990199199627" fileName="ProjectStructureHandler.java" startLine="111" startPosition="61" endLine="112" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7976131990198905246" fileName="ProjectStructureHandler.java" startLine="113" startPosition="48" endLine="114" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7976131990198905250" fileName="ProjectStructureHandler.java" startLine="114" startPosition="47" endLine="115" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7976131990198905258" fileName="ProjectStructureHandler.java" startLine="115" startPosition="56" endLine="116" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5037960186197383374" fileName="ProjectStructureHandler.java" startLine="116" startPosition="67" endLine="117" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7976131990198905271" fileName="ProjectStructureHandler.java" startLine="117" startPosition="127" endLine="118" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7976131990199061405" fileName="ProjectStructureHandler.java" startLine="119" startPosition="5" endLine="120" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7976131990199085457" fileName="ProjectStructureHandler.java" startLine="120" startPosition="46" endLine="121" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7976131990198653132" fileName="ProjectStructureHandler.java" startLine="124" startPosition="102" endLine="125" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7976131990198864154" fileName="ProjectStructureHandler.java" startLine="126" startPosition="60" endLine="127" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7976131990198837553" fileName="ProjectStructureHandler.java" startLine="128" startPosition="5" endLine="129" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6886375483014165263" fileName="ProjectStructureHandler.java" startLine="132" startPosition="116" endLine="133" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6886375483014154492" fileName="ProjectStructureHandler.java" startLine="136" startPosition="13" endLine="137" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6886375483014303692" fileName="ProjectStructureHandler.java" startLine="138" startPosition="31" endLine="139" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6886375483014458188" fileName="ProjectStructureHandler.java" startLine="143" startPosition="24" endLine="144" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="6886375483014677316" fileName="ProjectStructureHandler.java" startLine="63" startPosition="82" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6886375483015488594" fileName="ProjectStructureHandler.java" startLine="85" startPosition="62" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7976131990198533734" fileName="ProjectStructureHandler.java" startLine="96" startPosition="69" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7976131990198652513" fileName="ProjectStructureHandler.java" startLine="122" startPosition="85" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6886375483014428176" fileName="ProjectStructureHandler.java" startLine="139" startPosition="7" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6886375483015488594" fileName="ProjectStructureHandler.java" startLine="88" startPosition="62" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7976131990198533734" fileName="ProjectStructureHandler.java" startLine="99" startPosition="69" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7976131990198652513" fileName="ProjectStructureHandler.java" startLine="125" startPosition="85" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6886375483014428176" fileName="ProjectStructureHandler.java" startLine="142" startPosition="7" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5037960186196422664" fileName="ProjectStructureHandler.java" startLine="31" startPosition="58" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6886375483013624785" fileName="ProjectStructureHandler.java" startLine="39" startPosition="77" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5037960186199125727" fileName="ProjectStructureHandler.java" startLine="50" startPosition="69" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6886375483014266020" fileName="ProjectStructureHandler.java" startLine="132" startPosition="25" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6886375483014582234" fileName="ProjectStructureHandler.java" startLine="71" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/web/JsonBuilder;" />
-    <nodeInfo nodeId="7976131990198855420" fileName="ProjectStructureHandler.java" startLine="109" startPosition="128" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7976131990198646252" fileName="ProjectStructureHandler.java" startLine="121" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpSubfolders#(Ljetbrains/mps/web/viewer/handlers/VirtualFolder;Ljetbrains/mps/project/StandaloneMPSProject;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="6886375483014154139" fileName="ProjectStructureHandler.java" startLine="132" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6886375483014266020" fileName="ProjectStructureHandler.java" startLine="135" startPosition="25" endLine="140" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7976131990198855420" fileName="ProjectStructureHandler.java" startLine="112" startPosition="128" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7976131990198646252" fileName="ProjectStructureHandler.java" startLine="124" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpSubfolders#(Ljetbrains/mps/web/viewer/handlers/VirtualFolder;Ljetbrains/mps/project/StandaloneMPSProject;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="6886375483014154139" fileName="ProjectStructureHandler.java" startLine="135" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="5037960186199206816" fileName="ProjectStructureHandler.java" startLine="61" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpModelStructure#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5037960186196516258" fileName="ProjectStructureHandler.java" startLine="95" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpProjectStructure#(Ljetbrains/mps/project/StandaloneMPSProject;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6886375483014064108" fileName="ProjectStructureHandler.java" startLine="130" startPosition="49" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5037960186198081975" fileName="ProjectStructureHandler.java" startLine="80" startPosition="85" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6886375483014582234" fileName="ProjectStructureHandler.java" startLine="71" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/web/JsonBuilder;" />
+    <nodeInfo nodeId="5037960186196516258" fileName="ProjectStructureHandler.java" startLine="98" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpProjectStructure#(Ljetbrains/mps/project/StandaloneMPSProject;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6886375483014064108" fileName="ProjectStructureHandler.java" startLine="133" startPosition="49" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5037960186198081975" fileName="ProjectStructureHandler.java" startLine="83" startPosition="85" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5037960186197116659" fileName="ProjectStructureHandler.java" startLine="35" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5037960186197202116" fileName="ProjectStructureHandler.java" startLine="46" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7976131990199039154" fileName="ProjectStructureHandler.java" startLine="105" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpFolder#(Ljetbrains/mps/web/viewer/handlers/VirtualFolder;Ljetbrains/mps/project/StandaloneMPSProject;)Ljetbrains/mps/web/JsonBuilder;" />
-    <nodeInfo nodeId="6886375483014042560" fileName="ProjectStructureHandler.java" startLine="129" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
-    <nodeInfo nodeId="5037960186196319969" fileName="ProjectStructureHandler.java" startLine="78" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpModuleStructure#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/project/StandaloneMPSProject;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7976131990199039154" fileName="ProjectStructureHandler.java" startLine="108" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpFolder#(Ljetbrains/mps/web/viewer/handlers/VirtualFolder;Ljetbrains/mps/project/StandaloneMPSProject;)Ljetbrains/mps/web/JsonBuilder;" />
+    <nodeInfo nodeId="6886375483014042560" fileName="ProjectStructureHandler.java" startLine="132" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
+    <nodeInfo nodeId="5037960186196319969" fileName="ProjectStructureHandler.java" startLine="81" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dumpModuleStructure#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/project/StandaloneMPSProject;)Ljava/lang/String;" />
     <nodeInfo nodeId="7976131990197880469" fileName="ProjectStructureHandler.java" startLine="29" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleInRead#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
     <scopeInfo nodeId="6886375483014677322" fileName="ProjectStructureHandler.java" startLine="64" startPosition="68" endLine="65" endPosition="62" />
-    <scopeInfo nodeId="6886375483015488597" fileName="ProjectStructureHandler.java" startLine="86" startPosition="44" endLine="87" endPosition="118" />
-    <scopeInfo nodeId="7976131990198533740" fileName="ProjectStructureHandler.java" startLine="97" startPosition="76" endLine="98" endPosition="87" />
-    <scopeInfo nodeId="7976131990198652514" fileName="ProjectStructureHandler.java" startLine="123" startPosition="60" endLine="124" endPosition="81" />
-    <scopeInfo nodeId="6886375483014266022" fileName="ProjectStructureHandler.java" startLine="133" startPosition="13" endLine="134" endPosition="54" />
-    <scopeInfo nodeId="6886375483014266023" fileName="ProjectStructureHandler.java" startLine="135" startPosition="0" endLine="136" endPosition="20">
+    <scopeInfo nodeId="6886375483015488597" fileName="ProjectStructureHandler.java" startLine="89" startPosition="44" endLine="90" endPosition="118" />
+    <scopeInfo nodeId="7976131990198533740" fileName="ProjectStructureHandler.java" startLine="100" startPosition="76" endLine="101" endPosition="87" />
+    <scopeInfo nodeId="7976131990198652514" fileName="ProjectStructureHandler.java" startLine="126" startPosition="60" endLine="127" endPosition="81" />
+    <scopeInfo nodeId="6886375483014266022" fileName="ProjectStructureHandler.java" startLine="136" startPosition="13" endLine="137" endPosition="54" />
+    <scopeInfo nodeId="6886375483014266023" fileName="ProjectStructureHandler.java" startLine="138" startPosition="0" endLine="139" endPosition="20">
       <varInfo nodeId="6886375483014266025" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6886375483014266029" fileName="ProjectStructureHandler.java" startLine="135" startPosition="31" endLine="136" endPosition="20" />
-    <scopeInfo nodeId="6886375483014428179" fileName="ProjectStructureHandler.java" startLine="140" startPosition="24" endLine="141" endPosition="18" />
+    <scopeInfo nodeId="6886375483014266029" fileName="ProjectStructureHandler.java" startLine="138" startPosition="31" endLine="139" endPosition="20" />
+    <scopeInfo nodeId="6886375483014428179" fileName="ProjectStructureHandler.java" startLine="143" startPosition="24" endLine="144" endPosition="18" />
     <scopeInfo nodeId="5037960186196422667" fileName="ProjectStructureHandler.java" startLine="32" startPosition="51" endLine="34" endPosition="13" />
     <scopeInfo nodeId="6886375483013624788" fileName="ProjectStructureHandler.java" startLine="40" startPosition="27" endLine="42" endPosition="15" />
     <scopeInfo nodeId="5037960186199125730" fileName="ProjectStructureHandler.java" startLine="51" startPosition="26" endLine="53" endPosition="15" />
     <scopeInfo nodeId="6886375483014677316" fileName="ProjectStructureHandler.java" startLine="63" startPosition="82" endLine="66" endPosition="5">
       <varInfo nodeId="6886375483014677318" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7976131990198533734" fileName="ProjectStructureHandler.java" startLine="96" startPosition="69" endLine="99" endPosition="5">
+    <scopeInfo nodeId="7976131990198533734" fileName="ProjectStructureHandler.java" startLine="99" startPosition="69" endLine="102" endPosition="5">
       <varInfo nodeId="7976131990198533736" varName="nextModule" />
     </scopeInfo>
-    <scopeInfo nodeId="7976131990198652513" fileName="ProjectStructureHandler.java" startLine="122" startPosition="85" endLine="125" endPosition="5">
+    <scopeInfo nodeId="7976131990198652513" fileName="ProjectStructureHandler.java" startLine="125" startPosition="85" endLine="128" endPosition="5">
       <varInfo nodeId="7976131990198652517" varName="subfolder" />
     </scopeInfo>
-    <scopeInfo nodeId="6886375483014582238" fileName="ProjectStructureHandler.java" startLine="71" startPosition="44" endLine="75" endPosition="19">
-      <varInfo nodeId="6886375483014843078" varName="builder" />
-    </scopeInfo>
-    <scopeInfo nodeId="7976131990198855421" fileName="ProjectStructureHandler.java" startLine="110" startPosition="48" endLine="115" endPosition="56">
+    <scopeInfo nodeId="7976131990198855421" fileName="ProjectStructureHandler.java" startLine="113" startPosition="48" endLine="118" endPosition="56">
       <varInfo nodeId="7976131990198905247" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="7976131990198646256" fileName="ProjectStructureHandler.java" startLine="121" startPosition="102" endLine="126" endPosition="20">
+    <scopeInfo nodeId="7976131990198646256" fileName="ProjectStructureHandler.java" startLine="124" startPosition="102" endLine="129" endPosition="20">
       <varInfo nodeId="7976131990198653135" varName="children" />
     </scopeInfo>
-    <scopeInfo nodeId="6886375483014154143" fileName="ProjectStructureHandler.java" startLine="132" startPosition="25" endLine="137" endPosition="9" />
-    <scopeInfo nodeId="6886375483014582234" fileName="ProjectStructureHandler.java" startLine="71" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="6886375483014758023" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="6886375483014154143" fileName="ProjectStructureHandler.java" startLine="135" startPosition="25" endLine="140" endPosition="9" />
     <scopeInfo nodeId="5037960186199206820" fileName="ProjectStructureHandler.java" startLine="61" startPosition="51" endLine="68" endPosition="30">
       <varInfo nodeId="5037960186199319375" varName="builder" />
       <varInfo nodeId="5037960186199335317" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5037960186196516262" fileName="ProjectStructureHandler.java" startLine="95" startPosition="69" endLine="102" endPosition="30">
+    <scopeInfo nodeId="6886375483014582238" fileName="ProjectStructureHandler.java" startLine="71" startPosition="44" endLine="78" endPosition="19">
+      <varInfo nodeId="6886375483014843078" varName="builder" />
+    </scopeInfo>
+    <scopeInfo nodeId="5037960186196516262" fileName="ProjectStructureHandler.java" startLine="98" startPosition="69" endLine="105" endPosition="30">
       <varInfo nodeId="7976131990198642827" varName="builder" />
       <varInfo nodeId="7976131990198546348" varName="projectRoot" />
     </scopeInfo>
-    <scopeInfo nodeId="7976131990198855420" fileName="ProjectStructureHandler.java" startLine="109" startPosition="128" endLine="116" endPosition="5">
+    <scopeInfo nodeId="7976131990198855420" fileName="ProjectStructureHandler.java" startLine="112" startPosition="128" endLine="119" endPosition="5">
       <varInfo nodeId="7976131990198855424" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="7976131990198646252" fileName="ProjectStructureHandler.java" startLine="121" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="7976131990198646252" fileName="ProjectStructureHandler.java" startLine="124" startPosition="0" endLine="131" endPosition="0">
       <varInfo nodeId="7976131990198646811" varName="folder" />
       <varInfo nodeId="5037960186197539310" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6886375483014154139" fileName="ProjectStructureHandler.java" startLine="132" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="5037960186198081981" fileName="ProjectStructureHandler.java" startLine="81" startPosition="68" endLine="89" endPosition="63">
+    <scopeInfo nodeId="6886375483014154139" fileName="ProjectStructureHandler.java" startLine="135" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="5037960186198081981" fileName="ProjectStructureHandler.java" startLine="84" startPosition="68" endLine="92" endPosition="63">
       <varInfo nodeId="5037960186197840445" varName="modelBuilder" />
       <varInfo nodeId="6886375483015416771" varName="modelReference" />
     </scopeInfo>
@@ -791,33 +791,36 @@
     <scopeInfo nodeId="5037960186199206816" fileName="ProjectStructureHandler.java" startLine="61" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="5037960186199267860" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="5037960186196516258" fileName="ProjectStructureHandler.java" startLine="95" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="6886375483014582234" fileName="ProjectStructureHandler.java" startLine="71" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="6886375483014758023" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5037960186196516258" fileName="ProjectStructureHandler.java" startLine="98" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="5037960186196601286" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5037960186198081975" fileName="ProjectStructureHandler.java" startLine="80" startPosition="85" endLine="90" endPosition="5">
+    <scopeInfo nodeId="5037960186198081975" fileName="ProjectStructureHandler.java" startLine="83" startPosition="85" endLine="93" endPosition="5">
       <varInfo nodeId="5037960186198081977" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="7976131990199039158" fileName="ProjectStructureHandler.java" startLine="105" startPosition="86" endLine="118" endPosition="19">
+    <scopeInfo nodeId="7976131990199039158" fileName="ProjectStructureHandler.java" startLine="108" startPosition="86" endLine="121" endPosition="19">
       <varInfo nodeId="7976131990199061388" varName="builder" />
       <varInfo nodeId="7976131990199199628" varName="children" />
     </scopeInfo>
-    <scopeInfo nodeId="6886375483014042571" fileName="ProjectStructureHandler.java" startLine="129" startPosition="116" endLine="142" endPosition="5">
+    <scopeInfo nodeId="6886375483014042571" fileName="ProjectStructureHandler.java" startLine="132" startPosition="116" endLine="145" endPosition="5">
       <varInfo nodeId="6886375483014165264" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="5037960186196319973" fileName="ProjectStructureHandler.java" startLine="78" startPosition="84" endLine="92" endPosition="30">
+    <scopeInfo nodeId="5037960186196319973" fileName="ProjectStructureHandler.java" startLine="81" startPosition="84" endLine="95" endPosition="30">
       <varInfo nodeId="5037960186198502975" varName="builder" />
       <varInfo nodeId="5037960186198309966" varName="children" />
     </scopeInfo>
-    <scopeInfo nodeId="7976131990199039154" fileName="ProjectStructureHandler.java" startLine="105" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="7976131990199039154" fileName="ProjectStructureHandler.java" startLine="108" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="7976131990199050315" varName="folder" />
       <varInfo nodeId="5037960186197515747" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6886375483014042560" fileName="ProjectStructureHandler.java" startLine="129" startPosition="0" endLine="144" endPosition="0">
+    <scopeInfo nodeId="6886375483014042560" fileName="ProjectStructureHandler.java" startLine="132" startPosition="0" endLine="147" endPosition="0">
       <varInfo nodeId="6886375483014042569" varName="exchange" />
       <varInfo nodeId="6886375483014042567" varName="project" />
       <varInfo nodeId="6886375483014042565" varName="requestUrl" />
     </scopeInfo>
-    <scopeInfo nodeId="5037960186196319969" fileName="ProjectStructureHandler.java" startLine="78" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="5037960186196319969" fileName="ProjectStructureHandler.java" startLine="81" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="5037960186196349680" varName="module" />
       <varInfo nodeId="5037960186198684045" varName="project" />
     </scopeInfo>
@@ -830,8 +833,8 @@
       <varInfo nodeId="7976131990197880476" varName="project" />
       <varInfo nodeId="7976131990197880474" varName="requestUrl" />
     </scopeInfo>
-    <unitInfo nodeId="6886375483014154137" fileName="ProjectStructureHandler.java" startLine="131" startPosition="63" endLine="139" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.ProjectStructureHandler$1" />
-    <unitInfo nodeId="7976131990197880387" fileName="ProjectStructureHandler.java" startLine="23" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.ProjectStructureHandler" />
+    <unitInfo nodeId="6886375483014154137" fileName="ProjectStructureHandler.java" startLine="134" startPosition="63" endLine="142" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.ProjectStructureHandler$1" />
+    <unitInfo nodeId="7976131990197880387" fileName="ProjectStructureHandler.java" startLine="23" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.ProjectStructureHandler" />
   </root>
   <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/7976131990198129069">
     <nodeInfo nodeId="7976131990198129157" fileName="VirtualFolder.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />

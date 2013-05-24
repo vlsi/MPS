@@ -198,7 +198,7 @@ $(function () {
                 span.on("click", treeToggle);
                 li.attr("data-collapsed", collapsed);
             } else {
-                span.append($('<a/>').attr("href", child.link).text(child.name));
+                span.append($('<a/>').attr("href","/#" + currentProject + "/node/" + child["moduleId"] + "/" + child["modelId"] + "/" + child["nodeId"]).text(child.name));
             }
             node.append(li);
         });

@@ -72,6 +72,9 @@ public class ProjectStructureHandler implements Handler {
     JsonBuilder builder = JsonBuilder.object();
     builder.addProperty("name", node.getName());
     builder.addProperty("icon", IconUtil.getIconForNode(node));
+    builder.addProperty("nodeId", node.getNodeId().toString());
+    builder.addProperty("modelId", node.getModel().getModelId().toString());
+    builder.addProperty("moduleId", node.getModel().getModule().getModuleId().toString());
     return builder;
   }
 
