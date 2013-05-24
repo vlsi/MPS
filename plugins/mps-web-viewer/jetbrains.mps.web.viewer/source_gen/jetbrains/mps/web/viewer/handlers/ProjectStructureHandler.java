@@ -12,6 +12,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.web.JsonBuilder;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -55,7 +58,60 @@ public class ProjectStructureHandler implements Handler {
       HttpUtil.doJsonResponse("Model not found: " + modelReferenceString, exchange);
       return;
     }
+    if (processNodeRequest(suffix, project, exchange)) {
+      return;
+    }
+    if (processModelRequest(suffix, project, exchange)) {
+      return;
+    }
+    if (processModuleRequest(suffix, project, exchange)) {
+      return;
+    }
     HttpUtil.doJsonResponse("Invalid suffix: " + suffix, exchange);
+  }
+
+  private boolean processNodeRequest(String path, Project project, HttpExchange exchange) {
+    return false;
+  }
+
+  private boolean processModelRequest(String path, Project project, HttpExchange exchange) {
+    StandaloneMPSProject standaloneProject = (StandaloneMPSProject) project;
+    Pattern p = Pattern.compile("/([^/]*)/([^/]*)");
+    Matcher match = p.matcher(path);
+    if (match.matches()) {
+      ModuleId moduleId = ModuleId.fromString(match.group(1));
+      SModule module = standaloneProject.getRepository().getModule(moduleId);
+      if (module == null) {
+        HttpUtil.doJsonResponse("Module not found: " + match.group(1), exchange);
+        return true;
+      }
+      SModelId smodelId = PersistenceFacade.getInstance().createModelId(match.group(2));
+      SModel model = module.getModel(smodelId);
+      if (model != null) {
+        HttpUtil.doJsonResponse(dumpModelStructure(model), exchange);
+        return true;
+      }
+      HttpUtil.doJsonResponse("Model not found: " + match.group(2), exchange);
+      return true;
+    }
+    return false;
+  }
+
+  private boolean processModuleRequest(String path, Project project, HttpExchange exchange) {
+    StandaloneMPSProject standaloneProject = (StandaloneMPSProject) project;
+    Pattern p = Pattern.compile("/([^/]*)");
+    Matcher match = p.matcher(path);
+    if (match.matches()) {
+      ModuleId moduleId = ModuleId.fromString(match.group(1));
+      SModule module = standaloneProject.getRepository().getModule(moduleId);
+      if (module != null) {
+        HttpUtil.doJsonResponse(dumpModuleStructure(module, standaloneProject), exchange);
+        return true;
+      }
+      HttpUtil.doJsonResponse("Module not found: " + match.group(1), exchange);
+      return true;
+    }
+    return false;
   }
 
   private String dumpModelStructure(SModel model) {
