@@ -43,9 +43,7 @@ public class MpsHttpServer implements ApplicationComponent {
       String requestMethod = exchange.getRequestMethod();
       if (requestMethod.equalsIgnoreCase("GET")) {
         String uri = exchange.getRequestURI().toString();
-        if (LOG.isInfoEnabled()) {
-          LOG.info("was given uri: " + uri);
-        }
+        long beginTime = System.currentTimeMillis();
         try {
           if (uri.startsWith("/rest/projects.json")) {
             handleProjectsListRequest(exchange);
@@ -63,6 +61,10 @@ public class MpsHttpServer implements ApplicationComponent {
           e.printStackTrace(printer);
           printer.flush();
           HttpUtil.doResponse(writer.toString(), "text/plain", 500, exchange);
+        } finally {
+          if (LOG.isInfoEnabled()) {
+            LOG.info("processing time for " + uri + ": " + (System.currentTimeMillis() - beginTime) / 1000.0 + "s");
+          }
         }
       }
     }
@@ -126,7 +128,6 @@ public class MpsHttpServer implements ApplicationComponent {
       if (uri.contains("?")) {
         uri = uri.substring(0, uri.indexOf("?"));
       }
-      exchange.getResponseHeaders().set("Cache-Control", "max-age=300");
       HttpUtil.doResponse(new File(htmlFolder, uri.replace("/", File.separator)), exchange);
     }
   };

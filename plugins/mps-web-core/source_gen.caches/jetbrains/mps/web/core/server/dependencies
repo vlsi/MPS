@@ -35,6 +35,7 @@
     <classNode dependClassName="java.io.StringWriter" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.net.InetSocketAddress" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
