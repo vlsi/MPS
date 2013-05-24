@@ -18,7 +18,6 @@ import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.Collections;
-import org.apache.log4j.Priority;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -27,12 +26,11 @@ import java.util.Iterator;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NodeToHtmlHandler implements Handler {
   public void handle(String requestUrl, final Project project, HttpExchange exchange) throws Exception {
@@ -60,9 +58,6 @@ public class NodeToHtmlHandler implements Handler {
     EditorContext context = new EditorContext(component, node.getModel(), project.getRepository());
     jetbrains.mps.openapi.editor.cells.EditorCell cell = context.createRootCell(node, Collections.<SModelEvent>emptyList());
     String htmlForCell = getHtmlForCell(cell);
-    if (LOG.isEnabledFor(Priority.ERROR)) {
-      LOG.error(htmlForCell);
-    }
     return htmlForCell;
   }
 
@@ -80,7 +75,11 @@ public class NodeToHtmlHandler implements Handler {
         builder.append(getHtmlForCell(child)).append('\n');
       }
     } else if (cell instanceof EditorCell_Label) {
-      builder.append(((EditorCell_Label) cell).getText());
+      String text = ((EditorCell_Label) cell).getText();
+      builder.append(((text == null || text.length() == 0) ?
+        "&nbsp;" :
+        text
+      ));
     }
     appendClosingDiv(builder);
     return builder.toString();
@@ -256,7 +255,7 @@ public class NodeToHtmlHandler implements Handler {
   private void appendOpenDiv(StringBuilder builder, jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     StringBuilder div = new StringBuilder("<div");
     addClasses(cell, div);
-    addColor(cell, div);
+    addTextAttributes(cell, div);
     addTargetNodeId(cell, div);
     div.append(">");
     builder.append(div);
@@ -275,14 +274,36 @@ public class NodeToHtmlHandler implements Handler {
     }
   }
 
-  private void addColor(jetbrains.mps.openapi.editor.cells.EditorCell cell, StringBuilder div) {
+  private void addTextAttributes(jetbrains.mps.openapi.editor.cells.EditorCell cell, StringBuilder div) {
     if (cell instanceof EditorCell_Label) {
-      Color color = cell.getStyle().get(StyleAttributes.TEXT_COLOR);
-      String strColor = Integer.toHexString(color.getRGB());
-      strColor = strColor.substring(2, strColor.length());
-      div.append(" style=\"color:#" + strColor + ";\"");
+      Color fg = cell.getStyle().get(StyleAttributes.TEXT_COLOR);
+      Color bg = cell.getStyle().get(StyleAttributes.TEXT_BACKGROUND_COLOR);
+      StringBuilder builder = new StringBuilder();
+      if (fg != null && fg != Color.BLACK) {
+        builder.append("color:#" + colorToHEX(fg) + ";");
+      }
+      if (bg != null && bg != Color.WHITE) {
+        builder.append("background:#" + colorToHEX(bg) + ";");
+      }
+      int font = cell.getStyle().get(StyleAttributes.FONT_STYLE);
+      if ((font & MPSFonts.BOLD) > 0) {
+        builder.append("font-weight: bold;");
+      }
+      if ((font & MPSFonts.ITALIC) > 0) {
+        builder.append("font-style: italic;");
+      }
+
+      if (isNotEmpty_9d126p_a0j0a0r(builder.toString())) {
+        div.append(" style=\"" + builder.toString() + "\"");
+      }
     }
   }
+
+  private String colorToHEX(Color color) {
+    String strColor = Integer.toHexString(color.getRGB());
+    return strColor.substring(2, strColor.length());
+  }
+
 
 
 
@@ -301,6 +322,9 @@ public class NodeToHtmlHandler implements Handler {
       div.append(targetNodeId);
       div.append(targetModelId);
       div.append(targetModuleId);
+    }
+    if (cell.isBig()) {
+      div.append(" data-node = \"" + cell.getSNode().getNodeId() + "\"");
     }
   }
 
@@ -321,6 +345,8 @@ public class NodeToHtmlHandler implements Handler {
     if (getStyleForLast(StyleAttributes.INDENT_LAYOUT_NEW_LINE, collection)) {
       clazz.append("indent-layout-new-line ");
     }
+    clazz.append("n-list ");
+
     return clazz.toString();
   }
 
@@ -352,8 +378,22 @@ public class NodeToHtmlHandler implements Handler {
     if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
       clazz.append("indent-layout-indent ");
     }
+
+    if (cell instanceof EditorCell_Label) {
+      clazz.append("n-leaf ");
+      if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_LEFT))) {
+        clazz.append("n-pleft ");
+      }
+      if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT))) {
+        clazz.append("n-pright ");
+      }
+
+    }
+
     return clazz.toString();
   }
 
-  protected static Logger LOG = LogManager.getLogger(NodeToHtmlHandler.class);
+  public static boolean isNotEmpty_9d126p_a0j0a0r(String str) {
+    return str != null && str.length() > 0;
+  }
 }
