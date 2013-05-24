@@ -7,6 +7,7 @@ import jetbrains.mps.web.core.server.Handler;
 import jetbrains.mps.web.viewer.handlers.ProjectNameHandler;
 import jetbrains.mps.web.viewer.handlers.ProjectVcsRevisionHandler;
 import jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler;
+import jetbrains.mps.web.viewer.handlers.GoToHandler;
 import jetbrains.mps.web.core.server.MpsHttpServer;
 import jetbrains.mps.web.viewer.handlers.ProjectStructureHandler;
 
@@ -15,6 +16,7 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
   private Handler projectStructure;
   private Handler projectRevisionHandler;
   private Handler nodeToHtmlHandler;
+  private Handler goToHandler;
 
   public WebViewerHttpHandlers_CustomApplicationPlugin() {
   }
@@ -24,12 +26,17 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
     WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler = new ProjectNameHandler();
     WebViewerHttpHandlers_CustomApplicationPlugin.this.projectRevisionHandler = new ProjectVcsRevisionHandler();
     WebViewerHttpHandlers_CustomApplicationPlugin.this.nodeToHtmlHandler = new NodeToHtmlHandler();
+    WebViewerHttpHandlers_CustomApplicationPlugin.this.goToHandler = new GoToHandler();
+
+    // todo: add method Handler#getPrefix 
 
     // register handlers 
     MpsHttpServer.getInstance().registerHandler("/name.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectNameHandler);
     MpsHttpServer.getInstance().registerHandler(ProjectStructureHandler.PREFIX, WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure = new ProjectStructureHandler());
     MpsHttpServer.getInstance().registerHandler("/revision.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.projectRevisionHandler);
     MpsHttpServer.getInstance().registerHandler("/view/", WebViewerHttpHandlers_CustomApplicationPlugin.this.nodeToHtmlHandler);
+    // todo: rename /roots to /goto 
+    MpsHttpServer.getInstance().registerHandler("/goto.json", WebViewerHttpHandlers_CustomApplicationPlugin.this.goToHandler);
   }
 
   public void doDispose() {
@@ -37,5 +44,6 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
     MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.projectStructure);
     MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.projectRevisionHandler);
     MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.nodeToHtmlHandler);
+    MpsHttpServer.getInstance().unregisterHandler(WebViewerHttpHandlers_CustomApplicationPlugin.this.goToHandler);
   }
 }

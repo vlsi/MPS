@@ -41,6 +41,7 @@
   <dependency className="jetbrains.mps.web.viewer.plugin.WebViewerHttpHandlers_CustomApplicationPlugin" file="WebViewerHttpHandlers_CustomApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.web.core.server.Handler" />
     <classNode dependClassName="jetbrains.mps.web.core.server.MpsHttpServer" />
+    <classNode dependClassName="jetbrains.mps.web.viewer.handlers.GoToHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ProjectNameHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ProjectStructureHandler" />
