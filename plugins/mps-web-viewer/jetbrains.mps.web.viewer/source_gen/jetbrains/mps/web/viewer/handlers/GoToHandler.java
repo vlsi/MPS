@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.web.JsonBuilder;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Collection;
@@ -25,7 +24,6 @@ import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GoToHandler implements Handler {
   private static final String QUERY_PARAM_NAME = "?query=";
@@ -55,12 +53,7 @@ public class GoToHandler implements Handler {
       }
     }).select(new ISelector<SModule, String>() {
       public String select(SModule module) {
-        JsonBuilder moduleJson = JsonBuilder.object();
-        moduleJson.addProperty("type", "module");
-        moduleJson.addProperty("icon", IconUtil.getIconForModule(module));
-        moduleJson.addProperty("module-name", module.getModuleName());
-        moduleJson.addProperty("module-id", module.getModuleId().toString());
-        return moduleJson.toString();
+        return MpsJsonUtil.dumpModuleReference(module).toString();
       }
     });
   }
@@ -78,14 +71,7 @@ public class GoToHandler implements Handler {
       }
     }).select(new ISelector<SModel, String>() {
       public String select(SModel model) {
-        JsonBuilder modelJson = JsonBuilder.object();
-        modelJson.addProperty("type", "model");
-        modelJson.addProperty("icon", IconUtil.getIconForModel(model));
-        modelJson.addProperty("model-name", model.getModelName());
-        modelJson.addProperty("model-id", model.getModelId().toString());
-        modelJson.addProperty("module-name", model.getModule().getModuleName());
-        modelJson.addProperty("module-id", model.getModule().getModuleId().toString());
-        return modelJson.toString();
+        return MpsJsonUtil.dumpModelReference(model).toString();
       }
     });
   }
@@ -101,18 +87,7 @@ public class GoToHandler implements Handler {
     }).take(100).select(new ISelector<NavigationParticipant.NavigationTarget, String>() {
       public String select(NavigationParticipant.NavigationTarget it) {
         SNode node = it.getNodeReference().resolve(MPSModuleRepository.getInstance());
-
-        JsonBuilder nodeJson = JsonBuilder.object();
-        nodeJson.addProperty("type", "node");
-        nodeJson.addProperty("icon", IconUtil.getIconForNode(node));
-        nodeJson.addProperty("node-name", it.getPresentation());
-        nodeJson.addProperty("node-id", node.getNodeId().toString());
-        SModel model = SNodeOperations.getModel(node);
-        nodeJson.addProperty("model-name", model.getModelName());
-        nodeJson.addProperty("model-id", model.getModelId().toString());
-        nodeJson.addProperty("module-name", model.getModule().getModuleName());
-        nodeJson.addProperty("module-id", model.getModule().getModuleId().toString());
-        return nodeJson.toString();
+        return MpsJsonUtil.dumpNodeReference(node).toString();
       }
     });
   }
