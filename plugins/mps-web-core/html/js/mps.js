@@ -185,7 +185,7 @@ $(function () {
         $.each(children, function (index, child) {
             var span = $('<span/>').css("class", "treeitem");
             var li = $('<li/>').append(span);
-            span.append($('<span class="icon_any"/>').css('background-image', 'url(\'' + child.icon + '\')'));
+            span.append(createIconSpan(child.icon));
             nameFetcher.updateWithCompletionResult([child]);
             if ($.isArray(child.children)) {
                 span.append($('<a/>').text(child[child["type"] + "-name"]));
@@ -284,3 +284,10 @@ $(function () {
 
     Path.listen();
 });
+
+function createIconSpan(icon_json) {
+    var element = $("<span/>");
+    element.addClass("icon_any");
+    element.css('background-image', 'url(\'' + icon_json + '\')')
+    return element;
+}
