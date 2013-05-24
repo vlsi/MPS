@@ -65,6 +65,9 @@ public class NodeToHtmlHandler implements Handler {
 
   public String getHtmlForCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, SNode selectedNode) {
     StringBuilder builder = new StringBuilder();
+    if (cell instanceof EditorCell_Collection && isEmptyCollection((EditorCell_Collection) cell)) {
+      return "";
+    }
     if (cell instanceof EditorCell_Collection && ((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Indent) {
       builder.append(getHtmlForIndent(((EditorCell_Collection) cell), selectedNode));
       return builder.toString();
@@ -83,6 +86,20 @@ public class NodeToHtmlHandler implements Handler {
     }
     appendClosingDiv(builder);
     return builder.toString();
+  }
+
+
+
+  private boolean isEmptyCollection(EditorCell_Collection collection) {
+    for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : collection) {
+      if (!(editorCell instanceof EditorCell_Collection)) {
+        return false;
+      }
+      if (!(isEmptyCollection((EditorCell_Collection) editorCell))) {
+        return false;
+      }
+    }
+    return true;
   }
 
 
@@ -299,8 +316,11 @@ public class NodeToHtmlHandler implements Handler {
       if ((font & MPSFonts.ITALIC) > 0) {
         builder.append("font-style: italic;");
       }
+      if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.DRAW_BORDER))) {
+        builder.append("border: solid 1px;");
+      }
 
-      if (isNotEmpty_9d126p_a0j0a0u(builder.toString())) {
+      if (isNotEmpty_9d126p_a0k0a0w(builder.toString())) {
         div.append(" style=\"" + builder.toString() + "\"");
       }
     }
@@ -394,13 +414,19 @@ public class NodeToHtmlHandler implements Handler {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT))) {
         clazz.append("n-pright ");
       }
-
+      if (isEmpty_9d126p_a0d0f0fb(((EditorCell_Label) cell).getText())) {
+        clazz.append("n-empty");
+      }
     }
 
     return clazz.toString();
   }
 
-  public static boolean isNotEmpty_9d126p_a0j0a0u(String str) {
+  public static boolean isNotEmpty_9d126p_a0k0a0w(String str) {
     return str != null && str.length() > 0;
+  }
+
+  public static boolean isEmpty_9d126p_a0d0f0fb(String str) {
+    return str == null || str.length() == 0;
   }
 }
