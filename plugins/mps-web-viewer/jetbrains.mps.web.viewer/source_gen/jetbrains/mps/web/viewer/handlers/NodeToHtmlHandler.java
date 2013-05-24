@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -55,22 +56,22 @@ public class NodeToHtmlHandler implements Handler {
       }
     };
     EditorContext context = new EditorContext(component, node.getModel(), project.getRepository());
-    jetbrains.mps.openapi.editor.cells.EditorCell cell = context.createRootCell(node, Collections.<SModelEvent>emptyList());
-    return getHtmlForCell(cell);
+    jetbrains.mps.openapi.editor.cells.EditorCell cell = context.createRootCell(SNodeOperations.getContainingRoot(node), Collections.<SModelEvent>emptyList());
+    return getHtmlForCell(cell, node);
   }
 
 
 
-  public String getHtmlForCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public String getHtmlForCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, SNode selectedNode) {
     StringBuilder builder = new StringBuilder();
     if (cell instanceof EditorCell_Collection && ((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Indent) {
-      builder.append(getHtmlForIndent(((EditorCell_Collection) cell)));
+      builder.append(getHtmlForIndent(((EditorCell_Collection) cell), selectedNode));
       return builder.toString();
     }
-    appendOpenDiv(builder, cell);
+    appendOpenDiv(builder, cell, selectedNode);
     if (cell instanceof EditorCell_Collection) {
       for (jetbrains.mps.openapi.editor.cells.EditorCell child : Sequence.fromIterable(((EditorCell_Collection) cell))) {
-        builder.append(getHtmlForCell(child)).append('\n');
+        builder.append(getHtmlForCell(child, selectedNode)).append('\n');
       }
     } else if (cell instanceof EditorCell_Label) {
       builder.append(((EditorCell_Label) cell).getText());
@@ -116,7 +117,7 @@ public class NodeToHtmlHandler implements Handler {
 
 
 
-  public String getHtmlForIndent(EditorCell_Collection collection) {
+  public String getHtmlForIndent(EditorCell_Collection collection, SNode selectedNode) {
     StringBuilder builder = new StringBuilder();
     jetbrains.mps.openapi.editor.cells.EditorCell startMain;
     jetbrains.mps.openapi.editor.cells.EditorCell startLast;
@@ -127,7 +128,7 @@ public class NodeToHtmlHandler implements Handler {
     }
     startLast = findLastNewLine(collection);
     if (startMain == null) {
-      appendOpenDiv(builder, collection);
+      appendOpenDiv(builder, collection, selectedNode);
       appendClosingDiv(builder);
     }
     Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator = collection.iterator();
@@ -145,7 +146,7 @@ public class NodeToHtmlHandler implements Handler {
         if (currentCell == startMain) {
           break;
         }
-        builder.append(getHtmlForCell(currentCell));
+        builder.append(getHtmlForCell(currentCell, selectedNode));
 
       }
       builder.append("</div>");
@@ -171,7 +172,7 @@ public class NodeToHtmlHandler implements Handler {
 
     builder.append("\">");
     while (current != null && current != startLast) {
-      builder.append(getHtmlForCell(current));
+      builder.append(getHtmlForCell(current, selectedNode));
       current = CellTraversalUtil.getNextSibling(current);
     }
     builder.append("</div>");
@@ -193,7 +194,7 @@ public class NodeToHtmlHandler implements Handler {
 
     builder.append("\">");
     while (current != null) {
-      builder.append(getHtmlForCell(current));
+      builder.append(getHtmlForCell(current, selectedNode));
       current = CellTraversalUtil.getNextSibling(current);
     }
     builder.append("</div>");
@@ -246,21 +247,28 @@ public class NodeToHtmlHandler implements Handler {
 
 
 
-  private void appendOpenDiv(StringBuilder builder, jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  private void appendOpenDiv(StringBuilder builder, jetbrains.mps.openapi.editor.cells.EditorCell cell, SNode selectedNode) {
     StringBuilder div = new StringBuilder("<div");
-    addClasses(cell, div);
+    addClasses(cell, div, selectedNode);
     addColor(cell, div);
     addTargetNodeId(cell, div);
     div.append(">");
     builder.append(div);
   }
 
-  private void addClasses(jetbrains.mps.openapi.editor.cells.EditorCell cell, StringBuilder div) {
+
+
+
+
+  private void addClasses(jetbrains.mps.openapi.editor.cells.EditorCell cell, StringBuilder div, SNode selectedNode) {
     String classes = "";
     if (cell instanceof EditorCell_Collection) {
       classes = classes + getClassesForCollection(((EditorCell_Collection) cell));
     }
     classes += getClassesForCell(cell);
+    if (cell.getSNode().equals(selectedNode) && SNodeOperations.getContainingRoot(selectedNode) != selectedNode) {
+      classes += " selected-cell";
+    }
     if ((classes != null && classes.length() > 0)) {
       div.append(" class = \"");
       div.append(classes);

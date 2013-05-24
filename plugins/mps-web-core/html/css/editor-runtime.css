@@ -36,3 +36,8 @@ div {margin-left: 2px}
 /*div {*/
     /*border: 1px solid black;*/
 /*}*/
+
+div.selected-cell {
+    color: white;
+    background-color: darkcyan;
+}
