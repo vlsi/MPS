@@ -262,6 +262,12 @@ $(function () {
         });
     });
 
+    Path.map("#:projectId/clientNode/:moduleId/:modelId/:rootId").to(function () {
+        setContext(this.params['projectId'], this.params['moduleId'], this.params['modelId'], this.params['rootId']);
+        var content = $('#content');
+        content.html("<h1>TMP</h1> ");
+    });
+
     Path.rescue(function () {
         setContext(null, null, null, null);
         $("#content").text("Something went wrong! URL is not supported.");

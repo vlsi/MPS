@@ -53,6 +53,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
+  <dependency className="jetbrains.mps.web.viewer.handlers.NodeStructureHandler" file="NodeStructureHandler.java">
+    <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode extendsClassName="jetbrains.mps.web.core.server.Handler" />
+  </dependency>
   <dependency className="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler" file="NodeToHtmlHandler.java">
     <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />
     <classNode dependClassName="java.awt.Color" />
