@@ -16,6 +16,7 @@ import jetbrains.mps.web.viewer.handlers.ProjectVcsRevisionHandler;
 import jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler;
 import jetbrains.mps.web.viewer.handlers.GoToHandler;
 import jetbrains.mps.web.viewer.handlers.NodeStructureHandler;
+import jetbrains.mps.web.viewer.handlers.NodeRendererHandler;
 import java.util.Iterator;
 
 public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
@@ -35,6 +36,7 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
     MpsHttpServer.getInstance().registerHandler("/view/", ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new NodeToHtmlHandler()));
     MpsHttpServer.getInstance().registerHandler("/goto.json", ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new GoToHandler()));
     MpsHttpServer.getInstance().registerHandler(NodeStructureHandler.PREFIX, ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new NodeStructureHandler()));
+    MpsHttpServer.getInstance().registerHandler(NodeRendererHandler.PREFIX, ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new NodeRendererHandler()));
 
     WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHelper = new IconHelper();
     WebViewerHttpHandlers_CustomApplicationPlugin.this.iconHelper.init();

@@ -26,8 +26,8 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
   </dependency>
   <dependency className="jetbrains.mps.web.viewer.handlers.GoToHandler" file="GoToHandler.java">
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.NavigationParticipant" />
@@ -50,8 +50,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.MpsJsonUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.GoToNodeIndexer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="java.util.regex.Matcher" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="jetbrains.mps.web.core.server.HttpUtil" />
@@ -122,10 +122,38 @@
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
+  <dependency className="jetbrains.mps.web.viewer.handlers.NodeRendererHandler" file="NodeRendererHandler.java">
+    <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.web.ConceptIdDispatcher" />
+    <classNode dependClassName="jetbrains.mps.web.core.server.HttpUtil" />
+    <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ReflectiveNodeRendererBuilder" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.web.core.server.Handler" />
+  </dependency>
   <dependency className="jetbrains.mps.web.viewer.handlers.NodeStructureHandler" file="NodeStructureHandler.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="jetbrains.mps.web.JsonBuilder" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="jetbrains.mps.web.core.server.HttpUtil" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.web.SnodeToJsonConverter" />
     <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />
     <classNode extendsClassName="jetbrains.mps.web.core.server.Handler" />
   </dependency>
@@ -147,8 +175,8 @@
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.CellToHtmlGenerator" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleAttribute" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellTraversalUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -218,6 +246,27 @@
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.sun.net.httpserver.HttpExchange" />
     <classNode extendsClassName="jetbrains.mps.web.core.server.Handler" />
+  </dependency>
+  <dependency className="jetbrains.mps.web.viewer.handlers.ReflectiveNodeRendererBuilder" file="ReflectiveNodeRendererBuilder.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.DequeSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
+    <classNode dependClassName="jetbrains.mps.web.ConceptIdDispatcher" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SInterfaceConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
   </dependency>
   <dependency className="jetbrains.mps.web.viewer.handlers.VirtualFolder" file="VirtualFolder.java">
     <classNode dependClassName="java.util.ArrayList" />

@@ -21,8 +21,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModuleId;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -33,15 +35,27 @@ import java.util.Set;
  * Date: 5/23/13
  */
 public class SnodeToJsonConverter {
+  private ConceptIdDispatcher myConceptIdDispatcher;
+
   public String convert(SNode node) {
-    JsonBuilder builder = serializeNode(node);
+    JsonBuilder builder = serializeRoot(node);
     return builder.toString();
   }
 
-  public JsonBuilder serializeNode(SNode node) {
+  public JsonBuilder serializeRoot(SNode node) {
+    myConceptIdDispatcher = new ConceptIdDispatcher(node);
+    JsonBuilder builder = serializeNode(node);
+    SModel model = node.getModel();
+    builder.addProperty("modelReference", model.getReference().toString());
+    myConceptIdDispatcher = null;
+    return builder;
+  }
+
+  private JsonBuilder serializeNode(SNode node) {
     JsonBuilder builder = JsonBuilder.object();
     SConcept nodeConcept = node.getConcept();
     builder.addProperty("concept", nodeConcept.getQualifiedName());
+    builder.addProperty("conceptID", myConceptIdDispatcher.getConceptId(nodeConcept));
     builder.addProperty("nodeID", node.getNodeId().toString());
     for (SAbstractConcept nextConcept : getAllSuperConcepts(nodeConcept)) {
       for (SProperty property : nextConcept.getProperties()) {

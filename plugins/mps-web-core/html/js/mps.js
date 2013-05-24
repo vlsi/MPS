@@ -240,8 +240,30 @@ $(function () {
 
     Path.map("#:projectId/clientNode/:moduleId/:modelId/:rootId").to(function () {
         setContext(this.params['projectId'], this.params['moduleId'], this.params['modelId'], this.params['rootId']);
-        var content = $('#content');
-        content.html("<h1>TMP</h1> ");
+        $("#content").text("Content of node " + this.params['rootId'] + " is loading...");
+
+        var urlPrefix = 'rest/p/' + currentProject;
+        var urlSuffix = escape(this.params['modelId']) + "(" + nameFetcher.getModelName(this.params['modelId']) + ")" + "/" + this.params['rootId'];
+        $.ajax({
+            url: urlPrefix + '/renderer/' + urlSuffix,
+            type: 'get',
+            cache: 'true',
+            dataType: 'script',
+            success: function () {
+                $.ajax({
+                    url: urlPrefix + '/node/' + urlSuffix,
+                    type: 'get',
+                    dataType: 'json',
+                    success: function (json) {
+                        return typeof json.conceptID == 'undefined' ? false : (function () {
+                            var content = window.registry['render_' + json.conceptID](json);
+                            $('#content').empty();
+                            $('#content').append(content);
+                        }());
+                    }
+                });
+            }
+        });
     });
 
     Path.rescue(function () {
