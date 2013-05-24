@@ -1,21 +1,10 @@
-var nodesSlice = 0;
-var modulesSlice = 0;
-var modelsSlice = 0;
-var lastQuery = "";
 $('.roots-search').typeahead({
     items: 20,
     source: function (query, process) {
-        console.info(query, lastQuery, nodesSlice, modelsSlice, modulesSlice);
-        if (lastQuery != query) {
-            nodesSlice = 0;
-            modulesSlice = 0;
-            modelsSlice = 0;
-        }
-        console.info(query, lastQuery, nodesSlice, modelsSlice, modulesSlice);
         $.ajax({
             url: "/rest/p/" + currentProject + "/goto.json",
             type: 'get',
-            data: {query: query, nodesSlice: nodesSlice, modelsSlice: modelsSlice, modulesSlice: modulesSlice},
+            data: {query: query},
             dataType: 'json',
             success: function (json) {
                 if (typeof json.options == 'undefined') {
@@ -53,20 +42,6 @@ $('.roots-search').typeahead({
     },
     updater: function (item) {
         var item_json = JSON.parse(item);
-        if (item_json["type"].indexOf("fetch") != -1) {
-            if (item_json["type"] == "fetch-nodes") {
-                nodesSlice = item_json["slice"];
-            } else if (item_json["type"] == "fetch-models") {
-                modelsSlice = item_json["slice"];
-            } else if (item_json["type"] == "fetch-modules") {
-                modulesSlice = item_json["slice"];
-            }
-            lastQuery = this.query;
-            console.info(item_json);
-            this.lookup("event");
-            return this.query;
-        }
-
         $('#go-to-root input[name="search"]').val(itemPresentation(item));
 
         $('#go-to-root input[name="search-type"]').val(item_json["type"]);
