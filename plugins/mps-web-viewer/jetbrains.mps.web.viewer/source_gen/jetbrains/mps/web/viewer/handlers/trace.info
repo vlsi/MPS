@@ -241,6 +241,518 @@
     </scopeInfo>
     <unitInfo nodeId="4671236541324035489" fileName="MpsJsonUtil.java" startLine="14" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.MpsJsonUtil" />
   </root>
+  <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/5700371569146882302">
+    <nodeInfo nodeId="5700371569147315598" fileName="CellToHtmlGenerator.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rootCell" />
+    <nodeInfo nodeId="5700371569147365114" fileName="CellToHtmlGenerator.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="selectedNode" />
+    <nodeInfo nodeId="5700371569147366623" fileName="CellToHtmlGenerator.java" startLine="28" startPosition="71" endLine="29" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5700371569147382203" fileName="CellToHtmlGenerator.java" startLine="29" startPosition="29" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5700371569147500177" fileName="CellToHtmlGenerator.java" startLine="35" startPosition="28" endLine="36" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3656887959594454710" fileName="CellToHtmlGenerator.java" startLine="41" startPosition="50" endLine="42" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3376719102115624195" fileName="CellToHtmlGenerator.java" startLine="43" startPosition="99" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352018073381" fileName="CellToHtmlGenerator.java" startLine="46" startPosition="127" endLine="47" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352025183149" fileName="CellToHtmlGenerator.java" startLine="47" startPosition="85" endLine="48" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3656887959595071508" fileName="CellToHtmlGenerator.java" startLine="49" startPosition="5" endLine="50" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7794845149926097600" fileName="CellToHtmlGenerator.java" startLine="50" startPosition="47" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7998422013324844797" fileName="CellToHtmlGenerator.java" startLine="52" startPosition="43" endLine="53" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3656887959594666336" fileName="CellToHtmlGenerator.java" startLine="55" startPosition="86" endLine="56" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019351339419" fileName="CellToHtmlGenerator.java" startLine="58" startPosition="50" endLine="59" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3656887959595364186" fileName="CellToHtmlGenerator.java" startLine="64" startPosition="5" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3656887959594775898" fileName="CellToHtmlGenerator.java" startLine="65" startPosition="30" endLine="66" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7998422013324844677" fileName="CellToHtmlGenerator.java" startLine="71" startPosition="92" endLine="72" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7998422013324844696" fileName="CellToHtmlGenerator.java" startLine="73" startPosition="109" endLine="74" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7998422013324844702" fileName="CellToHtmlGenerator.java" startLine="74" startPosition="47" endLine="75" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7998422013324844706" fileName="CellToHtmlGenerator.java" startLine="75" startPosition="54" endLine="76" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7998422013324844711" fileName="CellToHtmlGenerator.java" startLine="76" startPosition="29" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7998422013324844712" fileName="CellToHtmlGenerator.java" startLine="77" startPosition="0" endLine="78" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7998422013324844732" fileName="CellToHtmlGenerator.java" startLine="79" startPosition="127" endLine="80" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2533261537000423100" fileName="CellToHtmlGenerator.java" startLine="81" startPosition="53" endLine="82" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2533261537000423098" fileName="CellToHtmlGenerator.java" startLine="82" startPosition="34" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7703435594990937757" fileName="CellToHtmlGenerator.java" startLine="84" startPosition="9" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7998422013324844727" fileName="CellToHtmlGenerator.java" startLine="85" startPosition="0" endLine="86" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7998422013324844738" fileName="CellToHtmlGenerator.java" startLine="86" startPosition="31" endLine="87" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7998422013324844748" fileName="CellToHtmlGenerator.java" startLine="87" startPosition="62" endLine="88" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7998422013324844758" fileName="CellToHtmlGenerator.java" startLine="89" startPosition="7" endLine="90" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7998422013324844762" fileName="CellToHtmlGenerator.java" startLine="90" startPosition="23" endLine="91" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7998422013324844767" fileName="CellToHtmlGenerator.java" startLine="91" startPosition="30" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7998422013324844768" fileName="CellToHtmlGenerator.java" startLine="93" startPosition="5" endLine="94" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3376719102115819984" fileName="CellToHtmlGenerator.java" startLine="101" startPosition="59" endLine="102" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3376719102115930683" fileName="CellToHtmlGenerator.java" startLine="104" startPosition="69" endLine="105" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3376719102115808638" fileName="CellToHtmlGenerator.java" startLine="107" startPosition="5" endLine="108" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352027006918" fileName="CellToHtmlGenerator.java" startLine="113" startPosition="73" endLine="114" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352027100102" fileName="CellToHtmlGenerator.java" startLine="115" startPosition="32" endLine="116" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352026871116" fileName="CellToHtmlGenerator.java" startLine="117" startPosition="75" endLine="118" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352027314537" fileName="CellToHtmlGenerator.java" startLine="121" startPosition="33" endLine="122" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352027361469" fileName="CellToHtmlGenerator.java" startLine="125" startPosition="5" endLine="126" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352027696372" fileName="CellToHtmlGenerator.java" startLine="126" startPosition="34" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1515824352027695673" fileName="CellToHtmlGenerator.java" startLine="130" startPosition="72" endLine="131" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352027695685" fileName="CellToHtmlGenerator.java" startLine="132" startPosition="32" endLine="133" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352027695699" fileName="CellToHtmlGenerator.java" startLine="134" startPosition="72" endLine="135" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352027695714" fileName="CellToHtmlGenerator.java" startLine="138" startPosition="33" endLine="139" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352027695718" fileName="CellToHtmlGenerator.java" startLine="142" startPosition="5" endLine="143" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352026457945" fileName="CellToHtmlGenerator.java" startLine="148" startPosition="89" endLine="149" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352026531846" fileName="CellToHtmlGenerator.java" startLine="149" startPosition="48" endLine="150" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352026569865" fileName="CellToHtmlGenerator.java" startLine="150" startPosition="25" endLine="151" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352026596776" fileName="CellToHtmlGenerator.java" startLine="152" startPosition="34" endLine="153" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352027380455" fileName="CellToHtmlGenerator.java" startLine="154" startPosition="12" endLine="155" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352027777173" fileName="CellToHtmlGenerator.java" startLine="156" startPosition="5" endLine="157" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352027879827" fileName="CellToHtmlGenerator.java" startLine="158" startPosition="28" endLine="159" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352027919671" fileName="CellToHtmlGenerator.java" startLine="159" startPosition="55" endLine="160" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352028076514" fileName="CellToHtmlGenerator.java" startLine="161" startPosition="5" endLine="162" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352028412232" fileName="CellToHtmlGenerator.java" startLine="163" startPosition="46" endLine="164" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352028624485" fileName="CellToHtmlGenerator.java" startLine="164" startPosition="40" endLine="165" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3376719102116132916" fileName="CellToHtmlGenerator.java" startLine="165" startPosition="39" endLine="166" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352028699010" fileName="CellToHtmlGenerator.java" startLine="167" startPosition="76" endLine="168" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352030104384" fileName="CellToHtmlGenerator.java" startLine="169" startPosition="7" endLine="170" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352028729705" fileName="CellToHtmlGenerator.java" startLine="170" startPosition="48" endLine="171" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352028658797" fileName="CellToHtmlGenerator.java" startLine="171" startPosition="28" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1515824352028205380" fileName="CellToHtmlGenerator.java" startLine="173" startPosition="34" endLine="174" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352028293008" fileName="CellToHtmlGenerator.java" startLine="175" startPosition="39" endLine="176" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1515824352028510504" fileName="CellToHtmlGenerator.java" startLine="177" startPosition="9" endLine="178" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352028420247" fileName="CellToHtmlGenerator.java" startLine="179" startPosition="7" endLine="180" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352028837479" fileName="CellToHtmlGenerator.java" startLine="181" startPosition="5" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1515824352029072152" fileName="CellToHtmlGenerator.java" startLine="182" startPosition="0" endLine="183" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352029263734" fileName="CellToHtmlGenerator.java" startLine="183" startPosition="35" endLine="184" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029272527" fileName="CellToHtmlGenerator.java" startLine="184" startPosition="38" endLine="185" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3376719102116165521" fileName="CellToHtmlGenerator.java" startLine="186" startPosition="46" endLine="187" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3376719102116172932" fileName="CellToHtmlGenerator.java" startLine="188" startPosition="12" endLine="189" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029282696" fileName="CellToHtmlGenerator.java" startLine="191" startPosition="74" endLine="192" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6858603581775687529" fileName="CellToHtmlGenerator.java" startLine="194" startPosition="84" endLine="195" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029667005" fileName="CellToHtmlGenerator.java" startLine="197" startPosition="79" endLine="198" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1796284964482554188" fileName="CellToHtmlGenerator.java" startLine="201" startPosition="80" endLine="202" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029648526" fileName="CellToHtmlGenerator.java" startLine="204" startPosition="5" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1515824352029294548" fileName="CellToHtmlGenerator.java" startLine="205" startPosition="0" endLine="206" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029349589" fileName="CellToHtmlGenerator.java" startLine="207" startPosition="53" endLine="208" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029216755" fileName="CellToHtmlGenerator.java" startLine="208" startPosition="46" endLine="209" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029364522" fileName="CellToHtmlGenerator.java" startLine="210" startPosition="5" endLine="211" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352028841001" fileName="CellToHtmlGenerator.java" startLine="211" startPosition="29" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1515824352030520153" fileName="CellToHtmlGenerator.java" startLine="213" startPosition="28" endLine="214" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352029502005" fileName="CellToHtmlGenerator.java" startLine="215" startPosition="5" endLine="216" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029433111" fileName="CellToHtmlGenerator.java" startLine="216" startPosition="24" endLine="217" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029433116" fileName="CellToHtmlGenerator.java" startLine="217" startPosition="38" endLine="218" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3376719102116177068" fileName="CellToHtmlGenerator.java" startLine="218" startPosition="37" endLine="219" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029433129" fileName="CellToHtmlGenerator.java" startLine="220" startPosition="74" endLine="221" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029592669" fileName="CellToHtmlGenerator.java" startLine="223" startPosition="78" endLine="224" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352030177613" fileName="CellToHtmlGenerator.java" startLine="225" startPosition="5" endLine="226" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352030153978" fileName="CellToHtmlGenerator.java" startLine="226" startPosition="49" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1515824352029575128" fileName="CellToHtmlGenerator.java" startLine="227" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1515824352029433134" fileName="CellToHtmlGenerator.java" startLine="228" startPosition="0" endLine="229" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029433144" fileName="CellToHtmlGenerator.java" startLine="230" startPosition="29" endLine="231" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029433139" fileName="CellToHtmlGenerator.java" startLine="231" startPosition="46" endLine="232" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029433150" fileName="CellToHtmlGenerator.java" startLine="233" startPosition="5" endLine="234" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352029432741" fileName="CellToHtmlGenerator.java" startLine="234" startPosition="29" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1515824352028804829" fileName="CellToHtmlGenerator.java" startLine="235" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1515824352028022282" fileName="CellToHtmlGenerator.java" startLine="236" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1515824352027945961" fileName="CellToHtmlGenerator.java" startLine="237" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1515824352027952592" fileName="CellToHtmlGenerator.java" startLine="238" startPosition="0" endLine="239" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352026739009" fileName="CellToHtmlGenerator.java" startLine="239" startPosition="30" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1515824352025553265" fileName="CellToHtmlGenerator.java" startLine="244" startPosition="73" endLine="245" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352025585513" fileName="CellToHtmlGenerator.java" startLine="246" startPosition="5" endLine="247" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352030651500" fileName="CellToHtmlGenerator.java" startLine="248" startPosition="27" endLine="249" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352025943458" fileName="CellToHtmlGenerator.java" startLine="250" startPosition="12" endLine="251" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352026315671" fileName="CellToHtmlGenerator.java" startLine="253" startPosition="38" endLine="254" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352026278123" fileName="CellToHtmlGenerator.java" startLine="255" startPosition="9" endLine="256" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1515824352026367066" fileName="CellToHtmlGenerator.java" startLine="258" startPosition="5" endLine="259" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1796284964482066810" fileName="CellToHtmlGenerator.java" startLine="263" startPosition="27" endLine="264" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352026221337" fileName="CellToHtmlGenerator.java" startLine="266" startPosition="74" endLine="267" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352026221350" fileName="CellToHtmlGenerator.java" startLine="269" startPosition="52" endLine="270" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1515824352026230469" fileName="CellToHtmlGenerator.java" startLine="270" startPosition="76" endLine="271" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352026221360" fileName="CellToHtmlGenerator.java" startLine="272" startPosition="5" endLine="273" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3656887959595311305" fileName="CellToHtmlGenerator.java" startLine="278" startPosition="56" endLine="279" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3656887959595787403" fileName="CellToHtmlGenerator.java" startLine="284" startPosition="90" endLine="285" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4761358399197486417" fileName="CellToHtmlGenerator.java" startLine="285" startPosition="50" endLine="286" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4761358399197452694" fileName="CellToHtmlGenerator.java" startLine="286" startPosition="40" endLine="287" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4761358399199011367" fileName="CellToHtmlGenerator.java" startLine="287" startPosition="33" endLine="288" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3656887959596899028" fileName="CellToHtmlGenerator.java" startLine="288" startPosition="31" endLine="289" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3656887959594911032" fileName="CellToHtmlGenerator.java" startLine="289" startPosition="20" endLine="290" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4761358399197486355" fileName="CellToHtmlGenerator.java" startLine="297" startPosition="83" endLine="298" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4761358399197486364" fileName="CellToHtmlGenerator.java" startLine="299" startPosition="48" endLine="300" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4761358399197486374" fileName="CellToHtmlGenerator.java" startLine="301" startPosition="5" endLine="302" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="663115807303209435" fileName="CellToHtmlGenerator.java" startLine="303" startPosition="114" endLine="304" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4761358399197486384" fileName="CellToHtmlGenerator.java" startLine="306" startPosition="52" endLine="307" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4761358399197486389" fileName="CellToHtmlGenerator.java" startLine="307" startPosition="32" endLine="308" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4761358399197486394" fileName="CellToHtmlGenerator.java" startLine="308" startPosition="26" endLine="309" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4761358399197452644" fileName="CellToHtmlGenerator.java" startLine="314" startPosition="43" endLine="315" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213033019351552344" fileName="CellToHtmlGenerator.java" startLine="315" startPosition="65" endLine="316" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213033019351773597" fileName="CellToHtmlGenerator.java" startLine="316" startPosition="76" endLine="317" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213033019351788876" fileName="CellToHtmlGenerator.java" startLine="318" startPosition="44" endLine="319" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019351844730" fileName="CellToHtmlGenerator.java" startLine="321" startPosition="44" endLine="322" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019352162157" fileName="CellToHtmlGenerator.java" startLine="323" startPosition="7" endLine="324" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213033019353068870" fileName="CellToHtmlGenerator.java" startLine="325" startPosition="39" endLine="326" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019353038447" fileName="CellToHtmlGenerator.java" startLine="328" startPosition="41" endLine="329" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5577184777819182143" fileName="CellToHtmlGenerator.java" startLine="331" startPosition="82" endLine="332" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019353012217" fileName="CellToHtmlGenerator.java" startLine="333" startPosition="7" endLine="334" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4761358399197452670" fileName="CellToHtmlGenerator.java" startLine="335" startPosition="59" endLine="336" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019351967894" fileName="CellToHtmlGenerator.java" startLine="341" startPosition="42" endLine="342" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213033019351764427" fileName="CellToHtmlGenerator.java" startLine="342" startPosition="58" endLine="343" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4761358399197746737" fileName="CellToHtmlGenerator.java" startLine="350" startPosition="43" endLine="351" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3228268613620327589" fileName="CellToHtmlGenerator.java" startLine="352" startPosition="31" endLine="353" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3228268613620327596" fileName="CellToHtmlGenerator.java" startLine="355" startPosition="42" endLine="356" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4761358399198090736" fileName="CellToHtmlGenerator.java" startLine="357" startPosition="7" endLine="358" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4761358399198415901" fileName="CellToHtmlGenerator.java" startLine="358" startPosition="83" endLine="359" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4761358399198432345" fileName="CellToHtmlGenerator.java" startLine="359" startPosition="97" endLine="360" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4761358399198599604" fileName="CellToHtmlGenerator.java" startLine="360" startPosition="112" endLine="361" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4761358399198642107" fileName="CellToHtmlGenerator.java" startLine="361" startPosition="31" endLine="362" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4761358399198642177" fileName="CellToHtmlGenerator.java" startLine="362" startPosition="32" endLine="363" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019353868830" fileName="CellToHtmlGenerator.java" startLine="365" startPosition="23" endLine="366" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3656887959596068477" fileName="CellToHtmlGenerator.java" startLine="372" startPosition="76" endLine="373" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3656887959596078735" fileName="CellToHtmlGenerator.java" startLine="374" startPosition="70" endLine="375" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3656887959596157631" fileName="CellToHtmlGenerator.java" startLine="376" startPosition="75" endLine="377" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3656887959596184859" fileName="CellToHtmlGenerator.java" startLine="378" startPosition="73" endLine="379" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3656887959596233374" fileName="CellToHtmlGenerator.java" startLine="381" startPosition="84" endLine="382" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1796284964484094410" fileName="CellToHtmlGenerator.java" startLine="384" startPosition="78" endLine="385" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019353247775" fileName="CellToHtmlGenerator.java" startLine="386" startPosition="5" endLine="387" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019353198954" fileName="CellToHtmlGenerator.java" startLine="387" startPosition="28" endLine="388" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3656887959596971992" fileName="CellToHtmlGenerator.java" startLine="388" startPosition="0" endLine="389" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1796284964483647978" fileName="CellToHtmlGenerator.java" startLine="395" startPosition="23" endLine="396" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1796284964483588656" fileName="CellToHtmlGenerator.java" startLine="397" startPosition="5" endLine="398" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1796284964483606986" fileName="CellToHtmlGenerator.java" startLine="399" startPosition="17" endLine="400" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1796284964483656810" fileName="CellToHtmlGenerator.java" startLine="402" startPosition="48" endLine="403" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1796284964483766947" fileName="CellToHtmlGenerator.java" startLine="404" startPosition="12" endLine="405" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3656887959595643215" fileName="CellToHtmlGenerator.java" startLine="409" startPosition="53" endLine="410" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3656887959595552450" fileName="CellToHtmlGenerator.java" startLine="411" startPosition="70" endLine="412" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3656887959595705075" fileName="CellToHtmlGenerator.java" startLine="414" startPosition="73" endLine="415" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3656887959596280280" fileName="CellToHtmlGenerator.java" startLine="417" startPosition="68" endLine="418" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019353375386" fileName="CellToHtmlGenerator.java" startLine="419" startPosition="5" endLine="420" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1213033019353268947" fileName="CellToHtmlGenerator.java" startLine="421" startPosition="43" endLine="422" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019353389698" fileName="CellToHtmlGenerator.java" startLine="423" startPosition="87" endLine="424" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019353389668" fileName="CellToHtmlGenerator.java" startLine="426" startPosition="88" endLine="427" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3376719102115250121" fileName="CellToHtmlGenerator.java" startLine="429" startPosition="73" endLine="430" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213033019352162013" fileName="CellToHtmlGenerator.java" startLine="432" startPosition="5" endLine="433" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3656887959596434700" fileName="CellToHtmlGenerator.java" startLine="433" startPosition="0" endLine="434" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213033019351924905" fileName="CellToHtmlGenerator.java" startLine="439" startPosition="64" endLine="440" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3376719102115250102" fileName="CellToHtmlGenerator.java" startLine="443" startPosition="61" endLine="444" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1515824352026750002" fileName="CellToHtmlGenerator.java" startLine="154" startPosition="10" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3376719102116169271" fileName="CellToHtmlGenerator.java" startLine="188" startPosition="10" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1796284964483757271" fileName="CellToHtmlGenerator.java" startLine="404" startPosition="10" endLine="406" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5700371569147053169" fileName="CellToHtmlGenerator.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3376719102115524165" fileName="CellToHtmlGenerator.java" startLine="42" startPosition="48" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3656887959594649742" fileName="CellToHtmlGenerator.java" startLine="54" startPosition="55" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3376719102115728967" fileName="CellToHtmlGenerator.java" startLine="100" startPosition="46" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3376719102115831336" fileName="CellToHtmlGenerator.java" startLine="103" startPosition="7" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352026822250" fileName="CellToHtmlGenerator.java" startLine="116" startPosition="40" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352027547007" fileName="CellToHtmlGenerator.java" startLine="120" startPosition="72" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352027695691" fileName="CellToHtmlGenerator.java" startLine="133" startPosition="40" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352027695709" fileName="CellToHtmlGenerator.java" startLine="137" startPosition="75" endLine="140" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352028699002" fileName="CellToHtmlGenerator.java" startLine="166" startPosition="32" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352028264668" fileName="CellToHtmlGenerator.java" startLine="174" startPosition="49" endLine="177" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352029282688" fileName="CellToHtmlGenerator.java" startLine="190" startPosition="5" endLine="193" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6858603581775687521" fileName="CellToHtmlGenerator.java" startLine="193" startPosition="5" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352029666997" fileName="CellToHtmlGenerator.java" startLine="196" startPosition="5" endLine="199" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1796284964482554180" fileName="CellToHtmlGenerator.java" startLine="200" startPosition="28" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352030431877" fileName="CellToHtmlGenerator.java" startLine="212" startPosition="0" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352029433121" fileName="CellToHtmlGenerator.java" startLine="219" startPosition="34" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352029592661" fileName="CellToHtmlGenerator.java" startLine="222" startPosition="5" endLine="225" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352025516287" fileName="CellToHtmlGenerator.java" startLine="243" startPosition="48" endLine="246" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352026299534" fileName="CellToHtmlGenerator.java" startLine="252" startPosition="34" endLine="255" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1796284964482053987" fileName="CellToHtmlGenerator.java" startLine="262" startPosition="62" endLine="265" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352026221335" fileName="CellToHtmlGenerator.java" startLine="265" startPosition="5" endLine="268" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3656887959595302988" fileName="CellToHtmlGenerator.java" startLine="278" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="appendClosingDiv#(Ljava/lang/StringBuilder;)V" />
+    <nodeInfo nodeId="4761358399197486359" fileName="CellToHtmlGenerator.java" startLine="298" startPosition="24" endLine="301" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="663115807302517993" fileName="CellToHtmlGenerator.java" startLine="302" startPosition="39" endLine="305" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213033019351778135" fileName="CellToHtmlGenerator.java" startLine="317" startPosition="50" endLine="320" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213033019351826011" fileName="CellToHtmlGenerator.java" startLine="320" startPosition="7" endLine="323" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213033019352174969" fileName="CellToHtmlGenerator.java" startLine="324" startPosition="65" endLine="327" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213033019352243565" fileName="CellToHtmlGenerator.java" startLine="327" startPosition="7" endLine="330" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5577184777819105878" fileName="CellToHtmlGenerator.java" startLine="330" startPosition="7" endLine="333" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213033019351882867" fileName="CellToHtmlGenerator.java" startLine="334" startPosition="0" endLine="337" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3228268613620327587" fileName="CellToHtmlGenerator.java" startLine="351" startPosition="67" endLine="354" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3228268613620327594" fileName="CellToHtmlGenerator.java" startLine="354" startPosition="7" endLine="357" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213033019353840535" fileName="CellToHtmlGenerator.java" startLine="364" startPosition="5" endLine="367" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3656887959595248764" fileName="CellToHtmlGenerator.java" startLine="380" startPosition="5" endLine="383" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1796284964483995087" fileName="CellToHtmlGenerator.java" startLine="383" startPosition="5" endLine="386" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1796284964483642134" fileName="CellToHtmlGenerator.java" startLine="394" startPosition="83" endLine="397" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1796284964483235203" fileName="CellToHtmlGenerator.java" startLine="398" startPosition="48" endLine="401" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3656887959595210349" fileName="CellToHtmlGenerator.java" startLine="410" startPosition="46" endLine="413" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3656887959595705067" fileName="CellToHtmlGenerator.java" startLine="413" startPosition="5" endLine="416" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3656887959596280272" fileName="CellToHtmlGenerator.java" startLine="416" startPosition="5" endLine="419" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213033019353297227" fileName="CellToHtmlGenerator.java" startLine="422" startPosition="30" endLine="425" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213033019353375554" fileName="CellToHtmlGenerator.java" startLine="425" startPosition="7" endLine="428" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3376719102115145406" fileName="CellToHtmlGenerator.java" startLine="428" startPosition="7" endLine="431" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213033019351924905" fileName="CellToHtmlGenerator.java" startLine="439" startPosition="0" endLine="442" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_je17c5_a0k0a0bb#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3376719102115250102" fileName="CellToHtmlGenerator.java" startLine="443" startPosition="0" endLine="446" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_je17c5_a0d0f0kb#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="5700371569147049329" fileName="CellToHtmlGenerator.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellToHtmlGenerator#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1515824352018030833" fileName="CellToHtmlGenerator.java" startLine="45" startPosition="5" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3656887959594706744" fileName="CellToHtmlGenerator.java" startLine="59" startPosition="56" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2533261537000423086" fileName="CellToHtmlGenerator.java" startLine="80" startPosition="50" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352027851012" fileName="CellToHtmlGenerator.java" startLine="157" startPosition="44" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352029120192" fileName="CellToHtmlGenerator.java" startLine="206" startPosition="26" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1515824352029433102" fileName="CellToHtmlGenerator.java" startLine="229" startPosition="26" endLine="233" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1515824352026221345" fileName="CellToHtmlGenerator.java" startLine="268" startPosition="5" endLine="272" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213033019351726602" fileName="CellToHtmlGenerator.java" startLine="341" startPosition="0" endLine="345" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="colorToHEX#(Ljava/awt/Color;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1515824352026891368" fileName="CellToHtmlGenerator.java" startLine="119" startPosition="7" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352027695701" fileName="CellToHtmlGenerator.java" startLine="136" startPosition="7" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352026402162" fileName="CellToHtmlGenerator.java" startLine="151" startPosition="25" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3376719102116137165" fileName="CellToHtmlGenerator.java" startLine="185" startPosition="37" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1796284964482435853" fileName="CellToHtmlGenerator.java" startLine="199" startPosition="5" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4761358399197486379" fileName="CellToHtmlGenerator.java" startLine="305" startPosition="5" endLine="310" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1796284964483171558" fileName="CellToHtmlGenerator.java" startLine="401" startPosition="5" endLine="406" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352025993950" fileName="CellToHtmlGenerator.java" startLine="251" startPosition="47" endLine="257" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1515824352028156686" fileName="CellToHtmlGenerator.java" startLine="172" startPosition="0" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="3656887959595944615" fileName="CellToHtmlGenerator.java" startLine="373" startPosition="46" endLine="380" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3376719102115652175" fileName="CellToHtmlGenerator.java" startLine="99" startPosition="71" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1515824352025894366" fileName="CellToHtmlGenerator.java" startLine="250" startPosition="10" endLine="258" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3656887959594899752" fileName="CellToHtmlGenerator.java" startLine="284" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="appendOpenDiv#(Ljava/lang/StringBuilder;Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7998422013324844716" fileName="CellToHtmlGenerator.java" startLine="78" startPosition="21" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="3376719102115600590" fileName="CellToHtmlGenerator.java" startLine="99" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEmptyCollection#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)Z" />
+    <nodeInfo nodeId="1515824352027030761" fileName="CellToHtmlGenerator.java" startLine="114" startPosition="58" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1515824352027695680" fileName="CellToHtmlGenerator.java" startLine="131" startPosition="65" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1515824352025628399" fileName="CellToHtmlGenerator.java" startLine="247" startPosition="65" endLine="258" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213033019353494368" fileName="CellToHtmlGenerator.java" startLine="420" startPosition="0" endLine="432" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3656887959594630137" fileName="CellToHtmlGenerator.java" startLine="51" startPosition="0" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352026221369" fileName="CellToHtmlGenerator.java" startLine="262" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOnNewLineRightChild#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
+    <nodeInfo nodeId="1796284964482866858" fileName="CellToHtmlGenerator.java" startLine="394" startPosition="0" endLine="408" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStyleForLast#(Ljetbrains/mps/openapi/editor/style/StyleAttribute;Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="1515824352027695671" fileName="CellToHtmlGenerator.java" startLine="130" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findLastNewLine#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4761358399197486411" fileName="CellToHtmlGenerator.java" startLine="297" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addClasses#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljava/lang/StringBuilder;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4761358399197598017" fileName="CellToHtmlGenerator.java" startLine="349" startPosition="68" endLine="364" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1515824352026776606" fileName="CellToHtmlGenerator.java" startLine="113" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findFirstNewLine#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1515824352025493177" fileName="CellToHtmlGenerator.java" startLine="243" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOnNewLine#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
+    <nodeInfo nodeId="1515824352028307178" fileName="CellToHtmlGenerator.java" startLine="162" startPosition="58" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3656887959595248752" fileName="CellToHtmlGenerator.java" startLine="372" startPosition="0" endLine="391" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassesForCollection#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4761358399197577022" fileName="CellToHtmlGenerator.java" startLine="349" startPosition="0" endLine="369" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTargetNodeId#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljava/lang/StringBuilder;)V" />
+    <nodeInfo nodeId="7998422013324844682" fileName="CellToHtmlGenerator.java" startLine="72" startPosition="43" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="7998422013324844790" fileName="CellToHtmlGenerator.java" startLine="71" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHtmlForTable#(Ljava/lang/StringBuilder;Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4761358399197452639" fileName="CellToHtmlGenerator.java" startLine="313" startPosition="70" endLine="338" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6087360391926274176" fileName="CellToHtmlGenerator.java" startLine="41" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHtmlForCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4761358399197452688" fileName="CellToHtmlGenerator.java" startLine="313" startPosition="0" endLine="340" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTextAttributes#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljava/lang/StringBuilder;)V" />
+    <nodeInfo nodeId="3656887959596332750" fileName="CellToHtmlGenerator.java" startLine="409" startPosition="0" endLine="436" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassesForCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1515824352017826115" fileName="CellToHtmlGenerator.java" startLine="148" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHtmlForIndent#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="5700371569147053172" fileName="CellToHtmlGenerator.java" startLine="35" startPosition="28" endLine="36" endPosition="36" />
+    <scopeInfo nodeId="3376719102115524168" fileName="CellToHtmlGenerator.java" startLine="43" startPosition="99" endLine="44" endPosition="16" />
+    <scopeInfo nodeId="3656887959594630140" fileName="CellToHtmlGenerator.java" startLine="52" startPosition="43" endLine="53" endPosition="51" />
+    <scopeInfo nodeId="3656887959594649745" fileName="CellToHtmlGenerator.java" startLine="55" startPosition="86" endLine="56" endPosition="59" />
+    <scopeInfo nodeId="3376719102115728968" fileName="CellToHtmlGenerator.java" startLine="101" startPosition="59" endLine="102" endPosition="21" />
+    <scopeInfo nodeId="3376719102115831339" fileName="CellToHtmlGenerator.java" startLine="104" startPosition="69" endLine="105" endPosition="21" />
+    <scopeInfo nodeId="1515824352026822251" fileName="CellToHtmlGenerator.java" startLine="117" startPosition="75" endLine="118" endPosition="20" />
+    <scopeInfo nodeId="1515824352027547010" fileName="CellToHtmlGenerator.java" startLine="121" startPosition="33" endLine="122" endPosition="33" />
+    <scopeInfo nodeId="1515824352027695698" fileName="CellToHtmlGenerator.java" startLine="134" startPosition="72" endLine="135" endPosition="54" />
+    <scopeInfo nodeId="1515824352027695713" fileName="CellToHtmlGenerator.java" startLine="138" startPosition="33" endLine="139" endPosition="22" />
+    <scopeInfo nodeId="1515824352026402163" fileName="CellToHtmlGenerator.java" startLine="152" startPosition="34" endLine="153" endPosition="41" />
+    <scopeInfo nodeId="1515824352026750003" fileName="CellToHtmlGenerator.java" startLine="154" startPosition="12" endLine="155" endPosition="47" />
+    <scopeInfo nodeId="1515824352028699009" fileName="CellToHtmlGenerator.java" startLine="167" startPosition="76" endLine="168" endPosition="48" />
+    <scopeInfo nodeId="1515824352028264671" fileName="CellToHtmlGenerator.java" startLine="175" startPosition="39" endLine="176" endPosition="16" />
+    <scopeInfo nodeId="3376719102116137168" fileName="CellToHtmlGenerator.java" startLine="186" startPosition="46" endLine="187" endPosition="36" />
+    <scopeInfo nodeId="3376719102116169272" fileName="CellToHtmlGenerator.java" startLine="188" startPosition="12" endLine="189" endPosition="32" />
+    <scopeInfo nodeId="1515824352029282695" fileName="CellToHtmlGenerator.java" startLine="191" startPosition="74" endLine="192" endPosition="46" />
+    <scopeInfo nodeId="6858603581775687528" fileName="CellToHtmlGenerator.java" startLine="194" startPosition="84" endLine="195" endPosition="57" />
+    <scopeInfo nodeId="1515824352029667004" fileName="CellToHtmlGenerator.java" startLine="197" startPosition="79" endLine="198" endPosition="51" />
+    <scopeInfo nodeId="1796284964482554187" fileName="CellToHtmlGenerator.java" startLine="201" startPosition="80" endLine="202" endPosition="50" />
+    <scopeInfo nodeId="1515824352030431880" fileName="CellToHtmlGenerator.java" startLine="213" startPosition="28" endLine="214" endPosition="32" />
+    <scopeInfo nodeId="1515824352029433128" fileName="CellToHtmlGenerator.java" startLine="220" startPosition="74" endLine="221" endPosition="46" />
+    <scopeInfo nodeId="1515824352029592668" fileName="CellToHtmlGenerator.java" startLine="223" startPosition="78" endLine="224" endPosition="48" />
+    <scopeInfo nodeId="1515824352025516288" fileName="CellToHtmlGenerator.java" startLine="244" startPosition="73" endLine="245" endPosition="18" />
+    <scopeInfo nodeId="1515824352025628402" fileName="CellToHtmlGenerator.java" startLine="248" startPosition="27" endLine="249" endPosition="45" />
+    <scopeInfo nodeId="1515824352026299537" fileName="CellToHtmlGenerator.java" startLine="253" startPosition="38" endLine="254" endPosition="22" />
+    <scopeInfo nodeId="1796284964482053990" fileName="CellToHtmlGenerator.java" startLine="263" startPosition="27" endLine="264" endPosition="19" />
+    <scopeInfo nodeId="1515824352026221336" fileName="CellToHtmlGenerator.java" startLine="266" startPosition="74" endLine="267" endPosition="18" />
+    <scopeInfo nodeId="3656887959595302991" fileName="CellToHtmlGenerator.java" startLine="278" startPosition="56" endLine="279" endPosition="29" />
+    <scopeInfo nodeId="4761358399197486363" fileName="CellToHtmlGenerator.java" startLine="299" startPosition="48" endLine="300" endPosition="82" />
+    <scopeInfo nodeId="663115807302517996" fileName="CellToHtmlGenerator.java" startLine="303" startPosition="114" endLine="304" endPosition="34" />
+    <scopeInfo nodeId="1213033019351778138" fileName="CellToHtmlGenerator.java" startLine="318" startPosition="44" endLine="319" endPosition="57" />
+    <scopeInfo nodeId="1213033019351826014" fileName="CellToHtmlGenerator.java" startLine="321" startPosition="44" endLine="322" endPosition="62" />
+    <scopeInfo nodeId="1213033019352174972" fileName="CellToHtmlGenerator.java" startLine="325" startPosition="39" endLine="326" endPosition="45" />
+    <scopeInfo nodeId="1213033019352243568" fileName="CellToHtmlGenerator.java" startLine="328" startPosition="41" endLine="329" endPosition="46" />
+    <scopeInfo nodeId="5577184777819105881" fileName="CellToHtmlGenerator.java" startLine="331" startPosition="82" endLine="332" endPosition="45" />
+    <scopeInfo nodeId="1213033019351882870" fileName="CellToHtmlGenerator.java" startLine="335" startPosition="59" endLine="336" endPosition="60" />
+    <scopeInfo nodeId="3228268613620327588" fileName="CellToHtmlGenerator.java" startLine="352" startPosition="31" endLine="353" endPosition="15" />
+    <scopeInfo nodeId="3228268613620327595" fileName="CellToHtmlGenerator.java" startLine="355" startPosition="42" endLine="356" endPosition="15" />
+    <scopeInfo nodeId="1213033019353840538" fileName="CellToHtmlGenerator.java" startLine="365" startPosition="23" endLine="366" endPosition="73" />
+    <scopeInfo nodeId="3656887959595944618" fileName="CellToHtmlGenerator.java" startLine="374" startPosition="70" endLine="375" endPosition="41" />
+    <scopeInfo nodeId="3656887959596141667" fileName="CellToHtmlGenerator.java" startLine="376" startPosition="75" endLine="377" endPosition="39" />
+    <scopeInfo nodeId="3656887959596184858" fileName="CellToHtmlGenerator.java" startLine="378" startPosition="73" endLine="379" endPosition="37" />
+    <scopeInfo nodeId="3656887959595248765" fileName="CellToHtmlGenerator.java" startLine="381" startPosition="84" endLine="382" endPosition="55" />
+    <scopeInfo nodeId="1796284964483995090" fileName="CellToHtmlGenerator.java" startLine="384" startPosition="78" endLine="385" endPosition="46" />
+    <scopeInfo nodeId="1796284964483642137" fileName="CellToHtmlGenerator.java" startLine="395" startPosition="23" endLine="396" endPosition="19" />
+    <scopeInfo nodeId="1796284964483235206" fileName="CellToHtmlGenerator.java" startLine="399" startPosition="17" endLine="400" endPosition="20" />
+    <scopeInfo nodeId="1796284964483171559" fileName="CellToHtmlGenerator.java" startLine="402" startPosition="48" endLine="403" endPosition="79" />
+    <scopeInfo nodeId="1796284964483757272" fileName="CellToHtmlGenerator.java" startLine="404" startPosition="12" endLine="405" endPosition="19" />
+    <scopeInfo nodeId="3656887959595210352" fileName="CellToHtmlGenerator.java" startLine="411" startPosition="70" endLine="412" endPosition="46" />
+    <scopeInfo nodeId="3656887959595705074" fileName="CellToHtmlGenerator.java" startLine="414" startPosition="73" endLine="415" endPosition="49" />
+    <scopeInfo nodeId="3656887959596280279" fileName="CellToHtmlGenerator.java" startLine="417" startPosition="68" endLine="418" endPosition="44" />
+    <scopeInfo nodeId="1213033019353297230" fileName="CellToHtmlGenerator.java" startLine="423" startPosition="87" endLine="424" endPosition="33" />
+    <scopeInfo nodeId="1213033019353375564" fileName="CellToHtmlGenerator.java" startLine="426" startPosition="88" endLine="427" endPosition="34" />
+    <scopeInfo nodeId="3376719102115145409" fileName="CellToHtmlGenerator.java" startLine="429" startPosition="73" endLine="430" endPosition="32" />
+    <scopeInfo nodeId="1213033019351924905" fileName="CellToHtmlGenerator.java" startLine="439" startPosition="64" endLine="440" endPosition="43" />
+    <scopeInfo nodeId="3376719102115250102" fileName="CellToHtmlGenerator.java" startLine="443" startPosition="61" endLine="444" endPosition="44" />
+    <scopeInfo nodeId="5700371569147049334" fileName="CellToHtmlGenerator.java" startLine="28" startPosition="71" endLine="30" endPosition="37" />
+    <scopeInfo nodeId="1515824352018030836" fileName="CellToHtmlGenerator.java" startLine="46" startPosition="127" endLine="48" endPosition="32" />
+    <scopeInfo nodeId="2533261537000423087" fileName="CellToHtmlGenerator.java" startLine="81" startPosition="53" endLine="83" endPosition="19" />
+    <scopeInfo nodeId="1515824352027851015" fileName="CellToHtmlGenerator.java" startLine="158" startPosition="28" endLine="160" endPosition="32" />
+    <scopeInfo nodeId="1515824352029120196" fileName="CellToHtmlGenerator.java" startLine="207" startPosition="53" endLine="209" endPosition="58" />
+    <scopeInfo nodeId="1515824352029433110" fileName="CellToHtmlGenerator.java" startLine="230" startPosition="29" endLine="232" endPosition="58" />
+    <scopeInfo nodeId="1515824352026221349" fileName="CellToHtmlGenerator.java" startLine="269" startPosition="52" endLine="271" endPosition="47">
+      <varInfo nodeId="1515824352026221351" varName="rightChild" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213033019351726605" fileName="CellToHtmlGenerator.java" startLine="341" startPosition="42" endLine="343" endPosition="52">
+      <varInfo nodeId="1213033019351967895" varName="strColor" />
+    </scopeInfo>
+    <scopeInfo nodeId="5700371569147053169" fileName="CellToHtmlGenerator.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="3656887959594649742" fileName="CellToHtmlGenerator.java" startLine="54" startPosition="55" endLine="57" endPosition="7">
+      <varInfo nodeId="3656887959594649743" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="7794845149925914924" fileName="CellToHtmlGenerator.java" startLine="54" startPosition="55" endLine="57" endPosition="7" />
+    <scopeInfo nodeId="1515824352026891371" fileName="CellToHtmlGenerator.java" startLine="120" startPosition="72" endLine="123" endPosition="9" />
+    <scopeInfo nodeId="1515824352027695708" fileName="CellToHtmlGenerator.java" startLine="137" startPosition="75" endLine="140" endPosition="9" />
+    <scopeInfo nodeId="1796284964482435856" fileName="CellToHtmlGenerator.java" startLine="200" startPosition="28" endLine="203" endPosition="7" />
+    <scopeInfo nodeId="3656887959595302988" fileName="CellToHtmlGenerator.java" startLine="278" startPosition="0" endLine="281" endPosition="0">
+      <varInfo nodeId="3656887959595307450" varName="builder" />
+    </scopeInfo>
+    <scopeInfo nodeId="4761358399197486383" fileName="CellToHtmlGenerator.java" startLine="306" startPosition="52" endLine="309" endPosition="23" />
+    <scopeInfo nodeId="1213033019351924905" fileName="CellToHtmlGenerator.java" startLine="439" startPosition="0" endLine="442" endPosition="0">
+      <varInfo nodeId="1213033019351924905" varName="str" />
+    </scopeInfo>
+    <scopeInfo nodeId="3376719102115250102" fileName="CellToHtmlGenerator.java" startLine="443" startPosition="0" endLine="446" endPosition="0">
+      <varInfo nodeId="3376719102115250102" varName="str" />
+    </scopeInfo>
+    <scopeInfo nodeId="5700371569147049329" fileName="CellToHtmlGenerator.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="5700371569147049341" varName="rootCell" />
+      <varInfo nodeId="5700371569147049564" varName="selectedNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352025993954" fileName="CellToHtmlGenerator.java" startLine="252" startPosition="34" endLine="256" endPosition="44" />
+    <scopeInfo nodeId="1213033019351726602" fileName="CellToHtmlGenerator.java" startLine="341" startPosition="0" endLine="345" endPosition="0">
+      <varInfo nodeId="1213033019351729037" varName="color" />
+    </scopeInfo>
+    <scopeInfo nodeId="3656887959594692540" fileName="CellToHtmlGenerator.java" startLine="58" startPosition="50" endLine="63" endPosition="9">
+      <varInfo nodeId="1213033019351339420" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352028156690" fileName="CellToHtmlGenerator.java" startLine="173" startPosition="34" endLine="178" endPosition="52">
+      <varInfo nodeId="1515824352028205381" varName="currentCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3376719102115652178" fileName="CellToHtmlGenerator.java" startLine="100" startPosition="46" endLine="106" endPosition="7" />
+    <scopeInfo nodeId="3656887959594899755" fileName="CellToHtmlGenerator.java" startLine="284" startPosition="90" endLine="290" endPosition="24">
+      <varInfo nodeId="3656887959595787404" varName="div" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352025894367" fileName="CellToHtmlGenerator.java" startLine="250" startPosition="12" endLine="257" endPosition="7">
+      <varInfo nodeId="1515824352025943459" varName="parentCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3376719102115652175" fileName="CellToHtmlGenerator.java" startLine="99" startPosition="71" endLine="107" endPosition="5">
+      <varInfo nodeId="3376719102115652181" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3656887959594899752" fileName="CellToHtmlGenerator.java" startLine="284" startPosition="0" endLine="292" endPosition="0">
+      <varInfo nodeId="3656887959594907318" varName="builder" />
+      <varInfo nodeId="3656887959595214120" varName="cell" />
+      <varInfo nodeId="663115807303448132" varName="selectedNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7998422013324844726" fileName="CellToHtmlGenerator.java" startLine="79" startPosition="127" endLine="88" endPosition="32">
+      <varInfo nodeId="7998422013324844733" varName="nextCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3376719102115600593" fileName="CellToHtmlGenerator.java" startLine="99" startPosition="71" endLine="108" endPosition="16" />
+    <scopeInfo nodeId="1515824352027030765" fileName="CellToHtmlGenerator.java" startLine="115" startPosition="32" endLine="124" endPosition="7">
+      <varInfo nodeId="1515824352027100103" varName="cell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352027695684" fileName="CellToHtmlGenerator.java" startLine="132" startPosition="32" endLine="141" endPosition="7">
+      <varInfo nodeId="1515824352027695686" varName="cell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213033019353494371" fileName="CellToHtmlGenerator.java" startLine="421" startPosition="43" endLine="431" endPosition="7" />
+    <scopeInfo nodeId="7998422013324844716" fileName="CellToHtmlGenerator.java" startLine="78" startPosition="21" endLine="89" endPosition="7">
+      <varInfo nodeId="7998422013324844717" varName="cellIterator" />
+    </scopeInfo>
+    <scopeInfo nodeId="3376719102115600590" fileName="CellToHtmlGenerator.java" startLine="99" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="3376719102115602002" varName="collection" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352026221328" fileName="CellToHtmlGenerator.java" startLine="262" startPosition="62" endLine="273" endPosition="17" />
+    <scopeInfo nodeId="1796284964482866861" fileName="CellToHtmlGenerator.java" startLine="394" startPosition="83" endLine="406" endPosition="5">
+      <varInfo nodeId="1796284964483588657" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352027695672" fileName="CellToHtmlGenerator.java" startLine="130" startPosition="72" endLine="143" endPosition="16">
+      <varInfo nodeId="1515824352027695674" varName="iterator" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352026221369" fileName="CellToHtmlGenerator.java" startLine="262" startPosition="0" endLine="275" endPosition="0">
+      <varInfo nodeId="1515824352026221362" varName="prevCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4761358399197486354" fileName="CellToHtmlGenerator.java" startLine="297" startPosition="83" endLine="310" endPosition="5">
+      <varInfo nodeId="4761358399197486356" varName="classes" />
+    </scopeInfo>
+    <scopeInfo nodeId="4761358399197598021" fileName="CellToHtmlGenerator.java" startLine="350" startPosition="43" endLine="363" endPosition="33">
+      <varInfo nodeId="4761358399198415902" varName="targetModelId" />
+      <varInfo nodeId="4761358399198432346" varName="targetModuleId" />
+      <varInfo nodeId="4761358399197746738" varName="targetNode" />
+      <varInfo nodeId="4761358399198090739" varName="targetNodeId" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352026776609" fileName="CellToHtmlGenerator.java" startLine="113" startPosition="73" endLine="127" endPosition="0">
+      <varInfo nodeId="1515824352027006919" varName="iterator" />
+    </scopeInfo>
+    <scopeInfo nodeId="1796284964482866858" fileName="CellToHtmlGenerator.java" startLine="394" startPosition="0" endLine="408" endPosition="0">
+      <varInfo nodeId="1796284964483153058" varName="cell" />
+      <varInfo nodeId="1796284964482885667" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352027695671" fileName="CellToHtmlGenerator.java" startLine="130" startPosition="0" endLine="145" endPosition="0">
+      <varInfo nodeId="1515824352027695724" varName="collection" />
+    </scopeInfo>
+    <scopeInfo nodeId="4761358399197486411" fileName="CellToHtmlGenerator.java" startLine="297" startPosition="0" endLine="312" endPosition="0">
+      <varInfo nodeId="4761358399197486399" varName="cell" />
+      <varInfo nodeId="4761358399197486401" varName="div" />
+      <varInfo nodeId="663115807302587993" varName="selectedNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352026776606" fileName="CellToHtmlGenerator.java" startLine="113" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="1515824352026797943" varName="collection" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352025493180" fileName="CellToHtmlGenerator.java" startLine="243" startPosition="48" endLine="259" endPosition="16">
+      <varInfo nodeId="1515824352025585514" varName="prevCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352028307181" fileName="CellToHtmlGenerator.java" startLine="163" startPosition="46" endLine="180" endPosition="31" />
+    <scopeInfo nodeId="3656887959595248753" fileName="CellToHtmlGenerator.java" startLine="372" startPosition="76" endLine="389" endPosition="28">
+      <varInfo nodeId="3656887959596068478" varName="clazz" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352025493177" fileName="CellToHtmlGenerator.java" startLine="243" startPosition="0" endLine="261" endPosition="0">
+      <varInfo nodeId="1515824352025507676" varName="cell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4761358399197577025" fileName="CellToHtmlGenerator.java" startLine="349" startPosition="68" endLine="367" endPosition="5" />
+    <scopeInfo nodeId="7998422013324844695" fileName="CellToHtmlGenerator.java" startLine="73" startPosition="109" endLine="92" endPosition="0">
+      <varInfo nodeId="7998422013324844713" varName="index" />
+      <varInfo nodeId="7998422013324844697" varName="nextRow" />
+    </scopeInfo>
+    <scopeInfo nodeId="3656887959595248752" fileName="CellToHtmlGenerator.java" startLine="372" startPosition="0" endLine="391" endPosition="0">
+      <varInfo nodeId="3656887959595248778" varName="collection" />
+    </scopeInfo>
+    <scopeInfo nodeId="4761358399197577022" fileName="CellToHtmlGenerator.java" startLine="349" startPosition="0" endLine="369" endPosition="0">
+      <varInfo nodeId="4761358399197616963" varName="cell" />
+      <varInfo nodeId="4761358399197640384" varName="div" />
+    </scopeInfo>
+    <scopeInfo nodeId="7998422013324844682" fileName="CellToHtmlGenerator.java" startLine="72" startPosition="43" endLine="93" endPosition="5">
+      <varInfo nodeId="7998422013324844686" varName="rowsIterator" />
+    </scopeInfo>
+    <scopeInfo nodeId="7998422013324844676" fileName="CellToHtmlGenerator.java" startLine="71" startPosition="92" endLine="94" endPosition="31" />
+    <scopeInfo nodeId="4761358399197452643" fileName="CellToHtmlGenerator.java" startLine="314" startPosition="43" endLine="337" endPosition="7">
+      <varInfo nodeId="1213033019351552345" varName="bg" />
+      <varInfo nodeId="1213033019351773598" varName="builder" />
+      <varInfo nodeId="4761358399197452645" varName="fg" />
+      <varInfo nodeId="1213033019352162158" varName="font" />
+    </scopeInfo>
+    <scopeInfo nodeId="6087360391926274179" fileName="CellToHtmlGenerator.java" startLine="41" startPosition="50" endLine="66" endPosition="30">
+      <varInfo nodeId="3656887959594454711" varName="builder" />
+    </scopeInfo>
+    <scopeInfo nodeId="7998422013324844790" fileName="CellToHtmlGenerator.java" startLine="71" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="7998422013324844773" varName="builder" />
+      <varInfo nodeId="7998422013324844775" varName="cell" />
+      <varInfo nodeId="7998422013324844777" varName="selectedNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4761358399197452638" fileName="CellToHtmlGenerator.java" startLine="313" startPosition="70" endLine="338" endPosition="5" />
+    <scopeInfo nodeId="3656887959596332753" fileName="CellToHtmlGenerator.java" startLine="409" startPosition="53" endLine="434" endPosition="28">
+      <varInfo nodeId="3656887959595643216" varName="clazz" />
+    </scopeInfo>
+    <scopeInfo nodeId="6087360391926274176" fileName="CellToHtmlGenerator.java" startLine="41" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="6087360391926275417" varName="cell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4761358399197452688" fileName="CellToHtmlGenerator.java" startLine="313" startPosition="0" endLine="340" endPosition="0">
+      <varInfo nodeId="4761358399197452679" varName="cell" />
+      <varInfo nodeId="4761358399197452681" varName="div" />
+    </scopeInfo>
+    <scopeInfo nodeId="3656887959596332750" fileName="CellToHtmlGenerator.java" startLine="409" startPosition="0" endLine="436" endPosition="0">
+      <varInfo nodeId="3656887959596352755" varName="cell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352017826119" fileName="CellToHtmlGenerator.java" startLine="148" startPosition="89" endLine="240" endPosition="0">
+      <varInfo nodeId="1515824352026457946" varName="builder" />
+      <varInfo nodeId="1515824352029072153" varName="current" />
+      <varInfo nodeId="1515824352028076515" varName="iterator" />
+      <varInfo nodeId="1515824352026569866" varName="startLast" />
+      <varInfo nodeId="1515824352026531847" varName="startMain" />
+    </scopeInfo>
+    <scopeInfo nodeId="1515824352017826115" fileName="CellToHtmlGenerator.java" startLine="148" startPosition="0" endLine="242" endPosition="0">
+      <varInfo nodeId="1515824352017855058" varName="collection" />
+      <varInfo nodeId="663115807301885203" varName="selectedNode" />
+    </scopeInfo>
+    <unitInfo nodeId="5700371569146882302" fileName="CellToHtmlGenerator.java" startLine="23" startPosition="0" endLine="447" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.CellToHtmlGenerator" />
+  </root>
   <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/6087360391925491751">
     <nodeInfo nodeId="6087360391925739246" fileName="ProjectVcsRevisionHandler.java" startLine="16" startPosition="98" endLine="17" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6087360391925833380" fileName="ProjectVcsRevisionHandler.java" startLine="17" startPosition="91" endLine="18" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -284,546 +796,50 @@
     <unitInfo nodeId="6087360391925491751" fileName="ProjectVcsRevisionHandler.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.ProjectVcsRevisionHandler" />
   </root>
   <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/6087360391926012886">
-    <nodeInfo nodeId="6087360391926018960" fileName="NodeToHtmlHandler.java" startLine="38" startPosition="104" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6087360391926021248" fileName="NodeToHtmlHandler.java" startLine="39" startPosition="20" endLine="40" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6087360391926131286" fileName="NodeToHtmlHandler.java" startLine="41" startPosition="41" endLine="42" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6087360391926058221" fileName="NodeToHtmlHandler.java" startLine="45" startPosition="31" endLine="46" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6087360391926068866" fileName="NodeToHtmlHandler.java" startLine="48" startPosition="7" endLine="49" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6087360391926571120" fileName="NodeToHtmlHandler.java" startLine="56" startPosition="67" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6087360391926604324" fileName="NodeToHtmlHandler.java" startLine="59" startPosition="6" endLine="60" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6087360391926275513" fileName="NodeToHtmlHandler.java" startLine="60" startPosition="99" endLine="61" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6087360391926275520" fileName="NodeToHtmlHandler.java" startLine="61" startPosition="159" endLine="62" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3656887959594454710" fileName="NodeToHtmlHandler.java" startLine="67" startPosition="104" endLine="68" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3376719102115624195" fileName="NodeToHtmlHandler.java" startLine="69" startPosition="99" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352018073381" fileName="NodeToHtmlHandler.java" startLine="72" startPosition="127" endLine="73" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352025183149" fileName="NodeToHtmlHandler.java" startLine="73" startPosition="85" endLine="74" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3656887959595071508" fileName="NodeToHtmlHandler.java" startLine="75" startPosition="5" endLine="76" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7794845149926097600" fileName="NodeToHtmlHandler.java" startLine="76" startPosition="47" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7998422013324844797" fileName="NodeToHtmlHandler.java" startLine="78" startPosition="43" endLine="79" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3656887959594666336" fileName="NodeToHtmlHandler.java" startLine="81" startPosition="121" endLine="82" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019351339419" fileName="NodeToHtmlHandler.java" startLine="84" startPosition="50" endLine="85" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3656887959595364186" fileName="NodeToHtmlHandler.java" startLine="90" startPosition="5" endLine="91" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3656887959594775898" fileName="NodeToHtmlHandler.java" startLine="91" startPosition="30" endLine="92" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7998422013324844677" fileName="NodeToHtmlHandler.java" startLine="97" startPosition="127" endLine="98" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7998422013324844696" fileName="NodeToHtmlHandler.java" startLine="99" startPosition="144" endLine="100" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7998422013324844702" fileName="NodeToHtmlHandler.java" startLine="100" startPosition="82" endLine="101" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7998422013324844706" fileName="NodeToHtmlHandler.java" startLine="101" startPosition="54" endLine="102" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7998422013324844711" fileName="NodeToHtmlHandler.java" startLine="102" startPosition="29" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7998422013324844712" fileName="NodeToHtmlHandler.java" startLine="103" startPosition="0" endLine="104" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7998422013324844732" fileName="NodeToHtmlHandler.java" startLine="105" startPosition="162" endLine="106" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2533261537000423100" fileName="NodeToHtmlHandler.java" startLine="107" startPosition="53" endLine="108" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2533261537000423098" fileName="NodeToHtmlHandler.java" startLine="108" startPosition="34" endLine="109" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7703435594990937757" fileName="NodeToHtmlHandler.java" startLine="110" startPosition="9" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7998422013324844727" fileName="NodeToHtmlHandler.java" startLine="111" startPosition="0" endLine="112" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7998422013324844738" fileName="NodeToHtmlHandler.java" startLine="112" startPosition="31" endLine="113" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7998422013324844748" fileName="NodeToHtmlHandler.java" startLine="113" startPosition="76" endLine="114" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7998422013324844758" fileName="NodeToHtmlHandler.java" startLine="115" startPosition="7" endLine="116" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7998422013324844762" fileName="NodeToHtmlHandler.java" startLine="116" startPosition="23" endLine="117" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7998422013324844767" fileName="NodeToHtmlHandler.java" startLine="117" startPosition="30" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7998422013324844768" fileName="NodeToHtmlHandler.java" startLine="119" startPosition="5" endLine="120" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3376719102115819984" fileName="NodeToHtmlHandler.java" startLine="127" startPosition="59" endLine="128" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3376719102115930683" fileName="NodeToHtmlHandler.java" startLine="130" startPosition="69" endLine="131" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3376719102115808638" fileName="NodeToHtmlHandler.java" startLine="133" startPosition="5" endLine="134" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352027006918" fileName="NodeToHtmlHandler.java" startLine="139" startPosition="108" endLine="140" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352027100102" fileName="NodeToHtmlHandler.java" startLine="141" startPosition="32" endLine="142" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352026871116" fileName="NodeToHtmlHandler.java" startLine="143" startPosition="75" endLine="144" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352027314537" fileName="NodeToHtmlHandler.java" startLine="147" startPosition="33" endLine="148" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352027361469" fileName="NodeToHtmlHandler.java" startLine="151" startPosition="5" endLine="152" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352027696372" fileName="NodeToHtmlHandler.java" startLine="152" startPosition="34" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1515824352027695673" fileName="NodeToHtmlHandler.java" startLine="156" startPosition="107" endLine="157" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352027695685" fileName="NodeToHtmlHandler.java" startLine="158" startPosition="32" endLine="159" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352027695699" fileName="NodeToHtmlHandler.java" startLine="160" startPosition="72" endLine="161" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352027695714" fileName="NodeToHtmlHandler.java" startLine="164" startPosition="33" endLine="165" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352027695718" fileName="NodeToHtmlHandler.java" startLine="168" startPosition="5" endLine="169" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352026457945" fileName="NodeToHtmlHandler.java" startLine="174" startPosition="88" endLine="175" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352026531846" fileName="NodeToHtmlHandler.java" startLine="175" startPosition="48" endLine="176" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352026569865" fileName="NodeToHtmlHandler.java" startLine="176" startPosition="60" endLine="177" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352026596776" fileName="NodeToHtmlHandler.java" startLine="178" startPosition="34" endLine="179" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352027380455" fileName="NodeToHtmlHandler.java" startLine="180" startPosition="12" endLine="181" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352027777173" fileName="NodeToHtmlHandler.java" startLine="182" startPosition="5" endLine="183" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352027879827" fileName="NodeToHtmlHandler.java" startLine="184" startPosition="28" endLine="185" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352027919671" fileName="NodeToHtmlHandler.java" startLine="185" startPosition="55" endLine="186" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352028076514" fileName="NodeToHtmlHandler.java" startLine="187" startPosition="5" endLine="188" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352028412232" fileName="NodeToHtmlHandler.java" startLine="189" startPosition="46" endLine="190" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352028624485" fileName="NodeToHtmlHandler.java" startLine="190" startPosition="40" endLine="191" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3376719102116132916" fileName="NodeToHtmlHandler.java" startLine="191" startPosition="39" endLine="192" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352028699010" fileName="NodeToHtmlHandler.java" startLine="193" startPosition="76" endLine="194" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352030104384" fileName="NodeToHtmlHandler.java" startLine="195" startPosition="7" endLine="196" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352028729705" fileName="NodeToHtmlHandler.java" startLine="196" startPosition="48" endLine="197" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352028658797" fileName="NodeToHtmlHandler.java" startLine="197" startPosition="28" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1515824352028205380" fileName="NodeToHtmlHandler.java" startLine="199" startPosition="34" endLine="200" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352028293008" fileName="NodeToHtmlHandler.java" startLine="201" startPosition="39" endLine="202" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1515824352028510504" fileName="NodeToHtmlHandler.java" startLine="203" startPosition="9" endLine="204" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352028420247" fileName="NodeToHtmlHandler.java" startLine="205" startPosition="7" endLine="206" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352028837479" fileName="NodeToHtmlHandler.java" startLine="207" startPosition="5" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1515824352029072152" fileName="NodeToHtmlHandler.java" startLine="208" startPosition="0" endLine="209" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352029263734" fileName="NodeToHtmlHandler.java" startLine="209" startPosition="70" endLine="210" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029272527" fileName="NodeToHtmlHandler.java" startLine="210" startPosition="38" endLine="211" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3376719102116165521" fileName="NodeToHtmlHandler.java" startLine="212" startPosition="46" endLine="213" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3376719102116172932" fileName="NodeToHtmlHandler.java" startLine="214" startPosition="12" endLine="215" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029282696" fileName="NodeToHtmlHandler.java" startLine="217" startPosition="74" endLine="218" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6858603581775687529" fileName="NodeToHtmlHandler.java" startLine="220" startPosition="84" endLine="221" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029667005" fileName="NodeToHtmlHandler.java" startLine="223" startPosition="79" endLine="224" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1796284964482554188" fileName="NodeToHtmlHandler.java" startLine="227" startPosition="80" endLine="228" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029648526" fileName="NodeToHtmlHandler.java" startLine="230" startPosition="5" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1515824352029294548" fileName="NodeToHtmlHandler.java" startLine="231" startPosition="0" endLine="232" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029349589" fileName="NodeToHtmlHandler.java" startLine="233" startPosition="53" endLine="234" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029216755" fileName="NodeToHtmlHandler.java" startLine="234" startPosition="60" endLine="235" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029364522" fileName="NodeToHtmlHandler.java" startLine="236" startPosition="5" endLine="237" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352028841001" fileName="NodeToHtmlHandler.java" startLine="237" startPosition="29" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1515824352030520153" fileName="NodeToHtmlHandler.java" startLine="239" startPosition="28" endLine="240" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352029502005" fileName="NodeToHtmlHandler.java" startLine="241" startPosition="5" endLine="242" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029433111" fileName="NodeToHtmlHandler.java" startLine="242" startPosition="24" endLine="243" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029433116" fileName="NodeToHtmlHandler.java" startLine="243" startPosition="38" endLine="244" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3376719102116177068" fileName="NodeToHtmlHandler.java" startLine="244" startPosition="37" endLine="245" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029433129" fileName="NodeToHtmlHandler.java" startLine="246" startPosition="74" endLine="247" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029592669" fileName="NodeToHtmlHandler.java" startLine="249" startPosition="78" endLine="250" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352030177613" fileName="NodeToHtmlHandler.java" startLine="251" startPosition="5" endLine="252" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352030153978" fileName="NodeToHtmlHandler.java" startLine="252" startPosition="49" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1515824352029575128" fileName="NodeToHtmlHandler.java" startLine="253" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1515824352029433134" fileName="NodeToHtmlHandler.java" startLine="254" startPosition="0" endLine="255" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029433144" fileName="NodeToHtmlHandler.java" startLine="256" startPosition="29" endLine="257" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029433139" fileName="NodeToHtmlHandler.java" startLine="257" startPosition="60" endLine="258" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029433150" fileName="NodeToHtmlHandler.java" startLine="259" startPosition="5" endLine="260" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352029432741" fileName="NodeToHtmlHandler.java" startLine="260" startPosition="29" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1515824352028804829" fileName="NodeToHtmlHandler.java" startLine="261" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1515824352028022282" fileName="NodeToHtmlHandler.java" startLine="262" startPosition="0" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1515824352027945961" fileName="NodeToHtmlHandler.java" startLine="263" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1515824352027952592" fileName="NodeToHtmlHandler.java" startLine="264" startPosition="0" endLine="265" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352026739009" fileName="NodeToHtmlHandler.java" startLine="265" startPosition="30" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1515824352025553265" fileName="NodeToHtmlHandler.java" startLine="270" startPosition="73" endLine="271" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352025585513" fileName="NodeToHtmlHandler.java" startLine="272" startPosition="5" endLine="273" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352030651500" fileName="NodeToHtmlHandler.java" startLine="274" startPosition="27" endLine="275" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352025943458" fileName="NodeToHtmlHandler.java" startLine="276" startPosition="12" endLine="277" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352026315671" fileName="NodeToHtmlHandler.java" startLine="279" startPosition="38" endLine="280" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352026278123" fileName="NodeToHtmlHandler.java" startLine="281" startPosition="9" endLine="282" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1515824352026367066" fileName="NodeToHtmlHandler.java" startLine="284" startPosition="5" endLine="285" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1796284964482066810" fileName="NodeToHtmlHandler.java" startLine="289" startPosition="27" endLine="290" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352026221337" fileName="NodeToHtmlHandler.java" startLine="292" startPosition="74" endLine="293" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352026221350" fileName="NodeToHtmlHandler.java" startLine="295" startPosition="52" endLine="296" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352026230469" fileName="NodeToHtmlHandler.java" startLine="296" startPosition="111" endLine="297" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352026221360" fileName="NodeToHtmlHandler.java" startLine="298" startPosition="5" endLine="299" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3656887959595311305" fileName="NodeToHtmlHandler.java" startLine="304" startPosition="56" endLine="305" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3656887959595787403" fileName="NodeToHtmlHandler.java" startLine="310" startPosition="125" endLine="311" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4761358399197486417" fileName="NodeToHtmlHandler.java" startLine="311" startPosition="50" endLine="312" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4761358399197452694" fileName="NodeToHtmlHandler.java" startLine="312" startPosition="40" endLine="313" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4761358399199011367" fileName="NodeToHtmlHandler.java" startLine="313" startPosition="33" endLine="314" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3656887959596899028" fileName="NodeToHtmlHandler.java" startLine="314" startPosition="31" endLine="315" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3656887959594911032" fileName="NodeToHtmlHandler.java" startLine="315" startPosition="20" endLine="316" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4761358399197486355" fileName="NodeToHtmlHandler.java" startLine="323" startPosition="118" endLine="324" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4761358399197486364" fileName="NodeToHtmlHandler.java" startLine="325" startPosition="48" endLine="326" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4761358399197486374" fileName="NodeToHtmlHandler.java" startLine="327" startPosition="5" endLine="328" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="663115807303209435" fileName="NodeToHtmlHandler.java" startLine="329" startPosition="114" endLine="330" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4761358399197486384" fileName="NodeToHtmlHandler.java" startLine="332" startPosition="52" endLine="333" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4761358399197486389" fileName="NodeToHtmlHandler.java" startLine="333" startPosition="32" endLine="334" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4761358399197486394" fileName="NodeToHtmlHandler.java" startLine="334" startPosition="26" endLine="335" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4761358399197452644" fileName="NodeToHtmlHandler.java" startLine="340" startPosition="43" endLine="341" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213033019351552344" fileName="NodeToHtmlHandler.java" startLine="341" startPosition="65" endLine="342" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213033019351773597" fileName="NodeToHtmlHandler.java" startLine="342" startPosition="76" endLine="343" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213033019351788876" fileName="NodeToHtmlHandler.java" startLine="344" startPosition="44" endLine="345" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019351844730" fileName="NodeToHtmlHandler.java" startLine="347" startPosition="44" endLine="348" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019352162157" fileName="NodeToHtmlHandler.java" startLine="349" startPosition="7" endLine="350" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213033019353068870" fileName="NodeToHtmlHandler.java" startLine="351" startPosition="39" endLine="352" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019353038447" fileName="NodeToHtmlHandler.java" startLine="354" startPosition="41" endLine="355" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5577184777819182143" fileName="NodeToHtmlHandler.java" startLine="357" startPosition="82" endLine="358" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019353012217" fileName="NodeToHtmlHandler.java" startLine="359" startPosition="7" endLine="360" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4761358399197452670" fileName="NodeToHtmlHandler.java" startLine="361" startPosition="58" endLine="362" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019351967894" fileName="NodeToHtmlHandler.java" startLine="367" startPosition="42" endLine="368" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213033019351764427" fileName="NodeToHtmlHandler.java" startLine="368" startPosition="58" endLine="369" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4761358399197746737" fileName="NodeToHtmlHandler.java" startLine="376" startPosition="43" endLine="377" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3228268613620327589" fileName="NodeToHtmlHandler.java" startLine="378" startPosition="31" endLine="379" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3228268613620327596" fileName="NodeToHtmlHandler.java" startLine="381" startPosition="42" endLine="382" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4761358399198090736" fileName="NodeToHtmlHandler.java" startLine="383" startPosition="7" endLine="384" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4761358399198415901" fileName="NodeToHtmlHandler.java" startLine="384" startPosition="83" endLine="385" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4761358399198432345" fileName="NodeToHtmlHandler.java" startLine="385" startPosition="97" endLine="386" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4761358399198599604" fileName="NodeToHtmlHandler.java" startLine="386" startPosition="112" endLine="387" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4761358399198642107" fileName="NodeToHtmlHandler.java" startLine="387" startPosition="31" endLine="388" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4761358399198642177" fileName="NodeToHtmlHandler.java" startLine="388" startPosition="32" endLine="389" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019353868830" fileName="NodeToHtmlHandler.java" startLine="391" startPosition="23" endLine="392" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3656887959596068477" fileName="NodeToHtmlHandler.java" startLine="398" startPosition="76" endLine="399" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3656887959596078735" fileName="NodeToHtmlHandler.java" startLine="400" startPosition="70" endLine="401" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3656887959596157631" fileName="NodeToHtmlHandler.java" startLine="402" startPosition="75" endLine="403" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3656887959596184859" fileName="NodeToHtmlHandler.java" startLine="404" startPosition="73" endLine="405" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3656887959596233374" fileName="NodeToHtmlHandler.java" startLine="407" startPosition="84" endLine="408" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1796284964484094410" fileName="NodeToHtmlHandler.java" startLine="410" startPosition="78" endLine="411" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019353247775" fileName="NodeToHtmlHandler.java" startLine="412" startPosition="5" endLine="413" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019353198954" fileName="NodeToHtmlHandler.java" startLine="413" startPosition="28" endLine="414" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3656887959596971992" fileName="NodeToHtmlHandler.java" startLine="414" startPosition="0" endLine="415" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1796284964483647978" fileName="NodeToHtmlHandler.java" startLine="421" startPosition="23" endLine="422" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1796284964483588656" fileName="NodeToHtmlHandler.java" startLine="423" startPosition="5" endLine="424" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1796284964483606986" fileName="NodeToHtmlHandler.java" startLine="425" startPosition="17" endLine="426" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1796284964483656810" fileName="NodeToHtmlHandler.java" startLine="428" startPosition="79" endLine="429" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1796284964483766947" fileName="NodeToHtmlHandler.java" startLine="430" startPosition="12" endLine="431" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3656887959595643215" fileName="NodeToHtmlHandler.java" startLine="435" startPosition="88" endLine="436" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3656887959595552450" fileName="NodeToHtmlHandler.java" startLine="437" startPosition="70" endLine="438" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3656887959595705075" fileName="NodeToHtmlHandler.java" startLine="440" startPosition="73" endLine="441" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3656887959596280280" fileName="NodeToHtmlHandler.java" startLine="443" startPosition="68" endLine="444" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019353375386" fileName="NodeToHtmlHandler.java" startLine="445" startPosition="5" endLine="446" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1213033019353268947" fileName="NodeToHtmlHandler.java" startLine="447" startPosition="43" endLine="448" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019353389698" fileName="NodeToHtmlHandler.java" startLine="449" startPosition="87" endLine="450" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019353389668" fileName="NodeToHtmlHandler.java" startLine="452" startPosition="88" endLine="453" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3376719102115250121" fileName="NodeToHtmlHandler.java" startLine="455" startPosition="73" endLine="456" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019352162013" fileName="NodeToHtmlHandler.java" startLine="458" startPosition="5" endLine="459" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3656887959596434700" fileName="NodeToHtmlHandler.java" startLine="459" startPosition="0" endLine="460" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213033019351924905" fileName="NodeToHtmlHandler.java" startLine="463" startPosition="63" endLine="464" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3376719102115250102" fileName="NodeToHtmlHandler.java" startLine="467" startPosition="61" endLine="468" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1515824352026750002" fileName="NodeToHtmlHandler.java" startLine="180" startPosition="10" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3376719102116169271" fileName="NodeToHtmlHandler.java" startLine="214" startPosition="10" endLine="216" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1796284964483757271" fileName="NodeToHtmlHandler.java" startLine="430" startPosition="10" endLine="432" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6087360391926122986" fileName="NodeToHtmlHandler.java" startLine="40" startPosition="104" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6087360391926058205" fileName="NodeToHtmlHandler.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6087360391926565677" fileName="NodeToHtmlHandler.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRootCell#(Ljava/util/List;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3376719102115524165" fileName="NodeToHtmlHandler.java" startLine="68" startPosition="48" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3656887959594649742" fileName="NodeToHtmlHandler.java" startLine="80" startPosition="55" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3376719102115728967" fileName="NodeToHtmlHandler.java" startLine="126" startPosition="81" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3376719102115831336" fileName="NodeToHtmlHandler.java" startLine="129" startPosition="7" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352026822250" fileName="NodeToHtmlHandler.java" startLine="142" startPosition="75" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352027547007" fileName="NodeToHtmlHandler.java" startLine="146" startPosition="72" endLine="149" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352027695691" fileName="NodeToHtmlHandler.java" startLine="159" startPosition="75" endLine="162" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352027695709" fileName="NodeToHtmlHandler.java" startLine="163" startPosition="75" endLine="166" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352028699002" fileName="NodeToHtmlHandler.java" startLine="192" startPosition="32" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352028264668" fileName="NodeToHtmlHandler.java" startLine="200" startPosition="84" endLine="203" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352029282688" fileName="NodeToHtmlHandler.java" startLine="216" startPosition="5" endLine="219" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6858603581775687521" fileName="NodeToHtmlHandler.java" startLine="219" startPosition="5" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352029666997" fileName="NodeToHtmlHandler.java" startLine="222" startPosition="5" endLine="225" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1796284964482554180" fileName="NodeToHtmlHandler.java" startLine="226" startPosition="28" endLine="229" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352030431877" fileName="NodeToHtmlHandler.java" startLine="238" startPosition="0" endLine="241" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352029433121" fileName="NodeToHtmlHandler.java" startLine="245" startPosition="34" endLine="248" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352029592661" fileName="NodeToHtmlHandler.java" startLine="248" startPosition="5" endLine="251" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352025516287" fileName="NodeToHtmlHandler.java" startLine="269" startPosition="83" endLine="272" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352026299534" fileName="NodeToHtmlHandler.java" startLine="278" startPosition="34" endLine="281" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1796284964482053987" fileName="NodeToHtmlHandler.java" startLine="288" startPosition="97" endLine="291" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352026221335" fileName="NodeToHtmlHandler.java" startLine="291" startPosition="5" endLine="294" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3656887959595302988" fileName="NodeToHtmlHandler.java" startLine="304" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="appendClosingDiv#(Ljava/lang/StringBuilder;)V" />
-    <nodeInfo nodeId="4761358399197486359" fileName="NodeToHtmlHandler.java" startLine="324" startPosition="24" endLine="327" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="663115807302517993" fileName="NodeToHtmlHandler.java" startLine="328" startPosition="39" endLine="331" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213033019351778135" fileName="NodeToHtmlHandler.java" startLine="343" startPosition="50" endLine="346" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213033019351826011" fileName="NodeToHtmlHandler.java" startLine="346" startPosition="7" endLine="349" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213033019352174969" fileName="NodeToHtmlHandler.java" startLine="350" startPosition="65" endLine="353" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213033019352243565" fileName="NodeToHtmlHandler.java" startLine="353" startPosition="7" endLine="356" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5577184777819105878" fileName="NodeToHtmlHandler.java" startLine="356" startPosition="7" endLine="359" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213033019351882867" fileName="NodeToHtmlHandler.java" startLine="360" startPosition="0" endLine="363" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3228268613620327587" fileName="NodeToHtmlHandler.java" startLine="377" startPosition="67" endLine="380" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3228268613620327594" fileName="NodeToHtmlHandler.java" startLine="380" startPosition="7" endLine="383" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213033019353840535" fileName="NodeToHtmlHandler.java" startLine="390" startPosition="5" endLine="393" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3656887959595248764" fileName="NodeToHtmlHandler.java" startLine="406" startPosition="5" endLine="409" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1796284964483995087" fileName="NodeToHtmlHandler.java" startLine="409" startPosition="5" endLine="412" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1796284964483642134" fileName="NodeToHtmlHandler.java" startLine="420" startPosition="118" endLine="423" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1796284964483235203" fileName="NodeToHtmlHandler.java" startLine="424" startPosition="48" endLine="427" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3656887959595210349" fileName="NodeToHtmlHandler.java" startLine="436" startPosition="46" endLine="439" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3656887959595705067" fileName="NodeToHtmlHandler.java" startLine="439" startPosition="5" endLine="442" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3656887959596280272" fileName="NodeToHtmlHandler.java" startLine="442" startPosition="5" endLine="445" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213033019353297227" fileName="NodeToHtmlHandler.java" startLine="448" startPosition="30" endLine="451" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213033019353375554" fileName="NodeToHtmlHandler.java" startLine="451" startPosition="7" endLine="454" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3376719102115145406" fileName="NodeToHtmlHandler.java" startLine="454" startPosition="7" endLine="457" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213033019351924905" fileName="NodeToHtmlHandler.java" startLine="463" startPosition="0" endLine="466" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_9d126p_a0k0a0y#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="3376719102115250102" fileName="NodeToHtmlHandler.java" startLine="467" startPosition="0" endLine="470" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_9d126p_a0d0f0hb#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1515824352018030833" fileName="NodeToHtmlHandler.java" startLine="71" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3656887959594706744" fileName="NodeToHtmlHandler.java" startLine="85" startPosition="56" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2533261537000423086" fileName="NodeToHtmlHandler.java" startLine="106" startPosition="85" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352027851012" fileName="NodeToHtmlHandler.java" startLine="183" startPosition="44" endLine="187" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352029120192" fileName="NodeToHtmlHandler.java" startLine="232" startPosition="26" endLine="236" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1515824352029433102" fileName="NodeToHtmlHandler.java" startLine="255" startPosition="26" endLine="259" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1515824352026221345" fileName="NodeToHtmlHandler.java" startLine="294" startPosition="5" endLine="298" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213033019351726602" fileName="NodeToHtmlHandler.java" startLine="367" startPosition="0" endLine="371" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="colorToHEX#(Ljava/awt/Color;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6087360391926044235" fileName="NodeToHtmlHandler.java" startLine="43" startPosition="5" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6087360391926520042" fileName="NodeToHtmlHandler.java" startLine="54" startPosition="61" endLine="59" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1515824352026891368" fileName="NodeToHtmlHandler.java" startLine="145" startPosition="7" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352027695701" fileName="NodeToHtmlHandler.java" startLine="162" startPosition="7" endLine="167" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352026402162" fileName="NodeToHtmlHandler.java" startLine="177" startPosition="60" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3376719102116137165" fileName="NodeToHtmlHandler.java" startLine="211" startPosition="37" endLine="216" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1796284964482435853" fileName="NodeToHtmlHandler.java" startLine="225" startPosition="5" endLine="230" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4761358399197486379" fileName="NodeToHtmlHandler.java" startLine="331" startPosition="5" endLine="336" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1796284964483171558" fileName="NodeToHtmlHandler.java" startLine="427" startPosition="5" endLine="432" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352025993950" fileName="NodeToHtmlHandler.java" startLine="277" startPosition="82" endLine="283" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1515824352028156686" fileName="NodeToHtmlHandler.java" startLine="198" startPosition="0" endLine="205" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3656887959595944615" fileName="NodeToHtmlHandler.java" startLine="399" startPosition="46" endLine="406" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3376719102115652175" fileName="NodeToHtmlHandler.java" startLine="125" startPosition="71" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1515824352025894366" fileName="NodeToHtmlHandler.java" startLine="276" startPosition="10" endLine="284" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3656887959594899752" fileName="NodeToHtmlHandler.java" startLine="310" startPosition="0" endLine="318" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="appendOpenDiv#(Ljava/lang/StringBuilder;Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6087360391926020319" fileName="NodeToHtmlHandler.java" startLine="54" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHtmlForNode#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7998422013324844716" fileName="NodeToHtmlHandler.java" startLine="104" startPosition="21" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="3376719102115600590" fileName="NodeToHtmlHandler.java" startLine="125" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEmptyCollection#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)Z" />
-    <nodeInfo nodeId="1515824352027030761" fileName="NodeToHtmlHandler.java" startLine="140" startPosition="93" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1515824352027695680" fileName="NodeToHtmlHandler.java" startLine="157" startPosition="100" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1515824352025628399" fileName="NodeToHtmlHandler.java" startLine="273" startPosition="100" endLine="284" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213033019353494368" fileName="NodeToHtmlHandler.java" startLine="446" startPosition="0" endLine="458" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6087360391926018494" fileName="NodeToHtmlHandler.java" startLine="38" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
-    <nodeInfo nodeId="3656887959594630137" fileName="NodeToHtmlHandler.java" startLine="77" startPosition="0" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352026221369" fileName="NodeToHtmlHandler.java" startLine="288" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOnNewLineRightChild#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
-    <nodeInfo nodeId="1796284964482866858" fileName="NodeToHtmlHandler.java" startLine="420" startPosition="0" endLine="434" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStyleForLast#(Ljetbrains/mps/openapi/editor/style/StyleAttribute;Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="1515824352027695671" fileName="NodeToHtmlHandler.java" startLine="156" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findLastNewLine#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4761358399197486411" fileName="NodeToHtmlHandler.java" startLine="323" startPosition="0" endLine="338" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addClasses#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljava/lang/StringBuilder;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4761358399197598017" fileName="NodeToHtmlHandler.java" startLine="375" startPosition="103" endLine="390" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1515824352026776606" fileName="NodeToHtmlHandler.java" startLine="139" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findFirstNewLine#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1515824352025493177" fileName="NodeToHtmlHandler.java" startLine="269" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOnNewLine#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
-    <nodeInfo nodeId="1515824352028307178" fileName="NodeToHtmlHandler.java" startLine="188" startPosition="93" endLine="207" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3656887959595248752" fileName="NodeToHtmlHandler.java" startLine="398" startPosition="0" endLine="417" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassesForCollection#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4761358399197577022" fileName="NodeToHtmlHandler.java" startLine="375" startPosition="0" endLine="395" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTargetNodeId#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljava/lang/StringBuilder;)V" />
-    <nodeInfo nodeId="7998422013324844682" fileName="NodeToHtmlHandler.java" startLine="98" startPosition="43" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="7998422013324844790" fileName="NodeToHtmlHandler.java" startLine="97" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHtmlForTable#(Ljava/lang/StringBuilder;Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4761358399197452639" fileName="NodeToHtmlHandler.java" startLine="339" startPosition="105" endLine="364" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6087360391926274176" fileName="NodeToHtmlHandler.java" startLine="67" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHtmlForCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4761358399197452688" fileName="NodeToHtmlHandler.java" startLine="339" startPosition="0" endLine="366" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTextAttributes#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljava/lang/StringBuilder;)V" />
-    <nodeInfo nodeId="3656887959596332750" fileName="NodeToHtmlHandler.java" startLine="435" startPosition="0" endLine="462" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassesForCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1515824352017826115" fileName="NodeToHtmlHandler.java" startLine="174" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHtmlForIndent#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="6087360391926122989" fileName="NodeToHtmlHandler.java" startLine="41" startPosition="41" endLine="42" endPosition="89" />
-    <scopeInfo nodeId="6087360391926058206" fileName="NodeToHtmlHandler.java" startLine="45" startPosition="31" endLine="46" endPosition="122" />
-    <scopeInfo nodeId="6087360391926565684" fileName="NodeToHtmlHandler.java" startLine="56" startPosition="67" endLine="57" endPosition="20" />
-    <scopeInfo nodeId="3376719102115524168" fileName="NodeToHtmlHandler.java" startLine="69" startPosition="99" endLine="70" endPosition="16" />
-    <scopeInfo nodeId="3656887959594630140" fileName="NodeToHtmlHandler.java" startLine="78" startPosition="43" endLine="79" endPosition="51" />
-    <scopeInfo nodeId="3656887959594649745" fileName="NodeToHtmlHandler.java" startLine="81" startPosition="121" endLine="82" endPosition="73" />
-    <scopeInfo nodeId="3376719102115728968" fileName="NodeToHtmlHandler.java" startLine="127" startPosition="59" endLine="128" endPosition="21" />
-    <scopeInfo nodeId="3376719102115831339" fileName="NodeToHtmlHandler.java" startLine="130" startPosition="69" endLine="131" endPosition="21" />
-    <scopeInfo nodeId="1515824352026822251" fileName="NodeToHtmlHandler.java" startLine="143" startPosition="75" endLine="144" endPosition="20" />
-    <scopeInfo nodeId="1515824352027547010" fileName="NodeToHtmlHandler.java" startLine="147" startPosition="33" endLine="148" endPosition="33" />
-    <scopeInfo nodeId="1515824352027695698" fileName="NodeToHtmlHandler.java" startLine="160" startPosition="72" endLine="161" endPosition="54" />
-    <scopeInfo nodeId="1515824352027695713" fileName="NodeToHtmlHandler.java" startLine="164" startPosition="33" endLine="165" endPosition="22" />
-    <scopeInfo nodeId="1515824352026402163" fileName="NodeToHtmlHandler.java" startLine="178" startPosition="34" endLine="179" endPosition="41" />
-    <scopeInfo nodeId="1515824352026750003" fileName="NodeToHtmlHandler.java" startLine="180" startPosition="12" endLine="181" endPosition="47" />
-    <scopeInfo nodeId="1515824352028699009" fileName="NodeToHtmlHandler.java" startLine="193" startPosition="76" endLine="194" endPosition="48" />
-    <scopeInfo nodeId="1515824352028264671" fileName="NodeToHtmlHandler.java" startLine="201" startPosition="39" endLine="202" endPosition="16" />
-    <scopeInfo nodeId="3376719102116137168" fileName="NodeToHtmlHandler.java" startLine="212" startPosition="46" endLine="213" endPosition="36" />
-    <scopeInfo nodeId="3376719102116169272" fileName="NodeToHtmlHandler.java" startLine="214" startPosition="12" endLine="215" endPosition="32" />
-    <scopeInfo nodeId="1515824352029282695" fileName="NodeToHtmlHandler.java" startLine="217" startPosition="74" endLine="218" endPosition="46" />
-    <scopeInfo nodeId="6858603581775687528" fileName="NodeToHtmlHandler.java" startLine="220" startPosition="84" endLine="221" endPosition="57" />
-    <scopeInfo nodeId="1515824352029667004" fileName="NodeToHtmlHandler.java" startLine="223" startPosition="79" endLine="224" endPosition="51" />
-    <scopeInfo nodeId="1796284964482554187" fileName="NodeToHtmlHandler.java" startLine="227" startPosition="80" endLine="228" endPosition="50" />
-    <scopeInfo nodeId="1515824352030431880" fileName="NodeToHtmlHandler.java" startLine="239" startPosition="28" endLine="240" endPosition="32" />
-    <scopeInfo nodeId="1515824352029433128" fileName="NodeToHtmlHandler.java" startLine="246" startPosition="74" endLine="247" endPosition="46" />
-    <scopeInfo nodeId="1515824352029592668" fileName="NodeToHtmlHandler.java" startLine="249" startPosition="78" endLine="250" endPosition="48" />
-    <scopeInfo nodeId="1515824352025516288" fileName="NodeToHtmlHandler.java" startLine="270" startPosition="73" endLine="271" endPosition="18" />
-    <scopeInfo nodeId="1515824352025628402" fileName="NodeToHtmlHandler.java" startLine="274" startPosition="27" endLine="275" endPosition="45" />
-    <scopeInfo nodeId="1515824352026299537" fileName="NodeToHtmlHandler.java" startLine="279" startPosition="38" endLine="280" endPosition="22" />
-    <scopeInfo nodeId="1796284964482053990" fileName="NodeToHtmlHandler.java" startLine="289" startPosition="27" endLine="290" endPosition="19" />
-    <scopeInfo nodeId="1515824352026221336" fileName="NodeToHtmlHandler.java" startLine="292" startPosition="74" endLine="293" endPosition="18" />
-    <scopeInfo nodeId="3656887959595302991" fileName="NodeToHtmlHandler.java" startLine="304" startPosition="56" endLine="305" endPosition="29" />
-    <scopeInfo nodeId="4761358399197486363" fileName="NodeToHtmlHandler.java" startLine="325" startPosition="48" endLine="326" endPosition="82" />
-    <scopeInfo nodeId="663115807302517996" fileName="NodeToHtmlHandler.java" startLine="329" startPosition="114" endLine="330" endPosition="34" />
-    <scopeInfo nodeId="1213033019351778138" fileName="NodeToHtmlHandler.java" startLine="344" startPosition="44" endLine="345" endPosition="57" />
-    <scopeInfo nodeId="1213033019351826014" fileName="NodeToHtmlHandler.java" startLine="347" startPosition="44" endLine="348" endPosition="62" />
-    <scopeInfo nodeId="1213033019352174972" fileName="NodeToHtmlHandler.java" startLine="351" startPosition="39" endLine="352" endPosition="45" />
-    <scopeInfo nodeId="1213033019352243568" fileName="NodeToHtmlHandler.java" startLine="354" startPosition="41" endLine="355" endPosition="46" />
-    <scopeInfo nodeId="5577184777819105881" fileName="NodeToHtmlHandler.java" startLine="357" startPosition="82" endLine="358" endPosition="45" />
-    <scopeInfo nodeId="1213033019351882870" fileName="NodeToHtmlHandler.java" startLine="361" startPosition="58" endLine="362" endPosition="60" />
-    <scopeInfo nodeId="3228268613620327588" fileName="NodeToHtmlHandler.java" startLine="378" startPosition="31" endLine="379" endPosition="15" />
-    <scopeInfo nodeId="3228268613620327595" fileName="NodeToHtmlHandler.java" startLine="381" startPosition="42" endLine="382" endPosition="15" />
-    <scopeInfo nodeId="1213033019353840538" fileName="NodeToHtmlHandler.java" startLine="391" startPosition="23" endLine="392" endPosition="73" />
-    <scopeInfo nodeId="3656887959595944618" fileName="NodeToHtmlHandler.java" startLine="400" startPosition="70" endLine="401" endPosition="41" />
-    <scopeInfo nodeId="3656887959596141667" fileName="NodeToHtmlHandler.java" startLine="402" startPosition="75" endLine="403" endPosition="39" />
-    <scopeInfo nodeId="3656887959596184858" fileName="NodeToHtmlHandler.java" startLine="404" startPosition="73" endLine="405" endPosition="37" />
-    <scopeInfo nodeId="3656887959595248765" fileName="NodeToHtmlHandler.java" startLine="407" startPosition="84" endLine="408" endPosition="55" />
-    <scopeInfo nodeId="1796284964483995090" fileName="NodeToHtmlHandler.java" startLine="410" startPosition="78" endLine="411" endPosition="46" />
-    <scopeInfo nodeId="1796284964483642137" fileName="NodeToHtmlHandler.java" startLine="421" startPosition="23" endLine="422" endPosition="19" />
-    <scopeInfo nodeId="1796284964483235206" fileName="NodeToHtmlHandler.java" startLine="425" startPosition="17" endLine="426" endPosition="20" />
-    <scopeInfo nodeId="1796284964483171559" fileName="NodeToHtmlHandler.java" startLine="428" startPosition="79" endLine="429" endPosition="79" />
-    <scopeInfo nodeId="1796284964483757272" fileName="NodeToHtmlHandler.java" startLine="430" startPosition="12" endLine="431" endPosition="19" />
-    <scopeInfo nodeId="3656887959595210352" fileName="NodeToHtmlHandler.java" startLine="437" startPosition="70" endLine="438" endPosition="46" />
-    <scopeInfo nodeId="3656887959595705074" fileName="NodeToHtmlHandler.java" startLine="440" startPosition="73" endLine="441" endPosition="49" />
-    <scopeInfo nodeId="3656887959596280279" fileName="NodeToHtmlHandler.java" startLine="443" startPosition="68" endLine="444" endPosition="44" />
-    <scopeInfo nodeId="1213033019353297230" fileName="NodeToHtmlHandler.java" startLine="449" startPosition="87" endLine="450" endPosition="33" />
-    <scopeInfo nodeId="1213033019353375564" fileName="NodeToHtmlHandler.java" startLine="452" startPosition="88" endLine="453" endPosition="34" />
-    <scopeInfo nodeId="3376719102115145409" fileName="NodeToHtmlHandler.java" startLine="455" startPosition="73" endLine="456" endPosition="32" />
-    <scopeInfo nodeId="1213033019351924905" fileName="NodeToHtmlHandler.java" startLine="463" startPosition="63" endLine="464" endPosition="43" />
-    <scopeInfo nodeId="3376719102115250102" fileName="NodeToHtmlHandler.java" startLine="467" startPosition="61" endLine="468" endPosition="44" />
-    <scopeInfo nodeId="1515824352018030836" fileName="NodeToHtmlHandler.java" startLine="72" startPosition="127" endLine="74" endPosition="32" />
-    <scopeInfo nodeId="2533261537000423087" fileName="NodeToHtmlHandler.java" startLine="107" startPosition="53" endLine="109" endPosition="19" />
-    <scopeInfo nodeId="1515824352027851015" fileName="NodeToHtmlHandler.java" startLine="184" startPosition="28" endLine="186" endPosition="32" />
-    <scopeInfo nodeId="1515824352029120196" fileName="NodeToHtmlHandler.java" startLine="233" startPosition="53" endLine="235" endPosition="58" />
-    <scopeInfo nodeId="1515824352029433110" fileName="NodeToHtmlHandler.java" startLine="256" startPosition="29" endLine="258" endPosition="58" />
-    <scopeInfo nodeId="1515824352026221349" fileName="NodeToHtmlHandler.java" startLine="295" startPosition="52" endLine="297" endPosition="47">
-      <varInfo nodeId="1515824352026221351" varName="rightChild" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213033019351726605" fileName="NodeToHtmlHandler.java" startLine="367" startPosition="42" endLine="369" endPosition="52">
-      <varInfo nodeId="1213033019351967895" varName="strColor" />
-    </scopeInfo>
-    <scopeInfo nodeId="6087360391926058205" fileName="NodeToHtmlHandler.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="6087360391926565677" fileName="NodeToHtmlHandler.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
+    <nodeInfo nodeId="6087360391926018960" fileName="NodeToHtmlHandler.java" startLine="24" startPosition="104" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6087360391926021248" fileName="NodeToHtmlHandler.java" startLine="25" startPosition="20" endLine="26" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6087360391926131286" fileName="NodeToHtmlHandler.java" startLine="27" startPosition="41" endLine="28" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6087360391926058221" fileName="NodeToHtmlHandler.java" startLine="31" startPosition="31" endLine="32" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6087360391926068866" fileName="NodeToHtmlHandler.java" startLine="34" startPosition="7" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6087360391926571120" fileName="NodeToHtmlHandler.java" startLine="42" startPosition="67" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6087360391926604324" fileName="NodeToHtmlHandler.java" startLine="45" startPosition="6" endLine="46" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6087360391926275513" fileName="NodeToHtmlHandler.java" startLine="46" startPosition="99" endLine="47" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6087360391926275520" fileName="NodeToHtmlHandler.java" startLine="47" startPosition="159" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6087360391926122986" fileName="NodeToHtmlHandler.java" startLine="26" startPosition="104" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6087360391926058205" fileName="NodeToHtmlHandler.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6087360391926565677" fileName="NodeToHtmlHandler.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRootCell#(Ljava/util/List;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6087360391926044235" fileName="NodeToHtmlHandler.java" startLine="29" startPosition="5" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6087360391926520042" fileName="NodeToHtmlHandler.java" startLine="40" startPosition="61" endLine="45" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6087360391926020319" fileName="NodeToHtmlHandler.java" startLine="40" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHtmlForNode#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6087360391926018494" fileName="NodeToHtmlHandler.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
+    <scopeInfo nodeId="6087360391926122989" fileName="NodeToHtmlHandler.java" startLine="27" startPosition="41" endLine="28" endPosition="89" />
+    <scopeInfo nodeId="6087360391926058206" fileName="NodeToHtmlHandler.java" startLine="31" startPosition="31" endLine="32" endPosition="122" />
+    <scopeInfo nodeId="6087360391926565684" fileName="NodeToHtmlHandler.java" startLine="42" startPosition="67" endLine="43" endPosition="20" />
+    <scopeInfo nodeId="6087360391926058205" fileName="NodeToHtmlHandler.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6087360391926565677" fileName="NodeToHtmlHandler.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="6087360391926565681" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="3656887959594649742" fileName="NodeToHtmlHandler.java" startLine="80" startPosition="55" endLine="83" endPosition="7">
-      <varInfo nodeId="3656887959594649743" varName="child" />
-    </scopeInfo>
-    <scopeInfo nodeId="7794845149925914924" fileName="NodeToHtmlHandler.java" startLine="80" startPosition="55" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="1515824352026891371" fileName="NodeToHtmlHandler.java" startLine="146" startPosition="72" endLine="149" endPosition="9" />
-    <scopeInfo nodeId="1515824352027695708" fileName="NodeToHtmlHandler.java" startLine="163" startPosition="75" endLine="166" endPosition="9" />
-    <scopeInfo nodeId="1796284964482435856" fileName="NodeToHtmlHandler.java" startLine="226" startPosition="28" endLine="229" endPosition="7" />
-    <scopeInfo nodeId="3656887959595302988" fileName="NodeToHtmlHandler.java" startLine="304" startPosition="0" endLine="307" endPosition="0">
-      <varInfo nodeId="3656887959595307450" varName="builder" />
-    </scopeInfo>
-    <scopeInfo nodeId="4761358399197486383" fileName="NodeToHtmlHandler.java" startLine="332" startPosition="52" endLine="335" endPosition="23" />
-    <scopeInfo nodeId="1213033019351924905" fileName="NodeToHtmlHandler.java" startLine="463" startPosition="0" endLine="466" endPosition="0">
-      <varInfo nodeId="1213033019351924905" varName="str" />
-    </scopeInfo>
-    <scopeInfo nodeId="3376719102115250102" fileName="NodeToHtmlHandler.java" startLine="467" startPosition="0" endLine="470" endPosition="0">
-      <varInfo nodeId="3376719102115250102" varName="str" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352025993954" fileName="NodeToHtmlHandler.java" startLine="278" startPosition="34" endLine="282" endPosition="44" />
-    <scopeInfo nodeId="1213033019351726602" fileName="NodeToHtmlHandler.java" startLine="367" startPosition="0" endLine="371" endPosition="0">
-      <varInfo nodeId="1213033019351729037" varName="color" />
-    </scopeInfo>
-    <scopeInfo nodeId="3656887959594692540" fileName="NodeToHtmlHandler.java" startLine="84" startPosition="50" endLine="89" endPosition="9">
-      <varInfo nodeId="1213033019351339420" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352028156690" fileName="NodeToHtmlHandler.java" startLine="199" startPosition="34" endLine="204" endPosition="66">
-      <varInfo nodeId="1515824352028205381" varName="currentCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="3376719102115652178" fileName="NodeToHtmlHandler.java" startLine="126" startPosition="81" endLine="132" endPosition="7" />
-    <scopeInfo nodeId="3656887959594899755" fileName="NodeToHtmlHandler.java" startLine="310" startPosition="125" endLine="316" endPosition="24">
-      <varInfo nodeId="3656887959595787404" varName="div" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352025894367" fileName="NodeToHtmlHandler.java" startLine="276" startPosition="12" endLine="283" endPosition="7">
-      <varInfo nodeId="1515824352025943459" varName="parentCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="6087360391926020322" fileName="NodeToHtmlHandler.java" startLine="54" startPosition="61" endLine="62" endPosition="38">
+    <scopeInfo nodeId="6087360391926020322" fileName="NodeToHtmlHandler.java" startLine="40" startPosition="61" endLine="48" endPosition="58">
       <varInfo nodeId="6087360391926275512" varName="cell" />
       <varInfo nodeId="6087360391926520043" varName="component" />
       <varInfo nodeId="6087360391926604325" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="3376719102115652175" fileName="NodeToHtmlHandler.java" startLine="125" startPosition="71" endLine="133" endPosition="5">
-      <varInfo nodeId="3376719102115652181" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="3656887959594899752" fileName="NodeToHtmlHandler.java" startLine="310" startPosition="0" endLine="318" endPosition="0">
-      <varInfo nodeId="3656887959594907318" varName="builder" />
-      <varInfo nodeId="3656887959595214120" varName="cell" />
-      <varInfo nodeId="663115807303448132" varName="selectedNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7998422013324844726" fileName="NodeToHtmlHandler.java" startLine="105" startPosition="162" endLine="114" endPosition="32">
-      <varInfo nodeId="7998422013324844733" varName="nextCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="3376719102115600593" fileName="NodeToHtmlHandler.java" startLine="125" startPosition="71" endLine="134" endPosition="16" />
-    <scopeInfo nodeId="1515824352027030765" fileName="NodeToHtmlHandler.java" startLine="141" startPosition="32" endLine="150" endPosition="7">
-      <varInfo nodeId="1515824352027100103" varName="cell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352027695684" fileName="NodeToHtmlHandler.java" startLine="158" startPosition="32" endLine="167" endPosition="7">
-      <varInfo nodeId="1515824352027695686" varName="cell" />
-    </scopeInfo>
-    <scopeInfo nodeId="6087360391926020319" fileName="NodeToHtmlHandler.java" startLine="54" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="6087360391926020319" fileName="NodeToHtmlHandler.java" startLine="40" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="6087360391926020343" varName="node" />
       <varInfo nodeId="6087360391926332072" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1213033019353494371" fileName="NodeToHtmlHandler.java" startLine="447" startPosition="43" endLine="457" endPosition="7" />
-    <scopeInfo nodeId="6087360391926018505" fileName="NodeToHtmlHandler.java" startLine="38" startPosition="104" endLine="49" endPosition="58">
+    <scopeInfo nodeId="6087360391926018505" fileName="NodeToHtmlHandler.java" startLine="24" startPosition="104" endLine="35" endPosition="58">
       <varInfo nodeId="6087360391926044238" varName="html" />
       <varInfo nodeId="6087360391926021251" varName="nodeId" />
     </scopeInfo>
-    <scopeInfo nodeId="7998422013324844716" fileName="NodeToHtmlHandler.java" startLine="104" startPosition="21" endLine="115" endPosition="7">
-      <varInfo nodeId="7998422013324844717" varName="cellIterator" />
-    </scopeInfo>
-    <scopeInfo nodeId="3376719102115600590" fileName="NodeToHtmlHandler.java" startLine="125" startPosition="0" endLine="136" endPosition="0">
-      <varInfo nodeId="3376719102115602002" varName="collection" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352026221328" fileName="NodeToHtmlHandler.java" startLine="288" startPosition="97" endLine="299" endPosition="17" />
-    <scopeInfo nodeId="1796284964482866861" fileName="NodeToHtmlHandler.java" startLine="420" startPosition="118" endLine="432" endPosition="5">
-      <varInfo nodeId="1796284964483588657" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="6087360391926018494" fileName="NodeToHtmlHandler.java" startLine="38" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="6087360391926018494" fileName="NodeToHtmlHandler.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="6087360391926018503" varName="exchange" />
       <varInfo nodeId="6087360391926018501" varName="project" />
       <varInfo nodeId="6087360391926018499" varName="requestUrl" />
     </scopeInfo>
-    <scopeInfo nodeId="1515824352027695672" fileName="NodeToHtmlHandler.java" startLine="156" startPosition="107" endLine="169" endPosition="16">
-      <varInfo nodeId="1515824352027695674" varName="iterator" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352026221369" fileName="NodeToHtmlHandler.java" startLine="288" startPosition="0" endLine="301" endPosition="0">
-      <varInfo nodeId="1515824352026221362" varName="prevCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4761358399197486354" fileName="NodeToHtmlHandler.java" startLine="323" startPosition="118" endLine="336" endPosition="5">
-      <varInfo nodeId="4761358399197486356" varName="classes" />
-    </scopeInfo>
-    <scopeInfo nodeId="4761358399197598021" fileName="NodeToHtmlHandler.java" startLine="376" startPosition="43" endLine="389" endPosition="33">
-      <varInfo nodeId="4761358399198415902" varName="targetModelId" />
-      <varInfo nodeId="4761358399198432346" varName="targetModuleId" />
-      <varInfo nodeId="4761358399197746738" varName="targetNode" />
-      <varInfo nodeId="4761358399198090739" varName="targetNodeId" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352026776609" fileName="NodeToHtmlHandler.java" startLine="139" startPosition="108" endLine="153" endPosition="0">
-      <varInfo nodeId="1515824352027006919" varName="iterator" />
-    </scopeInfo>
-    <scopeInfo nodeId="1796284964482866858" fileName="NodeToHtmlHandler.java" startLine="420" startPosition="0" endLine="434" endPosition="0">
-      <varInfo nodeId="1796284964483153058" varName="cell" />
-      <varInfo nodeId="1796284964482885667" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352027695671" fileName="NodeToHtmlHandler.java" startLine="156" startPosition="0" endLine="171" endPosition="0">
-      <varInfo nodeId="1515824352027695724" varName="collection" />
-    </scopeInfo>
-    <scopeInfo nodeId="4761358399197486411" fileName="NodeToHtmlHandler.java" startLine="323" startPosition="0" endLine="338" endPosition="0">
-      <varInfo nodeId="4761358399197486399" varName="cell" />
-      <varInfo nodeId="4761358399197486401" varName="div" />
-      <varInfo nodeId="663115807302587993" varName="selectedNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352026776606" fileName="NodeToHtmlHandler.java" startLine="139" startPosition="0" endLine="155" endPosition="0">
-      <varInfo nodeId="1515824352026797943" varName="collection" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352025493180" fileName="NodeToHtmlHandler.java" startLine="269" startPosition="83" endLine="285" endPosition="16">
-      <varInfo nodeId="1515824352025585514" varName="prevCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352028307181" fileName="NodeToHtmlHandler.java" startLine="189" startPosition="46" endLine="206" endPosition="31" />
-    <scopeInfo nodeId="3656887959595248753" fileName="NodeToHtmlHandler.java" startLine="398" startPosition="76" endLine="415" endPosition="28">
-      <varInfo nodeId="3656887959596068478" varName="clazz" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352025493177" fileName="NodeToHtmlHandler.java" startLine="269" startPosition="0" endLine="287" endPosition="0">
-      <varInfo nodeId="1515824352025507676" varName="cell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4761358399197577025" fileName="NodeToHtmlHandler.java" startLine="375" startPosition="103" endLine="393" endPosition="5" />
-    <scopeInfo nodeId="7998422013324844695" fileName="NodeToHtmlHandler.java" startLine="99" startPosition="144" endLine="118" endPosition="0">
-      <varInfo nodeId="7998422013324844713" varName="index" />
-      <varInfo nodeId="7998422013324844697" varName="nextRow" />
-    </scopeInfo>
-    <scopeInfo nodeId="3656887959595248752" fileName="NodeToHtmlHandler.java" startLine="398" startPosition="0" endLine="417" endPosition="0">
-      <varInfo nodeId="3656887959595248778" varName="collection" />
-    </scopeInfo>
-    <scopeInfo nodeId="4761358399197577022" fileName="NodeToHtmlHandler.java" startLine="375" startPosition="0" endLine="395" endPosition="0">
-      <varInfo nodeId="4761358399197616963" varName="cell" />
-      <varInfo nodeId="4761358399197640384" varName="div" />
-    </scopeInfo>
-    <scopeInfo nodeId="7998422013324844682" fileName="NodeToHtmlHandler.java" startLine="98" startPosition="43" endLine="119" endPosition="5">
-      <varInfo nodeId="7998422013324844686" varName="rowsIterator" />
-    </scopeInfo>
-    <scopeInfo nodeId="7998422013324844676" fileName="NodeToHtmlHandler.java" startLine="97" startPosition="127" endLine="120" endPosition="31" />
-    <scopeInfo nodeId="4761358399197452643" fileName="NodeToHtmlHandler.java" startLine="340" startPosition="43" endLine="363" endPosition="7">
-      <varInfo nodeId="1213033019351552345" varName="bg" />
-      <varInfo nodeId="1213033019351773598" varName="builder" />
-      <varInfo nodeId="4761358399197452645" varName="fg" />
-      <varInfo nodeId="1213033019352162158" varName="font" />
-    </scopeInfo>
-    <scopeInfo nodeId="6087360391926274179" fileName="NodeToHtmlHandler.java" startLine="67" startPosition="104" endLine="92" endPosition="30">
-      <varInfo nodeId="3656887959594454711" varName="builder" />
-    </scopeInfo>
-    <scopeInfo nodeId="7998422013324844790" fileName="NodeToHtmlHandler.java" startLine="97" startPosition="0" endLine="122" endPosition="0">
-      <varInfo nodeId="7998422013324844773" varName="builder" />
-      <varInfo nodeId="7998422013324844775" varName="cell" />
-      <varInfo nodeId="7998422013324844777" varName="selectedNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4761358399197452638" fileName="NodeToHtmlHandler.java" startLine="339" startPosition="105" endLine="364" endPosition="5" />
-    <scopeInfo nodeId="3656887959596332753" fileName="NodeToHtmlHandler.java" startLine="435" startPosition="88" endLine="460" endPosition="28">
-      <varInfo nodeId="3656887959595643216" varName="clazz" />
-    </scopeInfo>
-    <scopeInfo nodeId="6087360391926274176" fileName="NodeToHtmlHandler.java" startLine="67" startPosition="0" endLine="94" endPosition="0">
-      <varInfo nodeId="6087360391926275417" varName="cell" />
-      <varInfo nodeId="663115807301698962" varName="selectedNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4761358399197452688" fileName="NodeToHtmlHandler.java" startLine="339" startPosition="0" endLine="366" endPosition="0">
-      <varInfo nodeId="4761358399197452679" varName="cell" />
-      <varInfo nodeId="4761358399197452681" varName="div" />
-    </scopeInfo>
-    <scopeInfo nodeId="3656887959596332750" fileName="NodeToHtmlHandler.java" startLine="435" startPosition="0" endLine="462" endPosition="0">
-      <varInfo nodeId="3656887959596352755" varName="cell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352017826119" fileName="NodeToHtmlHandler.java" startLine="174" startPosition="88" endLine="266" endPosition="0">
-      <varInfo nodeId="1515824352026457946" varName="builder" />
-      <varInfo nodeId="1515824352029072153" varName="current" />
-      <varInfo nodeId="1515824352028076515" varName="iterator" />
-      <varInfo nodeId="1515824352026569866" varName="startLast" />
-      <varInfo nodeId="1515824352026531847" varName="startMain" />
-    </scopeInfo>
-    <scopeInfo nodeId="1515824352017826115" fileName="NodeToHtmlHandler.java" startLine="174" startPosition="0" endLine="268" endPosition="0">
-      <varInfo nodeId="1515824352017855058" varName="collection" />
-      <varInfo nodeId="663115807301885203" varName="selectedNode" />
-    </scopeInfo>
-    <unitInfo nodeId="6087360391926058205" fileName="NodeToHtmlHandler.java" startLine="44" startPosition="59" endLine="48" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler$1" />
-    <unitInfo nodeId="6087360391926565481" fileName="NodeToHtmlHandler.java" startLine="55" startPosition="36" endLine="59" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler$2" />
-    <unitInfo nodeId="6087360391926012886" fileName="NodeToHtmlHandler.java" startLine="37" startPosition="0" endLine="471" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler" />
+    <unitInfo nodeId="6087360391926058205" fileName="NodeToHtmlHandler.java" startLine="30" startPosition="59" endLine="34" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler$1" />
+    <unitInfo nodeId="6087360391926565481" fileName="NodeToHtmlHandler.java" startLine="41" startPosition="36" endLine="45" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler$2" />
+    <unitInfo nodeId="6087360391926012886" fileName="NodeToHtmlHandler.java" startLine="23" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler" />
   </root>
   <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/7481782646737023365">
     <nodeInfo nodeId="7481782646737054417" fileName="ProjectNameHandler.java" startLine="11" startPosition="98" endLine="12" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
