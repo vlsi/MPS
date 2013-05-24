@@ -99,7 +99,7 @@ public class IconHandler implements Handler {
 
 
   private static BufferedImage convertIconToBufferedImage(Icon icon) {
-    BufferedImage bi = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(), BufferedImage.TYPE_INT_RGB);
+    BufferedImage bi = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
     Graphics g = bi.createGraphics();
     icon.paintIcon(null, g, 0, 0);
     g.dispose();
