@@ -66,7 +66,7 @@ $(function () {
             }
             var index = 1;
             var li = $('.mbreadcrumb li');
-            while($('.mbreadcrumb').width() > $('.mbreadcrumb-container').width() && index < li.size() - 1) {
+            while ($('.mbreadcrumb').width() > $('.mbreadcrumb-container').width() && index < li.size() - 1) {
                 $(li.get(index)).children("a").text("...");
                 index++;
             }
@@ -93,7 +93,14 @@ $(function () {
         },
         sorter: function (items) {
             return items.sort(function (item1, item2) {
-                return itemPresentation(item1).localeCompare(itemPresentation(item2));
+                var item1_json = JSON.parse(item1);
+                var item2_json = JSON.parse(item2);
+
+                if (item1_json["type"] == item2_json["type"]) {
+                    return itemPresentation(item1).localeCompare(itemPresentation(item2));
+                }
+                var typesOrder = {"node": 1, "model": 2, "module": 3};
+                return typesOrder[item1_json["type"]] - typesOrder[item2_json["type"]];
             });
         },
         highlighter: function (item) {
