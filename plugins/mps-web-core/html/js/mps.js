@@ -40,7 +40,7 @@ $(function () {
     $('.roots-search').typeahead({
         source: function (query, process) {
             return $.ajax({
-                url: "/fake/p/" + currentProject + "/goto.json",
+                url: "/rest/p/" + currentProject + "/goto.json",
                 type: 'get',
                 data: {query: query},
                 dataType: 'json',

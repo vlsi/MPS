@@ -54,14 +54,81 @@
     <unitInfo nodeId="4671236541318171017" fileName="IconUtil.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.IconUtil" />
   </root>
   <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/4671236541319382784">
-    <nodeInfo nodeId="4671236541319389222" fileName="GoToHandler.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
-    <scopeInfo nodeId="4671236541319389233" fileName="GoToHandler.java" startLine="10" startPosition="98" endLine="10" endPosition="98" />
-    <scopeInfo nodeId="4671236541319389222" fileName="GoToHandler.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+    <nodeInfo nodeId="4671236541319622727" fileName="GoToHandler.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="QUERY_PARAM_NAME" />
+    <nodeInfo nodeId="4671236541319509512" fileName="GoToHandler.java" startLine="23" startPosition="98" endLine="24" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671236541319694050" fileName="GoToHandler.java" startLine="24" startPosition="126" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4671236541319476332" fileName="GoToHandler.java" startLine="25" startPosition="0" endLine="26" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671236541319480108" fileName="GoToHandler.java" startLine="26" startPosition="72" endLine="27" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671236541319509638" fileName="GoToHandler.java" startLine="27" startPosition="100" endLine="28" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671236541319509693" fileName="GoToHandler.java" startLine="28" startPosition="99" endLine="29" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671236541319509589" fileName="GoToHandler.java" startLine="29" startPosition="98" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4671236541319511175" fileName="GoToHandler.java" startLine="30" startPosition="0" endLine="31" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671236541320131675" fileName="GoToHandler.java" startLine="38" startPosition="41" endLine="39" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671236541319947514" fileName="GoToHandler.java" startLine="42" startPosition="40" endLine="43" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671236541319958191" fileName="GoToHandler.java" startLine="43" startPosition="54" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671236541319970425" fileName="GoToHandler.java" startLine="44" startPosition="49" endLine="45" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671236541319970466" fileName="GoToHandler.java" startLine="45" startPosition="70" endLine="46" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671236541319970513" fileName="GoToHandler.java" startLine="46" startPosition="66" endLine="47" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671236541319977115" fileName="GoToHandler.java" startLine="47" startPosition="73" endLine="48" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671236541320108736" fileName="GoToHandler.java" startLine="53" startPosition="64" endLine="54" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671236541319469526" fileName="GoToHandler.java" startLine="59" startPosition="76" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671236541319474441" fileName="GoToHandler.java" startLine="65" startPosition="75" endLine="66" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671236541320103855" fileName="GoToHandler.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
+    <nodeInfo nodeId="4671236541320105644" fileName="GoToHandler.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matches#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="4671236541319466418" fileName="GoToHandler.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelsJson#(Ljetbrains/mps/project/Project;Ljava/lang/String;)Ljava/util/List;" />
+    <nodeInfo nodeId="4671236541319466520" fileName="GoToHandler.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodesJson#(Ljetbrains/mps/project/Project;Ljava/lang/String;)Ljava/util/List;" />
+    <nodeInfo nodeId="4671236541319680178" fileName="GoToHandler.java" startLine="71" startPosition="55" endLine="75" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671236541319680178" fileName="GoToHandler.java" startLine="71" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="trim_g7q2vn_a0a0a2#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4671236541319915823" fileName="GoToHandler.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4671236541319389222" fileName="GoToHandler.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
+    <nodeInfo nodeId="4671236541319814835" fileName="GoToHandler.java" startLine="36" startPosition="87" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671236541319465015" fileName="GoToHandler.java" startLine="36" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModulesJson#(Ljetbrains/mps/project/Project;Ljava/lang/String;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="4671236541320103856" fileName="GoToHandler.java" startLine="38" startPosition="41" endLine="39" endPosition="34" />
+    <scopeInfo nodeId="4671236541320105647" fileName="GoToHandler.java" startLine="53" startPosition="64" endLine="54" endPosition="50" />
+    <scopeInfo nodeId="4671236541319466419" fileName="GoToHandler.java" startLine="59" startPosition="76" endLine="60" endPosition="58" />
+    <scopeInfo nodeId="4671236541319466521" fileName="GoToHandler.java" startLine="65" startPosition="75" endLine="66" endPosition="58" />
+    <scopeInfo nodeId="4671236541320103855" fileName="GoToHandler.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="4671236541320103855" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4671236541320105644" fileName="GoToHandler.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="4671236541320105824" varName="module" />
+      <varInfo nodeId="4671236541320105828" varName="query" />
+    </scopeInfo>
+    <scopeInfo nodeId="4671236541319466418" fileName="GoToHandler.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="4671236541319466423" varName="project" />
+      <varInfo nodeId="4671236541319466425" varName="query" />
+    </scopeInfo>
+    <scopeInfo nodeId="4671236541319466520" fileName="GoToHandler.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="4671236541319466525" varName="project" />
+      <varInfo nodeId="4671236541319466527" varName="query" />
+    </scopeInfo>
+    <scopeInfo nodeId="4671236541319680178" fileName="GoToHandler.java" startLine="71" startPosition="55" endLine="75" endPosition="6" />
+    <scopeInfo nodeId="4671236541319915824" fileName="GoToHandler.java" startLine="42" startPosition="40" endLine="48" endPosition="37">
+      <varInfo nodeId="4671236541319947515" varName="moduleJson" />
+    </scopeInfo>
+    <scopeInfo nodeId="4671236541319680178" fileName="GoToHandler.java" startLine="71" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="4671236541319680178" varName="str" />
+    </scopeInfo>
+    <scopeInfo nodeId="4671236541319389233" fileName="GoToHandler.java" startLine="23" startPosition="98" endLine="31" endPosition="123">
+      <varInfo nodeId="4671236541319476335" varName="items" />
+      <varInfo nodeId="4671236541319509515" varName="query" />
+    </scopeInfo>
+    <scopeInfo nodeId="4671236541319915823" fileName="GoToHandler.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="4671236541319915823" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4671236541319389222" fileName="GoToHandler.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="4671236541319389231" varName="exchange" />
       <varInfo nodeId="4671236541319389229" varName="project" />
       <varInfo nodeId="4671236541319389227" varName="requestUrl" />
     </scopeInfo>
-    <unitInfo nodeId="4671236541319382784" fileName="GoToHandler.java" startLine="9" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.GoToHandler" />
+    <scopeInfo nodeId="4671236541319465018" fileName="GoToHandler.java" startLine="36" startPosition="87" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="4671236541319465015" fileName="GoToHandler.java" startLine="36" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="4671236541319465037" varName="project" />
+      <varInfo nodeId="4671236541319465041" varName="query" />
+    </scopeInfo>
+    <unitInfo nodeId="4671236541320103855" fileName="GoToHandler.java" startLine="37" startPosition="97" endLine="41" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.GoToHandler$1" />
+    <unitInfo nodeId="4671236541319915823" fileName="GoToHandler.java" startLine="41" startPosition="18" endLine="50" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.GoToHandler$2" />
+    <unitInfo nodeId="4671236541319382784" fileName="GoToHandler.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.GoToHandler" />
   </root>
   <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/6087360391925491751">
     <nodeInfo nodeId="6087360391925739246" fileName="ProjectVcsRevisionHandler.java" startLine="16" startPosition="98" endLine="17" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

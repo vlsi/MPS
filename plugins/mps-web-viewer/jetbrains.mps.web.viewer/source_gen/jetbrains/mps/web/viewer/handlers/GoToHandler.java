@@ -5,8 +5,73 @@ package jetbrains.mps.web.viewer.handlers;
 import jetbrains.mps.web.core.server.Handler;
 import jetbrains.mps.project.Project;
 import com.sun.net.httpserver.HttpExchange;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.web.core.server.HttpUtil;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.web.JsonBuilder;
 
 public class GoToHandler implements Handler {
+  private static final String QUERY_PARAM_NAME = "?query=";
+
+
   public void handle(String requestUrl, Project project, HttpExchange exchange) throws Exception {
+    String query = trim_g7q2vn_a0a0a2(requestUrl.substring(requestUrl.indexOf(QUERY_PARAM_NAME) + QUERY_PARAM_NAME.length()));
+
+    List<String> items = ListSequence.fromList(new ArrayList<String>());
+    ListSequence.fromList(items).addSequence(Sequence.fromIterable(getModulesJson(project, query)));
+    ListSequence.fromList(items).addSequence(ListSequence.fromList(getModelsJson(project, query)));
+    ListSequence.fromList(items).addSequence(ListSequence.fromList(getNodesJson(project, query)));
+
+    HttpUtil.doJsonResponse("{ \"options\": [" + IterableUtils.join(ListSequence.fromList(items), ", ") + "] }", exchange);
+  }
+
+
+
+  private static Iterable<String> getModulesJson(Project project, final String query) {
+    return Sequence.fromIterable(((Iterable<? extends SModule>) project.getModules())).where(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return matches(it, query);
+      }
+    }).select(new ISelector<SModule, String>() {
+      public String select(SModule it) {
+        JsonBuilder moduleJson = JsonBuilder.object();
+        moduleJson.addProperty("type", "module");
+        moduleJson.addProperty("icon", IconUtil.getIconForModule(it));
+        moduleJson.addProperty("module-name", it.getModuleName());
+        moduleJson.addProperty("module-id", it.getModuleId().toString());
+        return moduleJson.toString();
+      }
+    });
+  }
+
+  private static boolean matches(SModule module, String query) {
+    return module.getModuleName().contains(query);
+  }
+
+
+
+  private static List<String> getModelsJson(Project project, String query) {
+    return ListSequence.fromList(new ArrayList<String>());
+  }
+
+
+
+  private static List<String> getNodesJson(Project project, String query) {
+    return ListSequence.fromList(new ArrayList<String>());
+  }
+
+
+
+  public static String trim_g7q2vn_a0a0a2(String str) {
+    return (str == null ?
+      null :
+      str.trim()
+    );
   }
 }
