@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import java.util.Iterator;
@@ -73,7 +74,10 @@ public class NodeToHtmlHandler implements Handler {
       return builder.toString();
     }
     appendOpenDiv(builder, cell, selectedNode);
-    if (cell instanceof EditorCell_Collection) {
+
+    if (cell instanceof EditorCell_Table) {
+      getHtmlForTable(builder, cell, selectedNode);
+    } else if (cell instanceof EditorCell_Collection) {
       for (jetbrains.mps.openapi.editor.cells.EditorCell child : Sequence.fromIterable(((EditorCell_Collection) cell))) {
         builder.append(getHtmlForCell(child, selectedNode)).append('\n');
       }
@@ -86,6 +90,32 @@ public class NodeToHtmlHandler implements Handler {
     }
     appendClosingDiv(builder);
     return builder.toString();
+  }
+
+  private void getHtmlForTable(StringBuilder builder, jetbrains.mps.openapi.editor.cells.EditorCell cell, SNode selectedNode) {
+    builder.append("<table border=\"1\">");
+    for (Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> rowsIterator = ((EditorCell_Table) cell).iterator(); rowsIterator.hasNext();) {
+      jetbrains.mps.openapi.editor.cells.EditorCell nextRow = rowsIterator.next();
+      assert nextRow instanceof EditorCell_Collection;
+      builder.append("<tr>");
+
+      int index = -1;
+      for (Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> cellIterator = ((EditorCell_Collection) nextRow).iterator(); cellIterator.hasNext(); index++) {
+        jetbrains.mps.openapi.editor.cells.EditorCell nextCell = cellIterator.next();
+        if (index < 0 || !(cellIterator.hasNext())) {
+          //  skipping first cell 
+          continue;
+        }
+
+        builder.append("<td>");
+        builder.append(getHtmlForCell(nextCell, selectedNode)).append('\n');
+        builder.append("</td>");
+      }
+      assert index > 0;
+      builder.append("</tr>");
+
+    }
+    builder.append("</table>");
   }
 
 
@@ -170,7 +200,6 @@ public class NodeToHtmlHandler implements Handler {
           break;
         }
         builder.append(getHtmlForCell(currentCell, selectedNode));
-
       }
       builder.append("</div>");
     }
