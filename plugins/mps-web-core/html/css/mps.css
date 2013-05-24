@@ -70,7 +70,7 @@ li[data-collapsed="true"] > ul.tree-content {
     line-height: 1.618;
 }
 
-.icon_any {
+.icon {
     position: relative;
     display: inline-block;
     top: 1px;
@@ -94,4 +94,30 @@ li[data-collapsed="true"] > ul.tree-content {
 
 .tree-root li[data-collapsed="false"] > span {
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAaElEQVR42pXKwQmAMAyFYb05gQ6hA4mTiGN40iFyruPoCJ4VYgLvEFpS6uGnvPSrmLm4/5iIDokzBYsH6XXgI/UWa7uDN/2PcSfdFmK3CUZLhGe9e7iRLsBTt4vRBDxiZ3EtrXgTXNwHC5hIYpqNZTcAAAAASUVORK5CYII=') scroll 27px 4px no-repeat;
+}
+
+/*node/model/module completion stuff*/
+.goto {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    margin-left: -8px;
+}
+
+.goto.node .icon {
+    background-image: url(/img/rootNode.png);
+}
+
+.goto.model .icon {
+    background-image: url(/img/model.png);
+}
+
+.goto.stub.model .icon {
+}
+
+.goto.language .icon {
+    background-image: url(/img/language.png);
+}
+
+.goto.solution .icon {
+    background-image: url(/img/solution.png);
 }

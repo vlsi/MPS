@@ -58,8 +58,7 @@ $(function () {
             });
         },
         highlighter: function (item) {
-            var regex = new RegExp('(' + this.query + ')', 'gi');
-            return itemPresentation(item).replace(regex, "<strong>$1</strong>");
+            return completionItemTemplate(JSON.parse(item), this.query);
         },
         updater: function (item) {
             $('#go-to-root input[name="search"]').val(itemPresentation(item));
@@ -75,7 +74,7 @@ $(function () {
             }
 
             $('#go-to-root').submit();
-            return itemPresentation(item);
+            return "";
         }
     });
 
@@ -138,7 +137,7 @@ $(function () {
         $.each(children, function (index, child) {
             var span = $('<span/>').css("class", "treeitem");
             var li = $('<li/>').append(span);
-            span.append($('<span class="icon_any"/>').css('background-image', 'url(\'' + child.icon + '\')'));
+            span.append($('<span class="icon"/>').css('background-image', 'url(\'' + child.icon + '\')'));
             if ($.isArray(child.children)) {
                 span.append($('<a/>').text(child.name));
                 var childNode = $('<ul/>');
