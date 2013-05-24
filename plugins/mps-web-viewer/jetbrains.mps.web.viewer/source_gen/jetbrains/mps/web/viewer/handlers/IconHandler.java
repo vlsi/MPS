@@ -45,7 +45,7 @@ public class IconHandler implements Handler {
 
 
 
-  public void handle(String requestUrl, Project project, HttpExchange exchange) throws Exception {
+  public synchronized void handle(String requestUrl, Project project, HttpExchange exchange) throws Exception {
     // /rest/p/Project/icons/{icon_hash}.png or /rest/p/Project/icons/{icon_name}.png?icon_hash 
     HttpUtil.doResponse(MapSequence.fromMap(iconIdToBytes).get(requestUrl), "image/png", 200, exchange);
   }
@@ -78,7 +78,7 @@ public class IconHandler implements Handler {
 
 
   @NotNull
-  private String getIconIdForIcon(Icon icon) {
+  private synchronized String getIconIdForIcon(Icon icon) {
     try {
       if (MapSequence.fromMap(iconToIconId).containsKey(icon)) {
         return MapSequence.fromMap(iconToIconId).get(icon);
