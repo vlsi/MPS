@@ -102,22 +102,3 @@ li[data-collapsed="true"] > ul.tree-content {
     font-size: 12px;
     margin-left: -8px;
 }
-
-.goto.node .icon {
-    background-image: url(/img/rootNode.png);
-}
-
-.goto.model .icon {
-    background-image: url(/img/model.png);
-}
-
-.goto.stub.model .icon {
-}
-
-.goto.language .icon {
-    background-image: url(/img/language.png);
-}
-
-.goto.solution .icon {
-    background-image: url(/img/solution.png);
-}
