@@ -388,7 +388,7 @@
     <nodeInfo nodeId="7998422013324844797" fileName="CellToHtmlGenerator.java" startLine="58" startPosition="43" endLine="59" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5700371569155710023" fileName="CellToHtmlGenerator.java" startLine="61" startPosition="86" endLine="62" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3656887959594666336" fileName="CellToHtmlGenerator.java" startLine="62" startPosition="45" endLine="63" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213033019351339419" fileName="CellToHtmlGenerator.java" startLine="65" startPosition="50" endLine="66" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213033019351339419" fileName="CellToHtmlGenerator.java" startLine="65" startPosition="50" endLine="66" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3656887959595364186" fileName="CellToHtmlGenerator.java" startLine="71" startPosition="5" endLine="72" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7998422013324844677" fileName="CellToHtmlGenerator.java" startLine="77" startPosition="54" endLine="78" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7998422013324844696" fileName="CellToHtmlGenerator.java" startLine="79" startPosition="109" endLine="80" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -496,7 +496,7 @@
     <nodeInfo nodeId="1213033019353268947" fileName="CellToHtmlGenerator.java" startLine="339" startPosition="43" endLine="340" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213033019353389698" fileName="CellToHtmlGenerator.java" startLine="341" startPosition="87" endLine="342" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213033019353389668" fileName="CellToHtmlGenerator.java" startLine="344" startPosition="88" endLine="345" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3376719102115250121" fileName="CellToHtmlGenerator.java" startLine="347" startPosition="73" endLine="348" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3376719102115250121" fileName="CellToHtmlGenerator.java" startLine="347" startPosition="81" endLine="348" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213033019352162013" fileName="CellToHtmlGenerator.java" startLine="350" startPosition="5" endLine="351" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3656887959596434700" fileName="CellToHtmlGenerator.java" startLine="351" startPosition="0" endLine="352" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213033019351924905" fileName="CellToHtmlGenerator.java" startLine="362" startPosition="61" endLine="363" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -544,7 +544,7 @@
     <nodeInfo nodeId="5700371569147049329" fileName="CellToHtmlGenerator.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellToHtmlGenerator#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1515824352018030833" fileName="CellToHtmlGenerator.java" startLine="51" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3656887959594649742" fileName="CellToHtmlGenerator.java" startLine="60" startPosition="55" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3656887959594706744" fileName="CellToHtmlGenerator.java" startLine="66" startPosition="79" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3656887959594706744" fileName="CellToHtmlGenerator.java" startLine="66" startPosition="87" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2533261537000423086" fileName="CellToHtmlGenerator.java" startLine="86" startPosition="50" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1515824352026221345" fileName="CellToHtmlGenerator.java" startLine="174" startPosition="5" endLine="178" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213033019351726602" fileName="CellToHtmlGenerator.java" startLine="256" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="colorToHEX#(Ljava/awt/Color;)Ljava/lang/String;" />
@@ -624,7 +624,7 @@
     <scopeInfo nodeId="4405684370549775434" fileName="CellToHtmlGenerator.java" startLine="335" startPosition="32" endLine="336" endPosition="23" />
     <scopeInfo nodeId="1213033019353297230" fileName="CellToHtmlGenerator.java" startLine="341" startPosition="87" endLine="342" endPosition="33" />
     <scopeInfo nodeId="1213033019353375564" fileName="CellToHtmlGenerator.java" startLine="344" startPosition="88" endLine="345" endPosition="34" />
-    <scopeInfo nodeId="3376719102115145409" fileName="CellToHtmlGenerator.java" startLine="347" startPosition="73" endLine="348" endPosition="33" />
+    <scopeInfo nodeId="3376719102115145409" fileName="CellToHtmlGenerator.java" startLine="347" startPosition="81" endLine="348" endPosition="33" />
     <scopeInfo nodeId="1213033019351924905" fileName="CellToHtmlGenerator.java" startLine="362" startPosition="61" endLine="363" endPosition="43" />
     <scopeInfo nodeId="3376719102115250102" fileName="CellToHtmlGenerator.java" startLine="366" startPosition="61" endLine="367" endPosition="44" />
     <scopeInfo nodeId="5700371569147049334" fileName="CellToHtmlGenerator.java" startLine="33" startPosition="71" endLine="35" endPosition="37" />

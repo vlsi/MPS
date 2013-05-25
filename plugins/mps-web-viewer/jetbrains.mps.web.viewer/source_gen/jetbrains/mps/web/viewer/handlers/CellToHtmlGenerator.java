@@ -63,7 +63,7 @@ public class CellToHtmlGenerator {
         builder.append('\n');
       }
     } else if (cell instanceof EditorCell_Label) {
-      String text = trim_je17c5_a0a0a1e0j(((EditorCell_Label) cell).getText());
+      String text = trim_je17c5_a0a0a1e0j(((EditorCell_Label) cell).getRenderedText());
       builder.append(((text == null || text.length() == 0) ?
         "&nbsp;" :
         text.replace("<", "&lt").replace(">", "&gt")
@@ -344,7 +344,7 @@ public class CellToHtmlGenerator {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT))) {
         clazz.append("n-pright ");
       }
-      if (isEmpty_je17c5_a0d0e0ib(((EditorCell_Label) cell).getText())) {
+      if (isEmpty_je17c5_a0d0e0ib(((EditorCell_Label) cell).getRenderedText())) {
         clazz.append("n-empty ");
       }
     }
