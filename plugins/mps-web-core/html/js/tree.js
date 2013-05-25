@@ -10,7 +10,7 @@ function treeToggle(event) {
     event.preventDefault();
 }
 
-function applyTree(node, children, collapsed) {
+function applyTree(node, children, collapsed, module_id, model_id) {
     node.removeAttr("data-source");
     node.empty();
     if (children.length) {
@@ -19,6 +19,12 @@ function applyTree(node, children, collapsed) {
         node.parent().removeAttr('data-collapsed');
     }
     $.each(children, function (index, child) {
+        if (module_id != null && child["type"] == "module" && child["module-id"] == module_id) {
+            collapsed = false;
+        }
+        if (model_id != null && child["type"] == "model" && child["model-id"] == model_id) {
+            collapsed = false;
+        }
         var span = $('<span/>').css("class", "treeitem");
         var li = $('<li/>').append(span);
         span.append(createIconSpan(child.icon));
@@ -28,7 +34,7 @@ function applyTree(node, children, collapsed) {
             var childNode = $('<ul/>');
             childNode.attr('class', 'tree-content');
             li.append(childNode);
-            applyTree(childNode, child.children, true);
+            applyTree(childNode, child.children, true, module_id, model_id);
             span.on("click", treeToggle);
             li.attr("data-collapsed", collapsed);
         } else if (child["isStructure"] == "true") {
@@ -38,6 +44,9 @@ function applyTree(node, children, collapsed) {
             li.append(childNode);
             span.on("click", treeToggle);
             li.attr("data-collapsed", collapsed);
+            if (!collapsed) {
+                loadTree(childNode, module_id, model_id);
+            }
         } else {
             var url = "/#" + currentProject + "/node/" + child["module-id"] + "/" + child["model-id"] + "/" + child["node-id"];
             span.append($('<a/>').attr("href", url).text(child[child["type"] + "-name"]));
@@ -46,7 +55,7 @@ function applyTree(node, children, collapsed) {
     });
 }
 
-function loadTree(node) {
+function loadTree(node, module_id, model_id) {
     node.empty();
     node.append("<li>Loading....</li>");
     $.ajax({
@@ -54,22 +63,16 @@ function loadTree(node) {
         type: 'get',
         dataType: 'json',
         success: function (json) {
-            return typeof json.elements == 'undefined' ? false : applyTree(node, json.elements, false);
+            return typeof json.elements == 'undefined' ? false : applyTree(node, json.elements, false, module_id, model_id);
         }
     });
 }
 
 function showTree(project_id, module_id, model_id) {
-    var tree = $(".tree");
-    var link = '/rest/p/' + currentProject + '/structure.json';
-    link = module_id === null ? link : link + '/' + module_id;
-    link = model_id === null ? link : link + '/' + model_id;
     if ($('.tree-root').length == 0) {
-        tree.append('<ul class="tree-root" data-source="' + link + '"></ul>');
-    } else {
-        $('.tree-root').attr("data-source", link);
+        $(".tree").append('<ul class="tree-root" data-source="/rest/p/' + project_id + '/structure.json"></ul>');
     }
-    loadTree($('.tree-root'));
+    loadTree($('.tree-root'), module_id, model_id);
 }
 
 function getStructureUrl(project, item) {
