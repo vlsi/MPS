@@ -4,29 +4,30 @@ package jetbrains.mps.web.viewer.handlers;
 
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
+import java.util.List;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.workbench.goTo.navigation.GotoNavigationUtil;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import java.util.Arrays;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import java.util.List;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class GoToNodeIndexer {
   public static GoToNodeIndexer INSTANCE;
 
-  private final Map<SModule, Map<String, NavigationParticipant.NavigationTarget>> moduleToNodePresentationToNodeReference = MapSequence.fromMap(new HashMap<SModule, Map<String, NavigationParticipant.NavigationTarget>>());
+  private final Map<SModule, List<Tuples._2<String, NavigationParticipant.NavigationTarget>>> moduleToNodePresentationToNodeReference = MapSequence.fromMap(new HashMap<SModule, List<Tuples._2<String, NavigationParticipant.NavigationTarget>>>());
 
 
   public void init() {
@@ -56,9 +57,9 @@ public class GoToNodeIndexer {
     long startTime = System.currentTimeMillis();
 
     for (SModule module : Sequence.fromIterable(MPSModuleRepository.getInstance().getModules())) {
-      Map<String, NavigationParticipant.NavigationTarget> moduleIndex = MapSequence.fromMap(new HashMap<String, NavigationParticipant.NavigationTarget>());
+      List<Tuples._2<String, NavigationParticipant.NavigationTarget>> moduleIndex = ListSequence.fromList(new ArrayList<Tuples._2<String, NavigationParticipant.NavigationTarget>>());
       for (NavigationParticipant.NavigationTarget nodeItem : CollectionSequence.fromCollection(GotoNavigationUtil.getNavigationTargets(NavigationParticipant.TargetKind.ROOT, new ModulesScope(Arrays.asList(module)), new EmptyProgressMonitor()))) {
-        MapSequence.fromMap(moduleIndex).put(nodeItem.getPresentation(), nodeItem);
+        ListSequence.fromList(moduleIndex).addElement(MultiTuple.<String,NavigationParticipant.NavigationTarget>from(nodeItem.getPresentation(), nodeItem));
       }
       MapSequence.fromMap(moduleToNodePresentationToNodeReference).put(module, moduleIndex);
     }
@@ -73,9 +74,9 @@ public class GoToNodeIndexer {
   public List<NavigationParticipant.NavigationTarget> getTargets(Project project, String query) {
     List<NavigationParticipant.NavigationTarget> targets = ListSequence.fromList(new ArrayList<NavigationParticipant.NavigationTarget>());
     for (SModule module : Sequence.fromIterable(project.getModules())) {
-      for (IMapping<String, NavigationParticipant.NavigationTarget> item : MapSequence.fromMap(MapSequence.fromMap(moduleToNodePresentationToNodeReference).get(module))) {
-        if (item.key().toLowerCase().contains(query.toLowerCase())) {
-          ListSequence.fromList(targets).addElement(item.value());
+      for (Tuples._2<String, NavigationParticipant.NavigationTarget> item : ListSequence.fromList(MapSequence.fromMap(moduleToNodePresentationToNodeReference).get(module))) {
+        if (item._0().toLowerCase().contains(query.toLowerCase())) {
+          ListSequence.fromList(targets).addElement(item._1());
         }
       }
     }
