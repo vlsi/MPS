@@ -27,6 +27,7 @@ function applyTree(node, children, collapsed) {
             span.append($('<a/>').text(child[child["type"] + "-name"]));
             var childNode = $('<ul/>');
             childNode.attr('class', 'tree-content');
+            childNode.addClass(escapeId(child[child["type"] + "-id"]));
             li.append(childNode);
             applyTree(childNode, child.children, true);
             span.on("click", treeToggle);
@@ -35,6 +36,7 @@ function applyTree(node, children, collapsed) {
             span.append($('<a/>').text(child[child["type"] + "-name"]));
             var childNode = $('<ul/>').attr("data-source", child.children);
             childNode.attr('class', 'tree-content');
+            childNode.addClass(escapeId(child[child["type"] + "-id"]));
             li.append(childNode);
             span.on("click", treeToggle);
             li.attr("data-collapsed", collapsed);
@@ -61,14 +63,31 @@ function loadTree(node) {
 
 function showTree(project_id, module_id, model_id) {
     var link = '/rest/p/' + currentProject + '/structure.json';
-    link = module_id === null ? link : link + '/' + module_id;
-    link = model_id === null ? link : link + '/' + model_id;
+//    link = module_id === null ? link : link + '/' + module_id;
+//    link = model_id === null ? link : link + '/' + model_id;
+
+    if (module_id == null) {
+        console.info("module_id null");
+        // only project to load
+        if ($('.tree-root').length == 0) {
+            $(".tree").append('<ul class="tree-root" data-source="' + link + '"></ul>');
+        }
+        loadTree($('.tree-root'));
+        return;
+    }
 
     if ($('.tree-root').length == 0) {
         $(".tree").append('<ul class="tree-root" data-source="' + link + '"></ul>');
     }
 
-    loadTree($('.tree-root'));
+    if ($('.' + escapeId(module_id)).length == 0 || $('.' + escapeId(model_id)).length == 0) {
+        console.info(module_id, model_id, $('.' + escapeId(module_id)), $('.' + escapeId(model_id)));
+        loadTree($('.tree-root'));
+    }
+}
+
+function escapeId(id) {
+    return id.replace("r:", "r");
 }
 
 function getStructureUrl(project, item) {
