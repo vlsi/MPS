@@ -19,10 +19,10 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class NameHandler implements Handler {
   public void handle(String requestUrl, Project project, HttpExchange exchange) throws Exception {
-    // response format: {"module_name" : "name"} 
+    // response format: {"module-name" : "name"} 
     // requestUrls: 
     // /name.json -> project name 
-    // /name.json?module_id=Q1&model_id=Q2&node_id=Q3 
+    // /name.json?module-id=Q1&model-id=Q2&node-id=Q3 
     // more parameters - more results 
     HttpUtil.doJsonResponse(getNames(HttpUtil.getQueryParameters(exchange), project).toString(), exchange);
   }
@@ -40,20 +40,22 @@ public class NameHandler implements Handler {
         if (!(MapSequence.fromMap(parameters).containsKey("module-id"))) {
           return;
         }
-        SModule module = project.getRepository().getModule(ModuleId.fromString(MapSequence.fromMap(parameters).get("module_id")));
+        SModule module = project.getRepository().getModule(ModuleId.fromString(MapSequence.fromMap(parameters).get("module-id")));
         if (module == null) {
           return;
         }
         result.addProperty("module-name", module.getModuleName());
+        result.addProperty("module-id", MapSequence.fromMap(parameters).get("module-id"));
 
         if (!(MapSequence.fromMap(parameters).containsKey("model-id"))) {
           return;
         }
-        SModel model = module.resolveInDependencies(SModelId.fromString(MapSequence.fromMap(parameters).get("model_id")));
+        SModel model = module.resolveInDependencies(SModelId.fromString(MapSequence.fromMap(parameters).get("model-id")));
         if (model == null) {
           return;
         }
         result.addProperty("model-name", model.getModelName());
+        result.addProperty("model-id", MapSequence.fromMap(parameters).get("model-id"));
 
         if (!(MapSequence.fromMap(parameters).containsKey("node-id"))) {
           return;
@@ -63,6 +65,7 @@ public class NameHandler implements Handler {
           return;
         }
         result.addProperty("node-name", node.getPresentation());
+        result.addProperty("node-id", MapSequence.fromMap(parameters).get("node-id"));
       }
     });
 

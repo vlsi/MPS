@@ -12,7 +12,7 @@ $('.roots-search').typeahead({
                     return false;
                 }
 
-                updateWithCompletionResult(json.options);
+                json.options.forEach(updateCachedNames);
 
                 return process(json.options.map(function (item) {
                     return JSON.stringify(item);

@@ -22,15 +22,32 @@ function getCachedResult(ids) { // like { "module-id" : "id", "model-id": "id", 
     return result;
 }
 function getNames(module_id, model_id, node_id, callback) {
-    callback(getCachedResult({"module-id": module_id, "model-id": model_id, "node-id": node_id}));
-}
-function updateWithCompletionResult(completionResult) {
-    completionResult.forEach(function (item) {
-        ["module", "model", "node"].forEach(function (type) {
-            if (typeof item[type + "-id"] != 'undefined') {
-                cachedNames[type + "/" + item[type + "-id"]] = item[type + "-name"];
+    var parameters = {"module-id": module_id, "model-id": model_id, "node-id": node_id};
+    var cached = getCachedResult(parameters);
+    if (cached != undefined) {
+        callback(cached);
+    } else {
+        $.ajax({
+            url: "/rest/p/" + currentProject + "/name.json",
+            type: 'get',
+            data: parameters,
+            dataType: 'json',
+            success: function (json) {
+                if (typeof json == 'undefined') {
+                    return false;
+                }
+                updateCachedNames(json);
+                callback(getCachedResult(parameters));
+                return true;
             }
         });
+    }
+}
+function updateCachedNames(namesItem) {
+    ["module", "model", "node"].forEach(function (type) {
+        if (typeof namesItem[type + "-id"] != 'undefined') {
+            cachedNames[type + "/" + namesItem[type + "-id"]] = namesItem[type + "-name"];
+        }
     });
 }
 
@@ -78,6 +95,7 @@ function showBreadCrumb(project, module_id, model_id, root_id) {
 }
 
 function setContext(project, module_id, model_id, root_id) {
+    currentProject = project;
     var bc = $('.mbreadcrumb');
     if (project === null) {
         bc.hide()
@@ -86,7 +104,6 @@ function setContext(project, module_id, model_id, root_id) {
         $('#go-to-root').show();
         showBreadCrumb(project, module_id, model_id, root_id);
     }
-    currentProject = project;
 }
 
 function createIconSpan(icon_json) {
