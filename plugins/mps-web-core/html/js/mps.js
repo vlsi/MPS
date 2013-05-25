@@ -37,20 +37,23 @@ $(function () {
     Path.map("#:projectId/node/:moduleId/:modelId/:rootId").to(function () {
         setContext(this.params['projectId'], this.params['moduleId'], this.params['modelId'], this.params['rootId']);
         $("#content").text("Content of node " + this.params['rootId'] + " is loading...");
-        $.get("/rest/p/" + currentProject + "/view/" + escape(this.params["modelId"]) + "(" + nameFetcher.getModelName(this.params["modelId"]) + ")" + "/" + this.params['rootId'],
-            function (data) {
-                var content = $('#content');
-                content.empty();
-                content.append($('<div/>').toggleClass('n-cursor').html("&nbsp;"));
-                content.append($('<div/>').attr('class', 'nodes').append(data));
-                setCursor();
-                content.find('div[target-node-id]').click(function (e) {
-                    window.location = "#" + currentProject + "/node" +
-                        "/" + $(e.target).attr("target-module-id") +
-                        "/" + $(e.target).attr("target-model-id") +
-                        "/" + $(e.target).attr("target-node-id");
-                });
-            }, "html");
+        var params = this.params;
+        nameFetcher.getName("model", params["modelId"], function (modelName) {
+            $.get("/rest/p/" + currentProject + "/view/" + escape(params["modelId"]) + "(" + modelName + ")" + "/" + params['rootId'],
+                function (data) {
+                    var content = $('#content');
+                    content.empty();
+                    content.append($('<div/>').toggleClass('n-cursor').html("&nbsp;"));
+                    content.append($('<div/>').attr('class', 'nodes').append(data));
+                    setCursor();
+                    content.find('div[target-node-id]').click(function (e) {
+                        window.location = "#" + currentProject + "/node" +
+                            "/" + $(e.target).attr("target-module-id") +
+                            "/" + $(e.target).attr("target-model-id") +
+                            "/" + $(e.target).attr("target-node-id");
+                    });
+                }, "html");
+        });
     });
 
     Path.map("#:projectId/model/:moduleId/:modelId").to(function () {
@@ -92,27 +95,30 @@ $(function () {
         setContext(this.params['projectId'], this.params['moduleId'], this.params['modelId'], this.params['rootId']);
         $("#content").text("Content of node " + this.params['rootId'] + " is loading...");
 
-        var urlPrefix = 'rest/p/' + currentProject;
-        var urlSuffix = escape(this.params['modelId']) + "(" + nameFetcher.getModelName(this.params['modelId']) + ")" + "/" + this.params['rootId'];
-        $.ajax({
-            url: urlPrefix + '/renderer/' + urlSuffix,
-            type: 'get',
-            cache: 'true',
-            dataType: 'script',
-            success: function () {
-                $.ajax({
-                    url: urlPrefix + '/node/' + urlSuffix,
-                    type: 'get',
-                    dataType: 'json',
-                    success: function (json) {
-                        return typeof json.conceptID == 'undefined' ? false : (function () {
-                            var content = window.registry['render_' + json.conceptID](json);
-                            $('#content').empty();
-                            $('#content').append(content);
-                        }());
-                    }
-                });
-            }
+        var params = this.params;
+        nameFetcher.getName('model', params['modelId'], function (modelName) {
+            var urlPrefix = 'rest/p/' + currentProject;
+            var urlSuffix = escape(params['modelId']) + "(" + modelName + ")" + "/" + params['rootId'];
+            $.ajax({
+                url: urlPrefix + '/renderer/' + urlSuffix,
+                type: 'get',
+                cache: 'true',
+                dataType: 'script',
+                success: function () {
+                    $.ajax({
+                        url: urlPrefix + '/node/' + urlSuffix,
+                        type: 'get',
+                        dataType: 'json',
+                        success: function (json) {
+                            return typeof json.conceptID == 'undefined' ? false : (function () {
+                                var content = window.registry['render_' + json.conceptID](json);
+                                $('#content').empty();
+                                $('#content').append(content);
+                            }());
+                        }
+                    });
+                }
+            });
         });
     });
 

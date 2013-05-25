@@ -1,35 +1,30 @@
 var currentProject = null;
 
 var nameFetcher = {
-    getModuleName: function (moduleId) {
-        // todo: if doesn't contains
-        return nameFetcher.moduleNames[moduleId] ? nameFetcher.moduleNames[moduleId] : moduleId;
-    },
+    getName: function (type, id, callback) {
+//        {"type" : "module", "id" : "123455"} -> "module_name"
+        callback(nameFetcher.names[type + "/" + id])
 
-    getModelName: function (modelId) {
-        // todo: if doesn't contains
-        return nameFetcher.modelNames[modelId] ? nameFetcher.modelNames[modelId] : modelId;
-    },
-
-    getNodeName: function (nodeId) {
-        // todo: if doesn't contains
-        return nameFetcher.nodeNames[nodeId] ? nameFetcher.nodeNames[nodeId] : nodeId;
     },
 
     updateWithCompletionResult: function (completionResult) {
         completionResult.forEach(function (item) {
             ["module", "model", "node"].forEach(function (type) {
                 if (typeof item[type + "-id"] != 'undefined') {
-                    nameFetcher[type + "Names"][item[type + "-id"]] = item[type + "-name"];
+                    nameFetcher.names[type + "/" + item[type + "-id"]] = item[type + "-name"];
                 }
             });
         });
     },
 
-    moduleNames: {},
-    modelNames: {},
-    nodeNames: {}
+    names: {}
 };
+
+function addBreadcrumbWithId(type, id, link) {
+    nameFetcher.getName(type, id, function (title) {
+        addBreadcrumb(title, link);
+    });
+}
 
 function addBreadcrumb(title, link) {
     var li = $('<li/>');
@@ -50,11 +45,11 @@ function showBreadCrumb(project, module_id, model_id, root_id) {
     bc.empty();
     addBreadcrumb(project, module_id != null ? "#" + project + "/view" : null);
     if (module_id != null) {
-        addBreadcrumb(nameFetcher.getModuleName(module_id), model_id !== null ? "#" + project + "/module/" + module_id : null);
+        addBreadcrumbWithId("module", module_id, model_id !== null ? "#" + project + "/module/" + module_id : null);
         if (model_id != null) {
-            addBreadcrumb(nameFetcher.getModelName(model_id), root_id !== null ? "#" + project + "/model/" + module_id + "/" + model_id : null);
+            addBreadcrumbWithId("model", model_id, root_id !== null ? "#" + project + "/model/" + module_id + "/" + model_id : null);
             if (root_id != null) {
-                addBreadcrumb(nameFetcher.getNodeName(root_id), null);
+                addBreadcrumbWithId("node", root_id, null);
             }
         }
     }
