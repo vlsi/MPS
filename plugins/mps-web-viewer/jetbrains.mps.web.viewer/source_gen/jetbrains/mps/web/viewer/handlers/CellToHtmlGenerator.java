@@ -170,7 +170,7 @@ public class CellToHtmlGenerator {
     }
     classes += getClassesForCell(cell);
     if (cell.getSNode().equals(selectedNode) && SNodeOperations.getContainingRoot(selectedNode) != selectedNode) {
-      classes += " selected-cell";
+      classes += " selected-cell ";
     }
     if (isOnNewLine) {
       classes += "indent-layout-on-new-line ";

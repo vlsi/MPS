@@ -6403,7 +6403,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4761358399197486356" resolveInfo="classes" />
                 </node>
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="663115807303320722">
-                  <property name="value" nameId="tpee.1070475926801" value=" selected-cell" />
+                  <property name="value" nameId="tpee.1070475926801" value=" selected-cell " />
                 </node>
               </node>
             </node>
