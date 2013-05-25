@@ -127,7 +127,7 @@ public class CellToHtmlGenerator {
     for (EditorCell child : Sequence.fromIterable(collection)) {
       boolean isOnNewLineChild = isOnNewLine(child);
       generateHtmlForCell(child, indention, isOnNewLine || isOnNewLineChild);
-      if (getStyleForLast(StyleAttributes.INDENT_LAYOUT_NEW_LINE, child)) {
+      if (getStyleForLast(StyleAttributes.INDENT_LAYOUT_NEW_LINE, child) || child instanceof EditorCell_Collection && ((EditorCell_Collection) child).getCellLayout() instanceof CellLayout_Indent && child.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) {
         isOnNewLine = true;
       } else if (CellFinderUtil.findChildByCondition(child, new Condition<EditorCell>() {
         public boolean met(EditorCell cell) {
