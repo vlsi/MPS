@@ -17,6 +17,7 @@ import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -62,7 +63,7 @@ public class CellToHtmlGenerator {
         builder.append('\n');
       }
     } else if (cell instanceof EditorCell_Label) {
-      String text = ((EditorCell_Label) cell).getText();
+      String text = trim_je17c5_a0a0a1e0j(((EditorCell_Label) cell).getText());
       builder.append(((text == null || text.length() == 0) ?
         "&nbsp;" :
         text.replace("<", "&lt").replace(">", "&gt")
@@ -241,10 +242,13 @@ public class CellToHtmlGenerator {
       }
     }
     if (isOnNewLine) {
-      temp.append("padding-left:" + indention * 2 + "em;");
+      temp.append("padding-left:" + (indention * 12) / 10 + "." + (indention * 12) % 10 + "em;");
+    }
+    if (cell instanceof EditorCell_Indent) {
+      temp.append("width: 1.2em;");
     }
 
-    if (isNotEmpty_je17c5_a0e0y(temp.toString())) {
+    if (isNotEmpty_je17c5_a0f0y(temp.toString())) {
       builder.append(" style=\"" + temp.toString() + "\"");
     }
   }
@@ -348,7 +352,14 @@ public class CellToHtmlGenerator {
     return clazz.toString();
   }
 
-  public static boolean isNotEmpty_je17c5_a0e0y(String str) {
+  public static String trim_je17c5_a0a0a1e0j(String str) {
+    return (str == null ?
+      null :
+      str.trim()
+    );
+  }
+
+  public static boolean isNotEmpty_je17c5_a0f0y(String str) {
     return str != null && str.length() > 0;
   }
 
