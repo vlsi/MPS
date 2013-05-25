@@ -1,7 +1,8 @@
 function completionItemTemplate(completion_item, query) {
     var name = completion_item[completion_item["type"] + "-name"];
-    var regex = new RegExp('(' + query + ')', 'gi');
-    var name_with_selection = name.replace(regex, "<strong>$1</strong>");
+//    var regex = new RegExp('(' + query + ')', 'gi');
+//    var name_with_selection = name.replace(regex, "<strong>$1</strong>");
+    var name_with_selection = name; // todo: =(
     var presentation = $('<span/>').addClass("nodes").addClass("goto-presentation").append(name_with_selection);
 
     var span = $('<span/>').addClass("goto").addClass(completion_item["type"]);

@@ -21,22 +21,24 @@ $('.roots-search').typeahead({
         });
     },
     matcher: function (item) {
-        if (JSON.parse(item)["type"].indexOf("fetch") != -1) {
-            return true;
-        }
-        return itemPresentation(item).toLowerCase().indexOf(this.query.trim().toLowerCase()) != -1;
+        return true;
+//        if (JSON.parse(item)["type"].indexOf("fetch") != -1) {
+//            return true;
+//        }
+//        return itemPresentation(item).toLowerCase().indexOf(this.query.trim().toLowerCase()) != -1;
     },
     sorter: function (items) {
-        return items.sort(function (item1, item2) {
-            var item1_json = JSON.parse(item1);
-            var item2_json = JSON.parse(item2);
-
-            if (item1_json["type"] == item2_json["type"]) {
-                return itemPresentation(item1).localeCompare(itemPresentation(item2));
-            }
-            var typesOrder = {"node": 1, "fetch-nodes": 2, "model": 3, "fetch-models": 4, "module": 5, "fetch-modules": 6};
-            return typesOrder[item1_json["type"]] - typesOrder[item2_json["type"]];
-        });
+        return items;
+//        return items.sort(function (item1, item2) {
+//            var item1_json = JSON.parse(item1);
+//            var item2_json = JSON.parse(item2);
+//
+//            if (item1_json["type"] == item2_json["type"]) {
+//                return itemPresentation(item1).localeCompare(itemPresentation(item2));
+//            }
+//            var typesOrder = {"node": 1, "fetch-nodes": 2, "model": 3, "fetch-models": 4, "module": 5, "fetch-modules": 6};
+//            return typesOrder[item1_json["type"]] - typesOrder[item2_json["type"]];
+//        });
     },
     highlighter: function (item) {
         return completionItemTemplate(JSON.parse(item), this.query);
