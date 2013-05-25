@@ -221,6 +221,11 @@ public class CellToHtmlGenerator {
     if (cell instanceof EditorCell_Label) {
       Color fg = cell.getStyle().get(StyleAttributes.TEXT_COLOR);
       Color bg = cell.getStyle().get(StyleAttributes.TEXT_BACKGROUND_COLOR);
+      if (isEmpty_je17c5_a0c0b0y(((EditorCell_Label) cell).getText())) {
+        fg = cell.getStyle().get(StyleAttributes.NULL_TEXT_COLOR);
+        bg = cell.getStyle().get(StyleAttributes.NULL_TEXT_BACKGROUND_COLOR);
+      }
+
       if (fg != null && fg != Color.BLACK) {
         temp.append("color:#" + colorToHEX(fg) + ";");
       }
@@ -357,6 +362,10 @@ public class CellToHtmlGenerator {
       null :
       str.trim()
     );
+  }
+
+  public static boolean isEmpty_je17c5_a0c0b0y(String str) {
+    return str == null || str.length() == 0;
   }
 
   public static boolean isNotEmpty_je17c5_a0f0y(String str) {
