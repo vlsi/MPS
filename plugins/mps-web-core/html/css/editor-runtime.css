@@ -10,9 +10,9 @@
     /*padding-left: 10px;*/
 }
 
-.nodes .indent-layout-indent {
-    padding-left: 2em;
-}
+/*.nodes .indent-layout-indent {*/
+    /*padding-left: 2em;*/
+/*}*/
 
 .nodes .indent-layout > div {
     float: left;
@@ -40,7 +40,7 @@
 
 
 
-#content div {float: left;}
+.nodes div {float: left;}
 
 .nodes .selected-cell {
     color: white;
@@ -63,7 +63,7 @@
 .n-pright {}
 */
 
-.n-cursor {
+.nodes .n-cursor {
     border-left: 1px solid black;
     z-index: 10;
     position: absolute;
@@ -74,8 +74,9 @@
 
 /* spaces between cells */
 
-/*.n-leaf:not(.indent-layout-on-new-line) {*/
-    /*padding-left: 4px;*/
+
+/*.nodes .n-leaf:not(.indent-layout-on-new-line),.n-leaf:not(.n-pleft),:not(.n-leaf+div.n) {*/
+    /*padding-left: 2px;*/
 /*}*/
 
 /*.nodes .horizontal-layout > :not(:first-child):before {*/
