@@ -58,7 +58,10 @@ public class CellToHtmlGenerator {
       generateHtmlForTable(cell);
     } else if (cell instanceof EditorCell_Collection) {
       for (EditorCell child : Sequence.fromIterable(((EditorCell_Collection) cell))) {
-        generateHtmlForCell(child, 0, false);
+        generateHtmlForCell(child, (isCellIndent(cell) ?
+          1 :
+          0
+        ), false);
         builder.append('\n');
       }
     } else if (cell instanceof EditorCell_Label) {
@@ -121,7 +124,7 @@ public class CellToHtmlGenerator {
     if (needWrapper) {
       appendOpeningDiv(collection, indention, false);
     }
-    if (collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
+    if (isCellIndent(collection)) {
       indention++;
     }
     for (EditorCell child : Sequence.fromIterable(collection)) {
@@ -200,7 +203,7 @@ public class CellToHtmlGenerator {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.DRAW_BORDER))) {
         temp.append("border: solid 1px;");
       }
-      if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
+      if (isCellIndent(cell)) {
         indention++;
       }
     }
@@ -214,6 +217,10 @@ public class CellToHtmlGenerator {
     if (isNotEmpty_je17c5_a0f0w(temp.toString())) {
       builder.append(" style=\"" + temp.toString() + "\"");
     }
+  }
+
+  private Boolean isCellIndent(EditorCell cell) {
+    return cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT);
   }
 
   private String colorToHEX(Color color) {
@@ -302,7 +309,7 @@ public class CellToHtmlGenerator {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT))) {
         clazz.append("n-pright ");
       }
-      if (isEmpty_je17c5_a0d0b0gb(((EditorCell_Label) cell).getText())) {
+      if (isEmpty_je17c5_a0d0b0hb(((EditorCell_Label) cell).getText())) {
         clazz.append("n-empty ");
       }
     }
@@ -321,7 +328,7 @@ public class CellToHtmlGenerator {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_je17c5_a0d0b0gb(String str) {
+  public static boolean isEmpty_je17c5_a0d0b0hb(String str) {
     return str == null || str.length() == 0;
   }
 }
