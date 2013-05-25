@@ -13,7 +13,6 @@ import java.util.Iterator;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -143,44 +142,6 @@ public class CellToHtmlGenerator {
     }
   }
 
-  private boolean isOnNewLine_Old(EditorCell cell) {
-    if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
-      return true;
-    }
-
-    if (cell.getParent() != null && cell.getParent().getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) {
-      return true;
-    }
-
-    EditorCell prevCell = CellTraversalUtil.getPrevSibling(cell);
-    if (prevCell != null) {
-      return isOnNewLineRightChild(prevCell);
-    } else {
-      EditorCell parentCell = cell.getParent();
-      while (parentCell != null) {
-        if (isOnNewLine_Old(parentCell)) {
-          return true;
-        }
-        parentCell = parentCell.getParent();
-      }
-    }
-    return true;
-  }
-
-  private boolean isOnNewLineRightChild(EditorCell prevCell) {
-    if (prevCell == null) {
-      return false;
-    }
-    if (prevCell.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
-      return true;
-    }
-    if (prevCell instanceof EditorCell_Collection) {
-      EditorCell rightChild = ((EditorCell_Collection) prevCell).lastCell();
-      return isOnNewLineRightChild(rightChild);
-    }
-    return false;
-  }
-
 
 
   private void appendClosingDiv() {
@@ -250,7 +211,7 @@ public class CellToHtmlGenerator {
       temp.append("width: 1.2em;");
     }
 
-    if (isNotEmpty_je17c5_a0f0y(temp.toString())) {
+    if (isNotEmpty_je17c5_a0f0w(temp.toString())) {
       builder.append(" style=\"" + temp.toString() + "\"");
     }
   }
@@ -333,11 +294,6 @@ public class CellToHtmlGenerator {
 
   private String getClassesForCell(EditorCell cell, int indention) {
     StringBuilder clazz = new StringBuilder();
-
-    if (isOnNewLine_Old(cell)) {
-      clazz.append("");
-    }
-
     if (cell instanceof EditorCell_Label) {
       clazz.append("n-leaf ");
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_LEFT))) {
@@ -346,7 +302,7 @@ public class CellToHtmlGenerator {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT))) {
         clazz.append("n-pright ");
       }
-      if (isEmpty_je17c5_a0d0e0ib(((EditorCell_Label) cell).getRenderedText())) {
+      if (isEmpty_je17c5_a0d0b0gb(((EditorCell_Label) cell).getText())) {
         clazz.append("n-empty ");
       }
     }
@@ -361,11 +317,11 @@ public class CellToHtmlGenerator {
     );
   }
 
-  public static boolean isNotEmpty_je17c5_a0f0y(String str) {
+  public static boolean isNotEmpty_je17c5_a0f0w(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_je17c5_a0d0e0ib(String str) {
+  public static boolean isEmpty_je17c5_a0d0b0gb(String str) {
     return str == null || str.length() == 0;
   }
 }
