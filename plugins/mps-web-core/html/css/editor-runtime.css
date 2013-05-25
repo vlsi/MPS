@@ -74,11 +74,15 @@
 
 /* spaces between cells */
 
-.nodes .horizontal-layout > :not(:first-child):before {
-    content: '\00a0';
-}
+/*.n-leaf:not(.indent-layout-on-new-line) {*/
+    /*padding-left: 4px;*/
+/*}*/
 
-.nodes .indent-layout:not(.indent-layout-new-line-children) > div:not(.n-pright):not(.indent-layout-new-line) + div:not(.n-pleft):not(.indent-layout-on-new-line):before {
-    content: '\00a0';
-    float: left;
-}
+/*.nodes .horizontal-layout > :not(:first-child):before {*/
+    /*content: '\00a0';*/
+/*}*/
+
+/*.nodes .indent-layout:not(.indent-layout-new-line-children) > div:not(.n-pright):not(.indent-layout-new-line) + div:not(.n-pleft):not(.indent-layout-on-new-line):before {*/
+    /*content: '\00a0';*/
+    /*float: left;*/
+/*}*/
