@@ -83,7 +83,7 @@
     /*content: '\00a0';*/
 /*}*/
 
-/*.nodes .indent-layout:not(.indent-layout-new-line-children) > div:not(.n-pright):not(.indent-layout-new-line) + div:not(.n-pleft):not(.indent-layout-on-new-line):before {*/
-    /*content: '\00a0';*/
-    /*float: left;*/
-/*}*/
+.nodes :not(.vertical-layout):not(.horizontal-layout) > div:not(.n-pright) + div:not(.n-pleft):not(.indent-layout-on-new-line):before {
+    content: '\00a0';
+    float: left;
+}
