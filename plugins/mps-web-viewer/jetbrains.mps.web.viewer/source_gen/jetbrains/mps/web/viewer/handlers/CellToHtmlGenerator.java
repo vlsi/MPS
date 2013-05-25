@@ -166,7 +166,7 @@ public class CellToHtmlGenerator {
       classes = classes + getClassesForCollection(((EditorCell_Collection) cell));
     }
     classes += getClassesForCell(cell);
-    if (cell.getSNode().equals(selectedNode) && SNodeOperations.getContainingRoot(selectedNode) != selectedNode) {
+    if (isUnderSelected(cell) && SNodeOperations.getContainingRoot(selectedNode) != selectedNode) {
       classes += " selected-cell ";
     }
     if (isOnNewLine) {
@@ -179,12 +179,23 @@ public class CellToHtmlGenerator {
     }
   }
 
+  private boolean isUnderSelected(EditorCell cell) {
+    if (cell == null) {
+      return false;
+    }
+    if (cell.getSNode().equals(selectedNode)) {
+      return true;
+    }
+    return isUnderSelected(cell.getParent());
+
+  }
+
   private void addTextAttributes(EditorCell cell, int indention, boolean isOnNewLine) {
     StringBuilder temp = new StringBuilder();
     if (cell instanceof EditorCell_Label) {
       Color fg = cell.getStyle().get(StyleAttributes.TEXT_COLOR);
       Color bg = cell.getStyle().get(StyleAttributes.TEXT_BACKGROUND_COLOR);
-      if (isEmpty_je17c5_a0c0b0w(((EditorCell_Label) cell).getText())) {
+      if (isEmpty_je17c5_a0c0b0x(((EditorCell_Label) cell).getText())) {
         fg = cell.getStyle().get(StyleAttributes.NULL_TEXT_COLOR);
         bg = cell.getStyle().get(StyleAttributes.NULL_TEXT_BACKGROUND_COLOR);
       }
@@ -216,7 +227,7 @@ public class CellToHtmlGenerator {
       temp.append("width: 1.2em;");
     }
 
-    if (isNotEmpty_je17c5_a0g0w(temp.toString())) {
+    if (isNotEmpty_je17c5_a0g0x(temp.toString())) {
       builder.append(" style=\"" + temp.toString() + "\"");
     }
   }
@@ -311,7 +322,7 @@ public class CellToHtmlGenerator {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT))) {
         clazz.append("n-pright ");
       }
-      if (isEmpty_je17c5_a0d0b0hb(((EditorCell_Label) cell).getRenderedText())) {
+      if (isEmpty_je17c5_a0d0b0ib(((EditorCell_Label) cell).getRenderedText())) {
         clazz.append("n-empty ");
       }
     }
@@ -326,15 +337,15 @@ public class CellToHtmlGenerator {
     );
   }
 
-  public static boolean isEmpty_je17c5_a0c0b0w(String str) {
+  public static boolean isEmpty_je17c5_a0c0b0x(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isNotEmpty_je17c5_a0g0w(String str) {
+  public static boolean isNotEmpty_je17c5_a0g0x(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_je17c5_a0d0b0hb(String str) {
+  public static boolean isEmpty_je17c5_a0d0b0ib(String str) {
     return str == null || str.length() == 0;
   }
 }

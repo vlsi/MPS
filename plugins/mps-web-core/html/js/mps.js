@@ -54,6 +54,17 @@ $(function () {
                         "/" + $(e.target).attr("target-model-id") +
                         "/" + $(e.target).attr("target-node-id");
                 });
+
+                var range = document.createRange();
+                var selectedCells = $(".selected-cell");
+                if (selectedCells.length > 0) {
+                    range.setStartBefore( selectedCells[0] );
+                    range.setEndAfter( selectedCells[selectedCells.length-1] );
+
+                    var selection = window.getSelection();
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                }
             }, "html");
         });
     });
