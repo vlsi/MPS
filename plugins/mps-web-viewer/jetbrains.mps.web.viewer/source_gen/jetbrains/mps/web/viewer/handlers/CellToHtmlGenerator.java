@@ -155,7 +155,7 @@ public class CellToHtmlGenerator {
 
   private void appendOpeningDiv(EditorCell cell, int indention, boolean isOnNewLine) {
     builder.append("<div");
-    addClasses(cell, indention, isOnNewLine);
+    addClasses(cell, isOnNewLine);
     addTextAttributes(cell, indention, isOnNewLine);
     addTargetNodeId(cell);
     builder.append(">");
@@ -163,12 +163,12 @@ public class CellToHtmlGenerator {
 
 
 
-  private void addClasses(EditorCell cell, int indention, boolean isOnNewLine) {
+  private void addClasses(EditorCell cell, boolean isOnNewLine) {
     String classes = "";
     if (cell instanceof EditorCell_Collection && !(((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Indent)) {
       classes = classes + getClassesForCollection(((EditorCell_Collection) cell));
     }
-    classes += getClassesForCell(cell, indention);
+    classes += getClassesForCell(cell);
     if (cell.getSNode().equals(selectedNode) && SNodeOperations.getContainingRoot(selectedNode) != selectedNode) {
       classes += " selected-cell";
     }
@@ -299,7 +299,7 @@ public class CellToHtmlGenerator {
     }
   }
 
-  private String getClassesForCell(EditorCell cell, int indention) {
+  private String getClassesForCell(EditorCell cell) {
     StringBuilder clazz = new StringBuilder();
     if (cell instanceof EditorCell_Label) {
       clazz.append("n-leaf ");
@@ -309,7 +309,7 @@ public class CellToHtmlGenerator {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT))) {
         clazz.append("n-pright ");
       }
-      if (isEmpty_je17c5_a0d0b0hb(((EditorCell_Label) cell).getText())) {
+      if (isEmpty_je17c5_a0d0b0hb(((EditorCell_Label) cell).getRenderedText())) {
         clazz.append("n-empty ");
       }
     }
