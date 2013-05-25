@@ -59,4 +59,8 @@ public class RootNodeElement implements NavigationItem {
   public boolean canNavigateToSource() {
     return true;
   }
+
+  public NavigationTarget getNavigationTarget() {
+    return myNodeResult;
+  }
 }

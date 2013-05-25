@@ -21,12 +21,20 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
+import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.goTo.matcher.HeadlessMPSNodeItemProvider;
+import jetbrains.mps.workbench.choose.base.FakePsiContext;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.util.Processor;
+import jetbrains.mps.workbench.goTo.navigation.RootNodeElement;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class GoToHandler implements Handler {
   private static final String QUERY_PARAM_NAME = "?query=";
-  private static final int ITEMS_COUNT = 4;
+  private static final int ITEMS_LIMIT = 25;
 
 
   public void handle(String requestUrl, final Project project, HttpExchange exchange) throws Exception {
@@ -89,7 +97,17 @@ public class GoToHandler implements Handler {
 
 
   private static Iterable<String> getNodesJson(final Project project, String query) {
-    return Sequence.fromIterable(GoToNodeIndexer.INSTANCE.getTargets(project, query)).take(25).select(new ISelector<NavigationParticipant.NavigationTarget, String>() {
+    final List<NavigationParticipant.NavigationTarget> nodes = ListSequence.fromList(new ArrayList<NavigationParticipant.NavigationTarget>());
+
+    RootChooseModel chooseSNodeResult = new RootChooseModel(((MPSProject) project).getProject(), new RootNodeNameIndex());
+    new HeadlessMPSNodeItemProvider(new FakePsiContext()).filterElementsHeadless(chooseSNodeResult, query, false, false, new EmptyProgressIndicator(), new Processor<Object>() {
+      public boolean process(Object item) {
+        ListSequence.fromList(nodes).addElement(((RootNodeElement) item).getNavigationTarget());
+        return ListSequence.fromList(nodes).count() < ITEMS_LIMIT;
+      }
+    });
+
+    return ListSequence.fromList(nodes).select(new ISelector<NavigationParticipant.NavigationTarget, String>() {
       public String select(NavigationParticipant.NavigationTarget it) {
         SNode node = it.getNodeReference().resolve(MPSModuleRepository.getInstance());
         return MpsJsonUtil.dumpNodeReference(project, node).toString();
