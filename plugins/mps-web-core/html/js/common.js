@@ -96,11 +96,25 @@ function showBreadCrumb(project, module_id, model_id, root_id) {
 
 function setContext(project, module_id, model_id, root_id) {
     currentProject = project;
-    var bc = $('.mbreadcrumb');
-    if (project === null) {
-        bc.hide()
+
+    if (project == null) {
+        $('.projects').show();
+        $('.view').hide();
+        $('.tree').hide();
+
+        $('.mbreadcrumb').hide()
         $('#go-to-root').hide();
+    } else if (root_id == null) {
+        $('.projects').hide();
+        $('.tree').show();
+        $('.view').hide();
     } else {
+        $('.projects').hide();
+        $('.tree').show();
+        $('.view').show();
+    }
+
+    if (project !== null) {
         $('#go-to-root').show();
         showBreadCrumb(project, module_id, model_id, root_id);
     }

@@ -60,13 +60,15 @@ function loadTree(node) {
 }
 
 function showTree(project_id, module_id, model_id) {
-    setContext(project_id, module_id, model_id, null);
-    var content = $("#content");
-    content.html('<h2>Code</h2>');
+    var tree = $(".tree");
     var link = '/rest/p/' + currentProject + '/structure.json';
     link = module_id === null ? link : link + '/' + module_id;
     link = model_id === null ? link : link + '/' + model_id;
-    content.append('<ul class="tree-root" data-source="' + link + '"></ul>');
+    if ($('.tree-root').length == 0) {
+        tree.append('<ul class="tree-root" data-source="' + link + '"></ul>');
+    } else {
+        $('.tree-root').attr("data-source", link);
+    }
     loadTree($('.tree-root'));
 }
 

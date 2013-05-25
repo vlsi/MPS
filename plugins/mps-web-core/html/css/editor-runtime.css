@@ -41,6 +41,7 @@
 
 
 .nodes div {float: left;}
+.view div {float: left;}
 
 .nodes .selected-cell {
     color: white;

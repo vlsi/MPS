@@ -98,6 +98,12 @@ li[data-collapsed="true"] > ul.tree-content {
     vertical-align: text-bottom;
 }
 
+.tree {
+    float: left;
+    /*margin: 20px;*/
+    /*padding: 20px;*/
+}
+
 .tree-root li > span {
     background-origin: padding-box;
     margin-left: -18px;
@@ -127,11 +133,20 @@ li[data-collapsed="true"] > ul.tree-content {
     color: gray;
 }
 
+.view {
+
+}
+
+.view div {
+    padding: 0px;
+    margin: 0px;
+}
+
 /*node click stuff*/
-#content div[target-node-id] {
+.view div[target-node-id] {
     cursor:pointer;
 }
 
-#content div[target-node-id]:hover {
+.view div[target-node-id]:hover {
     text-decoration: underline;
 }
