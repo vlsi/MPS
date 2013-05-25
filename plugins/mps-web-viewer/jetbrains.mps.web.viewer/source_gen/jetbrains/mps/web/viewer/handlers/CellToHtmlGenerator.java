@@ -25,6 +25,7 @@ import jetbrains.mps.openapi.editor.style.StyleAttribute;
 public class CellToHtmlGenerator {
   private final EditorCell rootCell;
   private final SNode selectedNode;
+  private boolean selectionFound;
 
   private StringBuilder builder;
 
@@ -37,6 +38,7 @@ public class CellToHtmlGenerator {
 
 
   public String generate() {
+    selectionFound = false;
     builder = new StringBuilder();
     generateHtmlForCell(rootCell, 0, true);
     return builder.toString();
@@ -62,7 +64,7 @@ public class CellToHtmlGenerator {
         builder.append('\n');
       }
     } else if (cell instanceof EditorCell_Label) {
-      String text = trim_je17c5_a0a0a1e0j(((EditorCell_Label) cell).getRenderedText());
+      String text = trim_je17c5_a0a0a1e0k(((EditorCell_Label) cell).getRenderedText());
       builder.append(((text == null || text.length() == 0) ?
         "&nbsp;" :
         text.replace("<", "&lt").replace(">", "&gt")
@@ -166,8 +168,13 @@ public class CellToHtmlGenerator {
       classes = classes + getClassesForCollection(((EditorCell_Collection) cell));
     }
     classes += getClassesForCell(cell);
-    if (cell.getSNode().equals(selectedNode) && SNodeOperations.getContainingRoot(selectedNode) != selectedNode) {
-      classes += " selected-cell ";
+    if (!(selectionFound)) {
+      if (cell.getSNode().equals(selectedNode)) {
+        selectionFound = true;
+        if (SNodeOperations.getContainingRoot(selectedNode) != selectedNode) {
+          classes += " selected-cell ";
+        }
+      }
     }
     if (isOnNewLine) {
       classes += "indent-layout-on-new-line ";
@@ -184,7 +191,7 @@ public class CellToHtmlGenerator {
     if (cell instanceof EditorCell_Label) {
       Color fg = cell.getStyle().get(StyleAttributes.TEXT_COLOR);
       Color bg = cell.getStyle().get(StyleAttributes.TEXT_BACKGROUND_COLOR);
-      if (isEmpty_je17c5_a0c0b0w(((EditorCell_Label) cell).getText())) {
+      if (isEmpty_je17c5_a0c0b0x(((EditorCell_Label) cell).getText())) {
         fg = cell.getStyle().get(StyleAttributes.NULL_TEXT_COLOR);
         bg = cell.getStyle().get(StyleAttributes.NULL_TEXT_BACKGROUND_COLOR);
       }
@@ -216,7 +223,7 @@ public class CellToHtmlGenerator {
       temp.append("width: 1.2em;");
     }
 
-    if (isNotEmpty_je17c5_a0g0w(temp.toString())) {
+    if (isNotEmpty_je17c5_a0g0x(temp.toString())) {
       builder.append(" style=\"" + temp.toString() + "\"");
     }
   }
@@ -311,7 +318,7 @@ public class CellToHtmlGenerator {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT))) {
         clazz.append("n-pright ");
       }
-      if (isEmpty_je17c5_a0d0b0hb(((EditorCell_Label) cell).getRenderedText())) {
+      if (isEmpty_je17c5_a0d0b0ib(((EditorCell_Label) cell).getRenderedText())) {
         clazz.append("n-empty ");
       }
     }
@@ -319,22 +326,22 @@ public class CellToHtmlGenerator {
     return clazz.toString();
   }
 
-  public static String trim_je17c5_a0a0a1e0j(String str) {
+  public static String trim_je17c5_a0a0a1e0k(String str) {
     return (str == null ?
       null :
       str.trim()
     );
   }
 
-  public static boolean isEmpty_je17c5_a0c0b0w(String str) {
+  public static boolean isEmpty_je17c5_a0c0b0x(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isNotEmpty_je17c5_a0g0w(String str) {
+  public static boolean isNotEmpty_je17c5_a0g0x(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_je17c5_a0d0b0hb(String str) {
+  public static boolean isEmpty_je17c5_a0d0b0ib(String str) {
     return str == null || str.length() == 0;
   }
 }

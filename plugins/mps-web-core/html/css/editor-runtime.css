@@ -43,7 +43,7 @@
 .nodes div {float: left;}
 .view div {float: left;}
 
-.nodes .selected-cell {
+.nodes .selected-cell, .selected-cell > div {
     color: white;
     background-color: darkcyan;
 }
