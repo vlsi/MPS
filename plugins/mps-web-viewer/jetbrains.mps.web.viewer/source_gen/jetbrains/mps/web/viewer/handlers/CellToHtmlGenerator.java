@@ -65,7 +65,7 @@ public class CellToHtmlGenerator {
       String text = ((EditorCell_Label) cell).getText();
       builder.append(((text == null || text.length() == 0) ?
         "&nbsp;" :
-        text
+        text.replace("<", "&lt").replace(">", "&gt")
       ));
     }
     appendClosingDiv();
