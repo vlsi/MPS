@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import jetbrains.mps.web.viewer.handlers.IconHelper;
 import jetbrains.mps.web.viewer.handlers.GoToNodeIndexer;
 import jetbrains.mps.web.core.server.MpsHttpServer;
-import jetbrains.mps.web.viewer.handlers.ProjectNameHandler;
+import jetbrains.mps.web.viewer.handlers.NameHandler;
 import jetbrains.mps.web.viewer.handlers.ProjectStructureHandler;
 import jetbrains.mps.web.viewer.handlers.ProjectVcsRevisionHandler;
 import jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler;
@@ -30,7 +30,7 @@ public class WebViewerHttpHandlers_CustomApplicationPlugin extends BaseCustomApp
   public void doInit() {
     // todo: add method Handler#getPrefix 
     // create & register handlers 
-    MpsHttpServer.getInstance().registerHandler("/name.json", ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new ProjectNameHandler()));
+    MpsHttpServer.getInstance().registerHandler("/name.json", ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new NameHandler()));
     MpsHttpServer.getInstance().registerHandler(ProjectStructureHandler.PREFIX, ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new ProjectStructureHandler()));
     MpsHttpServer.getInstance().registerHandler("/revision.json", ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new ProjectVcsRevisionHandler()));
     MpsHttpServer.getInstance().registerHandler("/view/", ListSequence.fromList(WebViewerHttpHandlers_CustomApplicationPlugin.this.handlers).addElement(new NodeToHtmlHandler()));

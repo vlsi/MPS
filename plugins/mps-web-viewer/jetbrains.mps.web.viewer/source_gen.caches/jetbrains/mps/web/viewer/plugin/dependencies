@@ -48,10 +48,10 @@
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.GoToHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.GoToNodeIndexer" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.IconHelper" />
+    <classNode dependClassName="jetbrains.mps.web.viewer.handlers.NameHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.NodeRendererHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.NodeStructureHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler" />
-    <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ProjectNameHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ProjectStructureHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ProjectVcsRevisionHandler" />
     <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />

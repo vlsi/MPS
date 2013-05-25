@@ -148,7 +148,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="8336172139239145935">
                   <node role="argument" roleId="tp2q.1160612519549" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8336172139239146317">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.DefaultClassCreator" typeId="tpee.2820489544401957797" id="8336172139239146318">
-                      <link role="classifier" roleId="tpee.2820489544401957798" targetNodeId="p0tl.7481782646737023365" resolveInfo="ProjectNameHandler" />
+                      <link role="classifier" roleId="tpee.2820489544401957798" targetNodeId="p0tl.3086121616341653742" resolveInfo="NameHandler" />
                     </node>
                   </node>
                 </node>

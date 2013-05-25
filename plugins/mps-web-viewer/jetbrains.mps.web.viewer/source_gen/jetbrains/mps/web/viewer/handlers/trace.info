@@ -80,6 +80,72 @@
     <scopeInfo nodeId="1026541632596651827" fileName="GoToNodeIndexer.java" startLine="55" startPosition="0" endLine="70" endPosition="0" />
     <unitInfo nodeId="1026541632596621683" fileName="GoToNodeIndexer.java" startLine="26" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.GoToNodeIndexer" />
   </root>
+  <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/3086121616341653742">
+    <nodeInfo nodeId="3086121616341687367" fileName="NameHandler.java" startLine="21" startPosition="98" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3086121616341687445" fileName="NameHandler.java" startLine="22" startPosition="49" endLine="23" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3086121616341687492" fileName="NameHandler.java" startLine="23" startPosition="20" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3086121616341687561" fileName="NameHandler.java" startLine="24" startPosition="34" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3086121616342454764" fileName="NameHandler.java" startLine="25" startPosition="54" endLine="26" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3086121616341679265" fileName="NameHandler.java" startLine="26" startPosition="38" endLine="27" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2629377093697485017" fileName="NameHandler.java" startLine="32" startPosition="100" endLine="33" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2629377093697507476" fileName="NameHandler.java" startLine="33" startPosition="52" endLine="34" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2629377093697657331" fileName="NameHandler.java" startLine="34" startPosition="58" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2629377093698925231" fileName="NameHandler.java" startLine="35" startPosition="0" endLine="36" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2629377093698925080" fileName="NameHandler.java" startLine="36" startPosition="35" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2629377093697471903" fileName="NameHandler.java" startLine="40" startPosition="74" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2629377093697736268" fileName="NameHandler.java" startLine="42" startPosition="9" endLine="43" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2629377093697803126" fileName="NameHandler.java" startLine="44" startPosition="29" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2629377093697895865" fileName="NameHandler.java" startLine="46" startPosition="9" endLine="47" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2629377093697968993" fileName="NameHandler.java" startLine="47" startPosition="66" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2629377093697997162" fileName="NameHandler.java" startLine="49" startPosition="73" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2629377093697997163" fileName="NameHandler.java" startLine="51" startPosition="9" endLine="52" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2629377093697997178" fileName="NameHandler.java" startLine="53" startPosition="28" endLine="54" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2629377093697997179" fileName="NameHandler.java" startLine="55" startPosition="9" endLine="56" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2629377093697983041" fileName="NameHandler.java" startLine="56" startPosition="63" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2629377093697997359" fileName="NameHandler.java" startLine="58" startPosition="72" endLine="59" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2629377093697997360" fileName="NameHandler.java" startLine="60" startPosition="9" endLine="61" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2629377093697997375" fileName="NameHandler.java" startLine="62" startPosition="27" endLine="63" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2629377093697997376" fileName="NameHandler.java" startLine="64" startPosition="9" endLine="65" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2629377093697684482" fileName="NameHandler.java" startLine="67" startPosition="7" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2629377093697688984" fileName="NameHandler.java" startLine="68" startPosition="0" endLine="69" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2629377093697448510" fileName="NameHandler.java" startLine="39" startPosition="25" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2629377093697794009" fileName="NameHandler.java" startLine="43" startPosition="130" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2629377093697997155" fileName="NameHandler.java" startLine="48" startPosition="0" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2629377093697997173" fileName="NameHandler.java" startLine="52" startPosition="122" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2629377093697997352" fileName="NameHandler.java" startLine="57" startPosition="0" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2629377093697997370" fileName="NameHandler.java" startLine="61" startPosition="103" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3086121616341674654" fileName="NameHandler.java" startLine="21" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
+    <nodeInfo nodeId="2629377093697684473" fileName="NameHandler.java" startLine="39" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2629377093697657661" fileName="NameHandler.java" startLine="37" startPosition="0" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3086121616341720211" fileName="NameHandler.java" startLine="32" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNames#(Ljava/util/Map;Ljetbrains/mps/project/Project;)Ljetbrains/mps/web/JsonBuilder;" />
+    <scopeInfo nodeId="2629377093697448513" fileName="NameHandler.java" startLine="40" startPosition="74" endLine="41" endPosition="17" />
+    <scopeInfo nodeId="2629377093697794012" fileName="NameHandler.java" startLine="44" startPosition="29" endLine="45" endPosition="17" />
+    <scopeInfo nodeId="2629377093697997161" fileName="NameHandler.java" startLine="49" startPosition="73" endLine="50" endPosition="17" />
+    <scopeInfo nodeId="2629377093697997177" fileName="NameHandler.java" startLine="53" startPosition="28" endLine="54" endPosition="17" />
+    <scopeInfo nodeId="2629377093697997358" fileName="NameHandler.java" startLine="58" startPosition="72" endLine="59" endPosition="17" />
+    <scopeInfo nodeId="2629377093697997374" fileName="NameHandler.java" startLine="62" startPosition="27" endLine="63" endPosition="17" />
+    <scopeInfo nodeId="3086121616341674665" fileName="NameHandler.java" startLine="21" startPosition="98" endLine="27" endPosition="107" />
+    <scopeInfo nodeId="3086121616341674654" fileName="NameHandler.java" startLine="21" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="3086121616341674663" varName="exchange" />
+      <varInfo nodeId="3086121616341674661" varName="project" />
+      <varInfo nodeId="3086121616341674659" varName="requestUrl" />
+    </scopeInfo>
+    <scopeInfo nodeId="2629377093697684474" fileName="NameHandler.java" startLine="39" startPosition="25" endLine="65" endPosition="64">
+      <varInfo nodeId="2629377093697997164" varName="model" />
+      <varInfo nodeId="2629377093697736269" varName="module" />
+      <varInfo nodeId="2629377093697997361" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2629377093697684473" fileName="NameHandler.java" startLine="39" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="3086121616341720214" fileName="NameHandler.java" startLine="32" startPosition="100" endLine="69" endPosition="18">
+      <varInfo nodeId="2629377093697485018" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3086121616341720211" fileName="NameHandler.java" startLine="32" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="3086121616341720256" varName="parameters" />
+      <varInfo nodeId="3086121616341720260" varName="project" />
+    </scopeInfo>
+    <unitInfo nodeId="2629377093697684473" fileName="NameHandler.java" startLine="38" startPosition="45" endLine="67" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.NameHandler$1" />
+    <unitInfo nodeId="3086121616341653742" fileName="NameHandler.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.NameHandler" />
+  </root>
   <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/4671236541319382784">
     <nodeInfo nodeId="4671236541319622727" fileName="GoToHandler.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="QUERY_PARAM_NAME" />
     <nodeInfo nodeId="4671236541327055039" fileName="GoToHandler.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ITEMS_COUNT" />
@@ -1041,17 +1107,7 @@
     <unitInfo nodeId="5202725479545223260" fileName="ReflectiveNodeRendererBuilder.java" startLine="68" startPosition="20" endLine="72" endPosition="5" unitName="jetbrains.mps.web.viewer.handlers.ReflectiveNodeRendererBuilder$8" />
     <unitInfo nodeId="6947201579628845939" fileName="ReflectiveNodeRendererBuilder.java" startLine="22" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.ReflectiveNodeRendererBuilder" />
   </root>
-  <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/7481782646737023365">
-    <nodeInfo nodeId="7481782646737054417" fileName="ProjectNameHandler.java" startLine="11" startPosition="98" endLine="12" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7481782646737054334" fileName="ProjectNameHandler.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljava/lang/String;Ljetbrains/mps/project/Project;Lcom/sun/net/httpserver/HttpExchange;)V" />
-    <scopeInfo nodeId="7481782646737054345" fileName="ProjectNameHandler.java" startLine="11" startPosition="98" endLine="12" endPosition="92" />
-    <scopeInfo nodeId="7481782646737054334" fileName="ProjectNameHandler.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="7481782646737054343" varName="exchange" />
-      <varInfo nodeId="7481782646737054341" varName="project" />
-      <varInfo nodeId="7481782646737054339" varName="requestUrl" />
-    </scopeInfo>
-    <unitInfo nodeId="7481782646737023365" fileName="ProjectNameHandler.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.web.viewer.handlers.ProjectNameHandler" />
-  </root>
+  <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/7481782646737023365" />
   <root nodeRef="r:253d3a88-a366-4083-a1d6-2ec610e3cda4(jetbrains.mps.web.viewer.handlers)/7904041625768638487">
     <nodeInfo nodeId="7048996341240033647" fileName="IconHelper.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT_ICON_BASE_64" />
     <nodeInfo nodeId="7048996341240167222" fileName="IconHelper.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
