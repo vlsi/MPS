@@ -31,38 +31,38 @@ public class NameHandler implements Handler {
 
   private static JsonBuilder getNames(final Map<String, String> parameters, final Project project) {
     final JsonBuilder result = JsonBuilder.object();
-    result.addProperty("project_name", project.getName());
+    result.addProperty("project-name", project.getName());
 
     System.out.println(parameters);
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (!(MapSequence.fromMap(parameters).containsKey("module_id"))) {
+        if (!(MapSequence.fromMap(parameters).containsKey("module-id"))) {
           return;
         }
         SModule module = project.getRepository().getModule(ModuleId.fromString(MapSequence.fromMap(parameters).get("module_id")));
         if (module == null) {
           return;
         }
-        result.addProperty("module_name", module.getModuleName());
+        result.addProperty("module-name", module.getModuleName());
 
-        if (!(MapSequence.fromMap(parameters).containsKey("model_id"))) {
+        if (!(MapSequence.fromMap(parameters).containsKey("model-id"))) {
           return;
         }
         SModel model = module.resolveInDependencies(SModelId.fromString(MapSequence.fromMap(parameters).get("model_id")));
         if (model == null) {
           return;
         }
-        result.addProperty("model_name", model.getModelName());
+        result.addProperty("model-name", model.getModelName());
 
-        if (!(MapSequence.fromMap(parameters).containsKey("node_id"))) {
+        if (!(MapSequence.fromMap(parameters).containsKey("node-id"))) {
           return;
         }
-        SNode node = model.getNode(SNodeId.fromString(MapSequence.fromMap(parameters).get("node_id")));
+        SNode node = model.getNode(SNodeId.fromString(MapSequence.fromMap(parameters).get("node-id")));
         if (node == null) {
           return;
         }
-        result.addProperty("node_name", node.getPresentation());
+        result.addProperty("node-name", node.getPresentation());
       }
     });
 

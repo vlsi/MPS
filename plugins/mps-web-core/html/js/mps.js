@@ -38,8 +38,9 @@ $(function () {
         setContext(this.params['projectId'], this.params['moduleId'], this.params['modelId'], this.params['rootId']);
         $("#content").text("Content of node " + this.params['rootId'] + " is loading...");
         var params = this.params;
-        nameFetcher.getName("model", params["modelId"], function (modelName) {
-            $.get("/rest/p/" + currentProject + "/view/" + escape(params["modelId"]) + "(" + modelName + ")" + "/" + params['rootId'],
+
+        getNames(params['moduleId'], params['modelId'], undefined, function (names) {
+            $.get("/rest/p/" + currentProject + "/view/" + escape(params["modelId"]) + "(" + names["model-name"] + ")" + "/" + params['rootId'],
                 function (data) {
                     var content = $('#content');
                     content.empty();
@@ -96,9 +97,9 @@ $(function () {
         $("#content").text("Content of node " + this.params['rootId'] + " is loading...");
 
         var params = this.params;
-        nameFetcher.getName('model', params['modelId'], function (modelName) {
+        getNames(params['moduleId'], params['modelId'], undefined, function (names) {
             var urlPrefix = 'rest/p/' + currentProject;
-            var urlSuffix = escape(params['modelId']) + "(" + modelName + ")" + "/" + params['rootId'];
+            var urlSuffix = escape(params['modelId']) + "(" + names["model-name"] + ")" + "/" + params['rootId'];
             $.ajax({
                 url: urlPrefix + '/renderer/' + urlSuffix,
                 type: 'get',

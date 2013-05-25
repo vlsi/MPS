@@ -22,7 +22,7 @@ function applyTree(node, children, collapsed) {
         var span = $('<span/>').css("class", "treeitem");
         var li = $('<li/>').append(span);
         span.append(createIconSpan(child.icon));
-        nameFetcher.updateWithCompletionResult([child]);
+        updateWithCompletionResult([child]);
         if ($.isArray(child.children)) {
             span.append($('<a/>').text(child[child["type"] + "-name"]));
             var childNode = $('<ul/>');

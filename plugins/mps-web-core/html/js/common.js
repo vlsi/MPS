@@ -1,28 +1,36 @@
 var currentProject = null;
 
-var nameFetcher = {
-    getName: function (type, id, callback) {
-//        {"type" : "module", "id" : "123455"} -> "module_name"
-        callback(nameFetcher.names[type + "/" + id])
-
-    },
-
-    updateWithCompletionResult: function (completionResult) {
-        completionResult.forEach(function (item) {
-            ["module", "model", "node"].forEach(function (type) {
-                if (typeof item[type + "-id"] != 'undefined') {
-                    nameFetcher.names[type + "/" + item[type + "-id"]] = item[type + "-name"];
-                }
-            });
-        });
-    },
-
-    names: {}
+var cachedNames = {
+    // keys format: node/nodeId, model/modelId, module/moduleId
 };
+function getCachedResult(ids) { // like { "module-id" : "id", "model-id": "id", "node-id" : "id" }
+    var result = {};
+    ["module", "model", "node"].forEach(function (type) {
+        if (result == undefined) {
+            return
+        }
 
-function addBreadcrumbWithId(type, id, link) {
-    nameFetcher.getName(type, id, function (title) {
-        addBreadcrumb(title, link);
+        if (ids[type + "-id"] != undefined) {
+            var cached_name = cachedNames[type + "/" + ids[type + "-id"]];
+            if (cached_name == undefined) {
+                result = undefined;
+            } else {
+                result[type + "-name"] = cached_name;
+            }
+        }
+    });
+    return result;
+}
+function getNames(module_id, model_id, node_id, callback) {
+    callback(getCachedResult({"module-id": module_id, "model-id": model_id, "node-id": node_id}));
+}
+function updateWithCompletionResult(completionResult) {
+    completionResult.forEach(function (item) {
+        ["module", "model", "node"].forEach(function (type) {
+            if (typeof item[type + "-id"] != 'undefined') {
+                cachedNames[type + "/" + item[type + "-id"]] = item[type + "-name"];
+            }
+        });
     });
 }
 
@@ -44,15 +52,20 @@ function showBreadCrumb(project, module_id, model_id, root_id) {
     bc.show();
     bc.empty();
     addBreadcrumb(project, module_id != null ? "#" + project + "/view" : null);
-    if (module_id != null) {
-        addBreadcrumbWithId("module", module_id, model_id !== null ? "#" + project + "/module/" + module_id : null);
-        if (model_id != null) {
-            addBreadcrumbWithId("model", model_id, root_id !== null ? "#" + project + "/model/" + module_id + "/" + model_id : null);
-            if (root_id != null) {
-                addBreadcrumbWithId("node", root_id, null);
+
+    getNames(module_id, model_id, root_id, function (names) {
+        console.log(names)
+        if (module_id != null) {
+            addBreadcrumb(names["module-name"], model_id !== null ? "#" + project + "/module/" + module_id : null);
+            if (model_id != null) {
+                addBreadcrumb(names["model-name"], root_id !== null ? "#" + project + "/model/" + module_id + "/" + model_id : null);
+                if (root_id != null) {
+                    addBreadcrumb(names["node-name"], null);
+                }
             }
         }
-    }
+    });
+
     var index = 1;
     var li = $('.mbreadcrumb li');
     while ($('.mbreadcrumb').width() > $('.mbreadcrumb-container').width() && index < li.length - 1) {

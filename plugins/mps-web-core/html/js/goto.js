@@ -12,7 +12,7 @@ $('.roots-search').typeahead({
                     return false;
                 }
 
-                nameFetcher.updateWithCompletionResult(json.options);
+                updateWithCompletionResult(json.options);
 
                 return process(json.options.map(function (item) {
                     return JSON.stringify(item);
