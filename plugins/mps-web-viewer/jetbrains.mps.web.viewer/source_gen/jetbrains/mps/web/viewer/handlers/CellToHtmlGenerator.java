@@ -58,10 +58,7 @@ public class CellToHtmlGenerator {
       generateHtmlForTable(cell);
     } else if (cell instanceof EditorCell_Collection) {
       for (EditorCell child : Sequence.fromIterable(((EditorCell_Collection) cell))) {
-        generateHtmlForCell(child, (isCellIndent(cell) ?
-          1 :
-          0
-        ), false);
+        generateHtmlForCell(child, 0, false);
         builder.append('\n');
       }
     } else if (cell instanceof EditorCell_Label) {
@@ -208,9 +205,9 @@ public class CellToHtmlGenerator {
       if (Boolean.TRUE.equals(cell.getStyle().get(StyleAttributes.DRAW_BORDER))) {
         temp.append("border: solid 1px;");
       }
-      if (isCellIndent(cell)) {
-        indention++;
-      }
+    }
+    if (!(cell instanceof EditorCell_Collection && ((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Indent) && isCellIndent(cell)) {
+      indention++;
     }
     if (isOnNewLine) {
       temp.append("padding-left:" + (indention * 12) / 10 + "." + (indention * 12) % 10 + "em;");
@@ -219,7 +216,7 @@ public class CellToHtmlGenerator {
       temp.append("width: 1.2em;");
     }
 
-    if (isNotEmpty_je17c5_a0f0w(temp.toString())) {
+    if (isNotEmpty_je17c5_a0g0w(temp.toString())) {
       builder.append(" style=\"" + temp.toString() + "\"");
     }
   }
@@ -333,7 +330,7 @@ public class CellToHtmlGenerator {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isNotEmpty_je17c5_a0f0w(String str) {
+  public static boolean isNotEmpty_je17c5_a0g0w(String str) {
     return str != null && str.length() > 0;
   }
 
