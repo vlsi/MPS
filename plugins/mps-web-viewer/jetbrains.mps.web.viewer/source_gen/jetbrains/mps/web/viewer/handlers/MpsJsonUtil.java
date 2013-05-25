@@ -57,6 +57,7 @@ public class MpsJsonUtil {
 
     builder.addProperty("type", "folder");
     builder.addProperty("folder-name", folder.getName());
+    builder.addProperty("folder-id", folder.getName());
     builder.addProperty("icon", createIconJson(project, AllIcons.Nodes.Folder));
 
     return builder;

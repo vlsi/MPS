@@ -54,6 +54,7 @@
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.NodeToHtmlHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ProjectStructureHandler" />
     <classNode dependClassName="jetbrains.mps.web.viewer.handlers.ProjectVcsRevisionHandler" />
+    <classNode dependClassName="jetbrains.mps.web.viewer.handlers.TreePathHandler" />
     <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
   </dependency>
 </dependenciesRoot>
