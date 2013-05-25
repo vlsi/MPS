@@ -12,6 +12,10 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.io.FileInputStream;
 import com.intellij.openapi.util.io.FileUtilRt;
+import java.util.Map;
+import java.util.HashMap;
+import java.net.URI;
+import java.net.URLDecoder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -91,6 +95,32 @@ public class HttpUtil {
       return "image/png";
     }
     return "application/octet-stream";
+  }
+
+
+
+  public static Map<String, String> getQueryParameters(HttpExchange exchange) {
+    Map<String, String> parameters = new HashMap<String, String>();
+    URI requestedUri = exchange.getRequestURI();
+    String query = requestedUri.getRawQuery();
+
+    if (query != null) {
+      String[] pairs = query.split("[&]");
+      for (String pair : pairs) {
+        String[] param = pair.split("[=]");
+        String key = null;
+        String value = null;
+        if (param.length > 0) {
+          key = URLDecoder.decode(param[0]);
+        }
+        if (param.length > 1) {
+          value = URLDecoder.decode(param[1]);
+        }
+        parameters.put(key, value);
+      }
+    }
+
+    return parameters;
   }
 
   protected static Logger LOG = LogManager.getLogger(HttpUtil.class);
