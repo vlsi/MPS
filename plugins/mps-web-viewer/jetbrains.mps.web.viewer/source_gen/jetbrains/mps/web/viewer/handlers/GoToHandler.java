@@ -89,7 +89,7 @@ public class GoToHandler implements Handler {
 
 
   private static Iterable<String> getNodesJson(final Project project, String query) {
-    return ListSequence.fromList(GoToNodeIndexer.INSTANCE.getTargets(project, query)).take(100).select(new ISelector<NavigationParticipant.NavigationTarget, String>() {
+    return Sequence.fromIterable(GoToNodeIndexer.INSTANCE.getTargets(project, query)).take(25).select(new ISelector<NavigationParticipant.NavigationTarget, String>() {
       public String select(NavigationParticipant.NavigationTarget it) {
         SNode node = it.getNodeReference().resolve(MPSModuleRepository.getInstance());
         return MpsJsonUtil.dumpNodeReference(project, node).toString();

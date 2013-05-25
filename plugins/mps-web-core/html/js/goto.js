@@ -1,5 +1,5 @@
 $('.roots-search').typeahead({
-    items: 20,
+    items: 25,
     menu: '<ul class="typeahead dropdown-menu" style="right: 0px; left: auto !important; width: 700px;"></ul>',
     source: function (query, process) {
         $.ajax({

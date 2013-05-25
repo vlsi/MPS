@@ -21,6 +21,7 @@ import java.util.Arrays;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -71,7 +72,7 @@ public class GoToNodeIndexer {
 
 
 
-  public List<NavigationParticipant.NavigationTarget> getTargets(Project project, String query) {
+  public Iterable<NavigationParticipant.NavigationTarget> getTargets(Project project, String query) {
     List<NavigationParticipant.NavigationTarget> targets = ListSequence.fromList(new ArrayList<NavigationParticipant.NavigationTarget>());
     for (SModule module : Sequence.fromIterable(project.getModules())) {
       for (Tuples._2<String, NavigationParticipant.NavigationTarget> item : ListSequence.fromList(MapSequence.fromMap(moduleToNodePresentationToNodeReference).get(module))) {
@@ -80,7 +81,11 @@ public class GoToNodeIndexer {
         }
       }
     }
-    return targets;
+    return ListSequence.fromList(targets).sort(new ISelector<NavigationParticipant.NavigationTarget, Integer>() {
+      public Integer select(NavigationParticipant.NavigationTarget it) {
+        return it.getPresentation().length();
+      }
+    }, true);
   }
 
   protected static Logger LOG = LogManager.getLogger(GoToNodeIndexer.class);
