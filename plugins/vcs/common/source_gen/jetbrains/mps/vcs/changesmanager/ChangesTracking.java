@@ -37,6 +37,7 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
@@ -234,6 +235,7 @@ public class ChangesTracking {
       public void run() {
         synchronized (ChangesTracking.this) {
           if (!(myDisposed)) {
+            DiffTemporaryModule.setSModelId(baseVersionModel.value, "repository");
             ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, ((SModelBase) myModelDescriptor).getSModelInternal(), true);
             myDifference.setChangeSet((ChangeSetImpl) changeSet);
             buildCaches();

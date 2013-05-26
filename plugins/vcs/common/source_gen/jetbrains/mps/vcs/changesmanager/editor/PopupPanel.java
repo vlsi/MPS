@@ -26,6 +26,7 @@ import java.awt.event.FocusEvent;
   private PopupPanel.MyMouseListener myMouseListener = new PopupPanel.MyMouseListener();
   private PopupPanel.MyFocusListener myFocusListener = new PopupPanel.MyFocusListener();
   private EditorComponent myEditor;
+  private BaseVersionEditorComponent myBaseEditor;
   private ActionToolbar myToolbar;
 
   public PopupPanel(ChangeStripsPainter painter, ChangeGroup group) {
@@ -47,8 +48,8 @@ import java.awt.event.FocusEvent;
     ), Color.BLACK, 1));
 
     if (myChangeGroup.getChangeType() != ChangeType.ADD) {
-      BaseVersionEditorComponent baseEditor = new BaseVersionEditorComponent(myEditor.getEditorContext().getRepository(), myChangeGroup);
-      add(baseEditor.getScrollPane(), BorderLayout.CENTER);
+      myBaseEditor = new BaseVersionEditorComponent(myEditor.getEditorContext().getRepository(), myChangeGroup);
+      add(myBaseEditor.getScrollPane(), BorderLayout.CENTER);
     }
   }
 
@@ -95,6 +96,11 @@ import java.awt.event.FocusEvent;
 
     myPainter.setGroupHighlighted(myChangeGroup, false);
     myPainter.popupClosed();
+
+    if (myBaseEditor != null) {
+      myBaseEditor.dispose();
+      myBaseEditor = null;
+    }
   }
 
   private class MyMouseListener extends MouseAdapter {
