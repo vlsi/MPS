@@ -2,6 +2,7 @@ package jetbrains.mps.idea.java.usages;
 
 import com.intellij.openapi.application.QueryExecutorBase;
 import com.intellij.openapi.progress.ProcessCanceledException;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiReference;
@@ -39,12 +40,15 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
   public void processQuery(@NotNull final SearchParameters queryParameters, @NotNull final Processor<PsiReference> consumer) {
 
     if (!(queryParameters.getScope() instanceof GlobalSearchScope)) {
-      // ??
       return;
     }
     final GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getScope();
-
     final PsiMethod method = queryParameters.getMethod();
+
+    if (DumbService.getInstance(method.getProject()).isDumb()) {
+      return;
+    }
+
     final GeneratedFinder finder = method.isConstructor() ?
       FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder")) :
       FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder"));
