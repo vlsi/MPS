@@ -9,12 +9,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.project.MPSProject;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -24,6 +21,8 @@ import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.io.IOException;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class UpgradePersistence_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -54,16 +53,16 @@ public class UpgradePersistence_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Logger LOG = LogManager.getLogger("jetbrains.mps.ide.migration.UpgradePersistence_Action");
-
-      final MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
-      for (SModule module : mpsProject.getModulesWithGenerators()) {
+      for (SModule module : ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModulesWithGenerators()) {
         for (SModel model : module.getModels()) {
           if (!(model instanceof EditableSModel)) {
             continue;
@@ -93,7 +92,9 @@ public class UpgradePersistence_Action extends BaseAction {
             ((EditableSModel) model).reloadFromSource();
 
           } catch (IOException ex) {
-            LOG.error(null, ex);
+            if (LOG.isEnabledFor(Priority.ERROR)) {
+              LOG.error("error upgrading " + model.getModelName(), ex);
+            }
           }
         }
       }
