@@ -1012,9 +1012,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        assert node == null ||
-            node.getModel().getRepository() == null ||
-            SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
+        assert node == null || SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
       }
     });
 
