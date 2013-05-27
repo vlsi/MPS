@@ -24,6 +24,7 @@ import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -106,7 +107,13 @@ public class CreateGroupsBuilder {
       final Runnable r1 = new Runnable() {
         @Override
         public void run() {
-          created[0] = myDescriptor.createNode(myBaseNode.resolve(MPSModuleRepository.getInstance()), myConcept);
+          SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+            @Override
+            public SNode compute() {
+              return myBaseNode.resolve(MPSModuleRepository.getInstance());
+            }
+          });
+          created[0] = myDescriptor.createNode(node, myConcept);
         }
       };
 

@@ -10,12 +10,16 @@ import java.util.Map;
 import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import com.intellij.ide.plugins.PluginManager;
-import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import com.intellij.ide.plugins.PluginManager;
 import jetbrains.mps.library.LibraryInitializer;
 import com.intellij.ide.plugins.cl.PluginClassLoader;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
+import org.jetbrains.mps.openapi.persistence.Memento;
+import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
+import java.util.Iterator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.vfs.IFile;
@@ -55,6 +59,15 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (SModule module : MPSModuleRepository.getInstance().getModules()) {
+        if (!(module instanceof AbstractModule) || (((AbstractModule) module).getModuleDescriptor() == null)) {
+          System.out.println("Strange module: " + module.getModuleName());
+          continue;
+        }
+
+        if (module.getFacet(JavaModuleFacet.class) == null || module.getFacet(JavaModuleFacet.class).isCompileInMps()) {
+          continue;
+        }
+
         String pluginId = SetPluginIdToCompileInIdeaModules_Action.this.getPluginIdForModule(module, _params);
         if (pluginId != null) {
           SetPluginIdToCompileInIdeaModules_Action.this.setPluginId(module, pluginId, _params);
@@ -70,11 +83,7 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
   }
 
   /*package*/ String getPluginIdForModule(SModule module, final Map<String, Object> _params) {
-    if (module.getFacet(JavaModuleFacet.class) == null || module.getFacet(JavaModuleFacet.class).isCompileInMps()) {
-      return null;
-    }
-
-    String path = check_ta15vl_a0c0a(((AbstractModule) module).getModuleSourceDir());
+    String path = check_ta15vl_a0a0a(((AbstractModule) module).getModuleSourceDir());
     if (path == null) {
       System.out.println("null path for " + module.getModuleName());
       return null;
@@ -93,11 +102,25 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     IdeaPluginModuleFacetImpl facet = new IdeaPluginModuleFacetImpl();
     facet.setModule(module);
     facet.setPluginId(pluginId);
+    Memento memento = new MementoImpl();
+    facet.save(memento);
+    ModuleFacetDescriptor facetDescriptor = new ModuleFacetDescriptor(facet.getFacetType(), memento);
+
+    Iterator<ModuleFacetDescriptor> iterator = ((AbstractModule) module).getModuleDescriptor().getModuleFacetDescriptors().iterator();
+    while (iterator.hasNext()) {
+      if (facet.getFacetType().equals(iterator.next().getType())) {
+        iterator.remove();
+        break;
+      }
+    }
+
+    ((AbstractModule) module).getModuleDescriptor().getModuleFacetDescriptors().add(facetDescriptor);
+    ((AbstractModule) module).save();
   }
 
   protected static Logger LOG = LogManager.getLogger(SetPluginIdToCompileInIdeaModules_Action.class);
 
-  private static String check_ta15vl_a0c0a(IFile checkedDotOperand) {
+  private static String check_ta15vl_a0a0a(IFile checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getPath();
     }

@@ -34,7 +34,7 @@ public class RelativePathHelper {
     }
     File res = new File(myBasePath, shortPath);
     try {
-      return res.getCanonicalPath();
+      return res.getCanonicalPath().replace("\\", "/");
     } catch (Exception ex) {
       throw new RelativePathHelper.PathException(ex, ex.getMessage());
     }

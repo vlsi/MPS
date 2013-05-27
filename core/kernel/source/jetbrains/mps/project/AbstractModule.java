@@ -38,7 +38,6 @@ import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
-import jetbrains.mps.smodel.DisposedRepository;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IllegalModelAccessError;
@@ -73,7 +72,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
@@ -108,9 +106,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   protected boolean myChanged = false;
 
-  private final Object REPO_LOCK = new Object();
-  private SRepository myRepository = null;
-
   private static Set<String> ourErroredModules = new ConcurrentHashSet<String>();
 
   //----model creation
@@ -134,34 +129,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public String getModuleName() {
     assertCanRead();
     return myModuleReference.getModuleName();
-  }
-
-  @Override
-  public void attach(SRepository repo) {
-    synchronized (REPO_LOCK) {
-      assert myRepository == null;
-      myRepository = repo;
-      for (SModel m : getOwnModelDescriptors()) {
-        m.attach(repo);
-      }
-    }
-  }
-
-  @Override
-  public void detach() {
-    synchronized (REPO_LOCK) {
-      assert myRepository != null;
-      for (SModel m : getOwnModelDescriptors()) {
-        m.detach();
-      }
-      myRepository = DisposedRepository.INSTANCE;
-    }
-  }
-
-  @Override
-  public SRepository getRepository() {
-    assertCanRead();
-    return myRepository;
   }
 
   @Override
@@ -231,13 +198,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     assertCanRead();
     // TODO: implement something more meaningful
     return SModelRepository.getInstance().getModelDescriptor(ref);
-  }
-
-  @Override
-  public SModel getModel(org.jetbrains.mps.openapi.model.SModelId id) {
-    assertCanRead();
-    // TODO API (implement)
-    return null;
   }
 
   protected void setModuleReference(@NotNull SModuleReference reference) {
@@ -572,6 +532,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     Set<String> types = new HashSet<String>();
     collectFacetTypes(types);
+    types.addAll(config.keySet());
 
     for (String facetType : types) {
       FacetFactory factory = FacetsFacade.getInstance().getFacetFactory(facetType);
@@ -614,12 +575,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public final List<SModel> getOwnModelDescriptors() {
     assertCanRead();
     return getModels();
-  }
-
-  @Override
-  public List<SModel> getModels() {
-    assertCanRead();
-    return SModelRepository.getInstance().getModelDescriptors(this);
   }
 
   /**
@@ -682,6 +637,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
   }
 
+  @Override
   public void dispose() {
     assertCanChange();
     FileSystem.getInstance().removeListener(this);
@@ -693,7 +649,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       ((ModelRootBase) m).dispose();
     }
     mySModelRoots.clear();
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    super.dispose();
   }
 
   public List<String> getSourcePaths() {
@@ -1016,43 +972,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Deprecated
   public final IFile getClassesGen() {
     return getJavaFacet(this).getClassesGen();
-  }
-
-  protected void assertCanRead() {
-//    if (myRepository == null) return;
-//    if (myRepository instanceof DisposedRepository) {
-//      showDisposedMessage();
-//      return;
-//    }
-//
-//    synchronized (REPO_LOCK) {
-//      if (myRepository == null) return;
-//      if (myRepository instanceof DisposedRepository) {
-//        showDisposedMessage();
-//        return;
-//      }
-//      myRepository.getModelAccess().checkReadAccess();
-//    }
-  }
-
-  protected void assertCanChange() {
-//    if (myRepository == null) return;
-//    if (myRepository instanceof DisposedRepository) {
-//      showDisposedMessage();
-//      return;
-//    }
-//
-//    synchronized (REPO_LOCK) {
-//      if (myRepository == null) return;
-//      if (myRepository instanceof DisposedRepository) {
-//        showDisposedMessage();
-//        return;
-//      }
-//      myRepository.getModelAccess().checkWriteAccess();
-//      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
-//        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
-//      }
-//    }
   }
 
   private void showDisposedMessage() {

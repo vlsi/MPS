@@ -24,21 +24,21 @@ public class TestRelativePathHelper_Test extends TestCase {
     Assert.assertEquals("../../build2", new RelativePathHelper(scriptsFolder).makeRelative(targetFolder));
 
     // back 
-    Assert.assertEquals(targetFolder, new RelativePathHelper(scriptsFolder).makeAbsolute("../../build2"));
-    Assert.assertEquals(targetFolder, new RelativePathHelper(scriptsFolder).makeAbsolute("../../build2/"));
+    Assert.assertEquals(targetFolder.replace("\\", "/"), new RelativePathHelper(scriptsFolder).makeAbsolute("../../build2"));
+    Assert.assertEquals(targetFolder.replace("\\", "/"), new RelativePathHelper(scriptsFolder).makeAbsolute("../../build2/"));
 
     // 2 same folder 
     Assert.assertEquals("", new RelativePathHelper(scriptsFolder).makeRelative(scriptsFolder));
 
     // back 
-    Assert.assertEquals(scriptsFolder, new RelativePathHelper(scriptsFolder).makeAbsolute(""));
+    Assert.assertEquals(scriptsFolder.replace("\\", "/"), new RelativePathHelper(scriptsFolder).makeAbsolute(""));
 
     // 3 one level up 
     String oneUp = baseDir.getParentFile().getCanonicalPath();
     Assert.assertEquals("../", new RelativePathHelper(scriptsFolder).makeRelative(oneUp));
 
     // back 
-    Assert.assertEquals(oneUp, new RelativePathHelper(scriptsFolder).makeAbsolute(".."));
-    Assert.assertEquals(oneUp, new RelativePathHelper(scriptsFolder).makeAbsolute("../"));
+    Assert.assertEquals(oneUp.replace("\\", "/"), new RelativePathHelper(scriptsFolder).makeAbsolute(".."));
+    Assert.assertEquals(oneUp.replace("\\", "/"), new RelativePathHelper(scriptsFolder).makeAbsolute("../"));
   }
 }

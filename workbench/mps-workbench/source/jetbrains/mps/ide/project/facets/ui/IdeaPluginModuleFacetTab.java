@@ -16,18 +16,29 @@
 package jetbrains.mps.ide.project.facets.ui;
 
 import com.intellij.icons.AllIcons.Nodes;
+import com.intellij.ide.util.BrowseFilesListener;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
+import com.intellij.openapi.fileChooser.FileChooserFactory;
+import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
+import com.intellij.ui.FieldPanel;
 import com.intellij.ui.IdeBorderFactory;
+import com.intellij.ui.InsertPathAction;
 import com.intellij.ui.TableUtil;
 import com.intellij.ui.ToolbarDecorator;
+import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.util.ui.JBInsets;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacet;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
+import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionOrLangChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
@@ -39,11 +50,15 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.util.Iterator;
 import java.util.List;
 
@@ -53,7 +68,6 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
   private IdeaPluginModuleFacet myNewIdeaPluginModuleFacet;
 
   private JTextField myTextField;
-  private IdeaPluginModulesTableModel myTableModel;
 
   public IdeaPluginModuleFacetTab(IdeaPluginModuleFacet moduleFacet) {
     super("Idea Plugin", Nodes.Plugin, "Idea Plugin Properties");
@@ -66,72 +80,38 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
 
   @Override
   public void init() {
-    JPanel panel = new JPanel(new GridLayoutManager(2, 2, MPSPropertiesConfigurable.INSETS, -1, -1));
+    JPanel content = new JPanel();
+    content.setLayout(new GridLayoutManager(1, 2, JBInsets.NONE, -1, -1));
 
-    panel.add(new JLabel("Plugin ID:"),
-        new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
-            GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+    JBLabel label = new JBLabel("Plugin ID:");
+    content.add(label, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+        GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
     myTextField = new JTextField(myIdeaPluginModuleFacet.getPluginId());
-    panel.add(myTextField,
-        new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL,
-            GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-    final JBTable modulesTable = new JBTable();
-    modulesTable.setShowHorizontalLines(false);
-    modulesTable.setShowVerticalLines(false);
-    modulesTable.setAutoCreateRowSorter(false);
-    modulesTable.setAutoscrolls(true);
-    modulesTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+    myTextField.setPreferredSize(new Dimension(300, 20));
+    content.add(myTextField, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+        GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-    myTableModel = new IdeaPluginModulesTableModel(myNewIdeaPluginModuleFacet);
-    modulesTable.setModel(myTableModel);
+    JPanel outerPanel = new JPanel();
+    outerPanel.setLayout(new GridLayoutManager(1, 1, new JBInsets(10, 10, 10, 10), -1, -1));
+    outerPanel.add(content,
+        new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
+            GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
 
-    modulesTable.setDefaultRenderer(SModuleReference.class, new ModuleTableCellRender());
-
-    ToolbarDecorator decorator = ToolbarDecorator.createDecorator(modulesTable);
-    decorator.setAddAction(new AnActionButtonRunnable() {
-      @Override
-      public void run(AnActionButton anActionButton) {
-        List<SModuleReference> list = (new SolutionOrLangChooser()).compute();
-        for (SModuleReference reference : list)
-          myTableModel.addItem(reference);
-      }
-    }).setRemoveAction(new AnActionButtonRunnable() {
-      @Override
-      public void run(AnActionButton anActionButton) {
-        int first = modulesTable.getSelectionModel().getMinSelectionIndex();
-        int last = modulesTable.getSelectionModel().getMaxSelectionIndex();
-        TableUtil.removeSelectedItems(modulesTable);
-        myTableModel.fireTableRowsDeleted(first, last);
-        first = Math.max(0, first - 1);
-        modulesTable.getSelectionModel().setSelectionInterval(first, first);
-      }
-    });
-    decorator.setPreferredSize(new Dimension(500, 150));
-
-    JPanel table = decorator.createPanel();
-    table.setBorder(IdeBorderFactory.createBorder());
-
-    panel.add(table,
-        new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_BOTH,
-            GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK,
-            GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null, 0, false));
-
-    setTabComponent(panel);
+    setTabComponent(outerPanel);
   }
 
   @Override
   public boolean isModified() {
-    return !myTextField.getText().equals(myIdeaPluginModuleFacet.getPluginId())
-        || myTableModel.isModified();
+    return !myTextField.getText().equals(myIdeaPluginModuleFacet.getPluginId());
   }
 
   @Override
   public void apply() {
     ((IdeaPluginModuleFacetImpl) myNewIdeaPluginModuleFacet).setPluginId(myTextField.getText());
-    myTableModel.apply();
 
+    // todo: move to separate common part
     Memento memento = new MementoImpl();
     myNewIdeaPluginModuleFacet.save(memento);
 
@@ -148,7 +128,7 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
       }
     }
 
-    if (!myNewIdeaPluginModuleFacet.getPluginId().isEmpty() || !myNewIdeaPluginModuleFacet.getContainedModules().isEmpty())
+    if (!myNewIdeaPluginModuleFacet.getPluginId().isEmpty())
       descriptor.getModuleFacetDescriptors().add(facetDescriptor);
   }
 

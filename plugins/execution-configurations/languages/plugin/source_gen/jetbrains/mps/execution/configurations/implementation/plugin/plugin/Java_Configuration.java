@@ -55,14 +55,18 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
   private JavaRunParameters_Configuration myRunParameters = new JavaRunParameters_Configuration();
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    this.getNode().checkConfiguration();
-    if (SNodeOperations.isInstanceOf(this.getNode().getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      final Wrappers._boolean hasMainMethod = new Wrappers._boolean();
+    {
+      this.getNode().checkConfiguration();
+      final Wrappers._boolean hasMainMethod = new Wrappers._boolean(false);
+
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          hasMainMethod.value = (BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(Java_Configuration.this.getNode().getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getMainMethod_1213877355884", new Object[]{}) == null);
+          if (SNodeOperations.isInstanceOf(Java_Configuration.this.getNode().getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+            hasMainMethod.value = (BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(Java_Configuration.this.getNode().getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getMainMethod_1213877355884", new Object[]{}) == null);
+          }
         }
       });
+
       if (hasMainMethod.value) {
         throw new RuntimeConfigurationException("Selected class does not have main method.");
       }

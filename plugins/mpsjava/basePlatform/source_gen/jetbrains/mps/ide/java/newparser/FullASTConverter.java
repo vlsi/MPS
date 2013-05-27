@@ -381,6 +381,9 @@ public class FullASTConverter extends ASTConverter {
   /*package*/ SNode convertStatement(ContinueStatement x) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ContinueStatement", null);
     if (x.label != null) {
+      // using new labels is commented out for now, something seems to be wrong with their scopes 
+      // <node> 
+      // <node> 
       SPropertyOperations.set(result, "label", new String(x.label));
     }
     return result;
@@ -517,14 +520,26 @@ public class FullASTConverter extends ASTConverter {
     if ((statement == null)) {
       return null;
     }
-    if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")) {
-      SNode loopStatement = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement");
-      SPropertyOperations.set(loopStatement, "label", new String(x.label));
+
+    if (x.statement instanceof ForStatement) {
+      // we do a trick to get our resulting mps LoopStatement here 
+      // because it could be converted into BlockStatement with the real loop inside 
+      SNode loopStatement = ListSequence.fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", true, new String[]{})).first();
+      if ((loopStatement == null)) {
+        return null;
+      }
+      SNode label = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LoopLabel", null);
+      SPropertyOperations.set(label, "name", new String(x.label));
+      SLinkOperations.setTarget(loopStatement, "loopLabel", label, true);
+
     } else
     if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.SwitchStatement")) {
       SNode switchStatement = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.SwitchStatement");
-      SPropertyOperations.set(switchStatement, "label", new String(x.label));
+      SNode label = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LoopLabel", null);
+      SPropertyOperations.set(label, "name", new String(x.label));
+      SLinkOperations.setTarget(switchStatement, "switchLabel", label, true);
     }
+
     return statement;
   }
 

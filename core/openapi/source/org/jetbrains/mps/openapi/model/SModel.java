@@ -33,6 +33,7 @@ public interface SModel {
   /**
    * Returns the id of the model valid within the containing module.
    */
+  @NotNull
   SModelId getModelId();
 
   /**
@@ -55,10 +56,6 @@ public interface SModel {
    * TODO: fix remove SModule!
    */
   SModule getModule();
-
-  void attach(SRepository repo);
-
-  void detach();
 
   /**
    * Returns a collection of root nodes. Root nodes are all nodes added to model using addRootNode.

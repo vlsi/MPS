@@ -1,10 +1,10 @@
 <component name="libraryTable">
   <library name="mps.jetbrains.mps.ide.java.basePlatform" type="mps.solution.library">
     <MPS_MODULE_XML>
-      <root url="jar://$IDEA_PLUGINS_FOLDER$/mps-java/lib/mps-java-common.jar!/modules/jetbrains.mps.ide.java.basePlatform/jetbrains.mps.ide.java.basePlatform.msd" />
+      <root url="jar://$PLUGINS_PATH$/mps-java/lib/mps-java-common.jar!/modules/jetbrains.mps.ide.java.basePlatform/jetbrains.mps.ide.java.basePlatform.msd" />
     </MPS_MODULE_XML>
     <CLASSES>
-      <root url="jar://$IDEA_PLUGINS_FOLDER$/mps-java/lib/mps-java-common.jar!/" />
+      <root url="jar://$PLUGINS_PATH$/mps-java/lib/mps-java-common.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

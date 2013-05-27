@@ -16,6 +16,7 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
+import jetbrains.mps.smodel.DisposedRepository;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -324,11 +325,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   @Override
   public final StackTraceElement[] getDisposedStacktrace() {
     return getSModelInternal().getDisposedStacktrace();
-  }
-
-  @Override
-  public final boolean isDisposed() {
-    return getSModelInternal().isDisposed();
   }
 
   @Override

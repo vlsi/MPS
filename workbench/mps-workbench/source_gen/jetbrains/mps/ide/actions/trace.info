@@ -7422,7 +7422,7 @@
     <nodeInfo nodeId="2533953941693774358" fileName="ForcedSaveAll_Action.java" startLine="54" startPosition="5" endLine="55" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2533953941693774358" fileName="ForcedSaveAll_Action.java" startLine="56" startPosition="62" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2533953941693774358" fileName="ForcedSaveAll_Action.java" startLine="58" startPosition="5" endLine="59" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="120896515006380270" fileName="ForcedSaveAll_Action.java" startLine="63" startPosition="9" endLine="64" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="120896515006380270" fileName="ForcedSaveAll_Action.java" startLine="63" startPosition="9" endLine="64" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="120896515006498962" fileName="ForcedSaveAll_Action.java" startLine="66" startPosition="55" endLine="67" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="120896515006498948" fileName="ForcedSaveAll_Action.java" startLine="70" startPosition="42" endLine="71" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="120896515006539481" fileName="ForcedSaveAll_Action.java" startLine="74" startPosition="49" endLine="75" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -7452,7 +7452,7 @@
     <nodeInfo nodeId="2533953941693774358" fileName="ForcedSaveAll_Action.java" startLine="40" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="2533953941693774358" fileName="ForcedSaveAll_Action.java" startLine="51" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="2533953941693793944" fileName="ForcedSaveAll_Action.java" startLine="78" startPosition="0" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="120896515006498941" fileName="ForcedSaveAll_Action.java" startLine="64" startPosition="122" endLine="77" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="120896515006498941" fileName="ForcedSaveAll_Action.java" startLine="64" startPosition="81" endLine="77" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2533953941693774358" fileName="ForcedSaveAll_Action.java" startLine="62" startPosition="96" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2533953941693774358" fileName="ForcedSaveAll_Action.java" startLine="62" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="2533953941693774358" fileName="ForcedSaveAll_Action.java" startLine="36" startPosition="32" endLine="37" endPosition="16" />
@@ -12403,126 +12403,148 @@
     <unitInfo nodeId="640843604926244916" fileName="NewRuntimeModule_Action.java" startLine="41" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/6460492932224949527">
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="26" startPosition="53" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="27" startPosition="63" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="28" startPosition="35" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="33" startPosition="32" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="38" startPosition="9" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="38" startPosition="9" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="41" startPosition="45" endLine="42" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="43" startPosition="7" endLine="44" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="51" startPosition="5" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6460492932225365785" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="57" startPosition="77" endLine="58" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7217424793751208490" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="59" startPosition="31" endLine="60" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7217424793751215831" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="61" startPosition="16" endLine="62" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="66" startPosition="45" endLine="67" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2503776137140495871" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="73" startPosition="116" endLine="74" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2503776137140616274" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="75" startPosition="5" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2503776137140495874" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="76" startPosition="0" endLine="77" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5347901971864406754" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="78" startPosition="23" endLine="79" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2503776137140495886" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="79" startPosition="68" endLine="80" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2503776137140616513" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="81" startPosition="5" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2503776137140495895" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="82" startPosition="0" endLine="83" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5347901971864436513" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="84" startPosition="54" endLine="85" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1074204840165403125" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="85" startPosition="80" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5347901971864431916" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="87" startPosition="5" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5347901971864441474" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="88" startPosition="0" endLine="89" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7217424793751326681" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="92" startPosition="100" endLine="93" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7217424793751498945" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="93" startPosition="70" endLine="94" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7217424793751532570" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="94" startPosition="28" endLine="95" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="98" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="101" startPosition="36" endLine="102" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="103" startPosition="5" endLine="104" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7217424793751215578" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="61" startPosition="14" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="48" startPosition="95" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="65" startPosition="27" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="65" startPosition="27" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2503776137140495855" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="72" startPosition="94" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="100" startPosition="69" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="2503776137140495882" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="77" startPosition="85" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5347901971864432231" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="83" startPosition="97" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SetPluginIdToCompileInIdeaModules_Action#()V" />
-    <nodeInfo nodeId="6460492932225313794" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="58" startPosition="110" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7217424793751150315" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="92" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPluginId#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/lang/String;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="100" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ta15vl_a0c0a#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="37" startPosition="89" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6460492932225273356" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="56" startPosition="9" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="37" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="55" startPosition="96" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="55" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="2503776137140397871" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="72" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPluginIdForModule#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/util/Map;)Ljava/lang/String;" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="33" startPosition="32" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="38" startPosition="9" endLine="39" endPosition="43" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="41" startPosition="45" endLine="42" endPosition="108" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
-    <scopeInfo nodeId="6460492932225313795" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="59" startPosition="31" endLine="60" endPosition="95" />
-    <scopeInfo nodeId="7217424793751215579" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="61" startPosition="16" endLine="62" endPosition="115" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="66" startPosition="45" endLine="67" endPosition="107" />
-    <scopeInfo nodeId="2503776137140495870" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="73" startPosition="116" endLine="74" endPosition="18" />
-    <scopeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="101" startPosition="36" endLine="102" endPosition="41" />
-    <scopeInfo nodeId="2503776137140495888" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="78" startPosition="23" endLine="80" endPosition="18" />
-    <scopeInfo nodeId="5347901971864432234" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="84" startPosition="54" endLine="86" endPosition="18" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="26" startPosition="53" endLine="29" endPosition="41" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="65" startPosition="0" endLine="68" endPosition="7">
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="30" startPosition="53" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="31" startPosition="63" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="32" startPosition="35" endLine="33" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="37" startPosition="32" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="42" startPosition="9" endLine="43" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="42" startPosition="9" endLine="43" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="45" startPosition="45" endLine="46" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="47" startPosition="7" endLine="48" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="53" startPosition="53" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9041825716930998516" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="62" startPosition="111" endLine="63" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7025774337358667225" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="63" startPosition="74" endLine="64" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7025774337362343417" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="65" startPosition="9" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7025774337362359503" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="67" startPosition="120" endLine="68" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7025774337362344423" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6460492932225365785" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="70" startPosition="0" endLine="71" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7217424793751208490" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="72" startPosition="31" endLine="73" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7217424793751215831" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="74" startPosition="16" endLine="75" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="79" startPosition="45" endLine="80" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2503776137140495874" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="85" startPosition="94" endLine="86" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5347901971864406754" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="87" startPosition="23" endLine="88" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2503776137140495886" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="88" startPosition="68" endLine="89" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2503776137140616513" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="90" startPosition="5" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2503776137140495895" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="91" startPosition="0" endLine="92" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5347901971864436513" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="93" startPosition="54" endLine="94" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1074204840165403125" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="94" startPosition="80" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5347901971864431916" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="96" startPosition="5" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5347901971864441474" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="97" startPosition="0" endLine="98" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7217424793751326681" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="101" startPosition="100" endLine="102" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7217424793751498945" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="102" startPosition="70" endLine="103" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7217424793751532570" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="103" startPosition="28" endLine="104" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7966082665800263097" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="104" startPosition="32" endLine="105" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7966082665800274956" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="105" startPosition="40" endLine="106" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7966082665799995551" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="106" startPosition="24" endLine="107" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7966082665800313928" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="107" startPosition="101" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7966082665800313555" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="108" startPosition="0" endLine="109" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7966082665800407624" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="111" startPosition="67" endLine="112" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7966082665800413405" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="112" startPosition="26" endLine="113" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7966082665800413412" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="115" startPosition="5" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7966082665800414306" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="116" startPosition="0" endLine="117" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7025774337360663579" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="117" startPosition="101" endLine="118" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="121" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="124" startPosition="36" endLine="125" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="126" startPosition="5" endLine="127" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7217424793751215578" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="74" startPosition="14" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="44" startPosition="27" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="44" startPosition="27" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="52" startPosition="95" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7025774337362355186" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="66" startPosition="0" endLine="69" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="78" startPosition="27" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="78" startPosition="27" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="123" startPosition="69" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="9041825716930910500" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="61" startPosition="77" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2503776137140495882" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="86" startPosition="85" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5347901971864432231" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="92" startPosition="97" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7966082665800340344" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="110" startPosition="32" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SetPluginIdToCompileInIdeaModules_Action#()V" />
+    <nodeInfo nodeId="6460492932225313794" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="71" startPosition="110" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="7966082665800330630" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="109" startPosition="134" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="123" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ta15vl_a0a0a#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="41" startPosition="89" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="41" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="2503776137140397871" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="85" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPluginIdForModule#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/util/Map;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6460492932225273356" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="60" startPosition="9" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7217424793751150315" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="101" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPluginId#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/lang/String;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="59" startPosition="96" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="59" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="37" startPosition="32" endLine="38" endPosition="16" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="42" startPosition="9" endLine="43" endPosition="43" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="45" startPosition="45" endLine="46" endPosition="108" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="53" startPosition="53" endLine="54" endPosition="19" />
+    <scopeInfo nodeId="7025774337362355218" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="67" startPosition="120" endLine="68" endPosition="19" />
+    <scopeInfo nodeId="6460492932225313795" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="72" startPosition="31" endLine="73" endPosition="95" />
+    <scopeInfo nodeId="7217424793751215579" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="74" startPosition="16" endLine="75" endPosition="115" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="79" startPosition="45" endLine="80" endPosition="107" />
+    <scopeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="124" startPosition="36" endLine="125" endPosition="41" />
+    <scopeInfo nodeId="9041825716930910503" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="62" startPosition="111" endLine="64" endPosition="19" />
+    <scopeInfo nodeId="2503776137140495888" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="87" startPosition="23" endLine="89" endPosition="18" />
+    <scopeInfo nodeId="5347901971864432234" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="93" startPosition="54" endLine="95" endPosition="18" />
+    <scopeInfo nodeId="7966082665800340345" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="111" startPosition="67" endLine="113" endPosition="14" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="30" startPosition="53" endLine="33" endPosition="41" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="44" startPosition="27" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="78" startPosition="0" endLine="81" endPosition="7">
       <varInfo nodeId="6460492932224949527" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="65" startPosition="27" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="7217424793751150681" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="92" startPosition="100" endLine="95" endPosition="32">
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="78" startPosition="27" endLine="81" endPosition="7" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="44" startPosition="0" endLine="48" endPosition="44">
+      <varInfo nodeId="6460492932224949527" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="44" startPosition="27" endLine="48" endPosition="44" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="52" startPosition="95" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="7966082665800330634" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="110" startPosition="32" endLine="114" endPosition="7" />
+    <scopeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="123" startPosition="69" endLine="127" endPosition="16" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="52" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="6460492932224949527" varName="_params" />
+      <varInfo nodeId="6460492932224949527" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="123" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="5347901971864414320" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="41" startPosition="89" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="41" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="6460492932224949527" varName="_params" />
+      <varInfo nodeId="6460492932224949527" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="2503776137140397873" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="85" startPosition="94" endLine="98" endPosition="73">
+      <varInfo nodeId="2503776137140495894" varName="classLoader" />
+      <varInfo nodeId="2503776137140495873" varName="path" />
+    </scopeInfo>
+    <scopeInfo nodeId="6460492932225273357" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="61" startPosition="77" endLine="76" endPosition="9">
+      <varInfo nodeId="6460492932225365788" varName="pluginId" />
+    </scopeInfo>
+    <scopeInfo nodeId="2503776137140397871" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="85" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="2503776137140397871" varName="_params" />
+      <varInfo nodeId="2503776137140450464" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="60" startPosition="9" endLine="77" endPosition="7" />
+    <scopeInfo nodeId="6460492932225273356" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="60" startPosition="9" endLine="77" endPosition="7">
+      <varInfo nodeId="6460492932225273358" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="7217424793751150681" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="101" startPosition="100" endLine="118" endPosition="37">
       <varInfo nodeId="7217424793751326682" varName="facet" />
+      <varInfo nodeId="7966082665799995552" varName="facetDescriptor" />
+      <varInfo nodeId="7966082665800313556" varName="iterator" />
+      <varInfo nodeId="7966082665800263098" varName="memento" />
     </scopeInfo>
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="44">
-      <varInfo nodeId="6460492932224949527" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="40" startPosition="27" endLine="44" endPosition="44" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="48" startPosition="95" endLine="52" endPosition="16" />
-    <scopeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="100" startPosition="69" endLine="104" endPosition="16" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="7217424793751150315" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="92" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="7217424793751150315" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="101" startPosition="0" endLine="120" endPosition="0">
       <varInfo nodeId="7217424793751150315" varName="_params" />
       <varInfo nodeId="7217424793751207800" varName="module" />
       <varInfo nodeId="7217424793751207804" varName="pluginId" />
     </scopeInfo>
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="59" startPosition="96" endLine="82" endPosition="5" />
+    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="59" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="6460492932224949527" varName="_params" />
       <varInfo nodeId="6460492932224949527" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6460492932225273357" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="57" startPosition="77" endLine="63" endPosition="9">
-      <varInfo nodeId="6460492932225365788" varName="pluginId" />
-    </scopeInfo>
-    <scopeInfo nodeId="5347901971864414320" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="100" startPosition="0" endLine="106" endPosition="0">
-      <varInfo nodeId="5347901971864414320" varName="checkedDotOperand" />
-    </scopeInfo>
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="37" startPosition="89" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="56" startPosition="9" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="6460492932225273356" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="56" startPosition="9" endLine="64" endPosition="7">
-      <varInfo nodeId="6460492932225273358" varName="module" />
-    </scopeInfo>
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="37" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="6460492932224949527" varName="_params" />
-      <varInfo nodeId="6460492932224949527" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="55" startPosition="96" endLine="69" endPosition="5" />
-    <scopeInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="55" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="6460492932224949527" varName="_params" />
-      <varInfo nodeId="6460492932224949527" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="2503776137140397873" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="72" startPosition="94" endLine="89" endPosition="73">
-      <varInfo nodeId="2503776137140495894" varName="classLoader" />
-      <varInfo nodeId="2503776137140495873" varName="path" />
-    </scopeInfo>
-    <scopeInfo nodeId="2503776137140397871" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="72" startPosition="0" endLine="91" endPosition="0">
-      <varInfo nodeId="2503776137140397871" varName="_params" />
-      <varInfo nodeId="2503776137140450464" varName="module" />
-    </scopeInfo>
-    <unitInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="23" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.actions.SetPluginIdToCompileInIdeaModules_Action" />
+    <unitInfo nodeId="6460492932224949527" fileName="SetPluginIdToCompileInIdeaModules_Action.java" startLine="27" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.ide.actions.SetPluginIdToCompileInIdeaModules_Action" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/6661528628553884549">
     <nodeInfo nodeId="6661528628553884549" fileName="NamespaceMakeActions_ActionGroup.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -12552,8 +12574,6 @@
     <scopeInfo nodeId="6661528628553884549" fileName="NamespaceMakeActions_ActionGroup.java" startLine="17" startPosition="0" endLine="32" endPosition="0" />
     <unitInfo nodeId="6661528628553884549" fileName="NamespaceMakeActions_ActionGroup.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/6714867774530115905" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/6714867774530130714" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/6840593892233915864">
     <nodeInfo nodeId="6840593892233915864" fileName="RenameModel_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="6840593892233915864" fileName="RenameModel_Action.java" startLine="25" startPosition="31" endLine="26" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -12912,193 +12932,195 @@
     <unitInfo nodeId="6939130023294386924" fileName="ShowModuleBootstrapDependency_Action.java" startLine="21" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowModuleBootstrapDependency_Action" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/6981599660810253824">
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="37" startPosition="46" endLine="38" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="38" startPosition="48" endLine="39" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="39" startPosition="35" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="44" startPosition="32" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981599660810339387" fileName="ConvertToBinaryPersistence_Action.java" startLine="48" startPosition="87" endLine="49" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6981599660810342958" fileName="ConvertToBinaryPersistence_Action.java" startLine="51" startPosition="40" endLine="52" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="59" startPosition="7" endLine="60" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="60" startPosition="60" endLine="61" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="64" startPosition="45" endLine="65" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="66" startPosition="7" endLine="67" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="72" startPosition="53" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="74" startPosition="5" endLine="75" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="76" startPosition="62" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="78" startPosition="5" endLine="79" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="80" startPosition="61" endLine="81" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="82" startPosition="5" endLine="83" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="84" startPosition="62" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="86" startPosition="5" endLine="87" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981599660810406849" fileName="ConvertToBinaryPersistence_Action.java" startLine="91" startPosition="9" endLine="92" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6981599660810445238" fileName="ConvertToBinaryPersistence_Action.java" startLine="94" startPosition="42" endLine="95" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5938312768539627377" fileName="ConvertToBinaryPersistence_Action.java" startLine="97" startPosition="9" endLine="98" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5171773620273043003" fileName="ConvertToBinaryPersistence_Action.java" startLine="98" startPosition="124" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5171773620271286385" fileName="ConvertToBinaryPersistence_Action.java" startLine="99" startPosition="0" endLine="100" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6981599660813479957" fileName="ConvertToBinaryPersistence_Action.java" startLine="100" startPosition="117" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5171773620272821124" fileName="ConvertToBinaryPersistence_Action.java" startLine="104" startPosition="60" endLine="105" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5171773620271636219" fileName="ConvertToBinaryPersistence_Action.java" startLine="105" startPosition="76" endLine="106" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5171773620272972461" fileName="ConvertToBinaryPersistence_Action.java" startLine="108" startPosition="53" endLine="109" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5171773620272200692" fileName="ConvertToBinaryPersistence_Action.java" startLine="110" startPosition="15" endLine="111" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5171773620272208069" fileName="ConvertToBinaryPersistence_Action.java" startLine="112" startPosition="13" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5171773620272399646" fileName="ConvertToBinaryPersistence_Action.java" startLine="115" startPosition="56" endLine="116" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981599660810645833" fileName="ConvertToBinaryPersistence_Action.java" startLine="120" startPosition="53" endLine="121" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5171773620272110756" fileName="ConvertToBinaryPersistence_Action.java" startLine="122" startPosition="15" endLine="123" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5171773620271275120" fileName="ConvertToBinaryPersistence_Action.java" startLine="124" startPosition="13" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6981599660810519306" fileName="ConvertToBinaryPersistence_Action.java" startLine="125" startPosition="0" endLine="126" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6981599660810874893" fileName="ConvertToBinaryPersistence_Action.java" startLine="126" startPosition="150" endLine="127" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5171773620271428952" fileName="ConvertToBinaryPersistence_Action.java" startLine="128" startPosition="17" endLine="129" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810775065" fileName="ConvertToBinaryPersistence_Action.java" startLine="129" startPosition="72" endLine="130" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660811865611" fileName="ConvertToBinaryPersistence_Action.java" startLine="130" startPosition="75" endLine="131" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810902384" fileName="ConvertToBinaryPersistence_Action.java" startLine="131" startPosition="31" endLine="132" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5171773620271402092" fileName="ConvertToBinaryPersistence_Action.java" startLine="134" startPosition="53" endLine="135" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5171773620275507476" fileName="ConvertToBinaryPersistence_Action.java" startLine="137" startPosition="45" endLine="138" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5171773620275560369" fileName="ConvertToBinaryPersistence_Action.java" startLine="139" startPosition="53" endLine="140" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="147" startPosition="45" endLine="148" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="153" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6981599660810342956" fileName="ConvertToBinaryPersistence_Action.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="63" startPosition="27" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="63" startPosition="27" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="71" startPosition="95" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="75" startPosition="100" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="79" startPosition="88" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="83" startPosition="94" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6981599660810445236" fileName="ConvertToBinaryPersistence_Action.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-    <nodeInfo nodeId="5171773620272972461" fileName="ConvertToBinaryPersistence_Action.java" startLine="107" startPosition="35" endLine="110" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5171773620272972461" fileName="ConvertToBinaryPersistence_Action.java" startLine="107" startPosition="35" endLine="110" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5171773620272399644" fileName="ConvertToBinaryPersistence_Action.java" startLine="115" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel/Problem;)Z" />
-    <nodeInfo nodeId="6981599660810645833" fileName="ConvertToBinaryPersistence_Action.java" startLine="119" startPosition="63" endLine="122" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6981599660810645833" fileName="ConvertToBinaryPersistence_Action.java" startLine="119" startPosition="63" endLine="122" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5171773620271402092" fileName="ConvertToBinaryPersistence_Action.java" startLine="133" startPosition="38" endLine="136" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5171773620271402092" fileName="ConvertToBinaryPersistence_Action.java" startLine="133" startPosition="38" endLine="136" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5171773620275560369" fileName="ConvertToBinaryPersistence_Action.java" startLine="138" startPosition="34" endLine="141" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5171773620275560369" fileName="ConvertToBinaryPersistence_Action.java" startLine="138" startPosition="34" endLine="141" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="146" startPosition="27" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="146" startPosition="27" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="58" startPosition="9" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="78" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="82" startPosition="5" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertToBinaryPersistence_Action#()V" />
-    <nodeInfo nodeId="6981599660810339394" fileName="ConvertToBinaryPersistence_Action.java" startLine="49" startPosition="81" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981599660810445215" fileName="ConvertToBinaryPersistence_Action.java" startLine="92" startPosition="83" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5171773620272399640" fileName="ConvertToBinaryPersistence_Action.java" startLine="113" startPosition="0" endLine="118" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5171773620272189226" fileName="ConvertToBinaryPersistence_Action.java" startLine="106" startPosition="65" endLine="112" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5171773620271801988" fileName="ConvertToBinaryPersistence_Action.java" startLine="118" startPosition="15" endLine="124" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="48" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="57" startPosition="89" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="57" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5171773620271335385" fileName="ConvertToBinaryPersistence_Action.java" startLine="127" startPosition="48" endLine="142" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="71" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="6981599660810446254" fileName="ConvertToBinaryPersistence_Action.java" startLine="103" startPosition="27" endLine="143" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5938312768539670256" fileName="ConvertToBinaryPersistence_Action.java" startLine="103" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5938312768539661661" fileName="ConvertToBinaryPersistence_Action.java" startLine="101" startPosition="0" endLine="145" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="90" startPosition="96" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="90" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="44" startPosition="32" endLine="45" endPosition="16" />
-    <scopeInfo nodeId="6981599660810342957" fileName="ConvertToBinaryPersistence_Action.java" startLine="51" startPosition="40" endLine="52" endPosition="78" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="64" startPosition="45" endLine="65" endPosition="101" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="72" startPosition="53" endLine="73" endPosition="19" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="76" startPosition="62" endLine="77" endPosition="19" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="80" startPosition="61" endLine="81" endPosition="19" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="84" startPosition="62" endLine="85" endPosition="19" />
-    <scopeInfo nodeId="6981599660810445237" fileName="ConvertToBinaryPersistence_Action.java" startLine="94" startPosition="42" endLine="95" endPosition="80" />
-    <scopeInfo nodeId="5171773620272972461" fileName="ConvertToBinaryPersistence_Action.java" startLine="108" startPosition="53" endLine="109" endPosition="51" />
-    <scopeInfo nodeId="5171773620272399645" fileName="ConvertToBinaryPersistence_Action.java" startLine="115" startPosition="56" endLine="116" endPosition="36" />
-    <scopeInfo nodeId="6981599660810645833" fileName="ConvertToBinaryPersistence_Action.java" startLine="120" startPosition="53" endLine="121" endPosition="110" />
-    <scopeInfo nodeId="5171773620271402092" fileName="ConvertToBinaryPersistence_Action.java" startLine="134" startPosition="53" endLine="135" endPosition="56" />
-    <scopeInfo nodeId="5171773620275560369" fileName="ConvertToBinaryPersistence_Action.java" startLine="139" startPosition="53" endLine="140" endPosition="56" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="147" startPosition="45" endLine="148" endPosition="100" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="59" startPosition="7" endLine="61" endPosition="63">
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="38" startPosition="46" endLine="39" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="39" startPosition="48" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="40" startPosition="35" endLine="41" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="45" startPosition="32" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981599660810339387" fileName="ConvertToBinaryPersistence_Action.java" startLine="49" startPosition="87" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6981599660810342958" fileName="ConvertToBinaryPersistence_Action.java" startLine="52" startPosition="40" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="60" startPosition="7" endLine="61" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="61" startPosition="60" endLine="62" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="65" startPosition="45" endLine="66" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="67" startPosition="7" endLine="68" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="73" startPosition="53" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="75" startPosition="5" endLine="76" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="77" startPosition="62" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="79" startPosition="5" endLine="80" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="81" startPosition="61" endLine="82" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="83" startPosition="5" endLine="84" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="85" startPosition="62" endLine="86" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="87" startPosition="5" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981599660810406849" fileName="ConvertToBinaryPersistence_Action.java" startLine="92" startPosition="9" endLine="93" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6981599660810445238" fileName="ConvertToBinaryPersistence_Action.java" startLine="95" startPosition="42" endLine="96" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5938312768539627377" fileName="ConvertToBinaryPersistence_Action.java" startLine="98" startPosition="9" endLine="99" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5171773620273043003" fileName="ConvertToBinaryPersistence_Action.java" startLine="99" startPosition="124" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5171773620271286385" fileName="ConvertToBinaryPersistence_Action.java" startLine="100" startPosition="0" endLine="101" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6981599660813479957" fileName="ConvertToBinaryPersistence_Action.java" startLine="101" startPosition="117" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5171773620272821124" fileName="ConvertToBinaryPersistence_Action.java" startLine="105" startPosition="60" endLine="106" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5171773620271636219" fileName="ConvertToBinaryPersistence_Action.java" startLine="106" startPosition="76" endLine="107" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5171773620272972461" fileName="ConvertToBinaryPersistence_Action.java" startLine="109" startPosition="53" endLine="110" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5171773620272200692" fileName="ConvertToBinaryPersistence_Action.java" startLine="111" startPosition="15" endLine="112" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5171773620272208069" fileName="ConvertToBinaryPersistence_Action.java" startLine="113" startPosition="13" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5171773620272399646" fileName="ConvertToBinaryPersistence_Action.java" startLine="116" startPosition="56" endLine="117" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981599660810645833" fileName="ConvertToBinaryPersistence_Action.java" startLine="121" startPosition="53" endLine="122" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5171773620272110756" fileName="ConvertToBinaryPersistence_Action.java" startLine="123" startPosition="15" endLine="124" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5171773620271275120" fileName="ConvertToBinaryPersistence_Action.java" startLine="125" startPosition="13" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6981599660810519306" fileName="ConvertToBinaryPersistence_Action.java" startLine="126" startPosition="0" endLine="127" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6981599660810874893" fileName="ConvertToBinaryPersistence_Action.java" startLine="127" startPosition="150" endLine="128" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5171773620271428952" fileName="ConvertToBinaryPersistence_Action.java" startLine="129" startPosition="17" endLine="130" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1436063320240783184" fileName="ConvertToBinaryPersistence_Action.java" startLine="131" startPosition="35" endLine="132" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660811865611" fileName="ConvertToBinaryPersistence_Action.java" startLine="133" startPosition="15" endLine="134" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660810902384" fileName="ConvertToBinaryPersistence_Action.java" startLine="134" startPosition="31" endLine="135" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5171773620271402092" fileName="ConvertToBinaryPersistence_Action.java" startLine="137" startPosition="53" endLine="138" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5171773620275507476" fileName="ConvertToBinaryPersistence_Action.java" startLine="140" startPosition="45" endLine="141" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5171773620275560369" fileName="ConvertToBinaryPersistence_Action.java" startLine="142" startPosition="53" endLine="143" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="150" startPosition="45" endLine="151" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="156" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6981599660810342956" fileName="ConvertToBinaryPersistence_Action.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="72" startPosition="95" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="76" startPosition="100" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="80" startPosition="88" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="84" startPosition="94" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6981599660810445236" fileName="ConvertToBinaryPersistence_Action.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="5171773620272972461" fileName="ConvertToBinaryPersistence_Action.java" startLine="108" startPosition="35" endLine="111" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5171773620272972461" fileName="ConvertToBinaryPersistence_Action.java" startLine="108" startPosition="35" endLine="111" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5171773620272399644" fileName="ConvertToBinaryPersistence_Action.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel/Problem;)Z" />
+    <nodeInfo nodeId="6981599660810645833" fileName="ConvertToBinaryPersistence_Action.java" startLine="120" startPosition="63" endLine="123" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6981599660810645833" fileName="ConvertToBinaryPersistence_Action.java" startLine="120" startPosition="63" endLine="123" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1436063320240765067" fileName="ConvertToBinaryPersistence_Action.java" startLine="130" startPosition="72" endLine="133" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5171773620271402092" fileName="ConvertToBinaryPersistence_Action.java" startLine="136" startPosition="38" endLine="139" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5171773620271402092" fileName="ConvertToBinaryPersistence_Action.java" startLine="136" startPosition="38" endLine="139" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5171773620275560369" fileName="ConvertToBinaryPersistence_Action.java" startLine="141" startPosition="34" endLine="144" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5171773620275560369" fileName="ConvertToBinaryPersistence_Action.java" startLine="141" startPosition="34" endLine="144" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="149" startPosition="27" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="149" startPosition="27" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="59" startPosition="9" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="83" startPosition="5" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertToBinaryPersistence_Action#()V" />
+    <nodeInfo nodeId="6981599660810339394" fileName="ConvertToBinaryPersistence_Action.java" startLine="50" startPosition="81" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981599660810445215" fileName="ConvertToBinaryPersistence_Action.java" startLine="93" startPosition="83" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5171773620272399640" fileName="ConvertToBinaryPersistence_Action.java" startLine="114" startPosition="0" endLine="119" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5171773620272189226" fileName="ConvertToBinaryPersistence_Action.java" startLine="107" startPosition="65" endLine="113" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5171773620271801988" fileName="ConvertToBinaryPersistence_Action.java" startLine="119" startPosition="15" endLine="125" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="49" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="58" startPosition="89" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="58" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5171773620271335385" fileName="ConvertToBinaryPersistence_Action.java" startLine="128" startPosition="48" endLine="145" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="72" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="6981599660810446254" fileName="ConvertToBinaryPersistence_Action.java" startLine="104" startPosition="27" endLine="146" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5938312768539670256" fileName="ConvertToBinaryPersistence_Action.java" startLine="104" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5938312768539661661" fileName="ConvertToBinaryPersistence_Action.java" startLine="102" startPosition="0" endLine="148" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="91" startPosition="96" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="91" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="45" startPosition="32" endLine="46" endPosition="16" />
+    <scopeInfo nodeId="6981599660810342957" fileName="ConvertToBinaryPersistence_Action.java" startLine="52" startPosition="40" endLine="53" endPosition="78" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="65" startPosition="45" endLine="66" endPosition="101" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="73" startPosition="53" endLine="74" endPosition="19" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="77" startPosition="62" endLine="78" endPosition="19" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="81" startPosition="61" endLine="82" endPosition="19" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="85" startPosition="62" endLine="86" endPosition="19" />
+    <scopeInfo nodeId="6981599660810445237" fileName="ConvertToBinaryPersistence_Action.java" startLine="95" startPosition="42" endLine="96" endPosition="80" />
+    <scopeInfo nodeId="5171773620272972461" fileName="ConvertToBinaryPersistence_Action.java" startLine="109" startPosition="53" endLine="110" endPosition="51" />
+    <scopeInfo nodeId="5171773620272399645" fileName="ConvertToBinaryPersistence_Action.java" startLine="116" startPosition="56" endLine="117" endPosition="36" />
+    <scopeInfo nodeId="6981599660810645833" fileName="ConvertToBinaryPersistence_Action.java" startLine="121" startPosition="53" endLine="122" endPosition="110" />
+    <scopeInfo nodeId="1436063320240765070" fileName="ConvertToBinaryPersistence_Action.java" startLine="131" startPosition="35" endLine="132" endPosition="76" />
+    <scopeInfo nodeId="5171773620271402092" fileName="ConvertToBinaryPersistence_Action.java" startLine="137" startPosition="53" endLine="138" endPosition="56" />
+    <scopeInfo nodeId="5171773620275560369" fileName="ConvertToBinaryPersistence_Action.java" startLine="142" startPosition="53" endLine="143" endPosition="56" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="150" startPosition="45" endLine="151" endPosition="100" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="60" startPosition="7" endLine="62" endPosition="63">
       <varInfo nodeId="6981599660810253824" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="37" startPosition="46" endLine="40" endPosition="40" />
-    <scopeInfo nodeId="6981599660810342956" fileName="ConvertToBinaryPersistence_Action.java" startLine="51" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="38" startPosition="46" endLine="41" endPosition="40" />
+    <scopeInfo nodeId="6981599660810342956" fileName="ConvertToBinaryPersistence_Action.java" startLine="52" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="6981599660810342956" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="63" startPosition="27" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="6981599660810445236" fileName="ConvertToBinaryPersistence_Action.java" startLine="94" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="6981599660810445236" fileName="ConvertToBinaryPersistence_Action.java" startLine="95" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="6981599660810445236" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5171773620272972461" fileName="ConvertToBinaryPersistence_Action.java" startLine="107" startPosition="35" endLine="110" endPosition="15" />
-    <scopeInfo nodeId="5171773620272399644" fileName="ConvertToBinaryPersistence_Action.java" startLine="115" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="5171773620272972461" fileName="ConvertToBinaryPersistence_Action.java" startLine="108" startPosition="35" endLine="111" endPosition="15" />
+    <scopeInfo nodeId="5171773620272399644" fileName="ConvertToBinaryPersistence_Action.java" startLine="116" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="5171773620272399644" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6981599660810645833" fileName="ConvertToBinaryPersistence_Action.java" startLine="119" startPosition="63" endLine="122" endPosition="15" />
-    <scopeInfo nodeId="5171773620271335388" fileName="ConvertToBinaryPersistence_Action.java" startLine="133" startPosition="0" endLine="136" endPosition="15">
+    <scopeInfo nodeId="6981599660810645833" fileName="ConvertToBinaryPersistence_Action.java" startLine="120" startPosition="63" endLine="123" endPosition="15" />
+    <scopeInfo nodeId="5171773620271335388" fileName="ConvertToBinaryPersistence_Action.java" startLine="136" startPosition="0" endLine="139" endPosition="15">
       <varInfo nodeId="5171773620271335390" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="5171773620271335394" fileName="ConvertToBinaryPersistence_Action.java" startLine="133" startPosition="38" endLine="136" endPosition="15" />
-    <scopeInfo nodeId="5171773620271402092" fileName="ConvertToBinaryPersistence_Action.java" startLine="133" startPosition="38" endLine="136" endPosition="15" />
-    <scopeInfo nodeId="5171773620275560369" fileName="ConvertToBinaryPersistence_Action.java" startLine="138" startPosition="34" endLine="141" endPosition="15" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="146" startPosition="0" endLine="149" endPosition="7">
+    <scopeInfo nodeId="5171773620271335394" fileName="ConvertToBinaryPersistence_Action.java" startLine="136" startPosition="38" endLine="139" endPosition="15" />
+    <scopeInfo nodeId="5171773620271402092" fileName="ConvertToBinaryPersistence_Action.java" startLine="136" startPosition="38" endLine="139" endPosition="15" />
+    <scopeInfo nodeId="5171773620275560369" fileName="ConvertToBinaryPersistence_Action.java" startLine="141" startPosition="34" endLine="144" endPosition="15" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="149" startPosition="0" endLine="152" endPosition="7">
       <varInfo nodeId="6981599660810253824" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="146" startPosition="27" endLine="149" endPosition="7" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="58" startPosition="9" endLine="62" endPosition="7" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="63" startPosition="0" endLine="67" endPosition="44">
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="149" startPosition="27" endLine="152" endPosition="7" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="59" startPosition="9" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="64" startPosition="0" endLine="68" endPosition="44">
       <varInfo nodeId="6981599660810253824" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="63" startPosition="27" endLine="67" endPosition="44" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="78" startPosition="5" endLine="82" endPosition="5" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="82" startPosition="5" endLine="86" endPosition="5" />
-    <scopeInfo nodeId="5171773620272189228" fileName="ConvertToBinaryPersistence_Action.java" startLine="107" startPosition="35" endLine="111" endPosition="23" />
-    <scopeInfo nodeId="5171773620271801990" fileName="ConvertToBinaryPersistence_Action.java" startLine="119" startPosition="63" endLine="123" endPosition="23" />
-    <scopeInfo nodeId="5171773620271335387" fileName="ConvertToBinaryPersistence_Action.java" startLine="128" startPosition="17" endLine="132" endPosition="58" />
-    <scopeInfo nodeId="5171773620275468766" fileName="ConvertToBinaryPersistence_Action.java" startLine="137" startPosition="0" endLine="141" endPosition="15">
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="64" startPosition="27" endLine="68" endPosition="44" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="83" startPosition="5" endLine="87" endPosition="5" />
+    <scopeInfo nodeId="5171773620272189228" fileName="ConvertToBinaryPersistence_Action.java" startLine="108" startPosition="35" endLine="112" endPosition="23" />
+    <scopeInfo nodeId="5171773620271801990" fileName="ConvertToBinaryPersistence_Action.java" startLine="120" startPosition="63" endLine="124" endPosition="23" />
+    <scopeInfo nodeId="5171773620275468766" fileName="ConvertToBinaryPersistence_Action.java" startLine="140" startPosition="0" endLine="144" endPosition="15">
       <varInfo nodeId="5171773620275468767" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="5171773620275468769" fileName="ConvertToBinaryPersistence_Action.java" startLine="137" startPosition="45" endLine="141" endPosition="15" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="6981599660810338692" fileName="ConvertToBinaryPersistence_Action.java" startLine="48" startPosition="87" endLine="54" endPosition="7">
+    <scopeInfo nodeId="5171773620275468769" fileName="ConvertToBinaryPersistence_Action.java" startLine="140" startPosition="45" endLine="144" endPosition="15" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="6981599660810338692" fileName="ConvertToBinaryPersistence_Action.java" startLine="49" startPosition="87" endLine="55" endPosition="7">
       <varInfo nodeId="6981599660810339388" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="48" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="5171773620271335387" fileName="ConvertToBinaryPersistence_Action.java" startLine="129" startPosition="17" endLine="135" endPosition="58" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="49" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="6981599660810253824" varName="_params" />
       <varInfo nodeId="6981599660810253824" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="57" startPosition="89" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="57" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="58" startPosition="89" endLine="69" endPosition="5" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="58" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="6981599660810253824" varName="_params" />
       <varInfo nodeId="6981599660810253824" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="71" startPosition="95" endLine="87" endPosition="16" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="71" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="72" startPosition="95" endLine="88" endPosition="16" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="72" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="6981599660810253824" varName="_params" />
       <varInfo nodeId="6981599660810253824" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6981599660810446263" fileName="ConvertToBinaryPersistence_Action.java" startLine="104" startPosition="60" endLine="142" endPosition="13">
+    <scopeInfo nodeId="6981599660810446263" fileName="ConvertToBinaryPersistence_Action.java" startLine="105" startPosition="60" endLine="145" endPosition="13">
       <varInfo nodeId="6981599660810874894" varName="module" />
       <varInfo nodeId="6981599660810519307" varName="newFile" />
       <varInfo nodeId="5171773620271636220" varName="newModel" />
       <varInfo nodeId="5171773620272821125" varName="oldFile" />
       <varInfo nodeId="5171773620272399641" varName="problems" />
     </scopeInfo>
-    <scopeInfo nodeId="5938312768539670257" fileName="ConvertToBinaryPersistence_Action.java" startLine="103" startPosition="27" endLine="143" endPosition="11" />
-    <scopeInfo nodeId="6981599660810446254" fileName="ConvertToBinaryPersistence_Action.java" startLine="103" startPosition="27" endLine="143" endPosition="11">
+    <scopeInfo nodeId="5938312768539670257" fileName="ConvertToBinaryPersistence_Action.java" startLine="104" startPosition="27" endLine="146" endPosition="11" />
+    <scopeInfo nodeId="6981599660810446254" fileName="ConvertToBinaryPersistence_Action.java" startLine="104" startPosition="27" endLine="146" endPosition="11">
       <varInfo nodeId="6981599660810446257" varName="smodel" />
     </scopeInfo>
-    <scopeInfo nodeId="5938312768539670256" fileName="ConvertToBinaryPersistence_Action.java" startLine="103" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="91" startPosition="9" endLine="145" endPosition="9">
+    <scopeInfo nodeId="5938312768539670256" fileName="ConvertToBinaryPersistence_Action.java" startLine="104" startPosition="0" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="92" startPosition="9" endLine="148" endPosition="9">
       <varInfo nodeId="5171773620271286386" varName="binaryFactory" />
       <varInfo nodeId="6981599660810406850" varName="m" />
       <varInfo nodeId="5938312768539627378" varName="modelAccess" />
       <varInfo nodeId="6981599660810445216" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="90" startPosition="96" endLine="150" endPosition="5" />
-    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="90" startPosition="0" endLine="152" endPosition="0">
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="91" startPosition="96" endLine="153" endPosition="5" />
+    <scopeInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="91" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="6981599660810253824" varName="_params" />
       <varInfo nodeId="6981599660810253824" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="6981599660810342956" fileName="ConvertToBinaryPersistence_Action.java" startLine="50" startPosition="44" endLine="54" endPosition="5" unitName="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$1" />
-    <unitInfo nodeId="6981599660810445236" fileName="ConvertToBinaryPersistence_Action.java" startLine="93" startPosition="70" endLine="97" endPosition="7" unitName="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$2" />
-    <unitInfo nodeId="5171773620272399644" fileName="ConvertToBinaryPersistence_Action.java" startLine="114" startPosition="133" endLine="118" endPosition="13" unitName="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$4" />
-    <unitInfo nodeId="5938312768539670256" fileName="ConvertToBinaryPersistence_Action.java" startLine="102" startPosition="37" endLine="145" endPosition="7" unitName="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$3" />
-    <unitInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="34" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action" />
+    <unitInfo nodeId="6981599660810342956" fileName="ConvertToBinaryPersistence_Action.java" startLine="51" startPosition="44" endLine="55" endPosition="5" unitName="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$1" />
+    <unitInfo nodeId="6981599660810445236" fileName="ConvertToBinaryPersistence_Action.java" startLine="94" startPosition="70" endLine="98" endPosition="7" unitName="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$2" />
+    <unitInfo nodeId="5171773620272399644" fileName="ConvertToBinaryPersistence_Action.java" startLine="115" startPosition="133" endLine="119" endPosition="13" unitName="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$4" />
+    <unitInfo nodeId="5938312768539670256" fileName="ConvertToBinaryPersistence_Action.java" startLine="103" startPosition="37" endLine="148" endPosition="7" unitName="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$3" />
+    <unitInfo nodeId="6981599660810253824" fileName="ConvertToBinaryPersistence_Action.java" startLine="35" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/7054831363147542055">
     <nodeInfo nodeId="7054831363147658711" fileName="MappingDialog.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainComponent" />
@@ -14783,7 +14805,6 @@
     <scopeInfo nodeId="7921481111246565812" fileName="Search_ActionGroup.java" startLine="13" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="7921481111246565812" fileName="Search_ActionGroup.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.Search_ActionGroup" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/7921481111246607754" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/8033185057371911844">
     <nodeInfo nodeId="8033185057371911844" fileName="AnalyzeModule_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="8033185057371911844" fileName="AnalyzeModule_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />

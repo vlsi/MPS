@@ -5,6 +5,9 @@
       <sourceRoot location="models" />
     </modelRoot>
   </models>
+  <facets>
+    <facet pluginId="jetbrains.mps.vcs" type="ideaPlugin" />
+  </facets>
   <stubModelEntries>
     <stubModelEntry path="${module}/classes" />
   </stubModelEntries>

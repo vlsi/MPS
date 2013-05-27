@@ -12,7 +12,6 @@ import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.classloading.ModuleClassLoader;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.junit.runner.notification.Failure;
 import java.lang.annotation.Retention;
@@ -148,7 +147,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       // todo: warning on null class loader and ClassNotFoundException? 
       // todo: execute only MPS tests here. move all unit tests to ant task 
       try {
-        ModuleClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoader(module);
+        ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoader(module);
         if (classLoader == null) {
           return null;
         }

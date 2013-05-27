@@ -17,15 +17,17 @@ package jetbrains.mps.project.structure;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -33,7 +35,6 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
@@ -51,8 +52,12 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
   private Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
 
-  public LanguageDescriptorModelProvider(SRepository repository) {
-    repository.addRepositoryListener(new SRepositoryContentAdapter() {
+  public LanguageDescriptorModelProvider() {
+  }
+
+  @Override
+  public void init() {
+    MPSModuleRepository.getInstance().addRepositoryListener(new SRepositoryContentAdapter() {
       @Override
       public void moduleAdded(SModule module) {
         super.moduleAdded(module);
@@ -81,16 +86,8 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
         refresh();
       }
     });
-  }
 
-  @Override
-  public void init() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        refresh();
-      }
-    });
+    refresh();
   }
 
   @Override
@@ -162,7 +159,9 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
   private void removeModel(SModel md) {
     if (myModels.remove(md.getReference()) != null) {
-      SModelRepository.getInstance().removeModelDescriptor(md);
+      SModuleBase module = (SModuleBase) md.getModule();
+      if (module == null) return;
+      module.unregisterModel((SModelBase) md);
     }
   }
 
@@ -170,7 +169,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     LanguageModelDescriptor result = new LanguageModelDescriptor(getSModelReference(module), module);
 
     myModels.put(result.getSModelReference(), result);
-    SModelRepository.getInstance().registerModelDescriptor(result, module);
+    module.registerModel(result);
     return result;
   }
 
@@ -250,11 +249,6 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
     public void invalidate() {
       myHash = null;
-    }
-
-    @Override
-    public SModule getModule() {
-      return myModule;
     }
   }
 }
