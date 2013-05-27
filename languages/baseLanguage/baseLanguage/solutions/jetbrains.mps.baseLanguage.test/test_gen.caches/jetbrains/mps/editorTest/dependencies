@@ -1505,7 +1505,51 @@
   <dependency className="jetbrains.mps.editorTest.TestClass" file="TestClass.java">
     <classNode dependClassName="java.lang.Object" />
   </dependency>
+  <dependency className="jetbrains.mps.editorTest.TestConvertAssignmentToTernaryOperatorIntention_Test" file="TestConvertAssignmentToTernaryOperatorIntention_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.TestConvertMethodCallToTernaryOperatorIntention_Test" file="TestConvertMethodCallToTernaryOperatorIntention_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.TestConvertReturnToTernaryOperatorIntention_Test" file="TestConvertReturnToTernaryOperatorIntention_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
+  </dependency>
   <dependency className="jetbrains.mps.editorTest.TestForNonEmptyProperty_Test" file="TestForNonEmptyProperty_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.TestNotApplicableConvertToTernaryOperatorIntention_Test" file="TestNotApplicableConvertToTernaryOperatorIntention_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

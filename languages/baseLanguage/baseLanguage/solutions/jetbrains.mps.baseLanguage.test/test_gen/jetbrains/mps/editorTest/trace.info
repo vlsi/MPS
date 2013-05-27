@@ -3291,6 +3291,102 @@
     <unitInfo nodeId="7704251192656077259" fileName="TestAutoresolve_Test.java" startLine="23" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.TestAutoresolve_Test$TestBody" />
     <unitInfo nodeId="7704251192656077259" fileName="TestAutoresolve_Test.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.TestAutoresolve_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7737741562085645980">
+    <nodeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="18" startPosition="83" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7737741562085707060" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestConvertReturnToTernaryOperatorIntention_Test#()V" />
+    <nodeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TestConvertReturnToTernaryOperatorIntention#()V" />
+    <nodeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="14" startPosition="61" endLine="14" endPosition="61" />
+    <scopeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="18" startPosition="83" endLine="20" endPosition="124" />
+    <scopeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="160">
+      <varInfo nodeId="7737741562085645980" varName="editor" />
+      <varInfo nodeId="7737741562085645980" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.TestConvertReturnToTernaryOperatorIntention_Test$TestBody" />
+    <unitInfo nodeId="7737741562085645980" fileName="TestConvertReturnToTernaryOperatorIntention_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.TestConvertReturnToTernaryOperatorIntention_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7737741562085722754">
+    <nodeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="18" startPosition="87" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7737741562085722771" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestConvertAssignmentToTernaryOperatorIntention_Test#()V" />
+    <nodeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TestConvertAssignmentToTernaryOperatorIntention#()V" />
+    <nodeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="14" startPosition="65" endLine="14" endPosition="65" />
+    <scopeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="18" startPosition="87" endLine="20" endPosition="128" />
+    <scopeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="160">
+      <varInfo nodeId="7737741562085722754" varName="editor" />
+      <varInfo nodeId="7737741562085722754" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.TestConvertAssignmentToTernaryOperatorIntention_Test$TestBody" />
+    <unitInfo nodeId="7737741562085722754" fileName="TestConvertAssignmentToTernaryOperatorIntention_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.TestConvertAssignmentToTernaryOperatorIntention_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7737741562085726746">
+    <nodeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="18" startPosition="87" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7737741562085726763" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestConvertMethodCallToTernaryOperatorIntention_Test#()V" />
+    <nodeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TestConvertMethodCallToTernaryOperatorIntention#()V" />
+    <nodeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="14" startPosition="65" endLine="14" endPosition="65" />
+    <scopeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="18" startPosition="87" endLine="20" endPosition="128" />
+    <scopeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="160">
+      <varInfo nodeId="7737741562085726746" varName="editor" />
+      <varInfo nodeId="7737741562085726746" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.TestConvertMethodCallToTernaryOperatorIntention_Test$TestBody" />
+    <unitInfo nodeId="7737741562085726746" fileName="TestConvertMethodCallToTernaryOperatorIntention_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.TestConvertMethodCallToTernaryOperatorIntention_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7737741562085730774">
+    <nodeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="18" startPosition="90" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7737741562085730791" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestNotApplicableConvertToTernaryOperatorIntention_Test#()V" />
+    <nodeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TestNotApplicableConvertToTernaryOperatorIntention#()V" />
+    <nodeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="14" startPosition="68" endLine="14" endPosition="68" />
+    <scopeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="18" startPosition="90" endLine="20" endPosition="131" />
+    <scopeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="160">
+      <varInfo nodeId="7737741562085730774" varName="editor" />
+      <varInfo nodeId="7737741562085730774" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.TestNotApplicableConvertToTernaryOperatorIntention_Test$TestBody" />
+    <unitInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.TestNotApplicableConvertToTernaryOperatorIntention_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8221415467041264294">
     <nodeInfo nodeId="8221415467041264294" fileName="RT_addTypeVariable_Test.java" startLine="18" startPosition="58" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8221415467041264294" fileName="RT_addTypeVariable_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

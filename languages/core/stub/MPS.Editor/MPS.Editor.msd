@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="MPS.Editor" uuid="1ed103c3-3aa6-49b7-9c21-6765ee11f224" compileInMPS="false">
   <models />
+  <facets>
+    <facet pluginId="com.intellij" type="ideaPlugin" />
+  </facets>
   <sourcePath />
   <dependencies>
     <dependency reexport="true">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>

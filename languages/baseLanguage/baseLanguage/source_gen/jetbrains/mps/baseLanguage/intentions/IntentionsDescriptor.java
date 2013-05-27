@@ -34,7 +34,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertElseToElseIf_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertElsifToNewIfStatement_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertIfConditionToTernaryOperator_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertIfReturnConditionToTernaryOperator_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertToArrayType_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertToClosure_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertToReturnStatement_Intention());

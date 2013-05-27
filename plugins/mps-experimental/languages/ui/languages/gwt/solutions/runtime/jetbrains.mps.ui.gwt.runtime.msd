@@ -3,6 +3,9 @@
   <models>
     <modelRoot path="${mps_home}/plugins/mps-experimental/languages/ui/languages/gwt/lib/gwt-user.jar" type="java_classes" />
   </models>
+  <facets>
+    <facet pluginId="jetbrains.mps.experimental" type="ideaPlugin" />
+  </facets>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/plugins/mps-experimental/languages/ui/languages/gwt/lib/gwt-user.jar" />
   </stubModelEntries>

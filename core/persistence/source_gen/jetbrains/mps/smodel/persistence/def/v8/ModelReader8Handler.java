@@ -155,7 +155,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       if (value.trim().length() == 0) {
         return;
       }
-      throw new SAXParseException("text is not accepted", null);
+      throw new SAXParseException("text is not accepted: '" + value + "'", null);
     }
 
     protected String[] requiredAttributes() {

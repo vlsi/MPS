@@ -36,7 +36,7 @@ public class PsiJavaStubDataSource extends DataSourceBase {
   public void dispatchEvent(PsiListener.PsiEvent event) {
     synchronized (LOCK) {
       {
-        Iterator<PsiListener> l_it = myListeners.iterator();
+        Iterator<PsiListener> l_it = ListSequence.fromList(myListeners).iterator();
         PsiListener l_var;
         while (l_it.hasNext()) {
           l_var = l_it.next();

@@ -89,6 +89,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.ConflictsUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.LogManager" />

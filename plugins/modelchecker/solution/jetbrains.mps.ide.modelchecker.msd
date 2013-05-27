@@ -9,6 +9,9 @@
     </modelRoot>
     <modelRoot path="${mps_home}/plugins/modelchecker/classes" type="java_classes" />
   </models>
+  <facets>
+    <facet pluginId="jetbrains.mps.ide.modelchecker" type="ideaPlugin" />
+  </facets>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/plugins/modelchecker/classes" />
   </stubModelEntries>

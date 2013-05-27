@@ -111,19 +111,19 @@
       <fileset dir="${build.tmp}/java/out/modelchecker" />
       <zipfileset file="${mps_home}/plugins/modelchecker/META-INF/plugin.xml" prefix="META-INF" />
     </jar>
-    <mkdir dir="${build.tmp}/default/migration25.jar" />
-    <mkdir dir="${build.tmp}/default/migration25.jar/META-INF" />
-    <copy todir="${build.tmp}/default/migration25.jar/META-INF">
-      <fileset file="${mps_home}/plugins/migration25/META-INF/plugin.xml" />
+    <mkdir dir="${build.tmp}/default/mpsmigration.jar" />
+    <mkdir dir="${build.tmp}/default/mpsmigration.jar/META-INF" />
+    <copy todir="${build.tmp}/default/mpsmigration.jar/META-INF">
+      <fileset file="${mps_home}/plugins/mpsmigration/META-INF/plugin.xml" />
       <filterchain>
         <tokenfilter>
           <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
         </tokenfilter>
       </filterchain>
     </copy>
-    <jar destfile="${build.layout}/migration25.jar">
-      <fileset dir="${build.tmp}/java/out/migration25" />
-      <fileset dir="${build.tmp}/default/migration25.jar" />
+    <jar destfile="${build.layout}/mpsmigration.jar">
+      <fileset dir="${build.tmp}/java/out/mpsmigration" />
+      <fileset dir="${build.tmp}/default/mpsmigration.jar" />
     </jar>
     <jar destfile="${build.layout}/samples.jar">
       <fileset dir="${build.tmp}/java/out/samples" />
@@ -150,7 +150,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant, java.compile.modelchecker, java.compile.mps-java, java.compile.samples, java.compile.migration25, java.compile.jetbrains.mps.ide.java.migration" />
+  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant, java.compile.modelchecker, java.compile.mps-java, java.compile.samples, java.compile.mpsmigration, java.compile.jetbrains.mps.ide.java.migration" />
   
   <target name="processResources" />
   
@@ -451,12 +451,12 @@
     </copy>
   </target>
   
-  <target name="java.compile.migration25" depends="java.compile.modelchecker, java.compile.mps-java, fetchDependencies">
-    <mkdir dir="${build.tmp}/java/out/migration25" />
-    <javac2 destdir="${build.tmp}/java/out/migration25" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+  <target name="java.compile.mpsmigration" depends="java.compile.modelchecker, java.compile.mps-java, fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/mpsmigration" />
+    <javac2 destdir="${build.tmp}/java/out/mpsmigration" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/migration25/source_gen" />
+        <path location="${mps_home}/plugins/mpsmigration/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
@@ -486,8 +486,8 @@
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
-    <copy todir="${build.tmp}/java/out/migration25">
-      <fileset dir="${mps_home}/plugins/migration25/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    <copy todir="${build.tmp}/java/out/mpsmigration">
+      <fileset dir="${mps_home}/plugins/mpsmigration/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   

@@ -3388,12 +3388,15 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl" />
     <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
+    <classNode dependClassName="jetbrains.mps.persistence.MementoImpl" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleFacet" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleFacetDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
@@ -3401,6 +3404,7 @@
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ShowBookmarksDialog_Action" file="ShowBookmarksDialog_Action.java">

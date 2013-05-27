@@ -7,6 +7,9 @@
     <modelRoot path="${mps_home}/plugins/svn4idea/lib/svn4idea.jar" type="java_classes" />
     <modelRoot path="${mps_home}/plugins/git4idea/lib/git4idea.jar" type="java_classes" />
   </models>
+  <facets>
+    <facet pluginId="jetbrains.mps.vcs" type="ideaPlugin" />
+  </facets>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
