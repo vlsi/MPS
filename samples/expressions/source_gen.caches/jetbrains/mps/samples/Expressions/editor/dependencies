@@ -29,6 +29,8 @@
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathBooleanConstant_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathBooleanType_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathElementType_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathFloatConstant_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathFloatType_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathIntegerConstant_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathIntegerType_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathLongConstant_Editor" />
@@ -99,6 +101,26 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMath_StyleSheet" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.Expressions.editor.SimpleMathFloatConstant_Editor" file="SimpleMathFloatConstant_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.Expressions.editor.SimpleMathFloatType_Editor" file="SimpleMathFloatType_Editor.java">
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>

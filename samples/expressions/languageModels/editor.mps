@@ -61,6 +61,14 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="constant" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="vpmn.2073504467209943018" resolveInfo="SimpleMathLongConstant" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2073504467210944150">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="vpmn.2073504467210944062" resolveInfo="SimpleMathFloatType" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2073504467210944684">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="constant" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="vpmn.2073504467210944676" resolveInfo="SimpleMathFloatConstant" />
+    </node>
   </roots>
   <root id="2073504467207935114">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="2073504467207936490">
@@ -226,6 +234,22 @@
         <property name="text" nameId="tpc2.1073389577007" value="L" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2073504467209943133" />
+    </node>
+  </root>
+  <root id="2073504467210944150">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2073504467210944267">
+      <property name="text" nameId="tpc2.1073389577007" value="Float" />
+    </node>
+  </root>
+  <root id="2073504467210944684">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="2073504467210944686">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2073504467210944693">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="vpmn.2073504467210944677" resolveInfo="value" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2073504467210944698">
+        <property name="text" nameId="tpc2.1073389577007" value="F" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2073504467210944689" />
     </node>
   </root>
 </model>

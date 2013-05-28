@@ -30,6 +30,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_SimpleMathFloatConstant_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_SimpleMathIntegerConstant_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -54,6 +58,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new SimpleMathFloatType_subtypeOf_Number_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new SimpleMathIntegerType_subtypeOf_Long_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
@@ -62,7 +70,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new SimpleMathLongType_subtypeOf_Number_SubtypingRule();
+      SubtypingRule_Runtime subtypingRule = new SimpleMathLongType_subtypeOf_Float_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
@@ -70,8 +78,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_c("jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_b("jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression"));
     this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_a("jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_b("jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression"));
   }
 
   public static class CustomOverloadedOperationsTypesProvider_c extends OverloadedOperationsTypesProvider {
@@ -108,10 +116,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider_b extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider_b(String conceptFQ) {
-      this.myLeftOperandType = createSimpleMathLongType_3ist9o_a0a0a2();
-      this.myRightOperandType = createSimpleMathLongType_3ist9o_a0b0a2();
+  public static class CustomOverloadedOperationsTypesProvider_a extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_a(String conceptFQ) {
+      this.myLeftOperandType = createSimpleMathFloatType_3ist9o_a0a0a2();
+      this.myRightOperandType = createSimpleMathFloatType_3ist9o_a0b0a2();
       this.myOperationConceptFQName = conceptFQ;
       this.myLeftTypeIsExact = false;
       this.myRightTypeIsExact = false;
@@ -120,32 +128,32 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return createSimpleMathLongType_3ist9o_a0a1c();
+      return createSimpleMathFloatType_3ist9o_a0a1c();
     }
 
-    private static SNode createSimpleMathLongType_3ist9o_a0a0a2() {
+    private static SNode createSimpleMathFloatType_3ist9o_a0a0a2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
-      SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", null, GlobalScope.getInstance(), false);
+      SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType", null, GlobalScope.getInstance(), false);
       return n1;
     }
 
-    private static SNode createSimpleMathLongType_3ist9o_a0b0a2() {
+    private static SNode createSimpleMathFloatType_3ist9o_a0b0a2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
-      SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", null, GlobalScope.getInstance(), false);
+      SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType", null, GlobalScope.getInstance(), false);
       return n1;
     }
 
-    private static SNode createSimpleMathLongType_3ist9o_a0a1c() {
+    private static SNode createSimpleMathFloatType_3ist9o_a0a1c() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
-      SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", null, GlobalScope.getInstance(), false);
+      SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType", null, GlobalScope.getInstance(), false);
       return n1;
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider_a extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider_a(String conceptFQ) {
-      this.myLeftOperandType = createSimpleMathNumberType_3ist9o_a0a0a3();
-      this.myRightOperandType = createSimpleMathNumberType_3ist9o_a0b0a3();
+  public static class CustomOverloadedOperationsTypesProvider_b extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_b(String conceptFQ) {
+      this.myLeftOperandType = createSimpleMathLongType_3ist9o_a0a0a3();
+      this.myRightOperandType = createSimpleMathLongType_3ist9o_a0b0a3();
       this.myOperationConceptFQName = conceptFQ;
       this.myLeftTypeIsExact = false;
       this.myRightTypeIsExact = false;
@@ -154,18 +162,24 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return leftOperandType;
+      return createSimpleMathLongType_3ist9o_a0a1d();
     }
 
-    private static SNode createSimpleMathNumberType_3ist9o_a0a0a3() {
+    private static SNode createSimpleMathLongType_3ist9o_a0a0a3() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
-      SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathNumberType", null, GlobalScope.getInstance(), false);
+      SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", null, GlobalScope.getInstance(), false);
       return n1;
     }
 
-    private static SNode createSimpleMathNumberType_3ist9o_a0b0a3() {
+    private static SNode createSimpleMathLongType_3ist9o_a0b0a3() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
-      SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathNumberType", null, GlobalScope.getInstance(), false);
+      SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", null, GlobalScope.getInstance(), false);
+      return n1;
+    }
+
+    private static SNode createSimpleMathLongType_3ist9o_a0a1d() {
+      PersistenceFacade facade = PersistenceFacade.getInstance();
+      SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", null, GlobalScope.getInstance(), false);
       return n1;
     }
   }

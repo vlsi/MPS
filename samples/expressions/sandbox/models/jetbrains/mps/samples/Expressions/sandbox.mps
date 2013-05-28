@@ -61,6 +61,18 @@
               </node>
             </node>
           </node>
+          <node role="expressions" roleId="vpmn.2073504467208335735" type="vpmn.SimpleMathVarDeclaration" typeId="vpmn.2073504467209342143" id="2073504467211039079">
+            <property name="name" nameId="tpck.1169194664001" value="d" />
+            <node role="initializer" roleId="vpmn.2073504467209342228" type="vpmn.ArithmeticSimpleMathExpression" typeId="vpmn.2073504467208672407" id="2073504467211039144">
+              <property name="operator" nameId="vpmn.2073504467208672490" value="*" />
+              <node role="left" roleId="vpmn.2073504467207935094" type="vpmn.SimpleMathIntegerConstant" typeId="vpmn.2073504467208541194" id="2073504467211042657">
+                <property name="value" nameId="vpmn.2073504467208541195" value="10" />
+              </node>
+              <node role="right" roleId="vpmn.2073504467207935096" type="vpmn.SimpleMathFloatConstant" typeId="vpmn.2073504467210944676" id="2073504467211039639">
+                <property name="value" nameId="vpmn.2073504467210944677" value="2.6" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

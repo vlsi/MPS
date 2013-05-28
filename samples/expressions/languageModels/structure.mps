@@ -118,6 +118,16 @@
       <property name="name" nameId="tpck.1169194664001" value="SimpleMathLongConstant" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2073504467207867403" resolveInfo="SimpleMathExpression" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2073504467210944062">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="name" nameId="tpck.1169194664001" value="SimpleMathFloatType" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2073504467208085351" resolveInfo="SimpleMathType" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2073504467210944676">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="constant" />
+      <property name="name" nameId="tpck.1169194664001" value="SimpleMathFloatConstant" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2073504467207867403" resolveInfo="SimpleMathExpression" />
+    </node>
   </roots>
   <root id="2073504467207867403" />
   <root id="2073504467207869132">
@@ -201,6 +211,13 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2073504467209943070">
       <property name="name" nameId="tpck.1169194664001" value="value" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
+  </root>
+  <root id="2073504467210944062" />
+  <root id="2073504467210944676">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2073504467210944677">
+      <property name="name" nameId="tpck.1169194664001" value="value" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpee.1113006251687" resolveInfo="_FPNumber_String" />
     </node>
   </root>
 </model>

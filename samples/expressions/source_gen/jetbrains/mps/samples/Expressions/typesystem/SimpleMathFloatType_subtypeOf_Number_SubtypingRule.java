@@ -11,16 +11,16 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 
-public class SimpleMathLongType_subtypeOf_Number_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  public SimpleMathLongType_subtypeOf_Number_SubtypingRule() {
+public class SimpleMathFloatType_subtypeOf_Number_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+  public SimpleMathFloatType_subtypeOf_Number_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode longType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return createSimpleMathNumberType_4hj00d_a0a1();
+  public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return createSimpleMathNumberType_mxid1z_a0a1();
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.samples.Expressions.structure.SimpleMathLongType";
+    return "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -38,7 +38,7 @@ public class SimpleMathLongType_subtypeOf_Number_SubtypingRule extends Subtyping
     return true;
   }
 
-  private static SNode createSimpleMathNumberType_4hj00d_a0a1() {
+  private static SNode createSimpleMathNumberType_mxid1z_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathNumberType", null, GlobalScope.getInstance(), false);
     return n1;
