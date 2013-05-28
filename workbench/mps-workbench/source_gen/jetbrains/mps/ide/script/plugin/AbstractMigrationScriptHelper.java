@@ -87,7 +87,7 @@ public abstract class AbstractMigrationScriptHelper {
     }
     String modelStereotype = SModelStereotype.getStereotype(model);
     if (modelStereotype != null) {
-      if (modelStereotype.equals(SModelStereotype.INTERNAL) || modelStereotype.equals(SModelStereotype.INTERNAL_COPY) || SModelStereotype.isStubModelStereotype(modelStereotype)) {
+      if (SModelStereotype.isStubModelStereotype(modelStereotype)) {
         return false;
       }
     }
