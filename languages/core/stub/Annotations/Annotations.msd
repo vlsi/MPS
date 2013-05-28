@@ -3,6 +3,9 @@
   <models>
     <modelRoot path="${mps_home}/lib/annotations.jar" type="java_classes" />
   </models>
+  <facets>
+    <facet pluginId="com.intellij" type="ideaPlugin" />
+  </facets>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/lib/annotations.jar" />
   </stubModelEntries>

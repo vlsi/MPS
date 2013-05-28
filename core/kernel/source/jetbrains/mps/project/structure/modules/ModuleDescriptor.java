@@ -228,7 +228,7 @@ public class ModuleDescriptor {
     }
 
     myFacets.clear();
-    for (int size = stream.readInt(); size > 0; size++) {
+    for (int size = stream.readInt(); size > 0; size--) {
       myFacets.add(ModuleFacetDescriptor.load(stream));
     }
 

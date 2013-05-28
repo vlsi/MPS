@@ -159,6 +159,7 @@ public class SModel implements SModelData {
     ModelChange.assertLegalNodeUnRegistration(getModelDescriptor(), node);
     enforceFullLoad();
     if (myRoots.contains(node)) {
+      fireBeforeRootRemovedEvent(node);
       myRoots.remove(node);
       SNode sn = (SNode) node;
       sn.unRegisterFromModel();
@@ -381,6 +382,17 @@ public class SModel implements SModelData {
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.rootRemoved(new SModelRootEvent(getDescriptorChecked(), root, false));
+      } catch (Throwable t) {
+        LOG.error(null, t);
+      }
+    }
+  }
+
+  private void fireBeforeRootRemovedEvent(org.jetbrains.mps.openapi.model.SNode node) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.beforeRootRemoved(new SModelRootEvent(getDescriptorChecked(), node, false));
       } catch (Throwable t) {
         LOG.error(null, t);
       }

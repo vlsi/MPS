@@ -19,7 +19,6 @@ import jetbrains.mps.library.LibraryInitializer;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -43,7 +42,7 @@ public class ModuleClassLoader extends ClassLoader {
 
   private final ModuleClassLoaderSupport mySupport;
 
-  private volatile Set<ModuleClassLoader> myDependenciesClassLoaders;
+  private volatile Set<ClassLoader> myDependenciesClassLoaders;
 
   // this must be thread-safe. This does not include results of parent classloader
   private final Map<String, Class> myClasses = new ConcurrentHashMap<String, Class>();
@@ -80,15 +79,12 @@ public class ModuleClassLoader extends ClassLoader {
           resolveClass(clazz);
         }
         return clazz;
-      }
-      catch (ClassNotFoundException e) {
+      } catch (ClassNotFoundException e) {
         throw e;
-      }
-      catch (RuntimeException re) {
+      } catch (RuntimeException re) {
         LOG.error("Exception during class loading", re);
         throw new ClassNotFoundException(name, re);
-      }
-      finally {
+      } finally {
         if (clazz != null) {
           myClasses.put(name, clazz);
         }
@@ -116,7 +112,7 @@ public class ModuleClassLoader extends ClassLoader {
       if (getPackage(pack) == null) {
         definePackage(pack, null, null, null, null, null, null, null);
       }
-      myManager.classLoaded(name, (SModuleReference) mySupport.getModule().getModuleReference());
+      myManager.classLoaded(name, mySupport.getModule().getModuleReference());
       return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
     }
 
@@ -135,38 +131,39 @@ public class ModuleClassLoader extends ClassLoader {
     }
 
     //from dependencies (try modules only)
-    for (ModuleClassLoader dep : getDependencyClassLoaders()) {
-      if (dep == this) continue;
+    for (ClassLoader dep : getDependencyClassLoaders()) {
+      if (dep instanceof ModuleClassLoader) {
+        if (dep == this) continue;
 
-      if (dep.mySupport.canFindClass(name)) {
-        //here it will load with self, with any values as two last parameters
-        return Class.forName(name, false, dep);
+        if (((ModuleClassLoader) dep).mySupport.canFindClass(name)) {
+          //here it will load with self, with any values as two last parameters
+          return Class.forName(name, false, dep);
+        }
       }
     }
 
     //from dependencies (try parent class loaders also)
-    Set<ClassLoader> processedParentClassLoaders = new HashSet<ClassLoader>();
-    for (ModuleClassLoader dep : getDependencyClassLoaders()) {
-      try {
-        if (processedParentClassLoaders.contains(dep.getParent())) {
-          continue;
+    for (ClassLoader dep : getDependencyClassLoaders()) {
+      if (!(dep instanceof ModuleClassLoader)) {
+        try {
+          return Class.forName(name, false, dep);
+        } catch (ClassNotFoundException e) {
+          //ignore
         }
-        processedParentClassLoaders.add(dep.getParent());
-        return Class.forName(name, false, dep.getParent());
-      } catch (ClassNotFoundException e) {
-        //ignore
       }
     }
 
-    return processedParentClassLoaders.contains(getParent()) ? null : loadFromParent(name);
+    return getDependencyClassLoaders().contains(getParent()) ? null : loadFromParent(name);
   }
 
   @Override
   protected URL findResource(String name) {
-    for (ModuleClassLoader dep : getDependencyClassLoaders()) {
-      URL res = dep.mySupport.findResource(name);
-      if (res != null) {
-        return res;
+    for (ClassLoader dep : getDependencyClassLoaders()) {
+      if (dep instanceof ModuleClassLoader) {
+        URL res = ((ModuleClassLoader) dep).mySupport.findResource(name);
+        if (res != null) {
+          return res;
+        }
       }
     }
 
@@ -176,10 +173,12 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
     ArrayList<URL> result = new ArrayList<URL>();
-    for (ModuleClassLoader dep : getDependencyClassLoaders()) {
-      URL res = dep.mySupport.findResource(name);
-      if (res != null) {
-        result.add(res);
+    for (ClassLoader dep : getDependencyClassLoaders()) {
+      if (dep instanceof ModuleClassLoader) {
+        URL res = ((ModuleClassLoader) dep).mySupport.findResource(name);
+        if (res != null) {
+          result.add(res);
+        }
       }
     }
 
@@ -200,19 +199,15 @@ public class ModuleClassLoader extends ClassLoader {
     return mySupport.getModule() + " class loader";
   }
 
-  private Iterable<ModuleClassLoader> getDependencyClassLoaders() {
+  private Set<ClassLoader> getDependencyClassLoaders() {
     if (myDependenciesClassLoaders != null) {
       return myDependenciesClassLoaders;
     }
-    Set<ModuleClassLoader> classLoaders = new HashSet<ModuleClassLoader>();
+    Set<ClassLoader> classLoaders = new HashSet<ClassLoader>();
     for (SModule dep : mySupport.getCompileDependencies()) {
-      if (!ModuleClassLoaderSupport.canCreate(dep)) continue; // avoid exceptions during class loading
-
-      ModuleClassLoader classLoader = myManager.getClassLoader(dep);
+      ClassLoader classLoader = myManager.getClassLoader(dep);
       if (classLoader != null) {
         classLoaders.add(classLoader);
-      } else {
-        LOG.warn("Null classloader for module from compile dependencies; module name: " + dep.getModuleName() + "; module class " + dep.getClass());
       }
     }
     myDependenciesClassLoaders = classLoaders;

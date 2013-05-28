@@ -5,16 +5,21 @@ package jetbrains.mps.vcs.changesmanager.editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import javax.swing.JScrollPane;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessageFactory;
-import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
@@ -30,38 +35,50 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class BaseVersionEditorComponent extends EditorComponent implements EditorMessageOwner {
   private JScrollPane myScrollPane;
+  private SModel myBaseModel;
 
-  public BaseVersionEditorComponent(SRepository repository, ChangeGroup changeGroup) {
+  public BaseVersionEditorComponent(final SRepository repository, final ChangeGroup changeGroup) {
     super(repository);
-    final SModel baseModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
-    SNode baseRoot = baseModel.getNode(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
-    editNode(baseRoot);
-
-    setBackground(CARET_ROW_COLOR);
-
-    Iterable<ChangeEditorMessage> messages = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
-      public Iterable<ChangeEditorMessage> translate(ModelChange ch) {
-        return ChangeEditorMessageFactory.createMessages(baseModel, ch, BaseVersionEditorComponent.this, null);
+    SModel baseModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
+    myBaseModel = CopyUtil.copyModel(baseModel);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        DiffTemporaryModule.createModuleAndRegister(myBaseModel, null, ProjectHelper.getProject(repository), false);
       }
     });
-    Bounds verticalBounds = Sequence.fromIterable(messages).select(new ISelector<ChangeEditorMessage, Bounds>() {
-      public Bounds select(ChangeEditorMessage m) {
-        return m.getBounds(BaseVersionEditorComponent.this);
-      }
-    }).reduceLeft(new ILeftCombinator<Bounds, Bounds>() {
-      public Bounds combine(Bounds a, Bounds b) {
-        return a.merge(b);
+    final Wrappers._T<Bounds> verticalBounds = new Wrappers._T<Bounds>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SNode baseRooot = myBaseModel.getNode(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
+        editNode(baseRooot);
+
+        setBackground(CARET_ROW_COLOR);
+
+        Iterable<ChangeEditorMessage> messages = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
+          public Iterable<ChangeEditorMessage> translate(ModelChange ch) {
+            return ChangeEditorMessageFactory.createMessages(myBaseModel, ch, BaseVersionEditorComponent.this, null);
+          }
+        });
+        verticalBounds.value = Sequence.fromIterable(messages).select(new ISelector<ChangeEditorMessage, Bounds>() {
+          public Bounds select(ChangeEditorMessage m) {
+            return m.getBounds(BaseVersionEditorComponent.this);
+          }
+        }).reduceLeft(new ILeftCombinator<Bounds, Bounds>() {
+          public Bounds combine(Bounds a, Bounds b) {
+            return a.merge(b);
+          }
+        });
       }
     });
     int rightMost = 0;
     for (EditorCell leafCell = CellTraversalUtil.getFirstLeaf(getRootCell()); leafCell != null; leafCell = CellTraversalUtil.getNextLeaf(leafCell)) {
-      if (verticalBounds.contains(leafCell.getY()) || verticalBounds.contains(leafCell.getBottom()) || verticalBounds.contains(leafCell.getY() + leafCell.getHeight() / 2)) {
+      if (verticalBounds.value.contains(leafCell.getY()) || verticalBounds.value.contains(leafCell.getBottom()) || verticalBounds.value.contains(leafCell.getY() + leafCell.getHeight() / 2)) {
         if (leafCell.getRight() > rightMost) {
           rightMost = leafCell.getRight();
         }
       }
     }
-    Rectangle viewRect = new Rectangle(0, (int) verticalBounds.start(), rightMost, verticalBounds.length());
+    Rectangle viewRect = new Rectangle(0, (int) verticalBounds.value.start(), rightMost, verticalBounds.value.length());
     viewRect.y -= 1;
     viewRect.width += 5;
     viewRect.height += 4;
@@ -79,6 +96,16 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
       return new EditorCell_Constant(editorContext, getEditedNode(), "");
     }
     return getEditorContext().createRootCell(getEditedNode(), events);
+  }
+
+  @Override
+  public void dispose() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        DiffTemporaryModule.unregisterModel(myBaseModel.getModelDescriptor(), getOperationContext().getProject());
+      }
+    });
+    super.dispose();
   }
 
   public JScrollPane getScrollPane() {

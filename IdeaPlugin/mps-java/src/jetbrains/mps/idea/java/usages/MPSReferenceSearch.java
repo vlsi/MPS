@@ -20,6 +20,7 @@ import com.intellij.facet.FacetManager;
 import com.intellij.openapi.application.QueryExecutorBase;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
@@ -68,10 +69,12 @@ import java.util.Set;
  * danilla 2/13/13
  */
 
+// NOTE: It should be invoked by Idea only for classes and fields
+// For methods MethodReferenceSearch is used.
+// Local variables shouldn't bother us since we can't reference java code's local vars
 public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, ReferencesSearch.SearchParameters> {
   @Override
   public void processQuery(@NotNull SearchParameters queryParameters, final @NotNull Processor<PsiReference> consumer) {
-
     if (!(queryParameters.getEffectiveSearchScope() instanceof GlobalSearchScope)) {
       return;
     }
@@ -82,6 +85,9 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
     final Project project = psiTarget.getProject();
     final MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(project);
 
+    if (DumbService.getInstance(project).isDumb()) {
+      return;
+    }
 
     ModelAccess.instance().runReadAction(new Runnable() {
 

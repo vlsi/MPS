@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ScopeOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.CopyUtil;
@@ -86,10 +85,6 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   private static void createModuleForModel(SModel model, String version, Project project, boolean mergeResultModel) {
-    SModelDescriptor md = model.getModelDescriptor();
-    if (!(md instanceof SModel.FakeModelDescriptor)) {
-      return;
-    }
     SModule module = null;
     if (mergeResultModel) {
       org.jetbrains.mps.openapi.model.SModel mdInRepo = SModelRepository.getInstance().getModelDescriptor(model.getReference());
@@ -109,15 +104,16 @@ public class DiffTemporaryModule extends AbstractModule {
       setSModelId(model, version);
     }
     createModuleForModel(model, (version == null ?
-      "module" :
+      "temporary" :
       version
     ), project, mergeResultModel);
     registerModel(model.getModelDescriptor(), project);
   }
 
-  private static void setSModelId(SModel model, String version) {
+  public static void setSModelId(SModel model, String version) {
     SModelReference modelRef = model.getReference();
     CopyUtil.changeModelReference(model.getModelDescriptor(), new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(genMergeSModelName(modelRef.getModelName(), version)), genMergeSModelId(modelRef.getModelId(), version)));
+    model.setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(null, model, false));
   }
 
   public static void resetSModelId(org.jetbrains.mps.openapi.model.SModel model) {

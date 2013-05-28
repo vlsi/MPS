@@ -111,7 +111,6 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -1010,7 +1009,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (isDisposed()) return;
     clearModelDisposedTrace();
 
-    assert node == null || node.getModel().getRepository() == null || SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
+    getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        assert node == null || SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
+      }
+    });
 
     if (myNode != null && notifiesCreation()) {
       notifyDisposal();

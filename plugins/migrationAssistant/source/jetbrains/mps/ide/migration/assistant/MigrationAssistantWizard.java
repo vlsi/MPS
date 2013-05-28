@@ -289,7 +289,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       info.setEditable(false);
       info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
-      info.setPreferredSize(new Dimension(300, 160));
+      info.setPreferredSize(new Dimension(300, 220));
 
       infoHolder.add(info, BorderLayout.CENTER);
 
@@ -322,7 +322,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     private boolean hasModelsInOldPersistence() {
-      return new ModelPersistenceDetector(myProject).hasModelsInOldPersistence();
+      return false;
+//      return new ModelPersistenceDetector(myProject).hasModelsInOldPersistence();
     }
   }
 
@@ -357,7 +358,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       info.setEditable(false);
       info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
-      info.setPreferredSize(new Dimension(300, 160));
+      info.setPreferredSize(new Dimension(300, 220));
 
       infoHolder.add(info, BorderLayout.CENTER);
 
@@ -784,12 +785,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
         "<br><br>" +
         "Your project files have been upgraded to be used with the latest version of MPS." +
         "<br><br>" +
-        "The wizard can now be closed and your project will be loaded." +
-        "<br><br>" +
-        "Now we recommend reading MPS 2.5 Migration Guide document at: " +
-        "<a href=\"http://confluence.jetbrains.com/display/MPS/Migration+to+MPS+2.5\">http://confluence.jetbrains.com/display/MPS/Migration+to+MPS+2.5</a> " +
-        "to control the project structure manually and ensure no more " +
-        "modifications are required.");
+        "The wizard can now be closed and your project will be loaded."
+        );
       info.setEditable(false);
       info.addHyperlinkListener(new HyperlinkListener() {
         public void hyperlinkUpdate(HyperlinkEvent e) {
@@ -800,7 +797,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       });
       info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
-      info.setPreferredSize(new Dimension(300, 160));
+      info.setPreferredSize(new Dimension(300, 220));
 
       infoHolder.add(info, BorderLayout.CENTER);
 
@@ -846,12 +843,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
         "<br><br>" +
         "Your project files have been upgraded to be used with the latest version of MPS." +
         "<br><br>" +
-        "The wizard can now be closed and your project will be loaded." +
-        "<br><br>" +
-        "Now we recommend reading MPS 2.5 Migration Guide document at: " +
-        "<a href=\"http://confluence.jetbrains.com/display/MPS/Migration+to+MPS+2.5\">http://confluence.jetbrains.com/display/MPS/Migration+to+MPS+2.5</a> " +
-        "to control the project structure manually and ensure no more " +
-        "modifications are required.");
+        "The wizard can now be closed and your project will be loaded."
+      );
       info.setEditable(false);
       info.addHyperlinkListener(new HyperlinkListener() {
         public void hyperlinkUpdate(HyperlinkEvent e) {
@@ -862,7 +855,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       });
       info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
-      info.setPreferredSize(new Dimension(300, 160));
+      info.setPreferredSize(new Dimension(300, 220));
 
       infoHolder.add(info, BorderLayout.CENTER);
 

@@ -19,6 +19,7 @@ import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.util.StringsIO;
 import java.io.IOException;
+import com.intellij.openapi.vcs.AbstractVcs;
 
 /*package*/ class GitRepositoriesInstaller extends AbstractInstaller {
   private static final String ATTRIBUTES_FILE = ".gitattributes";
@@ -82,7 +83,7 @@ import java.io.IOException;
     VcsRoot[] allRoots = myProject.getComponent(ProjectLevelVcsManager.class).getAllVcsRoots();
     return Sequence.fromIterable(Sequence.fromArray(allRoots)).where(new IWhereFilter<VcsRoot>() {
       public boolean accept(VcsRoot root) {
-        return "Git".equals(root.getVcs().getName());
+        return "Git".equals(check_mnsjzr_a0a0a0a0b0f(root.getVcs()));
       }
     });
   }
@@ -172,5 +173,12 @@ import java.io.IOException;
     } catch (IOException e) {
       return AbstractInstaller.State.NOT_INSTALLED;
     }
+  }
+
+  private static String check_mnsjzr_a0a0a0a0b0f(AbstractVcs checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
+    }
+    return null;
   }
 }
