@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ba4e31y98civz1jhbqvpb823umj7err">
+<dependencies version="2" modelHash="anlbqml1ksmuno1e44u0srr33amm3yr">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="7fhvhxli6zczl3xsh8xg3sxut4g9nbf" />
-  <common hash="-7xuux0d1357vl5g511kbo80j7y2z182" />
+  <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="-76x9bgn7tf22luoh9u83b5kds4ytsvx" />
+  <common hash="eium3wow77ncc11noxkil8g868df7da" />
   <source id="3990508698139426916" name="GDBBreakpoint" hash="eg5dye6jxmj7id9whgp2rn1tjz6q1m9">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" />

@@ -268,6 +268,8 @@
       <fileset dir="${build.tmp}/java/out/mps-debugger" />
       <zipfileset file="${mps_home}/languages/core/stub/MPS.Platform/MPS.Platform.msd" prefix="modules/MPS.Platform" />
       <zipfileset dir="${mps_home}/languages/core/stub/MPS.Platform" includes="icons/**, resources/**" prefix="modules/MPS.Platform" />
+      <zipfileset file="${mps_home}/languages/core/stub/MPS.IDEA/MPS.IDEA.msd" prefix="modules/MPS.IDEA" />
+      <zipfileset dir="${mps_home}/languages/core/stub/MPS.IDEA" includes="icons/**, resources/**" prefix="modules/MPS.IDEA" />
       <zipfileset file="${mps_home}/workbench/mps-platform/jetbrains.mps.ide.platform.msd" prefix="modules/jetbrains.mps.ide.platform" />
       <zipfileset dir="${mps_home}/workbench/mps-platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.platform" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/workbench-mps-platform-models" prefix="modules/jetbrains.mps.ide.platform/models" />
@@ -2862,6 +2864,7 @@
         <module file="${mps_home}/languages/core/stub/JDK/JDK.msd" bootstrap="true" />
         <module file="${mps_home}/languages/core/stub/MPS.Core/MPS.Core.msd" bootstrap="true" />
         <module file="${mps_home}/languages/core/stub/MPS.Editor/MPS.Editor.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/core/stub/MPS.IDEA/MPS.IDEA.msd" bootstrap="true" />
         <module file="${mps_home}/languages/core/stub/MPS.OpenAPI/MPS.OpenAPI.msd" bootstrap="true" />
         <module file="${mps_home}/languages/core/stub/MPS.Platform/MPS.Platform.msd" bootstrap="true" />
         <module file="${mps_home}/languages/baseLanguage/closures/runtime/closures.runtime.msd" bootstrap="true" />
