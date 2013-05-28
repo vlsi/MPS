@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="60l9gpi6ild5adtj8whu5gcca84k52s">
+<dependencies version="2" modelHash="-q9eoohpi8qqlpu8i13k8uchux4cj44">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
@@ -20,6 +20,9 @@
     <dep root="2073504467208536638" />
     <dep root="2073504467208541194" />
     <dep root="2073504467208542432" />
+    <dep root="2073504467208672407" />
+    <dep root="2073504467209342143" />
+    <dep root="2073504467209348321" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -67,7 +70,13 @@
   <source id="2073504467208542432" name="SimpleMathIntegerType" hash="396fi6waq1iaddjblsxh6zr0fbmv0s">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2073504467208672407" name="ArithmeticSimpleMathExpression" hash="-3299a63cpz15jtvd2kfy3fca66zus21">
+  <source id="2073504467208672407" name="ArithmeticSimpleMathExpression" hash="-9hkg7o559o2exvc5e5i9ds0gs4mzc6m">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2073504467209342143" name="SimpleMathVarDeclaration" hash="-2i7g8o3wnugk6eig94xtgnvqvpso7a2">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2073504467209348321" name="SimpleMathVarReference" hash="400ck3exf1sj83uy7sbz5flnzldk4cu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

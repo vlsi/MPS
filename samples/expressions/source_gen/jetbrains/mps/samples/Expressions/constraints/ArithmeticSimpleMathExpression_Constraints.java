@@ -30,7 +30,6 @@ public class ArithmeticSimpleMathExpression_Constraints extends BaseConstraintsD
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "operator";
-        System.out.println("Validating property " + (SPropertyOperations.getString(propertyValue)));
         return (SPropertyOperations.getString(propertyValue)).length() == 1 && ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "+", "-", "*", "/")).contains((SPropertyOperations.getString(propertyValue)));
       }
     });

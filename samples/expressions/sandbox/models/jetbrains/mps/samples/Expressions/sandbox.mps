@@ -25,15 +25,22 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2073504467208336400" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2073504467208336401">
         <node role="statement" roleId="tpee.1068581517665" type="vpmn.SimpleMathWrapper" typeId="vpmn.2073504467208335362" id="2073504467208336681">
-          <node role="expressions" roleId="vpmn.2073504467208335735" type="vpmn.AndSimpleMathExpression" typeId="vpmn.2073504467208490057" id="2073504467208529540">
-            <node role="left" roleId="vpmn.2073504467207935094" type="vpmn.OrSimpleMathExpression" typeId="vpmn.2073504467208490058" id="2073504467208529607">
-              <node role="right" roleId="vpmn.2073504467207935096" type="vpmn.SimpleMathBooleanConstant" typeId="vpmn.2073504467208536638" id="2073504467208596857" />
-              <node role="left" roleId="vpmn.2073504467207935094" type="vpmn.SimpleMathBooleanConstant" typeId="vpmn.2073504467208536638" id="2073504467208596676">
-                <property name="value" nameId="vpmn.2073504467208536639" value="true" />
+          <node role="expressions" roleId="vpmn.2073504467208335735" type="vpmn.SimpleMathVarDeclaration" typeId="vpmn.2073504467209342143" id="2073504467209441359">
+            <property name="name" nameId="tpck.1169194664001" value="a" />
+            <node role="initializer" roleId="vpmn.2073504467209342228" type="vpmn.ArithmeticSimpleMathExpression" typeId="vpmn.2073504467208672407" id="2073504467209502377">
+              <property name="operator" nameId="vpmn.2073504467208672490" value="+" />
+              <node role="left" roleId="vpmn.2073504467207935094" type="vpmn.SimpleMathIntegerConstant" typeId="vpmn.2073504467208541194" id="2073504467209502445">
+                <property name="value" nameId="vpmn.2073504467208541195" value="10" />
+              </node>
+              <node role="right" roleId="vpmn.2073504467207935096" type="vpmn.SimpleMathIntegerConstant" typeId="vpmn.2073504467208541194" id="2073504467209502688">
+                <property name="value" nameId="vpmn.2073504467208541195" value="20" />
               </node>
             </node>
-            <node role="right" roleId="vpmn.2073504467207935096" type="vpmn.NotSimpleMathExpression" typeId="vpmn.2073504467207935108" id="2073504467208671597">
-              <node role="original" roleId="vpmn.2073504467207935100" type="vpmn.SimpleMathBooleanConstant" typeId="vpmn.2073504467208536638" id="2073504467208672324" />
+          </node>
+          <node role="expressions" roleId="vpmn.2073504467208335735" type="vpmn.SimpleMathVarDeclaration" typeId="vpmn.2073504467209342143" id="2073504467209502868">
+            <property name="name" nameId="tpck.1169194664001" value="b" />
+            <node role="initializer" roleId="vpmn.2073504467209342228" type="vpmn.SimpleMathVarReference" typeId="vpmn.2073504467209348321" id="2073504467209502971">
+              <link role="declaration" roleId="vpmn.2073504467209348322" targetNodeId="2073504467209441359" resolveInfo="a" />
             </node>
           </node>
         </node>
