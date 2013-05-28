@@ -60,6 +60,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.java.refactoring.MoveRenameBatch</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.java.psi.PsiChangesWatcher</implementation-class>
+    </component>
     <!--
     <component>
       <implementation-class>jetbrains.mps.idea.sourceStubs.ProjectJavaSourceImporter</implementation-class>
