@@ -63,7 +63,6 @@
   <dependency className="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller" file="GitRepositoriesInstaller.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
-    <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsRoot" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />

@@ -9,7 +9,7 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="u67u" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(org.junit.runner@java_stub)" version="-1" />
   <import index="ajxo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(org.apache.log4j@java_stub)" version="-1" />
-  <import index="mkp5" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.diagnostic(com.intellij.openapi.diagnostic@java_stub)" version="-1" />
+  <import index="bw6v" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.diagnostic(com.intellij.openapi.diagnostic@java_stub)" version="-1" />
   <import index="xqpa" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(java.lang.reflect@java_stub)" version="-1" />
   <import index="lgzw" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(java.util.regex@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -22,7 +22,7 @@
   <import index="e2lc" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="u67v" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" version="-1" implicit="yes" />
   <import index="ajxp" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" version="-1" implicit="yes" />
-  <import index="mkp6" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.diagnostic(MPS.IDEA/com.intellij.openapi.diagnostic@java_stub)" version="-1" implicit="yes" />
+  <import index="bw6w" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.diagnostic(MPS.IDEA/com.intellij.openapi.diagnostic@java_stub)" version="-1" implicit="yes" />
   <import index="xqpb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" version="-1" implicit="yes" />
   <import index="lgzx" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" version="-1" implicit="yes" />
   <root type="tpee.Annotation" typeId="tpee.1188206331916" id="5294483648489411750" nodeInfo="ig">
@@ -915,27 +915,27 @@
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="5294483648489412217" nodeInfo="in">
         <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5294483648489412216" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mkp6.~Logger" resolveInfo="Logger" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bw6w.~Logger" resolveInfo="Logger" />
         </node>
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5294483648489412234" nodeInfo="nn">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreatorWithInitializer" typeId="tpee.1154542696413" id="5294483648489412233" nodeInfo="nn">
           <node role="initValue" roleId="tpee.1154542803372" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5294483648489532905" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="mkp6.~Logger" resolveInfo="Logger" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mkp6.~Logger%dgetInstance(java%dlang%dString)%ccom%dintellij%dopenapi%ddiagnostic%dLogger" resolveInfo="getInstance" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bw6w.~Logger%dgetInstance(java%dlang%dString)%ccom%dintellij%dopenapi%ddiagnostic%dLogger" resolveInfo="getInstance" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="bw6w.~Logger" resolveInfo="Logger" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5294483648489412225" nodeInfo="nn">
               <property name="value" nameId="tpee.1070475926801" value="#com.intellij.openapi.application.impl.LaterInvocator" />
             </node>
           </node>
           <node role="initValue" roleId="tpee.1154542803372" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5294483648489532907" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="mkp6.~Logger" resolveInfo="Logger" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mkp6.~Logger%dgetInstance(java%dlang%dString)%ccom%dintellij%dopenapi%ddiagnostic%dLogger" resolveInfo="getInstance" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bw6w.~Logger%dgetInstance(java%dlang%dString)%ccom%dintellij%dopenapi%ddiagnostic%dLogger" resolveInfo="getInstance" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="bw6w.~Logger" resolveInfo="Logger" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5294483648489412232" nodeInfo="nn">
               <property name="value" nameId="tpee.1070475926801" value="#com.intellij.application.impl.ApplicationImpl" />
             </node>
           </node>
           <node role="componentType" roleId="tpee.1154542793668" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5294483648489412218" nodeInfo="in">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mkp6.~Logger" resolveInfo="Logger" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bw6w.~Logger" resolveInfo="Logger" />
           </node>
         </node>
       </node>
@@ -1699,7 +1699,7 @@
             <property name="name" nameId="tpck.1169194664001" value="ignore" />
             <property name="isFinal" nameId="tpee.1176718929932" value="false" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5294483648489412528" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mkp6.~Logger" resolveInfo="Logger" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bw6w.~Logger" resolveInfo="Logger" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="5294483648489412519" nodeInfo="nn">
@@ -1709,7 +1709,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5294483648489412526" resolveInfo="ignore" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5294483648489533280" nodeInfo="nn">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mkp6.~Logger%dsetLevel(org%dapache%dlog4j%dLevel)%cvoid" resolveInfo="setLevel" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bw6w.~Logger%dsetLevel(org%dapache%dlog4j%dLevel)%cvoid" resolveInfo="setLevel" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5294483648489533282" nodeInfo="nn">
                     <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ajxp.~Level" resolveInfo="Level" />
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ajxp.~Level%dFATAL" resolveInfo="FATAL" />
