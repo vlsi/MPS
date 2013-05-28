@@ -73,8 +73,10 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
 
   @Override
   public boolean isLoaded() {
-    // todo fix this ! 
-    return myModel != null;
+    // <node> 
+    // Q: is it right? the idea is to the outside world we're always loaded 
+    // because any operation will load data transparently 
+    return true;
   }
 
 
@@ -83,7 +85,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
   public synchronized SModel getSModelInternal() {
     if (myModel == null) {
       myModel = new SModel(myModelRef);
-      load();
+      loadContents();
 
       myModel.setModelDescriptor(this);
     }
@@ -92,8 +94,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
 
 
 
-  @Override
-  public void load() {
+  private void loadContents() {
 
     for (PsiJavaFile jf : myDataSource.getJavaFiles()) {
       SNode javaImports = getImports(jf.getImportList().getAllImportStatements());
