@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.idea.java.psi.PsiListener;
 import com.intellij.psi.PsiFile;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.psi.PsiImportStatementBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.psi.PsiImportStaticStatement;
@@ -83,14 +82,12 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
   @Override
   public synchronized SModel getSModelInternal() {
     if (myModel == null) {
-      myModel = createModel();
+      myModel = new SModel(myModelRef);
+      load();
+
       myModel.setModelDescriptor(this);
     }
     return myModel;
-  }
-
-  private SModel createModel() {
-    return new SModel(myModelRef);
   }
 
 
@@ -111,7 +108,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
         }
         // TODO check for duplicate ids (in java sources there may be 2 classes with the same name 
         //  which is an error but none the less) 
-        addRootNode(node);
+        myModel.addRootNode(node);
         SetSequence.fromSet(roots).addElement(node);
         MapSequence.fromMap(myRootsById).put(node.getNodeId(), node);
       }
@@ -130,10 +127,9 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
 
   @Override
   public void changed(DataSource source, final PsiJavaStubEvent event) {
-    org.jetbrains.mps.openapi.model.SModel ourModel = this;
 
     // already attached, but not createModel'd yet? 
-    if (ourModel == null) {
+    if (myModel == null) {
       return;
     }
 
@@ -175,12 +171,12 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
         }
 
         SNodeId id = node.getNodeId();
-        SNode oldNode = ourModel.getNode(id);
+        SNode oldNode = myModel.getNode(id);
 
         if ((oldNode != null)) {
           SNodeOperations.replaceWithAnother(oldNode, node);
         } else {
-          SModelOperations.addRootNode(ourModel, node);
+          myModel.addRootNode(node);
         }
 
         SetSequence.fromSet(roots).addElement(node);
