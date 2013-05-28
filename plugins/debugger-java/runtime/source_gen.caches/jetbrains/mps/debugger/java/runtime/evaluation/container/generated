@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3gegz4vw6lh83i4zs9gk1yu2dcnnwoy">
+<dependencies version="2" modelHash="-bwl0chhiyncqp0kee7x7hmkk4ae92ux">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress.util(MPS.IDEA/com.intellij.openapi.progress.util@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -55,7 +55,7 @@
     <dep root="846214144115944320" />
     <dep root="846214144116398663" />
   </common>
-  <source id="846214144107996102" name="EvaluationContainer" hash="8u98l7igmuzwz6y63n8r7f67se4nqw">
+  <source id="846214144107996102" name="EvaluationContainer" hash="b5g5c1xm4s8nrj5h6zhordoxg1xptvu">
     <dep root="138767106959623910" />
     <dep root="846214144107996465" />
     <dep root="846214144108011478" />
