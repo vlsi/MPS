@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:95889e99-7e33-4e8a-9f36-e33116f08527(jetbrains.mps.samples.Expressions.sandbox)/2073504467208336329">
+    <nodeInfo nodeId="2073504467208336681" fileName="Main.java" startLine="7" startPosition="42" endLine="7" endPosition="94" conceptFqName="jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper" />
+    <nodeInfo nodeId="2073504467208336395" fileName="Main.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <scopeInfo nodeId="2073504467208336401" fileName="Main.java" startLine="7" startPosition="42" endLine="7" endPosition="94" />
+    <scopeInfo nodeId="2073504467208336395" fileName="Main.java" startLine="7" startPosition="0" endLine="9" endPosition="0">
+      <varInfo nodeId="2073504467208336396" varName="args" />
+    </scopeInfo>
+    <unitInfo nodeId="2073504467208336329" fileName="Main.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.samples.Expressions.sandbox.Main" />
+  </root>
+</debugInfo>
+

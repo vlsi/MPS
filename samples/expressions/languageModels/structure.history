@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history>
+  <StructureModification>
+    <dependencies>
+      <model index="vpmn" modelUID="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" version="-1" />
+    </dependencies>
+    <rename id="vpmn.2073504467207965605" type="CONCEPT" from="AndSimpleMathExpression" to="LogicalSimpleMathExpression" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="vpmn" modelUID="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" version="0" />
+    </dependencies>
+    <rename id="vpmn.2073504467208490058" type="CONCEPT" from="orSimpleMathExpression" to="OrSimpleMathExpression" />
+  </StructureModification>
+</history>
+

@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.samples.Expressions.typesystem.TypesystemDescriptor" />
+  <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467207965653">
+    <nodeInfo nodeId="2073504467208624598" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="56" startPosition="169" endLine="56" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208033384" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208033384" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="23" startPosition="100" endLine="24" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208033384" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="24" startPosition="210" endLine="25" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467208094202" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="27" startPosition="5" endLine="28" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208094202" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="28" startPosition="101" endLine="29" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208094202" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="29" startPosition="210" endLine="30" endPosition="358" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467208098709" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208098709" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="33" startPosition="59" endLine="34" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208098709" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="34" startPosition="210" endLine="35" endPosition="358" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="39" startPosition="46" endLine="40" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="44" startPosition="5" endLine="45" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="45" startPosition="126" endLine="46" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="50" startPosition="30" endLine="51" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208624598" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="54" startPosition="67" endLine="55" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208624598" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="55" startPosition="63" endLine="56" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208624598" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="56" startPosition="169" endLine="57" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_LogicalSimpleMathExpression_InferenceRule#()V" />
+    <nodeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="43" startPosition="68" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208033384" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="21" startPosition="130" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208094202" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="26" startPosition="5" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208098709" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208624598" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="54" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSimpleMathBooleanType_ngq3xd_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="18" startPosition="61" endLine="18" endPosition="61" />
+    <scopeInfo nodeId="2073504467208624598" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="56" startPosition="169" endLine="56" endPosition="169" />
+    <scopeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="39" startPosition="46" endLine="40" endPosition="85" />
+    <scopeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="50" startPosition="30" endLine="51" endPosition="17" />
+    <scopeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="44" startPosition="5" endLine="46" endPosition="45">
+      <varInfo nodeId="2073504467207965653" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208033384" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="293">
+      <varInfo nodeId="2073504467208033384" varName="_info_12389875345" />
+      <varInfo nodeId="2073504467208033384" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208094202" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="27" startPosition="5" endLine="30" endPosition="358">
+      <varInfo nodeId="2073504467208094202" varName="_info_12389875345" />
+      <varInfo nodeId="2073504467208094202" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208098709" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="35" endPosition="358">
+      <varInfo nodeId="2073504467208098709" varName="_info_12389875345" />
+      <varInfo nodeId="2073504467208098709" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="2073504467208624598" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="54" startPosition="67" endLine="57" endPosition="14">
+      <varInfo nodeId="2073504467208624598" varName="facade" />
+      <varInfo nodeId="2073504467208624598" varName="n1" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="43" startPosition="68" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="2073504467208624598" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="2073504467207965653" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467207965917" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="21" startPosition="130" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="2073504467207965653" varName="logicalExpression" />
+      <varInfo nodeId="2073504467207965653" varName="status" />
+      <varInfo nodeId="2073504467207965653" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="2073504467207965653" fileName="typeof_LogicalSimpleMathExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.samples.Expressions.typesystem.typeof_LogicalSimpleMathExpression_InferenceRule" />
+  </root>
+  <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467208085695">
+    <nodeInfo nodeId="2073504467208085714" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="17" startPosition="131" endLine="18" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="21" startPosition="46" endLine="22" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="26" startPosition="5" endLine="27" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="27" startPosition="126" endLine="28" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="32" startPosition="27" endLine="33" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule#()V" />
+    <nodeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="25" startPosition="68" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <scopeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="14" startPosition="67" endLine="14" endPosition="67" />
+    <scopeInfo nodeId="2073504467208085696" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="17" startPosition="131" endLine="18" endPosition="112" />
+    <scopeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="21" startPosition="46" endLine="22" endPosition="79" />
+    <scopeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="32" startPosition="27" endLine="33" endPosition="17" />
+    <scopeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="26" startPosition="5" endLine="28" endPosition="45">
+      <varInfo nodeId="2073504467208085695" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="2073504467208085695" varName="simpleMathBooleanType" />
+      <varInfo nodeId="2073504467208085695" varName="status" />
+      <varInfo nodeId="2073504467208085695" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="25" startPosition="68" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="25" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2073504467208085695" varName="argument" />
+    </scopeInfo>
+    <unitInfo nodeId="2073504467208085695" fileName="SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.Expressions.typesystem.SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule" />
+  </root>
+  <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467208515079">
+    <nodeInfo nodeId="2073504467208655871" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="50" startPosition="169" endLine="50" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208655915" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="56" startPosition="169" endLine="56" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208515523" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208515523" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="22" startPosition="90" endLine="23" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208515523" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="23" startPosition="210" endLine="24" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467208516077" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208516077" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="27" startPosition="45" endLine="28" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208516077" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="28" startPosition="210" endLine="29" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="33" startPosition="46" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="38" startPosition="5" endLine="39" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="39" startPosition="126" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208655871" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="48" startPosition="67" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208655871" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="49" startPosition="63" endLine="50" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208655871" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="50" startPosition="169" endLine="51" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208655915" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="54" startPosition="67" endLine="55" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208655915" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="55" startPosition="63" endLine="56" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208655915" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="56" startPosition="169" endLine="57" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_NotSimpleMathExpression_InferenceRule#()V" />
+    <nodeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208515523" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="20" startPosition="116" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208516077" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208655871" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSimpleMathBooleanType_7rascm_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2073504467208655915" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="54" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSimpleMathBooleanType_7rascm_a0b0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="17" startPosition="57" endLine="17" endPosition="57" />
+    <scopeInfo nodeId="2073504467208655871" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="50" startPosition="169" endLine="50" endPosition="169" />
+    <scopeInfo nodeId="2073504467208655915" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="56" startPosition="169" endLine="56" endPosition="169" />
+    <scopeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="33" startPosition="46" endLine="34" endPosition="81" />
+    <scopeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" />
+    <scopeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45">
+      <varInfo nodeId="2073504467208515079" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208515523" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="293">
+      <varInfo nodeId="2073504467208515523" varName="_info_12389875345" />
+      <varInfo nodeId="2073504467208515523" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208516077" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="26" startPosition="5" endLine="29" endPosition="293">
+      <varInfo nodeId="2073504467208516077" varName="_info_12389875345" />
+      <varInfo nodeId="2073504467208516077" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="2073504467208655871" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="48" startPosition="67" endLine="51" endPosition="14">
+      <varInfo nodeId="2073504467208655871" varName="facade" />
+      <varInfo nodeId="2073504467208655871" varName="n1" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208655915" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="54" startPosition="67" endLine="57" endPosition="14">
+      <varInfo nodeId="2073504467208655915" varName="facade" />
+      <varInfo nodeId="2073504467208655915" varName="n1" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="2073504467208655871" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="48" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="2073504467208655915" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="2073504467208515079" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208515080" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="20" startPosition="116" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="2073504467208515079" varName="not" />
+      <varInfo nodeId="2073504467208515079" varName="status" />
+      <varInfo nodeId="2073504467208515079" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="2073504467208515079" fileName="typeof_NotSimpleMathExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.samples.Expressions.typesystem.typeof_NotSimpleMathExpression_InferenceRule" />
+  </root>
+  <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467208524984">
+    <nodeInfo nodeId="2073504467208525522" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208525522" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="20" startPosition="47" endLine="21" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208525522" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="21" startPosition="210" endLine="22" endPosition="472" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="32" startPosition="126" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_UnarySimpleMathExpression_InferenceRule#()V" />
+    <nodeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208525522" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="18" startPosition="118" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="15" startPosition="59" endLine="15" endPosition="59" />
+    <scopeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="83" />
+    <scopeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
+    <scopeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
+      <varInfo nodeId="2073504467208524984" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208525522" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="472">
+      <varInfo nodeId="2073504467208525522" varName="_info_12389875345" />
+      <varInfo nodeId="2073504467208525522" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="2073504467208524985" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="18" startPosition="118" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="2073504467208524984" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="2073504467208524984" varName="status" />
+      <varInfo nodeId="2073504467208524984" varName="typeCheckingContext" />
+      <varInfo nodeId="2073504467208524984" varName="unary" />
+    </scopeInfo>
+    <unitInfo nodeId="2073504467208524984" fileName="typeof_UnarySimpleMathExpression_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.samples.Expressions.typesystem.typeof_UnarySimpleMathExpression_InferenceRule" />
+  </root>
+  <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467208540237">
+    <nodeInfo nodeId="2073504467208601023" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="44" startPosition="169" endLine="44" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208540714" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208540714" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="21" startPosition="50" endLine="22" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208540714" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="22" startPosition="210" endLine="23" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="33" startPosition="126" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208601023" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="42" startPosition="67" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208601023" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="43" startPosition="63" endLine="44" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208601023" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="44" startPosition="169" endLine="45" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_SimpleMathBooleanConstant_InferenceRule#()V" />
+    <nodeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208540714" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="19" startPosition="121" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208601023" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSimpleMathBooleanType_rs87p9_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="16" startPosition="59" endLine="16" endPosition="59" />
+    <scopeInfo nodeId="2073504467208601023" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="44" startPosition="169" endLine="44" endPosition="169" />
+    <scopeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="83" />
+    <scopeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" />
+    <scopeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
+      <varInfo nodeId="2073504467208540237" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208540714" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="20" startPosition="5" endLine="23" endPosition="293">
+      <varInfo nodeId="2073504467208540714" varName="_info_12389875345" />
+      <varInfo nodeId="2073504467208540714" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2073504467208601023" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="42" startPosition="67" endLine="45" endPosition="14">
+      <varInfo nodeId="2073504467208601023" varName="facade" />
+      <varInfo nodeId="2073504467208601023" varName="n1" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="2073504467208540238" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="19" startPosition="121" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="2073504467208601023" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="2073504467208540237" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="2073504467208540237" varName="constant" />
+      <varInfo nodeId="2073504467208540237" varName="status" />
+      <varInfo nodeId="2073504467208540237" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="2073504467208540237" fileName="typeof_SimpleMathBooleanConstant_InferenceRule.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.samples.Expressions.typesystem.typeof_SimpleMathBooleanConstant_InferenceRule" />
+  </root>
+  <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467208541211">
+    <nodeInfo nodeId="2073504467208601170" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="44" startPosition="169" endLine="44" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208541616" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208541616" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="21" startPosition="50" endLine="22" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208541616" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="22" startPosition="210" endLine="23" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="33" startPosition="126" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208601170" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="42" startPosition="67" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208601170" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="43" startPosition="63" endLine="44" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208601170" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="44" startPosition="169" endLine="45" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_SimpleMathIntegerConstant_InferenceRule#()V" />
+    <nodeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208541616" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="19" startPosition="121" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208601170" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSimpleMathIntegerType_611g7c_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="16" startPosition="59" endLine="16" endPosition="59" />
+    <scopeInfo nodeId="2073504467208601170" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="44" startPosition="169" endLine="44" endPosition="169" />
+    <scopeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="83" />
+    <scopeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" />
+    <scopeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
+      <varInfo nodeId="2073504467208541211" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208541616" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="20" startPosition="5" endLine="23" endPosition="293">
+      <varInfo nodeId="2073504467208541616" varName="_info_12389875345" />
+      <varInfo nodeId="2073504467208541616" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2073504467208601170" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="42" startPosition="67" endLine="45" endPosition="14">
+      <varInfo nodeId="2073504467208601170" varName="facade" />
+      <varInfo nodeId="2073504467208601170" varName="n1" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="2073504467208541212" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="19" startPosition="121" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="2073504467208601170" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="2073504467208541211" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="2073504467208541211" varName="constant" />
+      <varInfo nodeId="2073504467208541211" varName="status" />
+      <varInfo nodeId="2073504467208541211" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="2073504467208541211" fileName="typeof_SimpleMathIntegerConstant_InferenceRule.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.samples.Expressions.typesystem.typeof_SimpleMathIntegerConstant_InferenceRule" />
+  </root>
+  <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467208542717">
+    <nodeInfo nodeId="2073504467208542739" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="17" startPosition="121" endLine="18" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="21" startPosition="46" endLine="22" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="26" startPosition="5" endLine="27" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="27" startPosition="126" endLine="28" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="32" startPosition="27" endLine="33" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule#()V" />
+    <nodeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="25" startPosition="68" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <scopeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="14" startPosition="73" endLine="14" endPosition="73" />
+    <scopeInfo nodeId="2073504467208542718" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="17" startPosition="121" endLine="18" endPosition="112" />
+    <scopeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="21" startPosition="46" endLine="22" endPosition="79" />
+    <scopeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="32" startPosition="27" endLine="33" endPosition="17" />
+    <scopeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="26" startPosition="5" endLine="28" endPosition="45">
+      <varInfo nodeId="2073504467208542717" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="2073504467208542717" varName="integerType" />
+      <varInfo nodeId="2073504467208542717" varName="status" />
+      <varInfo nodeId="2073504467208542717" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="25" startPosition="68" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="25" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2073504467208542717" varName="argument" />
+    </scopeInfo>
+    <unitInfo nodeId="2073504467208542717" fileName="SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.Expressions.typesystem.SimpleMathIntegerType_subtypeOf_SimpleMathType_SubtypingRule" />
+  </root>
+  <root nodeRef="r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)/2073504467208952445">
+    <nodeInfo nodeId="2073504467208953067" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="55" startPosition="169" endLine="55" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208953134" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="61" startPosition="169" endLine="61" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208953155" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="67" startPosition="169" endLine="67" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208953004" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208953004" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="22" startPosition="52" endLine="23" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208953004" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="23" startPosition="210" endLine="24" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467208953132" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208953132" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="27" startPosition="93" endLine="28" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208953132" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="28" startPosition="210" endLine="29" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467208953153" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208953153" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="32" startPosition="94" endLine="33" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208953153" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="33" startPosition="210" endLine="34" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="38" startPosition="46" endLine="39" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="43" startPosition="5" endLine="44" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="44" startPosition="126" endLine="45" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="49" startPosition="30" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208953067" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="53" startPosition="67" endLine="54" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208953067" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="54" startPosition="63" endLine="55" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208953067" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="55" startPosition="169" endLine="56" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208953134" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="59" startPosition="67" endLine="60" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208953134" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="60" startPosition="63" endLine="61" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208953134" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="61" startPosition="169" endLine="62" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208953155" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="65" startPosition="67" endLine="66" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208953155" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="66" startPosition="63" endLine="67" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2073504467208953155" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="67" startPosition="169" endLine="68" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ArithmeticSimpleMathExpression_InferenceRule#()V" />
+    <nodeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="42" startPosition="68" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208953004" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="20" startPosition="123" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208953132" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208953153" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="30" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2073504467208953067" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="53" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSimpleMathIntegerType_jrhb9c_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2073504467208953134" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSimpleMathIntegerType_jrhb9c_a0b0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2073504467208953155" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="65" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSimpleMathIntegerType_jrhb9c_a0c0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="17" startPosition="64" endLine="17" endPosition="64" />
+    <scopeInfo nodeId="2073504467208953067" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="55" startPosition="169" endLine="55" endPosition="169" />
+    <scopeInfo nodeId="2073504467208953134" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="61" startPosition="169" endLine="61" endPosition="169" />
+    <scopeInfo nodeId="2073504467208953155" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="67" startPosition="169" endLine="67" endPosition="169" />
+    <scopeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="38" startPosition="46" endLine="39" endPosition="88" />
+    <scopeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="49" startPosition="30" endLine="50" endPosition="17" />
+    <scopeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="43" startPosition="5" endLine="45" endPosition="45">
+      <varInfo nodeId="2073504467208952445" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208953004" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="293">
+      <varInfo nodeId="2073504467208953004" varName="_info_12389875345" />
+      <varInfo nodeId="2073504467208953004" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208953132" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="26" startPosition="5" endLine="29" endPosition="293">
+      <varInfo nodeId="2073504467208953132" varName="_info_12389875345" />
+      <varInfo nodeId="2073504467208953132" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208953153" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="34" endPosition="293">
+      <varInfo nodeId="2073504467208953153" varName="_info_12389875345" />
+      <varInfo nodeId="2073504467208953153" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="2073504467208953067" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="53" startPosition="67" endLine="56" endPosition="14">
+      <varInfo nodeId="2073504467208953067" varName="facade" />
+      <varInfo nodeId="2073504467208953067" varName="n1" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208953134" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="59" startPosition="67" endLine="62" endPosition="14">
+      <varInfo nodeId="2073504467208953134" varName="facade" />
+      <varInfo nodeId="2073504467208953134" varName="n1" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208953155" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="65" startPosition="67" endLine="68" endPosition="14">
+      <varInfo nodeId="2073504467208953155" varName="facade" />
+      <varInfo nodeId="2073504467208953155" varName="n1" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="42" startPosition="68" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="2073504467208953067" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="53" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="2073504467208953134" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="2073504467208953155" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="65" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="2073504467208952445" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="2073504467208952446" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="20" startPosition="123" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="2073504467208952445" varName="expression" />
+      <varInfo nodeId="2073504467208952445" varName="status" />
+      <varInfo nodeId="2073504467208952445" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="2073504467208952445" fileName="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.samples.Expressions.typesystem.typeof_ArithmeticSimpleMathExpression_InferenceRule" />
+  </root>
+</debugInfo>
+
