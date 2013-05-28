@@ -22,7 +22,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 /**
@@ -109,6 +108,10 @@ public class ConceptEditorHintSettings {
       }
       return result;
     }
+  }
+
+  public synchronized void removeLang(String lang) {
+    mySettings.remove(lang);
   }
 
   public Boolean get(String lang, ConceptEditorHint hint) {

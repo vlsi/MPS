@@ -41,13 +41,15 @@ public class ConceptEditorHintPreferencesPage {
   private final ConceptEditorHintSettings registrySettings;
 
   public ConceptEditorHintPreferencesPage(ConceptEditorHintSettings state) {
-    myPreferencesPanel = new JPanel(new GridBagLayout());
+
     registrySettings = state != null ? state : new ConceptEditorHintSettings();
 
-    update();
+
   }
 
   public JComponent getComponent() {
+    myPreferencesPanel = new JPanel(new GridBagLayout());
+    update();
     return myPreferencesPanel;
   }
 

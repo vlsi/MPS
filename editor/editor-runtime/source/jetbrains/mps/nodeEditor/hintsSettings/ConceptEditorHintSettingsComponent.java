@@ -23,7 +23,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.MyState;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -58,10 +57,28 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
 
   @Override
   public void initComponent() {
+    if (mySettings == null) {
+      mySettings = new ConceptEditorHintSettings();
+    }
+    myListener = new LanguageRegistryListener() {
+      @Override
+      public void languagesLoaded(Iterable<LanguageRuntime> languages) {
+        updateHintsFromLanguages(languages);
+        mySettings.updateSettings(myCurrentState.getEnabledHints());
+      }
+
+      @Override
+      public void languagesUnloaded(Iterable<LanguageRuntime> languages) {
+        myCurrentState.addEnabledHints(mySettings.getEnabledHints());
+        removeHintsFromUnloadedLanguages(languages);
+      }
+    };
+    LanguageRegistry.getInstance().addRegistryListener(myListener);
   }
 
   @Override
   public void disposeComponent() {
+    LanguageRegistry.getInstance().removeRegistryListener(myListener);
   }
 
   @NotNull
@@ -94,46 +111,13 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
 
   @Override
   public void projectOpened() {
-    if (mySettings == null) {
-      mySettings = new ConceptEditorHintSettings();
-    }
-    myListener = new LanguageRegistryListener() {
-      @Override
-      public void languagesLoaded(Iterable<LanguageRuntime> languages) {
-        updateHintsFromLanguages(languages);
-        mySettings.updateSettings(myCurrentState.getEnabledHints());
-      }
-
-      @Override
-      public void languagesUnloaded(Iterable<LanguageRuntime> languages) {
-        myCurrentState.addEnabledHints(mySettings.getEnabledHints());
-        removeHintsFromUnloadedLanguages(languages);
-      }
-    };
-    LanguageRegistry.getInstance().addRegistryListener(myListener);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        updateHintsFromLanguages(LanguageRegistry.getInstance().getAvailableLanguages());
-      }
-    });
-    mySettings.updateSettings(myCurrentState.myEnabledHints);
 
   }
 
   private void removeHintsFromUnloadedLanguages(final Iterable<LanguageRuntime> languages) {
     for (LanguageRuntime language : languages) {
-      EditorAspectDescriptor editorDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
-      if (editorDescriptor == null) {
-        continue;
-      }
       String lang = language.getNamespace();
-      if (!mySettings.containsLang(lang)) {
-        continue;
-      }
-      for (ConceptEditorHint hint : editorDescriptor.getHints()) {
-        mySettings.remove(lang, hint);
-      }
+      mySettings.removeLang(lang);
     }
   }
 
@@ -159,7 +143,7 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
 
   @Override
   public void projectClosed() {
-    LanguageRegistry.getInstance().removeRegistryListener(myListener);
+
   }
 
   public static ConceptEditorHintSettingsComponent getInstance(Project project) {
