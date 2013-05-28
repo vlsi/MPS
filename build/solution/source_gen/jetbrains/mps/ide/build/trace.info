@@ -73,7 +73,7 @@
     <unitInfo nodeId="7926701909975931624" fileName="mpsBootstrapCore.xml" startLine="1" startPosition="0" endLine="8375" endPosition="10" unitName="jetbrains.mps.ide.build.mpsBootstrapCore" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/8227093612176368028">
-    <unitInfo nodeId="8227093612176368028" fileName="mpsBuildUI.xml" startLine="1" startPosition="0" endLine="383" endPosition="10" unitName="jetbrains.mps.ide.build.mpsBuildUI" />
+    <unitInfo nodeId="8227093612176368028" fileName="mpsBuildUI.xml" startLine="1" startPosition="0" endLine="382" endPosition="10" unitName="jetbrains.mps.ide.build.mpsBuildUI" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/8524659923334108558">
     <unitInfo nodeId="8524659923334108558" fileName="mpsBuild.xml" startLine="1" startPosition="0" endLine="930" endPosition="10" unitName="jetbrains.mps.ide.build.mpsBuild" />
