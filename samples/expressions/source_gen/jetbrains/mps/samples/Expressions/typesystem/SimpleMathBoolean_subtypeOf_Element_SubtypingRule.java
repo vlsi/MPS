@@ -10,12 +10,12 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  public SimpleMathBoolean_extends_SimpleMathTyoe_SubtypingRule() {
+public class SimpleMathBoolean_subtypeOf_Element_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+  public SimpleMathBoolean_subtypeOf_Element_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode simpleMathBooleanType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return SConceptOperations.createNewNode("jetbrains.mps.samples.Expressions.structure.SimpleMathType", null);
+    return SConceptOperations.createNewNode("jetbrains.mps.samples.Expressions.structure.SimpleMathElementType", null);
   }
 
   public String getApplicableConceptFQName() {

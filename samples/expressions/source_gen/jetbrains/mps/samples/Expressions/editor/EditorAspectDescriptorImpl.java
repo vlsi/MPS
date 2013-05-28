@@ -24,14 +24,22 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 4:
         return Collections.<ConceptEditor>singletonList(new SimpleMathBooleanType_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new SimpleMathIntegerConstant_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimpleMathElementType_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new SimpleMathIntegerType_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimpleMathIntegerConstant_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new SimpleMathVarDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimpleMathIntegerType_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new SimpleMathVarReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimpleMathLongConstant_Editor());
       case 9:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathLongType_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathNumberType_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathVarDeclaration_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathVarReference_Editor());
+      case 13:
         return Collections.<ConceptEditor>singletonList(new SimpleMathWrapper_Editor());
       default:
     }
@@ -42,5 +50,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.LogicalSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.NotSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference", "jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.LogicalSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.NotSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType", "jetbrains.mps.samples.Expressions.structure.SimpleMathElementType", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType", "jetbrains.mps.samples.Expressions.structure.SimpleMathLongConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", "jetbrains.mps.samples.Expressions.structure.SimpleMathNumberType", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference", "jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper"};
 }

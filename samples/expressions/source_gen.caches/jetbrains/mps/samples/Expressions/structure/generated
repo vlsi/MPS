@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-q9eoohpi8qqlpu8i13k8uchux4cj44">
+<dependencies version="2" modelHash="6hwkohuqkf8ayh3rd7wpme4mjtrnlr3">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
-  <common hash="-b6m79362aads2v3mmzvjb4apw6ebfne">
+  <common hash="-4uku9k9a2x19g38wk6u6eqr5dfte2nr">
     <dep root="2073504467207867403" />
     <dep root="2073504467207869132" />
     <dep root="2073504467207935099" />
@@ -23,6 +23,10 @@
     <dep root="2073504467208672407" />
     <dep root="2073504467209342143" />
     <dep root="2073504467209348321" />
+    <dep root="2073504467209504078" />
+    <dep root="2073504467209504611" />
+    <dep root="2073504467209660554" />
+    <dep root="2073504467209943018" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -46,10 +50,10 @@
   <source id="2073504467207965605" name="LogicalSimpleMathExpression" hash="-2rdyy8q1rp5mdrs07yvaim8hpjjz6k9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2073504467208085351" name="SimpleMathType" hash="9u5ax2b4rcowkvhv0bocgukrg5gwega">
+  <source id="2073504467208085351" name="SimpleMathType" hash="d0fj2ipnwp0f8ldsn2j9kraljskawm3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2073504467208085352" name="SimpleMathBooleanType" hash="-368ku0j267joi09vrxjhhyrejk8i822">
+  <source id="2073504467208085352" name="SimpleMathBooleanType" hash="-7u2xzu9hwgzt8by8d8gb2d12r4ezoba">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2073504467208335362" name="SimpleMathWrapper" hash="-230p4eu89khg8984rfjerdbb0ky1jul">
@@ -61,13 +65,13 @@
   <source id="2073504467208490058" name="OrSimpleMathExpression" hash="c0diov1an6w9bmgtpvvkiicjfnu1vqy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2073504467208536638" name="SimpleMathBooleanConstant" hash="-d73g347ja14ntx5c49al973dlg31bs">
+  <source id="2073504467208536638" name="SimpleMathBooleanConstant" hash="37ctlgexym6qwtiqzwo5xxezo951civ">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2073504467208541194" name="SimpleMathIntegerConstant" hash="3xirtvx8q0jo7gdhtjswpxqn51szkej">
+  <source id="2073504467208541194" name="SimpleMathIntegerConstant" hash="dkdk51lrgrlp63rx3cgvzlwlp1c692d">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2073504467208542432" name="SimpleMathIntegerType" hash="396fi6waq1iaddjblsxh6zr0fbmv0s">
+  <source id="2073504467208542432" name="SimpleMathIntegerType" hash="5xd4k098b1dyjpr1n6efrnxuviaf967">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2073504467208672407" name="ArithmeticSimpleMathExpression" hash="-9hkg7o559o2exvc5e5i9ds0gs4mzc6m">
@@ -77,6 +81,18 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2073504467209348321" name="SimpleMathVarReference" hash="400ck3exf1sj83uy7sbz5flnzldk4cu">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2073504467209504078" name="SimpleMathElementType" hash="-csa6pc9s3zf0pj6c6zlzqbpsxk2a27g">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2073504467209504611" name="SimpleMathNumberType" hash="-966urm5uby0jiarkb28ujcrbw4sexzz">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2073504467209660554" name="SimpleMathLongType" hash="23zrwfv81aqwq59nht9cu082thirlry">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2073504467209943018" name="SimpleMathLongConstant" hash="bu4iw18vhdtrbpj4apaiuwha3waf6z6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

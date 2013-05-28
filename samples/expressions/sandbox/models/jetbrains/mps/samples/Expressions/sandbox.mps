@@ -6,7 +6,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
-  <import index="vpmn" modelUID="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" version="1" implicit="yes" />
+  <import index="vpmn" modelUID="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" version="4" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2073504467208336329">
       <property name="name" nameId="tpck.1169194664001" value="Main" />
@@ -39,8 +39,26 @@
           </node>
           <node role="expressions" roleId="vpmn.2073504467208335735" type="vpmn.SimpleMathVarDeclaration" typeId="vpmn.2073504467209342143" id="2073504467209502868">
             <property name="name" nameId="tpck.1169194664001" value="b" />
-            <node role="initializer" roleId="vpmn.2073504467209342228" type="vpmn.SimpleMathVarReference" typeId="vpmn.2073504467209348321" id="2073504467209502971">
-              <link role="declaration" roleId="vpmn.2073504467209348322" targetNodeId="2073504467209441359" resolveInfo="a" />
+            <node role="initializer" roleId="vpmn.2073504467209342228" type="vpmn.ArithmeticSimpleMathExpression" typeId="vpmn.2073504467208672407" id="2073504467210168970">
+              <property name="operator" nameId="vpmn.2073504467208672490" value="+" />
+              <node role="right" roleId="vpmn.2073504467207935096" type="vpmn.SimpleMathLongConstant" typeId="vpmn.2073504467209943018" id="2073504467210169564">
+                <property name="value" nameId="vpmn.2073504467209943070" value="200" />
+              </node>
+              <node role="left" roleId="vpmn.2073504467207935094" type="vpmn.SimpleMathLongConstant" typeId="vpmn.2073504467209943018" id="2073504467210169200">
+                <property name="value" nameId="vpmn.2073504467209943070" value="100" />
+              </node>
+            </node>
+          </node>
+          <node role="expressions" roleId="vpmn.2073504467208335735" type="vpmn.SimpleMathVarDeclaration" typeId="vpmn.2073504467209342143" id="2073504467210938823">
+            <property name="name" nameId="tpck.1169194664001" value="c" />
+            <node role="initializer" roleId="vpmn.2073504467209342228" type="vpmn.ArithmeticSimpleMathExpression" typeId="vpmn.2073504467208672407" id="2073504467210938918">
+              <property name="operator" nameId="vpmn.2073504467208672490" value="-" />
+              <node role="right" roleId="vpmn.2073504467207935096" type="vpmn.SimpleMathIntegerConstant" typeId="vpmn.2073504467208541194" id="2073504467210939176">
+                <property name="value" nameId="vpmn.2073504467208541195" value="20" />
+              </node>
+              <node role="left" roleId="vpmn.2073504467207935094" type="vpmn.SimpleMathLongConstant" typeId="vpmn.2073504467209943018" id="2073504467210939014">
+                <property name="value" nameId="vpmn.2073504467209943070" value="300" />
+              </node>
             </node>
           </node>
         </node>
