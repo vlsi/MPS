@@ -289,7 +289,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       info.setEditable(false);
       info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
-      info.setPreferredSize(new Dimension(300, 180));
+      info.setPreferredSize(new Dimension(300, 220));
 
       infoHolder.add(info, BorderLayout.CENTER);
 
@@ -317,12 +317,13 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     @Override
     public Object getNextStepId() {
-      // if (hasModelsInOldPersistence()) return super.getNextStepId();
+      if (hasModelsInOldPersistence()) return super.getNextStepId();
       return mySelectActions.isSelected() ? super.getSkipNextStepId(1) : super.getSkipNextStepId(2);
     }
 
     private boolean hasModelsInOldPersistence() {
-      return new ModelPersistenceDetector(myProject).hasModelsInOldPersistence();
+      return false;
+//      return new ModelPersistenceDetector(myProject).hasModelsInOldPersistence();
     }
   }
 
@@ -357,7 +358,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       info.setEditable(false);
       info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
-      info.setPreferredSize(new Dimension(300, 180));
+      info.setPreferredSize(new Dimension(300, 220));
 
       infoHolder.add(info, BorderLayout.CENTER);
 
@@ -796,7 +797,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       });
       info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
-      info.setPreferredSize(new Dimension(300, 180));
+      info.setPreferredSize(new Dimension(300, 220));
 
       infoHolder.add(info, BorderLayout.CENTER);
 
@@ -854,7 +855,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       });
       info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
-      info.setPreferredSize(new Dimension(300, 180));
+      info.setPreferredSize(new Dimension(300, 220));
 
       infoHolder.add(info, BorderLayout.CENTER);
 

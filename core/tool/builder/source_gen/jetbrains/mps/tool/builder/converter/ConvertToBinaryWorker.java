@@ -44,7 +44,7 @@ public class ConvertToBinaryWorker {
       }
       BinaryPersistence.writeModel(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
     } catch (ModelReadException e) {
-      throw new IOException(e.getMessageEx() + " (" + sourceFile + ")", e);
+      throw new IOException("Couldn't parse " + sourceFile + ": " + e.getMessageEx(), e);
     }
   }
 }
