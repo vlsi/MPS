@@ -39,7 +39,7 @@ import java.util.NoSuchElementException;
 /**
  * evgeny, 1/25/13
  */
-public abstract class MPSPsiNodeBase extends LightElement implements SyntheticElement {
+public abstract class MPSPsiNodeBase extends LightElement {
 
   private NodeList children;
   private NodeList.Entry listEntry;
