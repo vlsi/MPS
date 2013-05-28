@@ -12,8 +12,8 @@
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6yvhxi9k55xxea1versvzjds8py3u8n" />
   <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" hash="-9qtat3qdmqqab8b4uwf5h3kyds8rsq9" />
-  <dep model="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)" hash="-3kag9h0r7sf0413gc8oq6v0ax2b9yfh" />
-  <dep model="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" hash="gbsmxh0k7t92d4xcqql1zxipakezql" />
+  <dep model="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)" hash="-xvxfv802sky6z0s3wt2i4we2hft84y" />
+  <dep model="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" hash="-5htcuimw5x0ojnu31qaqvj70wr4djps" />
   <common hash="-6jbmlu9abpgi2hstx3paxvyh0razms5" />
   <source id="2546981710035415466" name="TestBrokenReferencesWorker" hash="12hpgyfi2wya5jjxve0pihbaig6icux">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />

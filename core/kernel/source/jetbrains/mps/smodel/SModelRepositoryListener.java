@@ -20,9 +20,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
 
 public interface SModelRepositoryListener {
-  void beforeModelDeleted(SModel modelDescriptor);
-
-  void modelDeleted(SModel modelDescriptor);
 
   void beforeModelRemoved(SModel modelDescriptor);
 

@@ -76,6 +76,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.omg.CORBA.INTERNAL;
 
 import javax.swing.JTree;
 import javax.swing.tree.TreeNode;
@@ -167,11 +168,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   public boolean isDisposed() {
     return myDisposed;
-  }
-
-  //todo:the same thing for nodes & modules
-  protected void onBeforeModelWillBeDeleted(SModel sm) {
-    // unselect model if it was selected ?
   }
 
   @Override
@@ -544,15 +540,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   private class MyModelRepositoryAdapter extends SModelRepositoryAdapter {
     @Override
-    public void modelRepositoryChanged(SModel modelDescriptor) {
-      if (!SModelStereotype.INTERNAL.equals(SModelStereotype.getStereotype(modelDescriptor))) {
-        myNeedRebuild = true;
-      }
-    }
-
-    @Override
-    public void beforeModelDeleted(SModel modelDescriptor) {
-      onBeforeModelWillBeDeleted(modelDescriptor);
+    public void modelRepositoryChanged() {
+      myNeedRebuild = true;
     }
   }
 

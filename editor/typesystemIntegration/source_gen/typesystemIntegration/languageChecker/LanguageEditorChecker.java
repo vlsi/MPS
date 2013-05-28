@@ -65,11 +65,6 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     public void beforeModelRemoved(SModel descriptor) {
       modelDescriptorRemoved(descriptor);
     }
-
-    @Override
-    public void beforeModelDeleted(SModel descriptor) {
-      modelDescriptorRemoved(descriptor);
-    }
   };
   private SModelListener myModelListener = new SModelAdapter() {
     @Override

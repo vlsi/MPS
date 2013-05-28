@@ -120,8 +120,8 @@ public class DataTreeChangesNotifier {
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
     @Override
-    public void modelDeleted(SModel modelDescriptor) {
-      if (!myModels.contains(modelDescriptor.getReference())) return;
+    public void modelRemoved(SModel model) {
+      if (!myModels.contains(model.getReference())) return;
       myChanged = true;
     }
   }
