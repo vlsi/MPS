@@ -15,16 +15,17 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -33,8 +34,11 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.ModelSaveException;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -222,16 +226,42 @@ public class TransientModelsModule extends AbstractModule {
     }
   }
 
-  public class TransientSModelDescriptor extends BaseSpecialModelDescriptor {
+  public class TransientSModelDescriptor extends EditableSModelBase {
+    protected volatile jetbrains.mps.smodel.SModel mySModel;
     private final String myLongName;
     private boolean wasUnloaded = false;
 
     private TransientSModelDescriptor(String modelName) {
-      super(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
+      super(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName), new NullDataSource());
       myLongName = SModelStereotype.withoutStereotype(modelName);
+      updateTimestamp();
     }
 
     @Override
+    protected jetbrains.mps.smodel.SModel getCurrentModelInternal() {
+      return mySModel;
+    }
+
+    @Override
+    public final jetbrains.mps.smodel.SModel getSModelInternal() {
+      if (mySModel != null) {
+        return mySModel;
+      }
+      synchronized (this) {
+        if (mySModel == null) {
+          mySModel = createModel();
+          mySModel.setModelDescriptor(this);
+          fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
+        }
+      }
+      return mySModel;
+    }
+
+    @Override
+    public boolean isLoaded() {
+      return mySModel != null;
+    }
+
     protected jetbrains.mps.smodel.SModel createModel() {
       if (wasUnloaded) {
         LOG.debug("Re-loading " + getSModelReference());
@@ -284,6 +314,27 @@ public class TransientModelsModule extends AbstractModule {
         if (descriptor != null) return descriptor;
       }
       return super.resolveModel(reference);
+    }
+
+    @Override
+    public boolean isChanged() {
+      // TODO move transient models outside of the default repository; false here prevents model from saving
+      return false;
+    }
+
+    @Override
+    protected boolean saveModel() throws IOException, ModelSaveException {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void rename(String newModelName, boolean changeFile) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    protected void reloadContents() {
+      throw new UnsupportedOperationException();
     }
 
     @Override

@@ -25,11 +25,7 @@ import java.io.OutputStream;
  */
 public interface StreamDataSource extends DataSource {
 
-  String getLocation();
-
   InputStream openInputStream() throws IOException;
-
-  boolean isReadOnly();
 
   OutputStream openOutputStream() throws IOException;
 }

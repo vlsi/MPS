@@ -15,10 +15,18 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * An empty implementation of the DataSource interface.
  */
 public final class NullDataSource implements DataSource {
+
+  @NotNull
+  @Override
+  public String getLocation() {
+    return "null";
+  }
 
   @Override
   public void addListener(DataSourceListener listener) {
@@ -31,5 +39,10 @@ public final class NullDataSource implements DataSource {
   @Override
   public long getTimestamp() {
     return 0;
+  }
+
+  @Override
+  public boolean isReadOnly() {
+    return true;
   }
 }

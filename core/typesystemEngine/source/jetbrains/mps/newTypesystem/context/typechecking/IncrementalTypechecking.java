@@ -30,7 +30,6 @@ import jetbrains.mps.newTypesystem.context.component.TypeSystemComponent;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -288,12 +287,14 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
   }
 
   private class MyModelListener extends SModelAdapter {
+    @Override
     public void eventFired(SModelEvent event) {
       myEvents.add(event);
     }
   }
 
   private class MySModelEventVisitorAdapter extends SModelEventVisitorAdapter {
+    @Override
     public void visitChildEvent(SModelChildEvent event) {
       markDependentNodesForInvalidation(event.getChild(), getTypecheckingComponent());
       markDependentNodesForInvalidation(event.getParent(), getTypecheckingComponent());
@@ -326,6 +327,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
       }
     }
 
+    @Override
     public void visitReferenceEvent(SModelReferenceEvent event) {
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), getTypecheckingComponent());
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), myNonTypeSystemComponent);
@@ -333,6 +335,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
       markDependentNodesForInvalidation(jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(event.getReference()), myNonTypeSystemComponent);
     }
 
+    @Override
     public void visitPropertyEvent(SModelPropertyEvent event) {
       markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
     }
@@ -351,6 +354,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     MyTypeRecalculatedListener() {
     }
 
+    @Override
     public void typeWillBeRecalculatedForTerm(SNode term) {
       myNonTypeSystemComponent.typeWillBeRecalculatedForTerm(term);
     }

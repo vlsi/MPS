@@ -29,8 +29,10 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModelBase;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
+import java.io.IOException;
+import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import jetbrains.mps.project.ModuleContext;
 
 public class DiffTemporaryModule extends AbstractModule {
@@ -170,19 +172,22 @@ public class DiffTemporaryModule extends AbstractModule {
 
     @Override
     public org.jetbrains.mps.openapi.model.SModel resolve(SModelReference reference) {
-      return findModel((jetbrains.mps.smodel.SModelReference) reference);
+      return findModel(reference);
     }
   }
 
-  public static class DiffSModelDescriptor extends BaseSpecialModelDescriptor implements EditableSModelDescriptor {
+  public static class DiffSModelDescriptor extends EditableSModelBase {
     private SModule myModule;
     private boolean myEditable;
+    private final SModel mySModel;
+
 
     private DiffSModelDescriptor(SModule module, SModel model, boolean editable) {
-      super(model.getReference());
+      super(model.getReference(), new NullDataSource());
       myModule = module;
       mySModel = model;
       myEditable = editable;
+      updateTimestamp();
     }
 
     @Override
@@ -200,25 +205,22 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     @Override
-    public void reloadFromSource() {
-    }
-
-    @Override
-    public void updateTimestamp() {
-    }
-
-    @Override
-    public void rename(String newModelName, boolean changeFile) {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
     public boolean isReadOnly() {
       return !(myEditable);
     }
 
-    @Override
-    public void setChanged(boolean b) {
+
+
+    public SModel getSModelInternal() {
+      return mySModel;
+    }
+
+    protected SModel getCurrentModelInternal() {
+      return mySModel;
+    }
+
+    public boolean isLoaded() {
+      return true;
     }
 
     @Override
@@ -227,17 +229,18 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     @Override
-    public void save() {
-    }
-
-    @Override
-    protected SModel createModel() {
+    public void rename(String newModelName, boolean changeFile) {
       throw new UnsupportedOperationException();
     }
 
-    @Override
-    public boolean needsReloading() {
-      return false;
+
+
+    protected void reloadContents() {
+      throw new UnsupportedOperationException();
+    }
+
+    protected boolean saveModel() throws IOException, ModelSaveException {
+      throw new UnsupportedOperationException();
     }
   }
 

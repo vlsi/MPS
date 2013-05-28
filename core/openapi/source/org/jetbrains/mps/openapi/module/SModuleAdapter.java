@@ -34,6 +34,10 @@ public class SModuleAdapter implements SModuleListener {
   }
 
   @Override
+  public void modelRenamed(SModule module, SModel model, SModelReference oldRef) {
+  }
+
+  @Override
   public void dependencyAdded(SModule module, SDependency dep) {
     moduleChanged(module);
   }

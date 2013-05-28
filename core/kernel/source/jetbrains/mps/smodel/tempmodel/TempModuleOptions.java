@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.smodel.tempmodel;
 
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.SModule;
 

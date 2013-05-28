@@ -382,6 +382,7 @@
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.TreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule" file="DiffTemporaryModule.java">
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -415,11 +416,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelSaveException" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.NullDataSource" />
+    <classNode extendsClassName="jetbrains.mps.extapi.model.EditableSModelBase" />
     <classNode extendsClassName="jetbrains.mps.project.AbstractModule" />
     <classNode extendsClassName="jetbrains.mps.project.ModuleContext" />
     <classNode extendsClassName="jetbrains.mps.project.ModuleScope" />
-    <classNode extendsClassName="jetbrains.mps.smodel.BaseSpecialModelDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.FoldingAreaButton" file="FoldingAreaButton.java">
     <classNode dependClassName="java.awt.Graphics" />

@@ -18,6 +18,7 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 public interface SModelScope {
+
   Iterable<? extends SModel> getModels();
 
   Iterable<SLanguage> getLanguages();

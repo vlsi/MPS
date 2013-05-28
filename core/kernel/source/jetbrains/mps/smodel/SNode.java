@@ -16,11 +16,14 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -854,26 +857,26 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   private void referenceChanged(String role, org.jetbrains.mps.openapi.model.SReference reference, org.jetbrains.mps.openapi.model.SReference newValue) {
     SModelBase md = getRealModel();
-    if (md == null) return;
-    md.fireReferenceChanged(this, role, reference, newValue);
+    if (md == null || md instanceof FakeModelDescriptor) return;
+    ((EditableSModelBase)md).fireReferenceChanged(this, role, reference, newValue);
   }
 
   private void propertyChanged(String propertyName, String oldValue, String newValue) {
     SModelBase md = getRealModel();
-    if (md == null) return;
-    md.firePropertyChanged(this, propertyName, oldValue, newValue);
+    if (md == null || md instanceof FakeModelDescriptor) return;
+    ((EditableSModelBase)md).firePropertyChanged(this, propertyName, oldValue, newValue);
   }
 
   private void nodeAdded(String role, org.jetbrains.mps.openapi.model.SNode child) {
     SModelBase md = getRealModel();
-    if (md == null) return;
-    md.fireNodeAdded(this, role, child);
+    if (md == null || md instanceof FakeModelDescriptor) return;
+    ((EditableSModelBase)md).fireNodeAdded(this, role, child);
   }
 
   private void nodeRemoved(org.jetbrains.mps.openapi.model.SNode child, String role) {
     SModelBase md = getRealModel();
-    if (md == null) return;
-    md.fireNodeRemoved(this, role, child);
+    if (md == null || md instanceof FakeModelDescriptor) return;
+    ((EditableSModelBase)md).fireNodeRemoved(this, role, child);
   }
 
   public SModel getPersistentModel() {

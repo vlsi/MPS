@@ -25,8 +25,6 @@ import java.io.OutputStream;
  */
 public interface MultiStreamDataSource extends DataSource {
 
-  String getLocation();
-
   Iterable<String> getAvailableStreams();
 
   InputStream openInputStream(String name) throws IOException;

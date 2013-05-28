@@ -16,7 +16,6 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import jetbrains.mps.smodel.DisposedRepository;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -141,6 +140,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
     }
   }
 
+  @Deprecated
   protected void fireBeforeModelRenamed(SModelRenamedEvent event) {
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -151,6 +151,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
     }
   }
 
+  @Deprecated
   protected void fireModelRenamed(SModelRenamedEvent event) {
     for (SModelListener sModelListener : getModelListeners()) {
       try {
