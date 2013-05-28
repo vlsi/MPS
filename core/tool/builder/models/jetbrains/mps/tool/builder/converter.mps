@@ -15,7 +15,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="kgxg" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.components(MPS.Core/jetbrains.mps.components@java_stub)" version="-1" implicit="yes" />
-  <import index="iefc" modelUID="f:merge_repo#r:39e596a9-ed2d-4e2f-b055-9544a1f3a151(jetbrains.mps.tool.builder.converter@repo)" version="-1" implicit="yes" />
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7841036633975757760" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ConvertToBinaryWorker" />
     <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
@@ -250,13 +249,13 @@
                             <property name="value" nameId="tpee.1070475926801" value="Couldn't parse " />
                           </node>
                           <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6882647568612564568" nodeInfo="nn">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="iefc.7841036633975757804" resolveInfo="sourceFile" />
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7841036633975757804" resolveInfo="sourceFile" />
                           </node>
                         </node>
                       </node>
                       <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7841036633975757954" nodeInfo="nn">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7841036633975757953" nodeInfo="nn">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="iefc.7841036633975757866" resolveInfo="e" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7841036633975757866" resolveInfo="e" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7841036633975757955" nodeInfo="nn">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zofw.~ModelReadException%dgetMessageEx()%cjava%dlang%dString" resolveInfo="getMessageEx" />

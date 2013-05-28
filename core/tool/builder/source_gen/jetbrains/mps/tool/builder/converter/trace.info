@@ -13,11 +13,7 @@
     <nodeInfo nodeId="7841036633975757821" fileName="ConvertToBinaryWorker.java" startLine="40" startPosition="9" endLine="41" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7841036633975757844" fileName="ConvertToBinaryWorker.java" startLine="42" startPosition="92" endLine="43" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="5171773620270423448" fileName="ConvertToBinaryWorker.java" startLine="44" startPosition="7" endLine="45" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-<<<<<<< HEAD
-    <nodeInfo nodeId="7841036633975757875" fileName="ConvertToBinaryWorker.java" startLine="46" startPosition="36" endLine="47" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-=======
     <nodeInfo nodeId="7841036633975757875" fileName="ConvertToBinaryWorker.java" startLine="46" startPosition="36" endLine="47" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
->>>>>>> origin/master
     <nodeInfo nodeId="7841036633975757763" fileName="ConvertToBinaryWorker.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertToBinaryWorker#()V" />
     <nodeInfo nodeId="7841036633975757775" fileName="ConvertToBinaryWorker.java" startLine="26" startPosition="9" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7841036633975757827" fileName="ConvertToBinaryWorker.java" startLine="41" startPosition="90" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -32,17 +28,10 @@
     </scopeInfo>
     <scopeInfo nodeId="7841036633975757795" fileName="ConvertToBinaryWorker.java" startLine="30" startPosition="30" endLine="31" endPosition="37" />
     <scopeInfo nodeId="7841036633975757837" fileName="ConvertToBinaryWorker.java" startLine="42" startPosition="92" endLine="43" endPosition="113" />
-<<<<<<< HEAD
-    <scopeInfo nodeId="7841036633975757877" fileName="ConvertToBinaryWorker.java" startLine="46" startPosition="0" endLine="47" endPosition="75">
-      <varInfo nodeId="7841036633975757866" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="7841036633975757870" fileName="ConvertToBinaryWorker.java" startLine="46" startPosition="36" endLine="47" endPosition="75" />
-=======
     <scopeInfo nodeId="7841036633975757877" fileName="ConvertToBinaryWorker.java" startLine="46" startPosition="0" endLine="47" endPosition="89">
       <varInfo nodeId="7841036633975757866" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="7841036633975757870" fileName="ConvertToBinaryWorker.java" startLine="46" startPosition="36" endLine="47" endPosition="89" />
->>>>>>> origin/master
     <scopeInfo nodeId="7841036633975757763" fileName="ConvertToBinaryWorker.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="3563859626232997538" fileName="ConvertToBinaryWorker.java" startLine="32" startPosition="15" endLine="34" endPosition="38" />
     <scopeInfo nodeId="7841036633975757774" fileName="ConvertToBinaryWorker.java" startLine="26" startPosition="9" endLine="29" endPosition="7" />
