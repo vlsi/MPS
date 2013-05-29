@@ -129,6 +129,11 @@
       <property name="name" nameId="tpck.1169194664001" value="SimpleMathFloatConstant" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2073504467207867403" resolveInfo="SimpleMathExpression" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="930174696942536268">
+      <property name="name" nameId="tpck.1169194664001" value="SimpleMathAssignment" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value=":=" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2073504467207867403" resolveInfo="SimpleMathExpression" />
+    </node>
   </roots>
   <root id="2073504467207867403" />
   <root id="2073504467207869132">
@@ -219,6 +224,20 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2073504467210944677">
       <property name="name" nameId="tpck.1169194664001" value="value" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpee.1113006251687" resolveInfo="_FPNumber_String" />
+    </node>
+  </root>
+  <root id="930174696942536268">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="930174696942541360">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="variable" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2073504467209348321" resolveInfo="SimpleMathVarReference" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="930174696942541362">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="expression" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2073504467207867403" resolveInfo="SimpleMathExpression" />
     </node>
   </root>
 </model>

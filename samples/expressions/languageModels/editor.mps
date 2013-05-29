@@ -69,6 +69,9 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="constant" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="vpmn.2073504467210944676" resolveInfo="SimpleMathFloatConstant" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="930174696942541370">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="vpmn.930174696942536268" resolveInfo="SimpleMathAssignment" />
+    </node>
   </roots>
   <root id="2073504467207935114">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="2073504467207936490">
@@ -250,6 +253,20 @@
         <property name="text" nameId="tpc2.1073389577007" value="F" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2073504467210944689" />
+    </node>
+  </root>
+  <root id="930174696942541370">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="930174696942551172">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="930174696942551179">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="vpmn.930174696942541360" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="930174696942551192">
+        <property name="text" nameId="tpc2.1073389577007" value=":=" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="930174696942551200">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="vpmn.930174696942541362" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="930174696942551175" />
     </node>
   </root>
 </model>

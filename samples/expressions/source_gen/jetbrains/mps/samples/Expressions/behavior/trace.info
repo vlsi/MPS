@@ -2,11 +2,12 @@
 <debugInfo>
   <unitInfo fileName="AndSimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.AndSimpleMathExpression_BehaviorDescriptor" />
   <unitInfo fileName="ArithmeticSimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.ArithmeticSimpleMathExpression_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BinarySimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.BinarySimpleMathExpression_BehaviorDescriptor" />
   <unitInfo fileName="LogicalSimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.LogicalSimpleMathExpression_BehaviorDescriptor" />
   <unitInfo fileName="NotSimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.NotSimpleMathExpression_BehaviorDescriptor" />
   <unitInfo fileName="OrSimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.OrSimpleMathExpression_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathAssignment_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathAssignment_BehaviorDescriptor" />
   <unitInfo fileName="SimpleMathBooleanConstant_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathBooleanConstant_BehaviorDescriptor" />
   <unitInfo fileName="SimpleMathBooleanType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathBooleanType_BehaviorDescriptor" />
   <unitInfo fileName="SimpleMathElementType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathElementType_BehaviorDescriptor" />

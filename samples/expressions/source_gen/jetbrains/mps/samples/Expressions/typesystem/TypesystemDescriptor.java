@@ -28,6 +28,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_SimpleMathAssignment_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_SimpleMathBooleanConstant_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }

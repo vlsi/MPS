@@ -70,6 +70,12 @@
               </node>
             </node>
           </node>
+          <node role="expressions" roleId="vpmn.2073504467208335735" type="vpmn.SimpleMathAssignment" typeId="vpmn.930174696942536268" id="930174696942945406">
+            <node role="expression" roleId="vpmn.930174696942541362" type="vpmn.SimpleMathBooleanConstant" typeId="vpmn.2073504467208536638" id="930174696943103118" />
+            <node role="variable" roleId="vpmn.930174696942541360" type="vpmn.SimpleMathVarReference" typeId="vpmn.2073504467209348321" id="930174696942945447">
+              <link role="declaration" roleId="vpmn.2073504467209348322" targetNodeId="2073504467209441359" resolveInfo="A" />
+            </node>
+          </node>
         </node>
       </node>
     </node>
