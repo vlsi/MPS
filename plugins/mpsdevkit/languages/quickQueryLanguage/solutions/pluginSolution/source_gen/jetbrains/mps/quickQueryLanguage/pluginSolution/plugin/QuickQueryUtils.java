@@ -23,6 +23,9 @@ import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
+import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 
 public class QuickQueryUtils {
   private static Logger LOG = LogManager.getLogger(QuickQueryUtils.class);
@@ -71,5 +74,19 @@ public class QuickQueryUtils {
       LOG.warn("Exception on query loading", ignore);
     }
     return null;
+  }
+
+
+
+  public static SearchQuery createNodeInstancesSearchQuery(Query query, FindUsagesScope scope) {
+    if (isNotEmpty_465b23_a0a0g(query.getConcept())) {
+      return new SearchQuery(new NodeHolder(SModelUtil.findConceptDeclaration(query.getConcept(), null)), scope);
+    } else {
+      return new SearchQuery(scope);
+    }
+  }
+
+  public static boolean isNotEmpty_465b23_a0a0g(String str) {
+    return str != null && str.length() > 0;
   }
 }
