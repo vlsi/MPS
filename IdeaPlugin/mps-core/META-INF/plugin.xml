@@ -45,6 +45,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSGlobalLibImporter</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.platform.watching.ReloadManagerComponent</implementation-class>
+    </component>
     <!--
 
       JdkStubSolutionManager was commented since we decided to use same logic as works in MPS with loading
@@ -114,6 +117,7 @@
     <usageGroupingRuleProvider implementation="jetbrains.mps.idea.core.usages.rules.MPSUsageGroupingRuleProviderImpl" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <renameHandler implementation="jetbrains.mps.idea.core.refactoring.ModelRenameHandler"/>
+    <renameHandler implementation="jetbrains.mps.idea.core.refactoring.MPSRenameRefactoringHandler"/>
     <moduleRendererFactory implementation="jetbrains.mps.idea.core.navigation.MpsRendererFactory" order="first"/>
     <compileServer.plugin classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar"/>
     <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
