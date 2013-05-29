@@ -87,7 +87,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
       // TODO isLoaded is not enough
       if (isLoaded()) {
         for (org.jetbrains.mps.openapi.model.SNode node : getRootNodes()) {
-          node.detach();
+          ((SNodeBase) node).detach();
         }
       }
       myRepository = DisposedRepository.INSTANCE;
@@ -100,7 +100,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     Iterable<org.jetbrains.mps.openapi.model.SNode> roots = getSModelInternal().getRootNodes();
     if (myRepository != null) {
       for (org.jetbrains.mps.openapi.model.SNode r : roots) {
-        r.attach(myRepository);
+        ((SNodeBase) r).attach(myRepository);
       }
     }
     return roots;

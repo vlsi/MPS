@@ -52,10 +52,6 @@ public interface SNode {
    */
   SModel getModel();
 
-  void attach(SRepository repo);
-
-  void detach();
-
   /**
    * Uniquely identifies the node within its containing model. May also be null.
    */
