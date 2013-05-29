@@ -54,7 +54,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
       case NODE:
         return cell.isBig();
       case REFERENCE:
-        if (((EditorCell) cell).isReferenceCell()) {
+        if (cell.isReferenceCell()) {
           return myMessageTarget.getRole().equals(cell.getRole()) && getNode() == cell.getSNode();
         } else {
           return cell.isBig() && getCell(editor) == cell;
