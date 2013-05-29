@@ -41,12 +41,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   void paintSelection(Graphics g, Color c, boolean drawBorder);
   void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings);
 
-  // FIXME
-  void setLinkDeclaration(SNode link);
-  SNode getLinkDeclaration();
-
-  boolean isReferenceCell();
-
   boolean validate(boolean strict, boolean canActivatePopup);
 
   TextBuilder renderText();
@@ -111,7 +105,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   boolean isUnfoldedCollection();
   boolean canBePossiblyFolded();
 
-  boolean isBigCell();
   boolean isFirstPositionInBigCell();
   boolean isLastPositionInBigCell();
 
