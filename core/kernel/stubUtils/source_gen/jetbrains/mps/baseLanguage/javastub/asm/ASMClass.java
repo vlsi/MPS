@@ -125,10 +125,16 @@ public class ASMClass {
   }
 
   public String getName() {
-    return myNode.name;
+    return (myNode.name == null ?
+      "" :
+      myNode.name
+    );
   }
 
   public String getFqName() {
+    if (myNode.name == null) {
+      return "";
+    }
     return myNode.name.replace("/", ".");
   }
 
