@@ -19,9 +19,10 @@ import com.intellij.ui.CheckboxTree;
 import com.intellij.ui.CheckboxTree.CheckboxTreeCellRenderer;
 import com.intellij.ui.CheckboxTreeBase.CheckPolicy;
 import com.intellij.ui.CheckedTreeNode;
+import com.intellij.ui.ColoredSideBorder;
 import com.intellij.ui.ColoredTreeCellRenderer;
+import com.intellij.ui.JBColor;
 import com.intellij.ui.LayeredIcon;
-import com.intellij.ui.SimpleTextAttributes;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.Nodes.Models;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -45,6 +46,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.JCheckBox;
 import javax.swing.JTree;
@@ -86,7 +88,7 @@ public class GeneratorPrioritiesTree {
 
   private void initTree(GeneratorDescriptor descriptor) {
     ExtendedCheckedTreeNode generatorNode = new GeneratorCheckedTreeNode(
-        (SModuleReference) MPSModuleRepository.getInstance().getModule(descriptor.getId()).getModuleReference()
+        MPSModuleRepository.getInstance().getModule(descriptor.getId()).getModuleReference()
     );
     myRootNode.add(generatorNode);
 
@@ -273,7 +275,7 @@ public class GeneratorPrioritiesTree {
     return result;
   }
 
-  private boolean setCheckedUnder(ExtendedCheckedTreeNode root) {
+  private static boolean setCheckedUnder(ExtendedCheckedTreeNode root) {
     boolean childChecks = false;
     Enumeration<ExtendedCheckedTreeNode> children = root.children();
     while (children.hasMoreElements()) {
@@ -300,11 +302,17 @@ public class GeneratorPrioritiesTree {
         if (value instanceof ExtendedCheckedTreeNode) {
           ExtendedCheckedTreeNode checkedTreeNode = (ExtendedCheckedTreeNode) value;
 
-          renderer.append(checkedTreeNode.getPresentation(),
-              checkedTreeNode.isChecked() ? SimpleTextAttributes.REGULAR_ATTRIBUTES : SimpleTextAttributes.GRAYED_ATTRIBUTES);
+          renderer.append(checkedTreeNode.getPresentation());
           renderer.setIcon(checkedTreeNode.getIcon());
 
           checkBox.setSelected(checkedTreeNode.isChecked());
+
+          if(checkedTreeNode.equals(tree.getModel().getRoot())) {
+            if(!GeneratorPrioritiesTree.setCheckedUnder(checkedTreeNode))
+              tree.setBorder(new ColoredSideBorder(JBColor.RED, JBColor.RED, JBColor.RED, JBColor.RED, 1));
+            else
+              tree.setBorder(BorderFactory.createEmptyBorder());
+          }
         }
       }
     };
