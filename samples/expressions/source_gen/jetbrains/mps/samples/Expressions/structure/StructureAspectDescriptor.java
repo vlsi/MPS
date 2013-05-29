@@ -37,7 +37,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.Expressions.structure.SimpleMathFloatConstant").super_("jetbrains.mps.samples.Expressions.structure.SimpleMathExpression").parents("jetbrains.mps.samples.Expressions.structure.SimpleMathExpression").properties("value").create();
       case 11:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType").super_("jetbrains.mps.samples.Expressions.structure.SimpleMathType").parents("jetbrains.mps.samples.Expressions.structure.SimpleMathType").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType").super_("jetbrains.mps.samples.Expressions.structure.SimpleMathType").parents("jetbrains.mps.samples.Expressions.structure.SimpleMathType").alias("Float", "").create();
       case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant").super_("jetbrains.mps.samples.Expressions.structure.SimpleMathExpression").parents("jetbrains.mps.samples.Expressions.structure.SimpleMathExpression").properties("value").create();
       case 13:

@@ -630,14 +630,46 @@
       </node>
       <node role="function" roleId="tpd4.8124453027370845343" type="tpd4.OverloadedOperatorTypeFunction" typeId="tpd4.1236083146670" id="2073504467210336498">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2073504467210336499">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2073504467210336500">
-            <node role="expression" roleId="tpee.1068580123156" type="tpd4.LeftOperandType_parameter" typeId="tpd4.1236083209648" id="2073504467210898477" />
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3453667744252461014">
+            <node role="expression" roleId="tpee.1068580123156" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="3453667744252461015">
+              <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="3453667744252461192">
+                <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="vpmn.2073504467209504611" resolveInfo="SimpleMathNumberType" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
       <node role="rightOperandType" roleId="tpd4.1236083115200" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="2073504467210336503">
         <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="2073504467210336809">
           <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="vpmn.2073504467209504611" resolveInfo="SimpleMathNumberType" />
+        </node>
+      </node>
+      <node role="isApplicable" roleId="tpd4.6136676636349909553" type="tpd4.OverloadedOpIsApplicableFunction" typeId="tpd4.6136676636349908958" id="3453667744252244081">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3453667744252244082">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3453667744252256226">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.OrExpression" typeId="tpee.1080223426719" id="3453667744252259545">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="3453667744252260071">
+                <node role="expression" roleId="tpee.1081516765348" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="3453667744252252719">
+                  <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpd4.RightOperandType_parameter" typeId="tpd4.1236083248858" id="3453667744252253668" />
+                  <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="3453667744252254625">
+                    <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="3453667744252254626">
+                      <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="vpmn.2073504467210944062" resolveInfo="SimpleMathFloatType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotExpression" typeId="tpee.1081516740877" id="3453667744252256222">
+                <node role="expression" roleId="tpee.1081516765348" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="3453667744252249103">
+                  <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpd4.LeftOperandType_parameter" typeId="tpd4.1236083209648" id="3453667744252249104" />
+                  <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="3453667744252249105">
+                    <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="3453667744252249106">
+                      <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="vpmn.2073504467210944062" resolveInfo="SimpleMathFloatType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -666,6 +698,34 @@
           <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="vpmn.2073504467210944062" resolveInfo="SimpleMathFloatType" />
         </node>
       </node>
+      <node role="isApplicable" roleId="tpd4.6136676636349909553" type="tpd4.OverloadedOpIsApplicableFunction" typeId="tpd4.6136676636349908958" id="3453667744252170511">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3453667744252170512">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3453667744252263631">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.OrExpression" typeId="tpee.1080223426719" id="3453667744252263632">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="3453667744252263633">
+                <node role="expression" roleId="tpee.1081516765348" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="3453667744252263634">
+                  <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpd4.RightOperandType_parameter" typeId="tpd4.1236083248858" id="3453667744252263635" />
+                  <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="3453667744252263636">
+                    <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="3453667744252265664">
+                      <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="vpmn.2073504467209660554" resolveInfo="SimpleMathLongType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotExpression" typeId="tpee.1081516740877" id="3453667744252263638">
+                <node role="expression" roleId="tpee.1081516765348" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="3453667744252263639">
+                  <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpd4.LeftOperandType_parameter" typeId="tpd4.1236083209648" id="3453667744252263640" />
+                  <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="3453667744252263641">
+                    <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="3453667744252264662">
+                      <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="vpmn.2073504467209660554" resolveInfo="SimpleMathLongType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="rule" roleId="tpd4.1236165725858" type="tpd4.OverloadedOperatorTypeRule" typeId="tpd4.1236083041311" id="2073504467211045081">
       <node role="leftOperandType" roleId="tpd4.1236083115043" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="2073504467211045082">
@@ -690,6 +750,34 @@
       <node role="rightOperandType" roleId="tpd4.1236083115200" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="2073504467211045090">
         <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="2073504467211045091">
           <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="vpmn.2073504467209660554" resolveInfo="SimpleMathLongType" />
+        </node>
+      </node>
+      <node role="isApplicable" roleId="tpd4.6136676636349909553" type="tpd4.OverloadedOpIsApplicableFunction" typeId="tpd4.6136676636349908958" id="3453667744252266998">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3453667744252266999">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3453667744252267544">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.OrExpression" typeId="tpee.1080223426719" id="3453667744252267545">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="3453667744252267546">
+                <node role="expression" roleId="tpee.1081516765348" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="3453667744252267547">
+                  <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpd4.RightOperandType_parameter" typeId="tpd4.1236083248858" id="3453667744252267548" />
+                  <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="3453667744252267549">
+                    <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="3453667744252269570">
+                      <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="vpmn.2073504467208542432" resolveInfo="SimpleMathIntegerType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotExpression" typeId="tpee.1081516740877" id="3453667744252267551">
+                <node role="expression" roleId="tpee.1081516765348" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="3453667744252267552">
+                  <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpd4.LeftOperandType_parameter" typeId="tpd4.1236083209648" id="3453667744252267553" />
+                  <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="3453667744252267554">
+                    <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="3453667744252268568">
+                      <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="vpmn.2073504467208542432" resolveInfo="SimpleMathIntegerType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

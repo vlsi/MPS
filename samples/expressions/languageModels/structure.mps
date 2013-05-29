@@ -121,6 +121,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2073504467210944062">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <property name="name" nameId="tpck.1169194664001" value="SimpleMathFloatType" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Float" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2073504467208085351" resolveInfo="SimpleMathType" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2073504467210944676">
