@@ -18,19 +18,21 @@ package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelRefere
 import org.jetbrains.mps.openapi.model.SNode;
 
 class AddRootUndoableAction extends SNodeUndoableAction {
+  private final SModel myModel;
 
   public AddRootUndoableAction(SNode root) {
     super(root);
+    myModel  = root.getModel();
   }
 
   @Override
   protected void doUndo() {
-    getAffectedNode().getModel().removeRootNode(getAffectedNode());
+    myModel.removeRootNode(getAffectedNode());
   }
 
   @Override
   protected void doRedo() {
-    getAffectedNode().getModel().addRootNode(getAffectedNode());
+    myModel.addRootNode(getAffectedNode());
   }
 
   @Override

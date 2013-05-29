@@ -293,6 +293,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       myModelForUndo.performUndoableAction(computable);
     } else {
       if (!UndoHelper.getInstance().needRegisterUndo()) return;
+      if (!UnregisteredNodes.instance().contains(this)) return;
 
       UndoHelper.getInstance().addUndoableAction(computable.compute());
     }
@@ -564,6 +565,12 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     children_insertAfter(((SNode) anchor), schild);
     schild.setRoleInParent(role);
 
+    //if child is in unregistered nodes, add this one too to track undo for it
+    UnregisteredNodes un = UnregisteredNodes.instance();
+    if (un.contains(child) && myModelForUndo==null && !un.contains(this)) {
+      startUndoTracking(getTopmostAncestor(), ((SNode) child).myRepository);
+    }
+
     if (myModel == null) {
       if (schild.myModel != null) {
         schild.clearModel();
@@ -584,6 +591,15 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       myModel.fireChildAddedEvent(this, role, schild, ((SNode) anchor));
     }
     nodeAdded(role, child);
+  }
+
+  private void startUndoTracking(SNode root, SRepository repo) {
+    for (SNode child: root.getChildren()){
+      startUndoTracking(child,repo);
+    }
+    if (UnregisteredNodes.instance().contains(root)) return;
+    UnregisteredNodes.instance().put(root);
+    root.myRepository = repo;
   }
 
   @Override

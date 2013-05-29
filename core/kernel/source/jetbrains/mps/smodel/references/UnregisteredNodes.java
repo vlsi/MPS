@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.references;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.util.PairMap;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -22,11 +23,14 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
+import java.util.Set;
+
 public class UnregisteredNodes {
   private static final Logger LOG = LogManager.getLogger(UnregisteredNodes.class);
   private static UnregisteredNodes ourInstance;
 
   private final PairMap<SModelReference, SNodeId, SNode> myMap = new PairMap<SModelReference, SNodeId, SNode>();
+  private final Set<SNode> myNodesWithoutRefs = new THashSet<SNode>();
   private final Object myLock = new Object();
 
   private boolean myDisabled = true;
@@ -56,12 +60,26 @@ public class UnregisteredNodes {
       for (SNode node : myMap.values()) {
         node.detach();
       }
+      for (SNode node : myNodesWithoutRefs) {
+        node.detach();
+      }
       myMap.clear();
+      myNodesWithoutRefs.clear();
+    }
+  }
+
+  public boolean contains(SNode node) {
+    synchronized (myLock) {
+      return myMap.values().contains(node) || myNodesWithoutRefs.contains(node);
     }
   }
 
   public void put(SNode node) {
-    if (myDisabled || node.getNodeId() == null) return;
+    if (myDisabled) return;
+    if (node.getNodeId() == null || node.getModel() == null) {
+      myNodesWithoutRefs.add(node);
+      return;
+    }
     add(node.getModel().getReference(), node.getNodeId(), node);
   }
 
@@ -69,6 +87,7 @@ public class UnregisteredNodes {
     if (myDisabled) return;
     synchronized (myLock) {
       myMap.remove(node);
+      myNodesWithoutRefs.remove(node);
     }
   }
 
@@ -82,13 +101,14 @@ public class UnregisteredNodes {
   private void add(SModelReference reference, SNodeId id, SNode node) {
     boolean showError = false;
     synchronized (myLock) {
-      if (myMap.contains(reference, id)) {
+      if (myMap.contains(reference, id) && myMap.get(reference, id) != node) {
         showError = true;
       }
       myMap.put(reference, id, node);
     }
     if (showError) {
-      LOG.error(new IllegalStateException("attempt to put another node with same key: " + reference + "#" + id));
+      IllegalStateException ex = new IllegalStateException("attempt to put another node with same key: " + reference + "#" + id);
+      LOG.error(ex, ex);
     }
   }
 }
