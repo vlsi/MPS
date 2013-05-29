@@ -106,7 +106,7 @@ public class SimpleEmbeddableEditor extends JPanel implements DataProvider {
         SModelOperations.addRootNode(nodeModel, node);
         TemporaryModels.getInstance().addMissingModuleImports(nodeModel);
       } else {
-        throw new IllegalStateException();
+        throw new IllegalStateException("For nodes not from repository edit mode is disabled");
       }
     } else {
       nodeModel = SNodeOperations.getModel(node);
