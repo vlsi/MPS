@@ -68,15 +68,15 @@ public class UnregisteredNodes {
     }
   }
 
-  public boolean contains(SNode node){
-    synchronized (myLock){
+  public boolean contains(SNode node) {
+    synchronized (myLock) {
       return myMap.values().contains(node) || myNodesWithoutRefs.contains(node);
     }
   }
 
   public void put(SNode node) {
     if (myDisabled) return;
-    if (node.getNodeId() == null || node.getModel()==null) {
+    if (node.getNodeId() == null || node.getModel() == null) {
       myNodesWithoutRefs.add(node);
       return;
     }
@@ -101,13 +101,14 @@ public class UnregisteredNodes {
   private void add(SModelReference reference, SNodeId id, SNode node) {
     boolean showError = false;
     synchronized (myLock) {
-      if (myMap.contains(reference, id)) {
+      if (myMap.contains(reference, id) && myMap.get(reference, id) != node) {
         showError = true;
       }
       myMap.put(reference, id, node);
     }
     if (showError) {
-      LOG.error(new IllegalStateException("attempt to put another node with same key: " + reference + "#" + id));
+      IllegalStateException ex = new IllegalStateException("attempt to put another node with same key: " + reference + "#" + id);
+      LOG.error(ex, ex);
     }
   }
 }
