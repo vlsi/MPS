@@ -134,8 +134,6 @@ public interface SNode {
    */
   Iterable<? extends SNode> getChildren(String role);
 
-  String getRoleOf(SNode child);
-
   /**
    * Returns an immutable collection of all children.
    */

@@ -603,24 +603,6 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @Override
-  public String getRoleOf(org.jetbrains.mps.openapi.model.SNode child) {
-    nodeRead();
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    if (child.getParent() == this) {
-      String role = ((SNode) child).myRoleInParent;
-      assert role != null;
-      return role;
-    }
-    for (SReference reference : myReferences) {
-      if (reference.getTargetNode() == child) return reference.getRole();
-    }
-
-    return "<no role>";
-  }
-
-  @Override
   public SNodeReference getReference() {
     nodeRead();
 
