@@ -23,6 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.idea.java.psi.PsiListener;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiImportStatementBase;
@@ -134,6 +135,8 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
       return;
     }
 
+    SModel myModelCopy = CopyUtil.copyModel(myModel);
+
     for (PsiJavaFile file : event.removed()) {
       myMps2PsiMapper.clearFile(file.getName());
     }
@@ -172,12 +175,12 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
         }
 
         SNodeId id = node.getNodeId();
-        SNode oldNode = myModel.getNode(id);
+        SNode oldNode = myModelCopy.getNode(id);
 
         if ((oldNode != null)) {
           SNodeOperations.replaceWithAnother(oldNode, node);
         } else {
-          myModel.addRootNode(node);
+          myModelCopy.addRootNode(node);
         }
 
         SetSequence.fromSet(roots).addElement(node);
@@ -186,7 +189,11 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
       if (SetSequence.fromSet(roots).isNotEmpty()) {
         MapSequence.fromMap(myRootsPerFile).put(file.getName(), roots);
       }
+
     }
+
+    myModel = myModelCopy;
+    myModel.setModelDescriptor(this);
   }
 
 
