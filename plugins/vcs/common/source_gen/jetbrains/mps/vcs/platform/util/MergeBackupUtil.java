@@ -57,7 +57,7 @@ public class MergeBackupUtil {
       File[] logfiles = logsDir.listFiles(new FilenameFilter() {
         @Override
         public boolean accept(File dir, String name) {
-          return name.matches("mpsvcs\\.log(\\.1)*") || name.matches("idea\\.log(\\.1)*");
+          return name.matches("mpsvcs\\.log(\\.1)?") || name.matches("mps\\.log(\\.1)?");
         }
       });
       File tmpLogDir = new File(tmp + File.separator + "logs");
