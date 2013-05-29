@@ -228,11 +228,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6619269785060746114" nodeInfo="nn">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6619269785060746115" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~SModelDescriptorStub%dfireModelStateChanged(jetbrains%dmps%dsmodel%dloading%dModelLoadingState,jetbrains%dmps%dsmodel%dloading%dModelLoadingState)%cvoid" resolveInfo="fireModelStateChanged" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="6619269785060746116" nodeInfo="nn">
-                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="gznm.~ModelLoadingState%dNOT_LOADED" resolveInfo="NOT_LOADED" />
-                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="gznm.~ModelLoadingState" resolveInfo="ModelLoadingState" />
-                </node>
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~SModelBase%dfireModelStateChanged(jetbrains%dmps%dsmodel%dloading%dModelLoadingState)%cvoid" resolveInfo="fireModelStateChanged" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="6619269785060746117" nodeInfo="nn">
                   <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="gznm.~ModelLoadingState%dFULLY_LOADED" resolveInfo="FULLY_LOADED" />
                   <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="gznm.~ModelLoadingState" resolveInfo="ModelLoadingState" />

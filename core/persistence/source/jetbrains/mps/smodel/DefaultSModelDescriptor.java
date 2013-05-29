@@ -106,8 +106,7 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
       if (oldState != myModel.getState()) {
         res.setModelDescriptor(this);
         // TODO FIXME listeners are invoked while holding the lock
-        fireModelStateChanged(oldState, myModel.getState());
-        fireModelProblemsUpdated();
+        fireModelStateChanged(myModel.getState());
       }
       return res;
     }

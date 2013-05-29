@@ -790,6 +790,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return result;
   }
 
+  @Override
   public org.jetbrains.mps.openapi.model.SModel getModel() {
     nodeRead();
 
@@ -839,25 +840,33 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private void referenceChanged(String role, org.jetbrains.mps.openapi.model.SReference reference, org.jetbrains.mps.openapi.model.SReference newValue) {
     SModelBase md = getRealModel();
     if (md == null || md instanceof FakeModelDescriptor) return;
-    ((EditableSModelBase) md).fireReferenceChanged(this, role, reference, newValue);
+    EditableSModelBase emd = (EditableSModelBase) md;
+    emd.fireReferenceChanged(this, role, reference, newValue);
+    emd.setChanged(true);
   }
 
   private void propertyChanged(String propertyName, String oldValue, String newValue) {
     SModelBase md = getRealModel();
     if (md == null || md instanceof FakeModelDescriptor) return;
-    ((EditableSModelBase) md).firePropertyChanged(this, propertyName, oldValue, newValue);
+    EditableSModelBase emd = (EditableSModelBase) md;
+    emd.firePropertyChanged(this, propertyName, oldValue, newValue);
+    emd.setChanged(true);
   }
 
   private void nodeAdded(String role, org.jetbrains.mps.openapi.model.SNode child) {
     SModelBase md = getRealModel();
     if (md == null || md instanceof FakeModelDescriptor) return;
-    ((EditableSModelBase) md).fireNodeAdded(this, role, child);
+    EditableSModelBase emd = (EditableSModelBase) md;
+    emd.fireNodeAdded(this, role, child);
+    emd.setChanged(true);
   }
 
   private void nodeRemoved(org.jetbrains.mps.openapi.model.SNode child, String role) {
     SModelBase md = getRealModel();
     if (md == null || md instanceof FakeModelDescriptor) return;
-    ((EditableSModelBase) md).fireNodeRemoved(this, role, child);
+    EditableSModelBase emd = (EditableSModelBase) md;
+    emd.fireNodeRemoved(this, role, child);
+    emd.setChanged(true);
   }
 
   public SModel getPersistentModel() {

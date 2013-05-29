@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ir53qvrf4qqhnqahk724kh7q80cabz">
+<dependencies version="2" modelHash="b6yncyl37p9837p4m8pxj2gtdz0xpmi">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
   <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" hash="-2cmmqnhee14dfjjk65czwkvhtuvlgjc" />
-  <common hash="4g14ogu51dcjw8m05ffcous9o6l5wy" dependsOnNodes="true">
+  <common hash="4c1n6lmz879d3abkymdm58vyuhjabe2" dependsOnNodes="true">
     <dep root="2990235398088186554" />
     <dep root="349375443596798661" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
@@ -12,13 +12,13 @@
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <file name="IconContainer.java" />
   </common>
-  <source id="2990235398088186554" name="Behavior" hash="-5dl14qm1c9rbuoos2zi6m885i05a62l" dependsOnCreated="true">
+  <source id="2990235398088186554" name="Behavior" hash="-36ix1pjdjz0rtr7p7zcj64fi5qb5utm" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <file name="IconResourceBundle_Behavior.java" />
   </source>
-  <source id="349375443596798661" name="Visibility" hash="brr3npd4cxxu21wzqie8lcqzi5gsw8i" dependsOnCreated="true">
+  <source id="349375443596798661" name="Visibility" hash="d3nvu7snpp1po1val8djt55kgzepq4s" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />

@@ -35,8 +35,7 @@ public class TextModelDescriptor extends EditableSModelBase {
       myModel = loadSModel();
       (myModel).setModelDescriptor(this);
       updateTimestamp();
-      fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
-      fireModelProblemsUpdated();
+      fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
   }

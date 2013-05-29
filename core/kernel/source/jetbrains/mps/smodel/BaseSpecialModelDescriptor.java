@@ -41,7 +41,7 @@ public abstract class BaseSpecialModelDescriptor extends SModelBase {
       if (mySModel == null) {
         mySModel = createModel();
         mySModel.setModelDescriptor(this);
-        fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
+        fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
       }
     }
     return mySModel;

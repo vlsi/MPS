@@ -190,7 +190,7 @@ public class ModelRepositoryComponent {
 
     private SModelListener myModelListener = new SModelAdapter() {
       @Override
-      public void modelLoadingStateChanged(SModel sm, ModelLoadingState oldState, ModelLoadingState newState) {
+      public void modelLoadingStateChanged(SModel sm, ModelLoadingState newState) {
         requestUpdate();
       }
     };
