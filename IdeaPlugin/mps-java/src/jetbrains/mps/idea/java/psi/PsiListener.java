@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.psi;
+package jetbrains.mps.idea.java.psi;
 
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -38,7 +38,7 @@ public interface PsiListener {
     Iterable<PsiFileSystemItem> getRemoved();
     Iterable<FSMove> getMoved();
     Iterable<FSRename> getRenamed();
-    Map<PsiFile,Set<PsiElement>> getChanged();
+    Iterable<PsiFile> getChanged();
   }
 
   public static class FSMove {

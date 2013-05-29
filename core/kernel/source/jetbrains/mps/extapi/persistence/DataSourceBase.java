@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
@@ -37,6 +38,17 @@ public abstract class DataSourceBase implements DataSource {
   }
 
   public void refresh() {
+  }
+
+  @NotNull
+  @Override
+  public String getLocation() {
+    return "unknown";
+  }
+
+  @Override
+  public boolean isReadOnly() {
+    return true;
   }
 
   @Override

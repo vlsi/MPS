@@ -23,6 +23,7 @@ import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.DiskMemoryConflictResolver;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelRootUtil;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
@@ -30,13 +31,17 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * evgeny, 11/21/12
@@ -45,16 +50,11 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditableSModelBase.class));
 
+  private final List<SModelChangeListener> myChangeListeners = new CopyOnWriteArrayList<SModelChangeListener>();
   private boolean myChanged = false;
 
-  protected EditableSModelBase(@NotNull SModelReference modelReference, @NotNull StreamDataSource source) {
+  protected EditableSModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
-  }
-
-  @Override
-  @NotNull
-  public StreamDataSource getSource() {
-    return (StreamDataSource) super.getSource();
   }
 
   @Override
@@ -65,6 +65,20 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   @Override
   public void setChanged(boolean changed) {
     myChanged = changed;
+  }
+
+  @Override
+  public void addRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    assertCanChange();
+    getSModelInternal().addRootNode(node);
+    fireNodeAdded(null, null, node);
+  }
+
+  @Override
+  public void removeRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    assertCanChange();
+    getSModelInternal().removeRootNode(node);
+    fireNodeRemoved(null, null, node);
   }
 
   @Override
@@ -180,8 +194,8 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
       throw new UnsupportedOperationException("cannot change model file on non-file data source");
     }
 
-    String oldFqName = getReference().getModelName();
-    fireBeforeModelRenamed(new SModelRenamedEvent(this, oldFqName, newModelName));
+    SModelReference oldName = getReference();
+    fireBeforeModelRenamed(new SModelRenamedEvent(this, oldName.getModelName(), newModelName));
 
     // TODO update SModelId (if it contains modelName)
     //if(getReference().getModelId().getModelName() != null) { }
@@ -215,7 +229,43 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
     updateReferenceAfterRename(newModelReference);
 
-    fireModelRenamed(new SModelRenamedEvent(this, oldFqName, newModelName));
+    fireModelRenamed(new SModelRenamedEvent(this, oldName.getModelName(), newModelName));
+    fireModelRenamed(oldName);
+  }
+
+  @Override
+  public void addChangeListener(SModelChangeListener l) {
+    myChangeListeners.add(l);
+  }
+
+  @Override
+  public void removeChangeListener(SModelChangeListener l) {
+    myChangeListeners.remove(l);
+  }
+
+  public void fireReferenceChanged(SNode node, String role, SReference oldValue, SReference newValue) {
+    for (SModelChangeListener l : myChangeListeners) {
+      l.referenceChanged(node, role, oldValue, newValue);
+    }
+  }
+
+
+  public void firePropertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
+    for (SModelChangeListener l : myChangeListeners) {
+      l.propertyChanged(node, propertyName, oldValue, newValue);
+    }
+  }
+
+  public void fireNodeAdded(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
+    for (SModelChangeListener l : myChangeListeners) {
+      l.nodeAdded(node, role, child);
+    }
+  }
+
+  public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
+    for (SModelChangeListener l : myChangeListeners) {
+      l.nodeRemoved(node, role, child);
+    }
   }
 
   public String toString() {

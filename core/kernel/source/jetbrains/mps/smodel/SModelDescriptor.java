@@ -37,14 +37,6 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   @Deprecated
   /**
-   * Replace with implemented in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  SModule getModule();
-
-
-  @Deprecated
-  /**
    * Replace with SNodeOperations.isGeneratable in java code, use migration in MPS
    * @Deprecated in 3.0
    */

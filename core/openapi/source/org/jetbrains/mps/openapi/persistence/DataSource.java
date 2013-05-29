@@ -15,11 +15,17 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Represents a source of data to build models from.
  * For implementation consider extending {@link jetbrains.mps.extapi.persistence.DataSourceBase}.
  */
 public interface DataSource {
+
+  @NotNull
+  String getLocation();
+
   /**
    * Registers listeners who need to be notified about changes in the underlying data source.
    * It is the responsibility of the DataSource to detect such updates and notify the listeners.
@@ -34,4 +40,6 @@ public interface DataSource {
    * @return 0 if timestamp is not supported for the source, or -1 if the source is dead (like when file is deleted)
    */
   long getTimestamp();
+
+  boolean isReadOnly();
 }

@@ -127,6 +127,17 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   }
 
   @Override
+  public boolean isReadOnly() {
+    return false;
+  }
+
+  @NotNull
+  @Override
+  public String getLocation() {
+    return "Folders(" + Arrays.toString(getPaths().toArray()) + ")";
+  }
+
+  @Override
   public void addListener(DataSourceListener listener) {
     synchronized (LOCK) {
       if (myListeners.isEmpty()) {
