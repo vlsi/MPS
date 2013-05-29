@@ -90,6 +90,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettings;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
@@ -370,6 +371,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private KeymapHandler<KeyEvent> myKeymapHandler = new AWTKeymapHandler();
   private ActionHandler myActionHandler = new ActionHandlerImpl(this);
+
+  private ConceptEditorHintSettings mySettings;
 
   public EditorComponent(@NotNull SRepository repository) {
     this(repository, false, false);
@@ -3355,6 +3358,20 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public ActionHandler getActionHandler() {
     return myActionHandler;
+  }
+
+  public synchronized void setSettings(ConceptEditorHintSettings settings) {
+    if (mySettings == null) {
+      mySettings = new ConceptEditorHintSettings();
+    }
+    mySettings.putAll(settings);
+  }
+
+  public synchronized ConceptEditorHintSettings getSettings() {
+    if (mySettings == null) {
+      mySettings = new ConceptEditorHintSettings();
+    }
+    return mySettings;
   }
 
   private class ReferenceUnderliner {
