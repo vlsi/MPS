@@ -37534,7 +37534,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Integration" />
     <property name="name" nameId="tpck.1169194664001" value="IDEAEditorTabs" />
     <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3767536026883611630" nodeInfo="nn">
-      <property name="value" nameId="tpee.1070475926801" value="EditorTabsGroup" />
+      <property name="value" nameId="tpee.1070475926801" value="EditorTabPopupMenu" />
     </node>
     <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="3767536026883421757" nodeInfo="ng" />
   </root>

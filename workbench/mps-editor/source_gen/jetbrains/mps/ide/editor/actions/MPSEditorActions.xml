@@ -121,6 +121,7 @@
     <action id="jetbrains.mps.ide.editor.actions.MoveUp_Action" class="jetbrains.mps.ide.editor.actions.MoveUp_Action">
       <keyboard-shortcut first-keystroke=" UP" keymap="$default" />
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.PushEditorHints_Action" class="jetbrains.mps.ide.editor.actions.PushEditorHints_Action"></action>
     <action id="jetbrains.mps.ide.editor.actions.RootEnd_Action" class="jetbrains.mps.ide.editor.actions.RootEnd_Action">
       <keyboard-shortcut first-keystroke="ctrl END" keymap="$default" />
     </action>
@@ -291,6 +292,10 @@
     </group>
     <group id="jetbrains.mps.ide.editor.actions.SuppressErrorsGroup_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.DoNotSuppressErrors_Action" />
+    </group>
+    <group id="jetbrains.mps.ide.editor.actions.EditorTabActions_ActionGroup">
+      <reference ref="jetbrains.mps.ide.editor.actions.PushEditorHints_Action" />
+      <add-to-group group-id="EditorTabPopupMenu" anchor="last" />
     </group>
     <group id="jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup" popup="true"></group>
     <group id="jetbrains.mps.ide.editor.actions.SpecificIntentions_ActionGroup">
