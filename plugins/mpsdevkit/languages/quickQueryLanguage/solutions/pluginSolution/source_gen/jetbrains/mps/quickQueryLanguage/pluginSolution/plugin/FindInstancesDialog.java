@@ -201,11 +201,7 @@ public class FindInstancesDialog extends DialogWrapper {
       return;
     }
     myDisposed = true;
-    myModelAccess.runWriteInEDT(new Runnable() {
-      public void run() {
-        myEditor.disposeEditor();
-      }
-    });
+    // <node> 
     super.dispose();
   }
 
