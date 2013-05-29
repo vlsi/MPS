@@ -5,13 +5,12 @@ package jetbrains.mps.ide.embeddableEditor;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
-import java.util.concurrent.Future;
 import com.intellij.openapi.application.ApplicationManager;
-import java.util.concurrent.Callable;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
@@ -19,20 +18,21 @@ import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
+import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.concurrent.ExecutionException;
 
 public class MakeUtils {
-  public static boolean make(SRepository repo, final IOperationContext context, final SModel model) {
+  public static void make(SRepository repo, final IOperationContext context, final SModel model, final _FunctionTypes._void_P1_E0<? super Boolean> callback) {
     // todo: move out from embeddableEditor 
     // <node> 
 
     final IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
 
-    Future<Boolean> data = ApplicationManager.getApplication().executeOnPooledThread(new Callable<Boolean>() {
-      public Boolean call() throws Exception {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
         IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
           @Override
           public <T extends IOption> T relayQuery(IQuery<T> query) {
@@ -43,22 +43,20 @@ public class MakeUtils {
         MakeSession session = new MakeSession(context, null, true);
         if (IMakeService.INSTANCE.get().openNewSession(session)) {
           Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(context, Sequence.<SModel>singleton(model)).resources(false), scr, ctl);
-          IResult result = future.get();
-          return result.isSucessful();
+          try {
+            callback.invoke(future.get().isSucessful());
+          } catch (ExecutionException e) {
+            // todo: log 
+            callback.invoke(false);
+          } catch (InterruptedException e) {
+            // todo: log 
+            callback.invoke(false);
+          }
         }
 
-        return false;
+        // todo: log 
+        callback.invoke(false);
       }
     });
-
-    try {
-      return data.get();
-    } catch (ExecutionException e) {
-      // log 
-      return false;
-    } catch (InterruptedException e) {
-      // log 
-      return false;
-    }
   }
 }

@@ -51,13 +51,13 @@ public class TempModule extends AbstractModule implements SModule, MPSModuleOwne
     setModuleDescriptor(myDescriptor, false);
 
     if (withSourceGen) {
-      mySourceGen = createTempDirectory(reference.toString() + "_source_gen");
+      mySourceGen = createTempDirectory("TempModule_source_gen");
     } else {
       mySourceGen = null;
     }
 
     if (withJavaFacet) {
-      IFile classesGen = createTempDirectory(reference.toString() + "_classes_gen");
+      IFile classesGen = createTempDirectory("TempModule_classes_gen");
       if (classesGen != null) {
         myJavaModuleFacet = new TempModuleJavaFacet(classesGen);
       } else {
@@ -72,6 +72,10 @@ public class TempModule extends AbstractModule implements SModule, MPSModuleOwne
     return true;
   }
 
+  @Override
+  public boolean isReadOnly() {
+    return false;
+  }
 
   @Override
   public IFile getOutputPath() {
@@ -80,7 +84,7 @@ public class TempModule extends AbstractModule implements SModule, MPSModuleOwne
 
   @Override
   public Iterable<SModuleFacet> getFacets() {
-    return myJavaModuleFacet != null ? Collections.<SModuleFacet>singleton(myJavaModuleFacet) : null;
+    return myJavaModuleFacet != null ? Collections.<SModuleFacet>singleton(myJavaModuleFacet) : Collections.<SModuleFacet>emptySet();
   }
 
   @Override
