@@ -16,29 +16,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
-import java.util.Set;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import java.awt.Dimension;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.embeddableEditor.MakeUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
@@ -62,7 +49,7 @@ public class FindInstancesDialog extends DialogWrapper {
   private Project myProject;
 
 
-  public FindInstancesDialog(final SNode concept, IOperationContext context, final SModule module) {
+  public FindInstancesDialog(final SNode concept, IOperationContext context, SModule module) {
     super(ProjectHelper.toIdeaProject(context.getProject()));
     this.setTitle("Find Instances by condition");
     this.myContext = context;
@@ -74,27 +61,11 @@ public class FindInstancesDialog extends DialogWrapper {
 
     myModelAccess.executeCommand(new Runnable() {
       public void run() {
-        myTempModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModuleWithSourceAndClassesGen());
-        myNode = _quotation_createNode_vfh0rq_a0b0a0a9a11((concept == null ?
+        myNode = _quotation_createNode_vfh0rq_a0a0a0a9a11((concept == null ?
           SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626") :
           concept
         ));
-        myTempModel.addRootNode(myNode);
-
-        ((SModelInternal) myTempModel).addDevKit(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference());
-
-        Set<Language> languagesForImport = SetSequence.fromSet(new HashSet<Language>());
-        SetSequence.fromSet(languagesForImport).addElement(BootstrapLanguages.collectionsLanguage());
-        SetSequence.fromSet(languagesForImport).addElement((Language) module);
-        SetSequence.fromSet(languagesForImport).addElement((Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c")));
-        for (Language language : SetSequence.fromSet(languagesForImport)) {
-          ((AbstractModule) myTempModel.getModule()).addDependency(language.getModuleReference(), false);
-
-          ((AbstractModule) myTempModel.getModule()).addUsedLanguage(language.getModuleReference());
-          ((SModelInternal) myTempModel).addLanguage(language.getModuleReference());
-        }
-
-        TemporaryModels.getInstance().addMissingModuleImports(myTempModel);
+        myTempModel = QuickQueryUtils.createTemporaryModelWithQuery(myNode);
 
         myEditor = new SimpleEmbeddableEditor(myProject, true);
         myEditor.editNode(myNode);
@@ -138,32 +109,15 @@ public class FindInstancesDialog extends DialogWrapper {
   }
 
   private void executeQuery() {
-    final Wrappers._T<String> queryClassFqName = new Wrappers._T<String>();
     myModelAccess.runReadAction(new Runnable() {
       public void run() {
-        queryClassFqName.value = jetbrains.mps.util.SNodeOperations.getModelLongName(myTempModel) + "." + QueryExecutor.GENERATED_QUERY_NAME;
-      }
-    });
+        Query query = QuickQueryUtils.loadCompiledQuery(myNode);
+        if (query == null) {
+          return;
+        }
 
-    ClassLoader temporaryModuleClassLoader = ClassLoaderManager.getInstance().getClassLoader(myTempModel.getModule());
-    final Wrappers._T<Query> query = new Wrappers._T<Query>(null);
-    try {
-      query.value = (Query) Class.forName(queryClassFqName.value, true, temporaryModuleClassLoader).newInstance();
-    } catch (ClassNotFoundException ignore) {
-      LOG.warn("Exception on query loading", ignore);
-    } catch (IllegalAccessException ignore) {
-      LOG.warn("Exception on query loading", ignore);
-    } catch (InstantiationException ignore) {
-      LOG.warn("Exception on query loading", ignore);
-    }
-    if (query.value == null) {
-      return;
-    }
-
-    myModelAccess.runReadAction(new Runnable() {
-      public void run() {
         final FindUsagesScope scope = FindInstancesDialog.this.myScope.getOptions().getScope(FindInstancesDialog.this.myContext, null);
-        FindInstancesDialog.this.executeQuery(FindInstancesDialog.this.myContext.getProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+        FindInstancesDialog.this.executeQuery(FindInstancesDialog.this.myContext.getProject(), query, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
       }
     });
   }
@@ -199,7 +153,7 @@ public class FindInstancesDialog extends DialogWrapper {
     super.dispose();
   }
 
-  private static SNode _quotation_createNode_vfh0rq_a0b0a0a9a11(Object parameter_1) {
+  private static SNode _quotation_createNode_vfh0rq_a0a0a0a9a11(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
