@@ -97,6 +97,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
 
   @Override
   public void dispose() {
+    super.dispose();
     PsiChangesWatcher w = myIdeaModule.getProject().getComponent(PsiChangesWatcher.class);
     w.removeListener(this);
   }
