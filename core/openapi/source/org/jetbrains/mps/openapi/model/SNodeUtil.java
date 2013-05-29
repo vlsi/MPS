@@ -75,7 +75,7 @@ public class SNodeUtil {
       }
 
       SNode anchor = node.getPrevSibling();
-      String role = nodeParent.getRoleOf(node);
+      String role = node.getRoleInParent();
       assert role != null;
       // old and new child can have the same node Id
       // thus it is important to remove old child first
@@ -92,7 +92,7 @@ public class SNodeUtil {
     String roleText = "";
     if (node.getModel() != null) {
       SNode parent = node.getParent();
-      roleText = parent == null ? "[root]" : "[" + parent.getRoleOf(node) + "]";
+      roleText = parent == null ? "[root]" : "[" + node.getRoleInParent() + "]";
     }
     String nameText;
     String modelName;
