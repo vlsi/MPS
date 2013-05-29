@@ -40,12 +40,6 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
   }
 
   @Override
-  public EditorCell createEditorCell(EditorContext context) {
-    EditorCell result = super.createEditorCell(context);
-    return result;
-  }
-
-  @Override
   protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
     AbstractCellProvider inlineComponent = myAuxiliaryCellProvider;
     myAuxiliaryCellProvider.setSNode(effectiveNode);
