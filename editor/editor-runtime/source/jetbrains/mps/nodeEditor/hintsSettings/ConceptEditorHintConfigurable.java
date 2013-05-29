@@ -35,12 +35,10 @@ import javax.swing.JComponent;
 public class ConceptEditorHintConfigurable implements SearchableConfigurable {
   private ConceptEditorHintPreferencesPage myPage;
   private final Project myProject;
-  private final FileEditorManager myFileEditorManager;
 
 
-  public ConceptEditorHintConfigurable(Project project, FileEditorManager fileEditorManager) {
+  public ConceptEditorHintConfigurable(Project project) {
     myProject = project;
-    myFileEditorManager = fileEditorManager;
   }
 
   @NotNull
@@ -91,7 +89,7 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (EditorComponent component : EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true)) {
+        for (EditorComponent component : EditorComponentUtil.getAllEditorComponents(FileEditorManager.getInstance(myProject), true)) {
           component.rebuildEditorContent();
         }
       }

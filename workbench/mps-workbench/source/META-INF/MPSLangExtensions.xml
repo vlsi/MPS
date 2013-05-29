@@ -86,7 +86,7 @@
   <projectConfigurable instance="jetbrains.mps.ide.codeStyle.CodeStyleSettingsConfigurable" id="codeStyle" order="after colors"/>
 
   <!--Editor Hints-->
-  <projectConfigurable instance="jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintConfigurable" order="after codeStyle"/>
+  <projectConfigurable instance="jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintConfigurable" displayName="Editor hints" order="after codeStyle" nonDefaultProject="true"/>
 
 
   <!--<projectService serviceInterface="com.intellij.semantic.SemService" serviceImplementation="com.intellij.semantic.SemServiceImpl"/>
