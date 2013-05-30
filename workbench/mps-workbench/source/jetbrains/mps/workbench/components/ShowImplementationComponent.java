@@ -25,7 +25,7 @@ import com.intellij.ui.CollectionComboBoxModel;
 import com.intellij.ui.ColoredListCellRenderer;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.SideBorder;
-import jetbrains.mps.ide.embeddableEditor.SimpleEmbeddableEditor;
+import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -49,7 +49,7 @@ public class ShowImplementationComponent extends JPanel {
   private ComboBox myNodeChooser;
   private JLabel myLocationLabel = new JLabel("");
   private JLabel myCountLabel = new JLabel("0 of 0");
-  private SimpleEmbeddableEditor myEditor;
+  private EmbeddableEditor myEditor;
   private int mySelectedIndex = -1;
   private JBPopup myPopup;
   private Project myProject;
@@ -67,7 +67,7 @@ public class ShowImplementationComponent extends JPanel {
 
     myProject = context.getProject();
 
-    myEditor = new SimpleEmbeddableEditor(myProject, false);
+    myEditor = new EmbeddableEditor(myProject, false);
     myEditor.editNode(myImplNodes.get(0).myNode);
 
     init();

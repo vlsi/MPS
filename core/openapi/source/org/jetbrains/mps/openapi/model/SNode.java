@@ -52,10 +52,6 @@ public interface SNode {
    */
   SModel getModel();
 
-  void attach(SRepository repo);
-
-  void detach();
-
   /**
    * Uniquely identifies the node within its containing model. May also be null.
    */
@@ -133,8 +129,6 @@ public interface SNode {
    * Returns an immutable collection of children in the specified role.
    */
   Iterable<? extends SNode> getChildren(String role);
-
-  String getRoleOf(SNode child);
 
   /**
    * Returns an immutable collection of all children.

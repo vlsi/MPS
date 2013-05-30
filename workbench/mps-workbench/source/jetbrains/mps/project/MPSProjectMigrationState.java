@@ -35,12 +35,22 @@ import java.util.List;
  */
 
 
-public class MPSProjectMigrationState extends AbstractProjectComponent {
+@State(
+    name = "MPSProjectMigrationState",
+    storages = {
+        @Storage(
+            id = "other",
+            file = "$PROJECT_FILE$"
+        )
+    }
+)
+public class MPSProjectMigrationState extends AbstractProjectComponent  implements PersistentStateComponent<MPSProjectMigrationState.MyState>{
 
   private List<MPSProjectMigrationListener> myMigrationListeners =
     Collections.synchronizedList(new ArrayList<MPSProjectMigrationListener>());
   private boolean myMigrationInProgress = false;
   private Object myAgent;
+  private MyState myState;
 
   protected MPSProjectMigrationState(com.intellij.openapi.project.Project project, MPSProjectVersion version) {
     super(project);
@@ -69,6 +79,7 @@ public class MPSProjectMigrationState extends AbstractProjectComponent {
   public void migrationFinished () {
     this.myMigrationInProgress = false;
     myProject.getComponent(MPSProjectVersion.class).setVersion(MPSProjectVersion.CURRENT);
+    myState = null;
     fireMigrationEvent(Event.FINISHED);
   }
 
@@ -94,7 +105,26 @@ public class MPSProjectMigrationState extends AbstractProjectComponent {
       event.fire(listener, myProject);
     }
   }
-  
+
+  @Nullable
+  @Override
+  public MyState getState() {
+    return myState;
+  }
+
+  @Override
+  public void loadState(MyState state) {
+    myState = state;
+  }
+
+  public void setCurrentStep(int n) {
+    if (myState == null)  myState = new MyState();
+    myState.step = n;
+  }
+  public int getCurrentStep() {
+    return myState == null ? 0 : myState.step;
+  }
+
   private static enum Event {
     STARTED,
     FINISHED,
@@ -113,5 +143,9 @@ public class MPSProjectMigrationState extends AbstractProjectComponent {
           break;
       }
     }
+  }
+
+  public static class MyState {
+    public int step = 0;
   }
 }

@@ -46,7 +46,7 @@ public class EvaluationPanel extends EvaluationUi {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SNode node = myEvaluationModel.getNode();
-        myEditor = new EmbeddableEditor(myEvaluationModel.getContext().getProject(), node.getModel());
+        myEditor = new EmbeddableEditor(myEvaluationModel.getContext().getProject(), true);
         myEditor.editNode(node);
       }
     });
@@ -58,7 +58,7 @@ public class EvaluationPanel extends EvaluationUi {
 
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
     splitPane.setResizeWeight(0.8);
-    splitPane.setTopComponent(myEditor.getComponenet());
+    splitPane.setTopComponent(myEditor);
     splitPane.setBottomComponent(new JBScrollPane(myTree));
 
     if (Properties.IS_DEVELOPER_MODE) {
@@ -68,7 +68,7 @@ public class EvaluationPanel extends EvaluationUi {
       add(splitPane);
     }
 
-    myEditor.getComponenet().registerKeyboardAction(new AbstractAction() {
+    myEditor.registerKeyboardAction(new AbstractAction() {
       @Override
       public void actionPerformed(ActionEvent p0) {
         evaluate();
@@ -105,10 +105,10 @@ public class EvaluationPanel extends EvaluationUi {
         if (myResultEditor == null) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              myResultEditor = new EmbeddableEditor(myEvaluationModel.getContext().getProject(), generatedResult.getModel());
+              myResultEditor = new EmbeddableEditor(myEvaluationModel.getContext().getProject(), true);
             }
           });
-          myTabbedPane.add("Generated Result", myResultEditor.getComponenet());
+          myTabbedPane.add("Generated Result", myResultEditor);
           myTabbedPane.validate();
         }
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {

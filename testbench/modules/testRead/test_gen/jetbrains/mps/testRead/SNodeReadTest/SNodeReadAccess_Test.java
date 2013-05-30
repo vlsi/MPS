@@ -68,12 +68,6 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_getRoleOf() throws Throwable {
-    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)");
-    this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getRoleOf", true);
-  }
-
-  @Test
   public void test_getUserObject() throws Throwable {
     this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getUserObject", true);
@@ -230,20 +224,6 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       sNode.getReferenceTarget("");
 
       this.assertMethod("public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getReferenceTarget(java.lang.String)", listener.getResults().o1);
-    }
-
-    public void test_getRoleOf() throws Exception {
-      this.addNodeById("8150353254540236423");
-      this.addNodeById("8150353254540236549");
-      this.addNodeById("4195712261513743410");
-      SNode sNode = SNodeOperations.cast(this.getNodeById("8150353254540236424"), "jetbrains.mps.baseLanguage.structure.BlockStatement");
-
-      StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
-      NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
-
-      sNode.getRoleOf(sNode);
-
-      this.assertMethod("public java.lang.String jetbrains.mps.smodel.SNode.getRoleOf(jetbrains.mps.smodel.SNode)", listener.getResults().o1);
     }
 
     public void test_getUserObject() throws Exception {

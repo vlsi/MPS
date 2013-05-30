@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.ide.embeddableEditor.SimpleEmbeddableEditor;
+import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.project.Project;
 import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
@@ -40,7 +40,7 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
   private ChangeMethodSignatureParameters myParameters;
   private IOperationContext myOperationContext;
   private SModel myTempModel;
-  private SimpleEmbeddableEditor myEditor;
+  private EmbeddableEditor myEditor;
   private Project myProject;
   private List<ChangeMethodSignatureRefactoring> myRefactorings = null;
 
@@ -71,7 +71,7 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
         myTempModel.addRootNode(baseMethodDeclaration);
         TemporaryModels.getInstance().addMissingModuleImports(myTempModel);
 
-        ChangeMethodSignatureDialog.this.myEditor = new SimpleEmbeddableEditor(myProject, true);
+        ChangeMethodSignatureDialog.this.myEditor = new EmbeddableEditor(myProject, true);
         myEditor.editNode(baseMethodDeclaration);
       }
     });

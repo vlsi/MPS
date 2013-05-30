@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.references;
 
 import gnu.trove.THashSet;
+import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.util.PairMap;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -58,10 +59,10 @@ public class UnregisteredNodes {
   public void clear() {
     synchronized (myLock) {
       for (SNode node : myMap.values()) {
-        node.detach();
+        ((SNodeBase) node).detach();
       }
       for (SNode node : myNodesWithoutRefs) {
-        node.detach();
+        ((SNodeBase) node).detach();
       }
       myMap.clear();
       myNodesWithoutRefs.clear();

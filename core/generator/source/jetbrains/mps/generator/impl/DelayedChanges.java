@@ -143,7 +143,7 @@ public class DelayedChanges {
               myGenerator.rootReplaced(myChildToReplace, child);
             }
           } else {
-            String childRole = parent.getRoleOf(myChildToReplace);
+            String childRole = myChildToReplace.getRoleInParent();
             RoleValidationStatus status = myGenerator.validateChild(parent, childRole, child);
             if (status != null) {
               status.reportProblem(false, "",

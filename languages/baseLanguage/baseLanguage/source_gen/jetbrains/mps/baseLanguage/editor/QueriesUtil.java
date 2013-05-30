@@ -80,7 +80,7 @@ public class QueriesUtil {
       }
     }
     for (SNode attribute : ListSequence.fromList(AttributeOperations.getAttributeList(oldNode, new IAttributeDescriptor.AllAttributes()))) {
-      String role = oldNode.getRoleOf(attribute);
+      String role = attribute.getRoleInParent();
       newNode.addChild(role, SNodeOperations.copyNode(attribute));
     }
     return newNode;
