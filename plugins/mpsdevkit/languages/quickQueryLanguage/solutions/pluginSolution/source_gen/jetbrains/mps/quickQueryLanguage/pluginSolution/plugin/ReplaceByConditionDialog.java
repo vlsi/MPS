@@ -4,7 +4,6 @@ package jetbrains.mps.quickQueryLanguage.pluginSolution.plugin;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
@@ -20,8 +19,8 @@ import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ReplaceByConditionDialog extends BaseQQDialog {
-  public ReplaceByConditionDialog(SNode concept, IOperationContext context, SModule module) {
-    super("Modify Instances by condition", "&Modify", concept, context, module);
+  public ReplaceByConditionDialog(SNode concept, IOperationContext context) {
+    super("Modify Instances by condition", "&Modify", concept, context);
   }
 
 

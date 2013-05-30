@@ -4,7 +4,6 @@ package jetbrains.mps.quickQueryLanguage.pluginSolution.plugin;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
@@ -19,8 +18,8 @@ import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class FindByConditionDialog extends BaseQQDialog {
-  public FindByConditionDialog(SNode concept, IOperationContext context, SModule module) {
-    super("Find Instances by condition", "&Find", concept, context, module);
+  public FindByConditionDialog(SNode concept, IOperationContext context) {
+    super("Find Instances by condition", "&Find", concept, context);
   }
 
 
