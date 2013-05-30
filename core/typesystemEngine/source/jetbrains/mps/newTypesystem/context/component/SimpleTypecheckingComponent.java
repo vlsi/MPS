@@ -23,6 +23,7 @@ import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -239,7 +240,7 @@ import java.util.Set;
       computeTypesSpecial(node, false, additionalNodes, false, initialNode);
       type = typeCalculated(initialNode);
       if (type == null) {
-        if (node.getModel() != null && node.getParent() == null) {
+        if (node.getModel() != null && node.getModel().isRoot(node)) {
           //System.out.println("Root: " + initialNode.getDebugText());
           computeTypes(initialNode, node);
           type = getType(initialNode);

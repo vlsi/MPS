@@ -21,6 +21,7 @@ import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -451,7 +452,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        return getSNode().getModel() != null && getSNode().getParent() == null;
+        return getSNode().getModel() != null && getSNode().getModel().isRoot(getSNode());
       }
     })) return false;
 

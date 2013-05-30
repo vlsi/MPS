@@ -18,11 +18,11 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -155,7 +155,8 @@ public class SNodeOperations {
    * todo rewrite the code using this
    */
   public static boolean isRoot(SNode n) {
-    return n.getModel() != null && n.getParent() == null;
+    SModel model = ((SNode) n).getModel();
+    return model != null && model.isRoot(((SNode) n));
   }
 
   /**

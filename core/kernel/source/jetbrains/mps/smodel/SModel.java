@@ -132,7 +132,7 @@ public class SModel implements SModelData {
     enforceFullLoad();
     if (myRoots.contains(node)) return;
     org.jetbrains.mps.openapi.model.SModel model = node.getModel();
-    if (model != null && model != getModelDescriptor() && node.getParent() == null) {
+    if (model != null && model != getModelDescriptor() && model.isRoot(node)) {
       model.removeRootNode(node);
     } else {
       org.jetbrains.mps.openapi.model.SNode parent = node.getParent();

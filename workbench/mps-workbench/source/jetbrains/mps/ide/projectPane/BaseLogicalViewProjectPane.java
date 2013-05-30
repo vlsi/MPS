@@ -63,6 +63,7 @@ import jetbrains.mps.smodel.ModelAccessAdapter;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
@@ -75,6 +76,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.omg.CORBA.INTERNAL;
 
 import javax.swing.JTree;
 import javax.swing.tree.TreeNode;
@@ -374,7 +376,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   public void editNode(final SNode node, final IOperationContext context, final boolean focus) {
     ModelAccess.assertLegalWrite();
-    NavigationSupport.getInstance().openNode(context, node, focus, !(node.getModel() != null && node.getParent() == null));
+    NavigationSupport.getInstance().openNode(context, node, focus, !(node.getModel() != null && node.getModel().isRoot(node)));
   }
 
   public <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {

@@ -230,7 +230,7 @@ public class BookmarksTree extends MPSTree {
         public void run() {
           SNode openNode = getSNode();
           if (openNode == null) return;
-          NavigationSupport.getInstance().openNode(getOperationContext(), openNode, true, !(openNode.getModel() != null && openNode.getParent() == null));
+          NavigationSupport.getInstance().openNode(getOperationContext(), openNode, true, !(openNode.getModel() != null && openNode.getModel().isRoot(openNode)));
         }
       });
     }

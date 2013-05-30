@@ -61,7 +61,7 @@ public class SNodeUtil {
     SNode nodeParent = node.getParent();
     if (nodeParent == null) {
       SModel model = node.getModel();
-      if (model != null && node.getParent() == null) {
+      if (model != null && model.isRoot(node)) {
         node.delete();
         model.addRootNode(replacer);
       }

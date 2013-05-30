@@ -19,10 +19,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.*;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.ErrorReferenceDescriptor;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.OkReferenceDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -54,7 +51,7 @@ public class ModelConstraints {
 
   // is it possible: replace node -> node with concept conceptFqName?
   public static boolean canBeReplaced(@NotNull SNode node, @NotNull String conceptFqName) {
-    if (node.getModel() != null && node.getParent() == null) {
+    if (node.getModel() != null && node.getModel().isRoot(node)) {
       return canBeRoot(conceptFqName, node.getModel(), null);
     }
 

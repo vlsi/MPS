@@ -63,6 +63,9 @@ public interface SModel {
    */
   Iterable<SNode> getRootNodes();
 
+  // TODO remove
+  boolean isRoot(SNode node);
+
   /**
    * Add the node as a root to this model.
    * After the operation each node in the underlying subtree will have getModel() set to return "this model".

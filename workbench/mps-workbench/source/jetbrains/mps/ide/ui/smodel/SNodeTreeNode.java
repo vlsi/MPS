@@ -114,7 +114,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     setText(caclulateNodeTextPresentation());
-    setAutoExpandable(myNode != null && !(myNode.getModel() != null && myNode.getParent() == null));
+    setAutoExpandable(myNode != null && !(myNode.getModel() != null && myNode.getModel().isRoot(myNode)));
   }
 
   public SModelTreeNode getSModelModelTreeNode() {

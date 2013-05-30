@@ -39,7 +39,7 @@ public abstract class ReferenceInfo_TemplateBase extends ReferenceInfo {
     SNode outputTargetRoot = outputTarget.getContainingRoot();
     SNode outputSourceRoot = myOutputSourceNode.getContainingRoot();
     SModel model = outputTargetRoot.getModel();
-    if (model == null || !(outputTargetRoot.getParent() == null)) {
+    if (model == null || !model.isRoot(outputTargetRoot)) {
       SNode inputSourceRoot = generator.getOriginalRootByGenerated(outputSourceRoot);
       SNode inputTargetRoot = generator.getOriginalRootByGenerated(outputTargetRoot);
       if (inputTargetRoot != inputSourceRoot) {

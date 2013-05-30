@@ -119,7 +119,7 @@ public class FindUsagesDialog extends DialogWrapper {
           if (finderNode == null) return;
           FindUsagesDialog.this.doCancelAction();
           IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-          NavigationSupport.getInstance().openNode(context, finderNode, true, !(finderNode.getModel() != null && finderNode.getParent() == null));
+          NavigationSupport.getInstance().openNode(context, finderNode, true, !(finderNode.getModel() != null && finderNode.getModel().isRoot(finderNode)));
         }
       });
     }
