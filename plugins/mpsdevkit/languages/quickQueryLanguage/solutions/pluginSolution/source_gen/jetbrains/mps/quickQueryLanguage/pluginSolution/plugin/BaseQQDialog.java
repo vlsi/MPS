@@ -13,7 +13,6 @@ import jetbrains.mps.ide.embeddableEditor.SimpleEmbeddableEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import java.awt.Dimension;
@@ -36,14 +35,14 @@ public abstract class BaseQQDialog extends DialogWrapper {
   private Project myProject;
 
 
-  public BaseQQDialog(String title, String okButtonText, final SNode concept, IOperationContext context) {
-    super(ProjectHelper.toIdeaProject(context.getProject()));
+  public BaseQQDialog(String title, String okButtonText, Project project, final SNode concept) {
+    super(ProjectHelper.toIdeaProject(project));
     this.setTitle(title);
-    this.myModelAccess = context.getProject().getRepository().getModelAccess();
+    this.myModelAccess = project.getRepository().getModelAccess();
     this.setModal(false);
     this.setOKButtonText(okButtonText);
     this.setCancelButtonText("&Cancel");
-    myProject = context.getProject();
+    myProject = project;
 
     myModelAccess.executeCommand(new Runnable() {
       public void run() {
