@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.ide.embeddableEditor.SimpleEmbeddableEditor;
 import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
@@ -18,8 +19,11 @@ import java.awt.Dimension;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 import javax.swing.JComponent;
-import jetbrains.mps.ide.embeddableEditor.MakeUtils;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 
 public abstract class BaseQQDialog extends DialogWrapper {
   private static Logger LOG = LogManager.getLogger(BaseQQDialog.class);
@@ -28,6 +32,7 @@ public abstract class BaseQQDialog extends DialogWrapper {
   private SimpleEmbeddableEditor myEditor;
 
   private final Project myProject;
+  private final ModelAccess myModelAccess;
 
   private SNode myQueryNode;
   private SModel myTempModel;
@@ -45,6 +50,7 @@ public abstract class BaseQQDialog extends DialogWrapper {
     setModal(false);
 
     myProject = project;
+    myModelAccess = project.getRepository().getModelAccess();
 
     myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
@@ -80,21 +86,39 @@ public abstract class BaseQQDialog extends DialogWrapper {
 
   @Override
   public void doOKAction() {
-    MakeUtils.make(myProject, myTempModel, new _FunctionTypes._void_P1_E0<Boolean>() {
-      public void invoke(Boolean isSuccessful) {
-        // todo: enable after modal in doOkAction! 
-        // <node> 
+    ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(myProject), "Compiling", false) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        final Project mpsProject = BaseQQDialog.this.myProject;
 
+        boolean isSuccessful = QuickQueryUtils.make(mpsProject, myTempModel);
         if (isSuccessful) {
-          myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+          if (myDisposed) {
+            return;
+          }
+
+          myModelAccess.runReadAction(new Runnable() {
             public void run() {
               Query query = QuickQueryUtils.loadCompiledQuery(myQueryNode);
+
               if (query == null) {
+                myModelAccess.runWriteInEDT(new Runnable() {
+                  public void run() {
+                    TemporaryModels.getInstance().dispose(myTempModel);
+                  }
+                });
                 return;
               }
 
-              FindUsagesScope scope = BaseQQDialog.this.myScope.getOptions().getScope(myProject);
-              executeQuery(myProject, query, scope);
+              FindUsagesScope scope = BaseQQDialog.this.myScope.getOptions().getScope(mpsProject);
+              executeQuery(mpsProject, query, scope);
+
+              // todo: keywords for thinking: re-run search, non-blocking executeQuery 
+              myModelAccess.runWriteInEDT(new Runnable() {
+                public void run() {
+                  // this happens after query execution so hopefully after using Query object 
+                  TemporaryModels.getInstance().dispose(myTempModel);
+                }
+              });
             }
           });
         } else {
@@ -124,8 +148,6 @@ public abstract class BaseQQDialog extends DialogWrapper {
     myProject.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         myEditor.disposeEditor();
-        // todo: enable after modal in doOkAction! 
-        // <node> 
       }
     });
     super.dispose();
