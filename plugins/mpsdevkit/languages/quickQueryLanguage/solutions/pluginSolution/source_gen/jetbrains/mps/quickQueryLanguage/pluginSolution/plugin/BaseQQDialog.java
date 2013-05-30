@@ -18,12 +18,12 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import java.awt.Dimension;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import javax.swing.JComponent;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 
 public abstract class BaseQQDialog extends DialogWrapper {
   private static Logger LOG = LogManager.getLogger(BaseQQDialog.class);
@@ -77,6 +77,17 @@ public abstract class BaseQQDialog extends DialogWrapper {
 
   protected abstract void executeQuery(Project project, Query query, FindUsagesScope scope);
 
+  protected void doTempModelDispose() {
+    myModelAccess.runWriteInEDT(new Runnable() {
+      public void run() {
+        if (myTempModel != null) {
+          TemporaryModels.getInstance().dispose(myTempModel);
+          myTempModel = null;
+        }
+      }
+    });
+  }
+
 
 
   @Override
@@ -101,24 +112,12 @@ public abstract class BaseQQDialog extends DialogWrapper {
               Query query = QuickQueryUtils.loadCompiledQuery(myQueryNode);
 
               if (query == null) {
-                myModelAccess.runWriteInEDT(new Runnable() {
-                  public void run() {
-                    TemporaryModels.getInstance().dispose(myTempModel);
-                  }
-                });
+                doTempModelDispose();
                 return;
               }
 
               FindUsagesScope scope = BaseQQDialog.this.myScope.getOptions().getScope(mpsProject);
               executeQuery(mpsProject, query, scope);
-
-              // todo: keywords for thinking: re-run search, non-blocking executeQuery 
-              myModelAccess.runWriteInEDT(new Runnable() {
-                public void run() {
-                  // this happens after query execution so hopefully after using Query object 
-                  TemporaryModels.getInstance().dispose(myTempModel);
-                }
-              });
             }
           });
         } else {

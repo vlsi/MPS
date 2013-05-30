@@ -40,7 +40,8 @@ public class FindByConditionDialog extends BaseQQDialog {
       }
     });
     UsagesViewTool tool = project.getComponent(UsagesViewTool.class);
-    tool.findUsages(FindUtils.makeProvider(new QueryFinder(query)), searchQuery.value, true, true, false, "No usages for that node");
+    tool.findUsages(FindUtils.makeProvider(new QueryFinder(query)), searchQuery.value, false, true, false, "No usages for that node");
+    doTempModelDispose();
   }
 
   private static SNode _quotation_createNode_rwieix_a0a2(Object parameter_1) {

@@ -113,147 +113,152 @@
     <nodeInfo nodeId="7176542018560629424" fileName="FindByConditionDialog.java" startLine="35" startPosition="93" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7176542018560629432" fileName="FindByConditionDialog.java" startLine="38" startPosition="25" endLine="39" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7176542018560629439" fileName="FindByConditionDialog.java" startLine="41" startPosition="7" endLine="42" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7176542018560629446" fileName="FindByConditionDialog.java" startLine="42" startPosition="69" endLine="43" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="46" startPosition="78" endLine="47" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="47" startPosition="63" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="48" startPosition="30" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7176542018560629446" fileName="FindByConditionDialog.java" startLine="42" startPosition="69" endLine="43" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107795503523525612" fileName="FindByConditionDialog.java" startLine="43" startPosition="134" endLine="44" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="47" startPosition="78" endLine="48" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="48" startPosition="63" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="49" startPosition="30" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="50" startPosition="30" endLine="51" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="51" startPosition="167" endLine="52" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="52" startPosition="96" endLine="53" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="53" startPosition="171" endLine="54" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="54" startPosition="164" endLine="55" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="55" startPosition="48" endLine="56" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="56" startPosition="53" endLine="57" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="53" startPosition="171" endLine="55" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="53" startPosition="171" endLine="55" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="50" startPosition="30" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="51" startPosition="30" endLine="52" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="52" startPosition="167" endLine="53" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="53" startPosition="96" endLine="54" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="54" startPosition="171" endLine="55" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="55" startPosition="164" endLine="56" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="56" startPosition="48" endLine="57" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="57" startPosition="53" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="54" startPosition="171" endLine="56" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="54" startPosition="171" endLine="56" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841943063" fileName="FindByConditionDialog.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FindByConditionDialog#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7176542018560629430" fileName="FindByConditionDialog.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="7176542018559779450" fileName="FindByConditionDialog.java" startLine="26" startPosition="46" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="52" startPosition="96" endLine="56" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="52" startPosition="96" endLine="56" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="53" startPosition="96" endLine="57" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="53" startPosition="96" endLine="57" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7176542018560629427" fileName="FindByConditionDialog.java" startLine="36" startPosition="80" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7176542018559953451" fileName="FindByConditionDialog.java" startLine="26" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createQuery#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="50" startPosition="30" endLine="56" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="50" startPosition="30" endLine="56" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7176542018560629261" fileName="FindByConditionDialog.java" startLine="35" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeQuery#(Ljetbrains/mps/project/Project;Ljetbrains/mps/quickQueryLanguage/runtime/Query;Ljetbrains/mps/ide/findusages/model/scopes/FindUsagesScope;)V" />
-    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="46" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_rwieix_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="51" startPosition="30" endLine="57" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="51" startPosition="30" endLine="57" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7176542018560629261" fileName="FindByConditionDialog.java" startLine="35" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeQuery#(Ljetbrains/mps/project/Project;Ljetbrains/mps/quickQueryLanguage/runtime/Query;Ljetbrains/mps/ide/findusages/model/scopes/FindUsagesScope;)V" />
+    <nodeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="47" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_rwieix_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="5487985028841943066" fileName="FindByConditionDialog.java" startLine="20" startPosition="64" endLine="21" endPosition="68" />
     <scopeInfo nodeId="7176542018560629431" fileName="FindByConditionDialog.java" startLine="38" startPosition="25" endLine="39" endPosition="89" />
-    <scopeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="53" startPosition="171" endLine="55" endPosition="48" />
+    <scopeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="54" startPosition="171" endLine="56" endPosition="48" />
     <scopeInfo nodeId="5487985028841943063" fileName="FindByConditionDialog.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="241681141559044863" varName="concept" />
       <varInfo nodeId="7176542018563182088" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7176542018560629430" fileName="FindByConditionDialog.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="7176542018559953457" fileName="FindByConditionDialog.java" startLine="26" startPosition="46" endLine="30" endPosition="7" />
-    <scopeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="52" startPosition="96" endLine="56" endPosition="53" />
+    <scopeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="53" startPosition="96" endLine="57" endPosition="53" />
     <scopeInfo nodeId="7176542018559953451" fileName="FindByConditionDialog.java" startLine="26" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="7176542018559953452" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="50" startPosition="30" endLine="56" endPosition="53" />
-    <scopeInfo nodeId="7176542018560629271" fileName="FindByConditionDialog.java" startLine="35" startPosition="93" endLine="43" endPosition="133">
+    <scopeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="51" startPosition="30" endLine="57" endPosition="53" />
+    <scopeInfo nodeId="7176542018560629271" fileName="FindByConditionDialog.java" startLine="35" startPosition="93" endLine="44" endPosition="25">
       <varInfo nodeId="7176542018560629425" varName="searchQuery" />
       <varInfo nodeId="7176542018560629440" varName="tool" />
     </scopeInfo>
-    <scopeInfo nodeId="7176542018560629261" fileName="FindByConditionDialog.java" startLine="35" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="7176542018560629261" fileName="FindByConditionDialog.java" startLine="35" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="7176542018560629265" varName="project" />
       <varInfo nodeId="7176542018560629267" varName="query" />
       <varInfo nodeId="7176542018560629269" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="46" startPosition="78" endLine="57" endPosition="24">
+    <scopeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="47" startPosition="78" endLine="58" endPosition="24">
       <varInfo nodeId="7176542018559718537" varName="facade" />
       <varInfo nodeId="7176542018559718537" varName="quotedNode_2" />
       <varInfo nodeId="7176542018559718537" varName="quotedNode_3" />
       <varInfo nodeId="7176542018559718537" varName="quotedNode_4" />
     </scopeInfo>
-    <scopeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="46" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="7176542018559718537" fileName="FindByConditionDialog.java" startLine="47" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="7176542018559718537" varName="parameter_1" />
     </scopeInfo>
     <unitInfo nodeId="7176542018560629430" fileName="FindByConditionDialog.java" startLine="37" startPosition="63" endLine="41" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindByConditionDialog$1" />
-    <unitInfo nodeId="5487985028841942759" fileName="FindByConditionDialog.java" startLine="19" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindByConditionDialog" />
+    <unitInfo nodeId="5487985028841942759" fileName="FindByConditionDialog.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindByConditionDialog" />
   </root>
   <root nodeRef="r:3a778ef5-24fe-4aa0-8558-f81e64e33ac0(jetbrains.mps.quickQueryLanguage.pluginSolution.plugin)/5487985028841943302">
     <nodeInfo nodeId="7176542018561244795" fileName="ReplaceByConditionDialog.java" startLine="21" startPosition="67" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841943521" fileName="ReplaceByConditionDialog.java" startLine="36" startPosition="102" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7176542018561489388" fileName="ReplaceByConditionDialog.java" startLine="39" startPosition="25" endLine="40" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018561607076" fileName="ReplaceByConditionDialog.java" startLine="44" startPosition="25" endLine="45" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="50" startPosition="78" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="51" startPosition="63" endLine="52" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="52" startPosition="30" endLine="53" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="53" startPosition="30" endLine="54" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="54" startPosition="30" endLine="55" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="55" startPosition="30" endLine="56" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4107795503523620371" fileName="ReplaceByConditionDialog.java" startLine="46" startPosition="29" endLine="47" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="54" startPosition="78" endLine="55" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="55" startPosition="63" endLine="56" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="56" startPosition="30" endLine="57" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="57" startPosition="30" endLine="58" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="58" startPosition="30" endLine="59" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="59" startPosition="174" endLine="60" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="60" startPosition="96" endLine="61" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="61" startPosition="169" endLine="62" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="62" startPosition="164" endLine="63" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="63" startPosition="48" endLine="64" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="64" startPosition="51" endLine="65" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="65" startPosition="171" endLine="66" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="66" startPosition="164" endLine="67" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="67" startPosition="170" endLine="68" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="68" startPosition="166" endLine="69" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="69" startPosition="63" endLine="70" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="70" startPosition="54" endLine="71" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="71" startPosition="53" endLine="72" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="72" startPosition="48" endLine="73" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="73" startPosition="53" endLine="74" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="61" startPosition="169" endLine="63" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="61" startPosition="169" endLine="63" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="58" startPosition="30" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="59" startPosition="30" endLine="60" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="60" startPosition="30" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="61" startPosition="30" endLine="62" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="62" startPosition="30" endLine="63" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="63" startPosition="174" endLine="64" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="64" startPosition="96" endLine="65" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="65" startPosition="169" endLine="66" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="66" startPosition="164" endLine="67" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="67" startPosition="48" endLine="68" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="68" startPosition="51" endLine="69" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="69" startPosition="171" endLine="70" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="70" startPosition="164" endLine="71" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="71" startPosition="170" endLine="72" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="72" startPosition="166" endLine="73" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="73" startPosition="63" endLine="74" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="74" startPosition="54" endLine="75" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="75" startPosition="53" endLine="76" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="76" startPosition="48" endLine="77" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="77" startPosition="53" endLine="78" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="65" startPosition="169" endLine="67" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="65" startPosition="169" endLine="67" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841943634" fileName="ReplaceByConditionDialog.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceByConditionDialog#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6352952732710656681" fileName="ReplaceByConditionDialog.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7176542018561607048" fileName="ReplaceByConditionDialog.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="67" startPosition="170" endLine="70" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="67" startPosition="170" endLine="70" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4107795503523619963" fileName="ReplaceByConditionDialog.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="71" startPosition="170" endLine="74" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="71" startPosition="170" endLine="74" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7176542018561386234" fileName="ReplaceByConditionDialog.java" startLine="27" startPosition="46" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="60" startPosition="96" endLine="64" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="60" startPosition="96" endLine="64" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="64" startPosition="96" endLine="68" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="64" startPosition="96" endLine="68" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6352952732710617221" fileName="ReplaceByConditionDialog.java" startLine="37" startPosition="80" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018561600766" fileName="ReplaceByConditionDialog.java" startLine="42" startPosition="7" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="66" startPosition="164" endLine="71" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="66" startPosition="164" endLine="71" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7176542018561607076" fileName="ReplaceByConditionDialog.java" startLine="44" startPosition="25" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="70" startPosition="164" endLine="75" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="70" startPosition="164" endLine="75" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7176542018561367625" fileName="ReplaceByConditionDialog.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createQuery#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="65" startPosition="171" endLine="72" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="65" startPosition="171" endLine="72" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="64" startPosition="51" endLine="73" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="64" startPosition="51" endLine="73" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7176542018561367632" fileName="ReplaceByConditionDialog.java" startLine="36" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeQuery#(Ljetbrains/mps/project/Project;Ljetbrains/mps/quickQueryLanguage/runtime/Query;Ljetbrains/mps/ide/findusages/model/scopes/FindUsagesScope;)V" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="58" startPosition="30" endLine="73" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="58" startPosition="30" endLine="73" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="50" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_6vpr30_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7176542018561607048" fileName="ReplaceByConditionDialog.java" startLine="44" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="69" startPosition="171" endLine="76" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="69" startPosition="171" endLine="76" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7176542018561600766" fileName="ReplaceByConditionDialog.java" startLine="42" startPosition="7" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="68" startPosition="51" endLine="77" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="68" startPosition="51" endLine="77" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="62" startPosition="30" endLine="77" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="62" startPosition="30" endLine="77" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7176542018561367632" fileName="ReplaceByConditionDialog.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeQuery#(Ljetbrains/mps/project/Project;Ljetbrains/mps/quickQueryLanguage/runtime/Query;Ljetbrains/mps/ide/findusages/model/scopes/FindUsagesScope;)V" />
+    <nodeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="54" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_6vpr30_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="5487985028841943637" fileName="ReplaceByConditionDialog.java" startLine="21" startPosition="67" endLine="22" endPosition="72" />
     <scopeInfo nodeId="6352952732710656682" fileName="ReplaceByConditionDialog.java" startLine="39" startPosition="25" endLine="40" endPosition="89" />
-    <scopeInfo nodeId="7176542018561607049" fileName="ReplaceByConditionDialog.java" startLine="44" startPosition="25" endLine="45" endPosition="154" />
-    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="61" startPosition="169" endLine="63" endPosition="48" />
+    <scopeInfo nodeId="4107795503523619965" fileName="ReplaceByConditionDialog.java" startLine="46" startPosition="29" endLine="47" endPosition="33" />
+    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="65" startPosition="169" endLine="67" endPosition="48" />
     <scopeInfo nodeId="5487985028841943634" fileName="ReplaceByConditionDialog.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="241681141559974176" varName="concept" />
       <varInfo nodeId="7176542018563226638" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="6352952732710656681" fileName="ReplaceByConditionDialog.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="7176542018561607048" fileName="ReplaceByConditionDialog.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="67" startPosition="170" endLine="70" endPosition="54" />
+    <scopeInfo nodeId="4107795503523619963" fileName="ReplaceByConditionDialog.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="71" startPosition="170" endLine="74" endPosition="54" />
     <scopeInfo nodeId="7176542018561367631" fileName="ReplaceByConditionDialog.java" startLine="27" startPosition="46" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="60" startPosition="96" endLine="64" endPosition="51" />
-    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="66" startPosition="164" endLine="71" endPosition="53" />
+    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="64" startPosition="96" endLine="68" endPosition="51" />
+    <scopeInfo nodeId="7176542018561607049" fileName="ReplaceByConditionDialog.java" startLine="44" startPosition="25" endLine="49" endPosition="11" />
+    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="70" startPosition="164" endLine="75" endPosition="53" />
     <scopeInfo nodeId="7176542018561367625" fileName="ReplaceByConditionDialog.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="7176542018561367626" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="65" startPosition="171" endLine="72" endPosition="48" />
-    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="64" startPosition="51" endLine="73" endPosition="53" />
-    <scopeInfo nodeId="7176542018561367642" fileName="ReplaceByConditionDialog.java" startLine="36" startPosition="102" endLine="47" endPosition="7">
+    <scopeInfo nodeId="7176542018561607048" fileName="ReplaceByConditionDialog.java" startLine="44" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="69" startPosition="171" endLine="76" endPosition="48" />
+    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="68" startPosition="51" endLine="77" endPosition="53" />
+    <scopeInfo nodeId="7176542018561367642" fileName="ReplaceByConditionDialog.java" startLine="36" startPosition="102" endLine="51" endPosition="7">
       <varInfo nodeId="5487985028841943522" varName="searchQuery" />
     </scopeInfo>
-    <scopeInfo nodeId="7176542018561367632" fileName="ReplaceByConditionDialog.java" startLine="36" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="62" startPosition="30" endLine="77" endPosition="53" />
+    <scopeInfo nodeId="7176542018561367632" fileName="ReplaceByConditionDialog.java" startLine="36" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="7176542018561367636" varName="project" />
       <varInfo nodeId="7176542018561367638" varName="query" />
       <varInfo nodeId="7176542018561367640" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="58" startPosition="30" endLine="73" endPosition="53" />
-    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="50" startPosition="78" endLine="74" endPosition="24">
+    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="54" startPosition="78" endLine="78" endPosition="24">
       <varInfo nodeId="241681141559755795" varName="facade" />
       <varInfo nodeId="241681141559755795" varName="quotedNode_2" />
       <varInfo nodeId="241681141559755795" varName="quotedNode_3" />
@@ -263,12 +268,13 @@
       <varInfo nodeId="241681141559755795" varName="quotedNode_7" />
       <varInfo nodeId="241681141559755795" varName="quotedNode_8" />
     </scopeInfo>
-    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="50" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="241681141559755795" fileName="ReplaceByConditionDialog.java" startLine="54" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="241681141559755795" varName="parameter_1" />
     </scopeInfo>
     <unitInfo nodeId="6352952732710656681" fileName="ReplaceByConditionDialog.java" startLine="38" startPosition="63" endLine="42" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceByConditionDialog$1" />
-    <unitInfo nodeId="7176542018561607048" fileName="ReplaceByConditionDialog.java" startLine="43" startPosition="35" endLine="47" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceByConditionDialog$2" />
-    <unitInfo nodeId="5487985028841943302" fileName="ReplaceByConditionDialog.java" startLine="20" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceByConditionDialog" />
+    <unitInfo nodeId="4107795503523619963" fileName="ReplaceByConditionDialog.java" startLine="45" startPosition="158" endLine="49" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceByConditionDialog$3" />
+    <unitInfo nodeId="7176542018561607048" fileName="ReplaceByConditionDialog.java" startLine="43" startPosition="35" endLine="51" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceByConditionDialog$2" />
+    <unitInfo nodeId="5487985028841943302" fileName="ReplaceByConditionDialog.java" startLine="20" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceByConditionDialog" />
   </root>
   <root nodeRef="r:3a778ef5-24fe-4aa0-8558-f81e64e33ac0(jetbrains.mps.quickQueryLanguage.pluginSolution.plugin)/5487985028841943773">
     <nodeInfo nodeId="5487985028841943773" fileName="ReplaceByCondition_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -362,96 +368,100 @@
     <nodeInfo nodeId="5487985028841944053" fileName="ReplacementView.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTool" />
     <nodeInfo nodeId="5487985028841944056" fileName="ReplacementView.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainPanel" />
     <nodeInfo nodeId="5487985028841944063" fileName="ReplacementView.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myButton" />
-    <nodeInfo nodeId="5487985028841943870" fileName="ReplacementView.java" startLine="39" startPosition="145" endLine="40" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943886" fileName="ReplacementView.java" startLine="43" startPosition="27" endLine="44" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943899" fileName="ReplacementView.java" startLine="46" startPosition="6" endLine="47" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841943928" fileName="ReplacementView.java" startLine="53" startPosition="17" endLine="54" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841943942" fileName="ReplacementView.java" startLine="55" startPosition="47" endLine="56" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943950" fileName="ReplacementView.java" startLine="57" startPosition="15" endLine="58" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943960" fileName="ReplacementView.java" startLine="59" startPosition="35" endLine="60" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943966" fileName="ReplacementView.java" startLine="65" startPosition="7" endLine="66" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943979" fileName="ReplacementView.java" startLine="66" startPosition="113" endLine="67" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943986" fileName="ReplacementView.java" startLine="67" startPosition="35" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943994" fileName="ReplacementView.java" startLine="68" startPosition="58" endLine="69" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944025" fileName="ReplacementView.java" startLine="74" startPosition="65" endLine="75" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944030" fileName="ReplacementView.java" startLine="75" startPosition="45" endLine="76" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943822" fileName="ReplacementView.java" startLine="83" startPosition="36" endLine="84" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841943830" fileName="ReplacementView.java" startLine="87" startPosition="25" endLine="88" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943841" fileName="ReplacementView.java" startLine="91" startPosition="67" endLine="92" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841943850" fileName="ReplacementView.java" startLine="93" startPosition="46" endLine="94" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943860" fileName="ReplacementView.java" startLine="95" startPosition="5" endLine="96" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841943940" fileName="ReplacementView.java" startLine="54" startPosition="139" endLine="57" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5487985028841943818" fileName="ReplacementView.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="5487985028841943826" fileName="ReplacementView.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="5487985028841943848" fileName="ReplacementView.java" startLine="92" startPosition="72" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5487985028841943882" fileName="ReplacementView.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" />
-    <nodeInfo nodeId="5487985028841944018" fileName="ReplacementView.java" startLine="73" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="5487985028841943876" fileName="ReplacementView.java" startLine="40" startPosition="23" endLine="46" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944010" fileName="ReplacementView.java" startLine="71" startPosition="25" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943836" fileName="ReplacementView.java" startLine="91" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExecuteResult#(Ljava/util/List;)Ljava/util/List;" />
-    <nodeInfo nodeId="5487985028841943926" fileName="ReplacementView.java" startLine="52" startPosition="29" endLine="61" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5487985028841944008" fileName="ReplacementView.java" startLine="71" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841943924" fileName="ReplacementView.java" startLine="52" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841944006" fileName="ReplacementView.java" startLine="69" startPosition="80" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943923" fileName="ReplacementView.java" startLine="50" startPosition="54" endLine="63" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943917" fileName="ReplacementView.java" startLine="49" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="5487985028841943907" fileName="ReplacementView.java" startLine="47" startPosition="69" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943866" fileName="ReplacementView.java" startLine="39" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplacementView#(Ljetbrains/mps/quickQueryLanguage/pluginSolution/plugin/RunReplacement_Tool;Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/findusages/model/IResultProvider;Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/quickQueryLanguage/runtime/Query;)V" />
-    <scopeInfo nodeId="5487985028841943885" fileName="ReplacementView.java" startLine="43" startPosition="27" endLine="44" endPosition="67" />
-    <scopeInfo nodeId="5487985028841943941" fileName="ReplacementView.java" startLine="55" startPosition="47" endLine="56" endPosition="38" />
-    <scopeInfo nodeId="5487985028841943956" fileName="ReplacementView.java" startLine="59" startPosition="0" endLine="60" endPosition="105">
+    <nodeInfo nodeId="4107795503523735922" fileName="ReplacementView.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTempModelDisposer" />
+    <nodeInfo nodeId="5487985028841943870" fileName="ReplacementView.java" startLine="40" startPosition="173" endLine="41" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107795503523794725" fileName="ReplacementView.java" startLine="41" startPosition="23" endLine="42" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943886" fileName="ReplacementView.java" startLine="45" startPosition="27" endLine="46" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943899" fileName="ReplacementView.java" startLine="48" startPosition="6" endLine="49" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841943928" fileName="ReplacementView.java" startLine="55" startPosition="17" endLine="56" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841943942" fileName="ReplacementView.java" startLine="57" startPosition="47" endLine="58" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943950" fileName="ReplacementView.java" startLine="59" startPosition="15" endLine="60" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943960" fileName="ReplacementView.java" startLine="61" startPosition="35" endLine="62" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943966" fileName="ReplacementView.java" startLine="67" startPosition="7" endLine="68" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943979" fileName="ReplacementView.java" startLine="68" startPosition="113" endLine="69" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943986" fileName="ReplacementView.java" startLine="69" startPosition="35" endLine="70" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943994" fileName="ReplacementView.java" startLine="70" startPosition="58" endLine="71" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944025" fileName="ReplacementView.java" startLine="76" startPosition="65" endLine="77" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944030" fileName="ReplacementView.java" startLine="77" startPosition="45" endLine="78" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943822" fileName="ReplacementView.java" startLine="85" startPosition="36" endLine="86" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4107795503523764223" fileName="ReplacementView.java" startLine="89" startPosition="25" endLine="90" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943830" fileName="ReplacementView.java" startLine="90" startPosition="30" endLine="91" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943841" fileName="ReplacementView.java" startLine="94" startPosition="67" endLine="95" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841943850" fileName="ReplacementView.java" startLine="96" startPosition="46" endLine="97" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943860" fileName="ReplacementView.java" startLine="98" startPosition="5" endLine="99" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841943940" fileName="ReplacementView.java" startLine="56" startPosition="139" endLine="59" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5487985028841943818" fileName="ReplacementView.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="5487985028841943848" fileName="ReplacementView.java" startLine="95" startPosition="72" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5487985028841943882" fileName="ReplacementView.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" />
+    <nodeInfo nodeId="5487985028841943826" fileName="ReplacementView.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="5487985028841944018" fileName="ReplacementView.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="5487985028841943876" fileName="ReplacementView.java" startLine="42" startPosition="49" endLine="48" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944010" fileName="ReplacementView.java" startLine="73" startPosition="25" endLine="80" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943836" fileName="ReplacementView.java" startLine="94" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExecuteResult#(Ljava/util/List;)Ljava/util/List;" />
+    <nodeInfo nodeId="5487985028841943926" fileName="ReplacementView.java" startLine="54" startPosition="29" endLine="63" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5487985028841944008" fileName="ReplacementView.java" startLine="73" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841943924" fileName="ReplacementView.java" startLine="54" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841944006" fileName="ReplacementView.java" startLine="71" startPosition="80" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943923" fileName="ReplacementView.java" startLine="52" startPosition="54" endLine="65" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943917" fileName="ReplacementView.java" startLine="51" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="5487985028841943907" fileName="ReplacementView.java" startLine="49" startPosition="69" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943866" fileName="ReplacementView.java" startLine="40" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplacementView#(Ljetbrains/mps/quickQueryLanguage/pluginSolution/plugin/RunReplacement_Tool;Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/findusages/model/IResultProvider;Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/quickQueryLanguage/runtime/Query;Ljava/lang/Runnable;)V" />
+    <scopeInfo nodeId="5487985028841943885" fileName="ReplacementView.java" startLine="45" startPosition="27" endLine="46" endPosition="67" />
+    <scopeInfo nodeId="5487985028841943941" fileName="ReplacementView.java" startLine="57" startPosition="47" endLine="58" endPosition="38" />
+    <scopeInfo nodeId="5487985028841943956" fileName="ReplacementView.java" startLine="61" startPosition="0" endLine="62" endPosition="105">
       <varInfo nodeId="5487985028841943957" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943959" fileName="ReplacementView.java" startLine="59" startPosition="35" endLine="60" endPosition="105" />
-    <scopeInfo nodeId="5487985028841943821" fileName="ReplacementView.java" startLine="83" startPosition="36" endLine="84" endPosition="28" />
-    <scopeInfo nodeId="5487985028841943829" fileName="ReplacementView.java" startLine="87" startPosition="25" endLine="88" endPosition="32" />
-    <scopeInfo nodeId="5487985028841943849" fileName="ReplacementView.java" startLine="93" startPosition="46" endLine="94" endPosition="121" />
-    <scopeInfo nodeId="5487985028841944024" fileName="ReplacementView.java" startLine="74" startPosition="65" endLine="76" endPosition="61" />
-    <scopeInfo nodeId="5487985028841943940" fileName="ReplacementView.java" startLine="54" startPosition="139" endLine="57" endPosition="15">
+    <scopeInfo nodeId="5487985028841943959" fileName="ReplacementView.java" startLine="61" startPosition="35" endLine="62" endPosition="105" />
+    <scopeInfo nodeId="5487985028841943821" fileName="ReplacementView.java" startLine="85" startPosition="36" endLine="86" endPosition="28" />
+    <scopeInfo nodeId="5487985028841943849" fileName="ReplacementView.java" startLine="96" startPosition="46" endLine="97" endPosition="121" />
+    <scopeInfo nodeId="5487985028841944024" fileName="ReplacementView.java" startLine="76" startPosition="65" endLine="78" endPosition="61" />
+    <scopeInfo nodeId="5487985028841943829" fileName="ReplacementView.java" startLine="89" startPosition="25" endLine="91" endPosition="32" />
+    <scopeInfo nodeId="5487985028841943940" fileName="ReplacementView.java" startLine="56" startPosition="139" endLine="59" endPosition="15">
       <varInfo nodeId="5487985028841943948" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943818" fileName="ReplacementView.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="5487985028841943826" fileName="ReplacementView.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="5487985028841943848" fileName="ReplacementView.java" startLine="92" startPosition="72" endLine="95" endPosition="5">
+    <scopeInfo nodeId="5487985028841943818" fileName="ReplacementView.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="5487985028841943848" fileName="ReplacementView.java" startLine="95" startPosition="72" endLine="98" endPosition="5">
       <varInfo nodeId="5487985028841943857" varName="nodePointer" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943882" fileName="ReplacementView.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="5487985028841943927" fileName="ReplacementView.java" startLine="53" startPosition="17" endLine="58" endPosition="131">
+    <scopeInfo nodeId="5487985028841943882" fileName="ReplacementView.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="5487985028841943826" fileName="ReplacementView.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="5487985028841943927" fileName="ReplacementView.java" startLine="55" startPosition="17" endLine="60" endPosition="131">
       <varInfo nodeId="5487985028841943929" varName="replaceNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841944018" fileName="ReplacementView.java" startLine="73" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="5487985028841944018" fileName="ReplacementView.java" startLine="75" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="5487985028841944021" varName="indicator" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943840" fileName="ReplacementView.java" startLine="91" startPosition="67" endLine="96" endPosition="19">
+    <scopeInfo nodeId="5487985028841943840" fileName="ReplacementView.java" startLine="94" startPosition="67" endLine="99" endPosition="19">
       <varInfo nodeId="5487985028841943842" varName="results" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841944009" fileName="ReplacementView.java" startLine="71" startPosition="25" endLine="78" endPosition="11" />
-    <scopeInfo nodeId="5487985028841943836" fileName="ReplacementView.java" startLine="91" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="5487985028841944009" fileName="ReplacementView.java" startLine="73" startPosition="25" endLine="80" endPosition="11" />
+    <scopeInfo nodeId="5487985028841943836" fileName="ReplacementView.java" startLine="94" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="5487985028841943862" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943925" fileName="ReplacementView.java" startLine="52" startPosition="29" endLine="61" endPosition="13" />
-    <scopeInfo nodeId="5487985028841944008" fileName="ReplacementView.java" startLine="71" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="5487985028841943924" fileName="ReplacementView.java" startLine="52" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="5487985028841943922" fileName="ReplacementView.java" startLine="50" startPosition="54" endLine="63" endPosition="11" />
-    <scopeInfo nodeId="5487985028841943917" fileName="ReplacementView.java" startLine="49" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="5487985028841943925" fileName="ReplacementView.java" startLine="54" startPosition="29" endLine="63" endPosition="13" />
+    <scopeInfo nodeId="5487985028841944008" fileName="ReplacementView.java" startLine="73" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="5487985028841943924" fileName="ReplacementView.java" startLine="54" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="5487985028841943922" fileName="ReplacementView.java" startLine="52" startPosition="54" endLine="65" endPosition="11" />
+    <scopeInfo nodeId="5487985028841943917" fileName="ReplacementView.java" startLine="51" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="5487985028841943920" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943869" fileName="ReplacementView.java" startLine="39" startPosition="145" endLine="80" endPosition="7">
+    <scopeInfo nodeId="5487985028841943869" fileName="ReplacementView.java" startLine="40" startPosition="173" endLine="82" endPosition="7">
       <varInfo nodeId="5487985028841943900" varName="buttonPanel" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943866" fileName="ReplacementView.java" startLine="39" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="5487985028841943866" fileName="ReplacementView.java" startLine="40" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="5487985028841944042" varName="project" />
       <varInfo nodeId="5487985028841944044" varName="provider" />
       <varInfo nodeId="5487985028841944048" varName="query" />
       <varInfo nodeId="5487985028841944046" varName="searchQuery" />
+      <varInfo nodeId="4107795503523647224" varName="tempModelDisposer" />
       <varInfo nodeId="5487985028841944040" varName="tool" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841943880" fileName="ReplacementView.java" startLine="41" startPosition="28" endLine="46" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView$1" />
-    <unitInfo nodeId="5487985028841944016" fileName="ReplacementView.java" startLine="72" startPosition="46" endLine="78" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView$4" />
-    <unitInfo nodeId="5487985028841944008" fileName="ReplacementView.java" startLine="70" startPosition="35" endLine="80" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView$3" />
-    <unitInfo nodeId="5487985028841943924" fileName="ReplacementView.java" startLine="51" startPosition="59" endLine="63" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView$3" />
-    <unitInfo nodeId="5487985028841943915" fileName="ReplacementView.java" startLine="48" startPosition="40" endLine="65" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView$2" />
-    <unitInfo nodeId="5487985028841943817" fileName="ReplacementView.java" startLine="33" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView" />
+    <unitInfo nodeId="5487985028841943880" fileName="ReplacementView.java" startLine="43" startPosition="28" endLine="48" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView$1" />
+    <unitInfo nodeId="5487985028841944016" fileName="ReplacementView.java" startLine="74" startPosition="46" endLine="80" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView$4" />
+    <unitInfo nodeId="5487985028841944008" fileName="ReplacementView.java" startLine="72" startPosition="35" endLine="82" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView$3" />
+    <unitInfo nodeId="5487985028841943924" fileName="ReplacementView.java" startLine="53" startPosition="59" endLine="65" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView$3" />
+    <unitInfo nodeId="5487985028841943915" fileName="ReplacementView.java" startLine="50" startPosition="40" endLine="67" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView$2" />
+    <unitInfo nodeId="5487985028841943817" fileName="ReplacementView.java" startLine="33" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView" />
   </root>
   <root nodeRef="r:3a778ef5-24fe-4aa0-8558-f81e64e33ac0(jetbrains.mps.quickQueryLanguage.pluginSolution.plugin)/5487985028841944069">
     <nodeInfo nodeId="95244134864136437" fileName="QueryFinder.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -506,16 +516,16 @@
     <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="26" startPosition="37" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841944246" fileName="RunReplacement_Tool.java" startLine="27" startPosition="24" endLine="28" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841944183" fileName="RunReplacement_Tool.java" startLine="31" startPosition="46" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944203" fileName="RunReplacement_Tool.java" startLine="37" startPosition="25" endLine="38" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841944203" fileName="RunReplacement_Tool.java" startLine="37" startPosition="25" endLine="38" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841944228" fileName="RunReplacement_Tool.java" startLine="40" startPosition="62" endLine="41" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RunReplacement_Tool#(Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="5487985028841944180" fileName="RunReplacement_Tool.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeTab#(Ljetbrains/mps/quickQueryLanguage/pluginSolution/plugin/ReplacementView;)V" />
     <nodeInfo nodeId="5487985028841944226" fileName="RunReplacement_Tool.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#(Ljavax/swing/JComponent;)V" />
     <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="5487985028841944218" fileName="RunReplacement_Tool.java" startLine="38" startPosition="187" endLine="43" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944218" fileName="RunReplacement_Tool.java" startLine="38" startPosition="206" endLine="43" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841944201" fileName="RunReplacement_Tool.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841944200" fileName="RunReplacement_Tool.java" startLine="35" startPosition="72" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944193" fileName="RunReplacement_Tool.java" startLine="35" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTab#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/quickQueryLanguage/runtime/Query;)V" />
+    <nodeInfo nodeId="5487985028841944200" fileName="RunReplacement_Tool.java" startLine="35" startPosition="106" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944193" fileName="RunReplacement_Tool.java" startLine="35" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTab#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/quickQueryLanguage/runtime/Query;Ljava/lang/Runnable;)V" />
     <scopeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="22" startPosition="47" endLine="23" endPosition="75" />
     <scopeInfo nodeId="5487985028841944182" fileName="RunReplacement_Tool.java" startLine="31" startPosition="46" endLine="32" endPosition="59" />
     <scopeInfo nodeId="5487985028841944227" fileName="RunReplacement_Tool.java" startLine="40" startPosition="62" endLine="41" endPosition="27" />
@@ -536,10 +546,11 @@
       <varInfo nodeId="5487985028841944204" varName="view" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841944201" fileName="RunReplacement_Tool.java" startLine="37" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="5487985028841944199" fileName="RunReplacement_Tool.java" startLine="35" startPosition="72" endLine="45" endPosition="7" />
+    <scopeInfo nodeId="5487985028841944199" fileName="RunReplacement_Tool.java" startLine="35" startPosition="106" endLine="45" endPosition="7" />
     <scopeInfo nodeId="5487985028841944193" fileName="RunReplacement_Tool.java" startLine="35" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="5487985028841944196" varName="query" />
       <varInfo nodeId="5487985028841944194" varName="searchQuery" />
+      <varInfo nodeId="4107795503523615095" varName="tempModelDisposer" />
     </scopeInfo>
     <unitInfo nodeId="5487985028841944226" fileName="RunReplacement_Tool.java" startLine="39" startPosition="156" endLine="43" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.RunReplacement_Tool$2" />
     <unitInfo nodeId="5487985028841944201" fileName="RunReplacement_Tool.java" startLine="36" startPosition="45" endLine="45" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.RunReplacement_Tool$1" />
@@ -762,53 +773,51 @@
     <nodeInfo nodeId="7176542018559718614" fileName="BaseQQDialog.java" startLine="70" startPosition="0" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7176542018559749085" fileName="BaseQQDialog.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createQuery#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7176542018560468844" fileName="BaseQQDialog.java" startLine="78" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeQuery#(Ljetbrains/mps/project/Project;Ljetbrains/mps/quickQueryLanguage/runtime/Query;Ljetbrains/mps/ide/findusages/model/scopes/FindUsagesScope;)V" />
-    <nodeInfo nodeId="7176542018559718622" fileName="BaseQQDialog.java" startLine="83" startPosition="44" endLine="84" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4107795503522343570" fileName="BaseQQDialog.java" startLine="90" startPosition="61" endLine="91" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4107795503522341582" fileName="BaseQQDialog.java" startLine="91" startPosition="63" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4107795503522065978" fileName="BaseQQDialog.java" startLine="92" startPosition="0" endLine="93" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4107795503521985548" fileName="BaseQQDialog.java" startLine="95" startPosition="27" endLine="96" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4107795503521985550" fileName="BaseQQDialog.java" startLine="97" startPosition="11" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4107795503521985559" fileName="BaseQQDialog.java" startLine="100" startPosition="31" endLine="101" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4107795503521985564" fileName="BaseQQDialog.java" startLine="101" startPosition="75" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4107795503521985577" fileName="BaseQQDialog.java" startLine="105" startPosition="37" endLine="106" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4107795503521985582" fileName="BaseQQDialog.java" startLine="108" startPosition="19" endLine="109" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4107795503521985586" fileName="BaseQQDialog.java" startLine="110" startPosition="15" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4107795503521985587" fileName="BaseQQDialog.java" startLine="111" startPosition="0" endLine="112" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4107795503521985598" fileName="BaseQQDialog.java" startLine="112" startPosition="98" endLine="113" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4107795503521985603" fileName="BaseQQDialog.java" startLine="113" startPosition="53" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4107795503521985604" fileName="BaseQQDialog.java" startLine="114" startPosition="0" endLine="115" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4107795503523024965" fileName="BaseQQDialog.java" startLine="117" startPosition="35" endLine="118" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4107795503521985616" fileName="BaseQQDialog.java" startLine="118" startPosition="94" endLine="119" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4107795503521985628" fileName="BaseQQDialog.java" startLine="124" startPosition="16" endLine="125" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2996802202586978533" fileName="BaseQQDialog.java" startLine="128" startPosition="7" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2996802202586965540" fileName="BaseQQDialog.java" startLine="129" startPosition="0" endLine="130" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718658" fileName="BaseQQDialog.java" startLine="136" startPosition="45" endLine="137" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7176542018559718789" fileName="BaseQQDialog.java" startLine="144" startPosition="21" endLine="145" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7176542018559718791" fileName="BaseQQDialog.java" startLine="146" startPosition="5" endLine="147" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718800" fileName="BaseQQDialog.java" startLine="149" startPosition="25" endLine="150" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718814" fileName="BaseQQDialog.java" startLine="152" startPosition="7" endLine="153" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4107795503522096748" fileName="BaseQQDialog.java" startLine="124" startPosition="14" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4107795503521985546" fileName="BaseQQDialog.java" startLine="94" startPosition="27" endLine="97" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4107795503521985575" fileName="BaseQQDialog.java" startLine="105" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7176542018559718787" fileName="BaseQQDialog.java" startLine="143" startPosition="25" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7176542018559718798" fileName="BaseQQDialog.java" startLine="149" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7176542018559718620" fileName="BaseQQDialog.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="4107795503521985614" fileName="BaseQQDialog.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7176542018559718656" fileName="BaseQQDialog.java" startLine="135" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4107795503521985567" fileName="BaseQQDialog.java" startLine="103" startPosition="34" endLine="108" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718795" fileName="BaseQQDialog.java" startLine="147" startPosition="22" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4107795503521985606" fileName="BaseQQDialog.java" startLine="115" startPosition="87" endLine="121" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4107795503521985565" fileName="BaseQQDialog.java" startLine="102" startPosition="0" endLine="110" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4107795503523512090" fileName="BaseQQDialog.java" startLine="83" startPosition="34" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107795503523724333" fileName="BaseQQDialog.java" startLine="84" startPosition="61" endLine="85" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718622" fileName="BaseQQDialog.java" startLine="94" startPosition="44" endLine="95" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4107795503522343570" fileName="BaseQQDialog.java" startLine="101" startPosition="61" endLine="102" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4107795503522341582" fileName="BaseQQDialog.java" startLine="102" startPosition="63" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4107795503522065978" fileName="BaseQQDialog.java" startLine="103" startPosition="0" endLine="104" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4107795503521985548" fileName="BaseQQDialog.java" startLine="106" startPosition="27" endLine="107" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4107795503521985550" fileName="BaseQQDialog.java" startLine="108" startPosition="11" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4107795503521985559" fileName="BaseQQDialog.java" startLine="111" startPosition="31" endLine="112" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4107795503521985564" fileName="BaseQQDialog.java" startLine="112" startPosition="75" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4107795503523513880" fileName="BaseQQDialog.java" startLine="114" startPosition="34" endLine="115" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107795503521985582" fileName="BaseQQDialog.java" startLine="115" startPosition="37" endLine="116" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4107795503521985586" fileName="BaseQQDialog.java" startLine="117" startPosition="15" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4107795503521985587" fileName="BaseQQDialog.java" startLine="118" startPosition="0" endLine="119" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4107795503521985598" fileName="BaseQQDialog.java" startLine="119" startPosition="98" endLine="120" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107795503521985628" fileName="BaseQQDialog.java" startLine="123" startPosition="16" endLine="124" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2996802202586978533" fileName="BaseQQDialog.java" startLine="127" startPosition="7" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2996802202586965540" fileName="BaseQQDialog.java" startLine="128" startPosition="0" endLine="129" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718658" fileName="BaseQQDialog.java" startLine="135" startPosition="45" endLine="136" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7176542018559718789" fileName="BaseQQDialog.java" startLine="143" startPosition="21" endLine="144" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7176542018559718791" fileName="BaseQQDialog.java" startLine="145" startPosition="5" endLine="146" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718800" fileName="BaseQQDialog.java" startLine="148" startPosition="25" endLine="149" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718814" fileName="BaseQQDialog.java" startLine="151" startPosition="7" endLine="152" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107795503522096748" fileName="BaseQQDialog.java" startLine="123" startPosition="14" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4107795503521985546" fileName="BaseQQDialog.java" startLine="105" startPosition="27" endLine="108" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7176542018559718787" fileName="BaseQQDialog.java" startLine="142" startPosition="25" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7176542018559718798" fileName="BaseQQDialog.java" startLine="148" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4107795503523726837" fileName="BaseQQDialog.java" startLine="82" startPosition="25" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7176542018559718620" fileName="BaseQQDialog.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="4107795503521985565" fileName="BaseQQDialog.java" startLine="113" startPosition="0" endLine="117" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7176542018559718656" fileName="BaseQQDialog.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7176542018559718795" fileName="BaseQQDialog.java" startLine="146" startPosition="22" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107795503523512086" fileName="BaseQQDialog.java" startLine="82" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4107795503523512082" fileName="BaseQQDialog.java" startLine="80" startPosition="39" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7176542018559718532" fileName="BaseQQDialog.java" startLine="56" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4107795503523506441" fileName="BaseQQDialog.java" startLine="80" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doTempModelDispose#()V" />
     <nodeInfo nodeId="7176542018559718529" fileName="BaseQQDialog.java" startLine="54" startPosition="0" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718783" fileName="BaseQQDialog.java" startLine="142" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="4107795503521985557" fileName="BaseQQDialog.java" startLine="100" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4107795503521985554" fileName="BaseQQDialog.java" startLine="98" startPosition="0" endLine="123" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107795503521985557" fileName="BaseQQDialog.java" startLine="111" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4107795503521985554" fileName="BaseQQDialog.java" startLine="109" startPosition="0" endLine="122" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718783" fileName="BaseQQDialog.java" startLine="141" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="4107795503522078413" fileName="BaseQQDialog.java" startLine="104" startPosition="77" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4107795503521672393" fileName="BaseQQDialog.java" startLine="101" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="4107795503521605280" fileName="BaseQQDialog.java" startLine="99" startPosition="28" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7176542018559718473" fileName="BaseQQDialog.java" startLine="44" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseQQDialog#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4107795503522078413" fileName="BaseQQDialog.java" startLine="93" startPosition="77" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4107795503521672393" fileName="BaseQQDialog.java" startLine="90" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="4107795503521605280" fileName="BaseQQDialog.java" startLine="88" startPosition="28" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718629" fileName="BaseQQDialog.java" startLine="87" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
+    <nodeInfo nodeId="7176542018559718629" fileName="BaseQQDialog.java" startLine="98" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
     <scopeInfo nodeId="7176542018559749085" fileName="BaseQQDialog.java" startLine="76" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="7176542018559751620" varName="concept" />
     </scopeInfo>
@@ -817,29 +826,38 @@
       <varInfo nodeId="7176542018560469420" varName="query" />
       <varInfo nodeId="7176542018560470021" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="7176542018559718621" fileName="BaseQQDialog.java" startLine="83" startPosition="44" endLine="84" endPosition="24" />
-    <scopeInfo nodeId="4107795503521985547" fileName="BaseQQDialog.java" startLine="95" startPosition="27" endLine="96" endPosition="19" />
-    <scopeInfo nodeId="4107795503521985576" fileName="BaseQQDialog.java" startLine="105" startPosition="37" endLine="106" endPosition="71" />
-    <scopeInfo nodeId="4107795503522096749" fileName="BaseQQDialog.java" startLine="124" startPosition="16" endLine="125" endPosition="23" />
-    <scopeInfo nodeId="7176542018559718657" fileName="BaseQQDialog.java" startLine="136" startPosition="45" endLine="137" endPosition="52" />
-    <scopeInfo nodeId="7176542018559718788" fileName="BaseQQDialog.java" startLine="144" startPosition="21" endLine="145" endPosition="13" />
-    <scopeInfo nodeId="7176542018559718799" fileName="BaseQQDialog.java" startLine="149" startPosition="25" endLine="150" endPosition="33" />
-    <scopeInfo nodeId="4107795503521985615" fileName="BaseQQDialog.java" startLine="117" startPosition="35" endLine="119" endPosition="69" />
-    <scopeInfo nodeId="4107795503521985575" fileName="BaseQQDialog.java" startLine="105" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="7176542018559718798" fileName="BaseQQDialog.java" startLine="149" startPosition="0" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="7176542018559718620" fileName="BaseQQDialog.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="4107795503521985614" fileName="BaseQQDialog.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="7176542018559718656" fileName="BaseQQDialog.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="4107795503521985566" fileName="BaseQQDialog.java" startLine="103" startPosition="34" endLine="109" endPosition="23" />
+    <scopeInfo nodeId="7176542018559718621" fileName="BaseQQDialog.java" startLine="94" startPosition="44" endLine="95" endPosition="24" />
+    <scopeInfo nodeId="4107795503521985547" fileName="BaseQQDialog.java" startLine="106" startPosition="27" endLine="107" endPosition="19" />
+    <scopeInfo nodeId="4107795503522096749" fileName="BaseQQDialog.java" startLine="123" startPosition="16" endLine="124" endPosition="23" />
+    <scopeInfo nodeId="7176542018559718657" fileName="BaseQQDialog.java" startLine="135" startPosition="45" endLine="136" endPosition="52" />
+    <scopeInfo nodeId="7176542018559718788" fileName="BaseQQDialog.java" startLine="143" startPosition="21" endLine="144" endPosition="13" />
+    <scopeInfo nodeId="7176542018559718799" fileName="BaseQQDialog.java" startLine="148" startPosition="25" endLine="149" endPosition="33" />
+    <scopeInfo nodeId="4107795503523726840" fileName="BaseQQDialog.java" startLine="83" startPosition="34" endLine="85" endPosition="29" />
+    <scopeInfo nodeId="4107795503521985566" fileName="BaseQQDialog.java" startLine="114" startPosition="34" endLine="116" endPosition="23" />
+    <scopeInfo nodeId="7176542018559718798" fileName="BaseQQDialog.java" startLine="148" startPosition="0" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="4107795503523512087" fileName="BaseQQDialog.java" startLine="82" startPosition="25" endLine="86" endPosition="9" />
+    <scopeInfo nodeId="7176542018559718620" fileName="BaseQQDialog.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="7176542018559718656" fileName="BaseQQDialog.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="4107795503523512086" fileName="BaseQQDialog.java" startLine="82" startPosition="0" endLine="88" endPosition="0" />
     <scopeInfo nodeId="7176542018559718533" fileName="BaseQQDialog.java" startLine="56" startPosition="25" endLine="63" endPosition="39" />
+    <scopeInfo nodeId="4107795503523506444" fileName="BaseQQDialog.java" startLine="80" startPosition="39" endLine="88" endPosition="7" />
     <scopeInfo nodeId="7176542018559718532" fileName="BaseQQDialog.java" startLine="56" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="7176542018559718786" fileName="BaseQQDialog.java" startLine="143" startPosition="25" endLine="153" endPosition="20" />
-    <scopeInfo nodeId="7176542018559718783" fileName="BaseQQDialog.java" startLine="142" startPosition="0" endLine="155" endPosition="0" />
-    <scopeInfo nodeId="4107795503521985558" fileName="BaseQQDialog.java" startLine="100" startPosition="31" endLine="121" endPosition="17">
+    <scopeInfo nodeId="4107795503521985558" fileName="BaseQQDialog.java" startLine="111" startPosition="31" endLine="120" endPosition="53">
       <varInfo nodeId="4107795503521985560" varName="query" />
       <varInfo nodeId="4107795503521985588" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="4107795503521985557" fileName="BaseQQDialog.java" startLine="100" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="4107795503523506441" fileName="BaseQQDialog.java" startLine="80" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="7176542018559718786" fileName="BaseQQDialog.java" startLine="142" startPosition="25" endLine="152" endPosition="20" />
+    <scopeInfo nodeId="4107795503521985557" fileName="BaseQQDialog.java" startLine="111" startPosition="0" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="7176542018559718783" fileName="BaseQQDialog.java" startLine="141" startPosition="0" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="4107795503522078416" fileName="BaseQQDialog.java" startLine="105" startPosition="27" endLine="122" endPosition="13" />
+    <scopeInfo nodeId="4107795503521672400" fileName="BaseQQDialog.java" startLine="101" startPosition="61" endLine="125" endPosition="9">
+      <varInfo nodeId="4107795503522065981" varName="isSuccessful" />
+      <varInfo nodeId="4107795503522343571" varName="mpsProject" />
+    </scopeInfo>
+    <scopeInfo nodeId="4107795503521672393" fileName="BaseQQDialog.java" startLine="101" startPosition="0" endLine="127" endPosition="0">
+      <varInfo nodeId="4107795503521672397" varName="indicator" />
+    </scopeInfo>
     <scopeInfo nodeId="7176542018559718478" fileName="BaseQQDialog.java" startLine="44" startPosition="96" endLine="71" endPosition="11" />
     <scopeInfo nodeId="7176542018559718473" fileName="BaseQQDialog.java" startLine="44" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="7176542018559718474" varName="concept" />
@@ -847,23 +865,14 @@
       <varInfo nodeId="7176542018563184359" varName="project" />
       <varInfo nodeId="7176542018560027942" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="4107795503522078416" fileName="BaseQQDialog.java" startLine="94" startPosition="27" endLine="123" endPosition="13" />
-    <scopeInfo nodeId="4107795503521672400" fileName="BaseQQDialog.java" startLine="90" startPosition="61" endLine="126" endPosition="9">
-      <varInfo nodeId="4107795503522065981" varName="isSuccessful" />
-      <varInfo nodeId="4107795503522343571" varName="mpsProject" />
-    </scopeInfo>
-    <scopeInfo nodeId="4107795503521672393" fileName="BaseQQDialog.java" startLine="90" startPosition="0" endLine="128" endPosition="0">
-      <varInfo nodeId="4107795503521672397" varName="indicator" />
-    </scopeInfo>
-    <scopeInfo nodeId="7176542018559718630" fileName="BaseQQDialog.java" startLine="88" startPosition="28" endLine="130" endPosition="23" />
-    <scopeInfo nodeId="7176542018559718629" fileName="BaseQQDialog.java" startLine="87" startPosition="0" endLine="132" endPosition="0" />
-    <unitInfo nodeId="4107795503521985575" fileName="BaseQQDialog.java" startLine="104" startPosition="48" endLine="108" endPosition="17" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$4" />
-    <unitInfo nodeId="7176542018559718798" fileName="BaseQQDialog.java" startLine="148" startPosition="65" endLine="152" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$3" />
-    <unitInfo nodeId="4107795503521985614" fileName="BaseQQDialog.java" startLine="116" startPosition="46" endLine="121" endPosition="15" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$4" />
+    <scopeInfo nodeId="7176542018559718630" fileName="BaseQQDialog.java" startLine="99" startPosition="28" endLine="129" endPosition="23" />
+    <scopeInfo nodeId="7176542018559718629" fileName="BaseQQDialog.java" startLine="98" startPosition="0" endLine="131" endPosition="0" />
+    <unitInfo nodeId="7176542018559718798" fileName="BaseQQDialog.java" startLine="147" startPosition="65" endLine="151" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$4" />
+    <unitInfo nodeId="4107795503523512086" fileName="BaseQQDialog.java" startLine="81" startPosition="36" endLine="88" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$2" />
     <unitInfo nodeId="7176542018559718532" fileName="BaseQQDialog.java" startLine="55" startPosition="66" endLine="65" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$1" />
-    <unitInfo nodeId="4107795503521985557" fileName="BaseQQDialog.java" startLine="99" startPosition="42" endLine="123" endPosition="11" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$3" />
-    <unitInfo nodeId="4107795503521672391" fileName="BaseQQDialog.java" startLine="89" startPosition="42" endLine="128" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$2" />
-    <unitInfo nodeId="7176542018559718432" fileName="BaseQQDialog.java" startLine="28" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog" />
+    <unitInfo nodeId="4107795503521985557" fileName="BaseQQDialog.java" startLine="110" startPosition="42" endLine="122" endPosition="11" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$4" />
+    <unitInfo nodeId="4107795503521672391" fileName="BaseQQDialog.java" startLine="100" startPosition="42" endLine="127" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$3" />
+    <unitInfo nodeId="7176542018559718432" fileName="BaseQQDialog.java" startLine="28" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog" />
   </root>
 </debugInfo>
 

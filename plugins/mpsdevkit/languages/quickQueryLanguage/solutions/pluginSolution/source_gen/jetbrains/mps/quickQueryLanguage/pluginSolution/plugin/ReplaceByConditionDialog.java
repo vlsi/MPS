@@ -42,7 +42,11 @@ public class ReplaceByConditionDialog extends BaseQQDialog {
     });
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        ProjectHelper.toIdeaProject(project).getComponent(ProjectPluginManager.class).getTool(RunReplacement_Tool.class).addTab(searchQuery.value, query);
+        ProjectHelper.toIdeaProject(project).getComponent(ProjectPluginManager.class).getTool(RunReplacement_Tool.class).addTab(searchQuery.value, query, new Runnable() {
+          public void run() {
+            doTempModelDispose();
+          }
+        });
       }
     });
   }
