@@ -30,8 +30,8 @@ class TempModel extends SModelBase implements EditableSModel {
   protected volatile jetbrains.mps.smodel.SModel mySModel;
   private boolean myReadOnly;
 
-  protected TempModel(boolean readOnly) {
-    super(createModelRef(), new NullDataSource());
+  protected TempModel(boolean readOnly, String modelName) {
+    super(createModelRef(modelName), new NullDataSource());
     myReadOnly = readOnly;
   }
 
@@ -110,8 +110,8 @@ class TempModel extends SModelBase implements EditableSModel {
     return null;
   }
 
-  private static SModelReference createModelRef() {
+  private static SModelReference createModelRef(String modelName) {
     SModelId id = SModelId.generate();
-    return PersistenceFacade.getInstance().createModelReference(null, id, "TempModel");
+    return PersistenceFacade.getInstance().createModelReference(null, id, modelName);
   }
 }

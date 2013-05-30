@@ -55,7 +55,7 @@ public class QuickQueryUtils {
   public static SModel createTemporaryModelWithQuery(SNode query) {
     SNode conceptToFind = SLinkOperations.getTarget(query, "conceptDeclaration", false);
 
-    SModel tempModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModuleWithSourceAndClassesGen());
+    SModel tempModel = TemporaryModels.getInstance().create("QQTempModel_" + System.nanoTime(), false, TempModuleOptions.forDefaultModuleWithSourceAndClassesGen());
     tempModel.addRootNode(query);
 
     ((SModelInternal) tempModel).addDevKit(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference());

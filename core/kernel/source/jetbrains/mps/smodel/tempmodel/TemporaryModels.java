@@ -45,13 +45,17 @@ public class TemporaryModels {
 
   private Map<TempModel, TempModuleOptions> myCreatedModels = new THashMap<TempModel, TempModuleOptions>();
 
-  public SModel create(boolean readOnly, @NotNull TempModuleOptions mp) {
+  public SModel create(String modelName, boolean readOnly, @NotNull TempModuleOptions mp) {
     SModuleBase module = (SModuleBase) mp.createModule();
 
-    TempModel model = new TempModel(readOnly);
+    TempModel model = new TempModel(readOnly, modelName);
     myCreatedModels.put(model, mp);
     module.registerModel(model);
     return model;
+  }
+
+  public SModel create(boolean readOnly, @NotNull TempModuleOptions mp) {
+    return create("TempModel", readOnly, mp);
   }
 
   //todo: this must be removed as soon as we have module API and can create a module that shows its model dependencies as its dependencies ("auto fixes" imports)
