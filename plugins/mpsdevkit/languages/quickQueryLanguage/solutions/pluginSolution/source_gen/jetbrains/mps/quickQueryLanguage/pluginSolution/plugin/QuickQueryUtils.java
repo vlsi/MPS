@@ -27,13 +27,11 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.project.Project;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
-import java.util.concurrent.Future;
-import com.intellij.openapi.application.ApplicationManager;
-import java.util.concurrent.Callable;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
@@ -43,6 +41,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
+import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -110,40 +109,33 @@ public class QuickQueryUtils {
 
 
   public static boolean make(final Project project, final SModel model) {
-    final IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
-
-    Future<Boolean> result = ApplicationManager.getApplication().executeOnPooledThread(new Callable<Boolean>() {
-      public Boolean call() throws Exception {
-        IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
-          @Override
-          public <T extends IOption> T relayQuery(IQuery<T> query) {
-            return query.defaultOption();
-          }
-        }, new IJobMonitor.Stub());
-
-        IOperationContext projectOperationContext = new ProjectOperationContext(project);
-        MakeSession session = new MakeSession(projectOperationContext, null, true);
-        if (IMakeService.INSTANCE.get().openNewSession(session)) {
-          Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(projectOperationContext, Sequence.<SModel>singleton(model)).resources(false), scr, ctl);
-          return future.get().isSucessful();
-        }
-
-        return false;
-      }
-    });
-
-    try {
-      return result.get();
-    } catch (InterruptedException e) {
-      // todo: log 
-      return false;
-    } catch (ExecutionException e) {
-      // todo: log 
+    if (SwingUtilities.isEventDispatchThread()) {
+      LOG.error("Must be called not from EDT", new IllegalStateException());
       return false;
     }
+
+    IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
+    IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
+      @Override
+      public <T extends IOption> T relayQuery(IQuery<T> query) {
+        return query.defaultOption();
+      }
+    }, new IJobMonitor.Stub());
+
+    IOperationContext projectOperationContext = new ProjectOperationContext(project);
+    MakeSession session = new MakeSession(projectOperationContext, null, true);
+    if (IMakeService.INSTANCE.get().openNewSession(session)) {
+      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(projectOperationContext, Sequence.<SModel>singleton(model)).resources(false), scr, ctl);
+      try {
+        return future.get().isSucessful();
+      } catch (InterruptedException e) {
+        // todo: log 
+      } catch (ExecutionException e) {
+        // todo: log 
+      }
+    }
+    return false;
   }
-
-
 
   public static boolean isNotEmpty_465b23_a0a0g(String str) {
     return str != null && str.length() > 0;

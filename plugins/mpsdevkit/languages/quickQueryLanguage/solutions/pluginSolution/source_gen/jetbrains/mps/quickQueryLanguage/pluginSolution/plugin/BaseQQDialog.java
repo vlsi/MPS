@@ -20,10 +20,7 @@ import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import javax.swing.JComponent;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.application.ApplicationManager;
 
 public abstract class BaseQQDialog extends DialogWrapper {
   private static Logger LOG = LogManager.getLogger(BaseQQDialog.class);
@@ -97,16 +94,12 @@ public abstract class BaseQQDialog extends DialogWrapper {
 
   @Override
   public void doOKAction() {
-    ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(myProject), "Compiling", false) {
-      public void run(@NotNull ProgressIndicator indicator) {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
         final Project mpsProject = BaseQQDialog.this.myProject;
 
         boolean isSuccessful = QuickQueryUtils.make(mpsProject, myTempModel);
         if (isSuccessful) {
-          if (myDisposed) {
-            return;
-          }
-
           myModelAccess.runReadAction(new Runnable() {
             public void run() {
               Query query = QuickQueryUtils.loadCompiledQuery(myQueryNode);
@@ -125,7 +118,6 @@ public abstract class BaseQQDialog extends DialogWrapper {
         }
       }
     });
-
     super.doOKAction();
   }
 
