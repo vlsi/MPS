@@ -4,7 +4,6 @@ package jetbrains.mps.samples.Expressions.sandbox;
 
 
 /**
- * 
  * Illustrates type inference using a dedicated simplified expression language.
  * Check types of the variables by inspecting their type - Control/Cmd + Shift + T.
  * You may also debug the typesystem engine using Type-system Trace - Control/Cmd + Shift + X.

@@ -129,9 +129,6 @@
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3453667744252544859" />
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="8620208551721910208">
-      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="8620208551721910209">
-        <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="8620208551721910210" />
-      </node>
       <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="8620208551721910235">
         <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="8620208551721910236">
           <property name="text" nameId="m373.8970989240999019144" value="Illustrates type inference using a dedicated simplified expression language." />
@@ -152,12 +149,14 @@
   <root id="3453667744252546022">
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceInitializer" typeId="tpee.1206629501431" id="3453667744252546042">
       <node role="statementList" roleId="tpee.1206629521979" type="tpee.StatementList" typeId="tpee.1068580123136" id="3453667744252546044">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8620208551721817807">
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="8620208551721817808">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1962809150991769646">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="1962809150991769647">
             <node role="commentedStatement" roleId="tpee.6329021646629175144" type="vpmn.SimpleMathWrapper" typeId="vpmn.2073504467208335362" id="3453667744252546099">
               <node role="expressions" roleId="vpmn.2073504467208335735" type="vpmn.SimpleMathTypedVarDeclaration" typeId="vpmn.8620208551721374838" id="8620208551721817373">
                 <property name="name" nameId="tpck.1169194664001" value="anotherInt" />
-                <node role="initializer" roleId="vpmn.2073504467209342228" type="vpmn.SimpleMathFloatConstant" typeId="vpmn.2073504467210944676" id="8620208551721817443" />
+                <node role="initializer" roleId="vpmn.2073504467209342228" type="vpmn.SimpleMathFloatConstant" typeId="vpmn.2073504467210944676" id="8620208551721817443">
+                  <property name="value" nameId="vpmn.2073504467210944677" value="1.3" />
+                </node>
                 <node role="type" roleId="vpmn.8620208551721379933" type="vpmn.SimpleMathIntegerType" typeId="vpmn.2073504467208542432" id="8620208551721817398" />
               </node>
             </node>
@@ -167,9 +166,6 @@
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3453667744252546023" />
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="8620208551721910297">
-      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="8620208551721910298">
-        <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="8620208551721910299" />
-      </node>
       <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="8620208551721910329">
         <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="8620208551721910330">
           <property name="text" nameId="m373.8970989240999019144" value="Illustrates type inference using a dedicated simplified expression language." />
