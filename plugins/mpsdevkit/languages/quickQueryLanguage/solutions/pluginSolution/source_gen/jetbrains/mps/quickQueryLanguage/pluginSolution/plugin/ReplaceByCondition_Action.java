@@ -4,25 +4,25 @@ package jetbrains.mps.quickQueryLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Priority;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.Language;
+import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class FindInstancesByCondition_Action extends BaseAction {
+public class ReplaceByCondition_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public FindInstancesByCondition_Action() {
-    super("Find Instances by Condition", "", ICON);
+  public ReplaceByCondition_Action() {
+    super("Modify Instances by Condition", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -32,12 +32,19 @@ public class FindInstancesByCondition_Action extends BaseAction {
     return false;
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((SModule) MapSequence.fromMap(_params).get("langModule")) instanceof Language;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "FindInstancesByCondition", t);
+        LOG.error("User's action doUpdate method failed. Action:" + "ReplaceByCondition", t);
       }
       this.disable(event.getPresentation());
     }
@@ -72,14 +79,14 @@ public class FindInstancesByCondition_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      FindInstancesDialog testDialog = new FindInstancesDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((SModule) MapSequence.fromMap(_params).get("langModule")));
-      testDialog.show();
+      ReplaceByConditionDialog dialog = new ReplaceByConditionDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((SModule) MapSequence.fromMap(_params).get("langModule")));
+      dialog.show();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "FindInstancesByCondition", t);
+        LOG.error("User's action execute method failed. Action:" + "ReplaceByCondition", t);
       }
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(FindInstancesByCondition_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ReplaceByCondition_Action.class);
 }

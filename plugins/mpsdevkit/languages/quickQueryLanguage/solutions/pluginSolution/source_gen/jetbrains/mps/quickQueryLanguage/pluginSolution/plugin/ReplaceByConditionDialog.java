@@ -19,15 +19,15 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public class ReplaceDialog extends BaseQQDialog {
-  public ReplaceDialog(SNode concept, IOperationContext context, SModule module) {
+public class ReplaceByConditionDialog extends BaseQQDialog {
+  public ReplaceByConditionDialog(SNode concept, IOperationContext context, SModule module) {
     super("Modify Instances by condition", "&Modify", concept, context, module);
   }
 
 
 
   protected SNode createQuery(SNode concept) {
-    return _quotation_createNode_bs6rum_a0a2((concept == null ?
+    return _quotation_createNode_6vpr30_a0a2((concept == null ?
       SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626") :
       concept
     ));
@@ -49,7 +49,7 @@ public class ReplaceDialog extends BaseQQDialog {
     });
   }
 
-  private static SNode _quotation_createNode_bs6rum_a0a2(Object parameter_1) {
+  private static SNode _quotation_createNode_6vpr30_a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

@@ -83,7 +83,7 @@
   <import index="n7he" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model.holders(MPS.Core/jetbrains.mps.ide.findusages.model.holders@java_stub)" version="-1" implicit="yes" />
   <import index="gv17" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view.optionseditor.options(MPS.Workbench/jetbrains.mps.ide.findusages.view.optionseditor.options@java_stub)" version="-1" implicit="yes" />
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841942626" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="FindInstancesByCondition" />
+    <property name="name" nameId="tpck.1169194664001" value="FindByCondition" />
     <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
     <property name="caption" nameId="tp4k.1205250923097" value="Find Instances by Condition" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="find" />
@@ -93,11 +93,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5487985028841942630" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="testDialog" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5487985028841942631" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5487985028841942759" resolveInfo="FindInstancesDialog" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5487985028841942759" resolveInfo="FindByConditionDialog" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5487985028841942632" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5487985028841942633" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5487985028841943063" resolveInfo="FindInstancesDialog" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5487985028841943063" resolveInfo="FindByConditionDialog" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="241681141559026929" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="241681141559026932" nodeInfo="nn" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionParameterReferenceOperation" typeId="tp4k.1206092561075" id="241681141559026934" nodeInfo="nn">
@@ -172,10 +172,10 @@
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="5487985028841942671" nodeInfo="ng">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5487985028841942672" nodeInfo="ng">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5487985028841942626" resolveInfo="FindInstancesByCondition" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5487985028841942626" resolveInfo="FindByCondition" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5487985028841942673" nodeInfo="ng">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5487985028841943773" resolveInfo="ReplacementQueryAction" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5487985028841943773" resolveInfo="ReplaceByCondition" />
       </node>
     </node>
   </root>
@@ -394,7 +394,7 @@
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5487985028841942759" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="FindInstancesDialog" />
+    <property name="name" nameId="tpck.1169194664001" value="FindByConditionDialog" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="find" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7176542018559918086" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7176542018559718432" resolveInfo="BaseQQDialog" />
@@ -625,7 +625,7 @@
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5487985028841943302" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="ReplaceDialog" />
+    <property name="name" nameId="tpck.1169194664001" value="ReplaceByConditionDialog" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="replace" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7176542018561248646" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7176542018559718432" resolveInfo="BaseQQDialog" />
@@ -845,7 +845,7 @@
     </node>
   </root>
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841943773" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="ReplacementQueryAction" />
+    <property name="name" nameId="tpck.1169194664001" value="ReplaceByCondition" />
     <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
     <property name="caption" nameId="tp4k.1205250923097" value="Modify Instances by Condition" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="replace" />
@@ -855,11 +855,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5487985028841943777" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="dialog" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5487985028841943778" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5487985028841943302" resolveInfo="ReplaceDialog" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5487985028841943302" resolveInfo="ReplaceByConditionDialog" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5487985028841943779" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5487985028841943780" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5487985028841943634" resolveInfo="ReplaceDialog" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5487985028841943634" resolveInfo="ReplaceByConditionDialog" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="241681141559900707" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="241681141559900710" nodeInfo="nn" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionParameterReferenceOperation" typeId="tp4k.1206092561075" id="241681141559900712" nodeInfo="nn">
@@ -2035,10 +2035,10 @@
   <root type="tp4k.NonDumbAwareActions" typeId="tp4k.1512255007353869532" id="3856909620695009137" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Default" />
     <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="3856909620695009217" nodeInfo="nn">
-      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="5487985028841942626" resolveInfo="FindInstancesByCondition" />
+      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="5487985028841942626" resolveInfo="FindByCondition" />
     </node>
     <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="3856909620695009219" nodeInfo="nn">
-      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="5487985028841943773" resolveInfo="ReplacementQueryAction" />
+      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="5487985028841943773" resolveInfo="ReplaceByCondition" />
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7176542018558731425" nodeInfo="ig">

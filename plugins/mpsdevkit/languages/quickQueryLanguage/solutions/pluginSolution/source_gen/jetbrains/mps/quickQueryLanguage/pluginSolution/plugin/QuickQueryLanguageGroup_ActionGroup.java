@@ -15,8 +15,8 @@ public class QuickQueryLanguageGroup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      QuickQueryLanguageGroup_ActionGroup.this.addAction("jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesByCondition_Action");
-      QuickQueryLanguageGroup_ActionGroup.this.addAction("jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementQueryAction_Action");
+      QuickQueryLanguageGroup_ActionGroup.this.addAction("jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindByCondition_Action");
+      QuickQueryLanguageGroup_ActionGroup.this.addAction("jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceByCondition_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

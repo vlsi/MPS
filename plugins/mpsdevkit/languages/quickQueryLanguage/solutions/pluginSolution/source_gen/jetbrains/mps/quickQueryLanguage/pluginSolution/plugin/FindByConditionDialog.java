@@ -18,15 +18,15 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public class FindInstancesDialog extends BaseQQDialog {
-  public FindInstancesDialog(SNode concept, IOperationContext context, SModule module) {
+public class FindByConditionDialog extends BaseQQDialog {
+  public FindByConditionDialog(SNode concept, IOperationContext context, SModule module) {
     super("Find Instances by condition", "&Find", concept, context, module);
   }
 
 
 
   protected SNode createQuery(SNode concept) {
-    return _quotation_createNode_vfh0rq_a0a2((concept == null ?
+    return _quotation_createNode_rwieix_a0a2((concept == null ?
       SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626") :
       concept
     ));
@@ -45,7 +45,7 @@ public class FindInstancesDialog extends BaseQQDialog {
     tool.findUsages(FindUtils.makeProvider(new QueryFinder(query)), searchQuery.value, true, true, false, "No usages for that node");
   }
 
-  private static SNode _quotation_createNode_vfh0rq_a0a2(Object parameter_1) {
+  private static SNode _quotation_createNode_rwieix_a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

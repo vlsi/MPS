@@ -19,8 +19,8 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new FindInstancesByCondition_Action());
-    addAction(new ReplacementQueryAction_Action());
+    addAction(new FindByCondition_Action());
+    addAction(new ReplaceByCondition_Action());
     // groups 
     addGroup(new QuickQueryLanguageGroup_ActionGroup());
   }
