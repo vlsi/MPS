@@ -23,10 +23,12 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SNodeUtil;
+import org.jetbrains.mps.openapi.model.*;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -137,7 +139,7 @@ public class DelayedChanges {
           SNode parent = myChildToReplace.getParent();
           if (parent == null) {
             // root?
-            if (myChildToReplace.getModel() != null && myChildToReplace.getModel().isRoot(myChildToReplace)) {
+            if (myChildToReplace.getModel() != null && myChildToReplace.getParent() == null) {
               myChildToReplace.getModel().addRootNode(child);
               myChildToReplace.getModel().removeRootNode(myChildToReplace);
               myGenerator.rootReplaced(myChildToReplace, child);

@@ -57,7 +57,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.regex.Pattern;
 
 public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
 
@@ -267,7 +266,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       if (jetbrains.mps.util.SNodeOperations.isDisposed(event.getNode())) return;
 
       MPSNodeVirtualFile vf = myVirtualFiles.get(new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), event.getNode().getNodeId()));
-      if (!(event.getNode().getModel() != null && event.getNode().getModel().isRoot(event.getNode())) || vf == null)
+      if (!(event.getNode().getModel() != null && event.getNode().getParent() == null) || vf == null)
         return;
       String newName = event.getNode().getPresentation();
       if (!newName.equals(vf.getName())) {
