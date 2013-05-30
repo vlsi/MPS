@@ -205,6 +205,7 @@ public class ModuleClassLoader extends ClassLoader {
     }
     Set<ClassLoader> classLoaders = new HashSet<ClassLoader>();
     for (SModule dep : mySupport.getCompileDependencies()) {
+      if (!ModuleClassLoaderSupport.canCreate(dep)) continue; // avoid exception throwing during class loading
       ClassLoader classLoader = myManager.getClassLoader(dep);
       if (classLoader != null) {
         classLoaders.add(classLoader);

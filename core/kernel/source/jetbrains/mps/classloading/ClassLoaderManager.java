@@ -179,6 +179,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   // main internal method. use getClass instead
   @Nullable
+  // TODO must declare checked exceptions instead of silently throwing IAE
   public synchronized ClassLoader getClassLoader(SModule module) {
     CustomClassLoadingFacet customClassLoadingFacet = module.getFacet(CustomClassLoadingFacet.class);
     if (customClassLoadingFacet != null) {
