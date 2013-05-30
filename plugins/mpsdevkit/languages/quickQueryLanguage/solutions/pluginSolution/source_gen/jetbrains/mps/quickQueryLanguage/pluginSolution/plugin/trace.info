@@ -690,15 +690,15 @@
     <nodeInfo nodeId="2996802202586259238" fileName="BaseQQDialog.java" startLine="45" startPosition="20" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7176542018559718522" fileName="BaseQQDialog.java" startLine="46" startPosition="0" endLine="47" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2996802202586219994" fileName="BaseQQDialog.java" startLine="47" startPosition="24" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7176542018559718534" fileName="BaseQQDialog.java" startLine="50" startPosition="25" endLine="51" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718548" fileName="BaseQQDialog.java" startLine="51" startPosition="43" endLine="52" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718553" fileName="BaseQQDialog.java" startLine="52" startPosition="81" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7176542018559718554" fileName="BaseQQDialog.java" startLine="53" startPosition="0" endLine="54" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718561" fileName="BaseQQDialog.java" startLine="54" startPosition="63" endLine="55" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718567" fileName="BaseQQDialog.java" startLine="57" startPosition="7" endLine="58" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718577" fileName="BaseQQDialog.java" startLine="58" startPosition="52" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7176542018559718583" fileName="BaseQQDialog.java" startLine="59" startPosition="0" endLine="60" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718592" fileName="BaseQQDialog.java" startLine="60" startPosition="50" endLine="61" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718583" fileName="BaseQQDialog.java" startLine="50" startPosition="25" endLine="51" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2996802202586770096" fileName="BaseQQDialog.java" startLine="51" startPosition="54" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7176542018559718534" fileName="BaseQQDialog.java" startLine="52" startPosition="0" endLine="53" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718548" fileName="BaseQQDialog.java" startLine="53" startPosition="43" endLine="54" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718553" fileName="BaseQQDialog.java" startLine="54" startPosition="81" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7176542018559718554" fileName="BaseQQDialog.java" startLine="55" startPosition="0" endLine="56" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718561" fileName="BaseQQDialog.java" startLine="56" startPosition="63" endLine="57" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718567" fileName="BaseQQDialog.java" startLine="59" startPosition="7" endLine="60" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718592" fileName="BaseQQDialog.java" startLine="60" startPosition="52" endLine="61" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2996802202586417756" fileName="BaseQQDialog.java" startLine="61" startPosition="65" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7176542018559718605" fileName="BaseQQDialog.java" startLine="62" startPosition="0" endLine="63" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7176542018559718613" fileName="BaseQQDialog.java" startLine="63" startPosition="54" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -706,41 +706,41 @@
     <nodeInfo nodeId="7176542018559749085" fileName="BaseQQDialog.java" startLine="70" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createQuery#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7176542018560468844" fileName="BaseQQDialog.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeQuery#(Ljetbrains/mps/project/Project;Ljetbrains/mps/quickQueryLanguage/runtime/Query;Ljetbrains/mps/ide/findusages/model/scopes/FindUsagesScope;)V" />
     <nodeInfo nodeId="7176542018559718622" fileName="BaseQQDialog.java" startLine="77" startPosition="44" endLine="78" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7176542018559718631" fileName="BaseQQDialog.java" startLine="82" startPosition="28" endLine="83" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018561156796" fileName="BaseQQDialog.java" startLine="83" startPosition="23" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2996802202586582566" fileName="BaseQQDialog.java" startLine="87" startPosition="25" endLine="88" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2996802202586582568" fileName="BaseQQDialog.java" startLine="89" startPosition="9" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7176542018559718676" fileName="BaseQQDialog.java" startLine="93" startPosition="31" endLine="94" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7176542018559718683" fileName="BaseQQDialog.java" startLine="95" startPosition="34" endLine="96" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7176542018559718687" fileName="BaseQQDialog.java" startLine="97" startPosition="15" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7176542018559718688" fileName="BaseQQDialog.java" startLine="98" startPosition="0" endLine="99" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7176542018559718702" fileName="BaseQQDialog.java" startLine="99" startPosition="97" endLine="100" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718649" fileName="BaseQQDialog.java" startLine="103" startPosition="16" endLine="104" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7176542018559718658" fileName="BaseQQDialog.java" startLine="113" startPosition="45" endLine="114" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7176542018559718789" fileName="BaseQQDialog.java" startLine="121" startPosition="21" endLine="122" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7176542018559718791" fileName="BaseQQDialog.java" startLine="123" startPosition="5" endLine="124" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718800" fileName="BaseQQDialog.java" startLine="126" startPosition="25" endLine="127" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718804" fileName="BaseQQDialog.java" startLine="127" startPosition="33" endLine="128" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7176542018559718806" fileName="BaseQQDialog.java" startLine="128" startPosition="51" endLine="129" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7176542018559718814" fileName="BaseQQDialog.java" startLine="131" startPosition="7" endLine="132" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718647" fileName="BaseQQDialog.java" startLine="103" startPosition="14" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2996802202586565644" fileName="BaseQQDialog.java" startLine="86" startPosition="48" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7176542018559718681" fileName="BaseQQDialog.java" startLine="94" startPosition="75" endLine="97" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7176542018559718787" fileName="BaseQQDialog.java" startLine="120" startPosition="25" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2996802202586897010" fileName="BaseQQDialog.java" startLine="84" startPosition="48" endLine="85" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2996802202586838216" fileName="BaseQQDialog.java" startLine="85" startPosition="51" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2996802202586582568" fileName="BaseQQDialog.java" startLine="86" startPosition="18" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7176542018559718676" fileName="BaseQQDialog.java" startLine="90" startPosition="31" endLine="91" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7176542018559718683" fileName="BaseQQDialog.java" startLine="92" startPosition="34" endLine="93" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7176542018559718687" fileName="BaseQQDialog.java" startLine="94" startPosition="15" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7176542018559718688" fileName="BaseQQDialog.java" startLine="95" startPosition="0" endLine="96" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7176542018559718702" fileName="BaseQQDialog.java" startLine="96" startPosition="97" endLine="97" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718649" fileName="BaseQQDialog.java" startLine="100" startPosition="16" endLine="101" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2996802202586978533" fileName="BaseQQDialog.java" startLine="104" startPosition="7" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2996802202586965540" fileName="BaseQQDialog.java" startLine="105" startPosition="0" endLine="106" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718658" fileName="BaseQQDialog.java" startLine="112" startPosition="45" endLine="113" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7176542018559718789" fileName="BaseQQDialog.java" startLine="120" startPosition="21" endLine="121" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7176542018559718791" fileName="BaseQQDialog.java" startLine="122" startPosition="5" endLine="123" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718800" fileName="BaseQQDialog.java" startLine="125" startPosition="25" endLine="126" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718804" fileName="BaseQQDialog.java" startLine="126" startPosition="33" endLine="127" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7176542018559718806" fileName="BaseQQDialog.java" startLine="127" startPosition="51" endLine="128" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7176542018559718814" fileName="BaseQQDialog.java" startLine="130" startPosition="7" endLine="131" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718647" fileName="BaseQQDialog.java" startLine="100" startPosition="14" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7176542018559718681" fileName="BaseQQDialog.java" startLine="91" startPosition="75" endLine="94" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7176542018559718787" fileName="BaseQQDialog.java" startLine="119" startPosition="25" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7176542018559718620" fileName="BaseQQDialog.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="7176542018559718656" fileName="BaseQQDialog.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7176542018559718798" fileName="BaseQQDialog.java" startLine="126" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7176542018559718532" fileName="BaseQQDialog.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7176542018559718795" fileName="BaseQQDialog.java" startLine="124" startPosition="22" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718529" fileName="BaseQQDialog.java" startLine="48" startPosition="0" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718674" fileName="BaseQQDialog.java" startLine="93" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7176542018559718671" fileName="BaseQQDialog.java" startLine="91" startPosition="27" endLine="102" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7176542018559718642" fileName="BaseQQDialog.java" startLine="90" startPosition="0" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7176542018559718783" fileName="BaseQQDialog.java" startLine="119" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="7176542018559718640" fileName="BaseQQDialog.java" startLine="86" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Boolean;)V" />
-    <nodeInfo nodeId="7176542018559718633" fileName="BaseQQDialog.java" startLine="84" startPosition="0" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718656" fileName="BaseQQDialog.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7176542018559718798" fileName="BaseQQDialog.java" startLine="125" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7176542018559718795" fileName="BaseQQDialog.java" startLine="123" startPosition="22" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718532" fileName="BaseQQDialog.java" startLine="50" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7176542018559718674" fileName="BaseQQDialog.java" startLine="90" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7176542018559718529" fileName="BaseQQDialog.java" startLine="48" startPosition="0" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718671" fileName="BaseQQDialog.java" startLine="88" startPosition="27" endLine="99" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718642" fileName="BaseQQDialog.java" startLine="87" startPosition="0" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7176542018559718783" fileName="BaseQQDialog.java" startLine="118" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="7176542018559718640" fileName="BaseQQDialog.java" startLine="84" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Boolean;)V" />
+    <nodeInfo nodeId="7176542018559718633" fileName="BaseQQDialog.java" startLine="82" startPosition="28" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7176542018559718629" fileName="BaseQQDialog.java" startLine="81" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
     <nodeInfo nodeId="7176542018559718473" fileName="BaseQQDialog.java" startLine="39" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseQQDialog#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7176542018559718629" fileName="BaseQQDialog.java" startLine="81" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
     <scopeInfo nodeId="7176542018559749085" fileName="BaseQQDialog.java" startLine="70" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="7176542018559751620" varName="concept" />
     </scopeInfo>
@@ -750,43 +750,42 @@
       <varInfo nodeId="7176542018560470021" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="7176542018559718621" fileName="BaseQQDialog.java" startLine="77" startPosition="44" endLine="78" endPosition="24" />
-    <scopeInfo nodeId="2996802202586565647" fileName="BaseQQDialog.java" startLine="87" startPosition="25" endLine="88" endPosition="17" />
-    <scopeInfo nodeId="7176542018559718682" fileName="BaseQQDialog.java" startLine="95" startPosition="34" endLine="96" endPosition="23" />
-    <scopeInfo nodeId="7176542018559718648" fileName="BaseQQDialog.java" startLine="103" startPosition="16" endLine="104" endPosition="23" />
-    <scopeInfo nodeId="7176542018559718657" fileName="BaseQQDialog.java" startLine="113" startPosition="45" endLine="114" endPosition="52" />
-    <scopeInfo nodeId="7176542018559718788" fileName="BaseQQDialog.java" startLine="121" startPosition="21" endLine="122" endPosition="13" />
-    <scopeInfo nodeId="7176542018559718799" fileName="BaseQQDialog.java" startLine="126" startPosition="25" endLine="129" endPosition="18" />
+    <scopeInfo nodeId="7176542018559718682" fileName="BaseQQDialog.java" startLine="92" startPosition="34" endLine="93" endPosition="23" />
+    <scopeInfo nodeId="7176542018559718648" fileName="BaseQQDialog.java" startLine="100" startPosition="16" endLine="101" endPosition="23" />
+    <scopeInfo nodeId="7176542018559718657" fileName="BaseQQDialog.java" startLine="112" startPosition="45" endLine="113" endPosition="52" />
+    <scopeInfo nodeId="7176542018559718788" fileName="BaseQQDialog.java" startLine="120" startPosition="21" endLine="121" endPosition="13" />
+    <scopeInfo nodeId="7176542018559718799" fileName="BaseQQDialog.java" startLine="125" startPosition="25" endLine="128" endPosition="18" />
     <scopeInfo nodeId="7176542018559718620" fileName="BaseQQDialog.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="7176542018559718656" fileName="BaseQQDialog.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="7176542018559718533" fileName="BaseQQDialog.java" startLine="50" startPosition="25" endLine="55" endPosition="39" />
-    <scopeInfo nodeId="7176542018559718798" fileName="BaseQQDialog.java" startLine="126" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="7176542018559718532" fileName="BaseQQDialog.java" startLine="50" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="7176542018559718675" fileName="BaseQQDialog.java" startLine="93" startPosition="31" endLine="100" endPosition="52">
+    <scopeInfo nodeId="7176542018559718656" fileName="BaseQQDialog.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="7176542018559718798" fileName="BaseQQDialog.java" startLine="125" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="7176542018559718533" fileName="BaseQQDialog.java" startLine="50" startPosition="25" endLine="57" endPosition="39" />
+    <scopeInfo nodeId="7176542018559718675" fileName="BaseQQDialog.java" startLine="90" startPosition="31" endLine="97" endPosition="52">
       <varInfo nodeId="7176542018559718677" varName="query" />
       <varInfo nodeId="7176542018559718689" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="7176542018559718674" fileName="BaseQQDialog.java" startLine="93" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="7176542018559718644" fileName="BaseQQDialog.java" startLine="91" startPosition="27" endLine="102" endPosition="13" />
-    <scopeInfo nodeId="7176542018559718786" fileName="BaseQQDialog.java" startLine="120" startPosition="25" endLine="132" endPosition="20" />
-    <scopeInfo nodeId="7176542018559718783" fileName="BaseQQDialog.java" startLine="119" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="7176542018559718641" fileName="BaseQQDialog.java" startLine="86" startPosition="48" endLine="105" endPosition="9" />
-    <scopeInfo nodeId="7176542018559718640" fileName="BaseQQDialog.java" startLine="86" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="7176542018559718532" fileName="BaseQQDialog.java" startLine="50" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="7176542018559718674" fileName="BaseQQDialog.java" startLine="90" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="7176542018559718644" fileName="BaseQQDialog.java" startLine="88" startPosition="27" endLine="99" endPosition="13" />
+    <scopeInfo nodeId="7176542018559718786" fileName="BaseQQDialog.java" startLine="119" startPosition="25" endLine="131" endPosition="20" />
+    <scopeInfo nodeId="7176542018559718783" fileName="BaseQQDialog.java" startLine="118" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="7176542018559718641" fileName="BaseQQDialog.java" startLine="84" startPosition="48" endLine="102" endPosition="9" />
+    <scopeInfo nodeId="7176542018559718640" fileName="BaseQQDialog.java" startLine="84" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="7176542018559718640" varName="isSuccessful" />
     </scopeInfo>
-    <scopeInfo nodeId="7176542018559718630" fileName="BaseQQDialog.java" startLine="82" startPosition="28" endLine="107" endPosition="7" />
+    <scopeInfo nodeId="7176542018559718630" fileName="BaseQQDialog.java" startLine="82" startPosition="28" endLine="106" endPosition="23" />
     <scopeInfo nodeId="7176542018559718478" fileName="BaseQQDialog.java" startLine="39" startPosition="96" endLine="65" endPosition="11" />
+    <scopeInfo nodeId="7176542018559718629" fileName="BaseQQDialog.java" startLine="81" startPosition="0" endLine="108" endPosition="0" />
     <scopeInfo nodeId="7176542018559718473" fileName="BaseQQDialog.java" startLine="39" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="7176542018559718474" varName="concept" />
       <varInfo nodeId="7176542018560043324" varName="okButtonText" />
       <varInfo nodeId="7176542018563184359" varName="project" />
       <varInfo nodeId="7176542018560027942" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="7176542018559718629" fileName="BaseQQDialog.java" startLine="81" startPosition="0" endLine="109" endPosition="0" />
-    <unitInfo nodeId="7176542018559718798" fileName="BaseQQDialog.java" startLine="125" startPosition="65" endLine="131" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$3" />
-    <unitInfo nodeId="7176542018559718532" fileName="BaseQQDialog.java" startLine="49" startPosition="66" endLine="57" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$1" />
-    <unitInfo nodeId="7176542018559718674" fileName="BaseQQDialog.java" startLine="92" startPosition="71" endLine="102" endPosition="11" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$3" />
-    <unitInfo nodeId="7176542018559718640" fileName="BaseQQDialog.java" startLine="85" startPosition="47" endLine="107" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$2" />
-    <unitInfo nodeId="7176542018559718432" fileName="BaseQQDialog.java" startLine="24" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog" />
+    <unitInfo nodeId="7176542018559718798" fileName="BaseQQDialog.java" startLine="124" startPosition="65" endLine="130" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$3" />
+    <unitInfo nodeId="7176542018559718532" fileName="BaseQQDialog.java" startLine="49" startPosition="66" endLine="59" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$1" />
+    <unitInfo nodeId="7176542018559718674" fileName="BaseQQDialog.java" startLine="89" startPosition="71" endLine="99" endPosition="11" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$3" />
+    <unitInfo nodeId="7176542018559718640" fileName="BaseQQDialog.java" startLine="83" startPosition="47" endLine="104" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog$2" />
+    <unitInfo nodeId="7176542018559718432" fileName="BaseQQDialog.java" startLine="24" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog" />
   </root>
 </debugInfo>
 

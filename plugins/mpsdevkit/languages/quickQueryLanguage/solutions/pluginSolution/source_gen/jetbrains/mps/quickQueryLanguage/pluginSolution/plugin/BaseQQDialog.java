@@ -48,6 +48,8 @@ public abstract class BaseQQDialog extends DialogWrapper {
 
     myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
+        myScope = new ScopeEditor(new ScopeOptions());
+
         myQueryNode = createQuery(concept);
         myTempModel = QuickQueryUtils.createTemporaryModelWithQuery(myQueryNode);
 
@@ -56,8 +58,6 @@ public abstract class BaseQQDialog extends DialogWrapper {
       }
     });
     myPanel.add(this.myEditor, BorderLayout.CENTER);
-
-    myScope = new ScopeEditor(new ScopeOptions());
     myPanel.add(this.myScope.getComponent(), BorderLayout.SOUTH);
 
     myPanel.setPreferredSize(new Dimension(500, 500));
@@ -80,13 +80,10 @@ public abstract class BaseQQDialog extends DialogWrapper {
 
   @Override
   public void doOKAction() {
-    super.doOKAction();
-
     MakeUtils.make(myProject, myTempModel, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean isSuccessful) {
-        if (myDisposed) {
-          return;
-        }
+        // todo: enable after modal in doOkAction! 
+        // <node> 
 
         if (isSuccessful) {
           myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -105,6 +102,8 @@ public abstract class BaseQQDialog extends DialogWrapper {
         }
       }
     });
+
+    super.doOKAction();
   }
 
 
