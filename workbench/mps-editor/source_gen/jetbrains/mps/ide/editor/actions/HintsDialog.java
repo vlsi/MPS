@@ -4,6 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintPreferencesPage;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -12,14 +13,17 @@ import javax.swing.Action;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class HintsDialog extends DialogWrapper {
   private ConceptEditorHintPreferencesPage myPage;
+  private EditorComponent myComponent;
 
 
-  public HintsDialog(Project project, @NotNull ConceptEditorHintPreferencesPage page) {
+  public HintsDialog(Project project, @NotNull ConceptEditorHintPreferencesPage page, EditorComponent component) {
     super(project, true);
     myPage = page;
+    myComponent = component;
     setTitle("Push Editor Hints");
     init();
   }
@@ -47,6 +51,14 @@ public class HintsDialog extends DialogWrapper {
   @Override
   protected void doOKAction() {
     myPage.commit();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        myComponent.rebuildEditorContent();
+      }
+    });
+
+    super.doOKAction();
   }
 
 

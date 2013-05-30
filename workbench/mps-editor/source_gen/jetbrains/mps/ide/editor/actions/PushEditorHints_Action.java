@@ -81,7 +81,7 @@ public class PushEditorHints_Action extends BaseAction {
       }
       ConceptEditorHintSettings settings = component.getSettings();
       final ConceptEditorHintPreferencesPage page = new ConceptEditorHintPreferencesPage(settings);
-      DialogWrapper dialog = new HintsDialog(((Project) MapSequence.fromMap(_params).get("project")), page);
+      DialogWrapper dialog = new HintsDialog(((Project) MapSequence.fromMap(_params).get("project")), page, component);
       dialog.show();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

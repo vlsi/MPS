@@ -102,6 +102,7 @@ import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -201,6 +202,7 @@ import java.beans.PropertyChangeListener;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -1862,12 +1864,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         getEditorContext().pushTracerTask("Running swap editor cell action", true);
+        if (mySettings != null) {
+          getEditorContext().getCellFactory().pushCellContext();
+          Object[] hints = mySettings.getEnabledHints().toArray();
+          getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
+        }
         runSwapCellsActions(new Runnable() {
           @Override
           public void run() {
+
             setRootCell(createRootCell(events));
           }
         });
+        if (mySettings != null) {
+          getEditorContext().getCellFactory().popCellContext();
+        }
         getEditorContext().popTracerTask();
 
         for (EditorCell_Component component : getCellTracker().getComponentCells()) {

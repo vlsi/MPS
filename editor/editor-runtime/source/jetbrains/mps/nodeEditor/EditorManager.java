@@ -146,16 +146,20 @@ public class EditorManager {
         fillContextToCellMap(rootCell, myContextToOldCellMap.peek());
       }
       myCreatingInspectedCell = isInspectorCell;
-      context.getCellFactory().pushCellContext();
-      com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(ProjectHelper.getProject(context.getRepository()));
-      MyState state = ConceptEditorHintSettingsComponent.getInstance(project).getState();
-      if (project != null && state != null) {
-        Object[] hints = state.getEnabledHints().toArray();
-        context.getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
+      if (context.getCellFactory().getCellContext() != null){
+        context.getCellFactory().pushCellContext();
+        com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(ProjectHelper.getProject(context.getRepository()));
+        MyState state = ConceptEditorHintSettingsComponent.getInstance(project).getState();
+        if (project != null && state != null) {
+          Object[] hints = state.getEnabledHints().toArray();
+          context.getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
+        }
       }
       return createEditorCell(context, modifications, nodeRefContext);
     } finally {
-      context.getCellFactory().popCellContext();
+      if (context.getCellFactory().getCellContext() != null) {
+        context.getCellFactory().popCellContext();
+      }
       myContextToOldCellMap.pop();
       popTask(context);
     }
