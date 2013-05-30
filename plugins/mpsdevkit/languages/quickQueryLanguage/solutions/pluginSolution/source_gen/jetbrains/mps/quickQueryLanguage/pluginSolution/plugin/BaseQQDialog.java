@@ -7,12 +7,11 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import org.jetbrains.mps.openapi.module.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.embeddableEditor.SimpleEmbeddableEditor;
-import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import java.awt.Dimension;
@@ -25,40 +24,43 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public abstract class BaseQQDialog extends DialogWrapper {
   private static Logger LOG = LogManager.getLogger(BaseQQDialog.class);
 
-  private JPanel myPanel = new JPanel(new BorderLayout());
-  private ModelAccess myModelAccess;
-  private SModel myTempModel;
+  private final JPanel myPanel = new JPanel(new BorderLayout());
   private SimpleEmbeddableEditor myEditor;
+
+  private final Project myProject;
+
+  private SNode myQueryNode;
+  private SModel myTempModel;
+
   private ScopeEditor myScope;
-  private SNode myNode;
   private boolean myDisposed = false;
-  private Project myProject;
 
 
   public BaseQQDialog(String title, String okButtonText, Project project, final SNode concept) {
     super(ProjectHelper.toIdeaProject(project));
-    this.setTitle(title);
-    this.myModelAccess = project.getRepository().getModelAccess();
-    this.setModal(false);
-    this.setOKButtonText(okButtonText);
-    this.setCancelButtonText("&Cancel");
+
+    setTitle(title);
+    setOKButtonText(okButtonText);
+    setCancelButtonText("&Cancel");
+    setModal(false);
+
     myProject = project;
 
-    myModelAccess.executeCommand(new Runnable() {
+    myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
-        myNode = createQuery(concept);
-        myTempModel = QuickQueryUtils.createTemporaryModelWithQuery(myNode);
+        myQueryNode = createQuery(concept);
+        myTempModel = QuickQueryUtils.createTemporaryModelWithQuery(myQueryNode);
 
         myEditor = new SimpleEmbeddableEditor(myProject, true);
-        myEditor.editNode(myNode);
+        myEditor.editNode(myQueryNode);
       }
     });
-    this.myPanel.add(this.myEditor, BorderLayout.CENTER);
+    myPanel.add(this.myEditor, BorderLayout.CENTER);
 
-    this.myScope = new ScopeEditor(new ScopeOptions());
-    this.myPanel.add(this.myScope.getComponent(), BorderLayout.SOUTH);
+    myScope = new ScopeEditor(new ScopeOptions());
+    myPanel.add(this.myScope.getComponent(), BorderLayout.SOUTH);
+
     myPanel.setPreferredSize(new Dimension(500, 500));
-    this.setModal(false);
 
     init();
   }
@@ -82,10 +84,14 @@ public abstract class BaseQQDialog extends DialogWrapper {
 
     MakeUtils.make(myProject, myTempModel, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean isSuccessful) {
+        if (myDisposed) {
+          return;
+        }
+
         if (isSuccessful) {
-          myModelAccess.runReadAction(new Runnable() {
+          myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
             public void run() {
-              Query query = QuickQueryUtils.loadCompiledQuery(myNode);
+              Query query = QuickQueryUtils.loadCompiledQuery(myQueryNode);
               if (query == null) {
                 return;
               }
@@ -116,7 +122,7 @@ public abstract class BaseQQDialog extends DialogWrapper {
       return;
     }
     myDisposed = true;
-    myModelAccess.runWriteInEDT(new Runnable() {
+    myProject.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         myEditor.disposeEditor();
         // todo: enable after modal in doOkAction! 
