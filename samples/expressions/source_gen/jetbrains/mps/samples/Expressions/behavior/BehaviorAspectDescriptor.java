@@ -16,7 +16,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new NotSimpleMathExpression_BehaviorDescriptor();
       case 6:
         return new SimpleMathBooleanType_BehaviorDescriptor();
-      case 17:
+      case 18:
         return new SimpleMathWrapper_BehaviorDescriptor();
       case 0:
         return new AndSimpleMathExpression_BehaviorDescriptor();
@@ -30,9 +30,9 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new SimpleMathIntegerType_BehaviorDescriptor();
       case 1:
         return new ArithmeticSimpleMathExpression_BehaviorDescriptor();
-      case 15:
-        return new SimpleMathVarDeclaration_BehaviorDescriptor();
       case 16:
+        return new SimpleMathVarDeclaration_BehaviorDescriptor();
+      case 17:
         return new SimpleMathVarReference_BehaviorDescriptor();
       case 7:
         return new SimpleMathElementType_BehaviorDescriptor();
@@ -48,10 +48,12 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new SimpleMathFloatConstant_BehaviorDescriptor();
       case 4:
         return new SimpleMathAssignment_BehaviorDescriptor();
+      case 15:
+        return new SimpleMathTypedVarDeclaration_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.Expressions.structure.AndSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.NotSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.OrSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.SimpleMathAssignment", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType", "jetbrains.mps.samples.Expressions.structure.SimpleMathElementType", "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType", "jetbrains.mps.samples.Expressions.structure.SimpleMathLongConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", "jetbrains.mps.samples.Expressions.structure.SimpleMathNumberType", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference", "jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.Expressions.structure.AndSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.NotSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.OrSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.SimpleMathAssignment", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType", "jetbrains.mps.samples.Expressions.structure.SimpleMathElementType", "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType", "jetbrains.mps.samples.Expressions.structure.SimpleMathLongConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", "jetbrains.mps.samples.Expressions.structure.SimpleMathNumberType", "jetbrains.mps.samples.Expressions.structure.SimpleMathTypedVarDeclaration", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference", "jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper"};
 }

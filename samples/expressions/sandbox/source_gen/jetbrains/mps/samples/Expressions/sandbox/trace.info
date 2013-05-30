@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:95889e99-7e33-4e8a-9f36-e33116f08527(jetbrains.mps.samples.Expressions.sandbox)/2073504467208336329">
-    <nodeInfo nodeId="2073504467208336681" fileName="Main.java" startLine="7" startPosition="42" endLine="7" endPosition="94" conceptFqName="jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper" />
-    <nodeInfo nodeId="2073504467208336395" fileName="Main.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <scopeInfo nodeId="2073504467208336401" fileName="Main.java" startLine="7" startPosition="42" endLine="7" endPosition="94" />
-    <scopeInfo nodeId="2073504467208336395" fileName="Main.java" startLine="7" startPosition="0" endLine="9" endPosition="0">
-      <varInfo nodeId="2073504467208336396" varName="args" />
-    </scopeInfo>
-    <unitInfo nodeId="2073504467208336329" fileName="Main.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.samples.Expressions.sandbox.Main" />
+    <nodeInfo nodeId="2073504467208336681" fileName="Main.java" startLine="12" startPosition="3" endLine="12" endPosition="55" conceptFqName="jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper" />
+    <scopeInfo nodeId="3453667744252543339" fileName="Main.java" startLine="12" startPosition="3" endLine="12" endPosition="55" />
+    <unitInfo nodeId="2073504467208336329" fileName="Main.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.sandbox.Main" />
+  </root>
+  <root nodeRef="r:95889e99-7e33-4e8a-9f36-e33116f08527(jetbrains.mps.samples.Expressions.sandbox)/3453667744252544858">
+    <nodeInfo nodeId="3453667744252544930" fileName="Simple.java" startLine="13" startPosition="3" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper" />
+    <scopeInfo nodeId="3453667744252544875" fileName="Simple.java" startLine="13" startPosition="3" endLine="13" endPosition="55" />
+    <unitInfo nodeId="3453667744252544858" fileName="Simple.java" startLine="6" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.Expressions.sandbox.Simple" />
+  </root>
+  <root nodeRef="r:95889e99-7e33-4e8a-9f36-e33116f08527(jetbrains.mps.samples.Expressions.sandbox)/3453667744252546022">
+    <nodeInfo nodeId="8620208551721817807" fileName="TypeError.java" startLine="13" startPosition="3" endLine="14" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <scopeInfo nodeId="3453667744252546044" fileName="TypeError.java" startLine="13" startPosition="3" endLine="14" endPosition="14" />
+    <unitInfo nodeId="3453667744252546022" fileName="TypeError.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.samples.Expressions.sandbox.TypeError" />
   </root>
 </debugInfo>
 

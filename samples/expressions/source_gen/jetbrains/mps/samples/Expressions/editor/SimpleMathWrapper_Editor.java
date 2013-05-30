@@ -31,7 +31,6 @@ public class SimpleMathWrapper_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_y4utgp_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_y4utgp_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_y4utgp_c0(editorContext, node));
     return editorCell;
   }
 
@@ -90,15 +89,5 @@ public class SimpleMathWrapper_Editor extends DefaultNodeEditor {
         }
       }
     }
-  }
-
-  private EditorCell createConstant_y4utgp_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_y4utgp_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 }

@@ -37,6 +37,7 @@
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathLongConstant_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathLongType_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathNumberType_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathTypedVarDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathVarDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathVarReference_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathWrapper_Editor" />
@@ -189,6 +190,20 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMath_StyleSheet" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.Expressions.editor.SimpleMathTypedVarDeclaration_Editor" file="SimpleMathTypedVarDeclaration_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>

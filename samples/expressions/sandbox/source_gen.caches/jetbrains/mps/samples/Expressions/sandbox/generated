@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3f16maxlvyc0ir5nmc08amqh2tgxj8i">
-  <common hash="8tx288oil6v04y8esxoqckpvdm7hro" />
-  <source id="2073504467208336329" name="Main" hash="olbzm6oz8hnusd6gr7krpu08usjkd5">
+<dependencies version="2" modelHash="-dz6eotlg3h6fym1d4r1oeouho8eqs8i">
+  <common hash="-2twhe7zzlidvjhk7fx0nflagwvr45an" />
+  <source id="2073504467208336329" name="Main" hash="d4y87ozlo4m8ghkefunsrgpj57oka2b">
     <file name="Main.java" />
+  </source>
+  <source id="3453667744252544858" name="Simple" hash="-d17kri4v9wmqeitshttonjq4ek31bzz">
+    <file name="Simple.java" />
+  </source>
+  <source id="3453667744252546022" name="TypeError" hash="cqwsz4s8n4z7vs9741xa3b93js8rcvg">
+    <file name="TypeError.java" />
   </source>
 </dependencies>
 
