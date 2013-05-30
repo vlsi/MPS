@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import jetbrains.mps.ide.embeddableEditor.SimpleEmbeddableEditor;
+import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -26,7 +26,7 @@ public abstract class BaseQQDialog extends DialogWrapper {
   private static Logger LOG = LogManager.getLogger(BaseQQDialog.class);
 
   private final JPanel myPanel = new JPanel(new BorderLayout());
-  private SimpleEmbeddableEditor myEditor;
+  private EmbeddableEditor myEditor;
 
   private final Project myProject;
   private final ModelAccess myModelAccess;
@@ -56,7 +56,7 @@ public abstract class BaseQQDialog extends DialogWrapper {
         myQueryNode = createQuery(concept);
         myTempModel = QuickQueryUtils.createTemporaryModelWithQuery(myQueryNode);
 
-        myEditor = new SimpleEmbeddableEditor(myProject, true);
+        myEditor = new EmbeddableEditor(myProject, true);
         myEditor.editNode(myQueryNode);
       }
     });

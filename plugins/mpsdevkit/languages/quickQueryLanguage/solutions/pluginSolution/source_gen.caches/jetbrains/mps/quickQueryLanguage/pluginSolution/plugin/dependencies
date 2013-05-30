@@ -9,7 +9,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.SimpleEmbeddableEditor" />
+    <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions" />

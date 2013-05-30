@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
-public class SimpleEmbeddableEditor extends JPanel implements DataProvider {
+public class EmbeddableEditor extends JPanel implements DataProvider {
   private final Project project;
   private final SRepository repository;
   private final boolean editable;
@@ -36,7 +36,7 @@ public class SimpleEmbeddableEditor extends JPanel implements DataProvider {
   private MPSFileNodeEditor nodeEditor;
 
 
-  public SimpleEmbeddableEditor(Project project, boolean editable) {
+  public EmbeddableEditor(Project project, boolean editable) {
     super(new BorderLayout());
     this.project = project;
     this.repository = project.getRepository();
