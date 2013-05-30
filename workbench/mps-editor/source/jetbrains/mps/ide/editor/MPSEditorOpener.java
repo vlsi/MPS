@@ -34,12 +34,9 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.Editor;
 import org.jetbrains.mps.openapi.model.*;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleContext;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -80,7 +77,7 @@ public class MPSEditorOpener {
         if (!org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return;
 
         ModuleContext context = new ModuleContext(node.getModel().getModule(), ProjectHelper.toMPSProject(myProject));
-        openNode(node, context, true, !(node.getModel() != null && node.getModel().isRoot(node)));
+        openNode(node, context, true, !(node.getModel() != null && node.getParent() == null));
       }
     });
   }
@@ -90,7 +87,7 @@ public class MPSEditorOpener {
    */
   @Deprecated
   public Editor editNode(@NotNull final SNode node, final IOperationContext context) {
-    return openNode(node, context, true, !(node.getModel() != null && node.getModel().isRoot(node)));
+    return openNode(node, context, true, !(node.getModel() != null && node.getParent() == null));
   }
 
   /*

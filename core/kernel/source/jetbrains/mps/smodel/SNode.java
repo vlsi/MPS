@@ -1380,7 +1380,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @Deprecated in 3.0
    */
   public boolean isRoot() {
-    return getModel() != null && getModel().isRoot(this);
+    return getModel() != null && getParent()==null;
   }
 
   @Deprecated
