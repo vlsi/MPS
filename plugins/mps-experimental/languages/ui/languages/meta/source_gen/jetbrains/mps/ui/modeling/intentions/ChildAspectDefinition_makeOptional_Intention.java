@@ -33,7 +33,7 @@ public class ChildAspectDefinition_makeOptional_Intention implements IntentionFa
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.ui.modeling";
   }
 
   public IntentionType getType() {

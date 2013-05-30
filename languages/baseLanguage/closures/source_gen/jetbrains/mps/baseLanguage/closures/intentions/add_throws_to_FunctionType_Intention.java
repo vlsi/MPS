@@ -35,7 +35,7 @@ public class add_throws_to_FunctionType_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.closures";
   }
 
   public IntentionType getType() {

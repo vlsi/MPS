@@ -6,7 +6,7 @@
     <nodeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="34" startPosition="41" endLine="35" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="42" startPosition="34" endLine="43" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="46" startPosition="44" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -42,7 +42,7 @@
     <scopeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="58" />
     <scopeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="63" />
     <scopeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="34" startPosition="41" endLine="35" endPosition="101" />
-    <scopeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="43" />
+    <scopeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="30" />
     <scopeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="42" startPosition="34" endLine="43" endPosition="31" />
     <scopeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="46" startPosition="44" endLine="47" endPosition="17" />
     <scopeInfo nodeId="1576918603588812821" fileName="replace_UIObjectStatement_AppendUIObjectStatement_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" />
@@ -94,7 +94,7 @@
     <nodeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="33" startPosition="41" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="37" startPosition="37" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="37" startPosition="37" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="41" startPosition="34" endLine="42" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="45" startPosition="44" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="50" startPosition="53" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -135,7 +135,7 @@
     <scopeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="45" />
     <scopeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="43" />
     <scopeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="33" startPosition="41" endLine="34" endPosition="81" />
-    <scopeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="37" startPosition="37" endLine="38" endPosition="43" />
+    <scopeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="37" startPosition="37" endLine="38" endPosition="30" />
     <scopeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="41" startPosition="34" endLine="42" endPosition="32" />
     <scopeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="45" startPosition="44" endLine="46" endPosition="17" />
     <scopeInfo nodeId="8381258131358771407" fileName="View_wrap_with_ValidatingView_Intention.java" startLine="50" startPosition="53" endLine="51" endPosition="19" />
@@ -190,7 +190,7 @@
     <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="40" startPosition="30" endLine="41" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="44" startPosition="35" endLine="45" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="48" startPosition="41" endLine="49" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="52" startPosition="37" endLine="53" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="52" startPosition="37" endLine="53" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="56" startPosition="34" endLine="57" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="60" startPosition="44" endLine="61" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="64" startPosition="84" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -300,7 +300,7 @@
     <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="40" startPosition="30" endLine="41" endPosition="61" />
     <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="44" startPosition="35" endLine="45" endPosition="44" />
     <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="48" startPosition="41" endLine="49" endPosition="82" />
-    <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="52" startPosition="37" endLine="53" endPosition="43" />
+    <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="52" startPosition="37" endLine="53" endPosition="30" />
     <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="56" startPosition="34" endLine="57" endPosition="32" />
     <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="60" startPosition="44" endLine="61" endPosition="17" />
     <scopeInfo nodeId="8905126934806239993" fileName="Classifier_add_GenerateVariant_Intention.java" startLine="64" startPosition="84" endLine="65" endPosition="16" />

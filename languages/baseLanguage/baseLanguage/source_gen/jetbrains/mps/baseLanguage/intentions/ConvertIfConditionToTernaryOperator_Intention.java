@@ -35,7 +35,7 @@ public class ConvertIfConditionToTernaryOperator_Intention implements IntentionF
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage";
   }
 
   public IntentionType getType() {

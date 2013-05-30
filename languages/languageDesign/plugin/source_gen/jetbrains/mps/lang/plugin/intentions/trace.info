@@ -6,7 +6,7 @@
     <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="34" startPosition="41" endLine="35" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="42" startPosition="34" endLine="43" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="46" startPosition="44" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -45,7 +45,7 @@
     <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="72" />
     <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="26" />
     <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="34" startPosition="41" endLine="35" endPosition="73" />
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="43" />
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="39" />
     <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="42" startPosition="34" endLine="43" endPosition="32" />
     <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="46" startPosition="44" endLine="47" endPosition="17" />
     <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" />

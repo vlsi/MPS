@@ -36,7 +36,7 @@ public class ConvertConceptPropertySetToAssignment_Intention implements Intentio
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.smodel";
   }
 
   public IntentionType getType() {

@@ -34,7 +34,7 @@ public class RemoveTVD_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.behavior";
   }
 
   public IntentionType getType() {

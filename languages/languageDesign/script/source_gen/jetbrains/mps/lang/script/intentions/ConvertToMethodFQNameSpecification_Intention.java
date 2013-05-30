@@ -36,7 +36,7 @@ public class ConvertToMethodFQNameSpecification_Intention implements IntentionFa
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.script";
   }
 
   public IntentionType getType() {

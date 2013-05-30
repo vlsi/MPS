@@ -43,7 +43,7 @@ public class ForbidIncomingReferencesInSubconcepts_Intention implements Intentio
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.structure";
   }
 
   public IntentionType getType() {

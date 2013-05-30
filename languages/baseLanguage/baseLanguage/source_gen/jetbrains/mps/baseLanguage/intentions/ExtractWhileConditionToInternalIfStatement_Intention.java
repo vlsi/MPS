@@ -36,7 +36,7 @@ public class ExtractWhileConditionToInternalIfStatement_Intention implements Int
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage";
   }
 
   public IntentionType getType() {

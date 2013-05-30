@@ -38,7 +38,7 @@ public class RemoveSetElementOperation_replace_Intention implements IntentionFac
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.collections";
   }
 
   public IntentionType getType() {

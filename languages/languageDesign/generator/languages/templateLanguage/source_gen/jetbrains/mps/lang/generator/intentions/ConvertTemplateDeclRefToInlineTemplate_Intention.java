@@ -41,7 +41,7 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention implements Intenti
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.generator";
   }
 
   public IntentionType getType() {

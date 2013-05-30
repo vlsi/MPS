@@ -35,7 +35,7 @@ public class add_parameter_to_InternalClassifierType_Intention implements Intent
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguageInternal";
   }
 
   public IntentionType getType() {

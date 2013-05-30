@@ -37,7 +37,7 @@ public class SurrondWithHorizontalCollection_Intention implements IntentionFacto
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.editor";
   }
 
   public IntentionType getType() {

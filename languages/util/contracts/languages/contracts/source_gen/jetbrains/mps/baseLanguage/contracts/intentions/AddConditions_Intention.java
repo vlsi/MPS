@@ -37,7 +37,7 @@ public class AddConditions_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.contracts";
   }
 
   public IntentionType getType() {

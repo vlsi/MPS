@@ -6,7 +6,7 @@
     <nodeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="36" startPosition="41" endLine="37" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="44" startPosition="34" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="52" startPosition="84" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -57,7 +57,7 @@
     <scopeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="77" />
     <scopeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="40" />
     <scopeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="36" startPosition="41" endLine="37" endPosition="93" />
-    <scopeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="43" />
+    <scopeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="45" />
     <scopeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="44" startPosition="34" endLine="45" endPosition="32" />
     <scopeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="17" />
     <scopeInfo nodeId="1237104496404" fileName="DivExpressionFractionToDiv_Intention.java" startLine="52" startPosition="84" endLine="53" endPosition="16" />
@@ -118,7 +118,7 @@
     <nodeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="36" startPosition="41" endLine="37" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="44" startPosition="34" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="52" startPosition="84" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -169,7 +169,7 @@
     <scopeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="64" />
     <scopeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="40" />
     <scopeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="36" startPosition="41" endLine="37" endPosition="93" />
-    <scopeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="43" />
+    <scopeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="45" />
     <scopeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="44" startPosition="34" endLine="45" endPosition="32" />
     <scopeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="17" />
     <scopeInfo nodeId="1237104500799" fileName="DivExpressionDivToFraction_Intention.java" startLine="52" startPosition="84" endLine="53" endPosition="16" />
@@ -230,7 +230,7 @@
     <nodeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="32" startPosition="41" endLine="33" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="40" startPosition="34" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="44" startPosition="44" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -266,7 +266,7 @@
     <scopeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="61" />
     <scopeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="32" />
     <scopeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="32" startPosition="41" endLine="33" endPosition="85" />
-    <scopeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="43" />
+    <scopeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="45" />
     <scopeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="40" startPosition="34" endLine="41" endPosition="32" />
     <scopeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="44" startPosition="44" endLine="45" endPosition="17" />
     <scopeInfo nodeId="1238402928175" fileName="SpecifyMathContext_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
@@ -318,7 +318,7 @@
     <nodeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="32" startPosition="41" endLine="33" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="40" startPosition="34" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="44" startPosition="44" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="48" startPosition="84" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -350,7 +350,7 @@
     <scopeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="78" />
     <scopeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="31" />
     <scopeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="32" startPosition="41" endLine="33" endPosition="84" />
-    <scopeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="43" />
+    <scopeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="45" />
     <scopeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="40" startPosition="34" endLine="41" endPosition="32" />
     <scopeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="44" startPosition="44" endLine="45" endPosition="17" />
     <scopeInfo nodeId="1238942880468" fileName="DeleteMathContext_Intention.java" startLine="48" startPosition="84" endLine="49" endPosition="16" />
