@@ -216,11 +216,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
     return getSModelInternal().getModelScope();
   }
 
-  @Override
-  public boolean isRoot(org.jetbrains.mps.openapi.model.SNode node) {
-    return getSModelInternal().isRoot(node);
-  }
-
   //
 
   @Override
