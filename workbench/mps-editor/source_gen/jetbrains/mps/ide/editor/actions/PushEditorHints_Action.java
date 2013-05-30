@@ -9,9 +9,16 @@ import java.util.Map;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import javax.swing.JOptionPane;
-import java.awt.Frame;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.ide.editor.MPSFileNodeEditor;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettings;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintPreferencesPage;
+import com.intellij.openapi.ui.DialogWrapper;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -21,7 +28,7 @@ public class PushEditorHints_Action extends BaseAction {
   public PushEditorHints_Action() {
     super("Push Editor Hints", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @Override
@@ -51,8 +58,12 @@ public class PushEditorHints_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("file", event.getData(PlatformDataKeys.VIRTUAL_FILE));
+    if (MapSequence.fromMap(_params).get("file") == null) {
       return false;
     }
     return true;
@@ -60,7 +71,18 @@ public class PushEditorHints_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "hello");
+      FileEditor fileEditor = FileEditorManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getSelectedEditor(((VirtualFile) MapSequence.fromMap(_params).get("file")));
+      EditorComponent component = null;
+      if (fileEditor instanceof MPSFileNodeEditor) {
+        component = ((EditorComponent) ((MPSFileNodeEditor) fileEditor).getNodeEditor().getCurrentEditorComponent());
+      }
+      if (component == null) {
+        return;
+      }
+      ConceptEditorHintSettings settings = component.getSettings();
+      final ConceptEditorHintPreferencesPage page = new ConceptEditorHintPreferencesPage(settings);
+      DialogWrapper dialog = new HintsDialog(((Project) MapSequence.fromMap(_params).get("project")), page);
+      dialog.show();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "PushEditorHints", t);

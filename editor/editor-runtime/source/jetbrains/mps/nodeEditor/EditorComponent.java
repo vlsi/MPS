@@ -91,6 +91,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettings;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
@@ -3370,6 +3371,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public synchronized ConceptEditorHintSettings getSettings() {
     if (mySettings == null) {
       mySettings = new ConceptEditorHintSettings();
+      mySettings.putAll(ConceptEditorHintSettingsComponent.getInstance(ProjectHelper.toIdeaProject(ProjectHelper.getProject(myRepository))).getSettings());
     }
     return mySettings;
   }

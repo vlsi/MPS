@@ -293,10 +293,6 @@
     <group id="jetbrains.mps.ide.editor.actions.SuppressErrorsGroup_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.DoNotSuppressErrors_Action" />
     </group>
-    <group id="jetbrains.mps.ide.editor.actions.EditorTabActions_ActionGroup">
-      <reference ref="jetbrains.mps.ide.editor.actions.PushEditorHints_Action" />
-      <add-to-group group-id="EditorTabPopupMenu" anchor="last" />
-    </group>
     <group id="jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup" popup="true"></group>
     <group id="jetbrains.mps.ide.editor.actions.SpecificIntentions_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.ShowGenerationActions_Action" />
@@ -304,6 +300,10 @@
       <add-to-group group-id="EditorPopup_ActionGroupintentions" anchor="last" />
     </group>
     <group id="jetbrains.mps.ide.editor.actions.GenerationActions_ActionGroup"></group>
+    <group id="jetbrains.mps.ide.editor.actions.EditorTabActions_ActionGroup">
+      <reference ref="jetbrains.mps.ide.editor.actions.PushEditorHints_Action" />
+      <add-to-group group-id="EditorTabPopupMenu" anchor="last" />
+    </group>
     <group id="jetbrains.mps.ide.editor.actions.RefactoringActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" />
       <add-to-group group-id="EditorPopup_ActionGrouprefactoring" anchor="last" />
