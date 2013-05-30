@@ -37,6 +37,7 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
 
 
   public EmbeddableEditor(Project project, boolean editable) {
+    // todo: merge with UIEditorComponent ? 
     super(new BorderLayout());
     this.project = project;
     this.repository = project.getRepository();
