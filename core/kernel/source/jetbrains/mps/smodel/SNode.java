@@ -324,30 +324,19 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     nodeRead();
 
     fireNodeReadAccess();
-
-    if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewChildRole(getModel(), myConceptFqName, role);
-    }
-    fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    SNode firstChild = firstChildInRole(role);
-    if (firstChild == null) return Collections.emptyList();
-    List<SNode> result = new ArrayList<SNode>();
 
-    boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
-    for (SNode child = firstChild; child != null; child = child.treeNext()) {
-      // Note: accessing through child.getRoleInParent() reports excess node read access
-      if (role.equals(child.myRoleInParent)) {
-        result.add(child);
-        child.fireNodeReadAccess();
-        fireNodeChildReadAccess(role, child);
-      } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
-        result.add(child);
-        child.fireNodeReadAccess();
-        fireNodeChildReadAccess(role, child);
+    SNode firstChild = firstChild();
+
+    if (role != null) {
+      while (firstChild != null && !firstChild.getRoleInParent().equals(role)) {
+        firstChild = firstChild.treeNext();
       }
     }
-    return result;
+
+    if (firstChild == null) return Collections.emptyList();
+
+    return new ChildrenList(firstChild, role);
   }
 
   /**
@@ -685,13 +674,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public List<SNode> getChildren() {
-    nodeRead();
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    SNode firstChild = firstChild();
-    return new ChildrenList(firstChild, null);
+    return getChildren(null);
   }
 
   @Override
