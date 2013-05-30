@@ -53,6 +53,14 @@ public class ButtonTabsComponent extends BaseTabsComponent {
         });
       }
     });
+
+    addListeners();
+  }
+
+  @Override
+  public void dispose() {
+    removeListeners();
+    super.dispose();
   }
 
   public Component getComponentForTabIndex(int index) {

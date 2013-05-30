@@ -115,13 +115,11 @@ public abstract class BaseTabsComponent implements TabsComponent {
     myComponent = new JPanel(new BorderLayout());
     ActionButton btn = new ActionButton(addAction, addAction.getTemplatePresentation(), ActionPlaces.UNKNOWN, new Dimension(23, 23));
     myComponent.add(btn, BorderLayout.WEST);
-
-    addListeners();
   }
 
   @Override
   public void dispose() {
-    removeListeners();
+
   }
 
   @Override
@@ -218,13 +216,13 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   ///-------------events----------------
 
-  private void addListeners() {
+  protected void addListeners() {
     myTabRemovalListener.startListening();
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myRootAdditionListener);
     FileStatusManager.getInstance(ProjectHelper.toIdeaProject(myOperationContext.getProject())).addFileStatusListener(myFileStatusListener);
   }
 
-  private void removeListeners() {
+  protected void removeListeners() {
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myRootAdditionListener);
     myTabRemovalListener.stopListening();
     FileStatusManager.getInstance(ProjectHelper.toIdeaProject(myOperationContext.getProject())).removeFileStatusListener(myFileStatusListener);

@@ -95,7 +95,11 @@ public class PlainTabsComponent extends BaseTabsComponent {
         });
       }
     });
+
+    addListeners();
   }
+
+
 
   private synchronized void onTabIndexChange() {
     if (myDisposed) return;
@@ -140,6 +144,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
   //this is synchronized because we change myJbTabs here (while disposing)
   @Override
   public synchronized void dispose() {
+    removeListeners();
     myDisposed = true;
     Disposer.dispose(myJbTabsDisposable);
     super.dispose();
