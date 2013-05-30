@@ -62,7 +62,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.Properties" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
-    <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
+    <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.SimpleEmbeddableEditor" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
