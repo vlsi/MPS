@@ -101,6 +101,23 @@ public class ScopeOptions extends BaseOptions {
     }
   }
 
+  public FindUsagesScope getScope(Project project) {
+    switch (myScopeType) {
+      case GLOBAL:
+        return new GlobalScope();
+      case PROJECT:
+        return new ProjectScope(project);
+      case BOOTSTRAP:
+        return new BootstrapScope();
+      case MODULE:
+        return new ModulesScope(myModule);
+      case MODEL:
+        return new ModelsScope(myModel);
+      default:
+        throw new IllegalArgumentException("Illegal scope type: " + myScopeType);
+    }
+  }
+
   @NotNull
   public SearchQuery getResult(SNode node, IOperationContext context, SModel modelDescriptor) {
     return new SearchQuery(node, getScope(context, modelDescriptor));

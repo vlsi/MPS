@@ -54,6 +54,7 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
 
+@Deprecated
 public class EmbeddableEditor {
   private MPSFileNodeEditor myNodeEditor;
   private EmbeddableEditorPanel myPanel;
@@ -64,6 +65,7 @@ public class EmbeddableEditor {
   private SNode myNode;
 
 
+  @Deprecated
   public EmbeddableEditor(Project p, _FunctionTypes._void_P1_E0<? super SModel> modelInitializer, boolean editable) {
     myModel = TemporaryModels.getInstance().create(!(editable), TempModuleOptions.forDefaultModule());
     modelInitializer.invoke(myModel);
@@ -73,6 +75,7 @@ public class EmbeddableEditor {
     myModelCreated = true;
   }
 
+  @Deprecated
   public EmbeddableEditor(Project p, SModel model) {
     myModel = model;
     myContext = new ModuleContext(myModel.getModule(), p);

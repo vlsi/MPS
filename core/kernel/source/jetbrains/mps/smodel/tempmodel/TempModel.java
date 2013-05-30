@@ -31,7 +31,7 @@ class TempModel extends EditableSModelBase {
   private boolean myReadOnly;
 
   protected TempModel(boolean readOnly) {
-    super(createModelRef(), new NullDataSource());
+    super(createModelRef("TempModel_" + System.nanoTime()), new NullDataSource());
     myReadOnly = readOnly;
     updateTimestamp();
   }
@@ -87,8 +87,9 @@ class TempModel extends EditableSModelBase {
     throw new UnsupportedOperationException();
   }
 
-  private static SModelReference createModelRef() {
+  private static SModelReference createModelRef(String modelName) {
+    // todo: make TempModel name customizable? like prefix for temporary file
     SModelId id = SModelId.generate();
-    return PersistenceFacade.getInstance().createModelReference(null, id, "TempModel-" + id.toString());
+    return PersistenceFacade.getInstance().createModelReference(null, id, modelName);
   }
 }

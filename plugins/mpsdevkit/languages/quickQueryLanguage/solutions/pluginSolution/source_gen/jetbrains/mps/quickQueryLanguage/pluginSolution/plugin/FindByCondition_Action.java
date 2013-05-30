@@ -4,25 +4,23 @@ package jetbrains.mps.quickQueryLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.Language;
-import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class ReplacementQueryAction_Action extends BaseAction {
+public class FindByCondition_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public ReplacementQueryAction_Action() {
-    super("Modify Instances by Condition", "", ICON);
+  public FindByCondition_Action() {
+    super("Find Instances by Condition", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -32,19 +30,12 @@ public class ReplacementQueryAction_Action extends BaseAction {
     return false;
   }
 
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModule) MapSequence.fromMap(_params).get("langModule")) instanceof Language;
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ReplacementQueryAction", t);
+        LOG.error("User's action doUpdate method failed. Action:" + "FindByCondition", t);
       }
       this.disable(event.getPresentation());
     }
@@ -54,12 +45,8 @@ public class ReplacementQueryAction_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("langModule", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
-    if (MapSequence.fromMap(_params).get("langModule") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     {
@@ -79,14 +66,14 @@ public class ReplacementQueryAction_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ReplaceDialog dialog = new ReplaceDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((SModule) MapSequence.fromMap(_params).get("langModule")));
+      FindByConditionDialog dialog = new FindByConditionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SNode) MapSequence.fromMap(_params).get("node")));
       dialog.show();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ReplacementQueryAction", t);
+        LOG.error("User's action execute method failed. Action:" + "FindByCondition", t);
       }
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(ReplacementQueryAction_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FindByCondition_Action.class);
 }
