@@ -58,13 +58,10 @@ public abstract class BaseQQDialog extends DialogWrapper {
     });
     this.myPanel.add(this.myEditor, BorderLayout.CENTER);
 
-    myModelAccess.runReadAction(new Runnable() {
-      public void run() {
-        BaseQQDialog.this.myScope = new ScopeEditor(new ScopeOptions());
-        BaseQQDialog.this.myPanel.add(BaseQQDialog.this.myScope.getComponent(), BorderLayout.SOUTH);
-      }
-    });
+    this.myScope = new ScopeEditor(new ScopeOptions());
+    this.myPanel.add(this.myScope.getComponent(), BorderLayout.SOUTH);
     myPanel.setPreferredSize(new Dimension(500, 500));
+    this.setModal(false);
 
     init();
   }
