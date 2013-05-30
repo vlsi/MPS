@@ -7,13 +7,13 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.embeddableEditor.SimpleEmbeddableEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import java.awt.Dimension;
@@ -25,8 +25,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public abstract class BaseQQDialog extends DialogWrapper {
   private static Logger LOG = LogManager.getLogger(BaseQQDialog.class);
+
   private JPanel myPanel = new JPanel(new BorderLayout());
-  private IOperationContext myContext;
   private ModelAccess myModelAccess;
   private SModel myTempModel;
   private SimpleEmbeddableEditor myEditor;
@@ -39,7 +39,6 @@ public abstract class BaseQQDialog extends DialogWrapper {
   public BaseQQDialog(String title, String okButtonText, final SNode concept, IOperationContext context) {
     super(ProjectHelper.toIdeaProject(context.getProject()));
     this.setTitle(title);
-    this.myContext = context;
     this.myModelAccess = context.getProject().getRepository().getModelAccess();
     this.setModal(false);
     this.setOKButtonText(okButtonText);
@@ -82,7 +81,7 @@ public abstract class BaseQQDialog extends DialogWrapper {
   public void doOKAction() {
     super.doOKAction();
 
-    MakeUtils.make(myProject.getRepository(), myContext, myTempModel, new _FunctionTypes._void_P1_E0<Boolean>() {
+    MakeUtils.make(myProject, myTempModel, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean isSuccessful) {
         if (isSuccessful) {
           myModelAccess.runReadAction(new Runnable() {
@@ -92,8 +91,8 @@ public abstract class BaseQQDialog extends DialogWrapper {
                 return;
               }
 
-              FindUsagesScope scope = BaseQQDialog.this.myScope.getOptions().getScope(BaseQQDialog.this.myContext, null);
-              executeQuery(BaseQQDialog.this.myContext.getProject(), query, scope);
+              FindUsagesScope scope = BaseQQDialog.this.myScope.getOptions().getScope(myProject);
+              executeQuery(myProject, query, scope);
             }
           });
         } else {
