@@ -19,6 +19,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -47,7 +48,7 @@ public class CoercionManager {
     if (pattern.match(subtype)) return subtype;
     if (!CoerceUtil.canBeCoerced(subtype, pattern.getConceptFQName())) return null;
     if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConcept().getId())) {
-      List<SNode> children = ((List) subtype.getChildren("argument"));
+      List<SNode> children = new ArrayList(IterableUtil.asCollection(subtype.getChildren("argument")));
       for (SNode child : children) {
         SNode result = coerceSubTypingNew(child, pattern, isWeak, context);
         if (result != null) return result;
@@ -56,7 +57,7 @@ public class CoercionManager {
     }
     final TypeCheckingContext typeCheckingContext = context;
     if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConcept().getId())) {
-      List<SNode> children = ((List) subtype.getChildren("argument"));
+      List<SNode> children = new ArrayList(IterableUtil.asCollection(subtype.getChildren("argument")));
 
       SNode lcs = SubtypingUtil.createLeastCommonSupertype(children, typeCheckingContext);
       return coerceSubTypingNew(lcs, pattern, isWeak, context);
