@@ -18,14 +18,14 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.idea.core.project.PluginModelRootUtil;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
-import jetbrains.mps.idea.core.psi.PsiChangesWatcher;
+import jetbrains.mps.idea.java.psi.PsiChangesWatcher;
 import java.io.InputStream;
 import java.io.IOException;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.editor.Document;
 import java.io.ByteArrayInputStream;
-import jetbrains.mps.idea.core.psi.PsiListener;
+import jetbrains.mps.idea.java.psi.PsiListener;
 import com.intellij.psi.PsiFileSystemItem;
 import com.intellij.psi.PsiFile;
 import jetbrains.mps.smodel.ModelAccess;
@@ -116,7 +116,7 @@ public class EclipseJavaStubDataSource extends MPSJavaSrcDataSource {
       SetSequence.fromSet(changedItems).addSequence(SetSequence.fromSet(handleFsItems(path, event.getRemoved())));
       // not pretty 
       Set<PsiFileSystemItem> files = SetSequence.fromSet(new HashSet<PsiFileSystemItem>());
-      for (PsiFile f : event.getChanged().keySet()) {
+      for (PsiFile f : event.getChanged()) {
         SetSequence.fromSet(files).addElement(f);
       }
       SetSequence.fromSet(changedItems).addSequence(SetSequence.fromSet(handleFsItems(path, files)));

@@ -16,6 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
+import jetbrains.mps.ClasspathReader.ClassType;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
@@ -62,6 +63,8 @@ public class Solution extends AbstractModule {
         ModuleId.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224")), ClasspathReader.ClassType.EDITOR);
     result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.Platform",
         ModuleId.fromString("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61")), ClasspathReader.ClassType.PLATFORM);
+    result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.IDEA",
+        ModuleId.fromString("498d89d2-c2e9-11e2-ad49-6cf049e62fe5")), ClasspathReader.ClassType.IDEA);
     result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.UI",
         ModuleId.fromString("267ff2fa-bd8d-467e-8bfe-73a9c242da8b")), ClasspathReader.ClassType.UI);
     result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.Workbench",

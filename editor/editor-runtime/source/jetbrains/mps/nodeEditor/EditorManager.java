@@ -32,6 +32,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.MyState;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
@@ -56,6 +58,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -143,9 +146,16 @@ public class EditorManager {
         fillContextToCellMap(rootCell, myContextToOldCellMap.peek());
       }
       myCreatingInspectedCell = isInspectorCell;
-
+      context.getCellFactory().pushCellContext();
+      com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(ProjectHelper.getProject(context.getRepository()));
+      MyState state = ConceptEditorHintSettingsComponent.getInstance(project).getState();
+      if (project != null && state != null) {
+        Object[] hints = state.getEnabledHints().toArray();
+        context.getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
+      }
       return createEditorCell(context, modifications, nodeRefContext);
     } finally {
+      context.getCellFactory().popCellContext();
       myContextToOldCellMap.pop();
       popTask(context);
     }

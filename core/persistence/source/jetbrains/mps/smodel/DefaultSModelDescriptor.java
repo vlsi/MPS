@@ -21,7 +21,6 @@ import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.refactoring.StructureModificationLog;
@@ -34,6 +33,7 @@ import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -79,6 +79,12 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
   public DefaultSModelDescriptor(StreamDataSource source, SModelReference modelReference, SModelHeader header) {
     super(modelReference, source);
     myHeader = header;
+  }
+
+  @NotNull
+  @Override
+  public StreamDataSource getSource() {
+    return (StreamDataSource) super.getSource();
   }
 
   public ModelLoadingState getLoadingState() {

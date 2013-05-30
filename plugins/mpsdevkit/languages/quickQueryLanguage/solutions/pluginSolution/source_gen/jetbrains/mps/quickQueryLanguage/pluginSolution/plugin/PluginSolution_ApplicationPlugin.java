@@ -19,14 +19,14 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new FindInstancesByCondition_Action());
-    addAction(new ReplacementQueryAction_Action());
+    addAction(new FindByCondition_Action());
+    addAction(new ReplaceByCondition_Action());
     // groups 
-    addGroup(new FindInstancesByConditionAndNodeGroup_ActionGroup());
+    addGroup(new QuickQueryLanguageGroup_ActionGroup());
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(FindInstancesByConditionAndNodeGroup_ActionGroup.ID, FindUsages_ActionGroup.ID, FindUsages_ActionGroup.LABEL_ID_find_instances);
-    insertGroupIntoAnother(FindInstancesByConditionAndNodeGroup_ActionGroup.ID, Search_ActionGroup.ID, null);
+    insertGroupIntoAnother(QuickQueryLanguageGroup_ActionGroup.ID, FindUsages_ActionGroup.ID, FindUsages_ActionGroup.LABEL_ID_find_instances);
+    insertGroupIntoAnother(QuickQueryLanguageGroup_ActionGroup.ID, Search_ActionGroup.ID, null);
   }
 }

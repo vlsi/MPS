@@ -22,22 +22,22 @@ public class VariableUnifyingMigration {
   private VariableUnifyingMigration() {
   }
 
-  public static List<AbstractMigrationRefactoring> forConcept(SNode referenceConcept, SNode targetConcept) {
+  public static List<AbstractMigrationRefactoring> forConcept(SNode referenceConcept, SNode declarationConcept) {
     List<AbstractMigrationRefactoring> refactorings = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
 
-    MigrationConfig config = getMigrationConfig(referenceConcept, targetConcept);
+    MigrationConfig config = getMigrationConfig(referenceConcept, declarationConcept);
     ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(Migrations.migrateConcept(config)));
-    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(SpecialMigrations.migrateSpecializedLinkAccess(config, targetConcept)));
+    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(SpecialMigrations.migrateSpecializedLinkAccess(config, declarationConcept)));
 
     return refactorings;
   }
 
-  public static MigrationConfig getMigrationConfig(SNode referenceConcept, SNode targetConcept) {
+  public static MigrationConfig getMigrationConfig(SNode referenceConcept, final SNode declarationConcept) {
     return new MigrationConfig(referenceConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference")) {
       @Override
       protected SNode createConditionInternal(SNode arg) {
         // <node> 
-        return _quotation_createNode_u7t7ux_a1a0a0a0a2(arg, targetConcept);
+        return _quotation_createNode_u7t7ux_a1a0a0a0a2(arg, declarationConcept);
       }
 
       @Override

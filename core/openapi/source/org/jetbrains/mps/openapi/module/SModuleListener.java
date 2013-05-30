@@ -30,6 +30,8 @@ public interface SModuleListener {
 
   void modelRemoved(SModule module, SModelReference ref);
 
+  void modelRenamed(SModule module, SModel model, SModelReference oldRef);
+
   void dependencyAdded(SModule module, SDependency dep);
 
   void dependencyRemoved(SModule module, SDependency dep);

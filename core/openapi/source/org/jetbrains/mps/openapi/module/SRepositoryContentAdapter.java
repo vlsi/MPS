@@ -18,7 +18,7 @@ package org.jetbrains.mps.openapi.module;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
-import org.jetbrains.mps.openapi.model.SModelStateListener;
+import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -30,7 +30,7 @@ import java.util.Set;
  * In addition it tracks all objects (modules, models and nodes) as they come and leave the repository.
  */
 public class SRepositoryContentAdapter extends SModuleAdapter implements SModelChangeListener, SModelAccessListener,
-    SModelStateListener, SModuleListener, SRepositoryListener {
+    SModelListener, SModuleListener, SRepositoryListener {
 
   private final Set<SRepository> commandStack = new HashSet<SRepository>();
 

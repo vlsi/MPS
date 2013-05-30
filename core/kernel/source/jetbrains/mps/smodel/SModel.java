@@ -1172,6 +1172,16 @@ public class SModel implements SModelData {
     }
 
     @Override
+    public void addRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+      getSModelInternal().addRootNode(node);
+    }
+
+    @Override
+    public void removeRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+      getSModelInternal().removeRootNode(node);
+    }
+
+    @Override
     public void addModelListener(@NotNull SModelListener listener) {
       LOG.error("remove exception if excess", new Throwable());
     }

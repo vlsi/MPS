@@ -82,6 +82,7 @@ public class TypeContextManager implements CoreComponent {
       }
     }
 
+    @Override
     public void beforeModelDisposed(SModel sm) {
       synchronized (myLock) {
         for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
@@ -94,14 +95,12 @@ public class TypeContextManager implements CoreComponent {
   };
 
   private SModelRepositoryAdapter mySModelRepositoryListener = new SModelRepositoryAdapter(SModelRepositoryListenerPriority.PLATFORM) {
-    public void modelDeleted(SModel modelDescriptor) {
-      myListeningForModels.remove(modelDescriptor);
-    }
-
+    @Override
     public void modelRemoved(SModel modelDescriptor) {
       myListeningForModels.remove(modelDescriptor);
     }
 
+    @Override
     public void modelsReplaced(Set<SModel> replacedModels) {
       for (SModel md : replacedModels) {
         if (!myListeningForModels.contains(md)) {
@@ -122,6 +121,7 @@ public class TypeContextManager implements CoreComponent {
   };
 
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       clearForClassesUnload();
     }
@@ -145,6 +145,7 @@ public class TypeContextManager implements CoreComponent {
     myClassLoaderManager = ClassLoaderManager.getInstance();
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -155,6 +156,7 @@ public class TypeContextManager implements CoreComponent {
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
   }
 
+  @Override
   public void dispose() {
     for (SModel model : myListeningForModels) {
       ((SModelInternal) model).removeModelListener(myModelListener);

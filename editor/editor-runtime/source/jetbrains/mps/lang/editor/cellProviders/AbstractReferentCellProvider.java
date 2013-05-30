@@ -98,16 +98,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   @Override
   public EditorCell createEditorCell(EditorContext context) {
-    EditorCell result = createCell_internal(myEditorContext);
-    // do not override role/link-declaration if they are already set
-    if (result.getRole() == null) {
-      if (myGenuineLinkDeclaration != null) {
-        ((jetbrains.mps.nodeEditor.cells.EditorCell) result).setLinkDeclaration(myGenuineLinkDeclaration);
-      } else {
-        LOG.error("Can't find link declaration " + myGenuineRole);
-      }
-    }
-    return result;
+    return createCell_internal(myEditorContext);
   }
 
   protected EditorCell createCell_internal(EditorContext context) {
@@ -147,6 +138,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       }
 
       noRefCell.setCellId("empty_" + myRole);
+      setRoleForCellWithNoTarget(noRefCell);
       return noRefCell;
     }
 
@@ -156,7 +148,17 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, error);
     errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode()));
+    setRoleForCellWithNoTarget(errorCell);
     return errorCell;
+  }
+
+  private void setRoleForCellWithNoTarget(EditorCell cell) {
+    if (myGenuineRole != null) {
+      cell.setRole(myGenuineRole);
+      if (!myIsAggregation) {
+        cell.setReferenceCell(true);
+      }
+    }
   }
 
   protected abstract EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node);

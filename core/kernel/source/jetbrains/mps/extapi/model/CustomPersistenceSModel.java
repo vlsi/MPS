@@ -50,6 +50,12 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     myPersistence = persistence;
   }
 
+  @NotNull
+  @Override
+  public StreamDataSource getSource() {
+    return (StreamDataSource) super.getSource();
+  }
+
   @Override
   protected SModel getCurrentModelInternal() {
     return myModel;

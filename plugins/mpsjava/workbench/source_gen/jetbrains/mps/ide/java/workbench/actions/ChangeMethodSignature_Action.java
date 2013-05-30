@@ -36,7 +36,7 @@ public class ChangeMethodSignature_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public ChangeMethodSignature_Action() {
-    super("ChangeMethodSignature", "", ICON);
+    super("Change Method Signature", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

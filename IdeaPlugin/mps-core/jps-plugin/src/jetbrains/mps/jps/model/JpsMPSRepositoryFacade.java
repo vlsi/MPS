@@ -298,7 +298,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
   private JpsLibSolution createLibSolution(JpsLibrary lib, boolean sdkHack, CompileContext ctx) {
     String name = lib.getName();
     SolutionDescriptor desc = new SolutionDescriptor();
-    desc.setNamespace(name);
+    desc.setNamespace("JDK");
 
     if (sdkHack) {
       ModuleId jdkId = ModuleId.regular(UUID.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));

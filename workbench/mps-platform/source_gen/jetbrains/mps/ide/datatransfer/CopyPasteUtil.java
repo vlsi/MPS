@@ -24,11 +24,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelOperations;
 import com.intellij.ide.CopyPasteManagerEx;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
@@ -38,9 +33,11 @@ import java.awt.datatransfer.DataFlavor;
 import org.apache.log4j.Priority;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -201,22 +198,6 @@ public class CopyPasteUtil {
       }
       newSourceNode.setReference(newReference.getRole(), newReference);
     }
-  }
-
-  private static jetbrains.mps.smodel.SModel copyModelProperties(SModel model) {
-    SModelReference modelReference = model.getReference();
-    SModelFqName fqName = new SModelFqName(SModelStereotype.withoutStereotype(modelReference.getModelName()), SModelStereotype.INTERNAL_COPY);
-    jetbrains.mps.smodel.SModel newModel = new jetbrains.mps.smodel.SModel(new jetbrains.mps.smodel.SModelReference(fqName, SModelId.generate()));
-    for (SModuleReference language : ((SModelInternal) model).importedLanguages()) {
-      newModel.addLanguage(language);
-    }
-    for (SModelReference importedModel : SModelOperations.getImportedModelUIDs(model)) {
-      newModel.addModelImport(importedModel, false);
-    }
-    for (SModuleReference devKit : ((SModelInternal) model).importedDevkits()) {
-      newModel.addDevKit(devKit);
-    }
-    return newModel;
   }
 
   public static void copyTextToClipboard(String text) {

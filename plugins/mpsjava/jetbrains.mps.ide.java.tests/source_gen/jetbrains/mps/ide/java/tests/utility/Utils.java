@@ -99,6 +99,8 @@ public class Utils {
     Iterator<? extends SNode> roots = models.next().getRootNodes().iterator();
     Assert.assertTrue("The model has no roots", roots.hasNext());
     SNode result = SNodeOperations.cast((roots.next()), "jetbrains.mps.baseLanguage.structure.Classifier");
+    result = SNodeOperations.copyNode(result);
+    expected = SNodeOperations.copyNode(expected);
 
     NodePatcher.removeStatements(expected);
     NodePatcher.fixNonStatic(expected);

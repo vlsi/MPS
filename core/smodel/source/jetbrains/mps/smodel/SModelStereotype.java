@@ -22,22 +22,12 @@ import org.jetbrains.annotations.NotNull;
  * Jul 20, 2005
  */
 public class SModelStereotype {
-  @Deprecated
-  public static final String JAVA_STUB = "java_stub";
-
-  //------
-
   public static final String STUB_SUFFIX = "_stub";
-
-  //------
 
   public static final String NONE = "";
   public static final String GENERATOR = "generator";
   public static final String TESTS = "tests";
   public static final String DESCRIPTOR = "descriptor";
-  public static final String GENERATED_MODEL = "generatedModel";
-  public static final String INTERNAL_COPY = "internal_copy";
-  public static final String INTERNAL = "$internal$";
 
   //------
 

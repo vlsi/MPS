@@ -8,6 +8,7 @@ import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 
+@Deprecated
 public class GenerationResult implements IClassesData {
   private SNode myNode;
   private InMemoryJavaGenerationHandler myHandler;
@@ -15,6 +16,7 @@ public class GenerationResult implements IClassesData {
   private SModel myModel;
   private boolean mySuccesful = true;
 
+  @Deprecated
   /*package*/ GenerationResult(SNode node, IOperationContext context, SModel model, InMemoryJavaGenerationHandler handler, boolean succesful) {
     myContext = context;
     myNode = node;
@@ -23,6 +25,7 @@ public class GenerationResult implements IClassesData {
     mySuccesful = succesful;
   }
 
+  @Deprecated
   /*package*/ GenerationResult(SNode node, IOperationContext context) {
     myContext = context;
     myNode = node;

@@ -52,6 +52,12 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
     myHeader = header;
   }
 
+  @NotNull
+  @Override
+  public StreamDataSource getSource() {
+    return (StreamDataSource) super.getSource();
+  }
+
   @Override
   protected BinarySModel getCurrentModelInternal() {
     return myModel;

@@ -380,30 +380,6 @@ public abstract class EditorCell_Basic implements EditorCell {
     myRole = role;
   }
 
-  @Override
-  public void setLinkDeclaration(final SNode link) {
-    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
-      @Override
-      public void run() {
-        if (link != null) {
-          myLinkDeclarationPointer = new jetbrains.mps.smodel.SNodePointer(link);
-          myIsReferenceCell = SNodeUtil.getLinkDeclaration_IsReference(link);
-        } else {
-          myLinkDeclarationPointer = null;
-          myIsReferenceCell = false;
-        }
-      }
-    });
-  }
-
-  @Override
-  public SNode getLinkDeclaration() {
-    String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
-    if (role != null) {
-      return ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role);
-    }
-    return myLinkDeclarationPointer != null ? myLinkDeclarationPointer.resolve(MPSModuleRepository.getInstance()) : null;
-  }
 
   @Override
   public void setSelected(boolean selected) {
@@ -1034,11 +1010,6 @@ public abstract class EditorCell_Basic implements EditorCell {
       cell = (EditorCell) cell.getParent();
     }
     return prevCell;
-  }
-
-  @Override
-  public boolean isBigCell() {
-    return getParent() == null || getParent().getSNode() != getSNode();
   }
 
   protected boolean isTopCell() {

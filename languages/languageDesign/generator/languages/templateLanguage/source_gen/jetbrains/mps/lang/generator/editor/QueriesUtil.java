@@ -176,7 +176,7 @@ public class QueriesUtil {
   }
 
   public static String getEditedLinkRole(EditorCell cell) {
-    if (!(((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isReferenceCell())) {
+    if (!(cell.isReferenceCell())) {
       return null;
     }
     return cell.getRole();

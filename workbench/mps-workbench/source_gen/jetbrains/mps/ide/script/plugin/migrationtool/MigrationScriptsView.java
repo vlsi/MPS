@@ -27,6 +27,7 @@ import jetbrains.mps.project.MPSProject;
 import java.util.Collection;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.util.Computable;
 import javax.swing.JOptionPane;
 import com.intellij.openapi.command.CommandProcessorEx;
 import com.intellij.openapi.command.CommandProcessor;
@@ -163,7 +164,11 @@ public abstract class MigrationScriptsView implements ResultsListener {
   private void applyMigrations() {
     ThreadUtils.assertEDT();
 
-    final Collection<SearchResult<SNode>> aliveIncludedResults = myController.computeAliveIncludedResults(myUsagesView.getIncludedResultNodes());
+    final Collection<SearchResult<SNode>> aliveIncludedResults = ModelAccess.instance().runReadAction(new Computable<Collection<SearchResult<SNode>>>() {
+      public Collection<SearchResult<SNode>> compute() {
+        return myController.computeAliveIncludedResults(myUsagesView.getIncludedResultNodes());
+      }
+    });
     if (aliveIncludedResults.size() == 0) {
       JOptionPane.showMessageDialog(myTool.getComponent(), "No job");
       return;
