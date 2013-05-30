@@ -17,26 +17,33 @@ package jetbrains.mps.intentions;
 
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class MigrationRefactoringAdapter extends BaseIntention {
-  private AbstractMigrationRefactoring myRefactoring;
-  private SNode myMigrationScript;  //todo: do we really need migration script i.e. a link to SNode here?
-  private SNodeReference myIntentionNodeReference;
-  private String myPresentation;
+  private final AbstractMigrationRefactoring myRefactoring;
+  private final SNodeReference myIntentionNodeReference;
+  private final String myPresentation;
+  private final SModuleReference myLanguageReference;
 
-  public MigrationRefactoringAdapter(AbstractMigrationRefactoring refactoring, SNode migrationScript) {
+  public MigrationRefactoringAdapter(SModuleReference languageReference, AbstractMigrationRefactoring refactoring, SNodeReference migrationReference) {
+    myLanguageReference = languageReference;
     myRefactoring = refactoring;
-    myMigrationScript = migrationScript;
-    myIntentionNodeReference = migrationScript.getReference();
-    myPresentation = migrationScript.getName();
+    myIntentionNodeReference = migrationReference;
+    myPresentation = refactoring.getName();
   }
 
   @Override
   public String getConcept() {
     return myRefactoring.getFqNameOfConceptToSearchInstances();
+  }
+
+  @Override
+  public String getLanguageFqName() {
+    return myLanguageReference.getModuleName();
   }
 
   @Override
@@ -67,11 +74,6 @@ public class MigrationRefactoringAdapter extends BaseIntention {
   @Override
   public IntentionType getType() {
     return IntentionType.MIGRATION;
-  }
-
-  @Override
-  public String getLocationString() {
-    return jetbrains.mps.util.SNodeOperations.getModelLongName(myMigrationScript.getModel());
   }
 
   @Override
