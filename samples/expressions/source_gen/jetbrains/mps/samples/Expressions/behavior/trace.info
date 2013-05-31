@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="AndSimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.AndSimpleMathExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ArithmeticSimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.ArithmeticSimpleMathExpression_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BinarySimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.BinarySimpleMathExpression_BehaviorDescriptor" />
+  <unitInfo fileName="LogicalSimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.LogicalSimpleMathExpression_BehaviorDescriptor" />
+  <unitInfo fileName="NotSimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.NotSimpleMathExpression_BehaviorDescriptor" />
+  <unitInfo fileName="OrSimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.OrSimpleMathExpression_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathAssignment_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathAssignment_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathBooleanConstant_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathBooleanConstant_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathBooleanType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathBooleanType_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathElementType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathElementType_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathExpression_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathFloatConstant_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathFloatConstant_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathFloatType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathFloatType_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathIntegerConstant_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathIntegerConstant_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathIntegerType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathIntegerType_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathLongConstant_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathLongConstant_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathLongType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathLongType_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathNumberType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathNumberType_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathType_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathTypedVarDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathTypedVarDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathVarDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathVarDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathVarReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathVarReference_BehaviorDescriptor" />
+  <unitInfo fileName="SimpleMathWrapper_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.SimpleMathWrapper_BehaviorDescriptor" />
+  <unitInfo fileName="UnarySimpleMathExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Expressions.behavior.UnarySimpleMathExpression_BehaviorDescriptor" />
+</debugInfo>
+
