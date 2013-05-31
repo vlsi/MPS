@@ -16,7 +16,7 @@
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="kqhl" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="iwpw" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" version="-1" />
+  <import index="8d8y" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="88zw" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
@@ -398,11 +398,11 @@
                 <property name="name" nameId="tpck.1169194664001" value="runningBuild" />
                 <property name="isFinal" nameId="tpee.1176718929932" value="false" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3127508963967142122" nodeInfo="in">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="iwpw.~BuildNumber" resolveInfo="BuildNumber" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8d8y.~BuildNumber" resolveInfo="BuildNumber" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3127508963967142128" nodeInfo="nn">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwpw.~BuildNumber%dfromString(java%dlang%dString)%ccom%dintellij%dopenapi%dutil%dBuildNumber" resolveInfo="fromString" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="iwpw.~BuildNumber" resolveInfo="BuildNumber" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8d8y.~BuildNumber%dfromString(java%dlang%dString)%ccom%dintellij%dopenapi%dutil%dBuildNumber" resolveInfo="fromString" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8d8y.~BuildNumber" resolveInfo="BuildNumber" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3127508963967142130" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3127508963967142129" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3127508963967133362" resolveInfo="properties" />
@@ -424,7 +424,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3127508963967137129" resolveInfo="runningBuild" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3127508963967142145" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwpw.~BuildNumber%disSnapshot()%cboolean" resolveInfo="isSnapshot" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8d8y.~BuildNumber%disSnapshot()%cboolean" resolveInfo="isSnapshot" />
                   </node>
                 </node>
               </node>

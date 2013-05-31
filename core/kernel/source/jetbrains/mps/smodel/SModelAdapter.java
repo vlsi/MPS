@@ -150,15 +150,11 @@ public class SModelAdapter implements SModelListener {
   }
 
   @Override
-  public void modelLoadingStateChanged(SModel sm, ModelLoadingState oldState, ModelLoadingState newState) {
+  public void modelLoadingStateChanged(SModel sm, ModelLoadingState newState) {
   }
 
   @Override
   public void beforeModelDisposed(SModel sm) {
-  }
-
-  @Override
-  public void problemsUpdated(SModel event) {
   }
 
   @Override
