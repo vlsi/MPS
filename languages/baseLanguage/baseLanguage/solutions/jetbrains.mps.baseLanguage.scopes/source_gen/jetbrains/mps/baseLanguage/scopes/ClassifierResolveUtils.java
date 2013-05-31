@@ -348,7 +348,6 @@ public class ClassifierResolveUtils {
     List<SModel> samePackageModels = SModelRepository.getInstance().getModelDescriptorsByModelName(contextNodeModelName);
     models = ListSequence.fromList(samePackageModels).concat(Sequence.fromIterable(models));
 
-    SNode winner = null;
     for (SModel model : Sequence.fromIterable(models)) {
       // FIXME will be unnecessary when transient models live in a separate repository 
       if (!(model.equals(contextNodeModel)) && model instanceof SModel && (model.getModule() instanceof TransientModelsModule)) {
@@ -364,17 +363,9 @@ public class ClassifierResolveUtils {
         if (token.equals(SPropertyOperations.getString(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), "name"))) {
           // see if we can find a node for the whole refText, starting from here 
           // if not we should return anyway 
-          if (winner == null) {
-            winner = SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier");
-          } else {
-            // one classifier was already matched with this token, so we cannot resolve this reference 
-            return null;
-          }
+          return construct(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), tokenizer);
         }
       }
-    }
-    if (winner != null) {
-      return construct(winner, tokenizer);
     }
 
     // <node> 
@@ -393,7 +384,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<SModule> visibleModules = check_8z6r2b_a0a16a21(((AbstractModule) check_8z6r2b_a0a0a0jc0m(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<SModule> visibleModules = check_8z6r2b_a0a95a21(((AbstractModule) check_8z6r2b_a0a0a0hc0m(SNodeOperations.getModel(contextNode)))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
@@ -667,14 +658,14 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IScope check_8z6r2b_a0a16a21(AbstractModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0a95a21(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static SModule check_8z6r2b_a0a0a0jc0m(SModel checkedDotOperand) {
+  private static SModule check_8z6r2b_a0a0a0hc0m(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
