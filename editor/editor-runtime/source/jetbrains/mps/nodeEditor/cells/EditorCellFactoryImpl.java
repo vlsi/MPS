@@ -80,6 +80,11 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   @Override
+  public boolean hasCellContext() {
+    return myCellContextStack != null && !myCellContextStack.isEmpty();
+  }
+
+  @Override
   public void pushCellContext() {
     EditorCellContextImpl newCellContext = new EditorCellContextImpl(getCellContext());
     if (myCellContextStack == null) {

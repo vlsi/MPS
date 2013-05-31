@@ -90,6 +90,8 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettings;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
@@ -100,6 +102,7 @@ import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -199,6 +202,7 @@ import java.beans.PropertyChangeListener;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -370,6 +374,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private KeymapHandler<KeyEvent> myKeymapHandler = new AWTKeymapHandler();
   private ActionHandler myActionHandler = new ActionHandlerImpl(this);
+
+  private Set<String> myEnabledHints;
+  private boolean myUseDefaultsHints = true;
 
   public EditorComponent(@NotNull SRepository repository) {
     this(repository, false, false);
@@ -1858,12 +1865,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         getEditorContext().pushTracerTask("Running swap editor cell action", true);
+        boolean pushContext = !myUseDefaultsHints && myEnabledHints != null;
+        if (pushContext) {
+          getEditorContext().getCellFactory().pushCellContext();
+          Object[] hints = myEnabledHints.toArray();
+          getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
+        }
         runSwapCellsActions(new Runnable() {
           @Override
           public void run() {
+
             setRootCell(createRootCell(events));
           }
         });
+        if (pushContext) {
+          getEditorContext().getCellFactory().popCellContext();
+        }
         getEditorContext().popTracerTask();
 
         for (EditorCell_Component component : getCellTracker().getComponentCells()) {
@@ -3355,6 +3372,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public ActionHandler getActionHandler() {
     return myActionHandler;
+  }
+
+  public synchronized void setEnabledHints(Set<String> enabledHints) {
+    myEnabledHints = enabledHints;
+  }
+
+  public synchronized Set<String> getEnabledHints() {
+    return myEnabledHints;
+  }
+
+  public void setUseDefaultHints(boolean useDefaultsHints) {
+    myUseDefaultsHints = useDefaultsHints;
+  }
+  public boolean getUseDefaultHints() {
+    return myUseDefaultsHints;
   }
 
   private class ReferenceUnderliner {
