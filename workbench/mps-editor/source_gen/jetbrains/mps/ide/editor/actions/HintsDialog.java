@@ -18,11 +18,15 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import java.awt.GridBagLayout;
+import com.intellij.uiDesigner.core.GridLayoutManager;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.GridBagConstraints;
+import com.intellij.uiDesigner.core.GridConstraints;
+import java.awt.Dimension;
+import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import java.awt.Component;
+import org.jetbrains.annotations.NonNls;
 
 public class HintsDialog extends DialogWrapper {
   private ConceptEditorHintPreferencesPage myPage;
@@ -89,7 +93,7 @@ public class HintsDialog extends DialogWrapper {
 
   @Override
   protected void init() {
-    myMainPanel = new JPanel(new GridBagLayout());
+    myMainPanel = new JPanel(new GridLayoutManager(3, 1));
     myButtonGroup = new ButtonGroup();
     myDefaultRadioButton = new JRadioButton("Use default hints");
     myDefaultRadioButton.addActionListener(new ActionListener() {
@@ -111,21 +115,21 @@ public class HintsDialog extends DialogWrapper {
     myCustomRadioButton.setSelected(!(useDefaultHints));
     setPanelEnabled(myPage.getComponent(), !(useDefaultHints));
 
-    GridBagConstraints c = new GridBagConstraints();
-    c.fill = GridBagConstraints.BOTH;
-    c.anchor = GridBagConstraints.NORTHWEST;
+    GridConstraints c = new GridConstraints();
+    c.setFill(GridConstraints.FILL_BOTH);
+    c.setAnchor(GridConstraints.ANCHOR_NORTHWEST);
 
-    c.gridx = 0;
-    c.gridy = 0;
-    c.weightx = 1;
-    c.weighty = 0;
-    c.gridwidth = 2;
+    c.setRow(0);
+    c.setColumn(0);
 
     myMainPanel.add(myDefaultRadioButton, c);
-    c.gridy = 1;
+    c.setRow(1);
     myMainPanel.add(myCustomRadioButton, c);
-    c.gridy = 2;
-    myMainPanel.add(myPage.getComponent(), c);
+    JComponent component = myPage.getComponent();
+    component.setPreferredSize(new Dimension(400, 500));
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(component);
+
+    myMainPanel.add(scrollPane, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
     super.init();
   }
 
@@ -137,6 +141,16 @@ public class HintsDialog extends DialogWrapper {
       }
     }
   }
+
+
+
+  @Nullable
+  @NonNls
+  @Override
+  protected String getDimensionServiceKey() {
+    return getClass().getName();
+  }
+
 
 
 }
