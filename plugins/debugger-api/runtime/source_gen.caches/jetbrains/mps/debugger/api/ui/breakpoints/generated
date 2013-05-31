@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1469mvz43124r1j9shug3a10uodng63">
+<dependencies version="2" modelHash="-52yv5c0mjamlstm4c6s5naiedtjb97m">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
@@ -41,13 +41,13 @@
   <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" hash="rl584z2bxv9qi60i6qux83kmlx0fmj" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-1p4ewal3c0dn2gjrp0qdtm1mrzh7poi" />
-  <dep model="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)" hash="-8xt945ialoidvm5qumwazmsbkr67y4i" />
-  <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="76c6gyh8cxtupshldharsxg7lpjyqf9" />
-  <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="-76x9bgn7tf22luoh9u83b5kds4ytsvx" />
-  <dep model="r:e60874cf-5ffd-4123-9760-5f88ff8e0a5a(jetbrains.mps.debugger.api.ui.icons)" hash="1kyjo7w8au185hurvbllhitwb92zg4c" />
-  <common hash="-d2qa6nl3n8ycgbs80uccy4m8vxle4va" />
-  <source id="4474271214083117744" name="BreakpointIconRenderer" hash="-ewusxpvhhxh1iow6ctxnoicrzpvklok">
+  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="6mx1aal7rpszz8ztdio132l63ognod4" />
+  <dep model="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)" hash="-dgdky0b2ebiu7bvx5r72edfj77vc73i" />
+  <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="3q2x8179fixlai24r7yi4ty33bxlep7" />
+  <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="-ad0b2tbd61hvcemp8ztdvzbigznekg4" />
+  <dep model="r:e60874cf-5ffd-4123-9760-5f88ff8e0a5a(jetbrains.mps.debugger.api.ui.icons)" hash="aksu041wjviz2feur8oofbmmn1j6jvm" />
+  <common hash="-1nsr8tuhoatizohe03nxn2t1sae57ac" />
+  <source id="4474271214083117744" name="BreakpointIconRenderer" hash="3kpbw5jcjc532ygs7rqttgnl88qoc8v">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.debugger.core.breakpoints(MPS.Platform/jetbrains.mps.debugger.core.breakpoints@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -70,7 +70,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BreakpointsTable.java" />
   </source>
-  <source id="4474271214083119134" name="AbstractBreakpointsTree" hash="-4oaleg3xjzq5w2suwi3kqj63oj03y64">
+  <source id="4474271214083119134" name="AbstractBreakpointsTree" hash="-ba1czfbv56ay86ioxjo39ypqu5w4vha">
     <dep root="4474271214083119133" />
     <dep root="6515087165749902659" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
@@ -88,7 +88,7 @@
     <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" />
     <file name="AbstractBreakpointsTree.java" />
   </source>
-  <source id="4474271214083119133" name="BreakpointsView" hash="3pw0nitn7my5735px4utkfgjpm72hw9">
+  <source id="4474271214083119133" name="BreakpointsView" hash="dqghphvyvtymc8bhyzh8r56jhjk6rbb">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -97,7 +97,7 @@
     <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" />
     <file name="BreakpointsView.java" />
   </source>
-  <source id="4474271214083122178" name="BreakpointsBrowserDialog" hash="by5lnyg07p4h999kgxkmp0gl9owaw5o">
+  <source id="4474271214083122178" name="BreakpointsBrowserDialog" hash="667iboswuy2uxm5820jwmzddi567zme">
     <dep root="6515087165749902659" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
@@ -126,7 +126,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JPanelWithCheckbox.java" />
   </source>
-  <source id="4474271214083118038" name="BreakpointsUiComponent" hash="dcr5i2noef126cadof7s7oqa7netj7i">
+  <source id="4474271214083118038" name="BreakpointsUiComponent" hash="-8dcgjc462z6dmxbvfjv6vihmcxieg2k">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
@@ -152,7 +152,7 @@
     <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" />
     <file name="BreakpointsUiComponent.java" />
   </source>
-  <source id="4474271214083111858" name="GroupedTree" hash="-9guw5artmdygvr4lksjnupcwi9t7mym">
+  <source id="4474271214083111858" name="GroupedTree" hash="-8ehynk2lc7z8w1y3l61rhst4sva303c">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd(MPS.IDEA/com.intellij.ide.dnd@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd.aware(MPS.IDEA/com.intellij.ide.dnd.aware@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
@@ -179,7 +179,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <file name="GroupedTree.java" />
   </source>
-  <source id="4474271214083118632" name="BreakpointViewSettingsComponent" hash="-9gy4hhckcw12va5dv79fyyz1sizhmci">
+  <source id="4474271214083118632" name="BreakpointViewSettingsComponent" hash="-ba08ubqiz30h2rd5ip3bz2iw0vtpsk7">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BreakpointViewSettingsComponent.java" />
   </source>
@@ -188,7 +188,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BreakpointPainter.java" />
   </source>
-  <source id="6515087165749902659" name="BreakpointsUtil" hash="-852gyf50m9y3wl7a2yjc5uvtf712zme">
+  <source id="6515087165749902659" name="BreakpointsUtil" hash="-86jmmqlpm0k7gn9yynrjwj2vu44z67d">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BreakpointsUtil.java" />
   </source>

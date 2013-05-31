@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dkmwdd72b8vfexh3cpnz586fetp0nl1">
+<dependencies version="2" modelHash="-5622298nl1dyza28pz3j6xflnz5e792">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.ui(MPS.IDEA/com.intellij.execution.ui@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <common hash="8ca1ae1f5b01o0xcc3mz92xlred8we0" />
-  <source id="2392684134639614907" name="DebugActionsUtil" hash="5gpydhnkou3cbhpaquwyweoyjrh4dd1">
+  <common hash="z04pzt8tv3v4yy45xi3058dkql2b4m" />
+  <source id="2392684134639614907" name="DebugActionsUtil" hash="-6nceg5htpb15v9sez20dru98ngwvhhy">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.ui(MPS.IDEA/com.intellij.execution.ui@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

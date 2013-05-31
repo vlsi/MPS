@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-csyt8bycx3az8lqp9hr6e3xen812ot5">
+<dependencies version="2" modelHash="-7xk3k46oop5z071t2owfgsmk70tuvee">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.configurations(MPS.IDEA/com.intellij.execution.configurations@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.options(MPS.IDEA/com.intellij.openapi.options@java_stub)" />
@@ -20,14 +20,14 @@
   <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="108m9frs6rdj82t6r1g3jbfyyzennzo" />
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="-9uvwlvf131a3kqo9g1eijho212tgpq8" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
-  <common hash="67ntigqxyu0ap8fxm8s3ivljmmfmdfq" />
-  <source id="3908032508224771772" name="IPersistentConfiguration" hash="-e9e3m1vw38zmx722k4pobri3sfcbnn3">
+  <common hash="-7q13bp29qq8wlqttv1we1b9z28zqs8s" />
+  <source id="3908032508224771772" name="IPersistentConfiguration" hash="caznkz822zygdlwizqswtzcrcw1advl">
     <file name="IPersistentConfiguration.java" />
   </source>
   <source id="3908032508224771790" name="ITemplatePersistentConfiguration" hash="dtmeei95xdc7bkx34ougdjjqru5zd0z">
     <file name="ITemplatePersistentConfiguration.java" />
   </source>
-  <source id="3908032508224771799" name="SettingsEditorEx" hash="-9e5lx5gn0fi7zmepe3d0zqbdggectqo">
+  <source id="3908032508224771799" name="SettingsEditorEx" hash="-9zke36ce8mhra2cn2289a2mjhg9ddvg">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.options(MPS.IDEA/com.intellij.openapi.options@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -38,7 +38,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SettingsEditorEx.java" />
   </source>
-  <source id="7850891982542386442" name="SettingsEditorPanel" hash="4nt5lmu9tdvfdc74zkze8gmp38h03nl">
+  <source id="7850891982542386442" name="SettingsEditorPanel" hash="5v5im4a1k5wjqpyxvaja4dvgw8g5t2m">
     <dep root="3908032508224771772" />
     <dep root="3908032508224771790" />
     <dep root="3908032508224771799" />

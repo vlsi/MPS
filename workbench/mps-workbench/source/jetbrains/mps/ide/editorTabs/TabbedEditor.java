@@ -138,7 +138,7 @@ public class TabbedEditor extends BaseNodeEditor {
     myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getComponent(), new NodeChangeCallback() {
         @Override
         public void changeNode(SNode newNode) {
-          showNodeInternal(newNode, !(newNode.getModel() != null && newNode.getModel().isRoot(newNode)), true);
+          showNodeInternal(newNode, !(newNode.getModel() != null && newNode.getParent() == null), true);
         }
       }, new CreateModeCallback() {
         @Override
@@ -193,7 +193,7 @@ public class TabbedEditor extends BaseNodeEditor {
   }
 
   private void showNodeInternal(SNode node, boolean select, boolean fromTabs) {
-    SNode containingRoot = node.getModel() != null && node.getModel().isRoot(node) ? node : node.getContainingRoot();
+    SNode containingRoot = node.getModel() != null && node.getParent() == null ? node : node.getContainingRoot();
     SNodeReference currentlyEditedNode = getCurrentlyEditedNode();
     if (getCurrentEditorComponent() == null) {
       showEditor();
@@ -265,7 +265,7 @@ public class TabbedEditor extends BaseNodeEditor {
       @Override
       public void changeNode(SNode node) {
         myTabsComponent.setLastNode(new jetbrains.mps.smodel.SNodePointer(node));
-        showNode(node, !(node.getModel() != null && node.getModel().isRoot(node)));
+        showNode(node, !(node.getModel() != null && node.getParent() == null));
       }
     });
     for (DefaultActionGroup group : groups) {
