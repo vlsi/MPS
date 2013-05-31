@@ -140,23 +140,18 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       public VirtualFile compute() {
         try {
           if (path.startsWith(MPSNodeVirtualFile.NODE_PREFIX)) {
-            SNodeReference resolved = SNodePointer.deserialize(path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
-            if (resolved == null) {
-              return null;
-            }
-            SNode node = resolved.resolve(MPSModuleRepository.getInstance());
+            SNode node = NiceReferenceSerializer.deserializeNode(MPSModuleRepository.getInstance(), path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
             if (node == null) {
               return null;
             }
-            return getFileFor(resolved);
+            return getFileFor(node);
           } else if (path.startsWith(MPSModelVirtualFile.MODEL_PREFIX)) {
-            final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(
-                path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
-            SModel model = modelReference.resolve(MPSModuleRepository.getInstance());
+            SModel model =
+                NiceReferenceSerializer.deserializeModel(MPSModuleRepository.getInstance(), path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
             if (model == null) {
               return null;
             }
-            return getFileFor(modelReference);
+            return getFileFor(model.getReference());
           }
         } catch (IllegalArgumentException e) {
           // ignore, parse model ref exception

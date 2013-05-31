@@ -30,22 +30,22 @@ public class NiceReferenceSerializer {
   private static final String SEP = "/";
 
   // module
-  public String serializeModule(SModule module) {
+  public static String serializeModule(SModule module) {
     return serialize(module, module.getRepository().getModules(), MODULE_TARGET);
   }
 
   @Nullable
-  public SModule deserializeModule(SRepository repo, String s) {
+  public static SModule deserializeModule(SRepository repo, String s) {
     return deserialize(s, repo.getModules(), MODULE_TARGET);
   }
 
   // model
-  public String serializeModel(SModel model) {
+  public static String serializeModel(SModel model) {
     return serializeModule(model.getModule()) + SEP + serialize(model, model.getModule().getModels(), MODEL_TARGET);
   }
 
   @Nullable
-  public SModel deserializeModel(SRepository repo, String s) {
+  public static SModel deserializeModel(SRepository repo, String s) {
     if (!s.contains("/")) {
       return null;
     }
@@ -57,12 +57,12 @@ public class NiceReferenceSerializer {
   }
 
   // node
-  public String serializeNode(SNode node) {
+  public static String serializeNode(SNode node) {
     return serializeModel(node.getModel()) + SEP + serialize(node, node.getModel().getRootNodes(), NODE_TARGET);
   }
 
   @Nullable
-  public SNode deserializeNode(SRepository repo, String s) {
+  public static SNode deserializeNode(SRepository repo, String s) {
     if (!s.contains(SEP)) {
       return null;
     }
@@ -80,11 +80,13 @@ public class NiceReferenceSerializer {
    */
   @NotNull
   private static <T> String serialize(T e, Iterable<T> contextElements, SerializerTarget<T> target) {
+    // todo: implement name~2 format
     return target.getName(e);
   }
 
   @Nullable
   private static <T> T deserialize(@NotNull String s, Iterable<T> contextElements, SerializerTarget<T> target) {
+    // todo: implement name~2 format
     for (T e : contextElements) {
       if (s.equals(target.getName(e))) {
         return e;
@@ -114,6 +116,7 @@ public class NiceReferenceSerializer {
   };
 
   private static interface SerializerTarget<T> {
+    @NotNull
     String getName(T e);
   }
 }
