@@ -34,7 +34,6 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
@@ -42,12 +41,9 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.language.ExtensionRegistry;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.typesystem.MPSTypesystem;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -60,6 +56,7 @@ import org.jetbrains.jps.model.library.JpsLibrary;
 import org.jetbrains.jps.model.module.JpsDependencyElement;
 import org.jetbrains.jps.model.module.JpsModule;
 import org.jetbrains.jps.model.module.JpsSdkDependency;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
@@ -81,6 +78,7 @@ import java.util.UUID;
 public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
   private static final JpsMPSRepositoryFacade INSTANCE = new JpsMPSRepositoryFacade();
+  public static final UUID JDK_UUID = UUID.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065");
 
   private volatile boolean isInitialized = false;
   private CachedRepositoryData myRepo;
@@ -208,6 +206,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
     Set<JpsLibrary> processedSdks = new HashSet<JpsLibrary>();
 
+    JpsLibrary jdk = null;
     for (JpsModule mod : jpsProject.getModules()) {
       JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(mod);
 
@@ -235,12 +234,10 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
       jpsToMpsModules.put(mod, solutionIdea);
 
       // let's handle module sdkLib
-      JpsLibrary sdk = getModuleSdk(mod, context);
-      if (sdk != null && !processedSdks.contains(sdk)) {
+      for (JpsLibrary sdk: getModuleSdks(mod, context)) {
         MPSCompilerUtil.debug(context, "SDK name" + sdk.getName() + " type: " + sdk.getType());
 
-        boolean replaceJdk = sdk.getType() instanceof JpsJavaSdkType;
-        JpsLibSolution sdkSolution = createLibSolution(sdk, replaceJdk, context);
+        JpsLibSolution sdkSolution = createLibSolution(sdk, jdk, context);
         JpsLibSolution regSolution = MPSModuleRepository.getInstance().registerModule(sdkSolution, myProject);
         MPSCompilerUtil.debug(context, "SDK " + regSolution.getModuleReference().toString());
         if (sdkSolution == regSolution) {
@@ -248,7 +245,10 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
           sdkSolution.updateModelsSet();
         }
 
-        processedSdks.add(sdk);
+        if (JpsJavaSdkType.INSTANCE.equals(sdk.getType()) && !processedSdks.contains(sdk)) {
+          jdk = jdk != null ? jdk : sdk;
+          processedSdks.add(sdk);
+        }
       }
     }
 
@@ -257,7 +257,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
     }
 
     for (JpsLibrary jpsLib : jpsProject.getLibraryCollection().getLibraries()) {
-      JpsLibSolution libSolution = createLibSolution(jpsLib, false, context);
+      JpsLibSolution libSolution = createLibSolution(jpsLib, jdk, context);
       JpsLibSolution regSolution = MPSModuleRepository.getInstance().registerModule(libSolution, myProject);
       MPSCompilerUtil.debug(context, "LIB " + regSolution.getModuleReference().toString());
       if (libSolution == regSolution) {
@@ -295,44 +295,41 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
     }
   }
 
-  private JpsLibSolution createLibSolution(JpsLibrary lib, boolean sdkHack, CompileContext ctx) {
+  private JpsLibSolution createLibSolution(JpsLibrary lib, JpsLibrary jdk, CompileContext ctx) {
     String name = lib.getName();
     SolutionDescriptor desc = new SolutionDescriptor();
-    desc.setNamespace("JDK");
+    desc.setNamespace(name);
 
-    if (sdkHack) {
-      ModuleId jdkId = ModuleId.regular(UUID.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
+    if (JpsJavaSdkType.INSTANCE.equals(lib.getType()) && jdk == null) {
+      ModuleId jdkId = ModuleId.regular(JDK_UUID);
       MPSModuleRepository repo = MPSModuleRepository.getInstance();
-      SModule jdkMod = repo.getModule(jdkId);
-      if (jdkMod != null && jdkMod instanceof SModule) {
-        SModule imod = (SModule) jdkMod;
-        Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(repo.getOwners(imod));
+      SModule existingModule = repo.getModule(jdkId);
+      if (existingModule != null) {
+        desc.setNamespace(existingModule.getModuleName());
+        Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(repo.getOwners(existingModule));
         for (MPSModuleOwner owner : owners) {
 //          if (owner == this) continue;
-          repo.unregisterModule(imod, owner);
+          repo.unregisterModule(existingModule, owner);
         }
       }
       desc.setId(jdkId);
-
     } else {
       desc.setId(ModuleId.foreign(name));
     }
-    return new JpsLibSolution(desc, lib, ctx);
+    return new JpsLibSolution(desc, lib, jdk, ctx);
   }
 
-  private JpsLibrary getModuleSdk(JpsModule module, CompileContext ctx) {
+
+  private List<JpsLibrary> getModuleSdks(JpsModule module, CompileContext ctx) {
     List<JpsLibrary> sdks = new ArrayList<JpsLibrary>();
     for (JpsDependencyElement dep : module.getDependenciesList().getDependencies()) {
       if (!(dep instanceof JpsSdkDependency)) continue;
       JpsLibrary lib = ((JpsSdkDependency) dep).resolveSdk();
-      sdks.add(lib);
+      if (lib != null) {
+        sdks.add(lib);
+      }
     }
-    if (sdks.isEmpty()) return null;
-
-    if (sdks.size() > 1 && MPSCompilerUtil.isTracingMode()) {
-      ctx.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "hmm, more than 1 sdk for module " + module.getName() + ", taking first"));
-    }
-    return sdks.get(0);
+    return sdks;
   }
 
   public void dispose() {
