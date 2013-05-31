@@ -48,8 +48,10 @@ public class ConceptEditorHintPreferencesPage {
   }
 
   public JComponent getComponent() {
-    myPreferencesPanel = new JPanel(new GridBagLayout());
-    update();
+    if (myPreferencesPanel == null) {
+      myPreferencesPanel = new JPanel(new GridBagLayout());
+      update();
+    }
     return myPreferencesPanel;
   }
 

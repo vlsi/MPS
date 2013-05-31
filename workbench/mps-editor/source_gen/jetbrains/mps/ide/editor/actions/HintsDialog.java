@@ -5,6 +5,9 @@ package jetbrains.mps.ide.editor.actions;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintPreferencesPage;
 import jetbrains.mps.openapi.editor.EditorComponent;
+import javax.swing.JPanel;
+import javax.swing.ButtonGroup;
+import javax.swing.JRadioButton;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -14,10 +17,20 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.GridBagConstraints;
+import java.awt.Component;
 
 public class HintsDialog extends DialogWrapper {
   private ConceptEditorHintPreferencesPage myPage;
   private EditorComponent myComponent;
+  private JPanel myMainPanel;
+  private ButtonGroup myButtonGroup;
+  private JRadioButton myDefaultRadioButton;
+  private JRadioButton myCustomRadioButton;
+
 
 
   public HintsDialog(Project project, @NotNull ConceptEditorHintPreferencesPage page, EditorComponent component) {
@@ -30,7 +43,7 @@ public class HintsDialog extends DialogWrapper {
 
   @Nullable
   protected JComponent createCenterPanel() {
-    return myPage.getComponent();
+    return myMainPanel;
   }
 
 
@@ -50,7 +63,12 @@ public class HintsDialog extends DialogWrapper {
 
   @Override
   protected void doOKAction() {
-    myPage.commit();
+    if (myDefaultRadioButton.isSelected()) {
+      ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).setUseDefaultHints(true);
+    } else {
+      ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).setUseDefaultHints(false);
+      myPage.commit();
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -59,6 +77,61 @@ public class HintsDialog extends DialogWrapper {
     });
 
     super.doOKAction();
+  }
+
+
+
+
+
+  @Override
+  protected void init() {
+    myMainPanel = new JPanel(new GridBagLayout());
+    myButtonGroup = new ButtonGroup();
+    myDefaultRadioButton = new JRadioButton("Use default hints");
+    myDefaultRadioButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent p0) {
+        HintsDialog.this.setPanelEnabled(myPage.getComponent(), false);
+      }
+    });
+    myCustomRadioButton = new JRadioButton("Use custom hints:");
+    myCustomRadioButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent p0) {
+        HintsDialog.this.setPanelEnabled(myPage.getComponent(), true);
+      }
+    });
+    myButtonGroup.add(myDefaultRadioButton);
+    myButtonGroup.add(myCustomRadioButton);
+
+    boolean useDefaultHints = ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).getUseDefaultHints();
+    myDefaultRadioButton.setSelected(useDefaultHints);
+    myCustomRadioButton.setSelected(!(useDefaultHints));
+    setPanelEnabled(myPage.getComponent(), !(useDefaultHints));
+
+    GridBagConstraints c = new GridBagConstraints();
+    c.fill = GridBagConstraints.BOTH;
+    c.anchor = GridBagConstraints.NORTHWEST;
+
+    c.gridx = 0;
+    c.gridy = 0;
+    c.weightx = 1;
+    c.weighty = 0;
+    c.gridwidth = 2;
+
+    myMainPanel.add(myDefaultRadioButton, c);
+    c.gridy = 1;
+    myMainPanel.add(myCustomRadioButton, c);
+    c.gridy = 2;
+    myMainPanel.add(myPage.getComponent(), c);
+    super.init();
+  }
+
+  private void setPanelEnabled(JComponent panel, boolean enabled) {
+    for (Component component : panel.getComponents()) {
+      component.setEnabled(enabled);
+      if (component instanceof JComponent) {
+        setPanelEnabled(((JComponent) component), enabled);
+      }
+    }
   }
 
 

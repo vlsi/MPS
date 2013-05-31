@@ -376,6 +376,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private ActionHandler myActionHandler = new ActionHandlerImpl(this);
 
   private ConceptEditorHintSettings mySettings;
+  private boolean myUseDefaultsHints = true;
 
   public EditorComponent(@NotNull SRepository repository) {
     this(repository, false, false);
@@ -1864,7 +1865,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         getEditorContext().pushTracerTask("Running swap editor cell action", true);
-        if (mySettings != null) {
+        boolean pushContext = !myUseDefaultsHints && mySettings != null;
+        if (pushContext) {
           getEditorContext().getCellFactory().pushCellContext();
           Object[] hints = mySettings.getEnabledHints().toArray();
           getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
@@ -1876,7 +1878,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             setRootCell(createRootCell(events));
           }
         });
-        if (mySettings != null) {
+        if (pushContext) {
           getEditorContext().getCellFactory().popCellContext();
         }
         getEditorContext().popTracerTask();
@@ -3372,9 +3374,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myActionHandler;
   }
 
-  public synchronized void setSettings(ConceptEditorHintSettings settings) {
+  public synchronized void setSettings(@NotNull ConceptEditorHintSettings settings) {
     if (mySettings == null) {
       mySettings = new ConceptEditorHintSettings();
+    } else {
+      mySettings.clear();
     }
     mySettings.putAll(settings);
   }
@@ -3385,6 +3389,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       mySettings.putAll(ConceptEditorHintSettingsComponent.getInstance(ProjectHelper.toIdeaProject(ProjectHelper.getProject(myRepository))).getSettings());
     }
     return mySettings;
+  }
+
+  public void setUseDefaultHints(boolean useDefaultsHints) {
+    myUseDefaultsHints = useDefaultsHints;
+  }
+  public boolean getUseDefaultHints() {
+    return myUseDefaultsHints;
   }
 
   private class ReferenceUnderliner {
