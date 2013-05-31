@@ -25,6 +25,9 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.module.FacetsFacade;
+import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ReloadListener;
@@ -59,6 +62,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 // Main paint: modules && modules repository knows nothing about classloading
 // Maybe add invalidation listener or module dependencies change AND show warning if we change module dependencies while module loaded here?
 // todo: move to workbench
+// todo: rewrite!
 public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ClassLoaderManager.class));
 
@@ -69,6 +73,7 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   private final Map<SModule, ModuleClassLoader> myClassLoaders = new HashMap<SModule, ModuleClassLoader>();
+  private final Set<SModule> myLoadedNonReloadableModules = new HashSet<SModule>();
   private final Map<SModule, Set<SModule>> myBackRefs = new HashMap<SModule, Set<SModule>>();
 
   // this field for checking classes loading (double load from different modules)
@@ -100,6 +105,12 @@ public class ClassLoaderManager implements CoreComponent {
     INSTANCE = this;
     addClassesHandler(SModelRootClassesListener.INSTANCE);
     MPSModuleRepository.getInstance().addRepositoryListener(myRepositoryListener);
+    FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetFactory() {
+      @Override
+      public SModuleFacet create() {
+        return new DumbIdeaPluginFacet();
+      }
+    });
     // todo: add listener on module add? or not?
   }
 
@@ -282,6 +293,9 @@ public class ClassLoaderManager implements CoreComponent {
     Set<SModule> modulesToLoad = new HashSet<SModule>();
     for (SModule module : modules) {
       modulesToLoad.add(module);
+      if (module.getFacet(CustomClassLoadingFacet.class) != null) {
+        myLoadedNonReloadableModules.add(module);
+      }
     }
     modulesToLoad = Collections.unmodifiableSet(modulesToLoad);
 
@@ -321,7 +335,7 @@ public class ClassLoaderManager implements CoreComponent {
         modulesToLoad.add(module);
       }
       // todo: tmp hack
-      if (!myClassLoaders.containsKey(module) && module.getFacet(CustomClassLoadingFacet.class) != null) {
+      if (!myClassLoaders.containsKey(module) && module.getFacet(CustomClassLoadingFacet.class) != null && (!myLoadedNonReloadableModules.contains(module))) {
         modulesToLoad.add(module);
       }
     }

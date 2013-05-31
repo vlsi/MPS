@@ -1,13 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesByConditionAndNodeGroup_ActionGroup" file="FindInstancesByConditionAndNodeGroup_ActionGroup.java">
+  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog" file="BaseQQDialog.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.awt.Dimension" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QuickQueryUtils" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.Query" />
+    <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
+    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesByCondition_Action" file="FindInstancesByCondition_Action.java">
+  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindByConditionDialog" file="FindByConditionDialog.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesViewTool" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QueryFinder" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QuickQueryUtils" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.Query" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog" />
+  </dependency>
+  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindByCondition_Action" file="FindByCondition_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -18,99 +56,22 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesContext" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindByConditionDialog" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesContext" file="FindInstancesContext.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode extendsClassName="jetbrains.mps.project.StandaloneMPSContext" />
-  </dependency>
-  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog" file="FindInstancesDialog.java">
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.awt.Dimension" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.ClassLoader" />
-    <classNode dependClassName="java.lang.ClassNotFoundException" />
-    <classNode dependClassName="java.lang.IllegalAccessException" />
-    <classNode dependClassName="java.lang.InstantiationException" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.compiler.IClassesData" />
-    <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.NodeHolder" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesViewTool" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.project.ModuleId" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.project.dependency.modules.LanguageDependenciesManager" />
-    <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleFacet" />
-    <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleOperations" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QueryFinder" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.Query" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor" />
-    <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
-    <classNode dependClassName="jetbrains.mps.smodel.BootstrapLanguages" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FindUsages_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Search_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesByConditionAndNodeGroup_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesByCondition_Action" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementQueryAction_Action" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindByCondition_Action" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QuickQueryLanguageGroup_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceByCondition_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.PluginSolution_ProjectPlugin" file="PluginSolution_ProjectPlugin.java">
@@ -138,65 +99,90 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
   </dependency>
-  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceDialog" file="ReplaceDialog.java">
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.awt.Dimension" />
+  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QuickQueryLanguageGroup_ActionGroup" file="QuickQueryLanguageGroup_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QuickQueryUtils" file="QuickQueryUtils.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.InstantiationException" />
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.compiler.IClassesData" />
-    <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
+    <classNode dependClassName="java.util.concurrent.ExecutionException" />
+    <classNode dependClassName="java.util.concurrent.Future" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.NodeHolder" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.make.IMakeService" />
+    <classNode dependClassName="jetbrains.mps.make.MakeSession" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
+    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
+    <classNode dependClassName="jetbrains.mps.make.script.IOption" />
+    <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="jetbrains.mps.make.script.IScript" />
+    <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
+    <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode dependClassName="jetbrains.mps.project.ModuleId" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.Query" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor" />
+    <classNode dependClassName="jetbrains.mps.smodel.BootstrapLanguages" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
+    <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
+    <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
+    <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceByConditionDialog" file="ReplaceByConditionDialog.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.project.dependency.modules.LanguageDependenciesManager" />
-    <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleFacet" />
-    <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleOperations" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QuickQueryUtils" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.RunReplacement_Tool" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.Query" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor" />
-    <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
-    <classNode dependClassName="jetbrains.mps.smodel.BootstrapLanguages" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
+    <classNode extendsClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.BaseQQDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementQueryAction_Action" file="ReplacementQueryAction_Action.java">
+  <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceByCondition_Action" file="ReplaceByCondition_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -207,16 +193,13 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesContext" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceDialog" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplaceByConditionDialog" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView" file="ReplacementView.java">

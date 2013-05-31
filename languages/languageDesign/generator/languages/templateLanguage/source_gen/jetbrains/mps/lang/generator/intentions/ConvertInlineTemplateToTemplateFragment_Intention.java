@@ -38,7 +38,7 @@ public class ConvertInlineTemplateToTemplateFragment_Intention implements Intent
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.generator";
   }
 
   public IntentionType getType() {

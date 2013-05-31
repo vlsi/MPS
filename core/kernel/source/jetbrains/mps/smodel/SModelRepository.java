@@ -355,16 +355,6 @@ public class SModelRepository implements CoreComponent {
     }
 
     @Override
-    public void modelChanged(SModel model) {
-      markChanged(model);
-    }
-
-    @Override
-    public void modelChangedDramatically(SModel model) {
-      markChanged(model);
-    }
-
-    @Override
     public void modelRenamed(SModelRenamedEvent event) {
       synchronized (myModelsLock) {
         myFqNameToModelDescriptorMap.remove(event.getOldName());

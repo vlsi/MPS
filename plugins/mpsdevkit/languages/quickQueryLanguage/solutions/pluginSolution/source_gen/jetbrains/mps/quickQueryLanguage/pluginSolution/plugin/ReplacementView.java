@@ -35,9 +35,11 @@ public class ReplacementView {
   private RunReplacement_Tool myTool;
   private JPanel myMainPanel = new JPanel(new BorderLayout());
   private JButton myButton = new JButton("Do replace");
+  private Runnable myTempModelDisposer;
 
-  public ReplacementView(RunReplacement_Tool tool, final Project project, IResultProvider provider, SearchQuery searchQuery, final Query query) {
+  public ReplacementView(RunReplacement_Tool tool, final Project project, IResultProvider provider, SearchQuery searchQuery, final Query query, Runnable tempModelDisposer) {
     this.myTool = tool;
+    this.myTempModelDisposer = tempModelDisposer;
     this.myUsagesView = new UsagesView(project, new ViewOptions()) {
       @Override
       public void close() {
@@ -85,6 +87,7 @@ public class ReplacementView {
   }
 
   public void dispose() {
+    myTempModelDisposer.run();
     this.myUsagesView.dispose();
   }
 

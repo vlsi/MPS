@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -132,7 +133,7 @@ public class SModel implements SModelData {
     enforceFullLoad();
     if (myRoots.contains(node)) return;
     org.jetbrains.mps.openapi.model.SModel model = node.getModel();
-    if (model != null && model != getModelDescriptor() && model.isRoot(node)) {
+    if (model != null && model != getModelDescriptor() && node.getParent() == null) {
       model.removeRootNode(node);
     } else {
       org.jetbrains.mps.openapi.model.SNode parent = node.getParent();
@@ -359,7 +360,7 @@ public class SModel implements SModelData {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.importAdded(new SModelImportEvent(getDescriptorChecked(), modelReference, false));
+        sModelListener.importRemoved(new SModelImportEvent(getDescriptorChecked(), modelReference, false));
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -581,9 +582,11 @@ public class SModel implements SModelData {
   public void deleteLanguage(@NotNull SModuleReference ref) {
     ModelChange.assertLegalChange(getModelDescriptor());
 
-    myLanguages.remove(ref);
-    //calculateImplicitImports();
-    fireLanguageRemovedEvent(ref);
+    if (myLanguages.remove(ref)) {
+      //calculateImplicitImports();
+      fireLanguageRemovedEvent(ref);
+      markChanged();
+    }
   }
 
   public void addLanguage(SModuleReference ref) {
@@ -594,9 +597,9 @@ public class SModel implements SModelData {
       LOG.warn("Attempt to add language reference to a language without id in model " + getSModelFqName() + ". Language = " + ref);
     }
 
-    if (!myLanguages.contains(ref)) {
-      myLanguages.add(ref);
+    if (myLanguages.add(ref)) {
       fireLanguageAddedEvent(ref);
+      markChanged();
     }
   }
 
@@ -609,17 +612,19 @@ public class SModel implements SModelData {
   public void addDevKit(SModuleReference ref) {
     ModelChange.assertLegalChange(getModelDescriptor());
 
-    if (!myDevKits.contains(ref)) {
-      myDevKits.add(ref);
+    if (myDevKits.add(ref)) {
       fireDevKitAddedEvent(ref);
+      markChanged();
     }
   }
 
   public void deleteDevKit(@NotNull SModuleReference ref) {
     ModelChange.assertLegalChange(getModelDescriptor());
 
-    myDevKits.remove(ref);
-    fireDevKitRemovedEvent(ref);
+    if (myDevKits.remove(ref)) {
+      fireDevKitRemovedEvent(ref);
+      markChanged();
+    }
   }
 
   //model
@@ -652,6 +657,7 @@ public class SModel implements SModelData {
 
     myImports.add(importElement);
     fireImportAddedEvent(importElement.getModelReference());
+    markChanged();
   }
 
   public void deleteModelImport(SModelReference modelReference) {
@@ -662,6 +668,7 @@ public class SModel implements SModelData {
       myImports.remove(importElement);
       myImplicitImports.add(importElement);  // to save version and ID if model was imported implicitly
       fireImportRemovedEvent(modelReference);
+      markChanged();
     }
   }
 
@@ -734,6 +741,13 @@ public class SModel implements SModelData {
     return myLanguagesEngagedOnGeneration;
   }
 
+  private void markChanged() {
+    org.jetbrains.mps.openapi.model.SModel model = getModelDescriptor();
+    if (model instanceof EditableSModel) {
+      ((EditableSModel) model).setChanged(true);
+    }
+  }
+
   public void addEngagedOnGenerationLanguage(SModuleReference ref) {
     ModelChange.assertLegalChange(getModelDescriptor());
 
@@ -741,7 +755,7 @@ public class SModel implements SModelData {
       myLanguagesEngagedOnGeneration.add(ref);
       // don't send event but mark model as changed
       if (canFireEvent()) {
-        SModelRepository.getInstance().markChanged(getModelDescriptor());
+        markChanged();
       }
     }
   }
@@ -753,7 +767,7 @@ public class SModel implements SModelData {
       myLanguagesEngagedOnGeneration.remove(ref);
       // don't send event but mark model as changed
       if (canFireEvent()) {
-        SModelRepository.getInstance().markChanged(getDescriptorChecked());
+        markChanged();
       }
     }
   }

@@ -42,7 +42,7 @@ public class NewTemplateInWeaveEach_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.generator";
   }
 
   public IntentionType getType() {

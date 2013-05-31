@@ -5788,9 +5788,9 @@
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2925366645633375839" nodeInfo="nn">
             <node role="statement" roleId="tpee.1068581517665" type="tpd4.CoerceStatement" typeId="tpd4.1176558773329" id="2925366645633385711" nodeInfo="nn">
-              <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="2925366645633385712" nodeInfo="ng">
+              <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="2925366645633385712" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="node" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="2925366645633385713" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="2925366645633385713" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2925366645633385714" nodeInfo="in">
                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="2925366645633385715" nodeInfo="ng">
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
@@ -5846,9 +5846,9 @@
           <node role="elsifClauses" roleId="tpee.1206060520071" type="tpee.ElsifClause" typeId="tpee.1206060495898" id="2925366645633385688" nodeInfo="ng">
             <node role="statementList" roleId="tpee.1206060644605" type="tpee.StatementList" typeId="tpee.1068580123136" id="2925366645633385690" nodeInfo="nn">
               <node role="statement" roleId="tpee.1068581517665" type="tpd4.CoerceStatement" typeId="tpd4.1176558773329" id="2925366645633385697" nodeInfo="nn">
-                <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="2925366645633385698" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="2925366645633385698" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="seq" />
-                  <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="2925366645633385699" nodeInfo="nn">
+                  <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="2925366645633385699" nodeInfo="in">
                     <node role="patternNode" roleId="tp3t.1136720037778" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="2925366645633385700" nodeInfo="in">
                       <node role="elementType" roleId="tp2q.1151689745422" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2925366645633385701" nodeInfo="in">
                         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="2925366645633385702" nodeInfo="ng">

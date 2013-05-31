@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="86p8309ccvdr2gpj5cte5ze2odjizxz">
+<dependencies version="2" modelHash="-67k5irfzj6rzs4guz1w3ryrzz0dt5bo">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd(MPS.IDEA/com.intellij.ide.dnd@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd.aware(MPS.IDEA/com.intellij.ide.dnd.aware@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
@@ -33,35 +33,36 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6yvhxi9k55xxea1versvzjds8py3u8n" />
-  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-1p4ewal3c0dn2gjrp0qdtm1mrzh7poi" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)" hash="9acpwus7x7jbu5ovxgs53nd6l7y18v7" />
-  <dep model="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)" hash="-8xt945ialoidvm5qumwazmsbkr67y4i" />
+  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="6mx1aal7rpszz8ztdio132l63ognod4" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)" hash="-4d4ph1rda1kpj86ano7bnpz11rcwfu" />
+  <dep model="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)" hash="-dgdky0b2ebiu7bvx5r72edfj77vc73i" />
   <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="6lngotyf35uod105g6hfgzdi0hk082i" />
   <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="108m9frs6rdj82t6r1g3jbfyyzennzo" />
-  <dep model="r:63e7a653-1334-49d4-8e81-fd72b84fb4ff(jetbrains.mps.debugger.java.runtime.state)" hash="8ezbaza56m5evhjxbarlkxu27j8n444" />
+  <dep model="r:63e7a653-1334-49d4-8e81-fd72b84fb4ff(jetbrains.mps.debugger.java.runtime.state)" hash="-f62h2eg0tvd1obvba23oxfictaiofk" />
   <dep model="r:6c15a5c9-1bba-4ade-a066-13f2741b04fc(jetbrains.mps.debugger.java.api.state)" hash="3pnbrf7puov0ivpl0bfkv2gii53oqu8" />
   <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" hash="dha08n09yz1bmtulkfkk0mu5xu7cvld" />
-  <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="ct39iakb8d7fr4kby317zdhjrmdqbe5" />
-  <dep model="r:a3396333-01e8-4d8f-ac7d-92203e663cdb(jetbrains.mps.debugger.java.runtime.ui.actions)" hash="-8j10c0ifw8xxube380faxtelopk8trs" />
-  <dep model="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)" hash="-6g47yrik376bgrm2pvb3iarycdspug5" />
+  <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="191svz5o41xxjfhw1ybx76r2jh4ppjq" />
+  <dep model="r:a3396333-01e8-4d8f-ac7d-92203e663cdb(jetbrains.mps.debugger.java.runtime.ui.actions)" hash="-bdww3a1cu7tw7qfdqed29epn0l8dno5" />
+  <dep model="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)" hash="-9zwfxn77nmyoje1r3zx332gqjcev54z" />
   <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" hash="b102jag4t7tre4v2tns77wenghvnths" />
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="-9uvwlvf131a3kqo9g1eijho212tgpq8" />
-  <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="76c6gyh8cxtupshldharsxg7lpjyqf9" />
+  <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="3q2x8179fixlai24r7yi4ty33bxlep7" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-9fdi0n0a07zuqciwx30oe146qg9byaf" />
   <dep model="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)" hash="4qng3kri1j7nlungb17hqo4c0ot43z2" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <dep model="r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)" hash="-ev9bptpin8tije5ehukb409sh3zsqtd" />
-  <dep model="r:f5448de3-0d76-42bb-afa7-00b3b32de849(jetbrains.mps.debugger.java.runtime.evaluation.container)" hash="3gegz4vw6lh83i4zs9gk1yu2dcnnwoy" />
+  <dep model="r:f5448de3-0d76-42bb-afa7-00b3b32de849(jetbrains.mps.debugger.java.runtime.evaluation.container)" hash="-a96tyb30za8hpiovm955dbq35z2e6m" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
-  <common hash="-btn4i448of89vnzh4wljy29lh5znsh7" />
-  <source id="5849716370568348282" name="EvaluationDialog" hash="1yslkowcqvqv8gcndh5y6nnrllk7u1p">
+  <common hash="b193m87z197syrok65y42kpua87wyod" />
+  <source id="5849716370568348282" name="EvaluationDialog" hash="-14ra5bmbb6ebu5t8g3ivizkf81yr1g8">
     <dep root="4577525712681046198" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="EvaluationDialog.java" />
   </source>
-  <source id="920354110794004331" name="EvaluationPanel" hash="4u5ajou8kzdxahu04hpnl8e26vsjdf3">
+  <source id="920354110794004331" name="EvaluationPanel" hash="-2em32wg06iiq7olmyrd4mahd3v1a11b">
     <dep root="7406771907178600108" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
@@ -78,7 +79,7 @@
     <dep model="r:f5448de3-0d76-42bb-afa7-00b3b32de849(jetbrains.mps.debugger.java.runtime.evaluation.container)" />
     <file name="EvaluationPanel.java" />
   </source>
-  <source id="7406771907178597948" name="EvaluationTree" hash="-78csdgn5qaf9ee77yn58pvqy79fadan">
+  <source id="7406771907178597948" name="EvaluationTree" hash="1qyyi7uaq8ets0wxz77kacaz1klzp71">
     <dep root="7406771907178600108" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd(MPS.IDEA/com.intellij.ide.dnd@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd.aware(MPS.IDEA/com.intellij.ide.dnd.aware@java_stub)" />
@@ -114,7 +115,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="EvaluationTree.java" />
   </source>
-  <source id="7406771907178600108" name="EvaluationUi" hash="-4jo2m3w5vm8q4g8i4twoe8j3yuvulyy">
+  <source id="7406771907178600108" name="EvaluationUi" hash="-c6zr6r2t590wx8maj53jqblqx2y2ihx">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -140,19 +141,19 @@
     <dep model="r:f5448de3-0d76-42bb-afa7-00b3b32de849(jetbrains.mps.debugger.java.runtime.evaluation.container)" />
     <file name="EvaluationUi.java" />
   </source>
-  <source id="4577525712681038408" name="EditWatchDialog" hash="e8kgofazpcruc1w4pbhwkwnw4a0d9e1">
+  <source id="4577525712681038408" name="EditWatchDialog" hash="2dss70udjwq3wdg2kpfdkc2opak9ov">
     <dep root="4577525712681046198" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="EditWatchDialog.java" />
   </source>
-  <source id="4577525712681046198" name="AbstractEvaluationDialog" hash="-1o603tmr9uagl10dqxc7ctqdn1ptw6o">
+  <source id="4577525712681046198" name="AbstractEvaluationDialog" hash="j4qz5didul5t4hwwb5w67gxma2ich0">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AbstractEvaluationDialog.java" />
   </source>
-  <source id="5600062460044309378" name="WatchesPanel" hash="-ens75vp4uio8smvwjecs72c875fgsod">
+  <source id="5600062460044309378" name="WatchesPanel" hash="-7gwf8yv2gipc4i4mrlymyc8dehv7g0z">
     <dep root="7406771907178600108" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />

@@ -15411,12 +15411,12 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="8847838005406041530" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3ior.841011766565753074" resolveInfo="BuildLayout_Import" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="8847838005406041696" nodeInfo="ng">
-        <node role="contentNode" roleId="tpf8.8900764248744213871" type="3ior.BuildLayout" id="8847838005406041698" nodeInfo="ng">
-          <node role="children" type="3ior.BuildLayout_Folder" id="8847838005406041699" nodeInfo="ng">
-            <node role="containerName" type="3ior.BuildStringNotEmpty" id="8847838005406041700" nodeInfo="ng">
-              <node role="parts" type="3ior.BuildTextStringPart" id="5662023918413765603" nodeInfo="ng">
-                <property name="text" value="aaaa" />
-                <node role="smodelAttribute" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1556400259614055521" nodeInfo="nn">
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="8847838005406041698" nodeInfo="ng">
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="8847838005406041699" nodeInfo="ng">
+            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="8847838005406041700" nodeInfo="ng">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="5662023918413765603" nodeInfo="ng">
+                <property name="text" nameId="3ior.4903714810883755350" value="aaaa" />
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1556400259614055521" nodeInfo="nn">
                   <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
                   <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1556400259614055522" nodeInfo="nn">
                     <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1556400259614055523" nodeInfo="nn">
@@ -15626,9 +15626,9 @@
                 </node>
               </node>
             </node>
-            <node role="children" type="3ior.BuildLayout_ImportContent" id="8847838005406041703" nodeInfo="ng">
-              <link role="target" targetNodeId="8847838005406041699" resolveInfo="aa" />
-              <node role="smodelAttribute" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="8847838005406041706" nodeInfo="nn">
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="8847838005406041703" nodeInfo="ng">
+              <link role="target" roleId="3ior.5610619299013057365" targetNodeId="8847838005406041699" resolveInfo="aa" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="8847838005406041706" nodeInfo="nn">
                 <property name="linkRole" nameId="tpck.1757699476691236116" value="target" />
                 <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="8847838005406041707" nodeInfo="nn">
                   <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8847838005406041708" nodeInfo="nn">
@@ -15647,7 +15647,7 @@
                 </node>
               </node>
             </node>
-            <node role="smodelAttribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="8847838005406041709" nodeInfo="ng" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="8847838005406041709" nodeInfo="ng" />
           </node>
         </node>
       </node>
@@ -15720,9 +15720,9 @@
             </node>
           </node>
           <node role="caseConsequence" roleId="tpf8.1195158637244" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2750015747481190663" nodeInfo="ng">
-            <node role="templateNode" roleId="tpf8.1177093586806" type="3ior.BuildLayout_Filemode" id="2750015747481191460" nodeInfo="ng">
-              <property name="filemode" value="777" />
-              <node role="smodelAttribute" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2750015747481191461" nodeInfo="nn">
+            <node role="templateNode" roleId="tpf8.1177093586806" type="3ior.BuildLayout_Filemode" typeId="3ior.7801138212747054656" id="2750015747481191460" nodeInfo="ng">
+              <property name="filemode" nameId="3ior.7801138212747054660" value="777" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2750015747481191461" nodeInfo="nn">
                 <property name="propertyName" nameId="tpck.1757699476691236117" value="filemode" />
                 <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="2750015747481191462" nodeInfo="nn">
                   <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481191463" nodeInfo="nn">
@@ -15737,10 +15737,10 @@
                   </node>
                 </node>
               </node>
-              <node role="children" type="3ior.BuildLayout_CustomCopy" id="2750015747481191492" nodeInfo="ng">
-                <node role="fileset" type="3ior.BuildInputSingleFile" id="2750015747481191493" nodeInfo="ng">
-                  <node role="path" type="3ior.BuildSourceProjectRelativePath" id="2750015747481191494" nodeInfo="ng">
-                    <node role="smodelAttribute" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2750015747481191516" nodeInfo="nn">
+              <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CustomCopy" typeId="3ior.9184644532456495794" id="2750015747481191492" nodeInfo="ng">
+                <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="2750015747481191493" nodeInfo="ng">
+                  <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2750015747481191494" nodeInfo="ng">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2750015747481191516" nodeInfo="nn">
                       <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2750015747481191517" nodeInfo="nn">
                         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481191518" nodeInfo="nn">
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2750015747481191519" nodeInfo="nn">
@@ -15756,7 +15756,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="smodelAttribute" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="2750015747481191496" nodeInfo="nn">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="2750015747481191496" nodeInfo="nn">
                   <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="2750015747481191497" nodeInfo="nn">
                     <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481191498" nodeInfo="nn">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2750015747481191499" nodeInfo="nn">
@@ -15794,10 +15794,10 @@
                     </node>
                   </node>
                   <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2750015747481207046" nodeInfo="ng">
-                    <node role="templateNode" roleId="tpf8.1177093586806" type="3ior.BuildLayout_Copy" id="2750015747481207047" nodeInfo="ng">
-                      <node role="fileset" type="3ior.BuildInputSingleFile" id="2750015747481207048" nodeInfo="ng">
-                        <node role="path" type="3ior.BuildSourceProjectRelativePath" id="2750015747481207049" nodeInfo="ng">
-                          <node role="smodelAttribute" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2750015747481207050" nodeInfo="nn">
+                    <node role="templateNode" roleId="tpf8.1177093586806" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="2750015747481207047" nodeInfo="ng">
+                      <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="2750015747481207048" nodeInfo="ng">
+                        <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2750015747481207049" nodeInfo="ng">
+                          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2750015747481207050" nodeInfo="nn">
                             <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2750015747481207051" nodeInfo="nn">
                               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481207052" nodeInfo="nn">
                                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2750015747481207053" nodeInfo="nn">
@@ -15816,8 +15816,8 @@
                     </node>
                   </node>
                 </node>
-                <node role="handlers" type="3ior.BuildLayout_CopyFlattenMapper" id="2750015747481191548" nodeInfo="ng">
-                  <node role="smodelAttribute" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2750015747481207043" nodeInfo="nn">
+                <node role="handlers" roleId="3ior.9184644532456533278" type="3ior.BuildLayout_CopyFlattenMapper" typeId="3ior.6977615362525721939" id="2750015747481191548" nodeInfo="ng">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2750015747481207043" nodeInfo="nn">
                     <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2750015747481207044" nodeInfo="nn">
                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481207045" nodeInfo="nn">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2750015747481310689" nodeInfo="nn">
@@ -15898,9 +15898,9 @@
             </node>
           </node>
           <node role="caseConsequence" roleId="tpf8.1195158637244" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2750015747481063397" nodeInfo="ng">
-            <node role="templateNode" roleId="tpf8.1177093586806" type="3ior.BuildLayout_CustomCopy" id="2750015747481063224" nodeInfo="ng">
-              <node role="handlers" type="3ior.BuildLayout_CopyFlattenMapper" id="2750015747481063232" nodeInfo="ng">
-                <node role="smodelAttribute" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2750015747481063234" nodeInfo="nn">
+            <node role="templateNode" roleId="tpf8.1177093586806" type="3ior.BuildLayout_CustomCopy" typeId="3ior.9184644532456495794" id="2750015747481063224" nodeInfo="ng">
+              <node role="handlers" roleId="3ior.9184644532456533278" type="3ior.BuildLayout_CopyFlattenMapper" typeId="3ior.6977615362525721939" id="2750015747481063232" nodeInfo="ng">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2750015747481063234" nodeInfo="nn">
                   <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2750015747481063235" nodeInfo="nn">
                     <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481063236" nodeInfo="nn">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2750015747481063237" nodeInfo="nn">
@@ -15939,9 +15939,9 @@
                   </node>
                 </node>
               </node>
-              <node role="fileset" type="3ior.BuildInputSingleFile" id="2750015747481063225" nodeInfo="ng">
-                <node role="path" type="3ior.BuildSourceProjectRelativePath" id="2750015747481063226" nodeInfo="ng">
-                  <node role="smodelAttribute" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2750015747481063362" nodeInfo="nn">
+              <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="2750015747481063225" nodeInfo="ng">
+                <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2750015747481063226" nodeInfo="ng">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2750015747481063362" nodeInfo="nn">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2750015747481063363" nodeInfo="nn">
                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481063364" nodeInfo="nn">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2750015747481063365" nodeInfo="nn">
@@ -15961,10 +15961,10 @@
           </node>
         </node>
         <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2750015747481063399" nodeInfo="ng">
-          <node role="templateNode" roleId="tpf8.1177093586806" type="3ior.BuildLayout_Copy" id="2750015747481063401" nodeInfo="ng">
-            <node role="fileset" type="3ior.BuildInputSingleFile" id="2750015747481063403" nodeInfo="ng">
-              <node role="path" type="3ior.BuildSourceProjectRelativePath" id="2750015747481063404" nodeInfo="ng">
-                <node role="smodelAttribute" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2750015747481063406" nodeInfo="nn">
+          <node role="templateNode" roleId="tpf8.1177093586806" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="2750015747481063401" nodeInfo="ng">
+            <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="2750015747481063403" nodeInfo="ng">
+              <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2750015747481063404" nodeInfo="ng">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2750015747481063406" nodeInfo="nn">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2750015747481063407" nodeInfo="nn">
                     <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481063408" nodeInfo="nn">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2750015747481063409" nodeInfo="nn">
@@ -16025,9 +16025,9 @@
             </node>
           </node>
           <node role="caseConsequence" roleId="tpf8.1195158637244" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2750015747481074540" nodeInfo="ng">
-            <node role="templateNode" roleId="tpf8.1177093586806" type="3ior.BuildLayout_CustomCopy" id="2750015747481074541" nodeInfo="ng">
-              <node role="handlers" type="3ior.BuildLayout_CopyFlattenMapper" id="2750015747481074542" nodeInfo="ng">
-                <node role="smodelAttribute" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2750015747481074543" nodeInfo="nn">
+            <node role="templateNode" roleId="tpf8.1177093586806" type="3ior.BuildLayout_CustomCopy" typeId="3ior.9184644532456495794" id="2750015747481074541" nodeInfo="ng">
+              <node role="handlers" roleId="3ior.9184644532456533278" type="3ior.BuildLayout_CopyFlattenMapper" typeId="3ior.6977615362525721939" id="2750015747481074542" nodeInfo="ng">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2750015747481074543" nodeInfo="nn">
                   <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2750015747481074544" nodeInfo="nn">
                     <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481074545" nodeInfo="nn">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2750015747481074546" nodeInfo="nn">
@@ -16066,9 +16066,9 @@
                   </node>
                 </node>
               </node>
-              <node role="fileset" type="3ior.BuildInputFiles" id="2750015747481074585" nodeInfo="ng">
-                <node role="dir" type="3ior.BuildSourceProjectRelativePath" id="2750015747481074562" nodeInfo="ng">
-                  <node role="smodelAttribute" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2750015747481074563" nodeInfo="nn">
+              <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputFiles" typeId="3ior.5248329904287794596" id="2750015747481074585" nodeInfo="ng">
+                <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2750015747481074562" nodeInfo="ng">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2750015747481074563" nodeInfo="nn">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2750015747481074564" nodeInfo="nn">
                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481074565" nodeInfo="nn">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2750015747481074566" nodeInfo="nn">
@@ -16083,9 +16083,9 @@
                     </node>
                   </node>
                 </node>
-                <node role="selectors" type="3ior.BuildFileIncludeSelector" id="2750015747481074587" nodeInfo="ng">
-                  <property name="pattern" value="**/*" />
-                  <node role="smodelAttribute" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2750015747481074589" nodeInfo="nn">
+                <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="2750015747481074587" nodeInfo="ng">
+                  <property name="pattern" nameId="3ior.5248329904288051101" value="**/*" />
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2750015747481074589" nodeInfo="nn">
                     <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2750015747481074590" nodeInfo="nn">
                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481074591" nodeInfo="nn">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2750015747481074626" nodeInfo="nn">
@@ -16131,11 +16131,11 @@
           </node>
         </node>
         <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2750015747481074570" nodeInfo="ng">
-          <node role="templateNode" roleId="tpf8.1177093586806" type="3ior.BuildLayout_Copy" id="2750015747481074571" nodeInfo="ng">
-            <node role="fileset" type="3ior.BuildInputFiles" id="2750015747481074592" nodeInfo="ng">
-              <node role="selectors" type="3ior.BuildFileIncludeSelector" id="2750015747481074654" nodeInfo="ng">
-                <property name="pattern" value="**/*" />
-                <node role="smodelAttribute" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2750015747481074655" nodeInfo="nn">
+          <node role="templateNode" roleId="tpf8.1177093586806" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="2750015747481074571" nodeInfo="ng">
+            <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputFiles" typeId="3ior.5248329904287794596" id="2750015747481074592" nodeInfo="ng">
+              <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="2750015747481074654" nodeInfo="ng">
+                <property name="pattern" nameId="3ior.5248329904288051101" value="**/*" />
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2750015747481074655" nodeInfo="nn">
                   <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2750015747481074656" nodeInfo="nn">
                     <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481074657" nodeInfo="nn">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2750015747481074658" nodeInfo="nn">
@@ -16176,8 +16176,8 @@
                   </node>
                 </node>
               </node>
-              <node role="dir" type="3ior.BuildSourceProjectRelativePath" id="2750015747481074593" nodeInfo="ng">
-                <node role="smodelAttribute" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2750015747481074595" nodeInfo="nn">
+              <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2750015747481074593" nodeInfo="ng">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2750015747481074595" nodeInfo="nn">
                   <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2750015747481074596" nodeInfo="nn">
                     <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2750015747481074597" nodeInfo="nn">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2750015747481074598" nodeInfo="nn">

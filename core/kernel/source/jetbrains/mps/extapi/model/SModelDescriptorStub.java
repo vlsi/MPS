@@ -110,16 +110,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
 
   // Not SModel-specific listener notifications
 
-  protected void fireModelProblemsUpdated() {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.problemsUpdated(this);
-      } catch (Throwable t) {
-        LOG.error(null, t);
-      }
-    }
-  }
-
   protected void fireBeforeModelFileChanged(SModelFileChangedEvent event) {
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -162,10 +152,10 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
     }
   }
 
-  protected void fireModelStateChanged(ModelLoadingState oldState, ModelLoadingState newState) {
+  protected void fireModelStateChanged(ModelLoadingState newState) {
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.modelLoadingStateChanged(this, oldState, newState);
+        sModelListener.modelLoadingStateChanged(this, newState);
       } catch (Throwable t) {
         LOG.error(null, t);
       }
@@ -214,11 +204,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   @Override
   public SModelScope getModelScope() {
     return getSModelInternal().getModelScope();
-  }
-
-  @Override
-  public boolean isRoot(org.jetbrains.mps.openapi.model.SNode node) {
-    return getSModelInternal().isRoot(node);
   }
 
   //

@@ -37,7 +37,7 @@ public class UnmarkLocalInstanceMethodCallAsThreadSafe_Intention implements Inte
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "org.jetbrains.mps.samples.ParallelFor";
   }
 
   public IntentionType getType() {

@@ -7,14 +7,14 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModel;
 import java.util.Map;
 import java.util.Set;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import com.intellij.psi.PsiJavaFile;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.psi.PsiClass;
@@ -23,6 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.idea.java.psi.PsiListener;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiImportStatementBase;
@@ -40,10 +41,9 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
   private SModel myModel;
   private PsiJavaStubDataSource myDataSource;
 
-  private Map<String, Set<SNode>> myRootsPerFile = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
-  private Map<SNodeId, SNode> myRootsById = MapSequence.fromMap(new HashMap<SNodeId, SNode>());
-  private Map<SNode, PsiElement> myGlobalMps2PsiMapping = MapSequence.fromMap(new HashMap<SNode, PsiElement>());
-  private Map<String, Set<SNode>> myMps2PsiMappings = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
+  private Map<String, Set<SNodeId>> myRootsPerFile = MapSequence.fromMap(new HashMap<String, Set<SNodeId>>());
+  private Map<String, Set<SNodeId>> myAllNodesPerFile = MapSequence.fromMap(new HashMap<String, Set<SNodeId>>());
+  private Map<SNodeId, PsiElement> myGlobalMps2PsiMapping = MapSequence.fromMap(new HashMap<SNodeId, PsiElement>());
   private PsiJavaStubModelDescriptor.MyMps2PsiMapper myMps2PsiMapper = new PsiJavaStubModelDescriptor.MyMps2PsiMapper();
 
 
@@ -100,7 +100,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
       SNode javaImports = getImports(jf.getImportList().getAllImportStatements());
 
       ASTConverter converter = new ASTConverter(myMps2PsiMapper);
-      Set<SNode> roots = SetSequence.fromSet(new HashSet<SNode>());
+      Set<SNodeId> roots = SetSequence.fromSet(new HashSet<SNodeId>());
 
       for (PsiClass cls : jf.getClasses()) {
         SNode node = converter.convertClass(cls);
@@ -110,8 +110,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
         // TODO check for duplicate ids (in java sources there may be 2 classes with the same name 
         //  which is an error but none the less) 
         myModel.addRootNode(node);
-        SetSequence.fromSet(roots).addElement(node);
-        MapSequence.fromMap(myRootsById).put(node.getNodeId(), node);
+        SetSequence.fromSet(roots).addElement(node.getNodeId());
       }
 
       if (SetSequence.fromSet(roots).isNotEmpty()) {
@@ -133,6 +132,10 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
     if (myModel == null) {
       return;
     }
+
+    SModel myModelCopy = CopyUtil.copyModel(myModel);
+    SModel myOldModel = myModel;
+    myModel = myModelCopy;
 
     for (PsiJavaFile file : event.removed()) {
       myMps2PsiMapper.clearFile(file.getName());
@@ -163,7 +166,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
       SNode javaImports = getImports(file.getImportList().getAllImportStatements());
       ASTConverter converter = new ASTConverter(myMps2PsiMapper);
 
-      Set<SNode> roots = SetSequence.fromSet(new HashSet<SNode>());
+      Set<SNodeId> roots = SetSequence.fromSet(new HashSet<SNodeId>());
 
       for (PsiClass cls : file.getClasses()) {
         SNode node = converter.convertClass(cls);
@@ -180,13 +183,18 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
           myModel.addRootNode(node);
         }
 
-        SetSequence.fromSet(roots).addElement(node);
+        SetSequence.fromSet(roots).addElement(node.getNodeId());
       }
 
       if (SetSequence.fromSet(roots).isNotEmpty()) {
         MapSequence.fromMap(myRootsPerFile).put(file.getName(), roots);
       }
+
     }
+
+    myModel.setModelDescriptor(this);
+    // Q: do I need to call it or since the descriptor stays the same noone cares? 
+    myOldModel.dispose();
   }
 
 
@@ -214,7 +222,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
 
 
   public PsiElement getPsiSource(SNode node) {
-    return MapSequence.fromMap(myGlobalMps2PsiMapping).get(node);
+    return MapSequence.fromMap(myGlobalMps2PsiMapping).get(node.getNodeId());
   }
 
 
@@ -224,14 +232,14 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
     public void consume(Pair<SNode, PsiElement> pair) {
       SNode node = pair.o1;
       PsiElement element = pair.o2;
-      MapSequence.fromMap(myGlobalMps2PsiMapping).put(node, element);
+      MapSequence.fromMap(myGlobalMps2PsiMapping).put(node.getNodeId(), element);
       PsiFile file = element.getContainingFile();
-      Set<SNode> mapForFile = MapSequence.fromMap(myMps2PsiMappings).get(file.getName());
+      Set<SNodeId> mapForFile = MapSequence.fromMap(myAllNodesPerFile).get(file.getName());
       if (mapForFile == null) {
-        mapForFile = SetSequence.fromSet(new HashSet<SNode>());
-        MapSequence.fromMap(myMps2PsiMappings).put(file.getName(), mapForFile);
+        mapForFile = SetSequence.fromSet(new HashSet<SNodeId>());
+        MapSequence.fromMap(myAllNodesPerFile).put(file.getName(), mapForFile);
       }
-      SetSequence.fromSet(mapForFile).addElement(node);
+      SetSequence.fromSet(mapForFile).addElement(node.getNodeId());
     }
 
 
@@ -239,20 +247,21 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
     /*package*/ void clearFile(String fileName) {
 
       if (MapSequence.fromMap(myRootsPerFile).get(fileName) != null) {
-        SetSequence.fromSet(MapSequence.fromMap(myRootsPerFile).get(fileName)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            SNodeOperations.deleteNode(it);
+        SetSequence.fromSet(MapSequence.fromMap(myRootsPerFile).get(fileName)).visitAll(new IVisitor<SNodeId>() {
+          public void visit(SNodeId it) {
+            SNode node = myModel.getNode(it);
+            myModel.removeRootNode(node);
           }
         });
         MapSequence.fromMap(myRootsPerFile).removeKey(fileName);
       }
 
-      Set<SNode> mapForFile = MapSequence.fromMap(myMps2PsiMappings).get(fileName);
+      Set<SNodeId> mapForFile = MapSequence.fromMap(myAllNodesPerFile).get(fileName);
       if (mapForFile == null) {
         return;
       }
-      MapSequence.fromMap(myMps2PsiMappings).removeKey(fileName);
-      for (SNode node : mapForFile) {
+      MapSequence.fromMap(myAllNodesPerFile).removeKey(fileName);
+      for (SNodeId node : mapForFile) {
         MapSequence.fromMap(myGlobalMps2PsiMapping).removeKey(node);
       }
     }

@@ -37,7 +37,7 @@ public class SurroundWithExecuteLightweightCommandStatement_Intention implements
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.access";
   }
 
   public IntentionType getType() {

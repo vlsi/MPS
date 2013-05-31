@@ -17,21 +17,17 @@ package jetbrains.mps.ide.migration.assistant;
 
 import com.intellij.ide.RecentProjectsManagerBase;
 import com.intellij.ide.impl.ProjectUtil;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.impl.LaterInvocator;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.AsyncResult;
 import com.intellij.openapi.util.AsyncResult.Handler;
-import com.intellij.openapi.wm.IdeFrame;
-import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.impl.welcomeScreen.WelcomeFrame;
 import jetbrains.mps.project.MPSProjectMigrationState;
-import jetbrains.mps.project.ProjectManager;
 
 /**
  * Created by IntelliJ IDEA.
@@ -70,6 +66,19 @@ public class MigrationAssistant extends AbstractProjectComponent {
   private void initiateMigration(final MPSProjectMigrationState migrationState) {
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
+
+        if (migrationState.getCurrentStep() == 0) {
+          LaterInvocator.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+              VirtualFileManager.getInstance().syncRefresh();
+              migrationState.setCurrentStep(1);
+              ProjectManagerEx.getInstance().reloadProject(myProject);
+            }
+          });
+          return;
+        }
+
         LaterInvocator.invokeLater(new Runnable() {
           @Override
           public void run() {
@@ -80,8 +89,7 @@ public class MigrationAssistant extends AbstractProjectComponent {
               public void run(Boolean ok) {
                 if (ok) {
                   myMigrationState.migrationFinished();
-                }
-                else {
+                } else {
                   myMigrationState.migrationAborted();
                   forceCloseProject();
                 }
@@ -100,8 +108,8 @@ public class MigrationAssistant extends AbstractProjectComponent {
         ProjectUtil.closeAndDispose(myProject);
         RecentProjectsManagerBase.getInstance().updateLastProjectPath();
         WelcomeFrame.showIfNoProjectOpened();
-        }
       }
+    }
     );
   }
 

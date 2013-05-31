@@ -180,7 +180,7 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   }
 
   @Override
-  public void modelLoaded(SModel model) {
+  public void modelLoaded(SModel model, boolean partially) {
   }
 
   @Override

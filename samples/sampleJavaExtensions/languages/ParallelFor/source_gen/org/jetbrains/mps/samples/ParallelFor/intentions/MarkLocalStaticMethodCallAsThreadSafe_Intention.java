@@ -38,7 +38,7 @@ public class MarkLocalStaticMethodCallAsThreadSafe_Intention implements Intentio
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "org.jetbrains.mps.samples.ParallelFor";
   }
 
   public IntentionType getType() {

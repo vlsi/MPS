@@ -17,14 +17,12 @@
   <property name="artifacts.mpsTroveCollections" location="${build.dir}/artifacts/mpsTroveCollections" />
   <property name="artifacts.mpsStandalone" location="${build.dir}/artifacts/mpsStandalone" />
   <property name="artifacts.mpsDevKit" location="${build.dir}/artifacts/mpsDevKit" />
-  <property name="artifacts.mpsExperimental" location="${build.dir}/artifacts/mpsExperimental" />
   <property name="artifacts.mpsPlugins" location="${build.dir}/artifacts/mpsPlugins" />
   <property name="artifacts.mpsMakePlugin" location="${build.dir}/artifacts/mpsMakePlugin" />
   <property name="artifacts.mpsBuildUI" location="${build.dir}/artifacts/mpsBuildUI" />
   <property name="artifacts.mpsVcs" location="${build.dir}/artifacts/mpsVcs" />
   <property name="artifacts.mpsDebuggerPlugin" location="${build.dir}/artifacts/mpsDebuggerPlugin" />
   <property name="artifacts.mpsExecutionPlugin" location="${build.dir}/artifacts/mpsExecutionPlugin" />
-  <property name="artifacts.mpsObsolete" location="${build.dir}/artifacts/mpsObsolete" />
   <property name="artifacts.mpsDeprecatedBuildlanguage" location="${build.dir}/artifacts/mpsDeprecatedBuildlanguage" />
   <property name="artifacts.mpsTesting" location="${build.dir}/artifacts/mpsTesting" />
   <property file="${artifacts.mpsBuild}/build.properties" prefix="import.mpsBuild" />
@@ -127,10 +125,6 @@
       <fileset dir="${artifacts.mpsExecutionPlugin}" />
     </copy>
     <copy file="${artifacts.mpsMakePlugin}/mps-make.jar" todir="${build.layout}/plugins" />
-    <mkdir dir="${build.layout}/plugins/mps-obsolete" />
-    <copy todir="${build.layout}/plugins/mps-obsolete">
-      <fileset dir="${artifacts.mpsObsolete}/mps-obsolete" />
-    </copy>
     <mkdir dir="${build.layout}/plugins/mps-build-deprecated" />
     <copy todir="${build.layout}/plugins/mps-build-deprecated">
       <fileset dir="${artifacts.mpsDeprecatedBuildlanguage}/mps-build-deprecated" />
@@ -152,9 +146,6 @@
     <mkdir dir="${build.layout}/plugins/mps-testing" />
     <copy todir="${build.layout}/plugins/mps-testing">
       <fileset dir="${artifacts.mpsTesting}/mps-testing" />
-    </copy>
-    <copy todir="${build.layout}/plugins">
-      <fileset dir="${artifacts.mpsExperimental}" />
     </copy>
     <zip destfile="${build.layout}/samples.zip">
       <zipfileset dir="${basedir}/samples" prefix="MPSSamples" />
@@ -187,7 +178,6 @@
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsStandalone.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsDevKit.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsExperimental.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsJava.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsPlugins.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
@@ -196,7 +186,6 @@
     <ant antfile="build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsDeprecatedBuildlanguage.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsObsolete.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />

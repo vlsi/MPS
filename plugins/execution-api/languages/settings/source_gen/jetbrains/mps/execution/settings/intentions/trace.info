@@ -6,7 +6,7 @@
     <nodeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="35" startPosition="41" endLine="36" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="39" startPosition="37" endLine="40" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="39" startPosition="37" endLine="40" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="43" startPosition="34" endLine="44" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="47" startPosition="44" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="51" startPosition="84" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -43,7 +43,7 @@
     <scopeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="80" />
     <scopeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="40" />
     <scopeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="35" startPosition="41" endLine="36" endPosition="94" />
-    <scopeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="39" startPosition="37" endLine="40" endPosition="43" />
+    <scopeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="39" startPosition="37" endLine="40" endPosition="46" />
     <scopeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="43" startPosition="34" endLine="44" endPosition="32" />
     <scopeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="47" startPosition="44" endLine="48" endPosition="17" />
     <scopeInfo nodeId="9191251033651652580" fileName="ToggleDeprecatedAnnotation_Intention.java" startLine="51" startPosition="84" endLine="52" endPosition="16" />

@@ -17,11 +17,12 @@
 package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editor.checkers.ModelProblemsChecker;
 import jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.typesystem.checking.NonTypesystemEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import org.jetbrains.annotations.NotNull;
@@ -35,22 +36,29 @@ import java.util.Stack;
  */
 public class MPSValidationComponent implements ProjectComponent {
 
+  private final Project myIdeaProject;
   private final Highlighter myHighlighter;
   private Stack<BaseEditorChecker> myCheckers = new Stack<BaseEditorChecker>();
 
-  public MPSValidationComponent(Highlighter myHighlighter) {
+  public MPSValidationComponent(Project p, Highlighter myHighlighter) {
+    myIdeaProject = p;
     this.myHighlighter = myHighlighter;
   }
 
   @Override
   public void initComponent() {
     // TODO: create editor-specific "core" component in editor-runtime module and register all common checkers from there
-    addChecker(new TypesEditorChecker());
-    addChecker(new NonTypesystemEditorChecker());
-    addChecker(new AutoResolver());
-    addChecker(new LanguageEditorChecker());
-    addChecker(new SuppressErrorsChecker());
-    addChecker(new ModelProblemsChecker(GlobalSModelEventsManager.getInstance()));
+    ProjectHelper.getModelAccess(myIdeaProject).runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        addChecker(new TypesEditorChecker());
+        addChecker(new NonTypesystemEditorChecker());
+        addChecker(new AutoResolver());
+        addChecker(new LanguageEditorChecker());
+        addChecker(new SuppressErrorsChecker());
+        addChecker(new ModelProblemsChecker());
+      }
+    });
   }
 
   private void addChecker(BaseEditorChecker checker) {
@@ -59,11 +67,16 @@ public class MPSValidationComponent implements ProjectComponent {
 
   @Override
   public void disposeComponent() {
-    while (!myCheckers.isEmpty()) {
-      BaseEditorChecker checker = myCheckers.pop();
-      myHighlighter.removeChecker(checker);
-      checker.dispose();
-    }
+    ProjectHelper.getModelAccess(myIdeaProject).runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        while (!myCheckers.isEmpty()) {
+          BaseEditorChecker checker = myCheckers.pop();
+          myHighlighter.removeChecker(checker);
+          checker.dispose();
+        }
+      }
+    });
   }
 
   @NotNull

@@ -18,6 +18,7 @@ package jetbrains.mps.ide.migration.assistant;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.components.AbstractProjectComponent;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -89,29 +90,34 @@ public class MigrationProcessor extends AbstractProjectComponent{
           @Override
           public void run() {
             try{
-              fireStartingAction(action);
-              AnActionEvent event = new AnActionEvent(null, DataManager.getInstance().getDataContext(component), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
-              boolean success = false;
-              boolean oldFlag = action.isExecuteOutsideCommand();
-              try{
-                action.setExecuteOutsideCommand(true);
-                action.update(event);
-                if (action.getTemplatePresentation().isEnabled()) {
-                  action.actionPerformed(event);
-                  success = true;
+              DumbService.getInstance(myProject).runWhenSmart(new Runnable() {
+                @Override
+                public void run() {
+                  fireStartingAction(action);
+                  AnActionEvent event = new AnActionEvent(null, DataManager.getInstance().getDataContext(component), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
+                  boolean success = false;
+                  boolean oldFlag = action.isExecuteOutsideCommand();
+                  try{
+                    action.setExecuteOutsideCommand(true);
+                    action.update(event);
+                    if (action.getTemplatePresentation().isEnabled()) {
+                      action.actionPerformed(event);
+                      success = true;
+                    }
+                  }
+                  catch (Exception e) {
+                    LOG.error(null, e);
+                  }
+                  finally {
+                    action.setExecuteOutsideCommand(oldFlag);
+                    if (success) {
+                      fireFinishedAction(action);
+                    } else {
+                      fireFailedAction(action);
+                    }
+                  }
                 }
-              }
-              catch (Exception e) {
-                LOG.error(null, e);
-              }
-              finally {
-                action.setExecuteOutsideCommand(oldFlag);
-                if (success) {
-                  fireFinishedAction(action);
-                } else {
-                  fireFailedAction(action);
-                }
-              }
+              });
             }
             finally {
               latch.countDown();

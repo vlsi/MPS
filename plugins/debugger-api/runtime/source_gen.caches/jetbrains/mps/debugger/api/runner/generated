@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="72r67o1oyvt37eomvrggdi4elzm2rmt">
+<dependencies version="2" modelHash="-bblhg05hnf9ehzv5ugbmhlfv5uo3942">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.executors(MPS.IDEA/com.intellij.execution.executors@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <common hash="4crq7eivait8qff57g9et9t7e52qfte" />
-  <source id="4474271214083126640" name="MPSDebugRunner" hash="-8hsi2letxc4y8o4pp5yt4eg9f7rdef7">
+  <common hash="-tzetce0jsgapbo4mdiaaaxx1on5zr7" />
+  <source id="4474271214083126640" name="MPSDebugRunner" hash="-ep1lbq2jljb4lk0dm5p5inj92x21jsi">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.executors(MPS.IDEA/com.intellij.execution.executors@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MPSDebugRunner.java" />

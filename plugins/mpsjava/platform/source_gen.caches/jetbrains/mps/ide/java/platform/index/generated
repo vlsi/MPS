@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7dtx4fi2322142tps1lmc0cdajr33ho">
+<dependencies version="2" modelHash="cr23wx8u3qrl7nz96pxtzquixbzv8lh">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vfs(MPS.IDEA/com.intellij.openapi.vfs@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.psi.search(MPS.IDEA/com.intellij.psi.search@java_stub)" />
@@ -16,8 +16,8 @@
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-9fdi0n0a07zuqciwx30oe146qg9byaf" />
   <dep model="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" hash="3ldxzucnlkis010jzx34377egrnk5do" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
-  <common hash="-36hulh222d66qfmj0jvqg09kg13s7kl" />
-  <source id="4183391441819863852" name="ClassifierSuccessorsFinder" hash="s8pi5ag5ayej1atad3u3j9egd7dksr">
+  <common hash="-42e876xz9ypvc4u10ajhsggl4hda75w" />
+  <source id="4183391441819863852" name="ClassifierSuccessorsFinder" hash="-2x5i7jaa8vwuyi5qevc2y986duvj7z4">
     <dep root="4183391441819864496" />
     <dep root="4183391441819864880" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
@@ -36,7 +36,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ClassifierSuccessorsFinder.java" />
   </source>
-  <source id="4183391441819864496" name="ClassifierSuccessorsIndexer" hash="-bzmewglscu6nw9qamv7441egwr28fo6">
+  <source id="4183391441819864496" name="ClassifierSuccessorsIndexer" hash="-8g432lyoz2ew9ijtnjju562pht287sz">
     <dep root="4183391441819864880" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -55,13 +55,13 @@
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <file name="GlobalSNodeId.java" />
   </source>
-  <source id="4183391441819865064" name="GlobalSNodeIdDescriptor" hash="aseckpdyos4unh98zns44ngj8j85lkz">
+  <source id="4183391441819865064" name="GlobalSNodeIdDescriptor" hash="-3xhyscqbc88d04913jvuoepa17vsgq4">
     <dep root="4183391441819864880" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GlobalSNodeIdDescriptor.java" />
   </source>
-  <source id="4183391441819865189" name="ListExternalizer" hash="-arlyng31yswerr5v0opzl3hyxxf0jla">
+  <source id="4183391441819865189" name="ListExternalizer" hash="-a9rlgohwaw89kbzhi99mv9a4tlsjz67">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

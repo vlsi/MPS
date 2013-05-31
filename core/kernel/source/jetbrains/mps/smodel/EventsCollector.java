@@ -147,15 +147,11 @@ public class EventsCollector {
       }
 
       @Override
-      public void problemsUpdated(SModel sm) {
-      }
-
-      @Override
       public void modelSaved(SModel sm) {
       }
 
       @Override
-      public void modelLoadingStateChanged(SModel sm, ModelLoadingState oldState, ModelLoadingState newState) {
+      public void modelLoadingStateChanged(SModel sm, ModelLoadingState newState) {
       }
 
       @Override

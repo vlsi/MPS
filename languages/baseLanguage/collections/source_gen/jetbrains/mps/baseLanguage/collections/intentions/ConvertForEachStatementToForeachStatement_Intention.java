@@ -39,7 +39,7 @@ public class ConvertForEachStatementToForeachStatement_Intention implements Inte
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.collections";
   }
 
   public IntentionType getType() {

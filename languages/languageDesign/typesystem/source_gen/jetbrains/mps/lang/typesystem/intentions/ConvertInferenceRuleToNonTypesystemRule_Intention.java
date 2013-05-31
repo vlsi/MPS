@@ -39,7 +39,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention implements Intent
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.typesystem";
   }
 
   public IntentionType getType() {
