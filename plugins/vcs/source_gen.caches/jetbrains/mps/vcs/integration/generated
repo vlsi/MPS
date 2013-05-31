@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1aw8fvcfgacgzql9kgpbtztcqh6thfe">
+<dependencies version="2" modelHash="ewzolpj9vyh7l2ysxpsiw0ux1jasnqo">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vcs(MPS.IDEA/com.intellij.openapi.vcs@java_stub)" />
@@ -14,24 +14,24 @@
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="-9uvwlvf131a3kqo9g1eijho212tgpq8" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
-  <common hash="bvcpk34crt7xug1otpm6gk13vc7yqnu" />
-  <source id="3521790172251160903" name="ProjectCheckoutListener" hash="-6ryzxi0kuzxse27rinza6fl6pu1b8hv">
+  <common hash="-dfmi7rujkmfgty6e5pgcc88wyecgjdo" />
+  <source id="3521790172251160903" name="ProjectCheckoutListener" hash="-aje0arbfqrv9uqym0ikkrwec4z5h6pr">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ProjectCheckoutListener.java" />
   </source>
-  <source id="3521790172251226878" name="ModuleVcsPathPresenter" hash="3qyxgidb51ycfwxp2h2zf3460afejfe">
+  <source id="3521790172251226878" name="ModuleVcsPathPresenter" hash="czc5ahtoigha98qw6agjjo3o0qefhm3">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModuleVcsPathPresenter.java" />
   </source>
-  <source id="4093906047203397429" name="GeneratedFilesExcludePolicy" hash="-e8m14ehgk5if2pmlt4xtuxxhr3ipaml">
+  <source id="4093906047203397429" name="GeneratedFilesExcludePolicy" hash="ccdpy538hnr2wpd4ipu5r69q8qrw83j">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.vfs(MPS.Workbench/jetbrains.mps.ide.vfs@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GeneratedFilesExcludePolicy.java" />
   </source>
-  <source id="6203974263416579308" name="GeneratedFileConflictResolving" hash="-9fcu4tdyzs7w6wf3uvhhwojjhdostxv">
+  <source id="6203974263416579308" name="GeneratedFileConflictResolving" hash="4fmo0ak5x3fe7eybogztgikiqjfx8x0">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vcs(MPS.IDEA/com.intellij.openapi.vcs@java_stub)" />

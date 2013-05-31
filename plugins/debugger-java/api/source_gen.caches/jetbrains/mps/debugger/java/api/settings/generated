@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7jn4ze46xagsa1fe39er7fpvvbmi3vv">
+<dependencies version="2" modelHash="-7u3jw3k4npaq7hktsp5qmk99ozflx1t">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <common hash="albnerwqfon2vrm91ejry58y0nujnhl" />
+  <common hash="-4mw31lnqqja88n3114yj49aq79zive4" />
   <source id="3432969378036013784" name="RemoteConnectionSettings" hash="ejpq78q0eeoebb2x17sr4qrbj9by8rl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="RemoteConnectionSettings.java" />
@@ -9,7 +9,7 @@
   <source id="3432969378036013783" name="DebugConnectionSettings" hash="cgsq5xyn7nl4t2fc5dao0kbm4vayitt">
     <file name="DebugConnectionSettings.java" />
   </source>
-  <source id="3432969378036017435" name="LocalConnectionSettings" hash="-3mbqi5ka0snsfi1g82jd2rhh11exyrr">
+  <source id="3432969378036017435" name="LocalConnectionSettings" hash="814y82w68a2srxdh09y6hpggfqfzgqw">
     <file name="LocalConnectionSettings.java" />
   </source>
 </dependencies>
