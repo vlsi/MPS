@@ -56,7 +56,6 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_testWeaving",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_transformation_test_inputModels",
-  "jetbrains.mps.tests.TestModule_jetbrains_mps_ui_unittest",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_xml_tests"})
 @RunWith(WatchingSuite.class)
 public class ModuleTestSuite extends TestSuite {
