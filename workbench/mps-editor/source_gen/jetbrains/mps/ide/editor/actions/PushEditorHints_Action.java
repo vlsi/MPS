@@ -10,15 +10,13 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.ide.editor.MPSFileNodeEditor;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettings;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintPreferencesPage;
 import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -62,8 +60,8 @@ public class PushEditorHints_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("file", event.getData(PlatformDataKeys.VIRTUAL_FILE));
-    if (MapSequence.fromMap(_params).get("file") == null) {
+    MapSequence.fromMap(_params).put("editor", event.getData(MPSEditorDataKeys.MPS_EDITOR));
+    if (MapSequence.fromMap(_params).get("editor") == null) {
       return false;
     }
     return true;
@@ -71,11 +69,7 @@ public class PushEditorHints_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      FileEditor fileEditor = FileEditorManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getSelectedEditor(((VirtualFile) MapSequence.fromMap(_params).get("file")));
-      EditorComponent component = null;
-      if (fileEditor instanceof MPSFileNodeEditor) {
-        component = ((EditorComponent) ((MPSFileNodeEditor) fileEditor).getNodeEditor().getCurrentEditorComponent());
-      }
+      EditorComponent component = ((EditorComponent) ((Editor) MapSequence.fromMap(_params).get("editor")).getCurrentEditorComponent());
       if (component == null) {
         return;
       }
