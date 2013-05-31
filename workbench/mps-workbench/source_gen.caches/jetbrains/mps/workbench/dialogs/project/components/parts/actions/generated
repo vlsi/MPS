@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="esq9wzp6j4s7kd9pc11lyhl1rv9yukf">
+<dependencies version="2" modelHash="50b25met8nvun8lsppv45ymmhju9k97">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <common hash="-2w961swivlkgwu5hi00wgnrcjuk52mw" />
+  <common hash="-1azyd7gcsjvecc86bcpy6ze7dhf6r7t" />
   <source id="1560298786499490203" name="ListAddAction" hash="ekfaeonc0mz2kfw4at2b3ho7niu1emn">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ListAddAction.java" />
   </source>
-  <source id="1560298786499490464" name="BaseAddAction" hash="6wq1vn8ut6xyoeimfkucgr10t7yeheu">
+  <source id="1560298786499490464" name="BaseAddAction" hash="-8fd2heyf1hutvoa0nlkqi8xcaulhhoo">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BaseAddAction.java" />
@@ -16,21 +16,21 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TableAddAction.java" />
   </source>
-  <source id="1560298786499493338" name="ListRemoveAction" hash="-51bysiiu8iebia9n2sm3z67dftj9nuo">
+  <source id="1560298786499493338" name="ListRemoveAction" hash="33zf0k9t2yzjc0il9be51om0h2uqnzd">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ListRemoveAction.java" />
   </source>
-  <source id="1560298786499494244" name="BaseValidatedAction" hash="-eaqzqct123t0v97cdsk33yxlsy9gxr0">
+  <source id="1560298786499494244" name="BaseValidatedAction" hash="2yg80c3qp1ee8sa5jrat4ns67dyz2z">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BaseValidatedAction.java" />
   </source>
-  <source id="1560298786499495342" name="TableRemoveAction" hash="-efbby2emsz9k63xfvw8ol5xvnh3msfy">
+  <source id="1560298786499495342" name="TableRemoveAction" hash="-arxse3x2ef3237spzonyuq4sznbfoyl">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TableRemoveAction.java" />
   </source>
-  <source id="1560298786499497503" name="ListEditAction" hash="70fd5ujbym19yzjw2kk02z36q0hn2hu">
+  <source id="1560298786499497503" name="ListEditAction" hash="-92it2t2ahzbuyxpbl4l2vho6mabgr68">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ListEditAction.java" />

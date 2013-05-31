@@ -177,6 +177,7 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
 
   @Override
   public PsiElement setName(@NonNls @NotNull final String name) throws IncorrectOperationException {
+    // todo: assert that we're in idea command
     setNameProperty(name);
     return this;
   }

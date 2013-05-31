@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7fwhqsfjfz7nkerh9acod95gf0fu630">
+<dependencies version="2" modelHash="2nadoy1l746fpzbkp5jnrd0fa4852d2">
   <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.projectPane.fileSystem(MPS.Workbench/jetbrains.mps.ide.projectPane.fileSystem@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <common hash="-ce3mzp8f7zwf09tkrnkxnjdb7ynyw7o" />
-  <source id="7705742079275757540" name="ShowInFileView" hash="4y8bi6l27ddw82790jybco5x7l1hnmd">
+  <common hash="-b0ho0678lznwfalqwurwnqv0qmcnbat" />
+  <source id="7705742079275757540" name="ShowInFileView" hash="4u4y2ri6e1rgiokh6fqdiz79apr8981">
     <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.projectPane.fileSystem(MPS.Workbench/jetbrains.mps.ide.projectPane.fileSystem@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ShowInFileView.java" />
   </source>
-  <source id="7705742079275757770" name="AbstractShowInFileView" hash="-97ojia86m3ucda2j7gkgbvhd9tyqjpx">
+  <source id="7705742079275757770" name="AbstractShowInFileView" hash="e6yai8tvcut1cczlro6zwoq26ndepem">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AbstractShowInFileView.java" />
   </source>
-  <source id="7705742079275757969" name="ShowInLogicalView" hash="-9784dvp9y37aplumbl038mpf2zh6np8">
+  <source id="7705742079275757969" name="ShowInLogicalView" hash="-4949v7cktnbudard23pnakzl01z7u4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ShowInLogicalView.java" />
   </source>

@@ -10596,7 +10596,7 @@
           <property name="text" nameId="tpc2.1073389577007" value="ID:" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5944657839017689165" nodeInfo="nn">
-          <property name="text" nameId="tpc2.1073389577007" value="Unique identifier of the hint. Only letters, digits and '_' characters are allowed" />
+          <property name="text" nameId="tpc2.1073389577007" value="A unique identifier of the hint. Only letters, digits and '_' characters are allowed" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="5944657839017699576" nodeInfo="nn" />
         </node>
       </node>
@@ -10612,10 +10612,10 @@
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5944657839017657411" nodeInfo="nn">
-          <property name="text" nameId="tpc2.1073389577007" value="Presenration:" />
+          <property name="text" nameId="tpc2.1073389577007" value="Presentation:" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5944657839018108214" nodeInfo="nn">
-          <property name="text" nameId="tpc2.1073389577007" value="Short description of this hint. Will be used in UI." />
+          <property name="text" nameId="tpc2.1073389577007" value="a short description of this hint. Will be used in UI." />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="5944657839018108225" nodeInfo="nn" />
         </node>
       </node>

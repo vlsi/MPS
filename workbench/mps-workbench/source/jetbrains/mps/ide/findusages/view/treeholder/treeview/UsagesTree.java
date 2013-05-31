@@ -324,7 +324,7 @@ public class UsagesTree extends MPSTree {
             snode = (SNode) data.getIdObject();
           }
         }
-        return snode != null && !(snode.getModel() != null && snode.getModel().isRoot(snode));
+        return snode != null && !(snode.getModel() != null && snode.getParent() == null);
       }
 
       @Override
@@ -698,7 +698,7 @@ public class UsagesTree extends MPSTree {
     if (module == null) return;
 
     ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(myProject));
-    NavigationSupport.getInstance().openNode(context, node, focus, !(node.getModel() != null && node.getModel().isRoot(node)));
+    NavigationSupport.getInstance().openNode(context, node, focus, !(node.getModel() != null && node.getParent() == null));
   }
 
   private void navigateInTree(Object o, boolean focus) {

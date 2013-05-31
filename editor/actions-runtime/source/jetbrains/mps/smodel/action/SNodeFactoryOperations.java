@@ -96,7 +96,7 @@ public class SNodeFactoryOperations {
   public static SNode replaceWithNewChild(SNode oldChild, String conceptFqName) {
     assert oldChild != null : "can't replace node. node is NULL";
     SNode oldChildParent = oldChild.getParent();
-    if (oldChildParent == null && !(oldChild.getModel() != null && oldChild.getModel().isRoot(oldChild))) {
+    if (oldChildParent == null && !(oldChild.getModel() != null && oldChild.getParent() == null)) {
       return null;
     }
     SModel model = oldChild.getModel();

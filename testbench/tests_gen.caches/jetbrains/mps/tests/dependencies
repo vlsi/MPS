@@ -164,19 +164,7 @@
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
-  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_ui_unittest" file="TestModule_jetbrains_mps_ui_unittest.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-  </dependency>
   <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_xml_tests" file="TestModule_jetbrains_mps_xml_tests.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-  </dependency>
-  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_ypath_runtime" file="TestModule_jetbrains_mps_ypath_runtime.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-  </dependency>
-  <dependency className="jetbrains.mps.tests.TestModule_ypath_test" file="TestModule_ypath_test.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>

@@ -73,7 +73,7 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
             if (node == null || !SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return;
 
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-            NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getModel().isRoot(node)));
+            NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getParent() == null));
           }
         });
       }
