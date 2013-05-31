@@ -8,15 +8,23 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import java.util.List;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -50,15 +58,26 @@ public class MigrateCondition_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (SModel md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
-        if (md.isReadOnly()) {
-          continue;
+      List<SModule> modulelist = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
+
+      for (SModel md : ListSequence.fromList(modulelist).translate(new ITranslator2<SModule, SModel>() {
+        public Iterable<SModel> translate(SModule it) {
+          return it.getModels();
         }
+      }).where(new IWhereFilter<SModel>() {
+        public boolean accept(SModel m) {
+          return SModelStereotype.isUserModel(m) && !(m.isReadOnly());
+        }
+      })) {
         for (SNode node : new NodesIterable(md)) {
           for (SReference ref : Sequence.fromIterable(node.getReferences())) {
             if (!(ref instanceof jetbrains.mps.smodel.SReference)) {
