@@ -29,7 +29,9 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -52,27 +54,32 @@ public class MPSPackageFinder extends PsiElementFinder {
 
   @Nullable
   @Override
-  public PsiPackage findPackage(@NotNull String qualifiedName) {
+  public PsiPackage findPackage(@NotNull final String qualifiedName) {
 
-    List<PsiPackage> packages = new ArrayListModel<PsiPackage>();
+    return ModelAccess.instance().runReadAction(new Computable<PsiPackage>() {
+      @Override
+      public PsiPackage compute() {
+        List<PsiPackage> packages = new ArrayListModel<PsiPackage>();
 
-    List<SModel> models = SModelRepository.getInstance().getModelDescriptorsByModelName(qualifiedName);
-    if (models == null || models.size() == 0) return null;
+        List<SModel> models = SModelRepository.getInstance().getModelDescriptorsByModelName(qualifiedName);
+        if (models == null || models.size() == 0) return null;
 
-    for (SModel model : models) {
-      SModule module = model.getModule();
-      if (module instanceof SolutionIdea
-        && ((SolutionIdea) module).getIdeaModule().getProject().equals(myProject)) {
+        for (SModel model : models) {
+          SModule module = model.getModule();
+          if (module instanceof SolutionIdea
+            && ((SolutionIdea) module).getIdeaModule().getProject().equals(myProject)) {
 
-        packages.add(new MPSPackage(MPSPsiProvider.getInstance(myProject).getPsi(model)));
+            packages.add(new MPSPackage(MPSPsiProvider.getInstance(myProject).getPsi(model)));
+          }
+        }
+
+        if (packages.isEmpty() || packages.size() > 1) {
+          return null;
+        }
+
+        return packages.get(0);
       }
-    }
-
-    if (packages.isEmpty() || packages.size() > 1) {
-      return null;
-    }
-
-    return packages.get(0);
+    });
   }
 
   // we only handle packages
