@@ -120,12 +120,7 @@
     <scopeInfo nodeId="2712670354707941345" fileName="TestModule_jetbrains_mps_baseLanguage_regexp_unittest.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <unitInfo nodeId="2712670354707941345" fileName="TestModule_jetbrains_mps_baseLanguage_regexp_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_regexp_unittest" />
   </root>
-  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/2712670354707965320">
-    <nodeInfo nodeId="2712670354707965320" fileName="TestModule_jetbrains_mps_ui_unittest.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_ui_unittest#()V" />
-    <scopeInfo nodeId="2712670354707965320" fileName="TestModule_jetbrains_mps_ui_unittest.java" startLine="12" startPosition="49" endLine="12" endPosition="49" />
-    <scopeInfo nodeId="2712670354707965320" fileName="TestModule_jetbrains_mps_ui_unittest.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <unitInfo nodeId="2712670354707965320" fileName="TestModule_jetbrains_mps_ui_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_ui_unittest" />
-  </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/2712670354707965320" />
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/2712670354707965330">
     <nodeInfo nodeId="2712670354707965330" fileName="TestModule_jetbrains_mps_xml_tests.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_xml_tests#()V" />
     <scopeInfo nodeId="2712670354707965330" fileName="TestModule_jetbrains_mps_xml_tests.java" startLine="12" startPosition="47" endLine="12" endPosition="47" />
