@@ -294,9 +294,6 @@
       <modulePath path="$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swing/jetbrains.mps.ui.swing.mpl" folder="languages.ui" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swing/runtime/jetbrains.mps.ui.swing.runtime.msd" folder="languages.ui" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swing/solutions/pluginSolution/jetbrains.mps.ui.swing.pluginSolution.msd" folder="languages.ui" />
-      <modulePath path="$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swt/jetbrains.mps.ui.swt.mpl" folder="languages.ui" />
-      <modulePath path="$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swt/runtime/jetbrains.mps.ui.swt.runtime.msd" folder="languages.ui" />
-      <modulePath path="$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swt/solutions/pluginSolution/jetbrains.mps.ui.swt.pluginSolution.msd" folder="languages.ui" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/testdata/jetbrains.mps.ui.internal.testdata.mpl" folder="languages.ui" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/testdata/solutions/pluginSolution/jetbrains.mps.ui.internal.testdata.pluginSolution.msd" folder="languages.ui" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/ui/jetbrains.mps.ui.mpl" folder="languages.ui" />
