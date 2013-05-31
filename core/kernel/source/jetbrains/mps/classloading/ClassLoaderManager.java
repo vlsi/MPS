@@ -25,6 +25,9 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.module.FacetsFacade;
+import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ReloadListener;
@@ -102,6 +105,12 @@ public class ClassLoaderManager implements CoreComponent {
     INSTANCE = this;
     addClassesHandler(SModelRootClassesListener.INSTANCE);
     MPSModuleRepository.getInstance().addRepositoryListener(myRepositoryListener);
+    FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetFactory() {
+      @Override
+      public SModuleFacet create() {
+        return new DumbIdeaPluginFacet();
+      }
+    });
     // todo: add listener on module add? or not?
   }
 

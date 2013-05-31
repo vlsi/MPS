@@ -18,7 +18,6 @@ package jetbrains.mps.ide;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacet;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
@@ -35,6 +34,9 @@ public class MPSWorkbenchComponents implements ApplicationComponent {
 
   @Override
   public void initComponent() {
+    FacetFactory dumbFactory = FacetsFacade.getInstance().getFacetFactory(IdeaPluginModuleFacet.FACET_TYPE);
+    assert dumbFactory != null;
+    FacetsFacade.getInstance().removeFactory(dumbFactory);
     FacetsFacade.getInstance().addFactory(IdeaPluginModuleFacet.FACET_TYPE, new FacetFactory() {
       @Override
       public SModuleFacet create() {
