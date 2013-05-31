@@ -8,6 +8,7 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import javax.swing.JPanel;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettings;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -30,13 +31,15 @@ public class HintsDialog extends DialogWrapper {
   private ButtonGroup myButtonGroup;
   private JRadioButton myDefaultRadioButton;
   private JRadioButton myCustomRadioButton;
+  private ConceptEditorHintSettings mySettings;
 
 
 
-  public HintsDialog(Project project, @NotNull ConceptEditorHintPreferencesPage page, EditorComponent component) {
+  public HintsDialog(Project project, @NotNull ConceptEditorHintPreferencesPage page, ConceptEditorHintSettings settings, EditorComponent component) {
     super(project, true);
     myPage = page;
     myComponent = component;
+    mySettings = settings;
     setTitle("Push Editor Hints");
     init();
   }
@@ -68,6 +71,7 @@ public class HintsDialog extends DialogWrapper {
     } else {
       ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).setUseDefaultHints(false);
       myPage.commit();
+      ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).setEnabledHints(mySettings.getEnabledHints());
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override

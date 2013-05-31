@@ -375,7 +375,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private KeymapHandler<KeyEvent> myKeymapHandler = new AWTKeymapHandler();
   private ActionHandler myActionHandler = new ActionHandlerImpl(this);
 
-  private ConceptEditorHintSettings mySettings;
+  private Set<String> myEnabledHints;
   private boolean myUseDefaultsHints = true;
 
   public EditorComponent(@NotNull SRepository repository) {
@@ -1865,10 +1865,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         getEditorContext().pushTracerTask("Running swap editor cell action", true);
-        boolean pushContext = !myUseDefaultsHints && mySettings != null;
+        boolean pushContext = !myUseDefaultsHints && myEnabledHints != null;
         if (pushContext) {
           getEditorContext().getCellFactory().pushCellContext();
-          Object[] hints = mySettings.getEnabledHints().toArray();
+          Object[] hints = myEnabledHints.toArray();
           getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
         }
         runSwapCellsActions(new Runnable() {
@@ -3374,21 +3374,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myActionHandler;
   }
 
-  public synchronized void setSettings(@NotNull ConceptEditorHintSettings settings) {
-    if (mySettings == null) {
-      mySettings = new ConceptEditorHintSettings();
-    } else {
-      mySettings.clear();
-    }
-    mySettings.putAll(settings);
+  public synchronized void setEnabledHints(Set<String> enabledHints) {
+    myEnabledHints = enabledHints;
   }
 
-  public synchronized ConceptEditorHintSettings getSettings() {
-    if (mySettings == null) {
-      mySettings = new ConceptEditorHintSettings();
-      mySettings.putAll(ConceptEditorHintSettingsComponent.getInstance(ProjectHelper.toIdeaProject(ProjectHelper.getProject(myRepository))).getSettings());
-    }
-    return mySettings;
+  public synchronized Set<String> getEnabledHints() {
+    return myEnabledHints;
   }
 
   public void setUseDefaultHints(boolean useDefaultsHints) {

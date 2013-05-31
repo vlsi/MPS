@@ -13,10 +13,14 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
+import java.util.Set;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettings;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintPreferencesPage;
 import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -73,9 +77,19 @@ public class PushEditorHints_Action extends BaseAction {
       if (component == null) {
         return;
       }
-      ConceptEditorHintSettings settings = component.getSettings();
+      Set<String> enabledHints = component.getEnabledHints();
+      ConceptEditorHintSettings settings = new ConceptEditorHintSettings();
+      settings.putAll(ConceptEditorHintSettingsComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getSettings());
+      if (enabledHints != null) {
+        for (String lang : SetSequence.fromSet(settings.getLanguagesNames())) {
+          for (ConceptEditorHint hint : SetSequence.fromSet(settings.getHints(lang))) {
+            settings.put(lang, hint, false);
+          }
+        }
+        settings.updateSettings(enabledHints);
+      }
       final ConceptEditorHintPreferencesPage page = new ConceptEditorHintPreferencesPage(settings);
-      DialogWrapper dialog = new HintsDialog(((Project) MapSequence.fromMap(_params).get("project")), page, component);
+      DialogWrapper dialog = new HintsDialog(((Project) MapSequence.fromMap(_params).get("project")), page, settings, component);
       dialog.show();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
