@@ -33,6 +33,8 @@ public interface EditorCellFactory {
    */
   EditorCellContext getCellContext();
 
+  boolean hasCellContext();
+
   /**
    * Set new instance of EditorCellContext as currently active one. New EditorCellContext
    * will inherit all context hints specified in previously active EditorCellContext.

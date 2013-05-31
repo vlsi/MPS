@@ -134,6 +134,7 @@ public class EditorManager {
   }
 
   private EditorCell createRootCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
+    boolean needToPushContext = false;
     try {
       pushTask(context, "Creating " + (isInspectorCell ? "inspector" : "root") + " cell");
       EditorComponent nodeEditorComponent = getEditorComponent(context);
@@ -146,7 +147,8 @@ public class EditorManager {
         fillContextToCellMap(rootCell, myContextToOldCellMap.peek());
       }
       myCreatingInspectedCell = isInspectorCell;
-      if (context.getCellFactory().getCellContext() != null){
+      needToPushContext = !context.getCellFactory().hasCellContext();
+      if (needToPushContext){
         context.getCellFactory().pushCellContext();
         com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(ProjectHelper.getProject(context.getRepository()));
         MyState state = ConceptEditorHintSettingsComponent.getInstance(project).getState();
@@ -157,7 +159,7 @@ public class EditorManager {
       }
       return createEditorCell(context, modifications, nodeRefContext);
     } finally {
-      if (context.getCellFactory().getCellContext() != null) {
+      if (needToPushContext) {
         context.getCellFactory().popCellContext();
       }
       myContextToOldCellMap.pop();
