@@ -241,6 +241,18 @@
       <directory url="file://$PROJECT_DIR$/languages/util/builders/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/gentest/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/reduced/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/conf/languages/conf/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/conf/solutions/jetbrains.mps.platform.conf.sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/conf/solutions/jetbrains.mps.platform.conf.sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/contracts/languages/contracts/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/contracts/languages/contracts/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/dates/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/dates/internal/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/dates/runtime/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/dates/runtime/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/dates/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/dates/unittest/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/dates/unittest/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/execution/util/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/extensionMethod/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen" includeSubdirectories="true" />
@@ -258,8 +270,21 @@
       <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.planarization/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.test/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/gwtsupport/languages/client/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/gwtsupport/languages/client/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/gwtsupport/solutions/gwtsupport.buildtest/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/gwtsupport/solutions/gwtsupport.buildtest/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/gwtsupport/solutions/gwtsupport.sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/gwtsupport/solutions/gwtsupport.sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/ideUiLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/ideUiLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/languages/mpslite/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/languages/mpslite/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/languages/nanoj/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/solutions/mpslite.sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/solutions/mpslite.sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/regexp/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/test_gen" includeSubdirectories="true" />
@@ -284,6 +309,11 @@
       <directory url="file://$PROJECT_DIR$/plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/debugger-api/languages/nanoc/nanoc/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/debugger-api/languages/nanoc/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/debugger-api/languages/nanoc/pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/debugger-api/languages/nanoc/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/debugger-api/languages/nanoc/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/debugger-java/languages/customViewers/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/debugger-java/languages/customViewers/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/debugger-java/languages/evaluation/generator/source_gen" includeSubdirectories="true" />
@@ -319,6 +349,10 @@
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/tests.data/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/tests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/tests/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/bash/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/bash/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/bash/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/bash/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/buildlanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/buildlanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/generictasks/generator/source_gen" includeSubdirectories="true" />
@@ -383,13 +417,6 @@
       <directory url="file://$PROJECT_DIR$/plugins/mps-core/languages/util/xml/xmlQuery/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-core/languages/util/xml/xmlSchema/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-core/languages/util/xml/xmlSchema/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/internal/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/runtime/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/runtime/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/unittest/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/unittest/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/math/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/math/runtimeSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/math/runtimeSolution/test_gen" includeSubdirectories="true" />
@@ -404,6 +431,65 @@
       <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/money/runtimeSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/money/runtimeSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/money/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/gwt/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/gwt/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/gwt/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/gwt/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/internal/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/internal/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/meta/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/meta/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/meta/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swing/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swing/runtime/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swing/runtime/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swing/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swing/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swing/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swt/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swt/runtime/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swt/runtime/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swt/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swt/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/swt/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/testdata/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/testdata/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/testdata/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/testdata/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/ui/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/ui/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/ui/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/languages/ui/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/solutions/jetbrains.mps.ui.unittest/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/solutions/jetbrains.mps.ui.unittest/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/solutions/ui.sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ui/solutions/ui.sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ypath/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ypath/solutions/jetbrains.mps.ypath.runtime/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ypath/solutions/jetbrains.mps.ypath.runtime/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ypath/solutions/main/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ypath/solutions/main/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ypath/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ypath/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ypath/solutions/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ypath/solutions/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ypath/solutions/test/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ypath/solutions/test/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-experimental/languages/ypath/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/custommps/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/custommps/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/dependency/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/dependency/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/packaging/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/packaging/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/solutions/jetbrains.mps.build.generictasks.pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/solutions/jetbrains.mps.build.generictasks.pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/solutions/jetbrains.mps.build.mpsdist/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/solutions/jetbrains.mps.build.mpsdist/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/solutions/jetbrains.mps.buildlanguage.execution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/solutions/jetbrains.mps.buildlanguage.execution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/solutions/jetbrains.mps.xml.deprecated.pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-obsolete/languages/solutions/jetbrains.mps.xml.deprecated.pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/solutions/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/solutions/sandbox/test_gen" includeSubdirectories="true" />
@@ -465,10 +551,6 @@
       <directory url="file://$PROJECT_DIR$/samples/dslbook_example/solutions/runtime/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/dslbook_example/solutions/secretCompartmentLanguage.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/dslbook_example/solutions/secretCompartmentLanguage.sandbox/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/expressions/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/expressions/sandbox/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/expressions/sandbox/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/expressions/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/myReaderConfiguration/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/myReaderConfiguration/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/fixedLengthReader/readerConfigLanguage/generator/source_gen" includeSubdirectories="true" />
@@ -573,6 +655,31 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/internal/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/runtime/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/runtime/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/unittest/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/unittest/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/expressions/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/expressions/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/expressions/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/expressions/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/math/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/math/runtimeSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/math/runtimeSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/math/solutions/jetbrains.mps.baseLanguage.math.tests/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/math/solutions/jetbrains.mps.baseLanguage.math.tests/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/math/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/math/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/math/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/money/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/money/runtimeSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/money/runtimeSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/money/source_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
