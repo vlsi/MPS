@@ -5,7 +5,7 @@ package jetbrains.mps.ide.refactoring;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import javax.swing.JCheckBox;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.awt.HeadlessException;
 import javax.swing.JComponent;
 import java.awt.GridBagConstraints;
