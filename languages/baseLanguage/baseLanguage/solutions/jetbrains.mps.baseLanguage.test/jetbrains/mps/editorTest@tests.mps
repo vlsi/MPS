@@ -11,9 +11,7 @@
   <language namespace="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7(jetbrains.mps.lang.editor.editorTest)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)" />
   <language namespace="ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)" />
-  <language namespace="3304fc6e-7c6b-401e-a016-b944934bb21f(jetbrains.mps.baseLanguage.math)" />
   <language namespace="b5734616-c4b0-4639-9c6a-f3a1cf5dc4db(testDefaultEditor)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <import index="tpei" modelUID="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)" version="-1" />
@@ -46,7 +44,6 @@
   <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" implicit="yes" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
   <import index="tgbt" modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="1" implicit="yes" />
-  <import index="39kg" modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" version="-1" implicit="yes" />
   <import index="j0bb" modelUID="r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)" version="-1" implicit="yes" />
   <import index="e2lc" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" implicit="yes" />
@@ -9505,52 +9502,6 @@
     </node>
   </root>
   <root type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690965088108" nodeInfo="ng" />
-  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="4172912343885056959" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="DeleteEmptyCell" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorCell_Empty" />
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4172912343885191243" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="aaa" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4172912343885191245" nodeInfo="in" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4172912343885191246" nodeInfo="nn" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4172912343885191247" nodeInfo="nn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4172912343885231779" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="39kg.PowExpression" typeId="39kg.1238338031059" id="4172912343885285322" nodeInfo="nn">
-            <node role="base" roleId="39kg.1238338314123" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4172912343885285323" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="3" />
-            </node>
-            <node role="exponent" roleId="39kg.1238338314983" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4172912343885285987" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="4" />
-            </node>
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4172912343885295856" nodeInfo="ng">
-              <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
-              <property name="cellId" nameId="tp5g.1229194968595" value="Empty_ysso2m_b0" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="result" roleId="tp5g.1229187707859" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4172912343885298423" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="aaa" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4172912343885298424" nodeInfo="in" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4172912343885298425" nodeInfo="nn" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4172912343885298426" nodeInfo="nn">
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4172912343885298431" nodeInfo="ng">
-          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
-          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
-          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="Constant_u338ov_a0a" />
-        </node>
-      </node>
-    </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="4172912343885299459" nodeInfo="nn">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4172912343885299659" nodeInfo="nn">
-        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4172912343885299663" nodeInfo="ng">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.8896169282213320720" resolveInfo="Delete" />
-        </node>
-      </node>
-    </node>
-  </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="938834323431398136" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="TypeName" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="defaultEditor" />
