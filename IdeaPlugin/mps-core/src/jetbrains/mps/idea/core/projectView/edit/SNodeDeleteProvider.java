@@ -18,13 +18,13 @@ package jetbrains.mps.idea.core.projectView.edit;
 
 import com.intellij.ide.DeleteProvider;
 import com.intellij.openapi.actionSystem.DataContext;
-import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
