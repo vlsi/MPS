@@ -9637,10 +9637,10 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4136358845934355684" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7y.~Dimension%d&lt;init&gt;(int,int)" resolveInfo="Dimension" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4136358845934368144" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1068580320021" value="400" />
+                    <property name="value" nameId="tpee.1068580320021" value="330" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4136358845934405991" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1068580320021" value="500" />
+                    <property name="value" nameId="tpee.1068580320021" value="250" />
                   </node>
                 </node>
               </node>

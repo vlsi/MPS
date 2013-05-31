@@ -126,7 +126,7 @@ public class HintsDialog extends DialogWrapper {
     c.setRow(1);
     myMainPanel.add(myCustomRadioButton, c);
     JComponent component = myPage.getComponent();
-    component.setPreferredSize(new Dimension(400, 500));
+    component.setPreferredSize(new Dimension(330, 250));
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(component);
 
     myMainPanel.add(scrollPane, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
