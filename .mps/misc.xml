@@ -67,7 +67,6 @@
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/languages/trove/jetbrains.mps.baseLanguage.collections.trove.mpl" folder="baseLanguage.collections" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" folder="baseLanguage.collections" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/runtime/collections.runtime.msd" folder="baseLanguage.collections" />
-      <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/runtime/gwt/collections.runtime.gwt.msd" folder="baseLanguage.collections" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/solutions/collections/samples/jetbrains.mps.baseLanguage.collections.samples.msd" folder="baseLanguage.collections" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/solutions/collections/unittest/collections_unittest.msd" folder="baseLanguage.collections" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/solutions/collections_trove.test/collections_trove.test.msd" folder="baseLanguage.collections" />
@@ -192,9 +191,6 @@
       <modulePath path="$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.orthogonalLayout/jetbrains.mps.graphLayout.orthogonalLayout.msd" folder="graphLayout" />
       <modulePath path="$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.planarization/jetbrains.mps.graphLayout.planarization.msd" folder="graphLayout" />
       <modulePath path="$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.test/jetbrains.mps.graphLayout.test.msd" folder="graphLayout" />
-      <modulePath path="$PROJECT_DIR$/languages/util/gwtsupport/languages/client/jetbrains.mps.gwt.client.mpl" folder="languages.gwt" />
-      <modulePath path="$PROJECT_DIR$/languages/util/gwtsupport/solutions/gwtsupport.buildtest/gwtsupport.buildtest.msd" folder="languages.gwt" />
-      <modulePath path="$PROJECT_DIR$/languages/util/gwtsupport/solutions/gwtsupport.sandbox/gwtsupport.sandbox.msd" folder="languages.gwt" />
       <modulePath path="$PROJECT_DIR$/languages/util/ideUiLanguage/jetbrains.mps.ide.uiLanguage.mpl" folder="languages.uiLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/jetbrains.mps.baseLanguage.regexp.mpl" folder="baseLanguage.regexp" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/jetbrains.mps.baseLanguage.regexp.runtime.msd" folder="baseLanguage.regexp" />
