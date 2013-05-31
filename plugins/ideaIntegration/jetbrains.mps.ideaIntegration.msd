@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ideaIntegration" uuid="7c96448b-2b97-4f89-b563-f04172a4b83a" compileInMPS="false" generatorOutputPath="${module}/source_gen">
+<solution name="jetbrains.mps.ideaIntegration" uuid="7c96448b-2b97-4f89-b563-f04172a4b83a" compileInMPS="false">
   <models>
     <modelRoot path="${module}/classes" type="java_classes" />
     <modelRoot contentPath="${module}" type="default">
@@ -9,9 +9,6 @@
   <facets>
     <facet pluginId="com.intellij" type="ideaPlugin" />
   </facets>
-  <stubModelEntries>
-    <stubModelEntry path="${module}/classes" />
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
