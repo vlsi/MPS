@@ -6,16 +6,34 @@ import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
 
 public class RuleTypeEditor extends DefaultCellEditor {
+  private JComboBox myComboBox;
+
   public RuleTypeEditor() {
     super(new JComboBox());
-    JComboBox cb = (JComboBox) editorComponent;
-    cb.addItem(RuleType.STRICTLY_BEFORE);
-    cb.addItem(RuleType.BEFORE_OR_TOGETHER);
-    cb.addItem(RuleType.STRICTLY_AFTER);
-    cb.addItem(RuleType.AFTER_OR_TOGETHER);
-    cb.addItem(RuleType.STRICTLY_TOGETHER);
+    myComboBox = (JComboBox) editorComponent;
+    myComboBox.addItem(RuleType.STRICTLY_BEFORE);
+    myComboBox.addItem(RuleType.BEFORE_OR_TOGETHER);
+    myComboBox.addItem(RuleType.STRICTLY_AFTER);
+    myComboBox.addItem(RuleType.AFTER_OR_TOGETHER);
+    myComboBox.addItem(RuleType.STRICTLY_TOGETHER);
     editorComponent = RuleTypeRenderer.createCenterAlignmentInCell(editorComponent);
+    editorComponent.addKeyListener(new KeyListener() {
+      public void keyTyped(KeyEvent p0) {
+      }
+
+      public void keyPressed(KeyEvent p0) {
+        if (p0.isActionKey() || p0.getKeyCode() == KeyEvent.VK_ENTER) {
+          myComboBox.processKeyEvent(p0);
+          p0.consume();
+        }
+      }
+
+      public void keyReleased(KeyEvent p0) {
+      }
+    });
   }
 }

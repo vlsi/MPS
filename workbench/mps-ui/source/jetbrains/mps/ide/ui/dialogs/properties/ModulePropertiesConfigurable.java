@@ -24,13 +24,9 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
-import com.intellij.ui.CheckboxTree;
-import com.intellij.ui.CheckboxTreeBase.CheckPolicy;
-import com.intellij.ui.CheckedTreeNode;
 import com.intellij.ui.FieldPanel;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.InsertPathAction;
-import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.SpeedSearchBase;
 import com.intellij.ui.SpeedSearchComparator;
 import com.intellij.ui.TableUtil;
@@ -56,12 +52,24 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.IUsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.DependencyChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.LDSChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.MappingRuleCreator;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor;
 import jetbrains.mps.ide.ui.dialogs.properties.genpriorities.GeneratorPrioritiesTree;
+import jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyCellState;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModelTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
+import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ContentEntriesEditor;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem.ModuleType;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleDependTableModel;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleUsedLangTableModel;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.FacetTabsPersistence;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
@@ -70,17 +78,12 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.vfs.IFile;
-import org.jdom.Element;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -92,22 +95,15 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.DependencyChooser;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.MappingRuleCreator;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionChooser;
-import jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor;
-import jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer;
-import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ContentEntriesEditor;
-import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
-import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
-import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleDependTableModel;
-import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleUsedLangTableModel;
-import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
+import jetbrains.mps.vfs.IFile;
+import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.ui.Modifiable;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 
@@ -119,21 +115,17 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
-import javax.swing.event.TableColumnModelListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -202,7 +194,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if(myModule instanceof Generator)
         return "";
       return FileUtil.getCanonicalPath(
-        myModule.getDescriptorFile().getPath()
+          myModule.getDescriptorFile().getPath()
       );
     }
 
@@ -254,13 +246,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     public boolean isModified() {
       return super.isModified()
-        || (
-        myModule instanceof DevKit
-          ? myModuleDependenciesTab.isModified()
-          : myEntriesEditor.isModified())
-        || (
-        myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))
-        );
+          || (
+          myModule instanceof DevKit
+              ? myModuleDependenciesTab.isModified()
+              : myEntriesEditor.isModified())
+          || (
+          myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))
+      );
     }
 
     @Override
@@ -662,15 +654,15 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         public void run() {
           if(value instanceof SModelReference) {
             query[0] = new SearchQuery(
-              SModelRepository.getInstance().getModelDescriptor(((jetbrains.mps.smodel.SModelReference) value).getModelId()),
-              new ModulesScope(Arrays.asList(myModule))
+                SModelRepository.getInstance().getModelDescriptor(((jetbrains.mps.smodel.SModelReference) value).getModelId()),
+                new ModulesScope(Arrays.asList(myModule))
             );
             provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
           }
           else if(value instanceof SModuleReference) {
             query[0] = new SearchQuery(
-              MPSModuleRepository.getInstance().getModuleByFqName(
-                ((SModuleReference)value).getModuleName()),
+                MPSModuleRepository.getInstance().getModuleByFqName(
+                    ((SModuleReference)value).getModuleName()),
                 GlobalScope.getInstance()
             );
             provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder());
@@ -816,7 +808,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       private LinkedList<jetbrains.mps.smodel.SModelReference> getAccessoryModels() {
         LinkedList<jetbrains.mps.smodel.SModelReference> linkedList = new LinkedList<jetbrains.mps.smodel.SModelReference>();
         for(SModelReference modelReference : myTableItems)
-            linkedList.add((jetbrains.mps.smodel.SModelReference) modelReference);
+          linkedList.add((jetbrains.mps.smodel.SModelReference) modelReference);
 
         return linkedList;
       }
@@ -844,9 +836,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           if(e.getType() == TableModelEvent.UPDATE) {
             if(dependOnBL(tableModel)) {
               ModulePropertiesConfigurable.this.addTab(
-                ModulePropertiesConfigurable.this.myTab == null
-                  ? (ModulePropertiesConfigurable.this.myTab = null) //new JavaModuleFacetTab(myModule, myModuleDescriptor))
-                  : ModulePropertiesConfigurable.this.myTab
+                  ModulePropertiesConfigurable.this.myTab == null
+                      ? (ModulePropertiesConfigurable.this.myTab = null) //new JavaModuleFacetTab(myModule, myModuleDescriptor))
+                      : ModulePropertiesConfigurable.this.myTab
               );
             }
           }
@@ -878,6 +870,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private GenPrioritiesTableModel myPrioritiesTableModel;
     private JBCheckBox myCheckBox;
     private final Map<MappingConfig_AbstractRef, GeneratorPrioritiesTree> myMappings = new java.util.HashMap<MappingConfig_AbstractRef, GeneratorPrioritiesTree>();
+    private JBTable myTable;
 
     public GeneratorAdvancesTab() {
       super(PropertiesBundle.message("mps.properties.configurable.module.generatortab.title"), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("mps.properties.configurable.module.generatortab.tip"));
@@ -886,83 +879,38 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public void apply() {
+      if(myTable.isEditing())
+        myTable.getCellEditor().stopCellEditing();
       ((GeneratorDescriptor)myModuleDescriptor).setGenerateTemplates(myCheckBox.isSelected());
       myPrioritiesTableModel.apply();
     }
 
     @Override
     public void init() {
-      List<SModuleReference> list = new ArrayList<SModuleReference>(((GeneratorDescriptor) myModule.getModuleDescriptor()).getDepGenerators());
-
       JPanel panel = new JPanel();
       panel.setLayout(new GridLayoutManager(2, 1, INSETS, -1, -1));
 
-      final JBTable table = new JBTable();
-      table.setAutoscrolls(true);
+      myTable = new JBTable();
+      myTable.setSelectionBackground(myTable.getSelectionBackground().darker());
+      myTable.setAutoscrolls(true);
+      myTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
 
       myPrioritiesTableModel = new GenPrioritiesTableModel();
-      table.setModel(myPrioritiesTableModel);
+      myTable.setModel(myPrioritiesTableModel);
 
-      for(TableColumnModelListener listener : ((DefaultTableColumnModel) table.getColumnModel()).getColumnModelListeners()) {
-        table.getColumnModel().removeColumnModelListener(listener);
-      }
+      myTable.setDefaultRenderer(RuleType.class, new RuleTypeRenderer());
+      myTable.setDefaultEditor(RuleType.class, new RuleTypeEditor());
 
-      table.setDefaultRenderer(RuleType.class, new RuleTypeRenderer());
-      table.setDefaultEditor(RuleType.class, new RuleTypeEditor());
-
-      table.setDefaultRenderer(MappingConfig_AbstractRef.class, new TableCellRenderer() {
-        @Override
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-          if (value instanceof MappingConfig_AbstractRef) {
-            MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
-
-            GeneratorPrioritiesTree tree = new GeneratorPrioritiesTree((GeneratorDescriptor) myModuleDescriptor, mapping, column == 0);
-//            if (myMappings.containsKey(mapping)) {
-//              tree = myMappings.get(mapping);
-//            }
-//            else {
-//              tree = new GeneratorPrioritiesTree((GeneratorDescriptor) myModuleDescriptor, mapping, column == 0);
-//              myMappings.put(mapping, tree);
-//            }
-
-            CheckedTreeNode rootNode = (CheckedTreeNode) tree.getTree().getModel().getRoot();
-
-            if (!tree.getTree().isRootVisible() && rootNode.getChildCount() == 1)
-              rootNode = (CheckedTreeNode) rootNode.getChildAt(0);
-
-            noCheckedChildren(rootNode);
-
-            CheckboxTree checkboxTree = new CheckboxTree(GeneratorPrioritiesTree.getCheckboxTreeCellRenderer(), rootNode, new CheckPolicy(true, true, false, true));
-            checkboxTree.setRootVisible(true);
-
-            GeneratorPrioritiesTree.expandAllRows(checkboxTree);
-
-            table.setRowHeight(
-              row, Math.max(checkboxTree.getPreferredSize().height, table.getRowHeight(row))
-            );
-            return checkboxTree;
-          }
-          return null;
-        }
-
-        private boolean noCheckedChildren(CheckedTreeNode node) {
-          List<CheckedTreeNode> children = Collections.list(node.children());
-          for (int i = 0; i < children.size(); i++) {
-            CheckedTreeNode child = children.get(i);
-            if (noCheckedChildren(child) && !child.isChecked()) {
-              node.remove(child);
-              child.removeFromParent();
-            }
-          }
-          return node.isLeaf();
-        }
-      });
-      table.setDefaultEditor(MappingConfig_AbstractRef.class, new AbstractTableCellEditor() {
+      myTable.setDefaultRenderer(MappingConfig_AbstractRef.class, new TableCellRenderer() {
         private GeneratorPrioritiesTree myCurrentTree = null;
+
         @Override
-        public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+        public Component getTableCellRendererComponent(final JTable table, Object value, boolean isSelected, boolean hasFocus, final int row,
+            final int column) {
           if (value instanceof MappingConfig_AbstractRef) {
             MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
+
             if (myMappings.containsKey(mapping)) {
               myCurrentTree = myMappings.get(mapping);
             } else {
@@ -971,15 +919,43 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             }
 
             table.setRowHeight(
-              row, myCurrentTree.getTree().getPreferredSize().height + 20
+                row, Math.max(myCurrentTree.getTree().getPreferredSize().height + 10, table.getRowHeight(row))
             );
-            SwingUtilities.invokeLater(new Runnable() {
-              @Override
-              public void run() {
-                myCurrentTree.getTree().requestFocus();
-              }
-            });
-            return ScrollPaneFactory.createScrollPane(myCurrentTree.getTree(), true);
+            TableColumn tableColumn = table.getColumnModel().getColumn(column);
+            tableColumn.setResizable(true);
+            tableColumn.setPreferredWidth(
+                Math.max(table.getColumnModel().getColumn(column).getWidth(), myCurrentTree.getTree().getPreferredSize().width)
+            );
+            tableColumn.setResizable(false);
+
+            myCurrentTree.getTree().setBackground(isSelected ? table.getSelectionBackground() : table.getBackground());
+
+            if (hasFocus && table.isRowSelected(row)) {
+              SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                  table.editCellAt(row, column);
+                }
+              });
+            }
+
+            return myCurrentTree.getTreePanel();
+          }
+          return null;
+        }
+      });
+
+      myTable.setDefaultEditor(MappingConfig_AbstractRef.class, new AbstractTableCellEditor() {
+        private GeneratorPrioritiesTree myCurrentTree = null;
+
+        @Override
+        public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+          if (value instanceof MappingConfig_AbstractRef) {
+            MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
+
+            myCurrentTree = new GeneratorPrioritiesTree((GeneratorDescriptor) myModuleDescriptor, mapping, column == 0);
+
+            return myCurrentTree.getTreePanel();
           }
           return null;
         }
@@ -992,21 +968,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         }
       });
 
-      table.addPropertyChangeListener("tableCellEditor", new PropertyChangeListener() {
-        @Override
-        public void propertyChange(PropertyChangeEvent evt) {
-          if (!table.isEditing())
-            table.setRowHeight(table.getSelectedRow(), 5);
-        }
-      });
-
-
-
-      TableColumn column = table.getColumnModel().getColumn(1);
+      TableColumn column = myTable.getColumnModel().getColumn(1);
       column.setMaxWidth(50);
       column.setResizable(false);
 
-      ToolbarDecorator decorator = ToolbarDecorator.createDecorator(table);
+      ToolbarDecorator decorator = ToolbarDecorator.createDecorator(myTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
@@ -1016,7 +982,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          TableUtil.removeSelectedItems(table);
+          TableUtil.removeSelectedItems(myTable);
           myPrioritiesTableModel.fireTableDataChanged();
         }
       });
@@ -1027,14 +993,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
       myCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.module.generatortab.gentempcheckbox"), ((GeneratorDescriptor) myModule.getModuleDescriptor()).isGenerateTemplates());
       panel.add(myCheckBox, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-      
+
       setTabComponent(panel);
     }
 
     @Override
     public boolean isModified() {
       return myPrioritiesTableModel.isModified()
-        || myCheckBox.isSelected() != ((GeneratorDescriptor)myModuleDescriptor).isGenerateTemplates();
+          || myCheckBox.isSelected() != ((GeneratorDescriptor)myModuleDescriptor).isGenerateTemplates();
     }
 
     private class GenPrioritiesTableModel extends AbstractTableModel implements ItemRemovable {
@@ -1121,7 +1087,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       public boolean isModified() {
         GeneratorDescriptor generatorDescriptor = (GeneratorDescriptor) myModuleDescriptor;
         return !(generatorDescriptor.getPriorityRules().containsAll(myMappingPriorityRules)
-          && myMappingPriorityRules.containsAll(generatorDescriptor.getPriorityRules())
+            && myMappingPriorityRules.containsAll(generatorDescriptor.getPriorityRules())
         );
       }
 

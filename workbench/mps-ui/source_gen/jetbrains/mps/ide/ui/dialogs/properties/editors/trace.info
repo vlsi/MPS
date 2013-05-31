@@ -182,20 +182,40 @@
     <unitInfo nodeId="3995997045458442881" fileName="RuleOperandEditor.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleOperandEditor" />
   </root>
   <root nodeRef="r:e46d921f-36a3-4bc0-aa46-fc10c6f85948(jetbrains.mps.ide.ui.dialogs.properties.editors)/3995997045458443074">
-    <nodeInfo nodeId="3995997045458443080" fileName="RuleTypeEditor.java" startLine="11" startPosition="27" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3995997045458443083" fileName="RuleTypeEditor.java" startLine="12" startPosition="27" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3995997045458443089" fileName="RuleTypeEditor.java" startLine="13" startPosition="47" endLine="14" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443094" fileName="RuleTypeEditor.java" startLine="14" startPosition="41" endLine="15" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443099" fileName="RuleTypeEditor.java" startLine="15" startPosition="44" endLine="16" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443104" fileName="RuleTypeEditor.java" startLine="16" startPosition="40" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443109" fileName="RuleTypeEditor.java" startLine="17" startPosition="43" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443114" fileName="RuleTypeEditor.java" startLine="18" startPosition="43" endLine="19" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443077" fileName="RuleTypeEditor.java" startLine="11" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuleTypeEditor#()V" />
-    <scopeInfo nodeId="3995997045458443079" fileName="RuleTypeEditor.java" startLine="11" startPosition="27" endLine="19" endPosition="84">
-      <varInfo nodeId="3995997045458443084" varName="cb" />
+    <nodeInfo nodeId="6464687090063975627" fileName="RuleTypeEditor.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComboBox" />
+    <nodeInfo nodeId="3995997045458443080" fileName="RuleTypeEditor.java" startLine="15" startPosition="27" endLine="16" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6464687090063975762" fileName="RuleTypeEditor.java" startLine="16" startPosition="27" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3995997045458443089" fileName="RuleTypeEditor.java" startLine="17" startPosition="45" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3995997045458443094" fileName="RuleTypeEditor.java" startLine="18" startPosition="49" endLine="19" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3995997045458443099" fileName="RuleTypeEditor.java" startLine="19" startPosition="52" endLine="20" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3995997045458443104" fileName="RuleTypeEditor.java" startLine="20" startPosition="48" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3995997045458443109" fileName="RuleTypeEditor.java" startLine="21" startPosition="51" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3995997045458443114" fileName="RuleTypeEditor.java" startLine="22" startPosition="51" endLine="23" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8881345873770272859" fileName="RuleTypeEditor.java" startLine="29" startPosition="71" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8881345873770236606" fileName="RuleTypeEditor.java" startLine="30" startPosition="41" endLine="31" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8719553478678306782" fileName="RuleTypeEditor.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyTyped#(Ljava/awt/event/KeyEvent;)V" />
+    <nodeInfo nodeId="8719553478678306798" fileName="RuleTypeEditor.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyReleased#(Ljava/awt/event/KeyEvent;)V" />
+    <nodeInfo nodeId="8719553478678306850" fileName="RuleTypeEditor.java" startLine="28" startPosition="43" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8719553478678306790" fileName="RuleTypeEditor.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyPressed#(Ljava/awt/event/KeyEvent;)V" />
+    <nodeInfo nodeId="8719553478678184317" fileName="RuleTypeEditor.java" startLine="23" startPosition="84" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3995997045458443077" fileName="RuleTypeEditor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuleTypeEditor#()V" />
+    <scopeInfo nodeId="8719553478678306788" fileName="RuleTypeEditor.java" startLine="25" startPosition="41" endLine="25" endPosition="41" />
+    <scopeInfo nodeId="8719553478678306804" fileName="RuleTypeEditor.java" startLine="35" startPosition="44" endLine="35" endPosition="44" />
+    <scopeInfo nodeId="8719553478678306782" fileName="RuleTypeEditor.java" startLine="25" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="8719553478678306786" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="3995997045458443077" fileName="RuleTypeEditor.java" startLine="11" startPosition="0" endLine="21" endPosition="0" />
-    <unitInfo nodeId="3995997045458443074" fileName="RuleTypeEditor.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor" />
+    <scopeInfo nodeId="8719553478678306851" fileName="RuleTypeEditor.java" startLine="29" startPosition="71" endLine="31" endPosition="23" />
+    <scopeInfo nodeId="8719553478678306798" fileName="RuleTypeEditor.java" startLine="35" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="8719553478678306802" varName="p0" />
+    </scopeInfo>
+    <scopeInfo nodeId="8719553478678306796" fileName="RuleTypeEditor.java" startLine="28" startPosition="43" endLine="32" endPosition="9" />
+    <scopeInfo nodeId="8719553478678306790" fileName="RuleTypeEditor.java" startLine="28" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="8719553478678306794" varName="p0" />
+    </scopeInfo>
+    <scopeInfo nodeId="3995997045458443079" fileName="RuleTypeEditor.java" startLine="15" startPosition="27" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="3995997045458443077" fileName="RuleTypeEditor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" />
+    <unitInfo nodeId="8719553478678306780" fileName="RuleTypeEditor.java" startLine="24" startPosition="39" endLine="37" endPosition="5" unitName="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor$1" />
+    <unitInfo nodeId="3995997045458443074" fileName="RuleTypeEditor.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor" />
   </root>
 </debugInfo>
 

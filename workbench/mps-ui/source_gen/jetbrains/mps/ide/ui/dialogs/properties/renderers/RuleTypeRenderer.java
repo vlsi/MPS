@@ -7,6 +7,7 @@ import java.awt.Component;
 import javax.swing.JTable;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import javax.swing.JComponent;
+import javax.swing.SwingUtilities;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -18,12 +19,20 @@ public class RuleTypeRenderer extends DefaultTableCellRenderer {
   }
 
   @Override
-  public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+  public Component getTableCellRendererComponent(final JTable table, Object value, boolean isSelected, boolean hasFocus, final int row, final int column) {
     String caption = (value instanceof RuleType ?
       ((RuleType) value).getPresentation() :
       "null"
     );
     JComponent comp = (JComponent) super.getTableCellRendererComponent(table, caption, isSelected, hasFocus, row, column);
+    if (hasFocus && table.isRowSelected(row)) {
+      SwingUtilities.invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          table.editCellAt(row, column);
+        }
+      });
+    }
     return RuleTypeRenderer.createCenterAlignmentInCell(comp);
   }
 

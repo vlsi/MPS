@@ -25,6 +25,7 @@ import com.intellij.ui.JBColor;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.Nodes.Models;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
@@ -49,10 +50,15 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.JCheckBox;
+import javax.swing.JComponent;
 import javax.swing.JTree;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Queue;
 
 public class GeneratorPrioritiesTree {
 
@@ -81,8 +87,15 @@ public class GeneratorPrioritiesTree {
       setCheckedStateForRoot(myRootNode, mapping);
 
     myCheckboxTree = new CheckboxTree(getCheckboxTreeCellRenderer(), myRootNode, new CheckPolicy(true, true, false, true));
+    myCheckboxTree.addFocusListener(new FocusListener() {
+      @Override
+      public void focusGained(FocusEvent e) { if(myCheckboxTree.getSelectionCount() == 0) myCheckboxTree.setSelectionRow(0); }
+      @Override
+      public void focusLost(FocusEvent e) {}
+    });
     myCheckboxTree.setRootVisible(isRight);
     expandAllRows(myCheckboxTree);
+    checkChildren(myCheckboxTree);
     setCheckedUnder(myRootNode);
   }
 
@@ -291,6 +304,10 @@ public class GeneratorPrioritiesTree {
     return myCheckboxTree;
   }
 
+  public JComponent getTreePanel() {
+    return myCheckboxTree;
+  }
+
   public static CheckboxTreeCellRenderer getCheckboxTreeCellRenderer() {
     return new CheckboxTreeCellRenderer() {
       @Override
@@ -321,6 +338,20 @@ public class GeneratorPrioritiesTree {
   public static final void expandAllRows(JTree tree) {
     for (int i = 0; i < tree.getRowCount(); i++) {
       tree.expandRow(i);
+    }
+  }
+
+  private static void checkChildren(CheckboxTree checkboxTree) {
+    if(checkboxTree.getModel().getRoot() instanceof ExtendedCheckedTreeNode) {
+      Queue<ExtendedCheckedTreeNode> treeNodes = new LinkedList<ExtendedCheckedTreeNode>();
+      treeNodes.add((ExtendedCheckedTreeNode) checkboxTree.getModel().getRoot());
+      while (!treeNodes.isEmpty()) {
+        ExtendedCheckedTreeNode treeNode = treeNodes.poll();
+        treeNodes.addAll(Collections.list(treeNode.children()));
+        if(treeNode.getParent() instanceof ExtendedCheckedTreeNode && ((ExtendedCheckedTreeNode)treeNode.getParent()).isChecked()) {
+          treeNode.setChecked(true);
+        }
+      }
     }
   }
 
