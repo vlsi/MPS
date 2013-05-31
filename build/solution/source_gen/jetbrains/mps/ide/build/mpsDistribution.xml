@@ -184,7 +184,6 @@
     <ant antfile="build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsDeprecatedBuildlanguage.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsObsolete.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mps.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   

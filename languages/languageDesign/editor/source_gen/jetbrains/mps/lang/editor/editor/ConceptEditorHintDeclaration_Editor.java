@@ -141,7 +141,7 @@ public class ConceptEditorHintDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zcofbb_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Unique identifier of the hint. Only letters, digits and '_' characters are allowed");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "A unique identifier of the hint. Only letters, digits and '_' characters are allowed");
     editorCell.setCellId("Constant_zcofbb_b2a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
@@ -164,14 +164,14 @@ public class ConceptEditorHintDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zcofbb_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Presenration:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Presentation:");
     editorCell.setCellId("Constant_zcofbb_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_zcofbb_b3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Short description of this hint. Will be used in UI.");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "a short description of this hint. Will be used in UI.");
     editorCell.setCellId("Constant_zcofbb_b3a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
