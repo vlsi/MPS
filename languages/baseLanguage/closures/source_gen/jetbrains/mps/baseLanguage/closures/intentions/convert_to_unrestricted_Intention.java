@@ -38,7 +38,7 @@ public class convert_to_unrestricted_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.closures";
   }
 
   public IntentionType getType() {

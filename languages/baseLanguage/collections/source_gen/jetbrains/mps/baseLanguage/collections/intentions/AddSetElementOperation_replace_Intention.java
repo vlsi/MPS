@@ -38,7 +38,7 @@ public class AddSetElementOperation_replace_Intention implements IntentionFactor
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.collections";
   }
 
   public IntentionType getType() {

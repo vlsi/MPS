@@ -16,17 +16,17 @@
 package jetbrains.mps.ide.editor.checkers;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.awt.Color;
 import java.util.Collections;
@@ -36,23 +36,41 @@ import java.util.Set;
 
 public class ModelProblemsChecker extends EditorCheckerAdapter {
 
-  private final GlobalSModelEventsManager myGem;
   private boolean myChanged = true;
-  private final SModelAdapter myListener = new SModelAdapter() {
+  private SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
     @Override
-    public void problemsUpdated(SModel event) {
+    protected void startListening(SModel model) {
+      model.addModelListener(this);
+    }
+
+    @Override
+    protected void stopListening(SModel model) {
+      model.removeModelListener(this);
+    }
+
+    @Override
+    public void modelLoaded(SModel model, boolean partially) {
+      myChanged = true;
+    }
+
+    @Override
+    public void modelUnloaded(SModel model) {
+      myChanged = true;
+    }
+
+    @Override
+    public void modelSaved(SModel model) {
       myChanged = true;
     }
   };
 
-  public ModelProblemsChecker(GlobalSModelEventsManager gem) {
-    myGem = gem;
-    myGem.addGlobalModelListener(myListener);
+  public ModelProblemsChecker() {
+    SRepositoryRegistry.getInstance().addGlobalListener(myListener);
   }
 
   @Override
   protected void doDispose() {
-    myGem.removeGlobalModelListener(myListener);
+    SRepositoryRegistry.getInstance().removeGlobalListener(myListener);
     super.doDispose();
   }
 

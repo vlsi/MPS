@@ -36,7 +36,7 @@ public class add_copy_from_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.collections";
   }
 
   public IntentionType getType() {

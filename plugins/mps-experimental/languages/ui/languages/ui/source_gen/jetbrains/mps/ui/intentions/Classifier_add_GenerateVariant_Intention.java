@@ -50,7 +50,7 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.ui";
   }
 
   public IntentionType getType() {

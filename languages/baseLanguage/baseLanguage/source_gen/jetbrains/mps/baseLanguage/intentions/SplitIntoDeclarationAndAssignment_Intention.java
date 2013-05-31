@@ -35,7 +35,7 @@ public class SplitIntoDeclarationAndAssignment_Intention implements IntentionFac
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage";
   }
 
   public IntentionType getType() {

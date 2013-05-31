@@ -43,7 +43,7 @@ public abstract class SimpleModelListener extends SModelAdapter {
   }
 
   @Override
-  public void modelLoadingStateChanged(SModel sm, ModelLoadingState oldState, ModelLoadingState newState) {
+  public void modelLoadingStateChanged(SModel sm, ModelLoadingState newState) {
     updateNodePresentation(false, false);
   }
 

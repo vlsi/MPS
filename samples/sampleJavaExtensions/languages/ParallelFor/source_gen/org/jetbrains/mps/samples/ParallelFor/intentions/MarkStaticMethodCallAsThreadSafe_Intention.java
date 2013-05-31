@@ -37,7 +37,7 @@ public class MarkStaticMethodCallAsThreadSafe_Intention implements IntentionFact
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "org.jetbrains.mps.samples.ParallelFor";
   }
 
   public IntentionType getType() {

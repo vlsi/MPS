@@ -70,8 +70,7 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
       myModel.setModelDescriptor(this);
       updateTimestamp();
       // TODO FIXME listeners are invoked while holding the lock
-      fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
-      fireModelProblemsUpdated();
+      fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
   }

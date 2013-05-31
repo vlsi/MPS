@@ -36,7 +36,7 @@ public class ConvertToBeanBuilder_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.builders";
   }
 
   public IntentionType getType() {

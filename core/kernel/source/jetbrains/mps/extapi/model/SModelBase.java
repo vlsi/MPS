@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.IllegalModelAccessError;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -267,6 +268,35 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
       ((SModuleBase) module).fireModelRenamed(this, oldName);
     }
   }
+
+  @Override
+  protected void fireModelStateChanged(ModelLoadingState newState) {
+    super.fireModelStateChanged(newState);
+    for (SModelListener l : myModelListeners) {
+      try {
+        if (newState == ModelLoadingState.NOT_LOADED) {
+          l.modelUnloaded(this);
+        } else {
+          l.modelLoaded(this, newState == ModelLoadingState.ROOTS_LOADED);
+        }
+      } catch (Throwable t) {
+        LOG.error("listener failure", t);
+      }
+    }
+  }
+
+  @Override
+  protected void fireModelSaved() {
+    super.fireModelSaved();
+    for (SModelListener l : myModelListeners) {
+      try {
+        l.modelSaved(this);
+      } catch (Throwable t) {
+        LOG.error("listener failure", t);
+      }
+    }
+  }
+
 
   protected void assertCanRead() {
 //    if (myRepository == null) return;

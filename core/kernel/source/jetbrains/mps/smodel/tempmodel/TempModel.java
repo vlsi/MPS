@@ -45,7 +45,7 @@ class TempModel extends EditableSModelBase {
       if (mySModel == null) {
         mySModel = new jetbrains.mps.smodel.SModel(getReference());
         mySModel.setModelDescriptor(this);
-        fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
+        fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
       }
     }
     return mySModel;

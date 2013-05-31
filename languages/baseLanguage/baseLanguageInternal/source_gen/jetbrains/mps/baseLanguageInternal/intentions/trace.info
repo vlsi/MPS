@@ -6,7 +6,7 @@
     <nodeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="33" startPosition="41" endLine="34" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="37" startPosition="37" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="37" startPosition="37" endLine="38" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="41" startPosition="34" endLine="42" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="45" startPosition="44" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="50" startPosition="53" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -42,7 +42,7 @@
     <scopeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="81" />
     <scopeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="53" />
     <scopeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="33" startPosition="41" endLine="34" endPosition="109" />
-    <scopeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="37" startPosition="37" endLine="38" endPosition="43" />
+    <scopeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="37" startPosition="37" endLine="38" endPosition="48" />
     <scopeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="41" startPosition="34" endLine="42" endPosition="32" />
     <scopeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="45" startPosition="44" endLine="46" endPosition="17" />
     <scopeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="50" startPosition="53" endLine="51" endPosition="19" />
@@ -94,7 +94,7 @@
     <nodeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="29" startPosition="30" endLine="30" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="33" startPosition="35" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="37" startPosition="41" endLine="38" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="41" startPosition="37" endLine="42" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="41" startPosition="37" endLine="42" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="45" startPosition="34" endLine="46" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="49" startPosition="44" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="53" startPosition="84" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -136,7 +136,7 @@
     <scopeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="29" startPosition="30" endLine="30" endPosition="72" />
     <scopeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="33" startPosition="35" endLine="34" endPosition="39" />
     <scopeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="37" startPosition="41" endLine="38" endPosition="95" />
-    <scopeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="41" startPosition="37" endLine="42" endPosition="43" />
+    <scopeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="41" startPosition="37" endLine="42" endPosition="48" />
     <scopeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="45" startPosition="34" endLine="46" endPosition="32" />
     <scopeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="49" startPosition="44" endLine="50" endPosition="17" />
     <scopeInfo nodeId="5332097447638335653" fileName="ReplaceWithFieldReference_Intention.java" startLine="53" startPosition="84" endLine="54" endPosition="16" />
@@ -192,7 +192,7 @@
     <nodeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="36" startPosition="41" endLine="37" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="44" startPosition="34" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="52" startPosition="84" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -233,7 +233,7 @@
     <scopeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="71" />
     <scopeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="38" />
     <scopeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="36" startPosition="41" endLine="37" endPosition="94" />
-    <scopeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="43" />
+    <scopeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="48" />
     <scopeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="44" startPosition="34" endLine="45" endPosition="32" />
     <scopeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="17" />
     <scopeInfo nodeId="5332097447638335764" fileName="ReplaceWithConstantValue_Intention.java" startLine="52" startPosition="84" endLine="53" endPosition="16" />

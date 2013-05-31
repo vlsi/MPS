@@ -36,7 +36,7 @@ public class MarkVariableDeclarationAsThreadSafe_Intention implements IntentionF
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "org.jetbrains.mps.samples.ParallelFor";
   }
 
   public IntentionType getType() {

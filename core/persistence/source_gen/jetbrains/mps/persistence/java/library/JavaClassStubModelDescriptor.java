@@ -56,7 +56,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     if (myModel == null) {
       myModel = createModel();
       myModel.setModelDescriptor(this);
-      fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
+      fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
   }

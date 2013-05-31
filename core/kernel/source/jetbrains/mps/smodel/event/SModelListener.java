@@ -66,11 +66,9 @@ public interface SModelListener {
 
   void referenceRemoved(SModelReferenceEvent event);
 
-  void problemsUpdated(SModel sm);
-
   void modelSaved(SModel sm);
 
-  void modelLoadingStateChanged(SModel sm, ModelLoadingState oldState, ModelLoadingState newState);
+  void modelLoadingStateChanged(SModel sm, ModelLoadingState newState);
 
   void beforeModelDisposed(SModel sm);
 

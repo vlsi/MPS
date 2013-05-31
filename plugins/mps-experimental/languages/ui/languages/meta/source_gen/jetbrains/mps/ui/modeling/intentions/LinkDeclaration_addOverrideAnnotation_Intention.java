@@ -37,7 +37,7 @@ public class LinkDeclaration_addOverrideAnnotation_Intention implements Intentio
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.ui.modeling";
   }
 
   public IntentionType getType() {

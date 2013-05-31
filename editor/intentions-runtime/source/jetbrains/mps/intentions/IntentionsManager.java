@@ -398,10 +398,10 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       SNode migrationScript = scripts.get(script);
       for (AbstractMigrationRefactoring refactoring : script.getRefactorings()) {
         if (refactoring.isShowAsIntention()) {
-          Intention intention = new MigrationRefactoringAdapter(refactoring, migrationScript);
-          SModuleReference moduleRef = language.getModuleReference();
-          SNodeReference node = new jetbrains.mps.smodel.SNodePointer(migrationScript);
-          IntentionsManager.getInstance().addIntention(intention, moduleRef, node);
+          SModuleReference languageReference = language.getModuleReference();
+          SNodeReference migrationReference = migrationScript.getReference();
+          Intention intention = new MigrationRefactoringAdapter(languageReference, refactoring, migrationReference);
+          IntentionsManager.getInstance().addIntention(intention, languageReference, migrationReference);
         }
       }
     }

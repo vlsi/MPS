@@ -47,7 +47,7 @@ public class convert_test_case_to_unittest_case_Intention implements IntentionFa
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.unitTest";
   }
 
   public IntentionType getType() {

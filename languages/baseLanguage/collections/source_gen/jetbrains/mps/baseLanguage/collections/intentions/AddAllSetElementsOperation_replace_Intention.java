@@ -38,7 +38,7 @@ public class AddAllSetElementsOperation_replace_Intention implements IntentionFa
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.collections";
   }
 
   public IntentionType getType() {

@@ -20,7 +20,7 @@ package org.jetbrains.mps.openapi.model;
  */
 public interface SModelListener {
 
-  void modelLoaded(SModel model);
+  void modelLoaded(SModel model, boolean partially);
 
   void modelReplaced(SModel model);
 

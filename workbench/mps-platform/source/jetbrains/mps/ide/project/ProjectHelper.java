@@ -20,6 +20,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectRepository;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.awt.Frame;
@@ -44,6 +45,18 @@ public class ProjectHelper {
     }
     return null;
   }
+
+  @Nullable
+  public static ModelAccess getModelAccess(com.intellij.openapi.project.Project p) {
+    if (p != null) {
+      Project project = p.getComponent(MPSProject.class);
+      if (project != null) {
+        return project.getRepository().getModelAccess();
+      }
+    }
+    return null;
+  }
+
 
   @Nullable
   public static Frame toMainFrame(Project p) {

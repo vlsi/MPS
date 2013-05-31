@@ -29,26 +29,27 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,9 +63,34 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   private ClassLoaderManager myClassLoaderManager;
   private ReloadListener myReloadListener = new MyReloadListener();
   private MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
-  private final SModelAdapter myListener = new SModelAdapter() {
+
+  private SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
     @Override
-    public void problemsUpdated(SModel event) {
+    protected void startListening(SModel model) {
+      model.addModelListener(this);
+    }
+
+    @Override
+    protected void stopListening(SModel model) {
+      model.removeModelListener(this);
+    }
+
+    @Override
+    public void modelLoaded(SModel model, boolean partially) {
+      problemsUpdated();
+    }
+
+    @Override
+    public void modelUnloaded(SModel model) {
+      problemsUpdated();
+    }
+
+    @Override
+    public void modelSaved(SModel model) {
+      problemsUpdated();
+    }
+
+    public void problemsUpdated() {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         @Override
         public void run() {
@@ -74,6 +100,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
       });
     }
   };
+
   private Project myProject;
 
   private MyFileEditorManagerListener myFileEditorManagerListener = new MyFileEditorManagerListener();
@@ -106,12 +133,22 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
-    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myListener);
+    ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SRepositoryRegistry.getInstance().addGlobalListener(myListener);
+      }
+    });
   }
 
   @Override
   public void disposeComponent() {
-    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myListener);
+    ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SRepositoryRegistry.getInstance().removeGlobalListener(myListener);
+      }
+    });
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
   }

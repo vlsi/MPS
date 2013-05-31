@@ -36,7 +36,7 @@ public class ConvertClassCreatorToAnonimous_Intention implements IntentionFactor
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage";
   }
 
   public IntentionType getType() {

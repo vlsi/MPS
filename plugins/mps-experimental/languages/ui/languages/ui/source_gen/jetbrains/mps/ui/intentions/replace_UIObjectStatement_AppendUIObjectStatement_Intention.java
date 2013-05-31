@@ -36,7 +36,7 @@ public class replace_UIObjectStatement_AppendUIObjectStatement_Intention impleme
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.ui";
   }
 
   public IntentionType getType() {

@@ -72,6 +72,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     assertCanChange();
     getSModelInternal().addRootNode(node);
     fireNodeAdded(null, null, node);
+    setChanged(true);
   }
 
   @Override
@@ -79,6 +80,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     assertCanChange();
     getSModelInternal().removeRootNode(node);
     fireNodeRemoved(null, null, node);
+    setChanged(true);
   }
 
   @Override
@@ -178,7 +180,6 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
     updateTimestamp();
     fireModelSaved();
-    fireModelProblemsUpdated();
   }
 
   /**
@@ -248,7 +249,6 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
       l.referenceChanged(node, role, oldValue, newValue);
     }
   }
-
 
   public void firePropertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
     for (SModelChangeListener l : myChangeListeners) {

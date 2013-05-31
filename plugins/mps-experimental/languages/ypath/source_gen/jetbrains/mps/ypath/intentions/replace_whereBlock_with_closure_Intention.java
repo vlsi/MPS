@@ -38,7 +38,7 @@ public class replace_whereBlock_with_closure_Intention implements IntentionFacto
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.ypath";
   }
 
   public IntentionType getType() {

@@ -35,7 +35,7 @@ public class View_wrap_with_ValidatingView_Intention implements IntentionFactory
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.ui";
   }
 
   public IntentionType getType() {

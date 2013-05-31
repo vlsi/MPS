@@ -64,7 +64,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_647666612127856323(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SModelOperations.getModuleStub(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getFqName_1213877404258", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SModelOperations.getModuleStub(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode()))), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_7707122987721455412(final IOperationContext operationContext, final PropertyMacroContext _context) {

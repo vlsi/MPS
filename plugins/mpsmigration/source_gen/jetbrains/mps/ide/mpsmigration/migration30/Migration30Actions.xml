@@ -1,6 +1,7 @@
 <components>
   <actions>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action" class="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action"></action>
+    <action id="jetbrains.mps.ide.mpsmigration.migration30.ImportModelsWithUsedClassifiers_Action" class="jetbrains.mps.ide.mpsmigration.migration30.ImportModelsWithUsedClassifiers_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateCondition_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateCondition_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeAccess_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeAccess_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeMethods_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeMethods_Action"></action>
@@ -66,6 +67,7 @@
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_RemoveDirectCallProperty_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateParameterizedIntentionDeclaration_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_EditorContext_Action" />
+      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.ImportModelsWithUsedClassifiers_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.UpgradePersistence_Action" />
       <add-to-group group-id="ToolsMenu" anchor="last" />
     </group>

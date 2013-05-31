@@ -36,7 +36,7 @@ public class ConvertPropertySetToAssignment_Intention implements IntentionFactor
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.smodel";
   }
 
   public IntentionType getType() {
