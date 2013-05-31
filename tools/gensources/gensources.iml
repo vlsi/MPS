@@ -677,18 +677,12 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/nanoc/nanoc/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/nanoc/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/nanoc/sandbox/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/runtime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/nanoc/nanoc/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/nanoc/pluginSolution/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/nanoc/sandbox/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/debugger-java/languages">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java/languages/customViewers/generator/source_gen" isTestSource="false" />

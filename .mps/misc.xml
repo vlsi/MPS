@@ -214,9 +214,6 @@
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/runtime/jetbrains.mps.debugger.decisionTable.runtime.msd" folder="debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/sandbox/jetbrains.mps.debugger.decisionTable.sandbox.msd" folder="debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/jetbrains.mps.debugger.api.lang.mpl" folder="debugger.api" />
-      <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/nanoc/nanoc/jetbrains.mps.nanoc.mpl" folder="samples" />
-      <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/nanoc/pluginSolution/jetbrains.mps.nanoc.pluginSolution.msd" folder="samples" />
-      <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/nanoc/sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/runtime/jetbrains.mps.debugger.api.runtime.msd" folder="debugger.api" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-java-customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" folder="debugger.java" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" folder="debugger.java" />
