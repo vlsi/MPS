@@ -196,10 +196,6 @@
       <modulePath path="$PROJECT_DIR$/languages/util/gwtsupport/solutions/gwtsupport.buildtest/gwtsupport.buildtest.msd" folder="languages.gwt" />
       <modulePath path="$PROJECT_DIR$/languages/util/gwtsupport/solutions/gwtsupport.sandbox/gwtsupport.sandbox.msd" folder="languages.gwt" />
       <modulePath path="$PROJECT_DIR$/languages/util/ideUiLanguage/jetbrains.mps.ide.uiLanguage.mpl" folder="languages.uiLanguage" />
-      <modulePath path="$PROJECT_DIR$/languages/util/mps-lite/languages/mpslite/jetbrains.mpslite.mpl" folder="mpslite" />
-      <modulePath path="$PROJECT_DIR$/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/jetbrains.mpslite.pluginSolution.msd" folder="mpslite" />
-      <modulePath path="$PROJECT_DIR$/languages/util/mps-lite/languages/nanoj/jetbrains.mps.nanoj.mpl" folder="samples" />
-      <modulePath path="$PROJECT_DIR$/languages/util/mps-lite/solutions/mpslite.sandbox/mpslite.sandbox.msd" folder="mpslite" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/jetbrains.mps.baseLanguage.regexp.mpl" folder="baseLanguage.regexp" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/jetbrains.mps.baseLanguage.regexp.runtime.msd" folder="baseLanguage.regexp" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.baseLanguage.regexp.examples.msd" folder="baseLanguage.regexp" />
