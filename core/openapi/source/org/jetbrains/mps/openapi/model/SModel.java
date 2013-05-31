@@ -45,9 +45,6 @@ public interface SModel {
 
   ModelRoot getModelRoot();
 
-  // TODO remove
-  void setModelRoot(ModelRoot mr);
-
   /**
    * Retrieves the owning module
    * TODO: fix remove SModule!

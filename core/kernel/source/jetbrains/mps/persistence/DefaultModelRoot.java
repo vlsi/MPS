@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.MPSExtentions;
@@ -111,7 +112,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     FileDataSource source = createSource(modelName, MPSExtentions.MODEL, null);
     SModel model = modelFactory.create(modelName, source);
     if (model != null) {
-      model.setModelRoot(this);
+      ((SModelBase) model).setModelRoot(this);
       // TODO fix
       register(model);
     }
@@ -139,7 +140,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
       // TODO handle errors
       if (model != null) {
-        model.setModelRoot(this);
+        ((SModelBase) model).setModelRoot(this);
         models.add(model);
       }
     }
