@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="etzcqdcwss51p9y7ti4mj6lay0oi9f5">
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-19qr3t5j6zj1j6ub3v4uu8kimofng1x" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <dep model="r:94330202-b33f-456a-85ea-8a2bb978933f(jetbrains.mps.samples.multipleProjections.requestTracking.editor)" hash="-c0xt9rmbhifuhm9aepo3jpupne1f7zw" />
+  <dep model="r:a32fb61c-6c13-483c-acae-58ae0b63e119(jetbrains.mps.samples.multipleProjections.requestTracking.typesystem)" hash="b4fl9346cftnw43u2kbiiqr5mz9hbvp" />
+  <common>
+    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:94330202-b33f-456a-85ea-8a2bb978933f(jetbrains.mps.samples.multipleProjections.requestTracking.editor)" />
+    <dep model="r:a32fb61c-6c13-483c-acae-58ae0b63e119(jetbrains.mps.samples.multipleProjections.requestTracking.typesystem)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
+

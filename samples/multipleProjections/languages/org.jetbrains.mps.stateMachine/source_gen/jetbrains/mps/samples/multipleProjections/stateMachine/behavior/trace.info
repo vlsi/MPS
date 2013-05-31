@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="AbstractStateMachineElement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.AbstractStateMachineElement_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="EventReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.EventReference_BehaviorDescriptor" />
+  <unitInfo fileName="Event_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.Event_BehaviorDescriptor" />
+  <unitInfo fileName="StateMachine_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.StateMachine_BehaviorDescriptor" />
+  <unitInfo fileName="StateReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.StateReference_BehaviorDescriptor" />
+  <unitInfo fileName="State_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.State_BehaviorDescriptor" />
+  <unitInfo fileName="Transition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.Transition_BehaviorDescriptor" />
+  <root nodeRef="r:69c80171-1c29-4a65-a4dd-6ac282fe55ff(jetbrains.mps.samples.multipleProjections.stateMachine.behavior)/7943979732673457913">
+    <nodeInfo nodeId="7943979732673457921" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStateMachine_7943979732673457916#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="7943979732673457915" fileName="AbstractStateMachineElement_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="7943979732673457919" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="150" />
+    <scopeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="7943979732673457913" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="7943979732673457913" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.AbstractStateMachineElement_Behavior" />
+  </root>
+</debugInfo>
+
