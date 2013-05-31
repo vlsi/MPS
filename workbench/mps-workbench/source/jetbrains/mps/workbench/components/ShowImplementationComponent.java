@@ -21,7 +21,6 @@ import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.popup.JBPopup;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._void_P1_E0;
 import com.intellij.ui.CollectionComboBoxModel;
 import com.intellij.ui.ColoredListCellRenderer;
 import com.intellij.ui.IdeBorderFactory;
@@ -35,7 +34,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -52,7 +50,6 @@ public class ShowImplementationComponent extends JPanel {
   private JLabel myLocationLabel = new JLabel("");
   private JLabel myCountLabel = new JLabel("0 of 0");
   private EmbeddableEditor myEditor;
-  private JComponent myEditorPanel;
   private int mySelectedIndex = -1;
   private JBPopup myPopup;
   private Project myProject;
@@ -68,14 +65,10 @@ public class ShowImplementationComponent extends JPanel {
       myImplNodes.add(new ImplementationNode(node));
     }
 
-    myEditor = new EmbeddableEditor(context.getProject(), new _void_P1_E0<SModel>() {
-      @Override
-      public void invoke(SModel sModel) {
-        sModel.addRootNode(myImplNodes.get(0).myNode);
-      }
-    }, false);
-    myEditor.editNode(myImplNodes.get(0).myNode);
     myProject = context.getProject();
+
+    myEditor = new EmbeddableEditor(myProject, false);
+    myEditor.editNode(myImplNodes.get(0).myNode);
 
     init();
     if(myImplNodes.size() > 0)
@@ -137,7 +130,7 @@ public class ShowImplementationComponent extends JPanel {
         myEditor.editNode(myImplNodes.get(index).myNode);
         myEditor.setBackground(StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() : new Color(255, 255, 215));
         mySelectedIndex = index;
-        myEditorPanel.repaint();
+        myEditor.repaint();
         myNodeChooser.updateUI();
       }
     }, myProject);
@@ -146,8 +139,7 @@ public class ShowImplementationComponent extends JPanel {
   private void init() {
     setLayout(new BorderLayout());
 
-    myEditorPanel = myEditor.getComponenet();
-    add(myEditorPanel, BorderLayout.CENTER);
+    add(myEditor, BorderLayout.CENTER);
 
     JPanel northPanel = new JPanel(new BorderLayout(2, 0));
     northPanel.setBorder(BorderFactory.createCompoundBorder(IdeBorderFactory.createBorder(SideBorder.BOTTOM),

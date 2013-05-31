@@ -6,6 +6,7 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.project.Project;
 import java.util.List;
@@ -17,15 +18,8 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import javax.swing.border.TitledBorder;
 import org.jetbrains.annotations.Nullable;
 import java.awt.GridBagLayout;
@@ -39,15 +33,16 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ChangeMethodSignatureDialog extends RefactoringDialog {
   private SNode myDeclaration;
   private ChangeMethodSignatureParameters myParameters;
   private IOperationContext myOperationContext;
+  private SModel myTempModel;
   private EmbeddableEditor myEditor;
   private Project myProject;
   private List<ChangeMethodSignatureRefactoring> myRefactorings = null;
-
 
 
   public ChangeMethodSignatureDialog(@NotNull com.intellij.openapi.project.Project project, SNode node, IOperationContext operationContext) {
@@ -69,31 +64,19 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
     JPanel panel = new JPanel(new BorderLayout());
     myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
-        final SNode baseMethodDecalration = ChangeMethodSignatureDialog.this.myParameters.getDeclaration();
-        SLinkOperations.setTarget(baseMethodDecalration, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-        ChangeMethodSignatureDialog.this.myEditor = new EmbeddableEditor(ChangeMethodSignatureDialog.this.myOperationContext.getProject(), new _FunctionTypes._void_P1_E0<SModel>() {
-          public void invoke(SModel m) {
-            m.addRootNode(baseMethodDecalration);
-          }
-        }, true);
-        myEditor.editNode(baseMethodDecalration);
+        SNode baseMethodDeclaration = ChangeMethodSignatureDialog.this.myParameters.getDeclaration();
+        SLinkOperations.setTarget(baseMethodDeclaration, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
 
-        SModule module = ChangeMethodSignatureDialog.this.myOperationContext.getModule();
-        if (module instanceof Language) {
-          ChangeMethodSignatureDialog.this.myEditor.addLanguageStructureModel((Language) module);
-        }
-        SModule m = ChangeMethodSignatureDialog.this.myOperationContext.getModule();
-        for (Language language : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(m).getUsedLanguages())) {
-          ChangeMethodSignatureDialog.this.myEditor.addLanguage(language);
-        }
-        SModel model = ChangeMethodSignatureDialog.this.myDeclaration.getModel();
-        for (SModelReference imported : ListSequence.fromList(SModelOperations.getImportedModelUIDs(model))) {
-          ChangeMethodSignatureDialog.this.myEditor.addModel(imported);
-        }
+        myTempModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
+        myTempModel.addRootNode(baseMethodDeclaration);
+        TemporaryModels.getInstance().addMissingModuleImports(myTempModel);
+
+        ChangeMethodSignatureDialog.this.myEditor = new EmbeddableEditor(myProject, true);
+        myEditor.editNode(baseMethodDeclaration);
       }
     });
     panel.setBorder(new TitledBorder("Method signature"));
-    panel.add(this.myEditor.getComponenet());
+    panel.add(this.myEditor);
     return panel;
   }
 
@@ -143,6 +126,14 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
     if (myEditor != null) {
       myEditor.disposeEditor();
       myEditor = null;
+    }
+    if (myTempModel != null) {
+      myProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+        public void run() {
+          TemporaryModels.getInstance().dispose(myTempModel);
+          myTempModel = null;
+        }
+      });
     }
     super.dispose();
   }

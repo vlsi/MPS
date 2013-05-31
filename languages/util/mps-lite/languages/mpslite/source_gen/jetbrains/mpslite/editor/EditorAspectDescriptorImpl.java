@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
@@ -59,6 +60,13 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
+
+
+
+  public Collection<ConceptEditorHint> getHints() {
+    return Collections.emptyList();
+  }
+
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mpslite.structure.AbstractConceptReference", "jetbrains.mpslite.structure.BinaryOperationConcept", "jetbrains.mpslite.structure.BlockBodyPart", "jetbrains.mpslite.structure.BlockConcept", "jetbrains.mpslite.structure.ConceptContainer", "jetbrains.mpslite.structure.ConcreteChildPart", "jetbrains.mpslite.structure.ConcretePropertyPart", "jetbrains.mpslite.structure.ConcreteReferencePart", "jetbrains.mpslite.structure.ConstantLinePart", "jetbrains.mpslite.structure.ExpressionConcept", "jetbrains.mpslite.structure.IndentLinePart", "jetbrains.mpslite.structure.Line", "jetbrains.mpslite.structure.LineList", "jetbrains.mpslite.structure.MPSLiteConceptDeclaration", "jetbrains.mpslite.structure.NamePropertyNamePart", "jetbrains.mpslite.structure.OptionalPart", "jetbrains.mpslite.structure.StatementConcept", "jetbrains.mpslite.structure.TypePart", "jetbrains.mpslite.structure.VariableConcept"};
 }

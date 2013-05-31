@@ -16,16 +16,15 @@
 package jetbrains.mps.nodeEditor.messageTargets;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Evgeny Gerashchenko
@@ -47,8 +46,7 @@ public class CellFinder {
     EditorCell child = CellFinderUtil.findChildByCondition(rawCell, new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell cell) {
-        //TODO remove this cast
-        return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isReferenceCell() && role.equals(cell.getRole()) && node == cell.getSNode();
+        return cell.isReferenceCell() && role.equals(cell.getRole()) && node == cell.getSNode();
       }
     }, true, true);
     if (child != null) {

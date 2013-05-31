@@ -15,24 +15,25 @@
  */
 package jetbrains.mps.smodel.tempmodel;
 
-import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.model.EditableSModelBase;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.smodel.SModelId.RegularSModelId;
-import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-class TempModel extends SModelBase implements EditableSModel {
+import java.io.IOException;
+
+class TempModel extends EditableSModelBase {
   protected volatile jetbrains.mps.smodel.SModel mySModel;
   private boolean myReadOnly;
 
   protected TempModel(boolean readOnly) {
-    super(createModelRef(), new NullDataSource());
+    super(createModelRef("TempModel_" + System.nanoTime()), new NullDataSource());
     myReadOnly = readOnly;
+    updateTimestamp();
   }
 
   @Override
@@ -56,29 +57,19 @@ class TempModel extends SModelBase implements EditableSModel {
   }
 
   @Override
-  public void dispose() {
-    super.dispose();
-    fireBeforeModelDisposed(this);
-    jetbrains.mps.smodel.SModel model = mySModel;
-    if (model != null) {
-      model.dispose();
-    }
-    clearListeners();
+  protected SModel getCurrentModelInternal() {
+    return mySModel;
   }
 
   @Override
   public boolean isChanged() {
+    // TODO move TempModels outside of the default repository; false here prevents model from saving
     return false;
   }
 
   @Override
-  public void setChanged(boolean changed) {
-
-  }
-
-  @Override
-  public void save() {
-
+  protected boolean saveModel() throws IOException, ModelSaveException {
+    throw new UnsupportedOperationException();
   }
 
   @Override
@@ -92,26 +83,13 @@ class TempModel extends SModelBase implements EditableSModel {
   }
 
   @Override
-  public void updateTimestamp() {
-
+  protected void reloadContents() {
+    throw new UnsupportedOperationException();
   }
 
-  @Override
-  public boolean needsReloading() {
-    return false;
-  }
-
-  @Override
-  public void reloadFromSource() {
-
-  }
-
-  public IFile getModelFile() {
-    return null;
-  }
-
-  private static SModelReference createModelRef() {
+  private static SModelReference createModelRef(String modelName) {
+    // todo: make TempModel name customizable? like prefix for temporary file
     SModelId id = SModelId.generate();
-    return PersistenceFacade.getInstance().createModelReference(null, id, "TempModel");
+    return PersistenceFacade.getInstance().createModelReference(null, id, modelName);
   }
 }

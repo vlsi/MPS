@@ -31,20 +31,8 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
   }
 
   @Override
-  public void beforeModelDeleted(SModel modelDescriptor) {
-
-  }
-
-  @Override
-  public void modelDeleted(SModel modelDescriptor) {
-    modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
-  }
-
-  @Override
   public void modelRemoved(SModel modelDescriptor) {
     modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
   }
 
   @Override
@@ -55,13 +43,11 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
   @Override
   public void modelAdded(SModel modelDescriptor) {
     modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
   }
 
   @Override
   public void modelRenamed(SModel modelDescriptor) {
     modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
   }
 
   @Override
@@ -70,10 +56,6 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
   }
 
   public void modelRepositoryChanged() {
-
-  }
-
-  public void modelRepositoryChanged(SModel modelDescriptor) {
 
   }
 

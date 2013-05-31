@@ -78,6 +78,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     return FileSystem.getInstance().isPackaged(myFolder);
   }
 
+  @NotNull
   @Override
   public String getLocation() {
     return myFolder.toString();

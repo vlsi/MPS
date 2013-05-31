@@ -16,11 +16,14 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -58,7 +61,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class SNode implements org.jetbrains.mps.openapi.model.SNode {
+public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNode.class));
   private static final String[] EMPTY_ARRAY = new String[0];
   private static final Object USER_OBJECT_LOCK = new Object();
@@ -290,6 +293,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       myModelForUndo.performUndoableAction(computable);
     } else {
       if (!UndoHelper.getInstance().needRegisterUndo()) return;
+      if (!UnregisteredNodes.instance().contains(this)) return;
 
       UndoHelper.getInstance().addUndoableAction(computable.compute());
     }
@@ -320,30 +324,19 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     nodeRead();
 
     fireNodeReadAccess();
-
-    if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewChildRole(getModel(), myConceptFqName, role);
-    }
-    fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    SNode firstChild = firstChildInRole(role);
-    if (firstChild == null) return Collections.emptyList();
-    List<SNode> result = new ArrayList<SNode>();
 
-    boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
-    for (SNode child = firstChild; child != null; child = child.treeNext()) {
-      // Note: accessing through child.getRoleInParent() reports excess node read access
-      if (role.equals(child.myRoleInParent)) {
-        result.add(child);
-        child.fireNodeReadAccess();
-        fireNodeChildReadAccess(role, child);
-      } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
-        result.add(child);
-        child.fireNodeReadAccess();
-        fireNodeChildReadAccess(role, child);
+    SNode firstChild = firstChild();
+
+    if (role != null) {
+      while (firstChild != null && !firstChild.getRoleInParent().equals(role)) {
+        firstChild = firstChild.treeNext();
       }
     }
-    return result;
+
+    if (firstChild == null) return Collections.emptyList();
+
+    return new ChildrenList(firstChild, role);
   }
 
   /**
@@ -561,6 +554,12 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     children_insertAfter(((SNode) anchor), schild);
     schild.setRoleInParent(role);
 
+    //if child is in unregistered nodes, add this one too to track undo for it
+    UnregisteredNodes un = UnregisteredNodes.instance();
+    if (un.contains(child) && myModelForUndo == null && !un.contains(this)) {
+      startUndoTracking(getTopmostAncestor(), ((SNode) child).myRepository);
+    }
+
     if (myModel == null) {
       if (schild.myModel != null) {
         schild.clearModel();
@@ -583,22 +582,13 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     nodeAdded(role, child);
   }
 
-  @Override
-  public String getRoleOf(org.jetbrains.mps.openapi.model.SNode child) {
-    nodeRead();
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    if (child.getParent() == this) {
-      String role = ((SNode) child).myRoleInParent;
-      assert role != null;
-      return role;
+  private void startUndoTracking(SNode root, SRepository repo) {
+    for (SNode child : root.getChildren()) {
+      startUndoTracking(child, repo);
     }
-    for (SReference reference : myReferences) {
-      if (reference.getTargetNode() == child) return reference.getRole();
-    }
-
-    return "<no role>";
+    if (UnregisteredNodes.instance().contains(root)) return;
+    UnregisteredNodes.instance().put(root);
+    root.myRepository = repo;
   }
 
   @Override
@@ -684,13 +674,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public List<SNode> getChildren() {
-    nodeRead();
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    SNode firstChild = firstChild();
-    return new ChildrenList(firstChild);
+    return getChildren(null);
   }
 
   @Override
@@ -854,26 +838,26 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   private void referenceChanged(String role, org.jetbrains.mps.openapi.model.SReference reference, org.jetbrains.mps.openapi.model.SReference newValue) {
     SModelBase md = getRealModel();
-    if (md == null) return;
-    md.fireReferenceChanged(this, role, reference, newValue);
+    if (md == null || md instanceof FakeModelDescriptor) return;
+    ((EditableSModelBase) md).fireReferenceChanged(this, role, reference, newValue);
   }
 
   private void propertyChanged(String propertyName, String oldValue, String newValue) {
     SModelBase md = getRealModel();
-    if (md == null) return;
-    md.firePropertyChanged(this, propertyName, oldValue, newValue);
+    if (md == null || md instanceof FakeModelDescriptor) return;
+    ((EditableSModelBase) md).firePropertyChanged(this, propertyName, oldValue, newValue);
   }
 
   private void nodeAdded(String role, org.jetbrains.mps.openapi.model.SNode child) {
     SModelBase md = getRealModel();
-    if (md == null) return;
-    md.fireNodeAdded(this, role, child);
+    if (md == null || md instanceof FakeModelDescriptor) return;
+    ((EditableSModelBase) md).fireNodeAdded(this, role, child);
   }
 
   private void nodeRemoved(org.jetbrains.mps.openapi.model.SNode child, String role) {
     SModelBase md = getRealModel();
-    if (md == null) return;
-    md.fireNodeRemoved(this, role, child);
+    if (md == null || md instanceof FakeModelDescriptor) return;
+    ((EditableSModelBase) md).fireNodeRemoved(this, role, child);
   }
 
   public SModel getPersistentModel() {
@@ -1096,27 +1080,47 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //--------private classes-------
 
   private class ChildrenList extends AbstractImmutableList<SNode> {
-    public ChildrenList(SNode first) {
+    @Nullable
+    private String myRole;
+
+    public ChildrenList(SNode first, @Nullable String role) {
       super(first);
+      myRole = role;
     }
 
-    public ChildrenList(SNode first, int size) {
+    public ChildrenList(SNode first, @Nullable String role, int size) {
       super(first, size);
+      myRole = role;
     }
 
     @Override
     protected SNode next(SNode node) {
-      return node.nextSibling();
+      if (myRole == null) return node.nextSibling();
+
+      do {
+        node = node.nextSibling();
+      } while (node != null && !node.getRoleInParent().equals(myRole));
+      return node;
     }
 
     @Override
     protected SNode prev(SNode node) {
-      return node.prevSibling();
+      if (getParent() == null) return null;
+      if (myRole == null) return node.prevSibling();
+
+      SNode first = getParent().firstChild();
+      if (node == first) return null;
+
+      do {
+        node = node.prevSibling();
+      } while (node != first && !node.getRoleInParent().equals(myRole));
+
+      return node.getRoleInParent().equals(myRole) ? node : null;
     }
 
     @Override
     protected AbstractImmutableList<SNode> subList(SNode elem, int size) {
-      return new ChildrenList(elem, size);
+      return new ChildrenList(elem, myRole, size);
     }
   }
 

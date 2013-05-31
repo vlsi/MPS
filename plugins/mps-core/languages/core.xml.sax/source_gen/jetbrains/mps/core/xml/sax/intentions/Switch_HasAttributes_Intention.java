@@ -33,7 +33,7 @@ public class Switch_HasAttributes_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.core.xml.sax";
   }
 
   public IntentionType getType() {

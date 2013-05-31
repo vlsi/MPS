@@ -34,9 +34,9 @@ import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.EqualUtil;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -64,7 +64,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
   };
 
-  public PlainTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, IOperationContext operationContext) {
+  public PlainTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed,
+      CreateModeCallback createModeCallback, IOperationContext operationContext) {
     super(baseNode, possibleTabs, editor, callback, showGrayed, createModeCallback, operationContext);
 
     DataContext dataContext = DataManager.getInstance().getDataContext(myEditor);
@@ -73,8 +74,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
     PrevNextActionsDescriptor navigation = new PrevNextActionsDescriptor(IdeActions.ACTION_NEXT_EDITOR_TAB, IdeActions.ACTION_PREVIOUS_EDITOR_TAB);
     myJbTabs = new AsJBTabs(project, SwingConstants.BOTTOM, navigation, myJbTabsDisposable);
     myJbTabs.getTabs().getPresentation()
-      .setPaintBorder(0, 0, 0, 0)
-      .setGhostsAlwaysVisible(true);
+        .setPaintBorder(0, 0, 0, 0)
+        .setGhostsAlwaysVisible(true);
 
     getComponent().add(myJbTabs.getTabs().getComponent(), BorderLayout.CENTER);
 
@@ -94,7 +95,11 @@ public class PlainTabsComponent extends BaseTabsComponent {
         });
       }
     });
+
+    addListeners();
   }
+
+
 
   private synchronized void onTabIndexChange() {
     if (myDisposed) return;
@@ -139,6 +144,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
   //this is synchronized because we change myJbTabs here (while disposing)
   @Override
   public synchronized void dispose() {
+    removeListeners();
     myDisposed = true;
     Disposer.dispose(myJbTabsDisposable);
     super.dispose();
@@ -211,7 +217,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
     if (selNode != null) {
       for (PlainEditorTab tab : myRealTabs) {
-        if (tab.getNode().equals(selNode)) {
+        if (EqualUtil.equals(tab.getNode(), selNode)) {
           myJbTabs.setSelectedIndex(myRealTabs.indexOf(tab));
           break;
         }

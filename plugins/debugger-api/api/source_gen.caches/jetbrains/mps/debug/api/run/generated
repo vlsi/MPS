@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4h20gh63hpsn2h2ms84dn3it00cxho7">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
-  <common hash="c862hjrrnxaeloairvwz7uqw9ehqhtx" />
+<dependencies version="2" modelHash="-80pe4v58t24gx7d43s908iv0aucxy53">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <common hash="-a8qkmz1waj05vv2mjffk4dzt0ordqop" />
   <source id="4474271214082913232" name="IDebuggerConfiguration" hash="a0sdlmjfebhl820zqxdexd555em7e81">
     <file name="IDebuggerConfiguration.java" />
   </source>

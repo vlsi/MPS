@@ -217,7 +217,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 100:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration").super_("jetbrains.mps.lang.editor.structure.BaseEditorComponent").parents("jetbrains.mps.lang.editor.structure.BaseEditorComponent", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect").children(new String[]{"inspectedCellModel", "contextHints"}, new boolean[]{false, true}).alias("Concept Editor", "").create();
       case 101:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.InterfacePart").properties("presentation").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.InterfacePart").properties("presentation", "showInUI").create();
       case 102:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart").references("hint").create();
       case 103:

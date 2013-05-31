@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.smodel.tempmodel;
 
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -33,25 +31,39 @@ public abstract class TempModuleOptions {
     return new ExistingModuleOptions(m);
   }
 
+  public static TempModuleOptions forNewModule(Set<ModelRootDescriptor> modelRoots, boolean withSourceGen, boolean withJavaFacet) {
+    return new NewModuleOptions(modelRoots, withSourceGen, withJavaFacet);
+  }
+
   public static TempModuleOptions forNewModule(Set<ModelRootDescriptor> modelRoots) {
-    return new NewModuleOptions(modelRoots);
+    return forNewModule(modelRoots, false, false);
   }
 
   public static TempModuleOptions forDefaultModule() {
-    return new NewModuleOptions(Collections.<ModelRootDescriptor>emptySet());
+    return forNewModule(Collections.<ModelRootDescriptor>emptySet());
+  }
+
+  public static TempModuleOptions forDefaultModuleWithSourceAndClassesGen() {
+    // todo: builder here
+    return new NewModuleOptions(Collections.<ModelRootDescriptor>emptySet(), true, true);
   }
 
   private static class NewModuleOptions extends TempModuleOptions {
     private Set<ModelRootDescriptor> myModelRoots;
+    private boolean myWithSourceGen;
+    private boolean myWithJavaFacet;
+
     private TempModule myCreatedModule;
 
-    public NewModuleOptions(Set<ModelRootDescriptor> modelRoots) {
+    public NewModuleOptions(Set<ModelRootDescriptor> modelRoots, boolean withSourceGen, boolean withJavaFacet) {
       myModelRoots = modelRoots;
+      myWithSourceGen = withSourceGen;
+      myWithJavaFacet = withJavaFacet;
     }
 
     @Override
     public SModule createModule() {
-      myCreatedModule = new TempModule(myModelRoots);
+      myCreatedModule = new TempModule(myModelRoots, myWithSourceGen, myWithJavaFacet);
       TempModule regModule = MPSModuleRepository.getInstance().registerModule(myCreatedModule, myCreatedModule);
       assert myCreatedModule == regModule : "Temporary module with same id already registered";
       return myCreatedModule;

@@ -45,7 +45,7 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.typesystem";
   }
 
   public IntentionType getType() {

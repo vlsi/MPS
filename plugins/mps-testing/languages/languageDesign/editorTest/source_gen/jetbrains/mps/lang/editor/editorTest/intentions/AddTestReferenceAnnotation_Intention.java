@@ -38,7 +38,7 @@ public class AddTestReferenceAnnotation_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.editor.editorTest";
   }
 
   public IntentionType getType() {

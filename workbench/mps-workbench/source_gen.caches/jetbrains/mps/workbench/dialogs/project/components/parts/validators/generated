@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="1jvvlxzyy0z8uldj8rqypp00t6t5lvj">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
   <common hash="-eo17r8cxm2x9b5hkeu4cnln9f6idhng" />
   <source id="1560298786499493318" name="Validator" hash="-jb985fg8htrlcyv3ergokuyl0edyvt">
     <file name="Validator.java" />

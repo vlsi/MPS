@@ -41,7 +41,7 @@ public class ChangeNonEmptyProperty_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.editor";
   }
 
   public IntentionType getType() {

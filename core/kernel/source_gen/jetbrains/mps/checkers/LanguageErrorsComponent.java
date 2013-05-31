@@ -340,11 +340,6 @@ public class LanguageErrorsComponent {
     public void modelRemoved(SModel descriptor) {
       processModelRemoved(descriptor);
     }
-
-    @Override
-    public void modelDeleted(SModel descriptor) {
-      processModelRemoved(descriptor);
-    }
   }
 
   private static IScope check_29uvfh_a0h0v(AbstractModule checkedDotOperand) {

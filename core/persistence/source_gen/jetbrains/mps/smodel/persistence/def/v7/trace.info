@@ -52,7 +52,7 @@
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="137" startPosition="73" endLine="138" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="144" startPosition="137" endLine="145" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="149" startPosition="39" endLine="150" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="151" startPosition="7" endLine="152" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="151" startPosition="7" endLine="152" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="155" startPosition="45" endLine="156" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="164" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
     <nodeInfo nodeId="286176397450364167" fileName="ModelReader7Handler.java" startLine="170" startPosition="82" endLine="171" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -493,7 +493,7 @@
     <scopeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="86" startPosition="12" endLine="90" endPosition="7">
       <varInfo nodeId="286176397450364062" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="148" startPosition="86" endLine="152" endPosition="64" />
+    <scopeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="148" startPosition="86" endLine="152" endPosition="81" />
     <scopeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="179" startPosition="0" endLine="183" endPosition="0" />
     <scopeInfo nodeId="7113564998979546576" fileName="ModelReader7Handler.java" startLine="192" startPosition="13" endLine="196" endPosition="12" />
     <scopeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="218" startPosition="0" endLine="222" endPosition="0">
@@ -1243,7 +1243,7 @@
     <nodeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="120" startPosition="73" endLine="121" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="127" startPosition="148" endLine="128" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="132" startPosition="39" endLine="133" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="134" startPosition="7" endLine="135" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="134" startPosition="7" endLine="135" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="138" startPosition="45" endLine="139" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="147" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
     <nodeInfo nodeId="8837498651724313962" fileName="LineToContentMapReader7Handler.java" startLine="153" startPosition="84" endLine="154" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1495,7 +1495,7 @@
       <varInfo nodeId="5797832288566425370" varName="resultObject" />
       <varInfo nodeId="5797832288566425370" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="131" startPosition="86" endLine="135" endPosition="64" />
+    <scopeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="131" startPosition="86" endLine="135" endPosition="81" />
     <scopeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="202" startPosition="0" endLine="206" endPosition="0">
       <varInfo nodeId="5797832288566425370" varName="resultObject" />
       <varInfo nodeId="5797832288566425370" varName="value" />

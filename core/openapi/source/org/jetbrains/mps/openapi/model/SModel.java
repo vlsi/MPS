@@ -126,13 +126,9 @@ public interface SModel {
   void unload();
 
 
-  void addStateListener(SModelStateListener l);
+  void addModelListener(SModelListener l);
 
-  void removeStateListener(SModelStateListener l);
-
-  void addChangeListener(SModelChangeListener l);
-
-  void removeChangeListener(SModelChangeListener l);
+  void removeModelListener(SModelListener l);
 
   void addAccessListener(SModelAccessListener l);
 

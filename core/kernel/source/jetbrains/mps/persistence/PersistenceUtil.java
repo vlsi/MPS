@@ -18,6 +18,7 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -88,6 +89,7 @@ public class PersistenceUtil {
 
   private static abstract class StreamDataSourceBase implements StreamDataSource {
 
+    @NotNull
     @Override
     public String getLocation() {
       return "in-memory";

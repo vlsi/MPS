@@ -61,6 +61,7 @@ public class ClasspathReader {
     EDITOR("editor"),
     IDEA_PLATFORM("ideaPlatform"),
     PLATFORM("platform"),
+    IDEA("idea"),
     UI("ui"),
     WORKBENCH("workbench"),
     TEST("test");

@@ -1006,11 +1006,11 @@
     <nodeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="38" startPosition="60" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="39" startPosition="63" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="40" startPosition="30" endLine="41" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="41" startPosition="165" endLine="42" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="42" startPosition="298" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="41" startPosition="165" endLine="42" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="42" startPosition="294" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156863830" fileName="processIsProcessHandler_SubtypingRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="processIsProcessHandler_SubtypingRule#()V" />
-    <nodeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="946964771156863830" fileName="processIsProcessHandler_SubtypingRule.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156863830" fileName="processIsProcessHandler_SubtypingRule.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="946964771156863830" fileName="processIsProcessHandler_SubtypingRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
@@ -1025,7 +1025,7 @@
     <scopeInfo nodeId="946964771156863830" fileName="processIsProcessHandler_SubtypingRule.java" startLine="28" startPosition="5" endLine="30" endPosition="45">
       <varInfo nodeId="946964771156863830" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="298" />
+    <scopeInfo nodeId="946964771156863833" fileName="processIsProcessHandler_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="294" />
     <scopeInfo nodeId="946964771156863830" fileName="processIsProcessHandler_SubtypingRule.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="946964771156863830" varName="processType" />
       <varInfo nodeId="946964771156863830" varName="status" />
@@ -1067,11 +1067,11 @@
     <nodeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="61" startPosition="61" endLine="62" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="62" startPosition="63" endLine="63" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="63" startPosition="30" endLine="64" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="64" startPosition="165" endLine="65" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="65" startPosition="299" endLine="66" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="64" startPosition="165" endLine="65" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="65" startPosition="295" endLine="66" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156863836" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_RedirectOutputExpression_InferenceRule#()V" />
-    <nodeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="63" startPosition="30" endLine="65" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="63" startPosition="30" endLine="65" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="63" startPosition="30" endLine="65" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="63" startPosition="30" endLine="65" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="946964771156863836" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="946964771156863836" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="946964771156863836" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="43" startPosition="68" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1090,7 +1090,7 @@
     <scopeInfo nodeId="946964771156863836" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="44" startPosition="5" endLine="46" endPosition="45">
       <varInfo nodeId="946964771156863836" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="63" startPosition="30" endLine="65" endPosition="299" />
+    <scopeInfo nodeId="946964771156863851" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="63" startPosition="30" endLine="65" endPosition="295" />
     <scopeInfo nodeId="946964771156863838" fileName="typeof_RedirectOutputExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="309">
       <varInfo nodeId="946964771156863838" varName="_info_12389875345" />
       <varInfo nodeId="946964771156863838" varName="_nodeToCheck_1029348928467" />

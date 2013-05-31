@@ -39,7 +39,7 @@ public class AddNodeMacroParam_copySrcMacro_Intention implements IntentionFactor
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.generator";
   }
 
   public IntentionType getType() {

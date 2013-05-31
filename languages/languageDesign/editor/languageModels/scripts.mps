@@ -1080,6 +1080,15 @@
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="4214592848196858238" nodeInfo="ng">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%dgetParent()%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell_Collection" resolveInfo="getParent" />
       </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2651150073382249461" nodeInfo="ng">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%disReferenceCell()%cboolean" resolveInfo="isReferenceCell" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2651150073382296077" nodeInfo="ng">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%disBig()%cboolean" resolveInfo="isBig" />
+        <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.FQNameMethodSpecification" typeId="tp33.4774682482449847011" id="2651150073382310049" nodeInfo="ng">
+          <property name="snodeId" nameId="tp33.2291767839160466985" value="~EditorCell.isBigCell():boolean" />
+        </node>
+      </node>
       <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="5434557751112863745" nodeInfo="ng">
         <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="jsgz.~EditorCell" resolveInfo="EditorCell" />
       </node>

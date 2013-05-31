@@ -37,7 +37,7 @@ public class ConvertToClassifierFQNameSpecification_Intention implements Intenti
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.script";
   }
 
   public IntentionType getType() {

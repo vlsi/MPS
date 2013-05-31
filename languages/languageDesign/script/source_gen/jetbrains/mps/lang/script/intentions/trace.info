@@ -6,7 +6,7 @@
     <nodeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="34" startPosition="41" endLine="35" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="42" startPosition="34" endLine="43" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="46" startPosition="44" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="50" startPosition="84" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -40,7 +40,7 @@
     <scopeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="75" />
     <scopeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="48" />
     <scopeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="34" startPosition="41" endLine="35" endPosition="95" />
-    <scopeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="43" />
+    <scopeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="39" />
     <scopeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="42" startPosition="34" endLine="43" endPosition="32" />
     <scopeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="46" startPosition="44" endLine="47" endPosition="17" />
     <scopeInfo nodeId="4126624587000694735" fileName="ConvertToMethodFQNameSpecification_Intention.java" startLine="50" startPosition="84" endLine="51" endPosition="16" />
@@ -88,7 +88,7 @@
     <nodeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="35" startPosition="41" endLine="36" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="39" startPosition="37" endLine="40" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="39" startPosition="37" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="43" startPosition="34" endLine="44" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="47" startPosition="44" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="51" startPosition="84" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -124,7 +124,7 @@
     <scopeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="79" />
     <scopeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="52" />
     <scopeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="35" startPosition="41" endLine="36" endPosition="99" />
-    <scopeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="39" startPosition="37" endLine="40" endPosition="43" />
+    <scopeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="39" startPosition="37" endLine="40" endPosition="39" />
     <scopeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="43" startPosition="34" endLine="44" endPosition="32" />
     <scopeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="47" startPosition="44" endLine="48" endPosition="17" />
     <scopeInfo nodeId="5434557751114211965" fileName="ConvertToClassifierFQNameSpecification_Intention.java" startLine="51" startPosition="84" endLine="52" endPosition="16" />

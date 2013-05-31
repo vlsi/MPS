@@ -16,6 +16,7 @@
 package jetbrains.mps.extapi.model;
 
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelChangeListener;
 
 /**
  * evgeny, 2/14/13
@@ -40,4 +41,8 @@ public interface EditableSModel extends SModel {
 
   //note this can unregister the model
   void reloadFromSource();
+
+  void addChangeListener(SModelChangeListener l);
+
+  void removeChangeListener(SModelChangeListener l);
 }

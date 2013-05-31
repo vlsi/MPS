@@ -55,6 +55,7 @@ import org.jetbrains.mps.util.Condition;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -207,7 +208,8 @@ public class ImportHelper {
             ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage((SModuleReference) ref);
           }
           if (reload) {
-            ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+            ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(myContextModule), new EmptyProgressMonitor());
+            ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
           }
         }
       });
@@ -306,7 +308,8 @@ public class ImportHelper {
 
       if (module[0] != null) {
         int res = JOptionPane.showConfirmDialog(getFrame(),
-            "<html>Model <b>" + getModelReference().getModelName() + "</b> is owned by module <b>" + module[0].getModuleName() + "</b> which is not imported.</html>\n\n" +
+            "<html>Model <b>" + getModelReference().getModelName() + "</b> is owned by module <b>" + module[0].getModuleName() +
+                "</b> which is not imported.</html>\n\n" +
 
                 "Importing the module will take some time.\n" +
                 "Do you want to automatically import the module?",
@@ -322,7 +325,8 @@ public class ImportHelper {
                 ((AbstractModule) myModule).addUsedLanguage(module[0]);
                 ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage(module[0]);
               }
-              ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+              ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(myModule), new EmptyProgressMonitor());
+              ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
             }
           });
         }

@@ -36,7 +36,7 @@ public class ConvertCastToNodeCast_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.smodel";
   }
 
   public IntentionType getType() {

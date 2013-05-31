@@ -40,7 +40,7 @@ public class AddExecutor_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.execution.configurations";
   }
 
   public IntentionType getType() {

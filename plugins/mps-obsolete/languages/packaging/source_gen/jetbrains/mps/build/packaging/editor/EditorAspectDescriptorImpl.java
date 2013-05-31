@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
@@ -128,6 +129,13 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     }
     return Collections.emptyList();
   }
+
+
+
+  public Collection<ConceptEditorHint> getHints() {
+    return Collections.emptyList();
+  }
+
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.packaging.structure.Antcall", "jetbrains.mps.build.packaging.structure.Block", "jetbrains.mps.build.packaging.structure.BlockReference", "jetbrains.mps.build.packaging.structure.Branding", "jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference", "jetbrains.mps.build.packaging.structure.ComponentsList", "jetbrains.mps.build.packaging.structure.CompositePathComponent", "jetbrains.mps.build.packaging.structure.CompositeString", "jetbrains.mps.build.packaging.structure.Configuration", "jetbrains.mps.build.packaging.structure.ConfigurationReference", "jetbrains.mps.build.packaging.structure.Copy", "jetbrains.mps.build.packaging.structure.Echo", "jetbrains.mps.build.packaging.structure.File", "jetbrains.mps.build.packaging.structure.FileExistsCondition", "jetbrains.mps.build.packaging.structure.Folder", "jetbrains.mps.build.packaging.structure.Help", "jetbrains.mps.build.packaging.structure.IdeaInitializerReference", "jetbrains.mps.build.packaging.structure.Jar", "jetbrains.mps.build.packaging.structure.Layout", "jetbrains.mps.build.packaging.structure.Library", "jetbrains.mps.build.packaging.structure.MPSLayoutConfigurationReferencePropertyValueExpression", "jetbrains.mps.build.packaging.structure.Macro", "jetbrains.mps.build.packaging.structure.MacroReference", "jetbrains.mps.build.packaging.structure.Manifest", "jetbrains.mps.build.packaging.structure.ManifestAttribute", "jetbrains.mps.build.packaging.structure.Module", "jetbrains.mps.build.packaging.structure.NonExistingPath", "jetbrains.mps.build.packaging.structure.NotCondition", "jetbrains.mps.build.packaging.structure.Pair", "jetbrains.mps.build.packaging.structure.Path", "jetbrains.mps.build.packaging.structure.PathComponent", "jetbrains.mps.build.packaging.structure.PathHolder", "jetbrains.mps.build.packaging.structure.Plugin", "jetbrains.mps.build.packaging.structure.PluginModule", "jetbrains.mps.build.packaging.structure.PropertyFileImport", "jetbrains.mps.build.packaging.structure.PropertyNodeImport", "jetbrains.mps.build.packaging.structure.Replace", "jetbrains.mps.build.packaging.structure.SimpleString", "jetbrains.mps.build.packaging.structure.Space", "jetbrains.mps.build.packaging.structure.UpdateWebsite", "jetbrains.mps.build.packaging.structure.Variable", "jetbrains.mps.build.packaging.structure.VariableReference", "jetbrains.mps.build.packaging.structure.WelcomeScreen", "jetbrains.mps.build.packaging.structure.Zip"};
   private static String[] stringSwitchCases_xbvbvu_a0a0b0a1 = new String[]{"jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent", "jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent", "jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector"};

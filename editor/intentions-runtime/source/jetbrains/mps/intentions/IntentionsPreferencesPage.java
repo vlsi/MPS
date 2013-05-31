@@ -17,13 +17,11 @@ package jetbrains.mps.intentions;
 
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.packageDependencies.ui.TreeExpansionMonitor;
 import com.intellij.ui.CheckboxTree;
 import com.intellij.ui.CheckboxTree.CheckboxTreeCellRenderer;
 import com.intellij.ui.CheckboxTreeBase.CheckPolicy;
 import com.intellij.ui.CheckedTreeNode;
 import com.intellij.ui.ColoredTreeCellRenderer;
-import com.intellij.ui.FilterComponent;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
@@ -36,7 +34,6 @@ import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTree;
-import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -51,7 +48,6 @@ public class IntentionsPreferencesPage implements Configurable {
 
   public IntentionsPreferencesPage(IntentionsManager intentionsManager) {
     myIntentionsManager = intentionsManager;
-    initCheckBoxes();
   }
 
   @Nls
@@ -68,6 +64,7 @@ public class IntentionsPreferencesPage implements Configurable {
 
   @Override
   public JComponent createComponent() {
+    initCheckBoxes();
     CheckedTreeNode rootNode = new CheckedTreeNode(null);
     for (LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
       rootNode.add(languageTreeNode);

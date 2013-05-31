@@ -20,6 +20,7 @@ import com.intellij.psi.PsiReference;
 import jetbrains.mps.idea.java.psi.impl.MPSPsiJavaRef.MPSPsiJavaReference;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SNodeId.Foreign;
+import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -52,7 +53,11 @@ public class MPSPsiMethodRef extends MPSPsiJavaRef {
         public void run() {
           SReference sref = getSReference();
 
-          if (sref instanceof StaticReference) {
+          // target node id can be non-foreign, because search for method usages will also
+          // search for its overriding methods (which can be normal mps nodes)
+          // in this case we ignore such reference
+          if (sref instanceof StaticReference && sref.getTargetNodeId() instanceof Foreign) {
+
             String oldTargetIdString = ((StaticReference) sref).getTargetNodeId().toString();
             int openingBrace = oldTargetIdString.indexOf("(");
             // it should be a good foreign id of java method

@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
@@ -41,6 +42,13 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.emptyList();
   }
+
+
+
+  public Collection<ConceptEditorHint> getHints() {
+    return Collections.emptyList();
+  }
+
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild2"};
 }

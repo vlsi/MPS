@@ -38,7 +38,7 @@ public class RemoveAllSetElementsOperation_replace_Intention implements Intentio
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.collections";
   }
 
   public IntentionType getType() {

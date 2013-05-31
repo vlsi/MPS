@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
@@ -102,6 +103,7 @@ public class XmlConverterTest {
       this.resourceName = resourceName;
     }
 
+    @NotNull
     @Override
     public String getLocation() {
       return "test";
@@ -148,6 +150,7 @@ public class XmlConverterTest {
       return new String(bos.toByteArray(), FileUtil.DEFAULT_CHARSET);
     }
 
+    @NotNull
     @Override
     public String getLocation() {
       return "test";

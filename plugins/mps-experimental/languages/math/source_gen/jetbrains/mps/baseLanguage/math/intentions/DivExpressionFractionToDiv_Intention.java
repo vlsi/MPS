@@ -38,7 +38,7 @@ public class DivExpressionFractionToDiv_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.math";
   }
 
   public IntentionType getType() {

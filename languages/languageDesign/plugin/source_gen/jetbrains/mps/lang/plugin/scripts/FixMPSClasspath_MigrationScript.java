@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class FixMPSClasspath_MigrationScript extends BaseMigrationScript {
   public FixMPSClasspath_MigrationScript(IOperationContext operationContext) {
@@ -31,10 +32,12 @@ public class FixMPSClasspath_MigrationScript extends BaseMigrationScript {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
             String modelName = it.getTargetSModelReference().getModelName();
-            return modelName.contains("MPS.Core") || modelName.contains("MPS.Platform") || modelName.contains("MPS.Workbench") || modelName.contains("MPS.Classpath");
+            boolean oldModel = modelName.contains("MPS.Core") || modelName.contains("MPS.Platform") || modelName.contains("MPS.Workbench") || modelName.contains("MPS.Classpath");
+            SModuleReference moduleReference = it.getTargetSModelReference().getModuleReference();
+            boolean oldModule = moduleReference != null && moduleReference.getModuleName().contains("MPS.Platform") && modelName.contains("com.intellij");
+            return oldModel || oldModule;
           }
         }).isNotEmpty();
-
       }
 
       public void doUpdateInstanceNode(SNode node) {

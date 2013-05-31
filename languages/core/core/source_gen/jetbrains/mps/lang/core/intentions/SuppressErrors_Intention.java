@@ -37,7 +37,7 @@ public class SuppressErrors_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.core";
   }
 
   public IntentionType getType() {

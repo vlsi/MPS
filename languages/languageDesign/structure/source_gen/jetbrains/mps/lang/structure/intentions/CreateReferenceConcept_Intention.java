@@ -48,7 +48,7 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.lang.structure";
   }
 
   public IntentionType getType() {

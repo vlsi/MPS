@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
@@ -92,6 +93,13 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     }
     return Collections.emptyList();
   }
+
+
+
+  public Collection<ConceptEditorHint> getHints() {
+    return Collections.emptyList();
+  }
+
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", "jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement", "jetbrains.mps.lang.refactoring.structure.FinderReference", "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable", "jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", "jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.OldRefactoring", "jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"};
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.refactoring.structure.OldRefactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringTarget"};

@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -98,4 +99,8 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
     return null;
   }
 
+  @Override
+  public Collection<ConceptEditorHint> getHints() {
+    return Collections.emptyList();
+  }
 }

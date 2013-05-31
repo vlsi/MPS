@@ -212,11 +212,11 @@
     <nodeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="46" startPosition="61" endLine="47" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="47" startPosition="63" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="48" startPosition="30" endLine="49" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="49" startPosition="165" endLine="50" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="50" startPosition="298" endLine="51" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="49" startPosition="165" endLine="50" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="50" startPosition="294" endLine="51" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1207145525059" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_AddActionStatement_InferenceRule#()V" />
-    <nodeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="48" startPosition="30" endLine="50" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="48" startPosition="30" endLine="50" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="48" startPosition="30" endLine="50" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="48" startPosition="30" endLine="50" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1207145525059" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="1207145525059" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="1207145525059" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -232,7 +232,7 @@
     <scopeInfo nodeId="1207145525059" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45">
       <varInfo nodeId="1207145525059" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="48" startPosition="30" endLine="50" endPosition="298" />
+    <scopeInfo nodeId="1207145556362" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="48" startPosition="30" endLine="50" endPosition="294" />
     <scopeInfo nodeId="1207145552839" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="23" startPosition="7" endLine="26" endPosition="298">
       <varInfo nodeId="1207145552839" varName="_info_12389875345" />
       <varInfo nodeId="1207145552839" varName="_nodeToCheck_1029348928467" />
@@ -1628,13 +1628,13 @@
     <nodeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="59" startPosition="61" endLine="60" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="60" startPosition="63" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="62" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="62" startPosition="165" endLine="63" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="63" startPosition="301" endLine="64" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="62" startPosition="165" endLine="63" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="63" startPosition="297" endLine="64" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9011731583464039460" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ToolbarCreator_InferenceRule#()V" />
     <nodeInfo nodeId="9011731583464286471" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="55" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9011731583464286471" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="55" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9011731583464039460" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="9011731583464039460" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="9011731583464039460" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="40" startPosition="68" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1653,7 +1653,7 @@
       <varInfo nodeId="9011731583464039460" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="9011731583464286471" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="55" endPosition="247" />
-    <scopeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="301" />
+    <scopeInfo nodeId="9011731583464088733" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="297" />
     <scopeInfo nodeId="9011731583464286469" fileName="typeof_ToolbarCreator_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="279">
       <varInfo nodeId="9011731583464286469" varName="_info_12389875345" />
       <varInfo nodeId="9011731583464286469" varName="_nodeToCheck_1029348928467" />
@@ -1706,13 +1706,13 @@
     <nodeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="59" startPosition="61" endLine="60" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="60" startPosition="63" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="62" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="62" startPosition="165" endLine="63" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="63" startPosition="301" endLine="64" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="62" startPosition="165" endLine="63" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="63" startPosition="297" endLine="64" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9011731583464088737" fileName="typeof_PopupCreator_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_PopupCreator_InferenceRule#()V" />
     <nodeInfo nodeId="9011731583464286465" fileName="typeof_PopupCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="55" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9011731583464286465" fileName="typeof_PopupCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="55" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9011731583464088737" fileName="typeof_PopupCreator_InferenceRule.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="9011731583464088737" fileName="typeof_PopupCreator_InferenceRule.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="9011731583464088737" fileName="typeof_PopupCreator_InferenceRule.java" startLine="40" startPosition="68" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1731,7 +1731,7 @@
       <varInfo nodeId="9011731583464088737" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="9011731583464286465" fileName="typeof_PopupCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="55" endPosition="247" />
-    <scopeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="301" />
+    <scopeInfo nodeId="9011731583464088742" fileName="typeof_PopupCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="297" />
     <scopeInfo nodeId="9011731583464286458" fileName="typeof_PopupCreator_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="279">
       <varInfo nodeId="9011731583464286458" varName="_info_12389875345" />
       <varInfo nodeId="9011731583464286458" varName="_nodeToCheck_1029348928467" />
@@ -1779,18 +1779,18 @@
     <nodeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="51" startPosition="61" endLine="52" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="52" startPosition="63" endLine="53" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="54" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="54" startPosition="165" endLine="55" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="55" startPosition="312" endLine="56" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="54" startPosition="165" endLine="55" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="55" startPosition="308" endLine="56" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="59" startPosition="61" endLine="60" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="60" startPosition="63" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="62" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="62" startPosition="165" endLine="63" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="63" startPosition="298" endLine="64" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="62" startPosition="165" endLine="63" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="63" startPosition="294" endLine="64" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9011731583464286477" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ButtonCreator_InferenceRule#()V" />
-    <nodeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="55" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="55" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="55" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="55" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9011731583464286477" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="9011731583464286477" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="9011731583464286477" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="40" startPosition="68" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1808,8 +1808,8 @@
     <scopeInfo nodeId="9011731583464286477" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="41" startPosition="5" endLine="43" endPosition="45">
       <varInfo nodeId="9011731583464286477" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="55" endPosition="312" />
-    <scopeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="298" />
+    <scopeInfo nodeId="9011731583464286482" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="53" startPosition="30" endLine="55" endPosition="308" />
+    <scopeInfo nodeId="9011731583464286492" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="294" />
     <scopeInfo nodeId="9011731583464286480" fileName="typeof_ButtonCreator_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="279">
       <varInfo nodeId="9011731583464286480" varName="_info_12389875345" />
       <varInfo nodeId="9011731583464286480" varName="_nodeToCheck_1029348928467" />

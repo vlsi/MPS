@@ -96,6 +96,7 @@ public class ConceptEditorHintDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_zcofbb_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_zcofbb_c0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_zcofbb_d0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_zcofbb_e0(editorContext, node));
     return editorCell;
   }
 
@@ -176,6 +177,44 @@ public class ConceptEditorHintDeclaration_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_zcofbb_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_zcofbb_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_zcofbb_a4a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_zcofbb_b4a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_zcofbb_a4a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Can be used as a default hint");
+    editorCell.setCellId("Constant_zcofbb_a4a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_zcofbb_b4a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("showInUI");
+    provider.setNoTargetText("<no showInUI>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_showInUI");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 }

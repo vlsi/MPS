@@ -34,7 +34,7 @@ public class CreateReferenceOnClassifier_Intention implements IntentionFactory {
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.classifiers";
   }
 
   public IntentionType getType() {

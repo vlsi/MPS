@@ -39,7 +39,7 @@ public class replace_invokeOperation_with_compactInvoke_Intention implements Int
   }
 
   public String getLanguageFqName() {
-    return "jetbrains.mps.lang.intentions";
+    return "jetbrains.mps.baseLanguage.closures";
   }
 
   public IntentionType getType() {

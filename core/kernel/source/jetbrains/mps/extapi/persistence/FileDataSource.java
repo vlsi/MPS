@@ -84,6 +84,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     return FileSystem.getInstance().isPackaged(myFile);
   }
 
+  @NotNull
   @Override
   public String getLocation() {
     return myFile.toString();
