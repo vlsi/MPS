@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ide.make" uuid="8f6725be-608d-433b-98fd-844f816eb05f" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${mps_home}/plugins/mpsmake/source_gen">
   <models>
-    <modelRoot path="${mps_home}/plugins/mpsmake">
-      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
-    </modelRoot>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
     </modelRoot>
