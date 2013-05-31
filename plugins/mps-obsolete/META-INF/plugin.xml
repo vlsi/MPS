@@ -11,8 +11,7 @@
   <depends>jetbrains.mps.core</depends>
   <depends>jetbrains.mps.build</depends>
   <depends>jetbrains.mps.build.deprecated</depends>
-  <depends>jetbrains.mps.execution.languages</depends>
-  
+
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter" />
