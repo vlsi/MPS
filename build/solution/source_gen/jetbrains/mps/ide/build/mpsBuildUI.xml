@@ -64,7 +64,6 @@
           <module ref="ceb47609-02c2-4927-bb6d-d58368388a62(jetbrains.mps.ide.uiLanguage.runtime)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
-          <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.mps.pluginSolution-src.jar" descriptor="jetbrains.mps.build.mps.pluginSolution.msd" />
       </module>
@@ -100,7 +99,6 @@
           <module ref="365fb593-3c1a-40a0-a7d7-c98144281283(jetbrains.mps.execution.impl)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
-          <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.pluginSolution-src.jar" descriptor="jetbrains.mps.build.pluginSolution.msd" />
       </module>
@@ -193,7 +191,6 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.script.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.stubs.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
@@ -316,7 +313,6 @@
         <fileset file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
@@ -365,7 +361,6 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.mpsExecutionPlugin}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.configurations.pluginSolution.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>

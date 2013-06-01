@@ -41,7 +41,6 @@
   <import index="th8p" modelUID="r:e4338979-215b-4b9c-a1e7-b887743c18eb(layeredLayoutTest)" version="-1" />
   <import index="kyp0" modelUID="r:e318478c-edb7-4caf-bafe-2e5906944dde(jetbrains.mps.baseLanguage.math.tests)" version="-1" />
   <import index="982r" modelUID="r:710bb5ca-133c-4e34-80eb-4be42af51339(tests)" version="-1" />
-  <import index="im6l" modelUID="r:713811b0-d2b6-4c36-83ef-cabdc9db96f6(jetbrains.mps.ui.unittest.tests)" version="-1" />
   <import index="ppyt" modelUID="r:453eba07-be06-4d79-be27-e839de91fcf2(sax)" version="-1" />
   <import index="vz87" modelUID="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" version="-1" />
   <import index="mbhy" modelUID="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)" version="-1" />
@@ -723,24 +722,6 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707941352" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="982r.3796137614137404062" resolveInfo="PerlReplace_Test" />
-    </node>
-  </root>
-  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707965320" nodeInfo="ng">
-    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707965321" nodeInfo="ig">
-      <property name="moduleID" nameId="pop3.1280144168199506910" value="8243a5aa-ceff-484d-8124-da694e9f8ef4" />
-      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.ui.unittest" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707965322" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="im6l.5211164146777102347" resolveInfo="Widgets_noCtx_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707965323" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="im6l.3633072329222757661" resolveInfo="Widgets_ctx_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707965328" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="im6l.5520428330967866438" resolveInfo="Views_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707965329" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="im6l.6876714382652043622" resolveInfo="Events_Test" />
     </node>
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707965330" nodeInfo="ng">
@@ -1996,9 +1977,6 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274219322" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.938834323431398136" resolveInfo="TypeName" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274219861" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.4172912343885056959" resolveInfo="DeleteEmptyCell" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8922108995178459110" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.7737741562085722754" resolveInfo="TestConvertAssignmentToTernaryOperatorIntention" />

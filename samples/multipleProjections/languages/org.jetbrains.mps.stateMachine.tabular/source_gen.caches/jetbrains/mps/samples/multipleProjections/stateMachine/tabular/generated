@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="dj6w0p4k6evdsgj8ft2j0lbhh4g7pr0">
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-19qr3t5j6zj1j6ub3v4uu8kimofng1x" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <dep model="r:13232651-7f9c-48ad-b7ea-67f933cdf1b0(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor)" hash="-36l8p1a33jpvvkyq8ush815gipc6hsc" />
+  <dep model="r:995e083b-5cc3-4bb5-be6c-dcb076136b05(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.typesystem)" hash="-6ev2nhjb8k5ykrwfelz7zxce2o4nnp3" />
+  <common>
+    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:13232651-7f9c-48ad-b7ea-67f933cdf1b0(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor)" />
+    <dep model="r:995e083b-5cc3-4bb5-be6c-dcb076136b05(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.typesystem)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
+
