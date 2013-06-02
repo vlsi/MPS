@@ -189,7 +189,7 @@ public class TypecheckerStateViewComponent extends JPanel {
           LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
           return;
         }
-        NavigationSupport.getInstance().openNode(myOperationContext, rule, true, !(rule.getModel() != null && rule.getModel().isRoot(rule)));
+        NavigationSupport.getInstance().openNode(myOperationContext, rule, true, !(rule.getModel() != null && rule.getParent() == null));
       }
     });
   }

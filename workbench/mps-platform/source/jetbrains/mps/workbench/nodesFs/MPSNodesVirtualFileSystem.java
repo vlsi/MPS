@@ -57,7 +57,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.regex.Pattern;
 
 public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
 
@@ -141,23 +140,18 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       public VirtualFile compute() {
         try {
           if (path.startsWith(MPSNodeVirtualFile.NODE_PREFIX)) {
-            SNodeReference resolved = SNodePointer.deserialize(path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
-            if (resolved == null) {
-              return null;
-            }
-            SNode node = resolved.resolve(MPSModuleRepository.getInstance());
+            SNode node = NiceReferenceSerializer.deserializeNode(MPSModuleRepository.getInstance(), path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
             if (node == null) {
               return null;
             }
-            return getFileFor(resolved);
+            return getFileFor(node);
           } else if (path.startsWith(MPSModelVirtualFile.MODEL_PREFIX)) {
-            final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(
-                path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
-            SModel model = modelReference.resolve(MPSModuleRepository.getInstance());
+            SModel model =
+                NiceReferenceSerializer.deserializeModel(MPSModuleRepository.getInstance(), path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
             if (model == null) {
               return null;
             }
-            return getFileFor(modelReference);
+            return getFileFor(model.getReference());
           }
         } catch (IllegalArgumentException e) {
           // ignore, parse model ref exception
@@ -267,7 +261,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       if (jetbrains.mps.util.SNodeOperations.isDisposed(event.getNode())) return;
 
       MPSNodeVirtualFile vf = myVirtualFiles.get(new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), event.getNode().getNodeId()));
-      if (!(event.getNode().getModel() != null && event.getNode().getModel().isRoot(event.getNode())) || vf == null)
+      if (!(event.getNode().getModel() != null && event.getNode().getParent() == null) || vf == null)
         return;
       String newName = event.getNode().getPresentation();
       if (!newName.equals(vf.getName())) {

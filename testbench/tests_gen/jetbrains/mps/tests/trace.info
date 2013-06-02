@@ -120,24 +120,14 @@
     <scopeInfo nodeId="2712670354707941345" fileName="TestModule_jetbrains_mps_baseLanguage_regexp_unittest.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <unitInfo nodeId="2712670354707941345" fileName="TestModule_jetbrains_mps_baseLanguage_regexp_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_regexp_unittest" />
   </root>
-  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/2712670354707965320">
-    <nodeInfo nodeId="2712670354707965320" fileName="TestModule_jetbrains_mps_ui_unittest.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_ui_unittest#()V" />
-    <scopeInfo nodeId="2712670354707965320" fileName="TestModule_jetbrains_mps_ui_unittest.java" startLine="12" startPosition="49" endLine="12" endPosition="49" />
-    <scopeInfo nodeId="2712670354707965320" fileName="TestModule_jetbrains_mps_ui_unittest.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <unitInfo nodeId="2712670354707965320" fileName="TestModule_jetbrains_mps_ui_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_ui_unittest" />
-  </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/2712670354707965320" />
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/2712670354707965330">
     <nodeInfo nodeId="2712670354707965330" fileName="TestModule_jetbrains_mps_xml_tests.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_xml_tests#()V" />
     <scopeInfo nodeId="2712670354707965330" fileName="TestModule_jetbrains_mps_xml_tests.java" startLine="12" startPosition="47" endLine="12" endPosition="47" />
     <scopeInfo nodeId="2712670354707965330" fileName="TestModule_jetbrains_mps_xml_tests.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <unitInfo nodeId="2712670354707965330" fileName="TestModule_jetbrains_mps_xml_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_xml_tests" />
   </root>
-  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/2712670354707965968">
-    <nodeInfo nodeId="2712670354707965968" fileName="TestModule_ypath_test.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_ypath_test#()V" />
-    <scopeInfo nodeId="2712670354707965968" fileName="TestModule_ypath_test.java" startLine="12" startPosition="34" endLine="12" endPosition="34" />
-    <scopeInfo nodeId="2712670354707965968" fileName="TestModule_ypath_test.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <unitInfo nodeId="2712670354707965968" fileName="TestModule_ypath_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_ypath_test" />
-  </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/2712670354707965968" />
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/3034322180552461514">
     <nodeInfo nodeId="3034322180552461514" fileName="TestModule_jetbrains_mps_baseLanguage_unitTest_sandbox.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_baseLanguage_unitTest_sandbox#()V" />
     <scopeInfo nodeId="3034322180552461514" fileName="TestModule_jetbrains_mps_baseLanguage_unitTest_sandbox.java" startLine="12" startPosition="67" endLine="12" endPosition="67" />
@@ -180,12 +170,7 @@
     <scopeInfo nodeId="4246614868164057743" fileName="TestModule_jetbrains_mps_lang_test_sandbox.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <unitInfo nodeId="4246614868164057743" fileName="TestModule_jetbrains_mps_lang_test_sandbox.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_test_sandbox" />
   </root>
-  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/4246614868164057746">
-    <nodeInfo nodeId="4246614868164057746" fileName="TestModule_jetbrains_mps_ypath_runtime.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_ypath_runtime#()V" />
-    <scopeInfo nodeId="4246614868164057746" fileName="TestModule_jetbrains_mps_ypath_runtime.java" startLine="12" startPosition="51" endLine="12" endPosition="51" />
-    <scopeInfo nodeId="4246614868164057746" fileName="TestModule_jetbrains_mps_ypath_runtime.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <unitInfo nodeId="4246614868164057746" fileName="TestModule_jetbrains_mps_ypath_runtime.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_ypath_runtime" />
-  </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/4246614868164057746" />
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/4246614868164057750">
     <nodeInfo nodeId="4246614868164057750" fileName="TestModule_jetbrains_mps_execution_impl_tests_sandbox.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_execution_impl_tests_sandbox#()V" />
     <scopeInfo nodeId="4246614868164057750" fileName="TestModule_jetbrains_mps_execution_impl_tests_sandbox.java" startLine="12" startPosition="66" endLine="12" endPosition="66" />

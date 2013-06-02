@@ -42,7 +42,7 @@ import java.io.OutputStream;
 public class MPSModelVirtualFile extends VirtualFile {
   private static final Logger LOG = LogManager.getLogger(MPSModelVirtualFile.class);
   private static final byte[] ZERO_BYTES = new byte[0];
-  public static final String MODEL_PREFIX = "model/";
+  public static final String MODEL_PREFIX = "model://";
 
   private final SModelReference myModelReference;
 
@@ -63,9 +63,12 @@ public class MPSModelVirtualFile extends VirtualFile {
         SModel model = myModelReference.resolve(MPSModuleRepository.getInstance());
         if (model == null) {
           LOG.error(new Throwable("Model resolve failed for SModelReference: " + myModelReference.toString()));
+          myName = "";
+          myPath = "";
+        } else {
+          myName = JavaNameUtil.shortName(String.valueOf(model.getModelName()));
+          myPath = MODEL_PREFIX + NiceReferenceSerializer.serializeModel(model);
         }
-        myName = JavaNameUtil.shortName(String.valueOf(model.getModelName()));
-        myPath = MODEL_PREFIX + myModelReference.toString();
       }
     });
   }

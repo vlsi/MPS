@@ -116,6 +116,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return getOperationContext().getScope();
   }
 
+  @NotNull
   @Override
   public SRepository getRepository() {
     return myRepository;

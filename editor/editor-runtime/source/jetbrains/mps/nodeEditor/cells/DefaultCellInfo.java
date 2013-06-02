@@ -16,24 +16,23 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class DefaultCellInfo implements CellInfo {
   private static final String CELL_ID = "cellId";
   private static final String CELL_NUMBER = "cellNumber";
   private static final String IS_IN_LIST = "isInList";
   private static final String NODE = "node";
-  private static final String NODE_REF = "node_ref";
+  private static final String NODE_REFERENCE = "node_reference";
   private static final String PARENT = "parent";
 
-  private SNodeReference myNodePointer;
+  private SNodeReference myNodeReference;
   private String myCellId;
   private int myCellNumber;
   private boolean myIsInList = false;
@@ -44,8 +43,8 @@ public class DefaultCellInfo implements CellInfo {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SNode n = cell.getSNode();
-        myNodePointer = (n == null || n.getModel() == null) ? null : new jetbrains.mps.smodel.SNodePointer(n);
+        SNode node = cell.getSNode();
+        myNodeReference = (node == null || node.getModel() == null) ? null : node.getReference();
       }
     });
 
@@ -72,8 +71,8 @@ public class DefaultCellInfo implements CellInfo {
     e.setAttribute(CELL_NUMBER, "" + myCellNumber);
     e.setAttribute(IS_IN_LIST, "" + myIsInList);
     Element nodeElement = new Element(NODE);
-    assert myNodePointer != null;
-    nodeElement.setAttribute(NODE_REF, jetbrains.mps.smodel.SNodePointer.serialize(myNodePointer));
+    assert myNodeReference != null;
+    nodeElement.setAttribute(NODE_REFERENCE, myNodeReference.toString());
     e.addContent(nodeElement);
     if (myParentInfo instanceof DefaultCellInfo) {
       Element parentElement = new Element(PARENT);
@@ -86,7 +85,7 @@ public class DefaultCellInfo implements CellInfo {
     String cellId;
     int cellNumber;
     boolean isInList;
-    final String ref;
+    final String nodeReference;
     DefaultCellInfo parentInfo = null;
     cellId = e.getAttributeValue(CELL_ID);
     String num = e.getAttributeValue(CELL_NUMBER);
@@ -99,15 +98,15 @@ public class DefaultCellInfo implements CellInfo {
     isInList = "true".equals(e.getAttributeValue(IS_IN_LIST));
     Element nodeElem = e.getChild(NODE);
     if (nodeElem == null) return null;
-    ref = nodeElem.getAttributeValue(NODE_REF);
-    if (ref == null) return null;
+    nodeReference = nodeElem.getAttributeValue(NODE_REFERENCE);
+    if (nodeReference == null) return null;
     Element parentElem = e.getChild(PARENT);
     if (parentElem != null) {
       parentInfo = loadFrom(parentElem);
       if (parentInfo == null) return null;
     }
     final DefaultCellInfo result = new DefaultCellInfo();
-    result.myNodePointer = jetbrains.mps.smodel.SNodePointer.deserialize(ref);
+    result.myNodeReference = PersistenceFacade.getInstance().createNodeReference(nodeReference);
     result.myCellId = cellId;
     result.myParentInfo = parentInfo;
     result.myIsInList = isInList;
@@ -117,46 +116,35 @@ public class DefaultCellInfo implements CellInfo {
 
   public int hashCode() {
     return (myParentInfo == null ? 0 : myParentInfo.hashCode()) +
-      (myNodePointer == null ? 0 : myNodePointer.hashCode()) + (myCellId == null ? 0 : myCellId.hashCode()) + myCellNumber;
+        (myNodeReference == null ? 0 : myNodeReference.hashCode()) + (myCellId == null ? 0 : myCellId.hashCode()) + myCellNumber;
   }
 
   @Override
   public EditorCell findCell(final EditorComponent editorComponent) {
     if (myCellId != null) {
-      if (myNodePointer == null) return null;
-      return ModelAccess.instance().runReadAction(new Computable<EditorCell>() {
+      final EditorContext editorContext = editorComponent.getEditorContext();
+      if (myNodeReference == null || editorContext == null) return null;
+
+      final EditorCell[] cell = new EditorCell[]{null};
+      editorContext.getRepository().getModelAccess().runReadAction(new Runnable() {
         @Override
-        public EditorCell compute() {
-          // This is needed while merging: if node pointer points to node from current model,
-          // it should be used instead of model in model repository.
-          SNode node;
-          assert myNodePointer != null;
-          if (editorComponent.getEditedNode() != null &&
-            EqualUtil.equals(myNodePointer.getModelReference(),
-              editorComponent.getEditedNode().getModel().getReference())) {
-            node = editorComponent.getEditedNode().getModel().getNode(((SNodePointer) myNodePointer).getNodeId());
-          } else {
-            node = myNodePointer.resolve(MPSModuleRepository.getInstance());
-          }
-          return editorComponent.findCellWithId(node, myCellId);
+        public void run() {
+          cell[0] = editorComponent.findCellWithId(myNodeReference.resolve(editorContext.getRepository()), myCellId);
         }
       });
+      return cell[0];
     } else if (myParentInfo != null) {
-      EditorCell_Collection parent = (EditorCell_Collection) myParentInfo.findCell(editorComponent);
-      if (parent == null) {
+      EditorCell parentCell = myParentInfo.findCell(editorComponent);
+      if (!(parentCell instanceof EditorCell_Collection)) {
         return null;
       }
-      if (myCellNumber < parent.getChildCount()) {
-        EditorCell editorCell = parent.getChildAt(myCellNumber);
-        // Cell should have same cellId, and myCellId is null.
-        if (editorCell.getCellId() != null) {
-          return null;
-        }
-        return editorCell;
-      } else {
+      EditorCell_Collection parentCollection = (EditorCell_Collection) parentCell;
+      if (myCellNumber >= parentCollection.getCellsCount()) {
         return null;
       }
-
+      EditorCell editorCell = parentCollection.getChildAt(myCellNumber);
+      // This editorCell should not have any cellId due to corresponding conditions in constructor
+      return editorCell.getCellId() == null ? editorCell : null;
     }
     return null;
   }
@@ -170,22 +158,20 @@ public class DefaultCellInfo implements CellInfo {
     if (!(o instanceof DefaultCellInfo)) return false;
     DefaultCellInfo cellInfo = (DefaultCellInfo) o;
     if (!EqualUtil.equals(cellInfo.myParentInfo, myParentInfo)) return false;
-    if (cellInfo.myNodePointer == null) return false;
-    boolean idsBothNull = false;
-    if (cellInfo.myCellId == null && myCellId == null) idsBothNull = true;
-    return (cellInfo.myCellId == null ? idsBothNull : cellInfo.myCellId.equals(myCellId))
-      && (cellInfo.myNodePointer.equals(myNodePointer))
-      && cellInfo.myCellNumber == myCellNumber;
+    if (cellInfo.myNodeReference == null) return false;
+    return (cellInfo.myCellId == null ?
+        myCellId == null :
+        cellInfo.myCellId.equals(myCellId)) && (cellInfo.myNodeReference.equals(myNodeReference)) && cellInfo.myCellNumber == myCellNumber;
   }
 
   @Override
   public String toString() {
     return "DefaultCellInfo[" +
-      "myNodePointer=" + (myNodePointer == null ? null : myNodePointer.toString()) +
-      ", myCellId='" + myCellId + '\'' +
-      ", myCellNumber=" + myCellNumber +
-      ", myIsInList=" + myIsInList +
-      ", myParentInfo=" + myParentInfo +
-      ']';
+        "myNodePointer=" + (myNodeReference == null ? null : myNodeReference.toString()) +
+        ", myCellId='" + myCellId + '\'' +
+        ", myCellNumber=" + myCellNumber +
+        ", myIsInList=" + myIsInList +
+        ", myParentInfo=" + myParentInfo +
+        ']';
   }
 }

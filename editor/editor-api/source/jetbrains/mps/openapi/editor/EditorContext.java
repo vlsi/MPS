@@ -20,6 +20,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -31,6 +32,7 @@ import java.util.List;
  */
 public interface EditorContext {
 
+  @NotNull
   SRepository getRepository();
 
   SNode getSelectedNode();

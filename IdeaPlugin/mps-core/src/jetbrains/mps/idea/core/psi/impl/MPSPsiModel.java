@@ -63,6 +63,8 @@ import java.util.Map;
  */
 public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
+  private Object LOCK = new Object();
+
   public static final PsiDirectory[] EMPTY_PSI_DIRECTORIES = new PsiDirectory[0];
   private final SModelReference myModelReference;
   private final Map<SNodeId, MPSPsiNode> myNodes = new HashMap<SNodeId, MPSPsiNode>();
@@ -105,7 +107,6 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   }
 
   public <T extends PsiElement> T[] getRootNodesOfType(Class<T> aClass) {
-
     PsiElement[] surrogateRoots = getChildren();
     List<T> result = new ArrayList<T>();
     for (PsiElement r : surrogateRoots) {
@@ -118,6 +119,16 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     }
     return ArrayUtil.toObjectArray(result, aClass);
   }
+
+  @NotNull
+  @Override
+  public PsiElement[] getChildren() {
+    synchronized (LOCK) {
+      return super.getChildren();
+    }
+  }
+
+  // todo: other reading routines (getFirstChild() etc) should also be guarded
 
   /* PsiFile */
 
@@ -284,32 +295,33 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     reload(sModel);
   }
 
-  MPSPsiNode lookupNode(SNodeId nodeId) {
-    return myNodes.get(nodeId);
-  }
-
   void reload(SModel model) {
-    clearChildren();
-    for (SNode root : model.getRootNodes()) {
-      String rootName = null;
-      rootName = extractName(root);
-      MPSPsiRootNode rootNode = new MPSPsiRootNode(root.getNodeId(), rootName, getManager());
-      addChildLast(rootNode);
-      rootNode.addChildLast(convert(root));
-    }
+    // happens under Idea read-lock (via MPSPsiProvider.getPsi(SModel)), so we have to guard consistent state
+    // as there may be multiple readers
+    synchronized (LOCK) {
+      clearChildren();
+      for (SNode root : model.getRootNodes()) {
+        String rootName = null;
+        rootName = extractName(root);
+        MPSPsiRootNode rootNode = new MPSPsiRootNode(root.getNodeId(), rootName, getManager());
+        addChildLast(rootNode);
+        rootNode.addChildLast(convert(root));
+      }
 
-    enumerateNodes();
+      enumerateNodes();
 
-    // TODO use ModelUtil
-    DataSource source = model.getSource();
-    if (source instanceof FileDataSource) {
-      File file = new File(((FileDataSource) source).getFile().getPath());
-      VirtualFile vfile = LocalFileSystem.getInstance().findFileByIoFile(file);
-      this.mySourceVirtualFile = vfile;
+      // TODO use ModelUtil
+      DataSource source = model.getSource();
+      if (source instanceof FileDataSource) {
+        File file = new File(((FileDataSource) source).getFile().getPath());
+        VirtualFile vfile = LocalFileSystem.getInstance().findFileByIoFile(file);
+        this.mySourceVirtualFile = vfile;
+      }
     }
   }
 
-  MPSPsiNode convert(SNode node) {
+  private MPSPsiNode convert(SNode node) {
+
     MPSPsiNode psiNode = MPSPsiProvider.getInstance(getProject()).create(node.getNodeId(), node.getConcept(), node.getRoleInParent());
     myNodes.put(node.getNodeId(), psiNode);
 
@@ -346,7 +358,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     return psiNode;
   }
 
-  void drop(MPSPsiNode psiNode) {
+  private void drop(MPSPsiNode psiNode) {
     myNodes.remove(psiNode.getId());
 
     for (MPSPsiNodeBase node : psiNode.children()) {
@@ -356,8 +368,17 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     }
   }
 
+  MPSPsiNode lookupNode(SNodeId nodeId) {
+    // bad: reads are also mutually exclusive
+    synchronized (LOCK) {
+      return myNodes.get(nodeId);
+    }
+  }
+
   Integer getNodePosition(MPSPsiNodeBase node) {
-    return myNodesOrder.get(node);
+    synchronized (LOCK) {
+      return myNodesOrder.get(node);
+    }
   }
 
   private String extractName(SNode sNode) {

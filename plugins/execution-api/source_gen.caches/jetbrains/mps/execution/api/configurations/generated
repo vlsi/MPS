@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="eu6yo57b1sgss8ysdq4x28p71xisvig">
+<dependencies version="2" modelHash="-azop826sl6djlvzxlqv58v3ffpx4yct">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.executors(MPS.IDEA/com.intellij.execution.executors@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.process(MPS.IDEA/com.intellij.execution.process@java_stub)" />
@@ -20,29 +20,29 @@
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="97bcp20rwvaujtt4z6d96fxd6ude8mm" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
-  <common hash="9xfsul8qqpzbllv9vqqm1ee7mr74dzj" />
-  <source id="3908032508224771122" name="BaseMpsRunConfiguration" hash="8r1emlzbii0svdo2niydr14g2799xda">
+  <common hash="7y5po5aaml4x3nzqscjseb5pczh4fuw" />
+  <source id="3908032508224771122" name="BaseMpsRunConfiguration" hash="at3xyax01xqglktlb38v51scvkp1daj">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.executors(MPS.IDEA/com.intellij.execution.executors@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BaseMpsRunConfiguration.java" />
   </source>
-  <source id="3908032508224771150" name="ConsoleProcessListener" hash="9uc5cyq50mrm5ewhhajb1lbqo39ck6i">
+  <source id="3908032508224771150" name="ConsoleProcessListener" hash="-ayjvwu6u53qyjmsc72h0gc1e8nj2wko">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.process(MPS.IDEA/com.intellij.execution.process@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.ui(MPS.IDEA/com.intellij.execution.ui@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConsoleProcessListener.java" />
   </source>
-  <source id="3908032508224771217" name="DefaultExecutionConsole" hash="-db12yflehfm1wrsi4ea5021mwlgy1qe">
+  <source id="3908032508224771217" name="DefaultExecutionConsole" hash="-6g9kwtoyr2afm4f34jxrxc4kdd3fd7c">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.ui(MPS.IDEA/com.intellij.execution.ui@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DefaultExecutionConsole.java" />
   </source>
-  <source id="3908032508224771272" name="DefaultExecutionResult" hash="-j8z1pjc82l01c0pjcyz4e4xrckse8f">
+  <source id="3908032508224771272" name="DefaultExecutionResult" hash="5f4pc3ags9h9qrax4hffsdisih14c30">
     <file name="DefaultExecutionResult.java" />
   </source>
-  <source id="7037083547575991021" name="BaseMpsBeforeTaskProvider" hash="86rgbpbly6frchu8f0duljcvzlwtu3c">
+  <source id="7037083547575991021" name="BaseMpsBeforeTaskProvider" hash="47i46pgp709viboft5qhl3bn4h13xlz">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -60,7 +60,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BaseMpsBeforeTaskProvider.java" />
   </source>
-  <source id="6875903550967223425" name="ConsoleCreator" hash="9zr8ffwfotfah08ie61kia0wc1oujij">
+  <source id="6875903550967223425" name="ConsoleCreator" hash="-6fnwutvr1fs45cb41urpq7q80leu33g">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConsoleCreator.java" />
   </source>

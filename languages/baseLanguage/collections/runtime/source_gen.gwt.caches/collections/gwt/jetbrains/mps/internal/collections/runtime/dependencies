@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot>
-  <dependency className="collections.gwt.jetbrains.mps.internal.collections.runtime.ArrayUtils" file="ArrayUtils.java" />
-  <dependency className="collections.gwt.jetbrains.mps.internal.collections.runtime.ClassUtils" file="ClassUtils.java" />
-  <dependency className="collections.gwt.jetbrains.mps.internal.collections.runtime.CollectionUtils" file="CollectionUtils.java" />
-</dependenciesRoot>
-
