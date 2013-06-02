@@ -115,6 +115,7 @@
     <node role="hints" roleId="tpc2.5944657839000877563" type="tpc2.ConceptEditorHintDeclaration" typeId="tpc2.5944657839003601246" id="3675491646420891365">
       <property name="name" nameId="tpck.1169194664001" value="tabular" />
       <property name="presentation" nameId="tpc2.5944657839012629576" value="Use tabular notation for workflow presentation" />
+      <property name="showInUI" nameId="tpc2.168363875802087287" value="true" />
     </node>
   </root>
 </model>

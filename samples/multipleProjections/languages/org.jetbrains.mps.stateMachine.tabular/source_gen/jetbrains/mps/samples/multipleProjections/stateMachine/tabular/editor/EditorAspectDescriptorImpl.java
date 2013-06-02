@@ -23,6 +23,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new State_hidden_Editor());
       case 2:
         return Collections.<ConceptEditor>singletonList(new StateMachine_tabular_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new Transition_tabular_Editor());
       default:
     }
     return Collections.emptyList();
@@ -39,5 +41,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.State", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.State", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition"};
 }

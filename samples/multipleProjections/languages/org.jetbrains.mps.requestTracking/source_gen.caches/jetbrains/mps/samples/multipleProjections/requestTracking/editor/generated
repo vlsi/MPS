@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c0xt9rmbhifuhm9aepo3jpupne1f7zw">
+<dependencies version="2" modelHash="3jf4o3f9gq88j6yrv4vq6vyygap8oik">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
@@ -72,7 +72,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Workflow_Editor.java" />
   </source>
-  <source id="3675491646420891362" name="WorkflowPresentations" hash="c8jmxzcgh5p9hcr1clsg765aqoa6lfq">
+  <source id="3675491646420891362" name="WorkflowPresentations" hash="7agthwpyt6oc76j18snba2zdzqxtbjs">
     <file name="WorkflowPresentations" />
   </source>
 </dependencies>

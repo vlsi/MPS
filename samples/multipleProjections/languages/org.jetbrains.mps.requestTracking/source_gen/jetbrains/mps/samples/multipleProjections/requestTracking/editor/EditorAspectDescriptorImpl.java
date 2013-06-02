@@ -13,7 +13,7 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tabular", "Use tabular notation for workflow presentation", false, "jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tabular", "Use tabular notation for workflow presentation", true, "jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular"));
 
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
