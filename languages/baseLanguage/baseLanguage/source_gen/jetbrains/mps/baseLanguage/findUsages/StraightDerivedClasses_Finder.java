@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -35,7 +35,7 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
       for (SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(1))) {

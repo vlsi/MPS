@@ -6,7 +6,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.Project;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.ArrayList;
 
 public class ClassifierSuccessors implements CoreComponent {
@@ -33,7 +33,7 @@ public class ClassifierSuccessors implements CoreComponent {
     );
   }
 
-  public List<SNode> getDerivedClassifiers(SNode classifier, IScope scope) {
+  public List<SNode> getDerivedClassifiers(SNode classifier, SearchScope scope) {
     return (myFastFinder != null ?
       myFastFinder.getDerivedClassifiers(classifier, scope) :
       new ArrayList<SNode>()
@@ -49,7 +49,7 @@ public class ClassifierSuccessors implements CoreComponent {
   }
 
   public static interface Finder {
-    public List<SNode> getDerivedClassifiers(SNode classifier, IScope scope);
+    public List<SNode> getDerivedClassifiers(SNode classifier, SearchScope scope);
     public boolean isIndexReady(Project project);
   }
 }
