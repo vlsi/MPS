@@ -829,21 +829,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/languageDesign/table/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/languageDesign/table/runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/languageDesign/table/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/gtext/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/gtext/runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/gtext/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/gtext/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/solutions/jetbrains.mps.webr.xml.sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/solutions/jetbrains.mps.xml.tests/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlInternal/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlInternal/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlQuery/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlQuery/runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlQuery/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlSchema/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlSchema/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/core.properties/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/core.properties/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/core.properties/sandbox/classes_gen" />
@@ -855,21 +840,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/languageDesign/table/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/languageDesign/table/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/languageDesign/table/runtime/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/gtext/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/gtext/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/gtext/runtime/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/gtext/solutions/pluginSolution/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/solutions/jetbrains.mps.webr.xml.sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/solutions/jetbrains.mps.xml.tests/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlInternal/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlInternal/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlQuery/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlQuery/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlQuery/runtime/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlSchema/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlSchema/generator/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/mps-dates">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-dates/languages/dates/generator/source_gen" isTestSource="false" />
@@ -901,8 +871,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/baseLanguage/unitTest/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/baseLanguage/unitTest/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/baseLanguage/unitTest/solutions/sandbox/classes_gen" />
@@ -914,9 +882,43 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/solutions/sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/util/xmlUnitTest/solutions/jetbrains.mps.xmlUnitTest.sandbox/classes_gen" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/gtext/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/gtext/runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/gtext/solutions/pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/gtext/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xml/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xml/solutions/jetbrains.mps.webr.xml.sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xml/solutions/jetbrains.mps.xml.tests/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xml/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlInternal/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlInternal/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlQuery/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlQuery/runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlQuery/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlSchema/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlSchema/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/gtext/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/gtext/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/gtext/runtime/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/gtext/solutions/pluginSolution/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xml/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xml/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xml/solutions/jetbrains.mps.webr.xml.sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xml/solutions/jetbrains.mps.xml.tests/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlInternal/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlInternal/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlQuery/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlQuery/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlQuery/runtime/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlSchema/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xml/xmlSchema/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-xml-obsolete/languages/util/xmlUnitTest/solutions/jetbrains.mps.xmlUnitTest.sandbox/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/quickQueryLanguage/generator/source_gen" isTestSource="false" />
