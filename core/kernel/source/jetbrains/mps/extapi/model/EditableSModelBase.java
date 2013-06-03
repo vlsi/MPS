@@ -249,24 +249,28 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     for (SModelChangeListener l : myChangeListeners) {
       l.referenceChanged(node, role, oldValue, newValue);
     }
+    setChanged(true);
   }
 
   public void firePropertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
     for (SModelChangeListener l : myChangeListeners) {
       l.propertyChanged(node, propertyName, oldValue, newValue);
     }
+    setChanged(true);
   }
 
   public void fireNodeAdded(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
     for (SModelChangeListener l : myChangeListeners) {
       l.nodeAdded(node, role, child);
     }
+    setChanged(true);
   }
 
   public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
     for (SModelChangeListener l : myChangeListeners) {
       l.nodeRemoved(node, role, child);
     }
+    setChanged(true);
   }
 
   public String toString() {
