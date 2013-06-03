@@ -725,10 +725,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/languages/migration">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/languages/migration/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/languages/migration/classes_gen" />
-    </content>
     <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/languages/unitTests/startup">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/languages/unitTests/startup/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/languages/unitTests/startup/classes_gen" />
