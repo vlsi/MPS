@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8w0vdp937i8sa59xrg2hf1dglj3r8ea">
+<dependencies version="2" modelHash="cfcmjj8uznyv4awtgphq9ahxokldc6q">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress(MPS.IDEA/com.intellij.openapi.progress@java_stub)" />
@@ -30,7 +30,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6yvhxi9k55xxea1versvzjds8py3u8n" />
   <dep model="r:eb359f8b-b521-4c1b-bcbd-ac058df58bd6(jetbrains.mps.lang.script.runtime)" hash="-av85hac9oc1m40t1vmht43jyzokjc1t" />
-  <common hash="-9f8wo3q8p7hxzuj582n9ri7xmli65tx" />
+  <common hash="-eh5kqlst5063302y4a8s0o57xvykn33" />
   <source id="7316415153790558500" name="MigrationScriptsView" hash="-s1rv354ohirmikcb32qhyuqsgl5pma">
     <dep root="7316415153790561714" />
     <dep root="7316415153790565185" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6zne2m8w4tt8ye6hac4lxushnfph322">
+<dependencies version="2" modelHash="2w0wy2c99rfaosxhu9g0ha2w0p7c5g6">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.navigation(MPS.IDEA/com.intellij.navigation@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
@@ -30,7 +30,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959054d(jetbrains.mps.uiLanguage.components)" hash="bgpddhj794nah31lxr3qjrl6ozici38" />
   <dep model="r:00000000-0000-4000-0000-011c89590557(jetbrains.mps.uiLanguage.generator.baseLanguage.template.main@generator)" hash="-8asjky8asxh5of7p4h6asaa6re2r9dd" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
-  <common hash="-obg3d61sgxwrsrrdfutu9siqi1n9k2" />
+  <common hash="-av2cv2o9orhd7h666umh3fiz6j9s6o5" />
   <source id="1203601634745" name="PathField" hash="bk9ni84i7ty2ymd70ezll1kyq84cqrf">
     <dep root="1203601659817" />
     <dep root="144575100359734006" />
