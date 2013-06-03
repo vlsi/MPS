@@ -4,54 +4,50 @@ package jetbrains.mps.ide.script.plugin;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.project.Project;
+import java.util.Collections;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import java.util.Collections;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelStereotype;
 
 public abstract class AbstractMigrationScriptHelper {
-  public static void doRunScripts(List<SNode> scripts, IScope scope, IOperationContext context) {
+  public static void doRunScripts(List<SNode> scripts, SearchScope scope, IOperationContext context) {
     context.getComponent(MigrationScriptsTool.class).startMigration(scripts, scope, context);
   }
 
-  public static IScope createMigrationScope(Iterable<? extends SModel> models, Iterable<? extends SModule> modules, boolean applyToSelection) {
-    Set<SModel> modelsToMigration = SetSequence.fromSet(new HashSet<SModel>());
-    if (applyToSelection) {
-      SetSequence.fromSet(modelsToMigration).addSequence(SetSequence.fromSet(collectModelsForMigration(models, modules)));
-    }
-    // TODO: why global scope??? 
-    if (SetSequence.fromSet(modelsToMigration).isEmpty()) {
-      SetSequence.fromSet(modelsToMigration).addSequence(SetSequence.fromSet(collectModelsForMigration(Collections.<SModel>emptySet(), GlobalScope.getInstance().getModules())));
-    }
-    return new ModelsScope(modelsToMigration);
+
+
+  public static SearchScope createMigrationScope(Iterable<SModule> selectedModules, Iterable<SModel> selectedModels) {
+    return createMigrationScopeInternal(selectedModules, selectedModels);
   }
 
-  public static IScope createMigrationScope(Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
-    return new ModelsScope(collectModelsForMigration(models, modules));
+
+
+  public static SearchScope createMigrationScope(Project project) {
+    return createMigrationScopeInternal(project.getModules(), (Iterable<SModel>) Collections.<SModel>emptySet());
   }
 
-  private static Set<SModel> collectModelsForMigration(Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
+
+
+  private static SearchScope createMigrationScopeInternal(Iterable<? extends SModule> modules, Iterable<? extends SModel> models) {
     Set<SModel> result = SetSequence.fromSet(new HashSet<SModel>());
     SetSequence.fromSet(result).addSequence(Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return includeModel(it);
       }
     }));
-    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(withGenerators(modules)).where(new IWhereFilter<SModule>() {
+    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
         return !(it.isReadOnly());
       }
@@ -64,18 +60,7 @@ public abstract class AbstractMigrationScriptHelper {
         return includeModel(it);
       }
     }));
-    return result;
-  }
-
-  private static Iterable<SModule> withGenerators(Iterable<? extends SModule> modules) {
-    Set<SModule> result = SetSequence.fromSet(new HashSet<SModule>());
-    for (SModule module : Sequence.fromIterable(modules)) {
-      SetSequence.fromSet(result).addElement(module);
-      if (module instanceof Language) {
-        SetSequence.fromSet(result).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
-      }
-    }
-    return result;
+    return new ModelsScope(result);
   }
 
   private static boolean includeModel(SModel model) {
