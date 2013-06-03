@@ -30,9 +30,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.Stack;
 
 class Memento {
@@ -58,6 +60,8 @@ class Memento {
 
   private Map<CellInfo, String> myErrorTexts = new HashMap<CellInfo, String>();
   private Point myViewPosition;
+  private Set<String> myEnabledHints;
+  private boolean myUseCustomHints;
 
   private Memento() {}
 
@@ -81,6 +85,8 @@ class Memento {
     }
 
     myViewPosition = nodeEditor.getViewport().getViewPosition();
+    myUseCustomHints = nodeEditor.getUseCustomHints();
+    myEnabledHints = new HashSet<String>(nodeEditor.getEnabledHints());
   }
 
   private void collectErrors(EditorComponent editor) {
@@ -123,6 +129,9 @@ class Memento {
     if (myViewPosition != null) {
       editor.getViewport().setViewPosition(myViewPosition);
     }
+
+    editor.setEnabledHints(myEnabledHints);
+    editor.setUseCustomHints(myUseCustomHints);
   }
 
   private boolean restoreErrors(EditorComponent editor) {
@@ -147,7 +156,7 @@ class Memento {
       Memento m = (Memento) object;
       if (EqualUtil.equals(mySelectionStack, m.mySelectionStack) &&
         EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
-        EqualUtil.equals(myFolded, m.myFolded)) {
+        EqualUtil.equals(myFolded, m.myFolded) && EqualUtil.equals(myEnabledHints, m.myEnabledHints) && myUseCustomHints == m.myUseCustomHints) {
 
         return true;
       }
@@ -164,6 +173,8 @@ class Memento {
       "  selectedStack = " + mySelectionStack + "\n" +
       "  collectionsWithBraces = " + myCollectionsWithEnabledBraces + "\n" +
       "  foldedCells = " + myFolded + "\n" +
+      "  enabledHints = " + myEnabledHints + "\n" +
+      "  useCustomHints = " + myUseCustomHints + "\n" +
       "]\n";
   }
 
@@ -173,6 +184,10 @@ class Memento {
   private static final String FOLDED_ELEMENT = "foldedElement";
   private static final String VIEW_POSITION_X = "viewPositionX";
   private static final String VIEW_POSITION_Y = "viewPositionY";
+  private static final String ENABLED_HINTS = "enabledHints";
+  private static final String ENABLED_HINTS_ELEMENT = "enabledHintsElement";
+  private static final String ENABLED_HINTS_ATTRIBUTE = "enabledHintsAttribute";
+  private static final String USE_CUSTOM_HINTS = "useCustomHints";
 
   public void save(Element e) {
     Element selectionStack = new Element(SELECTION_STACK);
@@ -200,6 +215,16 @@ class Memento {
     }
     e.setAttribute(VIEW_POSITION_X, String.valueOf(myViewPosition.x));
     e.setAttribute(VIEW_POSITION_Y, String.valueOf(myViewPosition.y));
+    if (myUseCustomHints) {
+      e.setAttribute(USE_CUSTOM_HINTS, String.valueOf(myUseCustomHints));
+    }
+    Element hintsElement = new Element(ENABLED_HINTS);
+    for (String hint : myEnabledHints) {
+      Element hintElement = new Element(ENABLED_HINTS_ELEMENT);
+      hintElement.setAttribute(ENABLED_HINTS_ATTRIBUTE, hint);
+      hintsElement.addContent(hintElement);
+    }
+    e.addContent(hintsElement);
   }
 
   public static Memento load(Element e) {
@@ -224,6 +249,17 @@ class Memento {
       memento.myViewPosition = new Point(viewPositionX, viewPositionY);
     } catch (NumberFormatException nfe) {
     }
+
+    memento.myUseCustomHints = Boolean.valueOf(e.getAttributeValue(USE_CUSTOM_HINTS));
+    memento.myEnabledHints = new HashSet<String>();
+    Element hintsElement = e.getChild(ENABLED_HINTS);
+    if (hintsElement != null) {
+      List children = hintsElement.getChildren(ENABLED_HINTS_ELEMENT);
+      for (Object o : children) {
+        memento.myEnabledHints.add(((Element) o).getAttributeValue(ENABLED_HINTS_ATTRIBUTE));
+      }
+    }
+
     return memento;
   }
 }

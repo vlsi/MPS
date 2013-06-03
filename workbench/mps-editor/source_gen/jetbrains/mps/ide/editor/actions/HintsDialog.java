@@ -71,9 +71,9 @@ public class HintsDialog extends DialogWrapper {
   @Override
   protected void doOKAction() {
     if (myDefaultRadioButton.isSelected()) {
-      ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).setUseDefaultHints(true);
+      ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).setUseCustomHints(false);
     } else {
-      ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).setUseDefaultHints(false);
+      ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).setUseCustomHints(true);
       myPage.commit();
       ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).setEnabledHints(mySettings.getEnabledHints());
     }
@@ -110,10 +110,10 @@ public class HintsDialog extends DialogWrapper {
     myButtonGroup.add(myDefaultRadioButton);
     myButtonGroup.add(myCustomRadioButton);
 
-    boolean useDefaultHints = ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).getUseDefaultHints();
-    myDefaultRadioButton.setSelected(useDefaultHints);
-    myCustomRadioButton.setSelected(!(useDefaultHints));
-    setPanelEnabled(myPage.getComponent(), !(useDefaultHints));
+    boolean useCustomHints = ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).getUseCustomHints();
+    myDefaultRadioButton.setSelected(!(useCustomHints));
+    myCustomRadioButton.setSelected(useCustomHints);
+    setPanelEnabled(myPage.getComponent(), useCustomHints);
 
     GridConstraints c = new GridConstraints();
     c.setFill(GridConstraints.FILL_BOTH);

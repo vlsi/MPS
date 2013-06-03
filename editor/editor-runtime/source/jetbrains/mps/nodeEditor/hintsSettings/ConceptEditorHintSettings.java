@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.hintsSettings;
 
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -35,6 +36,7 @@ public class ConceptEditorHintSettings {
   }
 
 
+  @NotNull
   public Set<String> getEnabledHints() {
     Set<String> enabledHints = new HashSet<String>();
     for (String lang : getLanguagesNames()) {

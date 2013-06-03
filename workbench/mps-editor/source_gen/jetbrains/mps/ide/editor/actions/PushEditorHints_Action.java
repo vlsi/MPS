@@ -80,14 +80,12 @@ public class PushEditorHints_Action extends BaseAction {
       Set<String> enabledHints = component.getEnabledHints();
       ConceptEditorHintSettings settings = new ConceptEditorHintSettings();
       settings.putAll(ConceptEditorHintSettingsComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getSettings());
-      if (enabledHints != null) {
-        for (String lang : SetSequence.fromSet(settings.getLanguagesNames())) {
-          for (ConceptEditorHint hint : SetSequence.fromSet(settings.getHints(lang))) {
-            settings.put(lang, hint, false);
-          }
+      for (String lang : SetSequence.fromSet(settings.getLanguagesNames())) {
+        for (ConceptEditorHint hint : SetSequence.fromSet(settings.getHints(lang))) {
+          settings.put(lang, hint, false);
         }
-        settings.updateSettings(enabledHints);
       }
+      settings.updateSettings(enabledHints);
       final ConceptEditorHintPreferencesPage page = new ConceptEditorHintPreferencesPage(settings);
       DialogWrapper dialog = new HintsDialog(((Project) MapSequence.fromMap(_params).get("project")), page, settings, component);
       dialog.show();
