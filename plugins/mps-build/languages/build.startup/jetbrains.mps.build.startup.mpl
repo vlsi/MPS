@@ -13,9 +13,7 @@
           <sourceRoot location="generator/template" />
         </modelRoot>
       </models>
-      <external-templates>
-        <generator generatorUID="bfcadeff-430f-4472-9641-06156a02be37(jetbrains.mps.gtext#1164413905312)" />
-      </external-templates>
+      <external-templates />
       <usedLanguages>
         <usedLanguage>479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)</usedLanguage>
         <usedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</usedLanguage>
@@ -25,22 +23,7 @@
       <usedDevKits>
         <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
       </usedDevKits>
-      <mapping-priorities>
-        <mapping-priority-rule kind="strictly_before">
-          <greater-priority-mapping>
-            <generator generatorUID="806e3b22-557f-4d5e-94a3-443cbb7dc456(jetbrains.mps.build.startup#3885435385580635037)" />
-            <external-mapping>
-              <mapping-node modelUID="r:9eaefcec-a5af-4365-b04c-b6940eebe416(jetbrains.mps.build.startup.generator.template.main@generator)" nodeID="*" />
-            </external-mapping>
-          </greater-priority-mapping>
-          <lesser-priority-mapping>
-            <generator generatorUID="bfcadeff-430f-4472-9641-06156a02be37(jetbrains.mps.gtext#1164413905312)" />
-            <external-mapping>
-              <mapping-node modelUID="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" nodeID="1164413908130" />
-            </external-mapping>
-          </lesser-priority-mapping>
-        </mapping-priority-rule>
-      </mapping-priorities>
+      <mapping-priorities />
     </generator>
   </generators>
   <sourcePath />
