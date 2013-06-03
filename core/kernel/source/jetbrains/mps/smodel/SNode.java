@@ -532,7 +532,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
+  public void insertChild(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     assertCanChange();
 
     if (ourMemberAccessModifier != null) {
@@ -550,6 +550,23 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     if (getTopmostAncestor() == child) {
       throw new RuntimeException("Trying to create a cyclic tree");
+    }
+
+    if (anchor != null) {
+      if (anchor.getParent()!=this){
+        throw new RuntimeException(
+            "anchor is not a child of this node" + " | " +
+                "this: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this) + " | " +
+                "anchor: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(anchor)
+        );
+      }
+      if (!role.equals(anchor.getRoleInParent())){
+        throw new RuntimeException(
+            "anchor has a different role" + " | " +
+                "role: " + role + " | " +
+                "anchor role: " + anchor.getRoleInParent()
+        );
+      }
     }
 
     children_insertAfter(((SNode) anchor), schild);
