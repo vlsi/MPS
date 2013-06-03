@@ -14,10 +14,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper;
 import jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog;
 import java.awt.Frame;
@@ -63,6 +64,10 @@ public class RunMigrationScripts_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
@@ -78,8 +83,13 @@ public class RunMigrationScripts_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IScope scope = AbstractMigrationScriptHelper.createMigrationScope(((List<SModel>) MapSequence.fromMap(_params).get("models")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")), RunMigrationScripts_Action.this.selectionOnly);
-      if (!(scope.getModelDescriptors().iterator().hasNext())) {
+      SearchScope scope;
+      if (RunMigrationScripts_Action.this.selectionOnly) {
+        scope = AbstractMigrationScriptHelper.createMigrationScope(((List<SModule>) MapSequence.fromMap(_params).get("modules")), ((List<SModel>) MapSequence.fromMap(_params).get("models")));
+      } else {
+        scope = AbstractMigrationScriptHelper.createMigrationScope(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+      }
+      if (!(scope.getModels().iterator().hasNext())) {
         return;
       }
       ScriptsActionGroupHelper.sortScripts(RunMigrationScripts_Action.this.scripts);
