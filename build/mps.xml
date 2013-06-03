@@ -13,7 +13,6 @@
   <property name="idea.platform.build.number" value="${loaded.for.idea.platform.build.number.idea.platform.build.number}" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.mpsBuild" location="${build.dir}/artifacts/mpsBuild" />
-  <property name="artifacts.mpsDates" location="${build.dir}/artifacts/mpsDates" />
   <property name="artifacts.mpsTroveCollections" location="${build.dir}/artifacts/mpsTroveCollections" />
   <property name="artifacts.mpsStandalone" location="${build.dir}/artifacts/mpsStandalone" />
   <property name="artifacts.mpsDevKit" location="${build.dir}/artifacts/mpsDevKit" />
@@ -23,7 +22,6 @@
   <property name="artifacts.mpsVcs" location="${build.dir}/artifacts/mpsVcs" />
   <property name="artifacts.mpsDebuggerPlugin" location="${build.dir}/artifacts/mpsDebuggerPlugin" />
   <property name="artifacts.mpsExecutionPlugin" location="${build.dir}/artifacts/mpsExecutionPlugin" />
-  <property name="artifacts.mpsDeprecatedBuildlanguage" location="${build.dir}/artifacts/mpsDeprecatedBuildlanguage" />
   <property name="artifacts.mpsTesting" location="${build.dir}/artifacts/mpsTesting" />
   <property file="${artifacts.mpsBuild}/build.properties" prefix="import.mpsBuild" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBuild.mpsBootstrapCore.version}" />
@@ -102,10 +100,6 @@
       <fileset file="${basedir}/plugin/MPSPlugin.jar" />
     </copy>
     <mkdir dir="${build.layout}/plugins" />
-    <mkdir dir="${build.layout}/plugins/mps-dates" />
-    <copy todir="${build.layout}/plugins/mps-dates">
-      <fileset dir="${artifacts.mpsDates}/mps-dates" />
-    </copy>
     <mkdir dir="${build.layout}/plugins/mps-build" />
     <copy todir="${build.layout}/plugins/mps-build">
       <fileset dir="${artifacts.mpsBuild}/mps-build" />
@@ -125,10 +119,6 @@
       <fileset dir="${artifacts.mpsExecutionPlugin}" />
     </copy>
     <copy file="${artifacts.mpsMakePlugin}/mps-make.jar" todir="${build.layout}/plugins" />
-    <mkdir dir="${build.layout}/plugins/mps-build-deprecated" />
-    <copy todir="${build.layout}/plugins/mps-build-deprecated">
-      <fileset dir="${artifacts.mpsDeprecatedBuildlanguage}/mps-build-deprecated" />
-    </copy>
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.mpsPlugins}" />
     </copy>
@@ -172,7 +162,6 @@
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsDates.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
@@ -185,7 +174,6 @@
     <ant antfile="build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsDeprecatedBuildlanguage.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
