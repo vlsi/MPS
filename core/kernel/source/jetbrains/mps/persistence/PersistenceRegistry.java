@@ -58,6 +58,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   private Map<String, SNodeIdFactory> myNodeIdFactory = new HashMap<String, SNodeIdFactory>();
   private Set<FindUsagesParticipant> myFindUsagesParticipants = new LinkedHashSet<FindUsagesParticipant>();
   private Set<NavigationParticipant> myNavigationParticipants = new LinkedHashSet<NavigationParticipant>();
+  private Set<FolderModelFactory> myFolderModelFactories = new LinkedHashSet<FolderModelFactory>();
   private ModelEnvironmentInfo myModelEnvironmentInfo = new ModelEnvironmentInfoImpl();
 
   public static PersistenceRegistry getInstance() {
@@ -198,6 +199,18 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   @Override
   public void removeNavigationParticipant(NavigationParticipant participant) {
     myNavigationParticipants.remove(participant);
+  }
+
+  public void addFolderModelFactory(FolderModelFactory factory) {
+    myFolderModelFactories.add(factory);
+  }
+
+  public void removeFolderModelFactory(FolderModelFactory factory) {
+    myFolderModelFactories.remove(factory);
+  }
+
+  public Set<FolderModelFactory> getFolderModelFactories() {
+    return Collections.unmodifiableSet(myFolderModelFactories);
   }
 
   @Override

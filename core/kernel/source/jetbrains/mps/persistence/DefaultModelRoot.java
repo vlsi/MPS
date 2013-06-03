@@ -34,11 +34,20 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * evgeny, 11/9/12
@@ -124,6 +133,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     if (!dir.isDirectory()) return;
 
     List<IFile> files = dir.getChildren();
+    options.put(ModelFactory.OPTION_PACKAGE, package_);
     for (IFile file : files) {
       String fileName = file.getName();
       String extension = FileUtil.getExtension(fileName);
@@ -133,17 +143,27 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       if (modelFactory == null || file.isDirectory()) continue;
 
       FileDataSource source = new FileDataSource(file, this);
-      options.put(ModelFactory.OPTION_PACKAGE, package_);
       options.put(ModelFactory.OPTION_RELPATH, combinePath(relativePath, fileName));
       String fileNameWE = FileUtil.getNameWithoutExtension(fileName);
       options.put(ModelFactory.OPTION_MODELNAME, package_ != null ? (package_.isEmpty() ? fileNameWE : package_ + "." + fileNameWE) : null);
-      SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
-      // TODO handle errors
-      if (model != null) {
+      try {
+        SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
+        ((SModelBase) model).setModelRoot(this);
+        models.add(model);
+      } catch (UnsupportedDataSourceException ex) {
+    /* model factory registration problem: ignore */
+      }
+    }
+
+    options.put(ModelFactory.OPTION_RELPATH, relativePath);
+    for (FolderModelFactory factory : PersistenceRegistry.getInstance().getFolderModelFactories()) {
+      for (DataSource dataSource : factory.createDataSources(this, dir)) {
+        SModel model = factory.load(dataSource, Collections.unmodifiableMap(options));
         ((SModelBase) model).setModelRoot(this);
         models.add(model);
       }
     }
+
     for (IFile childDir : files) {
       if (childDir.isDirectory()) {
         String name = childDir.getName();
@@ -153,6 +173,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       }
     }
   }
+
 
   protected final String combinePath(String left, String right) {
     if (left == null) {

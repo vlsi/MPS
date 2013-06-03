@@ -42,10 +42,12 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.xml.sax.InputSource;
 
 import java.io.BufferedOutputStream;
@@ -77,8 +79,13 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
     PersistenceRegistry.getInstance().setModelFactory(XML_EXTENSION, null);
   }
 
+  @NotNull
   @Override
-  public SModel load(@NotNull StreamDataSource dataSource, @NotNull Map<String, String> options) {
+  public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
+    if (!(dataSource instanceof StreamDataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
     String moduleRef = options.get(OPTION_MODULEREF);
     String relPath = options.get(OPTION_RELPATH);
     String modelName = options.get(OPTION_MODELNAME);
@@ -102,32 +109,43 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
       }
       ref = PersistenceFacade.getInstance().createModelReference(mref, id, modelName);
     }
-    return new CustomPersistenceSModel(ref, dataSource, this);
+    return new CustomPersistenceSModel(ref, (StreamDataSource) dataSource, this);
   }
 
   @Override
-  public SModel create(String modelName, StreamDataSource dataSource) {
+  public SModel create(String modelName, DataSource dataSource) {
+    if (!(dataSource instanceof StreamDataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
     return null;
   }
 
   @Override
-  public boolean canCreate(String modelName, StreamDataSource dataSource) {
+  public boolean canCreate(String modelName, DataSource dataSource) {
+    if (!(dataSource instanceof StreamDataSource)) {
+      return false;
+    }
     // TODO create xml models
     return false;
   }
 
   @Override
-  public void save(SModel model, StreamDataSource dataSource) throws ModelSaveException, IOException {
-    writeModel(((SModelBase) model).getSModelInternal(), dataSource);
+  public void save(SModel model, DataSource dataSource) throws ModelSaveException, IOException {
+    if (!(dataSource instanceof StreamDataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    writeModel(((SModelBase) model).getSModelInternal(), (StreamDataSource) dataSource);
   }
 
   @Override
-  public boolean needsUpgrade(StreamDataSource dataSource) throws IOException {
+  public boolean needsUpgrade(DataSource dataSource) throws IOException {
     return false;
   }
 
   @Override
-  public void upgrade(StreamDataSource dataSource) throws IOException {
+  public void upgrade(DataSource dataSource) throws IOException {
   }
 
   @Override
