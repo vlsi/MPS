@@ -755,12 +755,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/demo/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/demo/pluginSolution/classes_gen" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/deprecated">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/deprecated/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/deprecated/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/deprecated/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/deprecated/generator/classes_gen" />
-    </content>
     <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/jetbrains.mps.execution.sandbox">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/jetbrains.mps.execution.sandbox/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/jetbrains.mps.execution.sandbox/classes_gen" />
@@ -892,6 +886,12 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-dates/languages/dates/internal/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-dates/languages/dates/runtime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-dates/languages/dates/unittest/classes_gen" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../plugins/mps-execution-deprecated/languages/deprecated">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-execution-deprecated/languages/deprecated/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-execution-deprecated/languages/deprecated/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-execution-deprecated/languages/deprecated/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-execution-deprecated/languages/deprecated/generator/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/mps-testing">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/baseLanguage/unitTest/generator/source_gen" isTestSource="false" />
