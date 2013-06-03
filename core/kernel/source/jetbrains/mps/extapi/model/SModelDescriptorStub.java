@@ -201,11 +201,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
     return SModelStereotype.getStereotype(getReference().getModelName());
   }
 
-  @Override
-  public SModelScope getModelScope() {
-    return getSModelInternal().getModelScope();
-  }
-
   //
 
   @Override

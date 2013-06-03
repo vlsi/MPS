@@ -185,30 +185,6 @@ public class SModel implements SModelData {
     return ((SNode) myIdToNodeMap.get(nodeId));
   }
 
-  public SModelScope getModelScope() {
-    return new SModelScope() {
-      @Override
-      public Iterable<? extends org.jetbrains.mps.openapi.model.SModel> getModels() {
-        return new TranslatingIterator<ImportElement, org.jetbrains.mps.openapi.model.SModel>(myImports.iterator()) {
-          @Override
-          protected org.jetbrains.mps.openapi.model.SModel translate(ImportElement imp) {
-            return imp.getModelReference().resolve(MPSModuleRepository.getInstance());
-          }
-        };
-      }
-
-      @Override
-      public Iterable<SLanguage> getLanguages() {
-        return new TranslatingIterator<SModuleReference, SLanguage>(myLanguages.iterator()) {
-          @Override
-          protected SLanguage translate(SModuleReference ref) {
-            return new SLanguageLanguageAdapter(((Language) ref.resolve(MPSModuleRepository.getInstance())));
-          }
-        };
-      }
-    };
-  }
-
   @NotNull
   public String toString() {
     return getSModelReference().toString();

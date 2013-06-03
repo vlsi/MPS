@@ -76,8 +76,6 @@ public interface SModel {
 
   SNode getNode(SNodeId id);
 
-  SModelScope getModelScope();
-
   /**
    * The data source which this model was loaded from.
    */
