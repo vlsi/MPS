@@ -763,7 +763,7 @@ public class SModel implements SModelData {
     myImplicitImports.add(element);
   }
 
-  boolean isUpdateMode() {
+  public boolean isUpdateMode() {
     return false;
   }
 

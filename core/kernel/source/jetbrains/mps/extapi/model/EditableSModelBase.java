@@ -246,6 +246,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   }
 
   public void fireReferenceChanged(SNode node, String role, SReference oldValue, SReference newValue) {
+    LOG.assertLog(!getSModelInternal().isUpdateMode());
     for (SModelChangeListener l : myChangeListeners) {
       l.referenceChanged(node, role, oldValue, newValue);
     }
@@ -253,6 +254,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   }
 
   public void firePropertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
+    LOG.assertLog(!getSModelInternal().isUpdateMode());
     for (SModelChangeListener l : myChangeListeners) {
       l.propertyChanged(node, propertyName, oldValue, newValue);
     }
@@ -260,6 +262,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   }
 
   public void fireNodeAdded(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
+    LOG.assertLog(!getSModelInternal().isUpdateMode());
     for (SModelChangeListener l : myChangeListeners) {
       l.nodeAdded(node, role, child);
     }
@@ -267,6 +270,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   }
 
   public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
+    LOG.assertLog(!getSModelInternal().isUpdateMode());
     for (SModelChangeListener l : myChangeListeners) {
       l.nodeRemoved(node, role, child);
     }
