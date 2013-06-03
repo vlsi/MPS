@@ -4037,7 +4037,7 @@
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1866379231788528084" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6xgk.26272194522282586" resolveInfo="HidingByNameScope" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="26272194522411498" nodeInfo="nn">
-                <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
+                <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpee.5432666129547687712" resolveInfo="IVariableDeclaration" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1866379231788528086" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1866379231788528091" resolveInfo="kind" />
