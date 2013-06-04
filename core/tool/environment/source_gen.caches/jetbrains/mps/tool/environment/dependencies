@@ -44,11 +44,29 @@
     <classNode extendsClassName="jetbrains.mps.tool.environment.Environment" />
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.MpsEnvironment" file="MpsEnvironment.java">
+    <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.TestMain" />
+    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.testbench.Testbench" />
+    <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.Environment" />
   </dependency>
 </dependenciesRoot>

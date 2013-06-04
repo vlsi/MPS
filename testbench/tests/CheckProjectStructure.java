@@ -56,7 +56,7 @@ public class CheckProjectStructure {
   @Parameters
   public static List<Object[]> filePaths() {
     HELPER = new CheckProjectStructureHelper();
-    HELPER.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
+    HELPER.init();
 
     List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.getExcludeSet(), false);
 
@@ -86,7 +86,6 @@ public class CheckProjectStructure {
 
   @AfterClass
   public static void cleanUp() {
-    HELPER.cleanUp();
     HELPER.dispose();
   }
 

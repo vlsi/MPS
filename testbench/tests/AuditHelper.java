@@ -63,7 +63,7 @@ public class AuditHelper {
   }
 
   public static List<Object[]> filePathes(CheckProjectStructureHelper helper) {
-    helper.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
+    helper.init();
 
     List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.getExcludeSet(), false);
 
@@ -91,7 +91,6 @@ public class AuditHelper {
   }
 
   public static void cleanUp(CheckProjectStructureHelper helper) {
-    helper.cleanUp();
     helper.dispose();
     PerformanceMessenger.getInstance().report("auditErrors", helper.getNumErrors());
     PerformanceMessenger.getInstance().report("auditWarnings", helper.getNumWarnings());

@@ -15,26 +15,20 @@
  */
 package jetbrains.mps.testbench;
 
-import com.intellij.ide.IdeEventQueue;
-import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.checkers.LanguageChecker;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentBuilder;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.StandaloneMPSProject;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -43,19 +37,14 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.*;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -67,12 +56,26 @@ public class CheckProjectStructureHelper {
 
   private static long myErrors;
   private static long myWarnings;
-  private MPSProject myProject;
+  private Environment myEnvironment;
 
   public CheckProjectStructureHelper() {
   }
 
+  public void init() {
+    myEnvironment = EnvironmentBuilder.defaultEnvironment().build(false);
+
+    myErrors = 0;
+    myWarnings = 0;
+    // todo: use dummy project
+    myEnvironment.openProject(FileUtil.createTmpFile());
+  }
+
+  public void dispose() {
+    myEnvironment.disposeEnvironment();
+  }
+
   public static void loadModules(final Collection<ModulesMiner.ModuleHandle> handles) {
+    // todo: looks like dummy project with modules!
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
@@ -163,10 +166,6 @@ public class CheckProjectStructureHelper {
     return applyChecker(new LanguageChecker(), models);
   }
 
-  public void cleanUp() {
-    doCleanUp(myProject);
-  }
-
   public String formatErrors(List<String> errors) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
@@ -177,48 +176,7 @@ public class CheckProjectStructureHelper {
     return sb.toString();
   }
 
-  public void init(String[][] macros) {
-    BasicConfigurator.configure();
-    Logger.getRootLogger().setLevel(Level.INFO);
-
-    IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS(new String[0]);
-
-    for (String[] macro : macros) {
-      Testbench.setMacro(macro[0], macro[1]);
-    }
-    Testbench.initLibs();
-    // we do not make anything here
-    // we have a special test (Making) that does make
-    // and more importantly checks that make is ok and fails if not
-    // that should be enough
-
-    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
-    File projectFile = FileUtil.createTmpFile();
-    StandaloneMPSProject project = new StandaloneMPSProject(ideaProject);
-    project.setProjectFile(projectFile);
-    project.init(new ProjectDescriptor());
-    myErrors = 0;
-    myWarnings = 0;
-    myProject = project;
-  }
-
-  public void dispose() {
-    TestMain.disposeMPS();
-  }
-
   // Private
-
-  private void doCleanUp(final MPSProject project) {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        project.dispose(false);
-        IdeEventQueue.getInstance().flushQueue();
-        System.gc();
-      }
-    });
-  }
-
   private List<String> checkModelsGenerationStatus(final Iterable<SModel> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -349,7 +307,8 @@ public class CheckProjectStructureHelper {
                 SNode node = reporter.getSNode();
                 if (!CheckProjectStructureUtil.filterIssue(node)) continue;
                 myErrors++;
-                errors.add("Error message: " + reporter.reportError() + "   model: " + jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()) + " root: " + node.getContainingRoot() + " node: " + node);
+                errors.add("Error message: " + reporter.reportError() + "   model: " + jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()) +
+                    " root: " + node.getContainingRoot() + " node: " + node);
               }
               if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
                 myWarnings++;
@@ -396,14 +355,14 @@ public class CheckProjectStructureHelper {
 
         if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
           errorMessages.
-            append("Broken reference in model {").
-            append(jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel())).
-            append("}").
-            append(" node ").
-            append(node.getNodeId().toString()).
-            append("(").
-            append(node).
-            append(")\n");
+              append("Broken reference in model {").
+              append(jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel())).
+              append("}").
+              append(" node ").
+              append(node.getNodeId().toString()).
+              append("(").
+              append(node).
+              append(")\n");
         }
       }
     }
