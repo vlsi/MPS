@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,10 +39,7 @@ import java.util.List;
 @State(
     name = "MPSProjectMigrationState",
     storages = {
-        @Storage(
-            id = "other",
-            file = "$PROJECT_FILE$"
-        )
+        @Storage(file = StoragePathMacros.PROJECT_FILE)
     }
 )
 public class MPSProjectMigrationState extends AbstractProjectComponent  implements PersistentStateComponent<MPSProjectMigrationState.MyState>{
