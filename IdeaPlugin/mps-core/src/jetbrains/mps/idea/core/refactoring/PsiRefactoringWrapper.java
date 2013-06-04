@@ -105,11 +105,3 @@ public class PsiRefactoringWrapper implements IRefactoring {
     return mpsResults;
   }
 }
-
-class PsiSearchResult extends SearchResult<SNode> {
-  private PsiReference myPsiReference;
-
-  public PsiSearchResult(PsiReference psiRef) {
-    myPsiReference = psiRef;
-  }
-}

@@ -18,23 +18,34 @@ package jetbrains.mps.idea.core.ui;
 
 
 import com.intellij.openapi.project.Project;
+import com.intellij.psi.PsiReference;
 import com.intellij.refactoring.RefactoringBundle;
-import com.intellij.usages.*;
+import com.intellij.usageView.UsageInfo;
+import com.intellij.usages.Usage;
+import com.intellij.usages.UsageInfo2UsageAdapter;
+import com.intellij.usages.UsageTarget;
+import com.intellij.usages.UsageView;
+import com.intellij.usages.UsageViewManager;
+import com.intellij.usages.UsageViewPresentation;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.idea.core.refactoring.PsiSearchResult;
 import jetbrains.mps.idea.core.usages.NodeUsage;
 import jetbrains.mps.idea.core.usages.NodeUsageTarget;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 public class RefactoringViewItemImpl implements RefactoringViewItem {
   private UsageView usageView;
@@ -75,14 +86,21 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
 
     List<Usage> usages = new ArrayList<Usage>();
     Set<SNode> nodes = new HashSet<SNode>();
-    for (SearchResult searchResult : (List<SearchResult>) searchResults.getAliveResults()) {
-      Object usage = searchResult.getObject();
-      if (usage instanceof SNode && !(nodes.contains((SNode)usage))) {
-        nodes.add((SNode) usage);
-        usages.add(new NodeUsage(new jetbrains.mps.smodel.SNodePointer((SNode) usage), myProject, searchResult.getCategory()));
+    for (SearchResult searchResult : (List<SearchResult>) searchResults.getSearchResults()) {
+      if (searchResult instanceof PsiSearchResult) {
+
+        PsiReference psiRef = ((PsiSearchResult) searchResult).getReference();
+        usages.add(new UsageInfo2UsageAdapter(new UsageInfo(psiRef)));
+
+      } else if (searchResult.getObject() != null) {
+
+        Object usage = searchResult.getObject();
+        if (usage instanceof SNode && !(nodes.contains((SNode)usage))) {
+          nodes.add((SNode) usage);
+          usages.add(new NodeUsage(new jetbrains.mps.smodel.SNodePointer((SNode) usage), myProject, searchResult.getCategory()));
+        }
       }
     }
-
 
     final UsageViewPresentation presentation = createPresentation();
 
