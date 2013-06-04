@@ -8,12 +8,6 @@ import java.util.List;
 import com.intellij.util.PathUtil;
 import java.io.File;
 import com.intellij.openapi.application.PathMacros;
-import jetbrains.mps.TestMain;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.Level;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
@@ -38,6 +32,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.io.IOException;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -69,10 +64,6 @@ import java.io.StringWriter;
 import java.io.PrintWriter;
 
 public class ProjectTestHelper {
-  public ProjectTestHelper() {
-    init();
-  }
-
   public ProjectTestHelper.Token getToken(SModule module, Project project) {
     return new ProjectTestHelper.PrivToken(module, project);
   }
@@ -105,24 +96,6 @@ public class ProjectTestHelper {
     File file = new File(canonicalPath);
     if (file.exists() && file.isDirectory()) {
       PathMacros.getInstance().setMacro(macroName, canonicalPath);
-    }
-  }
-
-  public void dispose() {
-    TestMain.disposeMPS();
-  }
-
-  private void init() {
-    BasicConfigurator.configure();
-    Logger.getRootLogger().setLevel(Level.ERROR);
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-    TestMain.configureMPS();
-    Testbench.initLibs();
-    boolean isParallel = System.getProperty("parallel.generation") != null && Boolean.parseBoolean(System.getProperty("parallel.generation"));
-    GenerationSettings.getInstance().setParallelGenerator(isParallel);
-    GenerationSettings.getInstance().setStrictMode(isParallel);
-    if (isParallel) {
-      GenerationSettings.getInstance().setNumberOfParallelThreads(8);
     }
   }
 

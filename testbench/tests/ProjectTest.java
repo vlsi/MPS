@@ -14,22 +14,19 @@
  * limitations under the License.
  */
 
-import com.intellij.ide.IdeEventQueue;
-import jetbrains.mps.TestMain;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
+import jetbrains.mps.tool.environment.EnvironmentBuilder;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.util.*;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;
 import jetbrains.mps.testbench.junit.Order;
-import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
 import org.junit.*;
 import org.junit.rules.TestName;
 import org.junit.rules.TestWatchman;
@@ -51,6 +48,7 @@ public class ProjectTest {
 
   private static ProjectTestHelper HELPER;
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
+  private static jetbrains.mps.tool.environment.Environment environment;
   private static Project mpsProject;
 
   public static class Fixture {
@@ -96,20 +94,43 @@ public class ProjectTest {
     }
   }
 
+  public static void initEnvironment() {
+    // todo: move to BeforeClass
+    // todo: should be .build(false)
+    environment = EnvironmentBuilder.defaultEnvironment().build(true);
+
+    // prepare isParallel mode
+    boolean isParallel = System.getProperty("parallel.generation") != null && Boolean.parseBoolean(System.getProperty("parallel.generation"));
+    GenerationSettings.getInstance().setParallelGenerator(isParallel);
+    GenerationSettings.getInstance().setStrictMode(isParallel);
+    if (isParallel) {
+      GenerationSettings.getInstance().setNumberOfParallelThreads(8);
+    }
+
+    // todo: make all methods in HELPER static
+    HELPER = new ProjectTestHelper();
+
+    mpsProject = environment.openProject(new File(System.getProperty("user.dir")));
+  }
+
+  @AfterClass
+  public static void disposeEnvironment() {
+    environment.disposeEnvironment();
+  }
+
   @Parameters
   public static List<Object[]> FIXTURES() {
-    HELPER = new ProjectTestHelper();
-    HELPER.setMacro("samples_home", System.getProperty("user.dir") + "/samples");
+    initEnvironment();
+
     List<Object[]> fixtures = new ArrayList<Object[]>();
-    mpsProject = TestMain.loadProject(new File(System.getProperty("user.dir")));
     Set<SModule> allModules = ModelAccess.instance().runReadAction(new Computable<Set<SModule>>() {
       @Override
       public Set<SModule> compute() {
         return MPSModuleRepository.getInstance().getAllModules();
       }
     });
-    
-    List<SModule> mlist=new ArrayList<SModule>(allModules);
+
+    List<SModule> mlist = new ArrayList<SModule>(allModules);
     Collections.sort(mlist, new Comparator<SModule>() {
       @Override
       public int compare(SModule m1, SModule m2) {
@@ -133,26 +154,6 @@ public class ProjectTest {
   }
 
   private final Fixture fixture;
-
-  @AfterClass
-  public static void disposeProject() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        mpsProject.dispose();
-        IdeEventQueue.getInstance().flushQueue();
-        System.gc();
-      }
-    });
-    // magic
-    ModelAccess.instance().flushEventQueue();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        IdeEventQueue.getInstance().flushQueue();
-      }
-    });
-    HELPER.dispose();
-  }
-
 
   public ProjectTest(Fixture fix) {
     this.fixture = fix;

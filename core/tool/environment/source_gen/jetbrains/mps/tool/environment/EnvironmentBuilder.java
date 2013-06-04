@@ -46,7 +46,7 @@ public class EnvironmentBuilder {
 
   public EnvironmentBuilder withDefaults() {
     // todo 
-    return this;
+    return this.addMacro("samples_home", new File(System.getProperty("user.dir"), "samples"));
   }
 
   public static EnvironmentBuilder defaultEnvironment() {
