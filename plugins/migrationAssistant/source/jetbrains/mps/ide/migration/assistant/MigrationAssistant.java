@@ -27,7 +27,22 @@ import com.intellij.openapi.util.AsyncResult;
 import com.intellij.openapi.util.AsyncResult.Handler;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.impl.welcomeScreen.WelcomeFrame;
+import jetbrains.mps.extapi.persistence.DataSourceBase;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProjectMigrationState;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.FrameUtil;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -63,6 +78,22 @@ public class MigrationAssistant extends AbstractProjectComponent {
     }
   }
 
+
+  private void refresh() {
+    VirtualFileManager.getInstance().syncRefresh();
+
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        for (SModel md : SModelRepository.getInstance().getModelDescriptors()) {
+          if (md instanceof EditableSModel) {
+            ((EditableSModel) md).reloadFromSource();
+          }
+        }
+      }
+    });
+  }
+
   private void initiateMigration(final MPSProjectMigrationState migrationState) {
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
@@ -71,7 +102,8 @@ public class MigrationAssistant extends AbstractProjectComponent {
           LaterInvocator.invokeLater(new Runnable() {
             @Override
             public void run() {
-              VirtualFileManager.getInstance().syncRefresh();
+              refresh();
+
               migrationState.setCurrentStep(1);
               ProjectManagerEx.getInstance().reloadProject(myProject);
             }
