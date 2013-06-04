@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2ruphodd33ay4qfq9a1p2kl15vny7rx">
-  <common hash="-2ruphodd33ay4qfq9a1p2kl15vny7rx" />
-  <source id="~unpackAndTest" name="unpackAndTest">
-    <file name="unpackAndTest.xml" />
-  </source>
-</dependencies>
-
