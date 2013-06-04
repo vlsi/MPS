@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -37,7 +37,7 @@ public class PropertyInstances_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
       String role = SPropertyOperations.getString(node, "name");
       SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);

@@ -7,7 +7,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.junit.Test;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.smodel.SModelRepository;

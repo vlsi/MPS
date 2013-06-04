@@ -10,7 +10,6 @@ import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import java.util.Set;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -18,7 +17,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -48,7 +47,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
   }
 
   @Override
-  public List<SNode> getDerivedClassifiers(SNode classifier, IScope scope) {
+  public List<SNode> getDerivedClassifiers(SNode classifier, org.jetbrains.mps.openapi.module.SearchScope scope) {
     Set<VirtualFile> unModifiedModelFiles = SetSequence.fromSet(new HashSet<VirtualFile>());
     List<SNode> modifiedClasses = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> modifiedInterfaces = ListSequence.fromList(new ArrayList<SNode>());

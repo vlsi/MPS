@@ -19,18 +19,18 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Semen Alperovich
  * 05 15, 2013
  */
 public class ConceptEditorHintSettings {
-  private Map<String, Map<ConceptEditorHint, Boolean>> mySettings = Collections.synchronizedMap(new HashMap<String, Map<ConceptEditorHint, Boolean>>());
+  private final Map<String, Map<ConceptEditorHint, Boolean>> mySettings = new ConcurrentHashMap<String, Map<ConceptEditorHint, Boolean>>();
 
   public ConceptEditorHintSettings() {
   }

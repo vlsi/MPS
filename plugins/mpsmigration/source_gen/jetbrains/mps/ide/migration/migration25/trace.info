@@ -336,7 +336,6 @@
     </scopeInfo>
     <unitInfo nodeId="1828409047608306672" fileName="MigrationScript_FixReferencesToMpsLaunch_Action.java" startLine="26" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.MigrationScript_FixReferencesToMpsLaunch_Action" />
   </root>
-  <root nodeRef="r:ac0b1498-2795-4a56-a562-d0f2d196bfe1(jetbrains.mps.ide.migration.migration25)/1828409047608306728" />
   <root nodeRef="r:ac0b1498-2795-4a56-a562-d0f2d196bfe1(jetbrains.mps.ide.migration.migration25)/1828409047608306784">
     <nodeInfo nodeId="1828409047608306784" fileName="MigrationScript_RemoveKeystrokes_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1828409047608306784" fileName="MigrationScript_RemoveKeystrokes_Action.java" startLine="29" startPosition="52" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -2506,7 +2505,7 @@
     <nodeInfo nodeId="9065176582222574669" fileName="UpdateRefactoringVersions_Action.java" startLine="112" startPosition="7" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9065176582222574570" fileName="UpdateRefactoringVersions_Action.java" startLine="90" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModelVersion#(Ljetbrains/mps/smodel/descriptor/RefactorableSModelDescriptor;Ljava/util/Map;)V" />
     <nodeInfo nodeId="9065176582222574645" fileName="UpdateRefactoringVersions_Action.java" startLine="107" startPosition="23" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9065176582222574636" fileName="UpdateRefactoringVersions_Action.java" startLine="106" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateImportVersions#(Ljetbrains/mps/extapi/model/EditableSModel;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="9065176582222574636" fileName="UpdateRefactoringVersions_Action.java" startLine="106" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateImportVersions#(Lorg/jetbrains/mps/openapi/model/EditableSModel;Ljava/util/Map;)V" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="62" startPosition="96" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="62" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="36" startPosition="32" endLine="37" endPosition="16" />

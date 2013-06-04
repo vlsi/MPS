@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import java.util.List;

@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;

@@ -30,7 +30,6 @@ import java.util.Iterator;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.FastNodeFinder;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
@@ -322,12 +321,8 @@ public class SNodeOperations {
   }
 
   public static List<SModuleReference> getUsedLanguages(SModel model) {
-    Iterable<SLanguage> languages = model.getModelScope().getLanguages();
-    return Sequence.fromIterable(languages).select(new ISelector<SLanguage, SModuleReference>() {
-      public SModuleReference select(SLanguage it) {
-        return it.getModule().getModuleReference();
-      }
-    }).toListSequence();
+    Iterable<SModuleReference> languages = ((SModelInternal) model).importedLanguages();
+    return Sequence.fromIterable(languages).toListSequence();
   }
 
   public static boolean isModelDisposed(SModel model) {

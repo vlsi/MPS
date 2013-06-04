@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
 import java.util.Set;
@@ -39,7 +39,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
       Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(nodes).addElement(node);
@@ -60,7 +60,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   }
 
   @Override
-  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
+  public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);
   }
 

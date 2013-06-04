@@ -1116,7 +1116,7 @@
   <root nodeRef="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)/4143990013474875883">
     <nodeInfo nodeId="6428254090689409135" fileName="Scopes.java" startLine="16" startPosition="30" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1866379231788528080" fileName="Scopes.java" startLine="18" startPosition="5" endLine="19" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1866379231788528082" fileName="Scopes.java" startLine="19" startPosition="92" endLine="20" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1866379231788528082" fileName="Scopes.java" startLine="19" startPosition="92" endLine="20" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1866379231788528118" fileName="Scopes.java" startLine="23" startPosition="94" endLine="24" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1866379231788528169" fileName="Scopes.java" startLine="27" startPosition="83" endLine="28" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6428254090689409126" fileName="Scopes.java" startLine="32" startPosition="30" endLine="33" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1165,7 +1165,7 @@
     <scopeInfo nodeId="3050821798734714303" fileName="Scopes.java" startLine="53" startPosition="86" endLine="56" endPosition="125">
       <varInfo nodeId="5151813541030927335" varName="typeVarConceptFQName" />
     </scopeInfo>
-    <scopeInfo nodeId="1866379231788528079" fileName="Scopes.java" startLine="15" startPosition="99" endLine="20" endPosition="128" />
+    <scopeInfo nodeId="1866379231788528079" fileName="Scopes.java" startLine="15" startPosition="99" endLine="20" endPosition="129" />
     <scopeInfo nodeId="1866379231788528255" fileName="Scopes.java" startLine="31" startPosition="95" endLine="36" endPosition="128" />
     <scopeInfo nodeId="4143990013475407977" fileName="Scopes.java" startLine="39" startPosition="99" endLine="44" endPosition="110" />
     <scopeInfo nodeId="9000162595163812002" fileName="Scopes.java" startLine="47" startPosition="0" endLine="52" endPosition="0">

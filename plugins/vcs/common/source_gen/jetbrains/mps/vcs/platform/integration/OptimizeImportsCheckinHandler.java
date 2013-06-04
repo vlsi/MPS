@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.OptimizeImportsHelper;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.changes.CommitContext;

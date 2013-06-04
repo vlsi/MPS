@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.MPSProject;
 import java.io.IOException;
 import java.io.File;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.Project;

@@ -63,7 +63,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
 
   @Override
   public SModel resolveModel(SModelReference reference) {
-    return reference.resolve(MPSModuleRepository.getInstance());
+    throw new UnsupportedOperationException("not supported since 3.0");
   }
 
   @Override
@@ -199,11 +199,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   @Override
   public String getStereotype() {
     return SModelStereotype.getStereotype(getReference().getModelName());
-  }
-
-  @Override
-  public SModelScope getModelScope() {
-    return getSModelInternal().getModelScope();
   }
 
   //

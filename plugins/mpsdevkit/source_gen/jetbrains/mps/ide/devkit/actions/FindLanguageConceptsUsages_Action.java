@@ -17,6 +17,7 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -93,7 +94,7 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
       final SModule module = ((SModule) MapSequence.fromMap(_params).get("module"));
-      final IScope scope = ((IScope) MapSequence.fromMap(_params).get("scope"));
+      final SearchScope scope = ((IScope) MapSequence.fromMap(_params).get("scope"));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           query[0] = new SearchQuery(module, scope);

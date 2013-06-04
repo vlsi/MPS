@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
@@ -20,7 +20,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
   public InterfaceAncestors_Finder() {
   }
 
-  public boolean isVisible(SNode node, IScope scope) {
+  public boolean isVisible(SNode node, SearchScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty();
   }
 
@@ -45,7 +45,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isEmpty()) {

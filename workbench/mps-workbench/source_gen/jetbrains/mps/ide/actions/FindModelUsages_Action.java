@@ -14,6 +14,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -76,7 +77,7 @@ public class FindModelUsages_Action extends BaseAction {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
       final SModel model = ((SModel) MapSequence.fromMap(_params).get("model"));
-      final IScope scope = ((IScope) MapSequence.fromMap(_params).get("scope"));
+      final SearchScope scope = ((IScope) MapSequence.fromMap(_params).get("scope"));
 
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {

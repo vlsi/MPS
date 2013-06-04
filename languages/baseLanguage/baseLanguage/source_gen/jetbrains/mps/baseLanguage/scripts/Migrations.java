@@ -420,7 +420,7 @@ public class Migrations {
         // <node> 
         // <node> 
 
-        return false;
+        return true;
       }
 
       @Override

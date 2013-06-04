@@ -16,7 +16,7 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.persistence.DefaultModelRoot;

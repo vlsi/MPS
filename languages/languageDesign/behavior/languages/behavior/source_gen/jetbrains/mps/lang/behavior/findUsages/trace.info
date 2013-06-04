@@ -27,8 +27,8 @@
     <nodeInfo nodeId="8441762775555558491" fileName="OverridingMethods_Finder.java" startLine="51" startPosition="27" endLine="56" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227530893129" fileName="OverridingMethods_Finder.java" startLine="57" startPosition="60" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1227530893124" fileName="OverridingMethods_Finder.java" startLine="56" startPosition="18" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="45" startPosition="98" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="44" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <nodeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="45" startPosition="103" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="44" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SearchScope;Ljava/util/List;Ljetbrains/mps/progress/ProgressMonitor;)V" />
     <scopeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="21" startPosition="37" endLine="21" endPosition="37" />
     <scopeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="25" startPosition="34" endLine="26" endPosition="32" />
     <scopeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="30" startPosition="38" endLine="31" endPosition="14" />
@@ -60,7 +60,7 @@
       <varInfo nodeId="8441762775555519003" varName="nodes" />
       <varInfo nodeId="8441762775555552661" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="45" startPosition="98" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="45" startPosition="103" endLine="68" endPosition="5" />
     <scopeInfo nodeId="1227530810320" fileName="OverridingMethods_Finder.java" startLine="44" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="1227530810320" varName="_results" />
       <varInfo nodeId="1227530810320" varName="monitor" />

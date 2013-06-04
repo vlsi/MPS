@@ -17,7 +17,7 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
 import com.intellij.icons.AllIcons.General;
 import com.intellij.openapi.actionSystem.*;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.actions.CreateAspect_Action;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.plugins.relations.RelationDescriptor;

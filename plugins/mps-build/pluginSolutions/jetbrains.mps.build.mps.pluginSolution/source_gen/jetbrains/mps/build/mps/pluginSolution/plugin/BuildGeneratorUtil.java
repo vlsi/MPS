@@ -7,7 +7,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.vfs.IFile;

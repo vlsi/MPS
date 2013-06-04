@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;

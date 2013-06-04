@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;

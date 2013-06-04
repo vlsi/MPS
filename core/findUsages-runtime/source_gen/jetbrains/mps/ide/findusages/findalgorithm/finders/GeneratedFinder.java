@@ -7,7 +7,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.FindersManager;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -65,9 +65,9 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     return true;
   }
 
-  protected abstract void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor);
+  protected abstract void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor);
 
-  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
+  public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     _results.add(node);
   }
 
