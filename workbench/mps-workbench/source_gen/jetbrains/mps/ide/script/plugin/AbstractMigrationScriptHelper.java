@@ -35,7 +35,7 @@ public abstract class AbstractMigrationScriptHelper {
 
 
   public static SearchScope createMigrationScope(Project project) {
-    return createMigrationScopeInternal(project.getModules(), (Iterable<SModel>) Collections.<SModel>emptySet());
+    return createMigrationScopeInternal(project.getModulesWithGenerators(), (Iterable<SModel>) Collections.<SModel>emptySet());
   }
 
 
