@@ -45,9 +45,8 @@ import java.util.*;
  */
 @RunWith(WatchingParameterizedWithMake.class)
 public class ProjectTest {
-
-  private static ProjectTestHelper HELPER;
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
+
   private static jetbrains.mps.tool.environment.Environment environment;
   private static Project mpsProject;
 
@@ -58,7 +57,7 @@ public class ProjectTest {
 
     Fixture(SModule module, Project project) {
       fixtureId = getFixtureId(module, project);
-      this.token = HELPER.getToken(module, project);
+      this.token = ProjectTestHelper.getToken(module, project);
       methods.addAll(METHODS);
     }
 
@@ -84,7 +83,7 @@ public class ProjectTest {
     void after(FrameworkMethod mth) {
       methods.remove(mth);
       if (methods.size() == 0) {
-        HELPER.cleanUp(token);
+        ProjectTestHelper.cleanUp(token);
       }
     }
 
@@ -106,9 +105,6 @@ public class ProjectTest {
     if (isParallel) {
       GenerationSettings.getInstance().setNumberOfParallelThreads(8);
     }
-
-    // todo: make all methods in HELPER static
-    HELPER = new ProjectTestHelper();
 
     mpsProject = environment.openProject(new File(System.getProperty("user.dir")));
   }
@@ -173,10 +169,10 @@ public class ProjectTest {
   @Test
   @Order(1)
   public void buildModule() throws Exception {
-    if (!HELPER.build(fixture.token)) {
-      List<String> errors = HELPER.buildErrors(fixture.token);
+    if (!ProjectTestHelper.build(fixture.token)) {
+      List<String> errors = ProjectTestHelper.buildErrors(fixture.token);
       Assert.assertTrue("Build errors:\n" + IterableUtils.join(errors, "\n"), errors.isEmpty());
-      List<String> warns = HELPER.buildWarns(fixture.token);
+      List<String> warns = ProjectTestHelper.buildWarns(fixture.token);
       Assert.assertTrue("Build warnings:\n" + IterableUtils.join(warns, "\n"), warns.isEmpty());
     }
   }
@@ -184,14 +180,13 @@ public class ProjectTest {
   @Test
   @Order(2)
   public void diffModule() throws Exception {
-    List<String> diffReport = HELPER.getDiffReport(fixture.token);
+    List<String> diffReport = ProjectTestHelper.getDiffReport(fixture.token);
     Assert.assertTrue("Difference:\n" + IterableUtils.join(diffReport, "\n"), diffReport.isEmpty());
   }
-
 
   //  @Test
   @Order(4)
   public void testProject() throws Exception {
-    HELPER.test(fixture.token);
+    ProjectTestHelper.test(fixture.token);
   }
 }

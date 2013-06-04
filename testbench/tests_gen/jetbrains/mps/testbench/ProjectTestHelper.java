@@ -5,9 +5,6 @@ package jetbrains.mps.testbench;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import java.util.List;
-import com.intellij.util.PathUtil;
-import java.io.File;
-import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
@@ -30,6 +27,7 @@ import java.util.HashSet;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.ide.generator.GenerationSettings;
@@ -64,46 +62,39 @@ import java.io.StringWriter;
 import java.io.PrintWriter;
 
 public class ProjectTestHelper {
-  public ProjectTestHelper.Token getToken(SModule module, Project project) {
+  public static ProjectTestHelper.Token getToken(SModule module, Project project) {
     return new ProjectTestHelper.PrivToken(module, project);
   }
 
-  public boolean build(ProjectTestHelper.Token tok) {
+  public static boolean build(ProjectTestHelper.Token tok) {
     return ((ProjectTestHelper.PrivToken) tok).build();
   }
 
-  public void cleanUp(ProjectTestHelper.Token tok) {
+  public static void cleanUp(ProjectTestHelper.Token tok) {
     ((ProjectTestHelper.PrivToken) tok).cleanUp();
   }
 
-  public void test(ProjectTestHelper.Token tok) {
+  public static void test(ProjectTestHelper.Token tok) {
+    // todo: ? 
   }
 
-  public List<String> buildErrors(ProjectTestHelper.Token tok) {
+  public static List<String> buildErrors(ProjectTestHelper.Token tok) {
     return ((ProjectTestHelper.PrivToken) tok).buildErrors();
   }
 
-  public List<String> buildWarns(ProjectTestHelper.Token tok) {
+  public static List<String> buildWarns(ProjectTestHelper.Token tok) {
     return ((ProjectTestHelper.PrivToken) tok).buildWarns();
   }
 
-  public List<String> getDiffReport(ProjectTestHelper.Token tok) {
+  public static List<String> getDiffReport(ProjectTestHelper.Token tok) {
     return ((ProjectTestHelper.PrivToken) tok).diff();
   }
 
-  public void setMacro(String macroName, String path) {
-    String canonicalPath = PathUtil.getCanonicalPath(path);
-    File file = new File(canonicalPath);
-    if (file.exists() && file.isDirectory()) {
-      PathMacros.getInstance().setMacro(macroName, canonicalPath);
-    }
-  }
-
-  private ScriptBuilder defaultScriptBuilder() {
+  private static ScriptBuilder defaultScriptBuilder() {
     return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make"));
   }
 
-  private Iterable<SModule> withGenerators(Iterable<SModule> modules) {
+  private static Iterable<SModule> withGenerators(Iterable<SModule> modules) {
     return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
         return it instanceof Language;
@@ -115,7 +106,7 @@ public class ProjectTestHelper {
     }));
   }
 
-  private Iterable<IResource> collectResources(IOperationContext context, final SModule module) {
+  private static Iterable<IResource> collectResources(IOperationContext context, final SModule module) {
     final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -140,7 +131,7 @@ public class ProjectTestHelper {
     }
   }
 
-  private class PrivToken extends ProjectTestHelper.Token {
+  private static class PrivToken extends ProjectTestHelper.Token {
     private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "dependencies");
     private final Project project;
     private final SModule module;

@@ -15,8 +15,6 @@
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.ProjectTestHelper" file="ProjectTestHelper.java">
-    <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
-    <classNode dependClassName="com.intellij.util.PathUtil" />
     <classNode dependClassName="difflib.DiffUtils" />
     <classNode dependClassName="difflib.Patch" />
     <classNode dependClassName="java.io.BufferedReader" />
