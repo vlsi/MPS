@@ -3045,7 +3045,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1452412866770392994" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="MovingNode" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="selection" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="selection.moveElements" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1452412866770394613" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="method" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1452412866770394614" nodeInfo="in" />
@@ -3112,7 +3112,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7247887419163198990" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="MoveNodeRange" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="selection" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="selection.moveElements" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7247887419163198992" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="method" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7247887419163198993" nodeInfo="in" />
