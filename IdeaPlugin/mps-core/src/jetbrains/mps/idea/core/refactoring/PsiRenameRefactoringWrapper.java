@@ -3,18 +3,15 @@ package jetbrains.mps.idea.core.refactoring;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiReference;
-import com.intellij.psi.search.searches.MethodReferencesSearch;
 import com.intellij.psi.search.searches.ReferencesSearch;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -27,14 +24,14 @@ import java.util.List;
  * danilla 6/3/13
  */
 
-public class PsiRefactoringWrapper implements IRefactoring {
+public class PsiRenameRefactoringWrapper implements IRefactoring {
 
   // Q: or SNodeReference ?
   // todo should get this from refactoring context (currently it doesn't have getTarget()...)
-  private SNode myTarget;
-  private IRefactoring baseRefactoring;
+  protected final SNode myTarget;
+  protected final IRefactoring baseRefactoring;
 
-  public PsiRefactoringWrapper(IRefactoring base, SNode target) {
+  public PsiRenameRefactoringWrapper(IRefactoring base, SNode target) {
     baseRefactoring = base;
     myTarget = target;
   }
@@ -90,6 +87,7 @@ public class PsiRefactoringWrapper implements IRefactoring {
 
     Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
     PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(myTarget);
+    // todo search scope?
     Collection<PsiReference> psiRefs = ReferencesSearch.search(psiTarget).findAll();
     // size may be bigger than needed, due to MPS usages returned among PSI usages
     List<SearchResult<SNode>> psiResults = new ArrayList<SearchResult<SNode>>(psiRefs.size());

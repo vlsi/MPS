@@ -1,7 +1,6 @@
 package jetbrains.mps.idea.core.refactoring;
 
 import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
@@ -11,12 +10,10 @@ import com.intellij.refactoring.rename.RenameHandler;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
-import jetbrains.mps.ide.platform.refactoring.RenameMethodDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -74,7 +71,7 @@ public class MPSRenameRefactoringHandler implements RenameHandler {
         }
 
         IRefactoring base = RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings.Rename");
-        IRefactoring psiAwareRefactoring = new PsiRefactoringWrapper(base, node);
+        IRefactoring psiAwareRefactoring = new PsiRenameRefactoringWrapper(base, node);
 
         RefactoringAccess.getInstance().getRefactoringFacade().execute(
           RefactoringContext.createRefactoringContext(psiAwareRefactoring,
