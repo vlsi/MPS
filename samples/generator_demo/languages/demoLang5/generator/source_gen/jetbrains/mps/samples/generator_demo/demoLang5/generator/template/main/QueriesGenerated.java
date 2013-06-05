@@ -135,10 +135,10 @@ public class QueriesGenerated {
     // find all text nodes 
     List<SNode> texts = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.sampleXML.structure.Text");
     for (SNode text : ListSequence.fromList(texts)) {
-      // replace with 'label' element 
+      // replace with a 'label' element 
       SNode label = SNodeOperations.replaceWithNewChild(text, "jetbrains.mps.sampleXML.structure.Element");
       SPropertyOperations.set(label, "name", "label");
-      // Add text attribute to the 'label' element 
+      // Add a text attribute to the 'label' element 
       SNode attribute = SLinkOperations.addNewChild(label, "attribute", "jetbrains.mps.sampleXML.structure.Attribute");
       SPropertyOperations.set(attribute, "name", "text");
       SPropertyOperations.set(attribute, "value", SPropertyOperations.getString(text, "text"));

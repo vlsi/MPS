@@ -910,15 +910,10 @@
   <root type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1228678752673" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="main" />
     <node role="createRootRule" roleId="tpf8.1167088157977" type="tpf8.CreateRootRule" typeId="tpf8.1167087469898" id="1228678752674" nodeInfo="ng">
-      <link role="label" roleId="tpf8.1200923511980" targetNodeId="1228678752725" resolveInfo="main_class" />
       <link role="templateNode" roleId="tpf8.1167087469901" targetNodeId="1228678752534" resolveInfo="DemoApp" />
     </node>
     <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="1228678752675" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="dghb.1225239603382" resolveInfo="Document" />
-    </node>
-    <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="1228678752725" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="main_class" />
-      <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="1228680559970" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="factory_method" />
@@ -1097,7 +1092,7 @@
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="3978102045101469722" nodeInfo="nn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3978102045101588110" nodeInfo="nn">
               <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="3978102045101588149" nodeInfo="nn">
-                <property name="text" nameId="tpee.6329021646629104958" value="replace with 'label' element" />
+                <property name="text" nameId="tpee.6329021646629104958" value="replace with a 'label' element" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3978102045101486307" nodeInfo="nn">
@@ -1133,7 +1128,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3978102045101587539" nodeInfo="nn">
               <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="3978102045101587576" nodeInfo="nn">
-                <property name="text" nameId="tpee.6329021646629104958" value="Add text attribute to the 'label' element" />
+                <property name="text" nameId="tpee.6329021646629104958" value="Add a text attribute to the 'label' element" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3978102045101559641" nodeInfo="nn">

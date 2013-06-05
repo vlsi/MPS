@@ -236,14 +236,9 @@
     <property name="name" nameId="tpck.1169194664001" value="main" />
     <node role="createRootRule" roleId="tpf8.1167088157977" type="tpf8.CreateRootRule" typeId="tpf8.1167087469898" id="1228529813145" nodeInfo="ng">
       <link role="templateNode" roleId="tpf8.1167087469901" targetNodeId="1228529813076" resolveInfo="DemoApp" />
-      <link role="label" roleId="tpf8.1200923511980" targetNodeId="1228530406249" resolveInfo="main_class" />
     </node>
     <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="1228529813146" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="dghb.1225239603382" resolveInfo="Document" />
-    </node>
-    <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="1228530406249" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="main_class" />
-      <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="5273477653284546103" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="method" />
