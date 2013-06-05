@@ -35,7 +35,6 @@ import org.junit.runners.Parameterized.Parameters;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.TestClass;
 
-import java.io.File;
 import java.util.*;
 
 
@@ -101,7 +100,8 @@ public class ProjectTest {
   @Parameters
   public static List<Object[]> FIXTURES() {
     environment = EnvironmentBuilder.defaultEnvironment().build(true);
-    mpsProject = environment.openProject(new File(System.getProperty("user.dir")));
+//    mpsProject = environment.openProject(new File(System.getProperty("user.dir")));
+    mpsProject = environment.createDummyProject();
 
     List<Object[]> fixtures = new ArrayList<Object[]>();
     Set<SModule> allModules = ModelAccess.instance().runReadAction(new Computable<Set<SModule>>() {
