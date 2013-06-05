@@ -17,16 +17,18 @@ package org.jetbrains.mps.openapi.language;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Semen Alperovich
  * 04 04, 2013
  */
 public class SConceptUtil {
-  public static List<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept, boolean includeBaseConcept) {
-    List<SAbstractConcept> result = new LinkedList<SAbstractConcept>();
+  public static Set<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept, boolean includeBaseConcept) {
+    Set<SAbstractConcept> result = new LinkedHashSet<SAbstractConcept>();
     if (concept == null) {
       return result;
     }
@@ -48,7 +50,7 @@ public class SConceptUtil {
     return result;
   }
 
-  public static List<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept) {
+  public static Set<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept) {
     return getAllSuperConcepts(concept, false);
   }
 }

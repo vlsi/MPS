@@ -21,6 +21,8 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
@@ -84,26 +86,27 @@ class IntelligentNodeMover {
     final String role = current.getRoleInParent();
     assert parent != null && role != null;
 
-    final SNode acd = ((jetbrains.mps.smodel.SNode) parent).getConceptDeclarationNode();
-    final SNode link = SModelSearchUtil.findLinkDeclaration(acd, role);
+    final SConcept acd = parent.getConcept();
+    final SLink link = acd.findLink(role);
 
     if (link == null) {
       LOG.error("Can't find a link " + role + " in concept " + acd.getName());
       return;
     }
 
-    if (!SModelUtil.isMultipleLinkDeclaration(link)) {
+    if (!link.isMultiple()) {
       return;
     }
 
-    final SNode targetType = link.getParent();
+    //final SNode targetType = link.getParent();
 
     if (isBoundary(current)) {
       SNode currentAnchor = parent;
       SNode currentTarget = parent.getParent();
 
       while (currentTarget != null) {
-        if (currentTarget.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(targetType)))) {
+        //todo bad check
+        if (haveSimilarLink(current, link)) {
           parent.removeChild(current);
           addWithAnchor(currentTarget, currentAnchor, role, current);
           moveOtherNodes(current);
@@ -112,7 +115,7 @@ class IntelligentNodeMover {
 
         SNode levelCurrent = siblingWithTheSameRole(currentAnchor);
         while (levelCurrent != null) {
-          SNode result = findNodeAtBoundary(targetType, levelCurrent, true);
+          SNode result = findNodeAtBoundary(link, levelCurrent, true);
           if (result != null) {
             parent.removeChild(current);
             addAtBoundary(result, role, current);
@@ -137,7 +140,7 @@ class IntelligentNodeMover {
       return;
     }
 
-    SNode innermostContainer = findNodeAtBoundary(targetType, prevChild, true);
+    SNode innermostContainer = findNodeAtBoundary(link, prevChild, true);
     if (innermostContainer != null) {
       parent.removeChild(current);
       addAtBoundary(innermostContainer, role, current);
@@ -166,8 +169,9 @@ class IntelligentNodeMover {
     }
   }
 
-  private SNode findNodeAtBoundary(SNode acd, SNode current, boolean includeThis) {
-    if (includeThis && current.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(acd)))) {
+  private SNode findNodeAtBoundary(SLink link, SNode current, boolean includeThis) {
+    //todo: bad checking
+    if (includeThis && haveSimilarLink(current,link)) {
       return current;
     }
 
@@ -176,13 +180,17 @@ class IntelligentNodeMover {
       Collections.reverse(children);
     }
     for (SNode child : children) {
-      SNode result = findNodeAtBoundary(acd, child, true);
+      SNode result = findNodeAtBoundary(link, child, true);
       if (result != null) {
         return result;
       }
     }
 
     return null;
+  }
+
+  private boolean haveSimilarLink(SNode current, SLink link) {
+    return true;
   }
 
   private SNode siblingWithTheSameRole(SNode node) {
