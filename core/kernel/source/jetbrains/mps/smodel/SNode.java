@@ -560,13 +560,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
                 "anchor: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(anchor)
         );
       }
-      if (!role.equals(anchor.getRoleInParent())){
-        throw new RuntimeException(
-            "anchor has a different role" + " | " +
-                "role: " + role + " | " +
-                "anchor role: " + anchor.getRoleInParent()
-        );
-      }
+//      if (!role.equals(anchor.getRoleInParent())){
+//        throw new RuntimeException(
+//            "anchor has a different role" + " | " +
+//                "role: " + role + " | " +
+//                "anchor role: " + anchor.getRoleInParent()
+//        );
+//      }
     }
 
     children_insertAfter(((SNode) anchor), schild);
