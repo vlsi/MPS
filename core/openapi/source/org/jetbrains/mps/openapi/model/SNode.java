@@ -27,6 +27,11 @@ import org.jetbrains.mps.openapi.module.SRepository;
  * After getting attached to a repository, the node starts checking correct read/write access permissions (locks) through repository.getModelAccess()
  * and also starts sending notifications about node reads.
  * <p/>
+ * CHILDREN
+ * Child nodes must have a global ordering meaning that the order in which child nodes are returned by getNextSibling, getPrevSibling, getChildren
+ * and other methods, must be consistent with order determined by child add operations. The ordering should be consistent not only for children in
+ * any particular role, but also for nodes with different roles.
+ * <p/>
  * NODE MANIPULATION
  * After detaching from a model, the node is held in a special place in the repository until the end of the current Command
  * (UnregisteredNodes/ImmatureReferences) so that all references in the node and from the outside still work.
@@ -87,10 +92,12 @@ public interface SNode {
    *
    * @param role   a role to insert new child into
    * @param child  a node to insert
-   * @param anchor a new child node will be inserted after this node. If specified,
-   *               the anchor must be in the same role as the inserted child. If not specified,
-   *               a new child is inserted into the first position of the given role
+   * @param anchor a new child node will be inserted just before this node. If anchor is not specified,
+   *               a new child is inserted as a last child
    */
+  void insertChildBefore(String role, SNode child, @Nullable SNode anchor);
+
+  @Deprecated
   void insertChild(String role, SNode child, @Nullable SNode anchor);
 
   /**
