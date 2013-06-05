@@ -35,9 +35,6 @@ public class NewDevKitDialogContentPane extends JPanel {
   private NewDevKitDialog myDialog;
   public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
-    {
-    }
-
     public void initialize() {
     }
   };
@@ -184,7 +181,6 @@ public class NewDevKitDialogContentPane extends JPanel {
       myThis.getDialog().setError(message);
       return;
     }
-
     myThis.getDialog().dispose();
     NewModuleUtil.runModuleCreation(myThis.getProject(), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
