@@ -54,27 +54,12 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FileNotFoundException" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.io.InputStream" />
-    <classNode dependClassName="java.io.PrintStream" />
-    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Process" />
-    <classNode dependClassName="java.lang.ProcessBuilder" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="java.util.concurrent.BrokenBarrierException" />
-    <classNode dependClassName="java.util.concurrent.CyclicBarrier" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.testbench.IdeaTestEnvironment" />
@@ -85,8 +70,6 @@
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.tools.ant.BuildException" />
-    <classNode dependClassName="org.apache.tools.ant.util.JavaEnvUtils" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.PerformanceMessenger" file="PerformanceMessenger.java">
     <classNode dependClassName="java.io.File" />
