@@ -15,10 +15,9 @@
  */
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
+import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithAllModules;
 import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
@@ -26,20 +25,19 @@ import org.junit.runners.Parameterized.Parameters;
 import java.util.Collections;
 import java.util.List;
 
-@RunWith(WatchingParameterizedWithMake.class)
+@RunWith(WatchingParameterizedWithAllModules.class)
 public class AuditTypeSystem {
   private static CheckProjectStructureHelper HELPER;
 
   @Parameters
   public static List<Object[]> filePaths() {
     HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet());
-    HELPER.init();
     return HELPER.filePaths();
   }
 
   @AfterClass
   public static void cleanUp() {
-    HELPER.dispose();
+    HELPER.printStatistic();
   }
 
   // main part

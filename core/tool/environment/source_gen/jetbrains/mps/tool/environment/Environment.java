@@ -6,6 +6,8 @@ import jetbrains.mps.project.Project;
 import java.io.File;
 
 public interface Environment {
+  public static Environment ACTIVE_ENVIRONMENT = null;
+
   /**
    * Opened project should be compiled and classloaded
    */

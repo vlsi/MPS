@@ -15,10 +15,9 @@
  */
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
+import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithAllModules;
 import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
@@ -27,7 +26,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@RunWith(WatchingParameterizedWithMake.class)
+@RunWith(WatchingParameterizedWithAllModules.class)
 public class AuditConstraints {
   private static final Set<String> DISABLED_MODULES = new HashSet<String>();
   static {
@@ -60,13 +59,12 @@ public class AuditConstraints {
   @Parameters
   public static List<Object[]> filePaths() {
     HELPER = new CheckProjectStructureHelper(DISABLED_MODULES);
-    HELPER.init();
     return HELPER.filePaths();
   }
 
   @AfterClass
   public static void cleanUp() {
-    HELPER.dispose();
+    HELPER.printStatistic();
   }
 
   // main part

@@ -15,6 +15,10 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.testbench.Testbench;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.ProjectManager;
+import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.smodel.ModelAccess;
@@ -26,6 +30,9 @@ public class IdeaEnvironment implements Environment {
 
 
   public IdeaEnvironment(Set<String> plugins, Map<String, File> macroses, Map<String, File> libs) {
+    // todo: if creationg of environment fails? is it publication before we need it? 
+    ActiveEnvironment.activateEnvironment(this);
+
     // todo: use plugins and libs 
 
     // part from ProjectTest 
@@ -53,7 +60,16 @@ public class IdeaEnvironment implements Environment {
   }
 
   public Project createDummyProject() {
-    throw new UnsupportedOperationException();
+    // from CheckProjectStructureHelper 
+    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+    StandaloneMPSProject project = new StandaloneMPSProject(ideaProject);
+    File projectFile = FileUtil.createTmpFile();
+    project.setProjectFile(projectFile);
+    projectFile.deleteOnExit();
+    project.init(new ProjectDescriptor());
+
+    SetSequence.fromSet(openedProjects).addElement(project);
+    return project;
   }
 
   public void disposeProject(final Project project) {
@@ -81,6 +97,8 @@ public class IdeaEnvironment implements Environment {
 
     // part from ProjectTest 
     TestMain.disposeMPS();
+
+    ActiveEnvironment.deactivateEnvironment(this);
   }
 
 

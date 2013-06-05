@@ -16,7 +16,7 @@
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.testbench.junit.Order;
-import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
+import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithAllModules;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
@@ -31,20 +31,19 @@ import java.util.List;
  * Date: Aug 27, 2010
  */
 
-@RunWith(WatchingParameterizedWithMake.class)
+@RunWith(WatchingParameterizedWithAllModules.class)
 public class CheckProjectStructure {
   private static CheckProjectStructureHelper HELPER;
 
   @Parameters
   public static List<Object[]> filePaths() {
     HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet());
-    HELPER.init();
     return HELPER.filePaths();
   }
 
   @AfterClass
   public static void cleanUp() {
-    HELPER.dispose();
+    HELPER.printStatistic();
   }
 
   // main part

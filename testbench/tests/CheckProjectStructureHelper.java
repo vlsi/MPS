@@ -22,26 +22,20 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.testbench.CheckProjectStructureUtil;
 import jetbrains.mps.testbench.ModelsExtractor;
 import jetbrains.mps.testbench.PerformanceMessenger;
-import jetbrains.mps.testbench.Testbench;
-import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentBuilder;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
@@ -49,7 +43,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
-import javax.swing.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -74,27 +67,14 @@ public class CheckProjectStructureHelper {
 
   private final Set<String> myDisabledModules;
 
-  private static long myErrors;
-  private static long myWarnings;
-  private Environment myEnvironment;
+  private static long myErrors = 0;
+  private static long myWarnings = 0;
 
   public CheckProjectStructureHelper(Set<String> disabledModules) {
     myDisabledModules = disabledModules;
   }
 
-  public void init() {
-    myEnvironment = EnvironmentBuilder.defaultEnvironment().build(false);
-
-    myErrors = 0;
-    myWarnings = 0;
-    // todo: use dummy project
-    myEnvironment.openProject(FileUtil.createTmpFile());
-
-    loadAllModulesIntoRepository();
-  }
-
-  public void dispose() {
-    myEnvironment.disposeEnvironment();
+  public void printStatistic() {
     PerformanceMessenger.getInstance().report("auditErrors", getNumErrors());
     PerformanceMessenger.getInstance().report("auditWarnings", getNumWarnings());
     PerformanceMessenger.getInstance().generateReport();
@@ -143,42 +123,6 @@ public class CheckProjectStructureHelper {
       return handle.getDescriptor().getNamespace() + " [solution]";
     }
     return handle.getFile().getName() + " - " + handle.getDescriptor().getNamespace();
-  }
-
-  public static void loadModules(final Collection<ModulesMiner.ModuleHandle> handles) {
-    // todo: looks like dummy project with modules!
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              MPSModuleOwner mpsModuleOwner = new BaseMPSModuleOwner() {
-              };
-
-              for (ModulesMiner.ModuleHandle handle : handles) {
-                if (handle.getFile().getName().endsWith(".iml")) {
-                  // temporary ignore .iml files
-                  continue;
-                }
-
-                ModuleRepositoryFacade.createModule(handle, mpsModuleOwner);
-              }
-
-              ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-            }
-          });
-        }
-      });
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
-  }
-
-  public static void loadAllModulesIntoRepository() {
-    CheckProjectStructureHelper.loadModules(
-        ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), getExcludeSet(),
-            false));
   }
 
   public List<String> check(ModulesMiner.ModuleHandle moduleHandle) {

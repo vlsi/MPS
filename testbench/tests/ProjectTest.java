@@ -16,7 +16,7 @@
 
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
+import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentBuilder;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -44,7 +44,7 @@ import java.util.*;
  * User: fyodor
  * Date: Aug 19, 2010
  */
-@RunWith(WatchingParameterizedWithMake.class)
+@RunWith(WatchingParameterized.class)
 public class ProjectTest {
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
 

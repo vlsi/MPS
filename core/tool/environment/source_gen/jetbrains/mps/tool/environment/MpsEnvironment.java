@@ -15,17 +15,15 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.testbench.Testbench;
-import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.ide.ThreadUtils;
-import com.intellij.ide.IdeEventQueue;
 
 public class MpsEnvironment implements Environment {
   private final Set<Project> openedProjects = SetSequence.fromSet(new HashSet<Project>());
 
 
   public MpsEnvironment(Set<String> plugins, Map<String, File> macros, Map<String, File> libs) {
+    // todo: if creationg of environment fails? is it publication before we need it? 
+    ActiveEnvironment.activateEnvironment(this);
+
     // todo: plugins, libs 
 
     // from CheckProjectStructureHelper 
@@ -46,16 +44,7 @@ public class MpsEnvironment implements Environment {
 
 
   public Project openProject(File projectFile) {
-    // todo: StandaloneMPSProject or FileMPSProject? 
-
-    // from CheckProjectStructureHelper 
-    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
-    StandaloneMPSProject project = new StandaloneMPSProject(ideaProject);
-    project.setProjectFile(projectFile);
-    project.init(new ProjectDescriptor());
-
-    SetSequence.fromSet(openedProjects).addElement(project);
-    return project;
+    throw new UnsupportedOperationException();
   }
 
   public Project createDummyProject() {
@@ -63,14 +52,7 @@ public class MpsEnvironment implements Environment {
   }
 
   public void disposeProject(final Project project) {
-    // from CheckProjectStructureHelper 
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        ((StandaloneMPSProject) project).dispose(false);
-        IdeEventQueue.getInstance().flushQueue();
-        System.gc();
-      }
-    });
+    throw new UnsupportedOperationException();
   }
 
   public void disposeEnvironment() {
@@ -80,5 +62,7 @@ public class MpsEnvironment implements Environment {
 
     // from CheckProjectStructureHelper 
     TestMain.disposeMPS();
+
+    ActiveEnvironment.deactivateEnvironment(this);
   }
 }
