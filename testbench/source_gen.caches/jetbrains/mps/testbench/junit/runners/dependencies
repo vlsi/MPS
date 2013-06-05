@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.testbench.junit.runners.DisposeEnvironmentStatement" file="DisposeEnvironmentStatement.java">
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
+    <classNode dependClassName="org.junit.runners.model.MultipleFailureException" />
+    <classNode extendsClassName="org.junit.runners.model.Statement" />
+  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.DisposeMPSStatement" file="DisposeMPSStatement.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -31,6 +39,14 @@
     <classNode dependClassName="org.junit.runners.model.TestClass" />
     <classNode extendsClassName="org.junit.runners.BlockJUnit4ClassRunner" />
     <classNode extendsClassName="org.junit.runners.Suite" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.runners.InitEnvironmentStatement" file="InitEnvironmentStatement.java">
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
+    <classNode dependClassName="org.junit.runners.model.MultipleFailureException" />
+    <classNode extendsClassName="org.junit.runners.model.Statement" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.MPSOpenProjectRunner" file="MPSOpenProjectRunner.java">
     <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
@@ -107,6 +123,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
@@ -120,6 +138,7 @@
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.notification.Failure" />
     <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
+    <classNode dependClassName="org.junit.runners.model.TestClass" />
     <classNode extendsClassName="org.junit.runner.Runner" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" file="ModuleSymbolicSuite.java">
@@ -238,6 +257,32 @@
     <classNode dependClassName="org.junit.runners.model.TestClass" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.MPSProjectITestsSuite" />
   </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" file="MpsTestsSupport.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.smodel.BaseMPSModuleOwner" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleOwner" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.ActiveEnvironment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentBuilder" />
+    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.ParameterizedSuite" file="ParameterizedSuite.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
@@ -293,37 +338,16 @@
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.FilepathParameterized" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithAllModules" file="WatchingParameterizedWithAllModules.java">
-    <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.RuntimeException" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
-    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseMPSModuleOwner" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleOwner" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.DisposeEnvironmentStatement" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.InitEnvironmentStatement" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentBuilder" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.junit.runner.Runner" />
-    <classNode dependClassName="org.junit.runners.model.MultipleFailureException" />
+    <classNode dependClassName="org.junit.runners.model.Statement" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.WatchingParameterized" />
-    <classNode extendsClassName="org.junit.runners.model.Statement" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.WatchingSuite" file="WatchingSuite.java">
     <classNode dependClassName="java.lang.Class" />

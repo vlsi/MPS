@@ -4,6 +4,9 @@ package jetbrains.mps.testbench.junit.runners;
 
 import org.junit.runner.Runner;
 import org.junit.runner.Description;
+import java.util.List;
+import org.junit.runners.model.TestClass;
+import java.util.ArrayList;
 import org.junit.runner.notification.RunNotifier;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
@@ -21,6 +24,13 @@ import java.lang.reflect.InvocationTargetException;
 
 public class MakeRunner extends Runner {
   private Description myDescription;
+
+  public static List<Runner> withMakeRunner(TestClass testClass, List<Runner> original) {
+    List<Runner> runners = new ArrayList<Runner>();
+    runners.add(new MakeRunner(testClass.getJavaClass()));
+    runners.addAll(original);
+    return runners;
+  }
 
   public MakeRunner(Class<?> class_) {
     myDescription = Description.createTestDescription(class_, "Making");
