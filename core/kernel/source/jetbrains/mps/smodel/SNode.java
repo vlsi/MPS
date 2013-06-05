@@ -312,7 +312,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public void addChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
-    assertCanChange();
     insertChildBefore(role, child, null);
   }
 
