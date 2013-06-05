@@ -15,7 +15,7 @@
  */
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithAllModules;
+import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
@@ -25,7 +25,7 @@ import org.junit.runners.Parameterized.Parameters;
 import java.util.Collections;
 import java.util.List;
 
-@RunWith(WatchingParameterizedWithAllModules.class)
+@RunWith(ParameterizedMpsTest.class)
 public class AuditTypeSystem {
   private static CheckProjectStructureHelper HELPER;
 

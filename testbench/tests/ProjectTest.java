@@ -16,7 +16,7 @@
 
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithAllModules;
+import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
@@ -39,7 +39,7 @@ import java.util.*;
  * User: fyodor
  * Date: Aug 19, 2010
  */
-@RunWith(WatchingParameterizedWithAllModules.class)
+@RunWith(ParameterizedMpsTest.class)
 public class ProjectTest {
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
 

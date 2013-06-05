@@ -38,10 +38,6 @@ public class MpsTestsSupport {
     EnvironmentBuilder.defaultEnvironment().build(withIdea);
   }
 
-  public static void loadDummyProject() {
-    CURRENT_PROJECT = ActiveEnvironment.get().createDummyProject();
-  }
-
   public static void disposeEnv() {
     ActiveEnvironment.get().disposeEnvironment();
   }

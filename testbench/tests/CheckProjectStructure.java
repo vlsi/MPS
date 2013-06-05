@@ -16,7 +16,7 @@
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.testbench.junit.Order;
-import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithAllModules;
+import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
@@ -31,7 +31,7 @@ import java.util.List;
  * Date: Aug 27, 2010
  */
 
-@RunWith(WatchingParameterizedWithAllModules.class)
+@RunWith(ParameterizedMpsTest.class)
 public class CheckProjectStructure {
   private static CheckProjectStructureHelper HELPER;
 
