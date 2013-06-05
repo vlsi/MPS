@@ -847,24 +847,33 @@
     <unitInfo nodeId="6791703723376742374" fileName="MakeRunner.java" startLine="25" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/6791703723376744293">
-    <nodeInfo nodeId="6791703723376744310" fileName="WatchingSuiteWithMake.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />
-    <nodeInfo nodeId="6791703723376744305" fileName="WatchingSuiteWithMake.java" startLine="14" startPosition="98" endLine="15" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6791703723376744322" fileName="WatchingSuiteWithMake.java" startLine="20" startPosition="28" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376744328" fileName="WatchingSuiteWithMake.java" startLine="21" startPosition="42" endLine="22" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376744337" fileName="WatchingSuiteWithMake.java" startLine="22" startPosition="67" endLine="23" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376744345" fileName="WatchingSuiteWithMake.java" startLine="24" startPosition="5" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6791703723376744295" fileName="WatchingSuiteWithMake.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchingSuiteWithMake#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
-    <nodeInfo nodeId="6791703723376744320" fileName="WatchingSuiteWithMake.java" startLine="19" startPosition="40" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6791703723376744314" fileName="WatchingSuiteWithMake.java" startLine="18" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
-    <scopeInfo nodeId="6791703723376744298" fileName="WatchingSuiteWithMake.java" startLine="14" startPosition="98" endLine="15" endPosition="26" />
-    <scopeInfo nodeId="6791703723376744295" fileName="WatchingSuiteWithMake.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="8181622299283506945" fileName="MpsTest.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="children" />
+    <nodeInfo nodeId="6791703723376744305" fileName="MpsTest.java" startLine="15" startPosition="84" endLine="16" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8181622299283506969" fileName="MpsTest.java" startLine="16" startPosition="26" endLine="17" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8181622299283506972" fileName="MpsTest.java" startLine="17" startPosition="34" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8181622299283558871" fileName="MpsTest.java" startLine="18" startPosition="51" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8181622299283506960" fileName="MpsTest.java" startLine="19" startPosition="0" endLine="20" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8181622299283506995" fileName="MpsTest.java" startLine="24" startPosition="64" endLine="25" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8181622299283507011" fileName="MpsTest.java" startLine="26" startPosition="54" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8181622299283507019" fileName="MpsTest.java" startLine="32" startPosition="40" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8181622299283506999" fileName="MpsTest.java" startLine="25" startPosition="37" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8181622299283507013" fileName="MpsTest.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
+    <nodeInfo nodeId="6791703723376744295" fileName="MpsTest.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsTest#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
+    <nodeInfo nodeId="8181622299283506986" fileName="MpsTest.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
+    <scopeInfo nodeId="8181622299283507010" fileName="MpsTest.java" startLine="26" startPosition="54" endLine="27" endPosition="35" />
+    <scopeInfo nodeId="8181622299283507018" fileName="MpsTest.java" startLine="32" startPosition="40" endLine="33" endPosition="20" />
+    <scopeInfo nodeId="8181622299283506994" fileName="MpsTest.java" startLine="24" startPosition="64" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="8181622299283507013" fileName="MpsTest.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="6791703723376744298" fileName="MpsTest.java" startLine="15" startPosition="84" endLine="20" endPosition="78" />
+    <scopeInfo nodeId="6791703723376744295" fileName="MpsTest.java" startLine="15" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="6791703723376744303" varName="builder" />
       <varInfo nodeId="6791703723376744300" varName="klass" />
     </scopeInfo>
-    <scopeInfo nodeId="6791703723376744321" fileName="WatchingSuiteWithMake.java" startLine="20" startPosition="28" endLine="23" endPosition="44" />
-    <scopeInfo nodeId="6791703723376744319" fileName="WatchingSuiteWithMake.java" startLine="19" startPosition="40" endLine="25" endPosition="21" />
-    <scopeInfo nodeId="6791703723376744314" fileName="WatchingSuiteWithMake.java" startLine="18" startPosition="0" endLine="27" endPosition="0" />
-    <unitInfo nodeId="6791703723376744293" fileName="WatchingSuiteWithMake.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.WatchingSuiteWithMake" />
+    <scopeInfo nodeId="8181622299283506986" fileName="MpsTest.java" startLine="23" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="8181622299283506991" varName="notifier" />
+      <varInfo nodeId="8181622299283506989" varName="runner" />
+    </scopeInfo>
+    <unitInfo nodeId="6791703723376744293" fileName="MpsTest.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MpsTest" />
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/7906452883299897332">
     <nodeInfo nodeId="7906452883299929239" fileName="MPSOpenProjectSuite.java" startLine="11" startPosition="96" endLine="12" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />

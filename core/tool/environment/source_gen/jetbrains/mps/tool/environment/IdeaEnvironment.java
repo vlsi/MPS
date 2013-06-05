@@ -98,6 +98,9 @@ public class IdeaEnvironment implements Environment {
   }
 
   public void disposeEnvironment() {
+    // from ModuleTestSuite 
+    TestMain.PROJECT_CONTAINER.clear();
+
     for (Project project : SetSequence.fromSetWithValues(new HashSet<Project>(), openedProjects)) {
       disposeProject(project);
     }

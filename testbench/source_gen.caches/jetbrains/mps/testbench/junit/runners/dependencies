@@ -241,6 +241,18 @@
     <classNode dependClassName="org.junit.runners.model.TestClass" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.MPSProjectITestsSuite" />
   </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.runners.MpsTest" file="MpsTest.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
+    <classNode dependClassName="org.junit.runner.Runner" />
+    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
+    <classNode dependClassName="org.junit.runners.model.InitializationError" />
+    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
+    <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.WatchingSuite" />
+  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" file="MpsTestsSupport.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />
@@ -342,17 +354,6 @@
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.SymbolicSuite" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.WatchingSuiteWithMake" file="WatchingSuiteWithMake.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
-    <classNode dependClassName="org.junit.runner.Runner" />
-    <classNode dependClassName="org.junit.runners.model.InitializationError" />
-    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
-    <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.WatchingSuite" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.misc" file="misc.xml" />
 </dependenciesRoot>

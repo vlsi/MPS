@@ -14,15 +14,10 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.TestMain;
-import jetbrains.mps.testbench.MpsMakeHelper;
+import jetbrains.mps.testbench.junit.runners.MpsTest;
 import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
-import jetbrains.mps.testbench.junit.runners.WatchingSuite;
 import junit.framework.TestSuite;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-
 
 @SuiteClassSymbols({"jetbrains.mps.tests.TestModule_closures_test",
   "jetbrains.mps.tests.TestModule_collections_trove_test",
@@ -57,19 +52,6 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_testWeaving",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_transformation_test_inputModels",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_xml_tests"})
-@RunWith(WatchingSuite.class)
+@RunWith(MpsTest.class)
 public class ModuleTestSuite extends TestSuite {
-
-  private static MpsMakeHelper ourMakeHelper = new MpsMakeHelper();
-
-  @BeforeClass
-  public static void make() throws Exception {
-    ourMakeHelper.make();
-  }
-
-  @AfterClass
-  public static void shutdown() {
-    TestMain.PROJECT_CONTAINER.clear();
-    ourMakeHelper.dispose();
-  }
 }
