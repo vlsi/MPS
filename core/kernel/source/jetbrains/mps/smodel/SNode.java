@@ -313,10 +313,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public void addChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
     assertCanChange();
-
-    SNode firstChild = firstChild();
-    final SNode anchor = firstChild == null ? null : firstChild.treePrevious();
-    insertChild(role, child, anchor);
+    insertChildBefore(role, child, null);
   }
 
   @Override
@@ -533,6 +530,16 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public void insertChild(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
+    if (anchor != null) {
+      insertChildBefore(role, child, ((SNode) anchor).treeNext());
+      return;
+    }
+    List<SNode> childrenWithRole = getChildren(role);
+    insertChildBefore(role, child, childrenWithRole.isEmpty() ? null : childrenWithRole.get(0));
+  }
+
+  public void insertChildBefore(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child,
+      @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     assertCanChange();
 
     if (ourMemberAccessModifier != null) {
@@ -553,7 +560,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
 
     if (anchor != null) {
-      if (anchor.getParent()!=this){
+      if (anchor.getParent() != this) {
         throw new RuntimeException(
             "anchor is not a child of this node" + " | " +
                 "this: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this) + " | " +
@@ -569,7 +576,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 //      }
     }
 
-    children_insertAfter(((SNode) anchor), schild);
+    children_insertBefore(((SNode) anchor), schild);
     schild.setRoleInParent(role);
 
     //if child is in unregistered nodes, add this one too to track undo for it
@@ -1246,32 +1253,40 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return parent;
   }
 
-  protected void children_insertAfter(SNode anchor, @NotNull SNode node) {
+  protected void children_insertBefore(SNode anchor, @NotNull SNode node) {
     //be sure that getFirstChild is called before any access to myFirstChild
     SNode firstChild = firstChild();
-    if (anchor == null) {
-      if (firstChild != null) {
-        node.prev = firstChild.prev;
-        firstChild.prev = node;
-      } else {
-        node.prev = node;
-      }
-      node.next = firstChild;
-      first = node;
-    } else {
-      node.prev = anchor;
-      node.next = anchor.next;
-      if (anchor.next == null) {
-        firstChild.prev = node;
-      } else {
-        anchor.next.prev = node;
-      }
-      anchor.next = node;
-    }
+
     if (myRepository != null) {
       node.attach(myRepository);
     }
     node.parent = this;
+
+    if (firstChild == null) {
+      assert anchor == null;
+      first = node;
+      node.next = null;
+      node.prev = node;
+      return;
+    }
+
+    if (anchor == null) {
+      SNode lastChild = firstChild.prev;
+      node.next = null;
+      node.prev = lastChild;
+      firstChild.prev = node;
+      lastChild.next = node;
+      return;
+    }
+
+    node.next = anchor;
+    node.prev = anchor.prev;
+    if (anchor != firstChild) {
+      anchor.prev.next = node;
+    }else{
+      first = node;
+    }
+    anchor.prev = node;
   }
 
   protected void children_remove(@NotNull SNode node) {
@@ -1397,7 +1412,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @Deprecated in 3.0
    */
   public boolean isRoot() {
-    return getModel() != null && getParent()==null;
+    return getModel() != null && getParent() == null;
   }
 
   @Deprecated
@@ -1647,8 +1662,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    */
   public void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore) {
     if (insertBefore) {
-      final SNode anchor = firstChild() == anchorChild ? null : anchorChild.treePrevious();
-      insertChild(role, child, anchor);
+      insertChildBefore(role, child, anchorChild);
     } else {
       insertChild(role, child, anchorChild);
     }

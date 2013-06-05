@@ -67,7 +67,7 @@ public class ModelLoader {
       if (fullNode == null) {
         LOG.error("model " + myModel.getReference().getModelName() + " (" + myModel.getPersistenceVersion() + ")"
             + ": no peer node in full model for " + node.getNodeId()
-            + " (in " + ((StreamDataSource) myModel.getModelDescriptor().getSource()).getLocation() + ")");
+            + " (in " + (myModel.getModelDescriptor().getSource()).getLocation() + ")");
         return;
       }
       Iterator<jetbrains.mps.smodel.SNode> it = fullNode.getChildren().iterator();
@@ -79,8 +79,7 @@ public class ModelLoader {
           SNode next = it.hasNext() ? it.next() : null;
           String role = curr.getRoleInParent();
           curr.delete();
-          // had to use deprecated method to insert _before_ the anchor node
-          node.insertChild((jetbrains.mps.smodel.SNode) child, role, (jetbrains.mps.smodel.SNode) curr, true);
+          node.insertChildBefore(role, curr, child);
           curr = next;
         }
         if (curr != null && childId.equals(curr.getNodeId())) {
@@ -95,7 +94,6 @@ public class ModelLoader {
         SNode next = it.hasNext() ? it.next() : null;
         String role = curr.getRoleInParent();
         curr.delete();
-        // had to use deprecated method to insert _before_ the anchor node
         node.addChild(role, curr);
         curr = next;
       }
