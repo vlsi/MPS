@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.testbench;
 
 import jetbrains.mps.checkers.LanguageChecker;
 import jetbrains.mps.errors.IErrorReporter;
@@ -22,11 +21,16 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.testbench.CheckProjectStructureUtil;
+import jetbrains.mps.testbench.ModelsExtractor;
+import jetbrains.mps.testbench.PerformanceMessenger;
+import jetbrains.mps.testbench.Testbench;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentBuilder;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.validation.ModelValidator;
@@ -47,18 +51,22 @@ import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
 import static org.junit.Assert.assertNotNull;
 
 public class CheckProjectStructureHelper {
+  private final Set<String> myDisabledModules;
 
   private static long myErrors;
   private static long myWarnings;
   private Environment myEnvironment;
 
-  public CheckProjectStructureHelper() {
+  public CheckProjectStructureHelper(Set<String> disabledModules) {
+    myDisabledModules = disabledModules;
   }
 
   public void init() {
@@ -68,10 +76,54 @@ public class CheckProjectStructureHelper {
     myWarnings = 0;
     // todo: use dummy project
     myEnvironment.openProject(FileUtil.createTmpFile());
+
+    loadAllModulesIntoRepository();
   }
 
   public void dispose() {
     myEnvironment.disposeEnvironment();
+    PerformanceMessenger.getInstance().report("auditErrors", getNumErrors());
+    PerformanceMessenger.getInstance().report("auditWarnings", getNumWarnings());
+    PerformanceMessenger.getInstance().generateReport();
+    System.out.println(getNumErrors() + " errors total");
+    System.out.println(getNumWarnings() + " warnings total");
+  }
+
+  public List<Object[]> filePaths() {
+    List<ModuleHandle> moduleHandles =
+        ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.getExcludeSet(),
+            false);
+
+    ArrayList<Object[]> res = new ArrayList<Object[]>();
+    for (ModuleHandle moduleHandle : moduleHandles) {
+      if (moduleHandle.getFile().getName().endsWith(".iml")) {
+        // temporary ignore .iml files
+        continue;
+      }
+
+      if (myDisabledModules.contains(moduleHandle.getDescriptor().getModuleReference().getModuleName())) {
+        continue;
+      }
+
+      res.add(new Object[]{getDescription(moduleHandle), moduleHandle});
+    }
+
+    Collections.sort(res, new Comparator<Object[]>() {
+      @Override
+      public int compare(Object[] o1, Object[] o2) {
+        return ((String) o1[0]).compareTo((String) o2[0]);
+      }
+    });
+    return res;
+  }
+
+  private static String getDescription(ModuleHandle handle) {
+    if (handle.getFile().getName().endsWith(".mpl")) {
+      return handle.getDescriptor().getNamespace() + " [lang]";
+    } else if (handle.getFile().getName().endsWith(".msd")) {
+      return handle.getDescriptor().getNamespace() + " [solution]";
+    }
+    return handle.getFile().getName() + " - " + handle.getDescriptor().getNamespace();
   }
 
   public static void loadModules(final Collection<ModulesMiner.ModuleHandle> handles) {
@@ -102,6 +154,12 @@ public class CheckProjectStructureHelper {
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
+  }
+
+  public static void loadAllModulesIntoRepository() {
+    CheckProjectStructureHelper.loadModules(
+        ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.getExcludeSet(),
+            false));
   }
 
   public List<String> check(ModulesMiner.ModuleHandle moduleHandle) {
@@ -339,7 +397,7 @@ public class CheckProjectStructureHelper {
     }
 
     for (SNode node : new NodesIterable(sm)) {
-      Testbench.LOG.debug("Checking node " + node);
+//      Testbench.LOG.debug("Checking node " + node);
       if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
         errorMessages.append(node.getConcept().getId());

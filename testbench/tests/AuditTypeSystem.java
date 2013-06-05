@@ -15,7 +15,6 @@
  */
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.testbench.CheckProjectStructureHelper;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -24,12 +23,26 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.util.Collections;
 import java.util.List;
 
 @RunWith(WatchingParameterizedWithMake.class)
 public class AuditTypeSystem {
   private static CheckProjectStructureHelper HELPER;
 
+  @Parameters
+  public static List<Object[]> filePaths() {
+    HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet());
+    HELPER.init();
+    return HELPER.filePaths();
+  }
+
+  @AfterClass
+  public static void cleanUp() {
+    HELPER.dispose();
+  }
+
+  // main part
   private ModuleHandle handle;
 
   public AuditTypeSystem(String testName, ModuleHandle handle) {
@@ -40,21 +53,5 @@ public class AuditTypeSystem {
   public void checkTypeSystem() {
     List<String> errors = HELPER.checkTypeSystem(handle);
     Assert.assertTrue("Type system errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
-  }
-
-  @Parameters
-  public static List<Object[]> filePaths() {
-    HELPER = new CheckProjectStructureHelper();
-    return AuditHelper.filePathes(HELPER);
-  }
-
-  @BeforeClass
-  public static void init() {
-    AuditHelper.init();
-  }
-
-  @AfterClass
-  public static void cleanUp() {
-    AuditHelper.cleanUp(HELPER);
   }
 }

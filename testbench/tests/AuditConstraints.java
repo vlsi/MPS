@@ -15,7 +15,6 @@
  */
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.testbench.CheckProjectStructureHelper;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -24,12 +23,53 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @RunWith(WatchingParameterizedWithMake.class)
 public class AuditConstraints {
+  private static final Set<String> DISABLED_MODULES = new HashSet<String>();
+  static {
+    // obsolete modules
+    DISABLED_MODULES.add("jetbrains.mps.ui.unittest");
+    DISABLED_MODULES.add("jetbrains.mps.ui.sandbox");
+
+    // TransformationUtil_Complex out of scopes is ok,
+    // TODO: TransformationUtil_Expressions should be fixed by right ClassifiersScope (MPS-16863)
+    DISABLED_MODULES.add("jetbrains.mps.debugger.java.runtime.tests");
+
+    // illegal cardinalities is part of test
+    DISABLED_MODULES.add("jetbrains.mps.smodel.test");
+
+    // TODO: when concrete for foreach doesn't works (MPS-16864)
+    DISABLED_MODULES.add("jetbrains.mps.debugger.api.api");
+    DISABLED_MODULES.add("jetbrains.mps.graphLayout.orthogonalLayout");
+
+    // TODO: some of error nodes is ClassifiersScope (MPS-16863)
+    // TODO: and some of them is illegal concept for variable reference, check it with mikev
+    DISABLED_MODULES.add("jetbrains.mps.baseLanguage.test");
+
+    // test usage: root node is not root in test
+    // TODO: maybe fix scopes for test nodes? to all nodes with concept in test root?
+    DISABLED_MODULES.add("jetbrains.mps.build.tests");
+  }
+
   private static CheckProjectStructureHelper HELPER;
 
+  @Parameters
+  public static List<Object[]> filePaths() {
+    HELPER = new CheckProjectStructureHelper(DISABLED_MODULES);
+    HELPER.init();
+    return HELPER.filePaths();
+  }
+
+  @AfterClass
+  public static void cleanUp() {
+    HELPER.dispose();
+  }
+
+  // main part
   private ModuleHandle handle;
 
   public AuditConstraints(String testName, ModuleHandle handle) {
@@ -40,21 +80,5 @@ public class AuditConstraints {
   public void checkConstraints() {
     List<String> errors = HELPER.checkConstraints(handle);
     Assert.assertTrue("Constraints and scopes errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
-  }
-
-  @Parameters
-  public static List<Object[]> filePaths() {
-    HELPER = new CheckProjectStructureHelper();
-    return AuditHelper.filePathes(HELPER);
-  }
-
-  @BeforeClass
-  public static void init() {
-    AuditHelper.init();
-  }
-
-  @AfterClass
-  public static void cleanUp() {
-    AuditHelper.cleanUp(HELPER);
   }
 }
