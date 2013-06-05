@@ -31,6 +31,7 @@ import jetbrains.mps.testbench.Testbench;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentBuilder;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.validation.ModelValidator;
@@ -49,16 +50,28 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 import javax.swing.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import static org.junit.Assert.assertNotNull;
 
 public class CheckProjectStructureHelper {
+  private static final String[] excludes = new String[]{"IdeaPlugin"};
+  private static final Set<IFile> excludeSet = new HashSet<IFile>();
+
+  static {
+    String mpsDir = System.getProperty("user.dir");
+    for (String e : excludes) {
+      excludeSet.add(FileSystem.getInstance().getFileByPath(mpsDir + File.separator + e));
+    }
+  }
+
   private final Set<String> myDisabledModules;
 
   private static long myErrors;
@@ -89,9 +102,15 @@ public class CheckProjectStructureHelper {
     System.out.println(getNumWarnings() + " warnings total");
   }
 
+  public static Set<IFile> getExcludeSet() {
+    Set<IFile> copy = new HashSet<IFile>();
+    copy.addAll(excludeSet);
+    return copy;
+  }
+
   public List<Object[]> filePaths() {
     List<ModuleHandle> moduleHandles =
-        ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.getExcludeSet(),
+        ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), getExcludeSet(),
             false);
 
     ArrayList<Object[]> res = new ArrayList<Object[]>();
@@ -158,7 +177,7 @@ public class CheckProjectStructureHelper {
 
   public static void loadAllModulesIntoRepository() {
     CheckProjectStructureHelper.loadModules(
-        ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.getExcludeSet(),
+        ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), getExcludeSet(),
             false));
   }
 
