@@ -15,6 +15,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.testbench.Testbench;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.util.FileUtil;
@@ -60,6 +61,7 @@ public class IdeaEnvironment implements Environment {
   }
 
   public Project createDummyProject() {
+    ProjectManagerEx.getInstanceEx();
     // from CheckProjectStructureHelper 
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     StandaloneMPSProject project = new StandaloneMPSProject(ideaProject);
