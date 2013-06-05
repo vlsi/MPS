@@ -14,7 +14,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RenameMethodDialog;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
-import jetbrains.mps.idea.core.refactoring.PsiRenameRefactoringWrapper;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.IRefactoring;
@@ -22,6 +21,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -39,19 +39,20 @@ public class MPSMethodRenameRefactoringHandler implements RenameHandler {
   @Override
   public boolean isAvailableOnDataContext(DataContext dataContext) {
     SNode currentNode = (SNode) dataContext.getData(MPSCommonDataKeys.NODE.getName());
-    return currentNode != null && isMethod(currentNode);
+    return currentNode != null && isJavaMethod(currentNode);
 
   }
 
-  private boolean isMethod(final SNode node) {
+  private boolean isJavaMethod(final SNode node) {
     // todo must obtain project here => repository => ModelAccess proper
-    // Q: or constrain it to be only java methods
     return jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        // FIXME this is false
-//        return node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept("org.jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
-        return node.getConcept().getQualifiedName().contains("Method");
+        SConcept concept = node.getConcept();
+        SConceptRepository repo = SConceptRepository.getInstance();
+        return concept.isSubConceptOf(repo.getConcept("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))
+          || concept.isSubConceptOf(repo.getConcept("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))
+          || concept.isSubConceptOf(repo.getConcept("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
       }
     });
   }
