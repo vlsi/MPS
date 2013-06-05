@@ -30,7 +30,6 @@ import java.util.HashMap;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -154,7 +153,8 @@ public class ProjectTestHelper {
     }
 
     public boolean build() {
-      final GenerationOptions.OptionsBuilder optBuilder = GenerationOptions.fromSettings(GenerationSettings.getInstance());
+      // <node> 
+      final GenerationOptions.OptionsBuilder optBuilder = GenerationOptions.getDefaults();
       boolean isParallel = "true".equalsIgnoreCase(System.getProperty("parallel.generation"));
       if (isParallel) {
         optBuilder.strictMode(true).generateInParallel(isParallel, 8);

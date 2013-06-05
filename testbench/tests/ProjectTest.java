@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
 import jetbrains.mps.tool.environment.Environment;
@@ -94,22 +93,6 @@ public class ProjectTest {
     }
   }
 
-  public static void initEnvironment() {
-    // todo: move to BeforeClass
-    // todo: should be .build(false)
-    environment = EnvironmentBuilder.defaultEnvironment().build(true);
-
-    // prepare isParallel mode
-    boolean isParallel = System.getProperty("parallel.generation") != null && Boolean.parseBoolean(System.getProperty("parallel.generation"));
-    GenerationSettings.getInstance().setParallelGenerator(isParallel);
-    GenerationSettings.getInstance().setStrictMode(isParallel);
-    if (isParallel) {
-      GenerationSettings.getInstance().setNumberOfParallelThreads(8);
-    }
-
-    mpsProject = environment.openProject(new File(System.getProperty("user.dir")));
-  }
-
   @AfterClass
   public static void disposeEnvironment() {
     environment.disposeEnvironment();
@@ -117,7 +100,8 @@ public class ProjectTest {
 
   @Parameters
   public static List<Object[]> FIXTURES() {
-    initEnvironment();
+    environment = EnvironmentBuilder.defaultEnvironment().build(true);
+    mpsProject = environment.openProject(new File(System.getProperty("user.dir")));
 
     List<Object[]> fixtures = new ArrayList<Object[]>();
     Set<SModule> allModules = ModelAccess.instance().runReadAction(new Computable<Set<SModule>>() {
