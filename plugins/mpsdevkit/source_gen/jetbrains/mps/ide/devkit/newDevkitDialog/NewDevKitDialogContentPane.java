@@ -22,6 +22,10 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.io.File;
 
+/**
+ * ToDo: rewrite in the same manner as new solution dialog.
+ * (I mean in human-readable form)
+ */
 public class NewDevKitDialogContentPane extends JPanel {
   public NewDevKitDialogContentPane myThis;
   private JLabel myComponent_t9qnp8_b0;
