@@ -162,7 +162,7 @@ public class SNodeOperations {
    */
   public static void insertChild(SNode parent, String role, SNode child, SNode anchor, boolean before) {
     if (before) {
-      parent.insertChildBefore(role, child, anchor);
+      parent.insertChild(role, child, anchor);
     } else {
       insertChild(anchor, parent, role, child);
     }
