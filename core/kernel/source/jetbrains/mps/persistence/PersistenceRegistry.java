@@ -102,6 +102,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   }
 
   @Override
+  public Set<String> getModelFactoryExtensions() {
+    return myExtensionToModelFactoryMap.keySet();
+  }
+
+  @Override
   public SModelId createModelId(String text) {
     int colon = text.indexOf(':');
     if (colon == -1) {

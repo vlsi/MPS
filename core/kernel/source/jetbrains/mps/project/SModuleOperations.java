@@ -13,7 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
+
+import jetbrains.mps.persistence.DefaultModelRoot;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -39,6 +43,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
@@ -134,6 +139,10 @@ public class SModuleOperations {
   }
 
   public static EditableSModel createModelWithAdjustments(String name, @NotNull ModelRoot root) {
+    return createModelWithAdjustments(name, root, null);
+  }
+
+  public static EditableSModel createModelWithAdjustments(String name, @NotNull ModelRoot root, @Nullable ModelFactory modelFactory) {
     // todo: review usages of this method: a) i think in most cases we don't need adjustments b) in most cases we got first modelroot from module,
     // create method like createModel(SModule module, String name) ?
 
@@ -151,7 +160,8 @@ public class SModuleOperations {
       return null;
     }
 
-    EditableSModel model = (EditableSModel) root.createModel(name);
+    EditableSModel model = (EditableSModel) (modelFactory != null && root instanceof DefaultModelRoot
+        ? ((DefaultModelRoot) root).createModel(name, modelFactory) : root.createModel(name) );
     // model.getSModel() ?
     model.setChanged(true);
     model.save();
