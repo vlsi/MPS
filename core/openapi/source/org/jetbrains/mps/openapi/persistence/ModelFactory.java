@@ -82,4 +82,14 @@ public interface ModelFactory {
    * returns true if plain text is not enough to represent stored data.
    */
   boolean isBinary();
+
+  /**
+   * returns the file extension this factory is registered on
+   */
+  String getFileExtension();
+
+  /**
+   * User-readable title of the storage format.
+   */
+  String getFormatTitle();
 }

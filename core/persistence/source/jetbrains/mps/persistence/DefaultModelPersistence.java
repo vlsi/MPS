@@ -43,7 +43,7 @@ import java.io.Reader;
 import java.util.Map;
 
 /**
- * evgeny, 11/9/12
+ * Factory for models stored in .mps files.
  */
 public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultModelPersistence.class));
@@ -148,6 +148,16 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   @Override
   public boolean isBinary() {
     return false;
+  }
+
+  @Override
+  public String getFileExtension() {
+    return MPSExtentions.MODEL;
+  }
+
+  @Override
+  public String getFormatTitle() {
+    return "Universal XML-based format";
   }
 
   public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {

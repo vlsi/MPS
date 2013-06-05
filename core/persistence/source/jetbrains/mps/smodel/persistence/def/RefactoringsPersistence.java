@@ -15,17 +15,18 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler;
 import jetbrains.mps.smodel.persistence.def.refactoring.HistoryWriter;
-import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Document;
+import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
@@ -45,7 +46,7 @@ public class RefactoringsPersistence {
   private static IFile getRefactoringsFile(IFile modelFile) {
     String modelPath = modelFile.getPath();
     String refactoringsPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length())
-      + MPSExtentions.DOT_REFACTORINGS;
+        + MPSExtentions.DOT_REFACTORINGS;
     return FileSystem.getInstance().getFileByPath(refactoringsPath);
   }
 
@@ -66,9 +67,40 @@ public class RefactoringsPersistence {
     }
   }
 
+  public static void save(MultiStreamDataSource source, StructureModificationLog log) {
+    Document document = new HistoryWriter().saveHistory(log);
+    try {
+      JDOMUtil.writeDocument(document, source, MPSExtentions.DOT_REFACTORINGS);
+    } catch (IOException e) {
+      LOG.error("Cannot save refactorings log into " + source.getLocation(), e);
+    }
+  }
+
+  public static StructureModificationLog load(MultiStreamDataSource dataSource) {
+    InputStream in = null;
+    try {
+      HistoryReaderHandler handler = new HistoryReaderHandler();
+      in = dataSource.openInputStream(MPSExtentions.DOT_REFACTORINGS);
+      InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
+      JDOMUtil.createSAXParser().parse(source, handler);
+      return handler.getResult();
+    } catch (SAXParseException e) {
+      LOG.warn(dataSource.getLocation() + "/" + MPSExtentions.DOT_REFACTORINGS + " line " + e.getLineNumber());
+    } catch (IOException e) {
+      LOG.error(null, e);
+    } catch (SAXException e) {
+      LOG.error(null, e);
+    } catch (ParserConfigurationException e) {
+      LOG.error(null, e);
+    } finally {
+      FileUtil.closeFileSafe(in);
+    }
+    return null;
+  }
+
   public static StructureModificationLog load(IFile modelFile) {
     IFile refactoringsFile = getRefactoringsFile(modelFile);
-    if (!refactoringsFile.exists())  return null;
+    if (!refactoringsFile.exists()) return null;
     InputStream in = null;
     try {
       HistoryReaderHandler handler = new HistoryReaderHandler();
@@ -85,13 +117,7 @@ public class RefactoringsPersistence {
     } catch (ParserConfigurationException e) {
       LOG.error(null, e);
     } finally {
-      if (in != null) {
-        try {
-          in.close();
-        } catch (IOException e) {
-          LOG.error(null, e);
-        }
-      }
+      FileUtil.closeFileSafe(in);
     }
     return null;
   }

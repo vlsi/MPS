@@ -97,6 +97,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
         if (dataSource instanceof FileDataSource) {
           LOG.error("cannot load " + dataSource.getLocation() + ": relPath = " + relPath, new Throwable());
         }
+        // TODO fix
         return null;
       }
       ref = PersistenceFacade.getInstance().createModelReference(
@@ -105,6 +106,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
       SModelId id = PersistenceFacade.getInstance().createModelId("path:" + relPath);
       SModuleReference mref = ModuleReference.fromString(moduleRef);
       if (mref == null) {
+        // TODO fix
         return null;
       }
       ref = PersistenceFacade.getInstance().createModelReference(mref, id, modelName);
@@ -118,6 +120,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
       throw new UnsupportedDataSourceException(dataSource);
     }
 
+    // TODO create xml models
     return null;
   }
 
@@ -151,6 +154,16 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
   @Override
   public boolean isBinary() {
     return false;
+  }
+
+  @Override
+  public String getFileExtension() {
+    return XML_EXTENSION;
+  }
+
+  @Override
+  public String getFormatTitle() {
+    return "XML file";
   }
 
 

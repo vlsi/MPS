@@ -194,6 +194,16 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("modelUID".equals(name)) {
         return;
       }
+      if ("content".equals(name)) {
+        if ("header".equals(value)) {
+          result.setContentKind(ModelLoadResult.ContentKind.MODEL_HEADER);
+        } else if ("root".equals(value)) {
+          result.setContentKind(ModelLoadResult.ContentKind.MODEL_ROOT);
+        } else {
+          throw new SAXException("unknown content attribute value: " + value);
+        }
+        return;
+      }
       if ("version".equals(name)) {
         int version;
         try {
@@ -285,7 +295,10 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
 
     private void handleChild_286176397450364112(Object resultObject, Object value) throws SAXException {
       String[] child = (String[]) value;
-      fieldhelper.addImportToModel(fieldmodel, child[0], child[1], Integer.parseInt(child[2]), child[3] != null);
+      fieldhelper.addImportToModel(fieldmodel, child[0], child[1], (child[2] != null ?
+        Integer.parseInt(child[2]) :
+        -1
+      ), child[3] != null);
     }
 
     private void handleChild_1361478912184551722(Object resultObject, Object value) throws SAXException {
@@ -366,7 +379,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
   }
 
   public class ImportElementHandler extends ModelReader8Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"index", "version", "modelUID"};
+    private String[] requiredAttributes = new String[]{"index", "modelUID"};
 
     public ImportElementHandler() {
     }

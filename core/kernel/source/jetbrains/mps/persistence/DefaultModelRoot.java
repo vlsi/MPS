@@ -115,17 +115,35 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return modelFactory.canCreate(modelName, source);
   }
 
-  @Override
-  public SModel createModel(String modelName) {
-    ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
-    FileDataSource source = createSource(modelName, MPSExtentions.MODEL, null);
-    SModel model = modelFactory.create(modelName, source);
+  public SModel createModel(String modelName, ModelFactory factory) {
+    DataSource source = factory instanceof FolderModelFactory
+        ? ((FolderModelFactory) factory).createNewSource(this, null, modelName)
+        : createSource(modelName, factory.getFileExtension(), null);
+    if (source == null) {
+      return null;
+    }
+    SModel model = factory.create(modelName, source);
     if (model != null) {
       ((SModelBase) model).setModelRoot(this);
       // TODO fix
       register(model);
     }
     return model;
+  }
+
+  @Override
+  public SModel createModel(String modelName) {
+    // TODO temporary remove
+//    for (FolderModelFactory factory : PersistenceRegistry.getInstance().getFolderModelFactories()) {
+//      SModel model = createModel(modelName, factory);
+//      if (model != null) {
+//        return model;
+//      }
+//    }
+    // TODO endof temporary code
+
+    ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
+    return createModel(modelName, modelFactory);
   }
 
   protected final void collectModels(IFile dir, String package_, String relativePath, Map<String, String> options, Collection<SModel> models) {
@@ -244,7 +262,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return false;
   }
 
-  private boolean isLanguageAspectsSourceRoot(String sourceRoot) {
+  public boolean isLanguageAspectsSourceRoot(String sourceRoot) {
     if (!(getModule() instanceof Language)) return false;
     return FileSystem.getInstance().getFileByPath(sourceRoot).getName().equals(Language.LANGUAGE_MODELS);
   }

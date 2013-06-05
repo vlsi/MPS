@@ -26,4 +26,9 @@ public interface FolderModelFactory extends ModelFactory {
    * Creates data sources for models in the folder.
    */
   Iterable<DataSource> createDataSources(ModelRoot root, IFile folder);
+
+  /**
+   * Creates new data source.
+   */
+  DataSource createNewSource(ModelRoot root, String sourceRoot, String modelName);
 }

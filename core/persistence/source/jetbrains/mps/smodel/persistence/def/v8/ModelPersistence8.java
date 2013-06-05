@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -32,13 +33,18 @@ import java.util.List;
  */
 public class ModelPersistence8 extends ModelPersistence7 {
   @Override
+  public int getVersion() {
+    return 8;
+  }
+
+  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter8();
   }
 
   @Override
   public IModelReader getModelReader() {
-    throw new UnsupportedOperationException("use sax reader");
+    return null;
   }
 
   @Override
@@ -55,4 +61,6 @@ public class ModelPersistence8 extends ModelPersistence7 {
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return new LineToContentMapReader8Handler();
   }
+
+  // TODO override
 }

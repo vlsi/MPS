@@ -21,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
 public class ModelLoadResult {
   private ModelLoadingState state;
   private DefaultSModel model;
+  private ContentKind contentKind = ContentKind.MODEL;
 
   public ModelLoadResult(@NotNull DefaultSModel model, ModelLoadingState state) {
     this.model = model;
@@ -38,5 +39,19 @@ public class ModelLoadResult {
   @NotNull
   public DefaultSModel getModel() {
     return model;
+  }
+
+  public ContentKind getContentKind() {
+    return contentKind;
+  }
+
+  public void setContentKind(ContentKind contentKind) {
+    this.contentKind = contentKind;
+  }
+
+  public enum ContentKind {
+    MODEL,
+    MODEL_HEADER,
+    MODEL_ROOT
   }
 }

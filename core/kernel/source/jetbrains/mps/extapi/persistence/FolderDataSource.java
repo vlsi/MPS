@@ -114,6 +114,15 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   }
 
   @Override
+  public boolean delete(String name) {
+    IFile file = getFile(name);
+    if (file == null) {
+      return false;
+    }
+    return file.delete();
+  }
+
+  @Override
   public long getTimestamp() {
     long max = -1;
     for (IFile file : getStreams()) {

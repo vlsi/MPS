@@ -108,6 +108,16 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     return true;
   }
 
+  @Override
+  public String getFileExtension() {
+    return MPSExtentions.MODEL_BINARY;
+  }
+
+  @Override
+  public String getFormatTitle() {
+    return "Universal binary format";
+  }
+
   public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {
     try {
       BinarySModel model = BinaryPersistence.readModel(source.openInputStream());

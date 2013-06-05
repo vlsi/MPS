@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,35 +16,32 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
-import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.DefaultModelPersistence;
-import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.refactoring.StructureModificationLog;
+import jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoader;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.loading.UpdateableModel;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 
 import java.io.IOException;
-import java.util.Map;
 
-import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
-
-public class DefaultSModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
+/**
+ * evgeny, 6/3/13
+ */
+public class FilePerRootSModel extends EditableSModelBase implements /*GeneratableSModel,*/ RefactorableSModelDescriptor {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultSModelDescriptor.class));
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
@@ -76,15 +73,15 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
 
-  public DefaultSModelDescriptor(StreamDataSource source, SModelReference modelReference, SModelHeader header) {
+  public FilePerRootSModel(MultiStreamDataSource source, SModelReference modelReference, SModelHeader header) {
     super(modelReference, source);
     myHeader = header;
   }
 
   @NotNull
   @Override
-  public StreamDataSource getSource() {
-    return (StreamDataSource) super.getSource();
+  public MultiStreamDataSource getSource() {
+    return (MultiStreamDataSource) super.getSource();
   }
 
   public ModelLoadingState getLoadingState() {
@@ -136,7 +133,7 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
   private ModelLoadResult loadSModel(ModelLoadingState state) {
     SModelReference dsmRef = getReference();
 
-    StreamDataSource source = getSource();
+    MultiStreamDataSource source = getSource();
     if (!source.isReadOnly() && source.getTimestamp() == -1) {
       // no file on disk
       DefaultSModel model = new DefaultSModel(dsmRef, new RegularNodeIdMap());
@@ -146,7 +143,7 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
     ModelLoadResult result;
     try {
       // TODO use DataSource
-      result = ModelPersistence.readModel(myHeader, source, state);
+      result = FilePerRootFormatUtil.readModel(myHeader, source, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       DefaultSModel newModel = new InvalidDefaultSModel(getSModelReference(), e);
@@ -186,7 +183,7 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
   public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
       if (myStructureModificationLog == null && getSource() instanceof FileDataSource) {
-        myStructureModificationLog = RefactoringsPersistence.load(((FileDataSource) getSource()).getFile());
+        myStructureModificationLog = RefactoringsPersistence.load(getSource());
       }
       if (myStructureModificationLog == null) {
         myStructureModificationLog = new StructureModificationLog();
@@ -198,8 +195,7 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
   @Override
   public void saveStructureModificationLog(@NotNull StructureModificationLog log) {
     myStructureModificationLog = log;
-    if (!(getSource() instanceof FileDataSource)) throw new UnsupportedOperationException("cannot save structure modification log");
-    RefactoringsPersistence.save(((FileDataSource) getSource()).getFile(), log);
+    RefactoringsPersistence.save(getSource(), log);
   }
 
   @Override
@@ -209,9 +205,10 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
       // we do not save stub model to not overwrite the real model
       return false;
     }
-    return ModelPersistence.saveModel(smodel, getSource()) != null;
+    return FilePerRootFormatUtil.saveModel(smodel, getSource(), smodel.getPersistenceVersion());
   }
 
+  /*
   @Override
   public boolean isGeneratable() {
     return !isDoNotGenerate() && !getSource().isReadOnly() && SModelStereotype.isUserModel(this);
@@ -221,6 +218,7 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
   public boolean isGenerateIntoModelFolder() {
     return Boolean.parseBoolean(getSModelHeader().getOptionalProperty("useModelFolderForGeneration"));
   }
+
 
   @Override
   public String getModelHash() {
@@ -235,8 +233,9 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
     Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
     if (generationHashes != null) return generationHashes;
 
-    return DefaultModelPersistence.getDigestMap(getSource());
+    return PerRootModelPersistence.getDigestMap(getSource());
   }
+
 
   @Override
   public void setDoNotGenerate(boolean value) {
@@ -248,7 +247,7 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
   @Override
   public boolean isDoNotGenerate() {
     return getSModelHeader().isDoNotGenerate();
-  }
+  }                            */
 
   @Override
   public int getVersion() {
@@ -279,7 +278,7 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
       loadedSModel.setVersion(latestVersion);
-      LOG.error("Version for model " + getSModelReference().getModelName() + " was not set.");
+      LOG.error("Version for model " + getReference().getModelName() + " was not set.");
     }
   }
 
@@ -300,7 +299,7 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
   @Override
   protected void reloadContents() {
     try {
-      myHeader = ModelPersistence.loadDescriptor(getSource());
+      myHeader = FilePerRootFormatUtil.loadDescriptor(getSource());
     } catch (ModelReadException e) {
       updateTimestamp();
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
@@ -314,4 +313,5 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
     ModelLoadResult result = loadSModel(myModel.getState());
     replaceModel(result.getModel(), result.getState());
   }
+
 }
