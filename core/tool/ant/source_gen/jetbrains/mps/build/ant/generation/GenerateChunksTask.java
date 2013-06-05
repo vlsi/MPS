@@ -31,7 +31,6 @@ public class GenerateChunksTask extends MpsLoadTask {
     myWhatToDo.addChunk(chunk.getModules(), chunk.getBootstrap());
   }
 
-  @Override
   public void addConfiguredLibrary(LibraryDataType jar) {
     File file = jar.getFile();
     if (file != null) {
