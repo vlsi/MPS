@@ -17,6 +17,7 @@
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentBuilder;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
@@ -47,7 +48,7 @@ import java.util.*;
 public class ProjectTest {
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
 
-  private static jetbrains.mps.tool.environment.Environment environment;
+  private static Environment environment;
   private static Project mpsProject;
 
   public static class Fixture {
