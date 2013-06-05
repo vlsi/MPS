@@ -21,7 +21,9 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptUtil;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -105,8 +107,7 @@ class IntelligentNodeMover {
       SNode currentTarget = parent.getParent();
 
       while (currentTarget != null) {
-        //todo bad check
-        if (haveSimilarLink(current, link)) {
+        if (haveSimilarLink(currentTarget, link)) {
           parent.removeChild(current);
           addWithAnchor(currentTarget, currentAnchor, role, current);
           moveOtherNodes(current);
@@ -190,7 +191,13 @@ class IntelligentNodeMover {
   }
 
   private boolean haveSimilarLink(SNode current, SLink link) {
-    return true;
+    for (SAbstractConcept concept : SConceptUtil.getAllSuperConcepts(current.getConcept(), true)) {
+      SLink currentLink = concept.findLink(link.getRole());
+      if (currentLink != null && currentLink.isMultiple() && !currentLink.isReference() && currentLink.getTargetConcept().equals(link.getTargetConcept())) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private SNode siblingWithTheSameRole(SNode node) {
