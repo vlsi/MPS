@@ -69,12 +69,15 @@ public class IdeaEnvironment implements Environment {
     project.setProjectFile(projectFile);
     projectFile.deleteOnExit();
     project.init(new ProjectDescriptor());
+    project.projectOpened();
 
     SetSequence.fromSet(openedProjects).addElement(project);
     return project;
   }
 
   public void disposeProject(final Project project) {
+    ((StandaloneMPSProject) project).projectClosed();
+
     // part from ProjectTest 
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
@@ -90,6 +93,8 @@ public class IdeaEnvironment implements Environment {
         IdeEventQueue.getInstance().flushQueue();
       }
     });
+
+    SetSequence.fromSet(openedProjects).removeElement(project);
   }
 
   public void disposeEnvironment() {
