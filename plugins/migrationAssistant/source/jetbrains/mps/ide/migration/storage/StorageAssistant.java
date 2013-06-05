@@ -34,6 +34,9 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.migration.storage.StorageAssistant.MyState;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProjectVersion;
+import jetbrains.mps.project.Version;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,7 +56,9 @@ public class StorageAssistant extends AbstractProjectComponent implements Persis
 
   @Override
   public void projectOpened() {
+    Version version = myProject.getComponent(MPSProjectVersion.class).getVersion();
     if(myProject instanceof ProjectEx
+        && !version.isMajorUpdate(MPSProjectVersion.CURRENT)
         && ((ProjectEx)myProject).getStateStore().getStorageScheme() != StorageScheme.DIRECTORY_BASED
         && myState.offerStorageMigration) {
       StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
