@@ -49,14 +49,6 @@ public class InterfaceSNode extends SNode {
   }
 
   @Override
-  public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    if (skippedRoles != null) {
-      enforceModelLoad();
-    }
-    super.insertChild(role, child, anchor);
-  }
-
-  @Override
   public void insertChildBefore(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     if (skippedRoles != null) {
       enforceModelLoad();

@@ -529,12 +529,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public void insertChild(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    if (anchor != null) {
-      insertChildBefore(role, child, ((SNode) anchor).treeNext());
-      return;
-    }
-    List<SNode> childrenWithRole = getChildren(role);
-    insertChildBefore(role, child, childrenWithRole.isEmpty() ? null : childrenWithRole.get(0));
+    jetbrains.mps.util.SNodeOperations.insertChild(this, role, child, anchor);
   }
 
   public void insertChildBefore(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child,
@@ -1240,7 +1235,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return prev;
   }
 
-  protected SNode treeNext() {
+  public SNode treeNext() {
     if (next == null) return null;
     if (myRepository != null && next.myRepository == null) {
       next.attach(myRepository);
@@ -1282,7 +1277,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     node.prev = anchor.prev;
     if (anchor != firstChild) {
       anchor.prev.next = node;
-    }else{
+    } else {
       first = node;
     }
     anchor.prev = node;

@@ -164,7 +164,7 @@ public class SNodeOperations {
     if (before) {
       parent.insertChild(role, child, anchor);
     } else {
-      insertChild(anchor, parent, role, child);
+      insertChild(parent, role, child, anchor);
     }
   }
 
@@ -172,7 +172,12 @@ public class SNodeOperations {
    * todo rewrite the code via snode methods
    */
   public static void insertChild(SNode parent, String role, SNode child, SNode anchor) {
-    parent.insertChild(role, child, anchor);
+    if (anchor != null) {
+      parent.insertChildBefore(role, child, ((jetbrains.mps.smodel.SNode) anchor).treeNext());
+      return;
+    }
+    Iterable<? extends SNode> childrenWithRole = parent.getChildren(role);
+    parent.insertChildBefore(role, child, childrenWithRole.iterator().hasNext() ? null : childrenWithRole.iterator().next());
   }
 
   /**
