@@ -178,8 +178,8 @@ public class SNodeOperations {
     }
     Iterable<? extends SNode> childrenWithRole = parent.getChildren(role);
     parent.insertChildBefore(role, child, (childrenWithRole.iterator().hasNext() ?
-      null :
-      childrenWithRole.iterator().next()
+      childrenWithRole.iterator().next() :
+      null
     ));
   }
 
