@@ -49,7 +49,7 @@ public class FilePerRootSModel extends EditableSModelBase implements Generatable
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
     @Override
-    protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable DefaultSModel current) {
+    protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current) {
       if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult(null, ModelLoadingState.NOT_LOADED);
       if (state == ModelLoadingState.ROOTS_LOADED) {
         ModelLoadResult result = loadSModel(ModelLoadingState.ROOTS_LOADED);
@@ -58,13 +58,13 @@ public class FilePerRootSModel extends EditableSModelBase implements Generatable
         return result;
       }
       if (state == ModelLoadingState.FULLY_LOADED) {
-        DefaultSModel fullModel = loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
+        DefaultSModel fullModel = (DefaultSModel)loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
         updateTimestamp();
         if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
-        current.setUpdateMode(true);   //not to send events on changes
+        ((DefaultSModel)current).setUpdateMode(true);   //not to send events on changes
         fullModel.setUpdateMode(true);
         new ModelLoader(current, fullModel).update();
-        current.setUpdateMode(false);  //enable events
+        ((DefaultSModel)current).setUpdateMode(false);  //enable events
         return new ModelLoadResult(current, ModelLoadingState.FULLY_LOADED);
       }
       throw new UnsupportedOperationException();
@@ -95,13 +95,13 @@ public class FilePerRootSModel extends EditableSModelBase implements Generatable
   public final DefaultSModel getSModelInternal() {
     ModelLoadingState oldState = myModel.getState();
     if (oldState.ordinal() >= ModelLoadingState.ROOTS_LOADED.ordinal()) {
-      return myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+      return (DefaultSModel)myModel.getModel(ModelLoadingState.ROOTS_LOADED);
     }
     synchronized (myModel) {
-      if (myModel instanceof InvalidSModel) return myModel.getModel(null);
+      if (myModel instanceof InvalidSModel) return (DefaultSModel)myModel.getModel(null);
 
       oldState = myModel.getState();
-      DefaultSModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+      DefaultSModel res = (DefaultSModel)myModel.getModel(ModelLoadingState.ROOTS_LOADED);
       if (res == null) return null; // this is when we are in recursion
       if (oldState != myModel.getState()) {
         res.setModelDescriptor(this);
@@ -129,7 +129,7 @@ public class FilePerRootSModel extends EditableSModelBase implements Generatable
 
   @Override
   protected DefaultSModel getCurrentModelInternal() {
-    return myModel.getModel(null);
+    return (DefaultSModel)myModel.getModel(null);
   }
 
   //just loads model, w/o changing state of SModelDescriptor
@@ -312,7 +312,7 @@ public class FilePerRootSModel extends EditableSModelBase implements Generatable
     if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
 
     ModelLoadResult result = loadSModel(myModel.getState());
-    replaceModel(result.getModel(), result.getState());
+    replaceModel((DefaultSModel)result.getModel(), result.getState());
   }
 
 }

@@ -19,16 +19,26 @@ import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.BinaryModelPersistence;
 import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.InvalidSModel;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoader;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.smodel.loading.UpdateableModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.IOException;
@@ -40,8 +50,31 @@ import static jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
  * evgeny, 11/21/12
  */
 public class BinarySModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(BinarySModelDescriptor.class));
 
-  private volatile BinarySModel myModel = null;
+  private final UpdateableModel myModel = new UpdateableModel(this) {
+    @Override
+    protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current) {
+      if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult(null, ModelLoadingState.NOT_LOADED);
+      if (state == ModelLoadingState.ROOTS_LOADED) {
+        ModelLoadResult result = loadSModel(ModelLoadingState.ROOTS_LOADED);
+        tryFixingVersion(result.getModel());
+        updateTimestamp();
+        return result;
+      }
+      if (state == ModelLoadingState.FULLY_LOADED) {
+        SModel fullModel = loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
+        updateTimestamp();
+        if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
+        ((BinarySModel)current).setUpdateMode(true);   //not to send events on changes
+        ((BinarySModel)fullModel).setUpdateMode(true);
+        new ModelLoader(current, fullModel).update();
+        ((BinarySModel)current).setUpdateMode(false);  //enable events
+        return new ModelLoadResult(current, ModelLoadingState.FULLY_LOADED);
+      }
+      throw new UnsupportedOperationException();
+    }
+  };
   private final BinaryModelHeader myHeader;
 
   private final Object myRefactoringHistoryLock = new Object();
@@ -60,28 +93,67 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
 
   @Override
   protected BinarySModel getCurrentModelInternal() {
-    return myModel;
+    return (BinarySModel) myModel.getModel(null);
   }
 
   @Override
   public synchronized BinarySModel getSModelInternal() {
-    if (myModel == null) {
-      myModel = loadSModel();
-      myModel.setModelDescriptor(this);
-      updateTimestamp();
-      // TODO FIXME listeners are invoked while holding the lock
-      fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+    ModelLoadingState oldState = myModel.getState();
+    if (oldState.ordinal() >= ModelLoadingState.ROOTS_LOADED.ordinal()) {
+      return (BinarySModel) myModel.getModel(ModelLoadingState.ROOTS_LOADED);
     }
-    return myModel;
+    synchronized (myModel) {
+      if (myModel instanceof InvalidSModel) return (BinarySModel) myModel.getModel(null);
+
+      oldState = myModel.getState();
+      BinarySModel res = (BinarySModel) myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+      if (res == null) return null; // this is when we are in recursion
+      if (oldState != myModel.getState()) {
+        res.setModelDescriptor(this);
+        // TODO FIXME listeners are invoked while holding the lock
+        fireModelStateChanged(myModel.getState());
+      }
+      return res;
+    }
   }
 
   @NotNull
-  private BinarySModel loadSModel() {
-    try {
-      return BinaryPersistence.readModel(getReference(), getSource());
-    } catch (ModelReadException e) {
-      return new InvalidBinarySModel(getReference(), e);
+  private ModelLoadResult loadSModel(ModelLoadingState state) {
+    SModelReference dsmRef = getReference();
+
+    StreamDataSource source = getSource();
+    if (!source.isReadOnly() && source.getTimestamp() == -1) {
+      // no file on disk
+      BinarySModel model = new BinarySModel(myHeader);
+      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
+
+    ModelLoadResult result;
+    try {
+      // TODO use DataSource
+      result = new ModelLoadResult(BinaryPersistence.readModel(getReference(), getSource()), state);
+    } catch (ModelReadException e) {
+      SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
+      InvalidBinarySModel newModel = new InvalidBinarySModel(getReference(), e);
+      return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
+    }
+
+    jetbrains.mps.smodel.SModel model = result.getModel();
+    if (result.getState() == ModelLoadingState.FULLY_LOADED) {
+      boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
+
+      if (needToSave && !source.isReadOnly()) {
+        setChanged(true);
+      }
+    }
+
+    LOG.assertLog(model.getReference().equals(dsmRef),
+        "\nError loading model from: \"" + source.getLocation() + "\"\n" +
+            "expected model UID     : \"" + dsmRef + "\"\n" +
+            "but was UID            : \"" + model.getReference() + "\"\n" +
+            "the model will not be available.\n" +
+            "Make sure that all project's roots and/or the model namespace is correct");
+    return result;
   }
 
   @Override
@@ -89,21 +161,28 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
     return myModel != null;
   }
 
-  @Override
-  protected void reloadContents() {
-    updateTimestamp();
+  void replaceModel(final BinarySModel newModel, final ModelLoadingState state) {
+    ModelAccess.assertLegalWrite();
 
-    if (!isLoaded()) return;
-
-    final BinarySModel newModel = loadSModel();
+    if (newModel == getCurrentModelInternal()) return;
     myStructureModificationLog = null;
     setChanged(false);
     super.replaceModel(new Runnable() {
       @Override
       public void run() {
-        myModel = newModel;
+        myModel.replaceWith(newModel, state);
       }
     });
+  }
+
+  @Override
+  protected void reloadContents() {
+    updateTimestamp();
+
+    if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
+
+    ModelLoadResult result = loadSModel(myModel.getState());
+    replaceModel((BinarySModel)result.getModel(), result.getState());
   }
 
   @Override
@@ -140,7 +219,6 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
 
   @Override
   public int getVersion() {
-    if (myModel != null) return (myModel).getVersion();
     return myHeader.getVersion();
   }
 
@@ -194,4 +272,14 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
     return myHeader.createCopy();
   }
 
+  private void tryFixingVersion(jetbrains.mps.smodel.SModel loadedSModel) {
+    if (getVersion() != -1) return;
+
+    int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
+    myStructureModificationLog = null;  // we don't need to keep log in memory
+    if (latestVersion != -1) {
+      loadedSModel.setVersion(latestVersion);
+      LOG.error("Version for model " + getSModelReference().getModelName() + " was not set.");
+    }
+  }
 }

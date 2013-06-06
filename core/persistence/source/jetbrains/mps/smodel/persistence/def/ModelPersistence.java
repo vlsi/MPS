@@ -344,14 +344,14 @@ public class ModelPersistence {
   public static DefaultSModel readModel(@NotNull final StreamDataSource source, boolean onlyRoots) throws ModelReadException {
     SModelHeader header = loadDescriptor(source);
     ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
-    return readModel(header, source, state).getModel();
+    return (DefaultSModel)readModel(header, source, state).getModel();
   }
 
   @NotNull
   public static DefaultSModel readModel(@NotNull final String content, boolean onlyRoots) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
     ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
-    return readModel(header, new InputSource(new StringReader(content)), state).getModel();
+    return (DefaultSModel)readModel(header, new InputSource(new StringReader(content)), state).getModel();
   }
 
   @NotNull

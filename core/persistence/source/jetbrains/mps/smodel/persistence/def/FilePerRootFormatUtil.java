@@ -86,7 +86,7 @@ public class FilePerRootFormatUtil {
     } finally {
       FileUtil.closeFileSafe(in);
     }
-    result = headerHandler.getResult().getModel();
+    result = (DefaultSModel)headerHandler.getResult().getModel();
     header = result.getSModelHeader();
 
     // load roots

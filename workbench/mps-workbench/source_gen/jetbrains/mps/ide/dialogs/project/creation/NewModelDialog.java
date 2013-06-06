@@ -26,14 +26,17 @@ import javax.swing.JList;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import java.awt.Insets;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.List;
+import java.util.LinkedList;
+import java.util.Arrays;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.Generator;
 import com.intellij.ui.ColoredListCellRenderer;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import java.util.List;
-import java.util.LinkedList;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -88,15 +91,15 @@ public class NewModelDialog extends DialogWrapper {
   }
 
   private void initContentPane() {
-    JPanel mainPanel = new JPanel(new GridLayoutManager(8, 1));
+    JPanel mainPanel = new JPanel(new GridLayoutManager(6, 1));
     mainPanel.setPreferredSize(new Dimension(200, 50));
 
     GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
 
     mainPanel.add(new JLabel("Model root:"), constraints);
+
     constraints.setRow(constraints.getRow() + 1);
     mainPanel.add(myModelRoots, constraints);
-    constraints.setRow(constraints.getRow() + 1);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (ModelRoot root : myModule.getModelRoots()) {
       if (root.canCreateModels()) {
@@ -133,10 +136,13 @@ public class NewModelDialog extends DialogWrapper {
       myNamespace + "."
     ));
 
+    constraints.setRow(constraints.getRow() + 1);
     mainPanel.add(new JLabel("Model name:"), constraints);
-    constraints.setRow(constraints.getRow() + 1);
-    mainPanel.add(myModelName, constraints);
-    constraints.setRow(constraints.getRow() + 1);
+
+    JPanel nameAndStereotype = new JPanel(new GridLayoutManager(1, 3, new Insets(0, 0, 0, 0), -1, -1));
+    GridConstraints nameConstraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+
+    nameAndStereotype.add(myModelName, nameConstraints);
     myModelName.addKeyListener(new KeyAdapter() {
       @Override
       public void keyReleased(KeyEvent event) {
@@ -144,10 +150,17 @@ public class NewModelDialog extends DialogWrapper {
       }
     });
 
-    mainPanel.add(new JLabel("Stereotype:"), constraints);
-    constraints.setRow(constraints.getRow() + 1);
+    final JLabel atSign = new JLabel();
+    nameConstraints.setColumn(nameConstraints.getColumn() + 1);
+    nameConstraints.setHSizePolicy(GridConstraints.SIZEPOLICY_FIXED);
+    nameAndStereotype.add(atSign, nameConstraints);
+
+    List<String> stereotypes = new LinkedList<String>(Arrays.asList(SModelStereotype.values));
+    if (!(myModule instanceof Generator)) {
+      stereotypes.remove(SModelStereotype.GENERATOR);
+    }
     myModelStereotype.setEditable(true);
-    myModelStereotype.setModel(new DefaultComboBoxModel(SModelStereotype.values));
+    myModelStereotype.setModel(new DefaultComboBoxModel(stereotypes.toArray(new String[stereotypes.size()])));
     myModelStereotype.addKeyListener(new KeyAdapter() {
       @Override
       public void keyReleased(KeyEvent event) {
@@ -158,9 +171,19 @@ public class NewModelDialog extends DialogWrapper {
       @Override
       public void itemStateChanged(ItemEvent p0) {
         check();
+        atSign.setText((myModelStereotype.getSelectedItem().equals(SModelStereotype.NONE) ?
+          "" :
+          "@"
+        ));
       }
     });
-    mainPanel.add(myModelStereotype, constraints);
+
+    nameConstraints.setColumn(nameConstraints.getColumn() + 1);
+    nameAndStereotype.add(myModelStereotype, nameConstraints);
+
+    constraints.setRow(constraints.getRow() + 1);
+    mainPanel.add(nameAndStereotype, constraints);
+
     constraints.setRow(constraints.getRow() + 1);
     mainPanel.add(new JLabel("Storage format:"), constraints);
     constraints.setRow(constraints.getRow() + 1);
@@ -174,8 +197,9 @@ public class NewModelDialog extends DialogWrapper {
       }
     });
     myModelStorageFormat.setSelectedItem(PersistenceFacade.getInstance().getDefaultModelFactory());
+
+    new DefaultComboBoxModel(getStorageFormats());
     mainPanel.add(myModelStorageFormat, constraints);
-    constraints.setRow(constraints.getRow() + 1);
 
     myContentPane.add(mainPanel, BorderLayout.CENTER);
   }
