@@ -46,7 +46,7 @@ public class NodesReader {
   public NodesReader(@NotNull SModelReference modelReference, LightModelEnvironmentInfo info, boolean interfaceOnly) {
     myModelReference = modelReference;
     myEnv = info;
-    myInterfaceOnly = interfaceOnly;
+    myInterfaceOnly = false; //interfaceOnly;
   }
 
   public boolean hasSkippedNodes() {
