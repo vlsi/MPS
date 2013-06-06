@@ -284,7 +284,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
         BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);
         for (LanguageAspect aspect: HASHED_LANGUAGE_ASPECTS) {
           final EditableSModelDescriptor aspModel = aspect.get(myModule);
-          if (!aspModel.isChanged() && aspModel instanceof GeneratableSModel) {
+          if (aspModel != null && !aspModel.isChanged() && aspModel instanceof GeneratableSModel) {
             modelHash = modelHash.xor(new BigInteger(((GeneratableSModel) aspModel).getModelHash(), Character.MAX_RADIX));
           }
         }
