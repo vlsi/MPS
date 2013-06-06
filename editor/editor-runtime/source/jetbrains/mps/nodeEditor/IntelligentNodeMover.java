@@ -154,7 +154,7 @@ class IntelligentNodeMover {
     if (forward()) {
       for (SNode node : myNodes.subList(0, myNodes.size() - 1)) {
         node.getParent().removeChild(node);
-        jetbrains.mps.util.SNodeOperations.insertChild(parent, current.getRoleInParent(), node, current.getPrevSibling());
+        parent.insertChildBefore(current.getRoleInParent(), node, current);
       }
     } else {
       List<SNode> list = new ArrayList<SNode>(myNodes.subList(1, myNodes.size()));
@@ -187,9 +187,35 @@ class IntelligentNodeMover {
 
   private SNode siblingWithTheSameRole(SNode node) {
     if (forward()) {
-      return node.getNextSibling();
+      SNode p = node.getParent();
+      if (p == null) return null;
+
+      SNode current = node;
+      String currentRole = node.getRoleInParent();
+      assert currentRole != null : "role must be not null";
+
+      // to ensure that role is loaded
+      while (current.getNextSibling() != null) {
+        current = current.getNextSibling();
+        if (current.getRoleInParent().equals(currentRole)) return current;
+      }
+
+      return null;
     } else {
-      return node.getPrevSibling();
+      SNode p = node.getParent();
+      if (p == null) return null;
+
+      SNode current = node;
+      String currentRole = node.getRoleInParent();
+      assert currentRole != null : "role must be not null";
+
+      SNode fc = p.getFirstChild();
+      while (current != fc) {
+        current = current.getPrevSibling();
+        if (current.getRoleInParent().equals(currentRole)) return current;
+      }
+
+      return null;
     }
   }
 
@@ -209,7 +235,7 @@ class IntelligentNodeMover {
     if (forward()) {
       jetbrains.mps.util.SNodeOperations.insertChild(parent, role, current, prevChild);
     } else {
-      jetbrains.mps.util.SNodeOperations.insertChild(parent, role, current, prevChild.getPrevSibling());
+      parent.insertChildBefore(role, current, prevChild);
     }
   }
 
