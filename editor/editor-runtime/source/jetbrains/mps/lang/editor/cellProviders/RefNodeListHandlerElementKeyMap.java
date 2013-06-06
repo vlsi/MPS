@@ -40,7 +40,7 @@ public class RefNodeListHandlerElementKeyMap extends KeyMapImpl {
           SNode anchorNode = getAnchorNode(context);
           SNode nodeToInsert = myListHandler.createNodeToInsert(context);
           SNode parentNode = myListHandler.getOwner();
-          parentNode.insertChild(myListHandler.getElementRole(), nodeToInsert, anchorNode.getPrevSibling());
+          jetbrains.mps.util.SNodeOperations.insertChild(parentNode, myListHandler.getElementRole(), nodeToInsert, anchorNode.getPrevSibling());
         }
       };
       insertAction.setCaretPolicy(KeyMapAction.CARET_AT_FIRST_POSITION);
@@ -55,7 +55,7 @@ public class RefNodeListHandlerElementKeyMap extends KeyMapImpl {
         public void execute(EditorContext context) {
           SNode anchorNode = getAnchorNode(context);
           SNode nodeToInsert = myListHandler.createNodeToInsert(context);
-          myListHandler.getOwner().insertChild(myListHandler.getElementRole(), nodeToInsert, anchorNode);
+          jetbrains.mps.util.SNodeOperations.insertChild(myListHandler.getOwner(), myListHandler.getElementRole(), nodeToInsert, anchorNode);
         }
       };
       addAction.setCaretPolicy(KeyMapAction.CARET_AT_LAST_POSITION);

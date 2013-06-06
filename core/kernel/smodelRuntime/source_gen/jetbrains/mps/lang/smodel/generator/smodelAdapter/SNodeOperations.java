@@ -421,7 +421,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert parent != null && role != null;
-    parent.insertChild(role, node, newChild);
+    jetbrains.mps.util.SNodeOperations.insertChild(parent, role, node, newChild);
     return newChild;
   }
 
@@ -439,7 +439,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    parent.insertChild(role, newChild, node.getPrevSibling());
+    jetbrains.mps.util.SNodeOperations.insertChild(parent, role, newChild, node.getPrevSibling());
     return newChild;
   }
 
@@ -457,7 +457,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    nodeParent.insertChild(role, siblingNode, node);
+    jetbrains.mps.util.SNodeOperations.insertChild(nodeParent, role, siblingNode, node);
     return siblingNode;
   }
 
@@ -475,7 +475,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    nodeParent.insertChild(role, siblingNode, node.getPrevSibling());
+    jetbrains.mps.util.SNodeOperations.insertChild(nodeParent, role, siblingNode, node.getPrevSibling());
     return siblingNode;
   }
 

@@ -115,7 +115,7 @@ public class SLinkOperations {
       if (childParent != null) {
         childParent.removeChild(child);
       }
-      parent.insertChild(role, child, null);
+      SNodeOperations.insertChild(parent, role, child, null);
     }
     return child;
   }

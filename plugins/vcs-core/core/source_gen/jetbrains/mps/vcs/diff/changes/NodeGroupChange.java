@@ -105,7 +105,7 @@ public class NodeGroupChange extends ModelChange {
     );
     SNode parent = model.getNode(myParentNodeId);
     for (SNode newNode : ListSequence.fromList(nodesToAdd).reversedList()) {
-      parent.insertChild(myRole, newNode, anchor);
+      jetbrains.mps.util.SNodeOperations.insertChild(parent, myRole, newNode, anchor);
     }
   }
 

@@ -154,14 +154,14 @@ class IntelligentNodeMover {
     if (forward()) {
       for (SNode node : myNodes.subList(0, myNodes.size() - 1)) {
         node.getParent().removeChild(node);
-        parent.insertChild(current.getRoleInParent(), node, current.getPrevSibling());
+        jetbrains.mps.util.SNodeOperations.insertChild(parent, current.getRoleInParent(), node, current.getPrevSibling());
       }
     } else {
       List<SNode> list = new ArrayList<SNode>(myNodes.subList(1, myNodes.size()));
       Collections.reverse(list);
       for (SNode node : list) {
         node.getParent().removeChild(node);
-        parent.insertChild(current.getRoleInParent(), node, current);
+        jetbrains.mps.util.SNodeOperations.insertChild(parent, current.getRoleInParent(), node, current);
       }
     }
   }
@@ -207,15 +207,15 @@ class IntelligentNodeMover {
 
   private void addWithAnchor(SNode parent, SNode prevChild, String role, SNode current) {
     if (forward()) {
-      parent.insertChild(role, current, prevChild);
+      jetbrains.mps.util.SNodeOperations.insertChild(parent, role, current, prevChild);
     } else {
-      parent.insertChild(role, current, prevChild.getPrevSibling());
+      jetbrains.mps.util.SNodeOperations.insertChild(parent, role, current, prevChild.getPrevSibling());
     }
   }
 
   private void addAtBoundary(SNode result, String role, SNode current) {
     if (forward()) {
-      result.insertChild(role, current, null);
+      jetbrains.mps.util.SNodeOperations.insertChild(result, role, current, null);
     } else {
       result.addChild(role, current);
     }

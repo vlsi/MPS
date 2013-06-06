@@ -265,7 +265,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
       NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
 
-      sNode.insertChild("", child, null);
+      jetbrains.mps.util.SNodeOperations.insertChild(sNode, "", child, null);
 
       this.assertMethod("public void jetbrains.mps.smodel.SNode.insertChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)", listener.getResults().o1);
     }

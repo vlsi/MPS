@@ -97,9 +97,6 @@ public interface SNode {
    */
   void insertChildBefore(String role, SNode child, @Nullable SNode anchor);
 
-  @Deprecated
-  void insertChild(String role, SNode child, @Nullable SNode anchor);
-
   /**
    * Removes the child of this node. See "node manipulation" section in class doc
    */

@@ -527,11 +527,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return s;
   }
 
-  @Override
-  public void insertChild(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    jetbrains.mps.util.SNodeOperations.insertChild(this, role, child, anchor);
-  }
-
   public void insertChildBefore(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child,
       @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     assertCanChange();
@@ -1658,7 +1653,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (insertBefore) {
       insertChildBefore(role, child, anchorChild);
     } else {
-      insertChild(role, child, anchorChild);
+      jetbrains.mps.util.SNodeOperations.insertChild(this, role, child, anchorChild);
     }
   }
 
@@ -1955,7 +1950,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @Deprecated in 3.0
    */
   public void insertChild(final SNode anchor, String role, final SNode child) {
-    insertChild(role, child, anchor);
+    jetbrains.mps.util.SNodeOperations.insertChild(this, role, child, anchor);
   }
 
   @Deprecated
@@ -1995,7 +1990,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assert oldChildRole != null;
     SNode prevChild = oldChild;
     for (SNode newChild : newChildren) {
-      insertChild(oldChildRole, newChild, prevChild);
+      jetbrains.mps.util.SNodeOperations.insertChild(this, oldChildRole, newChild, prevChild);
       prevChild = newChild;
     }
     removeChild(oldChild);
