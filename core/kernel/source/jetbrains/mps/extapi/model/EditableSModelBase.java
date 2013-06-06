@@ -264,7 +264,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   public void fireNodeAdded(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
     LOG.assertLog(!getSModelInternal().isUpdateMode());
     for (SModelChangeListener l : myChangeListeners) {
-      l.nodeAdded(node, role, child);
+      l.nodeAdded(this, node, role, child);
     }
     setChanged(true);
   }
@@ -272,7 +272,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
     LOG.assertLog(!getSModelInternal().isUpdateMode());
     for (SModelChangeListener l : myChangeListeners) {
-      l.nodeRemoved(node, role, child);
+      l.nodeRemoved(this, node, role, child);
     }
     setChanged(true);
   }
