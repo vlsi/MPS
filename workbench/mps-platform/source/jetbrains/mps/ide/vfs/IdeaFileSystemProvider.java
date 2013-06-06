@@ -127,6 +127,10 @@ public class IdeaFileSystemProvider implements FileSystemProvider, SafeWriteRequ
     });
   }
 
+  public void dispose() {
+    ourJarRootsAccessedAtLeastOnce.clear();
+  }
+
   // Workaround for IDEA-75359
   static void jarRootAccessed(final VirtualFile jarRootFile) {
     synchronized (ourJarRootsAccessedAtLeastOnce) {

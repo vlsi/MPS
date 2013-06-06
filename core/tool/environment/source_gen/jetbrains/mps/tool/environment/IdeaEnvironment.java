@@ -23,6 +23,7 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.DefaultModelAccess;
 import jetbrains.mps.tool.common.util.PathUtil;
 import com.intellij.openapi.application.PathMacros;
 
@@ -104,6 +105,9 @@ public class IdeaEnvironment implements Environment {
     for (Project project : SetSequence.fromSetWithValues(new HashSet<Project>(), openedProjects)) {
       disposeProject(project);
     }
+
+    // todo: fix it in right way 
+    ModelAccess.setInstance(new DefaultModelAccess());
 
     // part from ProjectTest 
     TestMain.disposeMPS();

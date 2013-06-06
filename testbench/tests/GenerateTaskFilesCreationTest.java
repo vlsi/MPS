@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import jetbrains.mps.tool.builder.Environment;
-import jetbrains.mps.testbench.MpsMakeHelper;
+
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
 import jetbrains.mps.testbench.junit.runners.WatchingSuite;
 import org.junit.BeforeClass;
@@ -27,8 +27,7 @@ import org.junit.runner.RunWith;
 @RunWith(WatchingSuite.class)
 public class GenerateTaskFilesCreationTest {
   @BeforeClass
-  public static void make () throws Exception {
-    new MpsMakeHelper(new Environment()).make();
+  public static void makeAll() throws Exception {
+    MpsTestsSupport.makeAllWithoutEnvironment();
   }
-
 }

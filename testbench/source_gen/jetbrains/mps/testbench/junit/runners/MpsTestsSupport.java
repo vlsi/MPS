@@ -10,16 +10,21 @@ import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import jetbrains.mps.tool.environment.EnvironmentBuilder;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
+import jetbrains.mps.make.MPSCompilationResult;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Collection;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class MpsTestsSupport {
   public static Project CURRENT_PROJECT = null;
@@ -40,6 +45,29 @@ public class MpsTestsSupport {
 
   public static void disposeEnv() {
     ActiveEnvironment.get().disposeEnvironment();
+  }
+
+
+
+  public static MPSCompilationResult makeAllInCreatedEnvironment() {
+    assert ActiveEnvironment.get() != null;
+    return ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
+      public MPSCompilationResult compute() {
+        return new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
+      }
+    });
+  }
+
+
+
+  public static MPSCompilationResult makeAllWithoutEnvironment() {
+    assert ActiveEnvironment.get() == null;
+    // true should be false 
+    MpsTestsSupport.initEnv(true);
+    MpsTestsSupport.loadAllModulesIntoRepository();
+    MPSCompilationResult result = MpsTestsSupport.makeAllInCreatedEnvironment();
+    MpsTestsSupport.disposeEnv();
+    return result;
   }
 
 

@@ -8,14 +8,12 @@ import java.util.List;
 import org.junit.runners.model.TestClass;
 import java.util.ArrayList;
 import org.junit.runner.notification.RunNotifier;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.make.MPSCompilationResult;
-import jetbrains.mps.util.IterableUtil;
+import org.junit.runner.notification.Failure;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.junit.runner.notification.Failure;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import javax.swing.SwingUtilities;
@@ -39,16 +37,11 @@ public class MakeRunner extends Runner {
   @Override
   public void run(final RunNotifier notifier) {
     notifier.fireTestStarted(myDescription);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        ModuleMaker maker = new ModuleMaker();
-        MPSCompilationResult compilationResult = maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
-        if (compilationResult != null && compilationResult.getErrors() > 0) {
-          notifier.fireTestFailure(new Failure(myDescription, new Exception("Compilation errors: " + compilationResult)));
-        }
-      }
-    });
+
+    MPSCompilationResult compilationResult = MpsTestsSupport.makeAllInCreatedEnvironment();
+    if (compilationResult != null && compilationResult.getErrors() > 0) {
+      notifier.fireTestFailure(new Failure(myDescription, new Exception("Compilation errors: " + compilationResult)));
+    }
 
     // why we need it? because some classes loaded before maker - LanguageRuntime and typesystem classes 
     ModelAccess.instance().runWriteAction(new Runnable() {

@@ -16,6 +16,10 @@ public class Extension_GeneratorCache6905339732004138486_ extends Extension.Defa
     if (ApplicationManager.getApplication() == null) {
       return null;
     }
+    if (ApplicationManager.getApplication().isDisposed()) {
+      // todo: hack for next scenario: create IdeaEnvironment, dispose IdeaEnvironment, create MpsEnvironment, generate 
+      return null;
+    }
     return GeneratorCacheComponent.getInstance().getCache();
   }
 }
