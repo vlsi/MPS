@@ -31,9 +31,8 @@ import java.util.Collections;
 /**
  * evgeny, 11/20/12
  */
-public class DefaultSModel extends SModel {
+public class DefaultSModel extends LazySModel {
 
-  private boolean fullLoadUpdateMode;
   private final SModelHeader myHeader = new SModelHeader();
   private Element myStructureModificationHistory;
 
@@ -51,16 +50,6 @@ public class DefaultSModel extends SModel {
 
   public int getPersistenceVersion() {
     return myHeader.getPersistenceVersion();
-  }
-
-  public void setUpdateMode(boolean value) {
-    // update mode means we are attaching newly loaded children
-    this.fullLoadUpdateMode = value;
-  }
-
-  @Override
-  public boolean isUpdateMode() {
-    return fullLoadUpdateMode;
   }
 
   @Override
