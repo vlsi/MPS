@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-553tlxo5fu6j3j63t7s02p2bmodetn1">
+<dependencies version="2" modelHash="ebo38nw77al6yg309oeo0ukbkr0u3lz">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <common hash="-1wu2ely06ju4i8d1giz1w99ku0w1yod" />
+  <common hash="4tqdiza9nbydf5rmt246t36npkqc2xj" />
   <source id="6249396921771873248" name="NewDevKitDialog" hash="-92wmucwagd01v5qytyat75cn3woqbfj">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NewDevKitDialog.java" />
