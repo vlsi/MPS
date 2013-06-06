@@ -728,46 +728,24 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public SNode getPrevSibling() {
     nodeRead();
+    fireNodeReadAccess();
 
     SNode p = getParent();
     if (p == null) return null;
 
-    fireNodeReadAccess();
-
-    SNode curent = this;
-    String currentRole = getRoleInParent();
-    assert currentRole != null : "role must be not null";
-
-    SNode fc = p.firstChildInRole(currentRole);
-    while (curent != fc) {
-      curent = curent.treePrevious();
-      if (curent.getRoleInParent().equals(currentRole)) return curent;
-    }
-
-    return null;
+    SNode tp = treePrevious();
+    return tp.next == null ? null : tp;
   }
 
   @Override
   public SNode getNextSibling() {
     nodeRead();
+    fireNodeReadAccess();
 
     SNode p = getParent();
     if (p == null) return null;
 
-    fireNodeReadAccess();
-
-    SNode current = this;
-    String currentRole = getRoleInParent();
-    assert currentRole != null : "role must be not null";
-
-    // to ensure that role is loaded
-    p.firstChildInRole(currentRole);
-    while (current.treeNext() != null) {
-      current = current.treeNext();
-      if (current.getRoleInParent().equals(currentRole)) return current;
-    }
-
-    return null;
+    return treeNext();
   }
 
   @Override
@@ -1235,7 +1213,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   protected SNode treePrevious() {
-    if (prev == null) return null;
     if (myRepository != null && prev.myRepository == null) {
       prev.attach(myRepository);
     }
