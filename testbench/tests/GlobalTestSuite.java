@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import jetbrains.mps.TestMain;
-import jetbrains.mps.testbench.MpsMakeHelper;
+
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
 import jetbrains.mps.testbench.junit.runners.WatchingSuite;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentBuilder;
 import junit.framework.TestSuite;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -50,14 +52,18 @@ import org.junit.runner.RunWith;
     "jetbrains.mps.smodel.language.ExtensionRegistryTest"})
 @RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
+  private static Environment ENV;
+
   @BeforeClass
-  public static void make () throws Exception {
-    System.setProperty("idea.load.plugins.id", "jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make,Git4Idea");
-    new MpsMakeHelper().make();
+  public static void setup() throws Exception {
+    ENV = EnvironmentBuilder.emptyEnvironment()
+        .addPlugin("jetbrains.mps.vcs").addPlugin("jetbrains.mps.ide.editor").addPlugin("jetbrains.mps.ide.make").addPlugin("Git4Idea") // todo: add plugins
+        .build(true);
+    MpsTestsSupport.makeAllInCreatedEnvironment();
   }
 
   @AfterClass
   public static void shutdown() {
-    TestMain.PROJECT_CONTAINER.clear();
+    ENV.disposeEnvironment();
   }
 }
