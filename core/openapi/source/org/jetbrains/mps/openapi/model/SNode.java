@@ -119,6 +119,8 @@ public interface SNode {
 
   String getRoleInParent();
 
+  SNode getFirstChild();
+
   /**
    * no parent -> no sibling. Root has no siblings
    */
@@ -128,6 +130,8 @@ public interface SNode {
    * no parent -> no sibling. Root has no siblings
    */
   SNode getNextSibling();
+
+  SNode getLastChild();
 
   /**
    * Returns an immutable collection of children in the specified role.
