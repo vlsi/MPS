@@ -34,7 +34,13 @@
   <void method="add">
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.insertChildBefore(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string>
   </void>
-  <void method="add"> 
+  <void method="add">
+   <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getFirstChild()</string>
+  </void>
+  <void method="add">
+   <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getLastChild()</string>
+  </void>
+   <void method="add">
    <string>public abstract java.lang.String org.jetbrains.mps.openapi.model.SNode.getProperty(java.lang.String)</string> 
   </void>
   <void method="add">
