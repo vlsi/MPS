@@ -24,19 +24,24 @@ import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -51,6 +56,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class LanguageDescriptorModelProvider implements CoreComponent {
 
   private Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
+  private static final LanguageAspect[] HASHED_LANGUAGE_ASPECTS =
+      new LanguageAspect[]{LanguageAspect.BEHAVIOR, LanguageAspect.CONSTRAINTS, LanguageAspect.EDITOR, LanguageAspect.TYPESYSTEM};
 
   public LanguageDescriptorModelProvider() {
   }
@@ -84,6 +91,43 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       @Override
       public void repositoryChanged() {
         refresh();
+      }
+
+      @Override
+      protected void startListening(SModel model) {
+        for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {
+          if (aspect.is(model) && model instanceof EditableSModel) {
+            ((EditableSModel)model).addChangeListener(this);
+            return;
+          }
+        }
+      }
+
+      @Override
+      protected void stopListening(SModel model) {
+        if (model instanceof EditableSModel) {
+          ((EditableSModel)model).removeChangeListener(this);
+        }
+      }
+
+      @Override
+      public void nodeAdded(SModel model, SNode node, String role, SNode child) {
+        if (node == null) {
+          final Language language = Language.getLanguageFor(model);
+          if (language != null) {
+            refreshModule(language, false);
+          }
+        }
+      }
+
+      @Override
+      public void nodeRemoved(SModel model, SNode node, String role, SNode child) {
+        if (node == null) {
+          final Language language = Language.getLanguageFor(model);
+          if (language != null) {
+            refreshModule(language, false);
+          }
+        }
       }
     });
 
@@ -226,7 +270,16 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       if (hash == null) {
         IFile descriptorFile = myModule.getDescriptorFile();
         hash = ModelDigestUtil.hash(new FileDataSource(descriptorFile), true);
-        // TODO add existing aspects hash
+
+        BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);
+        for (LanguageAspect aspect: HASHED_LANGUAGE_ASPECTS) {
+          final EditableSModelDescriptor aspModel = aspect.get(myModule);
+          if (aspModel instanceof GeneratableSModel) {
+            modelHash = modelHash.xor(new BigInteger(((GeneratableSModel) aspModel).getModelHash(), Character.MAX_RADIX));
+          }
+        }
+
+        hash = modelHash.toString(Character.MAX_RADIX);
         myHash = hash;
       }
       return hash;
