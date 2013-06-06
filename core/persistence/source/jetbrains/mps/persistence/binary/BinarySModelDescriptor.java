@@ -15,19 +15,25 @@
  */
 package jetbrains.mps.persistence.binary;
 
-import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.BinaryModelPersistence;
 import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.InvalidSModel;
+import jetbrains.mps.smodel.LazyEditableSModelBase;
+import jetbrains.mps.smodel.LazySModel;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
@@ -39,10 +45,10 @@ import static jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
 /**
  * evgeny, 11/21/12
  */
-public class BinarySModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
+public class BinarySModelDescriptor extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(BinarySModelDescriptor.class));
 
-  private volatile BinarySModel myModel = null;
-  private final BinaryModelHeader myHeader;
+  private BinaryModelHeader myHeader;
 
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
@@ -59,62 +65,39 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
   }
 
   @Override
-  protected BinarySModel getCurrentModelInternal() {
-    return myModel;
-  }
-
-  @Override
-  public synchronized BinarySModel getSModelInternal() {
-    if (myModel == null) {
-      myModel = loadSModel();
-      myModel.setModelDescriptor(this);
-      updateTimestamp();
-      // TODO FIXME listeners are invoked while holding the lock
-      fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+  protected ModelLoadResult loadSModel(ModelLoadingState state) {
+    StreamDataSource source = getSource();
+    if (!source.isReadOnly() && source.getTimestamp() == -1) {
+      // no file on disk
+      BinarySModel model = new BinarySModel(myHeader);
+      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
-    return myModel;
-  }
 
-  @NotNull
-  private BinarySModel loadSModel() {
+    ModelLoadResult result;
     try {
-      return BinaryPersistence.readModel(getReference(), getSource());
+      result = BinaryPersistence.readModel(getReference(), getSource(), state == ModelLoadingState.ROOTS_LOADED);
     } catch (ModelReadException e) {
-      return new InvalidBinarySModel(getReference(), e);
+      SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
+      BinarySModel newModel = new InvalidBinarySModel(getReference(), e);
+      return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     }
-  }
 
-  @Override
-  public boolean isLoaded() {
-    return myModel != null;
-  }
+    jetbrains.mps.smodel.SModel model = result.getModel();
+    if (result.getState() == ModelLoadingState.FULLY_LOADED) {
+      boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
 
-  @Override
-  protected void reloadContents() {
-    updateTimestamp();
-
-    if (!isLoaded()) return;
-
-    final BinarySModel newModel = loadSModel();
-    myStructureModificationLog = null;
-    setChanged(false);
-    super.replaceModel(new Runnable() {
-      @Override
-      public void run() {
-        myModel = newModel;
+      if (needToSave && !source.isReadOnly()) {
+        setChanged(true);
       }
-    });
-  }
-
-  @Override
-  protected boolean saveModel() throws IOException {
-    BinarySModel smodel = getSModelInternal();
-    if (smodel instanceof InvalidSModel) {
-      // we do not save stub model to not overwrite the real model
-      return false;
     }
-    BinaryPersistence.writeModel(smodel, getSource());
-    return false;
+
+    LOG.assertLog(model.getReference().equals(getReference()),
+        "\nError loading model from: \"" + source.getLocation() + "\"\n" +
+            "expected model UID     : \"" + getReference() + "\"\n" +
+            "but was UID            : \"" + model.getReference() + "\"\n" +
+            "the model will not be available.\n" +
+            "Make sure that all project's roots and/or the model namespace is correct");
+    return result;
   }
 
   @Override
@@ -139,15 +122,19 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
   }
 
   @Override
-  public int getVersion() {
-    if (myModel != null) return (myModel).getVersion();
-    return myHeader.getVersion();
+  protected boolean saveModel() throws IOException {
+    BinarySModel smodel = (BinarySModel) getSModelInternal();
+    if (smodel instanceof InvalidSModel) {
+      // we do not save stub model to not overwrite the real model
+      return false;
+    }
+    BinaryPersistence.writeModel(smodel, getSource());
+    return false;
   }
 
   @Override
-  public void setVersion(int newVersion) {
-    getSModelInternal().setVersion(newVersion);
-    setChanged(true);
+  public boolean isGeneratable() {
+    return !isDoNotGenerate() && !getSource().isReadOnly() && SModelStereotype.isUserModel(this);
   }
 
   @Override
@@ -172,26 +159,66 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
   }
 
   @Override
-  public boolean isGeneratable() {
-    return !isDoNotGenerate() && !getSource().isReadOnly() && SModelStereotype.isUserModel(this);
-  }
-
-
-  @Override
   public void setDoNotGenerate(boolean value) {
-    getSModelInternal().getHeader().setDoNotGenerate(value);
+    ModelAccess.assertLegalWrite();
+
+    getModelHeader().setDoNotGenerate(value);
     setChanged(true);
   }
 
   @Override
   public boolean isDoNotGenerate() {
-    BinarySModel model = getCurrentModelInternal();
-    if (model != null) return model.getHeader().isDoNotGenerate();
-    return myHeader.isDoNotGenerate();
+    return getModelHeader().isDoNotGenerate();
   }
 
-  public BinaryModelHeader getModelHeader() {
-    return myHeader.createCopy();
+  @Override
+  public int getVersion() {
+    return getModelHeader().getVersion();
   }
 
+  @Override
+  public void setVersion(int newVersion) {
+    ModelAccess.assertLegalWrite();
+
+    getSModelInternal().setVersion(newVersion);
+    setChanged(true);
+  }
+
+
+  private BinaryModelHeader getModelHeader() {
+    BinarySModel model = (BinarySModel) getCurrentModelInternal();
+    if (model == null) return myHeader;
+    return model.getHeader();
+  }
+
+  @Override
+  protected void processLoadedModel(jetbrains.mps.smodel.SModel loadedSModel) {
+    if (getVersion() != -1) return;
+
+    int latestVersion = getStructureModificationLog().getLatestVersion(getReference());
+    myStructureModificationLog = null;  // we don't need to keep log in memory
+    if (latestVersion != -1) {
+      loadedSModel.setVersion(latestVersion);
+      LOG.error("Version for model " + getModelName() + " was not set.");
+    }
+  }
+
+  @Override
+  protected void replaceModel(LazySModel newModel, ModelLoadingState state) {
+    super.replaceModel(newModel, state);
+    myStructureModificationLog = null;
+  }
+
+  @Override
+  protected void reloadContents() {
+    try {
+      myHeader = BinaryPersistence.readHeader(getSource());
+    } catch (ModelReadException e) {
+      updateTimestamp();
+      SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
+      return;
+    }
+
+    super.reloadContents();
+  }
 }

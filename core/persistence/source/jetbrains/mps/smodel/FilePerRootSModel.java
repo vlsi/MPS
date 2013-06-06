@@ -115,11 +115,6 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
   }
 
   @Override
-  public boolean isLoaded() {
-    return getLoadingState() == ModelLoadingState.FULLY_LOADED;
-  }
-
-  @Override
   @NotNull
   public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {

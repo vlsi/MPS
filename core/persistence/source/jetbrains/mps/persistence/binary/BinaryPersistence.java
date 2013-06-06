@@ -16,9 +16,13 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.LightModelEnvironmentInfo;
+import jetbrains.mps.persistence.ModelEnvironmentInfo;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -26,7 +30,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -50,8 +53,6 @@ import static jetbrains.mps.smodel.SModel.ImportElement;
  */
 public class BinaryPersistence {
 
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(BinaryPersistence.class));
-
   public static BinaryModelHeader readHeader(@NotNull StreamDataSource source) throws ModelReadException {
     ModelInputStream mis = null;
     try {
@@ -64,11 +65,11 @@ public class BinaryPersistence {
     }
   }
 
-  public static BinarySModel readModel(@NotNull SModelReference mref, @NotNull StreamDataSource source) throws ModelReadException {
+  public static ModelLoadResult readModel(@NotNull SModelReference mref, @NotNull StreamDataSource source, boolean interfaceOnly) throws ModelReadException {
     ModelInputStream mis = null;
     try {
       mis = new ModelInputStream(source.openInputStream());
-      return loadModel(mref, mis);
+      return loadModel(mref, mis, interfaceOnly);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, mref);
     } finally {
@@ -81,7 +82,7 @@ public class BinaryPersistence {
     ModelInputStream mis = null;
     try {
       mis = new ModelInputStream(content);
-      return loadModel(null, mis);
+      return (BinarySModel) loadModel(null, mis, false).getModel();
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
     } finally {
@@ -140,7 +141,7 @@ public class BinaryPersistence {
   }
 
   @NotNull
-  private static BinarySModel loadModel(@Nullable SModelReference modelReference, ModelInputStream is) throws IOException {
+  private static ModelLoadResult loadModel(@Nullable SModelReference modelReference, ModelInputStream is, boolean interfaceOnly) throws IOException {
     BinaryModelHeader modelHeader = loadHeader(is);
     if (modelReference == null) {
       modelReference = modelHeader.getReference();
@@ -149,7 +150,10 @@ public class BinaryPersistence {
     BinarySModel model = new BinarySModel(modelHeader);
     loadModelProperties(model, is);
 
-    List<Pair<String, SNode>> roots = new NodesReader(modelReference).readNodes(model, is);
+    ModelEnvironmentInfo env = PersistenceRegistry.getInstance().getModelEnvironmentInfo();
+    NodesReader reader = new NodesReader(modelReference,
+        env instanceof LightModelEnvironmentInfo ? (LightModelEnvironmentInfo) env : null, interfaceOnly);
+    List<Pair<String, SNode>> roots = reader.readNodes(model, is);
     for (Pair<String, SNode> r : roots) {
       model.addRootNode(r.o2);
     }
@@ -159,7 +163,7 @@ public class BinaryPersistence {
 
     // TODO
     // new StructureModificationProcessor(myLinkMap, model).updateModelOnLoad();
-    return model;
+    return new ModelLoadResult(model, reader.hasSkippedNodes() ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED);
   }
 
   private static void saveModel(SModel model, ModelOutputStream os) throws IOException {
@@ -170,7 +174,7 @@ public class BinaryPersistence {
     for (SNode root : model.getRootNodes()) {
       roots.add(root);
     }
-    new NodesWriter(model.getReference()).writeNodes(roots, os);
+    new NodesWriter(model.getReference(), PersistenceRegistry.getInstance().getModelEnvironmentInfo()).writeNodes(roots, os);
   }
 
   public static void saveModelProperties(SModel model, ModelOutputStream os) throws IOException {
@@ -238,7 +242,7 @@ public class BinaryPersistence {
       for (ImportElement element : model.importedModels()) {
         consumer.consume(element.getModelReference().getModelName());
       }
-      new NodesReader(modelHeader.getReference()) {
+      new NodesReader(modelHeader.getReference(), null, false) {
         @Override
         protected String readConceptQualifiedName(ModelInputStream is) throws IOException {
           String name = super.readConceptQualifiedName(is);

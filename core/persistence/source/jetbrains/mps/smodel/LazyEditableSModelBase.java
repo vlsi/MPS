@@ -60,7 +60,7 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
     super(modelReference, source);
   }
 
-  public ModelLoadingState getLoadingState() {
+  public final ModelLoadingState getLoadingState() {
     return myModel.getState();
   }
 
@@ -86,12 +86,18 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
   }
 
   @Override
-  public void load() {
+  public final void load() {
     myModel.getModel(ModelLoadingState.FULLY_LOADED);
   }
 
   @Override
-  protected LazySModel getCurrentModelInternal() {
+  public final boolean isLoaded() {
+    return getLoadingState() == ModelLoadingState.FULLY_LOADED;
+  }
+
+
+  @Override
+  protected final LazySModel getCurrentModelInternal() {
     return myModel.getModel(null);
   }
 

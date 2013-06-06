@@ -152,7 +152,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
       DigestBuilderOutputStream os = ModelDigestUtil.createDigestBuilderOutputStream();
       try {
         ModelOutputStream mos = new ModelOutputStream(os);
-        new NodesWriter(model.getReference()).writeNode(node, mos);
+        new NodesWriter(model.getReference(), null).writeNode(node, mos);
         mos.flush();
       } catch (IOException ignored) {
         assert false;

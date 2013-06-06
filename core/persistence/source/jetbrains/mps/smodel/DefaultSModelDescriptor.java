@@ -115,11 +115,6 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   }
 
   @Override
-  public boolean isLoaded() {
-    return getLoadingState() == ModelLoadingState.FULLY_LOADED;
-  }
-
-  @Override
   @NotNull
   public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
@@ -181,6 +176,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     ModelAccess.assertLegalWrite();
 
     getSModelHeader().setDoNotGenerate(value);
+    setChanged(true);
   }
 
   @Override
@@ -198,6 +194,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     ModelAccess.assertLegalWrite();
 
     getSModelHeader().setVersion(newVersion);
+    setChanged(true);
   }
 
   private SModelHeader getSModelHeader() {
