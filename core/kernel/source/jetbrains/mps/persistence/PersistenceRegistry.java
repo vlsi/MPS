@@ -206,6 +206,15 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     myNavigationParticipants.remove(participant);
   }
 
+  public FolderModelFactory getFolderModelFactory(@NotNull String id) {
+    for (FolderModelFactory folderModelFactory : myFolderModelFactories) {
+      if (id.equals(folderModelFactory.getFactoryId())) {
+        return folderModelFactory;
+      }
+    }
+    return null;
+  }
+
   public void addFolderModelFactory(FolderModelFactory factory) {
     myFolderModelFactories.add(factory);
   }

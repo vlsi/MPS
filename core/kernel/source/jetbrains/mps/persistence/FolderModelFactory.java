@@ -15,12 +15,20 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
+import java.io.IOException;
+
 public interface FolderModelFactory extends ModelFactory {
+
+  /**
+   * Unique id for the factory (used instead of the file extension, which is null).
+   */
+  String getFactoryId();
 
   /**
    * Creates data sources for models in the folder.
@@ -29,6 +37,8 @@ public interface FolderModelFactory extends ModelFactory {
 
   /**
    * Creates new data source.
+   *
+   * @throws java.io.IOException if new data source cannot be created
    */
-  DataSource createNewSource(ModelRoot root, String sourceRoot, String modelName);
+  DataSource createNewSource(FileBasedModelRoot root, String sourceRoot, String modelName) throws IOException;
 }

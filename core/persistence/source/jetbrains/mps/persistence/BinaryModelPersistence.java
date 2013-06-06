@@ -69,6 +69,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     return new BinarySModelDescriptor(source, binaryModelHeader);
   }
 
+  @NotNull
   @Override
   public SModel create(String modelName, DataSource dataSource) {
     if (!(dataSource instanceof StreamDataSource)) {

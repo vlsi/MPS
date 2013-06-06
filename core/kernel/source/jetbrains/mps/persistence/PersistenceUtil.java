@@ -87,9 +87,7 @@ public class PersistenceUtil {
     try {
       SModel model = factory.load(new FileDataSource(file), Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY,
           Boolean.TRUE.toString()));
-      if (model != null) {
-        model.load();
-      }
+      model.load();
       return model;
     } catch (UnsupportedDataSourceException ex) {
       return null;

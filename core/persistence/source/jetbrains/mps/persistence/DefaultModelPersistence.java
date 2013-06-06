@@ -87,6 +87,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     return new DefaultSModelDescriptor(source, modelReference, header);
   }
 
+  @NotNull
   @Override
   public SModel create(String modelName, DataSource dataSource) {
     if (!(dataSource instanceof StreamDataSource)) {

@@ -62,6 +62,7 @@ import java.util.Map.Entry;
  */
 public class FilePerRootModelPersistence implements CoreComponent, ModelFactory, FolderModelFactory {
   private static final Logger LOG = LogManager.getLogger(FilePerRootModelPersistence.class);
+  public static final String FACTORY_ID = "file-per-root";
 
   FilePerRootModelPersistence() {
   }
@@ -101,6 +102,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     return new FilePerRootSModel(source, modelReference, header);
   }
 
+  @NotNull
   @Override
   public SModel create(String modelName, DataSource dataSource) {
     if (!(dataSource instanceof MultiStreamDataSource)) {
@@ -178,6 +180,11 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   }
 
   @Override
+  public String getFactoryId() {
+    return FACTORY_ID;
+  }
+
+  @Override
   public Iterable<DataSource> createDataSources(ModelRoot root, IFile folder) {
     if (!(FilePerRootDataSource.isPerRootPersistenceFolder(folder))) {
       return Collections.emptySet();
@@ -187,40 +194,31 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   }
 
   @Override
-  public DataSource createNewSource(ModelRoot root, String sourceRoot, String modelName) {
-    if (!(root instanceof FileBasedModelRoot)) {
-      return null;
-    }
-    FileBasedModelRoot modelRoot = (FileBasedModelRoot) root;
+  public DataSource createNewSource(FileBasedModelRoot modelRoot, String sourceRoot, String modelName) throws IOException {
     Collection<String> sourceRoots = new LinkedHashSet<String>(modelRoot.getFiles(FileBasedModelRoot.SOURCE_ROOTS));
     if (sourceRoots.isEmpty()) {
-      // TODO
-      return null;
-      //throw new IllegalStateException("empty list of source roots");
+      throw new IOException("empty list of source roots");
     }
 
     if (sourceRoot == null || !sourceRoots.contains(sourceRoot)) {
       sourceRoot = null;
       for (String sr : sourceRoots) {
-        if (root instanceof DefaultModelRoot && ((DefaultModelRoot) root).isLanguageAspectsSourceRoot(sr)) {
+        if (modelRoot instanceof DefaultModelRoot && ((DefaultModelRoot) modelRoot).isLanguageAspectsSourceRoot(sr)) {
           continue;
         }
         sourceRoot = sr;
         break;
       }
       if (sourceRoot == null) {
-        // TODO
-        return null;
-        //throw new IllegalStateException("no suitable source root found");
+        throw new IOException("no suitable source root found");
       }
     }
 
     IFile folder = FileSystem.getInstance().getFileByPath(sourceRoot + File.separator + NameUtil.pathFromNamespace(modelName));
     if (folder.getDescendant(FilePerRootDataSource.HEADER_FILE).exists()) {
-      // TODO report: model already exists
-      return null;
+      throw new IOException("model already exists");
     }
-    return new FilePerRootDataSource(folder, root);
+    return new FilePerRootDataSource(folder, modelRoot);
   }
 
   public static Map<String, String> getModelHashes(@NotNull MultiStreamDataSource source) {

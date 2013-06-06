@@ -15,18 +15,12 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.persistence.DefaultModelRoot;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
-
 import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -41,8 +35,13 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -160,8 +159,14 @@ public class SModuleOperations {
       return null;
     }
 
-    EditableSModel model = (EditableSModel) (modelFactory != null && root instanceof DefaultModelRoot
-        ? ((DefaultModelRoot) root).createModel(name, modelFactory) : root.createModel(name) );
+    EditableSModel model;
+    try {
+      model = (EditableSModel) (modelFactory != null && root instanceof DefaultModelRoot
+          ? ((DefaultModelRoot) root).createModel(name, modelFactory) : root.createModel(name));
+    } catch (IOException e) {
+      LOG.error("Can't create a model " + name + ": " + e.getMessage());
+      return null;
+    }
     // model.getSModel() ?
     model.setChanged(true);
     model.save();

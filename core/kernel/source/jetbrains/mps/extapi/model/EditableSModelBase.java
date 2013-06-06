@@ -220,12 +220,17 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
             break;
           }
         }
-        IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot).getFile();
-        newFile.getParent().mkdirs();
-        newFile.createNewFile();
-        changeModelFile(newFile);
-        save();
-        oldFile.delete();
+        try {
+          IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot).getFile();
+          newFile.getParent().mkdirs();
+          newFile.createNewFile();
+          changeModelFile(newFile);
+          save();
+          oldFile.delete();
+        } catch (IOException e) {
+          LOG.error("cannot rename " + getModelName() + ": " + e.getMessage());
+          save();
+        }
       }
     }
 
