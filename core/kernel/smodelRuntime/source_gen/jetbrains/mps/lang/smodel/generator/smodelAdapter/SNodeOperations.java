@@ -332,35 +332,36 @@ public class SNodeOperations {
 
   public static SNode getNextSibling(SNode node) {
     SNode p = node.getParent();
-    if (p == null) return null;
-
+    if (p == null) {
+      return null;
+    }
     SNode current = node;
     String currentRole = node.getRoleInParent();
     assert currentRole != null : "role must be not null";
-
-    // to ensure that role is loaded
     while (current.getNextSibling() != null) {
       current = current.getNextSibling();
-      if (current.getRoleInParent().equals(currentRole)) return current;
+      if (current.getRoleInParent().equals(currentRole)) {
+        return current;
+      }
     }
-
     return null;
   }
 
   public static SNode getPrevSibling(SNode node) {
     SNode p = node.getParent();
-    if (p == null) return null;
-
+    if (p == null) {
+      return null;
+    }
     SNode current = node;
     String currentRole = node.getRoleInParent();
     assert currentRole != null : "role must be not null";
-
     SNode fc = p.getFirstChild();
     while (current != fc) {
       current = current.getPrevSibling();
-      if (current.getRoleInParent().equals(currentRole)) return current;
+      if (current.getRoleInParent().equals(currentRole)) {
+        return current;
+      }
     }
-
     return null;
   }
 
