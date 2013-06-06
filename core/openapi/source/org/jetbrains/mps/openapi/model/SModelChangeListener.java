@@ -22,12 +22,6 @@ package org.jetbrains.mps.openapi.model;
  */
 public interface SModelChangeListener {
 
-  @Deprecated
-  void nodeAdded(SNode node, String role, SNode child);
-
-  @Deprecated
-  void nodeRemoved(SNode node, String role, SNode child);
-
   void nodeAdded(SModel model, SNode node, String role, SNode child);
 
   void nodeRemoved(SModel model, SNode node, String role, SNode child);
