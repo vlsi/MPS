@@ -16,9 +16,11 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.FilePerRootModelPersistence;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
@@ -37,11 +39,12 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 
 import java.io.IOException;
+import java.util.Map;
 
 /**
  * evgeny, 6/3/13
  */
-public class FilePerRootSModel extends EditableSModelBase implements /*GeneratableSModel,*/ RefactorableSModelDescriptor {
+public class FilePerRootSModel extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultSModelDescriptor.class));
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
@@ -208,7 +211,6 @@ public class FilePerRootSModel extends EditableSModelBase implements /*Generatab
     return FilePerRootFormatUtil.saveModel(smodel, getSource(), smodel.getPersistenceVersion());
   }
 
-  /*
   @Override
   public boolean isGeneratable() {
     return !isDoNotGenerate() && !getSource().isReadOnly() && SModelStereotype.isUserModel(this);
@@ -219,21 +221,20 @@ public class FilePerRootSModel extends EditableSModelBase implements /*Generatab
     return Boolean.parseBoolean(getSModelHeader().getOptionalProperty("useModelFolderForGeneration"));
   }
 
-
   @Override
   public String getModelHash() {
-    String modelHash = ModelDigestHelper.getInstance().getModelHash(getSource());
-    if (modelHash != null) return modelHash;
+    Map<String, String> genHashes = getGenerationHashes();
+    if (genHashes == null) {
+      // I/O problem, hash is not available
+      return null;
+    }
 
-    return ModelDigestUtil.hash(getSource(), true);
+    return genHashes.get(GeneratableSModel.FILE);
   }
 
   @Override
   public Map<String, String> getGenerationHashes() {
-    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
-    if (generationHashes != null) return generationHashes;
-
-    return PerRootModelPersistence.getDigestMap(getSource());
+    return FilePerRootModelPersistence.getModelHashes(getSource());
   }
 
 
@@ -247,7 +248,7 @@ public class FilePerRootSModel extends EditableSModelBase implements /*Generatab
   @Override
   public boolean isDoNotGenerate() {
     return getSModelHeader().isDoNotGenerate();
-  }                            */
+  }
 
   @Override
   public int getVersion() {

@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.BufferedReader;
@@ -48,13 +49,7 @@ public class ModelDigestUtil {
     } catch (IOException e) {
       /* ignore */
     } finally {
-      if (is != null) {
-        try {
-          is.close();
-        } catch (IOException e) {
-          /* ignore */
-        }
-      }
+      FileUtil.closeFileSafe(is);
     }
     return null;
   }
@@ -80,6 +75,7 @@ public class ModelDigestUtil {
     }
   }
 
+  @NotNull
   public static String hashBytes(InputStream stream) throws IOException {
     try {
       MessageDigest digest = MessageDigest.getInstance("SHA");
@@ -96,6 +92,7 @@ public class ModelDigestUtil {
     }
   }
 
+  @NotNull
   public static String hashText(Reader r) throws IOException {
     try {
       BufferedReader reader = new BufferedReader(r);

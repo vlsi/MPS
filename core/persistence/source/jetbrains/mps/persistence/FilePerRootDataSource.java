@@ -16,6 +16,7 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FolderDataSource;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +28,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 public class FilePerRootDataSource extends FolderDataSource {
 
   public static final String HEADER_FILE = ".model";
-  public static final String ROOT_EXTENSION = "mpsr";
+  public static final String ROOT_EXTENSION = MPSExtentions.MODEL_ROOT;
 
   /**
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update

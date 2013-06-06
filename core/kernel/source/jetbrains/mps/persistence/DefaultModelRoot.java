@@ -169,7 +169,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
         ((SModelBase) model).setModelRoot(this);
         models.add(model);
       } catch (UnsupportedDataSourceException ex) {
-    /* model factory registration problem: ignore */
+        /* model factory registration problem: ignore */
       }
     }
 

@@ -78,6 +78,11 @@ public class ModelWriter8 extends ModelWriter7 {
       Element rootElement = new Element(ModelPersistence.MODEL);
       rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
       rootElement.setAttribute(ModelPersistence.FILE_CONTENT, "root");
+
+      Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
+      persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
+      rootElement.addContent(persistenceElement);
+
       Element childElement = new Element(ModelPersistence.ROOT_NODE);
 
       CollectConsumer<SModelReference> usedImports = new CollectConsumer<SModelReference>(new LinkedHashSet<SModelReference>());

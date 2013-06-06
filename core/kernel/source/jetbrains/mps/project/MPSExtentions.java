@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
 
 public class MPSExtentions {
   public static final String MPS_PROJECT = "mpr";
@@ -26,6 +26,7 @@ public class MPSExtentions {
   public static final String DEVKIT = "devkit";
   public static final String MODEL = "mps";
   public static final String MODEL_BINARY = "mpb";
+  public static final String MODEL_ROOT = "mpsr";
   public static final String REFACTORINGS = "history";
   public static final String JAVAFILE = "java";
   public static final String CLASSFILE = "class";
@@ -47,5 +48,5 @@ public class MPSExtentions {
   public static final String DOT_IDEAWORKSPACE = "." + IDEAWORKSPACE;
   public static final String DOT_WORKSPACE = "." + WORKSPACE;
   public static final String DOT_IDEMODULE = "." + IDEAMODULE;
-  public static final String DOT_LIBRARY = "."+LIBRARY;
+  public static final String DOT_LIBRARY = "." + LIBRARY;
 }

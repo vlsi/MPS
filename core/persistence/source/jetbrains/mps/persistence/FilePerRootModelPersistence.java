@@ -16,8 +16,10 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.smodel.FilePerRootSModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -47,10 +49,13 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * evgeny, 6/3/13
@@ -216,5 +221,39 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
       return null;
     }
     return new FilePerRootDataSource(folder, root);
+  }
+
+  public static Map<String, String> getModelHashes(@NotNull MultiStreamDataSource source) {
+    BigInteger fileHash = BigInteger.ZERO;
+    Map<String, String> result = new HashMap<String, String>();
+    for (String streamName : source.getAvailableStreams()) {
+      Map<String, String> generationHashes = null;
+      if (source instanceof FolderDataSource) {
+        IFile file = ((FolderDataSource) source).getFile(streamName);
+        generationHashes = file == null ? null : ModelDigestHelper.getInstance().getGenerationHashes(file);
+      }
+      if (generationHashes == null) {
+        generationHashes = DefaultModelPersistence.getDigestMap(source, streamName);
+        if (generationHashes == null) {
+          // no hash for stream
+          return null;
+        }
+      }
+
+      String streamHash = generationHashes.get(GeneratableSModel.FILE);
+      if (streamName.equals(FilePerRootDataSource.HEADER_FILE)) {
+        result.put(GeneratableSModel.HEADER, streamHash);
+      } else {
+        // copy root keys
+        for (Entry<String, String> entry : generationHashes.entrySet()) {
+          String key = entry.getKey();
+          if (GeneratableSModel.FILE.equals(key) || GeneratableSModel.HEADER.equals(key)) continue;
+          result.put(entry.getKey(), entry.getValue());
+        }
+      }
+      fileHash = fileHash.xor(new BigInteger(streamHash, Character.MAX_RADIX));
+    }
+    result.put(GeneratableSModel.FILE, fileHash.toString(Character.MAX_RADIX));
+    return result;
   }
 }

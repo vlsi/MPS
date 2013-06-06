@@ -31,6 +31,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
@@ -158,6 +159,19 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   @Override
   public String getFormatTitle() {
     return "Universal XML-based format";
+  }
+
+  public static Map<String, String> getDigestMap(@NotNull MultiStreamDataSource source, String streamName) {
+    InputStream is = null;
+    try {
+      is = source.openInputStream(streamName);
+      return getDigestMap(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET));
+    } catch (IOException e) {
+      /* ignore */
+    } finally {
+      FileUtil.closeFileSafe(is);
+    }
+    return null;
   }
 
   public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {
