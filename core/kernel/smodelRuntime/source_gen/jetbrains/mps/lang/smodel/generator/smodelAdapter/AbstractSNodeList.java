@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Collection;
 import java.util.Iterator;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /*package*/ abstract class AbstractSNodeList extends ArrayList<SNode> {
@@ -188,7 +189,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       if (node.getParent() != null) {
         node.getParent().removeChild(node);
       }
-      jetbrains.mps.util.SNodeOperations.insertChild(myReferenceContainer, myRole, node, anchorNode);
+      SNodeOperations.insertChild(myReferenceContainer, myRole, node, anchorNode);
     }
   }
 

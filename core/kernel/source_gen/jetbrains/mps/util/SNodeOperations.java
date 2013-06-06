@@ -162,7 +162,7 @@ public class SNodeOperations {
    */
   public static void insertChild(SNode parent, String role, SNode child, SNode anchor, boolean before) {
     if (before) {
-      insertChild(parent, role, child, anchor);
+      parent.insertChildBefore(role, child, anchor);
     } else {
       insertChild(parent, role, child, anchor);
     }
@@ -177,7 +177,10 @@ public class SNodeOperations {
       return;
     }
     Iterable<? extends SNode> childrenWithRole = parent.getChildren(role);
-    parent.insertChildBefore(role, child, childrenWithRole.iterator().hasNext() ? null : childrenWithRole.iterator().next());
+    parent.insertChildBefore(role, child, (childrenWithRole.iterator().hasNext() ?
+      null :
+      childrenWithRole.iterator().next()
+    ));
   }
 
   /**

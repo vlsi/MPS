@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -105,7 +106,7 @@ public class NodeGroupChange extends ModelChange {
     );
     SNode parent = model.getNode(myParentNodeId);
     for (SNode newNode : ListSequence.fromList(nodesToAdd).reversedList()) {
-      jetbrains.mps.util.SNodeOperations.insertChild(parent, myRole, newNode, anchor);
+      SNodeOperations.insertChild(parent, myRole, newNode, anchor);
     }
   }
 
