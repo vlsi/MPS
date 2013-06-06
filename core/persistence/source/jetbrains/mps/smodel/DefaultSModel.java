@@ -55,7 +55,7 @@ public class DefaultSModel extends LazySModel {
   @Override
   protected void enforceFullLoad() {
     org.jetbrains.mps.openapi.model.SModel md = myModelDescriptor;
-    if (!(md instanceof DefaultSModelDescriptor)) return;
+    if (!(md instanceof LazyEditableSModelBase)) return;
     md.load();
   }
 
