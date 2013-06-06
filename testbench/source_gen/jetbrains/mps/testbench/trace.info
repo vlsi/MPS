@@ -112,68 +112,7 @@
     <unitInfo nodeId="5294483648489411504" fileName="IdeaTestEnvironment.java" startLine="69" startPosition="41" endLine="81" endPosition="5" unitName="jetbrains.mps.testbench.IdeaTestEnvironment$2" />
     <unitInfo nodeId="5294483648489411372" fileName="IdeaTestEnvironment.java" startLine="30" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.testbench.IdeaTestEnvironment" />
   </root>
-  <root nodeRef="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)/5294483648489412787">
-    <nodeInfo nodeId="5294483648489412790" fileName="MpsMakeHelper.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATTERNS" />
-    <nodeInfo nodeId="4232275527340635599" fileName="MpsMakeHelper.java" startLine="26" startPosition="10" endLine="27" endPosition="966" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412870" fileName="MpsMakeHelper.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEnvironment" />
-    <nodeInfo nodeId="5294483648489412890" fileName="MpsMakeHelper.java" startLine="34" startPosition="46" endLine="35" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412897" fileName="MpsMakeHelper.java" startLine="35" startPosition="79" endLine="36" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412902" fileName="MpsMakeHelper.java" startLine="36" startPosition="52" endLine="37" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412906" fileName="MpsMakeHelper.java" startLine="37" startPosition="63" endLine="38" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412909" fileName="MpsMakeHelper.java" startLine="38" startPosition="35" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489412919" fileName="MpsMakeHelper.java" startLine="44" startPosition="49" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412926" fileName="MpsMakeHelper.java" startLine="48" startPosition="25" endLine="49" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4380316535195238796" fileName="MpsMakeHelper.java" startLine="52" startPosition="22" endLine="53" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4380316535195238801" fileName="MpsMakeHelper.java" startLine="53" startPosition="31" endLine="54" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4380316535195238810" fileName="MpsMakeHelper.java" startLine="54" startPosition="90" endLine="55" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4380316535195238823" fileName="MpsMakeHelper.java" startLine="56" startPosition="36" endLine="57" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4380316535195238836" fileName="MpsMakeHelper.java" startLine="59" startPosition="68" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4380316535195238841" fileName="MpsMakeHelper.java" startLine="61" startPosition="5" endLine="62" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4380316535195238846" fileName="MpsMakeHelper.java" startLine="62" startPosition="36" endLine="63" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4380316535195238853" fileName="MpsMakeHelper.java" startLine="63" startPosition="65" endLine="64" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4380316535195238862" fileName="MpsMakeHelper.java" startLine="64" startPosition="87" endLine="65" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4380316535195238866" fileName="MpsMakeHelper.java" startLine="65" startPosition="18" endLine="66" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5294483648489412914" fileName="MpsMakeHelper.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsMakeHelper#(Ljetbrains/mps/tool/builder/Environment;)V" />
-    <nodeInfo nodeId="5294483648489412924" fileName="MpsMakeHelper.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="4380316535195238817" fileName="MpsMakeHelper.java" startLine="55" startPosition="92" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4380316535195238829" fileName="MpsMakeHelper.java" startLine="58" startPosition="5" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489412886" fileName="MpsMakeHelper.java" startLine="33" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDummyProject#()Ljetbrains/mps/project/MPSProject;" />
-    <nodeInfo nodeId="5294483648489412877" fileName="MpsMakeHelper.java" startLine="31" startPosition="26" endLine="41" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412874" fileName="MpsMakeHelper.java" startLine="31" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsMakeHelper#()V" />
-    <nodeInfo nodeId="5294483648489412931" fileName="MpsMakeHelper.java" startLine="52" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#()V" />
-    <scopeInfo nodeId="5294483648531169346" fileName="MpsMakeHelper.java" startLine="26" startPosition="10" endLine="27" endPosition="966" />
-    <scopeInfo nodeId="5294483648489412918" fileName="MpsMakeHelper.java" startLine="44" startPosition="49" endLine="45" endPosition="32" />
-    <scopeInfo nodeId="5294483648489412925" fileName="MpsMakeHelper.java" startLine="48" startPosition="25" endLine="49" endPosition="28" />
-    <scopeInfo nodeId="4380316535195238822" fileName="MpsMakeHelper.java" startLine="56" startPosition="36" endLine="57" endPosition="72" />
-    <scopeInfo nodeId="4380316535195238835" fileName="MpsMakeHelper.java" startLine="59" startPosition="68" endLine="60" endPosition="28" />
-    <scopeInfo nodeId="5294483648489412914" fileName="MpsMakeHelper.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="5294483648489412916" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412924" fileName="MpsMakeHelper.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="4380316535195238817" fileName="MpsMakeHelper.java" startLine="55" startPosition="92" endLine="58" endPosition="5">
-      <varInfo nodeId="4380316535195238819" varName="ptns" />
-    </scopeInfo>
-    <scopeInfo nodeId="4380316535195238829" fileName="MpsMakeHelper.java" startLine="58" startPosition="5" endLine="61" endPosition="5">
-      <varInfo nodeId="4380316535195238833" varName="f" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412888" fileName="MpsMakeHelper.java" startLine="34" startPosition="46" endLine="39" endPosition="23">
-      <varInfo nodeId="5294483648489412889" varName="ideaProject" />
-      <varInfo nodeId="5294483648489412901" varName="project" />
-      <varInfo nodeId="5294483648489412896" varName="projectFile" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412886" fileName="MpsMakeHelper.java" startLine="33" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="5294483648489412876" fileName="MpsMakeHelper.java" startLine="31" startPosition="26" endLine="41" endPosition="6" />
-    <scopeInfo nodeId="5294483648489412874" fileName="MpsMakeHelper.java" startLine="31" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="5294483648489412932" fileName="MpsMakeHelper.java" startLine="52" startPosition="22" endLine="66" endPosition="33">
-      <varInfo nodeId="4380316535195238811" varName="filePtns" />
-      <varInfo nodeId="4380316535195238802" varName="path" />
-      <varInfo nodeId="4380316535195238797" varName="toDo" />
-      <varInfo nodeId="4380316535195238854" varName="worker" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412931" fileName="MpsMakeHelper.java" startLine="52" startPosition="0" endLine="68" endPosition="0" />
-    <unitInfo nodeId="5294483648489412884" fileName="MpsMakeHelper.java" startLine="32" startPosition="29" endLine="41" endPosition="5" unitName="jetbrains.mps.testbench.MpsMakeHelper$1" />
-    <unitInfo nodeId="5294483648489412787" fileName="MpsMakeHelper.java" startLine="21" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.testbench.MpsMakeHelper" />
-  </root>
+  <root nodeRef="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)/5294483648489412787" />
   <root nodeRef="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)/5294483648489413878">
     <nodeInfo nodeId="5294483648489413881" fileName="PerformanceMessenger.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySingleValues" />
     <nodeInfo nodeId="5294483648489413890" fileName="PerformanceMessenger.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPercentValues" />

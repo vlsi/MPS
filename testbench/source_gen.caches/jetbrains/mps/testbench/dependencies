@@ -50,27 +50,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.Environment" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.MpsMakeHelper" file="MpsMakeHelper.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.testbench.IdeaTestEnvironment" />
-    <classNode dependClassName="jetbrains.mps.testbench.util.FilesCollector" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.Environment" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.make.MakeWorker" />
-    <classNode dependClassName="jetbrains.mps.tool.common.Script" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-  </dependency>
   <dependency className="jetbrains.mps.testbench.PerformanceMessenger" file="PerformanceMessenger.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
