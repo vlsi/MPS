@@ -162,18 +162,18 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
   public void setDoNotGenerate(boolean value) {
     ModelAccess.assertLegalWrite();
 
-    getModelHeader().setDoNotGenerate(value);
+    getHeader().setDoNotGenerate(value);
     setChanged(true);
   }
 
   @Override
   public boolean isDoNotGenerate() {
-    return getModelHeader().isDoNotGenerate();
+    return getHeader().isDoNotGenerate();
   }
 
   @Override
   public int getVersion() {
-    return getModelHeader().getVersion();
+    return getHeader().getVersion();
   }
 
   @Override
@@ -185,7 +185,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
   }
 
 
-  private BinaryModelHeader getModelHeader() {
+  private BinaryModelHeader getHeader() {
     BinarySModel model = (BinarySModel) getCurrentModelInternal();
     if (model == null) return myHeader;
     return model.getHeader();
@@ -220,5 +220,9 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
     }
 
     super.reloadContents();
+  }
+
+  public BinaryModelHeader getHeaderCopy() {
+    return myHeader.createCopy();
   }
 }

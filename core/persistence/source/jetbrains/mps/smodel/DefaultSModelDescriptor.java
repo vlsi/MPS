@@ -111,7 +111,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
 
   public int getPersistenceVersion() {
-    return getSModelHeader().getPersistenceVersion();
+    return getModelHeader().getPersistenceVersion();
   }
 
   @Override
@@ -152,7 +152,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
   @Override
   public boolean isGenerateIntoModelFolder() {
-    return Boolean.parseBoolean(getSModelHeader().getOptionalProperty("useModelFolderForGeneration"));
+    return Boolean.parseBoolean(getModelHeader().getOptionalProperty("useModelFolderForGeneration"));
   }
 
   @Override
@@ -175,29 +175,29 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   public void setDoNotGenerate(boolean value) {
     ModelAccess.assertLegalWrite();
 
-    getSModelHeader().setDoNotGenerate(value);
+    getModelHeader().setDoNotGenerate(value);
     setChanged(true);
   }
 
   @Override
   public boolean isDoNotGenerate() {
-    return getSModelHeader().isDoNotGenerate();
+    return getModelHeader().isDoNotGenerate();
   }
 
   @Override
   public int getVersion() {
-    return getSModelHeader().getVersion();
+    return getModelHeader().getVersion();
   }
 
   @Override
   public void setVersion(int newVersion) {
     ModelAccess.assertLegalWrite();
 
-    getSModelHeader().setVersion(newVersion);
+    getModelHeader().setVersion(newVersion);
     setChanged(true);
   }
 
-  private SModelHeader getSModelHeader() {
+  private SModelHeader getModelHeader() {
     DefaultSModel model = (DefaultSModel) getCurrentModelInternal();
     if (model == null) return myHeader;
     return model.getSModelHeader();
@@ -233,4 +233,9 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
     super.reloadContents();
   }
+
+  public SModelHeader getHeaderCopy() {
+    return myHeader.createCopy();
+  }
+
 }
