@@ -98,6 +98,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
         for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {
           if (aspect.is(model) && model instanceof EditableSModel) {
             ((EditableSModel)model).addChangeListener(this);
+            model.addModelListener(this);
             return;
           }
         }
@@ -107,6 +108,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       protected void stopListening(SModel model) {
         if (model instanceof EditableSModel) {
           ((EditableSModel)model).removeChangeListener(this);
+          model.removeModelListener(this);
         }
       }
 
@@ -127,6 +129,14 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
           if (language != null) {
             refreshModule(language, false);
           }
+        }
+      }
+
+      @Override
+      public void modelSaved(SModel model) {
+        final Language language = Language.getLanguageFor(model);
+        if (language != null) {
+          refreshModule(language, false);
         }
       }
     });
@@ -274,7 +284,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
         BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);
         for (LanguageAspect aspect: HASHED_LANGUAGE_ASPECTS) {
           final EditableSModelDescriptor aspModel = aspect.get(myModule);
-          if (aspModel instanceof GeneratableSModel) {
+          if (!aspModel.isChanged() && aspModel instanceof GeneratableSModel) {
             modelHash = modelHash.xor(new BigInteger(((GeneratableSModel) aspModel).getModelHash(), Character.MAX_RADIX));
           }
         }
