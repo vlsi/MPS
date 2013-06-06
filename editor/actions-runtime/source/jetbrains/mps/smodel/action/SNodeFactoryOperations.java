@@ -156,7 +156,7 @@ public class SNodeFactoryOperations {
     if (newChild == null) return null;
     String role = node.getRoleInParent();
     assert role != null;
-    jetbrains.mps.util.SNodeOperations.insertChild(parent, role, newChild, node.getPrevSibling());
+    parent.insertChildBefore(role, newChild, node);
     return newChild;
   }
 }
