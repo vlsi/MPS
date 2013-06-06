@@ -21,6 +21,7 @@
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
+    <orderEntry type="module" module-name="environment" scope="TEST" />
   </component>
 </module>
 

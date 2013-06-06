@@ -43,13 +43,19 @@ public class IdeaEnvironment implements Environment {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
 
     // todo: inline 
-    TestMain.configureMPS();
+    TestMain.configureMPS(SetSequence.fromSet(plugins).toGenericArray(String.class));
     Testbench.initLibs();
 
     // todo: is it right place? 
     for (String macro : SetSequence.fromSet(MapSequence.fromMap(macroses).keySet())) {
       setMacro(macro, MapSequence.fromMap(macroses).get(macro));
     }
+  }
+
+
+
+  public boolean hasIdeaInstance() {
+    return true;
   }
 
 

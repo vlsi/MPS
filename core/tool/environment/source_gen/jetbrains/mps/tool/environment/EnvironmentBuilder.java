@@ -16,6 +16,11 @@ public class EnvironmentBuilder {
   private final Map<String, File> libs = MapSequence.fromMap(new HashMap<String, File>());
 
 
+  private EnvironmentBuilder() {
+  }
+
+
+
   public EnvironmentBuilder addPlugin(String plugin) {
     SetSequence.fromSet(plugins).addElement(plugin);
     return this;
@@ -42,14 +47,18 @@ public class EnvironmentBuilder {
 
 
 
-
-
-  public EnvironmentBuilder withDefaults() {
-    // todo 
+  public EnvironmentBuilder withDefaultSamplesDir() {
     return this.addMacro("samples_home", new File(System.getProperty("user.dir"), "samples"));
   }
 
+
+
   public static EnvironmentBuilder defaultEnvironment() {
-    return new EnvironmentBuilder().withDefaults();
+    // todo: default plugins, default etc 
+    return new EnvironmentBuilder().withDefaultSamplesDir();
+  }
+
+  public static EnvironmentBuilder emptyEnvironment() {
+    return new EnvironmentBuilder();
   }
 }

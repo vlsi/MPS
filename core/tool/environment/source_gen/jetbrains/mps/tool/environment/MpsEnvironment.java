@@ -43,6 +43,12 @@ public class MpsEnvironment implements Environment {
 
 
 
+  public boolean hasIdeaInstance() {
+    return false;
+  }
+
+
+
   public Project openProject(File projectFile) {
     throw new UnsupportedOperationException();
   }
