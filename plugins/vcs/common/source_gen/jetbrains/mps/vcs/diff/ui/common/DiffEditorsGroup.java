@@ -5,8 +5,6 @@ package jetbrains.mps.vcs.diff.ui.common;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-
-import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.ModelAccess;
@@ -18,6 +16,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
+import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;

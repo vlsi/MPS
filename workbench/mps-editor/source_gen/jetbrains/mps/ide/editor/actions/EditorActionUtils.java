@@ -4,10 +4,10 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import java.util.Iterator;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
+import java.util.Iterator;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
