@@ -15,15 +15,21 @@
  */
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.leftHighlighter.HighlighterBracket.BracketEdge;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map.Entry;
+import java.util.Stack;
 
 /**
  * User: Alexander Shatalin
@@ -62,7 +68,7 @@ public class BracketsPainter extends AbstractFoldingAreaPainter {
   }
 
   private int relayoutBrackets() {
-    for (Iterator<Entry<CellInfo, HighlighterBracket>> it = myBrackets.entrySet().iterator(); it.hasNext();) {
+    for (Iterator<Entry<CellInfo, HighlighterBracket>> it = myBrackets.entrySet().iterator(); it.hasNext(); ) {
       Entry<CellInfo, HighlighterBracket> nextEntry = it.next();
       if (!nextEntry.getValue().relayout()) {
         // TODO: check if this code is useful 
@@ -135,13 +141,13 @@ public class BracketsPainter extends AbstractFoldingAreaPainter {
   }
 
   public void removeBracket(EditorCell cell) {
-    myBrackets.remove(cell.getCellInfo());
+    myBrackets.remove(APICellAdapter.getCellInfo(cell));
     myAreaWidth = -1;
   }
 
   public void addBracket(EditorCell cell, EditorCell secondCell, Color c) {
-    CellInfo info1 = cell.getCellInfo();
-    CellInfo info2 = secondCell.getCellInfo();
+    CellInfo info1 = APICellAdapter.getCellInfo(cell);
+    CellInfo info2 = APICellAdapter.getCellInfo(secondCell);
     myBrackets.put(info1, new HighlighterBracket(info1, info2, c, getEditorComponent(), myRightToLeft));
     myAreaWidth = -1;
   }

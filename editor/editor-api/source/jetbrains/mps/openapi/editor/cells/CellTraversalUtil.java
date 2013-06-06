@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.openapi.editor.cells;
 
-import org.jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -29,7 +29,8 @@ import java.util.List;
 public class CellTraversalUtil {
 
   // no one can instantiate this class.
-  private CellTraversalUtil(){}
+  private CellTraversalUtil() {
+  }
 
   public static EditorCell getNextSibling(@NotNull EditorCell cell) {
     return getSibling(cell, true);
@@ -58,7 +59,7 @@ public class CellTraversalUtil {
 
   public static EditorCell getNextLeaf(@NotNull EditorCell cell) {
     EditorCell next = getNextSibling(cell);
-    if (next != null){
+    if (next != null) {
       return getFirstLeaf(next);
     }
 
@@ -83,7 +84,7 @@ public class CellTraversalUtil {
 
   public static EditorCell getPrevLeaf(@NotNull EditorCell cell) {
     EditorCell prev = getPrevSibling(cell);
-    if (prev != null){
+    if (prev != null) {
       return getLastLeaf(prev);
     }
 
@@ -182,5 +183,14 @@ public class CellTraversalUtil {
       parent = parent.getParent();
     }
     return false;
+  }
+
+  public static EditorCell_Collection getFoldedParent(@NotNull EditorCell cell) {
+    for (EditorCell_Collection parent = cell.getParent(); parent != null; parent = parent.getParent()) {
+      if (parent.isFolded()) {
+        return parent;
+      }
+    }
+    return null;
   }
 }

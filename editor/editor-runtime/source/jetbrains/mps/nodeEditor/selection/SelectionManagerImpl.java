@@ -15,27 +15,32 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import org.apache.log4j.Logger;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionInfo;
+import jetbrains.mps.openapi.editor.selection.SelectionListener;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
-public class SelectionManager {
-  private static final Logger LOG = LogManager.getLogger(SelectionManager.class);
+public class SelectionManagerImpl implements SelectionManager {
+  private static final Logger LOG = LogManager.getLogger(SelectionManagerImpl.class);
 
   private EditorComponent myEditorComponent;
-  private Stack<Selection> mySelectionStack = new Stack<Selection>();
+  private Deque<Selection> mySelectionStack = new LinkedList<Selection>();
   private List<SelectionListener> mySelectionListeners = new LinkedList<SelectionListener>();
 
-  public SelectionManager(EditorComponent editorComponent) {
+  public SelectionManagerImpl(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
   }
 
@@ -43,19 +48,20 @@ public class SelectionManager {
     if (mySelectionStack.isEmpty()) {
       return;
     }
-    Selection oldSelection = mySelectionStack.peek();
+    Selection oldSelection = mySelectionStack.getLast();
     mySelectionStack.clear();
     doChangeSelection(oldSelection, null);
   }
 
   public Selection getSelection() {
-    return isSelectionStackEmpty() ? null : mySelectionStack.peek();
+    return isSelectionStackEmpty() ? null : mySelectionStack.getLast();
   }
 
   public Selection getDeepestSelection() {
-    return isSelectionStackEmpty() ? null : mySelectionStack.firstElement();
+    return isSelectionStackEmpty() ? null : mySelectionStack.getFirst();
   }
 
+  @Override
   public Selection createSelection(EditorCell editorCell) {
     Selection selection;
     if (editorCell instanceof EditorCell_Label) {
@@ -68,19 +74,23 @@ public class SelectionManager {
     return selection;
   }
 
+  @Override
   public Selection createRangeSelection(SNode firstNode, SNode lastNode) {
     return new NodeRangeSelection(myEditorComponent, firstNode, lastNode);
   }
 
+  @Override
   public void setSelection(EditorCell editorCell) {
     setSelection(createSelection(editorCell));
   }
 
+  @Override
   public void setSelection(EditorCell_Label label, int caretPosition) {
     label.setCaretPosition(caretPosition);
     setSelection(new EditorCellLabelSelection(label));
   }
 
+  @Override
   public void setSelection(EditorCell_Label label, int caretPosition, int selectionStart, int selectionEnd) {
     label.setCaretPosition(caretPosition);
     label.setSelectionStart(selectionStart);
@@ -88,39 +98,46 @@ public class SelectionManager {
     setSelection(new EditorCellLabelSelection(label));
   }
 
+  @Override
   public void setSelection(Selection selection) {
     Selection oldSelection = getSelection();
     if (!mySelectionStack.isEmpty()) {
       mySelectionStack.clear();
     }
     if (selection != null) {
-      mySelectionStack.push(selection);
+      mySelectionStack.addLast(selection);
     }
     doChangeSelection(oldSelection, selection);
   }
 
+  @Override
   public void pushSelection(@NotNull Selection selection) {
-    doChangeSelection(getSelection(), mySelectionStack.push(selection));
+    Selection oldSelection = getSelection();
+    mySelectionStack.addLast(selection);
+    doChangeSelection(oldSelection, selection);
   }
 
+  @Override
   public Selection popSelection() {
     if (mySelectionStack.isEmpty()) {
       return null;
     }
-    Selection oldSelection = mySelectionStack.pop();
+    Selection oldSelection = mySelectionStack.removeLast();
     doChangeSelection(oldSelection, getSelection());
     return oldSelection;
   }
 
+  @Override
   public Iterable<Selection> getSelectionStackIterable() {
     return new ArrayList<Selection>(mySelectionStack);
   }
 
-  public Stack<SelectionInfo> getSelectionInfoStack() {
-    Stack<SelectionInfo> result = new Stack<SelectionInfo>();
+  @Override
+  public List<SelectionInfo> getSelectionInfoStack() {
+    List<SelectionInfo> result = new ArrayList<SelectionInfo>();
     try {
       for (Selection nextSelection : mySelectionStack) {
-        result.push(nextSelection.getSelectionInfo());
+        result.add(nextSelection.getSelectionInfo());
       }
     } catch (SelectionStoreException e) {
       LOG.error(null, e);
@@ -130,8 +147,9 @@ public class SelectionManager {
     return result;
   }
 
-  public void setSelectionInfoStack(@NotNull Stack<SelectionInfo> selectionStack) {
-    Stack<Selection> newSelectionStack = new Stack<Selection>();
+  @Override
+  public void setSelectionInfoStack(@NotNull List<SelectionInfo> selectionStack) {
+    List<Selection> newSelectionStack = new ArrayList<Selection>();
     for (SelectionInfo nextSelectionInfo : selectionStack) {
       Selection selection = nextSelectionInfo.createSelection(myEditorComponent);
       if (selection == null) {
@@ -139,7 +157,7 @@ public class SelectionManager {
         newSelectionStack.clear();
         break;
       }
-      newSelectionStack.push(selection);
+      newSelectionStack.add(selection);
     }
     if (isSameSelectionStack(newSelectionStack)) {
       return;
@@ -147,19 +165,17 @@ public class SelectionManager {
 
     Selection oldSelection = getSelection();
     mySelectionStack.clear();
-    for (Selection nextSelection : newSelectionStack) {
-      mySelectionStack.push(nextSelection);
-    }
+    mySelectionStack.addAll(newSelectionStack);
     doChangeSelection(oldSelection, getSelection());
   }
 
-  private boolean isSameSelectionStack(Stack<Selection> newSelectionStack) {
+  private boolean isSameSelectionStack(List<Selection> newSelectionStack) {
     if (newSelectionStack.size() != mySelectionStack.size()) {
       return false;
     }
-    for (int i = 0; i < mySelectionStack.size(); i++) {
-      Selection oldSelection = mySelectionStack.get(i);
-      Selection newSelection = newSelectionStack.get(i);
+    int index = 0;
+    for (Selection oldSelection : mySelectionStack) {
+      Selection newSelection = newSelectionStack.get(index++);
       if (!oldSelection.isSame(newSelection)) {
         return false;
       }
@@ -167,19 +183,23 @@ public class SelectionManager {
     return true;
   }
 
+  @Override
   public int getSelectionStackSize() {
     return mySelectionStack.size();
   }
 
+  @Override
   public boolean isSelectionStackEmpty() {
     return mySelectionStack.isEmpty();
   }
 
+  @Override
   public void addSelectionListener(@NotNull SelectionListener listener) {
     assert !mySelectionListeners.contains(listener);
     mySelectionListeners.add(listener);
   }
 
+  @Override
   public void removeSelectionListener(@NotNull SelectionListener listener) {
     mySelectionListeners.remove(listener);
   }
@@ -202,7 +222,7 @@ public class SelectionManager {
 
   public void dispose() {
     if (!mySelectionStack.isEmpty()) {
-      mySelectionStack.peek().deactivate();
+      mySelectionStack.getLast().deactivate();
     }
     mySelectionStack.clear();
   }

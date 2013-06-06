@@ -30,20 +30,22 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Superscript;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.util.ArrayWrapper;
-import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Condition;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -67,28 +69,28 @@ import java.util.Queue;
  */
 public class EditorCell_Collection extends EditorCell_Basic implements jetbrains.mps.openapi.editor.cells.EditorCell_Collection {
   public static final String FOLDED_TEXT = "...";
-  private static final jetbrains.mps.openapi.editor.cells.EditorCell[] EMPTY_ARRAY = new jetbrains.mps.openapi.editor.cells.EditorCell[0];
+  private static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
 
-  private jetbrains.mps.openapi.editor.cells.EditorCell[] myEditorCells = EditorCell_Collection.EMPTY_ARRAY;
-  private List<jetbrains.mps.openapi.editor.cells.EditorCell> myEditorCellsWrapper = new ArrayWrapper<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+  private EditorCell[] myEditorCells = EditorCell_Collection.EMPTY_ARRAY;
+  private List<EditorCell> myEditorCellsWrapper = new ArrayWrapper<EditorCell>() {
     @Override
-    protected jetbrains.mps.openapi.editor.cells.EditorCell[] getArray() {
+    protected EditorCell[] getArray() {
       return myEditorCells;
     }
 
     @Override
-    protected void setArray(jetbrains.mps.openapi.editor.cells.EditorCell[] newArray) {
+    protected void setArray(EditorCell[] newArray) {
       myEditorCells = newArray;
     }
 
     @Override
-    protected jetbrains.mps.openapi.editor.cells.EditorCell[] newArray(int size) {
-      return new jetbrains.mps.openapi.editor.cells.EditorCell[size];
+    protected EditorCell[] newArray(int size) {
+      return new EditorCell[size];
     }
   };
 
-  private List<jetbrains.mps.openapi.editor.cells.EditorCell> myFoldedCellCollection;
-  private jetbrains.mps.openapi.editor.cells.EditorCell myFoldedCell;
+  private List<EditorCell> myFoldedCellCollection;
+  private EditorCell myFoldedCell;
 
   protected CellLayout myCellLayout;
   private AbstractCellListHandler myCellListHandler;
@@ -157,12 +159,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return myFolded;
   }
 
-  private List<jetbrains.mps.openapi.editor.cells.EditorCell> getEditorCells() {
+  private List<EditorCell> getEditorCells() {
     return myEditorCellsWrapper;
   }
 
   @NotNull
-  private List<jetbrains.mps.openapi.editor.cells.EditorCell> getFoldedCellCollection() {
+  private List<EditorCell> getFoldedCellCollection() {
     if (!hasFoldedCell()) {
       return Collections.emptyList();
     }
@@ -172,7 +174,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return myFoldedCellCollection;
   }
 
-  private jetbrains.mps.openapi.editor.cells.EditorCell getFoldedCell() {
+  private EditorCell getFoldedCell() {
     assert hasFoldedCell();
     if (myFoldedCell == null) {
       EditorCell_Constant foldedCell = new EditorCell_Constant(getContext(), getSNode(), FOLDED_TEXT);
@@ -187,7 +189,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return myFoldedCell;
   }
 
-  public void setFoldedCell(jetbrains.mps.openapi.editor.cells.EditorCell foldedCell) {
+  public void setFoldedCell(EditorCell foldedCell) {
     if (myFoldedCell != null) {
       ((EditorCell_Basic) myFoldedCell).setParent(null);
       getStyle().remove(myFoldedCell.getStyle());
@@ -201,7 +203,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return myCanBeFolded;
   }
 
-  private List<jetbrains.mps.openapi.editor.cells.EditorCell> getVisibleChildCells() {
+  private List<EditorCell> getVisibleChildCells() {
     return isFolded() ? getFoldedCellCollection() : getEditorCells();
   }
 
@@ -209,12 +211,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return getVisibleChildCells().size();
   }
 
-  public EditorCell getChildAt(int i) {
-    return (EditorCell) getVisibleChildCells().get(i);
+  public jetbrains.mps.nodeEditor.cells.EditorCell getChildAt(int i) {
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) getVisibleChildCells().get(i);
   }
 
   @Override
-  public int indexOf(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public int indexOf(EditorCell cell) {
     return getVisibleChildCells().indexOf(cell);
   }
 
@@ -242,7 +244,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return myCellListHandler.getElementRole();
   }
 
-  public int getCellNumber(EditorCell cell) {
+  public int getCellNumber(jetbrains.mps.nodeEditor.cells.EditorCell cell) {
     if (usesBraces()) {
       return indexOf(cell) - 1;
     } else {
@@ -251,7 +253,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public jetbrains.mps.openapi.editor.cells.EditorCell getCellAt(int number) {
+  public EditorCell getCellAt(int number) {
     try {
       return getChildAt(usesBraces() ? number + 1 : number);
     } catch (IndexOutOfBoundsException e) {
@@ -271,7 +273,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public boolean isAncestorOf(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public boolean isAncestorOf(EditorCell cell) {
     while (cell != null) {
       cell = cell.getParent();
       if (cell == this) return true;
@@ -339,12 +341,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public jetbrains.mps.openapi.editor.cells.EditorCell getOpeningBrace() {
+  public EditorCell getOpeningBrace() {
     return myOpeningBrace;
   }
 
   @Override
-  public jetbrains.mps.openapi.editor.cells.EditorCell getClosingBrace() {
+  public EditorCell getClosingBrace() {
     return myClosingBrace;
   }
 
@@ -369,14 +371,14 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   // TODO: not used? Remove?
-  public Iterable<jetbrains.mps.openapi.editor.cells.EditorCell> contentCells() {
+  public Iterable<EditorCell> contentCells() {
     if (usesBraces()) {
-      return new Iterable<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+      return new Iterable<EditorCell>() {
         @Override
-        public Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator() {
-          return new Iterator<jetbrains.mps.openapi.editor.cells.EditorCell>() {//iterates from second to before last
-            private Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> myIterator = EditorCell_Collection.this.iterator();
-            private jetbrains.mps.openapi.editor.cells.EditorCell myNext;
+        public Iterator<EditorCell> iterator() {
+          return new Iterator<EditorCell>() {//iterates from second to before last
+            private Iterator<EditorCell> myIterator = EditorCell_Collection.this.iterator();
+            private EditorCell myNext;
 
             {
               myIterator.next();
@@ -389,9 +391,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
             }
 
             @Override
-            public jetbrains.mps.openapi.editor.cells.EditorCell next() {
+            public EditorCell next() {
               if (!hasNext()) throw new NoSuchElementException();
-              jetbrains.mps.openapi.editor.cells.EditorCell result = myNext;
+              EditorCell result = myNext;
               myNext = myIterator.next();
               return result;
             }
@@ -407,50 +409,50 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator() {
-    return new UnmodifiableIterator<jetbrains.mps.openapi.editor.cells.EditorCell>(getVisibleChildCells(), false);
+  public Iterator<EditorCell> iterator() {
+    return new UnmodifiableIterator<EditorCell>(getVisibleChildCells(), false);
   }
 
   @Override
-  public Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> reverseIterator() {
-    return new UnmodifiableIterator<jetbrains.mps.openapi.editor.cells.EditorCell>(getVisibleChildCells(), true);
+  public Iterator<EditorCell> reverseIterator() {
+    return new UnmodifiableIterator<EditorCell>(getVisibleChildCells(), true);
   }
 
   @Override
-  public Iterable<jetbrains.mps.openapi.editor.cells.EditorCell> getContentCells() {
+  public Iterable<EditorCell> getContentCells() {
     if (usesBraces() && !isFolded()) {
-      List<jetbrains.mps.openapi.editor.cells.EditorCell> editorCells = getEditorCells();
+      List<EditorCell> editorCells = getEditorCells();
       return editorCells.subList(1, editorCells.size() - 1);
     } else {
       return this;
     }
   }
 
-  public EditorCell[] getCells() {
-    return getVisibleChildCells().toArray(new EditorCell[getVisibleChildCells().size()]);
+  public jetbrains.mps.nodeEditor.cells.EditorCell[] getCells() {
+    return getVisibleChildCells().toArray(new jetbrains.mps.nodeEditor.cells.EditorCell[getVisibleChildCells().size()]);
   }
 
-  public List<EditorCell> dfsCells() {
-    List<EditorCell> result = new ArrayList<EditorCell>();
-    for (jetbrains.mps.openapi.editor.cells.EditorCell cell : getVisibleChildCells()) {
+  public List<jetbrains.mps.nodeEditor.cells.EditorCell> dfsCells() {
+    List<jetbrains.mps.nodeEditor.cells.EditorCell> result = new ArrayList<jetbrains.mps.nodeEditor.cells.EditorCell>();
+    for (EditorCell cell : getVisibleChildCells()) {
       if (cell instanceof EditorCell_Collection) {
-        result.add((EditorCell) cell);
+        result.add((jetbrains.mps.nodeEditor.cells.EditorCell) cell);
         result.addAll(((EditorCell_Collection) cell).dfsCells());
       } else {
-        result.add((EditorCell) cell);
+        result.add((jetbrains.mps.nodeEditor.cells.EditorCell) cell);
       }
     }
     return result;
   }
 
   @Override
-  public void addEditorCell(jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+  public void addEditorCell(EditorCell editorCell) {
     if (editorCell == null) return;
     addCell(editorCell);
     ((EditorCell_Basic) editorCell).setParent(this);
   }
 
-  public boolean containsCell(EditorCell editorCell) {
+  public boolean containsCell(jetbrains.mps.nodeEditor.cells.EditorCell editorCell) {
     return getVisibleChildCells().contains(editorCell);
   }
 
@@ -513,10 +515,14 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
+  protected boolean isUnderFolded() {
+    return CellTraversalUtil.getFoldedParent(this) != null;
+  }
+
   private void addUnfoldingListenerForChildren() {
-    Queue<jetbrains.mps.openapi.editor.cells.EditorCell> children = new LinkedList<jetbrains.mps.openapi.editor.cells.EditorCell>(getEditorCells());
+    Queue<EditorCell> children = new LinkedList<EditorCell>(getEditorCells());
     while (!children.isEmpty()) {
-      jetbrains.mps.openapi.editor.cells.EditorCell child = children.poll();
+      EditorCell child = children.poll();
       if (!(child instanceof EditorCell_Collection)) {
         continue;
       }
@@ -530,9 +536,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   private void removeFoldingListenerForChildren() {
-    Queue<jetbrains.mps.openapi.editor.cells.EditorCell> children = new LinkedList<jetbrains.mps.openapi.editor.cells.EditorCell>(getEditorCells());
+    Queue<EditorCell> children = new LinkedList<EditorCell>(getEditorCells());
     while (!children.isEmpty()) {
-      jetbrains.mps.openapi.editor.cells.EditorCell child = children.poll();
+      EditorCell child = children.poll();
       if (!(child instanceof EditorCell_Collection)) {
         continue;
       }
@@ -573,7 +579,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   private void adjustSelectionToFoldingState(EditorComponent editorComponent) {
     if (isDescendantCellSelected(editorComponent)) {
       editorComponent.clearSelectionStack();
-      EditorCell editorCellToSelect = getFirstLeaf(CellConditions.SELECTABLE);
+      jetbrains.mps.nodeEditor.cells.EditorCell editorCellToSelect = getFirstLeaf(CellConditions.SELECTABLE);
       if (editorCellToSelect != null) {
         editorComponent.changeSelection(editorCellToSelect);
         editorCellToSelect.home();
@@ -586,9 +592,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   private boolean isDescendantCellSelected(EditorComponent editorComponent) {
     EditorCell selectedCell = editorComponent.getDeepestSelectedCell();
-    return selectedCell != null && selectedCell.findParent(new Condition<EditorCell_Collection>() {
+    return selectedCell != null && CellFinderUtil.findParent(selectedCell, new Condition<jetbrains.mps.openapi.editor.cells.EditorCell_Collection>() {
       @Override
-      public boolean met(EditorCell_Collection object) {
+      public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell_Collection object) {
         return object == EditorCell_Collection.this;
       }
     }) != null;
@@ -597,6 +603,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   @Override
   public boolean canBePossiblyFolded() {
     return myCanBeFolded && myCellLayout.canBeFolded();
+  }
+
+  @Override
+  public boolean isFoldable() {
+    return canBePossiblyFolded();
   }
 
   public void setCanBeFolded(boolean canBeFolded) {
@@ -644,9 +655,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     paintSelectionIfRequired(g, parentSettings);
     paintContent(g, parentSettings);
 
-    for (jetbrains.mps.openapi.editor.cells.EditorCell child : this) {
+    for (EditorCell child : this) {
       if (g.hitClip(child.getX(), child.getY(), child.getWidth(), child.getHeight())) {
-        ((EditorCell) child).paint(g, settings);
+        ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paint(g, settings);
       }
     }
     paintDecorations(g);
@@ -661,7 +672,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     int xOld = myX;
     int yOld = myY;
     super.moveTo(x, y);
-    for (EditorCell myEditorCell : getCells()) {
+    for (jetbrains.mps.nodeEditor.cells.EditorCell myEditorCell : getCells()) {
       myEditorCell.moveTo(myEditorCell.getX() + x - xOld, myEditorCell.getY() + y - yOld);
       if (((EditorCell_Basic) myEditorCell).isNeedsRelayout()) {
         markNeedsRelayout();
@@ -685,12 +696,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings) {
-    List<? extends jetbrains.mps.openapi.editor.cells.EditorCell> selectionCells = myCellLayout.getSelectionCells(this);
+    List<? extends EditorCell> selectionCells = myCellLayout.getSelectionCells(this);
     if (selectionCells != null) {
       ParentSettings selection = isSelectionPaintedOnAncestor(parentSettings);
-      for (jetbrains.mps.openapi.editor.cells.EditorCell cell : selectionCells) {
+      for (EditorCell cell : selectionCells) {
         if (g.hitClip(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight())) {
-          ((EditorCell) cell).paintSelection(g, c, false, selection);
+          ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).paintSelection(g, c, false, selection);
         }
       }
     } else {
@@ -732,19 +743,19 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public void synchronizeViewWithModel() {
-    for (jetbrains.mps.openapi.editor.cells.EditorCell myEditorCell : getEditorCells()) {
-      ((EditorCell) myEditorCell).synchronizeViewWithModel();
+    for (EditorCell myEditorCell : getEditorCells()) {
+      ((jetbrains.mps.nodeEditor.cells.EditorCell) myEditorCell).synchronizeViewWithModel();
     }
     if (hasFoldedCell()) {
-      ((EditorCell) getFoldedCell()).synchronizeViewWithModel();
+      ((jetbrains.mps.nodeEditor.cells.EditorCell) getFoldedCell()).synchronizeViewWithModel();
     }
   }
 
   @Override
-  public EditorCell findLeaf(int x, int y, Condition<EditorCell> condition) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell findLeaf(int x, int y, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
     if (myX <= x && x < myX + myWidth && myY <= y && y < myY + myHeight) {
-      for (jetbrains.mps.openapi.editor.cells.EditorCell child : getVisibleChildCells()) {
-        EditorCell result = ((EditorCell) child).findLeaf(x, y, condition);
+      for (EditorCell child : getVisibleChildCells()) {
+        jetbrains.mps.nodeEditor.cells.EditorCell result = ((jetbrains.mps.nodeEditor.cells.EditorCell) child).findLeaf(x, y, condition);
         if (result != null) {
           return result;
         }
@@ -755,7 +766,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public void addEditorCellAt(int i, jetbrains.mps.openapi.editor.cells.EditorCell cellToAdd, boolean ignoreBraces) {
+  public void addEditorCellAt(int i, EditorCell cellToAdd, boolean ignoreBraces) {
     int j = i;
     if (usesBraces() && !ignoreBraces) {
       j = i - 1;
@@ -769,7 +780,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
-  public void removeCell(EditorCell cellToRemove) {
+  public void removeCell(jetbrains.mps.nodeEditor.cells.EditorCell cellToRemove) {
     ((EditorCell_Basic) cellToRemove).setParent(null);
     getEditorCells().remove(cellToRemove);
     getStyle().remove(cellToRemove.getStyle());
@@ -780,12 +791,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   public void removeAllCells() {
-    for (EditorCell cell : getCells()) {
+    for (jetbrains.mps.nodeEditor.cells.EditorCell cell : getCells()) {
       removeCell(cell);
     }
   }
 
-  private void addCell(jetbrains.mps.openapi.editor.cells.EditorCell cellToAdd) {
+  private void addCell(EditorCell cellToAdd) {
     addEditorCellAt(getChildCount(), cellToAdd, false);
   }
 
@@ -806,18 +817,18 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public jetbrains.mps.openapi.editor.cells.EditorCell firstCell() {
+  public EditorCell firstCell() {
     return getFirstChild();
   }
 
   @Override
-  public jetbrains.mps.openapi.editor.cells.EditorCell lastCell() {
+  public EditorCell lastCell() {
     return getLastChild();
   }
 
   @Override
   @SuppressWarnings({"UnusedDeclaration"})
-  public jetbrains.mps.openapi.editor.cells.EditorCell firstContentCell() {
+  public EditorCell firstContentCell() {
     int shift = 0;
     int size = 0;
     if (usesBraces()) {
@@ -831,7 +842,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public jetbrains.mps.openapi.editor.cells.EditorCell lastContentCell() {
+  public EditorCell lastContentCell() {
     int shift = 0;
     int size = 0;
     if (usesBraces()) {
@@ -845,22 +856,22 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public EditorCell getFirstLeaf() {
+  public jetbrains.mps.nodeEditor.cells.EditorCell getFirstLeaf() {
     return getChildCount() > 0 ? getFirstChild().getFirstLeaf() : this;
   }
 
   @Override
-  public EditorCell getLastLeaf() {
+  public jetbrains.mps.nodeEditor.cells.EditorCell getLastLeaf() {
     return getChildCount() > 0 ? getLastChild().getLastLeaf() : this;
   }
 
   @Override
-  public EditorCell getLastChild() {
+  public jetbrains.mps.nodeEditor.cells.EditorCell getLastChild() {
     return getChildCount() > 0 ? getChildAt(getChildCount() - 1) : null;
   }
 
   @Override
-  public EditorCell getFirstChild() {
+  public jetbrains.mps.nodeEditor.cells.EditorCell getFirstChild() {
     return getChildCount() > 0 ? getChildAt(0) : null;
   }
 
@@ -871,7 +882,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   @Override
   public void onAdd() {
     super.onAdd();
-    for (jetbrains.mps.openapi.editor.cells.EditorCell child : getEditorCells()) {
+    for (EditorCell child : getEditorCells()) {
       ((EditorCell_Basic) child).onAdd();
     }
     if (hasFoldedCell()) {
@@ -900,7 +911,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       setBracesEnabled(false);
       getEditor().getSelectionManager().removeSelectionListener(myLastCellSelectionListener);
     }
-    for (jetbrains.mps.openapi.editor.cells.EditorCell child : getEditorCells()) {
+    for (EditorCell child : getEditorCells()) {
       ((EditorCell_Basic) child).onRemove();
     }
     if (hasFoldedCell()) {
@@ -926,14 +937,14 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   private class SelectLastChild extends AbstractCellAction {
     @Override
     public boolean canExecute(EditorContext context) {
-      return EditorCell_Collection.this.isSelected() &&  CellFinderUtil.findLastSelectableLeaf(EditorCell_Collection.this) != null;
+      return EditorCell_Collection.this.isSelected() && CellFinderUtil.findLastSelectableLeaf(EditorCell_Collection.this) != null;
     }
 
     @Override
     public void execute(EditorContext context) {
       EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
       editorComponent.clearSelectionStack();
-      editorComponent.changeSelection( CellFinderUtil.findLastSelectableLeaf(EditorCell_Collection.this));
+      editorComponent.changeSelection(CellFinderUtil.findLastSelectableLeaf(EditorCell_Collection.this));
     }
   }
 
@@ -941,7 +952,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   public void setSubstituteInfo(SubstituteInfo substitueInfo) {
     super.setSubstituteInfo(substitueInfo);
     if (isTransparentCollection()) {
-      for (jetbrains.mps.openapi.editor.cells.EditorCell child : getEditorCells()) {
+      for (EditorCell child : getEditorCells()) {
         if (child.getSNode() == getSNode()) {
           child.setSubstituteInfo(substitueInfo);
         }
@@ -953,7 +964,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   public void setAction(CellActionType type, CellAction action) {
     super.setAction(type, action);
     if (isTransparentCollection()) {
-      for (jetbrains.mps.openapi.editor.cells.EditorCell child : getEditorCells()) {
+      for (EditorCell child : getEditorCells()) {
         if (child.getSNode() == getSNode()) {
           child.setAction(type, action);
         }
@@ -965,8 +976,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   public boolean isTransparentCollection() {
     return getChildCount() == 1 && getStyle().get(StyleAttributes.SELECTABLE);
   }
-
-
 
 
   class EditorCell_Brace extends EditorCell_Constant {
@@ -1057,8 +1066,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
 
     @Override
-    public EditorCell findCell(EditorComponent editorComponent) {
-      EditorCell cell = myCollectionCellInfo.findCell(editorComponent);
+    public jetbrains.mps.nodeEditor.cells.EditorCell findCell(EditorComponent editorComponent) {
+      jetbrains.mps.nodeEditor.cells.EditorCell cell = myCollectionCellInfo.findCell(editorComponent);
       if (!(cell instanceof EditorCell_Collection)) return null;
       EditorCell_Collection parent = (EditorCell_Collection) cell;
       if (myOpeningBrace) {
@@ -1079,36 +1088,40 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
-
   private class MyLastCellSelectionListener implements SelectionListener {
-    public final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
-      @Override
-      public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-        return myOpeningBrace != cell && cell.isSelectable() && !(cell instanceof EditorCell_Collection);
-      }
-    };
-    public final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> LAST_SELECTABLE_LEAF_EXCLUDING_BRACE = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
-      @Override
-      public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-        return myClosingBrace != cell && cell.isSelectable() && !(cell instanceof EditorCell_Collection);
-      }
-    };
+    public final Condition<EditorCell> FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE =
+        new Condition<EditorCell>() {
+          @Override
+          public boolean met(EditorCell cell) {
+            return myOpeningBrace != cell && cell.isSelectable() && !(cell instanceof EditorCell_Collection);
+          }
+        };
+    public final Condition<EditorCell> LAST_SELECTABLE_LEAF_EXCLUDING_BRACE =
+        new Condition<EditorCell>() {
+          @Override
+          public boolean met(EditorCell cell) {
+            return myClosingBrace != cell && cell.isSelectable() && !(cell instanceof EditorCell_Collection);
+          }
+        };
+
     @Override
-    public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+    public void selectionChanged(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
       if (myClosingBrace.isSelected() || myOpeningBrace.isSelected()) {
         enableBraces();
         return;
       }
-      jetbrains.mps.openapi.editor.cells.EditorCell deepestSelection = editorComponent.getDeepestSelectedCell();
-      jetbrains.mps.openapi.editor.cells.EditorCell lastSelectableLeaf = CellFinderUtil.findChildByCondition(EditorCell_Collection.this, LAST_SELECTABLE_LEAF_EXCLUDING_BRACE, false);
-      jetbrains.mps.openapi.editor.cells.EditorCell firstSelectableLeaf = CellFinderUtil.findChildByCondition(EditorCell_Collection.this, FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE, true);
+      EditorCell deepestSelection = editorComponent.getDeepestSelectedCell();
+      EditorCell lastSelectableLeaf = CellFinderUtil.findChildByCondition(EditorCell_Collection.this, LAST_SELECTABLE_LEAF_EXCLUDING_BRACE, false);
+      EditorCell firstSelectableLeaf = CellFinderUtil.findChildByCondition(EditorCell_Collection.this, FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE, true);
       if (deepestSelection instanceof EditorCell_Brace) {
         EditorCell_Collection braceOwner = (EditorCell_Collection) deepestSelection.getParent();
-        if (braceOwner.myClosingBrace == deepestSelection && CellFinderUtil.findChildByCondition(braceOwner, LAST_SELECTABLE_LEAF_EXCLUDING_BRACE, false) == lastSelectableLeaf) {
+        if (braceOwner.myClosingBrace == deepestSelection &&
+            CellFinderUtil.findChildByCondition(braceOwner, LAST_SELECTABLE_LEAF_EXCLUDING_BRACE, false) == lastSelectableLeaf) {
           enableBraces();
           return;
         }
-        if (braceOwner.myOpeningBrace == deepestSelection && CellFinderUtil.findChildByCondition(braceOwner, FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE, true) == firstSelectableLeaf) {
+        if (braceOwner.myOpeningBrace == deepestSelection &&
+            CellFinderUtil.findChildByCondition(braceOwner, FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE, true) == firstSelectableLeaf) {
           enableBraces();
           return;
         }

@@ -22,13 +22,13 @@ import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.editor.runtime.impl.DataTransferUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.Collections;
@@ -257,7 +257,7 @@ public class NodePaster {
       for (SNode pasteNode : myPasteNodes) {
         SNode pasteConcept = ((jetbrains.mps.smodel.SNode) pasteNode).getConceptDeclarationNode();
         if (!SModelUtil.isAssignableConcept(pasteConcept, SModelUtil.getLinkDeclarationTarget(link)) &&
-          !PasteWrappersManager.getInstance().canWrapInto(pasteNode, SModelUtil.getLinkDeclarationTarget(link))) {
+            !PasteWrappersManager.getInstance().canWrapInto(pasteNode, SModelUtil.getLinkDeclarationTarget(link))) {
           suitable = false;
           break;
         }
@@ -277,12 +277,12 @@ public class NodePaster {
     String role = targetCell.getRole();
     if (role != null) return role;
 
-    EditorCell_Collection actualCollection = (targetCell instanceof EditorCell_Collection) ? (EditorCell_Collection) targetCell : (EditorCell_Collection) targetCell.getParent();
-    if (actualCollection != null) role = actualCollection.getCellNodesRole();
+    EditorCell_Collection actualCollection = (targetCell instanceof EditorCell_Collection) ? (EditorCell_Collection) targetCell : targetCell.getParent();
+    if (actualCollection != null) role = ((jetbrains.mps.nodeEditor.cells.EditorCell_Collection) actualCollection).getCellNodesRole();
     while (actualCollection != null && role == null) {
       actualCollection = actualCollection.getParent();
       if (actualCollection == null) break;
-      role = actualCollection.getCellNodesRole();
+      role = ((jetbrains.mps.nodeEditor.cells.EditorCell_Collection) actualCollection).getCellNodesRole();
     }
 
     if (role == null) {

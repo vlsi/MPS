@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.leftHighlighter;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;

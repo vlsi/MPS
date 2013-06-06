@@ -17,11 +17,10 @@ package jetbrains.mps.nodeEditor.text;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.TextBuilder;
+import jetbrains.mps.openapi.editor.selection.Selection;
 
 import java.util.ArrayList;
 import java.util.List;

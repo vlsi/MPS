@@ -25,18 +25,12 @@ public class CellConditions {
     }
   };
 
-  public static final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> EDITABLE = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
-    @Override
-    public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-      return cell.isSelectable() && cell instanceof EditorCell_Label && ((EditorCell_Label) cell).isEditable();
-    }
-  };
-
-  public static final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> ERROR_CONDITION = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
-    @Override
-    public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-      return cell instanceof EditorCell_Error || cell.isErrorState();
-    }
-  };
+  public static final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> ERROR_CONDITION =
+      new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+        @Override
+        public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+          return cell instanceof EditorCell_Error || cell.isErrorState();
+        }
+      };
 
 }

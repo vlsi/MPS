@@ -13,14 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.leftHighlighter;
+package jetbrains.mps.nodeEditor.selection;
 
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.selection.Selection;
 
-/**
- * Cyril.Konopko, 12.10.2010
- */
-public interface NodeTextElement extends Comparable<NodeTextElement> {
-  public String getText();
-  public SNode getNode();
+import java.awt.Graphics2D;
+
+public interface SelectionInternal extends Selection {
+  void paintSelection(Graphics2D g);
 }

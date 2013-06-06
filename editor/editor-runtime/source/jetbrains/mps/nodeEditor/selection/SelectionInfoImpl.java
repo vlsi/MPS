@@ -16,13 +16,16 @@
 package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionInfo;
+import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -33,8 +36,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class SelectionInfo {
-  private static final Logger LOG = LogManager.getLogger(SelectionInfo.class);
+public class SelectionInfoImpl implements SelectionInfo {
+  private static final Logger LOG = LogManager.getLogger(SelectionInfoImpl.class);
 
   private static final String CLASS_NAME_ATTRIBUTE = "className";
   private static final String MODULE_ID_ATTRIBUTE = "moduleID";
@@ -49,7 +52,7 @@ public class SelectionInfo {
   private Map<String, String> myProperties = new HashMap<String, String>();
   private DefaultCellInfo myCellInfo = null;
 
-  public SelectionInfo(Element element) {
+  public SelectionInfoImpl(Element element) {
     mySelectionClassName = element.getAttributeValue(CLASS_NAME_ATTRIBUTE);
     myModuleID = element.getAttributeValue(MODULE_ID_ATTRIBUTE);
     for (Object childElement : element.getChildren(PROPERTY_ELEMENT_NAME)) {
@@ -66,12 +69,12 @@ public class SelectionInfo {
     }
   }
 
-  public SelectionInfo(@NotNull String selectionClassName, String moduleID) {
+  public SelectionInfoImpl(@NotNull String selectionClassName, String moduleID) {
     this(selectionClassName);
     myModuleID = moduleID;
   }
 
-  public SelectionInfo(@NotNull String selectionClassName) {
+  public SelectionInfoImpl(@NotNull String selectionClassName) {
     mySelectionClassName = selectionClassName;
   }
 
@@ -86,7 +89,8 @@ public class SelectionInfo {
     myCellInfo = (DefaultCellInfo) cellInfo;
   }
 
-  Selection createSelection(EditorComponent editorComponent) {
+  @Override
+  public Selection createSelection(EditorComponent editorComponent) {
     try {
       Class<Selection> selectionClass;
       if (myModuleID != null) {
@@ -104,7 +108,7 @@ public class SelectionInfo {
         selectionClass = (Class<Selection>) getClass().getClassLoader().loadClass(mySelectionClassName);
       }
       if (!Selection.class.isAssignableFrom(selectionClass)) {
-        LOG.error("Serialized selection class: " + mySelectionClassName + " is not a subclas of " + Selection.class.getName());
+        LOG.error("Serialized selection class: " + mySelectionClassName + " is not a subclass of " + Selection.class.getName());
         return null;
       }
       Constructor<Selection> constructor = selectionClass.getConstructor(EditorComponent.class, Map.class, CellInfo.class);
@@ -159,7 +163,7 @@ public class SelectionInfo {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    SelectionInfo that = (SelectionInfo) o;
+    SelectionInfoImpl that = (SelectionInfoImpl) o;
 
     if (!mySelectionClassName.equals(that.mySelectionClassName)) return false;
     if (myCellInfo != null ? !myCellInfo.equals(that.myCellInfo) : that.myCellInfo != null) return false;
@@ -197,7 +201,8 @@ public class SelectionInfo {
       return Boolean.parseBoolean(propertyValue);
     }
 
-    public static Enum getEnumProperty(Map<String, String> properties, String propertyName, Class<? extends Enum> enumClass, Enum defaultPropertyValue) throws SelectionStoreException {
+    public static Enum getEnumProperty(Map<String, String> properties, String propertyName, Class<? extends Enum> enumClass, Enum defaultPropertyValue) throws
+        SelectionStoreException {
       String propertyValue = properties.get(propertyName);
       if (propertyValue == null) {
         return defaultPropertyValue;

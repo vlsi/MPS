@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionListener;
+import jetbrains.mps.openapi.editor.selection.SingularSelection;
 
 public abstract class SingularSelectionListenerAdapter implements SelectionListener {
   @Override

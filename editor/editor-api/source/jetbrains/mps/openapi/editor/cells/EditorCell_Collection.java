@@ -64,6 +64,12 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
 
   boolean isFolded();
 
+  void fold();
+
+  void unfold();
+
+  boolean isFoldable();
+
   int getBracesIndent();
 
   boolean isTransparentCollection();

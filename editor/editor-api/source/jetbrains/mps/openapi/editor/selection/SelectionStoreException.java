@@ -13,26 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.selection;
+package jetbrains.mps.openapi.editor.selection;
 
-import jetbrains.mps.openapi.editor.EditorComponent;
-import org.jetbrains.annotations.NotNull;
-
-import java.awt.Graphics2D;
-
-public abstract class AbstractSelection implements SelectionInternal {
-  private EditorComponent myEditorComponent;
-
-  public AbstractSelection(@NotNull EditorComponent editorComponent) {
-    myEditorComponent = editorComponent;
-  }
-
-  @NotNull
-  @Override
-  public EditorComponent getEditorComponent() {
-    return myEditorComponent;
-  }
-
-  public void paintSelection(Graphics2D g) {
+public class SelectionStoreException extends Exception {
+  public SelectionStoreException(String message) {
+    super(message);
   }
 }

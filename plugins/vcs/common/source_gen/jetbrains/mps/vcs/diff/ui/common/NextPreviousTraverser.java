@@ -7,11 +7,11 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.ShortcutSet;
 import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import java.util.List;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.actionSystem.ActionToolbar;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.nodeEditor.selection.SelectionListener;
-import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -69,7 +69,7 @@ public class NextPreviousTraverser {
     });
     SetSequence.fromSet(SetSequence.fromSetWithValues(new HashSet<EditorComponent>(), ListSequence.fromList(myChangeGroupLayouts).translate(new ITranslator2<ChangeGroupLayout, EditorComponent>() {
       public Iterable<EditorComponent> translate(ChangeGroupLayout b) {
-        return Arrays.asList(b.getLeftComponent(), b.getRightComponent());
+        return Arrays.<EditorComponent>asList(b.getLeftComponent(), b.getRightComponent());
       }
     }))).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
@@ -152,8 +152,8 @@ public class NextPreviousTraverser {
   private synchronized Bounds getNeighbourGroupBounds(boolean previous) {
     // -1 means that group is not available 
 
-    int currentY = myLastEditor.getViewport().getViewPosition().y;
-    EditorCell selectedCell = myLastEditor.getSelectedCell();
+    int currentY = ((jetbrains.mps.nodeEditor.EditorComponent) myLastEditor).getViewport().getViewPosition().y;
+    EditorCell selectedCell = ((jetbrains.mps.nodeEditor.EditorComponent) myLastEditor).getSelectedCell();
     if (selectedCell != null) {
       currentY = selectedCell.getY();
     }
@@ -227,7 +227,7 @@ public class NextPreviousTraverser {
   }
 
   private synchronized void goToY(int y) {
-    EditorCell editorCell = myLastEditor.findCellWeak(1, y + 1);
+    EditorCell editorCell = ((jetbrains.mps.nodeEditor.EditorComponent) myLastEditor).findCellWeak(1, y + 1);
     if (editorCell != null) {
       myLastEditor.changeSelection(editorCell);
     } else {
