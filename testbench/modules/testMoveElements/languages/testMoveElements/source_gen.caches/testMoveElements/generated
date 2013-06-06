@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-18k5s6nl81p3g7havmm6i7j2h491f7x">
+  <dep model="r:2de9cc1a-057f-4953-afea-1abb5cfe7f56(testMoveElements.editor)" hash="95fgjfdc3663d8rft7tpj8nl0tj52ey" />
+  <dep model="r:c4ad923b-e6a3-4100-863d-8a2e07caee6e(testMoveElements.typesystem)" hash="-7thwzsnthegcb8aua06u42ukf8pg5ua" />
+  <common>
+    <dep model="r:2de9cc1a-057f-4953-afea-1abb5cfe7f56(testMoveElements.editor)" />
+    <dep model="r:c4ad923b-e6a3-4100-863d-8a2e07caee6e(testMoveElements.typesystem)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
+
