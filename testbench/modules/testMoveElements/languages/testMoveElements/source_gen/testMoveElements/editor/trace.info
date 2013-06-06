@@ -1,3 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="testMoveElements.editor.EditorAspectDescriptorImpl" />
+  <root nodeRef="r:2de9cc1a-057f-4953-afea-1abb5cfe7f56(testMoveElements.editor)/7465696304914830836">
+    <nodeInfo nodeId="7465696304914830836" fileName="DummyBlock_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7465696304914831246" fileName="DummyBlock_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7465696304914831246" fileName="DummyBlock_Editor.java" startLine="17" startPosition="103" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7465696304914831246" fileName="DummyBlock_Editor.java" startLine="18" startPosition="46" endLine="19" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7465696304914831246" fileName="DummyBlock_Editor.java" startLine="19" startPosition="28" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7465696304914831246" fileName="DummyBlock_Editor.java" startLine="20" startPosition="34" endLine="21" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7465696304914830836" fileName="DummyBlock_Editor.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="7465696304914831246" fileName="DummyBlock_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_9lebyr_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="7465696304914830836" fileName="DummyBlock_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" />
+    <scopeInfo nodeId="7465696304914830836" fileName="DummyBlock_Editor.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="7465696304914830836" varName="editorContext" />
+      <varInfo nodeId="7465696304914830836" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7465696304914831246" fileName="DummyBlock_Editor.java" startLine="16" startPosition="87" endLine="21" endPosition="22">
+      <varInfo nodeId="7465696304914831246" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7465696304914831246" fileName="DummyBlock_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="7465696304914831246" varName="editorContext" />
+      <varInfo nodeId="7465696304914831246" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="7465696304914830836" fileName="DummyBlock_Editor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="testMoveElements.editor.DummyBlock_Editor" />
+  </root>
+</debugInfo>
 
