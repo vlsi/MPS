@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
@@ -187,35 +188,9 @@ class IntelligentNodeMover {
 
   private SNode siblingWithTheSameRole(SNode node) {
     if (forward()) {
-      SNode p = node.getParent();
-      if (p == null) return null;
-
-      SNode current = node;
-      String currentRole = node.getRoleInParent();
-      assert currentRole != null : "role must be not null";
-
-      // to ensure that role is loaded
-      while (current.getNextSibling() != null) {
-        current = current.getNextSibling();
-        if (current.getRoleInParent().equals(currentRole)) return current;
-      }
-
-      return null;
+      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNextSibling(node);
     } else {
-      SNode p = node.getParent();
-      if (p == null) return null;
-
-      SNode current = node;
-      String currentRole = node.getRoleInParent();
-      assert currentRole != null : "role must be not null";
-
-      SNode fc = p.getFirstChild();
-      while (current != fc) {
-        current = current.getPrevSibling();
-        if (current.getRoleInParent().equals(currentRole)) return current;
-      }
-
-      return null;
+      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getPrevSibling(node);
     }
   }
 
