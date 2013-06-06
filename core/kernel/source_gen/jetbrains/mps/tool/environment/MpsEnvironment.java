@@ -6,21 +6,20 @@ import java.util.Set;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import java.util.Map;
-import java.io.File;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.testbench.Testbench;
+import java.io.File;
 
 public class MpsEnvironment implements Environment {
   private final Set<Project> openedProjects = SetSequence.fromSet(new HashSet<Project>());
+  private final EnvironmentConfig config;
 
 
-  public MpsEnvironment(Set<String> plugins, Map<String, File> macros, Map<String, File> libs) {
+  public MpsEnvironment(EnvironmentConfig config) {
+    this.config = config;
+
     // todo: if creationg of environment fails? is it publication before we need it? 
     ActiveEnvironment.activateEnvironment(this);
 
@@ -29,12 +28,12 @@ public class MpsEnvironment implements Environment {
     // from CheckProjectStructureHelper 
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-    TestMain.configureMPS(new String[0]);
-    for (String macro : MapSequence.fromMap(macros).keySet()) {
-      Testbench.setMacro(macro, MapSequence.fromMap(macros).get(macro).getPath());
+    // IdeMain.setTestMode(TestMode.CORE_TEST) 
+    // TestMain.configureMPS(new String[0]) 
+    for (String macro : MapSequence.fromMap(config.macros()).keySet()) {
+      // todo: Testbench.setMacro(macro, macros[macro].getPath()) 
     }
-    Testbench.initLibs();
+    // todo: Testbench.initLibs() 
     // we do not make anything here 
     // we have a special test (Making) that does make 
     // and more importantly checks that make is ok and fails if not 
@@ -42,6 +41,10 @@ public class MpsEnvironment implements Environment {
   }
 
 
+
+  public EnvironmentConfig getConfig() {
+    return config;
+  }
 
   public boolean hasIdeaInstance() {
     return false;
@@ -67,7 +70,7 @@ public class MpsEnvironment implements Environment {
     }
 
     // from CheckProjectStructureHelper 
-    TestMain.disposeMPS();
+    // todo: TestMain.disposeMPS() 
 
     ActiveEnvironment.deactivateEnvironment(this);
   }

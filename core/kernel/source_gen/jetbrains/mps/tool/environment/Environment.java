@@ -5,7 +5,11 @@ package jetbrains.mps.tool.environment;
 import jetbrains.mps.project.Project;
 import java.io.File;
 
-public interface Environment {
+public /**
+ * Environment impl MUST call ActiveEnvironment.activateEnvironment at the beginning of the constructor and ActiveEnvrionment.deactivateEnvironment at the end of disposeEnvironment()
+ */
+interface Environment {
+  public EnvironmentConfig getConfig();
   public boolean hasIdeaInstance();
 
   /**

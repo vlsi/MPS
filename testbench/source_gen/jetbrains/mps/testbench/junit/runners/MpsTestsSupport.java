@@ -8,7 +8,10 @@ import jetbrains.mps.vfs.IFile;
 import java.util.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
-import jetbrains.mps.tool.environment.EnvironmentBuilder;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.testbench.IdeaEnvironment;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
@@ -39,8 +42,12 @@ public class MpsTestsSupport {
   }
 
 
-  public static void initEnv(boolean withIdea) {
-    EnvironmentBuilder.defaultEnvironment().build(withIdea);
+  public static Environment initEnv(boolean withIdea) {
+    EnvironmentConfig config = EnvironmentConfig.defaultEnvironment();
+    return (withIdea ?
+      new IdeaEnvironment(config) :
+      new MpsEnvironment(config)
+    );
   }
 
   public static void disposeEnv() {
