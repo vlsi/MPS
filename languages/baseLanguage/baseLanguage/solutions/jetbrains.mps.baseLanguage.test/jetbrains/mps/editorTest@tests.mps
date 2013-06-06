@@ -10754,9 +10754,7 @@
         </node>
       </node>
       <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="953450985260808087" nodeInfo="nn">
-        <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="953450985260808088" nodeInfo="nn">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="953450985260808809" nodeInfo="nn" />
-        </node>
+        <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="953450985260808088" nodeInfo="nn" />
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.IfStatement" typeId="tpee.1068580123159" id="953450985260843175" nodeInfo="nn">

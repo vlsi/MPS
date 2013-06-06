@@ -15,23 +15,24 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.kernel.model.SModelUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.IterableUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptUtil;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 class IntelligentNodeMover {
@@ -39,12 +40,18 @@ class IntelligentNodeMover {
 
   private List<SNode> myNodes = new ArrayList<SNode>();
   private EditorContext myEditorContext;
+  private EditorComponent myComponent;
   private boolean myForward;
+  private SNode myCurrent;
+  private SNode myParent;
+  private String myRole;
+  private SLink myLink;
 
   IntelligentNodeMover(EditorContext context, List<SNode> nodes, boolean forward) {
     myNodes.addAll(nodes);
     myEditorContext = context;
     myForward = forward;
+    myComponent = context.getEditorComponent();
   }
 
   private boolean forward() {
@@ -64,7 +71,7 @@ class IntelligentNodeMover {
 
         doMove();
       }
-    });
+    }, ProjectHelper.getProject(myEditorContext.getRepository()));
 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -80,99 +87,118 @@ class IntelligentNodeMover {
   }
 
   private void doMove() {
-    final SNode current = findBoundaryNode();
-    if (current == null) return;
-    if (current.getParent() == null) return;
+    myCurrent = findBoundaryNode();
+    if (myCurrent == null) return;
+    if (myCurrent.getParent() == null) return;
 
-    final SNode parent = current.getParent();
-    final String role = current.getRoleInParent();
-    assert parent != null && role != null;
+    myParent = myCurrent.getParent();
+    myRole = myCurrent.getRoleInParent();
+    assert myParent != null && myRole != null;
 
-    final SConcept acd = parent.getConcept();
-    final SLink link = acd.findLink(role);
+    final SConcept acd = myParent.getConcept();
+    myLink = acd.findLink(myRole);
 
-    if (link == null) {
-      LOG.error("Can't find a link " + role + " in concept " + acd.getName());
+    if (myLink == null) {
+      LOG.error("Can't find a link " + myRole + " in concept " + acd.getName());
       return;
     }
 
-    if (!link.isMultiple()) {
+    if (!myLink.isMultiple()) {
       return;
     }
 
-    //final SNode targetType = link.getParent();
+    if (isBoundary(myCurrent)) {
+      EditorCell anchorCell = myComponent.findNodeCell(myCurrent);
 
-    if (isBoundary(current)) {
-      SNode currentAnchor = parent;
-      SNode currentTarget = parent.getParent();
+      SNode currentAnchor = myCurrent;
+      SNode currentTarget = myCurrent.getParent();
 
-      while (currentTarget != null) {
-        if (haveSimilarLink(currentTarget, link)) {
-          parent.removeChild(current);
-          addWithAnchor(currentTarget, currentAnchor, role, current);
-          moveOtherNodes(current);
+      while (currentTarget != null && anchorCell != null) {
+        if (currentTarget != myCurrent.getParent() && haveSimilarLink(currentTarget)) {
+          myParent.removeChild(myCurrent);
+          addWithAnchor(currentTarget, currentAnchor);
+          moveOtherNodes();
           return;
         }
+        Iterator<EditorCell> iterator = getCellIterator(anchorCell);
+        while (iterator.hasNext()) {
+          EditorCell next = iterator.next();
 
-        SNode levelCurrent = siblingWithTheSameRole(currentAnchor);
-        while (levelCurrent != null) {
-          SNode result = findNodeAtBoundary(link, levelCurrent, true);
-          if (result != null) {
-            parent.removeChild(current);
-            addAtBoundary(result, role, current);
-            moveOtherNodes(current);
-            return;
+          if (tryPasteToCell(next)) return;
+          for (EditorCell levelCell : new DfsTraverserIterable(next, forward(), true)) {
+            if (tryPasteToCell(levelCell)) return;
           }
-
-          levelCurrent = siblingWithTheSameRole(levelCurrent);
         }
-
-        currentTarget = currentTarget.getParent();
-        currentAnchor = currentAnchor.getParent();
+        anchorCell = anchorCell.getParent();
+        if (anchorCell != null && anchorCell.isBig()) {
+          currentAnchor = anchorCell.getSNode();
+          currentTarget = currentAnchor.getParent();
+        }
       }
-
       return;
     }
 
-    final SNode prevChild = siblingWithTheSameRole(current);
+    final SNode prevChild = siblingWithTheSameRole(myCurrent);
     if (prevChild == null) {
-      List<? extends SNode> children = IterableUtil.asList(current.getParent().getChildren(role));
-      LOG.error("Prev. child is null. isForward = " + forward() + "; index = " + children.indexOf(current));
+      List<? extends SNode> children = IterableUtil.asList(myCurrent.getParent().getChildren(myRole));
+      LOG.error("Prev. child is null. isForward = " + forward() + "; index = " + children.indexOf(myCurrent));
       return;
     }
 
-    SNode innermostContainer = findNodeAtBoundary(link, prevChild, true);
+    SNode innermostContainer = findNodeAtBoundary(prevChild, true);
     if (innermostContainer != null) {
-      parent.removeChild(current);
-      addAtBoundary(innermostContainer, role, current);
+      myParent.removeChild(myCurrent);
+      addAtBoundary(innermostContainer);
     } else {
-      parent.removeChild(current);
-      addWithAnchor(parent, prevChild, role, current);
+      myParent.removeChild(myCurrent);
+      addWithAnchor(myParent, prevChild);
     }
 
-    moveOtherNodes(current);
+    moveOtherNodes();
   }
 
-  private void moveOtherNodes(SNode current) {
-    SNode parent = current.getParent();
+  private boolean tryPasteToCell(EditorCell levelCell) {
+    if (levelCell.isBig() && levelCell.getSNode() != null) {
+      SNode result = findNodeAtBoundary(levelCell.getSNode(), true);
+      if (result != null) {
+        myParent.removeChild(myCurrent);
+        addAtBoundary(result);
+        moveOtherNodes();
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private Iterator<EditorCell> getCellIterator(EditorCell anchorCell) {
+    Iterator<EditorCell> iterator = forward() ? anchorCell.getParent().iterator() : anchorCell.getParent().reverseIterator();
+    while (iterator.hasNext()) {
+      if (iterator.next().equals(anchorCell)) {
+        break;
+      }
+    }
+    return iterator;
+  }
+
+  private void moveOtherNodes() {
+    SNode parent = myCurrent.getParent();
     if (forward()) {
       for (SNode node : myNodes.subList(0, myNodes.size() - 1)) {
         node.getParent().removeChild(node);
-        parent.insertChild(current.getRoleInParent(), node, current.getPrevSibling());
+        parent.insertChild(myCurrent.getRoleInParent(), node, myCurrent.getPrevSibling());
       }
     } else {
       List<SNode> list = new ArrayList<SNode>(myNodes.subList(1, myNodes.size()));
       Collections.reverse(list);
       for (SNode node : list) {
         node.getParent().removeChild(node);
-        parent.insertChild(current.getRoleInParent(), node, current);
+        parent.insertChild(myCurrent.getRoleInParent(), node, myCurrent);
       }
     }
   }
 
-  private SNode findNodeAtBoundary(SLink link, SNode current, boolean includeThis) {
-    //todo: bad checking
-    if (includeThis && haveSimilarLink(current,link)) {
+  private SNode findNodeAtBoundary(SNode current, boolean includeThis) {
+    if (includeThis && haveSimilarLink(current)) {
       return current;
     }
 
@@ -181,7 +207,7 @@ class IntelligentNodeMover {
       Collections.reverse(children);
     }
     for (SNode child : children) {
-      SNode result = findNodeAtBoundary(link, child, true);
+      SNode result = findNodeAtBoundary(child, true);
       if (result != null) {
         return result;
       }
@@ -190,10 +216,10 @@ class IntelligentNodeMover {
     return null;
   }
 
-  private boolean haveSimilarLink(SNode current, SLink link) {
+  private boolean haveSimilarLink(SNode current) {
     for (SAbstractConcept concept : SConceptUtil.getAllSuperConcepts(current.getConcept(), true)) {
-      SLink currentLink = concept.findLink(link.getRole());
-      if (currentLink != null && currentLink.isMultiple() && !currentLink.isReference() && currentLink.getTargetConcept().equals(link.getTargetConcept())) {
+      SLink currentLink = concept.findLink(myLink.getRole());
+      if (currentLink != null && currentLink.isMultiple() && !currentLink.isReference() && currentLink.getTargetConcept().equals(myLink.getTargetConcept())) {
         return true;
       }
     }
@@ -220,19 +246,19 @@ class IntelligentNodeMover {
     }
   }
 
-  private void addWithAnchor(SNode parent, SNode prevChild, String role, SNode current) {
+  private void addWithAnchor(SNode parent, SNode prevChild) {
     if (forward()) {
-      parent.insertChild(role, current, prevChild);
+      parent.insertChild(myRole, myCurrent, prevChild);
     } else {
-      parent.insertChild(role, current, prevChild.getPrevSibling());
+      parent.insertChild(myRole, myCurrent, prevChild.getPrevSibling());
     }
   }
 
-  private void addAtBoundary(SNode result, String role, SNode current) {
+  private void addAtBoundary(SNode result) {
     if (forward()) {
-      result.insertChild(role, current, null);
+      result.insertChild(myRole, myCurrent, null);
     } else {
-      result.addChild(role, current);
+      result.addChild(myRole, myCurrent);
     }
   }
 
