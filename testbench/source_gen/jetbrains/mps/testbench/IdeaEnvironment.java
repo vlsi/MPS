@@ -47,6 +47,9 @@ public class IdeaEnvironment implements Environment {
 
     // todo: inline 
     TestMain.configureMPS(SetSequence.fromSet(config.plugins()).toGenericArray(String.class));
+    // todo: IdeaTestEnvironment - default plugins: jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make 
+    // todo: IdeaTestEnv - setMacro and loadLibraries from Environment 
+    // todo: IdeaTestEnv -  
     Testbench.initLibs();
 
     // todo: is it right place? 
