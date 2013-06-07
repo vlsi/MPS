@@ -3,7 +3,6 @@
   <persistence version="8" />
   <language namespace="772f6dcd-8c0d-48f7-869c-908e036f7c8e(jetbrains.mps.sampleXML)" />
   <language namespace="b1ccc903-f5a9-42d1-add9-80ac0e69d662(jetbrains.mps.samples.generator_demo.demoLang7)" />
-  <language-engaged-on-generation namespace="b1ccc903-f5a9-42d1-add9-80ac0e69d662(jetbrains.mps.samples.generator_demo.demoLang7)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="dghb" modelUID="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" version="-1" implicit="yes" />
   <import index="e3ke" modelUID="r:45723a22-341f-445c-b1e4-1a01f6efecf1(jetbrains.mps.samples.generator_demo.demoLang7.structure)" version="0" implicit="yes" />
