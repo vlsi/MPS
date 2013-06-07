@@ -30,4 +30,6 @@ public interface MultiStreamDataSource extends DataSource {
   InputStream openInputStream(String name) throws IOException;
 
   OutputStream openOutputStream(String name) throws IOException;
+
+  boolean delete(String name);
 }

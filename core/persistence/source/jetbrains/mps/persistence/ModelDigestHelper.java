@@ -17,6 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
@@ -43,9 +44,12 @@ public class ModelDigestHelper {
 
   public Map<String, String> getGenerationHashes(@NotNull StreamDataSource source) {
     if (!(source instanceof FileDataSource)) return null;
+    return getGenerationHashes(((FileDataSource) source).getFile());
+  }
 
+  public Map<String, String> getGenerationHashes(@NotNull IFile file) {
     for (DigestProvider p : myProviders) {
-      Map<String, String> result = p.getGenerationHashes((FileDataSource) source);
+      Map<String, String> result = p.getGenerationHashes(file);
       if (result != null) return result;
     }
 
@@ -56,7 +60,7 @@ public class ModelDigestHelper {
     if (!(source instanceof FileDataSource)) return null;
 
     for (DigestProvider p : myProviders) {
-      Map<String, String> result = p.getGenerationHashes((FileDataSource) source);
+      Map<String, String> result = p.getGenerationHashes(((FileDataSource) source).getFile());
       if (result != null) return result.get(GeneratableSModel.FILE);
     }
 
@@ -64,6 +68,6 @@ public class ModelDigestHelper {
   }
 
   public interface DigestProvider {
-    Map<String, String> getGenerationHashes(@NotNull FileDataSource f);
+    Map<String, String> getGenerationHashes(@NotNull IFile iFile);
   }
 }

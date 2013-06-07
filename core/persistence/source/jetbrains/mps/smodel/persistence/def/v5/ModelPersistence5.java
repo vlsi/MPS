@@ -28,6 +28,11 @@ import java.util.List;
 
 public class ModelPersistence5 extends ModelPersistence4 {
   @Override
+  public int getVersion() {
+    return 5;
+  }
+
+  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter5();
   }

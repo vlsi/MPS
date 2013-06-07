@@ -17,7 +17,6 @@ import javax.swing.JComponent;
 import java.awt.Dimension;
 import com.intellij.openapi.ui.Splitter;
 import java.awt.BorderLayout;
-import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
@@ -92,10 +91,6 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     myTestState.addView(myProgressLineComponent);
     myTestState.addView(myOutputComponent);
     addCloseListener(closeListener);
-  }
-
-  public UnitTestViewComponent(Project project, IOperationContext context, ConsoleViewImpl console, UnitTestExecutionController model) {
-    this(project, context, console, model.getState(), model.getCloseListener());
   }
 
   public JComponent createActionsToolbar(ConsoleView console) {

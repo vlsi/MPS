@@ -220,12 +220,17 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
             break;
           }
         }
-        IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot).getFile();
-        newFile.getParent().mkdirs();
-        newFile.createNewFile();
-        changeModelFile(newFile);
-        save();
-        oldFile.delete();
+        try {
+          IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot).getFile();
+          newFile.getParent().mkdirs();
+          newFile.createNewFile();
+          changeModelFile(newFile);
+          save();
+          oldFile.delete();
+        } catch (IOException e) {
+          LOG.error("cannot rename " + getModelName() + ": " + e.getMessage());
+          save();
+        }
       }
     }
 
@@ -264,7 +269,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   public void fireNodeAdded(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
     LOG.assertLog(!getSModelInternal().isUpdateMode());
     for (SModelChangeListener l : myChangeListeners) {
-      l.nodeAdded(node, role, child);
+      l.nodeAdded(this, node, role, child);
     }
     setChanged(true);
   }
@@ -272,7 +277,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
     LOG.assertLog(!getSModelInternal().isUpdateMode());
     for (SModelChangeListener l : myChangeListeners) {
-      l.nodeRemoved(node, role, child);
+      l.nodeRemoved(this, node, role, child);
     }
     setChanged(true);
   }

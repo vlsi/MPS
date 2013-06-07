@@ -46,7 +46,15 @@ public class ModelWriter7 implements IModelWriter {
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
 
-    int version = (sourceModel).getVersion();
+    saveHeader(sourceModel, rootElement);
+
+    // roots
+    saveModelNodes(rootElement, sourceModel);   // only for quick roots access
+    return new Document(rootElement);
+  }
+
+  protected void saveHeader(SModel sourceModel, Element rootElement) {
+    int version = sourceModel.getVersion();
     if (version >= 0) {
       rootElement.setAttribute(SModelHeader.VERSION, Integer.toString(version));
     }
@@ -66,28 +74,28 @@ public class ModelWriter7 implements IModelWriter {
     rootElement.addContent(persistenceElement);
 
     // languages
-    for (SModuleReference languageNamespace : (sourceModel).importedLanguages()) {
+    for (SModuleReference languageNamespace : sourceModel.importedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     // languages engaged on generation
-    for (SModuleReference languageNamespace : (sourceModel).engagedOnGenerationLanguages()) {
+    for (SModuleReference languageNamespace : sourceModel.engagedOnGenerationLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     //devkits
-    for (SModuleReference devkitNamespace : (sourceModel).importedDevkits()) {
+    for (SModuleReference devkitNamespace : sourceModel.importedDevkits()) {
       Element devkitElem = new Element(ModelPersistence.DEVKIT);
       devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);
     }
 
     // imports
-    for (ImportElement importElement : (sourceModel).importedModels()) {
+    for (ImportElement importElement : sourceModel.importedModels()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);
@@ -96,7 +104,7 @@ public class ModelWriter7 implements IModelWriter {
       elem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
       rootElement.addContent(elem);
     }
-    for (ImportElement importElement : (sourceModel).getAdditionalModelVersions()) {
+    for (ImportElement importElement : sourceModel.getAdditionalModelVersions()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);
@@ -106,10 +114,6 @@ public class ModelWriter7 implements IModelWriter {
       elem.setAttribute(ModelPersistence.IMPLICIT, "yes");
       rootElement.addContent(elem);
     }
-
-    // roots
-    saveModelNodes(rootElement, sourceModel);   // only for quick roots access
-    return new Document(rootElement);
   }
 
   protected void saveModelNodes(Element parent, SModel sourceModel) {
@@ -167,5 +171,10 @@ public class ModelWriter7 implements IModelWriter {
     element.setAttribute(ModelPersistence.TYPE, myHelper.genType(node));
     DocUtil.setNotNullAttribute(element, ModelPersistence.TYPE_ID, myHelper.genTypeId(node));
     element.setAttribute(ModelPersistence.ID, node.getNodeId().toString());
+  }
+
+  @Override
+  public Map<String, Document> saveModelAsMultiStream(SModel sourceModel) {
+    throw new UnsupportedOperationException();
   }
 }

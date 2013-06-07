@@ -18,6 +18,10 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.smodel.SModel;
 import org.jdom.Document;
 
+import java.util.Map;
+
 public interface IModelWriter {
   Document saveModel(SModel sourceModel);
+
+  Map<String, Document> saveModelAsMultiStream(SModel sourceModel);
 }

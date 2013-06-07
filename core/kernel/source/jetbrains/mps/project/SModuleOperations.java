@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -37,8 +35,14 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
@@ -134,6 +138,10 @@ public class SModuleOperations {
   }
 
   public static EditableSModel createModelWithAdjustments(String name, @NotNull ModelRoot root) {
+    return createModelWithAdjustments(name, root, null);
+  }
+
+  public static EditableSModel createModelWithAdjustments(String name, @NotNull ModelRoot root, @Nullable ModelFactory modelFactory) {
     // todo: review usages of this method: a) i think in most cases we don't need adjustments b) in most cases we got first modelroot from module,
     // create method like createModel(SModule module, String name) ?
 
@@ -151,7 +159,14 @@ public class SModuleOperations {
       return null;
     }
 
-    EditableSModel model = (EditableSModel) root.createModel(name);
+    EditableSModel model;
+    try {
+      model = (EditableSModel) (modelFactory != null && root instanceof DefaultModelRoot
+          ? ((DefaultModelRoot) root).createModel(name, modelFactory) : root.createModel(name));
+    } catch (IOException e) {
+      LOG.error("Can't create a model " + name + ": " + e.getMessage());
+      return null;
+    }
     // model.getSModel() ?
     model.setChanged(true);
     model.save();

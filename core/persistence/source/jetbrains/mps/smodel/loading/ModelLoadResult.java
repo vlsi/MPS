@@ -15,14 +15,15 @@
  */
 package jetbrains.mps.smodel.loading;
 
-import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.LazySModel;
 import org.jetbrains.annotations.NotNull;
 
 public class ModelLoadResult {
   private ModelLoadingState state;
-  private DefaultSModel model;
+  private LazySModel model;
+  private ContentKind contentKind = ContentKind.MODEL;
 
-  public ModelLoadResult(@NotNull DefaultSModel model, ModelLoadingState state) {
+  public ModelLoadResult(@NotNull LazySModel model, ModelLoadingState state) {
     this.model = model;
     this.state = state;
   }
@@ -35,8 +36,21 @@ public class ModelLoadResult {
     this.state = state;
   }
 
-  @NotNull
-  public DefaultSModel getModel() {
+  public LazySModel getModel() {
     return model;
+  }
+
+  public ContentKind getContentKind() {
+    return contentKind;
+  }
+
+  public void setContentKind(ContentKind contentKind) {
+    this.contentKind = contentKind;
+  }
+
+  public enum ContentKind {
+    MODEL,
+    MODEL_HEADER,
+    MODEL_ROOT
   }
 }

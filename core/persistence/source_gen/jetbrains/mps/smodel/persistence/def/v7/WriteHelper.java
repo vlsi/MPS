@@ -65,7 +65,7 @@ public class WriteHelper {
     if (ref.equals(myModelRef)) {
       return encode(text);
     }
-    String index = MapSequence.fromMap(myModelIndex).get(ref);
+    String index = getImportIndex(ref);
     if (index == null) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("model " + ref + " not found in index");
@@ -90,7 +90,7 @@ public class WriteHelper {
     if (conceptPointer == null) {
       return MODEL_SEPARATOR_CHAR + fqName;
     }
-    String index = MapSequence.fromMap(myModelIndex).get(conceptPointer.getModelReference());
+    String index = getImportIndex(conceptPointer.getModelReference());
     if (index == null) {
       return MODEL_SEPARATOR_CHAR + fqName;
     }

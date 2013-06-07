@@ -4,24 +4,26 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.ModelDigestUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.binary.BinaryModelHeader;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
 import jetbrains.mps.persistence.binary.BinarySModel;
 import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
 import jetbrains.mps.persistence.binary.NodesWriter;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.SModelFqName;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -36,6 +38,9 @@ import static jetbrains.mps.generator.ModelDigestUtil.DigestBuilderOutputStream;
 public class BinaryModelPersistence implements CoreComponent, ModelFactory {
   private static final Logger LOG = LogManager.getLogger(BinaryModelPersistence.class);
 
+  BinaryModelPersistence() {
+  }
+
   @Override
   public void init() {
     PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL_BINARY, this);
@@ -46,8 +51,14 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL_BINARY, null);
   }
 
+  @NotNull
   @Override
-  public SModel load(@NotNull StreamDataSource source, @NotNull Map<String, String> options) {
+  public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
+    if (!(dataSource instanceof StreamDataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    StreamDataSource source = (StreamDataSource) dataSource;
     BinaryModelHeader binaryModelHeader;
     try {
       binaryModelHeader = BinaryPersistence.readHeader(source);
@@ -58,35 +69,54 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     return new BinarySModelDescriptor(source, binaryModelHeader);
   }
 
+  @NotNull
   @Override
-  public SModel create(String modelName, StreamDataSource source) {
-    SModelReference ref = new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate());
+  public SModel create(String modelName, DataSource dataSource) {
+    if (!(dataSource instanceof StreamDataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    StreamDataSource source = (StreamDataSource) dataSource;
+    SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
     return new BinarySModelDescriptor(source, new BinaryModelHeader(ref));
   }
 
   @Override
-  public boolean canCreate(String modelName, StreamDataSource dataSource) {
-    return true;
+  public boolean canCreate(String modelName, DataSource dataSource) {
+    return dataSource instanceof StreamDataSource;
   }
 
   @Override
-  public boolean needsUpgrade(StreamDataSource dataSource) throws IOException {
+  public boolean needsUpgrade(DataSource dataSource) throws IOException {
     return false;
   }
 
   @Override
-  public void upgrade(StreamDataSource dataSource) throws IOException {
+  public void upgrade(DataSource dataSource) throws IOException {
     // no-op
   }
 
   @Override
-  public void save(SModel model, StreamDataSource dataSource) throws IOException {
-    BinaryPersistence.writeModel(((SModelBase) model).getSModelInternal(), dataSource);
+  public void save(SModel model, DataSource dataSource) throws IOException {
+    if (!(dataSource instanceof StreamDataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+    BinaryPersistence.writeModel(((SModelBase) model).getSModelInternal(), (StreamDataSource) dataSource);
   }
 
   @Override
   public boolean isBinary() {
     return true;
+  }
+
+  @Override
+  public String getFileExtension() {
+    return MPSExtentions.MODEL_BINARY;
+  }
+
+  @Override
+  public String getFormatTitle() {
+    return "Universal binary format";
   }
 
   public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {
@@ -123,7 +153,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
       DigestBuilderOutputStream os = ModelDigestUtil.createDigestBuilderOutputStream();
       try {
         ModelOutputStream mos = new ModelOutputStream(os);
-        new NodesWriter(model.getReference()).writeNode(node, mos);
+        new NodesWriter(model.getReference(), null).writeNode(node, mos);
         mos.flush();
       } catch (IOException ignored) {
         assert false;

@@ -15,15 +15,19 @@
  */
 package jetbrains.mps.persistence.binary;
 
+import jetbrains.mps.persistence.LightModelEnvironmentInfo;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
+import jetbrains.mps.smodel.InterfaceSNode;
 import jetbrains.mps.smodel.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -35,9 +39,18 @@ import java.util.List;
 
 public class NodesReader {
   protected final SModelReference myModelReference;
+  private final LightModelEnvironmentInfo myEnv;
+  private final boolean myInterfaceOnly;
+  private boolean hasSkippedNodes = false;
 
-  public NodesReader(@NotNull SModelReference modelReference) {
+  public NodesReader(@NotNull SModelReference modelReference, LightModelEnvironmentInfo info, boolean interfaceOnly) {
     myModelReference = modelReference;
+    myEnv = info;
+    myInterfaceOnly = false; //interfaceOnly;
+  }
+
+  public boolean hasSkippedNodes() {
+    return hasSkippedNodes;
   }
 
   public List<Pair<String, SNode>> readNodes(SModel model, ModelInputStream is) throws IOException {
@@ -53,11 +66,21 @@ public class NodesReader {
     String conceptFqName = readConceptQualifiedName(is);
     SNodeId nodeId = is.readNodeId();
     String nodeRole = is.readString();
+    byte nodeInfo = is.readByte();
     if (is.readByte() != '{') {
       throw new IOException("bad stream, no '{'");
     }
 
-    jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
+    boolean interfaceNode = false;
+    if (myInterfaceOnly) {
+      ConceptKind kind = getConceptKind(nodeInfo);
+      interfaceNode = (kind == ConceptKind.INTERFACE || nodeRole == null);
+    }
+    // TODO report if (nodeInfo != 0 && myEnv != null) .. myEnv.nodeRoleRead/conceptRead();
+
+    jetbrains.mps.smodel.SNode node = interfaceNode
+        ? new InterfaceSNode(InternUtil.intern(conceptFqName))
+        : new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
     node.setId(nodeId);
 
     readProperties(is, node);
@@ -74,6 +97,20 @@ public class NodesReader {
     return new Pair<String, SNode>(nodeRole, node);
   }
 
+  private ConceptKind getConceptKind(byte nodeInfo) {
+    int i = (nodeInfo >> 1) & 3;
+    return i == 1 ? ConceptKind.INTERFACE : i == 2 ? ConceptKind.IMPLEMENTATION : ConceptKind.NORMAL;
+  }
+
+  private StaticScope getStaticScope(byte nodeInfo) {
+    int i = (nodeInfo >> 3) & 3;
+    return i == 1 ? StaticScope.ROOT : i == 2 ? StaticScope.NONE : StaticScope.GLOBAL;
+  }
+
+  private boolean isUnordered(byte nodeInfo) {
+    return (nodeInfo & 1) != 0;
+  }
+
   protected String readConceptQualifiedName(ModelInputStream is) throws IOException {
     return is.readString();
   }
@@ -81,7 +118,12 @@ public class NodesReader {
   protected void readChildren(SModel model, ModelInputStream is, SNode node) throws IOException {
     List<Pair<String, SNode>> children = readNodes(model, is);
     for (Pair<String, SNode> child : children) {
-      node.addChild(child.o1, child.o2);
+      if (!(node instanceof InterfaceSNode) || child.o2 instanceof InterfaceSNode) {
+        node.addChild(child.o1, child.o2);
+      } else {
+        ((InterfaceSNode) node).skipRole(child.o1);
+        hasSkippedNodes = true;
+      }
     }
   }
 

@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -44,17 +45,19 @@ public class PersistenceUtil {
     if (factory == null || factory.isBinary()) {
       return null;
     }
-    SModel model = factory.load(new StreamDataSourceBase() {
-      @Override
-      public InputStream openInputStream() throws IOException {
-        byte[] bytes = content.getBytes(FileUtil.DEFAULT_CHARSET);
-        return new ByteArrayInputStream(bytes);
-      }
-    }, Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
-    if (model != null) {
+    try {
+      SModel model = factory.load(new StreamDataSourceBase() {
+        @Override
+        public InputStream openInputStream() throws IOException {
+          byte[] bytes = content.getBytes(FileUtil.DEFAULT_CHARSET);
+          return new ByteArrayInputStream(bytes);
+        }
+      }, Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
       model.load();
+      return model;
+    } catch (UnsupportedDataSourceException ex) {
+      return null;
     }
-    return model;
   }
 
   public static SModel loadModel(final byte[] content, String extension) {
@@ -62,16 +65,18 @@ public class PersistenceUtil {
     if (factory == null || !factory.isBinary()) {
       return null;
     }
-    SModel model = factory.load(new StreamDataSourceBase() {
-      @Override
-      public InputStream openInputStream() throws IOException {
-        return new ByteArrayInputStream(content);
-      }
-    }, Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
-    if (model != null) {
+    try {
+      SModel model = factory.load(new StreamDataSourceBase() {
+        @Override
+        public InputStream openInputStream() throws IOException {
+          return new ByteArrayInputStream(content);
+        }
+      }, Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
       model.load();
+      return model;
+    } catch (UnsupportedDataSourceException ex) {
+      return null;
     }
-    return model;
   }
 
   public static SModel loadModel(IFile file) {
@@ -79,12 +84,14 @@ public class PersistenceUtil {
     if (factory == null) {
       return null;
     }
-    SModel model = factory.load(new FileDataSource(file), Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY,
-        Boolean.TRUE.toString()));
-    if (model != null) {
+    try {
+      SModel model = factory.load(new FileDataSource(file), Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY,
+          Boolean.TRUE.toString()));
       model.load();
+      return model;
+    } catch (UnsupportedDataSourceException ex) {
+      return null;
     }
-    return model;
   }
 
   private static abstract class StreamDataSourceBase implements StreamDataSource {

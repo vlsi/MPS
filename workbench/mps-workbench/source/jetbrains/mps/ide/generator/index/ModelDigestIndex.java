@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.generator.index;
 
+import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
 import com.intellij.util.indexing.ID;
@@ -41,7 +42,10 @@ public class ModelDigestIndex extends BaseModelDigestIndex {
     return new InputFilter() {
       @Override
       public boolean acceptInput(VirtualFile file) {
-        return file.getFileType().equals(MPSFileTypeFactory.MPS_FILE_TYPE);
+        FileType fileType = file.getFileType();
+        return fileType.equals(MPSFileTypeFactory.MPS_FILE_TYPE)
+            || fileType.equals(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE)
+            || fileType.equals(MPSFileTypeFactory.MPS_HEADER_FILE_TYPE);
       }
     };
   }

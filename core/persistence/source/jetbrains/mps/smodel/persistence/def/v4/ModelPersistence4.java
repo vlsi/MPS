@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.List;
@@ -48,6 +49,11 @@ public class ModelPersistence4 implements IModelPersistence {
   @Override
   public void index(char[] data, Consumer<String> consumer) {
     // no-op
+  }
+
+  @Override
+  public int getVersion() {
+    return 4;
   }
 
   @Override

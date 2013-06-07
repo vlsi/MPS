@@ -34,6 +34,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CloneModel_Action());
     addAction(new CloneRoot_Action());
     addAction(new ConvertToBinaryPersistence_Action());
+    addAction(new ConvertToFilePerRootPersistence_Action());
     addAction(new CopyModelName_Action());
     addAction(new CopyModuleName_Action());
     addAction(new CopyNodeName_Action());

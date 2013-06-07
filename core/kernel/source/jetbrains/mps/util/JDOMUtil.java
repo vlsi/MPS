@@ -25,6 +25,7 @@ import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
@@ -153,6 +154,15 @@ public class JDOMUtil {
 
   public static void writeDocument(Document document, StreamDataSource source) throws IOException {
     OutputStream stream = new BufferedOutputStream(source.openOutputStream());
+    try {
+      writeDocument(document, stream);
+    } finally {
+      stream.close();
+    }
+  }
+
+  public static void writeDocument(Document document, MultiStreamDataSource source, String streamName) throws IOException {
+    OutputStream stream = new BufferedOutputStream(source.openOutputStream(streamName));
     try {
       writeDocument(document, stream);
     } finally {

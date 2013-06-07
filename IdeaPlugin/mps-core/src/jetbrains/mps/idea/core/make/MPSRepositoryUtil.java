@@ -83,9 +83,9 @@ public class MPSRepositoryUtil {
       Object header = null;
 
       if (model instanceof DefaultSModelDescriptor) {
-        header = ((DefaultSModelDescriptor) model).getModelHeader();
+        header = ((DefaultSModelDescriptor) model).getHeaderCopy();
       } else if (model instanceof BinarySModelDescriptor) {
-        header = ((BinarySModelDescriptor) model).getModelHeader();
+        header = ((BinarySModelDescriptor) model).getHeaderCopy();
       }
       result.add(new CachedModelData(modelPath, header));
     }

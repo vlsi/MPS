@@ -1129,64 +1129,69 @@
   <root nodeRef="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)/4278635856200768111">
     <nodeInfo nodeId="7444640161795094318" fileName="ModuleLoader.java" startLine="18" startPosition="184" endLine="19" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7444640161795230493" fileName="ModuleLoader.java" startLine="19" startPosition="83" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4278635856200768128" fileName="ModuleLoader.java" startLine="25" startPosition="9" endLine="26" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4278635856200768140" fileName="ModuleLoader.java" startLine="27" startPosition="30" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7444640161797781518" fileName="ModuleLoader.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4278635856200768142" fileName="ModuleLoader.java" startLine="30" startPosition="0" endLine="31" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7444640161795799098" fileName="ModuleLoader.java" startLine="32" startPosition="27" endLine="33" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7444640161797742996" fileName="ModuleLoader.java" startLine="33" startPosition="176" endLine="34" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7444640161795836940" fileName="ModuleLoader.java" startLine="36" startPosition="29" endLine="37" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7444640161797763289" fileName="ModuleLoader.java" startLine="37" startPosition="177" endLine="38" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4278635856200768204" fileName="ModuleLoader.java" startLine="39" startPosition="5" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7444640161797342358" fileName="ModuleLoader.java" startLine="40" startPosition="0" endLine="41" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7444640161797353462" fileName="ModuleLoader.java" startLine="42" startPosition="9" endLine="43" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7444640161796784397" fileName="ModuleLoader.java" startLine="44" startPosition="42" endLine="45" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7444640161796832036" fileName="ModuleLoader.java" startLine="47" startPosition="28" endLine="48" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8757919848289116194" fileName="ModuleLoader.java" startLine="48" startPosition="160" endLine="49" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7444640161797270346" fileName="ModuleLoader.java" startLine="50" startPosition="5" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7444640161797288703" fileName="ModuleLoader.java" startLine="51" startPosition="0" endLine="52" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7444640161798303146" fileName="ModuleLoader.java" startLine="55" startPosition="118" endLine="56" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4278635856200768214" fileName="ModuleLoader.java" startLine="43" startPosition="94" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7444640161798163517" fileName="ModuleLoader.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModuleChecker#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/mps/util/VisibleModules;Ljetbrains/mps/build/mps/util/PathConverter;)Ljetbrains/mps/build/mps/util/ModuleChecker;" />
+    <nodeInfo nodeId="4579351749504554546" fileName="ModuleLoader.java" startLine="29" startPosition="39" endLine="30" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4579351749504554585" fileName="ModuleLoader.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4278635856200768128" fileName="ModuleLoader.java" startLine="33" startPosition="9" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4278635856200768140" fileName="ModuleLoader.java" startLine="35" startPosition="30" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7444640161797781518" fileName="ModuleLoader.java" startLine="37" startPosition="5" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4278635856200768142" fileName="ModuleLoader.java" startLine="38" startPosition="0" endLine="39" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7444640161795799098" fileName="ModuleLoader.java" startLine="40" startPosition="27" endLine="41" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7444640161797742996" fileName="ModuleLoader.java" startLine="41" startPosition="176" endLine="42" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7444640161795836940" fileName="ModuleLoader.java" startLine="44" startPosition="29" endLine="45" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7444640161797763289" fileName="ModuleLoader.java" startLine="45" startPosition="177" endLine="46" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4278635856200768204" fileName="ModuleLoader.java" startLine="47" startPosition="5" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7444640161797342358" fileName="ModuleLoader.java" startLine="48" startPosition="0" endLine="49" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7444640161797353462" fileName="ModuleLoader.java" startLine="50" startPosition="9" endLine="51" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7444640161796784397" fileName="ModuleLoader.java" startLine="52" startPosition="42" endLine="53" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7444640161796832036" fileName="ModuleLoader.java" startLine="55" startPosition="28" endLine="56" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8757919848289116194" fileName="ModuleLoader.java" startLine="56" startPosition="160" endLine="57" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7444640161797270346" fileName="ModuleLoader.java" startLine="58" startPosition="5" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7444640161797288703" fileName="ModuleLoader.java" startLine="59" startPosition="0" endLine="60" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7444640161798303146" fileName="ModuleLoader.java" startLine="63" startPosition="118" endLine="64" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4278635856200768214" fileName="ModuleLoader.java" startLine="51" startPosition="94" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7444640161798163517" fileName="ModuleLoader.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModuleChecker#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/mps/util/VisibleModules;Ljetbrains/mps/build/mps/util/PathConverter;)Ljetbrains/mps/build/mps/util/ModuleChecker;" />
     <nodeInfo nodeId="4278635856200768116" fileName="ModuleLoader.java" startLine="20" startPosition="0" endLine="24" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4278635856200768149" fileName="ModuleLoader.java" startLine="31" startPosition="72" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3183586291405056250" fileName="ModuleLoader.java" startLine="35" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4278635856200768126" fileName="ModuleLoader.java" startLine="24" startPosition="8" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4278635856200768205" fileName="ModuleLoader.java" startLine="41" startPosition="31" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7444640161795068886" fileName="ModuleLoader.java" startLine="18" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModuleChecker#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/mps/util/VisibleModules;Ljetbrains/mps/build/mps/util/PathConverter;Ljetbrains/mps/generator/template/TemplateQueryContext;Ljetbrains/mps/build/mps/util/ModuleChecker/Reporter;)Ljetbrains/mps/build/mps/util/ModuleChecker;" />
-    <scopeInfo nodeId="4278635856200768127" fileName="ModuleLoader.java" startLine="25" startPosition="9" endLine="26" endPosition="67" />
-    <scopeInfo nodeId="4278635856200768136" fileName="ModuleLoader.java" startLine="27" startPosition="0" endLine="28" endPosition="16">
+    <nodeInfo nodeId="4579351749504554529" fileName="ModuleLoader.java" startLine="25" startPosition="33" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4278635856200768149" fileName="ModuleLoader.java" startLine="39" startPosition="72" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3183586291405056250" fileName="ModuleLoader.java" startLine="43" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4278635856200768126" fileName="ModuleLoader.java" startLine="32" startPosition="0" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4579351749504550522" fileName="ModuleLoader.java" startLine="24" startPosition="8" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4278635856200768205" fileName="ModuleLoader.java" startLine="49" startPosition="31" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7444640161795068886" fileName="ModuleLoader.java" startLine="18" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModuleChecker#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/mps/util/VisibleModules;Ljetbrains/mps/build/mps/util/PathConverter;Ljetbrains/mps/generator/template/TemplateQueryContext;Ljetbrains/mps/build/mps/util/ModuleChecker/Reporter;)Ljetbrains/mps/build/mps/util/ModuleChecker;" />
+    <scopeInfo nodeId="4278635856200768127" fileName="ModuleLoader.java" startLine="33" startPosition="9" endLine="34" endPosition="67" />
+    <scopeInfo nodeId="4278635856200768136" fileName="ModuleLoader.java" startLine="35" startPosition="0" endLine="36" endPosition="16">
       <varInfo nodeId="4278635856200768137" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="4278635856200768139" fileName="ModuleLoader.java" startLine="27" startPosition="30" endLine="28" endPosition="16" />
-    <scopeInfo nodeId="4278635856200768215" fileName="ModuleLoader.java" startLine="44" startPosition="42" endLine="45" endPosition="183" />
-    <scopeInfo nodeId="7444640161798163528" fileName="ModuleLoader.java" startLine="55" startPosition="118" endLine="56" endPosition="103" />
-    <scopeInfo nodeId="4278635856200768150" fileName="ModuleLoader.java" startLine="32" startPosition="27" endLine="34" endPosition="113" />
-    <scopeInfo nodeId="3183586291405056251" fileName="ModuleLoader.java" startLine="36" startPosition="29" endLine="38" endPosition="113" />
-    <scopeInfo nodeId="4278635856200768251" fileName="ModuleLoader.java" startLine="47" startPosition="0" endLine="49" endPosition="37">
+    <scopeInfo nodeId="4278635856200768139" fileName="ModuleLoader.java" startLine="35" startPosition="30" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="4278635856200768215" fileName="ModuleLoader.java" startLine="52" startPosition="42" endLine="53" endPosition="183" />
+    <scopeInfo nodeId="7444640161798163528" fileName="ModuleLoader.java" startLine="63" startPosition="118" endLine="64" endPosition="103" />
+    <scopeInfo nodeId="4278635856200768150" fileName="ModuleLoader.java" startLine="40" startPosition="27" endLine="42" endPosition="113" />
+    <scopeInfo nodeId="3183586291405056251" fileName="ModuleLoader.java" startLine="44" startPosition="29" endLine="46" endPosition="113" />
+    <scopeInfo nodeId="4278635856200768251" fileName="ModuleLoader.java" startLine="55" startPosition="0" endLine="57" endPosition="37">
       <varInfo nodeId="4278635856200768252" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="4278635856200768254" fileName="ModuleLoader.java" startLine="47" startPosition="28" endLine="49" endPosition="37" />
-    <scopeInfo nodeId="7444640161798163517" fileName="ModuleLoader.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="4278635856200768254" fileName="ModuleLoader.java" startLine="55" startPosition="28" endLine="57" endPosition="37" />
+    <scopeInfo nodeId="7444640161798163517" fileName="ModuleLoader.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="7444640161798163518" varName="module" />
       <varInfo nodeId="7444640161798295545" varName="pathConverter" />
       <varInfo nodeId="7444640161798288102" varName="visible" />
     </scopeInfo>
-    <scopeInfo nodeId="4278635856200768206" fileName="ModuleLoader.java" startLine="42" startPosition="9" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="7444640161795068889" fileName="ModuleLoader.java" startLine="18" startPosition="184" endLine="52" endPosition="121">
+    <scopeInfo nodeId="4278635856200768206" fileName="ModuleLoader.java" startLine="50" startPosition="9" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="4579351749504550525" fileName="ModuleLoader.java" startLine="25" startPosition="33" endLine="30" endPosition="113" />
+    <scopeInfo nodeId="7444640161795068889" fileName="ModuleLoader.java" startLine="18" startPosition="184" endLine="60" endPosition="121">
       <varInfo nodeId="4278635856200768143" varName="file" />
       <varInfo nodeId="7444640161797342359" varName="md" />
       <varInfo nodeId="4278635856200768117" varName="moduleFilePath" />
       <varInfo nodeId="7444640161795094321" varName="originalModule" />
     </scopeInfo>
-    <scopeInfo nodeId="7444640161795068886" fileName="ModuleLoader.java" startLine="18" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="7444640161795068886" fileName="ModuleLoader.java" startLine="18" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="7444640161795079749" varName="genContext" />
       <varInfo nodeId="7444640161795079699" varName="module" />
       <varInfo nodeId="7444640161795079731" varName="pathConverter" />
       <varInfo nodeId="7444640161795383174" varName="reporter" />
       <varInfo nodeId="7444640161795079713" varName="visible" />
     </scopeInfo>
-    <unitInfo nodeId="4278635856200768111" fileName="ModuleLoader.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.build.mps.util.ModuleLoader" />
+    <unitInfo nodeId="4278635856200768111" fileName="ModuleLoader.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.build.mps.util.ModuleLoader" />
   </root>
   <root nodeRef="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)/5780287594867965268">
     <nodeInfo nodeId="5780287594867973564" fileName="VisibleModules.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="allModules" />

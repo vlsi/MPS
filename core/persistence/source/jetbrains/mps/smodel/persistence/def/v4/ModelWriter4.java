@@ -34,6 +34,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class ModelWriter4 implements IModelWriter {
@@ -129,6 +130,11 @@ public class ModelWriter4 implements IModelWriter {
     Document document = new Document();
     document.setRootElement(rootElement);
     return document;
+  }
+
+  @Override
+  public Map<String, Document> saveModelAsMultiStream(SModel sourceModel) {
+    throw new UnsupportedOperationException();
   }
 
   protected void saveRefactorings(Element rootElement, DefaultSModel sourceModel) {

@@ -392,7 +392,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (p != null) {
       p.removeChild(this);
     } else if (myModel != null) {
-      myModel.removeRootNode(this);
+      myModel.getModelDescriptor().removeRootNode(this);
     }
   }
 

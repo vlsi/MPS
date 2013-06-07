@@ -50,7 +50,8 @@ public class ProjectCreationTest {
       PROJECT_PROPERTIES_DIR + "/encodings.xml",
       PROJECT_PROPERTIES_DIR + "/misc.xml",
       PROJECT_PROPERTIES_DIR + "/vcs.xml",
-      PROJECT_PROPERTIES_DIR + "/workspace.xml");
+      PROJECT_PROPERTIES_DIR + "/workspace.xml",
+      PROJECT_PROPERTIES_DIR + "/version.xml");
 
   private static final List<String> EMPTY_PROJECT_PATH_LIST_FB = Arrays.asList(
       PROJECT_NAME + "/" + PROJECT_NAME + ".iws", PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT);
