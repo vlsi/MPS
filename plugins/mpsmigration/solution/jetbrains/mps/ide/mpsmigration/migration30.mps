@@ -116,8 +116,6 @@
   <import index="fw3i" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress(MPS.IDEA/com.intellij.openapi.progress@java_stub)" version="-1" implicit="yes" />
   <import index="nx2" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" version="-1" implicit="yes" />
   <import index="axj0" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" version="-1" implicit="yes" />
-  <import index="9kw3" modelUID="f:merge_repo#r:a2ca46a2-8624-46b0-b4e7-377810fc3ad8(jetbrains.mps.ide.mpsmigration.migration30@repo)" version="-1" implicit="yes" />
-  <import index="p4aq" modelUID="f:merge_mine#r:a2ca46a2-8624-46b0-b4e7-377810fc3ad8(jetbrains.mps.ide.mpsmigration.migration30@mine)" version="-1" implicit="yes" />
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841902721" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="CheckLangForJavaStubModels" />
     <property name="caption" nameId="tp4k.1205250923097" value="Check for java_stubs Usages" />
@@ -7076,7 +7074,7 @@
                                                 <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3861468041911128808" nodeInfo="nn">
                                                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="3861468041911128809" nodeInfo="nn" />
                                                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3861468041911128810" nodeInfo="nn">
-                                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="p4aq.7039601390004648077" resolveInfo="usage" />
+                                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7039601390004648077" resolveInfo="usage" />
                                                   </node>
                                                 </node>
                                               </node>
@@ -8089,7 +8087,7 @@
                                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1453734572028529720" nodeInfo="nn">
                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="1453734572028529721" nodeInfo="nn" />
                                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1453734572028529722" nodeInfo="nn">
-                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9kw3.7039601390004648942" resolveInfo="usage" />
+                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7039601390004648942" resolveInfo="usage" />
                                     </node>
                                   </node>
                                 </node>
@@ -8100,7 +8098,7 @@
                             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1453734572028529724" nodeInfo="ng">
                               <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1453734572028529725" nodeInfo="nn">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1453734572028529726" nodeInfo="nn">
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9kw3.7039601390004648897" resolveInfo="arg" />
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7039601390004648897" resolveInfo="arg" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetElementOperation" typeId="tp2q.1162934736510" id="1453734572028529727" nodeInfo="nn">
                                   <node role="argument" roleId="tp2q.1162934736511" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1453734572028529728" nodeInfo="nn">
@@ -8119,7 +8117,7 @@
                                   </node>
                                 </node>
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1453734572028529734" nodeInfo="nn">
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9kw3.7039601390004648897" resolveInfo="arg" />
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7039601390004648897" resolveInfo="arg" />
                                 </node>
                               </node>
                             </node>
@@ -8133,7 +8131,7 @@
                                   </node>
                                 </node>
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1453734572028529740" nodeInfo="nn">
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9kw3.7039601390004648897" resolveInfo="arg" />
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7039601390004648897" resolveInfo="arg" />
                                 </node>
                               </node>
                             </node>
