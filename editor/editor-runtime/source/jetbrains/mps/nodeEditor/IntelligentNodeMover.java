@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -154,14 +155,14 @@ class IntelligentNodeMover {
     if (forward()) {
       for (SNode node : myNodes.subList(0, myNodes.size() - 1)) {
         node.getParent().removeChild(node);
-        parent.insertChild(current.getRoleInParent(), node, current.getPrevSibling());
+        parent.insertChildBefore(current.getRoleInParent(), node, current);
       }
     } else {
       List<SNode> list = new ArrayList<SNode>(myNodes.subList(1, myNodes.size()));
       Collections.reverse(list);
       for (SNode node : list) {
         node.getParent().removeChild(node);
-        parent.insertChild(current.getRoleInParent(), node, current);
+        jetbrains.mps.util.SNodeOperations.insertChild(parent, current.getRoleInParent(), node, current);
       }
     }
   }
@@ -187,9 +188,9 @@ class IntelligentNodeMover {
 
   private SNode siblingWithTheSameRole(SNode node) {
     if (forward()) {
-      return node.getNextSibling();
+      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNextSibling(node);
     } else {
-      return node.getPrevSibling();
+      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getPrevSibling(node);
     }
   }
 
@@ -207,15 +208,15 @@ class IntelligentNodeMover {
 
   private void addWithAnchor(SNode parent, SNode prevChild, String role, SNode current) {
     if (forward()) {
-      parent.insertChild(role, current, prevChild);
+      jetbrains.mps.util.SNodeOperations.insertChild(parent, role, current, prevChild);
     } else {
-      parent.insertChild(role, current, prevChild.getPrevSibling());
+      parent.insertChildBefore(role, current, prevChild);
     }
   }
 
   private void addAtBoundary(SNode result, String role, SNode current) {
     if (forward()) {
-      result.insertChild(role, current, null);
+      jetbrains.mps.util.SNodeOperations.insertChild(result, role, current, null);
     } else {
       result.addChild(role, current);
     }

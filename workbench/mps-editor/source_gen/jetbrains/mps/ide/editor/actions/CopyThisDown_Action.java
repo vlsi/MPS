@@ -94,7 +94,7 @@ public class CopyThisDown_Action extends BaseAction {
           }
           if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{}))) {
             SNode copy = SNodeOperations.copyNode(nodeToCopy);
-            parent.insertChild(role, copy, nodeToCopy);
+            jetbrains.mps.util.SNodeOperations.insertChild(parent, role, copy, nodeToCopy);
             EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
             editorContext.selectWRTFocusPolicy(copy);
             ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).selectNode(copy);
@@ -112,7 +112,7 @@ public class CopyThisDown_Action extends BaseAction {
           return;
         }
         for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).reversedList()) {
-          parent.insertChild(role, SNodeOperations.copyNode(node), lastNode);
+          jetbrains.mps.util.SNodeOperations.insertChild(parent, role, SNodeOperations.copyNode(node), lastNode);
         }
         EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
         editorContext.selectRange(firstNode, lastNode);

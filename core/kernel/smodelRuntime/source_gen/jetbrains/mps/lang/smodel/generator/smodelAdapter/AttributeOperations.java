@@ -64,7 +64,7 @@ public class AttributeOperations {
   }
 
   public static SNode insertAttribute(SNode node, SNode anchor, IAttributeDescriptor descriptor, SNode value) {
-    node.insertChild("smodelAttribute", value, anchor);
+    jetbrains.mps.util.SNodeOperations.insertChild(node, "smodelAttribute", value, anchor);
     descriptor.update(value);
     return value;
   }
