@@ -128,9 +128,7 @@ class IntelligentNodeMover {
 
     EditorCell anchorCell = myComponent.findNodeCell(prevChild);
     if (tryPasteToCellAndChildren(anchorCell)) return;
-    myParent.removeChild(myCurrent);
     addWithAnchor(myParent, prevChild);
-    moveOtherNodes();
   }
 
 
@@ -142,7 +140,12 @@ class IntelligentNodeMover {
     while (currentTarget != null && anchorCell != null) {
       Iterator<EditorCell> iterator = getCellIterator(anchorCell);
       while (iterator.hasNext()) {
-        if (tryPasteToCellAndChildren(iterator.next())) {
+        EditorCell next = iterator.next();
+        if (next.getSNode().equals(currentTarget) && next.getRole() != null && !next.isReferenceCell() && haveSimilarLink(currentTarget))  {
+          addAtBoundary(currentTarget);
+          return;
+        }
+        if (tryPasteToCellAndChildren(next)) {
           return;
         }
       }
@@ -151,9 +154,7 @@ class IntelligentNodeMover {
         SNode currentAnchor = anchorCell.getSNode();
         currentTarget = currentAnchor.getParent();
         if (currentTarget != null && haveSimilarLink(currentTarget) && currentAnchor.getRoleInParent().equals(myRole)) {
-          myParent.removeChild(myCurrent);
           addWithAnchor(currentTarget, currentAnchor);
-          moveOtherNodes();
           return;
         }
       }
@@ -174,7 +175,6 @@ class IntelligentNodeMover {
 
   private boolean tryPasteToCell(EditorCell levelCell) {
     if (canPasteToCell(levelCell)) {
-      myParent.removeChild(myCurrent);
       addAtBoundary(levelCell.getSNode());
       moveOtherNodes();
       return true;
@@ -251,19 +251,23 @@ class IntelligentNodeMover {
   }
 
   private void addWithAnchor(SNode parent, SNode prevChild) {
+    myParent.removeChild(myCurrent);
     if (forward()) {
       parent.insertChild(myRole, myCurrent, prevChild);
     } else {
       parent.insertChild(myRole, myCurrent, prevChild.getPrevSibling());
     }
+    moveOtherNodes();
   }
 
   private void addAtBoundary(SNode result) {
+    myParent.removeChild(myCurrent);
     if (forward()) {
       result.insertChild(myRole, myCurrent, null);
     } else {
       result.addChild(myRole, myCurrent);
     }
+    moveOtherNodes();
   }
 
   private SNode findBoundaryNode() {
