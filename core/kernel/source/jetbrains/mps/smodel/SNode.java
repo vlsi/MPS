@@ -716,12 +716,14 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public org.jetbrains.mps.openapi.model.SNode getFirstChild() {
     nodeRead();
+    fireNodeReadAccess();
     return firstChild();
   }
 
   @Override
   public org.jetbrains.mps.openapi.model.SNode getLastChild() {
     nodeRead();
+    fireNodeReadAccess();
     return firstChild().treePrevious();
   }
 
