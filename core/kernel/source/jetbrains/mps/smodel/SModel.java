@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -183,30 +183,6 @@ public class SModel implements SModelData {
     if (node != null) return ((SNode) node);
     enforceFullLoad();
     return ((SNode) myIdToNodeMap.get(nodeId));
-  }
-
-  public SModelScope getModelScope() {
-    return new SModelScope() {
-      @Override
-      public Iterable<? extends org.jetbrains.mps.openapi.model.SModel> getModels() {
-        return new TranslatingIterator<ImportElement, org.jetbrains.mps.openapi.model.SModel>(myImports.iterator()) {
-          @Override
-          protected org.jetbrains.mps.openapi.model.SModel translate(ImportElement imp) {
-            return imp.getModelReference().resolve(MPSModuleRepository.getInstance());
-          }
-        };
-      }
-
-      @Override
-      public Iterable<SLanguage> getLanguages() {
-        return new TranslatingIterator<SModuleReference, SLanguage>(myLanguages.iterator()) {
-          @Override
-          protected SLanguage translate(SModuleReference ref) {
-            return new SLanguageLanguageAdapter(((Language) ref.resolve(MPSModuleRepository.getInstance())));
-          }
-        };
-      }
-    };
   }
 
   @NotNull
@@ -591,7 +567,7 @@ public class SModel implements SModelData {
 
   public void addLanguage(SModuleReference ref) {
     ModelChange.assertLegalChange(getModelDescriptor());
-    if (SModelOperations.hasLanguage(getModelDescriptor(), ref)) return;
+    if (importedLanguages().contains(ref)) return;
 
     if (ref.getModuleId() == null) {
       LOG.warn("Attempt to add language reference to a language without id in model " + getSModelFqName() + ". Language = " + ref);
@@ -787,7 +763,7 @@ public class SModel implements SModelData {
     myImplicitImports.add(element);
   }
 
-  boolean isUpdateMode() {
+  public boolean isUpdateMode() {
     return false;
   }
 

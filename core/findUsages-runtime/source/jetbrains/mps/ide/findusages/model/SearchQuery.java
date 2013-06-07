@@ -26,45 +26,45 @@ import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 public class SearchQuery implements IExternalizeable {
   private static final String HOLDER = "holder";
   private static final String HOLDER_CLASS = "holder_class";
 
-  private IScope myScope;
+  private SearchScope myScope;
   private IHolder myObjectHolder = new VoidHolder();
 
   public SearchQuery(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
-  public SearchQuery(IHolder objectHolder, IScope scope) {
+  public SearchQuery(IHolder objectHolder, SearchScope scope) {
     myScope = scope;
     myObjectHolder = objectHolder;
   }
 
-  public SearchQuery(SModel model, IScope scope) {
+  public SearchQuery(SModel model, SearchScope scope) {
     this(new ModelHolder(model), scope);
   }
 
-  public SearchQuery(SNode node, IScope scope) {
+  public SearchQuery(SNode node, SearchScope scope) {
     this(new NodeHolder(node), scope);
   }
 
-  public SearchQuery(SModule module, IScope scope) {
+  public SearchQuery(SModule module, SearchScope scope) {
     this(new ModuleHolder(module), scope);
   }
 
-  public SearchQuery(IScope scope) {
+  public SearchQuery(SearchScope scope) {
     this(new VoidHolder(), scope);
   }
 
-  public IScope getScope() {
+  public SearchScope getScope() {
     return myScope;
   }
 

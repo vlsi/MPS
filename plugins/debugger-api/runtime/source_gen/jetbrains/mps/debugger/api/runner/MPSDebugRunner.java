@@ -8,7 +8,8 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RunProfile;
 import com.intellij.execution.executors.DefaultDebugExecutor;
-import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.project.Project;
@@ -36,7 +37,7 @@ public class MPSDebugRunner extends GenericProgramRunner {
   @Override
   public boolean canRun(@NotNull final String executorId, @NotNull final RunProfile profile) {
     try {
-      return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) && (isOldRunConfiguration(profile) || isNewRunConfiguration(profile));
+      return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) && (isNewRunConfiguration(profile) || isOldRunConfiguration(profile));
     } catch (Throwable throwable) {
       LOG.debug(throwable.getMessage());
       return false;
@@ -44,7 +45,18 @@ public class MPSDebugRunner extends GenericProgramRunner {
   }
 
   private boolean isOldRunConfiguration(RunProfile profile) {
-    return (profile instanceof BaseRunConfig) && (((BaseRunConfig) profile).isDebuggable());
+    try {
+      Method method = profile.getClass().getMethod("isDebuggable()");
+      if (method != null) {
+        Boolean result = (Boolean) method.invoke(profile);
+        return result;
+      }
+    } catch (NoSuchMethodException e) {
+    } catch (InvocationTargetException e) {
+      LOG.error(e);
+    } catch (IllegalAccessException e) {
+    }
+    return false;
   }
 
   private boolean isNewRunConfiguration(RunProfile profile) {

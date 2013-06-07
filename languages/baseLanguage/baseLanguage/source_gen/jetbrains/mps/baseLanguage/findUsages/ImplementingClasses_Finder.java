@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -37,7 +37,7 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
   }
 
   @Override
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
+  protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 3);
     try {
       List<SNode> derivedInterfaces = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder", node, scope, monitor.subTask(1));
@@ -68,7 +68,7 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
   }
 
   @Override
-  public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
+  public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);
     for (SNode derivedInterface : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder", node, scope, new EmptyProgressMonitor()))) {
       ListSequence.fromList(_results).addElement(derivedInterface);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7imqqxle6giwkzu6m6c6j7gk8igm3zg">
+<dependencies version="2" modelHash="elqjw9yugjvvziabask8c68zmelc6hs">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(MPS.IDEA/com.intellij.openapi.extensions@java_stub)" />
@@ -37,7 +37,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TaskQueue.java" />
   </source>
-  <source id="4093906047203395592" name="SuspiciousModelIndex" hash="-4pwr6fz7lrtk8sj14vz897b32be8gvh">
+  <source id="4093906047203395592" name="SuspiciousModelIndex" hash="-di8lzgpthv0rj5wd8ascsgoqk6gj8u">
     <dep root="4093906047203396099" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
@@ -63,7 +63,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Conflictable.java" />
   </source>
-  <source id="4093906047203396155" name="ConflictableModelAdapter" hash="-1mn1rx92jo1gcqhksqo2wh1u8wcqg8">
+  <source id="4093906047203396155" name="ConflictableModelAdapter" hash="9mbnu0ql20co7xy5yqqtdt5dii2yurr">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConflictableModelAdapter.java" />
   </source>

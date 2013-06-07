@@ -9,7 +9,7 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.vcs.core.mergedriver.MergerModelEnvironmentInfoImpl;
+import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -77,7 +77,7 @@ public class MergeData {
   }
 
   private boolean generateAndCheckResultData() throws ModelReadException {
-    PersistenceRegistry.getInstance().setModelEnvironmentInfo(new MergerModelEnvironmentInfoImpl());
+    PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
 
     DefaultSModel baseModel = ModelPersistence.readModel(myBaseModelString, false);
     DefaultSModel mineModel = ModelPersistence.readModel(myMineModelString, false);

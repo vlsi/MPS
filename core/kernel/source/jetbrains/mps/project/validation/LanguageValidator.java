@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.validation;
 
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;

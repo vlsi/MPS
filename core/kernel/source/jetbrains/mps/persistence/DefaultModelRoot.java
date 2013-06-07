@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.MPSExtentions;
@@ -33,11 +34,21 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 
 import java.io.File;
-import java.util.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * evgeny, 11/9/12
@@ -92,6 +103,20 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return super.canCreateModels() && !getFiles(SOURCE_ROOTS).isEmpty();
   }
 
+  public SModel createModel(String modelName, ModelFactory factory) throws IOException {
+    DataSource source = factory instanceof FolderModelFactory
+        ? ((FolderModelFactory) factory).createNewSource(this, null, modelName)
+        : createSource(modelName, factory.getFileExtension(), null);
+    if (source == null) {
+      return null;
+    }
+    SModel model = factory.create(modelName, source);
+    ((SModelBase) model).setModelRoot(this);
+    // TODO fix
+    register(model);
+    return model;
+  }
+
   @Override
   public boolean canCreateModel(String modelName) {
     if (!canCreateModels()) {
@@ -101,21 +126,23 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       return isLanguageAspect(modelName, getFiles(SOURCE_ROOTS).iterator().next());
     }
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
-    FileDataSource source = createSource(modelName, MPSExtentions.MODEL, null);
+    FileDataSource source;
+    try {
+      source = createSource(modelName, MPSExtentions.MODEL, null);
+    } catch (IOException e) {
+      return false;
+    }
     return modelFactory.canCreate(modelName, source);
   }
 
   @Override
   public SModel createModel(String modelName) {
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
-    FileDataSource source = createSource(modelName, MPSExtentions.MODEL, null);
-    SModel model = modelFactory.create(modelName, source);
-    if (model != null) {
-      model.setModelRoot(this);
-      // TODO fix
-      register(model);
+    try {
+      return createModel(modelName, modelFactory);
+    } catch (IOException e) {
+      return null;
     }
-    return model;
   }
 
   protected final void collectModels(IFile dir, String package_, String relativePath, Map<String, String> options, Collection<SModel> models) {
@@ -123,6 +150,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     if (!dir.isDirectory()) return;
 
     List<IFile> files = dir.getChildren();
+    options.put(ModelFactory.OPTION_PACKAGE, package_);
     for (IFile file : files) {
       String fileName = file.getName();
       String extension = FileUtil.getExtension(fileName);
@@ -132,17 +160,27 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       if (modelFactory == null || file.isDirectory()) continue;
 
       FileDataSource source = new FileDataSource(file, this);
-      options.put(ModelFactory.OPTION_PACKAGE, package_);
       options.put(ModelFactory.OPTION_RELPATH, combinePath(relativePath, fileName));
       String fileNameWE = FileUtil.getNameWithoutExtension(fileName);
       options.put(ModelFactory.OPTION_MODELNAME, package_ != null ? (package_.isEmpty() ? fileNameWE : package_ + "." + fileNameWE) : null);
-      SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
-      // TODO handle errors
-      if (model != null) {
-        model.setModelRoot(this);
+      try {
+        SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
+        ((SModelBase) model).setModelRoot(this);
+        models.add(model);
+      } catch (UnsupportedDataSourceException ex) {
+        /* model factory registration problem: ignore */
+      }
+    }
+
+    options.put(ModelFactory.OPTION_RELPATH, relativePath);
+    for (FolderModelFactory factory : PersistenceRegistry.getInstance().getFolderModelFactories()) {
+      for (DataSource dataSource : factory.createDataSources(this, dir)) {
+        SModel model = factory.load(dataSource, Collections.unmodifiableMap(options));
+        ((SModelBase) model).setModelRoot(this);
         models.add(model);
       }
     }
+
     for (IFile childDir : files) {
       if (childDir.isDirectory()) {
         String name = childDir.getName();
@@ -153,6 +191,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     }
   }
 
+
   protected final String combinePath(String left, String right) {
     if (left == null) {
       return null;
@@ -160,11 +199,12 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return left.length() == 0 ? right : left + "/" + right;
   }
 
-  public FileDataSource createSource(String modelName, String extension, @Nullable String sourceRoot) {
+  @NotNull
+  public FileDataSource createSource(String modelName, String extension, @Nullable String sourceRoot) throws IOException {
 
     Set<String> sourceRoots = new LinkedHashSet<String>(getFiles(SOURCE_ROOTS));
     if (sourceRoots.isEmpty()) {
-      throw new IllegalStateException("empty list of source roots");
+      throw new IOException("empty list of source roots");
     }
 
     if (sourceRoot == null || !sourceRoots.contains(sourceRoot)) {
@@ -185,7 +225,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
         break;
       }
       if (sourceRoot == null) {
-        throw new IllegalStateException("no suitable source root found");
+        throw new IOException("no suitable source root found");
       }
     }
 
@@ -222,7 +262,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return false;
   }
 
-  private boolean isLanguageAspectsSourceRoot(String sourceRoot) {
+  public boolean isLanguageAspectsSourceRoot(String sourceRoot) {
     if (!(getModule() instanceof Language)) return false;
     return FileSystem.getInstance().getFileByPath(sourceRoot).getName().equals(Language.LANGUAGE_MODELS);
   }

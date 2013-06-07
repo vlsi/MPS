@@ -164,11 +164,11 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   }
 
   @Override
-  public void nodeAdded(SNode node, String role, SNode child) {
+  public void nodeAdded(SModel model, SNode node, String role, SNode child) {
   }
 
   @Override
-  public void nodeRemoved(SNode node, String role, SNode child) {
+  public void nodeRemoved(SModel model, SNode node, String role, SNode child) {
   }
 
   @Override

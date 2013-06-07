@@ -17,6 +17,7 @@ package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.smodel.InvalidSModel;
+import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem.Kind;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -30,7 +31,7 @@ import java.util.Collections;
 /**
  * evgeny, 11/21/12
  */
-public class BinarySModel extends SModel {
+public class BinarySModel extends LazySModel {
   private final BinaryModelHeader header;
 
   public BinarySModel(@NotNull BinaryModelHeader header) {

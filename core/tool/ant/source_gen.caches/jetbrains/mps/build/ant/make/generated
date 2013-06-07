@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ebmapg3w9jd0bip7vsnplw588alroo2">
-  <common hash="-5gvk05e1ej341tsrsm7ne6wxml2yktj" />
-  <source id="4003657351907889485" name="MakeTask" hash="9ciinx0mbzssdsy4yosv3kdqiq8lalu">
-    <file name="MakeTask.java" />
-  </source>
-</dependencies>
-

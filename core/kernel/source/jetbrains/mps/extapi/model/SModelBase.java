@@ -160,7 +160,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     return myModule;
   }
 
-  @Override
   public void setModelRoot(ModelRoot modelRoot) {
     assertCanChange();
 //    if (myModelRoot != null && modelRoot != null) {

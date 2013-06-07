@@ -31,6 +31,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -211,6 +212,15 @@ public class TransientModelsModule extends AbstractModule {
     return myOriginalModule;
   }
 
+  @Override
+  public SModel resolveInDependencies(SModelId reference) {
+    String name = reference.getModelName();
+    if (name == null) return super.resolveInDependencies(reference);
+    boolean own = myModels.keySet().contains(SModelStereotype.withoutStereotype(name));
+    if (!own) return super.resolveInDependencies(reference);
+    return myModels.get(name);
+  }
+
   public class TransientModuleScope extends ModuleScope {
     @Override
     protected Set<SModule> getInitialModules() {
@@ -309,11 +319,7 @@ public class TransientModelsModule extends AbstractModule {
 
     @Override
     public SModel resolveModel(SModelReference reference) {
-      if (SModelStereotype.withoutStereotype(reference.getModelName()).equals(myLongName)) {
-        SModel descriptor = myModels.get(reference.getModelName());
-        if (descriptor != null) return descriptor;
-      }
-      return super.resolveModel(reference);
+      throw new UnsupportedOperationException("not supported since 3.0");
     }
 
     @Override

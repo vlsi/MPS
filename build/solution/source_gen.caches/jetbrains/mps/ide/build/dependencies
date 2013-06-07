@@ -6,15 +6,12 @@
   <dependency className="jetbrains.mps.ide.build.mps.sh" file="mps.sh" />
   <dependency className="jetbrains.mps.ide.build.mps.vmoptions" file="mps.vmoptions" />
   <dependency className="jetbrains.mps.ide.build.mps" file="mps.xml" />
-  <dependency className="jetbrains.mps.ide.build.mpsAdditionalPluginsDist" file="mpsAdditionalPluginsDist.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsBootstrapCore" file="mpsBootstrapCore.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsBuild" file="mpsBuild.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsBuildUI" file="mpsBuildUI.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsConnectorPlugin" file="mpsConnectorPlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsCore" file="mpsCore.xml" />
-  <dependency className="jetbrains.mps.ide.build.mpsDates" file="mpsDates.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsDebuggerPlugin" file="mpsDebuggerPlugin.xml" />
-  <dependency className="jetbrains.mps.ide.build.mpsDeprecatedBuildlanguage" file="mpsDeprecatedBuildlanguage.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsDevKit" file="mpsDevKit.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsDistribution" file="mpsDistribution.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsExecutionPlugin" file="mpsExecutionPlugin.xml" />

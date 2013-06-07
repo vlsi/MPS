@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.platform.integration;
 import jetbrains.mps.smodel.DiskMemoryConflictResolver;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import java.io.File;

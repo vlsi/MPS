@@ -32,13 +32,18 @@ import java.util.List;
 
 public class ModelPersistence7 extends ModelPersistence6 {
   @Override
+  public int getVersion() {
+    return 7;
+  }
+
+  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter7();
   }
 
   @Override
   public IModelReader getModelReader() {
-    throw new UnsupportedOperationException("use sax reader");
+    return null;
   }
 
   @Override

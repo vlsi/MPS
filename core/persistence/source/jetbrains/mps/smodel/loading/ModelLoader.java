@@ -16,14 +16,13 @@
 package jetbrains.mps.smodel.loading;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.InterfaceSNode;
+import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.LazySNode;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.util.Iterator;
 
@@ -31,10 +30,10 @@ public class ModelLoader {
 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ModelLoader.class));
 
-  private DefaultSModel myModel;
-  private DefaultSModel myFullModel;
+  private LazySModel myModel;
+  private LazySModel myFullModel;
 
-  public ModelLoader(DefaultSModel model, DefaultSModel fullModel) {
+  public ModelLoader(LazySModel model, LazySModel fullModel) {
     myModel = model;
     myFullModel = fullModel;
   }
@@ -56,7 +55,7 @@ public class ModelLoader {
     }
     int loadedNodes = myModel.getNodesCount() - nodesCountBefore;
     if (loadedNodes > 0) {
-      LOG.info("model " + myModel.getReference().getModelName() + " (" + myModel.getPersistenceVersion() + ")" +
+      LOG.info("model " + myModel.getReference().getModelName() +
           ": loaded " + loadedNodes + " new nodes, stubs size = " + nodesCountBefore + " nodes", new Throwable());
     }
   }
@@ -65,9 +64,9 @@ public class ModelLoader {
     if (node.hasSkippedChildren()) {
       jetbrains.mps.smodel.SNode fullNode = myFullModel.getNode(node.getNodeId());
       if (fullNode == null) {
-        LOG.error("model " + myModel.getReference().getModelName() + " (" + myModel.getPersistenceVersion() + ")"
+        LOG.error("model " + myModel.getReference().getModelName()
             + ": no peer node in full model for " + node.getNodeId()
-            + " (in " + ((StreamDataSource) myModel.getModelDescriptor().getSource()).getLocation() + ")");
+            + " (in " + myModel.getModelDescriptor().getSource().getLocation() + ")");
         return;
       }
       Iterator<jetbrains.mps.smodel.SNode> it = fullNode.getChildren().iterator();

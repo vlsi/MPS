@@ -392,7 +392,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (p != null) {
       p.removeChild(this);
     } else if (myModel != null) {
-      myModel.removeRootNode(this);
+      myModel.getModelDescriptor().removeRootNode(this);
     }
   }
 
@@ -839,35 +839,35 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private void referenceChanged(String role, org.jetbrains.mps.openapi.model.SReference reference, org.jetbrains.mps.openapi.model.SReference newValue) {
+    if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
     if (md == null || md instanceof FakeModelDescriptor) return;
     EditableSModelBase emd = (EditableSModelBase) md;
     emd.fireReferenceChanged(this, role, reference, newValue);
-    emd.setChanged(true);
   }
 
   private void propertyChanged(String propertyName, String oldValue, String newValue) {
+    if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
     if (md == null || md instanceof FakeModelDescriptor) return;
     EditableSModelBase emd = (EditableSModelBase) md;
     emd.firePropertyChanged(this, propertyName, oldValue, newValue);
-    emd.setChanged(true);
   }
 
   private void nodeAdded(String role, org.jetbrains.mps.openapi.model.SNode child) {
+    if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
     if (md == null || md instanceof FakeModelDescriptor) return;
     EditableSModelBase emd = (EditableSModelBase) md;
     emd.fireNodeAdded(this, role, child);
-    emd.setChanged(true);
   }
 
   private void nodeRemoved(org.jetbrains.mps.openapi.model.SNode child, String role) {
+    if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
     if (md == null || md instanceof FakeModelDescriptor) return;
     EditableSModelBase emd = (EditableSModelBase) md;
     emd.fireNodeRemoved(this, role, child);
-    emd.setChanged(true);
   }
 
   public SModel getPersistentModel() {

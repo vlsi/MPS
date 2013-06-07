@@ -47,10 +47,10 @@ public class VersionUtil {
     myModelRef = model.getReference();
     myImports = new HashMap<SModelReference, ImportElement>();
     fillReferenceIDs(model);  // replace "-1" indice to valid values and advance maxImportIndex
-    for (ImportElement elem : (model).importedModels()) {
+    for (ImportElement elem : model.importedModels()) {
       myImports.put(elem.getModelReference(), elem);
     }
-    for (ImportElement elem : (model).getAdditionalModelVersions()) {
+    for (ImportElement elem : model.getAdditionalModelVersions()) {
       myImports.put(elem.getModelReference(), elem);
     }
   }
@@ -58,16 +58,16 @@ public class VersionUtil {
   // when upgrading to 6 persistence some of IDs can be -1 and need to be fixed
   static void fillReferenceIDs(SModel model) {
     int maxImport = 0;
-    for (ImportElement elem : (model).importedModels()) {
+    for (ImportElement elem : model.importedModels()) {
       maxImport = Math.max(elem.getReferenceID(), maxImport);
     }
-    for (ImportElement elem : (model).getAdditionalModelVersions()) {
+    for (ImportElement elem : model.getAdditionalModelVersions()) {
       maxImport = Math.max(elem.getReferenceID(), maxImport);
     }
-    for (ImportElement elem : (model).importedModels()) {
+    for (ImportElement elem : model.importedModels()) {
       if (elem.getReferenceID() < 0) elem.setReferenceID(++maxImport);
     }
-    for (ImportElement elem : (model).getAdditionalModelVersions()) {
+    for (ImportElement elem : model.getAdditionalModelVersions()) {
       if (elem.getReferenceID() < 0) elem.setReferenceID(++maxImport);
     }
   }
@@ -84,7 +84,7 @@ public class VersionUtil {
       return text;
     }
     StringBuilder result = new StringBuilder();
-    if (usemodel && !(myModelRef.equals(ref))) result.append(impElem.getReferenceID()).append(MODEL_SEPARATOR_CHAR);
+    if (usemodel && !myModelRef.equals(ref)) result.append(impElem.getReferenceID()).append(MODEL_SEPARATOR_CHAR);
     result.append(text);
     if (impElem.getUsedVersion() >= 0) result.append(VERSION_SEPARATOR_CHAR).append(impElem.getUsedVersion());
     return result.toString();
@@ -139,9 +139,9 @@ public class VersionUtil {
     myImports.put(modelRef, elem);
     myImportByIx.put(ix, elem);
     if (implicit)
-      (model).addAdditionalModelVersion(elem);
+      model.addAdditionalModelVersion(elem);
     else
-      (model).addModelImport(elem);
+      model.addModelImport(elem);
   }
 
   public SModelReference getSModelReference(int ix) {

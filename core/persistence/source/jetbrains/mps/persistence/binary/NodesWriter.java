@@ -15,14 +15,17 @@
  */
 package jetbrains.mps.persistence.binary;
 
+import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -49,9 +52,11 @@ public class NodesWriter {
   public static final int USER_SERIALIZABLE = 6;
 
   protected final SModelReference myModelReference;
+  private final ModelEnvironmentInfo myEnv;
 
-  public NodesWriter(@NotNull SModelReference modelReference) {
-    this.myModelReference = modelReference;
+  public NodesWriter(@NotNull SModelReference modelReference, ModelEnvironmentInfo info) {
+    myModelReference = modelReference;
+    myEnv = info;
   }
 
   public void writeNodes(Collection<SNode> nodes, ModelOutputStream os) throws IOException {
@@ -65,6 +70,7 @@ public class NodesWriter {
     os.writeString(node.getConcept().getQualifiedName());
     os.writeNodeId(node.getNodeId());
     os.writeString(node.getRoleInParent());
+    os.writeByte(getNodeInfo(node));
     os.writeByte('{');
 
     writeProperties(node, os);
@@ -76,6 +82,26 @@ public class NodesWriter {
     writeUserObjects(node, os);
 
     os.writeByte('}');
+  }
+
+  public byte getNodeInfo(SNode node) {
+    if (myEnv == null) return 0;
+
+    ConceptKind conceptKind = myEnv.getConceptKind(node);
+    StaticScope conceptScope = myEnv.getConceptScope(node);
+    boolean unordered = myEnv.isInUnorderedRole(node);
+    byte result = unordered ? (byte) 1 : 0;
+    if (conceptKind == ConceptKind.INTERFACE) {
+      result |= 1 << 1;
+    } else if (conceptKind == ConceptKind.IMPLEMENTATION) {
+      result |= 2 << 1;
+    }
+    if (conceptScope == StaticScope.ROOT) {
+      result |= 1 << 3;
+    } else if (conceptScope == StaticScope.NONE) {
+      result |= 2 << 3;
+    }
+    return result;
   }
 
   protected void writeChildren(SNode node, ModelOutputStream os) throws IOException {

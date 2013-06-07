@@ -73,7 +73,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   private static final SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString(
       "642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)");
 
-  private Map<SModelReference, ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, ProjectStructureSModelDescriptor>();
+  private Map<SModelId, ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelId, ProjectStructureSModelDescriptor>();
 
   private static ProjectStructureModule INSTANCE;
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner() {
@@ -112,12 +112,12 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
     SModelReference ref = getSModelReference(module);
     if (isDeleted) {
-      ProjectStructureSModelDescriptor descriptor = myModels.get(ref);
+      ProjectStructureSModelDescriptor descriptor = myModels.get(ref.getModelId());
       if (descriptor != null) {
         removeModel(descriptor);
       }
-    } else if (myModels.containsKey(ref)) {
-      ProjectStructureSModelDescriptor descriptor = myModels.get(ref);
+    } else if (myModels.containsKey(ref.getModelId())) {
+      ProjectStructureSModelDescriptor descriptor = myModels.get(ref.getModelId());
       descriptor.dropModel();
     } else {
       createModel(module);
@@ -130,7 +130,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     if (module == null) return null;
     SModelReference ref = getSModelReference(module);
 
-    ProjectStructureSModelDescriptor descriptor = myModels.get(ref);
+    ProjectStructureSModelDescriptor descriptor = myModels.get(ref.getModelId());
     return descriptor == null ? null : descriptor;
   }
 
@@ -190,7 +190,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   private void removeModel(SModel md) {
-    if (myModels.remove(md.getReference()) != null) {
+    if (myModels.remove(md.getReference().getModelId()) != null) {
       unregisterModel((SModelBase) md);
       if (md instanceof ProjectStructureSModelDescriptor) {
         ((ProjectStructureSModelDescriptor) md).dropModel();
@@ -200,7 +200,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   public ProjectStructureSModelDescriptor createModel(SModule module) {
     ProjectStructureSModelDescriptor result = new ProjectStructureSModelDescriptor(getSModelReference(module), module);
-    myModels.put(result.getReference(), result);
+    myModels.put(result.getReference().getModelId(), result);
     registerModel(result);
     return result;
   }
@@ -241,6 +241,11 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       result.add(ProjectStructureModule.this);
       return result;
     }
+  }
+
+  @Override
+  public SModel resolveInDependencies(SModelId ref) {
+    return myModels.get(ref);
   }
 
   public class ProjectStructureSModelDescriptor extends BaseSpecialModelDescriptor {
@@ -310,7 +315,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
     @Override
     public SModel resolveModel(SModelReference reference) {
-      return myModels.get(reference);
+      throw new UnsupportedOperationException("not supported since 3.0");
     }
   }
 

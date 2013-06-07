@@ -13,7 +13,7 @@ import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import java.io.File;

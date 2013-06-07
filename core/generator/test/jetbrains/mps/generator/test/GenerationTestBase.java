@@ -18,7 +18,7 @@ package jetbrains.mps.generator.test;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.GenerationCacheContainer;

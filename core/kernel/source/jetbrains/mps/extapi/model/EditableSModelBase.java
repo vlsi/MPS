@@ -31,6 +31,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -219,12 +220,17 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
             break;
           }
         }
-        IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot).getFile();
-        newFile.getParent().mkdirs();
-        newFile.createNewFile();
-        changeModelFile(newFile);
-        save();
-        oldFile.delete();
+        try {
+          IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot).getFile();
+          newFile.getParent().mkdirs();
+          newFile.createNewFile();
+          changeModelFile(newFile);
+          save();
+          oldFile.delete();
+        } catch (IOException e) {
+          LOG.error("cannot rename " + getModelName() + ": " + e.getMessage());
+          save();
+        }
       }
     }
 
@@ -245,27 +251,35 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   }
 
   public void fireReferenceChanged(SNode node, String role, SReference oldValue, SReference newValue) {
+    LOG.assertLog(!getSModelInternal().isUpdateMode());
     for (SModelChangeListener l : myChangeListeners) {
       l.referenceChanged(node, role, oldValue, newValue);
     }
+    setChanged(true);
   }
 
   public void firePropertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
+    LOG.assertLog(!getSModelInternal().isUpdateMode());
     for (SModelChangeListener l : myChangeListeners) {
       l.propertyChanged(node, propertyName, oldValue, newValue);
     }
+    setChanged(true);
   }
 
   public void fireNodeAdded(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
+    LOG.assertLog(!getSModelInternal().isUpdateMode());
     for (SModelChangeListener l : myChangeListeners) {
-      l.nodeAdded(node, role, child);
+      l.nodeAdded(this, node, role, child);
     }
+    setChanged(true);
   }
 
   public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
+    LOG.assertLog(!getSModelInternal().isUpdateMode());
     for (SModelChangeListener l : myChangeListeners) {
-      l.nodeRemoved(node, role, child);
+      l.nodeRemoved(this, node, role, child);
     }
+    setChanged(true);
   }
 
   public String toString() {

@@ -18,7 +18,7 @@ import jetbrains.mps.ide.make.TextPreviewUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 

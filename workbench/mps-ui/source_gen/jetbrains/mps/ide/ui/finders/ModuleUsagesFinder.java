@@ -9,7 +9,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
@@ -46,7 +46,7 @@ public class ModuleUsagesFinder implements IFinder {
     }
     ModuleHolder moduleHolder = (ModuleHolder) objectHolder;
     SModule searchedModule = moduleHolder.getObject();
-    IScope scope = query.getScope();
+    SearchScope scope = query.getScope();
     for (SModule module : scope.getModules()) {
       if (monitor.isCanceled()) {
         return searchResults;

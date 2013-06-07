@@ -25,9 +25,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
  * Represents a model. Models are loaded lazily when needed.
  */
 public interface SModel {
-  // TODO remove
-  SModel resolveModel(SModelReference reference);
-
   SRepository getRepository();
 
   /**
@@ -47,9 +44,6 @@ public interface SModel {
   SModelReference getReference();
 
   ModelRoot getModelRoot();
-
-  // TODO remove
-  void setModelRoot(ModelRoot mr);
 
   /**
    * Retrieves the owning module
@@ -81,8 +75,6 @@ public interface SModel {
   void removeRootNode(SNode node);
 
   SNode getNode(SNodeId id);
-
-  SModelScope getModelScope();
 
   /**
    * The data source which this model was loaded from.

@@ -12,8 +12,9 @@ import javax.swing.JComboBox;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.awt.HeadlessException;
 import jetbrains.mps.ide.project.ProjectHelper;
-import java.awt.GridLayout;
+import com.intellij.uiDesigner.core.GridLayoutManager;
 import java.awt.Dimension;
+import com.intellij.uiDesigner.core.GridConstraints;
 import javax.swing.JLabel;
 import javax.swing.DefaultComboBoxModel;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -24,13 +25,18 @@ import java.awt.Component;
 import javax.swing.JList;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.smodel.SModelStereotype;
+import com.intellij.ui.ColoredListCellRenderer;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import java.util.List;
+import java.util.LinkedList;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.io.File;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -54,6 +60,7 @@ public class NewModelDialog extends DialogWrapper {
   private JTextField myModelName = new JTextField();
   private JComboBox myModelStereotype = new JComboBox();
   private JComboBox myModelRoots = new JComboBox();
+  private JComboBox myModelStorageFormat = new JComboBox();
   private SModel myResult;
   private String myNamespace;
 
@@ -81,11 +88,15 @@ public class NewModelDialog extends DialogWrapper {
   }
 
   private void initContentPane() {
-    JPanel mainPanel = new JPanel(new GridLayout(6, 1));
-    mainPanel.setPreferredSize(new Dimension(300, 100));
+    JPanel mainPanel = new JPanel(new GridLayoutManager(8, 1));
+    mainPanel.setPreferredSize(new Dimension(200, 50));
 
-    mainPanel.add(new JLabel("Model root:"));
-    mainPanel.add(myModelRoots);
+    GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+
+    mainPanel.add(new JLabel("Model root:"), constraints);
+    constraints.setRow(constraints.getRow() + 1);
+    mainPanel.add(myModelRoots, constraints);
+    constraints.setRow(constraints.getRow() + 1);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (ModelRoot root : myModule.getModelRoots()) {
       if (root.canCreateModels()) {
@@ -112,6 +123,7 @@ public class NewModelDialog extends DialogWrapper {
       @Override
       public void itemStateChanged(ItemEvent e) {
         check();
+        myModelStorageFormat.setVisible(myModelRoots.getSelectedItem() instanceof DefaultModelRoot);
       }
     });
     myModelRoots.setModel(model);
@@ -120,8 +132,11 @@ public class NewModelDialog extends DialogWrapper {
       myNamespace :
       myNamespace + "."
     ));
-    mainPanel.add(new JLabel("Model name:"));
-    mainPanel.add(myModelName);
+
+    mainPanel.add(new JLabel("Model name:"), constraints);
+    constraints.setRow(constraints.getRow() + 1);
+    mainPanel.add(myModelName, constraints);
+    constraints.setRow(constraints.getRow() + 1);
     myModelName.addKeyListener(new KeyAdapter() {
       @Override
       public void keyReleased(KeyEvent event) {
@@ -129,7 +144,8 @@ public class NewModelDialog extends DialogWrapper {
       }
     });
 
-    mainPanel.add(new JLabel("Stereotype:"));
+    mainPanel.add(new JLabel("Stereotype:"), constraints);
+    constraints.setRow(constraints.getRow() + 1);
     myModelStereotype.setEditable(true);
     myModelStereotype.setModel(new DefaultComboBoxModel(SModelStereotype.values));
     myModelStereotype.addKeyListener(new KeyAdapter() {
@@ -144,9 +160,32 @@ public class NewModelDialog extends DialogWrapper {
         check();
       }
     });
-    mainPanel.add(myModelStereotype);
+    mainPanel.add(myModelStereotype, constraints);
+    constraints.setRow(constraints.getRow() + 1);
+    mainPanel.add(new JLabel("Storage format:"), constraints);
+    constraints.setRow(constraints.getRow() + 1);
+    myModelStorageFormat.setModel(new DefaultComboBoxModel(getStorageFormats()));
+    myModelStorageFormat.setRenderer(new ColoredListCellRenderer() {
+      protected void customizeCellRenderer(JList p0, Object p1, int p2, boolean p3, boolean p4) {
+        if (!(p1 instanceof ModelFactory)) {
+          return;
+        }
+        append(((ModelFactory) p1).getFormatTitle());
+      }
+    });
+    myModelStorageFormat.setSelectedItem(PersistenceFacade.getInstance().getDefaultModelFactory());
+    mainPanel.add(myModelStorageFormat, constraints);
+    constraints.setRow(constraints.getRow() + 1);
 
     myContentPane.add(mainPanel, BorderLayout.CENTER);
+  }
+
+  private ModelFactory[] getStorageFormats() {
+    List<ModelFactory> list = new LinkedList<ModelFactory>();
+    for (String formatId : PersistenceFacade.getInstance().getModelFactoryExtensions()) {
+      list.add(PersistenceFacade.getInstance().getModelFactory(formatId));
+    }
+    return list.toArray(new ModelFactory[list.size()]);
   }
 
   @Override
@@ -202,6 +241,9 @@ public class NewModelDialog extends DialogWrapper {
       public SModel compute() {
         String fqName = getFqName();
         ModelRoot mr = (ModelRoot) myModelRoots.getSelectedItem();
+        if (mr instanceof DefaultModelRoot) {
+          return SModuleOperations.createModelWithAdjustments(fqName, mr, (ModelFactory) myModelStorageFormat.getSelectedItem());
+        }
         return SModuleOperations.createModelWithAdjustments(fqName, mr);
       }
     }, myProject);
@@ -292,5 +334,13 @@ public class NewModelDialog extends DialogWrapper {
   @Override
   protected JComponent createCenterPanel() {
     return myContentPane;
+  }
+
+
+
+  @Nullable
+  @Override
+  public JComponent getPreferredFocusedComponent() {
+    return myModelName;
   }
 }

@@ -25,6 +25,9 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import java.util.List;
 
 public interface IModelPersistence {
+
+  int getVersion();
+
   IModelWriter getModelWriter();
 
   IModelReader getModelReader();

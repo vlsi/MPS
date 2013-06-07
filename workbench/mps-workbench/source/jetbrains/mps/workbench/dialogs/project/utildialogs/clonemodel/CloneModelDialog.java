@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.ModuleUtil;
@@ -26,8 +26,6 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jdesktop.beansbinding.AutoBinding;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
 import org.jdesktop.beansbinding.BeanProperty;

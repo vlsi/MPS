@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <root nodeRef="r:3698f065-b2dd-473a-b072-dd8355238238(testAntTask.unpackAndTest)/~unpackAndTest">
-    <unitInfo nodeId="~unpackAndTest" fileName="unpackAndTest.xml" startLine="1" startPosition="0" endLine="38" endPosition="10" unitName="testAntTask.unpackAndTest.unpackAndTest" />
-  </root>
-</debugInfo>
-

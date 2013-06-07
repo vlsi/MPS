@@ -16,7 +16,7 @@ import java.util.IdentityHashMap;
 import java.util.Collections;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -41,7 +41,7 @@ public class MigrationScriptFinder implements IFinder {
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     myResults = new SearchResults<SNode>();
-    IScope queryScope = query.getScope();
+    SearchScope queryScope = query.getScope();
     List<BaseMigrationScript> scriptInstances = MigrationScriptUtil.getScriptInstances(myScripts, myOperationContext);
 
     monitor.start("Searching applicable nodes", scriptInstances.size());

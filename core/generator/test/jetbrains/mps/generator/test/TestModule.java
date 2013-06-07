@@ -38,6 +38,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModel.Problem.Kind;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -131,6 +132,13 @@ public class TestModule extends AbstractModule {
     return myPeer;
   }
 
+  @Override
+  public SModel resolveInDependencies(SModelId reference) {
+    boolean own = myModels.keySet().contains(SModelStereotype.withoutStereotype(reference.getModelName()));
+    if (!own) return super.resolveInDependencies(reference);
+    return myModels.get(reference.getModelName());
+  }
+
   public class TestModuleScope extends ModuleScope {
     @Override
     protected Set<SModule> getInitialModules() {
@@ -173,13 +181,7 @@ public class TestModule extends AbstractModule {
 
     @Override
     public SModel resolveModel(SModelReference reference) {
-      if (SModelStereotype.withoutStereotype(reference.getModelName()).equals(myLongName)) {
-        SModel descriptor = myModels.get(reference.getModelName());
-        if (descriptor != null) {
-          return descriptor;
-        }
-      }
-      return super.resolveModel(reference);
+      throw new UnsupportedOperationException("not supported since 3.0");
     }
   }
 

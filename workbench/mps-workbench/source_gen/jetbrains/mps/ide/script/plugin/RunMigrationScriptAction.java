@@ -9,12 +9,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.Project;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.ArrayList;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -24,6 +24,7 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
   private IOperationContext myContext;
   private List<SModel> myModels;
   private List<SModule> myModules;
+  private Project myProject;
 
   public RunMigrationScriptAction(SNode script, String name, boolean applyToSelection) {
     super(name);
@@ -33,13 +34,18 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
 
   @Override
   protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-    IScope migrationScope = AbstractMigrationScriptHelper.createMigrationScope(myModels, myModules, myApplyToSelection);
-    if (!(migrationScope.getModelDescriptors().iterator().hasNext())) {
+    SearchScope scope;
+    if (myApplyToSelection) {
+      scope = AbstractMigrationScriptHelper.createMigrationScope(myModules, myModels);
+    } else {
+      scope = AbstractMigrationScriptHelper.createMigrationScope(myProject);
+    }
+    if (!(scope.getModels().iterator().hasNext())) {
       return;
     }
     List<SNode> scripts = new ArrayList<SNode>();
     scripts.add(myScript);
-    AbstractMigrationScriptHelper.doRunScripts(scripts, migrationScope, myContext);
+    AbstractMigrationScriptHelper.doRunScripts(scripts, scope, myContext);
   }
 
   @Override
@@ -51,8 +57,8 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
     if (myContext == null) {
       return false;
     }
-    Project project = e.getData(MPSDataKeys.PROJECT);
-    if (project == null) {
+    myProject = e.getData(MPSDataKeys.MPS_PROJECT);
+    if (myProject == null) {
       return false;
     }
     myModels = new ArrayList<SModel>();

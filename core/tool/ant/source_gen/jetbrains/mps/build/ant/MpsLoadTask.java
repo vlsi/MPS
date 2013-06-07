@@ -7,11 +7,8 @@ import java.io.File;
 import jetbrains.mps.tool.common.Script;
 import java.util.List;
 import java.util.ArrayList;
-import org.apache.tools.ant.types.FileSet;
-import java.util.Iterator;
-import org.apache.tools.ant.types.resources.FileResource;
-import org.apache.tools.ant.Project;
 import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.Project;
 import java.util.Set;
 import java.util.Hashtable;
 import org.apache.tools.ant.util.JavaEnvUtils;
@@ -64,46 +61,6 @@ public abstract class MpsLoadTask extends Task {
 
   public void setFork(boolean fork) {
     myFork = fork;
-  }
-
-  public void addConfiguredModel(FileSet modelsInner) {
-    Iterator it = modelsInner.iterator();
-    while (it.hasNext()) {
-      FileResource next = (FileResource) it.next();
-      myWhatToDo.addModelFile(next.getFile());
-    }
-  }
-
-  public void addConfiguredModules(FileSet modulesInner) {
-    Iterator it = modulesInner.iterator();
-    while (it.hasNext()) {
-      FileResource next = (FileResource) it.next();
-      myWhatToDo.addModuleFile(next.getFile());
-    }
-  }
-
-  public void addConfiguredProject(ProjectNested projectInner) {
-    Iterator it = projectInner.iterator();
-    while (it.hasNext()) {
-      FileResource next = (FileResource) it.next();
-      myWhatToDo.addProjectFile(next.getFile());
-    }
-  }
-
-  public void addConfiguredExclude(ExcludeNested excludeInner) {
-    for (File file : excludeInner.getExcludedFromDiffFiles()) {
-      myWhatToDo.excludeFileFromDiff(file);
-    }
-  }
-
-  public void addConfiguredLibrary(LibraryDataType libraryInner) {
-    if (libraryInner.getName() == null) {
-      log("Library missing required attribute name.", Project.MSG_ERR);
-    } else
-    if (libraryInner.getDir() == null) {
-      throw new BuildException("Library missing required attribute dir.");
-    }
-    myWhatToDo.addLibrary(libraryInner.getName(), libraryInner.getDir(), libraryInner.getCompile());
   }
 
   public void addConfiguredMacro(Macro macro) {
@@ -185,7 +142,7 @@ public abstract class MpsLoadTask extends Task {
       } catch (IOException e) {
         throw new BuildException(e);
       }
-      Execute exe = new Execute(getExecuteStreamHandler());
+      Execute exe = new Execute(new MyExecuteStreamHandler(this));
       exe.setAntRun(this.getProject());
       exe.setWorkingDirectory(this.getProject().getBaseDir());
       exe.setCommandline(commandLine.toArray(new String[commandLine.size()]));
@@ -269,10 +226,6 @@ public abstract class MpsLoadTask extends Task {
     for (Object key : properties.keySet()) {
       myWhatToDo.putProperty((String) key, (String) properties.get(key));
     }
-  }
-
-  protected MyExecuteStreamHandler getExecuteStreamHandler() {
-    return new MyExecuteStreamHandler(this);
   }
 
   private void checkMpsHome() {

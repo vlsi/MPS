@@ -209,24 +209,13 @@ public class ModulesMiner {
       return;
     }
 
+    excludeGeneratedSourcesDir(ProjectPathUtil.getGeneratorOutputPath(descriptorFile.getParent(), descriptor), excludes);
+    excludeGeneratedSourcesDir(ProjectPathUtil.getGeneratorTestsOutputPath(descriptorFile, descriptor), excludes);
+    excludeIdeaClassesGen(descriptorFile, descriptor, excludes);
+    excludeClassesGen(descriptorFile, descriptor, excludes);
+
     for (String p : descriptor.getSourcePaths()) {
       excludes.add(FileSystem.getInstance().getFileByPath(p));
-    }
-
-    IFile genPath = ProjectPathUtil.getGeneratorOutputPath(descriptorFile.getParent(), descriptor);
-    if (genPath != null) {
-      excludes.add(genPath);
-      if (!descriptorFile.isReadOnly()) {
-        FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(genPath.getPath()));
-      }
-    }
-
-    IFile testsGenPath = ProjectPathUtil.getGeneratorTestsOutputPath(descriptorFile, descriptor);
-    if (testsGenPath != null) {
-      excludes.add(testsGenPath);
-      if (!descriptorFile.isReadOnly()) {
-        FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(testsGenPath.getPath()));
-      }
     }
 
     for (ModelRootDescriptor rootDescriptor : descriptor.getModelRootDescriptors()) {
@@ -238,21 +227,38 @@ public class ModulesMiner {
       excludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
     }
 
-    IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile.getParent(), false);
+    for (String entry : descriptor.getAdditionalJavaStubPaths()) {
+      excludes.add(FileSystem.getInstance().getFileByPath(entry));
+    }
+
+    if (descriptor instanceof LanguageDescriptor) {
+      for (GeneratorDescriptor generator : ((LanguageDescriptor) descriptor).getGenerators()) {
+        processExcludes(descriptorFile, generator, excludes);
+      }
+    }
+  }
+
+  private void excludeGeneratedSourcesDir(IFile sourceDir, Set<IFile> excludes) {
+    if (sourceDir != null) {
+      excludes.add(sourceDir);
+      // todo: why?
+      if (!sourceDir.isReadOnly()) {
+        excludes.add(FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(sourceDir.getPath())));
+      }
+    }
+  }
+
+  private void excludeClassesGen(IFile descriptorFile, ModuleDescriptor descriptor, Set<IFile> excludes) {
+    IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile.getParent(), descriptor instanceof GeneratorDescriptor);
     if (classesGen != null) {
       excludes.add(classesGen);
     }
+  }
 
-    // todo: specify what kind of descriptor can be input for this method
-    if (descriptor instanceof LanguageDescriptor) {
-      IFile generatorClassesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile.getParent(), true);
-      if (generatorClassesGen != null) {
-        excludes.add(generatorClassesGen);
-      }
-    }
-
-    for (String entry : descriptor.getAdditionalJavaStubPaths()) {
-      excludes.add(FileSystem.getInstance().getFileByPath(entry));
+  private void excludeIdeaClassesGen(IFile descriptorFile, ModuleDescriptor descriptor, Set<IFile> excludes) {
+    IFile classesDir = ProjectPathUtil.getClassesFolder(descriptorFile);
+    if (classesDir != null) {
+      excludes.add(classesDir);
     }
   }
 

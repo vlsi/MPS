@@ -110,7 +110,7 @@
       <property name="name" nameId="tpck.1169194664001" value="applicableHiddenParameter" />
       <link role="targetType" roleId="tpce.1105736621938" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3044950653914717096" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="3044950653914717095" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="3044950653914717095" nodeInfo="ig">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="wbvt.3044950653914717099" resolveInfo="getApplicableHiddenParameter" />
       </node>
     </node>

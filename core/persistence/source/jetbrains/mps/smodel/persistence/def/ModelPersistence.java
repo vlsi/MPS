@@ -92,6 +92,7 @@ public class ModelPersistence {
   public static final String DEVKIT = "devkit";
   public static final String STEREOTYPE = "stereotype";
   public static final String MODEL_UID = "modelUID";
+  public static final String FILE_CONTENT = "content";
   public static final String VERSION = "version";
   public static final String IMPLICIT = "implicit";
   public static final String ROOT_NODE = "root";
@@ -119,8 +120,8 @@ public class ModelPersistence {
   };
 
   @NotNull
-  private static IModelPersistence getCurrentModelPersistence() {
-    IModelPersistence modelPersistence = getModelPersistence(SModelHeader.create(getCurrentPersistenceVersion()));
+  static IModelPersistence getCurrentModelPersistence() {
+    IModelPersistence modelPersistence = getModelPersistence(ModelPersistence.LAST_VERSION);
     if (modelPersistence == null) {
       modelPersistence = myModelPersistenceFactory[myModelPersistenceFactory.length - 1];
     }
@@ -128,8 +129,7 @@ public class ModelPersistence {
   }
 
   @Nullable
-  private static IModelPersistence getModelPersistence(SModelHeader header) {
-    int persistenceID = header.getPersistenceVersion();
+  static IModelPersistence getModelPersistence(int persistenceID) {
     if (persistenceID < 0 || persistenceID >= myModelPersistenceFactory.length) {
       return null;
     }
@@ -151,10 +151,11 @@ public class ModelPersistence {
     }
   }
 
-  private static void loadDescriptor(SModelHeader result, InputSource source) throws ModelReadException {
+  static void loadDescriptor(SModelHeader result, InputSource source) throws ModelReadException {
     parseAndHandleExceptions(source, new MyDescriptorHandler(result), "model descriptor");
   }
 
+  @NotNull
   public static SModelHeader loadDescriptor(InputSource source) throws ModelReadException {
     SModelHeader result = new SModelHeader();
     loadDescriptor(result, source);
@@ -184,7 +185,7 @@ public class ModelPersistence {
   }
 
   private static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull InputSource source, ModelLoadingState state) throws ModelReadException {
-    IModelPersistence mp = getModelPersistence(header);
+    IModelPersistence mp = getModelPersistence(header.getPersistenceVersion());
     if (header.getPersistenceVersion() < 0) {
       throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
     }
@@ -225,7 +226,7 @@ public class ModelPersistence {
   public static List<LineContent> getLineToContentMap(String content) throws ModelReadException {
     SModelHeader header;
     header = loadDescriptor(new InputSource(new StringReader(content)));
-    IModelPersistence mp = getModelPersistence(header);
+    IModelPersistence mp = getModelPersistence(header.getPersistenceVersion());
 
     if (mp != null) {
       XMLSAXHandler<List<LineContent>> handler = mp.getLineToContentMapReaderHandler();
@@ -296,14 +297,14 @@ public class ModelPersistence {
         defaultSModel.setPersistenceVersion(persistenceVersion);
       }
 
-      modelPersistence = getModelPersistence(defaultSModel.getSModelHeader());
+      modelPersistence = getModelPersistence(defaultSModel.getSModelHeader().getPersistenceVersion());
     }
 
     if (modelPersistence == null) {
       modelPersistence = getCurrentModelPersistence();
     }
 
-    (sourceModel).calculateImplicitImports();
+    sourceModel.calculateImplicitImports();
     return modelPersistence.getModelWriter().saveModel(sourceModel);
   }
 
@@ -326,7 +327,7 @@ public class ModelPersistence {
 
   public static Map<String, String> calculateHashes(String content) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
-    IModelPersistence mp = getModelPersistence(header);
+    IModelPersistence mp = getModelPersistence(header.getPersistenceVersion());
     Map<String, String> result;
     if (mp != null) {
       IHashProvider hashProvider = mp.getHashProvider();
@@ -343,14 +344,14 @@ public class ModelPersistence {
   public static DefaultSModel readModel(@NotNull final StreamDataSource source, boolean onlyRoots) throws ModelReadException {
     SModelHeader header = loadDescriptor(source);
     ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
-    return readModel(header, source, state).getModel();
+    return (DefaultSModel) readModel(header, source, state).getModel();
   }
 
   @NotNull
   public static DefaultSModel readModel(@NotNull final String content, boolean onlyRoots) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
     ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
-    return readModel(header, new InputSource(new StringReader(content)), state).getModel();
+    return (DefaultSModel) readModel(header, new InputSource(new StringReader(content)), state).getModel();
   }
 
   @NotNull
@@ -378,7 +379,7 @@ public class ModelPersistence {
     return FileSystem.getInstance().getFileByPath(versionPath);
   }
 
-  private static void parseAndHandleExceptions(InputSource source, DefaultHandler handler, String what) throws ModelReadException {
+  static void parseAndHandleExceptions(InputSource source, DefaultHandler handler, String what) throws ModelReadException {
     try {
       JDOMUtil.createSAXParser().parse(source, handler);
     } catch (BreakParseSAXException e) {
@@ -395,7 +396,7 @@ public class ModelPersistence {
 
   public static void index(char[] data, Consumer<String> consumer) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new CharArrayReader(data)));
-    IModelPersistence mp = getModelPersistence(header);
+    IModelPersistence mp = getModelPersistence(header.getPersistenceVersion());
     assert mp != null : "Using unsupported persistence version: " + header.getPersistenceVersion();
     mp.index(data, consumer);
   }

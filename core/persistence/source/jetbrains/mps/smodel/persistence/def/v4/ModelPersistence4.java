@@ -51,6 +51,11 @@ public class ModelPersistence4 implements IModelPersistence {
   }
 
   @Override
+  public int getVersion() {
+    return 4;
+  }
+
+  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter4();
   }

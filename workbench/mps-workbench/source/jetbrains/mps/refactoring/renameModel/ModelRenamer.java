@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.refactoring.renameModel;
 
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;

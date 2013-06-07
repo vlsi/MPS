@@ -197,11 +197,7 @@ public class DiffTemporaryModule extends AbstractModule {
 
     @Override
     public org.jetbrains.mps.openapi.model.SModel resolveModel(SModelReference reference) {
-      if (myModule instanceof DiffTemporaryModule.DiffModuleScope) {
-        return ((DiffTemporaryModule) myModule).findModel(reference);
-      } else {
-        return super.resolveModel(reference);
-      }
+      throw new UnsupportedOperationException("not supported");
     }
 
     @Override

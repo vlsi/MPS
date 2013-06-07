@@ -60,7 +60,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 22:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.LinkDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable").properties("role", "metaClass", "sourceCardinality", "doNotGenerate", "unordered").references("specializedLink", "target").final_().create();
       case 23:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").references("method").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.InterfacePart").references("method").create();
       case 24:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration").super_("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").parents("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").final_().create();
       case 25:

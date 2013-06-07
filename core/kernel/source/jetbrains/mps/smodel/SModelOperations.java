@@ -20,7 +20,6 @@ import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.extapi.model.EditableSModel;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.DevKit;

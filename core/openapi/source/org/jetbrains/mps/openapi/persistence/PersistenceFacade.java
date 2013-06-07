@@ -76,6 +76,11 @@ public abstract class PersistenceFacade {
   public abstract void setModelFactory(String extension, ModelFactory factory);
 
   /**
+   * Retrieves registered storage formats extensions.
+   * */
+  public abstract Set<String> getModelFactoryExtensions();
+
+  /**
    * Creates an SModelId from a given text identifier.
    * Allows implementations to provide their own version of SModelId.
    *

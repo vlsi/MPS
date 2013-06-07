@@ -33,7 +33,7 @@ public class NewDevkitUITest extends NewDialogsUITestsBase {
     Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
     Assert.assertNotNull("Main frame not found", frame);
 
-    final NewDevKitDialog dialog = new NewDevKitDialog(frame);
+    final NewDevKitDialog dialog = new NewDevKitDialog(null);
     dialog.setProject(myCreatedProject);
 
     SwingUtilities.invokeLater(new Runnable() {

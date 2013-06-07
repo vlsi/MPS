@@ -31,7 +31,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -40,6 +39,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,7 +50,7 @@ public class FindUtils {
   private static final Logger LOG = LogManager.getLogger(FindUtils.class);
 
   @Deprecated
-  public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final IScope scope, final String... finderClassNames) {
+  public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final SearchScope scope, final String... finderClassNames) {
     List<GeneratedFinder> finders = new ArrayList<GeneratedFinder>(finderClassNames.length);
     for (String finderClassName : finderClassNames) {
       GeneratedFinder finder = getFinderByClassName(finderClassName);
@@ -60,7 +60,7 @@ public class FindUtils {
     return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new GeneratedFinder[0]));
   }
 
-  public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final IScope scope, final ModuleClassReference<GeneratedFinder>... finderClasses) {
+  public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final SearchScope scope, final ModuleClassReference<GeneratedFinder>... finderClasses) {
     List<GeneratedFinder> finders = new ArrayList<GeneratedFinder>(finderClasses.length);
     for (ModuleClassReference<GeneratedFinder> finderClass : finderClasses) {
       GeneratedFinder finder = getFinderByClass(finderClass);
@@ -86,7 +86,7 @@ public class FindUtils {
   }
 
   @Deprecated
-  public static List<SNode> executeFinder(String className, SNode node, IScope scope, ProgressMonitor monitor) {
+  public static List<SNode> executeFinder(String className, SNode node, SearchScope scope, ProgressMonitor monitor) {
     List<SNode> result = new ArrayList<SNode>();
     IInterfacedFinder finder = getFinderByClassName(className);
     if (finder == null) return result;
@@ -96,7 +96,7 @@ public class FindUtils {
     return result;
   }
 
-  public static List<SNode> executeFinder(ModuleClassReference<GeneratedFinder> finderClass, SNode node, IScope scope, ProgressMonitor monitor) {
+  public static List<SNode> executeFinder(ModuleClassReference<GeneratedFinder> finderClass, SNode node, SearchScope scope, ProgressMonitor monitor) {
     List<SNode> result = new ArrayList<SNode>();
     IInterfacedFinder finder = getFinderByClass(finderClass);
     if (finder == null) return result;
