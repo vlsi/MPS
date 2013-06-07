@@ -10869,7 +10869,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="4710305425207405693" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="selection.moveElements" />
-    <property name="name" nameId="tpck.1169194664001" value="MoveSingleExpresson" />
+    <property name="name" nameId="tpck.1169194664001" value="MoveIfByCondition" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4710305425207405721" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="foo" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4710305425207415195" nodeInfo="in" />
@@ -10892,6 +10892,7 @@
             <node role="statementList" roleId="tpee.1206060644605" type="tpee.StatementList" typeId="tpee.1068580123136" id="4710305425207457072" nodeInfo="nn" />
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="801169956440520508" nodeInfo="nn" />
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4710305425207457396" nodeInfo="ig">
@@ -10899,6 +10900,7 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4710305425207457397" nodeInfo="in" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4710305425207457398" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4710305425207457399" nodeInfo="nn">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="801169956440520562" nodeInfo="nn" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4710305425207457400" nodeInfo="nn">
           <node role="condition" roleId="tpee.1068580123160" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4710305425207457401" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580123138" value="true" />

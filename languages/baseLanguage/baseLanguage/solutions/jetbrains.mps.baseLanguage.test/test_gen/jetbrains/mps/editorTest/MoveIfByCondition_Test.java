@@ -10,14 +10,14 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class MoveSingleExpresson_Test extends BaseTransformationTest4 {
-  public MoveSingleExpresson_Test() {
+public class MoveIfByCondition_Test extends BaseTransformationTest4 {
+  public MoveIfByCondition_Test() {
   }
 
   @Test
-  public void test_MoveSingleExpresson() throws Throwable {
+  public void test_MoveIfByCondition() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MoveSingleExpresson_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.MoveIfByCondition_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
