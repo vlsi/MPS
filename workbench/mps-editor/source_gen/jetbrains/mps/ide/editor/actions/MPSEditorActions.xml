@@ -107,10 +107,10 @@
       <keyboard-shortcut first-keystroke=" DOWN" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.MoveElementsDown_Action" class="jetbrains.mps.ide.editor.actions.MoveElementsDown_Action">
-      <keyboard-shortcut first-keystroke="alt DOWN" keymap="$default" />
+      <keyboard-shortcut first-keystroke="ctrl shift DOWN" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.MoveElementsUp_Action" class="jetbrains.mps.ide.editor.actions.MoveElementsUp_Action">
-      <keyboard-shortcut first-keystroke="alt UP" keymap="$default" />
+      <keyboard-shortcut first-keystroke="ctrl shift UP" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.MoveLeft_Action" class="jetbrains.mps.ide.editor.actions.MoveLeft_Action">
       <keyboard-shortcut first-keystroke=" LEFT" keymap="$default" />
