@@ -15,10 +15,14 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.*;
 
@@ -33,12 +37,46 @@ public class TransientModelNodeFinder implements FastNodeFinder {
 
   private Map<String, List<SNode>> myNodes = new HashMap<String, List<SNode>>();
 
+  private SModelChangeListener myChangeListener = new SModelChangeListener() {
+    @Override
+    public void nodeAdded(SModel model, SNode node, String role, SNode child) {
+      clearCache();
+    }
+
+    @Override
+    public void nodeRemoved(SModel model, SNode node, String role, SNode child) {
+      clearCache();
+    }
+
+    @Override
+    public void propertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
+      clearCache();
+    }
+
+    @Override
+    public void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef) {
+      clearCache();
+    }
+  };
+
   public TransientModelNodeFinder(SModel model) {
     myModel = model;
+    if(myModel instanceof EditableSModelBase) {
+      ((EditableSModelBase)myModel).addChangeListener(myChangeListener);
+    }
   }
 
   @Override
   public void dispose() {
+    if(myModel instanceof EditableSModelBase) {
+      clearCache();
+      ((EditableSModelBase)myModel).removeChangeListener(myChangeListener);
+    }
+  }
+
+  private void clearCache() {
+    myNodes.clear();
+    myInitialized=false;
   }
 
   private void initCache() {
