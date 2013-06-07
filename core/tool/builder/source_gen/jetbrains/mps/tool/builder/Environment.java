@@ -7,7 +7,6 @@ import java.io.File;
 import org.apache.log4j.Level;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import jetbrains.mps.project.PathMacrosProvider;
-import jetbrains.mps.logging.MPSAppenderBase;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.SimpleLayout;
@@ -34,25 +33,20 @@ public class Environment {
   protected Level myLogLevel;
   protected SetLibraryContributor myLibraryContibutor;
   private PathMacrosProvider myMacroProvider;
-  protected MPSAppenderBase myMessageHandler;
 
   public Environment() {
   }
 
-  public void init(Map<String, String> macro, boolean isLoadBootstarpLibraries, Map<String, File> libraries, Level logLevel, MPSAppenderBase lh) {
+  public void init(Map<String, String> macro, boolean isLoadBootstarpLibraries, Map<String, File> libraries, Level logLevel) {
     myMacro = macro;
     myLoadBootstrapLibraries = isLoadBootstarpLibraries;
     myLibraries = libraries;
     myLogLevel = logLevel;
-    myMessageHandler = lh;
   }
 
   public void setup() {
     BasicConfigurator.configure(new ConsoleAppender(new SimpleLayout()));
     Logger.getRootLogger().setLevel(myLogLevel);
-    if (myMessageHandler != null) {
-      myMessageHandler.register();
-    }
     MpsPlatform.init();
     MPSCore.getInstance().setTestMode();
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
@@ -79,9 +73,6 @@ public class Environment {
       this.myLibraryContibutor = null;
     }
     MpsPlatform.dispose();
-    if (myMessageHandler != null) {
-      myMessageHandler.unregister();
-    }
   }
 
   public Project createDummyProject() {
@@ -106,7 +97,6 @@ public class Environment {
       }
       for (String libName : myLibraries.keySet()) {
         libraryPaths.add(new LibraryContributor.LibDescriptor(myLibraries.get(libName).getAbsolutePath(), null));
-
       }
       this.myLibraryContibutor = new SetLibraryContributor(libraryPaths);
       LibraryInitializer.getInstance().addContributor(myLibraryContibutor);

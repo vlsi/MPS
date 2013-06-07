@@ -19,17 +19,13 @@ public class GeneratedTestEnvironment extends Environment {
   private static boolean cachesInvalidated = false;
 
   public void init(Map<String, File> libraries) {
-    super.init(Collections.<String,String>emptyMap(), false, libraries, Level.INFO, null);
+    super.init(Collections.<String,String>emptyMap(), false, libraries, Level.INFO);
   }
 
   public void setup() {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(myLogLevel);
-    if (myMessageHandler != null) {
-      myMessageHandler.register();
-    }
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-
 
     EnvironmentUtils.setSystemProperties(true);
 

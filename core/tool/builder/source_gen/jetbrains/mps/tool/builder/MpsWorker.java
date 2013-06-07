@@ -69,7 +69,7 @@ public abstract class MpsWorker {
     myWhatToDo = whatToDo;
     myLogger = logger;
     this.myEnvironment = environment;
-    myEnvironment.init(whatToDo.getMacro(), whatToDo.isLoadBootstrapLibraries(), whatToDo.getLibraries(), whatToDo.getLogLevel(), null);
+    myEnvironment.init(whatToDo.getMacro(), whatToDo.isLoadBootstrapLibraries(), whatToDo.getLibraries(), whatToDo.getLogLevel());
   }
 
   public void setEnvironment(Environment environment) {
