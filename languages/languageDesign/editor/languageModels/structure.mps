@@ -3012,7 +3012,7 @@
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="4531786690998812995" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="methodToGenerate" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278847762" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278847761" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278847761" nodeInfo="ig">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpcb.1262430001741492328" resolveInfo="getMethodToGenerate" />
       </node>
     </node>

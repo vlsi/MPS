@@ -642,6 +642,9 @@
       <property name="sourceCardinality" nameId="1071599893252" value="1" />
       <link role="target" roleId="1071599976176" targetNodeId="1i04.1225194472830" resolveInfo="ConceptMethodDeclaration" />
     </node>
+    <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="8079832110223845416" nodeInfo="ig">
+      <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+    </node>
   </root>
   <root type="tpce.EnumerationDataTypeDeclaration" typeId="1082978164219" id="8087047305080774904" nodeInfo="ng">
     <property name="memberIdentifierPolicy" nameId="1197591154882" value="custom" />
