@@ -22,22 +22,23 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -57,7 +58,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
   @Override
   public boolean canExecute(EditorContext context) {
-    EditorCell selectedCell = getCellToPasteTo((EditorCell) context.getSelectedCell());
+    EditorCell selectedCell = getCellToPasteTo(context.getSelectedCell());
     if (selectedCell == null) {
       return false;
     }
@@ -82,7 +83,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
     LOG.assertInCommand();
     final EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
     EditorCell pasteTargetCell = getCellToPasteTo(editorComponent.getSelectedCell());
-    final CellInfo pasteTargetCellInfo = pasteTargetCell.getCellInfo();
+    final CellInfo pasteTargetCellInfo = APICellAdapter.getCellInfo(pasteTargetCell);
     final SNode nodeSelected = pasteTargetCell.getSNode();
     final SModel modeltoPaste = nodeSelected.getModel();
 
@@ -117,7 +118,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
             if (canPasteBefore(selectedCell, pasteNodes)) {
               SNode selectedNode = inRepository ? selectedNodePointer.resolve(MPSModuleRepository.getInstance()) : nodeSelected;
               if (jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
-                LOG.error("Selected node is disposed: node = " + selectedNode.toString()+" ; node pointer = ("+ selectedNodePointer.toString()+")");
+                LOG.error("Selected node is disposed: node = " + selectedNode.toString() + " ; node pointer = (" + selectedNodePointer.toString() + ")");
                 return;
               }
               new NodePaster(pasteNodes).pasteRelative(selectedNode, PastePlaceHint.BEFORE_ANCHOR);
@@ -167,33 +168,33 @@ public class CellAction_PasteNode extends AbstractCellAction {
   }
 
   private boolean canPasteBefore(EditorCell selectedCell, List<SNode> pasteNodes) {
-    if (!selectedCell.isFirstPositionInBigCell()) return false;
+    if (!APICellAdapter.isFirstPositionInBigCell(selectedCell)) return false;
     SNode anchor = selectedCell.getSNode();
     if (anchor.getParent() == null) return false;
 
     NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, anchor.getRoleInParent());
     if (nodeAndRole == null) return false;
 
-    EditorCell targetCell = selectedCell.getEditor().findNodeCell(nodeAndRole.myNode);
-    return targetCell != null && targetCell.getFirstLeaf(CellConditions.SELECTABLE) == selectedCell &&
-      new NodePaster(pasteNodes).canPasteRelative(nodeAndRole.myNode);
+    EditorCell targetCell = selectedCell.getEditorComponent().findNodeCell(nodeAndRole.myNode);
+    return targetCell != null && ((jetbrains.mps.nodeEditor.cells.EditorCell) targetCell).getFirstLeaf(CellConditions.SELECTABLE) == selectedCell &&
+        new NodePaster(pasteNodes).canPasteRelative(nodeAndRole.myNode);
   }
 
   private EditorCell getCellToPasteTo(EditorCell cell) {
     if (cell == null) {
       return cell;
     }
-    if (cell.isLastPositionInBigCell()) return cell;
+    if (APICellAdapter.isLastPositionInBigCell(cell)) return cell;
 
     if (cell instanceof EditorCell_Label && cell.getRole() == null) {
-      EditorCell result = (EditorCell) new ChildrenCollectionFinder(cell, true, false).find();
+      EditorCell result = new ChildrenCollectionFinder(cell, true, false).find();
       if (result != null) {
         return result;
       }
-      result = (EditorCell) new ChildrenCollectionFinder(cell, false, false).find();
+      result = new ChildrenCollectionFinder(cell, false, false).find();
       if (result != null) {
         if (result instanceof EditorCell_Collection) {
-          return result.getLastChild();
+          return ((EditorCell_Collection) result).lastCell();
         }
         return result;
       }

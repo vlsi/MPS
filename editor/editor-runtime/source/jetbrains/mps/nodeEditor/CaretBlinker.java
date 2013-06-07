@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.editor.ex.EditorSettingsExternalizable;
 import com.intellij.openapi.fileTypes.ex.FileTypeManagerEx;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import com.intellij.openapi.application.ApplicationManager;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -64,13 +64,13 @@ public class CaretBlinker implements ApplicationComponent {
   }
 
   public void registerEditor(EditorComponent editorComponent) {
-    synchronized(myRegistrationLock) {
+    synchronized (myRegistrationLock) {
       myEditors.add(editorComponent);
     }
   }
 
   public void unregisterEditor(EditorComponent editorComponent) {
-    synchronized(myRegistrationLock) {
+    synchronized (myRegistrationLock) {
       myEditors.remove(editorComponent);
     }
   }
@@ -95,19 +95,19 @@ public class CaretBlinker implements ApplicationComponent {
     @SuppressWarnings({"InfiniteLoopStatement"})
     public void run() {
       while (true) {
-        synchronized(myRegistrationLock) {
+        synchronized (myRegistrationLock) {
           for (EditorComponent editor : myEditors) {
             if (editor.hasFocus()) {
               EditorCell selectedCell = editor.getDeepestSelectedCell();
               if (selectedCell == null) continue;
-              selectedCell.switchCaretVisible();
-              editor.repaint(selectedCell.getX(), selectedCell.getY(), selectedCell.getWidth()+1, selectedCell.getHeight()+1);
+              ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).switchCaretVisible();
+              editor.repaint(selectedCell.getX(), selectedCell.getY(), selectedCell.getWidth() + 1, selectedCell.getHeight() + 1);
               break;
             }
           }
         }
         try {
-          synchronized(this) {
+          synchronized (this) {
             wait(getCaretBlinkingRateTimeMillis());
           }
         } catch (Throwable t) {

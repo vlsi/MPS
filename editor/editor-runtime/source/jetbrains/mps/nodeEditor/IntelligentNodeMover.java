@@ -17,11 +17,11 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
@@ -78,8 +78,7 @@ class IntelligentNodeMover {
         if (myNodes.size() == 1) {
           myComponent.selectNode(myNodes.get(0));
         } else if (myNodes.size() > 1) {
-          //todo remove cast when selection will be in open api
-          SelectionManager selectionManager = ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).getSelectionManager();
+          SelectionManager selectionManager = myComponent.getSelectionManager();
           selectionManager.setSelection(selectionManager.createRangeSelection(myNodes.get(0), myNodes.get(myNodes.size() - 1)));
         }
       }
@@ -239,14 +238,14 @@ class IntelligentNodeMover {
     if (forward()) {
       for (SNode node : myNodes.subList(0, myNodes.size() - 1)) {
         node.getParent().removeChild(node);
-        parent.insertChild(myCurrent.getRoleInParent(), node, myCurrent.getPrevSibling());
+        parent.insertChildBefore(myRole, node, myCurrent);
       }
     } else {
       List<SNode> list = new ArrayList<SNode>(myNodes.subList(1, myNodes.size()));
       Collections.reverse(list);
       for (SNode node : list) {
         node.getParent().removeChild(node);
-        parent.insertChild(myCurrent.getRoleInParent(), node, myCurrent);
+        jetbrains.mps.util.SNodeOperations.insertChild(parent, myRole, node, myCurrent);
       }
     }
   }
@@ -263,9 +262,9 @@ class IntelligentNodeMover {
 
   private SNode siblingWithTheSameRole(SNode node) {
     if (forward()) {
-      return node.getNextSibling();
+      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNextSibling(node);
     } else {
-      return node.getPrevSibling();
+      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getPrevSibling(node);
     }
   }
 
@@ -284,9 +283,9 @@ class IntelligentNodeMover {
   private void addWithAnchor(SNode parent, SNode prevChild) {
     myParent.removeChild(myCurrent);
     if (forward()) {
-      parent.insertChild(myRole, myCurrent, prevChild);
+      jetbrains.mps.util.SNodeOperations.insertChild(parent, myRole, myCurrent, prevChild);
     } else {
-      parent.insertChild(myRole, myCurrent, prevChild.getPrevSibling());
+      parent.insertChildBefore(myRole, myCurrent, prevChild);
     }
     moveOtherNodes();
   }
@@ -294,7 +293,7 @@ class IntelligentNodeMover {
   private void addAtBoundary(SNode result) {
     myParent.removeChild(myCurrent);
     if (forward()) {
-      result.insertChild(myRole, myCurrent, null);
+      jetbrains.mps.util.SNodeOperations.insertChild(result, myRole, myCurrent, null);
     } else {
       result.addChild(myRole, myCurrent);
     }

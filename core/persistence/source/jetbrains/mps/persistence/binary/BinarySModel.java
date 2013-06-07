@@ -33,6 +33,7 @@ import java.util.Collections;
  */
 public class BinarySModel extends LazySModel {
   private final BinaryModelHeader header;
+  private boolean fullLoadUpdateMode;
 
   public BinarySModel(@NotNull BinaryModelHeader header) {
     super(header.getReference());
@@ -56,6 +57,16 @@ public class BinarySModel extends LazySModel {
   @Override
   public SModel createEmptyCopy() {
     return new BinarySModel(new BinaryModelHeader(getReference()));
+  }
+
+  public void setUpdateMode(boolean value) {
+    // update mode means we are attaching newly loaded children
+    this.fullLoadUpdateMode = value;
+  }
+
+  @Override
+  public boolean isUpdateMode() {
+    return fullLoadUpdateMode;
   }
 
   public static class InvalidBinarySModel extends BinarySModel implements InvalidSModel {

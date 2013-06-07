@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.selection;
+package jetbrains.mps.openapi.editor.selection;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.awt.Graphics2D;
 import java.util.List;
 
+/**
+ * User: shatalin
+ * Date: 6/3/13
+ */
 public interface Selection {
   @NotNull
   EditorComponent getEditorComponent();
@@ -36,8 +39,8 @@ public interface Selection {
 
   boolean isSame(Selection another);
 
-
   public boolean canExecuteAction(CellActionType type);
+
   void executeAction(CellActionType type);
 
   /**
@@ -53,6 +56,4 @@ public interface Selection {
   List<SNode> getSelectedNodes();
 
   void ensureVisible();
-
-  void paintSelection(Graphics2D g);
 }

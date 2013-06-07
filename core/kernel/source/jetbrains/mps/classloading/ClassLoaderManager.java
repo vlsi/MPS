@@ -192,7 +192,8 @@ public class ClassLoaderManager implements CoreComponent {
     }
 
     if (!ModuleClassLoaderSupport.canCreate(module)) {
-      throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
+//      throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
+      return null;
     }
     if (!module.getFacet(JavaModuleFacet.class).isCompileInMps()) {
       // core module

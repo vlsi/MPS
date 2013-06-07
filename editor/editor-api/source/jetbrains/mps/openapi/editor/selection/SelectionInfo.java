@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,20 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.selection;
+package jetbrains.mps.openapi.editor.selection;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.EditorComponent;
 
-public interface SingularSelection extends Selection {
-  @NotNull
-  EditorCell getEditorCell();
-
-  void setSideSelectDirection(SideSelectDirection direction);
-
-  SideSelectDirection getSideSelectDirection();
-
-  enum SideSelectDirection {
-    LEFT, RIGHT, NONE;
-  }
+/**
+ * User: shatalin
+ * Date: 6/3/13
+ */
+public interface SelectionInfo {
+  Selection createSelection(EditorComponent editorComponent);
 }

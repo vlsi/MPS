@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
+import java.util.Iterator;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -26,7 +27,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import java.util.Iterator;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -162,10 +162,25 @@ public class SNodeOperations {
    */
   public static void insertChild(SNode parent, String role, SNode child, SNode anchor, boolean before) {
     if (before) {
-      parent.insertChild(role, child, anchor.getPrevSibling());
+      parent.insertChildBefore(role, child, anchor);
     } else {
-      parent.insertChild(role, child, anchor);
+      insertChild(parent, role, child, anchor);
     }
+  }
+
+  /**
+   * todo rewrite the code via snode methods
+   */
+  public static void insertChild(SNode parent, String role, SNode child, SNode anchor) {
+    if (anchor != null) {
+      parent.insertChildBefore(role, child, ((jetbrains.mps.smodel.SNode) anchor).treeNext());
+      return;
+    }
+    Iterator<? extends SNode> it = parent.getChildren().iterator();
+    parent.insertChildBefore(role, child, (it.hasNext() ?
+      it.next() :
+      null
+    ));
   }
 
   /**

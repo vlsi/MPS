@@ -18,6 +18,7 @@ package jetbrains.mps.openapi.editor;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -70,4 +71,6 @@ public interface EditorComponent {
   ActionHandler getActionHandler();
 
   CellAction getComponentAction(CellActionType type);
+
+  SelectionManager getSelectionManager();
 }

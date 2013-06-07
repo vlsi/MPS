@@ -34,6 +34,14 @@
    <int>7</int>
   </void>
   <void method="put">
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getFirstChild()</string>
+   <int>1</int>
+  </void>
+  <void method="put">
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getLastChild()</string>
+   <int>1</int>
+  </void>
+  <void method="put">
    <string>public boolean jetbrains.mps.smodel.SNode.hasConceptProperty(java.lang.String)</string>
    <null/>
   </void>
@@ -70,7 +78,7 @@
    <null/>
   </void>
   <void method="put">
-   <string>public void jetbrains.mps.smodel.SNode.insertChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string>
+   <string>public void jetbrains.mps.smodel.SNode.insertChildBefore(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string>
    <int>7</int>
   </void>
   <void method="put">

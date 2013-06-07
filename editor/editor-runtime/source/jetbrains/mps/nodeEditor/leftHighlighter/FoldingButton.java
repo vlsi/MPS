@@ -17,17 +17,19 @@ package jetbrains.mps.nodeEditor.leftHighlighter;
 
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JScrollBar;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.Graphics;
 
 /**
  * User: Alexander Shatalin
@@ -49,9 +51,9 @@ class FoldingButton {
 
   FoldingButton(@NotNull EditorCell_Collection cell, @NotNull Color background) {
     //TODO: Can we hold cell directly instad of CellInfo here?
-    myCellInfo = cell.getCellInfo();
+    myCellInfo = APICellAdapter.getCellInfo(cell);
     assert myCellInfo != null : "CellInfo unavailable for: " + cell;
-    myEditor = cell.getEditor();
+    myEditor = cell.getEditorComponent();
     myBackgroundColor = background;
   }
 
@@ -63,13 +65,13 @@ class FoldingButton {
     }
     if (cell instanceof EditorCell_Collection) {
       EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
-      myIsHidden = collectionCell.isUnderFolded();
+      myIsHidden = CellTraversalUtil.getFoldedParent(collectionCell) != null;
       if (!myIsHidden) {
         myIsFolded = collectionCell.isFolded();
-        EditorCell firstLeafCell = collectionCell.getFirstLeaf();
+        EditorCell firstLeafCell = CellTraversalUtil.getFirstLeaf(collectionCell);
         myY1 = firstLeafCell != null ? firstLeafCell.getBaseline() - HEIGHT : collectionCell.getBaseline() - HEIGHT;
-        EditorCell lastLeafCell = collectionCell.getLastLeaf();
-        myY2 = lastLeafCell != null ? collectionCell.getLastLeaf().getBaseline() : collectionCell.getBaseline();
+        EditorCell lastLeafCell = CellTraversalUtil.getLastLeaf(collectionCell);
+        myY2 = lastLeafCell != null ? CellTraversalUtil.getLastLeaf(collectionCell).getBaseline() : collectionCell.getBaseline();
         if (!myIsFolded && myY2 - myY1 < 2 * HEIGHT) {
           // to avoid overlapping folding buttons
           myIsHidden = true;
@@ -82,8 +84,8 @@ class FoldingButton {
 
   private Color getBorderColor() {
     return myMouseOver
-      ? EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTED_TEARLINE_COLOR)
-      : EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR);
+        ? EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTED_TEARLINE_COLOR)
+        : EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR);
   }
 
   void paintFeedback(Graphics g) {
@@ -131,19 +133,19 @@ class FoldingButton {
   }
 
   private EditorCell getCell() {
-    return myCellInfo.findCell(myEditor);
+    return myCellInfo.findCell((jetbrains.mps.nodeEditor.EditorComponent) myEditor);
   }
 
   void activate(int x, int y) {
     EditorCell cell = getCell();
     if (cell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) cell;
-      if (collection.isUnderFolded()) return;
+      if (CellTraversalUtil.getFoldedParent(collection) != null) return;
       if (collection.isFolded()) {
         collection.unfold();
       } else {
         if (isOnBottomButton(y)) {
-          JScrollBar verticalScrollBar = myEditor.getVerticalScrollBar();
+          JScrollBar verticalScrollBar = ((jetbrains.mps.nodeEditor.EditorComponent) myEditor).getVerticalScrollBar();
           verticalScrollBar.setValue(Math.max(verticalScrollBar.getValue() - (myY2 - myY1 - HEIGHT), 0));
         }
         collection.fold();

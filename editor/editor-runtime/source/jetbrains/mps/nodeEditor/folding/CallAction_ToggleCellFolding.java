@@ -17,9 +17,10 @@ package jetbrains.mps.nodeEditor.folding;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import org.jetbrains.mps.util.Condition;
 
 /**
@@ -51,10 +52,10 @@ public class CallAction_ToggleCellFolding extends AbstractCellAction {
     if (editorCell == null) {
       return null;
     }
-    return editorCell.findParent(new Condition<EditorCell_Collection>() {
+    return CellFinderUtil.findParent(editorCell, new Condition<EditorCell_Collection>() {
       @Override
       public boolean met(EditorCell_Collection object) {
-        return object.isFolded() || object.canBePossiblyFolded();
+        return object.isFolded() || object.isFoldable();
       }
     });
   }

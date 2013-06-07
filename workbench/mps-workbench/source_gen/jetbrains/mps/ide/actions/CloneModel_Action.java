@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel.CloneModelDialog;
+import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -81,10 +81,10 @@ public class CloneModel_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<CloneModelDialog> dialog = new Wrappers._T<CloneModelDialog>();
+      final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          dialog.value = new CloneModelDialog(((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
+          dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")));
         }
       });
       dialog.value.show();

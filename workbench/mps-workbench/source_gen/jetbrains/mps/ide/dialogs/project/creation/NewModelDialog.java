@@ -12,6 +12,10 @@ import javax.swing.JComboBox;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.awt.HeadlessException;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Generator;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import java.awt.Dimension;
 import com.intellij.uiDesigner.core.GridConstraints;
@@ -26,14 +30,15 @@ import javax.swing.JList;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import java.awt.Insets;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import jetbrains.mps.smodel.SModelStereotype;
+import java.util.List;
+import java.util.LinkedList;
+import java.util.Arrays;
 import com.intellij.ui.ColoredListCellRenderer;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import java.util.List;
-import java.util.LinkedList;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -42,12 +47,17 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import java.util.Iterator;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.SModuleOperations;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.LanguageAspect;
 import javax.lang.model.SourceVersion;
 import org.jetbrains.annotations.Nullable;
@@ -61,6 +71,7 @@ public class NewModelDialog extends DialogWrapper {
   private JComboBox myModelStereotype = new JComboBox();
   private JComboBox myModelRoots = new JComboBox();
   private JComboBox myModelStorageFormat = new JComboBox();
+  private SModel myClone;
   private SModel myResult;
   private String myNamespace;
 
@@ -83,20 +94,42 @@ public class NewModelDialog extends DialogWrapper {
     init();
   }
 
+  public NewModelDialog(Project project, SModel cloneModel) {
+    this(project, (AbstractModule) cloneModel.getModule(), getNamespace(cloneModel), SModelStereotype.getStereotype(cloneModel), false);
+    myClone = cloneModel;
+    setTitle("Clone Model " + SNodeOperations.getModelLongName(myClone));
+    myModelName.setText(myClone.getModelName() + "_clone");
+  }
+
+  public static String getNamespace(SModel model) {
+    SModule module = model.getModule();
+    if (module instanceof Generator) {
+      Generator gen = (Generator) module;
+      String name = gen.getName();
+      String genNamespace = gen.getSourceLanguage().getModuleName() + ".generator";
+
+      if ((name == null || name.length() == 0)) {
+        return genNamespace;
+      }
+      return genNamespace + "." + name;
+    }
+    return module.getModuleName();
+  }
+
   public SModel getResult() {
     return myResult;
   }
 
   private void initContentPane() {
-    JPanel mainPanel = new JPanel(new GridLayoutManager(8, 1));
+    JPanel mainPanel = new JPanel(new GridLayoutManager(6, 1));
     mainPanel.setPreferredSize(new Dimension(200, 50));
 
     GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
 
     mainPanel.add(new JLabel("Model root:"), constraints);
+
     constraints.setRow(constraints.getRow() + 1);
     mainPanel.add(myModelRoots, constraints);
-    constraints.setRow(constraints.getRow() + 1);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (ModelRoot root : myModule.getModelRoots()) {
       if (root.canCreateModels()) {
@@ -133,10 +166,13 @@ public class NewModelDialog extends DialogWrapper {
       myNamespace + "."
     ));
 
+    constraints.setRow(constraints.getRow() + 1);
     mainPanel.add(new JLabel("Model name:"), constraints);
-    constraints.setRow(constraints.getRow() + 1);
-    mainPanel.add(myModelName, constraints);
-    constraints.setRow(constraints.getRow() + 1);
+
+    JPanel nameAndStereotype = new JPanel(new GridLayoutManager(1, 3, new Insets(0, 0, 0, 0), -1, -1));
+    GridConstraints nameConstraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+
+    nameAndStereotype.add(myModelName, nameConstraints);
     myModelName.addKeyListener(new KeyAdapter() {
       @Override
       public void keyReleased(KeyEvent event) {
@@ -144,10 +180,17 @@ public class NewModelDialog extends DialogWrapper {
       }
     });
 
-    mainPanel.add(new JLabel("Stereotype:"), constraints);
-    constraints.setRow(constraints.getRow() + 1);
+    final JLabel atSign = new JLabel();
+    nameConstraints.setColumn(nameConstraints.getColumn() + 1);
+    nameConstraints.setHSizePolicy(GridConstraints.SIZEPOLICY_FIXED);
+    nameAndStereotype.add(atSign, nameConstraints);
+
+    List<String> stereotypes = new LinkedList<String>(Arrays.asList(SModelStereotype.values));
+    if (!(myModule instanceof Generator)) {
+      stereotypes.remove(SModelStereotype.GENERATOR);
+    }
     myModelStereotype.setEditable(true);
-    myModelStereotype.setModel(new DefaultComboBoxModel(SModelStereotype.values));
+    myModelStereotype.setModel(new DefaultComboBoxModel(stereotypes.toArray(new String[stereotypes.size()])));
     myModelStereotype.addKeyListener(new KeyAdapter() {
       @Override
       public void keyReleased(KeyEvent event) {
@@ -158,9 +201,19 @@ public class NewModelDialog extends DialogWrapper {
       @Override
       public void itemStateChanged(ItemEvent p0) {
         check();
+        atSign.setText((myModelStereotype.getSelectedItem().equals(SModelStereotype.NONE) ?
+          "" :
+          "@"
+        ));
       }
     });
-    mainPanel.add(myModelStereotype, constraints);
+
+    nameConstraints.setColumn(nameConstraints.getColumn() + 1);
+    nameAndStereotype.add(myModelStereotype, nameConstraints);
+
+    constraints.setRow(constraints.getRow() + 1);
+    mainPanel.add(nameAndStereotype, constraints);
+
     constraints.setRow(constraints.getRow() + 1);
     mainPanel.add(new JLabel("Storage format:"), constraints);
     constraints.setRow(constraints.getRow() + 1);
@@ -174,8 +227,9 @@ public class NewModelDialog extends DialogWrapper {
       }
     });
     myModelStorageFormat.setSelectedItem(PersistenceFacade.getInstance().getDefaultModelFactory());
+
+    new DefaultComboBoxModel(getStorageFormats());
     mainPanel.add(myModelStorageFormat, constraints);
-    constraints.setRow(constraints.getRow() + 1);
 
     myContentPane.add(mainPanel, BorderLayout.CENTER);
   }
@@ -229,7 +283,7 @@ public class NewModelDialog extends DialogWrapper {
       });
 
       for (ModelRoot modelRoot : myModule.getModelRoots()) {
-        if (modelRoot instanceof FileBasedModelRoot && ((FileBasedModelRoot) modelRoot).getContentRoot().equals((((FileBasedModelRoot) selectedModelRoot).getContentRoot()))) {
+        if (modelRoot instanceof FileBasedModelRoot && ((FileBasedModelRoot) modelRoot).getContentRoot().equals(selectedModelRoot.getContentRoot())) {
           myModelRoots.addItem(modelRoot);
           myModelRoots.setSelectedItem(modelRoot);
         }
@@ -241,10 +295,32 @@ public class NewModelDialog extends DialogWrapper {
       public SModel compute() {
         String fqName = getFqName();
         ModelRoot mr = (ModelRoot) myModelRoots.getSelectedItem();
+        EditableSModel result;
         if (mr instanceof DefaultModelRoot) {
-          return SModuleOperations.createModelWithAdjustments(fqName, mr, (ModelFactory) myModelStorageFormat.getSelectedItem());
+          result = SModuleOperations.createModelWithAdjustments(fqName, mr, (ModelFactory) myModelStorageFormat.getSelectedItem());
+        } else {
+          result = SModuleOperations.createModelWithAdjustments(fqName, mr);
         }
-        return SModuleOperations.createModelWithAdjustments(fqName, mr);
+        if (myClone == null) {
+          return result;
+        }
+        for (SModelReference ref : SModelOperations.getImportedModelUIDs(myClone)) {
+          ((SModelInternal) result).addModelImport(ref, false);
+        }
+        for (SModuleReference ref : ((SModelInternal) myClone).importedLanguages()) {
+          ((SModelInternal) result).addLanguage(ref);
+        }
+        for (SModuleReference ref : ((SModelInternal) myClone).importedDevkits()) {
+          ((SModelInternal) result).addDevKit(ref);
+        }
+        for (SModuleReference ref : ((SModelInternal) myClone).engagedOnGenerationLanguages()) {
+          ((SModelInternal) result).addEngagedOnGenerationLanguage(ref);
+        }
+        CopyUtil.copyModelContent(myClone, result);
+        result.setChanged(true);
+        result.save();
+
+        return result;
       }
     }, myProject);
 
@@ -288,7 +364,6 @@ public class NewModelDialog extends DialogWrapper {
       return false;
     }
 
-    SModelFqName modelUID = new SModelFqName(modelName, myModelStereotype.getSelectedItem().toString());
     if (modelName.lastIndexOf(".") == modelName.length()) {
       setErrorText("Empty model short name isn't allowed");
       return false;
