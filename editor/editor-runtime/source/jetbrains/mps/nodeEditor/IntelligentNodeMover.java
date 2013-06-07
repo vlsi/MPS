@@ -183,12 +183,16 @@ class IntelligentNodeMover {
   }
 
   private boolean canPasteToCell(EditorCell levelCell) {
-    return levelCell != null && levelCell.isBig() && levelCell.getSNode() != null && haveSimilarLink(levelCell.getSNode()) &&
+    if (levelCell == null) {
+      return false;
+    }
+    final SNode levelNode = levelCell.getSNode();
+    return levelCell.isBig() && levelNode != null && haveSimilarLink(levelNode) &&
         CellFinderUtil.findChildByCondition(levelCell,
             new Condition<EditorCell>() {
               @Override
               public boolean met(EditorCell cell) {
-                return !cell.isReferenceCell() && cell instanceof EditorCell_Collection && myRole.equals(cell.getRole());
+                return !cell.isReferenceCell() && cell instanceof EditorCell_Collection && myRole.equals(cell.getRole()) && cell.getSNode().equals(levelNode);
               }
             }, forward(), true) != null;
   }
