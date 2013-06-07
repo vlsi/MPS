@@ -20,8 +20,8 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
@@ -80,19 +80,25 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
 
   private String[] myContentTitles;
   private boolean myEditable;
+  private boolean myOldRegistered;
+  private boolean myNewRegistered;
 
 
   public ModelDifferenceDialog(final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
     super(diffRequest.getProject());
     myProject = diffRequest.getProject();
-    myEditable = newModel.getModelDescriptor() instanceof EditableSModel && SModelRepository.getInstance().getModelDescriptor(newModel.getReference()) == newModel.getModelDescriptor();
+    myOldRegistered = SModelRepository.getInstance().getModelDescriptor(oldModel.getReference()) == oldModel.getModelDescriptor();
+    myNewRegistered = SModelRepository.getInstance().getModelDescriptor(newModel.getReference()) == newModel.getModelDescriptor();
+    myEditable = newModel.getModelDescriptor() instanceof EditableSModel && myNewRegistered;
     final jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        if (!(myEditable)) {
+        if (!(myNewRegistered)) {
           DiffTemporaryModule.createModuleAndRegister(newModel, "new", p, false);
         }
-        DiffTemporaryModule.createModuleAndRegister(oldModel, "old", p, false);
+        if (!(myOldRegistered)) {
+          DiffTemporaryModule.createModuleAndRegister(oldModel, "old", p, false);
+        }
       }
     });
     myContentTitles = diffRequest.getContentTitles();
@@ -130,8 +136,10 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
               DiffTemporaryModule.unregisterModel(myMetadataChangeSet.getOldModel().getModelDescriptor(), p);
               DiffTemporaryModule.unregisterModel(myMetadataChangeSet.getNewModel().getModelDescriptor(), p);
             }
-            DiffTemporaryModule.unregisterModel(myChangeSet.getOldModel().getModelDescriptor(), p);
-            if (!(myEditable)) {
+            if (!(myOldRegistered)) {
+              DiffTemporaryModule.unregisterModel(myChangeSet.getOldModel().getModelDescriptor(), p);
+            }
+            if (!(myNewRegistered)) {
               DiffTemporaryModule.unregisterModel(myChangeSet.getNewModel().getModelDescriptor(), p);
             }
           }
