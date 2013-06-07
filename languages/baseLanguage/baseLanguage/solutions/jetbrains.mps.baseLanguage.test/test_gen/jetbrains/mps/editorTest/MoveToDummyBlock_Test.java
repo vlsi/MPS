@@ -27,8 +27,9 @@ public class MoveToDummyBlock_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("7465696304914840711", "");
+      final Editor editor = TestBody.this.initEditor("7465696304914840711", "1178999204729708747");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
     }
   }
 }
