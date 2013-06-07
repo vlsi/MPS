@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-efhsfb5nz07m4fdf9hv1wz6d7m18wnt">
+<dependencies version="2" modelHash="269to0zk8nsyxs69t3nyr6ai66po4kc">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="2op8y9fig1r9t602jduaxchhejyx723" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="2tkar8wwxyebdmgxtp5o764ljq3vhpt" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="4fpv2xr3ihc6ydyum9jowto74hclgxr" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-a5paiteqlzxfcmwi6m4jtivpvepljjm" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <common hash="-8whjl9gg6vorapht1hqmpnex4xvb4r2">
@@ -68,7 +68,7 @@
   <source id="1233920501193" name="IndentBufferOperation" hash="-byf3uu8kvfk7v6y89um8m6kag0q851z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1233921373471" name="LanguageTextGenDeclaration" hash="-6e29lcxz5yzfn741sm01ynikcoh9vhw">
+  <source id="1233921373471" name="LanguageTextGenDeclaration" hash="5irdnrl9as1f1byry6pnr7z90et6qhw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1233922353619" name="OperationDeclaration" hash="-2fuunr8a5p35jqkaqfec4z5k1tt0zy">

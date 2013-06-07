@@ -22,10 +22,10 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.testbench.TestOutputFilter;
 import jetbrains.mps.util.PathManager;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.io.File;
@@ -53,8 +53,8 @@ public class DependenciesViewerTest extends BaseMPSTest {
         res[0] = true;
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            DefaultSModelDescriptor testModel = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
-            DefaultSModelDescriptor targetModel = (DefaultSModelDescriptor) TestMain.getModel(project, TARGET_MODEL);
+            SModel testModel = TestMain.getModel(project, TEST_MODEL);
+            SModel targetModel = TestMain.getModel(project, TARGET_MODEL);
             assertNotNull("test model is null", testModel);
             assertNotNull("target model is null", targetModel);
 

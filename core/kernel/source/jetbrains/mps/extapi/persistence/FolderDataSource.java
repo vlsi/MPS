@@ -61,10 +61,11 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     return file.getName();
   }
 
-  protected IFile getFile(String streamName) {
+  public IFile getFile(String streamName) {
     return myFolder.getDescendant(streamName);
   }
 
+  @NotNull
   public IFile getFolder() {
     return myFolder;
   }
@@ -74,6 +75,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     return "FolderDataSource(" + myFolder.toString() + ")";
   }
 
+  @Override
   public boolean isReadOnly() {
     return FileSystem.getInstance().isPackaged(myFolder);
   }
@@ -111,6 +113,15 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
       throw new IOException("stream is not available");
     }
     return file.openOutputStream();
+  }
+
+  @Override
+  public boolean delete(String name) {
+    IFile file = getFile(name);
+    if (file == null) {
+      return false;
+    }
+    return file.delete();
   }
 
   @Override

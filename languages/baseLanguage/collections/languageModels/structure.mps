@@ -537,7 +537,7 @@
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1562299158921287427" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="hasInitSize" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278834175" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278834174" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278834174" nodeInfo="ig">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tp2z.1262430001741497996" resolveInfo="hasInitSize" />
       </node>
     </node>
@@ -1506,7 +1506,7 @@
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1562299158921240591" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="hasInitSize" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278847766" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278847765" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278847765" nodeInfo="ig">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tp2z.1262430001741498238" resolveInfo="hasInitSize" />
       </node>
     </node>
@@ -1536,7 +1536,7 @@
       <property name="name" nameId="tpck.1169194664001" value="availableFor" />
       <link role="targetType" roleId="tpce.1105736621938" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3044950653914717032" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="3044950653914717031" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="3044950653914717031" nodeInfo="ig">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tp2z.3044950653914717035" resolveInfo="getAvailableFor" />
       </node>
     </node>

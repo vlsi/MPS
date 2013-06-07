@@ -36,46 +36,61 @@ public interface ModelFactory {
    * Instantiates a model on a given data source. Options can be used to pass additional parameters
    * like stream encoding (usually, the default is utf-8), package name, containing module reference
    * or module relative path of the source.
-   * Returns null in case of problems with the data source.
    *
-   * @return The loaded model or null, if the data source is not supported
+   * @return The loaded model
+   * @throws UnsupportedDataSourceException if the data source is not supported
    */
-  SModel load(@NotNull StreamDataSource dataSource, @NotNull Map<String, String> options);
+  @NotNull
+  SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options);
 
   /**
    * Creates a new empty model.
-   * Throws an exception in case of problems with the data source.
-   * todo Implement and document error behavior
-   * todo throw an exception when problems get discovered
    *
    * @param modelName The name should be unique within the module
    * @return The created model or null, if the data source is not supported
+   * @throws UnsupportedDataSourceException if the data source is not supported
    */
-  SModel create(String modelName, StreamDataSource dataSource);
+  @NotNull
+  SModel create(String modelName, DataSource dataSource);
 
   /**
    * Indicates, whether the supplied data source can be used to hold models created by this factory.
    */
-  boolean canCreate(String modelName, StreamDataSource dataSource);
-
+  boolean canCreate(String modelName, DataSource dataSource);
 
   /**
-   *  Checks if the source content is outdated and needs to be upgraded.
+   * Checks if the source content is outdated and needs to be upgraded.
+   *
+   * @throws UnsupportedDataSourceException if the data source is not supported
    */
-  boolean needsUpgrade(StreamDataSource dataSource) throws IOException;
+  boolean needsUpgrade(DataSource dataSource) throws IOException;
 
   /**
-   *  Loads the model content, and saves it back in the up-to-date format.
+   * Loads the model content, and saves it back in the up-to-date format.
+   *
+   * @throws UnsupportedDataSourceException if the data source is not supported
    */
-  void upgrade(StreamDataSource dataSource) throws IOException;
+  void upgrade(DataSource dataSource) throws IOException;
 
   /**
-   *  Saves the model in the factory-specific format (including conversion when needed).
+   * Saves the model in the factory-specific format (including conversion when needed).
+   *
+   * @throws UnsupportedDataSourceException if the data source is not supported
    */
-  void save(SModel model, StreamDataSource dataSource) throws ModelSaveException, IOException;
+  void save(SModel model, DataSource dataSource) throws ModelSaveException, IOException;
 
   /**
-   *  returns true if plain text is not enough to represent stored data.
+   * returns true if plain text is not enough to represent stored data.
    */
   boolean isBinary();
+
+  /**
+   * returns the file extension this factory is registered on
+   */
+  String getFileExtension();
+
+  /**
+   * User-readable title of the storage format.
+   */
+  String getFormatTitle();
 }

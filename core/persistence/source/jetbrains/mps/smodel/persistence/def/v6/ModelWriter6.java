@@ -26,9 +26,10 @@ import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
+import java.util.Map;
+
 public class ModelWriter6 implements IModelWriter {
   private VersionUtil myHelper;
-  private SModel myModel;
 
   protected int getModelPersistenceVersion() {
     return 6;
@@ -36,7 +37,6 @@ public class ModelWriter6 implements IModelWriter {
 
   @Override
   public Document saveModel(SModel sourceModel) {
-    myModel = sourceModel;
     myHelper = new VersionUtil(sourceModel);
 
     Element rootElement = new Element(ModelPersistence.MODEL);
@@ -90,6 +90,11 @@ public class ModelWriter6 implements IModelWriter {
     }
 
     return new Document(rootElement);
+  }
+
+  @Override
+  public Map<String, Document> saveModelAsMultiStream(SModel sourceModel) {
+    throw new UnsupportedOperationException();
   }
 
   protected void saveRootStubs(Element parent, SModel model) {

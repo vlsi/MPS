@@ -244,7 +244,7 @@ import java.util.Set;
           computeTypes(initialNode, node);
           type = getType(initialNode);
           if (type == null && node != initialNode) {
-            TypeSystemComponent.LOG.error("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new jetbrains.mps.smodel.SNodePointer(initialNode));
+            TypeSystemComponent.LOG.debug("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new jetbrains.mps.smodel.SNodePointer(initialNode));
           }
           return type;
         }

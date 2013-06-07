@@ -79,6 +79,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.modelRootContributor className="jetbrains.mps.idea.sourceStubs.JavaSourceModelRootContributor"/>
+    <mps.renameRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MethodRenameContributor"/>
     <mps.psiFactory implementation="jetbrains.mps.idea.java.psi.impl.JavaMPSPsiNodeFactory"/>
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.fastFind.ClassStubPsiMapper"/>
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.psiStubs.Mapper"/>
@@ -91,7 +92,7 @@
     <java.elementFinder implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaClassFinder"/>
     <java.elementFinder implementation="jetbrains.mps.idea.java.psi.impl.MPSPackageFinder"/>
     <java.shortNamesCache implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaShortNamesCache"/>
-    <renameHandler implementation="jetbrains.mps.idea.java.refactoring.MPSMethodRenameRefactoringHandler" order="before mps-core"/>
+
     <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.usages.MPSJavaDirectInheritorsSearcher"/>
      <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSFQNameJavaClassIndex"/>
@@ -108,6 +109,7 @@
 
   <extensions defaultExtensionNs="jetbrains.mps">
     <nodeStructureViewProvider implementation="jetbrains.mps.idea.java.psi.structureView.MPSStructureViewFactory"/>
+
     <!--<editorOpenHandler implementation="jetbrains.mps.idea.core.editor.IdeaMPSEditorOpenHandler" id="default"/>-->
   </extensions>
 

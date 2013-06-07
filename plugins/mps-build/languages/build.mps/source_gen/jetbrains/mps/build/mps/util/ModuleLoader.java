@@ -7,11 +7,11 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.Context;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 public class ModuleLoader {
@@ -22,6 +22,14 @@ public class ModuleLoader {
       Context.defaultContext(genContext) :
       Context.defaultContext()
     )});
+    if (moduleFilePath == null) {
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, "name") + ": file doesn't exist (" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(module, "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{(genContext != null ?
+        Context.defaultContext(genContext) :
+        Context.defaultContext()
+      )}) + ")", originalModule, null);
+      return new ModuleChecker(module, originalModule, visible, pathConverter, genContext, null, null, reporter);
+    }
+
     try {
       moduleFilePath = new File(moduleFilePath).getCanonicalPath();
     } catch (IOException ex) {

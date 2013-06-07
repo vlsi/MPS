@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog" file="NewDevKitDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Dimension" />
-    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
@@ -27,7 +26,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JLabel" />
-    <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JTextField" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.common.PathField" />
@@ -42,7 +40,7 @@
     <classNode dependClassName="org.jdesktop.beansbinding.BeanProperty" />
     <classNode dependClassName="org.jdesktop.beansbinding.Bindings" />
     <classNode dependClassName="org.jdesktop.beansbinding.Property" />
-    <classNode extendsClassName="javax.swing.JComponent" />
+    <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
 </dependenciesRoot>
 

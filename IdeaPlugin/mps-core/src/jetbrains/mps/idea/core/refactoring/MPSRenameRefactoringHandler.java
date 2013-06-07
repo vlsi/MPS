@@ -57,9 +57,25 @@ public class MPSRenameRefactoringHandler implements RenameHandler {
 
     final SNode node = (SNode) dataContext.getData(MPSCommonDataKeys.NODE.getName());
 
-    modelAccess.executeCommandInEDT(new Runnable() {
+    modelAccess.runReadInEDT(new Runnable() {
       @Override
       public void run() {
+
+        if (node.getModel() == null) {
+          return;
+        }
+
+        // trying to apply sequentially, the first one wins and we go no further
+        for (RenameRefactoringContributorEP ep : RenameRefactoringContributorEP.EP_NAME.getExtensions()) {
+          RenameRefactoringContributor contributor = ep.getContribitor();
+          if (contributor.isAvailableFor(node)) {
+            contributor.invoke(project, node);
+            return;
+          }
+        }
+
+        // default rename logic: call jetbrains.mps.lang.core.refactorings.Rename refactoring
+        // and update psi references to the renamed node if any
 
         String oldName = node.getName();
 
@@ -79,7 +95,6 @@ public class MPSRenameRefactoringHandler implements RenameHandler {
             Arrays.asList(newName),
             node,
             mpsProject));
-
       }
     });
   }

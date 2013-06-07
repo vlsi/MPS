@@ -672,12 +672,28 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_8836955480108787790(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     Object idx = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(_context.getNode(), "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(_context.getNode()).getModule()});
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "tuple", true)), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true)).getElement((Integer) idx);
+    Integer index = (Integer) idx;
+    List<SNode> componentType = SLinkOperations.getTargets(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "tuple", true)), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true);
+    SNode result = null;
+    if (index >= ListSequence.fromList(componentType).count()) {
+      _context.showErrorMessage(_context.getNode(), "out of bounds access to indexed tuple");
+    } else {
+      result = ListSequence.fromList(componentType).getElement(index);
+    }
+    return result;
   }
 
   public static SNode sourceNodeQuery_8836955480108787840(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     Object idx = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(_context.getNode(), "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(_context.getNode()).getModule()});
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "tuple", true)), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true)).getElement((Integer) idx);
+    Integer index = (Integer) idx;
+    List<SNode> componentType = SLinkOperations.getTargets(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "tuple", true)), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true);
+    SNode result = null;
+    if (index >= ListSequence.fromList(componentType).count()) {
+      _context.showErrorMessage(_context.getNode(), "out of bounds access to indexed tuple");
+    } else {
+      result = ListSequence.fromList(componentType).getElement(index);
+    }
+    return result;
   }
 
   public static SNode sourceNodeQuery_8836955480108787898(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -686,7 +702,15 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_8836955480108788054(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     Object idx = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(_context.getNode(), "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(_context.getNode()).getModule()});
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "tuple", true)), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true)).getElement((Integer) idx);
+    Integer index = (Integer) idx;
+    List<SNode> componentType = SLinkOperations.getTargets(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "tuple", true)), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true);
+    SNode result = null;
+    if (index >= ListSequence.fromList(componentType).count()) {
+      _context.showErrorMessage(_context.getNode(), "out of bounds access to indexed tuple");
+    } else {
+      result = ListSequence.fromList(componentType).getElement(index);
+    }
+    return result;
   }
 
   public static SNode sourceNodeQuery_8836955480108788005(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

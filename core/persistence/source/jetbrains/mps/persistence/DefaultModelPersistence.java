@@ -21,18 +21,20 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelHeader;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.xml.sax.InputSource;
 
 import java.io.IOException;
@@ -42,11 +44,13 @@ import java.io.Reader;
 import java.util.Map;
 
 /**
- * evgeny, 11/9/12
+ * Factory for models stored in .mps files.
  */
 public class DefaultModelPersistence implements CoreComponent, ModelFactory {
-
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultModelPersistence.class));
+
+  DefaultModelPersistence() {
+  }
 
   @Override
   public void init() {
@@ -58,11 +62,17 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL, null);
   }
 
+  @NotNull
   @Override
-  public SModel load(@NotNull StreamDataSource dataSource, @NotNull Map<String, String> options) {
+  public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
+    if (!(dataSource instanceof StreamDataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    StreamDataSource source = (StreamDataSource) dataSource;
     SModelHeader header;
     try {
-      header = ModelPersistence.loadDescriptor(dataSource);
+      header = ModelPersistence.loadDescriptor(source);
     } catch (ModelReadException ignored) {
       LOG.error("Can't read model: ", ignored);
       header = new SModelHeader();
@@ -74,25 +84,34 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     modelReference = PersistenceFacade.getInstance().createModelReference(header.getUID());
 
     LOG.debug("Getting model " + modelReference + " from " + dataSource.getLocation());
-    return new DefaultSModelDescriptor(dataSource, modelReference, header);
+    return new DefaultSModelDescriptor(source, modelReference, header);
+  }
+
+  @NotNull
+  @Override
+  public SModel create(String modelName, DataSource dataSource) {
+    if (!(dataSource instanceof StreamDataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
+    return new DefaultSModelDescriptor((StreamDataSource) dataSource, ref, new SModelHeader());
   }
 
   @Override
-  public SModel create(String modelName, StreamDataSource dataSource) {
-    SModelReference ref = new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate());
-    return new DefaultSModelDescriptor(dataSource, ref, new SModelHeader());
+  public boolean canCreate(String modelName, DataSource dataSource) {
+    return dataSource instanceof StreamDataSource;
   }
 
   @Override
-  public boolean canCreate(String modelName, StreamDataSource dataSource) {
-    return true;
-  }
+  public boolean needsUpgrade(DataSource dataSource) throws IOException {
+    if (!(dataSource instanceof StreamDataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
 
-  @Override
-  public boolean needsUpgrade(StreamDataSource dataSource) throws IOException {
     InputStream in = null;
     try {
-      in = dataSource.openInputStream();
+      in = ((StreamDataSource) dataSource).openInputStream();
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
 
       SModelHeader header = ModelPersistence.loadDescriptor(source);
@@ -105,23 +124,55 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   }
 
   @Override
-  public void upgrade(StreamDataSource dataSource) throws IOException {
+  public void upgrade(DataSource dataSource) throws IOException {
+    if (!(dataSource instanceof StreamDataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    StreamDataSource source = (StreamDataSource) dataSource;
     try {
-      DefaultSModel model = ModelPersistence.readModel(dataSource, false);
-      ModelPersistence.saveModel(model, dataSource, ModelPersistence.LAST_VERSION);
+      DefaultSModel model = ModelPersistence.readModel(source, false);
+      ModelPersistence.saveModel(model, source, ModelPersistence.LAST_VERSION);
     } catch (ModelReadException ex) {
       throw new IOException(ex.getMessage(), ex);
     }
   }
 
   @Override
-  public void save(SModel model, StreamDataSource dataSource) throws IOException {
-    ModelPersistence.saveModel(((SModelBase)model).getSModelInternal(), dataSource);
+  public void save(SModel model, DataSource dataSource) throws IOException {
+    if (!(dataSource instanceof StreamDataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    ModelPersistence.saveModel(((SModelBase) model).getSModelInternal(), (StreamDataSource) dataSource);
   }
 
   @Override
   public boolean isBinary() {
     return false;
+  }
+
+  @Override
+  public String getFileExtension() {
+    return MPSExtentions.MODEL;
+  }
+
+  @Override
+  public String getFormatTitle() {
+    return "Universal XML-based format";
+  }
+
+  public static Map<String, String> getDigestMap(@NotNull MultiStreamDataSource source, String streamName) {
+    InputStream is = null;
+    try {
+      is = source.openInputStream(streamName);
+      return getDigestMap(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET));
+    } catch (IOException e) {
+      /* ignore */
+    } finally {
+      FileUtil.closeFileSafe(is);
+    }
+    return null;
   }
 
   public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {

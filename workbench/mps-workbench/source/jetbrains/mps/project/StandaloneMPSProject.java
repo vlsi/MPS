@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project;
 
+import com.intellij.openapi.components.StoragePathMacros;
+import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -55,10 +57,8 @@ import java.util.*;
 @State(
     name = "MPSProject",
     storages = {
-        @Storage(
-            id = "other",
-            file = "$PROJECT_FILE$"
-        )
+        @Storage(file = StoragePathMacros.PROJECT_FILE),
+        @Storage(file = StoragePathMacros.PROJECT_CONFIG_DIR + "/modules.xml", scheme = StorageScheme.DIRECTORY_BASED)
     },
     reloadable = false
 )

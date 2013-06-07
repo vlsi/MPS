@@ -567,7 +567,7 @@ public class SModel implements SModelData {
 
   public void addLanguage(SModuleReference ref) {
     ModelChange.assertLegalChange(getModelDescriptor());
-    if (SModelOperations.hasLanguage(getModelDescriptor(), ref)) return;
+    if (importedLanguages().contains(ref)) return;
 
     if (ref.getModuleId() == null) {
       LOG.warn("Attempt to add language reference to a language without id in model " + getSModelFqName() + ". Language = " + ref);

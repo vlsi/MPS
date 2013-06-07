@@ -15,10 +15,9 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.samples.generator_demo.demoLang5.generator.util.TextUtil;
 
 public class QueriesGenerated {
@@ -119,12 +118,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5273477653284500112(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Document")).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode it) {
-        return SNodeOperations.getDescendants(it, "jetbrains.mps.sampleXML.structure.Element", false, new String[]{});
-      }
-    });
-    // <node> 
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
   }
 
   public static Iterable sourceNodesQuery_1228681296814(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -135,10 +129,10 @@ public class QueriesGenerated {
     // find all text nodes 
     List<SNode> texts = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.sampleXML.structure.Text");
     for (SNode text : ListSequence.fromList(texts)) {
-      // replace with 'label' element 
+      // replace with a 'label' element 
       SNode label = SNodeOperations.replaceWithNewChild(text, "jetbrains.mps.sampleXML.structure.Element");
       SPropertyOperations.set(label, "name", "label");
-      // Add text attribute to the 'label' element 
+      // Add a text attribute to the 'label' element 
       SNode attribute = SLinkOperations.addNewChild(label, "attribute", "jetbrains.mps.sampleXML.structure.Attribute");
       SPropertyOperations.set(attribute, "name", "text");
       SPropertyOperations.set(attribute, "value", SPropertyOperations.getString(text, "text"));

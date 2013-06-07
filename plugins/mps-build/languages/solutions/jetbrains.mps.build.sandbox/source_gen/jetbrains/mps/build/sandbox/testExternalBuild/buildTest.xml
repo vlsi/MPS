@@ -54,7 +54,6 @@
     <ant antfile="../../../../build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="../../../../build/mpsDates.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
@@ -67,7 +66,6 @@
     <ant antfile="../../../../build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="../../../../build/mpsDeprecatedBuildlanguage.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mps.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
@@ -169,10 +167,6 @@
       <target name="generate" />
       <target name="assemble" />
     </ant>
-    <ant antfile="../../../../build/mpsDates.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="generate" />
-      <target name="assemble" />
-    </ant>
     <ant antfile="../../../../build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
@@ -218,10 +212,6 @@
       <target name="assemble" />
     </ant>
     <ant antfile="../../../../build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="generate" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="../../../../build/mpsDeprecatedBuildlanguage.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>
