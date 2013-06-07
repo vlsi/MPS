@@ -6,15 +6,32 @@ import java.util.Set;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.tool.builder.util.MapPathMacrosProvider;
+import jetbrains.mps.library.contributor.LibraryContributor;
 import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.SimpleLayout;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
+import jetbrains.mps.tool.builder.util.MpsPlatform;
+import jetbrains.mps.MPSCore;
+import jetbrains.mps.generator.GenerationSettingsProvider;
+import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
+import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.project.PathMacros;
+import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.smodel.ModelAccess;
 import java.io.File;
+import jetbrains.mps.tool.builder.FileMPSProject;
 
 public class MpsEnvironment implements Environment {
   private final Set<Project> openedProjects = SetSequence.fromSet(new HashSet<Project>());
   private final EnvironmentConfig config;
+
+  private final MapPathMacrosProvider macroProvider;
+  private final LibraryContributor libContributor;
 
 
   public MpsEnvironment(EnvironmentConfig config) {
@@ -25,19 +42,36 @@ public class MpsEnvironment implements Environment {
 
     // todo: plugins, libs 
 
-    // from CheckProjectStructureHelper 
-    BasicConfigurator.configure();
+    BasicConfigurator.configure(new ConsoleAppender(new SimpleLayout()));
     Logger.getRootLogger().setLevel(Level.INFO);
-    // IdeMain.setTestMode(TestMode.CORE_TEST) 
-    // TestMain.configureMPS(new String[0]) 
-    for (String macro : MapSequence.fromMap(config.macros()).keySet()) {
-      // todo: Testbench.setMacro(macro, macros[macro].getPath()) 
+
+    MpsPlatform.init();
+    // todo: =( 
+    MPSCore.getInstance().setTestMode();
+    GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
+
+    try {
+      EnvironmentUtils.setSystemProperties(false);
+      EnvironmentUtils.setPluginPath();
+    } catch (Exception ex) {
+      throw new RuntimeException(ex);
     }
-    // todo: Testbench.initLibs() 
-    // we do not make anything here 
-    // we have a special test (Making) that does make 
-    // and more importantly checks that make is ok and fails if not 
-    // that should be enough 
+
+    Map<String, String> macros = MapSequence.fromMap(new HashMap<String, String>());
+    for (String name : SetSequence.fromSet(MapSequence.fromMap(config.macros()).keySet())) {
+      MapSequence.fromMap(macros).put(name, MapSequence.fromMap(config.macros()).get(name).getAbsolutePath());
+    }
+    macroProvider = EnvironmentUtils.createMapMacrosProvider(macros);
+    PathMacros.getInstance().addMacrosProvider(macroProvider);
+
+    libContributor = EnvironmentUtils.createLibContributor(false, config.libs());
+    LibraryInitializer.getInstance().addContributor(libContributor);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        LibraryInitializer.getInstance().update();
+      }
+    });
   }
 
 
@@ -53,15 +87,17 @@ public class MpsEnvironment implements Environment {
 
 
   public Project openProject(File projectFile) {
-    throw new UnsupportedOperationException();
+    FileMPSProject project = new FileMPSProject(projectFile);
+    project.init(new FileMPSProject.ProjectDescriptor(projectFile));
+    return project;
   }
 
   public Project createDummyProject() {
-    throw new UnsupportedOperationException();
+    return EnvironmentUtils.createDummyFileProject();
   }
 
   public void disposeProject(final Project project) {
-    throw new UnsupportedOperationException();
+    // do nothing 
   }
 
   public void disposeEnvironment() {
@@ -69,8 +105,10 @@ public class MpsEnvironment implements Environment {
       disposeProject(project);
     }
 
-    // from CheckProjectStructureHelper 
-    // todo: TestMain.disposeMPS() 
+    PathMacros.getInstance().removeMacrosProvider(macroProvider);
+    LibraryInitializer.getInstance().removeContributor(libContributor);
+
+    MpsPlatform.dispose();
 
     ActiveEnvironment.deactivateEnvironment(this);
   }

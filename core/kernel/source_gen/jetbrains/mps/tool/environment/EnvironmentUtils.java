@@ -11,6 +11,11 @@ import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.tool.common.util.PathUtil;
+import jetbrains.mps.tool.builder.util.SetLibraryContributor;
+import java.util.Set;
+import jetbrains.mps.library.contributor.LibraryContributor;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class EnvironmentUtils {
   public static void setSystemProperties(boolean loadIdeaPlugins) {
@@ -64,5 +69,22 @@ public class EnvironmentUtils {
       }
     }
     return new MapPathMacrosProvider(realMacros);
+  }
+
+
+
+  public static SetLibraryContributor createLibContributor(boolean loadBootstrapLibs, Map<String, File> libs) {
+    Set<LibraryContributor.LibDescriptor> libraryPaths = new HashSet<LibraryContributor.LibDescriptor>();
+    if (loadBootstrapLibs) {
+      for (String bpath : CollectionSequence.fromCollection(PathManager.getBootstrapPaths())) {
+        libraryPaths.add(new LibraryContributor.LibDescriptor(bpath, null));
+      }
+      libraryPaths.add(new LibraryContributor.LibDescriptor(PathManager.getLanguagesPath(), null));
+    }
+    libraryPaths.addAll(PathManager.getExtensionsPaths());
+    for (String libName : libs.keySet()) {
+      libraryPaths.add(new LibraryContributor.LibDescriptor(libs.get(libName).getAbsolutePath(), null));
+    }
+    return new SetLibraryContributor(libraryPaths);
   }
 }

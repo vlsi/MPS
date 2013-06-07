@@ -10,11 +10,15 @@ import java.io.File;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.tool.builder.util.PathManager;
 
 /**
  * todo: make class immutable
  */
 public class EnvironmentConfig {
+  public static final String BOOTSTRAP_LIBRARIES_LIB_NAME = "bootstrap";
+
   private final Set<String> plugins = SetSequence.fromSet(new HashSet<String>());
   private final Map<String, File> macros = MapSequence.fromMap(new HashMap<String, File>());
   private final Map<String, File> libs = MapSequence.fromMap(new HashMap<String, File>());
@@ -71,11 +75,18 @@ public class EnvironmentConfig {
     // todo: add Git4Idea as default plugin? 
   }
 
+  public EnvironmentConfig withBootstrapLibraries() {
+    for (String bpath : CollectionSequence.fromCollection(PathManager.getBootstrapPaths())) {
+      addLib(BOOTSTRAP_LIBRARIES_LIB_NAME, new File(bpath));
+    }
+    return addLib(BOOTSTRAP_LIBRARIES_LIB_NAME, new File(PathManager.getLanguagesPath()));
+  }
+
 
 
   public static EnvironmentConfig defaultEnvironment() {
     // todo: default plugins, default etc 
-    return new EnvironmentConfig().withDefaultSamples().withDefaultPlugins();
+    return new EnvironmentConfig().withDefaultSamples().withDefaultPlugins().withBootstrapLibraries();
   }
 
   public static EnvironmentConfig emptyEnvironment() {
