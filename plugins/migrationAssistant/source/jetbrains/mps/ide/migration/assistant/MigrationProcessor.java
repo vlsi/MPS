@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JComponent;
+import javax.swing.SwingUtilities;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
@@ -41,7 +42,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * To change this template use File | Settings | File Templates.
  */
 public class MigrationProcessor extends AbstractProjectComponent{
-  
+
   private static Logger LOG = LogManager.getLogger(MigrationProcessor.class);
 
   private List<Callback> myCallbacks = new CopyOnWriteArrayList<Callback>();
@@ -59,26 +60,26 @@ public class MigrationProcessor extends AbstractProjectComponent{
     init();
     return Collections.unmodifiableList(myActions);
   }
-  
+
   public List<?> getSelectedActions () {
     init();
     return Collections.unmodifiableList(mySelectedActions);
   }
-  
+
   @SuppressWarnings("unchecked")
   public void setSelectedActions (List<?> actions) {
     if (!myActions.containsAll(actions)) throw new IllegalArgumentException();
       mySelectedActions = new ArrayList<BaseAction>((List<BaseAction>)actions);
   }
-  
+
   public boolean isProcessing() {
     return myStarted.get() && !myFinished.get();
   }
-  
+
   public boolean isFinished () {
     return myStarted.get() && myFinished.get();
   }
-  
+
   public void startProcessing(final JComponent component) {
     if (!myStarted.compareAndSet(false, true)) throw new IllegalStateException("already processing");
 
@@ -86,41 +87,15 @@ public class MigrationProcessor extends AbstractProjectComponent{
       final ArrayList<BaseAction> actionsCopy = new ArrayList<BaseAction>(mySelectedActions);
       for (final BaseAction action : actionsCopy) {
         final CountDownLatch latch = new CountDownLatch(1);
-        runCommand(new Runnable() {
+        final Runnable cmdRunnable = new MyActionRunnable(action, component, latch);
+        final boolean cmd = action.isExecuteOutsideCommand();
+        SwingUtilities.invokeLater(new Runnable() {
           @Override
           public void run() {
-            try{
-              DumbService.getInstance(myProject).runWhenSmart(new Runnable() {
-                @Override
-                public void run() {
-                  fireStartingAction(action);
-                  AnActionEvent event = new AnActionEvent(null, DataManager.getInstance().getDataContext(component), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
-                  boolean success = false;
-                  boolean oldFlag = action.isExecuteOutsideCommand();
-                  try{
-                    action.setExecuteOutsideCommand(true);
-                    action.update(event);
-                    if (action.getTemplatePresentation().isEnabled()) {
-                      action.actionPerformed(event);
-                      success = true;
-                    }
-                  }
-                  catch (Exception e) {
-                    LOG.error(null, e);
-                  }
-                  finally {
-                    action.setExecuteOutsideCommand(oldFlag);
-                    if (success) {
-                      fireFinishedAction(action);
-                    } else {
-                      fireFailedAction(action);
-                    }
-                  }
-                }
-              });
-            }
-            finally {
-              latch.countDown();
+            if (cmd){
+              cmdRunnable.run();
+            } else {
+              ModelAccess.instance().runWriteActionInCommand(cmdRunnable);
             }
           }
         });
@@ -140,7 +115,7 @@ public class MigrationProcessor extends AbstractProjectComponent{
       });
     }
   }
-  
+
   public void addCallback (Callback callback) {
     myCallbacks.add(callback);
   }
@@ -170,7 +145,7 @@ public class MigrationProcessor extends AbstractProjectComponent{
 
   private void fireStartingAction(Object action) {
     for (Callback callback: myCallbacks) {
-      callback.startingAction(action);        
+      callback.startingAction(action);
     }
   }
 
@@ -198,5 +173,49 @@ public class MigrationProcessor extends AbstractProjectComponent{
     void finishedAction(Object action);
     void finishedAll ();
   }
-  
+
+  private class MyActionRunnable implements Runnable {
+    private final BaseAction myAction;
+    private final JComponent myComponent;
+    private final CountDownLatch myLatch;
+
+    public MyActionRunnable(BaseAction action, JComponent component, CountDownLatch latch) {
+      myAction = action;
+      myComponent = component;
+      myLatch = latch;
+    }
+
+    @Override
+    public void run() {
+      try {
+        DumbService.getInstance(myProject).runWhenSmart(new Runnable() {
+          @Override
+          public void run() {
+            fireStartingAction(myAction);
+            AnActionEvent event =
+                new AnActionEvent(null, DataManager.getInstance().getDataContext(myComponent), ActionPlaces.UNKNOWN, myAction.getTemplatePresentation(),
+                    ActionManager.getInstance(), 0);
+            boolean success = false;
+            try {
+              myAction.update(event);
+              if (myAction.getTemplatePresentation().isEnabled()) {
+                myAction.actionPerformed(event);
+                success = true;
+              }
+            } catch (Exception e) {
+              LOG.error(null, e);
+            } finally {
+              if (success) {
+                fireFinishedAction(myAction);
+              } else {
+                fireFailedAction(myAction);
+              }
+            }
+          }
+        });
+      } finally {
+        myLatch.countDown();
+      }
+    }
+  }
 }
