@@ -108,36 +108,14 @@ class IntelligentNodeMover {
     }
 
     if (isBoundary(myCurrent)) {
-      EditorCell anchorCell = myComponent.findNodeCell(myCurrent);
-
-      SNode currentAnchor = myCurrent;
-      SNode currentTarget = myCurrent.getParent();
-
-      while (currentTarget != null && anchorCell != null) {
-        if (currentTarget != myCurrent.getParent() && haveSimilarLink(currentTarget)) {
-          myParent.removeChild(myCurrent);
-          addWithAnchor(currentTarget, currentAnchor);
-          moveOtherNodes();
-          return;
-        }
-        Iterator<EditorCell> iterator = getCellIterator(anchorCell);
-        while (iterator.hasNext()) {
-          EditorCell next = iterator.next();
-
-          if (tryPasteToCell(next)) return;
-          for (EditorCell levelCell : new DfsTraverserIterable(next, forward(), true)) {
-            if (tryPasteToCell(levelCell)) return;
-          }
-        }
-        anchorCell = anchorCell.getParent();
-        if (anchorCell != null && anchorCell.isBig()) {
-          currentAnchor = anchorCell.getSNode();
-          currentTarget = currentAnchor.getParent();
-        }
-      }
-      return;
+      moveBoundaryNode();
+    } else {
+      moveNotBoundaryNode();
     }
 
+  }
+
+  private void moveNotBoundaryNode() {
     final SNode prevChild = siblingWithTheSameRole(myCurrent);
     if (prevChild == null) {
       List<? extends SNode> children = IterableUtil.asList(myCurrent.getParent().getChildren(myRole));
@@ -145,27 +123,64 @@ class IntelligentNodeMover {
       return;
     }
 
-    SNode innermostContainer = findNodeAtBoundary(prevChild, true);
-    if (innermostContainer != null) {
-      myParent.removeChild(myCurrent);
-      addAtBoundary(innermostContainer);
-    } else {
-      myParent.removeChild(myCurrent);
-      addWithAnchor(myParent, prevChild);
-    }
-
+    EditorCell anchorCell = myComponent.findNodeCell(prevChild);
+    if (tryPasteToCellAndChildren(anchorCell)) return;
+    myParent.removeChild(myCurrent);
+    addWithAnchor(myParent, prevChild);
     moveOtherNodes();
   }
 
-  private boolean tryPasteToCell(EditorCell levelCell) {
-    if (levelCell.isBig() && levelCell.getSNode() != null) {
-      SNode result = findNodeAtBoundary(levelCell.getSNode(), true);
-      if (result != null) {
-        myParent.removeChild(myCurrent);
-        addAtBoundary(result);
-        moveOtherNodes();
+
+
+  private void moveBoundaryNode() {
+    EditorCell anchorCell = myComponent.findNodeCell(myCurrent);
+
+    SNode currentTarget = myCurrent.getParent();
+
+    while (currentTarget != null && anchorCell != null) {
+      Iterator<EditorCell> iterator = getCellIterator(anchorCell);
+      while (iterator.hasNext()) {
+        if (tryPasteToCellAndChildren(iterator.next())) {
+          return;
+        }
+      }
+      anchorCell = anchorCell.getParent();
+      if (anchorCell != null && anchorCell.isBig()) {
+        SNode currentAnchor = anchorCell.getSNode();
+        currentTarget = currentAnchor.getParent();
+        if (currentTarget != null && haveSimilarLink(currentTarget)) {
+          myParent.removeChild(myCurrent);
+          if (currentAnchor.getRoleInParent().equals(myRole)) {
+            addWithAnchor(currentTarget, currentAnchor);
+          } else {
+            addAtBoundary(currentTarget);
+          }
+          moveOtherNodes();
+          return;
+        }
+      }
+    }
+  }
+
+  private boolean tryPasteToCellAndChildren(EditorCell anchorCell) {
+    if (tryPasteToCell(anchorCell)) {
+      return true;
+    }
+    for (EditorCell levelCell : new DfsTraverserIterable(anchorCell, forward(), true)) {
+      if (tryPasteToCell(levelCell)) {
         return true;
       }
+    }
+    return false;
+  }
+
+  private boolean tryPasteToCell(EditorCell levelCell) {
+    SNode levelNode = levelCell.getSNode();
+    if (levelCell.isBig() && levelNode != null && haveSimilarLink(levelNode)) {
+      myParent.removeChild(myCurrent);
+      addAtBoundary(levelNode);
+      moveOtherNodes();
+      return true;
     }
     return false;
   }
@@ -195,25 +210,6 @@ class IntelligentNodeMover {
         parent.insertChild(myCurrent.getRoleInParent(), node, myCurrent);
       }
     }
-  }
-
-  private SNode findNodeAtBoundary(SNode current, boolean includeThis) {
-    if (includeThis && haveSimilarLink(current)) {
-      return current;
-    }
-
-    List<? extends SNode> children = IterableUtil.copyToList(current.getChildren());
-    if (!forward()) {
-      Collections.reverse(children);
-    }
-    for (SNode child : children) {
-      SNode result = findNodeAtBoundary(child, true);
-      if (result != null) {
-        return result;
-      }
-    }
-
-    return null;
   }
 
   private boolean haveSimilarLink(SNode current) {
