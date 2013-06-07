@@ -1399,9 +1399,6 @@
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="3091882534111945340" nodeInfo="ng">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="y597.~SelectionManager%dgetSelectionStackSize()%cint" resolveInfo="getSelectionStackSize" />
       </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="3091882534111945999" nodeInfo="ng">
-        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="y597.~SelectionManager%disSelectionStackEmpty()%cboolean" resolveInfo="isSelectionStackEmpty" />
-      </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="3091882534111946660" nodeInfo="ng">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="y597.~SelectionManager%daddSelectionListener(jetbrains%dmps%dopenapi%deditor%dselection%dSelectionListener)%cvoid" resolveInfo="addSelectionListener" />
         <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.FQNameMethodSpecification" typeId="tp33.4774682482449847011" id="3091882534111947990" nodeInfo="ng">
