@@ -54,11 +54,11 @@ public class SelectionManagerImpl implements SelectionManager {
   }
 
   public Selection getSelection() {
-    return isSelectionStackEmpty() ? null : mySelectionStack.getLast();
+    return mySelectionStack.isEmpty() ? null : mySelectionStack.getLast();
   }
 
   public Selection getDeepestSelection() {
-    return isSelectionStackEmpty() ? null : mySelectionStack.getFirst();
+    return mySelectionStack.isEmpty() ? null : mySelectionStack.getFirst();
   }
 
   @Override
@@ -186,11 +186,6 @@ public class SelectionManagerImpl implements SelectionManager {
   @Override
   public int getSelectionStackSize() {
     return mySelectionStack.size();
-  }
-
-  @Override
-  public boolean isSelectionStackEmpty() {
-    return mySelectionStack.isEmpty();
   }
 
   @Override

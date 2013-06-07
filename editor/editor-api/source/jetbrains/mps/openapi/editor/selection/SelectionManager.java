@@ -57,8 +57,6 @@ public interface SelectionManager {
 
   int getSelectionStackSize();
 
-  boolean isSelectionStackEmpty();
-
   void addSelectionListener(@NotNull SelectionListener listener);
 
   void removeSelectionListener(@NotNull SelectionListener listener);
