@@ -114,6 +114,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
     return new CustomPersistenceSModel(ref, (StreamDataSource) dataSource, this);
   }
 
+  @NotNull
   @Override
   public SModel create(String modelName, DataSource dataSource) {
     if (!(dataSource instanceof StreamDataSource)) {

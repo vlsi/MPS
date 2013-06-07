@@ -73,6 +73,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
   }
 
   public String currentHash(SModel md) {
+    if (md instanceof EditableSModel && ((EditableSModel)md).isChanged()) return null;
     if (!(md instanceof GeneratableSModel)) return null;
     GeneratableSModel sm = (GeneratableSModel) md;
     return sm.getModelHash();

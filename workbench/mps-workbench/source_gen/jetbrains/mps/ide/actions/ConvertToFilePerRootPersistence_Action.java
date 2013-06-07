@@ -6,20 +6,22 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.persistence.FolderModelFactory;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.persistence.FolderModelFactory;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.persistence.PersistenceUtil;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -46,10 +48,15 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    FolderModelFactory filePerRootFactory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
+    if (filePerRootFactory == null) {
+      return false;
+    }
+
     List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
     return ListSequence.fromList(m).any(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return !(it.isReadOnly()) && it.getSource() instanceof FileDataSource;
+        return !(it.isReadOnly()) && it.getSource() instanceof FileDataSource && it.getModelRoot() instanceof FileBasedModelRoot;
       }
     });
   }
@@ -97,14 +104,17 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
       });
       ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
 
-      // FIXME 
-      final FolderModelFactory filePerRootFactory = PersistenceRegistry.getInstance().getFolderModelFactories().iterator().next();
-      // endof FIXME 
+      final FolderModelFactory filePerRootFactory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
 
       modelAccess.runWriteAction(new Runnable() {
         public void run() {
           for (SModel smodel : Sequence.fromIterable(seq)) {
             IFile oldFile = ((FileDataSource) smodel.getSource()).getFile();
+            ModelRoot modelRoot = smodel.getModelRoot();
+            if (!(modelRoot instanceof FileBasedModelRoot)) {
+              continue;
+            }
+
             SModel newModel = PersistenceUtil.loadModel(oldFile);
             if (newModel == null) {
               if (LOG.isEnabledFor(Priority.ERROR)) {
@@ -125,9 +135,9 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
               continue;
             }
 
-            DataSource newSource = filePerRootFactory.createNewSource(smodel.getModelRoot(), null, newModel.getModelName());
-            SModule module = smodel.getModule();
             try {
+              DataSource newSource = filePerRootFactory.createNewSource((FileBasedModelRoot) modelRoot, null, newModel.getModelName());
+              SModule module = smodel.getModule();
               filePerRootFactory.save(newModel, newSource);
               if (module != null) {
                 ((SModuleBase) module).unregisterModel((SModelBase) smodel);

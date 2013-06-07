@@ -15,9 +15,6 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelChangeListener;
-
 /**
  * evgeny, 2/14/13
  */

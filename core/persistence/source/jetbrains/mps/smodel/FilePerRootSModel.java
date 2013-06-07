@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -25,16 +24,13 @@ import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.smodel.loading.ModelLoader;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.loading.UpdateableModel;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 
@@ -44,32 +40,8 @@ import java.util.Map;
 /**
  * evgeny, 6/3/13
  */
-public class FilePerRootSModel extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultSModelDescriptor.class));
-
-  private final UpdateableModel myModel = new UpdateableModel(this) {
-    @Override
-    protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current) {
-      if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult(null, ModelLoadingState.NOT_LOADED);
-      if (state == ModelLoadingState.ROOTS_LOADED) {
-        ModelLoadResult result = loadSModel(ModelLoadingState.ROOTS_LOADED);
-        tryFixingVersion(result.getModel());
-        updateTimestamp();
-        return result;
-      }
-      if (state == ModelLoadingState.FULLY_LOADED) {
-        DefaultSModel fullModel = (DefaultSModel)loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
-        updateTimestamp();
-        if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
-        ((DefaultSModel)current).setUpdateMode(true);   //not to send events on changes
-        fullModel.setUpdateMode(true);
-        new ModelLoader(current, fullModel).update();
-        ((DefaultSModel)current).setUpdateMode(false);  //enable events
-        return new ModelLoadResult(current, ModelLoadingState.FULLY_LOADED);
-      }
-      throw new UnsupportedOperationException();
-    }
-  };
+public class FilePerRootSModel extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(FilePerRootSModel.class));
 
   private SModelHeader myHeader;
 
@@ -87,30 +59,6 @@ public class FilePerRootSModel extends EditableSModelBase implements Generatable
     return (MultiStreamDataSource) super.getSource();
   }
 
-  public ModelLoadingState getLoadingState() {
-    return myModel.getState();
-  }
-
-  @Override
-  public final DefaultSModel getSModelInternal() {
-    ModelLoadingState oldState = myModel.getState();
-    if (oldState.ordinal() >= ModelLoadingState.ROOTS_LOADED.ordinal()) {
-      return (DefaultSModel)myModel.getModel(ModelLoadingState.ROOTS_LOADED);
-    }
-    synchronized (myModel) {
-      if (myModel instanceof InvalidSModel) return (DefaultSModel)myModel.getModel(null);
-
-      oldState = myModel.getState();
-      DefaultSModel res = (DefaultSModel)myModel.getModel(ModelLoadingState.ROOTS_LOADED);
-      if (res == null) return null; // this is when we are in recursion
-      if (oldState != myModel.getState()) {
-        res.setModelDescriptor(this);
-        // TODO FIXME listeners are invoked while holding the lock
-        fireModelStateChanged(myModel.getState());
-      }
-      return res;
-    }
-  }
 
   @Override
   public void replace(SModelData modelData) {
@@ -123,17 +71,7 @@ public class FilePerRootSModel extends EditableSModelBase implements Generatable
   }
 
   @Override
-  public void load() {
-    myModel.getModel(ModelLoadingState.FULLY_LOADED);
-  }
-
-  @Override
-  protected DefaultSModel getCurrentModelInternal() {
-    return (DefaultSModel)myModel.getModel(null);
-  }
-
-  //just loads model, w/o changing state of SModelDescriptor
-  private ModelLoadResult loadSModel(ModelLoadingState state) {
+  protected ModelLoadResult loadSModel(ModelLoadingState state) {
     SModelReference dsmRef = getReference();
 
     MultiStreamDataSource source = getSource();
@@ -177,11 +115,6 @@ public class FilePerRootSModel extends EditableSModelBase implements Generatable
   }
 
   @Override
-  public boolean isLoaded() {
-    return getLoadingState() == ModelLoadingState.FULLY_LOADED;
-  }
-
-  @Override
   @NotNull
   public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
@@ -203,7 +136,7 @@ public class FilePerRootSModel extends EditableSModelBase implements Generatable
 
   @Override
   protected boolean saveModel() throws IOException {
-    DefaultSModel smodel = getSModelInternal();
+    DefaultSModel smodel = (DefaultSModel) getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
@@ -262,39 +195,28 @@ public class FilePerRootSModel extends EditableSModelBase implements Generatable
     getSModelHeader().setVersion(newVersion);
   }
 
-  public SModelHeader getModelHeader() {
-    return myHeader.createCopy();
-  }
-
   private SModelHeader getSModelHeader() {
-    DefaultSModel model = getCurrentModelInternal();
+    DefaultSModel model = (DefaultSModel) getCurrentModelInternal();
     if (model == null) return myHeader;
     return model.getSModelHeader();
   }
 
-  private void tryFixingVersion(jetbrains.mps.smodel.SModel loadedSModel) {
+  @Override
+  protected void processLoadedModel(jetbrains.mps.smodel.SModel loadedSModel) {
     if (getVersion() != -1) return;
 
-    int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
+    int latestVersion = getStructureModificationLog().getLatestVersion(getReference());
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
       loadedSModel.setVersion(latestVersion);
-      LOG.error("Version for model " + getReference().getModelName() + " was not set.");
+      LOG.error("Version for model " + getModelName() + " was not set.");
     }
   }
 
-  void replaceModel(final DefaultSModel newModel, final ModelLoadingState state) {
-    ModelAccess.assertLegalWrite();
-
-    if (newModel == getCurrentModelInternal()) return;
+  @Override
+  protected void replaceModel(LazySModel newModel, ModelLoadingState state) {
+    super.replaceModel(newModel, state);
     myStructureModificationLog = null;
-    setChanged(false);
-    super.replaceModel(new Runnable() {
-      @Override
-      public void run() {
-        myModel.replaceWith(newModel, state);
-      }
-    });
   }
 
   @Override
@@ -307,12 +229,6 @@ public class FilePerRootSModel extends EditableSModelBase implements Generatable
       return;
     }
 
-    updateTimestamp();
-
-    if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
-
-    ModelLoadResult result = loadSModel(myModel.getState());
-    replaceModel((DefaultSModel)result.getModel(), result.getState());
+    super.reloadContents();
   }
-
 }

@@ -50,6 +50,7 @@ public interface ModelFactory {
    * @return The created model or null, if the data source is not supported
    * @throws UnsupportedDataSourceException if the data source is not supported
    */
+  @NotNull
   SModel create(String modelName, DataSource dataSource);
 
   /**

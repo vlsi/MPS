@@ -18,20 +18,25 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapOwner;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.generator.TransientSModel;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.util.io.ModelInputStream;
-import jetbrains.mps.util.io.ModelOutputStream;
 import jetbrains.mps.persistence.binary.NodesReader;
 import jetbrains.mps.persistence.binary.NodesWriter;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -185,7 +190,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       mySpaceDir = null;
     }
 
-    private static final int VERSION = 47;
+    private static final int VERSION = 48;
 
     public TransientSModel loadModel(SModelReference modelReference, ModelInputStream is, TransientSModel model) throws IOException {
       int version = is.readInt();
@@ -193,8 +198,8 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
         return null;
       }
 
-      List<Pair<String,SNode>> roots = new NodesReader(modelReference).readNodes(model, is);
-      for (Pair<String,SNode> r : roots) {
+      List<Pair<String, SNode>> roots = new NodesReader(modelReference, null, false).readNodes(model, is);
+      for (Pair<String, SNode> r : roots) {
         model.addRootNode(r.o2);
       }
 
@@ -206,20 +211,20 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
     public void saveModel(SModelReference modelReference, List<SNode> roots, ModelOutputStream os) throws IOException {
       os.writeInt(VERSION);
-      new NodesWriter(modelReference).writeNodes(roots, os);
+      new NodesWriter(modelReference, null).writeNodes(roots, os);
     }
 
   }
 
   // method created for testing
   public static SNode writeAndReadNode(SNode node) throws IOException {
-    NodesWriter writer = new NodesWriter(node.getModel().getReference());
+    NodesWriter writer = new NodesWriter(node.getModel().getReference(), null);
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     ModelOutputStream mos = new ModelOutputStream(os);
     writer.writeNode(node, mos);
     mos.close();
 
-    NodesReader reader = new NodesReader(node.getModel().getReference());
+    NodesReader reader = new NodesReader(node.getModel().getReference(), null, false);
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
 
     return reader.readNode(((jetbrains.mps.smodel.SNode) node).getPersistentModel(), new ModelInputStream(is)).o2;
@@ -235,21 +240,22 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     for (Iterator<SNode> it = model.getRootNodes().iterator(); it.hasNext(); ) {
       roots.add(it.next());
     }
-    mos.writeInt(43);
-    new NodesWriter(model.getReference()).writeNodes(roots, mos);
+    mos.writeInt(44);
+    new NodesWriter(model.getReference(), null).writeNodes(roots, mos);
     mos.close();
 
-    jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(PersistenceFacade.getInstance().createModelReference("smodel.long.name.for.testing"));
+    jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(
+        PersistenceFacade.getInstance().createModelReference("smodel.long.name.for.testing"));
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
     ModelInputStream mis = new ModelInputStream(is);
 
     // read
     int version = mis.readInt();
-    if (version != 43) {
+    if (version != 44) {
       return null;
     }
-    List<Pair<String,SNode>> resultRoots = new NodesReader(resultModel.getReference()).readNodes(resultModel, mis);
-    for (Pair<String,SNode> root : resultRoots) {
+    List<Pair<String, SNode>> resultRoots = new NodesReader(resultModel.getReference(), null, false).readNodes(resultModel, mis);
+    for (Pair<String, SNode> root : resultRoots) {
       resultModel.addRootNode(root.o2);
     }
 

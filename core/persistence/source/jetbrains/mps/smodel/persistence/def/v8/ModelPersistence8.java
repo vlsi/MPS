@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -61,6 +60,4 @@ public class ModelPersistence8 extends ModelPersistence7 {
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return new LineToContentMapReader8Handler();
   }
-
-  // TODO override
 }

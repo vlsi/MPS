@@ -126,8 +126,8 @@
     <nodeInfo nodeId="445606167100297445" fileName="MergeData.java" startLine="73" startPosition="52" endLine="74" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="445606167100297483" fileName="MergeData.java" startLine="74" startPosition="55" endLine="75" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="445606167100297490" fileName="MergeData.java" startLine="75" startPosition="55" endLine="76" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161737310435972187" fileName="MergeData.java" startLine="79" startPosition="74" endLine="80" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1099962754143797589" fileName="MergeData.java" startLine="80" startPosition="100" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3161737310435972187" fileName="MergeData.java" startLine="79" startPosition="74" endLine="80" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1099962754143797589" fileName="MergeData.java" startLine="80" startPosition="99" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="445606167100298406" fileName="MergeData.java" startLine="81" startPosition="0" endLine="82" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="445606167100298416" fileName="MergeData.java" startLine="82" startPosition="83" endLine="83" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="445606167100298422" fileName="MergeData.java" startLine="83" startPosition="83" endLine="84" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

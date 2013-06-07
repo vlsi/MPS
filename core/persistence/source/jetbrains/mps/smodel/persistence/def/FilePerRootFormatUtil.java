@@ -71,7 +71,7 @@ public class FilePerRootFormatUtil {
       throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
     }
     // load .model file
-    DefaultSModel result = null;
+    DefaultSModel result;
     XMLSAXHandler<ModelLoadResult> headerHandler = mp.getModelReaderHandler(targetState, header);
     InputStream in = null;
     try {
@@ -86,7 +86,7 @@ public class FilePerRootFormatUtil {
     } finally {
       FileUtil.closeFileSafe(in);
     }
-    result = (DefaultSModel)headerHandler.getResult().getModel();
+    result = (DefaultSModel) headerHandler.getResult().getModel();
     header = result.getSModelHeader();
 
     // load roots

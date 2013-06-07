@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8zea722pe0u076xhl126oy5pvpege0">
+<dependencies version="2" modelHash="-2v9frtjujh6lq19o1ok3v06n6ogc6cr">
   <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="5u3y65bwvhn853csy8v23ibl4l8odyj" />
-  <common hash="8vj60xvnu652gan0u65ri5nukw2la25">
+  <common hash="drv5i9o2qys2oaxbidqseh2b5p3c0e4">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="3675491646419595339" name="main" hash="4xmwz6bozcsq7ftmizn917i4bd8sgwg">
+  <source id="3675491646419595339" name="main" hash="-c4rlpbdb8d91vwc01uq3atmf67xr0h9">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

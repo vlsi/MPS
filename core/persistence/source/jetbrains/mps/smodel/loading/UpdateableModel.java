@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.loading;
 
 import jetbrains.mps.smodel.InvalidSModel;
+import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.UndoHelper;
@@ -38,7 +39,7 @@ public abstract class UpdateableModel {
   private final SModel myDescriptor;
 
   private volatile ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
-  private volatile jetbrains.mps.smodel.SModel myModel = null;
+  private volatile LazySModel myModel = null;
   private boolean myLoading = false;
 
   public UpdateableModel(SModel descriptor) {
@@ -51,7 +52,7 @@ public abstract class UpdateableModel {
 
   //null in parameter means "give me th current model, don't attempt to load"
   //with null parameter, no synch should occur
-  public final jetbrains.mps.smodel.SModel getModel(@Nullable ModelLoadingState state) {
+  public final LazySModel getModel(@Nullable ModelLoadingState state) {
     if (state == null) return myModel;
     if (!ModelAccess.instance().canWrite()) {
       if (state.ordinal() > myState.ordinal()) {
@@ -92,9 +93,9 @@ public abstract class UpdateableModel {
     }
   }
 
-  protected abstract ModelLoadResult doLoad(ModelLoadingState state, @Nullable jetbrains.mps.smodel.SModel current);
+  protected abstract ModelLoadResult doLoad(ModelLoadingState state, @Nullable LazySModel current);
 
-  public void replaceWith(jetbrains.mps.smodel.SModel newModel, ModelLoadingState state) {
+  public void replaceWith(LazySModel newModel, ModelLoadingState state) {
     if (!ModelAccess.instance().canWrite()) {
       synchronized (this) {
         doReplace(newModel, state);
@@ -104,7 +105,7 @@ public abstract class UpdateableModel {
     }
   }
 
-  private void doReplace(jetbrains.mps.smodel.SModel newModel, ModelLoadingState state) {
+  private void doReplace(LazySModel newModel, ModelLoadingState state) {
     myModel = newModel;
     myState = state;
   }
