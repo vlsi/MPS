@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import java.lang.reflect.InvocationTargetException;
@@ -67,23 +68,30 @@ public class MakeRunner extends Runner {
       }
     });
 
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-              LocalFileSystem.getInstance().refresh(false);
-            }
-          });
-        }
-      });
-    } catch (InterruptedException e) {
-      notifier.fireTestFailure(new Failure(myDescription, e));
-    } catch (InvocationTargetException e) {
-      notifier.fireTestFailure(new Failure(myDescription, e));
+    if (ActiveEnvironment.get().hasIdeaInstance()) {
+      try {
+        SwingUtilities.invokeAndWait(new Runnable() {
+          @Override
+          public void run() {
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              @Override
+              public void run() {
+                LocalFileSystem.getInstance().refresh(false);
+              }
+            });
+          }
+        });
+      } catch (InterruptedException e) {
+        notifier.fireTestFailure(new Failure(myDescription, e));
+      } catch (InvocationTargetException e) {
+        notifier.fireTestFailure(new Failure(myDescription, e));
+      }
+    } else {
+      // todo: ? 
+      // update all stubs? or whaaaat? or maybe everything what depends on make should listen core MakeService? 
+      // btw Danya's comment about stubs updating 
     }
+
     notifier.fireTestFinished(myDescription);
   }
 
