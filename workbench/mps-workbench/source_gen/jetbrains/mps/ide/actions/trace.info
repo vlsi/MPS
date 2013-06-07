@@ -1022,8 +1022,8 @@
     <nodeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="74" startPosition="5" endLine="75" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="76" startPosition="62" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="78" startPosition="5" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215874783308" fileName="CloneModel_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4047102590261012456" fileName="CloneModel_Action.java" startLine="86" startPosition="27" endLine="87" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874783308" fileName="CloneModel_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4047102590261012456" fileName="CloneModel_Action.java" startLine="86" startPosition="27" endLine="87" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215874800212" fileName="CloneModel_Action.java" startLine="89" startPosition="9" endLine="90" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="92" startPosition="45" endLine="93" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="98" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -1044,7 +1044,7 @@
     <nodeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CloneModel_Action#()V" />
-    <nodeInfo nodeId="5996241366547752298" fileName="CloneModel_Action.java" startLine="84" startPosition="87" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5996241366547752298" fileName="CloneModel_Action.java" startLine="84" startPosition="83" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1222268789084" fileName="CloneModel_Action.java" startLine="40" startPosition="86" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="49" startPosition="89" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="36" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
@@ -1060,7 +1060,7 @@
     <scopeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="68" startPosition="60" endLine="69" endPosition="19" />
     <scopeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="72" startPosition="62" endLine="73" endPosition="19" />
     <scopeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="76" startPosition="62" endLine="77" endPosition="19" />
-    <scopeInfo nodeId="5996241366547805920" fileName="CloneModel_Action.java" startLine="86" startPosition="27" endLine="87" endPosition="160" />
+    <scopeInfo nodeId="5996241366547805920" fileName="CloneModel_Action.java" startLine="86" startPosition="27" endLine="87" endPosition="158" />
     <scopeInfo nodeId="1215874656794" fileName="CloneModel_Action.java" startLine="92" startPosition="45" endLine="93" endPosition="84" />
     <scopeInfo nodeId="1222268789085" fileName="CloneModel_Action.java" startLine="41" startPosition="37" endLine="43" endPosition="102">
       <varInfo nodeId="1222268878902" varName="language" />
