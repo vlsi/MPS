@@ -16,6 +16,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new DummyBlock_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ManyStatements_Editor());
       default:
     }
     return Collections.emptyList();
@@ -32,5 +34,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"testMoveElements.structure.DummyBlock"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"testMoveElements.structure.DummyBlock", "testMoveElements.structure.ManyStatements"};
 }

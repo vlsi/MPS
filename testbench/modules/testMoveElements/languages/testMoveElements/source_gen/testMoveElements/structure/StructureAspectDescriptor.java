@@ -15,10 +15,12 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
         return new ConceptDescriptorBuilder("testMoveElements.structure.DummyBlock").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"statement"}, new boolean[]{true}).alias("dummy", "").create();
+      case 1:
+        return new ConceptDescriptorBuilder("testMoveElements.structure.ManyStatements").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"list", "list1", "list2", "statement"}, new boolean[]{false, false, false, true}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"testMoveElements.structure.DummyBlock"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"testMoveElements.structure.DummyBlock", "testMoveElements.structure.ManyStatements"};
 }
