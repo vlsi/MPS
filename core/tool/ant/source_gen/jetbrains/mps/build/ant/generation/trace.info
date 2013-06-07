@@ -92,6 +92,13 @@
     </scopeInfo>
     <unitInfo nodeId="4263887295358464059" fileName="GenerateChunksTask.java" startLine="15" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.build.ant.generation.GenerateChunksTask" />
   </root>
+  <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/861826518923203126">
+    <nodeInfo nodeId="861826518923203153" fileName="DiffTestTask.java" startLine="8" startPosition="37" endLine="9" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="861826518923203150" fileName="DiffTestTask.java" startLine="7" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWorkerClass#()Ljava/lang/String;" />
+    <scopeInfo nodeId="861826518923203152" fileName="DiffTestTask.java" startLine="8" startPosition="37" endLine="9" endPosition="60" />
+    <scopeInfo nodeId="861826518923203150" fileName="DiffTestTask.java" startLine="7" startPosition="0" endLine="11" endPosition="0" />
+    <unitInfo nodeId="861826518923203126" fileName="DiffTestTask.java" startLine="6" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.build.ant.generation.DiffTestTask" />
+  </root>
   <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/9096318311151691260">
     <nodeInfo nodeId="5922356631317911885" fileName="Chunk.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBootstrap" />
     <nodeInfo nodeId="5922356631317911816" fileName="Chunk.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModules" />

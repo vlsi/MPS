@@ -75,15 +75,15 @@ import jetbrains.mps.tool.builder.unittest.ConsoleTestReporter;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 
-public class TestGenerationWorker extends MpsWorker {
-  private final TestGenerationWorker.MyMessageHandler myMessageHandler = new TestGenerationWorker.MyMessageHandler();
+public class DiffTestWorker extends MpsWorker {
+  private final DiffTestWorker.MyMessageHandler myMessageHandler = new DiffTestWorker.MyMessageHandler();
   private boolean myTestFailed = false;
   private IMessageFormat myBuildServerMessageFormat;
   private Map<String, String> path2tmp = MapSequence.fromMap(new HashMap<String, String>());
   private String tmpPath;
-  private TestGenerationWorker.MyReporter myReporter = new TestGenerationWorker.MyReporter();
+  private DiffTestWorker.MyReporter myReporter = new DiffTestWorker.MyReporter();
 
-  public TestGenerationWorker(Script whatToDo, MpsWorker.AntLogger logger) {
+  public DiffTestWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
     myBuildServerMessageFormat = getBuildServerMessageFormat();
     File tmpDir;
@@ -226,7 +226,7 @@ public class TestGenerationWorker extends MpsWorker {
 
         if (isInvokeTestsSet()) {
           Tuples._1<UnitTestListener> testParams = (Tuples._1<UnitTestListener>) ppool.properties(new ITarget.Name("jetbrains.mps.build.gentest.Test.runTests"), Object.class);
-          testParams._0(new TestGenerationWorker.MyUnitTestAdapter());
+          testParams._0(new DiffTestWorker.MyUnitTestAdapter());
         }
         myReporter.finishRun();
         myReporter.startRun("Module cluster " + String.valueOf(count[0]++));
@@ -532,7 +532,7 @@ public class TestGenerationWorker extends MpsWorker {
   }
 
   public static void main(String[] args) {
-    TestGenerationWorker generator = new TestGenerationWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
+    DiffTestWorker generator = new DiffTestWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     generator.workFromMain();
   }
 
@@ -544,15 +544,15 @@ public class TestGenerationWorker extends MpsWorker {
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
-          TestGenerationWorker.this.error(msg.getText());
+          DiffTestWorker.this.error(msg.getText());
           myReporter.errorLine("[ERROR] " + msg.getText());
           break;
         case WARNING:
-          TestGenerationWorker.this.warning(msg.getText());
+          DiffTestWorker.this.warning(msg.getText());
           myReporter.outputLine("[WARNING]" + msg.getText());
           break;
         case INFORMATION:
-          TestGenerationWorker.this.info(msg.getText());
+          DiffTestWorker.this.info(msg.getText());
           myReporter.outputLine("[INFO]" + msg.getText());
           break;
         default:
