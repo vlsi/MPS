@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -40,8 +41,11 @@ public class FindByConditionDialog extends BaseQQDialog {
       }
     });
     UsagesViewTool tool = project.getComponent(UsagesViewTool.class);
-    tool.findUsages(FindUtils.makeProvider(new QueryFinder(query)), searchQuery.value, false, true, false, "No usages for that node");
-    doTempModelDispose();
+    tool.findUsages(FindUtils.makeProvider(new QueryFinder(query, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        doTempModelDispose();
+      }
+    })), searchQuery.value, false, true, false, "No usages for that node");
   }
 
   private static SNode _quotation_createNode_rwieix_a0a2(Object parameter_1) {
