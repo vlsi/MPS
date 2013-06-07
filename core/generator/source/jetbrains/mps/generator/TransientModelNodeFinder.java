@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Evgeny Gryaznov, Mar 1, 2010
@@ -35,7 +36,7 @@ public class TransientModelNodeFinder implements FastNodeFinder {
   private SModel myModel;
   private boolean myInitialized;
 
-  private Map<String, List<SNode>> myNodes = new HashMap<String, List<SNode>>();
+  private final Map<String, List<SNode>> myNodes = new ConcurrentHashMap<String, List<SNode>>();
 
   private SModelChangeListener myChangeListener = new SModelChangeListener() {
     @Override
@@ -69,7 +70,9 @@ public class TransientModelNodeFinder implements FastNodeFinder {
   @Override
   public void dispose() {
     if(myModel instanceof EditableSModelBase) {
-      clearCache();
+      synchronized (myLock) {
+        clearCache();
+      }
       ((EditableSModelBase)myModel).removeChangeListener(myChangeListener);
     }
   }
@@ -100,14 +103,16 @@ public class TransientModelNodeFinder implements FastNodeFinder {
     if (includeInherited) {
       final List<SNode> result = new ArrayList<SNode>();
       for (String d : LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(conceptFqName)) {
-        if (myNodes.containsKey(d)) {
-          result.addAll(myNodes.get(d));
+        List<SNode> nodes = myNodes.get(d);
+        if (nodes!=null) {
+          result.addAll(nodes);
         }
       }
       return result;
     } else {
-      if (myNodes.containsKey(conceptFqName)) {
-        return myNodes.get(conceptFqName);
+      List<SNode> nodes = myNodes.get(conceptFqName);
+      if (nodes!=null) {
+        return nodes;
       }
       return Collections.emptyList();
     }
