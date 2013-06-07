@@ -41,7 +41,7 @@ import java.util.Map;
  * evgeny, 6/3/13
  */
 public class FilePerRootSModel extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultSModelDescriptor.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(FilePerRootSModel.class));
 
   private SModelHeader myHeader;
 

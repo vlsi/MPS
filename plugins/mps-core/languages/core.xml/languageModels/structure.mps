@@ -30,14 +30,14 @@
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1622293396949018572" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="textLike" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278829727" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278829726" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278829726" nodeInfo="ig">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="t7at.1262430001741498277" resolveInfo="textLike" />
       </node>
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1622293396949027983" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="oneLineBlock" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278844285" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278844284" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278844284" nodeInfo="ig">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="t7at.1262430001741497816" resolveInfo="oneLineBlock" />
       </node>
     </node>
@@ -304,7 +304,7 @@
       <property name="name" nameId="tpck.1169194664001" value="isFirst" />
       <property name="inheritable" nameId="tpce.1218571350029" value="true" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278838317" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278838316" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278838316" nodeInfo="ig">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="t7at.1262430001741498376" resolveInfo="isFirst" />
       </node>
     </node>
@@ -312,7 +312,7 @@
       <property name="name" nameId="tpck.1169194664001" value="isSingle" />
       <property name="inheritable" nameId="tpce.1218571350029" value="true" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278844299" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278844298" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278844298" nodeInfo="ig">
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="t7at.1262430001741497810" resolveInfo="isSingle" />
       </node>
     </node>

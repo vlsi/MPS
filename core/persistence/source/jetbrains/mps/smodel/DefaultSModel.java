@@ -52,14 +52,6 @@ public class DefaultSModel extends LazySModel {
     return myHeader.getPersistenceVersion();
   }
 
-  @Override
-  protected void enforceFullLoad() {
-    org.jetbrains.mps.openapi.model.SModel md = myModelDescriptor;
-    if (!(md instanceof DefaultSModelDescriptor)) return;
-    md.load();
-  }
-
-
   public SModelHeader getSModelHeader() {
     return myHeader;
   }

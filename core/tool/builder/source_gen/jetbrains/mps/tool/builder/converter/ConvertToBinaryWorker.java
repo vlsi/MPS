@@ -5,6 +5,8 @@ package jetbrains.mps.tool.builder.converter;
 import java.util.Map;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.persistence.MPSPersistence;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
 import java.io.IOException;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -22,6 +24,7 @@ public class ConvertToBinaryWorker {
     MPSCore.getInstance().init();
     MPSPersistence.getInstance().init();
     MPSCore.getInstance().setMergeDriverMode(true);
+    PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
     System.setProperty("mps.playRefactorings", "false");
     try {
       for (Map.Entry<String, String> entry : map.entrySet()) {
@@ -30,6 +33,7 @@ public class ConvertToBinaryWorker {
     } catch (IOException ex) {
       throw new RuntimeException(ex);
     } finally {
+      PersistenceRegistry.getInstance().setModelEnvironmentInfo(null);
       MPSPersistence.getInstance().dispose();
       MPSCore.getInstance().dispose();
     }

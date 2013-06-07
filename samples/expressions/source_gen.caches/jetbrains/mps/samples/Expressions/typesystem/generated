@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-52bibutd4ig0xtt9ovp55l6ykxa3yct">
+<dependencies version="2" modelHash="-6udsfzwlug3hdwfz57peqlhlfeapg2v">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="2tkar8wwxyebdmgxtp5o764ljq3vhpt" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="aumxb375hryoj342z68nrzgvgr4jzbz" />
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="-addsjrelmbgkper3rl380f83fsj0vsv" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-a5paiteqlzxfcmwi6m4jtivpvepljjm" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="7tunkx61nsrmo3sgu4c3e00v2h21rh" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-69flps24gvvu8nfxv4d8nfugpkc051v" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9iow8oinjz3flhnokp65cdgbcfbisw5" />
-  <dep model="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" hash="-by731ets656ee6jako2th10no7blo35" />
+  <dep model="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" hash="-eojmw0rmrr8k7qcso13ymkpkf8f9a28" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="6wbb4crf3b4dbgairjnjeebsacld5eq" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
-  <common hash="-a3d9hsfw7aj8jdmqyia6trgukn24240" dependsOnNodes="true">
+  <common hash="-b69ufcz9yoj8nsdsvyoqsbaxzpg1eky" dependsOnNodes="true">
     <dep root="2073504467207965653" />
     <dep root="2073504467208085695" />
     <dep root="2073504467208515079" />
@@ -38,7 +38,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TypesystemDescriptor.java" />
   </common>
-  <source id="2073504467207965653" name="typeof_LogicalSimpleMathExpression" hash="-cznefmip1em9gebhzynpw835442pmd4">
+  <source id="2073504467207965653" name="typeof_LogicalSimpleMathExpression" hash="79zvxaim1inahiw7t2b3qnah1mvprkz">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -50,7 +50,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_LogicalSimpleMathExpression_InferenceRule.java" />
   </source>
-  <source id="2073504467208085695" name="SimpleMathBoolean_subtypeOf_Element" hash="-vlzap2bch5sx36mu2oji3ec0c7yozk">
+  <source id="2073504467208085695" name="SimpleMathBoolean_subtypeOf_Element" hash="6wk5xickjyvzxvr5hikgpsws7d2olbn">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -60,7 +60,7 @@
     <dep model="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" />
     <file name="SimpleMathBoolean_subtypeOf_Element_SubtypingRule.java" />
   </source>
-  <source id="2073504467208515079" name="typeof_NotSimpleMathExpression" hash="-425jvqmddlyzbna4gguswtblbg7pfuj">
+  <source id="2073504467208515079" name="typeof_NotSimpleMathExpression" hash="8w4tisy6jhmfado9re1uuypbro2gs3p">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -72,7 +72,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_NotSimpleMathExpression_InferenceRule.java" />
   </source>
-  <source id="2073504467208524984" name="typeof_UnarySimpleMathExpression" hash="-a2z9to2kwq34kb743edp5gjs92m2cyk">
+  <source id="2073504467208524984" name="typeof_UnarySimpleMathExpression" hash="3tf38t2qdtersx9973viyjfo7ceoa0">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -82,7 +82,7 @@
     <dep model="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" />
     <file name="typeof_UnarySimpleMathExpression_InferenceRule.java" />
   </source>
-  <source id="2073504467208540237" name="typeof_SimpleMathBooleanConstant" hash="-b4c67tvvy8l0wgt2u5abo0wm3qi4f2z">
+  <source id="2073504467208540237" name="typeof_SimpleMathBooleanConstant" hash="ayjt5dwqwkm9q2lrlc1u64vzx07mase">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -92,7 +92,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SimpleMathBooleanConstant_InferenceRule.java" />
   </source>
-  <source id="2073504467208541211" name="typeof_SimpleMathIntegerConstant" hash="2ntx70gl5f79lyzazep3nc9b06y7v3">
+  <source id="2073504467208541211" name="typeof_SimpleMathIntegerConstant" hash="-35c3jchehfgfe54sri8mewrlxno8gfp">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -102,7 +102,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SimpleMathIntegerConstant_InferenceRule.java" />
   </source>
-  <source id="2073504467208542717" name="SimpleMathIntegerType_subtypeOf_Number" hash="-4zm324jmk3umghljsi8lf5tn22b6g6a">
+  <source id="2073504467208542717" name="SimpleMathIntegerType_subtypeOf_Number" hash="74wqbcgkaodg07icx7zdi4xgl5r5z5j">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -112,7 +112,7 @@
     <dep model="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" />
     <file name="SimpleMathIntegerType_subtypeOf_Number_SubtypingRule.java" />
   </source>
-  <source id="2073504467208952445" name="typeof_ArithmeticSimpleMathExpression" hash="-cpeszh3cgmvv8mnthqx6kwjtum1ci3c">
+  <source id="2073504467208952445" name="typeof_ArithmeticSimpleMathExpression" hash="6w58wffxw2by3pzyjk140xfux5lqcrt">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -126,7 +126,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ArithmeticSimpleMathExpression_InferenceRule.java" />
   </source>
-  <source id="2073504467209342370" name="typeof_SimpleMathVarDeclaration" hash="-9y0tk3jog28z9nhhv3cpsfao9tcysmr">
+  <source id="2073504467209342370" name="typeof_SimpleMathVarDeclaration" hash="-5b7ab8w2c3k7p3cfc0kx981hgc6hczv">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -136,7 +136,7 @@
     <dep model="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" />
     <file name="typeof_SimpleMathVarDeclaration_InferenceRule.java" />
   </source>
-  <source id="2073504467209348344" name="typeof_SimpleMathVarReference" hash="-5tuacgitu95aqbcz1cvibfeemzcwbw1">
+  <source id="2073504467209348344" name="typeof_SimpleMathVarReference" hash="18gy7oy47a3jc8rtkowexy3llodaj10">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -146,7 +146,7 @@
     <dep model="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" />
     <file name="typeof_SimpleMathVarReference_InferenceRule.java" />
   </source>
-  <source id="2073504467209504627" name="SimpleMathNumberType_subtypeOf_Element" hash="9n4wfhdyga0h71mw622sh188cmqxcb1">
+  <source id="2073504467209504627" name="SimpleMathNumberType_subtypeOf_Element" hash="-77cqn5yrd0ae1wtuxypfl0fksd8gxoj">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -156,7 +156,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleMathNumberType_subtypeOf_Element_SubtypingRule.java" />
   </source>
-  <source id="2073504467209660703" name="SimpleMathLongType_subtypeOf_Float" hash="-b745h4lv0qp4jca1jls65zxaulei1re">
+  <source id="2073504467209660703" name="SimpleMathLongType_subtypeOf_Float" hash="-em7npajjbf7fkvtatev0ggklo8vqp8z">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -166,7 +166,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleMathLongType_subtypeOf_Float_SubtypingRule.java" />
   </source>
-  <source id="2073504467209943151" name="typeof_SimpleMathLongConstant" hash="-ajoctaphzu1i0lhk9u91pcq1sd4k5vz">
+  <source id="2073504467209943151" name="typeof_SimpleMathLongConstant" hash="7ykxioyp85hu0hhtg18j8wccokducf5">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -176,7 +176,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SimpleMathLongConstant_InferenceRule.java" />
   </source>
-  <source id="2073504467210017720" name="SimpleMathIntegerType_subtypeOf_Long" hash="9qh8o3uxewtr5x20wornvyytqdkj4y3">
+  <source id="2073504467210017720" name="SimpleMathIntegerType_subtypeOf_Long" hash="-9and4oa38oloigsvrxlq07w6c39de5w">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -186,10 +186,10 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleMathIntegerType_subtypeOf_Long_SubtypingRule.java" />
   </source>
-  <source id="2073504467210316440" name="SimpleMathOperations" hash="5wmylef5ebc2kn412mce5eoka41w9gl">
+  <source id="2073504467210316440" name="SimpleMathOperations" hash="dpugfll781v041vo79t09dh7gzgvhs3">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2073504467210944275" name="SimpleMathFloatType_subtypeOf_Number" hash="-dn5pot3au9iymi118chkbdjizkld2z9">
+  <source id="2073504467210944275" name="SimpleMathFloatType_subtypeOf_Number" hash="6534pa3amkz5ysydti7o5z9uousvtnv">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -199,7 +199,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleMathFloatType_subtypeOf_Number_SubtypingRule.java" />
   </source>
-  <source id="2073504467210944707" name="typeof_SimpleMathFloatConstant" hash="-1c9hpetebszrffsrvg2o17zy470ul1p">
+  <source id="2073504467210944707" name="typeof_SimpleMathFloatConstant" hash="-5sorml6kh62zk2t23ygrpeb1rslddr3">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -209,7 +209,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SimpleMathFloatConstant_InferenceRule.java" />
   </source>
-  <source id="930174696942551209" name="typeof_SimpleMathAssignment" hash="chvu01q9d7dg2vlemhvwgiqoh7tiy2d">
+  <source id="930174696942551209" name="typeof_SimpleMathAssignment" hash="-eo61zf6cskaulof2xihyaclvxh0jqn3">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -219,7 +219,7 @@
     <dep model="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" />
     <file name="typeof_SimpleMathAssignment_InferenceRule.java" />
   </source>
-  <source id="8620208551721419345" name="typeof_SimpleMathTypedVarDeclaration" hash="-58i23uli6gys1x0aspb50iv9bpwajwn">
+  <source id="8620208551721419345" name="typeof_SimpleMathTypedVarDeclaration" hash="8vr41e0rd6hz5gn3cp9ja85ndd15q68">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
