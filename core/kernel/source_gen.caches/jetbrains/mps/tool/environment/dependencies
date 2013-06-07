@@ -22,6 +22,20 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
   </dependency>
+  <dependency className="jetbrains.mps.tool.environment.EnvironmentUtils" file="EnvironmentUtils.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuffer" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.FileMPSProject" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.util.MapPathMacrosProvider" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.PathUtil" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+  </dependency>
   <dependency className="jetbrains.mps.tool.environment.MpsEnvironment" file="MpsEnvironment.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />

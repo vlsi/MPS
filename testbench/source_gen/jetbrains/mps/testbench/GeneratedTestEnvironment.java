@@ -10,6 +10,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.tool.environment.EnvironmentUtils;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import com.intellij.idea.IdeaTestApplication;
 import javax.swing.SwingUtilities;
@@ -29,7 +30,8 @@ public class GeneratedTestEnvironment extends Environment {
     }
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
 
-    setProperties(true);
+
+    EnvironmentUtils.setSystemProperties(true);
 
     if (!(cachesInvalidated)) {
       FSRecords.invalidateCaches();

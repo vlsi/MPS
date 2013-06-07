@@ -25,6 +25,7 @@ import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.HashSet;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.tool.environment.EnvironmentUtils;
 import jetbrains.mps.tool.common.ScriptProperties;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -118,7 +119,7 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
 
     @Override
     protected void configureMPS(boolean loadIdeaPlugins) {
-      setProperties(loadIdeaPlugins);
+      EnvironmentUtils.setSystemProperties(loadIdeaPlugins);
     }
 
     private UrlClassLoader createClassloader() {

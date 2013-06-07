@@ -16,19 +16,16 @@ import jetbrains.mps.tool.builder.util.MpsPlatform;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
+import jetbrains.mps.tool.environment.EnvironmentUtils;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.project.Project;
-import java.util.HashMap;
-import jetbrains.mps.tool.common.util.PathUtil;
-import jetbrains.mps.tool.builder.util.MapPathMacrosProvider;
 import java.util.Set;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.tool.builder.util.PathManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.FileUtil;
 
 public class Environment {
   private Map<String, String> myMacro;
@@ -64,7 +61,11 @@ public class Environment {
     } catch (Exception ex) {
       throw new RuntimeException(ex);
     }
-    setMacro();
+
+    assert myMacroProvider == null;
+    myMacroProvider = EnvironmentUtils.createMapMacrosProvider(myMacro);
+    PathMacros.getInstance().addMacrosProvider(myMacroProvider);
+
     loadLibraries();
   }
 
@@ -84,28 +85,13 @@ public class Environment {
   }
 
   public Project createDummyProject() {
-    return Environment.createTmpDummyProject();
+    return EnvironmentUtils.createDummyFileProject();
   }
 
   public Project loadProject(File projectFile) {
     FileMPSProject project = new FileMPSProject(projectFile);
     project.init(new FileMPSProject.ProjectDescriptor(projectFile));
     return project;
-  }
-
-  protected void setMacro() {
-    Map<String, String> realMacros = new HashMap<String, String>();
-    for (String macroName : myMacro.keySet()) {
-      String canonicalPath = PathUtil.getCanonicalPath(myMacro.get(macroName));
-      File file = new File(canonicalPath);
-      if (file.exists() && file.isDirectory()) {
-        realMacros.put(macroName, canonicalPath);
-      }
-    }
-    if (myMacroProvider == null) {
-      this.myMacroProvider = new MapPathMacrosProvider(realMacros);
-      PathMacros.getInstance().addMacrosProvider(myMacroProvider);
-    }
   }
 
   protected void loadLibraries() {
@@ -134,42 +120,7 @@ public class Environment {
   }
 
   protected void configureMPS(boolean loadIdeaPlugins) {
-    setProperties(loadIdeaPlugins);
-    collectPluginPaths();
-  }
-
-  private void collectPluginPaths() {
-    StringBuffer pluginPath = new StringBuffer();
-    File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
-    if (pluginDir.exists()) {
-      for (File pluginFolder : pluginDir.listFiles()) {
-        if (pluginPath.length() > 0) {
-          pluginPath.append(File.pathSeparator);
-        }
-        pluginPath.append(pluginFolder.getPath());
-      }
-      System.setProperty("plugin.path", pluginPath.toString());
-    }
-  }
-
-  protected void setProperties(boolean loadIdeaPlugins) {
-    String mpsInternal = System.getProperty("mps.internal");
-    System.setProperty("idea.is.internal", (mpsInternal == null ?
-      "false" :
-      mpsInternal
-    ));
-    System.setProperty("idea.no.jre.check", "true");
-    if (!(loadIdeaPlugins)) {
-      System.setProperty("idea.load.plugins", "false");
-    }
-    System.setProperty("idea.platform.prefix", "Idea");
-  }
-
-  public static Project createTmpDummyProject() {
-    File projectFile = FileUtil.createTmpFile();
-    FileMPSProject project = new FileMPSProject(projectFile);
-    project.init(new FileMPSProject.ProjectDescriptor(null));
-    projectFile.deleteOnExit();
-    return project;
+    EnvironmentUtils.setSystemProperties(loadIdeaPlugins);
+    EnvironmentUtils.setPluginPath();
   }
 }

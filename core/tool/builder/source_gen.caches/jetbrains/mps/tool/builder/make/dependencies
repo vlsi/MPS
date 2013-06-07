@@ -81,6 +81,7 @@
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentUtils" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.Environment" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.make.GeneratorWorker" />
