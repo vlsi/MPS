@@ -2898,6 +2898,33 @@
     <unitInfo nodeId="6230565632479499242" fileName="DeleteOnSelectedNode_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteOnSelectedNode_Test$TestBody" />
     <unitInfo nodeId="6230565632479499242" fileName="DeleteOnSelectedNode_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteOnSelectedNode_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6231723267717085092">
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="18" startPosition="57" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6231723267717205169" fileName="MoveOutOfTheBlock_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6231723267717616725" fileName="MoveOutOfTheBlock_Test.java" startLine="32" startPosition="113" endLine="33" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6231723267717615698" fileName="MoveOutOfTheBlock_Test.java" startLine="33" startPosition="113" endLine="34" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6231723267717206584" fileName="MoveOutOfTheBlock_Test.java" startLine="34" startPosition="113" endLine="35" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveOutOfTheBlock_Test#()V" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveOutOfTheBlock#()V" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="14" startPosition="35" endLine="14" endPosition="35" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="18" startPosition="57" endLine="20" endPosition="98" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="29" startPosition="51" endLine="35" endPosition="113">
+      <varInfo nodeId="6231723267717085092" varName="editor" />
+      <varInfo nodeId="6231723267717085092" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.MoveOutOfTheBlock_Test$TestBody" />
+    <unitInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.MoveOutOfTheBlock_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6249787563914683642">
     <nodeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="23" startPosition="59" endLine="24" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="24" startPosition="107" endLine="25" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
