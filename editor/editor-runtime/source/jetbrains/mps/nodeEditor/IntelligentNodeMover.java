@@ -99,12 +99,8 @@ class IntelligentNodeMover {
       }
     }
 
-    EditorCell currentCell = myComponent.findNodeCell(myCurrent);
     boolean nodeChanged = false;
-    while (currentCell != null) {
-      if (myCurrent == null) {
-        return false;
-      }
+    while (myCurrent != null) {
       if (myCurrent.getParent() == null) {
         return false;
       }
@@ -124,16 +120,10 @@ class IntelligentNodeMover {
       if (myLink.isMultiple()) {
         break;
       }
-      if (currentCell.isBig()) {
-        return false;
-      }
-      currentCell = currentCell.getParent();
-      if (!myCurrent.equals(currentCell.getSNode())) {
-        myCurrent = currentCell.getSNode();
-        nodeChanged = true;
-      }
+      myCurrent = myCurrent.getParent();
+      nodeChanged = true;
     }
-    if (currentCell == null) {
+    if (myCurrent == null) {
       return false;
     }
     if (nodeChanged) {
