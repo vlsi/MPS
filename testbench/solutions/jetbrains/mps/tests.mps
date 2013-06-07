@@ -1739,7 +1739,13 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.953450985260255367" resolveInfo="MoveRangeToNextMethod" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2844379130042582852" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.4710305425207405693" resolveInfo="MoveSingleExpresson" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.4710305425207405693" resolveInfo="MoveIfByCondition" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7111079427297599472" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.801169956439969290" resolveInfo="MoveStatementFromCenter" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7111079427297599753" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.801169956440189248" resolveInfo="MoveMethodByCenter" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2844379130042583126" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.953450985260813910" resolveInfo="MoveStatementToIf" />
