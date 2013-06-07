@@ -15,10 +15,9 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.samples.generator_demo.demoLang5.generator.util.TextUtil;
 
 public class QueriesGenerated {
@@ -119,12 +118,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5273477653284500112(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Document")).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode it) {
-        return SNodeOperations.getDescendants(it, "jetbrains.mps.sampleXML.structure.Element", false, new String[]{});
-      }
-    });
-    // <node> 
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
   }
 
   public static Iterable sourceNodesQuery_1228681296814(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
