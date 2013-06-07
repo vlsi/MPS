@@ -66,9 +66,15 @@ class IntelligentNodeMover {
           return;
         }
 
-        assert  !myNodes.isEmpty();
+        assert !myNodes.isEmpty();
 
         doMove();
+      }
+    }, ProjectHelper.getProject(myComponent.getEditorContext().getRepository()));
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
         if (myNodes.size() == 1) {
           myComponent.selectNode(myNodes.get(0));
         } else if (myNodes.size() > 1) {
@@ -77,7 +83,7 @@ class IntelligentNodeMover {
           selectionManager.setSelection(selectionManager.createRangeSelection(myNodes.get(0), myNodes.get(myNodes.size() - 1)));
         }
       }
-    }, ProjectHelper.getProject(myComponent.getEditorContext().getRepository()));
+    });
   }
 
   private boolean findAppropriateNode(List<SNode> selectedNodes) {
