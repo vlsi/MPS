@@ -18,9 +18,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.io.File;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.smodel.ModelAccess;
@@ -79,11 +78,10 @@ public class IdeaEnvironment implements Environment {
     ProjectManagerEx.getInstanceEx();
     // from CheckProjectStructureHelper 
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
-    StandaloneMPSProject project = new StandaloneMPSProject(ideaProject);
+    MPSProject project = new MPSProject(ideaProject);
     File projectFile = FileUtil.createTmpFile();
     project.setProjectFile(projectFile);
     projectFile.deleteOnExit();
-    project.init(new ProjectDescriptor());
     project.projectOpened();
 
     SetSequence.fromSet(openedProjects).addElement(project);
@@ -91,7 +89,7 @@ public class IdeaEnvironment implements Environment {
   }
 
   public void disposeProject(final Project project) {
-    ((StandaloneMPSProject) project).projectClosed();
+    ((MPSProject) project).projectClosed();
 
     // part from ProjectTest 
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
