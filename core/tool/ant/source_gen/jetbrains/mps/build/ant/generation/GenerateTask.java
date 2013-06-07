@@ -12,19 +12,19 @@ import jetbrains.mps.build.ant.MPSClasspathUtil;
 import org.apache.tools.ant.BuildException;
 import java.util.LinkedHashSet;
 
-public class GenerateChunksTask extends MpsLoadTask {
+public class GenerateTask extends MpsLoadTask {
   {
     myWhatToDo.putProperty(ScriptProperties.STRICT_MODE, Boolean.toString(true));
     myWhatToDo.putProperty(ScriptProperties.PARALLEL_MODE, Boolean.toString(false));
   }
 
-  public GenerateChunksTask() {
+  public GenerateTask() {
     setUsePropertiesAsMacro(true);
   }
 
   @Override
   protected String getWorkerClass() {
-    return "jetbrains.mps.tool.builder.make.ChunksGeneratorWorker";
+    return "jetbrains.mps.tool.builder.make.GeneratorWorker";
   }
 
   public void addConfiguredChunk(Chunk chunk) {

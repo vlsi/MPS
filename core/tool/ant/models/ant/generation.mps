@@ -227,7 +227,7 @@
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4263887295358464059" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="GenerateChunksTask" />
+    <property name="name" nameId="tpck.1169194664001" value="GenerateTask" />
     <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
     <property name="isFinal" nameId="tpee.1221565133444" value="false" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceInitializer" typeId="tpee.1206629501431" id="3643570831018835010" nodeInfo="lgu">
@@ -298,7 +298,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5682549678865142820" nodeInfo="nn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6255157494753346969" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6255157494753346971" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.tool.builder.make.ChunksGeneratorWorker" />
+            <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.tool.builder.make.GeneratorWorker" />
           </node>
         </node>
       </node>
@@ -810,7 +810,7 @@
     <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
     <property name="isFinal" nameId="tpee.1221565133444" value="false" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="861826518923207425" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4263887295358464059" resolveInfo="GenerateChunksTask" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4263887295358464059" resolveInfo="GenerateTask" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="861826518923203150" nodeInfo="igu">
       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />

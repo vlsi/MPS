@@ -18,9 +18,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.make.script.IProgress;
-import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
@@ -34,8 +31,6 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.progress.ProgressMonitorBase;
-import jetbrains.mps.progress.SubProgressKind;
 import java.util.concurrent.ExecutionException;
 import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
@@ -66,6 +61,7 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.tool.common.TeamCityMessageFormat;
+import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.tool.builder.unittest.UnitTestAdapter;
@@ -74,6 +70,10 @@ import jetbrains.mps.tool.builder.unittest.XmlTestReporter;
 import jetbrains.mps.tool.builder.unittest.ConsoleTestReporter;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
+import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.progress.ProgressMonitorBase;
+import jetbrains.mps.progress.SubProgressKind;
 
 public class DiffTestWorker extends MpsWorker {
   private final DiffTestWorker.MyMessageHandler myMessageHandler = new DiffTestWorker.MyMessageHandler();
@@ -155,50 +155,7 @@ public class DiffTestWorker extends MpsWorker {
     };
     final int[] count = new int[]{1};
 
-    IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(new IProgress.Stub() {
-      @Override
-      public void beginWork(String name, int estimate, int ofTotal) {
-        reportIfStartsWith("Generating ", name, startTestFormat);
-      }
-
-      @Override
-      public void finishWork(String name) {
-        reportIfStartsWith("Generating ", name, finishTestFormat);
-      }
-
-      @Override
-      public void advanceWork(String name, int done, String comment) {
-        if (comment != null) {
-          _FunctionTypes._void_P1_E0<? super String> format = startTestFormat;
-          if (done > 1) {
-            format = finishTestFormat;
-          }
-          reportIfStartsWith("Diffing ", name + " " + comment, format);
-        }
-      }
-    }) {
-      @Override
-      public void reportFeedback(IFeedback fdbk) {
-        if (fdbk.getSeverity() == IFeedback.Severity.ERROR) {
-          String test = myReporter.getCurrentTestName();
-          if (test == null) {
-            test = "unknown";
-          }
-          Throwable thr = fdbk.getException();
-          String msg = fdbk.getMessage();
-          String details = (thr == null ?
-            "(no details)" :
-            String.valueOf(MpsWorker.extractStackTrace(thr))
-          );
-          int eol = msg.indexOf("\n");
-          if (eol >= 0) {
-            details = msg.substring(eol + 1) + "\n" + details;
-            msg = msg.substring(0, eol);
-          }
-          myReporter.testFailed(test, msg, details);
-        }
-      }
-    }) {
+    IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new DiffTestWorker.MyJobMonitor(new DiffTestWorker.MyProgress(startTestFormat, finishTestFormat), startTestFormat, finishTestFormat)) {
       @Override
       public void setup(IPropertiesPool ppool, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
         super.setup(ppool, toExecute, input);
@@ -247,66 +204,7 @@ public class DiffTestWorker extends MpsWorker {
           return scriptBuilder.toScript();
         }
       };
-      bms.make(ms, collectResources(context, go.getProjects(), go.getModules(), go.getModels()), null, ctl, new ProgressMonitorBase() {
-        private String prevTitle;
-
-        @Override
-        protected void update(double p0) {
-        }
-
-        @Override
-        protected void startInternal(String text) {
-        }
-
-        @Override
-        protected void doneInternal(String text) {
-        }
-
-        @Override
-        protected void setTitleInternal(String text) {
-          prevTitle = text;
-        }
-
-        @Override
-        protected void setStepInternal(String p0) {
-        }
-
-        @Override
-        public boolean isCanceled() {
-          return false;
-        }
-
-        @Override
-        public void cancel() {
-        }
-
-        private ProgressMonitorBase.SubProgressMonitor customSubProgress(ProgressMonitorBase parent, int work, SubProgressKind kind) {
-          if (prevTitle != null && prevTitle.startsWith("Generating :: ")) {
-            return new ProgressMonitorBase.SubProgressMonitor(parent, work, kind) {
-              @Override
-              protected void startInternal(String text) {
-                reportIfStartsWith("Generating ", "Generating " + text, startTestFormat);
-              }
-
-              @Override
-              protected void doneInternal(String text) {
-                reportIfStartsWith("Generating ", "Generating " + text, finishTestFormat);
-              }
-            };
-          }
-          return new ProgressMonitorBase.SubProgressMonitor(parent, work, kind) {
-            @Override
-            protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
-              return customSubProgress(this, work, kind);
-            }
-          };
-        }
-
-        @Override
-        protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
-          return customSubProgress(this, work, kind);
-        }
-      }).get();
+      bms.make(ms, collectResources(context, go.getProjects(), go.getModules(), go.getModels()), null, ctl, new DiffTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat)).get();
     } catch (InterruptedException ignore) {
     } catch (ExecutionException ignore) {
     }
@@ -536,6 +434,37 @@ public class DiffTestWorker extends MpsWorker {
     generator.workFromMain();
   }
 
+  private class MyProgress extends IProgress.Stub {
+    private final _FunctionTypes._void_P1_E0<? super String> myStartTestFormat;
+    private final _FunctionTypes._void_P1_E0<? super String> myFinishTestFormat;
+
+    public MyProgress(_FunctionTypes._void_P1_E0<? super String> startTestFormat, _FunctionTypes._void_P1_E0<? super String> finishTestFormat) {
+      MyProgress.this.myStartTestFormat = startTestFormat;
+      MyProgress.this.myFinishTestFormat = finishTestFormat;
+    }
+
+    @Override
+    public void beginWork(String name, int estimate, int ofTotal) {
+      reportIfStartsWith("Generating ", name, MyProgress.this.myStartTestFormat);
+    }
+
+    @Override
+    public void finishWork(String name) {
+      reportIfStartsWith("Generating ", name, MyProgress.this.myFinishTestFormat);
+    }
+
+    @Override
+    public void advanceWork(String name, int done, String comment) {
+      if (comment != null) {
+        _FunctionTypes._void_P1_E0<? super String> format = MyProgress.this.myStartTestFormat;
+        if (done > 1) {
+          format = MyProgress.this.myFinishTestFormat;
+        }
+        reportIfStartsWith("Diffing ", name + " " + comment, format);
+      }
+    }
+  }
+
   private class MyMessageHandler implements IMessageHandler {
     public MyMessageHandler() {
     }
@@ -714,6 +643,107 @@ public class DiffTestWorker extends MpsWorker {
       } else {
         System.err.println(err);
       }
+    }
+  }
+
+  private class MyJobMonitor extends IJobMonitor.Stub {
+    private final _FunctionTypes._void_P1_E0<? super String> myStartTestFormat;
+    private final _FunctionTypes._void_P1_E0<? super String> myFinishTestFormat;
+
+    public MyJobMonitor(IProgress pstub, _FunctionTypes._void_P1_E0<? super String> startTestFormat, _FunctionTypes._void_P1_E0<? super String> finishTestFormat) {
+      super(pstub);
+      MyJobMonitor.this.myStartTestFormat = startTestFormat;
+      MyJobMonitor.this.myFinishTestFormat = finishTestFormat;
+    }
+
+    @Override
+    public void reportFeedback(IFeedback fdbk) {
+      if (fdbk.getSeverity() == IFeedback.Severity.ERROR) {
+        String test = myReporter.getCurrentTestName();
+        if (test == null) {
+          test = "unknown";
+        }
+        Throwable thr = fdbk.getException();
+        String msg = fdbk.getMessage();
+        String details = (thr == null ?
+          "(no details)" :
+          String.valueOf(MpsWorker.extractStackTrace(thr))
+        );
+        int eol = msg.indexOf("\n");
+        if (eol >= 0) {
+          details = msg.substring(eol + 1) + "\n" + details;
+          msg = msg.substring(0, eol);
+        }
+        myReporter.testFailed(test, msg, details);
+      }
+    }
+  }
+
+  private class MyProgressMonitorBase extends ProgressMonitorBase {
+    private String prevTitle;
+    private final _FunctionTypes._void_P1_E0<? super String> myStartTestFormat;
+    private final _FunctionTypes._void_P1_E0<? super String> myFinishTestFormat;
+
+    public MyProgressMonitorBase(_FunctionTypes._void_P1_E0<? super String> startTestFormat, _FunctionTypes._void_P1_E0<? super String> finishTestFormat) {
+      MyProgressMonitorBase.this.myStartTestFormat = startTestFormat;
+      MyProgressMonitorBase.this.myFinishTestFormat = finishTestFormat;
+    }
+
+    @Override
+    protected void update(double p0) {
+    }
+
+    @Override
+    protected void startInternal(String text) {
+    }
+
+    @Override
+    protected void doneInternal(String text) {
+    }
+
+    @Override
+    protected void setTitleInternal(String text) {
+      prevTitle = text;
+    }
+
+    @Override
+    protected void setStepInternal(String p0) {
+    }
+
+    @Override
+    public boolean isCanceled() {
+      return false;
+    }
+
+    @Override
+    public void cancel() {
+    }
+
+    private ProgressMonitorBase.SubProgressMonitor customSubProgress(ProgressMonitorBase parent, int work, SubProgressKind kind) {
+      if (prevTitle != null && prevTitle.startsWith("Generating :: ")) {
+        return new ProgressMonitorBase.SubProgressMonitor(parent, work, kind) {
+          @Override
+          protected void startInternal(String text) {
+            reportIfStartsWith("Generating ", "Generating " + text, MyProgressMonitorBase.this.myStartTestFormat);
+          }
+
+          @Override
+          protected void doneInternal(String text) {
+            reportIfStartsWith("Generating ", "Generating " + text, MyProgressMonitorBase.this.myFinishTestFormat);
+          }
+        };
+      }
+      return new ProgressMonitorBase.SubProgressMonitor(parent, work, kind) {
+        @Override
+        protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
+          return customSubProgress(this, work, kind);
+        }
+      };
+    }
+
+    @Override
+    protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
+      return customSubProgress(this, work, kind);
     }
   }
 }

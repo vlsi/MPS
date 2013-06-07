@@ -44,7 +44,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.apache.log4j.Level;
-import jetbrains.mps.tool.builder.util.PathManager;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import java.util.LinkedHashSet;
@@ -86,21 +85,7 @@ public abstract class MpsWorker {
     }
   }
 
-  public void work() {
-    setupEnvironment();
-    final Project project = createDummyProject();
-    MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess();
-    collectModelsToGenerate(go);
-    if (go.hasAnythingToGenerate()) {
-      reload();
-      executeTask(project, go);
-    } else {
-      error("Could not find anything to generate.");
-    }
-    disposeProjects(go.getProjects());
-    dispose();
-    showStatistic();
-  }
+  public abstract void work();
 
   protected Project createDummyProject() {
     return myEnvironment.createDummyProject();
@@ -338,28 +323,6 @@ public abstract class MpsWorker {
   public void log(String text, Throwable e) {
     StringBuffer sb = MpsWorker.extractStackTrace(e);
     error(text + "\n" + sb.toString());
-  }
-
-  protected void configureMPS(boolean loadIdeaPlugins) {
-    String mpsInternal = System.getProperty("mps.internal");
-    System.setProperty("idea.is.internal", (mpsInternal == null ?
-      "false" :
-      mpsInternal
-    ));
-    System.setProperty("idea.no.jre.check", "true");
-    if (!(loadIdeaPlugins)) {
-      System.setProperty("idea.load.plugins", "false");
-    }
-    System.setProperty("idea.platform.prefix", "Idea");
-    StringBuffer pluginPath = new StringBuffer();
-    File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
-    for (File pluginFolder : pluginDir.listFiles()) {
-      if (pluginPath.length() > 0) {
-        pluginPath.append(File.pathSeparator);
-      }
-      pluginPath.append(pluginFolder.getPath());
-    }
-    System.setProperty("plugin.path", pluginPath.toString());
   }
 
   public static StringBuffer extractStackTrace(Throwable e) {
