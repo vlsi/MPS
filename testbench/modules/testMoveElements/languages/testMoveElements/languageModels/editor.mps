@@ -12,7 +12,7 @@
   </roots>
   <root id="7465696304914830836">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7465696304914831246">
-      <property name="text" nameId="tpc2.1073389577007" value="IAmDummyStatement" />
+      <property name="text" nameId="tpc2.1073389577007" value="BlackHole" />
     </node>
   </root>
 </model>

@@ -134,7 +134,6 @@ class IntelligentNodeMover {
   }
 
 
-
   private void moveBoundaryNode() {
     EditorCell anchorCell = myComponent.findNodeCell(myCurrent);
 
@@ -151,13 +150,11 @@ class IntelligentNodeMover {
       if (anchorCell != null && anchorCell.isBig()) {
         SNode currentAnchor = anchorCell.getSNode();
         currentTarget = currentAnchor.getParent();
-        if (currentTarget != null && haveSimilarLink(currentTarget)) {
+        if (currentTarget != null && haveSimilarLink(currentTarget) && currentAnchor.getRoleInParent().equals(myRole)) {
           myParent.removeChild(myCurrent);
-          if (currentAnchor.getRoleInParent().equals(myRole)) {
-            addWithAnchor(currentTarget, currentAnchor);
-            moveOtherNodes();
-            return;
-          }
+          addWithAnchor(currentTarget, currentAnchor);
+          moveOtherNodes();
+          return;
         }
       }
     }
@@ -176,19 +173,24 @@ class IntelligentNodeMover {
   }
 
   private boolean tryPasteToCell(EditorCell levelCell) {
-    SNode levelNode = levelCell.getSNode();
-    if (levelCell.isBig() && levelNode != null && haveSimilarLink(levelNode) /*&& CellFinderUtil.findChildByCondition(levelCell, new Condition<EditorCell>() {
-      @Override
-      public boolean met(EditorCell cell) {
-        return !cell.isReferenceCell() && cell instanceof EditorCell_Collection && cell.getRole().equals(myRole);
-      }
-    }, forward(), true) != null*/) {
+    if (canPasteToCell(levelCell)) {
       myParent.removeChild(myCurrent);
-      addAtBoundary(levelNode);
+      addAtBoundary(levelCell.getSNode());
       moveOtherNodes();
       return true;
     }
     return false;
+  }
+
+  private boolean canPasteToCell(EditorCell levelCell) {
+    return levelCell != null && levelCell.isBig() && levelCell.getSNode() != null && haveSimilarLink(levelCell.getSNode()) &&
+        CellFinderUtil.findChildByCondition(levelCell,
+            new Condition<EditorCell>() {
+              @Override
+              public boolean met(EditorCell cell) {
+                return !cell.isReferenceCell() && cell instanceof EditorCell_Collection && myRole.equals(cell.getRole());
+              }
+            }, forward(), true) != null;
   }
 
   private Iterator<EditorCell> getCellIterator(EditorCell anchorCell) {

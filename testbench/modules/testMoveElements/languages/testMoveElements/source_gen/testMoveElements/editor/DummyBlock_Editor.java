@@ -14,7 +14,7 @@ public class DummyBlock_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9lebyr_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "IAmDummyStatement");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "BlackHole");
     editorCell.setCellId("Constant_9lebyr_a");
     editorCell.setBig(true);
     editorCell.setDefaultText("");
