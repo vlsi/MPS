@@ -25,7 +25,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -37,8 +36,6 @@ import java.util.List;
  */
 // TODO: Temporary adapter should be removed at the end of migration onto EditorCel API
 public class APICellAdapter {
-
-
   public static boolean isPunctuationLayout(EditorCell cell) {
     return LayoutConstraints.PUNCTUATION_LAYOUT_CONSTRAINT.equals(cell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT));
   }
@@ -106,6 +103,10 @@ public class APICellAdapter {
     return true;
   }
 
+  public static boolean isFirstPositionInBigCell(EditorCell cell) {
+    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isFirstPositionInBigCell();
+  }
+
   public static boolean isLastPositionInBigCell(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isLastPositionInBigCell();
   }
@@ -117,4 +118,11 @@ public class APICellAdapter {
     return false;
   }
 
+  public static CellInfo getCellInfo(EditorCell cell) {
+    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getCellInfo();
+  }
+
+  public static EditorCell getContainingBigCell(EditorCell cell) {
+    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getContainingBigCell();
+  }
 }

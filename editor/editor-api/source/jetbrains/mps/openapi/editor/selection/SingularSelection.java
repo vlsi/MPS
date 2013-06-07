@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.selection;
+package jetbrains.mps.openapi.editor.selection;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.annotations.NotNull;
 
-public interface SelectionListener {
-  /**
-   * @param editorComponent - cannot be null
-   * @param oldSelection    - can be null in case there was no oldSelection in editor
-   * @param newSelection    - can be null indicating there is no newSelection in editor
-   */
-  void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection);
+/**
+ * User: shatalin
+ * Date: 6/4/13
+ */
+public interface SingularSelection extends Selection {
+  @NotNull
+  EditorCell getEditorCell();
+
+  void setSideSelectDirection(SideSelectDirection direction);
+
+  SideSelectDirection getSideSelectDirection();
+
+  enum SideSelectDirection {
+    LEFT, RIGHT, NONE;
+  }
 }

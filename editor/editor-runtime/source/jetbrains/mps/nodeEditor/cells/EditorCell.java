@@ -96,8 +96,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   Iterator<EditorCell_Collection> parents();
 
-  boolean isUnderFolded();
-  EditorCell_Collection getFoldedAbove();
   EditorCell_Collection findParent(Condition<EditorCell_Collection> condition);
 
   // TODO: move to EditorCell_Collection & open API
@@ -156,9 +154,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   EditorCell getLastLeaf();
   EditorCell getLastLeaf(Condition<EditorCell> condition);
-
-  EditorCell getFirstDescendant(Condition<EditorCell> condition);
-  EditorCell getLastDescendant(Condition<EditorCell> condition);
 
   EditorCell getLastChild();
   EditorCell getFirstChild();

@@ -71,12 +71,6 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp5g.1229187653856" resolveInfo="EditorTestCase" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="1229198536781" resolveInfo="EditorTestCaseName" />
     </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2685915532175065954" nodeInfo="ng">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp5g.2685915532175039858" resolveInfo="ExpressionContainer" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="2685915532175065956" nodeInfo="nn">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2685915532175064259" resolveInfo="reduce_ExpressionContainer" />
-      </node>
-    </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1210689312859" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp5g.1210674524691" resolveInfo="TestNodeReference" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1210689616523" nodeInfo="nn">
@@ -1696,21 +1690,6 @@
       </node>
     </node>
   </root>
-  <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1226951961061" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="reduce_SelectCellOperation" />
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1226951981876" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="Class" />
-      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1226952005750" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tp6m.1221569991485" resolveInfo="BaseTestBody" />
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1226951981877" nodeInfo="nn" />
-      <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1226951981878" nodeInfo="igu">
-        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1226951981881" nodeInfo="nn" />
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1226951981879" nodeInfo="in" />
-        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1226951981880" nodeInfo="nn" />
-      </node>
-    </node>
-  </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1229198536781" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="EditorTestCaseName" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1229198536782" nodeInfo="nn" />
@@ -2064,15 +2043,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </root>
-  <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="2685915532175064259" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="reduce_ExpressionContainer" />
-    <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp5g.2685915532175039858" resolveInfo="ExpressionContainer" />
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7376433222636454171" nodeInfo="nn">
-      <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7376433222636454172" nodeInfo="nn">
-        <property name="text" nameId="tpee.6329021646629104958" value="an expression container was here" />
       </node>
     </node>
   </root>

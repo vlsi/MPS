@@ -15,15 +15,18 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -39,20 +42,21 @@ public class EditorCellLabelSelection extends EditorCellSelection {
   private int mySelectionEnd = -1;
   private boolean myNonTrivialSelection = false;
 
-  public EditorCellLabelSelection(EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException, SelectionRestoreException {
+  public EditorCellLabelSelection(EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException,
+      SelectionRestoreException {
     super(editorComponent, properties, cellInfo);
     if (!(getEditorCell() instanceof EditorCell_Label)) {
       throw new SelectionRestoreException();
     }
-    myNonTrivialSelection = SelectionInfo.Util.getBooleanProperty(properties, HAS_NON_TRIVIAL_SELECTION_PROPERTY_NAME);
-    if (getEditorCell().getCellInfo().equals(cellInfo)) {
+    myNonTrivialSelection = SelectionInfoImpl.Util.getBooleanProperty(properties, HAS_NON_TRIVIAL_SELECTION_PROPERTY_NAME);
+    if (APICellAdapter.getCellInfo(getEditorCell()).equals(cellInfo)) {
       if (myNonTrivialSelection) {
         /*
          This is kind of hack for EditorManager.STHintCellInfo - if located cell is different from the original one
          then we do not restore selection.
          */
-        mySelectionStart = SelectionInfo.Util.getIntProperty(properties, SELECTION_START_PROPERTY_NAME);
-        mySelectionEnd = SelectionInfo.Util.getIntProperty(properties, SELECTION_END_PROPERTY_NAME);
+        mySelectionStart = SelectionInfoImpl.Util.getIntProperty(properties, SELECTION_START_PROPERTY_NAME);
+        mySelectionEnd = SelectionInfoImpl.Util.getIntProperty(properties, SELECTION_END_PROPERTY_NAME);
       }
     } else {
       myNonTrivialSelection = false;
@@ -102,8 +106,8 @@ public class EditorCellLabelSelection extends EditorCellSelection {
   }
 
   @Override
-  public SelectionInfo getSelectionInfo() throws SelectionStoreException {
-    SelectionInfo selectionInfo = super.getSelectionInfo();
+  public SelectionInfoImpl getSelectionInfo() throws SelectionStoreException {
+    SelectionInfoImpl selectionInfo = super.getSelectionInfo();
     selectionInfo.getPropertiesMap().put(HAS_NON_TRIVIAL_SELECTION_PROPERTY_NAME, Boolean.toString(hasNonTrivialSelection()));
     if (hasNonTrivialSelection()) {
       selectionInfo.getPropertiesMap().put(SELECTION_START_PROPERTY_NAME, Integer.toString(getSelectionStart()));
@@ -155,7 +159,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
 
   @Override
   public void executeAction(CellActionType type) {
-    getEditorComponent().assertModelNotDisposed();
+    ((jetbrains.mps.nodeEditor.EditorComponent) getEditorComponent()).assertModelNotDisposed();
     if (type == CellActionType.DELETE || type == CellActionType.BACKSPACE) {
       performDeleteAction(type);
       return;
@@ -177,7 +181,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
       return false;
     }
     if (label instanceof EditorCell_Constant || label instanceof EditorCell_Property) {
-      return label.isEditable() || label.getContainingBigCell().getLastLeaf(CellConditions.SELECTABLE) != label;
+      return label.isEditable() || CellFinderUtil.findLastSelectableLeaf(APICellAdapter.getContainingBigCell(label)) != label;
     }
     return true;
   }
@@ -198,13 +202,13 @@ public class EditorCellLabelSelection extends EditorCellSelection {
   private boolean processSideDeletes(CellActionType type) {
     // TODO: review this logic - it was originally copied from EditorComponentKeyboardHandler
     final EditorCell selectedCell = getEditorCell();
-    if (type == CellActionType.DELETE && selectedCell.isLastPositionInBigCell() && !selectedCell.isFirstPositionInBigCell()) {
-      final jetbrains.mps.openapi.editor.cells.EditorCell target;
-      jetbrains.mps.openapi.editor.cells.EditorCell bigCellNextSibling = CellTraversalUtil.getNextSibling(selectedCell.getContainingBigCell());
-      if (selectedCell.isLastPositionInBigCell() && bigCellNextSibling != null) {
+    if (type == CellActionType.DELETE && APICellAdapter.isLastPositionInBigCell(selectedCell) && !APICellAdapter.isFirstPositionInBigCell(selectedCell)) {
+      final EditorCell target;
+      EditorCell bigCellNextSibling = CellTraversalUtil.getNextSibling(APICellAdapter.getContainingBigCell(selectedCell));
+      if (APICellAdapter.isLastPositionInBigCell(selectedCell) && bigCellNextSibling != null) {
         target = bigCellNextSibling;
       } else {
-        jetbrains.mps.openapi.editor.cells.EditorCell nextSibling = CellTraversalUtil.getNextSibling(selectedCell.getContainingBigCell());
+        EditorCell nextSibling = CellTraversalUtil.getNextSibling(APICellAdapter.getContainingBigCell(selectedCell));
         if (nextSibling != null) {
           target = nextSibling;
         } else {
@@ -222,13 +226,13 @@ public class EditorCellLabelSelection extends EditorCellSelection {
       return getEditorComponent().getActionHandler().executeAction(target, CellActionType.DELETE);
     }
 
-    if (type == CellActionType.BACKSPACE && selectedCell.isFirstPositionInBigCell() && !selectedCell.isLastPositionInBigCell()) {
-      final jetbrains.mps.openapi.editor.cells.EditorCell target;
-      jetbrains.mps.openapi.editor.cells.EditorCell bigCellPrevSibling = CellTraversalUtil.getPrevSibling(selectedCell.getContainingBigCell());
-      if (selectedCell.isFirstPositionInBigCell() && bigCellPrevSibling != null) {
+    if (type == CellActionType.BACKSPACE && APICellAdapter.isFirstPositionInBigCell(selectedCell) && !APICellAdapter.isLastPositionInBigCell(selectedCell)) {
+      final EditorCell target;
+      EditorCell bigCellPrevSibling = CellTraversalUtil.getPrevSibling(APICellAdapter.getContainingBigCell(selectedCell));
+      if (APICellAdapter.isFirstPositionInBigCell(selectedCell) && bigCellPrevSibling != null) {
         target = bigCellPrevSibling;
       } else {
-        jetbrains.mps.openapi.editor.cells.EditorCell prevSibling = CellTraversalUtil.getPrevSibling(selectedCell);
+        EditorCell prevSibling = CellTraversalUtil.getPrevSibling(selectedCell);
         if (prevSibling != null) {
           target = prevSibling;
         } else {

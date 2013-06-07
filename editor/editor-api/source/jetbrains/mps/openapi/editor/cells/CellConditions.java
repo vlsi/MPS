@@ -22,17 +22,24 @@ import org.jetbrains.mps.util.Condition;
  * 03 13, 2013
  */
 public class CellConditions {
-  public static final Condition<EditorCell> SELECTABLE = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+  public static final Condition<EditorCell> SELECTABLE = new Condition<EditorCell>() {
     @Override
-    public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    public boolean met(EditorCell cell) {
       return cell.isSelectable();
     }
   };
 
-  public static final Condition<EditorCell> SELECTABLE_lEAF = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+  public static final Condition<EditorCell> SELECTABLE_lEAF = new Condition<EditorCell>() {
     @Override
     public boolean met(EditorCell cell) {
       return !(cell instanceof EditorCell_Collection) && cell.isSelectable();
+    }
+  };
+
+  public static final Condition<EditorCell> EDITABLE = new Condition<EditorCell>() {
+    @Override
+    public boolean met(EditorCell cell) {
+      return cell.isSelectable() && cell instanceof EditorCell_Label && ((EditorCell_Label) cell).isEditable();
     }
   };
 }

@@ -20,18 +20,19 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._3;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
-import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.openapi.editor.TextBuilder;
+import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -94,16 +95,12 @@ public class CellAction_CopyNode extends AbstractCellAction {
         };
 
         Set<SNode> selectedAttributes = new HashSet<SNode>();
+        selectedAttributes.add(node);
         if (selectedCell instanceof EditorCell_Collection) {
-          EditorCell_Collection selectedCollection = (EditorCell_Collection) selectedCell;
-          for (EditorCell cell : selectedCollection.dfsCells()) {
+          for (EditorCell cell : new DfsTraverserIterable(selectedCell, true, true)) {
             if (condition.met(cell)) {
               selectedAttributes.add(cell.getSNode());
             }
-          }
-        } else {
-          if (condition.met(selectedCell)) {
-            selectedAttributes.add(selectedCell.getSNode());
           }
         }
         copyNodeList.add(parent);

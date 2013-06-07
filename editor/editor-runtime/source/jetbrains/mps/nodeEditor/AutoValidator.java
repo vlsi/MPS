@@ -16,11 +16,12 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.nodeEditor.selection.SelectionListener;
-import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionListener;
+import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -33,13 +34,14 @@ class AutoValidator {
 
   private class MyCellSelectionListener implements SelectionListener {
     @Override
-    public void selectionChanged(final EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+    public void selectionChanged(final jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+      final EditorComponent editorComponentInternal = (EditorComponent) editorComponent;
       if (!(oldSelection instanceof SingularSelection)) {
         return;
       }
       final EditorCell editorCell = ((SingularSelection) oldSelection).getEditorCell();
 
-      if (editorComponent.isCellSwapInProgress()) {
+      if (editorComponentInternal.isCellSwapInProgress()) {
         return;
       }
       if (!editorCell.isErrorState() && !(editorCell instanceof EditorCell_STHint)) {
@@ -54,7 +56,7 @@ class AutoValidator {
       }
 
       final SNode node = editorCell.getSNode();
-      final CellInfo cellInfo = editorCell.getCellInfo();
+      final CellInfo cellInfo = APICellAdapter.getCellInfo(editorCell);
       SwingUtilities.invokeLater(new Runnable() {
         @Override
         public void run() {
@@ -62,11 +64,11 @@ class AutoValidator {
             @Override
             public void run() {
               if (editorCell.isErrorState()) {
-                EditorCell cell = cellInfo.findCell(editorComponent);
+                EditorCell cell = cellInfo.findCell(editorComponentInternal);
                 if (cell != null) {
                   Object memento = editorComponent.getEditorContext().createMemento();
-                  cell.validate(true, false);
-                  editorComponent.flushEvents();
+                  APICellAdapter.validate(cell, true, false);
+                  editorComponentInternal.flushEvents();
                   editorComponent.getEditorContext().setMemento(memento);
                 }
               }

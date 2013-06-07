@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.selection;
+package jetbrains.mps.openapi.editor.selection;
 
-public class SelectionStoreException extends Exception {
-  public SelectionStoreException(String message) {
-    super(message);
-  }
+/**
+ * User: shatalin
+ * Date: 6/4/13
+ */
+public interface MultipleSelection extends Selection {
 }

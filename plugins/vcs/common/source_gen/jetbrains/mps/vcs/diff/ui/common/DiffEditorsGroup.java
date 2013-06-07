@@ -16,7 +16,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
-import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -83,7 +83,7 @@ public class DiffEditorsGroup {
     }
 
     @Override
-    protected void selectionChangedTo(EditorComponent component, final SingularSelection newSelection) {
+    protected void selectionChangedTo(jetbrains.mps.openapi.editor.EditorComponent component, final SingularSelection newSelection) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SNodeId selectionId = check_s6qw4f_a0a0a0a1g(check_s6qw4f_a0a0a0a0b6(newSelection.getEditorCell()));
@@ -154,7 +154,7 @@ public class DiffEditorsGroup {
     return null;
   }
 
-  private static SNode check_s6qw4f_a0a0a0a0b6(jetbrains.mps.nodeEditor.cells.EditorCell checkedDotOperand) {
+  private static SNode check_s6qw4f_a0a0a0a0b6(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }

@@ -22,8 +22,8 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
+import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -42,7 +42,7 @@ public class NodeEditorComponent extends EditorComponent {
 
     getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
       @Override
-      protected void selectionChangedTo(EditorComponent editorComponent, SingularSelection newSelection) {
+      protected void selectionChangedTo(jetbrains.mps.openapi.editor.EditorComponent editorComponent, SingularSelection newSelection) {
         final SNode[] toSelect = new SNode[]{newSelection.getEditorCell().getSNode()};
         ModelAccess.instance().runReadAction(new Runnable() {
           @Override
