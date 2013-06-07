@@ -42,7 +42,6 @@ class IntelligentNodeMover {
   private static final Logger LOG = LogManager.getLogger(IntelligentNodeMover.class);
 
   private List<SNode> myNodes = new ArrayList<SNode>();
-  private EditorContext myEditorContext;
   private EditorComponent myComponent;
   private boolean myForward;
   private SNode myCurrent;
@@ -50,11 +49,9 @@ class IntelligentNodeMover {
   private String myRole;
   private SLink myLink;
 
-  IntelligentNodeMover(EditorContext context, List<SNode> nodes, boolean forward) {
-    myNodes.addAll(nodes);
-    myEditorContext = context;
+  IntelligentNodeMover(EditorComponent component, boolean forward) {
+    myComponent = component;
     myForward = forward;
-    myComponent = context.getEditorComponent();
   }
 
   private boolean forward() {
@@ -62,54 +59,86 @@ class IntelligentNodeMover {
   }
 
   void move() {
-    final List<SNode> nodes = new ArrayList<SNode>();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       @Override
       public void run() {
-        nodes.addAll(myEditorContext.getSelectedNodes());
-
-        if (nodes.isEmpty()) {
+        if (!findAppropriateNode(myComponent.getSelectedNodes())) {
           return;
         }
 
-        doMove();
-      }
-    }, ProjectHelper.getProject(myEditorContext.getRepository()));
+        assert  !myNodes.isEmpty();
 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        if (nodes.size() == 1) {
-          myEditorContext.getNodeEditorComponent().selectNode(nodes.get(0));
-        } else if (nodes.size() > 1) {
-          SelectionManager selectionManager = myEditorContext.getNodeEditorComponent().getSelectionManager();
-          selectionManager.setSelection(selectionManager.createRangeSelection(nodes.get(0), nodes.get(nodes.size() - 1)));
+        doMove();
+        if (myNodes.size() == 1) {
+          myComponent.selectNode(myNodes.get(0));
+        } else if (myNodes.size() > 1) {
+          //todo remove cast when selection will be in open api
+          SelectionManager selectionManager = ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).getSelectionManager();
+          selectionManager.setSelection(selectionManager.createRangeSelection(myNodes.get(0), myNodes.get(myNodes.size() - 1)));
         }
       }
-    });
+    }, ProjectHelper.getProject(myComponent.getEditorContext().getRepository()));
+  }
+
+  private boolean findAppropriateNode(List<SNode> selectedNodes) {
+    myCurrent = findBoundaryNode(selectedNodes);
+    if (myCurrent == null) {
+      return false;
+    }
+    String role = myCurrent.getRoleInParent();
+    assert role != null;
+    for (SNode node : selectedNodes) {
+      if (node == null || !role.equals(node.getRoleInParent())) {
+        return false;
+      }
+    }
+
+    EditorCell currentCell = myComponent.findNodeCell(myCurrent);
+    boolean nodeChanged = false;
+    while (currentCell != null) {
+      if (myCurrent == null) {
+        return false;
+      }
+      if (myCurrent.getParent() == null) {
+        return false;
+      }
+
+      myParent = myCurrent.getParent();
+      myRole = myCurrent.getRoleInParent();
+      assert myParent != null && myRole != null;
+
+      final SConcept acd = myParent.getConcept();
+      myLink = acd.findLink(myRole);
+
+      if (myLink == null) {
+        LOG.error("Can't find a link " + myRole + " in concept " + acd.getName());
+        return false;
+      }
+
+      if (myLink.isMultiple()) {
+        break;
+      }
+      if (currentCell.isBig()) {
+        return false;
+      }
+      currentCell = currentCell.getParent();
+      if (!myCurrent.equals(currentCell.getSNode())) {
+        myCurrent = currentCell.getSNode();
+        nodeChanged = true;
+      }
+    }
+    if (currentCell == null) {
+      return false;
+    }
+    if (nodeChanged) {
+      myNodes.add(myCurrent);
+    } else {
+      myNodes.addAll(selectedNodes);
+    }
+    return true;
   }
 
   private void doMove() {
-    myCurrent = findBoundaryNode();
-    if (myCurrent == null) return;
-    if (myCurrent.getParent() == null) return;
-
-    myParent = myCurrent.getParent();
-    myRole = myCurrent.getRoleInParent();
-    assert myParent != null && myRole != null;
-
-    final SConcept acd = myParent.getConcept();
-    myLink = acd.findLink(myRole);
-
-    if (myLink == null) {
-      LOG.error("Can't find a link " + myRole + " in concept " + acd.getName());
-      return;
-    }
-
-    if (!myLink.isMultiple()) {
-      return;
-    }
-
     if (isBoundary(myCurrent)) {
       moveBoundaryNode();
     } else {
@@ -117,6 +146,8 @@ class IntelligentNodeMover {
     }
 
   }
+
+
 
   private void moveNotBoundaryNode() {
     final SNode prevChild = siblingWithTheSameRole(myCurrent);
@@ -274,11 +305,11 @@ class IntelligentNodeMover {
     moveOtherNodes();
   }
 
-  private SNode findBoundaryNode() {
+  private SNode findBoundaryNode(List<SNode> nodes) {
     if (forward()) {
-      return myNodes.get(myNodes.size() - 1);
+      return nodes.get(nodes.size() - 1);
     } else {
-      return myNodes.get(0);
+      return nodes.get(0);
     }
   }
 }

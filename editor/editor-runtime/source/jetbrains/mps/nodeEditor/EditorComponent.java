@@ -793,14 +793,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void moveCurrentUp() {
     Selection selection = getSelectionManager().getSelection();
     if (selection instanceof SingularSelection || selection instanceof NodeRangeSelection) {
-      new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), false).move();
+      new IntelligentNodeMover(this, false).move();
     }
   }
 
   public void moveCurrentDown() {
     Selection selection = getSelectionManager().getSelection();
     if (selection instanceof SingularSelection || selection instanceof NodeRangeSelection) {
-      new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), true).move();
+      new IntelligentNodeMover(this, true).move();
     }
   }
 
