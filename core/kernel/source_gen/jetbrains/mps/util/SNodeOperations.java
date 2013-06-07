@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
+import java.util.Iterator;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -26,7 +27,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import java.util.Iterator;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -176,9 +176,9 @@ public class SNodeOperations {
       parent.insertChildBefore(role, child, ((jetbrains.mps.smodel.SNode) anchor).treeNext());
       return;
     }
-    Iterable<? extends SNode> childrenWithRole = parent.getChildren(role);
-    parent.insertChildBefore(role, child, (childrenWithRole.iterator().hasNext() ?
-      childrenWithRole.iterator().next() :
+    Iterator<? extends SNode> it = parent.getChildren().iterator();
+    parent.insertChildBefore(role, child, (it.hasNext() ?
+      it.next() :
       null
     ));
   }
