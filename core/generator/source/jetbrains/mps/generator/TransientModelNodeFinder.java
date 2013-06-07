@@ -15,12 +15,17 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Evgeny Gryaznov, Mar 1, 2010
@@ -31,14 +36,50 @@ public class TransientModelNodeFinder implements FastNodeFinder {
   private SModel myModel;
   private boolean myInitialized;
 
-  private Map<String, List<SNode>> myNodes = new HashMap<String, List<SNode>>();
+  private final Map<String, List<SNode>> myNodes = new ConcurrentHashMap<String, List<SNode>>();
+
+  private SModelChangeListener myChangeListener = new SModelChangeListener() {
+    @Override
+    public void nodeAdded(SModel model, SNode node, String role, SNode child) {
+      clearCache();
+    }
+
+    @Override
+    public void nodeRemoved(SModel model, SNode node, String role, SNode child) {
+      clearCache();
+    }
+
+    @Override
+    public void propertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
+      clearCache();
+    }
+
+    @Override
+    public void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef) {
+      clearCache();
+    }
+  };
 
   public TransientModelNodeFinder(SModel model) {
     myModel = model;
+    if(myModel instanceof EditableSModelBase) {
+      ((EditableSModelBase)myModel).addChangeListener(myChangeListener);
+    }
   }
 
   @Override
   public void dispose() {
+    if(myModel instanceof EditableSModelBase) {
+      synchronized (myLock) {
+        clearCache();
+      }
+      ((EditableSModelBase)myModel).removeChangeListener(myChangeListener);
+    }
+  }
+
+  private void clearCache() {
+    myNodes.clear();
+    myInitialized=false;
   }
 
   private void initCache() {
@@ -62,14 +103,16 @@ public class TransientModelNodeFinder implements FastNodeFinder {
     if (includeInherited) {
       final List<SNode> result = new ArrayList<SNode>();
       for (String d : LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(conceptFqName)) {
-        if (myNodes.containsKey(d)) {
-          result.addAll(myNodes.get(d));
+        List<SNode> nodes = myNodes.get(d);
+        if (nodes!=null) {
+          result.addAll(nodes);
         }
       }
       return result;
     } else {
-      if (myNodes.containsKey(conceptFqName)) {
-        return myNodes.get(conceptFqName);
+      List<SNode> nodes = myNodes.get(conceptFqName);
+      if (nodes!=null) {
+        return nodes;
       }
       return Collections.emptyList();
     }
