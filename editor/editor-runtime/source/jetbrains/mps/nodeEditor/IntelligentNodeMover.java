@@ -16,10 +16,12 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
@@ -29,6 +31,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptUtil;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -152,11 +155,9 @@ class IntelligentNodeMover {
           myParent.removeChild(myCurrent);
           if (currentAnchor.getRoleInParent().equals(myRole)) {
             addWithAnchor(currentTarget, currentAnchor);
-          } else {
-            addAtBoundary(currentTarget);
+            moveOtherNodes();
+            return;
           }
-          moveOtherNodes();
-          return;
         }
       }
     }
@@ -176,7 +177,12 @@ class IntelligentNodeMover {
 
   private boolean tryPasteToCell(EditorCell levelCell) {
     SNode levelNode = levelCell.getSNode();
-    if (levelCell.isBig() && levelNode != null && haveSimilarLink(levelNode)) {
+    if (levelCell.isBig() && levelNode != null && haveSimilarLink(levelNode) /*&& CellFinderUtil.findChildByCondition(levelCell, new Condition<EditorCell>() {
+      @Override
+      public boolean met(EditorCell cell) {
+        return !cell.isReferenceCell() && cell instanceof EditorCell_Collection && cell.getRole().equals(myRole);
+      }
+    }, forward(), true) != null*/) {
       myParent.removeChild(myCurrent);
       addAtBoundary(levelNode);
       moveOtherNodes();
