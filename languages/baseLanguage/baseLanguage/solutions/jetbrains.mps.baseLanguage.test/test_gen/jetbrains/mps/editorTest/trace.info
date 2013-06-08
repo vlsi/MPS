@@ -1782,28 +1782,28 @@
     <unitInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveFirstStatementInTry_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2844379130040112869">
-    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="18" startPosition="64" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2844379130040161067" fileName="MoveFromOneCathToAnother_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveFromOneCathToAnother_Test#()V" />
-    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveFromOneCathToAnother#()V" />
-    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="14" startPosition="42" endLine="14" endPosition="42" />
-    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="18" startPosition="64" endLine="20" endPosition="105" />
-    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="113">
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2844379130040161067" fileName="MoveFromOneCatchToAnother_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveFromOneCatchToAnother_Test#()V" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveFromOneCatchToAnother#()V" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="113">
       <varInfo nodeId="2844379130040112869" varName="editor" />
       <varInfo nodeId="2844379130040112869" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveFromOneCathToAnother_Test$TestBody" />
-    <unitInfo nodeId="2844379130040112869" fileName="MoveFromOneCathToAnother_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveFromOneCathToAnother_Test" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveFromOneCatchToAnother_Test$TestBody" />
+    <unitInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveFromOneCatchToAnother_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2844379130040170696">
     <nodeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="18" startPosition="60" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

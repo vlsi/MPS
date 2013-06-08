@@ -11621,7 +11621,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="2844379130040112869" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="selection.moveElements" />
-    <property name="name" nameId="tpck.1169194664001" value="MoveFromOneCathToAnother" />
+    <property name="name" nameId="tpck.1169194664001" value="MoveFromOneCatchToAnother" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2844379130040113518" nodeInfo="nn">
       <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2844379130040113520" nodeInfo="nn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.TryStatement" typeId="tpee.1153952380246" id="2844379130040113663" nodeInfo="nn">
@@ -11714,8 +11714,8 @@
                 <node role="logExpression" roleId="tpib.1167227463056" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2844379130040157600" nodeInfo="nn">
                   <property name="value" nameId="tpee.1070475926801" value="Can't write messages" />
                 </node>
-                <node role="exception" roleId="tpib.1167227561449" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2844379130040157601" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2844379130040157592" resolveInfo="e" />
+                <node role="exception" roleId="tpib.1167227561449" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7462077311454791593" nodeInfo="nn">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2844379130040157596" resolveInfo="e" />
                 </node>
               </node>
             </node>

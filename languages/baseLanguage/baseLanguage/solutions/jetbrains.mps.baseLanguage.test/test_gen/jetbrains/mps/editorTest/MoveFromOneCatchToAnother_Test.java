@@ -10,14 +10,14 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class MoveFromOneCathToAnother_Test extends BaseTransformationTest4 {
-  public MoveFromOneCathToAnother_Test() {
+public class MoveFromOneCatchToAnother_Test extends BaseTransformationTest4 {
+  public MoveFromOneCatchToAnother_Test() {
   }
 
   @Test
-  public void test_MoveFromOneCathToAnother() throws Throwable {
+  public void test_MoveFromOneCatchToAnother() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MoveFromOneCathToAnother_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.MoveFromOneCatchToAnother_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
