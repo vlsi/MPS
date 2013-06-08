@@ -253,7 +253,7 @@ class IntelligentNodeMover {
   private boolean haveSimilarLink(SNode current) {
     for (SAbstractConcept concept : SConceptUtil.getAllSuperConcepts(current.getConcept(), true)) {
       SLink currentLink = concept.findLink(myLink.getRole());
-      if (currentLink != null && currentLink.isMultiple() && !currentLink.isReference() && currentLink.getTargetConcept().equals(myLink.getTargetConcept())) {
+      if (currentLink != null && currentLink.isMultiple() && !currentLink.isReference() && currentLink.getTargetConcept().getQualifiedName().equals(myLink.getTargetConcept().getQualifiedName())) {
         return true;
       }
     }
