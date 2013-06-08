@@ -87,7 +87,19 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
             TemporaryModels.getInstance().addMissingModuleImports(myModel);
             myLastCommand = ListSequence.fromList(SLinkOperations.getTargets(myRoot, "item", true)).last();
             if ((myLastCommand != null)) {
-              BehaviorReflection.invokeVirtual(Void.class, myLastCommand, "virtual_execute_757553790980855637", new Object[]{project});
+              BehaviorReflection.invokeVirtual(Void.class, myLastCommand, "virtual_execute_757553790980855637", new Object[]{project, new ConsoleStream() {
+                public void addText(String text) {
+                  System.out.print(text);
+                }
+
+                public void addNode(SNode node) {
+                  System.out.print(node.getPresentation());
+                }
+
+                public void addNewLine() {
+                  System.out.println("");
+                }
+              }});
             }
           }
         });
