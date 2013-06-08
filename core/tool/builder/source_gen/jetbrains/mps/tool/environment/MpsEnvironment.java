@@ -106,10 +106,12 @@ public class MpsEnvironment implements Environment {
   }
 
   public void disposeProject(final Project project) {
-    // do nothing 
+    project.dispose();
   }
 
   public void disposeEnvironment() {
+    ModelAccess.instance().flushEventQueue();
+
     for (Project project : SetSequence.fromSetWithValues(new HashSet<Project>(), openedProjects)) {
       disposeProject(project);
     }

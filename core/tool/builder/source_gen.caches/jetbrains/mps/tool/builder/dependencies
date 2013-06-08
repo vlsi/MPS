@@ -13,32 +13,6 @@
     <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.builder.Environment" file="Environment.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.RuntimeException" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.MPSCore" />
-    <classNode dependClassName="jetbrains.mps.generator.DefaultModifiableGenerationSettings" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
-    <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
-    <classNode dependClassName="jetbrains.mps.project.PathMacros" />
-    <classNode dependClassName="jetbrains.mps.project.PathMacrosProvider" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.FileMPSProject" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.util.MpsPlatform" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.util.SetLibraryContributor" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentUtils" />
-    <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
-    <classNode dependClassName="org.apache.log4j.ConsoleAppender" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.SimpleLayout" />
-  </dependency>
   <dependency className="jetbrains.mps.tool.builder.FileMPSProject" file="FileMPSProject.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
@@ -102,6 +76,8 @@
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
     <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
@@ -122,9 +98,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.ActiveEnvironment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.MpsEnvironment" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />

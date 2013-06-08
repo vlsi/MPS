@@ -57,7 +57,6 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
 
 
     Environment environment = new ChunksGeneratorWorker.MyEnvironment(config);
-    // todo: repeat in simple MpsWorker 
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
 
     setupEnvironment();

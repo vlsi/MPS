@@ -7,7 +7,14 @@ import org.apache.log4j.LogManager;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.tool.common.Script;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.MpsEnvironment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.io.File;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
@@ -15,7 +22,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Set;
-import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -55,25 +61,35 @@ public abstract class MpsWorker {
   protected final List<String> myWarnings = new ArrayList<String>();
   protected final Script myWhatToDo;
   private final MpsWorker.AntLogger myLogger;
-  protected Environment myEnvironment = new Environment();
+  protected Environment myEnvironment;
 
   public MpsWorker(Script whatToDo) {
     this(whatToDo, new MpsWorker.LogLogger());
   }
 
   public MpsWorker(Script whatToDo, MpsWorker.AntLogger logger) {
-    this(whatToDo, logger, new Environment());
-  }
-
-  public MpsWorker(Script whatToDo, MpsWorker.AntLogger logger, Environment environment) {
     myWhatToDo = whatToDo;
     myLogger = logger;
-    this.myEnvironment = environment;
-    myEnvironment.init(whatToDo.getMacro(), whatToDo.isLoadBootstrapLibraries(), whatToDo.getLibraries(), whatToDo.getLogLevel());
   }
 
-  public void setEnvironment(Environment environment) {
-    this.myEnvironment = environment;
+  private Environment createDefaultEnvironment() {
+    Environment env = new MpsEnvironment(createEnvConfig(myWhatToDo));
+    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
+    return env;
+  }
+
+  public static EnvironmentConfig createEnvConfig(Script whatToDo) {
+    EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
+    for (IMapping<String, String> macro : MapSequence.fromMap(whatToDo.getMacro())) {
+      config = config.addMacro(macro.key(), new File(macro.value()));
+    }
+    for (IMapping<String, File> lib : MapSequence.fromMap(whatToDo.getLibraries())) {
+      config = config.addLib(lib.key(), lib.value());
+    }
+    if (whatToDo.isLoadBootstrapLibraries()) {
+      config = config.withBootstrapLibraries();
+    }
+    return config;
   }
 
   public void workFromMain() {
@@ -97,25 +113,24 @@ public abstract class MpsWorker {
     } else {
       error("Could not find anything to generate.");
     }
-    disposeProjects(go.getProjects());
     dispose();
     showStatistic();
   }
 
   protected Project createDummyProject() {
-    return myEnvironment.createDummyProject();
+    return ActiveEnvironment.get().createDummyProject();
   }
 
   protected void dispose() {
-    myEnvironment.dispose();
-  }
-
-  protected void disposeProject(final Project p) {
-    p.dispose();
+    if (myEnvironment != null) {
+      myEnvironment.disposeEnvironment();
+    }
   }
 
   protected void setupEnvironment() {
-    myEnvironment.setup();
+    if (ActiveEnvironment.get() == null) {
+      myEnvironment = createDefaultEnvironment();
+    }
     make();
   }
 
@@ -167,13 +182,6 @@ public abstract class MpsWorker {
     }
   }
 
-  protected void disposeProjects(Set<Project> projects) {
-    ModelAccess.instance().flushEventQueue();
-    for (final Project project : projects) {
-      disposeProject(project);
-    }
-  }
-
   public void collectModelsToGenerate(MpsWorker.ObjectsToProcess go) {
     collectFromProjects(go.getProjects());
     collectFromModuleFiles(go.getModules());
@@ -183,7 +191,7 @@ public abstract class MpsWorker {
   private void collectFromProjects(Set<Project> projects) {
     for (File projectFile : myWhatToDo.getMPSProjectFiles().keySet()) {
       if (projectFile.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
-        Project project = myEnvironment.loadProject(projectFile);
+        Project project = myEnvironment.openProject(projectFile);
         info("Loaded project " + project);
         projects.add(project);
       }
