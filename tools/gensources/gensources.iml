@@ -981,6 +981,7 @@
     <orderEntry type="module" module-name="debugger-api-api" />
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="module" module-name="persistence" />
+    <orderEntry type="module" module-name="console" />
   </component>
 </module>
 
