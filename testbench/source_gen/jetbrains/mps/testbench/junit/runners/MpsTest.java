@@ -7,6 +7,10 @@ import org.junit.runner.Runner;
 import org.junit.runners.model.RunnerBuilder;
 import org.junit.runners.model.InitializationError;
 import org.junit.runner.notification.RunNotifier;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.annotation.ElementType;
 
 public class MpsTest extends WatchingSuite {
   private final List<Runner> children;
@@ -17,7 +21,11 @@ public class MpsTest extends WatchingSuite {
     MpsTestsSupport.initEnv(true);
     MpsTestsSupport.loadAllModulesIntoRepository();
 
-    children = MakeRunner.withMakeRunner(getTestClass(), super.getChildren());
+    if (isMakeIncluded(klass)) {
+      children = MakeRunner.withMakeRunner(getTestClass(), super.getChildren());
+    } else {
+      children = super.getChildren();
+    }
   }
 
   @Override
@@ -32,4 +40,18 @@ public class MpsTest extends WatchingSuite {
   protected List<Runner> getChildren() {
     return children;
   }
+
+
+
+  private static boolean isMakeIncluded(Class<?> testKlass) {
+    MpsTest.WithMake annotation = testKlass.getAnnotation(MpsTest.WithMake.class);
+    return annotation != null;
+  }
+
+
+
+  @Retention(RetentionPolicy.RUNTIME)
+  @Target(value = {ElementType.TYPE})
+public static   @interface WithMake {
+}
 }

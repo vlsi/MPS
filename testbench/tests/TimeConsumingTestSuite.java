@@ -15,10 +15,12 @@
  */
 
 import jetbrains.mps.testbench.junit.runners.MpsTest;
+import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
 import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
 import org.junit.runner.RunWith;
 
-@SuiteClassSymbols({"jetbrains.mps.PersistenceTest"})
 @RunWith(MpsTest.class)
+@WithMake
+@SuiteClassSymbols({"jetbrains.mps.PersistenceTest"})
 public class TimeConsumingTestSuite {
 }
