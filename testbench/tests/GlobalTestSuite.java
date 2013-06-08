@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.testbench.IdeaEnvironment;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.testbench.junit.runners.MpsTest;
+import jetbrains.mps.testbench.junit.runners.MpsTest.WithIdeaInstance;
+import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
 import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
-import jetbrains.mps.testbench.junit.runners.WatchingSuite;
-import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
 import junit.framework.TestSuite;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
+@RunWith(MpsTest.class)
+@WithIdeaInstance
+@WithMake
 @SuiteClassSymbols({"jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest",
     "jetbrains.mps.dataFlow.lang.LivenessAnalysisTest",
     "jetbrains.mps.dataFlow.lang.ProgramTest",
@@ -50,21 +49,5 @@ import org.junit.runner.RunWith;
     "jetbrains.mps.workbench.ProjectCreationTest",
     "jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest",
     "jetbrains.mps.smodel.language.ExtensionRegistryTest"})
-@RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
-  private static Environment ENV;
-
-  @BeforeClass
-  public static void setup() throws Exception {
-    ENV = new IdeaEnvironment(
-        EnvironmentConfig.emptyEnvironment()
-            .addPlugin("jetbrains.mps.vcs").addPlugin("jetbrains.mps.ide.editor").addPlugin("jetbrains.mps.ide.make").addPlugin("Git4Idea") // todo: add plugins
-    );
-    MpsTestsSupport.makeAllInCreatedEnvironment();
-  }
-
-  @AfterClass
-  public static void shutdown() {
-    ENV.disposeEnvironment();
-  }
 }

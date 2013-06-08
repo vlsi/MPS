@@ -7,12 +7,14 @@ import org.junit.runner.Runner;
 import org.junit.runners.model.RunnerBuilder;
 import org.junit.runners.model.InitializationError;
 import org.junit.runner.notification.RunNotifier;
+import jetbrains.mps.testbench.junit.WatchingRunNotifier;
+import jetbrains.mps.testbench.PerformanceMessenger;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 
-public class MpsTest extends WatchingSuite {
+public class MpsTest extends SymbolicSuite {
   private final List<Runner> children;
 
 
@@ -34,7 +36,14 @@ public class MpsTest extends WatchingSuite {
 
   @Override
   protected void runChild(Runner runner, RunNotifier notifier) {
-    super.runChild(runner, notifier);
+    WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier);
+    try {
+      super.runChild(runner, runNotifier);
+    } finally {
+      PerformanceMessenger.getInstance().generateReport();
+      runNotifier.dispose();
+    }
+
     if (runner == children.get(children.size() - 1)) {
       MpsTestsSupport.disposeEnv();
     }
