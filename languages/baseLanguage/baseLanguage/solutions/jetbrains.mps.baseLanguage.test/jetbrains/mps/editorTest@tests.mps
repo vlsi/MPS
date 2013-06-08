@@ -64,7 +64,6 @@
   <import index="y597" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.selection(MPS.Editor/jetbrains.mps.openapi.editor.selection@java_stub)" version="-1" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="kvy4" modelUID="r:1ce0b94d-16c2-4f0d-92d5-b5b1e611f24d(testMoveElements.structure)" version="0" implicit="yes" />
-  <import index="itjl" modelUID="f:merge_mine#r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests@mine)" version="-1" implicit="yes" />
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1230058635633" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="AnonymousClassTest" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="bugTest" />
@@ -11666,7 +11665,7 @@
                   <property name="value" nameId="tpee.1070475926801" value="Can't write messages" />
                 </node>
                 <node role="exception" roleId="tpib.1167227561449" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2844379130040150216" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="itjl.2844379130040113612" resolveInfo="e" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2844379130040113612" resolveInfo="e" />
                 </node>
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2844379130040157400" nodeInfo="ng">
                   <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
@@ -11716,7 +11715,7 @@
                   <property name="value" nameId="tpee.1070475926801" value="Can't write messages" />
                 </node>
                 <node role="exception" roleId="tpib.1167227561449" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2844379130040157601" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="itjl.2844379130040157596" resolveInfo="e" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2844379130040157592" resolveInfo="e" />
                 </node>
               </node>
             </node>
