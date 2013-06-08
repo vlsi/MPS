@@ -1186,6 +1186,7 @@
       <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.multiple.testLanguage.jar" />
       <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.tableTests.jar" />
       <pathelement location="${build.layout}/languages/testDefaultEditor.jar" />
+      <pathelement location="${build.layout}/languages/testMoveElements.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">
