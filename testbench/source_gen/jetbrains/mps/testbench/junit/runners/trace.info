@@ -890,40 +890,43 @@
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/6791703723376744293">
     <nodeInfo nodeId="8181622299283506945" fileName="MpsTest.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="children" />
     <nodeInfo nodeId="6791703723376744305" fileName="MpsTest.java" startLine="19" startPosition="84" endLine="20" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8181622299283506969" fileName="MpsTest.java" startLine="20" startPosition="26" endLine="21" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105519997957786172" fileName="MpsTest.java" startLine="21" startPosition="34" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8181622299283506972" fileName="MpsTest.java" startLine="23" startPosition="71" endLine="24" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105519997957808185" fileName="MpsTest.java" startLine="26" startPosition="62" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105519997957808193" fileName="MpsTest.java" startLine="28" startPosition="12" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8181622299283506995" fileName="MpsTest.java" startLine="34" startPosition="64" endLine="35" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8181622299283507011" fileName="MpsTest.java" startLine="36" startPosition="54" endLine="37" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8181622299283507019" fileName="MpsTest.java" startLine="42" startPosition="40" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2105519997957808191" fileName="MpsTest.java" startLine="28" startPosition="10" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2105519997957786258" fileName="MpsTest.java" startLine="22" startPosition="0" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8181622299283506999" fileName="MpsTest.java" startLine="35" startPosition="37" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8181622299283507013" fileName="MpsTest.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
-    <nodeInfo nodeId="2105519997957808177" fileName="MpsTest.java" startLine="25" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8181622299283506986" fileName="MpsTest.java" startLine="33" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
-    <nodeInfo nodeId="6791703723376744295" fileName="MpsTest.java" startLine="19" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsTest#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
-    <scopeInfo nodeId="2105519997957786261" fileName="MpsTest.java" startLine="23" startPosition="71" endLine="24" endPosition="53" />
-    <scopeInfo nodeId="2105519997957808184" fileName="MpsTest.java" startLine="26" startPosition="62" endLine="27" endPosition="80" />
-    <scopeInfo nodeId="2105519997957808192" fileName="MpsTest.java" startLine="28" startPosition="12" endLine="29" endPosition="37" />
-    <scopeInfo nodeId="8181622299283507010" fileName="MpsTest.java" startLine="36" startPosition="54" endLine="37" endPosition="35" />
-    <scopeInfo nodeId="8181622299283507018" fileName="MpsTest.java" startLine="42" startPosition="40" endLine="43" endPosition="20" />
-    <scopeInfo nodeId="8181622299283506994" fileName="MpsTest.java" startLine="34" startPosition="64" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="8181622299283507013" fileName="MpsTest.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="8181622299283506986" fileName="MpsTest.java" startLine="33" startPosition="0" endLine="40" endPosition="0">
+    <nodeInfo nodeId="2105519997957919163" fileName="MpsTest.java" startLine="20" startPosition="26" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8181622299283506969" fileName="MpsTest.java" startLine="21" startPosition="0" endLine="22" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105519997957786172" fileName="MpsTest.java" startLine="22" startPosition="89" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8181622299283506972" fileName="MpsTest.java" startLine="24" startPosition="71" endLine="25" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105519997957972106" fileName="MpsTest.java" startLine="26" startPosition="5" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2105519997957808185" fileName="MpsTest.java" startLine="28" startPosition="62" endLine="29" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105519997957808193" fileName="MpsTest.java" startLine="30" startPosition="12" endLine="31" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8181622299283506995" fileName="MpsTest.java" startLine="36" startPosition="64" endLine="37" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8181622299283507011" fileName="MpsTest.java" startLine="38" startPosition="54" endLine="39" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8181622299283507019" fileName="MpsTest.java" startLine="44" startPosition="40" endLine="45" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105519997957808191" fileName="MpsTest.java" startLine="30" startPosition="10" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2105519997957786258" fileName="MpsTest.java" startLine="23" startPosition="0" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8181622299283506999" fileName="MpsTest.java" startLine="37" startPosition="37" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8181622299283507013" fileName="MpsTest.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
+    <nodeInfo nodeId="2105519997957808177" fileName="MpsTest.java" startLine="27" startPosition="0" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8181622299283506986" fileName="MpsTest.java" startLine="35" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
+    <nodeInfo nodeId="6791703723376744295" fileName="MpsTest.java" startLine="19" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsTest#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
+    <scopeInfo nodeId="2105519997957786261" fileName="MpsTest.java" startLine="24" startPosition="71" endLine="25" endPosition="53" />
+    <scopeInfo nodeId="2105519997957808184" fileName="MpsTest.java" startLine="28" startPosition="62" endLine="29" endPosition="80" />
+    <scopeInfo nodeId="2105519997957808192" fileName="MpsTest.java" startLine="30" startPosition="12" endLine="31" endPosition="37" />
+    <scopeInfo nodeId="8181622299283507010" fileName="MpsTest.java" startLine="38" startPosition="54" endLine="39" endPosition="35" />
+    <scopeInfo nodeId="8181622299283507018" fileName="MpsTest.java" startLine="44" startPosition="40" endLine="45" endPosition="20" />
+    <scopeInfo nodeId="8181622299283506994" fileName="MpsTest.java" startLine="36" startPosition="64" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="8181622299283507013" fileName="MpsTest.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="8181622299283506986" fileName="MpsTest.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="8181622299283506991" varName="notifier" />
       <varInfo nodeId="8181622299283506989" varName="runner" />
     </scopeInfo>
-    <scopeInfo nodeId="6791703723376744298" fileName="MpsTest.java" startLine="19" startPosition="84" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="6791703723376744295" fileName="MpsTest.java" startLine="19" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="6791703723376744298" fileName="MpsTest.java" startLine="19" startPosition="84" endLine="32" endPosition="5" />
+    <scopeInfo nodeId="6791703723376744295" fileName="MpsTest.java" startLine="19" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="6791703723376744303" varName="builder" />
       <varInfo nodeId="6791703723376744300" varName="klass" />
     </scopeInfo>
-    <unitInfo nodeId="2105519997957139085" fileName="MpsTest.java" startLine="56" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MpsTest$WithMake" />
-    <unitInfo nodeId="2105519997957764181" fileName="MpsTest.java" startLine="48" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MpsTest$PreloadAllModules" />
-    <unitInfo nodeId="6791703723376744293" fileName="MpsTest.java" startLine="15" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MpsTest" />
+    <unitInfo nodeId="2105519997957930193" fileName="MpsTest.java" startLine="50" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MpsTest$WithIdeaInstance" />
+    <unitInfo nodeId="2105519997957139085" fileName="MpsTest.java" startLine="63" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MpsTest$WithMake" />
+    <unitInfo nodeId="2105519997957764181" fileName="MpsTest.java" startLine="55" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MpsTest$PreloadAllModules" />
+    <unitInfo nodeId="6791703723376744293" fileName="MpsTest.java" startLine="15" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MpsTest" />
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/7906452883299897332">
     <nodeInfo nodeId="7906452883299929239" fileName="MPSOpenProjectSuite.java" startLine="11" startPosition="96" endLine="12" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />

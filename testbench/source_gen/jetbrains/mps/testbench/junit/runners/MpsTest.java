@@ -18,11 +18,13 @@ public class MpsTest extends WatchingSuite {
 
   public MpsTest(Class<?> klass, RunnerBuilder builder) throws InitializationError {
     super(klass, builder);
-    MpsTestsSupport.initEnv(true);
+
+    MpsTestsSupport.initEnv(klass.getAnnotation(MpsTest.WithIdeaInstance.class) != null);
 
     if (klass.getAnnotation(MpsTest.PreloadAllModules.class) != null) {
       MpsTestsSupport.loadAllModulesIntoRepository();
     }
+
     if (klass.getAnnotation(MpsTest.WithMake.class) != null) {
       children = MakeRunner.withMakeRunner(getTestClass(), super.getChildren());
     } else {
@@ -47,10 +49,15 @@ public class MpsTest extends WatchingSuite {
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
-public   /**
-   * Preload all modules from {user.dir}, do not use!
-   */
-static   @interface PreloadAllModules {
+public static   @interface WithIdeaInstance {
+}
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(value = {ElementType.TYPE})
+public /**
+ * Preload all modules from {user.dir}, do not use!
+ */
+static @interface PreloadAllModules {
 }
 
 @Retention(RetentionPolicy.RUNTIME)
