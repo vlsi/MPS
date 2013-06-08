@@ -11,7 +11,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.refactoring.renameLanguage.LanguageRenamer;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -68,7 +68,7 @@ public class RenameLanguageDialog extends RenameDialog {
     final boolean needToRegenerate = myRegenerateLanguage.getModel().isSelected();
 
     final String fqName = getCurrentValue();
-    if (ModuleRepositoryFacade.getInstance().getModule(fqName, Language.class) != null) {
+    if (MPSModuleRepository.getInstance().getModuleByFqName(fqName) != null) {
       setErrorText("Duplicate language name");
       return;
     }
