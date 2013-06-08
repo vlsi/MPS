@@ -37,7 +37,7 @@
   <dep model="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" hash="-3rznika7fc2o43toc0gqe02e13ums5z" />
   <dep model="r:6e2bf134-8b14-4a22-a511-dbed551042c1(jetbrains.mps.build.reduced.plugin)" hash="-7rykjdut0sabwqn3hx3ebfxmzaqbym1" />
   <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" hash="-8t0xcezn1sav7itf8ebch2p9jfkfrdv" />
-  <dep model="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" hash="-49c1ksh4aa0g47mr260pgou9nsklcfk" />
+  <dep model="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" hash="57rgp5k6vvea3zdvwbce7jrt9e3ig5h" />
   <dep model="r:7cb72aee-d3e2-47e9-9964-3abda6a73a9a(jetbrains.mps.make.service)" hash="a6ptnyoy1p2opbd1s0zjdcyq994r517" />
   <dep model="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" hash="dmhnzl6i8cylt78we2uhpqpbin0stje" />
   <dep model="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)" hash="1tqr6cyvmuyj4bqrp09wm4k131vn4j5" />
