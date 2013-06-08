@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.console.lang.behavior.Console_Behavior;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import com.intellij.openapi.application.ApplicationManager;
@@ -38,9 +38,11 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
+import org.apache.log4j.Priority;
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ExecutionException;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class BLCommand_Behavior {
   public static void init(SNode thisNode) {
@@ -57,7 +59,7 @@ public class BLCommand_Behavior {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         model.value = SNodeOperations.getModel(thisNode);
-        IModule module = model.value.getModule();
+        SModule module = model.value.getModule();
         context.value = new ModuleContext(module, p);
         className.value = Console_Behavior.call_getGeneratedName_5211727872447036782(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.console.lang.structure.Console"));
         classPath.value = JavaModuleOperations.createClassPathItem(JavaModuleOperations.collectExecuteClasspath(module), module.getModuleName());
@@ -111,11 +113,17 @@ public class BLCommand_Behavior {
                       }
                     }
                   } catch (ClassNotFoundException ignore) {
-                    LOG.warning("Exception on query loading", ignore);
+                    if (LOG.isEnabledFor(Priority.WARN)) {
+                      LOG.warn("Exception on query loading", ignore);
+                    }
                   } catch (IllegalAccessException ignore) {
-                    LOG.warning("Exception on query loading", ignore);
+                    if (LOG.isEnabledFor(Priority.WARN)) {
+                      LOG.warn("Exception on query loading", ignore);
+                    }
                   } catch (InvocationTargetException ignore) {
-                    LOG.warning("Exception on query loading", ignore);
+                    if (LOG.isEnabledFor(Priority.WARN)) {
+                      LOG.warn("Exception on query loading", ignore);
+                    }
                   }
                 }
               });
@@ -128,5 +136,5 @@ public class BLCommand_Behavior {
     });
   }
 
-  private static Logger LOG = Logger.getLogger(BLCommand_Behavior.class);
+  protected static Logger LOG = LogManager.getLogger(BLCommand_Behavior.class);
 }

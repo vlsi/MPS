@@ -24,6 +24,7 @@ public class BLCommandResultLine_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_584ftp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_584ftp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNodeList_584ftp_a0(editorContext, node));
     return editorCell;
   }

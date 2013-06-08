@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -22,14 +20,14 @@ public class PrintNode_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_eujoi6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_eujoi6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_eujoi6_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_eujoi6_b0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createComponent_eujoi6_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     return editorCell;
   }
 
@@ -39,6 +37,9 @@ public class PrintNode_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("node");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

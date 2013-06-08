@@ -33,6 +33,7 @@ public class NodeResultPart_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ModelAccess_zepkzh_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

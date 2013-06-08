@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 
 public class ModelStatCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -18,13 +16,13 @@ public class ModelStatCommand_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cdx9kf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cdx9kf_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_cdx9kf_a0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createComponent_cdx9kf_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     return editorCell;
   }
 }

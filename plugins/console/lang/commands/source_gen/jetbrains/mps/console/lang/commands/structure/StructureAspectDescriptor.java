@@ -4,7 +4,7 @@ package jetbrains.mps.console.lang.commands.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,27 +14,27 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.BLCommand", "jetbrains.mps.baseLanguage.structure.StatementList", false, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.console.lang.structure.Command"}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.BLCommand").super_("jetbrains.mps.baseLanguage.structure.StatementList").parents("jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.console.lang.structure.Command").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.BLCommandResult", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.lang.structure.Result"}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.BLCommandResult").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.lang.structure.Result").children(new String[]{"line"}, new boolean[]{true}).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.BLCommandResultLine", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.BLCommandResultLine").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"part"}, new boolean[]{true}).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.BLCommandResultPart", null, true, new String[]{}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.BLCommandResultPart").interface_().create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.FindUsagesCommand", "jetbrains.mps.console.lang.commands.structure.BLCommand", false, new String[]{"jetbrains.mps.console.lang.commands.structure.BLCommand"}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.FindUsagesCommand").super_("jetbrains.mps.console.lang.commands.structure.BLCommand").parents("jetbrains.mps.console.lang.commands.structure.BLCommand").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.ModelStatCommand", "jetbrains.mps.console.lang.commands.structure.BLCommand", false, new String[]{"jetbrains.mps.console.lang.commands.structure.BLCommand"}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.ModelStatCommand").super_("jetbrains.mps.console.lang.commands.structure.BLCommand").parents("jetbrains.mps.console.lang.commands.structure.BLCommand").children(new String[]{"model"}, new boolean[]{false}).alias("stat", "").create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.NodeResultPart", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.lang.commands.structure.BLCommandResultPart"}, new String[]{}, new String[]{"target"});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.NodeResultPart").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.lang.commands.structure.BLCommandResultPart").references("target").create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.PrintNewLine", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.PrintNewLine").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").alias("printNewLine", "").create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.PrintNode", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.PrintNode").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"node"}, new boolean[]{false}).alias("printNode", "").create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.PrintText", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.PrintText").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"text"}, new boolean[]{false}).alias("printText", "").create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.TextResultPart", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.lang.commands.structure.BLCommandResultPart"}, new String[]{"text"}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.TextResultPart").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.lang.commands.structure.BLCommandResultPart").properties("text").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

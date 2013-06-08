@@ -4,7 +4,7 @@ package jetbrains.mps.console.lang.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,13 +14,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.structure.Command", null, true, new String[]{"jetbrains.mps.console.lang.structure.ConsoleItem"}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.structure.Command").interface_().parents("jetbrains.mps.console.lang.structure.ConsoleItem").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.structure.Console", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.structure.Console").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"item"}, new boolean[]{true}).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.structure.ConsoleItem", null, true, new String[]{}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.structure.ConsoleItem").interface_().create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.structure.Result", null, true, new String[]{"jetbrains.mps.console.lang.structure.ConsoleItem"}, new String[]{}, new String[]{});
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.structure.Result").interface_().parents("jetbrains.mps.console.lang.structure.ConsoleItem").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
