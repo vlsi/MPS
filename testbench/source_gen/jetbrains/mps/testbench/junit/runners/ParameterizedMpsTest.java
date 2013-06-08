@@ -22,7 +22,7 @@ public class ParameterizedMpsTest extends WatchingParameterized {
    * Hack for being executed before Parameterized constructor
    */
   private static Class<?> initEnv(Class<?> clazz) {
-    MpsTestsSupport.initEnv(false);
+    MpsTestsSupport.initEnv(true);
     MpsTestsSupport.loadAllModulesIntoRepository();
 
     return clazz;

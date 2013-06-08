@@ -46,7 +46,7 @@ public class MpsModulesRunnerAdditionSuite extends Suite {
         errors.add(th);
       } finally {
         try {
-          myRunner.getEnvironment().dispose();
+          myRunner.getEnvironment().disposeEnvironment();
         } catch (Throwable th) {
           errors.add(th);
         }

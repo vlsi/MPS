@@ -13,6 +13,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.tool.environment.EnvironmentUtils;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.io.File;
@@ -28,6 +29,8 @@ import jetbrains.mps.tool.common.util.PathUtil;
 import com.intellij.openapi.application.PathMacros;
 
 public class IdeaEnvironment implements Environment {
+  private static boolean cachesInvalidated = false;
+
   private final EnvironmentConfig config;
   private final Set<Project> openedProjects = SetSequence.fromSet(new HashSet<Project>());
 
@@ -45,6 +48,9 @@ public class IdeaEnvironment implements Environment {
     Logger.getRootLogger().setLevel(Level.ERROR);
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
 
+    // todo: ? 
+    EnvironmentUtils.setSystemProperties(true);
+
     // todo: inline 
     TestMain.configureMPS(SetSequence.fromSet(config.plugins()).toGenericArray(String.class));
     // todo: IdeaTestEnvironment - default plugins: jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make 
@@ -56,6 +62,8 @@ public class IdeaEnvironment implements Environment {
     for (String macro : SetSequence.fromSet(MapSequence.fromMap(config.macros()).keySet())) {
       setMacro(macro, MapSequence.fromMap(config.macros()).get(macro));
     }
+
+    // todo: load libs like MpsEnv ? 
   }
 
 
