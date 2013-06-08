@@ -87,7 +87,7 @@ class IntelligentNodeMover {
 
   private boolean findAppropriateNode(List<SNode> selectedNodes) {
     myCurrent = findBoundaryNode(selectedNodes);
-    if (myCurrent == null) {
+    if (myCurrent == null || myCurrent.getParent() == null) {
       return false;
     }
     String role = myCurrent.getRoleInParent();
