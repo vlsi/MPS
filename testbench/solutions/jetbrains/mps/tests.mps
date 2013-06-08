@@ -1708,6 +1708,9 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2844379130042579904" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.7130462290292145235" resolveInfo="MoveBlockToBlock" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7462077311455593924" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.7462077311455328941" resolveInfo="MoveClass" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2844379130042580167" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.2844379130040014669" resolveInfo="MoveFirstStatementInTry" />
     </node>
@@ -1715,7 +1718,7 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.953450985260497371" resolveInfo="MoveFirstStatementThenMethod" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2844379130042580696" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.2844379130040112869" resolveInfo="MoveFromOneCathToAnother" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.2844379130040112869" resolveInfo="MoveFromOneCatchToAnother" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2844379130042580962" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.7247887419163198990" resolveInfo="MoveNodeRange" />
