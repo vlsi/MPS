@@ -332,7 +332,6 @@
     <unitInfo nodeId="2116786884968876798" fileName="SModelUtil.java" startLine="85" startPosition="69" endLine="100" endPosition="5" unitName="jetbrains.mps.kernel.model.SModelUtil$1" />
     <unitInfo nodeId="1237995590703" fileName="SModelUtil.java" startLine="37" startPosition="0" endLine="267" endPosition="0" unitName="jetbrains.mps.kernel.model.SModelUtil" />
   </root>
-  <root nodeRef="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)/3340103645315009208" />
   <root nodeRef="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)/4193578441192064991">
     <nodeInfo nodeId="7512946059813365946" fileName="MissingDependenciesFixer.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4193578441192064993" fileName="MissingDependenciesFixer.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
@@ -443,6 +442,5 @@
     <unitInfo nodeId="6352952732708123721" fileName="MissingDependenciesFixer.java" startLine="56" startPosition="55" endLine="117" endPosition="5" unitName="jetbrains.mps.kernel.model.MissingDependenciesFixer$1" />
     <unitInfo nodeId="4193578441192064991" fileName="MissingDependenciesFixer.java" startLine="29" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.kernel.model.MissingDependenciesFixer" />
   </root>
-  <root nodeRef="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)/507022825981353176" />
 </debugInfo>
 
