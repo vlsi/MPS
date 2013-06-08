@@ -21,6 +21,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.project.PathMacros;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.File;
@@ -31,7 +32,7 @@ public class MpsEnvironment implements Environment {
   private final EnvironmentConfig config;
 
   private final MapPathMacrosProvider macroProvider;
-  private final LibraryContributor libContributor;
+  private final Iterable<LibraryContributor> libContributors;
 
 
   public MpsEnvironment(EnvironmentConfig config) {
@@ -64,8 +65,10 @@ public class MpsEnvironment implements Environment {
     macroProvider = EnvironmentUtils.createMapMacrosProvider(macros);
     PathMacros.getInstance().addMacrosProvider(macroProvider);
 
-    libContributor = EnvironmentUtils.createLibContributor(false, config.libs());
-    LibraryInitializer.getInstance().addContributor(libContributor);
+    libContributors = SetSequence.fromSetWithValues(new HashSet<LibraryContributor>(), createLibContributors(config));
+    for (LibraryContributor libContributor : Sequence.fromIterable(libContributors)) {
+      LibraryInitializer.getInstance().addContributor(libContributor);
+    }
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
@@ -82,6 +85,12 @@ public class MpsEnvironment implements Environment {
 
   public boolean hasIdeaInstance() {
     return false;
+  }
+
+
+
+  protected Iterable<LibraryContributor> createLibContributors(EnvironmentConfig config) {
+    return Sequence.<LibraryContributor>singleton(EnvironmentUtils.createLibContributor(false, config.libs()));
   }
 
 
@@ -106,7 +115,9 @@ public class MpsEnvironment implements Environment {
     }
 
     PathMacros.getInstance().removeMacrosProvider(macroProvider);
-    LibraryInitializer.getInstance().removeContributor(libContributor);
+    for (LibraryContributor libContributor : Sequence.fromIterable(libContributors)) {
+      LibraryInitializer.getInstance().removeContributor(libContributor);
+    }
 
     MpsPlatform.dispose();
 

@@ -50,6 +50,7 @@
   <dependency className="jetbrains.mps.tool.builder.make.ChunksGeneratorWorker" file="ChunksGeneratorWorker.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -57,10 +58,8 @@
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
@@ -81,10 +80,12 @@
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentUtils" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode extendsClassName="jetbrains.mps.tool.builder.Environment" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.make.GeneratorWorker" />
+    <classNode extendsClassName="jetbrains.mps.tool.environment.MpsEnvironment" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.make.ConsoleMessageFormat" file="ConsoleMessageFormat.java">
     <classNode dependClassName="java.lang.CharSequence" />
