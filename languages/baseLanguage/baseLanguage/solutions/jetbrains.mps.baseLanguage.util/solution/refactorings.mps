@@ -43,6 +43,7 @@
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
   <import index="t3eg" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(org.jetbrains.mps.openapi.language@java_stub)" version="-1" />
   <import index="r9fo" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(org.jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="89o2" modelUID="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
@@ -27999,8 +28000,8 @@
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8032461659229463486" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="InlineFieldAssignmentRefactoring" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="inlineField" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8032461659229724966" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="g695.~InlineFieldRefactoring" resolveInfo="InlineFieldRefactoring" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="150281128378017744" nodeInfo="in">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8032461659229412326" resolveInfo="InlineFieldRefactoring" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8032461659229463494" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="myVariable" />
@@ -28167,8 +28168,8 @@
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4812946390332934290" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="InlineFieldReferenceOperationRefactoring" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="inlineField" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4812946390332934291" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="g695.~InlineFieldRefactoring" resolveInfo="InlineFieldRefactoring" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="150281128378063080" nodeInfo="in">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8032461659229412326" resolveInfo="InlineFieldRefactoring" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="4812946390332934292" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="myReference" />
@@ -28303,7 +28304,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4812946390332934351" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="4812946390332934352" nodeInfo="nn" />
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4812946390332934353" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g695.~InlineFieldRefactoring%doptimizeDeclaration(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="optimizeDeclaration" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8032461659229412335" resolveInfo="optimizeDeclaration" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4812946390332934354" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4812946390332934327" resolveInfo="variable" />
               </node>
@@ -28514,7 +28515,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3011630936848370588" nodeInfo="nn">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8032461659229412527" nodeInfo="nn">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8032461659229412528" nodeInfo="nn">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g695.~InlineFieldAssignmentRefactoring%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodel%dSNode)" resolveInfo="InlineFieldAssignmentRefactoring" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8032461659229463497" resolveInfo="InlineFieldAssignmentRefactoring" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="8032461659229412529" nodeInfo="nn">
                     <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8032461659229412530" nodeInfo="nn">
@@ -28530,7 +28531,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8032461659229412533" nodeInfo="nn">
                 <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8032461659229412534" nodeInfo="nn">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8032461659229412535" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g695.~InlineFieldReferenceRefactoring%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodel%dSNode)" resolveInfo="InlineFieldReferenceRefactoring" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8032461659229644624" resolveInfo="InlineFieldReferenceRefactoring" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="8032461659229412536" nodeInfo="nn">
                       <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
                       <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8032461659229412537" nodeInfo="nn">
@@ -28568,8 +28569,8 @@
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8032461659229644617" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="InlineFieldReferenceRefactoring" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="inlineField" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8032461659229686721" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="g695.~InlineFieldRefactoring" resolveInfo="InlineFieldRefactoring" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="150281128378067650" nodeInfo="in">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8032461659229412326" resolveInfo="InlineFieldRefactoring" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8032461659229644618" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="myReference" />
@@ -28694,7 +28695,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8032461659229644741" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="8032461659229644742" nodeInfo="nn" />
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8032461659229644743" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g695.~InlineFieldRefactoring%doptimizeDeclaration(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="optimizeDeclaration" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8032461659229412335" resolveInfo="optimizeDeclaration" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8032461659229644744" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8032461659229644659" resolveInfo="variable" />
               </node>
