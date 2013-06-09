@@ -97,9 +97,4 @@ public class ParameterizedMpsTest extends MpsTest {
       return childrenInvoker(notifier);
     }
   }
-
-  @Override
-  protected void runChild(Runner runner, RunNotifier notifier) {
-    super.runChild(runner, notifier);
-  }
 }

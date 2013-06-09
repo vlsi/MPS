@@ -912,42 +912,6 @@
         </node>
       </node>
     </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2105519997962035632" nodeInfo="igu">
-      <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="runChild" />
-      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="2105519997962035633" nodeInfo="nn" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2105519997962035635" nodeInfo="in" />
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2105519997962035636" nodeInfo="ir">
-        <property name="name" nameId="tpck.1169194664001" value="runner" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2105519997962035637" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="u67v.~Runner" resolveInfo="Runner" />
-        </node>
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2105519997962035638" nodeInfo="ir">
-        <property name="name" nameId="tpck.1169194664001" value="notifier" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2105519997962035639" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vzhc.~RunNotifier" resolveInfo="RunNotifier" />
-        </node>
-      </node>
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2105519997962035640" nodeInfo="nn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2105519997962042988" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="2105519997962042986" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="aj7e.~Suite%drunChild(org%djunit%drunner%dRunner,org%djunit%drunner%dnotification%dRunNotifier)%cvoid" resolveInfo="runChild" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2105519997962043068" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2105519997962035636" resolveInfo="runner" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2105519997962050003" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2105519997962035638" resolveInfo="notifier" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="2105519997962035641" nodeInfo="nn">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lc.~Override" resolveInfo="Override" />
-      </node>
-    </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1036071220598694533" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ModuleSymbolicSuite" />
@@ -3557,6 +3521,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1209415647739046624" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MPSOpenProjectRunner" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1209415647739046625" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1209415647739118398" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="u67v.~Runner" resolveInfo="Runner" />
@@ -4276,6 +4241,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6219666460876673637" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="DisposeMPSStatement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6219666460876673638" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6219666460876673643" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ik6t.~Statement" resolveInfo="Statement" />
@@ -4438,6 +4404,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7906452883299897332" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MPSOpenProjectSuite" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7906452883299897333" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7906452883299897338" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="aj7e.~Suite" resolveInfo="Suite" />
@@ -4572,6 +4539,7 @@
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5503298173333910467" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MPSProjectITestsSuite" />
     <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5503298173333910468" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3487579775279298544" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="aj7e.~Suite" resolveInfo="Suite" />
@@ -5028,6 +4996,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="912926329919748278" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MpsModuleTestSuite" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ant" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7535322034160454281" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="PROPERTY_TEST_MODULE" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -5455,6 +5424,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5835181105771454522" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MpsModulesRunner" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ant" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7535322034160451297" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="PROPERTY_LIBRARY" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -6318,6 +6288,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="912926329919545764" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MpsModulesRunnerAdditionSuite" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ant" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="7781441327979752687" nodeInfo="igu">
       <property name="isTransient" nameId="tpee.8606350594693632173" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="myRunner" />
@@ -6644,6 +6615,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5835181105770050000" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MpsProjectTestSuite" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ant" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5503298173333996383" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="PROPERTY_MODULE_UUID" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5503298173333996384" nodeInfo="nn" />

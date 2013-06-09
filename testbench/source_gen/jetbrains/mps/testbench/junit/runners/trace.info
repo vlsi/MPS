@@ -1216,7 +1216,6 @@
     <nodeInfo nodeId="935017990628671811" fileName="ParameterizedMpsTest.java" startLine="86" startPosition="61" endLine="87" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="935017990628671825" fileName="ParameterizedMpsTest.java" startLine="91" startPosition="64" endLine="92" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="935017990628671830" fileName="ParameterizedMpsTest.java" startLine="96" startPosition="58" endLine="97" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2105519997962042988" fileName="ParameterizedMpsTest.java" startLine="102" startPosition="64" endLine="103" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="935017990628671589" fileName="ParameterizedMpsTest.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParameterizedMpsTest#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
     <nodeInfo nodeId="935017990628671692" fileName="ParameterizedMpsTest.java" startLine="41" startPosition="54" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="935017990628671767" fileName="ParameterizedMpsTest.java" startLine="74" startPosition="67" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1226,7 +1225,6 @@
     <nodeInfo nodeId="935017990628671566" fileName="ParameterizedMpsTest.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testName#(Lorg/junit/runners/model/FrameworkMethod;)Ljava/lang/String;" />
     <nodeInfo nodeId="935017990628671571" fileName="ParameterizedMpsTest.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateConstructor#(Ljava/util/List;)V" />
     <nodeInfo nodeId="935017990628671577" fileName="ParameterizedMpsTest.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classBlock#(Lorg/junit/runner/notification/RunNotifier;)Lorg/junit/runners/model/Statement;" />
-    <nodeInfo nodeId="2105519997962035632" fileName="ParameterizedMpsTest.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
     <nodeInfo nodeId="935017990628671545" fileName="ParameterizedMpsTest.java" startLine="53" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestClassRunnerForParameters#(Ljava/lang/Class;Ljava/util/List;I)V" />
     <nodeInfo nodeId="935017990628671733" fileName="ParameterizedMpsTest.java" startLine="64" startPosition="55" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="935017990628671679" fileName="ParameterizedMpsTest.java" startLine="39" startPosition="98" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -1247,7 +1245,6 @@
     <scopeInfo nodeId="935017990628671810" fileName="ParameterizedMpsTest.java" startLine="86" startPosition="61" endLine="87" endPosition="100" />
     <scopeInfo nodeId="935017990628671824" fileName="ParameterizedMpsTest.java" startLine="91" startPosition="64" endLine="92" endPosition="41" />
     <scopeInfo nodeId="935017990628671829" fileName="ParameterizedMpsTest.java" startLine="96" startPosition="58" endLine="97" endPosition="39" />
-    <scopeInfo nodeId="2105519997962035640" fileName="ParameterizedMpsTest.java" startLine="102" startPosition="64" endLine="103" endPosition="37" />
     <scopeInfo nodeId="935017990628671618" fileName="ParameterizedMpsTest.java" startLine="26" startPosition="53" endLine="28" endPosition="26">
       <varInfo nodeId="935017990628671620" varName="runner" />
     </scopeInfo>
@@ -1274,10 +1271,6 @@
     </scopeInfo>
     <scopeInfo nodeId="935017990628671577" fileName="ParameterizedMpsTest.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="935017990628671580" varName="notifier" />
-    </scopeInfo>
-    <scopeInfo nodeId="2105519997962035632" fileName="ParameterizedMpsTest.java" startLine="101" startPosition="0" endLine="105" endPosition="0">
-      <varInfo nodeId="2105519997962035638" varName="notifier" />
-      <varInfo nodeId="2105519997962035636" varName="runner" />
     </scopeInfo>
     <scopeInfo nodeId="935017990628671545" fileName="ParameterizedMpsTest.java" startLine="53" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="935017990628671554" varName="i" />
@@ -1309,7 +1302,7 @@
     </scopeInfo>
     <scopeInfo nodeId="935017990628671563" fileName="ParameterizedMpsTest.java" startLine="72" startPosition="0" endLine="84" endPosition="0" />
     <unitInfo nodeId="935017990628671534" fileName="ParameterizedMpsTest.java" startLine="49" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest$TestClassRunnerForParameters" />
-    <unitInfo nodeId="935017990628671531" fileName="ParameterizedMpsTest.java" startLine="18" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest" />
+    <unitInfo nodeId="935017990628671531" fileName="ParameterizedMpsTest.java" startLine="18" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest" />
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/935017990628671834" />
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/935017990628672065" />
