@@ -16,6 +16,7 @@ import java.lang.annotation.ElementType;
 
 public class MpsTest extends SymbolicSuite {
   private final List<Runner> children;
+  private final boolean withWatching;
 
 
   public MpsTest(Class<?> klass, RunnerBuilder builder) throws InitializationError {
@@ -32,16 +33,22 @@ public class MpsTest extends SymbolicSuite {
     } else {
       children = super.getChildren();
     }
+
+    withWatching = klass.getAnnotation(MpsTest.WithoutWatching.class) == null;
   }
 
   @Override
   protected void runChild(Runner runner, RunNotifier notifier) {
-    WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier);
-    try {
-      super.runChild(runner, runNotifier);
-    } finally {
-      PerformanceMessenger.getInstance().generateReport();
-      runNotifier.dispose();
+    if (withWatching) {
+      WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier);
+      try {
+        super.runChild(runner, runNotifier);
+      } finally {
+        PerformanceMessenger.getInstance().generateReport();
+        runNotifier.dispose();
+      }
+    } else {
+      super.runChild(runner, notifier);
     }
 
     if (runner == children.get(children.size() - 1)) {
@@ -72,5 +79,10 @@ static @interface PreloadAllModules {
 @Retention(RetentionPolicy.RUNTIME)
 @Target(value = {ElementType.TYPE})
 public static @interface WithMake {
+}
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(value = {ElementType.TYPE})
+public static @interface WithoutWatching {
 }
 }
