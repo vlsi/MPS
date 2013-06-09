@@ -246,14 +246,12 @@
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.MpsTest" file="MpsTest.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.annotation.ElementType" />
     <classNode dependClassName="java.lang.annotation.Retention" />
     <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
     <classNode dependClassName="java.lang.annotation.Target" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
@@ -315,6 +313,17 @@
     <classNode dependClassName="org.junit.runner.manipulation.Sorter" />
     <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.FilepathParameterized" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.runners.SuiteMpsTest" file="SuiteMpsTest.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="org.junit.runner.Runner" />
+    <classNode dependClassName="org.junit.runners.model.InitializationError" />
+    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
+    <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.MpsTest" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.misc" file="misc.xml" />
 </dependenciesRoot>

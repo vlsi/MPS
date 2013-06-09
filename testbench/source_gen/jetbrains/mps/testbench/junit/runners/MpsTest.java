@@ -11,13 +11,12 @@ import org.junit.runner.notification.RunNotifier;
 import jetbrains.mps.testbench.junit.WatchingRunNotifier;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import org.junit.runner.Description;
-import java.util.ArrayList;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 
-public class MpsTest extends ParentRunner<Runner> {
+public abstract class MpsTest extends ParentRunner<Runner> {
   private List<Runner> children;
   private final boolean withWatching;
 
@@ -31,14 +30,15 @@ public class MpsTest extends ParentRunner<Runner> {
       MpsTestsSupport.loadAllModulesIntoRepository();
     }
 
-    // todo: in case of simple MpsTest without SuiteClassSymbolas and Parameters should be something else... 
-    children = builder.runners(klass, MpsTest.getAnnotatedClasses(klass));
+    children = createChildRunners(klass, builder);
     if (klass.getAnnotation(MpsTest.WithMake.class) != null) {
       children = MakeRunner.withMakeRunner(getTestClass(), children);
     }
 
     withWatching = klass.getAnnotation(MpsTest.WithoutWatching.class) == null;
   }
+
+  protected abstract List<Runner> createChildRunners(Class<?> klass, RunnerBuilder builder) throws InitializationError;
 
   @Override
   protected void runChild(Runner runner, RunNotifier notifier) {
@@ -66,28 +66,6 @@ public class MpsTest extends ParentRunner<Runner> {
   @Override
   protected List<Runner> getChildren() {
     return children;
-  }
-
-
-
-  private static Class<?>[] getAnnotatedClasses(Class<?> klass) throws InitializationError {
-    MpsTest.SuiteClassSymbols annotation = klass.getAnnotation(MpsTest.SuiteClassSymbols.class);
-    if (annotation == null) {
-      throw new InitializationError(String.format("class '%s' must have a SuiteClassSymbols annotation", klass.getName()));
-    }
-    List<Class<?>> foundClasses = new ArrayList<Class<?>>();
-    List<String> notfoundClasses = new ArrayList<String>();
-    for (String sym : annotation.value()) {
-      try {
-        foundClasses.add(Class.forName(sym));
-      } catch (ClassNotFoundException e) {
-        notfoundClasses.add(sym);
-      }
-    }
-    if (!(notfoundClasses.isEmpty())) {
-      throw new InitializationError("Not found classes: " + notfoundClasses);
-    }
-    return foundClasses.toArray(new Class<?>[foundClasses.size()]);
   }
 
 

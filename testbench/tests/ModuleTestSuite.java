@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.testbench.junit.runners.MpsTest;
 import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
 import jetbrains.mps.testbench.junit.runners.MpsTest.SuiteClassSymbols;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithIdeaInstance;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
+import jetbrains.mps.testbench.junit.runners.SuiteMpsTest;
 import junit.framework.TestSuite;
 import org.junit.runner.RunWith;
 
-@RunWith(MpsTest.class)
+@RunWith(SuiteMpsTest.class)
 @WithIdeaInstance
 @PreloadAllModules
 @WithMake
