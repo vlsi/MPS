@@ -32,10 +32,10 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="445606167100192268" nodeInfo="nn" />
     <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="1099962754143789941" nodeInfo="nn">
       <link role="annotation" roleId="tpee.1188208074048" targetNodeId="u67u.~RunWith" resolveInfo="RunWith" />
-      <node role="value" roleId="tpee.1188214630783" type="tpee.AnnotationInstanceValue" typeId="tpee.1188214545140" id="1099962754143790391" nodeInfo="ng">
+      <node role="value" roleId="tpee.1188214630783" type="tpee.ImplicitAnnotationInstanceValue" typeId="tpee.2580416627845338977" id="2105519997962592204" nodeInfo="ng">
         <link role="key" roleId="tpee.1188214555875" targetNodeId="u67u.~RunWith%dvalue()" resolveInfo="value" />
-        <node role="value" roleId="tpee.1188214607812" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="1099962754143792310" nodeInfo="nn">
-          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="oh7r.935017990628671531" resolveInfo="FilepathParameterized" />
+        <node role="value" roleId="tpee.1188214607812" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="2105519997962592682" nodeInfo="nn">
+          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="aj7d.~Parameterized" resolveInfo="Parameterized" />
         </node>
       </node>
     </node>

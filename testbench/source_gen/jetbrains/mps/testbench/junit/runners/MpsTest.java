@@ -6,8 +6,10 @@ import org.junit.runners.ParentRunner;
 import org.junit.runner.Runner;
 import java.util.List;
 import org.junit.runners.model.RunnerBuilder;
-import org.junit.runners.model.InitializationError;
 import org.junit.runner.notification.RunNotifier;
+import org.junit.runner.manipulation.Sortable;
+import org.junit.runner.manipulation.Sorter;
+import jetbrains.mps.testbench.junit.OrderComparator;
 import jetbrains.mps.testbench.junit.WatchingRunNotifier;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import org.junit.runner.Description;
@@ -21,7 +23,7 @@ public abstract class MpsTest extends ParentRunner<Runner> {
   private final boolean withWatching;
 
 
-  public MpsTest(Class<?> klass, RunnerBuilder builder) throws InitializationError {
+  public MpsTest(Class<?> klass, RunnerBuilder builder) throws Throwable {
     super(klass);
 
     MpsTestsSupport.initEnv(klass.getAnnotation(MpsTest.WithIdeaInstance.class) != null);
@@ -38,10 +40,15 @@ public abstract class MpsTest extends ParentRunner<Runner> {
     withWatching = klass.getAnnotation(MpsTest.WithoutWatching.class) == null;
   }
 
-  protected abstract List<Runner> createChildRunners(Class<?> klass, RunnerBuilder builder) throws InitializationError;
+  protected abstract List<Runner> createChildRunners(Class<?> klass, RunnerBuilder builder) throws Throwable;
 
   @Override
   protected void runChild(Runner runner, RunNotifier notifier) {
+    // todo: ? 
+    if (runner instanceof Sortable) {
+      ((Sortable) runner).sort(new Sorter(new OrderComparator()));
+    }
+
     if (withWatching) {
       WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier);
       try {

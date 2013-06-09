@@ -15,6 +15,8 @@
  */
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
+import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -27,6 +29,8 @@ import java.util.List;
 import java.util.Set;
 
 @RunWith(ParameterizedMpsTest.class)
+@PreloadAllModules
+@WithMake
 public class AuditConstraints {
   private static final Set<String> DISABLED_MODULES = new HashSet<String>();
   static {

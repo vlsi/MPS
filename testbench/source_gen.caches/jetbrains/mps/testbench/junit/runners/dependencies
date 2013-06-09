@@ -9,29 +9,6 @@
     <classNode dependClassName="org.junit.runners.model.MultipleFailureException" />
     <classNode extendsClassName="org.junit.runners.model.Statement" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.FilepathParameterized" file="FilepathParameterized.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.ClassCastException" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.SuppressWarnings" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.lang.reflect.Modifier" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="org.junit.runner.Runner" />
-    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
-    <classNode dependClassName="org.junit.runners.Parameterized" />
-    <classNode dependClassName="org.junit.runners.model.FrameworkMethod" />
-    <classNode dependClassName="org.junit.runners.model.InitializationError" />
-    <classNode dependClassName="org.junit.runners.model.Statement" />
-    <classNode dependClassName="org.junit.runners.model.TestClass" />
-    <classNode extendsClassName="org.junit.runners.BlockJUnit4ClassRunner" />
-    <classNode extendsClassName="org.junit.runners.Suite" />
-  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.MPSOpenProjectRunner" file="MPSOpenProjectRunner.java">
     <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
     <classNode dependClassName="com.intellij.util.PathUtil" />
@@ -248,19 +225,22 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.annotation.ElementType" />
     <classNode dependClassName="java.lang.annotation.Retention" />
     <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
     <classNode dependClassName="java.lang.annotation.Target" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.OrderComparator" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.Runner" />
+    <classNode dependClassName="org.junit.runner.manipulation.Sortable" />
+    <classNode dependClassName="org.junit.runner.manipulation.Sorter" />
     <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
-    <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
     <classNode extendsClassName="java.lang.annotation.Annotation" />
     <classNode extendsClassName="org.junit.runners.ParentRunner" />
@@ -301,23 +281,32 @@
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest" file="ParameterizedMpsTest.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassCastException" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.reflect.Modifier" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.OrderComparator" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
     <classNode dependClassName="org.junit.runner.Runner" />
-    <classNode dependClassName="org.junit.runner.manipulation.Sortable" />
-    <classNode dependClassName="org.junit.runner.manipulation.Sorter" />
     <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
-    <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.FilepathParameterized" />
+    <classNode dependClassName="org.junit.runners.Parameterized" />
+    <classNode dependClassName="org.junit.runners.model.FrameworkMethod" />
+    <classNode dependClassName="org.junit.runners.model.InitializationError" />
+    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
+    <classNode dependClassName="org.junit.runners.model.Statement" />
+    <classNode dependClassName="org.junit.runners.model.TestClass" />
+    <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.MpsTest" />
+    <classNode extendsClassName="org.junit.runners.BlockJUnit4ClassRunner" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.SuiteMpsTest" file="SuiteMpsTest.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="org.junit.runner.Runner" />
