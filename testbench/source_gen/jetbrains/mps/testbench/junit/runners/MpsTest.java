@@ -21,6 +21,7 @@ import java.lang.annotation.ElementType;
 public abstract class MpsTest extends ParentRunner<Runner> {
   private List<Runner> children;
   private final boolean withWatching;
+  private final boolean withSorting;
 
 
   public MpsTest(Class<?> klass, RunnerBuilder builder) throws Throwable {
@@ -38,15 +39,18 @@ public abstract class MpsTest extends ParentRunner<Runner> {
     }
 
     withWatching = klass.getAnnotation(MpsTest.WithoutWatching.class) == null;
+    // todo: remove withSorting annotation? 
+    withSorting = klass.getAnnotation(MpsTest.WithSorting.class) != null;
   }
 
   protected abstract List<Runner> createChildRunners(Class<?> klass, RunnerBuilder builder) throws Throwable;
 
   @Override
   protected void runChild(Runner runner, RunNotifier notifier) {
-    // todo: ? 
-    if (runner instanceof Sortable) {
-      ((Sortable) runner).sort(new Sorter(new OrderComparator()));
+    if (withSorting) {
+      if (runner instanceof Sortable) {
+        ((Sortable) runner).sort(new Sorter(new OrderComparator()));
+      }
     }
 
     if (withWatching) {
@@ -104,5 +108,10 @@ public static @interface WithoutWatching {
 @Target(value = {ElementType.TYPE})
 public static @interface SuiteClassSymbols {
 String[] value();
+}
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(value = {ElementType.TYPE})
+public static @interface WithSorting {
 }
 }

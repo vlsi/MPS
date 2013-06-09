@@ -18,6 +18,7 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
+import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -36,6 +37,7 @@ import java.util.List;
 @RunWith(ParameterizedMpsTest.class)
 @PreloadAllModules
 @WithMake
+@WithSorting
 public class CheckProjectStructure {
   private static CheckProjectStructureHelper HELPER;
 
