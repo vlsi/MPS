@@ -971,65 +971,7 @@
     </scopeInfo>
     <unitInfo nodeId="7906452883299897332" fileName="MPSOpenProjectSuite.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MPSOpenProjectSuite" />
   </root>
-  <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/7906452883299946826">
-    <nodeInfo nodeId="7906452883299947070" fileName="ParameterizedSuite.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />
-    <nodeInfo nodeId="7906452883299946838" fileName="ParameterizedSuite.java" startLine="24" startPosition="85" endLine="25" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7906452883299947181" fileName="ParameterizedSuite.java" startLine="26" startPosition="89" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7906452883299946863" fileName="ParameterizedSuite.java" startLine="31" startPosition="78" endLine="32" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7906452883299946968" fileName="ParameterizedSuite.java" startLine="35" startPosition="85" endLine="36" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7906452883299946896" fileName="ParameterizedSuite.java" startLine="37" startPosition="65" endLine="38" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7906452883299946911" fileName="ParameterizedSuite.java" startLine="39" startPosition="73" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7906452883299946913" fileName="ParameterizedSuite.java" startLine="42" startPosition="5" endLine="43" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7906452883299947248" fileName="ParameterizedSuite.java" startLine="47" startPosition="40" endLine="48" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7906452883299951160" fileName="ParameterizedSuite.java" startLine="53" startPosition="53" endLine="54" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7906452883299951169" fileName="ParameterizedSuite.java" startLine="54" startPosition="49" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7906452883299951174" fileName="ParameterizedSuite.java" startLine="55" startPosition="50" endLine="56" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7906452883299951146" fileName="ParameterizedSuite.java" startLine="57" startPosition="5" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7906452883299947055" fileName="ParameterizedSuite.java" startLine="25" startPosition="50" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7906452883299946855" fileName="ParameterizedSuite.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParametersList#(Lorg/junit/runners/model/TestClass;)Ljava/util/List;" />
-    <nodeInfo nodeId="7906452883299946904" fileName="ParameterizedSuite.java" startLine="38" startPosition="54" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7906452883299947239" fileName="ParameterizedSuite.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
-    <nodeInfo nodeId="7906452883299951150" fileName="ParameterizedSuite.java" startLine="52" startPosition="41" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7906452883299946828" fileName="ParameterizedSuite.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParameterizedSuite#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
-    <nodeInfo nodeId="7906452883299946983" fileName="ParameterizedSuite.java" startLine="36" startPosition="105" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7906452883299951139" fileName="ParameterizedSuite.java" startLine="51" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lorg/junit/runner/notification/RunNotifier;)V" />
-    <nodeInfo nodeId="7906452883299946877" fileName="ParameterizedSuite.java" startLine="35" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParametersMethod#(Lorg/junit/runners/model/TestClass;)Lorg/junit/runners/model/FrameworkMethod;" />
-    <scopeInfo nodeId="7906452883299947058" fileName="ParameterizedSuite.java" startLine="26" startPosition="89" endLine="27" endPosition="85" />
-    <scopeInfo nodeId="7906452883299946862" fileName="ParameterizedSuite.java" startLine="31" startPosition="78" endLine="32" endPosition="79" />
-    <scopeInfo nodeId="7906452883299946910" fileName="ParameterizedSuite.java" startLine="39" startPosition="73" endLine="40" endPosition="20" />
-    <scopeInfo nodeId="7906452883299947243" fileName="ParameterizedSuite.java" startLine="47" startPosition="40" endLine="48" endPosition="21" />
-    <scopeInfo nodeId="7906452883299947055" fileName="ParameterizedSuite.java" startLine="25" startPosition="50" endLine="28" endPosition="5">
-      <varInfo nodeId="7906452883299947056" varName="parameter" />
-    </scopeInfo>
-    <scopeInfo nodeId="7906452883299946855" fileName="ParameterizedSuite.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="7906452883299946860" varName="klass" />
-    </scopeInfo>
-    <scopeInfo nodeId="7906452883299951151" fileName="ParameterizedSuite.java" startLine="53" startPosition="53" endLine="56" endPosition="13" />
-    <scopeInfo nodeId="7906452883299946831" fileName="ParameterizedSuite.java" startLine="24" startPosition="85" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="7906452883299946986" fileName="ParameterizedSuite.java" startLine="37" startPosition="65" endLine="41" endPosition="7">
-      <varInfo nodeId="7906452883299946897" varName="modifiers" />
-    </scopeInfo>
-    <scopeInfo nodeId="7906452883299947239" fileName="ParameterizedSuite.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="7906452883299946828" fileName="ParameterizedSuite.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="7906452883299947051" varName="builder" />
-      <varInfo nodeId="7906452883299946833" varName="klass" />
-    </scopeInfo>
-    <scopeInfo nodeId="7906452883299946983" fileName="ParameterizedSuite.java" startLine="36" startPosition="105" endLine="42" endPosition="5">
-      <varInfo nodeId="7906452883299946984" varName="each" />
-    </scopeInfo>
-    <scopeInfo nodeId="7906452883299951144" fileName="ParameterizedSuite.java" startLine="52" startPosition="41" endLine="58" endPosition="24" />
-    <scopeInfo nodeId="7906452883299946882" fileName="ParameterizedSuite.java" startLine="35" startPosition="85" endLine="43" endPosition="94">
-      <varInfo nodeId="7906452883299946969" varName="methods" />
-    </scopeInfo>
-    <scopeInfo nodeId="7906452883299951139" fileName="ParameterizedSuite.java" startLine="51" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="7906452883299951142" varName="notifier" />
-    </scopeInfo>
-    <scopeInfo nodeId="7906452883299946877" fileName="ParameterizedSuite.java" startLine="35" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="7906452883299946880" varName="testClass" />
-    </scopeInfo>
-    <unitInfo nodeId="7906452883299946922" fileName="ParameterizedSuite.java" startLine="61" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ParameterizedSuite$SuiteClasses" />
-    <unitInfo nodeId="7906452883299946826" fileName="ParameterizedSuite.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ParameterizedSuite" />
-  </root>
+  <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/7906452883299946826" />
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/8816956192715451485">
     <nodeInfo nodeId="8181622299282921383" fileName="ParameterizedMpsTest.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="children" />
     <nodeInfo nodeId="8816956192715453275" fileName="ParameterizedMpsTest.java" startLine="16" startPosition="64" endLine="17" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
