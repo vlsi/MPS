@@ -306,18 +306,10 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
-    <classNode dependClassName="org.junit.runner.Runner" />
-    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
-    <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.WatchingParameterized" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.WatchingParameterized" file="WatchingParameterized.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.OrderComparator" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
     <classNode dependClassName="org.junit.runner.Runner" />
     <classNode dependClassName="org.junit.runner.manipulation.Sortable" />
     <classNode dependClassName="org.junit.runner.manipulation.Sorter" />

@@ -5,11 +5,15 @@ package jetbrains.mps.testbench.junit.runners;
 import java.util.List;
 import org.junit.runner.Runner;
 import org.junit.runner.notification.RunNotifier;
+import jetbrains.mps.testbench.junit.WatchingRunNotifier;
+import org.junit.runner.manipulation.Sortable;
+import org.junit.runner.manipulation.Sorter;
+import jetbrains.mps.testbench.junit.OrderComparator;
 
 /**
  * Use this type @RunWith() carefully. Better specify project with MPSOpenProjectSuite (but i'm not sure that MPSOpenProjectSuite works).
  */
-public class ParameterizedMpsTest extends WatchingParameterized {
+public class ParameterizedMpsTest extends FilepathParameterized {
   private final List<Runner> children;
 
 
@@ -30,7 +34,16 @@ public class ParameterizedMpsTest extends WatchingParameterized {
 
   @Override
   protected void runChild(Runner runner, RunNotifier notifier) {
-    super.runChild(runner, notifier);
+    WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier);
+    if (runner instanceof Sortable) {
+      ((Sortable) runner).sort(new Sorter(new OrderComparator()));
+    }
+    try {
+      super.runChild(runner, runNotifier);
+    } finally {
+      runNotifier.dispose();
+    }
+
     if (runner == children.get(children.size() - 1)) {
       MpsTestsSupport.disposeEnv();
     }

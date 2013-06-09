@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8efc7fuzmigukgi6i76dyf0udniw0g">
+<dependencies version="2" modelHash="-97dohk4a24bh6eb2980bts5vsrt5u34">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)" />
@@ -44,18 +44,12 @@
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="e4cv1gc4wskt76f7rva55r0sqoini0u" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-9fdi0n0a07zuqciwx30oe146qg9byaf" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
-  <common hash="wgu14ejaa2wg362k2oz6771fs40iv2" />
+  <common hash="5rx7g0a97sde5b1d4quxwglubpmszc6" />
   <source id="935017990628671531" name="FilepathParameterized" hash="dd4h0zwdj2vnj6ngcqjlhzdyjdnsnqk">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FilepathParameterized.java" />
-  </source>
-  <source id="935017990628672065" name="WatchingParameterized" hash="b1h52m6rkya1d5p062f603ilys4pxz4">
-    <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)" />
-    <file name="WatchingParameterized.java" />
   </source>
   <source id="1036071220598694533" name="ModuleSymbolicSuite" hash="7gbpf63lg950xnk0b9sp9l28pdn1w7u">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -67,10 +61,10 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModuleSymbolicSuite.java" />
   </source>
-  <source id="8816956192715451485" name="ParameterizedMpsTest" hash="-32p7gkqc0t3q1o05jf5wbwfp8h2ie0y">
+  <source id="8816956192715451485" name="ParameterizedMpsTest" hash="c6d115ijnv0leoefrcv4ougqrcrgfq7">
     <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" />
-    <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner.notification(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner.notification@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)" />
     <file name="ParameterizedMpsTest.java" />
   </source>
   <source id="6791703723376742374" name="MakeRunner" hash="-1awfa7rt0p5udhwh2u7pq4g881flvfi">

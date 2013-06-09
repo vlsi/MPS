@@ -1013,38 +1013,49 @@
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/7906452883299946826" />
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/8816956192715451485">
-    <nodeInfo nodeId="8181622299282921383" fileName="ParameterizedMpsTest.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="children" />
-    <nodeInfo nodeId="8816956192715453275" fileName="ParameterizedMpsTest.java" startLine="16" startPosition="64" endLine="17" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8181622299282925083" fileName="ParameterizedMpsTest.java" startLine="17" startPosition="26" endLine="18" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8181622299283012426" fileName="ParameterizedMpsTest.java" startLine="24" startPosition="51" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8181622299283012431" fileName="ParameterizedMpsTest.java" startLine="25" startPosition="34" endLine="26" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8181622299283053070" fileName="ParameterizedMpsTest.java" startLine="26" startPosition="51" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8181622299283053107" fileName="ParameterizedMpsTest.java" startLine="27" startPosition="0" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8181622299283081138" fileName="ParameterizedMpsTest.java" startLine="32" startPosition="64" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3894165323891617864" fileName="ParameterizedMpsTest.java" startLine="34" startPosition="54" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3894165323891927848" fileName="ParameterizedMpsTest.java" startLine="40" startPosition="40" endLine="41" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8181622299283094516" fileName="ParameterizedMpsTest.java" startLine="33" startPosition="37" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8816956192715451487" fileName="ParameterizedMpsTest.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParameterizedMpsTest#(Ljava/lang/Class;)V" />
-    <nodeInfo nodeId="8816956192715453278" fileName="ParameterizedMpsTest.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
-    <nodeInfo nodeId="8181622299283081092" fileName="ParameterizedMpsTest.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
-    <nodeInfo nodeId="8181622299283049394" fileName="ParameterizedMpsTest.java" startLine="21" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="initEnv#(Ljava/lang/Class;)Ljava/lang/Class;" />
-    <scopeInfo nodeId="8181622299283094519" fileName="ParameterizedMpsTest.java" startLine="34" startPosition="54" endLine="35" endPosition="35" />
-    <scopeInfo nodeId="8816956192715453283" fileName="ParameterizedMpsTest.java" startLine="40" startPosition="40" endLine="41" endPosition="20" />
-    <scopeInfo nodeId="8816956192715451490" fileName="ParameterizedMpsTest.java" startLine="16" startPosition="64" endLine="18" endPosition="78" />
-    <scopeInfo nodeId="8816956192715451487" fileName="ParameterizedMpsTest.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+    <nodeInfo nodeId="8181622299282921383" fileName="ParameterizedMpsTest.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="children" />
+    <nodeInfo nodeId="8816956192715453275" fileName="ParameterizedMpsTest.java" startLine="20" startPosition="64" endLine="21" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8181622299282925083" fileName="ParameterizedMpsTest.java" startLine="21" startPosition="26" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8181622299283012426" fileName="ParameterizedMpsTest.java" startLine="28" startPosition="51" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8181622299283012431" fileName="ParameterizedMpsTest.java" startLine="29" startPosition="34" endLine="30" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8181622299283053070" fileName="ParameterizedMpsTest.java" startLine="30" startPosition="51" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8181622299283053107" fileName="ParameterizedMpsTest.java" startLine="31" startPosition="0" endLine="32" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105519997959495062" fileName="ParameterizedMpsTest.java" startLine="36" startPosition="64" endLine="37" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105519997959495073" fileName="ParameterizedMpsTest.java" startLine="38" startPosition="37" endLine="39" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105519997959495091" fileName="ParameterizedMpsTest.java" startLine="41" startPosition="9" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105519997959495086" fileName="ParameterizedMpsTest.java" startLine="43" startPosition="15" endLine="44" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105519997959555414" fileName="ParameterizedMpsTest.java" startLine="45" startPosition="5" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3894165323891617864" fileName="ParameterizedMpsTest.java" startLine="47" startPosition="54" endLine="48" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3894165323891927848" fileName="ParameterizedMpsTest.java" startLine="53" startPosition="40" endLine="54" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2105519997959495068" fileName="ParameterizedMpsTest.java" startLine="37" startPosition="72" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8181622299283094516" fileName="ParameterizedMpsTest.java" startLine="46" startPosition="0" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8816956192715451487" fileName="ParameterizedMpsTest.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParameterizedMpsTest#(Ljava/lang/Class;)V" />
+    <nodeInfo nodeId="8816956192715453278" fileName="ParameterizedMpsTest.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
+    <nodeInfo nodeId="2105519997959495084" fileName="ParameterizedMpsTest.java" startLine="40" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="8181622299283049394" fileName="ParameterizedMpsTest.java" startLine="25" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="initEnv#(Ljava/lang/Class;)Ljava/lang/Class;" />
+    <nodeInfo nodeId="8181622299283081092" fileName="ParameterizedMpsTest.java" startLine="35" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
+    <scopeInfo nodeId="2105519997959495072" fileName="ParameterizedMpsTest.java" startLine="38" startPosition="37" endLine="39" endPosition="66" />
+    <scopeInfo nodeId="2105519997959495090" fileName="ParameterizedMpsTest.java" startLine="41" startPosition="9" endLine="42" endPosition="42" />
+    <scopeInfo nodeId="2105519997959495085" fileName="ParameterizedMpsTest.java" startLine="43" startPosition="15" endLine="44" endPosition="28" />
+    <scopeInfo nodeId="8181622299283094519" fileName="ParameterizedMpsTest.java" startLine="47" startPosition="54" endLine="48" endPosition="35" />
+    <scopeInfo nodeId="8816956192715453283" fileName="ParameterizedMpsTest.java" startLine="53" startPosition="40" endLine="54" endPosition="20" />
+    <scopeInfo nodeId="8816956192715451490" fileName="ParameterizedMpsTest.java" startLine="20" startPosition="64" endLine="22" endPosition="78" />
+    <scopeInfo nodeId="8816956192715451487" fileName="ParameterizedMpsTest.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="8816956192715453272" varName="clazz" />
     </scopeInfo>
-    <scopeInfo nodeId="8181622299283049397" fileName="ParameterizedMpsTest.java" startLine="24" startPosition="51" endLine="28" endPosition="17" />
-    <scopeInfo nodeId="8181622299283081134" fileName="ParameterizedMpsTest.java" startLine="32" startPosition="64" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="8816956192715453278" fileName="ParameterizedMpsTest.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="8181622299283081092" fileName="ParameterizedMpsTest.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="8181622299283049397" fileName="ParameterizedMpsTest.java" startLine="28" startPosition="51" endLine="32" endPosition="17" />
+    <scopeInfo nodeId="8816956192715453278" fileName="ParameterizedMpsTest.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="8181622299283049394" fileName="ParameterizedMpsTest.java" startLine="25" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="8181622299283049466" varName="clazz" />
+    </scopeInfo>
+    <scopeInfo nodeId="8181622299283081134" fileName="ParameterizedMpsTest.java" startLine="36" startPosition="64" endLine="49" endPosition="5">
+      <varInfo nodeId="2105519997959495063" varName="runNotifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="8181622299283081092" fileName="ParameterizedMpsTest.java" startLine="35" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="8181622299283081097" varName="notifier" />
       <varInfo nodeId="8181622299283081095" varName="runner" />
     </scopeInfo>
-    <scopeInfo nodeId="8181622299283049394" fileName="ParameterizedMpsTest.java" startLine="21" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="8181622299283049466" varName="clazz" />
-    </scopeInfo>
-    <unitInfo nodeId="8816956192715451485" fileName="ParameterizedMpsTest.java" startLine="9" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest" />
+    <unitInfo nodeId="8816956192715451485" fileName="ParameterizedMpsTest.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest" />
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/9085186120773985667">
     <unitInfo nodeId="9085186120773985667" fileName="misc.xml" startLine="1" startPosition="0" endLine="11" endPosition="10" unitName="jetbrains.mps.testbench.junit.runners.misc" />
@@ -1307,31 +1318,6 @@
     <unitInfo nodeId="935017990628671531" fileName="FilepathParameterized.java" startLine="19" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.FilepathParameterized" />
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/935017990628671834" />
-  <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/935017990628672065">
-    <nodeInfo nodeId="935017990628672075" fileName="WatchingParameterized.java" startLine="13" startPosition="65" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="935017990628672086" fileName="WatchingParameterized.java" startLine="18" startPosition="64" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="935017990628672097" fileName="WatchingParameterized.java" startLine="20" startPosition="37" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935017990628672115" fileName="WatchingParameterized.java" startLine="23" startPosition="9" endLine="24" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935017990628672110" fileName="WatchingParameterized.java" startLine="25" startPosition="15" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935017990628672068" fileName="WatchingParameterized.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchingParameterized#(Ljava/lang/Class;)V" />
-    <nodeInfo nodeId="935017990628672092" fileName="WatchingParameterized.java" startLine="19" startPosition="72" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="935017990628672108" fileName="WatchingParameterized.java" startLine="22" startPosition="5" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="935017990628672078" fileName="WatchingParameterized.java" startLine="17" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
-    <scopeInfo nodeId="935017990628672074" fileName="WatchingParameterized.java" startLine="13" startPosition="65" endLine="14" endPosition="17" />
-    <scopeInfo nodeId="935017990628672096" fileName="WatchingParameterized.java" startLine="20" startPosition="37" endLine="21" endPosition="66" />
-    <scopeInfo nodeId="935017990628672114" fileName="WatchingParameterized.java" startLine="23" startPosition="9" endLine="24" endPosition="42" />
-    <scopeInfo nodeId="935017990628672109" fileName="WatchingParameterized.java" startLine="25" startPosition="15" endLine="26" endPosition="28" />
-    <scopeInfo nodeId="935017990628672068" fileName="WatchingParameterized.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="935017990628672071" varName="klass" />
-    </scopeInfo>
-    <scopeInfo nodeId="935017990628672085" fileName="WatchingParameterized.java" startLine="18" startPosition="64" endLine="27" endPosition="5">
-      <varInfo nodeId="935017990628672087" varName="runNotifier" />
-    </scopeInfo>
-    <scopeInfo nodeId="935017990628672078" fileName="WatchingParameterized.java" startLine="17" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="935017990628672083" varName="notifier" />
-      <varInfo nodeId="935017990628672081" varName="runner" />
-    </scopeInfo>
-    <unitInfo nodeId="935017990628672065" fileName="WatchingParameterized.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.WatchingParameterized" />
-  </root>
+  <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/935017990628672065" />
 </debugInfo>
 
