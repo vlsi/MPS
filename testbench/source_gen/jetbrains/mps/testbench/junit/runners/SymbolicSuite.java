@@ -7,7 +7,6 @@ import org.junit.runner.Runner;
 import java.util.List;
 import org.junit.runners.model.RunnerBuilder;
 import org.junit.runners.model.InitializationError;
-import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import java.util.ArrayList;
@@ -20,24 +19,8 @@ public class SymbolicSuite extends ParentRunner<Runner> {
   private final List<Runner> myRunners;
 
   protected SymbolicSuite(Class<?> klass, RunnerBuilder builder) throws InitializationError {
-    this(builder, klass, SymbolicSuite.getAnnotatedClasses(klass));
-  }
-
-  protected SymbolicSuite(RunnerBuilder builder, Class<?>[] classes) throws InitializationError {
-    this(null, builder.runners(null, classes));
-  }
-
-  protected SymbolicSuite(Class<?> klass, Class<?>[] suiteClasses) throws InitializationError {
-    this(new AllDefaultPossibilitiesBuilder(true), klass, suiteClasses);
-  }
-
-  protected SymbolicSuite(RunnerBuilder builder, Class<?> klass, Class<?>[] suiteClasses) throws InitializationError {
-    this(klass, builder.runners(klass, suiteClasses));
-  }
-
-  protected SymbolicSuite(Class<?> klass, List<Runner> runners) throws InitializationError {
     super(klass);
-    myRunners = runners;
+    myRunners = builder.runners(klass, SymbolicSuite.getAnnotatedClasses(klass));
   }
 
   @Override
