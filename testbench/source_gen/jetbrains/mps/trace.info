@@ -380,5 +380,52 @@
   <root nodeRef="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)/5294483648489409013">
     <unitInfo nodeId="5294483648489409013" fileName="MPSLaunch.java" startLine="10" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.MPSLaunch" />
   </root>
+  <root nodeRef="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)/694564436393184888">
+    <nodeInfo nodeId="694564436393188666" fileName="CoreMpsTest.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CREATED_ENV" />
+    <nodeInfo nodeId="694564436393188704" fileName="CoreMpsTest.java" startLine="14" startPosition="30" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="694564436393188672" fileName="CoreMpsTest.java" startLine="15" startPosition="30" endLine="16" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="694564436393188684" fileName="CoreMpsTest.java" startLine="17" startPosition="30" endLine="18" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="694564436393188698" fileName="CoreMpsTest.java" startLine="24" startPosition="30" endLine="25" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="694564436393188678" fileName="CoreMpsTest.java" startLine="16" startPosition="49" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="694564436393188692" fileName="CoreMpsTest.java" startLine="23" startPosition="32" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="694564436393188689" fileName="CoreMpsTest.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="cleanup#()V" />
+    <nodeInfo nodeId="694564436393188669" fileName="CoreMpsTest.java" startLine="13" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setup#()V" />
+    <scopeInfo nodeId="694564436393188683" fileName="CoreMpsTest.java" startLine="17" startPosition="30" endLine="18" endPosition="52" />
+    <scopeInfo nodeId="694564436393188697" fileName="CoreMpsTest.java" startLine="24" startPosition="30" endLine="25" endPosition="39" />
+    <scopeInfo nodeId="694564436393188691" fileName="CoreMpsTest.java" startLine="23" startPosition="32" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="694564436393188671" fileName="CoreMpsTest.java" startLine="14" startPosition="30" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="694564436393188689" fileName="CoreMpsTest.java" startLine="22" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="694564436393188669" fileName="CoreMpsTest.java" startLine="13" startPosition="0" endLine="21" endPosition="0" />
+    <unitInfo nodeId="694564436393184888" fileName="CoreMpsTest.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.CoreMpsTest" />
+  </root>
+  <root nodeRef="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)/694564436393193873">
+    <nodeInfo nodeId="694564436393193879" fileName="WorkbenchMpsTest.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CREATED_ENV" />
+    <nodeInfo nodeId="694564436393193885" fileName="WorkbenchMpsTest.java" startLine="17" startPosition="30" endLine="18" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="694564436393193897" fileName="WorkbenchMpsTest.java" startLine="19" startPosition="30" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="694564436393193911" fileName="WorkbenchMpsTest.java" startLine="26" startPosition="30" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="694564436393193920" fileName="WorkbenchMpsTest.java" startLine="31" startPosition="55" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="694564436393193932" fileName="WorkbenchMpsTest.java" startLine="35" startPosition="54" endLine="36" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="694564436393193891" fileName="WorkbenchMpsTest.java" startLine="18" startPosition="48" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="694564436393193905" fileName="WorkbenchMpsTest.java" startLine="25" startPosition="32" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="694564436393193916" fileName="WorkbenchMpsTest.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openProject#(Ljava/io/File;)Ljetbrains/mps/project/Project;" />
+    <nodeInfo nodeId="694564436393193928" fileName="WorkbenchMpsTest.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="disposeProject#(Ljetbrains/mps/project/Project;)V" />
+    <nodeInfo nodeId="694564436393193902" fileName="WorkbenchMpsTest.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="cleanup#()V" />
+    <nodeInfo nodeId="694564436393193882" fileName="WorkbenchMpsTest.java" startLine="16" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setup#()V" />
+    <scopeInfo nodeId="694564436393193896" fileName="WorkbenchMpsTest.java" startLine="19" startPosition="30" endLine="20" endPosition="52" />
+    <scopeInfo nodeId="694564436393193910" fileName="WorkbenchMpsTest.java" startLine="26" startPosition="30" endLine="27" endPosition="39" />
+    <scopeInfo nodeId="694564436393193919" fileName="WorkbenchMpsTest.java" startLine="31" startPosition="55" endLine="32" endPosition="60" />
+    <scopeInfo nodeId="694564436393193931" fileName="WorkbenchMpsTest.java" startLine="35" startPosition="54" endLine="36" endPosition="52" />
+    <scopeInfo nodeId="694564436393193904" fileName="WorkbenchMpsTest.java" startLine="25" startPosition="32" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="694564436393193916" fileName="WorkbenchMpsTest.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="694564436393193917" varName="projectFile" />
+    </scopeInfo>
+    <scopeInfo nodeId="694564436393193928" fileName="WorkbenchMpsTest.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="694564436393193929" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="694564436393193884" fileName="WorkbenchMpsTest.java" startLine="17" startPosition="30" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="694564436393193902" fileName="WorkbenchMpsTest.java" startLine="24" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="694564436393193882" fileName="WorkbenchMpsTest.java" startLine="16" startPosition="0" endLine="23" endPosition="0" />
+    <unitInfo nodeId="694564436393193873" fileName="WorkbenchMpsTest.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.WorkbenchMpsTest" />
+  </root>
 </debugInfo>
 
