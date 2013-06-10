@@ -8,11 +8,12 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.io.File;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.FileUtil;
+import java.io.IOException;
+import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -30,7 +31,7 @@ import jetbrains.mps.util.NameUtil;
 public class DirParser {
   private static final Logger LOG = LogManager.getLogger(DirParser.class);
   private List<SModel> myAffectedModels = ListSequence.fromList(new ArrayList<SModel>());
-  private List<File> mySourceDirs;
+  private List<IFile> mySourceDirs;
   private SModule myModule;
   private Project myProject;
   private JavaParser myJavaParser = new JavaParser();
@@ -40,23 +41,23 @@ public class DirParser {
     myProject = project;
   }
 
-  public DirParser(SModule module, Project project, File sourceDir) {
+  public DirParser(SModule module, Project project, IFile sourceDir) {
     this(module, project);
-    mySourceDirs = ListSequence.fromListAndArray(new ArrayList<File>(), sourceDir);
+    mySourceDirs = ListSequence.fromListAndArray(new ArrayList<IFile>(), sourceDir);
   }
 
-  public List<SNode> parseDir(JavaParser parser, File dir) throws JavaParseException {
+  public List<SNode> parseDir(JavaParser parser, IFile dir) throws IOException, JavaParseException {
     List<SNode> result = new ArrayList<SNode>();
 
     if (dir == null || !(dir.exists()) || !(dir.isDirectory())) {
       throw new IllegalArgumentException("Bad directory");
     }
 
-    for (File file : dir.listFiles()) {
+    for (IFile file : ListSequence.fromList(dir.getChildren())) {
       if (file.isDirectory() || !(file.getName().endsWith(".java"))) {
         continue;
       }
-      String code = FileUtil.read(file);
+      String code = IFileUtils.getTextContents(file);
       List<SNode> oneFileRoots = parser.parse(code, "", FeatureKind.CLASS, true).getNodes();
       ListSequence.fromList(result).addSequence(ListSequence.fromList(oneFileRoots));
     }
@@ -64,12 +65,12 @@ public class DirParser {
     return result;
   }
 
-  public void addDirectory(File dir) {
+  public void addDirectory(IFile dir) {
     ListSequence.fromList(mySourceDirs).addElement(dir);
   }
 
-  public void parseDirs() throws JavaParseException {
-    for (File sourceDir : ListSequence.fromList(mySourceDirs)) {
+  public void parseDirs() throws IOException, JavaParseException {
+    for (IFile sourceDir : ListSequence.fromList(mySourceDirs)) {
       addSourceFromDirectory(sourceDir);
     }
 
@@ -86,7 +87,7 @@ public class DirParser {
 
   }
 
-  public void addSourceFromDirectory(final File dir) throws JavaParseException {
+  public void addSourceFromDirectory(final IFile dir) throws IOException, JavaParseException {
     assert dir.isDirectory();
 
     // packages which match the directory 
@@ -96,7 +97,7 @@ public class DirParser {
     final Wrappers._boolean wasDefaultPkg = new Wrappers._boolean(false);
     final List<SNode> roots = new ArrayList<SNode>();
 
-    for (final File file : dir.listFiles()) {
+    for (final IFile file : dir.getChildren()) {
       if (file.isDirectory()) {
         addSourceFromDirectory(file);
 
@@ -130,6 +131,9 @@ public class DirParser {
               ListSequence.fromList(roots).addSequence(ListSequence.fromList(parseRes.getNodes()));
             } catch (JavaParseException e) {
               javaParseException.value = e;
+            } catch (IOException e) {
+              // FIXME 
+              throw new RuntimeException(e);
             }
           }
         });
@@ -162,8 +166,8 @@ public class DirParser {
     }
   }
 
-  private JavaParser.JavaParseResult parseFile(File file) throws JavaParseException {
-    String contents = FileUtil.read(file);
+  private JavaParser.JavaParseResult parseFile(IFile file) throws IOException, JavaParseException {
+    String contents = IFileUtils.getTextContents(file);
     return myJavaParser.parseCompilationUnit(contents);
   }
 
@@ -205,8 +209,8 @@ public class DirParser {
     return null;
   }
 
-  public static boolean checkPackageMatchesSourceDirectory(String pkg, File sourceDir) {
+  public static boolean checkPackageMatchesSourceDirectory(String pkg, IFile sourceDir) {
     String pathPostfix = NameUtil.pathFromNamespace(pkg);
-    return sourceDir.getAbsolutePath().endsWith(pathPostfix);
+    return sourceDir.getPath().endsWith(pathPostfix);
   }
 }

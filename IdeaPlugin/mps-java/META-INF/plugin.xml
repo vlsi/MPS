@@ -21,7 +21,7 @@
   <category>Custom Languages</category>
   <version>3.0</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="123.1" />
+  <idea-version since-build="123.1"/>
   <depends>jetbrains.mps.core</depends>
 
   <xi:include href="../classes/jetbrains/mps/ide/java/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
@@ -73,7 +73,11 @@
   <actions>
     <action id="jetbrains.mps.idea.scopes.CheckScopesAction"
             class="jetbrains.mps.idea.scopes.CheckScopesAction">
-      <add-to-group group-id="ProjectViewPopupMenuSettingsGroup" />
+      <add-to-group group-id="ProjectViewPopupMenuSettingsGroup"/>
+    </action>
+    <action id="jetbrains.mps.idea.java.convert.ConvertPackageToModel"
+            class="jetbrains.mps.idea.java.convert.ConvertPackageToModel">
+      <add-to-group group-id="ProjectViewPopupMenuSettingsGroup"/>
     </action>
   </actions>
 
@@ -94,7 +98,7 @@
     <java.shortNamesCache implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaShortNamesCache"/>
 
     <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.usages.MPSJavaDirectInheritorsSearcher"/>
-     <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
+    <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSFQNameJavaClassIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaPackageIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSShortNameJavaClassIndex"/>

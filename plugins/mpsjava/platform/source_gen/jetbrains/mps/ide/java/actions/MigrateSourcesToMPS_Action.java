@@ -16,7 +16,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import java.io.File;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
@@ -90,7 +90,7 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
 
       DirParser dirParser = new DirParser(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
       for (String path : CollectionSequence.fromCollection(moduleDescr.getSourcePaths())) {
-        dirParser.addDirectory(new File(path));
+        dirParser.addDirectory(FileSystem.getInstance().getFileByPath(path));
       }
       try {
         dirParser.parseDirs();
