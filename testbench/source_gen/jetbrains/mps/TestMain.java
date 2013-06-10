@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import java.util.Arrays;
@@ -163,58 +162,6 @@ public class TestMain {
 
   public static SModel getModel(Project project, String modelName) {
     return ProjectTestsSupport.getModel(project, modelName);
-  }
-
-  public static boolean testProjectReloadForLeaks(File projectFile) {
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-    return testProjectReloadForLeaks(projectFile, 1000);
-  }
-
-  public static boolean testProjectReloadForLeaks(final File projectFile, int leakThreshold) {
-    TestMain.configureMPS();
-    return testActionForLeaks(new Runnable() {
-      public void run() {
-        Project project = loadProject(projectFile);
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-        project.dispose();
-      }
-    }, leakThreshold);
-  }
-
-  public static boolean testActionForLeaks(Runnable action, int leakThreshold) {
-    action.run();
-    gc();
-    allowToCreateASnapshot();
-    long memory = usedMemory();
-    action.run();
-    gc();
-    allowToCreateASnapshot();
-    long delta = usedMemory() - memory;
-    System.out.println("delta = " + delta);
-    if (delta > leakThreshold * 1000) {
-      System.out.println(delta + " bytes leaked");
-      return false;
-    }
-    return true;
-  }
-
-  private static void allowToCreateASnapshot() {
-    // try { 
-    // System.out.println("take a snapshot!!!!"); 
-    // Thread.sleep(30000); 
-    // } catch (Throwable t) { 
-    // t.printStackTrace(); 
-    // } 
-  }
-
-  private static void gc() {
-    for (int i = 0; i < 5; i++) {
-      System.gc();
-    }
-  }
-
-  private static long usedMemory() {
-    return Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
   }
 
   public static void configureMPS() {
