@@ -34,6 +34,8 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.java.newparser.DirParser;
+import jetbrains.mps.vfs.FileSystem;
+import java.io.IOException;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -157,7 +159,7 @@ public class Utils {
       for (SNode r : ListSequence.fromList(SModelOperations.getRoots(result, null))) {
         SNodeOperations.detachNode(r);
       }
-      List<SNode> nodes = dirParser.parseDir(parser, new File(dirPath));
+      List<SNode> nodes = dirParser.parseDir(parser, FileSystem.getInstance().getFileByPath(dirPath));
 
       for (SNode n : ListSequence.fromList(nodes)) {
         SModelOperations.addRootNode(result, n);
@@ -172,6 +174,8 @@ public class Utils {
       Assert.assertFalse(wereErrors);
 
     } catch (JavaParseException e) {
+      throw new RuntimeException(e);
+    } catch (IOException e) {
       throw new RuntimeException(e);
     }
   }
