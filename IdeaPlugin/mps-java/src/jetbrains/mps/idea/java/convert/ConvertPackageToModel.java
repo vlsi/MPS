@@ -4,14 +4,13 @@ import com.intellij.facet.FacetManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiJavaFile;
-import com.intellij.psi.PsiManager;
-import com.intellij.psi.PsiPackage;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
@@ -22,7 +21,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import javax.swing.JOptionPane;
 import java.io.IOException;
 
 /**
@@ -37,7 +35,10 @@ public class ConvertPackageToModel extends AnAction {
 
   @Override
   public void actionPerformed(AnActionEvent e) {
-    PsiElement element = e.getData(LangDataKeys.PSI_ELEMENT);
+
+    // TODO handle references from MPS to the java code being converted
+
+    final PsiElement element = e.getData(LangDataKeys.PSI_ELEMENT);
     Module module = e.getData(LangDataKeys.MODULE);
 
     MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
@@ -60,6 +61,17 @@ public class ConvertPackageToModel extends AnAction {
         }
 //      }
 //    });
+
+    // it was successful
+
+    ApplicationManager.getApplication().runWriteAction(new Runnable(){
+      @Override
+      public void run() {
+        // delete directory
+        element.delete();
+      }
+    });
+
 
   }
 

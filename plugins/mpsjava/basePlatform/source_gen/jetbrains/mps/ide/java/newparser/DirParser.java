@@ -16,6 +16,7 @@ import java.io.IOException;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelInternal;
@@ -81,6 +82,9 @@ public class DirParser {
           Iterable<SNode> roots = SModelOperations.getRoots(m, null);
           JavaParser.tryResolveUnknowns(roots);
           JavaParser.tryResolveDynamicRefs(roots);
+          if (m instanceof EditableSModel) {
+            ((EditableSModel) m).save();
+          }
         }
       }
     }, myProject);
