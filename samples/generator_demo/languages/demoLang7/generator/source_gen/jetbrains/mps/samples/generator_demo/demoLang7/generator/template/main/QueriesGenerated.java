@@ -26,14 +26,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("label");
   }
 
-  public static boolean baseMappingRule_Condition_1228517679346(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name").equals("button");
-  }
-
-  public static boolean baseMappingRule_Condition_1228517679359(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name").equals("label");
-  }
-
   public static Object propertyMacro_GetPropertyValue_3771754276239319050(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
