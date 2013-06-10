@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bmep71oj7cgi5d6mbfe67faecq8xnqz">
+<dependencies version="2" modelHash="-1ndn1k0h0s50mvzk3xe72i3ak6twkkg">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(MPS.IDEA/com.intellij.openapi.extensions@java_stub)" />
@@ -35,8 +35,8 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9iow8oinjz3flhnokp65cdgbcfbisw5" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6yvhxi9k55xxea1versvzjds8py3u8n" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
-  <common hash="9rfjf0ftw0d3eig9ywduto8dh46gigl" />
-  <source id="1957199320903967681" name="ChangeModel" hash="-8p9ksatt9vkwiacz41tfdfd3k66zr5x">
+  <common hash="-10egwczrheodcgbcqjmk6dtfpqhouyz" />
+  <source id="1957199320903967681" name="ChangeModel" hash="-2e0jmick92agle6xzv7bw0dnvihq7fb">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.model(MPS.Core/jetbrains.mps.extapi.model@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -44,7 +44,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ChangeModel.java" />
   </source>
-  <source id="1957199320903967715" name="CheckDependencies_Test" hash="b17tk4vko15bq984e8lui9ja95lr3ql">
+  <source id="1957199320903967715" name="CheckDependencies_Test" hash="-2ud4yzgjxnpkw8vknqta10fl99vl5xw">
     <dep root="1957199320903967681" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -57,7 +57,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CheckDependencies_Test.java" />
   </source>
-  <source id="1957199320903967759" name="MakeAssert" hash="ccow9sqh3duf23w97tvl8hbvzwpoz7x">
+  <source id="1957199320903967759" name="MakeAssert" hash="cbjsqcuc1seui7awx6lc7itjz458uj3">
     <dep root="7196776143116381095" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
@@ -84,7 +84,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MakeAssert.java" />
   </source>
-  <source id="1957199320903968411" name="NotMake_Test" hash="-6lse6k5adw0uct9vsu1y2rsh55dnbti">
+  <source id="1957199320903968411" name="NotMake_Test" hash="-gmmkp59n45pfykdvgonklp2n885otj">
     <dep root="1957199320903967681" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -98,7 +98,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="NotMake_Test.java" />
   </source>
-  <source id="7196776143116381095" name="ChangeModelProcessor" hash="7hsq6l1ywrvhupdf37du49b3190j2si">
+  <source id="7196776143116381095" name="ChangeModelProcessor" hash="7cpd6hwnz8454kyvf089tl1u0p5n6a6">
     <dep root="1957199320903967681" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />

@@ -8,8 +8,8 @@ import jetbrains.mps.vfs.IFile;
 import java.util.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.testbench.IdeaEnvironment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.make.MPSCompilationResult;
@@ -47,9 +47,8 @@ public class MpsTestsSupport {
    * @throws MpsTestsSupport.ActiveEnvironmentNotSatisfiedException if active environment not satisfied withIdea condition
    * @return created environment iff there is no active environment currently, do not forget dispose created environment in this case!, null if active environment is satisfies condition
    */
-  public static Environment initEnv(boolean withIdea) {
+  public static Environment initEnv(boolean withIdea, EnvironmentConfig config) {
     if (ActiveEnvironment.get() == null) {
-      EnvironmentConfig config = EnvironmentConfig.defaultEnvironment();
       CREATED_ENV = (withIdea ?
         new IdeaEnvironment(config) :
         new MpsEnvironment(config)
@@ -61,6 +60,10 @@ public class MpsTestsSupport {
       }
       return null;
     }
+  }
+
+  public static Environment initEnv(boolean withIdea) {
+    return initEnv(withIdea, EnvironmentConfig.defaultEnvironment());
   }
 
 

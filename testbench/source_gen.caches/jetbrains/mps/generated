@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8v3swv06g7wuf3f28vxf252otr21wta">
+<dependencies version="2" modelHash="-bihww0idfhhxuzccgm9hfirq3yn1b9p">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
@@ -13,11 +13,11 @@
   <source id="5294483648489409013" name="MPSLaunch" hash="-6l2qmj0ur5q744yr3huuxebeivr5ap2">
     <file name="MPSLaunch.java" />
   </source>
-  <source id="694564436393184888" name="CoreMpsTest" hash="-4sex65q9rsnkmcocrgsxrxzsol634hw">
+  <source id="694564436393184888" name="CoreMpsTest" hash="-arsmm075hoca43j3dm0offpuzvzea4s">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CoreMpsTest.java" />
   </source>
-  <source id="694564436393193873" name="WorkbenchMpsTest" hash="-70woptbibxuk2daqxu6cipim0q1g4dk">
+  <source id="694564436393193873" name="WorkbenchMpsTest" hash="-dzhbwgn32p5rzvfn9zmmpa5d3rymorb">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="WorkbenchMpsTest.java" />
   </source>

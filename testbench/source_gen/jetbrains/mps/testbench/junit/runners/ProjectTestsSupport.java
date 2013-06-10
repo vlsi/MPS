@@ -34,9 +34,10 @@ public class ProjectTestsSupport {
     return project.getScope().resolve(PersistenceFacade.getInstance().createModelReference(modelName));
   }
 
-
-
-  private static Project startTestOnProjectCopy(File source, final File destinationDir, final String projectName) {
+  /**
+   * todo: make this method private
+   */
+  public static Project startTestOnProjectCopy(File source, final File destinationDir, final String projectName) {
     if (destinationDir.exists()) {
       FileUtil.delete(destinationDir);
     }
@@ -58,7 +59,10 @@ public class ProjectTestsSupport {
     ));
   }
 
-  private static void finishTestOnProjectCopy(final Project project, final File destinationDir) {
+  /**
+   * todo: make this method private
+   */
+  public static void finishTestOnProjectCopy(final Project project, final File destinationDir) {
     waitUntilAllEventsFlushed();
     ActiveEnvironment.get().disposeProject(project);
     FileUtil.delete(destinationDir);
