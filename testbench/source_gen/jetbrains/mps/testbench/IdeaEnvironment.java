@@ -14,21 +14,24 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.tool.environment.EnvironmentUtils;
-import jetbrains.mps.TestMain;
+import java.io.File;
+import com.intellij.openapi.application.PathManager;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
+import com.intellij.idea.IdeaTestApplication;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.io.File;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
+import jetbrains.mps.TestMain;
 import jetbrains.mps.smodel.DefaultModelAccess;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -60,8 +63,39 @@ public class IdeaEnvironment implements Environment {
     // todo: ? 
     EnvironmentUtils.setSystemProperties(true);
 
-    // todo: inline 
-    TestMain.configureMPS(SetSequence.fromSet(config.plugins()).toGenericArray(String.class));
+    String mpsInternal = System.getProperty("mps.internal");
+    System.setProperty("idea.is.internal", (mpsInternal == null ?
+      "false" :
+      mpsInternal
+    ));
+    System.setProperty("idea.no.jre.check", "true");
+    // Not necessary to set this property for loading listed plugins - see PluginManager.loadDescriptors() 
+    System.setProperty("idea.platform.prefix", "Idea");
+    StringBuffer pluginPath = new StringBuffer();
+    File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
+    if (pluginDir.listFiles() != null) {
+      for (File pluginFolder : pluginDir.listFiles()) {
+        if (pluginPath.length() > 0) {
+          pluginPath.append(File.pathSeparator);
+        }
+        pluginPath.append(pluginFolder.getPath());
+      }
+    }
+    System.setProperty("plugin.path", pluginPath.toString());
+    // Value of this property is comma-separated list of plugin IDs intended to load by platform 
+    if (System.getProperty("idea.load.plugins") == null || System.getProperty("idea.load.plugins").equals("false")) {
+      System.setProperty("idea.load.plugins.id", IterableUtils.join(config.plugins(), ","));
+    }
+    if (!(cachesInvalidated)) {
+      FSRecords.invalidateCaches();
+      cachesInvalidated = true;
+    }
+    try {
+      IdeaTestApplication.getInstance(null);
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+
     // todo: IdeaTestEnvironment - default plugins: jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make 
     // todo: IdeaTestEnv - setMacro and loadLibraries from Environment 
     try {

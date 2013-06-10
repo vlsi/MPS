@@ -6,63 +6,14 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import java.io.File;
 import jetbrains.mps.testbench.IdeaEnvironment;
-import com.intellij.openapi.application.PathManager;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import java.util.Arrays;
-import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
-import com.intellij.idea.IdeaTestApplication;
 import javax.swing.SwingUtilities;
 
 public class TestMain {
-  private static final String[] DEFAULT_ENABLED_PLUGINS = new String[]{"jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make", "Git4Idea"};
   public static TestMain.ProjectContainer PROJECT_CONTAINER = new TestMain.ProjectContainer();
-  private static boolean cachesInvalidated = false;
-
-  public TestMain() {
-  }
 
   @NotNull
   public static Project loadProject(File projectFile) {
     return IdeaEnvironment.openProjectInIdeaEnvironment(projectFile);
-  }
-
-  public static void configureMPS() {
-    configureMPS(DEFAULT_ENABLED_PLUGINS);
-  }
-
-  public static void configureMPS(String... plugins) {
-    String mpsInternal = System.getProperty("mps.internal");
-    System.setProperty("idea.is.internal", (mpsInternal == null ?
-      "false" :
-      mpsInternal
-    ));
-    System.setProperty("idea.no.jre.check", "true");
-    // Not necessary to set this property for loading listed plugins - see PluginManager.loadDescriptors() 
-    System.setProperty("idea.platform.prefix", "Idea");
-    StringBuffer pluginPath = new StringBuffer();
-    File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
-    if (pluginDir.listFiles() != null) {
-      for (File pluginFolder : pluginDir.listFiles()) {
-        if (pluginPath.length() > 0) {
-          pluginPath.append(File.pathSeparator);
-        }
-        pluginPath.append(pluginFolder.getPath());
-      }
-    }
-    System.setProperty("plugin.path", pluginPath.toString());
-    // Value of this property is comma-separated list of plugin IDs intended to load by platform 
-    if (System.getProperty("idea.load.plugins") == null || System.getProperty("idea.load.plugins").equals("false")) {
-      System.setProperty("idea.load.plugins.id", IterableUtils.join(Arrays.asList(plugins), ","));
-    }
-    if (!(cachesInvalidated)) {
-      FSRecords.invalidateCaches();
-      cachesInvalidated = true;
-    }
-    try {
-      IdeaTestApplication.getInstance(null);
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
   }
 
   public static class ProjectContainer {
