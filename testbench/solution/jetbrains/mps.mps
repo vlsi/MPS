@@ -55,35 +55,6 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5294483648489407666" nodeInfo="nn" />
     </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="5294483648489407991" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="loadProject" />
-      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
-      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="5294483648489407992" nodeInfo="nn">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="as9o.~NotNull" resolveInfo="NotNull" />
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5294483648489407993" nodeInfo="ir">
-        <property name="name" nameId="tpck.1169194664001" value="projectFile" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5294483648489407994" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg7.~File" resolveInfo="File" />
-        </node>
-      </node>
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5294483648489407995" nodeInfo="nn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2770012171664430853" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2770012171664433313" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3ebz.2770012171664328364" resolveInfo="openProjectInIdeaEnvironment" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3ebz.7413225496542992859" resolveInfo="IdeaEnvironment" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2770012171664433321" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5294483648489407993" resolveInfo="projectFile" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5294483648489408124" nodeInfo="nn" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5294483648489408125" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~Project" resolveInfo="Project" />
-      </node>
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5294483648489407491" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="ProjectContainer" />
       <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
@@ -283,20 +254,20 @@
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5294483648489407591" nodeInfo="nr">
                     <property name="name" nameId="tpck.1169194664001" value="p" />
                     <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-                    <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5294483648489651623" nodeInfo="nn">
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5294483648489405947" resolveInfo="TestMain" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5294483648489407991" resolveInfo="loadProject" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5294483648489651624" nodeInfo="nn">
-                        <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5294483648489651625" nodeInfo="nn">
+                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5294483648489407593" nodeInfo="in">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~Project" resolveInfo="Project" />
+                    </node>
+                    <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8016425832626527016" nodeInfo="nn">
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3ebz.7413225496542992859" resolveInfo="IdeaEnvironment" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3ebz.2770012171664328364" resolveInfo="openProjectInIdeaEnvironment" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8016425832626528115" nodeInfo="nn">
+                        <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8016425832626528116" nodeInfo="nn">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5294483648489407597" nodeInfo="nn">
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8016425832626528117" nodeInfo="nn">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5294483648489407564" resolveInfo="name" />
                           </node>
                         </node>
                       </node>
-                    </node>
-                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5294483648489407593" nodeInfo="in">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~Project" resolveInfo="Project" />
                     </node>
                   </node>
                 </node>

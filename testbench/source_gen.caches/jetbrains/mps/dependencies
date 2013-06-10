@@ -20,7 +20,6 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.testbench.IdeaEnvironment" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.WorkbenchMpsTest" file="WorkbenchMpsTest.java">
     <classNode dependClassName="java.io.File" />

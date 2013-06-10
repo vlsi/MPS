@@ -25,8 +25,6 @@ public class MpsModulesRunner extends MPSOpenProjectRunner {
   private static final String MISC_XML = "misc.xml";
   private Environment myEnvironment;
 
-  private static boolean cachesInvalidated = false;
-
 
   public MpsModulesRunner(Class<?> testClass) throws InitializationError {
     super(testClass);
@@ -95,7 +93,7 @@ public class MpsModulesRunner extends MPSOpenProjectRunner {
 
     private Project getDummyProject() {
       File dummy = createDummyProjectFile();
-      Project p = TestMain.loadProject(dummy);
+      Project p = IdeaEnvironment.openProjectInIdeaEnvironment(dummy);
       if (this.lastProject != null) {
         try {
           SwingUtilities.invokeAndWait(new Runnable() {
