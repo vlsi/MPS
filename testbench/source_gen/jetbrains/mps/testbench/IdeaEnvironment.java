@@ -27,6 +27,8 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.smodel.DefaultModelAccess;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -153,8 +155,16 @@ public class IdeaEnvironment implements Environment {
     // todo: fix it in right way 
     ModelAccess.setInstance(new DefaultModelAccess());
 
-    // part from ProjectTest 
-    TestMain.disposeMPS();
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            IdeaTestApplication.getInstance(null).dispose();
+          }
+        });
+      }
+    });
 
     ActiveEnvironment.deactivateEnvironment(this);
   }

@@ -11,8 +11,6 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import java.util.Arrays;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import com.intellij.idea.IdeaTestApplication;
-import jetbrains.mps.ide.ThreadUtils;
-import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.SwingUtilities;
 
 public class TestMain {
@@ -65,19 +63,6 @@ public class TestMain {
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
-  }
-
-  public static void disposeMPS() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      @Override
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            IdeaTestApplication.getInstance(null).dispose();
-          }
-        });
-      }
-    });
   }
 
   public static class ProjectContainer {
