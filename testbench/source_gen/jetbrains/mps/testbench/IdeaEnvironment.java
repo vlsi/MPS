@@ -25,6 +25,11 @@ import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.DefaultModelAccess;
+import jetbrains.mps.make.ModuleMaker;
+import java.util.LinkedHashSet;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.tool.common.util.PathUtil;
 import com.intellij.openapi.application.PathMacros;
 
@@ -79,9 +84,7 @@ public class IdeaEnvironment implements Environment {
 
 
   public Project openProject(File projectFile) {
-    // part from ProjectTest 
-    // todo: inline 
-    Project project = TestMain.loadProject(projectFile);
+    Project project = openProjectInIdeaEnvironment(projectFile);
     // todo: from TestMain#startTestOnProjectCopy 
     // <node> 
     // <node> 
@@ -140,6 +143,42 @@ public class IdeaEnvironment implements Environment {
     TestMain.disposeMPS();
 
     ActiveEnvironment.deactivateEnvironment(this);
+  }
+
+
+
+  /**
+   * todo: should be private access
+   */
+  public static Project openProjectInIdeaEnvironment(File projectFile) {
+    if (!(projectFile.exists())) {
+      throw new RuntimeException("Can't find project file " + projectFile.getAbsolutePath());
+    }
+    final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
+    final String filePath = projectFile.getAbsolutePath();
+    // this is a workaround for MPS-8840 
+    final com.intellij.openapi.project.Project[] project = new com.intellij.openapi.project.Project[1];
+    final Throwable[] exc = new Throwable[]{null};
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        try {
+          project[0] = projectManager.loadAndOpenProject(filePath);
+        } catch (Throwable e) {
+          exc[0] = e;
+        }
+      }
+    });
+    if (project[0] == null) {
+      // this actually happens 
+      throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath(), exc[0]);
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        new ModuleMaker().make(new LinkedHashSet<SModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
+      }
+    });
+    projectManager.openProject(project[0]);
+    return project[0].getComponent(MPSProject.class);
   }
 
 
