@@ -79,6 +79,7 @@
 
       <add-to-group group-id="VersionControlsGroup" anchor="first"/>
       <add-to-group group-id="VcsGroups" anchor="first"/>
+      <add-to-group group-id="VcsGroup" anchor="last"/>
     </group>
 
     <group id="ConsoleView.PopupMenu">
