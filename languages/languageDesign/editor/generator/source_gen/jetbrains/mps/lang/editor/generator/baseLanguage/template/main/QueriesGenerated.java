@@ -712,7 +712,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5170495790389308440(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return QueriesUtil.getUnicName(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_createCellId_1216737839993", new Object[]{_context}), SNodeOperations.getContainingRoot(_context.getNode()), _context);
+    return QueriesUtil.getUnicName(EditorCellModel_Behavior.call_getCellId_1216737839993(_context.getNode(), _context), SNodeOperations.getContainingRoot(_context.getNode()), _context);
   }
 
   public static Object propertyMacro_GetPropertyValue_1601689342007235029(final IOperationContext operationContext, final PropertyMacroContext _context) {
