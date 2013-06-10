@@ -93,18 +93,21 @@ import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
-import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
-import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.nodeEditor.selection.SelectionListener;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
-import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.nodeEditor.selection.SelectionInternal;
+import jetbrains.mps.nodeEditor.selection.SelectionManagerImpl;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
+import jetbrains.mps.openapi.editor.selection.MultipleSelection;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionListener;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -318,7 +321,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private int myShiftX = 15;
   private int myShiftY = 10;
 
-  private SelectionManager mySelectionManager = new SelectionManager(this);
+  private SelectionManagerImpl mySelectionManager = new SelectionManagerImpl(this);
 
   private Stack<KeyboardHandler> myKbdHandlersStack;
   private MouseListener myMouseEventHandler;
@@ -543,7 +546,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     registerKeyboardAction(new AbstractAction() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        final EditorCell cell = getSelectedCell();
+        final jetbrains.mps.openapi.editor.cells.EditorCell cell = getSelectedCell();
         if (cell == null) return;
         getModelAccess().runReadAction(new Runnable() {
           @Override
@@ -572,7 +575,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (areMouseEventsBlocked()) {
           return;
         }
-        EditorCell selectedCell = getSelectedCell();
+        jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
         if (e.getClickCount() == 2 && myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell &&
             selectedCell instanceof EditorCell_Label) {
           ((EditorCell_Label) selectedCell).selectWordOrAll();
@@ -711,7 +714,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     getSelectionManager().addSelectionListener(new SelectionListener() {
       @Override
-      public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+      public void selectionChanged(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
         deactivateSubstituteChooser();
         updateStatusBarMessage();
       }
@@ -773,7 +776,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public SNode getSelectedNode() {
-    EditorCell selectedCell = getSelectedCell();
+    jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
     if (selectedCell == null) {
       return null;
     }
@@ -792,15 +795,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void moveCurrentUp() {
     Selection selection = getSelectionManager().getSelection();
-    if (selection instanceof SingularSelection || selection instanceof NodeRangeSelection) {
-      new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), false).move();
+    if (selection instanceof SingularSelection || selection instanceof MultipleSelection) {
+      new IntelligentNodeMover(this, false).move();
     }
   }
 
   public void moveCurrentDown() {
     Selection selection = getSelectionManager().getSelection();
-    if (selection instanceof SingularSelection || selection instanceof NodeRangeSelection) {
-      new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), true).move();
+    if (selection instanceof SingularSelection || selection instanceof MultipleSelection) {
+      new IntelligentNodeMover(this, true).move();
     }
   }
 
@@ -1262,7 +1265,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private DefaultActionGroup getCellActionsGroup() {
     DefaultActionGroup result = new DefaultActionGroup("Cell actions", true);
     result.setPopup(false);
-    EditorCell cell = getSelectedCell();
+    jetbrains.mps.openapi.editor.cells.EditorCell cell = getSelectedCell();
 
     final EditorContext editorContext = createEditorContextForActions();
     for (final KeyMapAction action : myKeymapHandler.getAllRegisteredActions(cell, editorContext)) {
@@ -1605,7 +1608,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     // ---
     if (keyTyped(keyEvent) && keyEvent.getKeyChar() == ' ' && noKeysDown(keyEvent)) {
-      EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
+      jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
 
       if (!(selectedCell instanceof EditorCell_STHint)) {
         if (!(selectedCell instanceof EditorCell_Label)) {
@@ -1769,7 +1772,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell> weakReference = myNodesToBigCellsMap.get(node);
     if (weakReference == null) return null;
     EditorCell result = (EditorCell) weakReference.get();
-    if (result != null && (result.getRootParent() != getRootCell() || result.isUnderFolded())) {
+    if (result != null && (result.getRootParent() != getRootCell() || CellTraversalUtil.getFoldedParent(result) != null)) {
       return null;
     }
     return result;
@@ -2073,7 +2076,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void processCoordSelection(MouseEvent mouseEvent) {
     EditorCell newSelectedCell = myRootCell.findLeaf(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
-    if (newSelectedCell != null && newSelectedCell.isUnderFolded()) {
+    if (newSelectedCell != null && CellTraversalUtil.getFoldedParent(newSelectedCell) != null) {
       // mouse was pressed on a cell representing folded collection
       return;
     }
@@ -2081,8 +2084,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       newSelectedCell = myRootCell.findCellWeak(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
     }
 
-    EditorCell selectedCell = getSelectedCell();
-    if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || selectedCell == null || !selectedCell.isAncestorOf(newSelectedCell))) {
+    jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
+    if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || selectedCell == null || !CellTraversalUtil.isAncestor(selectedCell,
+        newSelectedCell))) {
       resetLastCaretX();
       mySelectionManager.setSelection(newSelectedCell);
       newSelectedCell.processMousePressed(mouseEvent);
@@ -2094,16 +2098,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getSelectionManager().clearSelection();
   }
 
-  public void pushSelection(EditorCell cell) {
+  public void pushSelection(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     getSelectionManager().pushSelection(getSelectionManager().createSelection(cell));
   }
 
-  public EditorCell popSelection() {
-    Selection selection = getSelectionManager().popSelection();
-    return selection instanceof SingularSelection ? ((SingularSelection) selection).getEditorCell() : null;
-  }
+//  public EditorCell popSelection() {
+//    Selection selection = getSelectionManager().popSelection();
+//    return selection instanceof SingularSelection ? ((SingularSelection) selection).getEditorCell() : null;
+//  }
 
-  public EditorCell peekSelection() {
+  public jetbrains.mps.openapi.editor.cells.EditorCell peekSelection() {
     return getSelectedCell();
   }
 
@@ -2123,7 +2127,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     changeSelection((EditorCell) newSelectedCell, true);
   }
 
-  void changeSelection(@NotNull EditorCell newSelectedCell, boolean resetLastCaretX) {
+  void changeSelection(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell, boolean resetLastCaretX) {
     if (resetLastCaretX) {
       resetLastCaretX();
     }
@@ -2149,7 +2153,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   // TODO: think about replacing this method with one of ensureVisible()/scrollToCell()
-  private void showCellInViewPort(@NotNull EditorCell newSelectedCell) {
+  private void showCellInViewPort(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell) {
     if (getVisibleRect().isEmpty()) {
       final JViewport viewport = getViewport();
       viewport.addChangeListener(new ChangeListener() {
@@ -2270,7 +2274,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
-    EditorCell deepestCell = getDeepestSelectedCell();
+    jetbrains.mps.openapi.editor.cells.EditorCell deepestCell = getDeepestSelectedCell();
     if (deepestCell instanceof EditorCell_Label && g.hitClip(deepestCell.getX(), deepestCell.getY(), deepestCell.getWidth(), deepestCell.getHeight())) {
       EditorCell_Label label = (EditorCell_Label) deepestCell;
 
@@ -2349,7 +2353,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   @Override
-  public EditorCell getDeepestSelectedCell() {
+  public jetbrains.mps.openapi.editor.cells.EditorCell getDeepestSelectedCell() {
     if (isDisposed()) {
       return null;
     }
@@ -2358,7 +2362,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   @Nullable
-  public EditorCell getSelectedCell() {
+  public jetbrains.mps.openapi.editor.cells.EditorCell getSelectedCell() {
     if (isDisposed()) {
       return null;
     }
@@ -2703,7 +2707,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     super.paint(g);
     Selection selection = getSelectionManager().getSelection();
     if (selection != null) {
-      selection.paintSelection((Graphics2D) g);
+      ((SelectionInternal) selection).paintSelection((Graphics2D) g);
     }
   }
 
@@ -2853,9 +2857,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
 
       if (needsSavingState) {
-        EditorCell sc = getSelectedCell();
+        jetbrains.mps.openapi.editor.cells.EditorCell sc = getSelectedCell();
         if (sc != null) {
-          myRecentlySelectedCellInfo = sc.getCellInfo();
+          myRecentlySelectedCellInfo = APICellAdapter.getCellInfo(sc);
         }
         Object memento = ec.createMemento();
         action.run();
@@ -3489,7 +3493,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (isDisposed() || isInvalid() || isReadOnly()) {
             return;
           }
-          EditorCell selectedCell = getSelectedCell();
+          jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
           if (selectedCell != null) {
             myActionHandler.executeAction(selectedCell, jetbrains.mps.openapi.editor.cells.CellActionType.CUT);
           } else {
@@ -3522,7 +3526,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (isDisposed() || isInvalid()) {
             return;
           }
-          EditorCell selectedCell = getSelectedCell();
+          jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
           if (selectedCell != null) {
             myActionHandler.executeAction(selectedCell, jetbrains.mps.openapi.editor.cells.CellActionType.COPY);
           } else {
@@ -3554,7 +3558,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (isDisposed() || isInvalid() || isReadOnly()) {
             return;
           }
-          EditorCell selectedCell = getSelectedCell();
+          jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
           if (selectedCell != null) {
             myActionHandler.executeAction(selectedCell, jetbrains.mps.openapi.editor.cells.CellActionType.PASTE);
           } else {

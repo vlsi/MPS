@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -45,8 +46,8 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
 
   @Override
   public void activate() {
-    getEditorComponent().scrollRectToVisible(GeometryUtil.getBounds(getFirstCell(), getLastCell()));
-    getEditorComponent().repaint();
+    ((jetbrains.mps.nodeEditor.EditorComponent) getEditorComponent()).scrollRectToVisible(GeometryUtil.getBounds(getFirstCell(), getLastCell()));
+    ((jetbrains.mps.nodeEditor.EditorComponent) getEditorComponent()).repaint();
   }
 
   @Override
@@ -61,7 +62,7 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
 
   @Override
   public void executeAction(CellActionType type) {
-    getEditorComponent().assertModelNotDisposed();
+    ((jetbrains.mps.nodeEditor.EditorComponent) getEditorComponent()).assertModelNotDisposed();
     CellAction action = getAction(type);
     if (canExecuteAction(action)) {
       getAction(type).execute(getEditorComponent().getEditorContext());
@@ -114,7 +115,7 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
 
   @Override
   public void paintSelection(Graphics2D g) {
-    EditorComponent.turnOnAliasingIfPossible(g);
+    jetbrains.mps.nodeEditor.EditorComponent.turnOnAliasingIfPossible(g);
     for (EditorCell cell : getSelectedCells()) {
       if (!g.hitClip(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight())) {
         continue;
@@ -129,7 +130,7 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
         label.setCaretEnabled(false);
       }
 
-      cell.paint(g, ParentSettings.createDefaultSetting());
+      ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).paint(g, ParentSettings.createDefaultSetting());
       if (cell instanceof EditorCell_Label && !wasSelected) {
         EditorCell_Label label = (EditorCell_Label) cell;
         label.setCaretEnabled(wasCaretEnabled);

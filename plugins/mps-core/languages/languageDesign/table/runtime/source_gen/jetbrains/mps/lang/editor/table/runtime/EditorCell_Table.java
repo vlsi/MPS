@@ -12,7 +12,7 @@ import jetbrains.mps.editor.runtime.style.TableComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import java.awt.Graphics;
@@ -64,8 +64,8 @@ public class EditorCell_Table extends EditorCell_Collection {
         @Override
         public void execute(EditorContext editorContext) {
           assert !(myEmpty);
-          EditorComponent editorComponent = getEditor();
-          editorComponent.getSelectionManager().pushSelection(editorComponent.getSelectionManager().createSelection((jetbrains.mps.nodeEditor.cells.EditorCell) rowCell));
+          EditorComponent editorComponent = getEditorComponent();
+          editorComponent.getSelectionManager().pushSelection(editorComponent.getSelectionManager().createSelection(rowCell));
         }
       };
       rowCell.setAction(CellActionType.SELECT_LEFT, selectRowAction);
@@ -311,7 +311,7 @@ public class EditorCell_Table extends EditorCell_Collection {
         myExistingAction.execute(context);
         return;
       }
-      EditorComponent editorComponent = ((EditorComponent) context.getEditorComponent());
+      jetbrains.mps.nodeEditor.EditorComponent editorComponent = ((jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent());
       TableColumnSelection selection = new TableColumnSelection(editorComponent, EditorCell_Table.this, myColumnNumber);
       editorComponent.getSelectionManager().pushSelection(selection);
     }

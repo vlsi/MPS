@@ -17,12 +17,13 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.nodeEditor.selection.SelectionListener;
-import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionListener;
+import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.mps.util.Condition;
@@ -42,7 +43,7 @@ public class BracesHighlighter {
   private EditorComponent myEditorComponent;
   private SelectionListener mySelectionListener = new SelectionListener() {
     @Override
-    public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+    public void selectionChanged(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
       updateBracesSelection(newSelection instanceof SingularSelection ? ((SingularSelection) newSelection).getEditorCell() : null);
     }
   };
@@ -94,7 +95,7 @@ public class BracesHighlighter {
       if (editorCell.getStyle().get(StyleAttributes.MATCHING_LABEL) != null) {
         return new Pair(editorCell, editorCell.getStyle().get(StyleAttributes.MATCHING_LABEL));
       }
-      editorCell = (EditorCell) editorCell.getParent();
+      editorCell = editorCell.getParent();
     }
     return null;
   }
@@ -103,7 +104,7 @@ public class BracesHighlighter {
     for (EditorCell editorCell : myHighlightedCellStyles.keySet()) {
       Style originalStyle = myHighlightedCellStyles.get(editorCell);
       copyStyleAttributes(originalStyle, editorCell.getStyle());
-      myEditorComponent.leftUnhighlightCell(editorCell);
+      myEditorComponent.leftUnhighlightCell((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell);
     }
     myHighlightedCellStyles.clear();
   }
@@ -112,17 +113,18 @@ public class BracesHighlighter {
     final Pair<EditorCell, String> pair = getMatchingLabelAndCell(selectedCell);
     if (pair != null) {
       final EditorCell matchigCell = pair.o1;
-      EditorCell validCellForNode = matchigCell.getEditor().getBigValidCellForNode(matchigCell.getSNode());
+      EditorCell validCellForNode = ((EditorComponent) matchigCell.getEditorComponent()).getBigValidCellForNode(matchigCell.getSNode());
       if (validCellForNode != null) {
-        EditorCell editorCell = validCellForNode.getFirstDescendant(new Condition<EditorCell>() {
+        EditorCell editorCell = CellFinderUtil.findChildByCondition(validCellForNode, new Condition<EditorCell>() {
           @Override
           public boolean met(EditorCell cell) {
             return cell != matchigCell && cell.getSNode() == matchigCell.getSNode() && pair.o2.equals(cell.getStyle().get(StyleAttributes.MATCHING_LABEL));
           }
-        });
+        }, true);
         if (editorCell != null) {
           if (editorCell.getY() != matchigCell.getY()) {
-            matchigCell.getEditor().leftHighlightCells(matchigCell, editorCell, BRACES_LEFT_HIGHTLIGHT_COLOR);
+            ((EditorComponent) matchigCell.getEditorComponent()).leftHighlightCells((jetbrains.mps.nodeEditor.cells.EditorCell) matchigCell,
+                (jetbrains.mps.nodeEditor.cells.EditorCell) editorCell, BRACES_LEFT_HIGHTLIGHT_COLOR);
           }
           hightlightCell(editorCell);
           hightlightCell(matchigCell);

@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.openapi.editor.cells.*;
+import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.util.AndCondition;
-import org.jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Condition;
 
 /**
  * Semen Alperovich
@@ -78,13 +79,13 @@ public class CellFinderUtil {
     return findChildByManyFinders(cell, false, finders);
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell_Collection findParent(@NotNull EditorCell cell, @NotNull Condition<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> condition) {
-    if (cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection && condition.met(
-        ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell))) {
-      return ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell);
+  public static EditorCell_Collection findParent(@NotNull EditorCell cell, @NotNull Condition<EditorCell_Collection> condition) {
+    if (cell instanceof EditorCell_Collection && condition.met(
+        ((EditorCell_Collection) cell))) {
+      return ((EditorCell_Collection) cell);
     }
 
-    for (jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = cell.getParent(); parent != null; parent = parent.getParent()) {
+    for (EditorCell_Collection parent = cell.getParent(); parent != null; parent = parent.getParent()) {
       if (condition.met(parent)) {
         return parent;
       }
@@ -137,7 +138,7 @@ public class CellFinderUtil {
   }
 
   private static EditorCell_Label findEditable(@NotNull EditorCell cell, boolean forward, boolean includeThis) {
-    return findChildByConditionAndClass(cell, CellConditions.EDITABLE, EditorCell_Label.class, forward, includeThis);
+    return findChildByConditionAndClass(cell, jetbrains.mps.openapi.editor.cells.CellConditions.EDITABLE, EditorCell_Label.class, forward, includeThis);
   }
 
   public static EditorCell_Label findFirstEditable(@NotNull EditorCell cell, boolean includeThis) {
@@ -176,12 +177,12 @@ public class CellFinderUtil {
     return findLastError(cell, false);
   }
 
-  private static EditorCell findSelectedLeaf(@NotNull EditorCell cell, boolean forward, boolean includeThis) {
+  private static EditorCell findSelectableLeaf(@NotNull EditorCell cell, boolean forward, boolean includeThis) {
     return findChildByCondition(cell, jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE_lEAF, forward, includeThis);
   }
 
   public static EditorCell findFirstSelectableLeaf(@NotNull EditorCell cell, boolean includeThis) {
-    return findSelectedLeaf(cell, true, includeThis);
+    return findSelectableLeaf(cell, true, includeThis);
   }
 
   public static EditorCell findFirstSelectableLeaf(@NotNull EditorCell cell) {
@@ -189,7 +190,7 @@ public class CellFinderUtil {
   }
 
   public static EditorCell findLastSelectableLeaf(@NotNull EditorCell cell, boolean includeThis) {
-    return findSelectedLeaf(cell, false, includeThis);
+    return findSelectableLeaf(cell, false, includeThis);
   }
 
   public static EditorCell findLastSelectableLeaf(@NotNull EditorCell cell) {

@@ -248,7 +248,8 @@ public class JavaModuleFacetTab extends BaseTab {
 
     public void apply() {
       myJavaModuleFacet.getModule().getModuleDescriptor().getSourcePaths().clear();
-      myJavaModuleFacet.getModule().getModuleDescriptor().getSourcePaths().addAll(myPaths);
+      if(!myPaths.isEmpty())
+        myJavaModuleFacet.getModule().getModuleDescriptor().getSourcePaths().addAll(myPaths);
     }
   }
 
@@ -320,7 +321,8 @@ public class JavaModuleFacetTab extends BaseTab {
 
     public void apply() {
       myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths().clear();
-      myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths().addAll(myStubModelEntries);
+      if(!myStubModelEntries.isEmpty())
+        myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths().addAll(myStubModelEntries);
     }
   }
 

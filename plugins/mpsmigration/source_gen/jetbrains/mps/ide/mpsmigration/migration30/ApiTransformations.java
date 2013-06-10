@@ -2508,31 +2508,25 @@ public class ApiTransformations {
     SNode quotedNode_7 = null;
     SNode quotedNode_8 = null;
     SNode quotedNode_9 = null;
-    SNode quotedNode_10 = null;
-    SNode quotedNode_11 = null;
-    SNode quotedNode_12 = null;
-    SNode quotedNode_13 = null;
-    SNode quotedNode_14 = null;
-    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5.setReference("classConcept", SReference.create("classConcept", quotedNode_5, facade.createModelReference("r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)"), facade.createNodeId("2089287822043606602")));
+    quotedNode_5.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_5, facade.createModelReference("r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)"), facade.createNodeId("1453734572028966245")));
     quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
-      quotedNode_5.addChild("operand", HUtil.copyIfNecessary(quotedNode_6));
+      quotedNode_5.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_6));
     }
-    quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_7.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_7, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), facade.createNodeId("~SNode.insertChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void")));
-    quotedNode_9 = (SNode) parameter_2;
+    quotedNode_7 = (SNode) parameter_2;
+    if (quotedNode_7 != null) {
+      quotedNode_5.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_7));
+    }
+    quotedNode_8 = (SNode) parameter_3;
+    if (quotedNode_8 != null) {
+      quotedNode_5.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_8));
+    }
+    quotedNode_9 = (SNode) parameter_4;
     if (quotedNode_9 != null) {
-      quotedNode_7.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_9));
+      quotedNode_5.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_9));
     }
-    quotedNode_10 = (SNode) parameter_3;
-    if (quotedNode_10 != null) {
-      quotedNode_7.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_10));
-    }
-    quotedNode_11 = (SNode) parameter_4;
-    if (quotedNode_11 != null) {
-      quotedNode_7.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_11));
-    }
-    quotedNode_5.addChild("operation", quotedNode_7);
     return quotedNode_5;
   }
 

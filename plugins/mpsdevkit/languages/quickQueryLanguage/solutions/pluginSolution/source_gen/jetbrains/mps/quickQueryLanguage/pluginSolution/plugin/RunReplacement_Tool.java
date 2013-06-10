@@ -11,6 +11,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import jetbrains.mps.plugins.tool.IComponentDisposer;
 import javax.swing.JComponent;
@@ -35,7 +36,10 @@ public class RunReplacement_Tool extends GeneratedTabbedTool {
   public void addTab(final SearchQuery searchQuery, final Query query, final Runnable tempModelDisposer) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        final ReplacementView view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.myProject, FindUtils.makeProvider(new QueryFinder(query)), searchQuery, query, tempModelDisposer);
+        final ReplacementView view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.myProject, FindUtils.makeProvider(new QueryFinder(query, new _FunctionTypes._void_P0_E0() {
+          public void invoke() {
+          }
+        })), searchQuery, query, tempModelDisposer);
         RunReplacement_Tool.this.addTab(view.getComponent(), "for " + query.getConcept(), IconManager.getIconForIHolder(searchQuery.getObjectHolder()), new IComponentDisposer<JComponent>() {
           public void disposeComponent(JComponent component) {
             view.dispose();

@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.openapi.editor.cells.CellAction;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class AbstractSelection implements Selection {
+import java.awt.Graphics2D;
+
+public abstract class AbstractSelection implements SelectionInternal {
   private EditorComponent myEditorComponent;
 
   public AbstractSelection(@NotNull EditorComponent editorComponent) {
@@ -31,5 +31,8 @@ public abstract class AbstractSelection implements Selection {
   @Override
   public EditorComponent getEditorComponent() {
     return myEditorComponent;
+  }
+
+  public void paintSelection(Graphics2D g) {
   }
 }

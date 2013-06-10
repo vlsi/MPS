@@ -15,12 +15,16 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.selection.MultipleSelection;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionInfo;
+import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
@@ -114,7 +118,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
   @Override
   public SelectionInfo getSelectionInfo() {
-    SelectionInfo selectionInfo = new SelectionInfo(this.getClass().getName());
+    SelectionInfoImpl selectionInfo = new SelectionInfoImpl(this.getClass().getName());
     selectionInfo.getPropertiesMap().put(ROLE_PROPERTY_NAME, myRole);
     selectionInfo.getPropertiesMap().put(MODEL_ID_PROPERTY_NAME, myParentNode.getModel().getReference().toString());
     selectionInfo.getPropertiesMap().put(FIRST_NODE_ID_PROPERTY_NAME, myFirstNode.getNodeId().toString());
@@ -156,7 +160,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
   @Override
   public void executeAction(CellActionType type) {
-    getEditorComponent().assertModelNotDisposed();
+    ((jetbrains.mps.nodeEditor.EditorComponent) getEditorComponent()).assertModelNotDisposed();
     if (type == CellActionType.BACKSPACE || type == CellActionType.DELETE) {
       performDeleteAction(type);
       return;

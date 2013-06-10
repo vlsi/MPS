@@ -28,12 +28,12 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
-import jetbrains.mps.nodeEditor.selection.MultipleSelection;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.selection.MultipleSelection;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
@@ -52,7 +52,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.lang.ref.WeakReference;
 
-public abstract class EditorCell_Label extends EditorCell_Basic {
+public abstract class EditorCell_Label extends EditorCell_Basic implements jetbrains.mps.openapi.editor.cells.EditorCell_Label {
   protected boolean myNoTextSet;
   protected TextLine myTextLine;
   protected TextLine myNullTextLine;
@@ -111,6 +111,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myCaretIsVisible = true;
   }
 
+  @Override
   public String getText() {
     return myTextLine.getText();
   }
@@ -169,6 +170,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return myTextLine.getCaretPosition();
   }
 
+  @Override
   public void setCaretPosition(int position) {
     setCaretPosition(position, false);
   }
@@ -242,10 +244,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
+  @Override
   public boolean isCaretEnabled() {
     return myTextLine.isCaretEnabled();
   }
 
+  @Override
   public void setCaretEnabled(boolean enabled) {
     myTextLine.setCaretEnabled(enabled);
   }
@@ -519,6 +523,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return result;
   }
 
+  @Override
   public boolean executeTextAction(CellActionType type, boolean allowErrors) {
     // only following actions are supported on text
     switch (type) {
@@ -583,22 +588,27 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
+  @Override
   public String getSelectedText() {
     return myTextLine.getTextuallySelectedText();
   }
 
+  @Override
   public int getSelectionStart() {
     return myTextLine.getStartTextSelectionPosition();
   }
 
+  @Override
   public void setSelectionStart(int position) {
     myTextLine.setStartTextSelectionPosition(position);
   }
 
+  @Override
   public int getSelectionEnd() {
     return myTextLine.getEndTextSelectionPosition();
   }
 
+  @Override
   public void setSelectionEnd(int position) {
     myTextLine.setEndTextSelectionPosition(position);
   }
@@ -731,6 +741,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     getTextLine().selectAll();
   }
 
+  @Override
   public void deselectAll() {
     getTextLine().deselectAll();
   }
@@ -850,8 +861,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   private class SelectHome extends AbstractCellAction {
     @Override
     public boolean canExecute(EditorContext context) {
-      if (!isCaretPositionAllowed(0)) return false;
-      return true;
+      return isCaretPositionAllowed(0);
     }
 
     @Override
@@ -865,8 +875,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   private class SelectEnd extends AbstractCellAction {
     @Override
     public boolean canExecute(EditorContext context) {
-      if (!isCaretPositionAllowed(getText().length())) return false;
-      return true;
+      return isCaretPositionAllowed(getText().length());
     }
 
     @Override
@@ -880,7 +889,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   private class CopyLabelText extends AbstractCellAction {
     @Override
     public boolean canExecute(EditorContext context) {
-      SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
+      SelectionManager selectionManager = context.getEditorComponent().getSelectionManager();
       if (selectionManager.getSelection() instanceof EditorCellLabelSelection) {
         EditorCellLabelSelection labelSelection = (EditorCellLabelSelection) selectionManager.getSelection();
         return labelSelection.getEditorCellLabel().getSelectedText().length() > 0;
@@ -967,7 +976,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   private class CutLabelText extends AbstractCellAction {
     @Override
     public boolean canExecute(EditorContext context) {
-      SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
+      SelectionManager selectionManager = context.getEditorComponent().getSelectionManager();
       if (selectionManager.getSelection() instanceof EditorCellLabelSelection) {
         EditorCellLabelSelection labelSelection = (EditorCellLabelSelection) selectionManager.getSelection();
         return labelSelection.getEditorCellLabel().getSelectedText().length() > 0;

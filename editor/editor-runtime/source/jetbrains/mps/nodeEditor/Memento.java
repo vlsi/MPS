@@ -20,10 +20,11 @@ import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.selection.SelectionInfo;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.selection.SelectionInfoImpl;
+import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Point;
 import java.util.ArrayList;
@@ -35,7 +36,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.Stack;
 
 class Memento {
   private static final Comparator<EditorCell> FOLDED_CELLS_COMPARATOR = new Comparator<EditorCell>() {
@@ -54,7 +54,7 @@ class Memento {
     }
   };
 
-  private Stack<SelectionInfo> mySelectionStack = new Stack<SelectionInfo>();
+  private List<SelectionInfo> mySelectionStack = new ArrayList<SelectionInfo>();
   private List<CellInfo> myCollectionsWithEnabledBraces = new ArrayList<CellInfo>();
   private List<CellInfo> myFolded = new ArrayList<CellInfo>();
 
@@ -63,12 +63,14 @@ class Memento {
   private Set<String> myEnabledHints;
   private boolean myUseCustomHints;
 
-  private Memento() {}
+  private Memento() {
+  }
 
   Memento(jetbrains.mps.openapi.editor.EditorContext context, boolean full) {
     EditorComponent nodeEditor = (EditorComponent) context.getEditorComponent();
     SNode editedNode = nodeEditor.getEditedNode();
-    if (editedNode == null || (!jetbrains.mps.util.SNodeOperations.isDisposed(editedNode) && editedNode.getModel() != null && !jetbrains.mps.util.SNodeOperations.isModelDisposed(editedNode.getModel()))) {
+    if (editedNode == null || (!jetbrains.mps.util.SNodeOperations.isDisposed(editedNode) && editedNode.getModel() != null &&
+        !jetbrains.mps.util.SNodeOperations.isModelDisposed(editedNode.getModel()))) {
       mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
       ArrayList<EditorCell> foldedCells = new ArrayList<EditorCell>(nodeEditor.getFoldedCells());
       Collections.sort(foldedCells, FOLDED_CELLS_COMPARATOR);
@@ -112,15 +114,15 @@ class Memento {
     for (CellInfo collectionInfo : myCollectionsWithEnabledBraces) {
       EditorCell collection = collectionInfo.findCell(editor);
       if (!(collection instanceof EditorCell_Collection)) continue;
-      if (((EditorCell_Collection)collection).usesBraces()) {
-        ((EditorCell_Collection)collection).enableBraces();
+      if (((EditorCell_Collection) collection).usesBraces()) {
+        ((EditorCell_Collection) collection).enableBraces();
       }
     }
     for (CellInfo collectionInfo : myFolded) {
       needsRelayout = true;
       EditorCell collection = collectionInfo.findCell(editor);
       if (!(collection instanceof EditorCell_Collection)) continue;
-      ((EditorCell_Collection)collection).fold(true);      
+      ((EditorCell_Collection) collection).fold(true);
     }
 
     if (needsRelayout) {
@@ -155,8 +157,8 @@ class Memento {
     if (object instanceof Memento) {
       Memento m = (Memento) object;
       if (EqualUtil.equals(mySelectionStack, m.mySelectionStack) &&
-        EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
-        EqualUtil.equals(myFolded, m.myFolded) && EqualUtil.equals(myEnabledHints, m.myEnabledHints) && myUseCustomHints == m.myUseCustomHints) {
+          EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
+          EqualUtil.equals(myFolded, m.myFolded) && EqualUtil.equals(myEnabledHints, m.myEnabledHints) && myUseCustomHints == m.myUseCustomHints) {
 
         return true;
       }
@@ -170,12 +172,12 @@ class Memento {
 
   public String toString() {
     return "Editor Memento[\n" +
-      "  selectedStack = " + mySelectionStack + "\n" +
-      "  collectionsWithBraces = " + myCollectionsWithEnabledBraces + "\n" +
-      "  foldedCells = " + myFolded + "\n" +
-      "  enabledHints = " + myEnabledHints + "\n" +
-      "  useCustomHints = " + myUseCustomHints + "\n" +
-      "]\n";
+        "  selectedStack = " + mySelectionStack + "\n" +
+        "  collectionsWithBraces = " + myCollectionsWithEnabledBraces + "\n" +
+        "  foldedCells = " + myFolded + "\n" +
+        "  enabledHints = " + myEnabledHints + "\n" +
+        "  useCustomHints = " + myUseCustomHints + "\n" +
+        "]\n";
   }
 
   private static final String SELECTION_STACK = "selectionStack";
@@ -194,7 +196,7 @@ class Memento {
     e.addContent(selectionStack);
     for (SelectionInfo selectionInfo : mySelectionStack) {
       Element stackElement = new Element(STACK_ELEMENT);
-      selectionInfo.persistToXML(stackElement);
+      ((SelectionInfoImpl) selectionInfo).persistToXML(stackElement);
       selectionStack.addContent(stackElement);
     }
 
@@ -203,7 +205,7 @@ class Memento {
     for (CellInfo cellInfo : myFolded) {
       if (cellInfo instanceof DefaultCellInfo) {
         Element foldedElement = new Element(FOLDED_ELEMENT);
-        ((DefaultCellInfo)cellInfo).saveTo(foldedElement);
+        ((DefaultCellInfo) cellInfo).saveTo(foldedElement);
         folded.addContent(foldedElement);
       } else {
         success = false;
@@ -233,7 +235,7 @@ class Memento {
     if (selectionStack != null) {
       List children = selectionStack.getChildren(STACK_ELEMENT);
       for (Object o : children) {
-        memento.mySelectionStack.push(new SelectionInfo((Element) o)) ;
+        memento.mySelectionStack.add(new SelectionInfoImpl((Element) o));
       }
     }
     Element folded = e.getChild(FOLDED);

@@ -512,7 +512,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return facet;
   }
 
-  private void updateFacets() {
+  protected void updateFacets() {
     ModelAccess.assertLegalWrite();
 
     ModuleDescriptor descriptor = getModuleDescriptor();

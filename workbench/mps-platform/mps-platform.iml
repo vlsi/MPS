@@ -22,7 +22,7 @@
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="module" module-name="editor-api" />
     <orderEntry type="module" module-name="baseLanguage-util" />
-    <orderEntry type="module" module-name="mps-editor" />
+    <orderEntry type="module" module-name="mps-editor" exported="" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />

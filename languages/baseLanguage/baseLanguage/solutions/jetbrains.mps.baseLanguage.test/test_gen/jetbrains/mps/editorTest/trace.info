@@ -1757,6 +1757,102 @@
     <unitInfo nodeId="2707740038604155061" fileName="DeleteIfPossibleMethod_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteIfPossibleMethod_Test$TestBody" />
     <unitInfo nodeId="2707740038604155061" fileName="DeleteIfPossibleMethod_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteIfPossibleMethod_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2844379130040014669">
+    <nodeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2844379130040094786" fileName="MoveFirstStatementInTry_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveFirstStatementInTry_Test#()V" />
+    <nodeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveFirstStatementInTry#()V" />
+    <nodeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="113">
+      <varInfo nodeId="2844379130040014669" varName="editor" />
+      <varInfo nodeId="2844379130040014669" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveFirstStatementInTry_Test$TestBody" />
+    <unitInfo nodeId="2844379130040014669" fileName="MoveFirstStatementInTry_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveFirstStatementInTry_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2844379130040112869">
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2844379130040161067" fileName="MoveFromOneCatchToAnother_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveFromOneCatchToAnother_Test#()V" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveFromOneCatchToAnother#()V" />
+    <nodeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="113">
+      <varInfo nodeId="2844379130040112869" varName="editor" />
+      <varInfo nodeId="2844379130040112869" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveFromOneCatchToAnother_Test$TestBody" />
+    <unitInfo nodeId="2844379130040112869" fileName="MoveFromOneCatchToAnother_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveFromOneCatchToAnother_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2844379130040170696">
+    <nodeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="18" startPosition="60" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2844379130040284056" fileName="MoveToAbstractMethod_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveToAbstractMethod_Test#()V" />
+    <nodeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveToAbstractMethod#()V" />
+    <nodeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="14" startPosition="38" endLine="14" endPosition="38" />
+    <scopeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="18" startPosition="60" endLine="20" endPosition="101" />
+    <scopeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="115">
+      <varInfo nodeId="2844379130040170696" varName="editor" />
+      <varInfo nodeId="2844379130040170696" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveToAbstractMethod_Test$TestBody" />
+    <unitInfo nodeId="2844379130040170696" fileName="MoveToAbstractMethod_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveToAbstractMethod_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2844379130040305651">
+    <nodeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2844379130040349497" fileName="MoveOutOfCommentedBlock_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveOutOfCommentedBlock_Test#()V" />
+    <nodeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveOutOfCommentedBlock#()V" />
+    <nodeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="115">
+      <varInfo nodeId="2844379130040305651" varName="editor" />
+      <varInfo nodeId="2844379130040305651" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveOutOfCommentedBlock_Test$TestBody" />
+    <unitInfo nodeId="2844379130040305651" fileName="MoveOutOfCommentedBlock_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveOutOfCommentedBlock_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2907839077756756657">
     <nodeInfo nodeId="2907839077756756657" fileName="TryingToLeftTransformNewExpression_Test.java" startLine="21" startPosition="74" endLine="22" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2907839077756756657" fileName="TryingToLeftTransformNewExpression_Test.java" startLine="22" startPosition="107" endLine="23" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2265,6 +2361,30 @@
     <unitInfo nodeId="4507831107788316822" fileName="LT_DotExpression_with_UnaryMinus_Test.java" startLine="25" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_UnaryMinus_Test$TestBody" />
     <unitInfo nodeId="4507831107788316822" fileName="LT_DotExpression_with_UnaryMinus_Test.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_UnaryMinus_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4710305425207405693">
+    <nodeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="18" startPosition="57" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4710305425207457469" fileName="MoveIfByCondition_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveIfByCondition_Test#()V" />
+    <nodeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveIfByCondition#()V" />
+    <nodeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="14" startPosition="35" endLine="14" endPosition="35" />
+    <scopeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="18" startPosition="57" endLine="20" endPosition="98" />
+    <scopeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="115">
+      <varInfo nodeId="4710305425207405693" varName="editor" />
+      <varInfo nodeId="4710305425207405693" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveIfByCondition_Test$TestBody" />
+    <unitInfo nodeId="4710305425207405693" fileName="MoveIfByCondition_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveIfByCondition_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4741152186081386068">
     <nodeInfo nodeId="4741152186081386068" fileName="InsertBeforeUnaryMinus_Test.java" startLine="18" startPosition="62" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4741152186081386068" fileName="InsertBeforeUnaryMinus_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2481,6 +2601,31 @@
     <scopeInfo nodeId="5331479185384370996" fileName="LT_PlusExpressionRArgument_with_Plus_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <unitInfo nodeId="5331479185384370996" fileName="LT_PlusExpressionRArgument_with_Plus_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.LT_PlusExpressionRArgument_with_Plus_Test$TestBody" />
     <unitInfo nodeId="5331479185384370996" fileName="LT_PlusExpressionRArgument_with_Plus_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.LT_PlusExpressionRArgument_with_Plus_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5527013591529129291">
+    <nodeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="18" startPosition="58" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7130462290292121080" fileName="ManyStatementsList_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7130462290292123859" fileName="ManyStatementsList_Test.java" startLine="32" startPosition="113" endLine="33" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ManyStatementsList_Test#()V" />
+    <nodeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ManyStatementsList#()V" />
+    <nodeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="14" startPosition="36" endLine="14" endPosition="36" />
+    <scopeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="18" startPosition="58" endLine="20" endPosition="99" />
+    <scopeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="113">
+      <varInfo nodeId="5527013591529129291" varName="editor" />
+      <varInfo nodeId="5527013591529129291" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.ManyStatementsList_Test$TestBody" />
+    <unitInfo nodeId="5527013591529129291" fileName="ManyStatementsList_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.ManyStatementsList_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5633355289409916129">
     <nodeInfo nodeId="5633355289409916129" fileName="TestForNonEmptyProperty_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2874,6 +3019,33 @@
     <unitInfo nodeId="6230565632479499242" fileName="DeleteOnSelectedNode_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteOnSelectedNode_Test$TestBody" />
     <unitInfo nodeId="6230565632479499242" fileName="DeleteOnSelectedNode_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteOnSelectedNode_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6231723267717085092">
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="18" startPosition="57" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6231723267717205169" fileName="MoveOutOfTheBlock_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6231723267717616725" fileName="MoveOutOfTheBlock_Test.java" startLine="32" startPosition="113" endLine="33" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6231723267717615698" fileName="MoveOutOfTheBlock_Test.java" startLine="33" startPosition="113" endLine="34" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6231723267717206584" fileName="MoveOutOfTheBlock_Test.java" startLine="34" startPosition="113" endLine="35" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveOutOfTheBlock_Test#()V" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveOutOfTheBlock#()V" />
+    <nodeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="14" startPosition="35" endLine="14" endPosition="35" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="18" startPosition="57" endLine="20" endPosition="98" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="29" startPosition="51" endLine="35" endPosition="113">
+      <varInfo nodeId="6231723267717085092" varName="editor" />
+      <varInfo nodeId="6231723267717085092" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.MoveOutOfTheBlock_Test$TestBody" />
+    <unitInfo nodeId="6231723267717085092" fileName="MoveOutOfTheBlock_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.MoveOutOfTheBlock_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6249787563914683642">
     <nodeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="23" startPosition="59" endLine="24" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="24" startPosition="107" endLine="25" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3117,6 +3289,54 @@
     <unitInfo nodeId="707974323667242142" fileName="AssociativityProblem_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.AssociativityProblem_Test$TestBody" />
     <unitInfo nodeId="707974323667242142" fileName="AssociativityProblem_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AssociativityProblem_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7130462290292123895">
+    <nodeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="18" startPosition="54" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7130462290292131781" fileName="ManyStatements_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ManyStatements_Test#()V" />
+    <nodeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ManyStatements#()V" />
+    <nodeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="14" startPosition="32" endLine="14" endPosition="32" />
+    <scopeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="18" startPosition="54" endLine="20" endPosition="95" />
+    <scopeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="113">
+      <varInfo nodeId="7130462290292123895" varName="editor" />
+      <varInfo nodeId="7130462290292123895" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.ManyStatements_Test$TestBody" />
+    <unitInfo nodeId="7130462290292123895" fileName="ManyStatements_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.ManyStatements_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7130462290292145235">
+    <nodeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="18" startPosition="56" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7130462290292145644" fileName="MoveBlockToBlock_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveBlockToBlock_Test#()V" />
+    <nodeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveBlockToBlock#()V" />
+    <nodeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="14" startPosition="34" endLine="14" endPosition="34" />
+    <scopeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="18" startPosition="56" endLine="20" endPosition="97" />
+    <scopeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="113">
+      <varInfo nodeId="7130462290292145235" varName="editor" />
+      <varInfo nodeId="7130462290292145235" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveBlockToBlock_Test$TestBody" />
+    <unitInfo nodeId="7130462290292145235" fileName="MoveBlockToBlock_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveBlockToBlock_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247887419163198990">
     <nodeInfo nodeId="7247887419163198990" fileName="MoveNodeRange_Test.java" startLine="18" startPosition="53" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7247887419163198990" fileName="MoveNodeRange_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3239,6 +3459,78 @@
     <scopeInfo nodeId="7428162988804675173" fileName="SelectionOfWrappedCell_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <unitInfo nodeId="7428162988804675173" fileName="SelectionOfWrappedCell_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.SelectionOfWrappedCell_Test$TestBody" />
     <unitInfo nodeId="7428162988804675173" fileName="SelectionOfWrappedCell_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.SelectionOfWrappedCell_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7462077311455328941">
+    <nodeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="18" startPosition="49" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7462077311455334575" fileName="MoveClass_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveClass_Test#()V" />
+    <nodeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveClass#()V" />
+    <nodeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="14" startPosition="27" endLine="14" endPosition="27" />
+    <scopeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="18" startPosition="49" endLine="20" endPosition="90" />
+    <scopeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="113">
+      <varInfo nodeId="7462077311455328941" varName="editor" />
+      <varInfo nodeId="7462077311455328941" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveClass_Test$TestBody" />
+    <unitInfo nodeId="7462077311455328941" fileName="MoveClass_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveClass_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7465696304914414577">
+    <nodeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="18" startPosition="66" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7465696304914414998" fileName="MoveParameterToEmptyMethod_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveParameterToEmptyMethod_Test#()V" />
+    <nodeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveParameterToEmptyMethod#()V" />
+    <nodeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="14" startPosition="44" endLine="14" endPosition="44" />
+    <scopeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="18" startPosition="66" endLine="20" endPosition="107" />
+    <scopeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="113">
+      <varInfo nodeId="7465696304914414577" varName="editor" />
+      <varInfo nodeId="7465696304914414577" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveParameterToEmptyMethod_Test$TestBody" />
+    <unitInfo nodeId="7465696304914414577" fileName="MoveParameterToEmptyMethod_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveParameterToEmptyMethod_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7465696304914836340">
+    <nodeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="18" startPosition="56" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1178999204730116556" fileName="MoveToDummyBlock_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveToDummyBlock_Test#()V" />
+    <nodeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveToDummyBlock#()V" />
+    <nodeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="14" startPosition="34" endLine="14" endPosition="34" />
+    <scopeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="18" startPosition="56" endLine="20" endPosition="97" />
+    <scopeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="115">
+      <varInfo nodeId="7465696304914836340" varName="editor" />
+      <varInfo nodeId="7465696304914836340" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveToDummyBlock_Test$TestBody" />
+    <unitInfo nodeId="7465696304914836340" fileName="MoveToDummyBlock_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveToDummyBlock_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7704251192656077259">
     <nodeInfo nodeId="7704251192656077259" fileName="TestAutoresolve_Test.java" startLine="18" startPosition="55" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3364,6 +3656,54 @@
     <unitInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.TestNotApplicableConvertToTernaryOperatorIntention_Test$TestBody" />
     <unitInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.TestNotApplicableConvertToTernaryOperatorIntention_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/801169956439969290">
+    <nodeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="801169956440182376" fileName="MoveStatementFromCenter_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveStatementFromCenter_Test#()V" />
+    <nodeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveStatementFromCenter#()V" />
+    <nodeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="115">
+      <varInfo nodeId="801169956439969290" varName="editor" />
+      <varInfo nodeId="801169956439969290" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveStatementFromCenter_Test$TestBody" />
+    <unitInfo nodeId="801169956439969290" fileName="MoveStatementFromCenter_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveStatementFromCenter_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/801169956440189248">
+    <nodeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="18" startPosition="58" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="801169956440189354" fileName="MoveMethodByCenter_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveMethodByCenter_Test#()V" />
+    <nodeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveMethodByCenter#()V" />
+    <nodeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="14" startPosition="36" endLine="14" endPosition="36" />
+    <scopeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="18" startPosition="58" endLine="20" endPosition="99" />
+    <scopeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="113">
+      <varInfo nodeId="801169956440189248" varName="editor" />
+      <varInfo nodeId="801169956440189248" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveMethodByCenter_Test$TestBody" />
+    <unitInfo nodeId="801169956440189248" fileName="MoveMethodByCenter_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveMethodByCenter_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8221415467041264294">
     <nodeInfo nodeId="8221415467041264294" fileName="RT_addTypeVariable_Test.java" startLine="18" startPosition="58" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8221415467041264294" fileName="RT_addTypeVariable_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3442,6 +3782,30 @@
     <scopeInfo nodeId="8350369201053315001" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="28" startPosition="0" endLine="41" endPosition="0" />
     <unitInfo nodeId="8350369201053315001" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="23" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.editorTest.Post_StaticFieldToLocalStaticFieldReference_Test$TestBody" />
     <unitInfo nodeId="8350369201053315001" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="12" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.editorTest.Post_StaticFieldToLocalStaticFieldReference_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8444858026985862745">
+    <nodeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="18" startPosition="64" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8444858026986082081" fileName="MoveToCommentedStatement_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveToCommentedStatement_Test#()V" />
+    <nodeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveToCommentedStatement#()V" />
+    <nodeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="14" startPosition="42" endLine="14" endPosition="42" />
+    <scopeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="18" startPosition="64" endLine="20" endPosition="105" />
+    <scopeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="115">
+      <varInfo nodeId="8444858026985862745" varName="editor" />
+      <varInfo nodeId="8444858026985862745" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveToCommentedStatement_Test$TestBody" />
+    <unitInfo nodeId="8444858026985862745" fileName="MoveToCommentedStatement_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveToCommentedStatement_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8547191361977403062">
     <nodeInfo nodeId="8547191361977403062" fileName="ReturnFollowerByVarName_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3635,6 +3999,30 @@
     <unitInfo nodeId="8976921645732250110" fileName="PerformLeftTransformWithNoLeftTransformActions_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.PerformLeftTransformWithNoLeftTransformActions_Test$TestBody" />
     <unitInfo nodeId="8976921645732250110" fileName="PerformLeftTransformWithNoLeftTransformActions_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.PerformLeftTransformWithNoLeftTransformActions_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9046977500687661863">
+    <nodeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="18" startPosition="66" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8853870644337293941" fileName="MoveMethodToAnonymousClass_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveMethodToAnonymousClass_Test#()V" />
+    <nodeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveMethodToAnonymousClass#()V" />
+    <nodeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="14" startPosition="44" endLine="14" endPosition="44" />
+    <scopeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="18" startPosition="66" endLine="20" endPosition="107" />
+    <scopeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="115">
+      <varInfo nodeId="9046977500687661863" varName="editor" />
+      <varInfo nodeId="9046977500687661863" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveMethodToAnonymousClass_Test$TestBody" />
+    <unitInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveMethodToAnonymousClass_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/938834323431398136">
     <nodeInfo nodeId="938834323431398136" fileName="TypeName_Test.java" startLine="18" startPosition="48" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="938834323431398136" fileName="TypeName_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3658,6 +4046,209 @@
     <scopeInfo nodeId="938834323431398136" fileName="TypeName_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <unitInfo nodeId="938834323431398136" fileName="TypeName_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.TypeName_Test$TestBody" />
     <unitInfo nodeId="938834323431398136" fileName="TypeName_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.TypeName_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/953450985260205387">
+    <nodeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="18" startPosition="56" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260251639" fileName="MoveToNextMethod_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveToNextMethod_Test#()V" />
+    <nodeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveToNextMethod#()V" />
+    <nodeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="14" startPosition="34" endLine="14" endPosition="34" />
+    <scopeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="18" startPosition="56" endLine="20" endPosition="97" />
+    <scopeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="115">
+      <varInfo nodeId="953450985260205387" varName="editor" />
+      <varInfo nodeId="953450985260205387" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveToNextMethod_Test$TestBody" />
+    <unitInfo nodeId="953450985260205387" fileName="MoveToNextMethod_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveToNextMethod_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/953450985260255367">
+    <nodeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="18" startPosition="61" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260480268" fileName="MoveRangeToNextMethod_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260480283" fileName="MoveRangeToNextMethod_Test.java" startLine="32" startPosition="113" endLine="33" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260480289" fileName="MoveRangeToNextMethod_Test.java" startLine="33" startPosition="113" endLine="34" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveRangeToNextMethod_Test#()V" />
+    <nodeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveRangeToNextMethod#()V" />
+    <nodeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="14" startPosition="39" endLine="14" endPosition="39" />
+    <scopeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="18" startPosition="61" endLine="20" endPosition="102" />
+    <scopeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="29" startPosition="51" endLine="34" endPosition="115">
+      <varInfo nodeId="953450985260255367" varName="editor" />
+      <varInfo nodeId="953450985260255367" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.MoveRangeToNextMethod_Test$TestBody" />
+    <unitInfo nodeId="953450985260255367" fileName="MoveRangeToNextMethod_Test.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.MoveRangeToNextMethod_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/953450985260480313">
+    <nodeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="18" startPosition="51" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260497329" fileName="MoveToBlock_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260497342" fileName="MoveToBlock_Test.java" startLine="32" startPosition="113" endLine="33" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260497338" fileName="MoveToBlock_Test.java" startLine="33" startPosition="113" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveToBlock_Test#()V" />
+    <nodeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveToBlock#()V" />
+    <nodeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="14" startPosition="29" endLine="14" endPosition="29" />
+    <scopeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="18" startPosition="51" endLine="20" endPosition="92" />
+    <scopeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="29" startPosition="51" endLine="34" endPosition="0">
+      <varInfo nodeId="953450985260480313" varName="editor" />
+      <varInfo nodeId="953450985260480313" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.MoveToBlock_Test$TestBody" />
+    <unitInfo nodeId="953450985260480313" fileName="MoveToBlock_Test.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.MoveToBlock_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/953450985260497371">
+    <nodeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="18" startPosition="68" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260511220" fileName="MoveFirstStatementThenMethod_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260511245" fileName="MoveFirstStatementThenMethod_Test.java" startLine="32" startPosition="115" endLine="33" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260511252" fileName="MoveFirstStatementThenMethod_Test.java" startLine="33" startPosition="115" endLine="34" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260511450" fileName="MoveFirstStatementThenMethod_Test.java" startLine="34" startPosition="115" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260511468" fileName="MoveFirstStatementThenMethod_Test.java" startLine="35" startPosition="107" endLine="36" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260511267" fileName="MoveFirstStatementThenMethod_Test.java" startLine="36" startPosition="113" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="953450985260511235" fileName="MoveFirstStatementThenMethod_Test.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveFirstStatementThenMethod_Test#()V" />
+    <nodeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveFirstStatementThenMethod#()V" />
+    <nodeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="28" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="14" startPosition="46" endLine="14" endPosition="46" />
+    <scopeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="18" startPosition="68" endLine="20" endPosition="109" />
+    <scopeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="29" startPosition="51" endLine="38" endPosition="0">
+      <varInfo nodeId="953450985260497371" varName="editor" />
+      <varInfo nodeId="953450985260497371" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="28" startPosition="0" endLine="40" endPosition="0" />
+    <unitInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="23" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.editorTest.MoveFirstStatementThenMethod_Test$TestBody" />
+    <unitInfo nodeId="953450985260497371" fileName="MoveFirstStatementThenMethod_Test.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.editorTest.MoveFirstStatementThenMethod_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/953450985260511556">
+    <nodeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="18" startPosition="53" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260512003" fileName="MoveParameter_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveParameter_Test#()V" />
+    <nodeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveParameter#()V" />
+    <nodeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="14" startPosition="31" endLine="14" endPosition="31" />
+    <scopeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="18" startPosition="53" endLine="20" endPosition="94" />
+    <scopeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="115">
+      <varInfo nodeId="953450985260511556" varName="editor" />
+      <varInfo nodeId="953450985260511556" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveParameter_Test$TestBody" />
+    <unitInfo nodeId="953450985260511556" fileName="MoveParameter_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveParameter_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/953450985260512030">
+    <nodeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260758237" fileName="MoveParameterToNextMethod_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260758252" fileName="MoveParameterToNextMethod_Test.java" startLine="32" startPosition="113" endLine="33" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveParameterToNextMethod_Test#()V" />
+    <nodeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveParameterToNextMethod#()V" />
+    <nodeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="113">
+      <varInfo nodeId="953450985260512030" varName="editor" />
+      <varInfo nodeId="953450985260512030" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveParameterToNextMethod_Test$TestBody" />
+    <unitInfo nodeId="953450985260512030" fileName="MoveParameterToNextMethod_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.MoveParameterToNextMethod_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/953450985260807558">
+    <nodeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="18" startPosition="58" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4637760145514267580" fileName="MoveToElseIfClause_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveToElseIfClause_Test#()V" />
+    <nodeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveToElseIfClause#()V" />
+    <nodeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="14" startPosition="36" endLine="14" endPosition="36" />
+    <scopeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="18" startPosition="58" endLine="20" endPosition="99" />
+    <scopeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="115">
+      <varInfo nodeId="953450985260807558" varName="editor" />
+      <varInfo nodeId="953450985260807558" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveToElseIfClause_Test$TestBody" />
+    <unitInfo nodeId="953450985260807558" fileName="MoveToElseIfClause_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveToElseIfClause_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/953450985260813910">
+    <nodeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="18" startPosition="57" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="953450985260840504" fileName="MoveStatementToIf_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveStatementToIf_Test#()V" />
+    <nodeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveStatementToIf#()V" />
+    <nodeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="14" startPosition="35" endLine="14" endPosition="35" />
+    <scopeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="18" startPosition="57" endLine="20" endPosition="98" />
+    <scopeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="115">
+      <varInfo nodeId="953450985260813910" varName="editor" />
+      <varInfo nodeId="953450985260813910" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.MoveStatementToIf_Test$TestBody" />
+    <unitInfo nodeId="953450985260813910" fileName="MoveStatementToIf_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveStatementToIf_Test" />
   </root>
 </debugInfo>
 
