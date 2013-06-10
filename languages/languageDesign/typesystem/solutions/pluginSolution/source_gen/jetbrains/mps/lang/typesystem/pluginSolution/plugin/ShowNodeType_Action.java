@@ -85,6 +85,9 @@ public class ShowNodeType_Action extends BaseAction {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           typeCheckingContext.value = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
+          if (!(typeCheckingContext.value.isCheckedRoot(false))) {
+            typeCheckingContext.value.checkIfNotChecked(((SNode) MapSequence.fromMap(_params).get("node")), false);
+          }
           type.value = typeCheckingContext.value.getTypeDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
           reporter.value = typeCheckingContext.value.getTypeMessageDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
         }
