@@ -13,9 +13,10 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -64,9 +65,11 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
       public void run() {
         ConsoleTool.this.myContext = new ModuleContext(myModel.getModule(), project);
         ConsoleTool.this.myEditor = new UIEditorComponent(ProjectHelper.toMPSProject(getProject()).getRepository(), null);
-        ((SModelInternal) myModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.console.lang", Language.class).getModuleReference());
-        ((SModelInternal) myModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.console.lang.commands", Language.class).getModuleReference());
-        ((SModelInternal) myModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
+        Language[] langs = new Language[]{ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.console.lang", Language.class), ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.console.lang.commands", Language.class), ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class)};
+        for (Language l : langs) {
+          ((SModelInternal) myModel).addLanguage(l.getModuleReference());
+          ((AbstractModule) myModel.getModule()).addUsedLanguage(l.getModuleReference());
+        }
         ConsoleTool.this.myRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.lang.structure.Console", null);
         myEditor.editNode(myRoot, myContext);
       }
@@ -160,7 +163,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     super.doRegister();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        ConsoleTool.this.myModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
+        ConsoleTool.this.myModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModuleWithSourceAndClassesGen());
       }
     });
   }
