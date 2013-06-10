@@ -69,8 +69,7 @@ public class MpsTestsSupport {
 
   public static MPSCompilationResult makeAllWithoutEnvironment() {
     assert ActiveEnvironment.get() == null;
-    // true should be false 
-    MpsTestsSupport.initEnv(true);
+    MpsTestsSupport.initEnv(false);
     MpsTestsSupport.loadAllModulesIntoRepository();
     MPSCompilationResult result = MpsTestsSupport.makeAllInCreatedEnvironment();
     MpsTestsSupport.disposeEnv();
