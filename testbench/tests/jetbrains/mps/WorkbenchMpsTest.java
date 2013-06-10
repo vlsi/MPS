@@ -17,17 +17,15 @@ package jetbrains.mps;
 
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.tool.environment.Environment;
-import junit.framework.TestCase;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
-public class CoreMpsTest extends TestCase {
+public class WorkbenchMpsTest {
   private static Environment CREATED_ENV;
 
   @BeforeClass
   public static void setup() {
-    // todo: CoreTestsSupport
-    CREATED_ENV = MpsTestsSupport.initEnv(false);
+    CREATED_ENV = MpsTestsSupport.initEnv(true);
   }
 
   @AfterClass

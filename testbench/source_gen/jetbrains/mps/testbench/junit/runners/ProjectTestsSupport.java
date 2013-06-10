@@ -4,6 +4,8 @@ package jetbrains.mps.testbench.junit.runners;
 
 import java.io.File;
 import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.UnzipUtil;
 import java.io.IOException;
@@ -13,7 +15,7 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class ProjectTestsSupport {
-  public static boolean testOnProjectCopy(File source, File destinationDir, String projectName, MpsTestsSupport.ProjectRunnable runnable) {
+  public static boolean testOnProjectCopy(File source, File destinationDir, String projectName, ProjectTestsSupport.ProjectRunnable runnable) {
     final Project project = startTestOnProjectCopy(source, destinationDir, projectName);
     if (project == null) {
       return false;
@@ -27,6 +29,12 @@ public class ProjectTestsSupport {
       finishTestOnProjectCopy(project, destinationDir);
     }
   }
+
+  public static SModel getModel(Project project, String modelName) {
+    return project.getScope().resolve(PersistenceFacade.getInstance().createModelReference(modelName));
+  }
+
+
 
   private static Project startTestOnProjectCopy(File source, final File destinationDir, final String projectName) {
     if (destinationDir.exists()) {
@@ -69,4 +77,8 @@ public class ProjectTestsSupport {
   }
 
 
+
+  public static interface ProjectRunnable {
+    public boolean execute(Project project);
+  }
 }

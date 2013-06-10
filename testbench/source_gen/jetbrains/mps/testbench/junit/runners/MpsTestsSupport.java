@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.project.Project;
 
 public class MpsTestsSupport {
   private static Environment CREATED_ENV = null;
@@ -120,10 +119,6 @@ public class MpsTestsSupport {
   }
 
 
-
-  public static interface ProjectRunnable {
-    public boolean execute(Project project);
-  }
 
   public static class ActiveEnvironmentNotSatisfiedException extends RuntimeException {
   }

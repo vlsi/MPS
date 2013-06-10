@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.ide.dependencyViewer;
 
-import jetbrains.mps.BaseMPSTest;
-import jetbrains.mps.TestMain;
-import jetbrains.mps.TestMain.ProjectRunnable;
+import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.MPSExtentions;
@@ -25,13 +23,18 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.testbench.TestOutputFilter;
+import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
+import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.ProjectRunnable;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.io.File;
 import java.util.List;
 
-public class DependenciesViewerTest extends BaseMPSTest {
+// todo: use CoreMpsTest instead?
+public class DependenciesViewerTest extends WorkbenchMpsTest {
   private static final String TEST_PROJECT = "testDependenciesViewer" + MPSExtentions.DOT_MPS_PROJECT;
   private static final String TEST_MODEL = "testDependenciesViewer.sandbox.first";
   private static final String TARGET_MODEL = "testDependenciesViewer.sandbox.target";
@@ -45,18 +48,19 @@ public class DependenciesViewerTest extends BaseMPSTest {
     }
   };
 
+  @Test
   public void testDependencies() {
-    boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PROJECT, new ProjectRunnable() {
+    boolean result = ProjectTestsSupport.testOnProjectCopy(sourceZip, tempDir, TEST_PROJECT, new ProjectRunnable() {
       @Override
       public boolean execute(final Project project) {
         final boolean[] res = new boolean[1];
         res[0] = true;
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            DefaultSModelDescriptor testModel = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
-            DefaultSModelDescriptor targetModel = (DefaultSModelDescriptor) TestMain.getModel(project, TARGET_MODEL);
-            assertNotNull("test model is null", testModel);
-            assertNotNull("target model is null", targetModel);
+            DefaultSModelDescriptor testModel = (DefaultSModelDescriptor) ProjectTestsSupport.getModel(project, TEST_MODEL);
+            DefaultSModelDescriptor targetModel = (DefaultSModelDescriptor) ProjectTestsSupport.getModel(project, TARGET_MODEL);
+            Assert.assertNotNull("test model is null", testModel);
+            Assert.assertNotNull("target model is null", targetModel);
 
             ReferencesFinder finder = new ReferencesFinder();
 
@@ -88,6 +92,6 @@ public class DependenciesViewerTest extends BaseMPSTest {
         return res[0];
       }
     });
-    assertTrue(result);
+    Assert.assertTrue(result);
   }
 }

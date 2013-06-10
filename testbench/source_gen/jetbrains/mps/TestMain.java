@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -166,7 +166,7 @@ public class TestMain {
   }
 
   public static SModel getModel(Project project, String modelName) {
-    return project.getScope().resolve(PersistenceFacade.getInstance().createModelReference(modelName));
+    return ProjectTestsSupport.getModel(project, modelName);
   }
 
   public static Language getLanguage(Project project, String languageName) {
