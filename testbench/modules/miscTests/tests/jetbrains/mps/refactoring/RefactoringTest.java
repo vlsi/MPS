@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.refactoring;
 
-import jetbrains.mps.BaseMPSTest;
-import jetbrains.mps.TestMain;
-import jetbrains.mps.ide.IdeMain;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -25,6 +25,7 @@ import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ScopeOperations;
+import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.ProjectRunnable;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.junit.After;
@@ -32,12 +33,12 @@ import org.junit.Test;
 
 import java.io.File;
 
-import static jetbrains.mps.TestMain.loadProject;
-import static jetbrains.mps.TestMain.testOnProjectCopy;
 import static jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.getModel;
+import static jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.testOnProjectCopy;
 import static org.junit.Assert.assertTrue;
 
-public class RefactoringTest {
+// todo: extract BaseRefactoringTest
+public class RefactoringTest extends WorkbenchMpsTest {
   private static final String[] REFACTORING_SANDBOX = new String[]{"testRefactoring.sandbox", "testRefactoring.sandbox2"};
   private static final String[] REFACTORING_LANGUAGE = new String[]{"testRefactoring", "testRefactoringTargetLang"};
 
@@ -79,9 +80,7 @@ public class RefactoringTest {
   }
 
   protected boolean testRefactoringTestEnvironment(File projectDirectory) {
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-    TestMain.configureMPS();
-    final Project project = loadProject(projectDirectory);
+    final Project project = openProject(projectDirectory);
     final boolean[] b = new boolean[]{true};
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -89,11 +88,7 @@ public class RefactoringTest {
             getLanguage(project, REFACTORING_LANGUAGE[0]) != null && getLanguage(project, REFACTORING_LANGUAGE[1]) != null;
       }
     });
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        project.dispose();
-      }
-    });
+    disposeProject(project);
     return b[0];
   }
 
@@ -102,7 +97,22 @@ public class RefactoringTest {
       final Class<? extends IRefactoringTester> cls = (Class<? extends IRefactoringTester>) Class.forName(refactoringTesterClassName);
       final IRefactoringTester tester = cls.newInstance();
       final File destinationProjectDir = new File(PathManager.getHomePath(), "TEST_REFACTORING");
-      return testOnProjectCopy(projectDirectory, destinationProjectDir, null, new TestMain.ProjectRunnable() {
+      // todo: without refresh - doesn't work, should be part of IdeaEnvironment#openProject()?
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+          try {
+            VirtualFile projectVirtualDir = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(destinationProjectDir);
+            if (projectVirtualDir != null) {
+              projectVirtualDir.refresh(false, true);
+            } else {
+              // executed first time
+            }
+          } catch (Throwable t) {
+            t.printStackTrace();
+          }
+        }
+      });
+      return testOnProjectCopy(projectDirectory, destinationProjectDir, null, new ProjectRunnable() {
         public boolean execute(final Project project) {
           final SModel[] sandbox = new SModel[]{null, null};
           final Language[] testLanguage = new Language[]{null, null};

@@ -15,10 +15,14 @@
  */
 package jetbrains.mps;
 
+import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.tool.environment.Environment;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+
+import java.io.File;
 
 public class WorkbenchMpsTest {
   private static Environment CREATED_ENV;
@@ -36,5 +40,13 @@ public class WorkbenchMpsTest {
     if (CREATED_ENV != null) {
       CREATED_ENV.disposeEnvironment();
     }
+  }
+
+  public static Project openProject(File projectFile) {
+    return ActiveEnvironment.get().openProject(projectFile);
+  }
+
+  public static void disposeProject(Project project) {
+    ActiveEnvironment.get().disposeProject(project);
   }
 }
