@@ -27,6 +27,9 @@ public class CoreMpsTest {
   public static void setup() {
     // todo: CoreTestsSupport
     CREATED_ENV = MpsTestsSupport.initEnv(false);
+    if (CREATED_ENV != null) {
+      MpsTestsSupport.makeAllInCreatedEnvironment();
+    }
   }
 
   @AfterClass

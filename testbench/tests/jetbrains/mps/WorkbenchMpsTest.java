@@ -26,6 +26,9 @@ public class WorkbenchMpsTest {
   @BeforeClass
   public static void setup() {
     CREATED_ENV = MpsTestsSupport.initEnv(true);
+    if (CREATED_ENV != null) {
+      MpsTestsSupport.makeAllInCreatedEnvironment();
+    }
   }
 
   @AfterClass

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence.xml;
 
+import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.model.SModelPersistence;
 import jetbrains.mps.persistence.XmlModelPersistence;
@@ -46,21 +47,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * evgeny, 3/25/13
  */
-public class XmlConverterTest {
-  private static Environment ENV;
-
-  @BeforeClass
-  public static void start() throws Exception {
-    // todo: use @MpsTest
-    ENV = new MpsEnvironment(EnvironmentConfig.emptyEnvironment().withBootstrapLibraries().addPlugin("jetbrains.mps.core"));
-    MpsTestsSupport.makeAllInCreatedEnvironment();
-  }
-
-  @AfterClass
-  public static void shutdown() {
-    ENV.disposeEnvironment();
-  }
-
+public class XmlConverterTest extends CoreMpsTest {
   @Test
   public void testXml1() throws Exception {
     testXml("/jetbrains/mps/persistence/xml/testdata/test1.xml");
