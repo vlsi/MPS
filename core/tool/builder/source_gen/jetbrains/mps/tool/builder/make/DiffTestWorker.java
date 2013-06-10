@@ -132,7 +132,7 @@ public class DiffTestWorker extends GeneratorWorker {
           tparams._0(false);
         }
 
-        Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>> dparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>>) ppool.properties(new ITarget.Name("jetbrains.mps.build.gentest.Diff.diff"), Object.class);
+        Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>> dparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>>) ppool.properties(new ITarget.Name("jetbrains.mps.tool.gentest.Diff.diff"), Object.class);
         if (dparams != null && isShowDiff()) {
           dparams._0(new _FunctionTypes._return_P1_E0<String, IFile>() {
             public String invoke(IFile f) {
@@ -143,7 +143,7 @@ public class DiffTestWorker extends GeneratorWorker {
         }
 
         if (isInvokeTestsSet()) {
-          Tuples._1<UnitTestListener> testParams = (Tuples._1<UnitTestListener>) ppool.properties(new ITarget.Name("jetbrains.mps.build.gentest.Test.runTests"), Object.class);
+          Tuples._1<UnitTestListener> testParams = (Tuples._1<UnitTestListener>) ppool.properties(new ITarget.Name("jetbrains.mps.tool.gentest.Test.runTests"), Object.class);
           testParams._0(new DiffTestWorker.MyUnitTestAdapter());
         }
         myReporter.finishRun();
@@ -157,10 +157,10 @@ public class DiffTestWorker extends GeneratorWorker {
         @Override
         public IScript toScript(ScriptBuilder scriptBuilder) {
           if (isInvokeTestsSet()) {
-            scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.build.gentest.Test"));
+            scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.tool.gentest.Test"));
           }
           if (isShowDiff()) {
-            scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.build.gentest.Diff"));
+            scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.tool.gentest.Diff"));
           }
           return scriptBuilder.toScript();
         }
@@ -331,8 +331,8 @@ public class DiffTestWorker extends GeneratorWorker {
     private final _FunctionTypes._void_P1_E0<? super String> myFinishTestFormat;
 
     public MyProgress(_FunctionTypes._void_P1_E0<? super String> startTestFormat, _FunctionTypes._void_P1_E0<? super String> finishTestFormat) {
-      MyProgress.this.myStartTestFormat = startTestFormat;
-      MyProgress.this.myFinishTestFormat = finishTestFormat;
+      myStartTestFormat = startTestFormat;
+      myFinishTestFormat = finishTestFormat;
     }
 
     @Override
@@ -544,8 +544,8 @@ public class DiffTestWorker extends GeneratorWorker {
 
     public MyJobMonitor(IProgress pstub, _FunctionTypes._void_P1_E0<? super String> startTestFormat, _FunctionTypes._void_P1_E0<? super String> finishTestFormat) {
       super(pstub);
-      MyJobMonitor.this.myStartTestFormat = startTestFormat;
-      MyJobMonitor.this.myFinishTestFormat = finishTestFormat;
+      myStartTestFormat = startTestFormat;
+      myFinishTestFormat = finishTestFormat;
     }
 
     @Override
@@ -577,8 +577,8 @@ public class DiffTestWorker extends GeneratorWorker {
     private final _FunctionTypes._void_P1_E0<? super String> myFinishTestFormat;
 
     public MyProgressMonitorBase(_FunctionTypes._void_P1_E0<? super String> startTestFormat, _FunctionTypes._void_P1_E0<? super String> finishTestFormat) {
-      MyProgressMonitorBase.this.myStartTestFormat = startTestFormat;
-      MyProgressMonitorBase.this.myFinishTestFormat = finishTestFormat;
+      myStartTestFormat = startTestFormat;
+      myFinishTestFormat = finishTestFormat;
     }
 
     @Override

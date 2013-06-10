@@ -1408,18 +1408,18 @@
     <nodeInfo nodeId="878521226301296705" fileName="DiffTestWorker.java" startLine="129" startPosition="0" endLine="130" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="878521226301296721" fileName="DiffTestWorker.java" startLine="131" startPosition="30" endLine="132" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296730" fileName="DiffTestWorker.java" startLine="133" startPosition="9" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="878521226301296731" fileName="DiffTestWorker.java" startLine="134" startPosition="0" endLine="135" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="878521226301296731" fileName="DiffTestWorker.java" startLine="134" startPosition="0" endLine="135" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="878521226301296761" fileName="DiffTestWorker.java" startLine="138" startPosition="43" endLine="139" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="878521226301296767" fileName="DiffTestWorker.java" startLine="141" startPosition="13" endLine="142" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296780" fileName="DiffTestWorker.java" startLine="143" startPosition="9" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="878521226301296783" fileName="DiffTestWorker.java" startLine="145" startPosition="33" endLine="146" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="878521226301296797" fileName="DiffTestWorker.java" startLine="146" startPosition="175" endLine="147" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226301296783" fileName="DiffTestWorker.java" startLine="145" startPosition="33" endLine="146" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="878521226301296797" fileName="DiffTestWorker.java" startLine="146" startPosition="174" endLine="147" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296805" fileName="DiffTestWorker.java" startLine="148" startPosition="9" endLine="149" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296809" fileName="DiffTestWorker.java" startLine="149" startPosition="31" endLine="150" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296821" fileName="DiffTestWorker.java" startLine="152" startPosition="6" endLine="153" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="878521226301296829" fileName="DiffTestWorker.java" startLine="154" startPosition="9" endLine="155" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="878521226301296852" fileName="DiffTestWorker.java" startLine="159" startPosition="35" endLine="160" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226301296861" fileName="DiffTestWorker.java" startLine="162" startPosition="29" endLine="163" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226301296852" fileName="DiffTestWorker.java" startLine="159" startPosition="35" endLine="160" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226301296861" fileName="DiffTestWorker.java" startLine="162" startPosition="29" endLine="163" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296868" fileName="DiffTestWorker.java" startLine="164" startPosition="11" endLine="165" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="878521226301296873" fileName="DiffTestWorker.java" startLine="167" startPosition="8" endLine="168" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301297087" fileName="DiffTestWorker.java" startLine="184" startPosition="22" endLine="185" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1468,8 +1468,8 @@
     <nodeInfo nodeId="878521226301297866" fileName="DiffTestWorker.java" startLine="325" startPosition="125" endLine="326" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="861826518923500083" fileName="DiffTestWorker.java" startLine="330" startPosition="0" endLine="331" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStartTestFormat" />
     <nodeInfo nodeId="861826518923500088" fileName="DiffTestWorker.java" startLine="331" startPosition="0" endLine="332" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFinishTestFormat" />
-    <nodeInfo nodeId="861826518923500107" fileName="DiffTestWorker.java" startLine="333" startPosition="144" endLine="334" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="861826518923500113" fileName="DiffTestWorker.java" startLine="334" startPosition="58" endLine="335" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="861826518923500107" fileName="DiffTestWorker.java" startLine="333" startPosition="144" endLine="334" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="861826518923500113" fileName="DiffTestWorker.java" startLine="334" startPosition="42" endLine="335" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296506" fileName="DiffTestWorker.java" startLine="339" startPosition="67" endLine="340" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296518" fileName="DiffTestWorker.java" startLine="344" startPosition="41" endLine="345" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296536" fileName="DiffTestWorker.java" startLine="350" startPosition="28" endLine="351" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1531,8 +1531,8 @@
     <nodeInfo nodeId="861826518923500538" fileName="DiffTestWorker.java" startLine="542" startPosition="0" endLine="543" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStartTestFormat" />
     <nodeInfo nodeId="861826518923500543" fileName="DiffTestWorker.java" startLine="543" startPosition="0" endLine="544" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFinishTestFormat" />
     <nodeInfo nodeId="861826518923500564" fileName="DiffTestWorker.java" startLine="545" startPosition="163" endLine="546" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="861826518923500566" fileName="DiffTestWorker.java" startLine="546" startPosition="19" endLine="547" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="861826518923500572" fileName="DiffTestWorker.java" startLine="547" startPosition="60" endLine="548" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="861826518923500566" fileName="DiffTestWorker.java" startLine="546" startPosition="19" endLine="547" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="861826518923500572" fileName="DiffTestWorker.java" startLine="547" startPosition="42" endLine="548" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296577" fileName="DiffTestWorker.java" startLine="553" startPosition="59" endLine="554" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="878521226301296585" fileName="DiffTestWorker.java" startLine="555" startPosition="27" endLine="556" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296592" fileName="DiffTestWorker.java" startLine="557" startPosition="9" endLine="558" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1544,8 +1544,8 @@
     <nodeInfo nodeId="878521226301296896" fileName="DiffTestWorker.java" startLine="575" startPosition="0" endLine="576" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="prevTitle" />
     <nodeInfo nodeId="861826518923551285" fileName="DiffTestWorker.java" startLine="576" startPosition="0" endLine="577" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStartTestFormat" />
     <nodeInfo nodeId="861826518923551290" fileName="DiffTestWorker.java" startLine="577" startPosition="0" endLine="578" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFinishTestFormat" />
-    <nodeInfo nodeId="861826518923551309" fileName="DiffTestWorker.java" startLine="579" startPosition="155" endLine="580" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="861826518923551315" fileName="DiffTestWorker.java" startLine="580" startPosition="69" endLine="581" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="861826518923551309" fileName="DiffTestWorker.java" startLine="579" startPosition="155" endLine="580" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="861826518923551315" fileName="DiffTestWorker.java" startLine="580" startPosition="42" endLine="581" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296923" fileName="DiffTestWorker.java" startLine="597" startPosition="50" endLine="598" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296937" fileName="DiffTestWorker.java" startLine="606" startPosition="33" endLine="607" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="878521226301296977" fileName="DiffTestWorker.java" startLine="618" startPosition="53" endLine="619" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1654,7 +1654,7 @@
     <nodeInfo nodeId="878521226301298382" fileName="DiffTestWorker.java" startLine="530" startPosition="40" endLine="537" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="878521226301296438" fileName="DiffTestWorker.java" startLine="100" startPosition="0" endLine="108" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="878521226301296454" fileName="DiffTestWorker.java" startLine="108" startPosition="6" endLine="116" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="878521226301296753" fileName="DiffTestWorker.java" startLine="135" startPosition="278" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="878521226301296753" fileName="DiffTestWorker.java" startLine="135" startPosition="277" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="878521226301297044" fileName="DiffTestWorker.java" startLine="174" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportIfStartsWith#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
     <nodeInfo nodeId="878521226301297753" fileName="DiffTestWorker.java" startLine="292" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPerfomanceReportDestinations#()[Ljava/lang/String;" />
     <nodeInfo nodeId="878521226301297081" fileName="DiffTestWorker.java" startLine="183" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="work#()V" />
@@ -1723,8 +1723,8 @@
     <scopeInfo nodeId="878521226301296700" fileName="DiffTestWorker.java" startLine="125" startPosition="44" endLine="126" endPosition="33" />
     <scopeInfo nodeId="878521226301296720" fileName="DiffTestWorker.java" startLine="131" startPosition="30" endLine="132" endPosition="28" />
     <scopeInfo nodeId="878521226301296760" fileName="DiffTestWorker.java" startLine="138" startPosition="43" endLine="139" endPosition="38" />
-    <scopeInfo nodeId="878521226301296851" fileName="DiffTestWorker.java" startLine="159" startPosition="35" endLine="160" endPosition="93" />
-    <scopeInfo nodeId="878521226301296860" fileName="DiffTestWorker.java" startLine="162" startPosition="29" endLine="163" endPosition="93" />
+    <scopeInfo nodeId="878521226301296851" fileName="DiffTestWorker.java" startLine="159" startPosition="35" endLine="160" endPosition="92" />
+    <scopeInfo nodeId="878521226301296860" fileName="DiffTestWorker.java" startLine="162" startPosition="29" endLine="163" endPosition="92" />
     <scopeInfo nodeId="878521226301297296" fileName="DiffTestWorker.java" startLine="198" startPosition="30" endLine="199" endPosition="58" />
     <scopeInfo nodeId="878521226301297306" fileName="DiffTestWorker.java" startLine="200" startPosition="16" endLine="201" endPosition="27" />
     <scopeInfo nodeId="878521226301297453" fileName="DiffTestWorker.java" startLine="214" startPosition="56" endLine="215" endPosition="33" />
@@ -1785,7 +1785,7 @@
     <scopeInfo nodeId="878521226301297852" fileName="DiffTestWorker.java" startLine="324" startPosition="42" endLine="326" endPosition="29">
       <varInfo nodeId="878521226301297854" varName="generator" />
     </scopeInfo>
-    <scopeInfo nodeId="861826518923500103" fileName="DiffTestWorker.java" startLine="333" startPosition="144" endLine="335" endPosition="60" />
+    <scopeInfo nodeId="861826518923500103" fileName="DiffTestWorker.java" startLine="333" startPosition="144" endLine="335" endPosition="44" />
     <scopeInfo nodeId="878521226301297873" fileName="DiffTestWorker.java" startLine="361" startPosition="0" endLine="363" endPosition="0" />
     <scopeInfo nodeId="878521226301297955" fileName="DiffTestWorker.java" startLine="389" startPosition="0" endLine="391" endPosition="0" />
     <scopeInfo nodeId="878521226301297980" fileName="DiffTestWorker.java" startLine="398" startPosition="73" endLine="400" endPosition="26" />
@@ -1794,7 +1794,7 @@
     <scopeInfo nodeId="878521226301298066" fileName="DiffTestWorker.java" startLine="430" startPosition="0" endLine="432" endPosition="0" />
     <scopeInfo nodeId="878521226301298315" fileName="DiffTestWorker.java" startLine="511" startPosition="48" endLine="513" endPosition="34" />
     <scopeInfo nodeId="878521226301296623" fileName="DiffTestWorker.java" startLine="565" startPosition="23" endLine="567" endPosition="38" />
-    <scopeInfo nodeId="861826518923551305" fileName="DiffTestWorker.java" startLine="579" startPosition="155" endLine="581" endPosition="71" />
+    <scopeInfo nodeId="861826518923551305" fileName="DiffTestWorker.java" startLine="579" startPosition="155" endLine="581" endPosition="44" />
     <scopeInfo nodeId="878521226301296260" fileName="DiffTestWorker.java" startLine="74" startPosition="9" endLine="77" endPosition="21" />
     <scopeInfo nodeId="878521226301296697" fileName="DiffTestWorker.java" startLine="125" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="878521226301296697" varName="path" />
@@ -1838,7 +1838,7 @@
       <varInfo nodeId="878521226301298330" varName="msg" />
       <varInfo nodeId="878521226301298328" varName="testname" />
     </scopeInfo>
-    <scopeInfo nodeId="861826518923500560" fileName="DiffTestWorker.java" startLine="545" startPosition="163" endLine="548" endPosition="62" />
+    <scopeInfo nodeId="861826518923500560" fileName="DiffTestWorker.java" startLine="545" startPosition="163" endLine="548" endPosition="44" />
     <scopeInfo nodeId="878521226301296899" fileName="DiffTestWorker.java" startLine="584" startPosition="0" endLine="587" endPosition="0">
       <varInfo nodeId="878521226301296902" varName="p0" />
     </scopeInfo>
