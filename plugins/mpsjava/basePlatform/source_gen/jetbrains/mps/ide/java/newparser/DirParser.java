@@ -33,6 +33,7 @@ public class DirParser {
   private static final Logger LOG = LogManager.getLogger(DirParser.class);
   private List<SModel> myAffectedModels = ListSequence.fromList(new ArrayList<SModel>());
   private List<IFile> mySourceDirs;
+  private List<IFile> mySuccessfulFiles;
   private SModule myModule;
   private Project myProject;
   private JavaParser myJavaParser = new JavaParser();
@@ -45,6 +46,7 @@ public class DirParser {
   public DirParser(SModule module, Project project, IFile sourceDir) {
     this(module, project);
     mySourceDirs = ListSequence.fromListAndArray(new ArrayList<IFile>(), sourceDir);
+    mySuccessfulFiles = ListSequence.fromList(new ArrayList<IFile>());
   }
 
   public List<SNode> parseDir(JavaParser parser, IFile dir) throws IOException, JavaParseException {
@@ -91,6 +93,14 @@ public class DirParser {
 
   }
 
+
+
+  public List<IFile> getSuccessfulFiles() {
+    return mySuccessfulFiles;
+  }
+
+
+
   public void addSourceFromDirectory(final IFile dir) throws IOException, JavaParseException {
     assert dir.isDirectory();
 
@@ -132,7 +142,10 @@ public class DirParser {
                 LOG.error("different packages in directory " + dir.getAbsolutePath() + ", namely " + pkg.value + " and " + p);
                 return;
               }
+
               ListSequence.fromList(roots).addSequence(ListSequence.fromList(parseRes.getNodes()));
+              ListSequence.fromList(mySuccessfulFiles).addElement(file);
+
             } catch (JavaParseException e) {
               javaParseException.value = e;
             } catch (IOException e) {

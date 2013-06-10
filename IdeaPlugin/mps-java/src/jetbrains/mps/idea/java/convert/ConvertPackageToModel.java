@@ -64,11 +64,15 @@ public class ConvertPackageToModel extends AnAction {
 
     // it was successful
 
+    // here more complicated logic can be written
+    // e.g. not delete, but rather unmark as source dir -- in case if
+    // the resulting model(s) don't fall into the same directory where java was
     ApplicationManager.getApplication().runWriteAction(new Runnable(){
       @Override
       public void run() {
-        // delete directory
-        element.delete();
+        for (IFile file : dirParser.getSuccessfulFiles()) {
+          file.delete();
+        }
       }
     });
 
