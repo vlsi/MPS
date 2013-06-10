@@ -40,7 +40,14 @@ public class PsiChangesWatcher implements ProjectComponent {
 
   private Project myProject;
   private PsiManager myPsiManager;
+
   private Set<PsiListener> myListeners = new HashSet<PsiListener>();
+  // this is to allow listeners call code that adds/removes another listeners
+  // e.g. modelRoot (listener) calls update() that attaches models, which in turn start to listen PSI on attach
+  // note: it all happens in one same thread, so LOCK doesn't work as a guard
+  private boolean isNotifying = false;
+  private Set<PsiListener> toBeAdded = new HashSet<PsiListener>();
+  private Set<PsiListener> toBeRemoved = new HashSet<PsiListener>();
 
   private MessageBusConnection connection;
   private PsiTreeChangeListener myOwnPsiListener = new OwnPsiListener();
@@ -81,21 +88,51 @@ public class PsiChangesWatcher implements ProjectComponent {
 
   public void addListener(PsiListener listener) {
     synchronized (LOCK) {
-      myListeners.add(listener);
+      if (!isNotifying) {
+        myListeners.add(listener);
+      } else {
+        toBeAdded.add(listener);
+      }
+
+      // in case it was previously removed during this notification loop
+      toBeRemoved.remove(listener);
     }
   }
 
   public void removeListener(PsiListener listener) {
     synchronized (LOCK) {
-      myListeners.remove(listener);
+      if (!isNotifying) {
+        myListeners.remove(listener);
+      } else {
+        toBeRemoved.add(listener);
+      }
+      // in case it was pending-added during this notification loop
+      toBeAdded.remove(listener);
     }
   }
 
   // called by PsiChangeProcessor
   /* package */ void notifyListeners(PsiEvent event) {
     synchronized (LOCK) {
-      for (PsiListener l : myListeners) {
-        l.psiChanged(event);
+      try {
+        isNotifying = true;
+        for (PsiListener l : myListeners) {
+          l.psiChanged(event);
+        }
+      } finally {
+
+        isNotifying = false;
+        // handling pending additions/removals which have been added/removed as a result
+        // of previous listener invocations
+        if (!toBeAdded.isEmpty()) {
+          myListeners.addAll(toBeAdded);
+        }
+        if (!toBeRemoved.isEmpty()) {
+          myListeners.removeAll(toBeRemoved);
+        }
+
+        toBeAdded.clear();
+        toBeRemoved.clear();
       }
     }
   }
