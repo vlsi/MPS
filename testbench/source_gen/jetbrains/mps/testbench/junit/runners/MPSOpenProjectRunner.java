@@ -7,14 +7,9 @@ import jetbrains.mps.project.Project;
 import org.junit.runner.Description;
 import org.junit.runners.model.InitializationError;
 import org.junit.runner.notification.RunNotifier;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.library.LibraryInitializer;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.util.PathUtil;
@@ -51,25 +46,9 @@ public class MPSOpenProjectRunner extends Runner {
 
   protected void init(Class<?> testClass) throws InitializationError {
     String projectPath = getProjectPath(testClass);
-    BasicConfigurator.configure();
-    Logger.getRootLogger().setLevel(Level.INFO);
+    MpsTestsSupport.initEnv(true);
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-    TestMain.configureMPS();
     initPathMacros();
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              LibraryInitializer.getInstance().update();
-            }
-          });
-        }
-      });
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
     if (ourMPSProject != null) {
       throw new InitializationError("One MPS project was already openned in this java process: " + ourMPSProject.getName() + " (on trying to open: " + projectPath + ")");
     }
