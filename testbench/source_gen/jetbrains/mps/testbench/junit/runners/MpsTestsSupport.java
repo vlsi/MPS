@@ -45,7 +45,7 @@ public class MpsTestsSupport {
    * 
    * 
    * @throws MpsTestsSupport.ActiveEnvironmentNotSatisfiedException if active environment not satisfied withIdea condition
-   * @return created environment iff there is no active environment currently, null if active environment is satisfies condition
+   * @return created environment iff there is no active environment currently, do not forget dispose created environment in this case!, null if active environment is satisfies condition
    */
   public static Environment initEnv(boolean withIdea) {
     if (ActiveEnvironment.get() == null) {
@@ -60,12 +60,6 @@ public class MpsTestsSupport {
         throw new MpsTestsSupport.ActiveEnvironmentNotSatisfiedException();
       }
       return null;
-    }
-  }
-
-  public static void disposeEnv() {
-    if (CREATED_ENV != null) {
-      CREATED_ENV.disposeEnvironment();
     }
   }
 
@@ -84,10 +78,10 @@ public class MpsTestsSupport {
 
   public static MPSCompilationResult makeAllWithoutEnvironment() {
     assert ActiveEnvironment.get() == null;
-    MpsTestsSupport.initEnv(false);
+    Environment createdEnv = MpsTestsSupport.initEnv(false);
     MpsTestsSupport.loadAllModulesIntoRepository();
     MPSCompilationResult result = MpsTestsSupport.makeAllInCreatedEnvironment();
-    MpsTestsSupport.disposeEnv();
+    createdEnv.disposeEnvironment();
     return result;
   }
 

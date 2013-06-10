@@ -236,6 +236,7 @@
     <classNode dependClassName="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.Runner" />
     <classNode dependClassName="org.junit.runner.manipulation.Sortable" />

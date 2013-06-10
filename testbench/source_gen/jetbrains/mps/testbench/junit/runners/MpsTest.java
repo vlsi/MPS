@@ -5,6 +5,7 @@ package jetbrains.mps.testbench.junit.runners;
 import org.junit.runners.ParentRunner;
 import org.junit.runner.Runner;
 import java.util.List;
+import jetbrains.mps.tool.environment.Environment;
 import org.junit.runners.model.RunnerBuilder;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.manipulation.Sortable;
@@ -22,12 +23,13 @@ public abstract class MpsTest extends ParentRunner<Runner> {
   private List<Runner> children;
   private final boolean withWatching;
   private final boolean withSorting;
+  private final Environment createdEnv;
 
 
   public MpsTest(Class<?> klass, RunnerBuilder builder) throws Throwable {
     super(klass);
 
-    MpsTestsSupport.initEnv(klass.getAnnotation(MpsTest.WithIdeaInstance.class) != null);
+    createdEnv = MpsTestsSupport.initEnv(klass.getAnnotation(MpsTest.WithIdeaInstance.class) != null);
 
     if (klass.getAnnotation(MpsTest.PreloadAllModules.class) != null) {
       MpsTestsSupport.loadAllModulesIntoRepository();
@@ -65,8 +67,8 @@ public abstract class MpsTest extends ParentRunner<Runner> {
       runner.run(notifier);
     }
 
-    if (runner == children.get(children.size() - 1)) {
-      MpsTestsSupport.disposeEnv();
+    if (runner == children.get(children.size() - 1) && createdEnv != null) {
+      createdEnv.disposeEnvironment();
     }
   }
 
