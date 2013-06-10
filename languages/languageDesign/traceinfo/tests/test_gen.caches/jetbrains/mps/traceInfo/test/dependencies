@@ -20,7 +20,6 @@
     <classNode dependClassName="java.lang.StackTraceElement" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.TestMain" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.BreakpointLocation" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />

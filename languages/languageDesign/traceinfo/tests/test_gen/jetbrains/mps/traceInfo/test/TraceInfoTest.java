@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.TestMain;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.smodel.ModelAccess;
@@ -129,7 +128,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
   }
 
   private void invokeTest(final _FunctionTypes._void_P0_E0 test) {
-    Project project = TestMain.loadProject(new File(PathManager.getHomePath() + "/languages/languageDesign/traceinfo"));
+    Project project = openProject(new File(PathManager.getHomePath() + "/languages/languageDesign/traceinfo"));
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
