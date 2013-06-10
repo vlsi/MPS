@@ -12,8 +12,9 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.testbench.Testbench;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.library.LibraryInitializer;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.util.PathUtil;
@@ -55,14 +56,25 @@ public class MPSOpenProjectRunner extends Runner {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
     initPathMacros();
-    Testbench.initLibs();
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
+        public void run() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              LibraryInitializer.getInstance().update();
+            }
+          });
+        }
+      });
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
     if (ourMPSProject != null) {
       throw new InitializationError("One MPS project was already openned in this java process: " + ourMPSProject.getName() + " (on trying to open: " + projectPath + ")");
     }
     ourMPSProject = TestMain.PROJECT_CONTAINER.getProject(projectPath);
 
-    // <node> 
-    // <node> 
     // TODO: 
     // 
     // 2. Libraries? 

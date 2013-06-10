@@ -15,6 +15,9 @@ import org.apache.log4j.Level;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.tool.environment.EnvironmentUtils;
 import jetbrains.mps.TestMain;
+import javax.swing.SwingUtilities;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.io.File;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
@@ -23,7 +26,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.DefaultModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.LinkedHashSet;
@@ -60,8 +62,20 @@ public class IdeaEnvironment implements Environment {
     TestMain.configureMPS(SetSequence.fromSet(config.plugins()).toGenericArray(String.class));
     // todo: IdeaTestEnvironment - default plugins: jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make 
     // todo: IdeaTestEnv - setMacro and loadLibraries from Environment 
-    // todo: IdeaTestEnv -  
-    Testbench.initLibs();
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
+        public void run() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              LibraryInitializer.getInstance().update();
+            }
+          });
+        }
+      });
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
 
     // todo: is it right place? 
     for (String macro : SetSequence.fromSet(MapSequence.fromMap(config.macros()).keySet())) {

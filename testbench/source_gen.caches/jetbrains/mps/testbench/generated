@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8jbflymct4dx6jq1ao15ibmhovu2zd9">
+<dependencies version="2" modelHash="cwkpsoxlcoazyth3evuw25d4i7l01h">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -13,7 +13,7 @@
   <dep model="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" hash="9dpsds30aleyoxj2inntdhjvyno30ds" />
   <dep model="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)" hash="-j2eyffq8cmbjh90vtbfe3ahgfp45dt" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-9fdi0n0a07zuqciwx30oe146qg9byaf" />
-  <dep model="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)" hash="-50873b1icqyzesy7x281jh7w12iqjhr" />
+  <dep model="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)" hash="-6lp96fh9kubw6dhugjahrz192fw2j62" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
   <common hash="2ss8vwmfiazbl93l2gtnf1abxj8mbaf" />
   <source id="5294483648489413878" name="PerformanceMessenger" hash="8z5o62u68zc9byrhg5d7iakkt2eas6h">
@@ -24,12 +24,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PerformanceMessenger.java" />
   </source>
-  <source id="5294483648489414188" name="Testbench" hash="afmcxmyzzk8nfhxxjjfzuvztpheovdl">
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="Testbench.java" />
-  </source>
-  <source id="7413225496542992859" name="IdeaEnvironment" hash="-aqpy8r9ilopyzstv81moye0kmp9w72v">
+  <source id="7413225496542992859" name="IdeaEnvironment" hash="dovabayeddgpc3lll2vp60yeb98l42y">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
