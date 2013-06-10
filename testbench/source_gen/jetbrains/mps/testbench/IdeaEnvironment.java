@@ -82,6 +82,10 @@ public class IdeaEnvironment implements Environment {
     // part from ProjectTest 
     // todo: inline 
     Project project = TestMain.loadProject(projectFile);
+    // todo: from TestMain#startTestOnProjectCopy 
+    // <node> 
+    // <node> 
+    // <node> 
     return SetSequence.fromSet(openedProjects).addElement(project);
   }
 
