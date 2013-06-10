@@ -26,12 +26,8 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ScopeOperations;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.refactoring.tests.IRefactoringTester;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import java.util.Arrays;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
@@ -169,59 +165,6 @@ public class TestMain {
     return ProjectTestsSupport.getModel(project, modelName);
   }
 
-  public static Language getLanguage(Project project, String languageName) {
-    return ScopeOperations.getLanguage(project.getScope(), languageName);
-  }
-
-  public static void updateLanguageClasspath(Language l, String classpath) {
-    LanguageDescriptor languageDescriptor = l.getModuleDescriptor();
-    languageDescriptor.getAdditionalJavaStubPaths().add(classpath);
-    l.setLanguageDescriptor(languageDescriptor, false);
-  }
-
-  private static final String[] REFACTORING_SANDBOX = new String[]{"testRefactoring.sandbox", "testRefactoring.sandbox2"};
-  private static final String[] REFACTORING_LANGUAGE = new String[]{"testRefactoring", "testRefactoringTargetLang"};
-
-  public static boolean testRefactoringTestEnvironment(File projectDirectory) {
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-    TestMain.configureMPS();
-    final Project project = loadProject(projectDirectory);
-    final boolean[] b = new boolean[]{true};
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        b[0] = getModel(project, REFACTORING_SANDBOX[0]) != null && getModel(project, REFACTORING_SANDBOX[1]) != null && getLanguage(project, REFACTORING_LANGUAGE[0]) != null && getLanguage(project, REFACTORING_LANGUAGE[1]) != null;
-      }
-    });
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        project.dispose();
-      }
-    });
-    return b[0];
-  }
-
-  public static boolean testRefactoringOnProject(File sourceProjectDir, final IRefactoringTester refactoringTester) {
-    final File destinationProjectDir = new File(PathManager.getHomePath(), "TEST_REFACTORING");
-    return testOnProjectCopy(sourceProjectDir, destinationProjectDir, null, new TestMain.ProjectRunnable() {
-      public boolean execute(final Project project) {
-        final SModel[] sandbox = new SModel[]{null, null};
-        final Language[] testLanguage = new Language[]{null, null};
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            String classPath = destinationProjectDir.getAbsolutePath() + "/classes";
-            sandbox[0] = getModel(project, REFACTORING_SANDBOX[0]);
-            sandbox[1] = getModel(project, REFACTORING_SANDBOX[1]);
-            testLanguage[0] = getLanguage(project, REFACTORING_LANGUAGE[0]);
-            testLanguage[1] = getLanguage(project, REFACTORING_LANGUAGE[1]);
-            updateLanguageClasspath(testLanguage[0], classPath);
-            updateLanguageClasspath(testLanguage[1], classPath);
-          }
-        });
-        return refactoringTester.testRefactoring(project, sandbox[0], sandbox[1], testLanguage[0], testLanguage[1]);
-      }
-    });
-  }
-
   public static boolean testProjectReloadForLeaks(File projectFile) {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     return testProjectReloadForLeaks(projectFile, 1000);
@@ -288,7 +231,7 @@ public class TestMain {
     // Not necessary to set this property for loading listed plugins - see PluginManager.loadDescriptors() 
     System.setProperty("idea.platform.prefix", "Idea");
     StringBuffer pluginPath = new StringBuffer();
-    File pluginDir = new File(com.intellij.openapi.application.PathManager.getPreinstalledPluginsPath());
+    File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
     if (pluginDir.listFiles() != null) {
       for (File pluginFolder : pluginDir.listFiles()) {
         if (pluginPath.length() > 0) {

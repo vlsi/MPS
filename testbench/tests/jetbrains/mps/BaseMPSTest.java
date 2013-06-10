@@ -15,11 +15,8 @@
  */
 package jetbrains.mps;
 
-import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.smodel.ModelAccess;
 import junit.framework.TestCase;
-
-import java.io.File;
 
 public class BaseMPSTest extends TestCase {
   protected void setUp() throws Exception {
@@ -33,18 +30,5 @@ public class BaseMPSTest extends TestCase {
 
   public static void waitForEDTTasksToComplete() {
     ModelAccess.instance().flushEventQueue();
-  }
-
-  protected boolean testRefactoringTestEnvironment(File projectDirectory) {
-    return TestMain.testRefactoringTestEnvironment(projectDirectory);
-  }
-
-  protected boolean testRefactoringOnProject(File projectDirectory, String refactoringTesterClassName) {
-    try {
-      Class<? extends IRefactoringTester> cls = (Class<? extends IRefactoringTester>) Class.forName(refactoringTesterClassName);
-      return TestMain.testRefactoringOnProject(projectDirectory, cls.newInstance());
-    } catch (Throwable t) {
-      throw new RuntimeException(t);
-    }
   }
 }

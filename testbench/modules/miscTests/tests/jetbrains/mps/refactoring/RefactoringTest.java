@@ -16,33 +16,124 @@
 package jetbrains.mps.refactoring;
 
 import jetbrains.mps.BaseMPSTest;
+import jetbrains.mps.TestMain;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.refactoring.tests.IRefactoringTester;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ScopeOperations;
+import jetbrains.mps.util.PathManager;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.junit.After;
+import org.junit.Test;
 
 import java.io.File;
 
-public class RefactoringTest extends BaseMPSTest {
+import static jetbrains.mps.TestMain.loadProject;
+import static jetbrains.mps.TestMain.testOnProjectCopy;
+import static jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.getModel;
+import static org.junit.Assert.assertTrue;
+
+public class RefactoringTest {
+  private static final String[] REFACTORING_SANDBOX = new String[]{"testRefactoring.sandbox", "testRefactoring.sandbox2"};
+  private static final String[] REFACTORING_LANGUAGE = new String[]{"testRefactoring", "testRefactoringTargetLang"};
+
   private static final String TEST_REFACTORING_PATH = "testbench/modules/testRefactoring";
 
+  @After
+  public void tearDown() throws Exception {
+    ModelAccess.instance().flushEventQueue();
+  }
+
+  @Test
   public void testRefactoringEnvironment() {
     assertTrue(testRefactoringTestEnvironment(new File(TEST_REFACTORING_PATH)));
   }
 
-  public void  testRenameConceptRefactoring() {
+  @Test
+  public void testRenameConceptRefactoring() {
     assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester"));
   }
 
+  @Test
   public void testRenameLinkRefactoring_Hierarchy() {
     assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy"));
   }
 
+  @Test
   public void testRenameLinkRefactoring_Simple() {
     assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Simple"));
   }
 
+  @Test
   public void testMoveConceptRefactoring() {
     assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester"));
   }
 
+  @Test
   public void testRenamePropertyRefactoring_Simple() {
     assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.tests.RenamePropertyRefactoringTester_Simple"));
   }
+
+  protected boolean testRefactoringTestEnvironment(File projectDirectory) {
+    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
+    TestMain.configureMPS();
+    final Project project = loadProject(projectDirectory);
+    final boolean[] b = new boolean[]{true};
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        b[0] = getModel(project, REFACTORING_SANDBOX[0]) != null && getModel(project, REFACTORING_SANDBOX[1]) != null &&
+            getLanguage(project, REFACTORING_LANGUAGE[0]) != null && getLanguage(project, REFACTORING_LANGUAGE[1]) != null;
+      }
+    });
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        project.dispose();
+      }
+    });
+    return b[0];
+  }
+
+  protected boolean testRefactoringOnProject(File projectDirectory, String refactoringTesterClassName) {
+    try {
+      final Class<? extends IRefactoringTester> cls = (Class<? extends IRefactoringTester>) Class.forName(refactoringTesterClassName);
+      final IRefactoringTester tester = cls.newInstance();
+      final File destinationProjectDir = new File(PathManager.getHomePath(), "TEST_REFACTORING");
+      return testOnProjectCopy(projectDirectory, destinationProjectDir, null, new TestMain.ProjectRunnable() {
+        public boolean execute(final Project project) {
+          final SModel[] sandbox = new SModel[]{null, null};
+          final Language[] testLanguage = new Language[]{null, null};
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              String classPath = destinationProjectDir.getAbsolutePath() + "/classes";
+              sandbox[0] = getModel(project, REFACTORING_SANDBOX[0]);
+              sandbox[1] = getModel(project, REFACTORING_SANDBOX[1]);
+              testLanguage[0] = getLanguage(project, REFACTORING_LANGUAGE[0]);
+              testLanguage[1] = getLanguage(project, REFACTORING_LANGUAGE[1]);
+              updateLanguageClasspath(testLanguage[0], classPath);
+              updateLanguageClasspath(testLanguage[1], classPath);
+            }
+          });
+          return tester.testRefactoring(project, sandbox[0], sandbox[1], testLanguage[0], testLanguage[1]);
+        }
+      });
+    } catch (Throwable t) {
+      throw new RuntimeException(t);
+    }
+  }
+
+  public static Language getLanguage(Project project, String languageName) {
+    return ScopeOperations.getLanguage(project.getScope(), languageName);
+  }
+
+  public static void updateLanguageClasspath(Language l, String classpath) {
+    LanguageDescriptor languageDescriptor = l.getModuleDescriptor();
+    languageDescriptor.getAdditionalJavaStubPaths().add(classpath);
+    l.setLanguageDescriptor(languageDescriptor, false);
+  }
 }
+
+
