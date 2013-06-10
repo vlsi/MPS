@@ -21,10 +21,10 @@ import jetbrains.mps.persistence.XmlModelPersistence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.testbench.IdeaEnvironment;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
@@ -49,11 +49,10 @@ import static org.junit.Assert.assertNotNull;
 public class XmlConverterTest {
   private static Environment ENV;
 
-
   @BeforeClass
   public static void start() throws Exception {
     // todo: use @MpsTest
-    ENV = new IdeaEnvironment(EnvironmentConfig.emptyEnvironment().addPlugin("jetbrains.mps.core"));
+    ENV = new MpsEnvironment(EnvironmentConfig.emptyEnvironment().withBootstrapLibraries().addPlugin("jetbrains.mps.core"));
     MpsTestsSupport.makeAllInCreatedEnvironment();
   }
 
