@@ -198,10 +198,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     return copy != null && copy.getRepository() != null;
   }
 
-  protected void updateReferenceAfterRename(SModelReference ref) {
-    myModelReference = ref;
-  }
-
   @NotNull
   @Override
   public Iterable<Problem> getProblems() {
@@ -294,6 +290,12 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
         LOG.error("listener failure", t);
       }
     }
+  }
+
+  @Override
+  public void changeModelReference(SModelReference newModelReference) {
+    super.changeModelReference(newModelReference);
+    myModelReference = newModelReference;
   }
 
 
