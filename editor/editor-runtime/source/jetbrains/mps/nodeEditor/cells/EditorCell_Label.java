@@ -565,7 +565,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       changeText(newText);
       setCaretPositionIfPossible(startSelection + 1);
       myTextLine.resetSelection();
-      editor.resetLastCaretX();
+      fireSelectionChanged();
       ensureCaretVisible();
       return true;
     }
@@ -620,7 +620,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     int endSel = myTextLine.getEndTextSelectionPosition();
     changeText(myText.substring(0, stSel) + myText.substring(endSel));
     myTextLine.setCaretPosition(stSel);
-    editor.resetLastCaretX();
+    fireSelectionChanged();
     ensureCaretVisible();
   }
 
@@ -636,13 +636,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
     SNode node = getSNode();
     if (node == null) return;
-    if (CommandProcessor.getInstance().getCurrentCommand() == null)return;
+    if (CommandProcessor.getInstance().getCurrentCommand() == null) return;
     if (EqualUtil.equals(oldText, text)) return;
     if (isValidText(text)) return;
 
     UndoHelper.getInstance().addUndoableAction(new MySNodeUndoableAction(node, cellInfo, editor, oldText, text));
 
-    if (node.getModel()==null) return;
+    if (node.getModel() == null) return;
 
     MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getContainingRoot()).setModificationStamp(LocalTimeCounter.currentTime());
   }
@@ -780,6 +780,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     return myTextLine.getTextAfterCaret();
   }
 
+  private void fireSelectionChanged() {
+    getEditorComponent().getSelectionManager().setSelection(getEditorComponent().getSelectionManager().getSelection());
+  }
+
   private static class MySNodeUndoableAction extends SNodeUndoableAction {
     private final CellInfo myCellInfo;
     private final WeakReference<EditorComponent> myEditor;
@@ -833,7 +837,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     @Override
     public void execute(EditorContext context) {
       setCaretPosition(getCaretPosition() - 1, myWithSelection);
-      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
+      fireSelectionChanged();
       ensureCaretVisible();
     }
   }
@@ -853,7 +857,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     @Override
     public void execute(EditorContext context) {
       setCaretPosition(getCaretPosition() + 1, myWithSelection);
-      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
+      fireSelectionChanged();
       ensureCaretVisible();
     }
   }
@@ -867,7 +871,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     @Override
     public void execute(EditorContext context) {
       setCaretPosition(0, true);
-      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
+      fireSelectionChanged();
       ensureCaretVisible();
     }
   }
@@ -881,7 +885,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     @Override
     public void execute(EditorContext context) {
       setCaretPosition(getText().length(), true);
-      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
+      fireSelectionChanged();
       ensureCaretVisible();
     }
   }
@@ -968,7 +972,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       EditorCell_Label cell = (EditorCell_Label) context.getSelectedCell();
       final String s = TextPasteUtil.getStringFromClipboard();
       cell.insertText(NameUtil.escapeInvisibleCharacters(s));
-      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
+      fireSelectionChanged();
       cell.ensureCaretVisible();
     }
   }

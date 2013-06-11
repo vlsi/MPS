@@ -65,6 +65,7 @@ import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
 import jetbrains.mps.nodeEditor.actions.ActionHandlerImpl;
+import jetbrains.mps.nodeEditor.actions.CursorPositionTracker;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_CopyNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_CutNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteNode;
@@ -303,8 +304,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   };
 
-  private boolean myHasLastCaretX = false;
-  private int myLastCaretX;
   private boolean myReadOnly = false;
   private String myLastWrittenStatus = "";
 
@@ -469,13 +468,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myKbdHandlersStack = new Stack<KeyboardHandler>();
     myKbdHandlersStack.push(new EditorComponentKeyboardHandler(myKeymapHandler));
 
-    // --- init action map --   
+    // --- init action map --
     myActionMap = new HashMap<jetbrains.mps.openapi.editor.cells.CellActionType, CellAction>();
     // -- navigation
     myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.LEFT, new NodeEditorActions.MoveLeft());
     myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT, new NodeEditorActions.MoveRight());
-    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.UP, new NodeEditorActions.MoveUp());
-    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.DOWN, new NodeEditorActions.MoveDown());
+    CursorPositionTracker cursorPositionTracker = new CursorPositionTracker(getEditorContext());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.UP, new NodeEditorActions.MoveUp(cursorPositionTracker));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.DOWN, new NodeEditorActions.MoveDown(cursorPositionTracker));
     myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.NEXT, new NodeEditorActions.MoveNext());
     myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.PREV, new NodeEditorActions.MovePrev());
     myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.LOCAL_HOME, new NodeEditorActions.MoveLocal(true));
@@ -2087,7 +2087,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
     if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || selectedCell == null || !CellTraversalUtil.isAncestor(selectedCell,
         newSelectedCell))) {
-      resetLastCaretX();
       mySelectionManager.setSelection(newSelectedCell);
       newSelectedCell.processMousePressed(mouseEvent);
       revalidateAndRepaint();
@@ -2123,25 +2122,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   @Override
-  public final void changeSelection(jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell) {
-    changeSelection((EditorCell) newSelectedCell, true);
-  }
-
-  void changeSelection(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell, boolean resetLastCaretX) {
-    if (resetLastCaretX) {
-      resetLastCaretX();
-    }
+  public final void changeSelection(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell) {
     mySelectionManager.setSelection(newSelectedCell);
     showCellInViewPort(newSelectedCell);
     repaint();
   }
 
+  /**
+   * @deprecated seems not used anymore. Remove this method after MPS 3.0
+   */
   @UseCarefully
+  @Deprecated
   public void setSelectionDontClearStack(EditorCell newSelectedCell, boolean resetLastCaretX) {
-    if (resetLastCaretX) {
-      resetLastCaretX();
-    }
-
     if (getSelectedCell() != newSelectedCell) {
       mySelectionManager.pushSelection(mySelectionManager.createSelection(newSelectedCell));
     }
@@ -2709,25 +2701,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (selection != null) {
       ((SelectionInternal) selection).paintSelection((Graphics2D) g);
     }
-  }
-
-  // last caret X
-
-  boolean hasLastCaretX() {
-    return myHasLastCaretX;
-  }
-
-  int getLastCaretX() {
-    return myLastCaretX;
-  }
-
-  public void resetLastCaretX() {
-    myHasLastCaretX = false;
-  }
-
-  void saveLastCaretX(int lastCaretX) {
-    myLastCaretX = lastCaretX;
-    myHasLastCaretX = true;
   }
 
   public void addCellDependentOnNodeProperty(EditorCell_Property cell, Pair<SNodeReference, String> pair) {
