@@ -931,5 +931,32 @@
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp68.3731567766880819155" resolveInfo="InternalSuperMethodCallOperation" />
     </node>
   </root>
+  <root type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="3584941796637350105" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="InternalClassifierType_subtypeOf_ClassifierType" />
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="3584941796637350585" nodeInfo="nn">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3584941796637354391" nodeInfo="nn">
+        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3584941796637370689" nodeInfo="nn">
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3584941796637370719" nodeInfo="in">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3584941796637370748" nodeInfo="ng">
+              <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
+              <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
+              <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3584941796637371494" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="3584941796637370798" nodeInfo="nn">
+                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="3584941796637350587" resolveInfo="ict" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3584941796637378665" nodeInfo="nn">
+                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1107535924139" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3584941796637350587" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="ict" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp68.1174914042989" resolveInfo="InternalClassifierType" />
+    </node>
+  </root>
 </model>
 
