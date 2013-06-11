@@ -21,6 +21,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.Color;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import javax.swing.Scrollable;
 import java.awt.BorderLayout;
@@ -96,6 +97,7 @@ public class ShowCFGDialog extends DialogWrapper {
   }
 
   @Override
+  @NotNull
   protected Action[] createActions() {
     return new Action[0];
   }
