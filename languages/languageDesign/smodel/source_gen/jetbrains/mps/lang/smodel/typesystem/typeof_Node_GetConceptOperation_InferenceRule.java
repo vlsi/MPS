@@ -10,6 +10,9 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
@@ -38,9 +41,16 @@ public class typeof_Node_GetConceptOperation_InferenceRule extends AbstractInfer
       typeCheckingContext.whenConcrete(ignore, new Runnable() {
         public void run() {
           {
-            SNode _nodeToCheck_1029348928467 = op;
-            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225294453514", 0, null);
-            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225294447047", true), (SNode) _quotation_createNode_qqzg7i_a0a0f0b(SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getRepresentative(OPT_typevar_2077021505448795175), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false)), _info_12389875345);
+            IMatchingPattern pattern_3l14g3_a0f0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType");
+            SNode coercedNode_3l14g3_a0f0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(OPT_typevar_2077021505448795175), pattern_3l14g3_a0f0);
+            if (coercedNode_3l14g3_a0f0 != null) {
+              {
+                SNode _nodeToCheck_1029348928467 = op;
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225294453514", 0, null);
+                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225294447047", true), (SNode) _quotation_createNode_qqzg7i_a0a0c0a0f0b(SLinkOperations.getTarget(coercedNode_3l14g3_a0f0, "concept", false)), _info_12389875345);
+              }
+            } else {
+            }
           }
         }
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2077021505447919732", false, false);
@@ -70,7 +80,7 @@ public class typeof_Node_GetConceptOperation_InferenceRule extends AbstractInfer
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_qqzg7i_a0a0f0b(Object parameter_1) {
+  private static SNode _quotation_createNode_qqzg7i_a0a0c0a0f0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, GlobalScope.getInstance(), false);
