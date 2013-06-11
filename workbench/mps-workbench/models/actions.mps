@@ -5077,8 +5077,11 @@
       <property name="isOptional" nameId="tp4k.1221669969834" value="true" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="kt55.~MPSDataKeys%dNAMESPACE" resolveInfo="NAMESPACE" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3273304147471066259" nodeInfo="ng">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-icons/source/nodes/solution.png" />
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="5503882260880903205" nodeInfo="ng">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5503882260881137232" nodeInfo="nn">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4yn.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4yn.~MPSIcons$Nodes%dSolution" resolveInfo="Solution" />
+      </node>
     </node>
   </root>
   <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1234013859987" nodeInfo="ng">
