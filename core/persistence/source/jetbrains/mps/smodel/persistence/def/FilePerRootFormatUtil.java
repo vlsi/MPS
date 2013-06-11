@@ -102,8 +102,8 @@ public class FilePerRootFormatUtil {
         if (rootHandler.getResult().getContentKind() != ContentKind.MODEL_ROOT) {
           throw new ModelReadException("Couldn't read model: " + stream + " root file is broken", null);
         }
-        if (rootHandler.getResult().getState() == ModelLoadingState.ROOTS_LOADED) {
-          headerHandler.getResult().setState(ModelLoadingState.ROOTS_LOADED);
+        if (rootHandler.getResult().getState() == ModelLoadingState.INTERFACE_LOADED) {
+          headerHandler.getResult().setState(ModelLoadingState.INTERFACE_LOADED);
         }
         int count = 0;
         for (SNode rootNode : rootHandler.getResult().getModel().getRootNodes()) {

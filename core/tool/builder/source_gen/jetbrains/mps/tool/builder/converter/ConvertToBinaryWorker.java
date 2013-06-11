@@ -20,7 +20,7 @@ public class ConvertToBinaryWorker {
   public ConvertToBinaryWorker() {
   }
 
-  public void convert(Map<String, String> map) {
+  public void convert(Map<String, String> map, Boolean stripImplementation) {
     MPSCore.getInstance().init();
     MPSPersistence.getInstance().init();
     MPSCore.getInstance().setMergeDriverMode(true);
@@ -28,7 +28,7 @@ public class ConvertToBinaryWorker {
     System.setProperty("mps.playRefactorings", "false");
     try {
       for (Map.Entry<String, String> entry : map.entrySet()) {
-        convertModelToBinary(entry.getKey(), entry.getValue());
+        convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);
       }
     } catch (IOException ex) {
       throw new RuntimeException(ex);
@@ -39,10 +39,13 @@ public class ConvertToBinaryWorker {
     }
   }
 
-  private void convertModelToBinary(String sourceFile, String destFile) throws IOException {
+  private void convertModelToBinary(String sourceFile, String destFile, boolean stripImplementation) throws IOException {
     IFile source = FileSystem.getInstance().getFileByPath(sourceFile);
     try {
-      DefaultSModel model = ModelPersistence.readModel(new FileDataSource(source), false);
+      DefaultSModel model = (stripImplementation ?
+        ModelPersistence.readModelWithoutImplementation(new FileDataSource(source)) :
+        ModelPersistence.readModel(new FileDataSource(source), false)
+      );
       if (model.getSModelHeader().getPersistenceVersion() < ModelPersistence.LAST_VERSION) {
         throw new IOException("cannot convert " + sourceFile + ": model persistence is too old, please upgrade");
       }

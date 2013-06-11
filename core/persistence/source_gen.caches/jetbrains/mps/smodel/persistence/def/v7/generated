@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8hp21od9sz9sc6laeye4hi8j952q8ip">
+<dependencies version="2" modelHash="-6wwmmhkyeqcvoxzphyjslx5wshqlyoo">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -19,10 +19,10 @@
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="97bcp20rwvaujtt4z6d96fxd6ude8mm" />
   <dep model="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)" hash="-bso5ceq8mgd7pwkcepljen88cyp0klb" />
   <dep model="r:a94a31e6-5f27-484d-8a1c-c6b4b8fad112(jetbrains.mps.core.xml.sax.generator.template.main@generator)" hash="bft6j9c5cmorpmzy4farl5rooagq3k9" />
-  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="e4cv1gc4wskt76f7rva55r0sqoini0u" />
+  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="cl1ks7i5cjsf0u84lh5hsuf8gsibp3p" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
   <common hash="416fkt8xc9xdzk3kaqjvcp0e7xddc0j" />
-  <source id="286176397450364062" name="ModelReader7" hash="-cigsu6huvax7kpyvcfgjcjuhwammon">
+  <source id="286176397450364062" name="ModelReader7" hash="3itnb8mj1c88b6otrvaq2xiig80hwzp">
     <dep root="4362914091961475519" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -62,7 +62,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="WriteHelper.java" />
   </source>
-  <source id="4362914091961475519" name="ReadHelper" hash="2amblo8sij18dat1w6uu0qswbkl3gqj">
+  <source id="4362914091961475519" name="ReadHelper" hash="91kia227nelqwa1cj7h9kzxw1rf86yn">
     <dep root="4362914091961459500" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />

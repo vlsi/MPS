@@ -34,8 +34,8 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
     @Override
     protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable LazySModel current) {
       if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult(null, ModelLoadingState.NOT_LOADED);
-      if (state == ModelLoadingState.ROOTS_LOADED) {
-        ModelLoadResult result = loadSModel(ModelLoadingState.ROOTS_LOADED);
+      if (state == ModelLoadingState.INTERFACE_LOADED) {
+        ModelLoadResult result = loadSModel(ModelLoadingState.INTERFACE_LOADED);
         processLoadedModel(result.getModel());
         updateTimestamp();
         return result;
@@ -67,14 +67,14 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
   @Override
   public final LazySModel getSModelInternal() {
     ModelLoadingState oldState = myModel.getState();
-    if (oldState.ordinal() >= ModelLoadingState.ROOTS_LOADED.ordinal()) {
-      return myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+    if (oldState.ordinal() >= ModelLoadingState.INTERFACE_LOADED.ordinal()) {
+      return myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
     }
     synchronized (myModel) {
       if (myModel instanceof InvalidSModel) return myModel.getModel(null);
 
       oldState = myModel.getState();
-      LazySModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+      LazySModel res = myModel.getModel(ModelLoadingState.INTERFACE_LOADED);
       if (res == null) return null; // this is when we are in recursion
       if (oldState != myModel.getState()) {
         res.setModelDescriptor(this);

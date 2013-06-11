@@ -92,6 +92,10 @@ public class ReadHelper {
     return nodeInfo.startsWith("i");
   }
 
+  public boolean isImplementationNode(String nodeInfo) {
+    return nodeInfo != null && nodeInfo.startsWith("l");
+  }
+
   public Tuples._3<ConceptKind, StaticScope, Boolean> readNodeInfo(String s) {
     ConceptKind kind;
     StaticScope scope;

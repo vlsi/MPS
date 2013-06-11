@@ -288,8 +288,8 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_2824634917103356434(Object resultObject, Object value) throws SAXException {
       ModelLoadResult result = (ModelLoadResult) resultObject;
       Object child = (Object) value;
-      if (fieldtoState == ModelLoadingState.ROOTS_LOADED && !(StructureModificationProcessor.hasRefactoringsToPlay(fieldmodel))) {
-        result.setState(ModelLoadingState.ROOTS_LOADED);
+      if (fieldtoState == ModelLoadingState.INTERFACE_LOADED && !(StructureModificationProcessor.hasRefactoringsToPlay(fieldmodel))) {
+        result.setState(ModelLoadingState.INTERFACE_LOADED);
         throw new BreakParseSAXException();
       }
     }

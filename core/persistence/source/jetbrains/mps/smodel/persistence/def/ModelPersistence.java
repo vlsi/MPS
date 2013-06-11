@@ -341,16 +341,22 @@ public class ModelPersistence {
   }
 
   @NotNull
-  public static DefaultSModel readModel(@NotNull final StreamDataSource source, boolean onlyRoots) throws ModelReadException {
+  public static DefaultSModel readModelWithoutImplementation(@NotNull final StreamDataSource source) throws ModelReadException {
     SModelHeader header = loadDescriptor(source);
-    ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
+    return (DefaultSModel) readModel(header, source, ModelLoadingState.NO_IMPLEMENTATION).getModel();
+  }
+
+  @NotNull
+  public static DefaultSModel readModel(@NotNull final StreamDataSource source, boolean interfaceOnly) throws ModelReadException {
+    SModelHeader header = loadDescriptor(source);
+    ModelLoadingState state = interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED;
     return (DefaultSModel) readModel(header, source, state).getModel();
   }
 
   @NotNull
-  public static DefaultSModel readModel(@NotNull final String content, boolean onlyRoots) throws ModelReadException {
+  public static DefaultSModel readModel(@NotNull final String content, boolean interfaceOnly) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
-    ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
+    ModelLoadingState state = interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED;
     return (DefaultSModel) readModel(header, new InputSource(new StringReader(content)), state).getModel();
   }
 

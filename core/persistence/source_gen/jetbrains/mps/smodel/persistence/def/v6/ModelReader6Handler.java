@@ -276,8 +276,8 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_4813471910141063838(Object resultObject, Object value) throws SAXException {
       ModelLoadResult result = (ModelLoadResult) resultObject;
       Object child = (Object) value;
-      if (fieldtoState == ModelLoadingState.ROOTS_LOADED) {
-        result.setState(ModelLoadingState.ROOTS_LOADED);
+      if (fieldtoState == ModelLoadingState.INTERFACE_LOADED) {
+        result.setState(ModelLoadingState.INTERFACE_LOADED);
         throw new BreakParseSAXException();
       }
     }
@@ -405,7 +405,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
 
     private void handleChild_4813471910141063860(Object resultObject, Object value) throws SAXException {
       SNode child = (SNode) value;
-      if (fieldtoState == ModelLoadingState.ROOTS_LOADED && child != null) {
+      if (fieldtoState == ModelLoadingState.INTERFACE_LOADED && child != null) {
         fieldmodel.addRootNode(child);
       }
     }

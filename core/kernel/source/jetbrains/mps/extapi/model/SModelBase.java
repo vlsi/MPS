@@ -276,7 +276,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
         if (newState == ModelLoadingState.NOT_LOADED) {
           l.modelUnloaded(this);
         } else {
-          l.modelLoaded(this, newState == ModelLoadingState.ROOTS_LOADED);
+          l.modelLoaded(this, newState == ModelLoadingState.INTERFACE_LOADED);
         }
       } catch (Throwable t) {
         LOG.error("listener failure", t);

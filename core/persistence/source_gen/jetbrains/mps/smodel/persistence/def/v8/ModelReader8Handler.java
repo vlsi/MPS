@@ -50,6 +50,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
   private Locator myLocator;
   private ModelLoadResult myResult;
   private boolean fieldinterfaceOnly;
+  private boolean fieldstripImplementation;
   private SModelHeader fieldheader;
   private DefaultSModel fieldmodel;
   private ReadHelper fieldhelper;
@@ -57,8 +58,9 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
   private Boolean fieldhasRefactorings;
   private boolean fieldhasSkippedNodes;
 
-  public ModelReader8Handler(boolean interfaceOnly, SModelHeader header) {
+  public ModelReader8Handler(boolean interfaceOnly, boolean stripImplementation, SModelHeader header) {
     fieldinterfaceOnly = interfaceOnly;
+    fieldstripImplementation = stripImplementation;
     fieldheader = header;
   }
 
@@ -266,7 +268,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
         });
         return importhandler;
       }
-      if ("root".equals(tagName)) {
+      if ("root".equals(tagName) && checkroot_1768088633166530069(resultObject, attrs)) {
         myChildHandlersStack.push(new ModelReader8Handler.ChildHandler() {
           @Override
           public void apply(Object resultObject, Object value) throws SAXException {
@@ -275,7 +277,20 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
         });
         return nodehandler;
       }
+      if ("root".equals(tagName)) {
+        myChildHandlersStack.push(new ModelReader8Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_1768088633166523070(resultObject, value);
+          }
+        });
+        return ignoredNodehandler;
+      }
       return super.createChild(resultObject, tagName, attrs);
+    }
+
+    private boolean checkroot_1768088633166530069(Object resultObject, Attributes attrs) {
+      return !(fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("nodeInfo")));
     }
 
     private void handleChild_286176397450364079(Object resultObject, Object value) throws SAXException {
@@ -308,6 +323,11 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
     }
 
+    private void handleChild_1768088633166523070(Object resultObject, Object value) throws SAXException {
+      String child = (String) value;
+      fieldhasSkippedNodes = true;
+    }
+
     @Override
     protected void validate(Object resultObject) throws SAXException {
       if (!(validateInternal((ModelLoadResult) resultObject))) {
@@ -319,7 +339,10 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       new StructureModificationProcessor(fieldlinkMap, fieldmodel).updateModelOnLoad();
       fieldlinkMap.fillModelEnvironmentInfo();
       result.setState((fieldhasSkippedNodes ?
-        ModelLoadingState.ROOTS_LOADED :
+        ((fieldinterfaceOnly ?
+          ModelLoadingState.INTERFACE_LOADED :
+          ModelLoadingState.NO_IMPLEMENTATION
+        )) :
         ModelLoadingState.FULLY_LOADED
       ));
       return true;
@@ -523,6 +546,9 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
 
     private boolean checknode_1910945748547288250(Object resultObject, Attributes attrs) {
       SNode result = (SNode) resultObject;
+      if (fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("nodeInfo"))) {
+        return false;
+      }
       return !(result instanceof InterfaceSNode) || fieldhelper.isInterfaceNode(attrs.getValue("nodeInfo"));
     }
 
@@ -564,8 +590,9 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_1910945748545948896(Object resultObject, Object value) throws SAXException {
       SNode result = (SNode) resultObject;
       String child = (String) value;
-      assert result instanceof InterfaceSNode;
-      ((InterfaceSNode) result).skipRole(child);
+      if (result instanceof InterfaceSNode) {
+        ((InterfaceSNode) result).skipRole(child);
+      }
       fieldhasSkippedNodes = true;
     }
   }
