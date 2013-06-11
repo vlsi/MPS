@@ -20,6 +20,7 @@ import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.java.newparser.JavaParser;
+import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -150,7 +151,7 @@ public class ConvertPackageToModel extends AnAction {
         }
 
         // we want psi stub models to be up-to-date with regard to those deletions
-        // TODO ResolveManager.flush()
+        ReloadManager.getInstance().flush();
 
         JavaParser.tryResolveDynamicRefs(affectedNodes);
       }
