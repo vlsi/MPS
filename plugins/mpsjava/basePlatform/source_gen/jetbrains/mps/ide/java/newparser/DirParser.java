@@ -101,6 +101,12 @@ public class DirParser {
 
 
 
+  public List<SModel> getAffectedModels() {
+    return myAffectedModels;
+  }
+
+
+
   public void addSourceFromDirectory(final IFile dir) throws IOException, JavaParseException {
     assert dir.isDirectory();
 
