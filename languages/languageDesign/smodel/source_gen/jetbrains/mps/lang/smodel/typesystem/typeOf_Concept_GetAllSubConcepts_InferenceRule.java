@@ -56,7 +56,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule extends AbstractInfe
               {
                 SNode _nodeToCheck_1029348928467 = node;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225542362833", 0, null);
-                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225542362835", true), (SNode) _quotation_createNode_bc8hh4_a0a0c0a0f0b(coercedNode_3g7owd_a0f0), _info_12389875345);
+                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225542362835", true), (SNode) _quotation_createNode_bc8hh4_a0a0c0a0f0b(SLinkOperations.getTarget(coercedNode_3g7owd_a0f0, "conceptDeclaraton", false)), _info_12389875345);
               }
             } else {
             }

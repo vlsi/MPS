@@ -5690,8 +5690,13 @@
                       <node role="elementType" roleId="tp2q.1151688676805" type="tp25.SConceptType" typeId="tp25.1172420572800" id="1225542362840" nodeInfo="in">
                         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1225542362841" nodeInfo="ng">
                           <property name="linkRole" nameId="tpck.1757699476691236116" value="conceptDeclaraton" />
-                          <node role="expression" roleId="tp3r.1196350785111" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7697946499967423420" nodeInfo="nn">
-                            <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7697946499967422219" resolveInfo="conType" />
+                          <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3584941796639654071" nodeInfo="nn">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="3584941796639651842" nodeInfo="nn">
+                              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7697946499967422219" resolveInfo="conType" />
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3584941796639663965" nodeInfo="nn">
+                              <link role="link" roleId="tp25.1138056516764" targetNodeId="tp25.1180481110358" />
+                            </node>
                           </node>
                         </node>
                       </node>
