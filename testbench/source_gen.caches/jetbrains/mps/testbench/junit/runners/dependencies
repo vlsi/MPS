@@ -9,6 +9,20 @@
     <classNode dependClassName="org.junit.runners.model.MultipleFailureException" />
     <classNode extendsClassName="org.junit.runners.model.Statement" />
   </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.runners.DynamicSuite" file="DynamicSuite.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.annotation.ElementType" />
+    <classNode dependClassName="java.lang.annotation.Retention" />
+    <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
+    <classNode dependClassName="java.lang.annotation.Target" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
+    <classNode dependClassName="java.lang.reflect.Method" />
+    <classNode dependClassName="java.lang.reflect.Modifier" />
+    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
+    <classNode extendsClassName="org.junit.runners.Suite" />
+  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.MPSOpenProjectRunner" file="MPSOpenProjectRunner.java">
     <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
     <classNode dependClassName="com.intellij.util.PathUtil" />
