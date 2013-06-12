@@ -100,7 +100,7 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), "concept", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
-  public static Object propertyMacro_GetPropertyValue_1815980786158961949(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_802679297401943030(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
   }
 
