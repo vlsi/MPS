@@ -11506,6 +11506,7 @@
               <link role="module" roleId="kdzh.1692280246134781713" targetNodeId="2569834391839970945" resolveInfo="MPS.Workbench" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="6361939271669615913" nodeInfo="ng">
+              <property name="stripImplementation" nameId="kdzh.7918752904808503599" value="true" />
               <link role="module" roleId="kdzh.1692280246134781713" targetNodeId="2569834391839970962" resolveInfo="jetbrains.mps.ide" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="6361939271669637573" nodeInfo="ng">

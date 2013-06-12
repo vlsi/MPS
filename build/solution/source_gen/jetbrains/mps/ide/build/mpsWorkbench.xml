@@ -263,7 +263,7 @@
     <jar destfile="${build.layout}/lib/mps-boot.jar">
       <fileset dir="${build.tmp}/java/out/startup" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/workbench-mps-workbench-models">
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/workbench-mps-workbench-models" stripImplementation="true">
       <fileset dir="${mps_home}/workbench/mps-workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-uiLanguage-runtime-jetbrains">
