@@ -99,7 +99,7 @@ public class NodesReader {
 
   private ConceptKind getConceptKind(byte nodeInfo) {
     int i = (nodeInfo >> 1) & 3;
-    return i == 1 ? ConceptKind.INTERFACE : i == 2 ? ConceptKind.IMPLEMENTATION : ConceptKind.NORMAL;
+    return i == 1 ? ConceptKind.INTERFACE : i == 3 ? ConceptKind.IMPLEMENTATION_WITH_STUB : i == 2 ? ConceptKind.IMPLEMENTATION : ConceptKind.NORMAL;
   }
 
   private StaticScope getStaticScope(byte nodeInfo) {

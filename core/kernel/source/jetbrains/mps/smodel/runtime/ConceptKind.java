@@ -21,5 +21,6 @@ package jetbrains.mps.smodel.runtime;
 public enum ConceptKind {
   NORMAL,
   INTERFACE,
-  IMPLEMENTATION
+  IMPLEMENTATION,
+  IMPLEMENTATION_WITH_STUB
 }
