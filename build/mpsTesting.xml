@@ -334,6 +334,8 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.build.gentest.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.build.reduced.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
@@ -486,6 +488,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/bsh-core-2.0b4.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/cglib-nodep-2.1_3.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/hamcrest-core-1.1.jar" />
@@ -505,6 +508,7 @@
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -555,6 +559,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/bsh-core-2.0b4.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/cglib-nodep-2.1_3.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/hamcrest-core-1.1.jar" />
@@ -574,6 +579,7 @@
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -625,6 +631,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/bsh-core-2.0b4.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/cglib-nodep-2.1_3.jar" />
@@ -645,6 +652,7 @@
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -688,6 +696,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/bsh-core-2.0b4.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/cglib-nodep-2.1_3.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/hamcrest-core-1.1.jar" />
@@ -707,6 +716,7 @@
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
