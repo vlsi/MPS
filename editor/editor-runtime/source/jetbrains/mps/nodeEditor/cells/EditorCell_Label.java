@@ -21,6 +21,7 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import jetbrains.mps.nodeEditor.CellSide;
@@ -152,18 +153,20 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     getStyle().set(StyleAttributes.NULL_SELECTED_TEXT_BACKGROUND_COLOR, color);
   }
 
+  /**
+   * @deprecated Use StyleAttributesUtil.isFirstPositionAllowed() instead. Should be removed after MPS 3.0
+   */
+  @Deprecated
   public boolean isFirstPositionAllowed() {
-    if (getStyle().isSpecified(StyleAttributes.FIRST_POSITION_ALLOWED)) {
-      return getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED);
-    }
-    return !getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
+    return StyleAttributesUtil.isFirstPositionAllowed(getStyle());
   }
 
+  /**
+   * @deprecated Use StyleAttributesUtil.isLastPositionAllowed() instead. Should be removed after MPS 3.0
+   */
+  @Deprecated
   public boolean isLastPositionAllowed() {
-    if (getStyle().isSpecified(StyleAttributes.LAST_POSITION_ALLOWED)) {
-      return getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED);
-    }
-    return !getStyle().get(StyleAttributes.PUNCTUATION_RIGHT);
+    return StyleAttributesUtil.isLastPositionAllowed(getStyle());
   }
 
   public int getCaretPosition() {

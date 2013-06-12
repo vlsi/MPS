@@ -39,8 +39,7 @@ public class CellProperties {
     myCell = cell;
     myCellText = null;
     if (myCell instanceof EditorCell_Label) {
-      myCellText = ((EditorCell_Label) myCell).getText();
-      if (myCellText == null || myCellText.length() == 0) myCellText = ((EditorCell_Label) myCell).getNullText();
+      myCellText = ((EditorCell_Label) myCell).getRenderedText();
     }
     myCellKind = NameUtil.shortNameFromLongName(myCell.getClass().getName());
     myCellWidth = myCell.getWidth() + "";

@@ -314,10 +314,7 @@ public class CellExplorerView extends BaseProjectTool {
     public String calculateText() {
       String result = NameUtil.shortNameFromLongName(myCell.getClass().getName());
       if (myCell instanceof EditorCell_Label) {
-        String text = ((EditorCell_Label) myCell).getText();
-        if (text == null || text.length() == 0) {
-          text = ((EditorCell_Label) myCell).getNullText();
-        }
+        String text = ((EditorCell_Label) myCell).getRenderedText();
         result += " text = \"" + text + "\"";
       }
       if (myCell.isErrorState()) {
