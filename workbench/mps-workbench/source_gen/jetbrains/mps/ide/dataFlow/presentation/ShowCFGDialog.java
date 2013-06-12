@@ -8,17 +8,16 @@ import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.event.MouseEvent;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import javax.swing.SwingUtilities;
 import javax.swing.JPopupMenu;
 import javax.swing.JMenuItem;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.Color;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
@@ -47,40 +46,51 @@ public class ShowCFGDialog extends DialogWrapper {
     graph.relayout();
     this.myControlFlowGraph.addBlockListener(new IBlockListener() {
       @Override
-      public void mousePressed(final MouseEvent event, final IBlock block) {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          public void run() {
-            final SNode node = check_wx2hhz_a0a0a0a0a0a0a0a8a3(((SNodePointer) block.getSourceNode()));
-            if (SwingUtilities.isRightMouseButton(event)) {
+      public void mousePressed(MouseEvent event, IBlock block) {
+        final SNodeReference sourceRef = block.getSourceNode();
+        if (SwingUtilities.isRightMouseButton(event)) {
 
-              JPopupMenu menu = new JPopupMenu();
-              JMenuItem item = new JMenuItem("go to data flow rule");
-              menu.add(item);
-              final SNodeReference ruleNodeReference = block.getRuleNodeReference();
-              menu.setEnabled(ruleNodeReference != null);
-              menu.show(event.getComponent(), block.getX() + block.getWidth() / 2, block.getY() + block.getHeight() / 2);
-              item.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent p0) {
-                  ModelAccess.instance().runWriteInEDT(new Runnable() {
-                    public void run() {
-                      if (ruleNodeReference != null) {
-                        NavigationSupport.getInstance().openNode(operationContext, ruleNodeReference.resolve(MPSModuleRepository.getInstance()), true, false);
-                      }
-                    }
-                  });
-                }
-              });
-            } else {
-              if (node != null) {
-                NavigationSupport.getInstance().openNode(operationContext, node, true, true);
-              }
+          JPopupMenu menu = new JPopupMenu();
+          JMenuItem ruleItem = new JMenuItem("go to data flow rule");
+          JMenuItem nodeItem = new JMenuItem("go to node");
+          menu.add(ruleItem);
+          menu.add(nodeItem);
+          final SNodeReference ruleNodeReference = block.getRuleNodeReference();
+          menu.setEnabled(ruleNodeReference != null);
+          menu.show(event.getComponent(), event.getX(), event.getY());
+          ruleItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent p0) {
+              openNode(operationContext, ruleNodeReference);
             }
-          }
-        });
+          });
+          nodeItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent p0) {
+              openNode(operationContext, sourceRef);
+            }
+          });
+        } else {
+          openNode(operationContext, sourceRef);
+        }
       }
     });
+    setModal(false);
     init();
   }
+
+  private void openNode(final IOperationContext operationContext, final SNodeReference nodeReference) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        if (nodeReference != null) {
+          SNode node = nodeReference.resolve(MPSModuleRepository.getInstance());
+          if (node != null) {
+            NavigationSupport.getInstance().openNode(operationContext, node, true, true);
+          }
+        }
+      }
+    });
+  }
+
+
 
   public Color getBackground() {
     return Color.LIGHT_GRAY;
@@ -150,12 +160,5 @@ public class ShowCFGDialog extends DialogWrapper {
     public boolean getScrollableTracksViewportHeight() {
       return false;
     }
-  }
-
-  private static SNode check_wx2hhz_a0a0a0a0a0a0a0a8a3(SNodePointer checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
-    }
-    return null;
   }
 }

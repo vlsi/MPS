@@ -54,10 +54,6 @@ public class WriteInstruction extends Instruction {
 
   @Override
   public String commandPresentation() {
-    if (myValue == null) {
-      return "write " + myVar;
-    } else {
-      return "write " + myVar + " " + myValue;
-    }
+    return "write " + myVar;
   }
 }
