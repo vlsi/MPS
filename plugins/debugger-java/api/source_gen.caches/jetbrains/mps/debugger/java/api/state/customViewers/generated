@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ctnwqunghwb9ns5yn3e03vdflpzidat">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+<dependencies version="2" modelHash="17mwqnd7es93nln5rso3neb8cs70ts7">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <common hash="-5piyg0umac0k9s5saai2ft7t34tf28m" />
-  <source id="3432969378036015275" name="CustomViewersManager" hash="ds9c3pyfv63jcns8qmmjz4zfrmczek1">
+  <source id="3432969378036015275" name="CustomViewersManager" hash="b6x31ta5pdhnx02iqitjqkfh1qrbulw">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CustomViewersManager.java" />
   </source>

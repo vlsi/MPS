@@ -16,7 +16,7 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7943979732673457920" nodeInfo="in">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="owg1.763922957008726945" resolveInfo="StateMachine" />
       </node>
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7943979732673457919" nodeInfo="nn">
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7943979732673457919" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7943979732673457921" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="7943979732673457928" nodeInfo="nn">
             <link role="concept" roleId="tp25.1140138128738" targetNodeId="owg1.763922957008726945" resolveInfo="StateMachine" />
@@ -29,7 +29,7 @@
       </node>
     </node>
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="7943979732673457914" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7943979732673457915" nodeInfo="nn" />
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7943979732673457915" nodeInfo="sn" />
     </node>
   </root>
 </model>

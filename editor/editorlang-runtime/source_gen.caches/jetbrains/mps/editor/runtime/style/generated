@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8a9armx9gf62k8xyol0u6fxnwtbm1fi">
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="dgzpe8t5xtmfn9j4ba4t7uzkcnsuq7n" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9iow8oinjz3flhnokp65cdgbcfbisw5" />
+<dependencies version="2" modelHash="ddw0e0oh11b3n63dzu9rg1s2tmitei9">
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="3p7kr81yw1eb76it8sv96ls9hd8lkqj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-5fqxd7fcw96t2fj5bjsil5qbvnk0ekv" />
   <common hash="adcq3m7cpk0u3me23x20dbutgkkar0f" />
-  <source id="6822392181927252916" name="StyledTextPrinter" hash="-221j8c0nmxfi10c14jf0roc5sdahw7i">
+  <source id="6822392181927252916" name="StyledTextPrinter" hash="-a36x5iidb92qy6r88yfzc6a32ph7mpt">
     <file name="StyledTextPrinter.java" />
   </source>
-  <source id="6822392181928383378" name="SideTransformTagUtils" hash="7g5ujh30i0e868yprjkc903xxs4o5ym">
+  <source id="6822392181928383378" name="SideTransformTagUtils" hash="-1aosogny5u52wgikvygm97354eww0vu">
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="SideTransformTagUtils.java" />
   </source>
-  <source id="6822392181928409958" name="ParametersInformation" hash="echd4m2slluoq0hex97coyzwx900e9v">
+  <source id="6822392181928409958" name="ParametersInformation" hash="8knxy8jt3ewcr9dyx3h3qd2h8i3rdly">
     <file name="ParametersInformation.java" />
   </source>
 </dependencies>

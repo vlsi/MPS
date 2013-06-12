@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ed50kera12ct4evk94pqq93ll4eijqq">
+<dependencies version="2" modelHash="-4gcm3i8ot0ysjguf2joijttya3zd4nd">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <common hash="ejggumus109hxbctcdwujstsuz8i68x" />
-  <source id="3308300503039473785" name="KajaFrame" hash="-cmfack4s4d91ikknell9ttdrgw4u4zz">
+  <source id="3308300503039473785" name="KajaFrame" hash="etkgemgbk4vwlam1h219rvxex2k4i98">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="KajaFrame.java" />
   </source>
-  <source id="3308300503039569134" name="Direction" hash="494gfyu2wqn1tbq0z8jsu7gvl5hjrir">
+  <source id="3308300503039569134" name="Direction" hash="-qvf3jgyy1kd3q78pdvcrrzrfk44ky9">
     <file name="Direction.java" />
   </source>
-  <source id="3308300503039569160" name="Cell" hash="-1tnqnofi242dh8uu49q146ecvwsiary">
+  <source id="3308300503039569160" name="Cell" hash="6f87hwobw0wpeuvipjqru9rnzxxrh8a">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Cell.java" />
   </source>
-  <source id="1904811872814056520" name="VisualCell" hash="-7vp4jukpk1yh1tjx7y0uhcs8yvdot7u">
+  <source id="1904811872814056520" name="VisualCell" hash="-84y7jwlgiwlh6d4a29a2bfctr3edzn4">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

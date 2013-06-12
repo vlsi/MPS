@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6lngotyf35uod105g6hfgzdi0hk082i">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+<dependencies version="2" modelHash="-9lqpdz89et5k2eknc40ijrjwqgz6ezt">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <common hash="-dnz827tuql5lrvfuvj89m7ljy6bjqn1" />
-  <source id="4474271214082913243" name="IThread" hash="9sklz1ul4fcyjg4ge7vr26udvqtmaxg">
+  <source id="4474271214082913243" name="IThread" hash="-17do2ndujk5d44g3p1n3wea8l4yfma9">
     <file name="IThread.java" />
   </source>
-  <source id="4474271214082913347" name="NullLocation" hash="eq2znjpn35nvhosego0pvt49h14rw6">
+  <source id="4474271214082913347" name="NullLocation" hash="81dev5mt4i22mobue2qew4y0lerjmid">
     <file name="NullLocation.java" />
   </source>
-  <source id="4474271214082913394" name="WatchablesCategory" hash="-bklm0yw3vbjdtto755yfk5n9tcepx2r">
+  <source id="4474271214082913394" name="WatchablesCategory" hash="-6rvpqdfb0aov1prmykisq9hrin8r1z3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="WatchablesCategory.java" />
   </source>
-  <source id="4474271214082914121" name="IStackFrame" hash="3degsu4aahjimrr6f46lc2ypnkuk861">
+  <source id="4474271214082914121" name="IStackFrame" hash="-7mjck65nia74m0bq0jo148cr6bywns">
     <file name="IStackFrame.java" />
   </source>
-  <source id="4474271214082914148" name="ILocation" hash="72h0ftg4k04faalel5bqttydfyg8n2y">
+  <source id="4474271214082914148" name="ILocation" hash="-bp9413wxhxgh61nftwqggv3cx4fkrnm">
     <file name="ILocation.java" />
   </source>
-  <source id="4474271214082915199" name="IValue" hash="32yredqkmq422gcza0b24hel98p3iaw">
+  <source id="4474271214082915199" name="IValue" hash="br9490vooy34b64qwxwmt5rj9l65k1v">
     <file name="IValue.java" />
   </source>
-  <source id="4474271214082916598" name="IWatchable" hash="-10ep2j8ljx4zze31hwog0ejkl6opt1l">
+  <source id="4474271214082916598" name="IWatchable" hash="-5yntt63uxcy0u0oxh3tz94lod5fotcw">
     <file name="IWatchable.java" />
   </source>
 </dependencies>

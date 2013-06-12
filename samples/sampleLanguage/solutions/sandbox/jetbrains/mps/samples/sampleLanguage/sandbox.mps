@@ -12,7 +12,7 @@
     <property name="name" nameId="tpck.1169194664001" value="Foo" />
     <node role="method" roleId="agsu.1816315258006256080" type="agsu.WannabeMethod" typeId="agsu.1816315258006256016" id="6451203873426933244" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="hello" />
-      <node role="body" roleId="agsu.1816315258006256018" type="tpee.StatementList" typeId="tpee.1068580123136" id="6451203873426933245" nodeInfo="nn">
+      <node role="body" roleId="agsu.1816315258006256018" type="tpee.StatementList" typeId="tpee.1068580123136" id="6451203873426933245" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6451203873426933246" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6451203873426933247" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="6451203873426933248" nodeInfo="nn">
@@ -32,7 +32,7 @@
     <node role="method" roleId="agsu.1816315258006256080" type="agsu.WannabeMethod" typeId="agsu.1816315258006256016" id="6451203873426933251" nodeInfo="ng">
       <property name="isMain" nameId="agsu.1816315258006256051" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="mainMethod" />
-      <node role="body" roleId="agsu.1816315258006256018" type="tpee.StatementList" typeId="tpee.1068580123136" id="6451203873426933252" nodeInfo="nn">
+      <node role="body" roleId="agsu.1816315258006256018" type="tpee.StatementList" typeId="tpee.1068580123136" id="6451203873426933252" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6451203873426933253" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6451203873426933254" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />

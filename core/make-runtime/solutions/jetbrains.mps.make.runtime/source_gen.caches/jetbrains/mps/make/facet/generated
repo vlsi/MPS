@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8t0xcezn1sav7itf8ebch2p9jfkfrdv">
+<dependencies version="2" modelHash="-rm4ew6bojpeklcs7rlcwo6qjwkwct5">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.tuples.runtime(MPS.Core/jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6yvhxi9k55xxea1versvzjds8py3u8n" />
-  <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" hash="-cbbs3jojn8a880mhg6f45ad4q1y7nm7" />
-  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="e4cv1gc4wskt76f7rva55r0sqoini0u" />
-  <dep model="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" hash="-6ui9n3dvi7p28jvcg1wunau1i7fh98w" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ehclih2ljjvh3gcfl67v2ip8o73gip1" />
+  <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" hash="a5h93nuoh92rfbvnb4w9h69ckv1nm2" />
+  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="a7mvfiyrorcd3377pnn2hvrjnn2yn4z" />
+  <dep model="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" hash="aam9ybd77zqj98bepfljwe3esthh8ol" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5wivjm735wrx1nbiz5js62dqixuwvq4" />
   <common hash="7f1o54x8mxokak2rt5f2i9aotesq7p5" />
-  <source id="6168415856807657096" name="IFacet" hash="3pnxzh9gd6px9bt326qfcyvrple0aja">
+  <source id="6168415856807657096" name="IFacet" hash="5qt2j7w90im8cdwnhftzzky7wscgei6">
     <dep root="6168415856807657134" />
     <file name="IFacet.java" />
   </source>
-  <source id="6168415856807657134" name="ITarget" hash="89d0tgzf29oqeptbn35g28f39hpp9tn">
+  <source id="6168415856807657134" name="ITarget" hash="9fw55dgl6qviubb4rm4jki7m7z10ih0">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
     <file name="ITarget.java" />
   </source>
-  <source id="6168415856807659069" name="FacetRegistry" hash="-4vm6wtizg35rcipi6ak1u3j5vd1vmu">
+  <source id="6168415856807659069" name="FacetRegistry" hash="et6n9uyh53wrabbe0zcs0xu3gqe3j7s">
     <dep root="6168415856807657096" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -36,14 +36,14 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FacetRegistry.java" />
   </source>
-  <source id="2192279360708028642" name="IFacetManifest" hash="-2x22yc41vesyx6it3kuiyuwo3p18kf7">
+  <source id="2192279360708028642" name="IFacetManifest" hash="-eqnkrlqx9tz1y76xotir88tjh46e1qj">
     <dep root="6168415856807657096" />
     <file name="IFacetManifest.java" />
   </source>
-  <source id="7219266275016638568" name="ITargetEx" hash="-dv943awsskdqtj1ux6lcucdd7hop8mb">
+  <source id="7219266275016638568" name="ITargetEx" hash="ajqgmai6ifc3cb8607tbeybc2gwp7ss">
     <file name="ITargetEx.java" />
   </source>
-  <source id="184542595914090623" name="ITargetEx2" hash="-aous5rss2bvyspv7lac1776spqdq750">
+  <source id="184542595914090623" name="ITargetEx2" hash="-bczexwup9te77616o6xv5c80k0r96ws">
     <file name="ITargetEx2.java" />
   </source>
 </dependencies>

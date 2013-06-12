@@ -12,7 +12,7 @@
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2073504467208336329" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Main" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceInitializer" typeId="tpee.1206629501431" id="3453667744252543337" nodeInfo="lgu">
-      <node role="statementList" roleId="tpee.1206629521979" type="tpee.StatementList" typeId="tpee.1068580123136" id="3453667744252543339" nodeInfo="nn">
+      <node role="statementList" roleId="tpee.1206629521979" type="tpee.StatementList" typeId="tpee.1068580123136" id="3453667744252543339" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="vpmn.SimpleMathWrapper" typeId="vpmn.2073504467208335362" id="2073504467208336681" nodeInfo="ng">
           <node role="expressions" roleId="vpmn.2073504467208335735" type="vpmn.SimpleMathVarDeclaration" typeId="vpmn.2073504467209342143" id="2073504467209441359" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="A" />
@@ -101,7 +101,7 @@
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3453667744252544858" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Simple" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceInitializer" typeId="tpee.1206629501431" id="3453667744252544873" nodeInfo="lgu">
-      <node role="statementList" roleId="tpee.1206629521979" type="tpee.StatementList" typeId="tpee.1068580123136" id="3453667744252544875" nodeInfo="nn">
+      <node role="statementList" roleId="tpee.1206629521979" type="tpee.StatementList" typeId="tpee.1068580123136" id="3453667744252544875" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="vpmn.SimpleMathWrapper" typeId="vpmn.2073504467208335362" id="3453667744252544930" nodeInfo="ng">
           <node role="expressions" roleId="vpmn.2073504467208335735" type="vpmn.SimpleMathVarDeclaration" typeId="vpmn.2073504467209342143" id="3453667744252544931" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="aValue" />
@@ -140,7 +140,7 @@
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3453667744252546022" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TypeError" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceInitializer" typeId="tpee.1206629501431" id="3453667744252546042" nodeInfo="lgu">
-      <node role="statementList" roleId="tpee.1206629521979" type="tpee.StatementList" typeId="tpee.1068580123136" id="3453667744252546044" nodeInfo="nn">
+      <node role="statementList" roleId="tpee.1206629521979" type="tpee.StatementList" typeId="tpee.1068580123136" id="3453667744252546044" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1962809150991769646" nodeInfo="nn">
           <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="1962809150991769647" nodeInfo="nn">
             <node role="commentedStatement" roleId="tpee.6329021646629175144" type="vpmn.SimpleMathWrapper" typeId="vpmn.2073504467208335362" id="3453667744252546099" nodeInfo="ng">

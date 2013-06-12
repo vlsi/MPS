@@ -35,7 +35,7 @@
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7036359038356246778" nodeInfo="igu">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7036359038356246779" nodeInfo="in" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7036359038356246780" nodeInfo="nn" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7036359038356246781" nodeInfo="nn" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7036359038356246781" nodeInfo="sn" />
     </node>
   </root>
   <root type="v54s.ExtensionPointDeclaration" typeId="v54s.3729007189729192406" id="7036359038356253954" nodeInfo="ng">
@@ -53,7 +53,7 @@
       </node>
     </node>
     <node role="objectGetter" roleId="v54s.8029776554053057811" type="v54s.ExtensionObjectGetter" typeId="v54s.8029776554053043557" id="7036359038356253987" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7036359038356253988" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7036359038356253988" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7036359038356262452" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="v54s.ExtensionFieldReference" typeId="v54s.7036359038356115102" id="7036359038356262453" nodeInfo="nn">
             <link role="declaration" roleId="v54s.7036359038356115103" targetNodeId="7036359038356253991" resolveInfo="myTestObject" />
@@ -62,7 +62,7 @@
       </node>
     </node>
     <node role="activator" roleId="v54s.7036359038356050926" type="v54s.ExtensionFunction" typeId="v54s.7036359038356050927" id="7036359038356253990" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7036359038356253994" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7036359038356253994" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7036359038356253995" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7036359038356253999" nodeInfo="nn">
             <node role="lValue" roleId="tpee.1068498886295" type="v54s.ExtensionFieldReference" typeId="v54s.7036359038356115102" id="7036359038356253996" nodeInfo="nn">
@@ -93,7 +93,7 @@
       </node>
     </node>
     <node role="deactivator" roleId="v54s.7036359038356050934" type="v54s.ExtensionFunction" typeId="v54s.7036359038356050927" id="2622946712629175353" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2622946712629175354" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2622946712629175354" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2622946712629175355" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="2622946712629175368" nodeInfo="nn">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2622946712629175371" nodeInfo="nn">
@@ -139,7 +139,7 @@
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2622946712629256037" nodeInfo="igu">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2622946712629256038" nodeInfo="in" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2622946712629256039" nodeInfo="nn" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2622946712629256040" nodeInfo="nn">
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2622946712629256040" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2622946712629256045" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="2622946712629256049" nodeInfo="nn">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2622946712629256052" nodeInfo="nn" />
@@ -154,7 +154,7 @@
   <root type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="2622946712629256054" nodeInfo="ng">
     <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="2622946712629256033" resolveInfo="lazyTestExtensionPoint" />
     <node role="objectGetter" roleId="v54s.8029776554053057811" type="v54s.ExtensionObjectGetter" typeId="v54s.8029776554053043557" id="2622946712629256055" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2622946712629256056" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2622946712629256056" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2622946712629256057" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2622946712629256058" nodeInfo="nn">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2622946712629256060" nodeInfo="nn">
@@ -174,7 +174,7 @@
   <root type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="4451661519483734260" nodeInfo="ng">
     <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="4451661519483734255" resolveInfo="multiExtensionPoint" />
     <node role="objectGetter" roleId="v54s.8029776554053057811" type="v54s.ExtensionObjectGetter" typeId="v54s.8029776554053043557" id="4451661519483734261" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4451661519483734262" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4451661519483734262" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4451661519483734263" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4451661519483734264" nodeInfo="nn">
             <property name="value" nameId="tpee.1070475926801" value="salam" />
@@ -186,7 +186,7 @@
   <root type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="4451661519483734265" nodeInfo="ng">
     <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="4451661519483734255" resolveInfo="multiExtensionPoint" />
     <node role="objectGetter" roleId="v54s.8029776554053057811" type="v54s.ExtensionObjectGetter" typeId="v54s.8029776554053043557" id="4451661519483734266" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4451661519483734267" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4451661519483734267" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4451661519483734268" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4451661519483734269" nodeInfo="nn">
             <property name="value" nameId="tpee.1070475926801" value="dunya" />

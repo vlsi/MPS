@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3355umarucme5hpyeh3kictvg791mvn">
+<dependencies version="2" modelHash="-56jaxm8ymi462nj4vnst8ngn30c55k4">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-er04ynwwc0babx4ug54abz4i80ig26i" />
-  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-9jzi14pzoulzrfuxw3q1jn8oz0lewvc" />
-  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="a7t1ifq2vlwa2ofvdt4vi5qy4lr9yrz" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-4lgmeq738nky6w80atbecag8odytj68" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-e7b80cik395ob1knnyv2p6h2tvnqx40" />
+  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="-exlxtmt3jp78mqby0rhfwu3apw3k6ja" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5wivjm735wrx1nbiz5js62dqixuwvq4" />
   <common hash="-1jmqz7wrus9nrsis1p1f7ycypj9ph44" />
-  <source id="1550462124899260772" name="UpDownDummy" hash="epdgvfqmfp8xjrtme8udpfzi95hiid1" dependsOnNodes="true">
+  <source id="1550462124899260772" name="UpDownDummy" hash="3mnpw0bjhw42ebvtnhogay6x3xz4mqf" dependsOnNodes="true">
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />
     <dep root="5097407566121753122" />
@@ -33,7 +33,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="UpDownDummy_Test.java" />
   </source>
-  <source id="1550462124899316455" name="UpDownStack" hash="-5r5zqjre9ci6il6wll1wcmn8sdmj8e3" dependsOnNodes="true">
+  <source id="1550462124899316455" name="UpDownStack" hash="-aot6aec91f9vm9m47cbbrtmoi48afkq" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="2025581204008535354" />
     <dep root="5097407566121753122" />
@@ -58,7 +58,7 @@
   <source id="5781006588534334968" hash="9xblhifcbh3i22jclfpwqldp8g6hnfq">
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="789834969242091856" name="Up" hash="-4q55tiv88umkfmogtuqoruarcd8k7kb" dependsOnNodes="true">
+  <source id="789834969242091856" name="Up" hash="7vvsra09cxoobx4rutrcljbal9fox6m" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />
@@ -80,7 +80,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="Up_Test.java" />
   </source>
-  <source id="789834969242110843" name="UpDownEntirely" hash="-9zsh9kqo1w3raqui6djqo5qy57fncca" dependsOnNodes="true">
+  <source id="789834969242110843" name="UpDownEntirely" hash="-3r1fa4g4m21w5xl8leye6sks6y909cz" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />
@@ -102,7 +102,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="UpDownEntirely_Test.java" />
   </source>
-  <source id="9080919888312354538" name="HomeWithLineSelection_fromFirstCell" hash="e4zoas9gim03iwln5gsim0bwoiumovo" dependsOnNodes="true">
+  <source id="9080919888312354538" name="HomeWithLineSelection_fromFirstCell" hash="aotvi8552zfgu909a33pnft4chbt0w2" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />
@@ -124,7 +124,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="HomeWithLineSelection_fromFirstCell_Test.java" />
   </source>
-  <source id="9080919888312408932" name="HomeWithLineSelection_fromLastCell" hash="5l4gkq9iilfq9d35lg9lnw14ozuy7vn" dependsOnNodes="true">
+  <source id="9080919888312408932" name="HomeWithLineSelection_fromLastCell" hash="-eicq3xb267ud5kyghkrsazjv3lgdfc" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />
@@ -146,7 +146,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="HomeWithLineSelection_fromLastCell_Test.java" />
   </source>
-  <source id="9080919888312410798" name="EndWithLineSelection_fromFirstCell" hash="-6bfnc86rmealqk4c2as1ttufhmkmnia" dependsOnNodes="true">
+  <source id="9080919888312410798" name="EndWithLineSelection_fromFirstCell" hash="8kc1vqtp9wwsvgfzclhszmfgx77e60o" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />
@@ -168,7 +168,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="EndWithLineSelection_fromFirstCell_Test.java" />
   </source>
-  <source id="9080919888312410820" name="EndWithLineSelection_fromLastCell" hash="9kbg4bri0i2vwbyeyqa3kyq42wa2f09" dependsOnNodes="true">
+  <source id="9080919888312410820" name="EndWithLineSelection_fromLastCell" hash="5ot972hdklidvsvvpyyhyw1ag86oc2i" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />
@@ -190,7 +190,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="EndWithLineSelection_fromLastCell_Test.java" />
   </source>
-  <source id="2025581204008535354" name="RootHomeWithLineSelectionFromFirstCell" hash="859kb5r7nq7qctne6o97fqmzzyb5y5q" dependsOnNodes="true">
+  <source id="2025581204008535354" name="RootHomeWithLineSelectionFromFirstCell" hash="444lj8wbxg0mdv8b68exc7nv9cp55ba" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="5097407566121753122" />
@@ -212,7 +212,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="RootHomeWithLineSelectionFromFirstCell_Test.java" />
   </source>
-  <source id="5097407566121753122" name="RootEndWithLineSelectionFromFirstCell" hash="5q4i53dugrs6jvrq609xr9wc0jxlqta" dependsOnNodes="true">
+  <source id="5097407566121753122" name="RootEndWithLineSelectionFromFirstCell" hash="-ej032zsw6y3dibfs45sqjt8ilpjyf50" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />
@@ -234,7 +234,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="RootEndWithLineSelectionFromFirstCell_Test.java" />
   </source>
-  <source id="5097407566121771937" name="RootHomeWithLineSelectionFromLastCell" hash="-c5pbn132fcww8yfwp83krncp7a0pf4k" dependsOnNodes="true">
+  <source id="5097407566121771937" name="RootHomeWithLineSelectionFromLastCell" hash="bgctomuuzw8depgpl53c6a1nbz9uyrr" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />
@@ -256,7 +256,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="RootHomeWithLineSelectionFromLastCell_Test.java" />
   </source>
-  <source id="5097407566121847268" name="RootEndWithLineSelectionFromLastCell" hash="-6x94x7f3cyllcz5m92spw2bvzvgo6fq" dependsOnNodes="true">
+  <source id="5097407566121847268" name="RootEndWithLineSelectionFromLastCell" hash="-chektcbbihvxvwpx737ceyo5vwwzhxe" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />
@@ -278,7 +278,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="RootEndWithLineSelectionFromLastCell_Test.java" />
   </source>
-  <source id="5476958923832861246" name="SelectUpWithNodeRangeSelection" hash="aqgww6h1j92onc98fhn2zcw8u4rk181" dependsOnNodes="true">
+  <source id="5476958923832861246" name="SelectUpWithNodeRangeSelection" hash="45p9sdlcmtky059j5lduts21fickwiq" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />
@@ -300,7 +300,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="SelectUpWithNodeRangeSelection_Test.java" />
   </source>
-  <source id="5476958923832863137" name="SelectDownWithNodeRangeSelection" hash="-2pxxho64oc7nvxnqg7r27vmeomjr7aq" dependsOnNodes="true">
+  <source id="5476958923832863137" name="SelectDownWithNodeRangeSelection" hash="7p0gjcxx1uv6t7osooyiveh40zpf4ke" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />
@@ -322,7 +322,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="SelectDownWithNodeRangeSelection_Test.java" />
   </source>
-  <source id="7023440913657702620" name="GoToReference" hash="-1c5dmf6b46s6mfyc6s2cwg04kyg1pfw" dependsOnNodes="true">
+  <source id="7023440913657702620" name="GoToReference" hash="-bxomb9uq7y16z9wwmz1jhsss1ky7woy" dependsOnNodes="true">
     <dep root="1550462124899260772" />
     <dep root="1550462124899316455" />
     <dep root="2025581204008535354" />

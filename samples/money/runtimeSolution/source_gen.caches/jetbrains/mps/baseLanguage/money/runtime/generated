@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a3de3fzajzzrwcc29zpg4cv95jnik7w">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+<dependencies version="2" modelHash="b5fnbmc2yjv3tvnwv1sh8d5s60nheam">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <common hash="-61w61818o57lwh9y2kie1fuggesy17f" />
-  <source id="3840741013873804939" name="Currency" hash="t59ni5qdo3sbxrzwjetba9d0vtovcq">
+  <source id="3840741013873804939" name="Currency" hash="-cx0tzug0xi53f28qqgg0jv0b7r3oxu">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Currency.java" />
   </source>
-  <source id="3840741013873805187" name="NotCompatibleCurrencies" hash="-g3cufzofpkrrvw7c5xf00cdu23dm2r">
+  <source id="3840741013873805187" name="NotCompatibleCurrencies" hash="9ns35d3w9aqreni3e4sboy1da4xvh9n">
     <file name="NotCompatibleCurrencies.java" />
   </source>
 </dependencies>
