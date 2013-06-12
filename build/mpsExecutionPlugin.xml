@@ -564,7 +564,6 @@
       <chunk>
         <module file="${basedir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/jetbrains.mps.baseLanguage.execution.startup.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/commands/jetbrains.mps.execution.commands.mpl" />
-        <module file="" />
         <module file="${mps_home}/plugins/execution-languages/languages/jetbrains.mps.execution.impl/jetbrains.mps.execution.impl.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/plugin/jetbrains.mps.execution.languages.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/library/jetbrains.mps.execution.library.msd" />
@@ -575,7 +574,6 @@
         <module file="${basedir}/plugins/execution-configurations/languages/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.execution.msd" />
         <module file="${basedir}/plugins/execution-configurations/languages/unitTests/startup/jetbrains.mps.baseLanguage.unitTest.execution.startup.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/configurations/jetbrains.mps.execution.configurations.mpl" />
-        <module file="" />
         <module file="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/jetbrains.mps.execution.configurations.pluginSolution.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/devkit/devkit.devkit" />
       </chunk>

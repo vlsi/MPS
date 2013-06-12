@@ -1179,7 +1179,11 @@ public class QueriesGenerated {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");
       }
-    }, true);
+    }, true).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
+      }
+    });
   }
 
   public static Iterable sourceNodesQuery_5970181360963002103(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
