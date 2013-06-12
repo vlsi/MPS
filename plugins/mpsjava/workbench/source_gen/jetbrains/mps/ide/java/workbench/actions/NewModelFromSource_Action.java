@@ -34,6 +34,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
+import java.io.IOException;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.StereotypeProvider;
@@ -148,7 +149,7 @@ public class NewModelFromSource_Action extends BaseAction {
         }
         IFile resultFile = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
         if (resultFile != null) {
-          final DirParser dirParser = new DirParser(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")), new File(resultFile.getPath()));
+          final DirParser dirParser = new DirParser(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")), FileSystem.getInstance().getFileByPath(resultFile.getPath()));
           // we cannot take write action inside try, because it's implemented through 
           // ... Runnable() { void run() } 
           // Also I don't want to show error dialog while in write action 
@@ -159,6 +160,9 @@ public class NewModelFromSource_Action extends BaseAction {
                 dirParser.parseDirs();
               } catch (JavaParseException e) {
                 parseException.value = e;
+              } catch (IOException e) {
+                // FIXME 
+                throw new RuntimeException(e);
               }
             }
           });

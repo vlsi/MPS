@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.util.ui.update.Update;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -138,6 +139,15 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     }
   }
 
+  @Override
+  public void flush() {
+    // synchronously commit all pending reload requests 
+    ReloadSession session = myReloadSessionBroker.waitForUnemployed();
+    // Q: also do normal progressMonintor, as in real reload on timeout ? 
+    session.doReload(new EmptyProgressMonitor());
+  }
+
+
 
 
   private void queueReloadSession() {
@@ -159,6 +169,7 @@ public class ReloadManagerComponent extends ReloadManager implements Application
           queueReloadSession();
           return;
         }
+
         if (rs.isEmpty()) {
           return;
         }
@@ -187,6 +198,7 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     /*package*/ synchronized void dismiss(ReloadSession rs) {
       assert myReloadSession == rs;
       rs.decEmployCount();
+      notify();
     }
 
     /*package*/ boolean hasUnemployed() {
@@ -197,6 +209,22 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     /*package*/ synchronized ReloadSession getUnemployed() {
       if (myReloadSession == null || myReloadSession.isBeingEmployed()) {
         return null;
+      }
+      ReloadSession rs = myReloadSession;
+      myReloadSession = null;
+      return rs;
+    }
+
+    /*package*/ synchronized ReloadSession waitForUnemployed() {
+      if (myReloadSession == null) {
+        return null;
+      }
+      while (myReloadSession != null && myReloadSession.isBeingEmployed()) {
+        try {
+          wait();
+        } catch (InterruptedException e) {
+          throw new RuntimeException("Waiting for reload session to be freed failed", e);
+        }
       }
       ReloadSession rs = myReloadSession;
       myReloadSession = null;

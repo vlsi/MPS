@@ -28,6 +28,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.editor.actions.ImportHelper;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -38,13 +39,21 @@ import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.LinkedHashMap;
@@ -63,6 +72,12 @@ public class NewRootAction extends AnAction {
 
   @Override
   public void actionPerformed(AnActionEvent e) {
+    if(myConceptFqNameToNodePointerMap.isEmpty()) {
+      ImportHelper.addLanguageImport(myProject, myModelDescriptor.getModule(),
+        myModelDescriptor.getModule().getModel(myModelDescriptor.getModelId()), null);
+      return;
+    }
+
     final CreateFromTemplateDialog dialog = new CreateFromTemplateDialog(myProject) {
       @Override
       protected void doOKAction() {
@@ -100,7 +115,13 @@ public class NewRootAction extends AnAction {
     updateFields(e);
 
     e.getPresentation().setVisible(isEnabled());
-    e.getPresentation().setEnabled(!myConceptFqNameToNodePointerMap.isEmpty());
+    if(myConceptFqNameToNodePointerMap.isEmpty()) {
+      e.getPresentation().setText("Add Language Import");
+      e.getPresentation().setIcon(IdeIcons.LANGUAGE_ICON);
+    } else {
+      e.getPresentation().setText(MPSBundle.message("new.root.action"));
+      e.getPresentation().setIcon(IdeIcons.DEFAULT_ROOT_ICON);
+    }
   }
 
   private void updateFields(AnActionEvent e) {
