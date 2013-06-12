@@ -108,6 +108,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
             position = ((Program) (o)).getEnd(object);
           }
           Instruction instruction = new notNullInstruction((SNode) getFieldValue("patternVar_p"));
+          instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1490803006783710006");
           instruction.setSource(getFieldValue("patternVar_action_var_5730083271929373007"));
           ((Program) (o)).insert(instruction, position, true, before);
         }

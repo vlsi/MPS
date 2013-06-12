@@ -15,6 +15,6 @@ public class AssertSame_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expected", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "actual", true));
-    _context.getBuilder().emitNop();
+    _context.getBuilder().emitNop("r:00000000-0000-4000-0000-011c895902d3(jetbrains.mps.baseLanguage.unitTest.dataFlow)/1228580760685");
   }
 }

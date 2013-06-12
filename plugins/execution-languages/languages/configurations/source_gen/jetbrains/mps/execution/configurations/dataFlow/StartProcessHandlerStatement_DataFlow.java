@@ -15,6 +15,6 @@ public class StartProcessHandlerStatement_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "tool", true));
-    _context.getBuilder().emitRet();
+    _context.getBuilder().emitRet("r:a2b2ec6f-979b-40b3-95b7-73340d2d1923(jetbrains.mps.execution.configurations.dataFlow)/946964771156870369");
   }
 }

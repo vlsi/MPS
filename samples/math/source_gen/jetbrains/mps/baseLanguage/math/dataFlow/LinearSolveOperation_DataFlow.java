@@ -15,6 +15,6 @@ public class LinearSolveOperation_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "matrix", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "vector", true));
-    _context.getBuilder().emitWrite(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "matrix", true));
+    _context.getBuilder().emitWrite(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "matrix", true), "r:48b4a246-e052-4ee3-ba92-1505c2e94044(jetbrains.mps.baseLanguage.math.dataFlow)/1418611629042596927");
   }
 }

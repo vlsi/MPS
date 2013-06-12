@@ -11,6 +11,6 @@ public class IndentBufferOperation_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitNop();
+    _context.getBuilder().emitNop("r:812dd537-4bc6-4b23-8ff0-eed686398e8b(jetbrains.mps.lang.textGen.dataFlow)/1237483421750");
   }
 }
