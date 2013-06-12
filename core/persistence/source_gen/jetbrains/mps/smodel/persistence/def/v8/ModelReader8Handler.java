@@ -598,7 +598,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       SNode result = (SNode) resultObject;
       Tuples._3<String, String, String> child = (Tuples._3<String, String, String>) value;
       fieldhasSkippedNodes = true;
-      if (fieldhelper.isImplementationWithStubNode(child._1())) {
+      if (fieldstripImplementation && fieldhelper.isImplementationWithStubNode(child._1())) {
         String stubConcept = fieldhelper.getStubConceptQualifiedName(child._2());
         if (stubConcept != null) {
           jetbrains.mps.smodel.SNode childNode = new jetbrains.mps.smodel.SNode(stubConcept);

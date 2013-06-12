@@ -192,7 +192,7 @@
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader8Handler.java" startLine="597" startPosition="105" endLine="598" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader8Handler.java" startLine="598" startPosition="42" endLine="599" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1910945748552495394" fileName="ModelReader8Handler.java" startLine="599" startPosition="90" endLine="600" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6233597908538576076" fileName="ModelReader8Handler.java" startLine="601" startPosition="65" endLine="602" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6233597908538576076" fileName="ModelReader8Handler.java" startLine="601" startPosition="93" endLine="602" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6233597908538608745" fileName="ModelReader8Handler.java" startLine="603" startPosition="34" endLine="604" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6233597908538645238" fileName="ModelReader8Handler.java" startLine="604" startPosition="93" endLine="605" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6233597908538668860" fileName="ModelReader8Handler.java" startLine="605" startPosition="49" endLine="606" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -721,7 +721,7 @@
       <varInfo nodeId="286176397450364062" varName="child" />
       <varInfo nodeId="286176397450364062" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6233597908538576075" fileName="ModelReader8Handler.java" startLine="601" startPosition="65" endLine="607" endPosition="9">
+    <scopeInfo nodeId="6233597908538576075" fileName="ModelReader8Handler.java" startLine="601" startPosition="93" endLine="607" endPosition="9">
       <varInfo nodeId="6233597908538576077" varName="stubConcept" />
     </scopeInfo>
     <scopeInfo nodeId="286176397450364062" fileName="ModelReader8Handler.java" startLine="78" startPosition="80" endLine="85" endPosition="5">
