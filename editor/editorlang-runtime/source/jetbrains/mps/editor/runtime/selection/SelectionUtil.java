@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.editor.runtime.selection;
 
-import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
