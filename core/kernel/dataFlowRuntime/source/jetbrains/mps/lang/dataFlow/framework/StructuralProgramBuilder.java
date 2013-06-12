@@ -16,8 +16,9 @@
 package jetbrains.mps.lang.dataFlow.framework;
 
 import jetbrains.mps.lang.dataFlow.framework.instructions.*;
-import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -66,11 +67,11 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   public int insertAfter(Instruction i) {
-     return myProgram.indexOf(i)+1;
+    return myProgram.indexOf(i) + 1;
   }
 
   public int insertBefore(Instruction i) {
-     return myProgram.indexOf(i);
+    return myProgram.indexOf(i);
   }
 
   public Position label(final N node, final String label) {
@@ -93,10 +94,10 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   private void updateLabelsOnInsert(final int position) {
-    for(Entry<N, Map<String, Integer>> labels : myLabels.entrySet()) {
-      for(Entry<String,Integer> label : labels.getValue().entrySet()) {
+    for (Entry<N, Map<String, Integer>> labels : myLabels.entrySet()) {
+      for (Entry<String, Integer> label : labels.getValue().entrySet()) {
         if (label.getValue() > position) {
-          label.setValue(label.getValue()+1);
+          label.setValue(label.getValue() + 1);
         }
       }
     }
@@ -108,51 +109,77 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   private NopInstruction emitNopCommon() {
-    NopInstruction instruction = new NopInstruction();
+    return emitNopCommon(null, null);
+  }
+
+  private NopInstruction emitNopCommon(SModelId ruleModelId, SNodeId ruleNodeId) {
+    NopInstruction instruction = new NopInstruction(ruleModelId, ruleNodeId);
     onInstructionEmitted(instruction);
     return instruction;
   }
 
   public void emitNop(final int insertPosition) {
-    insertInstruction(emitNopCommon(), insertPosition);
+    emitNop(insertPosition, null, null);
+  }
+
+  public void emitNop(final int insertPosition, SModelId ruleModelId, SNodeId ruleNodeId) {
+    insertInstruction(emitNopCommon(ruleModelId, ruleNodeId), insertPosition);
   }
 
   public void emitNop() {
-    myProgram.add(emitNopCommon());
+    emitNop(null, null);
   }
 
-  public void emitRead(Object var) {
-    ReadInstruction instruction = new ReadInstruction(var);
+  public void emitNop(SModelId ruleModelId, SNodeId ruleNodeId) {
+    myProgram.add(emitNopCommon(ruleModelId, ruleNodeId));
+  }
+
+  public void emitRead(Object var, SModelId ruleModelId, SNodeId ruleNodeId) {
+    ReadInstruction instruction = new ReadInstruction(ruleModelId, ruleNodeId, var);
     onInstructionEmitted(instruction);
     myProgram.add(instruction);
   }
 
-  public void emitWrite(Object var) {
-    WriteInstruction instruction = new WriteInstruction(var, null);
+  public void emitRead(Object var) {
+    emitRead(var, null, null);
+  }
+
+  public void emitWrite(Object var, Object value, SModelId ruleModelId, SNodeId ruleNodeId) {
+    WriteInstruction instruction = new WriteInstruction(ruleModelId, ruleNodeId, var, value);
     onInstructionEmitted(instruction);
     myProgram.add(instruction);
   }
 
   public void emitWrite(Object var, Object value) {
-    WriteInstruction instruction = new WriteInstruction(var, value);
+    emitWrite(var, value, null, null);
+  }
+
+  public void emitWrite(Object var, SModelId ruleModelId, SNodeId ruleNodeId) {
+    emitWrite(var, null, ruleModelId, ruleNodeId);
+  }
+
+  public void emitWrite(Object var) {
+    emitWrite(var, null);
+  }
+
+  public void emitRet(SModelId ruleModelId, SNodeId ruleNodeId) {
+    RetInstruction instruction = new RetInstruction(ruleModelId, ruleNodeId);
     onInstructionEmitted(instruction);
     myProgram.add(instruction);
   }
 
   public void emitRet() {
-    RetInstruction instruction = new RetInstruction();
-    onInstructionEmitted(instruction);
-    myProgram.add(instruction);
+    emitRet(null, null);
   }
 
-  public void emitJump(final Position position) {
-    final JumpInstruction instruction = new JumpInstruction();
+  public void emitJump(final Position position, SModelId ruleModelId, SNodeId ruleNodeId) {
+    final JumpInstruction instruction = new JumpInstruction(ruleModelId, ruleNodeId);
     onInstructionEmitted(instruction);
     myProgram.add(instruction);
     invokeLater(new Runnable() {
       @Override
       public void run() {
-        try{
+        try {
           instruction.setJumpTo(position);
         } catch (DataflowBuilderException e) {
           LogManager.getLogger(StructuralProgramBuilder.class).warn("JumpTo instruction reference to outer node");
@@ -162,13 +189,18 @@ public abstract class StructuralProgramBuilder<N> {
     });
   }
 
-  private IfJumpInstruction emitIfJumpCommon(final Position position) {
-    final IfJumpInstruction instruction = new IfJumpInstruction();
+  public void emitJump(final Position position) {
+    emitJump(position, null, null);
+  }
+
+
+  private IfJumpInstruction emitIfJumpCommon(final Position position, SModelId ruleModelId, SNodeId ruleNodeId) {
+    final IfJumpInstruction instruction = new IfJumpInstruction(ruleModelId, ruleNodeId);
     onInstructionEmitted(instruction);
     invokeLater(new Runnable() {
       @Override
       public void run() {
-        try{
+        try {
           instruction.setJumpTo(position);
         } catch (DataflowBuilderException e) {
           LogManager.getLogger(StructuralProgramBuilder.class).warn("IfJumpTo instruction reference to outer node");
@@ -179,30 +211,48 @@ public abstract class StructuralProgramBuilder<N> {
     return instruction;
   }
 
+  public void emitIfJump(final Position position, SModelId ruleModelId, SNodeId ruleNodeId) {
+    myProgram.add(emitIfJumpCommon(position, ruleModelId, ruleNodeId));
+  }
   public void emitIfJump(final Position position) {
-    myProgram.add(emitIfJumpCommon(position));
+    emitIfJump(position, null, null);
+  }
+
+  public void emitIfJump(final Position position, int insertPosition, SModelId ruleModelId, SNodeId ruleNodeId) {
+    insertInstruction(emitIfJumpCommon(position, ruleModelId, ruleNodeId), insertPosition);
   }
 
   public void emitIfJump(final Position position, int insertPosition) {
-    insertInstruction(emitIfJumpCommon(position),insertPosition);
+    emitIfJump(position, insertPosition, null, null);
   }
 
-  public void emitTry() {
-    TryInstruction instruction = new TryInstruction();
+  public void emitTry(SModelId ruleModelId, SNodeId ruleNodeId) {
+    TryInstruction instruction = new TryInstruction(ruleModelId, ruleNodeId);
     onInstructionEmitted(instruction);
     myProgram.add(instruction);
   }
 
+  public void emitTry() {
+    emitTry(null, null);
+  }
+
+  public void emitFinally(SModelId ruleModelId, SNodeId ruleNodeId) {
+    FinallyInstruction instruction = new FinallyInstruction(ruleModelId ,ruleNodeId);
+    onInstructionEmitted(instruction);
+    myProgram.add(instruction);
+  }
   public void emitFinally() {
-    FinallyInstruction instruction = new FinallyInstruction();
+    emitFinally(null, null);
+  }
+
+  public void emitEndTry(SModelId ruleModelId, SNodeId ruleNodeId) {
+    EndTryInstruction instruction = new EndTryInstruction(ruleModelId ,ruleNodeId);
     onInstructionEmitted(instruction);
     myProgram.add(instruction);
   }
 
   public void emitEndTry() {
-    EndTryInstruction instruction = new EndTryInstruction();
-    onInstructionEmitted(instruction);
-    myProgram.add(instruction);
+    emitEndTry(null, null);
   }
 
   public void addInstruction(Instruction instruction, Position position) {
@@ -225,7 +275,7 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   public boolean contains(Object o) {
-      return myProgram.contains(o);
+    return myProgram.contains(o);
   }
 
   public List<Instruction> getInstructionsFor(Object o) {
