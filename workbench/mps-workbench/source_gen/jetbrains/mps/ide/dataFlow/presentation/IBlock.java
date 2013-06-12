@@ -12,7 +12,7 @@ public interface IBlock {
   public void paint(Graphics g);
   public void relayout(Component component);
   public SNodeReference getSourceNode();
-  public String getRuleNodeReference();
+  public SNodeReference getRuleNodeReference();
   public int getX();
   public int getY();
   public int getWidth();

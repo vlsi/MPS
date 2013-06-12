@@ -6,12 +6,17 @@
     <classNode dependClassName="java.awt.FontMetrics" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IBlockListener" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.IBlock" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.AltBlock" file="AltBlock.java">
@@ -81,7 +86,6 @@
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IBlockListener" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
@@ -187,6 +191,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode extendsClassName="javax.swing.JComponent" />
     <classNode extendsClassName="javax.swing.Scrollable" />

@@ -5,11 +5,15 @@ package jetbrains.mps.ide.dataFlow.presentation;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Set;
 import java.util.HashSet;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.apache.log4j.Priority;
 import java.awt.event.MouseEvent;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public abstract class AbstractBlock implements IBlock {
   protected int myX;
@@ -17,7 +21,7 @@ public abstract class AbstractBlock implements IBlock {
   protected int myWidth;
   protected int myHeight;
   protected SNodeReference mySourceNode;
-  private String myRuleNodeReference;
+  private SNodeReference myRuleNodeReference;
   private int myPaddingX = 0;
   private int myPaddingY = 0;
   private int myCharHeight = 0;
@@ -33,7 +37,16 @@ public abstract class AbstractBlock implements IBlock {
     this.myHeight = height;
     this.mySourceNode = sourceNode;
     this.myCaption = caption;
-    this.myRuleNodeReference = ruleNodeReference;
+    if (ruleNodeReference != null) {
+      try {
+        this.myRuleNodeReference = PersistenceFacade.getInstance().createNodeReference(ruleNodeReference);
+      } catch (IllegalArgumentException e) {
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Can't find node: " + ruleNodeReference, e);
+        }
+        this.myRuleNodeReference = null;
+      }
+    }
   }
 
   @Override
@@ -43,7 +56,7 @@ public abstract class AbstractBlock implements IBlock {
 
 
 
-  public String getRuleNodeReference() {
+  public SNodeReference getRuleNodeReference() {
     return this.myRuleNodeReference;
   }
 
@@ -154,4 +167,6 @@ public abstract class AbstractBlock implements IBlock {
     AbstractBlock.this.paintBlock(g);
     AbstractBlock.this.paintCaption(g);
   }
+
+  protected static Logger LOG = LogManager.getLogger(AbstractBlock.class);
 }

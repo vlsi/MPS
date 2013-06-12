@@ -14,9 +14,11 @@ import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.SwingUtilities;
 import javax.swing.JPopupMenu;
 import javax.swing.JMenuItem;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.awt.Color;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
@@ -28,7 +30,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Rectangle;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class ShowCFGDialog extends DialogWrapper {
   private JScrollPane myScrollPane;
@@ -55,17 +56,16 @@ public class ShowCFGDialog extends DialogWrapper {
               JPopupMenu menu = new JPopupMenu();
               JMenuItem item = new JMenuItem("go to data flow rule");
               menu.add(item);
+              final SNodeReference ruleNodeReference = block.getRuleNodeReference();
+              menu.setEnabled(ruleNodeReference != null);
               menu.show(event.getComponent(), block.getX() + block.getWidth() / 2, block.getY() + block.getHeight() / 2);
-              // get ref here 
               item.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent p0) {
                   ModelAccess.instance().runWriteInEDT(new Runnable() {
                     public void run() {
-                      /*
-                        if (null != null) {
-                          NavigationSupport.getInstance().openNode(operationContext, null, true, false);
-                        }
-                      */
+                      if (ruleNodeReference != null) {
+                        NavigationSupport.getInstance().openNode(operationContext, ruleNodeReference.resolve(MPSModuleRepository.getInstance()), true, false);
+                      }
                     }
                   });
                 }
