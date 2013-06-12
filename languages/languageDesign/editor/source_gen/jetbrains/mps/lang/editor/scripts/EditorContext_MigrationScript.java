@@ -2523,6 +2523,18 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
         }
 
         SNodeId targetNodeId = reference.getTargetNodeId();
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SelectionManager.FIRST_CELL").equals(targetNodeId)) {
+          return true;
+        }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SelectionManager.LAST_CELL").equals(targetNodeId)) {
+          return true;
+        }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SelectionManager.FIRST_EDITABLE_CELL").equals(targetNodeId)) {
+          return true;
+        }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SelectionManager.LAST_EDITABLE_CELL").equals(targetNodeId)) {
+          return true;
+        }
         return false;
       }
 

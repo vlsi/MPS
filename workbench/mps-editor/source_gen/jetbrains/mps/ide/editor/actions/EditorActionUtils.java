@@ -42,7 +42,7 @@ public class EditorActionUtils {
     if (!(selection instanceof SingularSelection)) {
       return null;
     }
-    Iterator<EditorCell> iterator = (Iterator<EditorCell>) ((Iterator) selection.getSelectedCells().iterator());
+    Iterator<EditorCell> iterator = selection.getSelectedCells().iterator();
     if (!(iterator.hasNext())) {
       return null;
     }
