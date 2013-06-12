@@ -204,10 +204,11 @@ public class SelectionManagerImpl implements SelectionManager {
   }
 
   private void doChangeSelection(Selection oldSelection, Selection newSelection) {
-    if (oldSelection != null) {
+    boolean isSameSelection = oldSelection == newSelection;
+    if (oldSelection != null && !isSameSelection) {
       oldSelection.deactivate();
     }
-    if (newSelection != null) {
+    if (newSelection != null && !isSameSelection) {
       newSelection.activate();
     }
     for (SelectionListener nextListener : mySelectionListeners) {
