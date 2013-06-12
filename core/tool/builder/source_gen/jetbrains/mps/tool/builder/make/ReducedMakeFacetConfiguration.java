@@ -96,13 +96,13 @@ public class ReducedMakeFacetConfiguration {
           compileProps._1(true);
         }
 
-        Tuples._4<List<String>, List<String>, List<String>, Map<String, SModel>> report = (Tuples._4<List<String>, List<String>, List<String>, Map<String, SModel>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.ReportFiles.report"), Object.class);
+        Tuples._4<List<String>, List<String>, List<String>, Map<String, SModel>> report = (Tuples._4<List<String>, List<String>, List<String>, Map<String, SModel>>) pp.properties(new ITarget.Name("jetbrains.mps.make.reduced.ReportFiles.report"), Object.class);
         report._0(writtenFiles);
         report._1(deletedFiles);
         report._2(keptFiles);
         report._3(sources);
 
-        Tuples._1<Map<String, String>> hashes = (Tuples._1<Map<String, String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.CollectHashes.collect"), Object.class);
+        Tuples._1<Map<String, String>> hashes = (Tuples._1<Map<String, String>>) pp.properties(new ITarget.Name("jetbrains.mps.make.reduced.CollectHashes.collect"), Object.class);
         hashes._0(fileHashes);
 
         Tuples._1<Boolean> skipReconcile = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile"), Object.class);
