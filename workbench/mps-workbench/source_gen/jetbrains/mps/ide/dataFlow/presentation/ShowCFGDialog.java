@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.SwingUtilities;
 import javax.swing.JPopupMenu;
 import javax.swing.JMenuItem;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -57,19 +56,16 @@ public class ShowCFGDialog extends DialogWrapper {
               JMenuItem item = new JMenuItem("go to data flow rule");
               menu.add(item);
               menu.show(event.getComponent(), block.getX() + block.getWidth() / 2, block.getY() + block.getHeight() / 2);
-              SNodeReference ruleRef = block.getRuleNode();
-              final SNode ruleNode = check_wx2hhz_a0g0b0a0a0a0a0a0a8a3(ruleRef);
-
-              if (ruleNode == null) {
-                item.setEnabled(false);
-              }
+              // get ref here 
               item.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent p0) {
                   ModelAccess.instance().runWriteInEDT(new Runnable() {
                     public void run() {
-                      if (ruleNode != null) {
-                        NavigationSupport.getInstance().openNode(operationContext, ruleNode, true, false);
-                      }
+                      /*
+                        if (null != null) {
+                          NavigationSupport.getInstance().openNode(operationContext, null, true, false);
+                        }
+                      */
                     }
                   });
                 }
@@ -157,13 +153,6 @@ public class ShowCFGDialog extends DialogWrapper {
   }
 
   private static SNode check_wx2hhz_a0a0a0a0a0a0a0a8a3(SNodePointer checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
-    }
-    return null;
-  }
-
-  private static SNode check_wx2hhz_a0g0b0a0a0a0a0a0a8a3(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }

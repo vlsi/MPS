@@ -5,14 +5,6 @@ package jetbrains.mps.ide.dataFlow.presentation;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.LanguageAspect;
 import java.awt.event.MouseEvent;
 import java.awt.Component;
 import java.awt.Font;
@@ -25,7 +17,7 @@ public abstract class AbstractBlock implements IBlock {
   protected int myWidth;
   protected int myHeight;
   protected SNodeReference mySourceNode;
-  private SNodeReference myRuleNode;
+  private String myRuleNodeReference;
   private int myPaddingX = 0;
   private int myPaddingY = 0;
   private int myCharHeight = 0;
@@ -34,28 +26,14 @@ public abstract class AbstractBlock implements IBlock {
   private Set<IBlockListener> myBlockListeners = new HashSet<IBlockListener>();
   private Set<IBlock> mySucc;
 
-  public AbstractBlock(int x, int y, int width, int height, SNodeReference sourceNode, String caption) {
+  public AbstractBlock(int x, int y, int width, int height, SNodeReference sourceNode, String caption, String ruleNodeReference) {
     this.myX = x;
     this.myY = y;
     this.myWidth = width;
     this.myHeight = height;
     this.mySourceNode = sourceNode;
     this.myCaption = caption;
-    if (mySourceNode != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-
-          for (SNode concept : ListSequence.fromList(SConceptOperations.getAllSuperConcepts(SNodeOperations.getConceptDeclaration(((SNode) mySourceNode.resolve(MPSModuleRepository.getInstance()))), true))) {
-            SNode dataFlow = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), ((SNode) concept), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspect_8360039740498068384", new Object[]{LanguageAspect.DATA_FLOW});
-            if (dataFlow != null) {
-              myRuleNode = dataFlow.getReference();
-              return;
-            }
-          }
-        }
-      });
-    }
-
+    this.myRuleNodeReference = ruleNodeReference;
   }
 
   @Override
@@ -65,8 +43,8 @@ public abstract class AbstractBlock implements IBlock {
 
 
 
-  public SNodeReference getRuleNode() {
-    return this.myRuleNode;
+  public String getRuleNodeReference() {
+    return this.myRuleNodeReference;
   }
 
 
