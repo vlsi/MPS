@@ -9,8 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.dataFlow.analyzers.behavior.Analyzer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.dataFlow.analyzers.behavior.Rule_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -79,6 +79,16 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1420906503568751825(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "patternVar_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getOriginalCopiedInputNode(_context.getNode())), "jetbrains.mps.lang.pattern.structure.ActionAsPattern"), "varName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6306456311885119751(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SModelOperations.getModelName(SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())));
+
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getModel().getModelName();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6306456311885119782(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_178770917832625999(final IOperationContext operationContext, final PropertyMacroContext _context) {
