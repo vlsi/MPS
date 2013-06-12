@@ -129,6 +129,8 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_aqxvre_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_aqxvre_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_aqxvre_c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_aqxvre_d0(editorContext, node));
     return editorCell;
   }
 
@@ -203,5 +205,33 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<< default relative locations for all jars >>");
       return editorCell;
     }
+  }
+
+  private EditorCell createConstant_aqxvre_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strip implementation:");
+    editorCell.setCellId("Constant_aqxvre_c0");
+    Style style = new StyleImpl();
+    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_aqxvre_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("stripImplementation");
+    provider.setNoTargetText("<no stripImplementation>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_stripImplementation");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
   }
 }

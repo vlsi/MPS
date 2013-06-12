@@ -26,7 +26,7 @@ import org.apache.tools.ant.Project;
 
 public class ConvertToBinaryTask extends Copy {
   private Map<String, String> toConvert = new HashMap<String, String>();
-  private boolean myStripImplementation = true;
+  private boolean myStripImplementation = false;
   private File mpsHome;
 
 

@@ -329,6 +329,10 @@
       <property name="name" nameId="tpck.1169194664001" value="modelsOnly" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7918752904808503599" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="stripImplementation" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1692280246134781713" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="module" />
@@ -367,6 +371,10 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="module" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848036997" resolveInfo="BuildLayout_Node" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7918752904810477378" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="stripImplementation" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4356762679305730677" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="jarLocations" />
@@ -817,6 +825,10 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="convert *.mps into *.mpb (binary format)" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.1330375798058820290" resolveInfo="BuildLayout_CopyProcessor" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7918752904805006474" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="stripImplementation" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5507251971038816436" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
