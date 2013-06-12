@@ -27,8 +27,8 @@ public class RetInstruction extends Instruction {
   public RetInstruction() {
   }
 
-  public RetInstruction(SModelId ruleModelId, SNodeId ruleNodeId) {
-    super(ruleModelId, ruleNodeId);
+  public RetInstruction(String ruleNodeReference) {
+    super(ruleNodeReference);
   }
 
   @Override

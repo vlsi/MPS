@@ -29,8 +29,8 @@ public class JumpInstruction extends Instruction {
   public JumpInstruction() {
   }
 
-  public JumpInstruction(SModelId ruleModelId, SNodeId ruleNodeId) {
-    super(ruleModelId, ruleNodeId);
+  public JumpInstruction(String ruleNodeReference) {
+    super(ruleNodeReference);
   }
 
   public int getJumpTo() {

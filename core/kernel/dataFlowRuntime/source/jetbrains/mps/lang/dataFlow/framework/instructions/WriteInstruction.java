@@ -28,8 +28,8 @@ public class WriteInstruction extends Instruction {
     myValue = value;
   }
 
-  public WriteInstruction(SModelId ruleModelId, SNodeId ruleNodeId, Object var, Object value) {
-    super(ruleModelId, ruleNodeId);
+  public WriteInstruction(String ruleNodeReference, Object var, Object value) {
+    super(ruleNodeReference);
     myVar = var;
     myValue = value;
   }

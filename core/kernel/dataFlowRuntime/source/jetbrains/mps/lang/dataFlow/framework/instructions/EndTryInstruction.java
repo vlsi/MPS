@@ -31,9 +31,10 @@ public class EndTryInstruction extends Instruction {
   public EndTryInstruction() {
   }
 
-  public EndTryInstruction(SModelId ruleModelId, SNodeId ruleNodeId) {
-    super(ruleModelId, ruleNodeId);
+  public EndTryInstruction(String ruleNodeReference) {
+    super(ruleNodeReference);
   }
+
 
   @Override
   public String commandPresentation() {

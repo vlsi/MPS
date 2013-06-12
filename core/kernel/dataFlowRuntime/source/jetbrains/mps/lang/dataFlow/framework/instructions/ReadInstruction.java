@@ -26,8 +26,8 @@ public class ReadInstruction extends Instruction {
     myVar = var;
   }
 
-  public ReadInstruction(SModelId ruleModelId, SNodeId ruleNodeId, Object var) {
-    super(ruleModelId, ruleNodeId);
+  public ReadInstruction(String ruleNodeReference, Object var) {
+    super(ruleNodeReference);
     myVar = var;
   }
 

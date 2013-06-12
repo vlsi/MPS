@@ -24,8 +24,8 @@ public class TryInstruction extends Instruction {
     super();
   }
 
-  public TryInstruction(SModelId ruleModelId, SNodeId ruleNodeId) {
-    super(ruleModelId, ruleNodeId);
+  public TryInstruction(String ruleNodeReference) {
+    super(ruleNodeReference);
   }
 
   @Override

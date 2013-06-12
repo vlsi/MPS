@@ -28,8 +28,9 @@ public class IfJumpInstruction extends Instruction {
   public IfJumpInstruction() {
   }
 
-  public IfJumpInstruction(SModelId ruleModelId, SNodeId ruleNodeId) {
-    super(ruleModelId, ruleNodeId);
+
+  public IfJumpInstruction(String ruleNodeReference) {
+    super(ruleNodeReference);
   }
 
   public int getJumpTo() {

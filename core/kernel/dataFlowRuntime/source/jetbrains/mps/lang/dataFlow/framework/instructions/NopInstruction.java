@@ -22,9 +22,10 @@ public class NopInstruction extends Instruction {
   public NopInstruction() {
   }
 
-  public NopInstruction(SModelId ruleModelId, SNodeId ruleNodeId) {
-    super(ruleModelId, ruleNodeId);
+  public NopInstruction(String ruleNodeReference) {
+    super(ruleNodeReference);
   }
+
 
   @Override
   public String commandPresentation() {

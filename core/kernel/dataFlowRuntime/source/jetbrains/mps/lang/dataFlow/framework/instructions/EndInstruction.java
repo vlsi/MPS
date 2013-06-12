@@ -30,8 +30,8 @@ public class EndInstruction extends Instruction {
     super();
   }
 
-  public EndInstruction(SModelId ruleModelId, SNodeId ruleNodeId) {
-    super(ruleModelId, ruleNodeId);
+  public EndInstruction(String ruleNodeReference) {
+    super(ruleNodeReference);
   }
 
   @Override

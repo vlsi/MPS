@@ -21,7 +21,6 @@ import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.Program.TryFinallyInfo;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.*;
 
@@ -29,8 +28,7 @@ public abstract class Instruction {
   private Program myProgram;
   private Object mySource;
 
-  private SModelId myRuleModel;
-  private SNodeId myRuleId;
+  private String myRuleReference;
   private Set<Instruction> myJumps = new HashSet<Instruction>();
   private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private TryFinallyInfo myBlockInfo;
@@ -39,9 +37,8 @@ public abstract class Instruction {
   public Instruction() {
   }
 
-  public Instruction(SModelId ruleModelId, SNodeId ruleNodeId) {
-    myRuleModel = ruleModelId;
-    myRuleId = ruleNodeId;
+  public Instruction(String ruleNodeReference) {
+    myRuleReference = ruleNodeReference;
   }
 
   public Program getProgram() {
@@ -161,19 +158,11 @@ public abstract class Instruction {
     return getIndex() + ": " + commandPresentation();
   }
 
-  public SModelId getRuleModel() {
-    return myRuleModel;
+  public String getRuleReference() {
+    return myRuleReference;
   }
 
-  public void setRuleModel(SModelId ruleModel) {
-    myRuleModel = ruleModel;
-  }
-
-  public SNodeId getRuleId() {
-    return myRuleId;
-  }
-
-  public void setRuleId(SNodeId ruleId) {
-    myRuleId = ruleId;
+  public void setRuleReference(String ruleReference) {
+    myRuleReference = ruleReference;
   }
 }

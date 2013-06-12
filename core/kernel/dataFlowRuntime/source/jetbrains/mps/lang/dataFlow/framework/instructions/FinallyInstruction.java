@@ -31,8 +31,8 @@ public class FinallyInstruction extends Instruction {
   public FinallyInstruction() {
   }
 
-  public FinallyInstruction(SModelId ruleModelId, SNodeId ruleNodeId) {
-    super(ruleModelId, ruleNodeId);
+  public FinallyInstruction(String ruleNodeReference) {
+    super(ruleNodeReference);
   }
 
   @Override
