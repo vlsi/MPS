@@ -15,11 +15,19 @@
  */
 package jetbrains.mps.lang.dataFlow.framework.instructions;
 
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
+
 public class ReadInstruction extends Instruction {
   private Object myVar;
   private int myIndex;
 
   public ReadInstruction(Object var) {
+    myVar = var;
+  }
+
+  public ReadInstruction(SModelId ruleModelId, SNodeId ruleNodeId, Object var) {
+    super(ruleModelId, ruleNodeId);
     myVar = var;
   }
 

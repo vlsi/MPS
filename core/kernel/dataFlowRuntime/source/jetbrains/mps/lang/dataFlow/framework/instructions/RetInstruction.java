@@ -17,12 +17,18 @@ package jetbrains.mps.lang.dataFlow.framework.instructions;
 
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.Program.TryFinallyInfo;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RetInstruction extends Instruction {
   public RetInstruction() {
+  }
+
+  public RetInstruction(SModelId ruleModelId, SNodeId ruleNodeId) {
+    super(ruleModelId, ruleNodeId);
   }
 
   @Override

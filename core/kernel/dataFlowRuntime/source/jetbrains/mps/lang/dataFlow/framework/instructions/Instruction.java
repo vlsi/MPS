@@ -39,6 +39,11 @@ public abstract class Instruction {
   public Instruction() {
   }
 
+  public Instruction(SModelId ruleModelId, SNodeId ruleNodeId) {
+    myRuleModel = ruleModelId;
+    myRuleId = ruleNodeId;
+  }
+
   public Program getProgram() {
     return myProgram;
   }
