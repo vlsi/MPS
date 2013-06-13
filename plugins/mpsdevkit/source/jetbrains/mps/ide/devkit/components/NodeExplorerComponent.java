@@ -103,7 +103,7 @@ public class NodeExplorerComponent {
     protected void doInit() {
       this.removeAllChildren();
 
-      add(new TextTreeNode("Concept = " + getSNode().getConcept().getId()));
+      add(new TextTreeNode("Concept = " + getSNode().getConcept().getQualifiedName()));
 
       if (getSNode() == null) return;
       for (SNode childNode : getSNode().getChildren()) {

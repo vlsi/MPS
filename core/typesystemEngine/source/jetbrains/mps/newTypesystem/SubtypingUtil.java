@@ -88,6 +88,7 @@ public class SubtypingUtil {
     if (types.size() == 1) return types.iterator().next();
     if (types.size() > 1) {
       Collections.sort(types, new Comparator<SNode>() {
+        @Override
         public int compare(SNode node1, SNode node2) {
           return node1.getPresentation().compareTo(node2.getPresentation());
         }

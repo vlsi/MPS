@@ -27,10 +27,12 @@ public class AddBlockOperation extends AbstractBlockOperation {
     super(block);
   }
 
+  @Override
   public String getPresentation() {
     return myBlock.getPresentation()+"   added";
   }
 
+  @Override
   public String getPresentationKind() {
     if (myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE) {
       return PresentationKind.WHEN_CONCRETE_ADDED;
@@ -39,14 +41,17 @@ public class AddBlockOperation extends AbstractBlockOperation {
     }
   }
 
+  @Override
   public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
     state.removeBlockNoVars(myBlock);
   }
 
+  @Override
   public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
     state.addBlockNoVars(myBlock);
   }
 
+  @Override
   public void execute(State state) {
     super.execute(state);
     state.collectVarsExecuteIfNecessary(myBlock);

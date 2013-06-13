@@ -98,6 +98,7 @@ public class InequalityBlock extends RelationBlock {
 
       final IsApplicable2Status status = inequalityReplacementRule.o2;
       getState().executeOperation(new ProcessReplacementRuleOperation(subType, superType, new Runnable() {
+        @Override
         public void run() {
           ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, myEquationInfo, getState().getTypeCheckingContext(), status, myRelationKind.isWeak(), lessThan);
         }
@@ -124,6 +125,7 @@ public class InequalityBlock extends RelationBlock {
     }
     final SubTypingManagerNew subTyping = (SubTypingManagerNew) TypeChecker.getInstance().getSubtypingManager();
     getState().executeOperation(new CheckSubTypeOperation(subType, superType, new Runnable() {
+      @Override
       public void run() {
         if (!calcIsSubtype(subTyping, subType, superType)) {
           getState().getNodeMaps().reportSubTypeError(subType, superType, myEquationInfo, myRelationKind.isWeak());

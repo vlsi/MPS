@@ -31,6 +31,7 @@ public class InferenceTypecheckingContext extends SimpleTypecheckingContext<Stat
     super(node, typeChecker);
   }
 
+  @Override
   protected void applyNonTypesystemRules() {
     getTypechecking().applyNonTypesystemRulesToRoot(null, this);
   }

@@ -19,11 +19,14 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Assert;
 import org.junit.Test;
@@ -48,20 +51,20 @@ public class PackagedLanguageTest {
   @Test
   public void testPackagedLanguageLoading() {
     final boolean result = TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE,
-      new ProjectRunnable() {
-        public boolean execute(final Project project) {
-          return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-            @Override
-            public Boolean compute() {
-              checkStructureModelLoaded();
-              checkEditorModelLoaded();
-              checkIconsLoaded();
-              checkStubsLoaded();
-              return true;
-            }
-          });
-        }
-      });
+        new ProjectRunnable() {
+          public boolean execute(final Project project) {
+            return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+              @Override
+              public Boolean compute() {
+                checkStructureModelLoaded();
+                checkEditorModelLoaded();
+                checkIconsLoaded();
+                checkStubsLoaded();
+                return true;
+              }
+            });
+          }
+        });
     if (!result) {
       Assert.fail();
     }
@@ -89,7 +92,7 @@ public class PackagedLanguageTest {
   }
 
   private void checkIconsLoaded() {
-    final jetbrains.mps.smodel.SNode packagedConceptInstance = new jetbrains.mps.smodel.SNode(PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT);
+    final jetbrains.mps.smodel.SNode packagedConceptInstance = new jetbrains.mps.smodel.SNode(InternUtil.intern(PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT));
     final Icon icon = IconManager.getIconFor(packagedConceptInstance);
     Assert.assertNotNull(icon);
     Assert.assertEquals(16, icon.getIconHeight());
@@ -100,7 +103,7 @@ public class PackagedLanguageTest {
 
     for (int i = 0; i < 16; i++) {
       final Color color = new Color(buf.getRGB(i, i));
-      Assert.assertTrue("Color at index " + i + " is " + color.toString(),  i % 2 == 0 ? Color.BLACK.equals(color) : Color.WHITE.equals(color));
+      Assert.assertTrue("Color at index " + i + " is " + color.toString(), i % 2 == 0 ? Color.BLACK.equals(color) : Color.WHITE.equals(color));
     }
   }
 
@@ -115,7 +118,8 @@ public class PackagedLanguageTest {
 
     SNode method = null;
     for (SNode child : root.getChildren("member")) {
-      if (org.jetbrains.mps.openapi.model.SNodeUtil.isInstanceOf(child, jetbrains.mps.util.SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
+      if (org.jetbrains.mps.openapi.model.SNodeUtil.isInstanceOf(child,
+          jetbrains.mps.util.SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
         if (method == null) {
           method = child;
         } else {

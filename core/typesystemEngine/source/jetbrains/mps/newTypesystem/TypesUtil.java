@@ -150,20 +150,24 @@ public class TypesUtil {
   private static class MatchingNodesCollector implements IMatchModifier {
     private final Set<Pair<SNode, SNode>> myMatchingPairs = new THashSet<Pair<SNode, SNode>>();
 
+    @Override
     public boolean accept(SNode node1, SNode node2) {
       return TypesUtil.isVariable(node1) || TypesUtil.isVariable(node2);
     }
 
+    @Override
     public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
       return false;
     }
 
+    @Override
     public void performAction(SNode node1, SNode node2) {
       if (myMatchingPairs != null) {
         myMatchingPairs.add(new Pair<SNode, SNode>(node1, node2));
       }
     }
 
+    @Override
     public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
     }
   }

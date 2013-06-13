@@ -38,6 +38,7 @@ public abstract class ComparisonRule_Runtime implements IRuleWithTwoApplicableNo
     return false;
   }
 
+  @Override
   public IsApplicable2Status isApplicableAndPatterns(SNode node1, SNode node2) {
     IsApplicableStatus applicableStatus1 = isApplicableFirst(node1);
     if (!applicableStatus1.isApplicable()) return IsApplicable2Status.FALSE_STATUS;

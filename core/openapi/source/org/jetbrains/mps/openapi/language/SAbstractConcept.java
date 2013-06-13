@@ -33,6 +33,7 @@ public interface SAbstractConcept {
    */
   String getConceptId();
 
+  // TODO remove
   String getId();
 
   String getQualifiedName();

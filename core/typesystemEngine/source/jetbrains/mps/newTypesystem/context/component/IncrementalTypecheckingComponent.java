@@ -38,6 +38,7 @@ import java.util.Set;
     super(state, component);
   }
 
+  @Override
   protected abstract boolean doInvalidate();
 
   public void setInvalidationWasPerformed(boolean invalidationWasPerformed) {
@@ -99,6 +100,7 @@ import java.util.Set;
       }
     }
 
+    @Override
     public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
       reportAccess();
       myAccessedNodes.add(node);
@@ -107,11 +109,13 @@ import java.util.Set;
       }
     }
 
+    @Override
     public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
       reportAccess();
       myAccessedProperties.add(new Pair<SNode, String>(node, propertyName));
     }
 
+    @Override
     public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
       reportAccess();
       myAccessedNodes.add(node);
@@ -120,6 +124,7 @@ import java.util.Set;
       }
     }
 
+    @Override
     public void nodeUnclassifiedReadAccess(SNode node) {
       reportAccess();
       myAccessedNodes.add(node);
@@ -160,6 +165,7 @@ import java.util.Set;
       myIsSetAccessReport = accessReport;
     }
 
+    @Override
     public void languageCacheRead() {
       if (myIsSetAccessReport) {
         new Throwable().printStackTrace();

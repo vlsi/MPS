@@ -39,8 +39,8 @@ public abstract class DoubleTermRules<K> {
 
     final LanguageScope langScope = LanguageScope.getCurrent();
 
-    final String leftConceptFQName = leftTerm.getConcept().getId();
-    final String rightConceptFQName = rightTerm.getConcept().getId();
+    final String leftConceptFQName = leftTerm.getConcept().getQualifiedName();
+    final String rightConceptFQName = rightTerm.getConcept().getQualifiedName();
 
     final Object compoundKey = new Triplet<Object, String, String>(langScope, leftConceptFQName, rightConceptFQName);
 

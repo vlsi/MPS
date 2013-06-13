@@ -27,10 +27,12 @@ import java.util.*;
 
 public class SubTypingRelation extends AbstractRelation {
 
+  @Override
   public boolean accept(RelationKind kind) {
     return !kind.isComparable();
   }
 
+  @Override
   public boolean solve(SNode node, Set<SNode> leftTypes, Set<SNode> rightTypes, State state, Map<SNode, RelationBlock> typesToBlocks) {
     SNode result = null;
     EquationInfo info = null;

@@ -116,8 +116,8 @@ public class ReferencesTest extends BaseMPSTest {
     }
 
     for (SNode node : new NodesIterable(sm)) {
-      if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
-        LOG.error("Error in model " + sm.getReference().getModelName() + " : Unknown concept " + node.getConcept().getId());
+      if (SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance()) == null) {
+        LOG.error("Error in model " + sm.getReference().getModelName() + " : Unknown concept " + node.getConcept().getQualifiedName());
       }
     }
 

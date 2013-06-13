@@ -105,7 +105,7 @@ public class VersionUtil {
 
   //this did not work: a model reference did not equal nothing
   public static int getNodeLanguageVersion(SNode node) {
-    SModuleReference moduleRef = new jetbrains.mps.project.structure.modules.ModuleReference(NameUtil.namespaceFromConceptFQName(node.getConcept().getId()));
+    SModuleReference moduleRef = new jetbrains.mps.project.structure.modules.ModuleReference(NameUtil.namespaceFromConceptFQName(node.getConcept().getQualifiedName()));
     SModelReference reference = ((jetbrains.mps.smodel.SModelReference) LanguageAspect.STRUCTURE.get(moduleRef)).update();
     return SModelOperations.getUsedVersion(node.getModel(), reference);
   }

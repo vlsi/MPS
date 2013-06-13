@@ -32,18 +32,22 @@ public class AddErrorOperation extends AbstractOperation {
     myRule = new Pair<String, String>(myError.getRuleModel(), myError.getRuleId());
   }
 
+  @Override
   public String getPresentation() {
     return "Error : " + myError.reportError();
   }
 
+  @Override
   public void doUndo(State state) {
     state.getNodeMaps().removeError(myNode, myError);
   }
 
+  @Override
   public void doRedo(State state) {
     state.getNodeMaps().addError(myNode, myError);
   }
 
+  @Override
   public String getPresentationKind() {
     return PresentationKind.ERROR_ADDED;
   }

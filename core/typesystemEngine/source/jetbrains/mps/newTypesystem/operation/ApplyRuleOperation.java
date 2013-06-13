@@ -32,22 +32,27 @@ public class ApplyRuleOperation extends AbstractOperation {
     mySource = node;
   }
 
+  @Override
   protected void doUndo(State state) {
 
   }
 
+  @Override
   protected void doRedo(State state) {
 
   }
 
+  @Override
   public void execute(State state) {
     myRule.applyRule(myNode, state.getTypeCheckingContext(), myStatus);
   }
 
+  @Override
   public String getPresentation() {
     return myRule.getClass().getSimpleName().replace("_InferenceRule", "") + " applied to node \"" + myNode+"\"";
   }
 
+  @Override
   public boolean hasEffect() {
     return false;
   }
