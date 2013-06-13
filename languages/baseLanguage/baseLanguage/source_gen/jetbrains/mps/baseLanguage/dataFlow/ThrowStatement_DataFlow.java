@@ -25,11 +25,11 @@ public class ThrowStatement_DataFlow extends DataFlowBuilder {
       for (SNode catchClause : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), tryCatch, "virtual_getCatchClauses_3718132079121388582", new Object[]{})) {
         SNode caughtType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
         if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "throwable", true)), caughtType)) {
-          _context.getBuilder().emitJump(_context.getBuilder().before(catchClause));
+          _context.getBuilder().emitJump(_context.getBuilder().before(catchClause), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/8754905177066818389");
           return;
         }
       }
     }
-    _context.getBuilder().emitRet();
+    _context.getBuilder().emitRet("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206464652781");
   }
 }

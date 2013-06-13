@@ -13,11 +13,11 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitNop();
+    _context.getBuilder().emitNop("r:5784598d-868b-437e-9c58-15fb07e7f373(jetbrains.mps.samples.Kaja.dataFlow)/6630310702472274368");
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "condition", true));
-    _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "elseBranch"));
+    _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "elseBranch"), "r:5784598d-868b-437e-9c58-15fb07e7f373(jetbrains.mps.samples.Kaja.dataFlow)/6630310702469684057");
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "trueBranch", true));
-    _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
+    _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()), "r:5784598d-868b-437e-9c58-15fb07e7f373(jetbrains.mps.samples.Kaja.dataFlow)/6630310702469695489");
     _context.getBuilder().emitLabel("elseBranch");
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "falseBranch", true));
   }

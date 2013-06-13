@@ -172,14 +172,14 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
-public static   @interface ModuleClassSymbols {
+  public @interface ModuleClassSymbols {
     String[] classes();
     String[] tests();
-}
+  }
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target(value = {ElementType.TYPE})
-public static @interface ModuleReference {
-  String value();
-}
+  @Retention(RetentionPolicy.RUNTIME)
+  @Target(value = {ElementType.TYPE})
+  public @interface ModuleReference {
+    String value();
+  }
 }

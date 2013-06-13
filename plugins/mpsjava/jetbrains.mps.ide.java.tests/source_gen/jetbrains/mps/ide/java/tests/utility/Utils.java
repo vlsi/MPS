@@ -44,11 +44,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
 public class Utils {
-  public Utils() {
-  }
+  private static SModule ourModule = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)"));
 
-  private static SModule getModule() {
-    return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)"));
+  public Utils() {
   }
 
   public static String generateCode(SNode node) {
@@ -94,7 +92,7 @@ public class Utils {
   public static void checkFile(String path, SNode expected) {
 
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
-    mr.setModule(getModule());
+    mr.setModule(ourModule);
     mr.setPath(path);
 
     Iterator<SModel> models = mr.loadModels().iterator();
@@ -124,7 +122,7 @@ public class Utils {
   public static void checkStubModels(String dirPath, List<SModel> expected) {
 
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
-    mr.setModule(getModule());
+    mr.setModule(ourModule);
     mr.setPath(dirPath);
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
@@ -154,25 +152,20 @@ public class Utils {
 
   public static void checkSourceModel(String dirPath, SModel expected) {
     try {
-      // FIXME  
-      JavaParser parser = new JavaParser();
-      DirParser dirParser = new DirParser(getModule(), new FileMPSProject(new File(PathManager.getHomePath())));
-      SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
-      for (SNode r : ListSequence.fromList(SModelOperations.getRoots(result, null))) {
-        SNodeOperations.detachNode(r);
-      }
-      List<SNode> nodes = dirParser.parseDir(parser, FileSystem.getInstance().getFileByPath(dirPath));
+      SModule testMaterials = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("49166c31-952a-46f6-8970-ea45964379d0(jetbrains.mps.ide.java.testMaterial)"));
 
-      for (SNode n : ListSequence.fromList(nodes)) {
-        SModelOperations.addRootNode(result, n);
-      }
-      JavaParser.tryResolveUnknowns(nodes);
-      JavaParser.tryResolveDynamicRefs(nodes);
+      DirParser dirParser = new DirParser(testMaterials, new FileMPSProject(new File(PathManager.getHomePath())), FileSystem.getInstance().getFileByPath(dirPath));
+
+      dirParser.parseDirs();
+
+      List<SModel> parsedModels = dirParser.getAffectedModels();
+      assert (int) ListSequence.fromList(parsedModels).count() == 1;
+      SModel resultModel = ListSequence.fromList(parsedModels).getElement(0);
 
       Map<SNode, SNode> referentMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-      buildModelNodeMap(result, expected, referentMap);
+      buildModelNodeMap(resultModel, expected, referentMap);
 
-      boolean wereErrors = compare2models(result, expected, referentMap);
+      boolean wereErrors = compare2models(resultModel, expected, referentMap);
       Assert.assertFalse(wereErrors);
 
     } catch (JavaParseException e) {

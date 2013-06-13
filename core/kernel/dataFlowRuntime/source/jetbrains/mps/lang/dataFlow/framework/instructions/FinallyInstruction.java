@@ -17,6 +17,8 @@ package jetbrains.mps.lang.dataFlow.framework.instructions;
 
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.Program.TryFinallyInfo;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -25,6 +27,13 @@ public class FinallyInstruction extends Instruction {
   private TryFinallyInfo myInfo;
   private List<RetInstruction> myReturns = new ArrayList<RetInstruction>();
   private List<TryFinallyInfo> myChildTryFinallies = new ArrayList<TryFinallyInfo>();
+
+  public FinallyInstruction() {
+  }
+
+  public FinallyInstruction(String ruleNodeReference) {
+    super(ruleNodeReference);
+  }
 
   @Override
   public String commandPresentation() {

@@ -60,6 +60,6 @@ public class ParameterizedSuite extends Suite {
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.METHOD})
-public static   @interface SuiteClasses {
-}
+  public @interface SuiteClasses {
+  }
 }

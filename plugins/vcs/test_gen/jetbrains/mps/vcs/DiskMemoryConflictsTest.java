@@ -151,7 +151,7 @@ public class DiskMemoryConflictsTest {
       List<String> lines = new ArrayList<String>();
       while (scanner.hasNextLine()) {
         String line = scanner.nextLine();
-        if (line.contains("<node role=\"field\" roleId=\"tpee.1068390468199\" type=\"tpee.FieldDeclaration\" typeId=\"tpee.1068390468200\" id=\"6010389230754495469\">")) {
+        if (line.contains("<node role=\"field\" roleId=\"tpee.1068390468199\" type=\"tpee.FieldDeclaration\" typeId=\"tpee.1068390468200\" id=\"6010389230754495469\"")) {
           inField = true;
         } else
         if (inField) {

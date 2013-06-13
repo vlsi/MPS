@@ -26,7 +26,7 @@ public class AnonymousClassCreator_DataFlow extends DataFlowBuilder {
       SetSequence.fromSet(vars).addSequence(SetSequence.fromSet(StatementList_Behavior.call_getExternalVariablesDeclarations_1214501165480(SLinkOperations.getTarget(method, "body", true))));
     }
     for (SNode var : vars) {
-      _context.getBuilder().emitRead(var);
+      _context.getBuilder().emitRead(var, "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1214502357422");
     }
     for (SNode expr : SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "cls", true), "parameter", true)) {
       _context.getBuilder().build((SNode) expr);

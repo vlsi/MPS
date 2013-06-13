@@ -4,13 +4,20 @@ package jetbrains.mps.ide.dataFlow.presentation;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JScrollPane;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.event.MouseEvent;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import javax.swing.SwingUtilities;
+import javax.swing.JPopupMenu;
+import javax.swing.JMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.Color;
 import org.jetbrains.annotations.Nullable;
@@ -22,14 +29,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Rectangle;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class ShowCFGDialog extends DialogWrapper {
   private JScrollPane myScrollPane;
   private ShowCFGDialog.MyComponent myComponent;
   private ControlFlowGraph<InstructionWrapper> myControlFlowGraph;
 
-  public ShowCFGDialog(ControlFlowGraph<InstructionWrapper> graph, final IOperationContext operationContext, Project project) {
+  public ShowCFGDialog(@NotNull ControlFlowGraph<InstructionWrapper> graph, @NotNull final IOperationContext operationContext, @NotNull Project project, @NotNull String title) {
     super(project);
     this.myComponent = new ShowCFGDialog.MyComponent();
     this.myScrollPane = ScrollPaneFactory.createScrollPane(myComponent);
@@ -40,19 +46,53 @@ public class ShowCFGDialog extends DialogWrapper {
     graph.relayout();
     this.myControlFlowGraph.addBlockListener(new IBlockListener() {
       @Override
-      public void mousePressed(MouseEvent event, final IBlock block) {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          public void run() {
-            SNode node = check_wx2hhz_a0a0a0a0a0a0a0a8a3(((SNodePointer) block.getSourceNode()));
-            if (node != null) {
-              NavigationSupport.getInstance().openNode(operationContext, node, true, true);
+      public void mousePressed(MouseEvent event, IBlock block) {
+        final SNodeReference sourceRef = block.getSourceNode();
+        if (SwingUtilities.isRightMouseButton(event)) {
+
+          JPopupMenu menu = new JPopupMenu();
+          JMenuItem ruleItem = new JMenuItem("go to data flow rule");
+          JMenuItem nodeItem = new JMenuItem("go to node");
+          menu.add(ruleItem);
+          menu.add(nodeItem);
+          final SNodeReference ruleNodeReference = block.getRuleNodeReference();
+          ruleItem.setEnabled(ruleNodeReference != null);
+          nodeItem.setEnabled(sourceRef != null);
+          menu.show(event.getComponent(), event.getX(), event.getY());
+          ruleItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent p0) {
+              openNode(operationContext, ruleNodeReference);
             }
-          }
-        });
+          });
+          nodeItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent p0) {
+              openNode(operationContext, sourceRef);
+            }
+          });
+        } else {
+          openNode(operationContext, sourceRef);
+        }
       }
     });
+    setModal(false);
+    setTitle(title);
     init();
   }
+
+  private void openNode(final IOperationContext operationContext, final SNodeReference nodeReference) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        if (nodeReference != null) {
+          SNode node = nodeReference.resolve(MPSModuleRepository.getInstance());
+          if (node != null) {
+            NavigationSupport.getInstance().openNode(operationContext, node, true, true);
+          }
+        }
+      }
+    });
+  }
+
+
 
   public Color getBackground() {
     return Color.LIGHT_GRAY;
@@ -65,6 +105,7 @@ public class ShowCFGDialog extends DialogWrapper {
   }
 
   @Override
+  @NotNull
   protected Action[] createActions() {
     return new Action[0];
   }
@@ -121,12 +162,5 @@ public class ShowCFGDialog extends DialogWrapper {
     public boolean getScrollableTracksViewportHeight() {
       return false;
     }
-  }
-
-  private static SNode check_wx2hhz_a0a0a0a0a0a0a0a8a3(SNodePointer checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
-    }
-    return null;
   }
 }

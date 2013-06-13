@@ -32,6 +32,42 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1815980786158776239(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1815980786159175721(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1815980786159157450(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1815980786159121502(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1815980786159130424(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1815980786159145524(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1815980786159187547(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1815980786159191586(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1815980786159196460(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
+  }
+
   public static Object propertyMacro_GetPropertyValue_1207063014986(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
   }
