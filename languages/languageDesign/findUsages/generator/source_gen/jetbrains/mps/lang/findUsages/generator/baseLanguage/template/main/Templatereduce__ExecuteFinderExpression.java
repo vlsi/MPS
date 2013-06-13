@@ -29,7 +29,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+    final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
     try {
       environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789321856");
@@ -37,7 +37,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
       tnode1.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils.executeFinder(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SearchScope,org.jetbrains.mps.openapi.util.ProgressMonitor):java.util.List")));
 
       {
-        final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+        final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
         try {
           environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789321857");
@@ -71,7 +71,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
         try {
           environment.getTracer().pushMacro(ifMacroRef_qubm7t_a0a0a1a7a1a2);
           if (QueriesGenerated.ifMacro_Condition_5097877160789322145(environment.getOperationContext(), new IfMacroContext(context.getInput(), ifMacroRef_qubm7t_a0a0a1a7a1a2, context, environment.getGenerator()))) {
-            final SNode tnode6 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
+            final SNode tnode6 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
             try {
               environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a1a1a7a1a2);
               environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789322143");
@@ -112,13 +112,13 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
             try {
               environment.getTracer().pushMacro(ifMacroRef_qubm7t_a0a0a1a1a1a8a1a2);
               if (QueriesGenerated.ifMacro_Condition_5097877160789322202(environment.getOperationContext(), new IfMacroContext(context.getInput(), ifMacroRef_qubm7t_a0a0a1a1a1a8a1a2, context, environment.getGenerator()))) {
-                final SNode tnode11 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.DotExpression");
+                final SNode tnode11 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.DotExpression");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a1a1a1a1a8a1a2);
                   environment.nodeCopied(context, tnode11, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789322162");
 
                   {
-                    final SNode tnode12 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
+                    final SNode tnode12 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a3a1a1a1a1a1a8a1a2);
                       environment.nodeCopied(context, tnode12, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789322163");
@@ -134,14 +134,14 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
                     // TODO validate child 
                   }
                   {
-                    final SNode tnode13 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
+                    final SNode tnode13 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a4a1a1a1a1a1a8a1a2);
                       environment.nodeCopied(context, tnode13, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789322164");
                       tnode13.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode13, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor")));
 
                       {
-                        final SNode tnode14 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
+                        final SNode tnode14 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a4a1a4a1a1a1a1a1a8a1a2);
                           environment.nodeCopied(context, tnode14, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789322165");
@@ -189,13 +189,13 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
             tlist9 = tlist10;
           } else {
             environment.getTracer().pushRuleConsequence(conseq_qubm7t_a0a0a0b0b0i0b0c);
-            final SNode tnode16 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression");
+            final SNode tnode16 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression");
             try {
               environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a2a0b0b0i0b0c);
               environment.nodeCopied(context, tnode16, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789322199");
 
               {
-                final SNode tnode17 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassCreator");
+                final SNode tnode17 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassCreator");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a3a2a0b0b0i0b0c);
                   environment.nodeCopied(context, tnode17, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789322200");

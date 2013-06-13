@@ -23,6 +23,7 @@ import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -58,6 +59,11 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public SModel getOutputModel() {
     return generator.getOutputModel();
+  }
+
+  @Override
+  public SNode createOutputNode(String conceptName) {
+    return new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptName));
   }
 
   @Override

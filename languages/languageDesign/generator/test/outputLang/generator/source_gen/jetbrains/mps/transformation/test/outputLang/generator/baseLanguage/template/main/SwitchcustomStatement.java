@@ -78,7 +78,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_68cped_a0a0a5h);
-      final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.NullLiteral");
+      final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.NullLiteral");
       try {
         environment.getTracer().pushTemplateNode(templateNode_68cped_a0a0a2a5h);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/8371596541809090602");
@@ -125,7 +125,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_68cped_a0a0a5i);
-      final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
+      final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
       try {
         environment.getTracer().pushTemplateNode(templateNode_68cped_a0a0a2a5i);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/8371596541809090625");
