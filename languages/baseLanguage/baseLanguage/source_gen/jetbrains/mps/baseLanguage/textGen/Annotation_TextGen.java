@@ -5,16 +5,14 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Priority;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -24,38 +22,23 @@ public class Annotation_TextGen extends SNodeTextGen {
     if (getBuffer().hasPositionsSupport()) {
       TraceInfoGenerationUtil.createUnitInfo(this, node);
     }
-    BaseLanguageTextGen.fileHeader(node, this);
-    BaseLanguageTextGen.annotations(node, this);
-    BaseLanguageTextGen.visibility(SLinkOperations.getTarget(node, "visibility", true), this);
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), this.getSNode());
     }
-    if (!(SNodeOperations.isRoot(node))) {
-      this.append("static ");
-    }
-    this.appendWithIndent("@interface ");
-    if (isEmpty_ydmu3t_a0f0a(SPropertyOperations.getString(node, "name"))) {
-      this.foundError("annotation name is empty");
-      this.append("???");
-    } else {
-      this.append(JavaNameUtil.shortName(SPropertyOperations.getString(node, "name")));
-    }
-    this.append(" {");
-    this.increaseDepth();
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "method", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-      }
-    }
-    this.decreaseDepth();
+    BaseLanguageTextGen.fileHeader(node, this);
+    BaseLanguageTextGen.annotations(node, this);
+    BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
+    this.append("@interface ");
+    this.append(SPropertyOperations.getString(node, "name"));
+    this.append(" ");
+    BaseClassConceptTextGen.membersWithBrackets(node, true, this);
     this.appendNewLine();
-    this.append("}");
-    this.appendNewLine();
+
     if (getBuffer().hasPositionsSupport()) {
       {
         String unitName = null;
         try {
-          unitName = BehaviorReflection.invokeVirtual(String.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Object[]{});
+          unitName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Object[]{});
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Priority.ERROR)) {
             LOG.error("Can't calculate unit name for a node " + node + ".", t);
@@ -71,8 +54,4 @@ public class Annotation_TextGen extends SNodeTextGen {
   }
 
   protected static Logger LOG = LogManager.getLogger(Annotation_TextGen.class);
-
-  public static boolean isEmpty_ydmu3t_a0f0a(String str) {
-    return str == null || str.length() == 0;
-  }
 }

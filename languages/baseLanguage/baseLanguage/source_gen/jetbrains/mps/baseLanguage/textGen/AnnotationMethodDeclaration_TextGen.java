@@ -28,7 +28,6 @@ public class AnnotationMethodDeclaration_TextGen extends SNodeTextGen {
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), this.getSNode());
     }
-    this.appendNewLine();
     this.indentBuffer();
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "returnType", true), this.getSNode());
     this.append(" ");
@@ -39,6 +38,7 @@ public class AnnotationMethodDeclaration_TextGen extends SNodeTextGen {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "defaultValue", true), this.getSNode());
     }
     this.append(";");
+    this.appendNewLine();
     if (getBuffer().hasPositionsSupport()) {
       {
         String traceableProperty = "";
