@@ -187,7 +187,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     if (BootstrapLanguages.coreLanguage() != null) {
       // todo: ???
-      languages.add(new SLanguageLanguageAdapter(BootstrapLanguages.CORE.getModuleName()));
+      languages.add(new SLanguageLanguageAdapter(BootstrapLanguages.CORE_NAMESPACE));
     }
 
     return languages; // todo: maybe collect extended languages here
@@ -819,7 +819,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
       if (AbstractModule.this instanceof Language) {
         result.add((Language) AbstractModule.this);
-        result.addAll(ModuleUtil.refsToLanguages(Collections.singletonList(BootstrapLanguages.DESCRIPTOR)));
+        result.addAll(ModuleUtil.refsToLanguages(Collections.singletonList(BootstrapLanguages.descriptorLanguageRef())));
       }
 
       if (AbstractModule.this instanceof Generator) {

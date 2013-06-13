@@ -9,14 +9,15 @@ import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
@@ -44,7 +45,7 @@ public class DependencyUtil {
         if (descr instanceof LanguageDescriptor) {
           LanguageDescriptor lang = (LanguageDescriptor) descr;
           addDeps(result, lang.getExtendedLanguages(), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ExtendsLanguage);
-          ListSequence.fromList(result).addElement(new DependencyUtil.Link(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c")), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.LangCore));
+          ListSequence.fromList(result).addElement(new DependencyUtil.Link(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)")), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.LangCore));
 
           // generators and generators dependencies are now also added to language dependencies (MPS-15883) 
           addDeps(result, Sequence.fromIterable(((Iterable<GeneratorDescriptor>) lang.getGenerators())).select(new ISelector<GeneratorDescriptor, SModuleReference>() {

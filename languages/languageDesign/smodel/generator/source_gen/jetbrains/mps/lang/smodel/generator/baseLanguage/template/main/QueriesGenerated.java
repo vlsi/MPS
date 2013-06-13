@@ -24,13 +24,13 @@ import jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.lang.smodel.generator.baseLanguage.util.ConceptMethodCallUtils;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.behavior.behavior.BehaviorMethodNames;
 import jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_Behavior;
 import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -407,6 +407,16 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5897605856268916715(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "conceptPropertyDeclaration", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6955116391921923057(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String moduleFqName = SPropertyOperations.getString(_context.getNode(), "moduleId");
+    SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleFqName);
+    if (module == null) {
+      _context.showErrorMessage(_context.getNode(), "module `" + moduleFqName + "` is not found");
+      return "";
+    }
+    return module.getModuleName();
   }
 
   public static Object propertyMacro_GetPropertyValue_1883223317721112276(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -864,11 +874,23 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_9053200010975950079(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "moduleId");
+    String moduleFqName = SPropertyOperations.getString(_context.getNode(), "name");
+    SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleFqName);
+    if (module == null) {
+      _context.showErrorMessage(_context.getNode(), "module `" + moduleFqName + "` is not found");
+      return "";
+    }
+    return module.getModuleReference().toString();
   }
 
-  public static Object propertyMacro_GetPropertyValue_676159187099095891(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+  public static Object propertyMacro_GetPropertyValue_6955116391927059032(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String moduleFqName = SPropertyOperations.getString(_context.getNode(), "name");
+    SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleFqName);
+    if (module == null) {
+      _context.showErrorMessage(_context.getNode(), "module `" + moduleFqName + "` is not found");
+      return "";
+    }
+    return module.getModuleReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_8317913688490057091(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1684,7 +1706,7 @@ public class QueriesGenerated {
       // todo: remove getClassExpression here 
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
-      return _quotation_createNode_x583g4_a0a0c0lo(returnType);
+      return _quotation_createNode_x583g4_a0a0c0mo(returnType);
     }
   }
 
@@ -1881,7 +1903,7 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0c0lo(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0c0mo(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

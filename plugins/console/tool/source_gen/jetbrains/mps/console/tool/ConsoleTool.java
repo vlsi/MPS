@@ -14,8 +14,7 @@ import javax.swing.JComponent;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -28,7 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -64,9 +62,9 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
       public void run() {
         ConsoleTool.this.myContext = new ModuleContext(myModel.getModule(), project);
         ConsoleTool.this.myEditor = new UIEditorComponent(ProjectHelper.toMPSProject(getProject()).getRepository(), null);
-        ((SModelInternal) myModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.console.lang", Language.class).getModuleReference());
-        ((SModelInternal) myModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.console.lang.commands", Language.class).getModuleReference());
-        ((SModelInternal) myModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
+        ((SModelInternal) myModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.lang)"));
+        ((SModelInternal) myModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.lang.commands)"));
+        ((SModelInternal) myModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
         ConsoleTool.this.myRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.lang.structure.Console", null);
         myEditor.editNode(myRoot, myContext);
       }

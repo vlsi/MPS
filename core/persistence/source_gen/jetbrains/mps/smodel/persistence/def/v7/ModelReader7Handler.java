@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.util.xml.BreakParseSAXException;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.InternUtil;
@@ -344,7 +343,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SModuleReference createObject(Attributes attrs) throws SAXException {
-      return ModuleReference.fromString(attrs.getValue("namespace"));
+      return PersistenceFacade.getInstance().createModuleReference(attrs.getValue("namespace"));
     }
 
     @Override

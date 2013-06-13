@@ -185,7 +185,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   @Override
   public Set<SLanguage> getUsedLanguages() {
     return Collections.<SLanguage>singleton(
-        new SLanguageLanguageAdapter(BootstrapLanguages.PROJECT.getModuleName()));
+        new SLanguageLanguageAdapter(BootstrapLanguages.PROJECT_NAMESPACE));
   }
 
   private void removeModel(SModel md) {

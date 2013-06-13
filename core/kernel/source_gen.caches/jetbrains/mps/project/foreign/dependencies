@@ -31,13 +31,13 @@
     <classNode dependClassName="jetbrains.mps.project.foreign.ModuleMacroExpander" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOException" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.project.io.DescriptorIO" />
   </dependency>
   <dependency className="jetbrains.mps.project.foreign.MPSFacetConfiguration" file="MPSFacetConfiguration.java">

@@ -45,10 +45,11 @@ public class CheckedModuleReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5d1rsq_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module reference");
     editorCell.setCellId("Constant_5d1rsq_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

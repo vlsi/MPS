@@ -12,6 +12,7 @@ import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.junit.runner.notification.Failure;
 import java.lang.annotation.Retention;
@@ -67,7 +68,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
   }
 
   private void initialize() {
-    SModule mod = MPSModuleRepository.getInstance().getModule(jetbrains.mps.project.structure.modules.ModuleReference.fromString(myModuleRef));
+    SModule mod = MPSModuleRepository.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(myModuleRef));
     for (Runner child : myRunners) {
       ((ModuleSymbolicSuite.DelegatingRunner) child).init(mod, myBuilder);
     }

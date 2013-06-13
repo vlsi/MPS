@@ -60,7 +60,7 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getReference().toString();
   }
 
-  public static Object propertyMacro_GetPropertyValue_392628194913860560(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6955116391918736655(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModule().getModuleReference().toString();
   }
 
@@ -74,7 +74,7 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getReference().toString();
   }
 
-  public static Object propertyMacro_GetPropertyValue_6720970695606049486(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6955116391918736970(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModule().getModuleReference().toString();
   }
 
@@ -92,7 +92,7 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getReference().toString();
   }
 
-  public static Object propertyMacro_GetPropertyValue_6720970695615504639(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6955116391918736614(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModule().getModuleReference().toString();
   }
 
@@ -122,7 +122,7 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getReference().toString();
   }
 
-  public static Object propertyMacro_GetPropertyValue_392628194913886717(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6955116391918736854(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModule().getModuleReference().toString();
   }
 
@@ -148,7 +148,7 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getReference().toString();
   }
 
-  public static Object propertyMacro_GetPropertyValue_5264392666049943069(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6955116391918736469(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModule().getModuleReference().toString();
   }
 
@@ -174,7 +174,7 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getReference().toString();
   }
 
-  public static Object propertyMacro_GetPropertyValue_2312049224521823009(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6955116391918736428(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModule().getModuleReference().toString();
   }
 
@@ -188,7 +188,7 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getReference().toString();
   }
 
-  public static Object propertyMacro_GetPropertyValue_2037769997942400222(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6955116391918736903(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModule().getModuleReference().toString();
   }
 
@@ -226,7 +226,7 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getReference().toString();
   }
 
-  public static Object propertyMacro_GetPropertyValue_5718428430098993525(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6955116391918736276(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModule().getModuleReference().toString();
   }
 

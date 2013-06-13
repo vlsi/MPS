@@ -19,9 +19,10 @@ import jetbrains.mps.project.AbstractModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.smodel.SModelStereotype;
 import java.io.File;
@@ -79,7 +80,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
 
   protected Set<Language> getLanguagesToImport() {
     Set<String> moduleIds = SetSequence.fromSet(new HashSet<String>());
-    SetSequence.fromSet(moduleIds).addElement(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleReference().getModuleId().toString());
+    SetSequence.fromSet(moduleIds).addElement(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)").getModuleId().toString());
     Iterable<Language> languages = SetSequence.fromSet(moduleIds).select(new ISelector<String, Language>() {
       public Language select(String it) {
         return ((Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(it)));

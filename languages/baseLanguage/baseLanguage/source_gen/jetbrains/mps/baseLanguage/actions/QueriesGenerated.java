@@ -65,11 +65,9 @@ import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -5013,7 +5011,7 @@ __switch__:
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         AbstractModule module = (AbstractModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
         SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a732(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
-        SModuleReference javadocLangReference = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage.javadoc", Language.class).getModuleReference();
+        SModuleReference javadocLangReference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
         if (!(model.importedLanguages().contains(javadocLangReference))) {
           module.addUsedLanguage(javadocLangReference);
           model.addLanguage(javadocLangReference);

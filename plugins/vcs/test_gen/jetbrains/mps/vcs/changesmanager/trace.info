@@ -348,8 +348,8 @@
     <nodeInfo nodeId="8182644708897716812" fileName="ChangesManagerTest.java" startLine="891" startPosition="122" endLine="892" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8182644708897716814" fileName="ChangesManagerTest.java" startLine="892" startPosition="0" endLine="893" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1813489455856698464" fileName="ChangesManagerTest.java" startLine="893" startPosition="24" endLine="894" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6372684221198338228" fileName="ChangesManagerTest.java" startLine="896" startPosition="25" endLine="897" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1813489455856698470" fileName="ChangesManagerTest.java" startLine="897" startPosition="138" endLine="898" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6372684221198338228" fileName="ChangesManagerTest.java" startLine="896" startPosition="25" endLine="897" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1813489455856698470" fileName="ChangesManagerTest.java" startLine="897" startPosition="165" endLine="898" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6372684221198335689" fileName="ChangesManagerTest.java" startLine="900" startPosition="7" endLine="901" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8182644708897716816" fileName="ChangesManagerTest.java" startLine="901" startPosition="42" endLine="902" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8182644708897716818" fileName="ChangesManagerTest.java" startLine="902" startPosition="0" endLine="903" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

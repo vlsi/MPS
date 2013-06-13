@@ -25,12 +25,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -59,10 +56,10 @@ import jetbrains.mps.build.mps.util.ModuleLoaderException;
 import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -174,12 +171,12 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private void addRequiredImports(SModel smodel, ModuleDescriptor moduleDescriptor) {
-    moduleDescriptor.getUsedLanguages().add(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
-    moduleDescriptor.getUsedLanguages().add(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
-    ((SModelInternal) smodel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
-    ((SModelInternal) smodel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
+    moduleDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)"));
+    moduleDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("0cf935df-4699-4e9c-a132-fa109541cba3(jetbrains.mps.build.mps)"));
+    ((SModelInternal) smodel).addLanguage(PersistenceFacade.getInstance().createModuleReference("798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)"));
+    ((SModelInternal) smodel).addLanguage(PersistenceFacade.getInstance().createModuleReference("0cf935df-4699-4e9c-a132-fa109541cba3(jetbrains.mps.build.mps)"));
 
-    moduleDescriptor.getDependencies().add(new Dependency(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("422c2909-59d6-41a9-b318-40e6256b250f")).getModuleReference(), false));
+    moduleDescriptor.getDependencies().add(new Dependency(PersistenceFacade.getInstance().createModuleReference("422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)"), false));
     ((SModelInternal) smodel).addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getReference(), false);
   }
 

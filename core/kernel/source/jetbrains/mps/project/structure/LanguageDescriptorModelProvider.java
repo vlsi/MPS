@@ -40,6 +40,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -260,7 +261,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
           return false;
         }
       };
-      model.addEngagedOnGenerationLanguage(BootstrapLanguages.DESCRIPTOR);
+      model.addEngagedOnGenerationLanguage(BootstrapLanguages.descriptorLanguageRef());
       return model;
     }
 

@@ -419,13 +419,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1445805690439864422" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5114497955154742475" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.NPEEqualsExpression" typeId="tpee.1225271283259" id="4416206207494603571" nodeInfo="nn">
-            <node role="rightExpression" roleId="tpee.1081773367579" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="4416206207494610310" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tp25.LanguageReferenceExpression" typeId="tp25.4040588429969069898" id="4416206207494603574" nodeInfo="nn">
-                <property name="moduleId" nameId="tp25.4040588429969021683" value="fba399db-f591-45dc-a279-e2a2a986e262" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4416206207494610308" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetModuleReference()%corg%djetbrains%dmps%dopenapi%dmodule%dSModuleReference" resolveInfo="getModuleReference" />
-              </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tp25.CheckedModuleReference" typeId="tp25.4357968816427488499" id="6955116391927451280" nodeInfo="nn">
+              <property name="moduleId" nameId="tp25.4357968816427488500" value="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="5114497955154742477" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="5114497955154742478" nodeInfo="nn">

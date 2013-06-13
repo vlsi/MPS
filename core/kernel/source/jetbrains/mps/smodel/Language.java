@@ -127,7 +127,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public Set<SModuleReference> getExtendedLanguageRefs() {
     HashSet<SModuleReference> res = new HashSet<SModuleReference>(myLanguageDescriptor.getExtendedLanguages());
     //this is needed now as we don't force the user to have an explicit dependency on core
-    res.add(BootstrapLanguages.CORE);
+    res.add(BootstrapLanguages.coreLanguageRef());
     return res;
   }
 
@@ -150,7 +150,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
 
     Dependency dep = new Dependency();
-    dep.setModuleRef(BootstrapLanguages.CORE);
+    dep.setModuleRef(BootstrapLanguages.coreLanguageRef());
     dep.setReexport(true);
     dependencies.add(new SDependencyAdapter(dep));
 
@@ -518,7 +518,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     @Override
     public Set<DevKit> getAutoImportedDevKits(Language contextModule, org.jetbrains.mps.openapi.model.SModel model) {
-      return Collections.singleton((DevKit) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.DEVKIT_GENERAL.getModuleId()));
+      return Collections.singleton(BootstrapLanguages.generalDevKit());
     }
   }
 }
