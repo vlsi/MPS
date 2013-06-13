@@ -52,8 +52,8 @@ public class MergeConflictsBuilder {
     myMyModel = mine;
 
     myRepositoryModel = repository;
-    myMineChangeSet = ChangeSetBuilder.buildChangeSet(base, mine);
-    myRepositoryChangeSet = ChangeSetBuilder.buildChangeSet(base, repository);
+    myMineChangeSet = ChangeSetBuilder.buildChangeSet(base.getModelDescriptor(), mine.getModelDescriptor());
+    myRepositoryChangeSet = ChangeSetBuilder.buildChangeSet(base.getModelDescriptor(), repository.getModelDescriptor());
 
     collectConflicts();
   }

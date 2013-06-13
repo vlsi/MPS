@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="481tr5gqod88fgqo0kvg4dyz4w1xdd2">
+<dependencies version="2" modelHash="8cvjfie5f9eojkosd522pylnzhtegog">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.leftHighlighter(MPS.Editor/jetbrains.mps.nodeEditor.leftHighlighter@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.message(MPS.Editor/jetbrains.mps.openapi.editor.message@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
@@ -46,9 +46,9 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ehclih2ljjvh3gcfl67v2ip8o73gip1" />
   <dep model="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)" hash="eloqxomfmjvmxkmzzd8c75icmmrt1cp" />
   <dep model="r:2170b42c-b000-4bd7-a2c2-c5cf5fe74d08(jetbrains.mps.ide.tooltips)" hash="-7qplgo745rck6hqq9ftfd7h0gf0v8bf" />
-  <dep model="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" hash="-9clifj64gv79ey7vlsaf2mcca3wdfse" />
+  <dep model="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" hash="-97ce1uqi8kovnzg85i5pwx1dqkj4r4u" />
   <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="-aer19kv5qljyhaz4bgt61yknnprfunr" />
-  <dep model="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" hash="-85lntabs2wxsw5bq7n3l20zfu4cj68f" />
+  <dep model="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" hash="bdaw6y1js4hxgehn8yo32mnkfc17bi4" />
   <dep model="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" hash="88i96xrb55kvsk5pyro9hn66jy0ubgt" />
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="gl25jjwfjfu4wby24mt254hot7fpb3" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="2brjy2koojatyjlu6v7cd8pwfhf7s9i" />
@@ -109,7 +109,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MetadataUtil.java" />
   </source>
-  <source id="4481873561818190815" name="ModelDifferenceDialog" hash="auyggg8p06x25752w0zb21vljz9lhcq">
+  <source id="4481873561818190815" name="ModelDifferenceDialog" hash="-5mpy93fw9rmintsu53nyp0mef4d3tj">
     <dep root="4685150495576934666" />
     <dep root="8733553229778918876" />
     <dep root="8817948936268058313" />

@@ -108,7 +108,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         setTitle("Difference for model: " + oldModel.getModelDescriptor().getModelName());
-        myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
+        myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel.getModelDescriptor(), newModel.getModelDescriptor(), true);
       }
     });
     if (Sequence.fromIterable(myChangeSet.getChangesForRoot(null)).isNotEmpty()) {
@@ -118,7 +118,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
           SModel newMetaModel = MetadataUtil.createMetadataModel(newModel);
           DiffTemporaryModule.createModuleAndRegister(newMetaModel, "new", p, myEditable);
           DiffTemporaryModule.createModuleAndRegister(oldMetaModel, "old", p, false);
-          myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel, newMetaModel, true);
+          myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel.getModelDescriptor(), newMetaModel.getModelDescriptor(), true);
         }
       });
     }

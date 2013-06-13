@@ -236,7 +236,7 @@ public class ChangesTracking {
         synchronized (ChangesTracking.this) {
           if (!(myDisposed)) {
             DiffTemporaryModule.setSModelId(baseVersionModel.value, "repository");
-            ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, ((SModelBase) myModelDescriptor).getSModelInternal(), true);
+            ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value.getModelDescriptor(), myModelDescriptor, true);
             myDifference.setChangeSet((ChangeSetImpl) changeSet);
             buildCaches();
           }

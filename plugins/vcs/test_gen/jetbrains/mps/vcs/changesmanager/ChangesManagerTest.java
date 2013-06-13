@@ -71,7 +71,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ModelChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
-import jetbrains.mps.extapi.model.SModelBase;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -79,6 +78,7 @@ import com.intellij.openapi.command.undo.UndoManager;
 import org.junit.Test;
 import java.util.Random;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
@@ -475,7 +475,7 @@ public class ChangesManagerTest {
   private void assertChangeSetIsCorrect(final ChangeSet changeSet) {
     ChangeSet rebuiltChangeSet = ModelAccess.instance().runReadAction(new Computable<ModelChangeSet>() {
       public ModelChangeSet compute() {
-        return ChangeSetBuilder.buildChangeSet(as_4gxggu_a0a0a0a0a0a0a0a93(changeSet.getOldModel(), SModelBase.class).getSModelInternal(), as_4gxggu_a0b0a0a0a0a0a0a93(changeSet.getNewModel(), SModelBase.class).getSModelInternal());
+        return ChangeSetBuilder.buildChangeSet(changeSet.getOldModel(), changeSet.getNewModel());
       }
     });
     Assert.assertEquals(getChangeSetString(rebuiltChangeSet), getChangeSetString(changeSet));
@@ -1108,19 +1108,5 @@ public class ChangesManagerTest {
       checkedDotOperand.run();
     }
 
-  }
-
-  private static <T> T as_4gxggu_a0a0a0a0a0a0a0a93(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_4gxggu_a0b0a0a0a0a0a0a93(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 }
