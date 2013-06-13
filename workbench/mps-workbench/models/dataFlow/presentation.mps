@@ -5894,7 +5894,7 @@
                                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8206768923889799014" nodeInfo="nn">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~JMenuItem%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JMenuItem" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8206768923889804983" nodeInfo="nn">
-                                      <property name="value" nameId="tpee.1070475926801" value="go to data flow rule" />
+                                      <property name="value" nameId="tpee.1070475926801" value="Go To Data Flow Rule" />
                                     </node>
                                   </node>
                                 </node>
@@ -5910,7 +5910,7 @@
                                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1752256779112912509" nodeInfo="nn">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~JMenuItem%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JMenuItem" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1752256779112912510" nodeInfo="nn">
-                                      <property name="value" nameId="tpee.1070475926801" value="go to node" />
+                                      <property name="value" nameId="tpee.1070475926801" value="Go To Node" />
                                     </node>
                                   </node>
                                 </node>

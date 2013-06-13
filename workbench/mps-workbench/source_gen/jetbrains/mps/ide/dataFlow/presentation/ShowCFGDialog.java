@@ -51,8 +51,8 @@ public class ShowCFGDialog extends DialogWrapper {
         if (SwingUtilities.isRightMouseButton(event)) {
 
           JPopupMenu menu = new JPopupMenu();
-          JMenuItem ruleItem = new JMenuItem("go to data flow rule");
-          JMenuItem nodeItem = new JMenuItem("go to node");
+          JMenuItem ruleItem = new JMenuItem("Go To Data Flow Rule");
+          JMenuItem nodeItem = new JMenuItem("Go To Node");
           menu.add(ruleItem);
           menu.add(nodeItem);
           final SNodeReference ruleNodeReference = block.getRuleNodeReference();

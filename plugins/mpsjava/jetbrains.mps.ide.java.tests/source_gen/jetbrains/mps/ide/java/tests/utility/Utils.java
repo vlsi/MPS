@@ -44,9 +44,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
 public class Utils {
-  private static SModule ourModule = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)"));
-
   public Utils() {
+  }
+
+  private static SModule getModule() {
+    return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)"));
   }
 
   public static String generateCode(SNode node) {
@@ -92,7 +94,7 @@ public class Utils {
   public static void checkFile(String path, SNode expected) {
 
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
-    mr.setModule(ourModule);
+    mr.setModule(getModule());
     mr.setPath(path);
 
     Iterator<SModel> models = mr.loadModels().iterator();
@@ -122,7 +124,7 @@ public class Utils {
   public static void checkStubModels(String dirPath, List<SModel> expected) {
 
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
-    mr.setModule(ourModule);
+    mr.setModule(getModule());
     mr.setPath(dirPath);
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
