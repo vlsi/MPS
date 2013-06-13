@@ -65,7 +65,9 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
 
   @Override
   public void clear() {
-    getTypechecking().clear();
+    synchronized (TYPECHECKING_LOCK) {
+      getTypechecking().clear();
+    }
   }
 
   @Override
