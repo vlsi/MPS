@@ -82,6 +82,8 @@ public class IFileUtils {
       StringBuilder sb = new StringBuilder();
       while (br.ready()) {
         sb.append( br.readLine() );
+        // FIXME preserve original line ednings
+        sb.append("\n");
       }
       return sb.toString();
 

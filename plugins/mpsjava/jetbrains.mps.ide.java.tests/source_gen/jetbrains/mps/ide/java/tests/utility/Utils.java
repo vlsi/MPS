@@ -152,25 +152,25 @@ public class Utils {
 
   public static void checkSourceModel(String dirPath, SModel expected) {
     try {
-      // FIXME  
-      JavaParser parser = new JavaParser();
-      DirParser dirParser = new DirParser(ourModule, new FileMPSProject(new File(PathManager.getHomePath())));
-      SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
-      for (SNode r : ListSequence.fromList(SModelOperations.getRoots(result, null))) {
-        SNodeOperations.detachNode(r);
-      }
-      List<SNode> nodes = dirParser.parseDir(parser, FileSystem.getInstance().getFileByPath(dirPath));
+      SModule testMaterials = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("49166c31-952a-46f6-8970-ea45964379d0"));
 
-      for (SNode n : ListSequence.fromList(nodes)) {
-        SModelOperations.addRootNode(result, n);
-      }
-      JavaParser.tryResolveUnknowns(nodes);
-      JavaParser.tryResolveDynamicRefs(nodes);
+      DirParser dirParser = new DirParser(testMaterials, new FileMPSProject(new File(PathManager.getHomePath())), FileSystem.getInstance().getFileByPath(dirPath));
+
+      dirParser.parseDirs();
+
+      List<SModel> parsedModels = dirParser.getAffectedModels();
+      assert (int) ListSequence.fromList(parsedModels).count() == 1;
+      SModel resultModel = ListSequence.fromList(parsedModels).getElement(0);
+
+      // <node> 
+
+      // <node> 
+      // <node> 
 
       Map<SNode, SNode> referentMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-      buildModelNodeMap(result, expected, referentMap);
+      buildModelNodeMap(resultModel, expected, referentMap);
 
-      boolean wereErrors = compare2models(result, expected, referentMap);
+      boolean wereErrors = compare2models(resultModel, expected, referentMap);
       Assert.assertFalse(wereErrors);
 
     } catch (JavaParseException e) {
