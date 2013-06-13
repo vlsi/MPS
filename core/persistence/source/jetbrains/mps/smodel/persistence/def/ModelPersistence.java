@@ -245,7 +245,7 @@ public class ModelPersistence {
    */
   public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source) throws IOException {
     int persistenceVersion =
-        model instanceof DefaultSModel ? ((DefaultSModel) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
+        model instanceof DefaultSModel ? ((DefaultSModel) model).getPersistenceVersion() : LAST_VERSION;
     return saveModel(model, source, persistenceVersion);
   }
 
@@ -256,7 +256,7 @@ public class ModelPersistence {
     LOG.debug("Saving model " + model.getReference() + " to " + source.getLocation());
 
     // (since 3.0) we do not support saving in old persistences (before 7)
-    persistenceVersion = Math.max(7, persistenceVersion);
+    persistenceVersion = persistenceVersion < 4 ? LAST_VERSION : Math.max(7, persistenceVersion);
 
     if (source.isReadOnly()) {
       throw new IOException("`" + source.getLocation() + "' is read-only");
