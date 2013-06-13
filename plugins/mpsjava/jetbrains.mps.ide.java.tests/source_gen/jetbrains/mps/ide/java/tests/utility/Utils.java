@@ -162,11 +162,6 @@ public class Utils {
       assert (int) ListSequence.fromList(parsedModels).count() == 1;
       SModel resultModel = ListSequence.fromList(parsedModels).getElement(0);
 
-      // <node> 
-
-      // <node> 
-      // <node> 
-
       Map<SNode, SNode> referentMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
       buildModelNodeMap(resultModel, expected, referentMap);
 
