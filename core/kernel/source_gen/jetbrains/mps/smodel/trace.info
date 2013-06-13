@@ -497,7 +497,9 @@
     <nodeInfo nodeId="4173418906129888260" fileName="BootstrapLanguages.java" startLine="144" startPosition="52" endLine="145" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4173418906129968039" fileName="BootstrapLanguages.java" startLine="148" startPosition="55" endLine="149" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4173418906129888569" fileName="BootstrapLanguages.java" startLine="152" startPosition="53" endLine="153" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4173418906129968441" fileName="BootstrapLanguages.java" startLine="156" startPosition="56" endLine="157" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9198229506099365909" fileName="BootstrapLanguages.java" startLine="156" startPosition="52" endLine="157" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4173418906129968441" fileName="BootstrapLanguages.java" startLine="160" startPosition="56" endLine="161" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9198229506099365566" fileName="BootstrapLanguages.java" startLine="164" startPosition="43" endLine="165" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5073169472575923462" fileName="BootstrapLanguages.java" startLine="49" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BootstrapLanguages#()V" />
     <nodeInfo nodeId="5073169472575923466" fileName="BootstrapLanguages.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="baseLanguage#()Ljetbrains/mps/smodel/Language;" />
     <nodeInfo nodeId="5073169472575923472" fileName="BootstrapLanguages.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="smodelLanguage#()Ljetbrains/mps/smodel/Language;" />
@@ -525,7 +527,9 @@
     <nodeInfo nodeId="4173418906129888258" fileName="BootstrapLanguages.java" startLine="144" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="testLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
     <nodeInfo nodeId="4173418906129968037" fileName="BootstrapLanguages.java" startLine="148" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="textGenLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
     <nodeInfo nodeId="4173418906129888567" fileName="BootstrapLanguages.java" startLine="152" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="stubsLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-    <nodeInfo nodeId="4173418906129968439" fileName="BootstrapLanguages.java" startLine="156" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="unitTestLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+    <nodeInfo nodeId="9198229506099365907" fileName="BootstrapLanguages.java" startLine="156" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="baseLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+    <nodeInfo nodeId="4173418906129968439" fileName="BootstrapLanguages.java" startLine="160" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="unitTestLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+    <nodeInfo nodeId="9198229506099365564" fileName="BootstrapLanguages.java" startLine="164" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="jdkRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
     <scopeInfo nodeId="5073169472575923465" fileName="BootstrapLanguages.java" startLine="49" startPosition="31" endLine="49" endPosition="31" />
     <scopeInfo nodeId="5073169472575923469" fileName="BootstrapLanguages.java" startLine="52" startPosition="41" endLine="53" endPosition="197" />
     <scopeInfo nodeId="5073169472575923475" fileName="BootstrapLanguages.java" startLine="56" startPosition="43" endLine="57" endPosition="196" />
@@ -553,7 +557,9 @@
     <scopeInfo nodeId="4173418906129888259" fileName="BootstrapLanguages.java" startLine="144" startPosition="52" endLine="145" endPosition="130" />
     <scopeInfo nodeId="4173418906129968038" fileName="BootstrapLanguages.java" startLine="148" startPosition="55" endLine="149" endPosition="133" />
     <scopeInfo nodeId="4173418906129888568" fileName="BootstrapLanguages.java" startLine="152" startPosition="53" endLine="153" endPosition="131" />
-    <scopeInfo nodeId="4173418906129968440" fileName="BootstrapLanguages.java" startLine="156" startPosition="56" endLine="157" endPosition="142" />
+    <scopeInfo nodeId="9198229506099365908" fileName="BootstrapLanguages.java" startLine="156" startPosition="52" endLine="157" endPosition="133" />
+    <scopeInfo nodeId="4173418906129968440" fileName="BootstrapLanguages.java" startLine="160" startPosition="56" endLine="161" endPosition="142" />
+    <scopeInfo nodeId="9198229506099365565" fileName="BootstrapLanguages.java" startLine="164" startPosition="43" endLine="165" endPosition="110" />
     <scopeInfo nodeId="5073169472575923462" fileName="BootstrapLanguages.java" startLine="49" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="5073169472575923466" fileName="BootstrapLanguages.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="5073169472575923472" fileName="BootstrapLanguages.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
@@ -581,8 +587,10 @@
     <scopeInfo nodeId="4173418906129888258" fileName="BootstrapLanguages.java" startLine="144" startPosition="0" endLine="147" endPosition="0" />
     <scopeInfo nodeId="4173418906129968037" fileName="BootstrapLanguages.java" startLine="148" startPosition="0" endLine="151" endPosition="0" />
     <scopeInfo nodeId="4173418906129888567" fileName="BootstrapLanguages.java" startLine="152" startPosition="0" endLine="155" endPosition="0" />
-    <scopeInfo nodeId="4173418906129968439" fileName="BootstrapLanguages.java" startLine="156" startPosition="0" endLine="159" endPosition="0" />
-    <unitInfo nodeId="5073169472575923460" fileName="BootstrapLanguages.java" startLine="9" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.smodel.BootstrapLanguages" />
+    <scopeInfo nodeId="9198229506099365907" fileName="BootstrapLanguages.java" startLine="156" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="4173418906129968439" fileName="BootstrapLanguages.java" startLine="160" startPosition="0" endLine="163" endPosition="0" />
+    <scopeInfo nodeId="9198229506099365564" fileName="BootstrapLanguages.java" startLine="164" startPosition="0" endLine="167" endPosition="0" />
+    <unitInfo nodeId="5073169472575923460" fileName="BootstrapLanguages.java" startLine="9" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.smodel.BootstrapLanguages" />
   </root>
 </debugInfo>
 

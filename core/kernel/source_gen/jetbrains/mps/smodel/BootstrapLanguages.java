@@ -153,8 +153,16 @@ public class BootstrapLanguages {
     return PersistenceFacade.getInstance().createModuleReference("ef703a71-a5a3-42af-b53c-ddced816ad5c(jetbrains.mps.lang.stubs)");
   }
 
+  public static SModuleReference baseLanguageRef() {
+    return PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)");
+  }
+
   public static SModuleReference unitTestLanguageRef() {
     return PersistenceFacade.getInstance().createModuleReference("f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)");
+  }
+
+  public static SModuleReference jdkRef() {
+    return PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)");
   }
 
 

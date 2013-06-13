@@ -167,7 +167,7 @@ public abstract class StubSolutionIdea extends StubSolution {
 
   @Nullable
   public static Solution getJdkSolution() {
-    return (Solution) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.JDK);
+    return ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.jdkRef(), Solution.class);
   }
 
   private class StubSolutionScope extends ModuleScope {
