@@ -53,7 +53,6 @@
   <import index="qx6o" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" version="-1" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
-  <import index="oudx" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.dataFlow.presentation(MPS.Workbench/jetbrains.mps.ide.dataFlow.presentation@java_stub)" version="-1" implicit="yes" />
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4282822416100096601" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="WriteBlock" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="block" />
@@ -5656,8 +5655,8 @@
         </node>
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1410818700511174511" nodeInfo="in">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4282822416100097580" resolveInfo="ControlFlowGraph" />
-          <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5496206068112843477" nodeInfo="in">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oudx.~InstructionWrapper" resolveInfo="InstructionWrapper" />
+          <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2336885491111194273" nodeInfo="in">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4282822416100096467" resolveInfo="InstructionWrapper" />
           </node>
         </node>
       </node>
@@ -5843,8 +5842,8 @@
                       </node>
                       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7125738324217620657" nodeInfo="ir">
                         <property name="name" nameId="tpck.1169194664001" value="block" />
-                        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5496206068112812068" nodeInfo="in">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oudx.~IBlock" resolveInfo="IBlock" />
+                        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2336885491111143502" nodeInfo="in">
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4282822416100098574" resolveInfo="IBlock" />
                         </node>
                       </node>
                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4282822416100099751" nodeInfo="sn">
@@ -5860,7 +5859,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7125738324217620657" resolveInfo="block" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2774990161568294163" nodeInfo="nn">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oudx.~IBlock%dgetSourceNode()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeReference" resolveInfo="getSourceNode" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4282822416100098591" resolveInfo="getSourceNode" />
                               </node>
                             </node>
                           </node>
@@ -5958,7 +5957,7 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7125738324217620657" resolveInfo="block" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="802679297407714718" nodeInfo="nn">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oudx.~IBlock%dgetRuleNodeReference()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeReference" resolveInfo="getRuleNodeReference" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2593126716998029468" resolveInfo="getRuleNodeReference" />
                                   </node>
                                 </node>
                               </node>
