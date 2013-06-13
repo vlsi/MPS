@@ -58,9 +58,9 @@ public class ModelContentUtil {
       namespaces.add(ref.getModuleName());
     }
     for (SNode root : model.getRootNodes()) {
-      namespaces.add(NameUtil.namespaceFromConceptFQName(root.getConcept().getId()));
+      namespaces.add(root.getConcept().getLanguage().getQualifiedName());
       for (SNode child : jetbrains.mps.util.SNodeOperations.getDescendants(root, null)) {
-        namespaces.add(NameUtil.namespaceFromConceptFQName(child.getConcept().getId()));
+        namespaces.add(child.getConcept().getLanguage().getQualifiedName());
       }
     }
     // empty behavior model should have it's behavior aspect descriptor generated

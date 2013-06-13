@@ -10,11 +10,13 @@ import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
   public Mps30ApiMigration_MigrationScript(IOperationContext operationContext) {
@@ -157,6 +159,32 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
         return false;
       }
     });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "ModuleReference.fromString() -> PersistenceFacade";
+      }
+
+      public String getAdditionalInfo() {
+        return "ModuleReference.fromString() -> PersistenceFacade";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.StaticMethodCall";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return StubRefUtil.isStaticMethodCall(node, "jetbrains.mps.project.structure.modules.ModuleReference.fromString(java.lang.String):org.jetbrains.mps.openapi.module.SModuleReference");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode arg = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first());
+        StubRefUtil.replaceNode(node, _quotation_createNode_kyzgj4_b0b0a5(arg));
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
   }
 
   private static SNode _quotation_createNode_kyzgj4_b0a0c0a0() {
@@ -268,5 +296,26 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), facade.createNodeId("~ProgressMonitor")));
     return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_kyzgj4_b0b0a5(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)"), facade.createNodeId("~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade")));
+    quotedNode_3.setReference("classConcept", SReference.create("classConcept", quotedNode_3, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)"), facade.createNodeId("~PersistenceFacade")));
+    quotedNode_2.addChild("operand", quotedNode_3);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_4, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)"), facade.createNodeId("~PersistenceFacade.createModuleReference(java.lang.String):org.jetbrains.mps.openapi.module.SModuleReference")));
+    quotedNode_5 = (SNode) parameter_1;
+    if (quotedNode_5 != null) {
+      quotedNode_4.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_5));
+    }
+    quotedNode_2.addChild("operation", quotedNode_4);
+    return quotedNode_2;
   }
 }

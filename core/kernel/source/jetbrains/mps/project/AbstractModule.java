@@ -170,7 +170,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     for (SModuleReference usedLanguage : getModuleDescriptor().getUsedLanguages()) {
       Language language = ModuleRepositoryFacade.getInstance().getModule(usedLanguage, Language.class);
       if (language != null) {
-        languages.add(new SLanguageLanguageAdapter(language));
+        languages.add(new SLanguageLanguageAdapter(language.getModuleName()));
       }
     }
 
@@ -179,7 +179,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       if (devKit != null) {
         for (Language language : devKit.getAllExportedLanguages()) {
           if (language != null) {
-            languages.add(new SLanguageLanguageAdapter(language));
+            languages.add(new SLanguageLanguageAdapter(language.getModuleName()));
           }
         }
       }
@@ -187,7 +187,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     if (BootstrapLanguages.coreLanguage() != null) {
       // todo: ???
-      languages.add(new SLanguageLanguageAdapter(BootstrapLanguages.coreLanguage()));
+      languages.add(new SLanguageLanguageAdapter(BootstrapLanguages.CORE.getModuleName()));
     }
 
     return languages; // todo: maybe collect extended languages here

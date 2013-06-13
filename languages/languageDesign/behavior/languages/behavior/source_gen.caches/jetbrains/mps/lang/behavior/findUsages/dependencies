@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.behavior.findUsages.FindUsagesDescriptor" file="FindUsagesDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor" />
   </dependency>

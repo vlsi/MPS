@@ -35,7 +35,7 @@ public final class ModuleReference implements SModuleReference {
     text = text.trim();
     Matcher m = MODULE_REFERENCE.matcher(text);
     if (m.matches()) {
-      return new ModuleReference(m.group(2), m.group(1));
+      return new ModuleReference(m.group(2), ModuleId.fromString(m.group(1)));
     }
     return new ModuleReference(text);
   }

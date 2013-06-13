@@ -6,7 +6,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)" hash="-cjhbi3j5ln8xkktu9vx6o58totgg06h" />
   <dep model="r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)" hash="-4ft2nhxl0j5nmqay5hbhw30kch9f9ja" />
-  <dep model="r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)" hash="-6a1q6vjx6uyxwad9hsi1dddvxidib87" />
+  <dep model="r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)" hash="a5iojsypsl3mh6bkwtsguy7p4yv6a6p" />
   <common>
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />

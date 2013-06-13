@@ -204,7 +204,7 @@ public class TemplateProcessor {
     // process property and reference macros
     List<SNode> templateChildNodes = new ArrayList<SNode>();
     for (SNode templateChildNode : templateNode.getChildren()) {
-      String templateChildNodeConcept = templateChildNode.getConcept().getId();
+      String templateChildNodeConcept = templateChildNode.getConcept().getQualifiedName();
 
       if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
         myReductionContext.getQueryExecutor().expandPropertyMacro(templateChildNode, context.getInput(), templateNode, outputNode, context);
@@ -256,7 +256,7 @@ public class TemplateProcessor {
 
   @Nullable
   private List<SNode> applyMacro(SNode macro, SNode templateNode, @NotNull TemplateContext templateContext, String outerMappingName) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
-    String macroConceptFQName = macro.getConcept().getId();
+    String macroConceptFQName = macro.getConcept().getQualifiedName();
     List<SNode> outputNodes = new ArrayList<SNode>();
     String mappingName = GeneratorUtilEx.getMappingName_NodeMacro(macro, outerMappingName);
 
@@ -429,7 +429,7 @@ public class TemplateProcessor {
         try {
           TemplateContext newcontext = templateContext.subContext(mappingName, newInputNode);
           if (macro_mapperFunction != null) {
-            SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConcept().getId(), myOutputModel, myGenerator.getScope(), false);
+            SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConcept().getQualifiedName(), myOutputModel, myGenerator.getScope(), false);
             myTracer.pushOutputNodeToReplaceLater(childToReplaceLater);
             outputNodes.add(childToReplaceLater);
             // execute the 'mapper' function later

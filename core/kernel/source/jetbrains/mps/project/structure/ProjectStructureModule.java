@@ -69,7 +69,6 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ProjectStructureModule extends AbstractModule implements CoreComponent {
 
-  //  private static final Logger LOG = Logger.getLogger(ProjectStructureModule.class);
   private static final SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString(
       "642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)");
 
@@ -186,7 +185,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   @Override
   public Set<SLanguage> getUsedLanguages() {
     return Collections.<SLanguage>singleton(
-        new SLanguageLanguageAdapter(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.PROJECT, Language.class)));
+        new SLanguageLanguageAdapter(BootstrapLanguages.PROJECT.getModuleName()));
   }
 
   private void removeModel(SModel md) {
