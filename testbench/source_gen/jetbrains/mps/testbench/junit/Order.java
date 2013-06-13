@@ -7,11 +7,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 
-@Retention(value = RetentionPolicy.RUNTIME)
-@Target(value = {ElementType.METHOD})
-public /**
+/**
  * fyodor, Sep 6, 2010
  */
-@interface Order {
+@Retention(value = RetentionPolicy.RUNTIME)
+@Target(value = {ElementType.METHOD})
+public @interface Order {
   int value() default -1;
 }
