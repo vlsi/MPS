@@ -7,8 +7,8 @@ import java.awt.Graphics;
 import java.awt.Color;
 
 public class JumpBlock extends AbstractBlock {
-  public JumpBlock(int x, int y, int width, int height, SNodeReference source, String caption) {
-    super(x, y, width, height, source, caption);
+  public JumpBlock(int x, int y, int width, int height, SNodeReference source, String caption, String ruleNodeReference) {
+    super(x, y, width, height, source, caption, ruleNodeReference);
   }
 
   @Override

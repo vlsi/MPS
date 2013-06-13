@@ -15,7 +15,19 @@
  */
 package jetbrains.mps.lang.dataFlow.framework.instructions;
 
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
+
 public class TryInstruction extends Instruction {
+
+  public TryInstruction() {
+    super();
+  }
+
+  public TryInstruction(String ruleNodeReference) {
+    super(ruleNodeReference);
+  }
+
   @Override
   public String commandPresentation() {
     return "try";

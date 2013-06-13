@@ -16,7 +16,7 @@ public class IndexedTupleLiteral_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (_context.getNode() == SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true)) {
       for (SNode mbr : SLinkOperations.getTargets(_context.getNode(), "component", true)) {
-        _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.as(mbr, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false));
+        _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.as(mbr, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "r:584f574a-ff70-48d8-8e32-f847d7f18b78(jetbrains.mps.baseLanguage.tuples.dataFlow)/1238857003685");
       }
     } else {
       for (SNode mbr : SLinkOperations.getTargets(_context.getNode(), "component", true)) {

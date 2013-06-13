@@ -7,8 +7,8 @@ import java.awt.Graphics;
 import java.awt.Color;
 
 public class ReturnBlock extends AbstractBlock {
-  public ReturnBlock(int x, int y, int width, int height, SNodeReference source, String caption) {
-    super(x, y, width, height, source, caption);
+  public ReturnBlock(int x, int y, int width, int height, SNodeReference source, String caption, String ruleNodeReference) {
+    super(x, y, width, height, source, caption, ruleNodeReference);
   }
 
   @Override

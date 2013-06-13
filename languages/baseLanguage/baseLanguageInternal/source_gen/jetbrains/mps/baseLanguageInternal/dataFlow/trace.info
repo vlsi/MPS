@@ -32,7 +32,7 @@
     <nodeInfo nodeId="3421461530438560065" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="22" startPosition="102" endLine="23" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3421461530438560073" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="23" startPosition="162" endLine="24" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3421461530438560082" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="25" startPosition="34" endLine="26" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3421461530438560096" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="28" startPosition="28" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3421461530438560096" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="28" startPosition="28" endLine="29" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3421461530438560114" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="31" startPosition="140" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3421461530438560125" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="34" startPosition="150" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3421461530438560062" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InternalAnonymousClassCreator_DataFlow#()V" />
@@ -43,7 +43,7 @@
     <nodeInfo nodeId="3421461530438560062" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="22" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
     <scopeInfo nodeId="3421461530438560062" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="19" startPosition="51" endLine="19" endPosition="51" />
     <scopeInfo nodeId="3421461530438560081" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="25" startPosition="34" endLine="26" endPosition="190" />
-    <scopeInfo nodeId="3421461530438560095" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="28" startPosition="28" endLine="29" endPosition="42" />
+    <scopeInfo nodeId="3421461530438560095" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="28" startPosition="28" endLine="29" endPosition="149" />
     <scopeInfo nodeId="3421461530438560113" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="31" startPosition="140" endLine="32" endPosition="48" />
     <scopeInfo nodeId="3421461530438560124" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="34" startPosition="150" endLine="35" endPosition="60" />
     <scopeInfo nodeId="3421461530438560062" fileName="InternalAnonymousClassCreator_DataFlow.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />

@@ -15,6 +15,6 @@ public class VectorInitializer_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rowsCount", true));
-    _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "rowIndex", true));
+    _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "rowIndex", true), "r:48b4a246-e052-4ee3-ba92-1505c2e94044(jetbrains.mps.baseLanguage.math.dataFlow)/5359814223490146698");
   }
 }

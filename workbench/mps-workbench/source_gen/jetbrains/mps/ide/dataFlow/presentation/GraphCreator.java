@@ -26,21 +26,22 @@ public class GraphCreator implements IGraphCreator<InstructionWrapper> {
       pointer = null;
     }
     String caption = instruction.toString();
+    String rule = instruction.getRuleReference();
     if (instruction instanceof IfJumpInstruction) {
-      return new AltBlock(x, y, width, height, pointer, caption);
+      return new AltBlock(x, y, width, height, pointer, caption, rule);
     }
     if (instruction instanceof JumpInstruction) {
-      return new JumpBlock(x, y, width, height, pointer, caption);
+      return new JumpBlock(x, y, width, height, pointer, caption, rule);
     }
     if (instruction instanceof WriteInstruction) {
-      return new WriteBlock(x, y, width, height, pointer, caption);
+      return new WriteBlock(x, y, width, height, pointer, caption, rule);
     }
     if (instruction instanceof ReadInstruction) {
-      return new ReadBlock(x, y, width, height, pointer, caption);
+      return new ReadBlock(x, y, width, height, pointer, caption, rule);
     }
     if (instruction instanceof RetInstruction) {
-      return new ReturnBlock(x, y, width, height, pointer, caption);
+      return new ReturnBlock(x, y, width, height, pointer, caption, rule);
     }
-    return new SimpleBlock(x, y, width, height, pointer, caption);
+    return new SimpleBlock(x, y, width, height, pointer, caption, rule);
   }
 }

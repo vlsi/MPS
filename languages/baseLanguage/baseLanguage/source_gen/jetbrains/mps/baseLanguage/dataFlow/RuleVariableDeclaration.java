@@ -35,6 +35,7 @@ public class RuleVariableDeclaration extends DataFlowConstructor {
               boolean before = false;
               int position = ((Program) (o)).getEnd(object);
               Instruction instruction = new nullableInstruction(node);
+              instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/6868777471677432643");
               instruction.setSource(node);
               ((Program) (o)).insert(instruction, position, true, before);
             }
@@ -47,6 +48,7 @@ public class RuleVariableDeclaration extends DataFlowConstructor {
               boolean before = false;
               int position = ((Program) (o)).getEnd(object);
               Instruction instruction = new notNullInstruction(node);
+              instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/6868777471677432655");
               instruction.setSource(node);
               ((Program) (o)).insert(instruction, position, true, before);
             }

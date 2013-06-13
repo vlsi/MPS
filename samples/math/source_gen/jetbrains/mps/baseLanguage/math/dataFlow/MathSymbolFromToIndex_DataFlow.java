@@ -14,7 +14,7 @@ public class MathSymbolFromToIndex_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitWrite(_context.getNode());
+    _context.getBuilder().emitWrite(_context.getNode(), "r:48b4a246-e052-4ee3-ba92-1505c2e94044(jetbrains.mps.baseLanguage.math.dataFlow)/1236595061381");
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "from", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), "upperBound", true));
   }
