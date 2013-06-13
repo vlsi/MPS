@@ -19,9 +19,9 @@ import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import com.intellij.idea.IdeaTestApplication;
+import jetbrains.mps.library.LibraryInitializer;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.project.ProjectManager;
@@ -97,7 +97,11 @@ public class IdeaEnvironment implements Environment {
     }
 
     // todo: IdeaTestEnvironment - default plugins: jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make 
-    // todo: IdeaTestEnv - setMacro and loadLibraries from Environment 
+    // todo: IdeaTestEnv - setMacro from Environment 
+
+    // todo: copy-paste from mps-env. should be or 1) more workbench-like or 2) base/util class? 
+    // todo: dispose lib contributors like in mps-env 
+    LibraryInitializer.getInstance().addContributor(EnvironmentUtils.createLibContributor(false, config.libs()));
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
