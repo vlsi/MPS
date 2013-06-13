@@ -16,6 +16,9 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.components.ProjectComponent;
@@ -105,6 +108,10 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
             myComponent.add(myInspectorComponent.getExternalComponent(), BorderLayout.CENTER);
             myMessagePanel.setNode(null);
             myComponent.add(myMessagePanel, BorderLayout.NORTH);
+            AnAction moveDownAction = ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
+            moveDownAction.registerCustomShortcutSet(moveDownAction.getShortcutSet(), myComponent);
+            AnAction moveUpAction = ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
+            moveUpAction.registerCustomShortcutSet(moveUpAction.getShortcutSet(), myComponent);
           }
         });
       }
