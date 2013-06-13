@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.workbench.goTo.navigation;
 
-import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.progress.SubProgressKind;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;

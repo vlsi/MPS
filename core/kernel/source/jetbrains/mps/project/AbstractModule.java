@@ -23,7 +23,7 @@ import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.IModule.ModelAdjuster;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;

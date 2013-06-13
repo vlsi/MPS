@@ -57,7 +57,7 @@
     <nodeInfo nodeId="4774203567228489393" fileName="ReloadSession.java" startLine="104" startPosition="84" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4774203567228170196" fileName="ReloadSession.java" startLine="103" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParticipant#(Ljava/lang/Class;)null" />
     <nodeInfo nodeId="174954467868287388" fileName="ReloadSession.java" startLine="75" startPosition="24" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="174954467868287367" fileName="ReloadSession.java" startLine="70" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doReload#(Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <nodeInfo nodeId="174954467868287367" fileName="ReloadSession.java" startLine="70" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doReload#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
     <scopeInfo nodeId="4774203567228726235" fileName="ReloadSession.java" startLine="109" startPosition="0" endLine="109" endPosition="42">
       <varInfo nodeId="4774203567228726237" varName="e" />
     </scopeInfo>
@@ -381,13 +381,16 @@
     <unitInfo nodeId="4774203567222745031" fileName="ReloadListener.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ReloadListener" />
   </root>
   <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/4774203567223269590">
-    <nodeInfo nodeId="4774203567223323805" fileName="ReloadParticipant.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Ljetbrains/mps/progress/ProgressMonitor;)V" />
-    <nodeInfo nodeId="4774203567223323811" fileName="ReloadParticipant.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEmpty#()Z" />
-    <scopeInfo nodeId="4774203567223323805" fileName="ReloadParticipant.java" startLine="8" startPosition="0" endLine="9" endPosition="0">
+    <nodeInfo nodeId="4774203567223323805" fileName="ReloadParticipant.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
+    <nodeInfo nodeId="4774203567223323811" fileName="ReloadParticipant.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEmpty#()Z" />
+    <nodeInfo nodeId="2555209654102878815" fileName="ReloadParticipant.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadParticipant#()V" />
+    <scopeInfo nodeId="2555209654102878819" fileName="ReloadParticipant.java" startLine="8" startPosition="30" endLine="8" endPosition="30" />
+    <scopeInfo nodeId="4774203567223323805" fileName="ReloadParticipant.java" startLine="11" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="4774203567223323809" varName="monitor" />
     </scopeInfo>
-    <scopeInfo nodeId="4774203567223323811" fileName="ReloadParticipant.java" startLine="10" startPosition="0" endLine="11" endPosition="0" />
-    <unitInfo nodeId="4774203567223269590" fileName="ReloadParticipant.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ReloadParticipant" />
+    <scopeInfo nodeId="4774203567223323811" fileName="ReloadParticipant.java" startLine="13" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="2555209654102878815" fileName="ReloadParticipant.java" startLine="8" startPosition="0" endLine="10" endPosition="0" />
+    <unitInfo nodeId="4774203567223269590" fileName="ReloadParticipant.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ReloadParticipant" />
   </root>
   <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/4774203567223296336">
     <nodeInfo nodeId="4774203567223296502" fileName="ReloadAction.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runAction#(null)V" />
@@ -549,7 +552,7 @@
     <nodeInfo nodeId="4989082803905356206" fileName="FileProcessor.java" startLine="72" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notify#(Ljetbrains/mps/vfs/FileSystemListener;Ljetbrains/mps/ide/platform/watching/FileProcessor/ListenerData;)V" />
     <nodeInfo nodeId="9101652812498380477" fileName="FileProcessor.java" startLine="94" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vfs/FileSystemListener;Ljava/util/Set;)V" />
     <nodeInfo nodeId="4237144640466539198" fileName="FileProcessor.java" startLine="41" startPosition="54" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4237144640466539185" fileName="FileProcessor.java" startLine="38" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <nodeInfo nodeId="4237144640466539185" fileName="FileProcessor.java" startLine="38" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
     <scopeInfo nodeId="6069288648216988292" fileName="FileProcessor.java" startLine="184" startPosition="28" endLine="184" endPosition="28" />
     <scopeInfo nodeId="7799350397879215653" fileName="FileProcessor.java" startLine="34" startPosition="26" endLine="35" endPosition="130" />
     <scopeInfo nodeId="4989082803905801523" fileName="FileProcessor.java" startLine="59" startPosition="30" endLine="60" endPosition="19" />
@@ -850,7 +853,7 @@
     <nodeInfo nodeId="9045182831066365401" fileName="EventProcessor.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDelete#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
     <nodeInfo nodeId="9045182831066365478" fileName="EventProcessor.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCreate#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
     <nodeInfo nodeId="9045182831066366115" fileName="EventProcessor.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processContentChanged#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
-    <nodeInfo nodeId="1851338810970286439" fileName="EventProcessor.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <nodeInfo nodeId="1851338810970286439" fileName="EventProcessor.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
     <nodeInfo nodeId="1851338810971899567" fileName="EventProcessor.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEmpty#()Z" />
     <nodeInfo nodeId="8474613039627890653" fileName="EventProcessor.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EventProcessor#()V" />
     <scopeInfo nodeId="8474613039627890655" fileName="EventProcessor.java" startLine="9" startPosition="27" endLine="9" endPosition="27" />

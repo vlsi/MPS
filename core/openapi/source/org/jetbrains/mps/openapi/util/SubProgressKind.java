@@ -13,15 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.progress;
+package org.jetbrains.mps.openapi.util;
 
 /**
- * moved to {@link org.jetbrains.mps.openapi.util.ProgressMonitor}
+ * Evgeny Gryaznov, 10/3/11
  */
-@Deprecated
-public interface ProgressMonitor extends org.jetbrains.mps.openapi.util.ProgressMonitor {
-  ProgressMonitor subTask(int work);
-
-  ProgressMonitor subTask(int work, SubProgressKind kind);
-
+public enum SubProgressKind {
+  DEFAULT,
+  REPLACING,
+  AS_COMMENT,
+  IGNORED
 }

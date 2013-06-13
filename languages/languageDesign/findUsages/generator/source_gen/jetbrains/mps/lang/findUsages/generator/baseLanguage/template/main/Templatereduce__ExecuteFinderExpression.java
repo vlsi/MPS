@@ -33,8 +33,8 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
     try {
       environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789321856");
-      tnode1.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils.executeFinder(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SearchScope,jetbrains.mps.progress.ProgressMonitor):java.util.List")));
       tnode1.setReference("classConcept", SReference.create("classConcept", tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils")));
+      tnode1.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils.executeFinder(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SearchScope,org.jetbrains.mps.openapi.util.ProgressMonitor):java.util.List")));
 
       {
         final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -138,7 +138,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a4a1a1a1a1a1a8a1a2);
                       environment.nodeCopied(context, tnode13, "tpl/r:00000000-0000-4000-0000-011c8959035c/5097877160789322164");
-                      tnode13.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode13, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.subTask(int):jetbrains.mps.progress.ProgressMonitor")));
+                      tnode13.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode13, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor")));
 
                       {
                         final SNode tnode14 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");

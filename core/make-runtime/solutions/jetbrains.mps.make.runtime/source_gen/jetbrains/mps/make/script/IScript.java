@@ -5,7 +5,7 @@ package jetbrains.mps.make.script;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public interface IScript {
   public boolean isValid();

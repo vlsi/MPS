@@ -8,7 +8,7 @@ import com.intellij.util.PathUtil;
 import java.io.File;
 import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.LinkedHashSet;

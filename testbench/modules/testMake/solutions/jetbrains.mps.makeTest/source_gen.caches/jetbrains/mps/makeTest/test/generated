@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7945mjjnhkutbk6cu6p0l58ytca28oh">
+<dependencies version="2" modelHash="89me5r563fcr6gkwf42ou4h4uvvsesq">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(MPS.IDEA/com.intellij.openapi.extensions@java_stub)" />
@@ -57,7 +57,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CheckDependencies_Test.java" />
   </source>
-  <source id="1957199320903967759" name="MakeAssert" hash="55vr86kl4cnbxduprswgvuv9j2vd9qw">
+  <source id="1957199320903967759" name="MakeAssert" hash="8ubdt9c1s48zyksf0rasnlul12q7sid">
     <dep root="7196776143116381095" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
@@ -98,7 +98,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="NotMake_Test.java" />
   </source>
-  <source id="7196776143116381095" name="ChangeModelProcessor" hash="8l7vmglc03a5unjhjplkz0ahq7nv7xr">
+  <source id="7196776143116381095" name="ChangeModelProcessor" hash="4ivz9pfbiycu37w0l72c781g1mko1bj">
     <dep root="1957199320903967681" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />

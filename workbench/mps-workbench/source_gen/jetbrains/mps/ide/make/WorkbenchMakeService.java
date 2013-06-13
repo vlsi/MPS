@@ -27,7 +27,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.MakeNotification;

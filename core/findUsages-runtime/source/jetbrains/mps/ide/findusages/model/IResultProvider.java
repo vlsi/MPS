@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.findusages.model;
 
 import jetbrains.mps.ide.findusages.IExternalizeable;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 
 public interface IResultProvider extends IExternalizeable {

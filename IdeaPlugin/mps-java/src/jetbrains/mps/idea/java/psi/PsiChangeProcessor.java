@@ -9,7 +9,7 @@ import jetbrains.mps.ide.platform.watching.ReloadParticipant;
 import jetbrains.mps.idea.java.psi.PsiListener.FSMove;
 import jetbrains.mps.idea.java.psi.PsiListener.FSRename;
 import jetbrains.mps.idea.java.psi.PsiListener.PsiEvent;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;

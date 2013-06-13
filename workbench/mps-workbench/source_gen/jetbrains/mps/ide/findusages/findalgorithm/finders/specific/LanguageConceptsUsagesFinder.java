@@ -5,7 +5,8 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
@@ -28,7 +29,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
   }
 
   @Override
-  public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
+  public SearchResults find(SearchQuery query, @NotNull ProgressMonitor monitor) {
     SearchResults<SNode> searchResults = new SearchResults<SNode>();
     IHolder holder = query.getObjectHolder();
     assert holder instanceof ModuleHolder;
@@ -62,7 +63,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
       IScope scope = new ModelsScope(models.toArray(new SModel[models.size()]));
       SearchResults<SNode> results = new SearchResults();
       for (SNode node : roots) {
-        if (monitor != null && monitor.isCanceled()) {
+        if (monitor.isCanceled()) {
           break;
         }
         results.addAll(FindUtils.getSearchResults(monitor.subTask(1), node, scope, "jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"));

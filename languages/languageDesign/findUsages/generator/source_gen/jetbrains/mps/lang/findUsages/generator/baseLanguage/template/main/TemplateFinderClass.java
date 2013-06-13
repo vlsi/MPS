@@ -1319,7 +1319,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a9a1a51a1a3);
                   environment.nodeCopied(context, tnode92, "tpl/r:00000000-0000-4000-0000-011c8959035c/5140158946217876019");
-                  tnode92.setReference("classifier", SReference.create("classifier", tnode92, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor")));
+                  tnode92.setReference("classifier", SReference.create("classifier", tnode92, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode92));

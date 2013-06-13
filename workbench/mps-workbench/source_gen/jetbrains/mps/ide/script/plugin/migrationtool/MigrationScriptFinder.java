@@ -15,7 +15,7 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import java.util.IdentityHashMap;
 import java.util.Collections;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;

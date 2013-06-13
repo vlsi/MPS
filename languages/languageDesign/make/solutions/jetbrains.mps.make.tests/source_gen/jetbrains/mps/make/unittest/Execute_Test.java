@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IFeedback;
 import org.hamcrest.BaseMatcher;

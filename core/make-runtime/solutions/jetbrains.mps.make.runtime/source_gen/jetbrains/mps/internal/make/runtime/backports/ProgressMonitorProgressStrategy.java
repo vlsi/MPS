@@ -4,7 +4,7 @@ package jetbrains.mps.internal.make.runtime.backports;
 
 import jetbrains.mps.internal.make.runtime.script.AbstractProgressStrategy;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;

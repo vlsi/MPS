@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2ges9dfvavswtpqwxwv4ijw9bfmbaly">
+<dependencies version="2" modelHash="-d5uwqgbixxo7wecnsetg5lumi32nupb">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" hash="a5h93nuoh92rfbvnb4w9h69ckv1nm2" />
-  <common hash="-et67lquq23a30owiwj6l23lb5jwqf3c" />
-  <source id="2082624981609760242" name="IMakeService" hash="-chpya4t6gps0mxlmun3jqx05ry4sna">
+  <common hash="-6h8n4nys634tl27l8b59ga7p5kdlmo3" />
+  <source id="2082624981609760242" name="IMakeService" hash="3e3oexcfkgtx5yxkpkvajvfqqfnksg2">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
     <file name="IMakeService.java" />
