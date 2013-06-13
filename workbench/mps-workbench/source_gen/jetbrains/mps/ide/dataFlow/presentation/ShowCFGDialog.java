@@ -4,6 +4,7 @@ package jetbrains.mps.ide.dataFlow.presentation;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JScrollPane;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
@@ -21,7 +22,6 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.Color;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
-import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import javax.swing.Scrollable;
 import java.awt.BorderLayout;
@@ -35,7 +35,7 @@ public class ShowCFGDialog extends DialogWrapper {
   private ShowCFGDialog.MyComponent myComponent;
   private ControlFlowGraph<InstructionWrapper> myControlFlowGraph;
 
-  public ShowCFGDialog(ControlFlowGraph<InstructionWrapper> graph, final IOperationContext operationContext, Project project) {
+  public ShowCFGDialog(@NotNull ControlFlowGraph<InstructionWrapper> graph, @NotNull final IOperationContext operationContext, @NotNull Project project, @NotNull String title) {
     super(project);
     this.myComponent = new ShowCFGDialog.MyComponent();
     this.myScrollPane = ScrollPaneFactory.createScrollPane(myComponent);
@@ -56,7 +56,8 @@ public class ShowCFGDialog extends DialogWrapper {
           menu.add(ruleItem);
           menu.add(nodeItem);
           final SNodeReference ruleNodeReference = block.getRuleNodeReference();
-          menu.setEnabled(ruleNodeReference != null);
+          ruleItem.setEnabled(ruleNodeReference != null);
+          nodeItem.setEnabled(sourceRef != null);
           menu.show(event.getComponent(), event.getX(), event.getY());
           ruleItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent p0) {
@@ -74,6 +75,7 @@ public class ShowCFGDialog extends DialogWrapper {
       }
     });
     setModal(false);
+    setTitle(title);
     init();
   }
 
