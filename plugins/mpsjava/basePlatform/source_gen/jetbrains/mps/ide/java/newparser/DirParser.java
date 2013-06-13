@@ -10,15 +10,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.io.IOException;
 import jetbrains.mps.vfs.IFileUtils;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
@@ -35,12 +33,13 @@ public class DirParser {
   private List<IFile> mySourceDirs;
   private List<IFile> mySuccessfulFiles;
   private SModule myModule;
-  private Project myProject;
+  private ModelAccess myModelAccess;
   private JavaParser myJavaParser = new JavaParser();
+
 
   public DirParser(SModule module, Project project) {
     myModule = module;
-    myProject = project;
+    myModelAccess = project.getRepository().getModelAccess();
   }
 
   public DirParser(SModule module, Project project, IFile sourceDir) {
@@ -77,19 +76,23 @@ public class DirParser {
       addSourceFromDirectory(sourceDir);
     }
 
-    ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+    Runnable finalize = new Runnable() {
       @Override
       public void run() {
         for (SModel m : ListSequence.fromList(myAffectedModels)) {
           Iterable<SNode> roots = SModelOperations.getRoots(m, null);
           JavaParser.tryResolveUnknowns(roots);
           JavaParser.tryResolveDynamicRefs(roots);
-          if (m instanceof EditableSModel) {
-            ((EditableSModel) m).save();
-          }
+          // <node> 
         }
       }
-    }, myProject);
+    };
+
+    if (myModelAccess.isCommandAction()) {
+      finalize.run();
+    } else {
+      myModelAccess.executeUndoTransparentCommand(finalize);
+    }
 
   }
 
@@ -122,7 +125,7 @@ public class DirParser {
         addSourceFromDirectory(file);
 
       } else if (file.getName().endsWith(".java")) {
-        MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
+        myModelAccess.runReadAction(new Runnable() {
           public void run() {
             try {
               JavaParser.JavaParseResult parseRes = parseFile(file);
@@ -170,7 +173,7 @@ public class DirParser {
     // do model stuff 
     final String finalPkg = pkg.value;
     if (pkg.value != null && ListSequence.fromList(roots).count() > 0) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      myModelAccess.executeCommand(new Runnable() {
         @Override
         public void run() {
           SModel mdl = registerModelForPackage(finalPkg);

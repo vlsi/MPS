@@ -1,3 +1,4 @@
+package pkg;
 
 public class Statements {
   void method(int arg) {
