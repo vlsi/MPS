@@ -41,6 +41,7 @@ import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
@@ -133,14 +134,14 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             if (myMetadataChangeSet != null) {
-              DiffTemporaryModule.unregisterModel(myMetadataChangeSet.getOldModel().getModelDescriptor(), p);
-              DiffTemporaryModule.unregisterModel(myMetadataChangeSet.getNewModel().getModelDescriptor(), p);
+              DiffTemporaryModule.unregisterModel(myMetadataChangeSet.getOldModel(), p);
+              DiffTemporaryModule.unregisterModel(myMetadataChangeSet.getNewModel(), p);
             }
             if (!(myOldRegistered)) {
-              DiffTemporaryModule.unregisterModel(myChangeSet.getOldModel().getModelDescriptor(), p);
+              DiffTemporaryModule.unregisterModel(myChangeSet.getOldModel(), p);
             }
             if (!(myNewRegistered)) {
-              DiffTemporaryModule.unregisterModel(myChangeSet.getNewModel().getModelDescriptor(), p);
+              DiffTemporaryModule.unregisterModel(myChangeSet.getNewModel(), p);
             }
           }
         });
@@ -236,7 +237,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     if (myMetadataChangeSet != null && myEditable) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          MetadataUtil.applyMetadataChanges(myChangeSet.getNewModel(), myMetadataChangeSet.getNewModel());
+          MetadataUtil.applyMetadataChanges(as_vk52pz_a0a0a0a0a0a0a0a0ib(myChangeSet.getNewModel(), SModelBase.class).getSModelInternal(), as_vk52pz_a0b0a0a0a0a0a0a0ib(myMetadataChangeSet.getNewModel(), SModelBase.class).getSModelInternal());
         }
       });
     }
@@ -270,7 +271,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
           myChangeSet
         );
         SNodeId nodeId = (rootId == null ?
-          ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) myMetadataChangeSet.getOldModel().getModelDescriptor()), null)).first().getNodeId() :
+          ListSequence.fromList(SModelOperations.getRoots(myMetadataChangeSet.getOldModel(), null)).first().getNodeId() :
           rootId
         );
         if (myRootDifferencePane == null) {
@@ -436,7 +437,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
 
     @Override
     protected Iterable<SModel> getModels() {
-      return Arrays.asList(myChangeSet.getNewModel(), myChangeSet.getOldModel());
+      return Arrays.asList(as_vk52pz_a0a0a0d74(myChangeSet.getNewModel(), SModelBase.class).getSModelInternal(), as_vk52pz_a0b0a0d74(myChangeSet.getOldModel(), SModelBase.class).getSModelInternal());
     }
 
     @Override
@@ -453,5 +454,33 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     protected void onSelectRoot(@Nullable SNodeId rootId) {
       changeCurrentRoot(rootId);
     }
+  }
+
+  private static <T> T as_vk52pz_a0a0a0a0a0a0a0a0ib(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_vk52pz_a0b0a0a0a0a0a0a0ib(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_vk52pz_a0a0a0d74(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_vk52pz_a0b0a0d74(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }

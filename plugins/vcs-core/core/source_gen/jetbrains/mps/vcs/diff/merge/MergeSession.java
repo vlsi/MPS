@@ -32,6 +32,7 @@ import java.util.Collections;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Comparator;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -264,15 +265,15 @@ public class MergeSession {
   }
 
   public SModel getBaseModel() {
-    return myMineChangeSet.getOldModel();
+    return as_bow6nj_a0a0a63(myMineChangeSet.getOldModel(), SModelBase.class).getSModelInternal();
   }
 
   public SModel getMyModel() {
-    return myMineChangeSet.getNewModel();
+    return as_bow6nj_a0a0a73(myMineChangeSet.getNewModel(), SModelBase.class).getSModelInternal();
   }
 
   public SModel getRepositoryModel() {
-    return myRepositoryChangeSet.getNewModel();
+    return as_bow6nj_a0a0a83(myRepositoryChangeSet.getNewModel(), SModelBase.class).getSModelInternal();
   }
 
   public ChangeSet getMyChangeSet() {
@@ -489,6 +490,27 @@ public class MergeSession {
       checkedDotOperand.someChangesInvalidated();
     }
 
+  }
+
+  private static <T> T as_bow6nj_a0a0a63(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_bow6nj_a0a0a73(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_bow6nj_a0a0a83(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 
   private static boolean eq_bow6nj_a0a0a0a0a0a0b0d84(Object a, Object b) {

@@ -19,6 +19,7 @@ import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
+import jetbrains.mps.extapi.model.SModelBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -43,10 +44,10 @@ public class ChangeEditorMessageFactory {
       messageTarget = new ReferenceMessageTarget(((SetReferenceChange) change).getRole());
     } else if (change instanceof NodeGroupChange) {
       NodeGroupChange ngc = ((NodeGroupChange) change);
-      SModel changeModel = change.getChangeSet().getNewModel();
+      SModel changeModel = as_4eohk0_a0a0b0c3a1(change.getChangeSet().getNewModel(), SModelBase.class).getSModelInternal();
       boolean reversed = changeModel != editedModel;
       if (reversed) {
-        changeModel = change.getChangeSet().getOldModel();
+        changeModel = as_4eohk0_a0a0a0d0c3a1(change.getChangeSet().getOldModel(), SModelBase.class).getSModelInternal();
       }
 
       String role = ngc.getRole();
@@ -111,5 +112,19 @@ public class ChangeEditorMessageFactory {
 
   public static List<ChangeEditorMessage> createMessages(SModel editedModel, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker) {
     return ChangeEditorMessageFactory.createMessages(editedModel, change, owner, conflictChecker, true);
+  }
+
+  private static <T> T as_4eohk0_a0a0b0c3a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_4eohk0_a0a0a0d0c3a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }

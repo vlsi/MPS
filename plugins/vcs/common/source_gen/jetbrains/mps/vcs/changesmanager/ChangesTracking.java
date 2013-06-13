@@ -175,7 +175,7 @@ public class ChangesTracking {
     if (myDifference.getChangeSet() != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (myDifference.getChangeSet().getNewModel().getModelDescriptor() != myModelDescriptor) {
+          if (myDifference.getChangeSet().getNewModel() != myModelDescriptor) {
             _force.value = true;
           }
         }
@@ -598,7 +598,7 @@ public class ChangesTracking {
 
   protected static Logger LOG = LogManager.getLogger(ChangesTracking.class);
 
-  private static SModel check_5iuzi5_a0a0a52(ChangeSet checkedDotOperand) {
+  private static org.jetbrains.mps.openapi.model.SModel check_5iuzi5_a0a0a52(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOldModel();
     }

@@ -19,6 +19,7 @@ import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
+import jetbrains.mps.extapi.model.SModelBase;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import jetbrains.mps.ide.icons.IdeIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -71,8 +72,8 @@ public class RootDifferencePane {
 
     myStatusBar = statusBar;
 
-    myOldEditor = addEditor(0, myChangeSet.getOldModel(), titles[0]);
-    myNewEditor = addEditor(1, myChangeSet.getNewModel(), titles[1]);
+    myOldEditor = addEditor(0, as_guncoj_a0b0a6a22(myChangeSet.getOldModel(), SModelBase.class).getSModelInternal(), titles[0]);
+    myNewEditor = addEditor(1, as_guncoj_a0b0a7a22(myChangeSet.getNewModel(), SModelBase.class).getSModelInternal(), titles[1]);
     linkEditors(true);
     linkEditors(false);
 
@@ -159,8 +160,8 @@ public class RootDifferencePane {
 
   public void setRootId(SNodeId rootId) {
     myRootId = rootId;
-    myOldEditor.editRoot(myProject, myRootId, myChangeSet.getOldModel());
-    myNewEditor.editRoot(myProject, myRootId, myChangeSet.getNewModel());
+    myOldEditor.editRoot(myProject, myRootId, as_guncoj_a0c0a1a23(myChangeSet.getOldModel(), SModelBase.class).getSModelInternal());
+    myNewEditor.editRoot(myProject, myRootId, as_guncoj_a0c0a2a23(myChangeSet.getNewModel(), SModelBase.class).getSModelInternal());
     rehighlight();
     myTraverser.goToFirstChangeLater();
   }
@@ -202,7 +203,7 @@ public class RootDifferencePane {
       myTopPanel
     )).add(separator, gbc);
     ListSequence.fromList(myEditorSeparators).addElement(separator);
-    if (!(SModelOperations.isReadOnly(myChangeSet.getNewModel().getModelDescriptor()))) {
+    if (!(SModelOperations.isReadOnly(myChangeSet.getNewModel()))) {
       DiffButtonsPainter.addTo(this, myOldEditor, layout, inspector);
       DiffButtonsPainter.addTo(this, myNewEditor, layout, inspector);
     }
@@ -234,8 +235,8 @@ public class RootDifferencePane {
       }
     });
     for (ModelChange change : Sequence.fromIterable(myChangeSet.getChangesForRoot(myRootId))) {
-      higlightChange(myOldEditor, myChangeSet.getOldModel(), change);
-      higlightChange(myNewEditor, myChangeSet.getNewModel(), change);
+      higlightChange(myOldEditor, as_guncoj_a0b0a0b0nb(myChangeSet.getOldModel(), SModelBase.class).getSModelInternal(), change);
+      higlightChange(myNewEditor, as_guncoj_a0b0b0b0nb(myChangeSet.getNewModel(), SModelBase.class).getSModelInternal(), change);
     }
     ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
       public void visit(ChangeGroupLayout b) {
@@ -263,7 +264,7 @@ public class RootDifferencePane {
     myOldEditor.unhighlightAllChanges();
 
     if (myNewEditor.getEditedNode() == null) {
-      myNewEditor.editRoot(myProject, myRootId, myChangeSet.getNewModel());
+      myNewEditor.editRoot(myProject, myRootId, as_guncoj_a0c0a0a4a14(myChangeSet.getNewModel(), SModelBase.class).getSModelInternal());
     }
 
     myNewEditor.getMainEditor().rebuildEditorContent();
@@ -298,4 +299,53 @@ public class RootDifferencePane {
   }
 
 
+
+  private static <T> T as_guncoj_a0b0a6a22(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_guncoj_a0b0a7a22(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_guncoj_a0c0a1a23(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_guncoj_a0c0a2a23(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_guncoj_a0b0a0b0nb(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_guncoj_a0b0b0b0nb(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_guncoj_a0c0a0a4a14(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
 }

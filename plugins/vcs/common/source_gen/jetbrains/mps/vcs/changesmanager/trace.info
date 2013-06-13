@@ -673,7 +673,7 @@
     <nodeInfo nodeId="3161776655522687104" fileName="ChangesTracking.java" startLine="169" startPosition="5" endLine="170" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1704934837581625117" fileName="ChangesTracking.java" startLine="171" startPosition="81" endLine="172" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3951871491765090509" fileName="ChangesTracking.java" startLine="173" startPosition="5" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3951871491765095743" fileName="ChangesTracking.java" startLine="178" startPosition="100" endLine="179" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3951871491765095743" fileName="ChangesTracking.java" startLine="178" startPosition="79" endLine="179" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6402272430681912661" fileName="ChangesTracking.java" startLine="183" startPosition="5" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6293182674526136329" fileName="ChangesTracking.java" startLine="185" startPosition="60" endLine="186" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6402272430681907663" fileName="ChangesTracking.java" startLine="187" startPosition="5" endLine="188" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -849,7 +849,7 @@
     <nodeInfo nodeId="3285276019551793323" fileName="ChangesTracking.java" startLine="561" startPosition="0" endLine="564" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/vcs/diff/changes/ModuleDependencyChange;)Ljava/lang/Boolean;" />
     <nodeInfo nodeId="5586130217025528069" fileName="ChangesTracking.java" startLine="576" startPosition="0" endLine="579" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/vcs/diff/changes/ImportedModelChange;)Ljava/lang/Boolean;" />
     <nodeInfo nodeId="6584823076310774670" fileName="ChangesTracking.java" startLine="592" startPosition="89" endLine="595" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722862962576140792" fileName="ChangesTracking.java" startLine="601" startPosition="75" endLine="604" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722862962576140792" fileName="ChangesTracking.java" startLine="601" startPosition="107" endLine="604" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3161776655522682286" fileName="ChangesTracking.java" startLine="95" startPosition="79" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="537188054566456050" fileName="ChangesTracking.java" startLine="206" startPosition="45" endLine="210" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="537188054565410474" fileName="ChangesTracking.java" startLine="222" startPosition="165" endLine="226" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -888,7 +888,7 @@
     <nodeInfo nodeId="9208608870626866295" fileName="ChangesTracking.java" startLine="236" startPosition="45" endLine="242" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3285276019551792921" fileName="ChangesTracking.java" startLine="509" startPosition="44" endLine="515" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3951871491765039092" fileName="ChangesTracking.java" startLine="591" startPosition="0" endLine="597" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelsReplaced#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="2722862962576140792" fileName="ChangesTracking.java" startLine="601" startPosition="0" endLine="607" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5iuzi5_a0a0a52#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="2722862962576140792" fileName="ChangesTracking.java" startLine="601" startPosition="0" endLine="607" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5iuzi5_a0a0a52#(Ljetbrains/mps/vcs/diff/ChangeSet;)Lorg/jetbrains/mps/openapi/model/SModel;" />
     <nodeInfo nodeId="2274405438583657679" fileName="ChangesTracking.java" startLine="608" startPosition="0" endLine="614" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_5iuzi5_a0a1a72#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="8473562513973655155" fileName="ChangesTracking.java" startLine="124" startPosition="5" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3161776655522682317" fileName="ChangesTracking.java" startLine="144" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scheduleFullUpdate#()V" />
@@ -967,7 +967,7 @@
     <scopeInfo nodeId="3161776655522687060" fileName="ChangesTracking.java" startLine="163" startPosition="32" endLine="164" endPosition="13" />
     <scopeInfo nodeId="3161776655522687089" fileName="ChangesTracking.java" startLine="167" startPosition="108" endLine="168" endPosition="13" />
     <scopeInfo nodeId="1704934837581625109" fileName="ChangesTracking.java" startLine="171" startPosition="81" endLine="172" endPosition="48" />
-    <scopeInfo nodeId="1400081181930264423" fileName="ChangesTracking.java" startLine="178" startPosition="100" endLine="179" endPosition="32" />
+    <scopeInfo nodeId="1400081181930264423" fileName="ChangesTracking.java" startLine="178" startPosition="79" endLine="179" endPosition="32" />
     <scopeInfo nodeId="6293182674526136313" fileName="ChangesTracking.java" startLine="185" startPosition="60" endLine="186" endPosition="13" />
     <scopeInfo nodeId="3161776655522687123" fileName="ChangesTracking.java" startLine="190" startPosition="62" endLine="191" endPosition="13" />
     <scopeInfo nodeId="3161776655522687132" fileName="ChangesTracking.java" startLine="194" startPosition="126" endLine="195" endPosition="76" />
@@ -1132,7 +1132,7 @@
     <scopeInfo nodeId="3557624462335397362" fileName="ChangesTracking.java" startLine="315" startPosition="0" endLine="319" endPosition="0">
       <varInfo nodeId="3557624462335397370" varName="id" />
     </scopeInfo>
-    <scopeInfo nodeId="2722862962576140792" fileName="ChangesTracking.java" startLine="601" startPosition="75" endLine="605" endPosition="16" />
+    <scopeInfo nodeId="2722862962576140792" fileName="ChangesTracking.java" startLine="601" startPosition="107" endLine="605" endPosition="16" />
     <scopeInfo nodeId="2274405438583657679" fileName="ChangesTracking.java" startLine="608" startPosition="65" endLine="612" endPosition="7" />
     <scopeInfo nodeId="3161776655522682320" fileName="ChangesTracking.java" startLine="144" startPosition="41" endLine="149" endPosition="7" />
     <scopeInfo nodeId="1400081181930264419" fileName="ChangesTracking.java" startLine="177" startPosition="0" endLine="182" endPosition="0" />

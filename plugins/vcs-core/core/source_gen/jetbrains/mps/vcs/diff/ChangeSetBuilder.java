@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.extapi.model.SModelBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.util.SNodeOperations;
@@ -54,8 +55,8 @@ public class ChangeSetBuilder {
   }
 
   private ChangeSetBuilder(ChangeSetImpl changeSet) {
-    myOldModel = changeSet.getOldModel();
-    myNewModel = changeSet.getNewModel();
+    myOldModel = as_nbyrtw_a0a0a0f(changeSet.getOldModel(), SModelBase.class).getSModelInternal();
+    myNewModel = as_nbyrtw_a0a0b0f(changeSet.getNewModel(), SModelBase.class).getSModelInternal();
     myChangeSet = changeSet;
   }
 
@@ -386,6 +387,20 @@ public class ChangeSetBuilder {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
+  }
+
+  private static <T> T as_nbyrtw_a0a0a0f(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_nbyrtw_a0a0b0f(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 
   private static boolean eq_nbyrtw_a0a0i0j(Object a, Object b) {

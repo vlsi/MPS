@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -57,7 +58,7 @@ public abstract class ModelChange {
 
   public static void rollbackChanges(Iterable<ModelChange> changes) {
     assert Sequence.fromIterable(changes).isNotEmpty();
-    final jetbrains.mps.smodel.SModel model = Sequence.fromIterable(changes).first().getChangeSet().getNewModel();
+    final jetbrains.mps.smodel.SModel model = as_dy9g5o_a0a0b0m(Sequence.fromIterable(changes).first().getChangeSet().getNewModel(), SModelBase.class).getSModelInternal();
     final NodeCopier nc = new NodeCopier(model);
     Iterable<ModelChange> oppositeChanges = Sequence.fromIterable(changes).select(new ISelector<ModelChange, ModelChange>() {
       public ModelChange select(ModelChange ch) {
@@ -75,5 +76,12 @@ public abstract class ModelChange {
       }
     });
     nc.restoreIds(true);
+  }
+
+  private static <T> T as_dy9g5o_a0a0b0m(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }

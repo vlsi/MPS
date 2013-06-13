@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
@@ -39,7 +40,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
   public BaseVersionEditorComponent(final SRepository repository, final ChangeGroup changeGroup) {
     super(repository);
-    SModel baseModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
+    SModel baseModel = as_i3w5ys_a0a0b0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModelInternal();
     myBaseModel = CopyUtil.copyModel(baseModel);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -110,5 +111,12 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
   public JScrollPane getScrollPane() {
     return myScrollPane;
+  }
+
+  private static <T> T as_i3w5ys_a0a0b0c(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }

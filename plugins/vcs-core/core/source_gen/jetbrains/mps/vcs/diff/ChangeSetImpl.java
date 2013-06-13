@@ -60,14 +60,14 @@ public class ChangeSetImpl implements ModelChangeSet {
 
   @NotNull
   @Override
-  public SModel getOldModel() {
-    return myOldModel;
+  public org.jetbrains.mps.openapi.model.SModel getOldModel() {
+    return myOldModel.getModelDescriptor();
   }
 
   @NotNull
   @Override
-  public SModel getNewModel() {
-    return myNewModel;
+  public org.jetbrains.mps.openapi.model.SModel getNewModel() {
+    return myNewModel.getModelDescriptor();
   }
 
   @NotNull

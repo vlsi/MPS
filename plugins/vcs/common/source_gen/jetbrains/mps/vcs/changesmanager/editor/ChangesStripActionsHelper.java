@@ -13,6 +13,7 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -86,7 +87,7 @@ public class ChangesStripActionsHelper {
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        final SModel model = ListSequence.fromList(changes).first().getChangeSet().getNewModel();
+        final SModel model = as_ikrecr_a0a0a0a0a0a0c0i(ListSequence.fromList(changes).first().getChangeSet().getNewModel(), SModelBase.class).getSModelInternal();
         final NodeCopier nc = new NodeCopier(model);
         Iterable<ModelChange> oppositeChanges = ListSequence.fromList(changes).select(new ISelector<ModelChange, ModelChange>() {
           public ModelChange select(ModelChange ch) {
@@ -124,8 +125,8 @@ public class ChangesStripActionsHelper {
     ChangeGroup changeGroup = getCurrentChangeGroup(editorContext);
     assert changeGroup != null;
 
-    final SModel oldModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
-    DiffTemporaryModule.createModuleAndRegister(oldModel, "old", editorContext.getOperationContext().getProject(), false);
+    final org.jetbrains.mps.openapi.model.SModel oldModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
+    DiffTemporaryModule.createModuleAndRegister(as_ikrecr_a0a0e0l(oldModel, SModelBase.class).getSModelInternal(), "old", editorContext.getOperationContext().getProject(), false);
 
     // compute paths to root 
     Iterable<SNode> baseNodes = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, SNode>() {
@@ -134,7 +135,7 @@ public class ChangesStripActionsHelper {
           return Sequence.<SNode>singleton(oldModel.getNode(((NodeChange) ch).getAffectedNodeId()));
         } else if (ch instanceof NodeGroupChange) {
           NodeGroupChange ngc = (NodeGroupChange) ch;
-          List<SNode> changeChildren = ((List) IterableUtil.asList(oldModel.getNode(ngc.getParentNodeId()).getChildren(ngc.getRole())));
+          List<SNode> changeChildren = IterableUtil.asList(oldModel.getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
           return ListSequence.fromList(changeChildren).page(ngc.getBegin(), ngc.getEnd());
         } else {
           return Sequence.fromIterable(Collections.<SNode>emptyList());
@@ -288,6 +289,20 @@ public class ChangesStripActionsHelper {
       checkedDotOperand.showPopupForGroup(null);
     }
 
+  }
+
+  private static <T> T as_ikrecr_a0a0a0a0a0a0c0i(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_ikrecr_a0a0e0l(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 
   private static boolean eq_ikrecr_a0a0a0a0a0d0t0l(Object a, Object b) {
