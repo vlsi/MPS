@@ -98,7 +98,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.java.newparser.DirParser" file="DirParser.java">
     <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -107,7 +106,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.FeatureKind" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

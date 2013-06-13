@@ -12,14 +12,14 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;
 import java.io.IOException;
-import jetbrains.mps.vfs.IFileUtils;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.SModuleOperations;
@@ -48,24 +48,7 @@ public class DirParser {
     mySuccessfulFiles = ListSequence.fromList(new ArrayList<IFile>());
   }
 
-  public List<SNode> parseDir(JavaParser parser, IFile dir) throws IOException, JavaParseException {
-    List<SNode> result = new ArrayList<SNode>();
 
-    if (dir == null || !(dir.exists()) || !(dir.isDirectory())) {
-      throw new IllegalArgumentException("Bad directory");
-    }
-
-    for (IFile file : ListSequence.fromList(dir.getChildren())) {
-      if (file.isDirectory() || !(file.getName().endsWith(".java"))) {
-        continue;
-      }
-      String code = IFileUtils.getTextContents(file);
-      List<SNode> oneFileRoots = parser.parse(code, "", FeatureKind.CLASS, true).getNodes();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(oneFileRoots));
-    }
-
-    return result;
-  }
 
   public void addDirectory(IFile dir) {
     ListSequence.fromList(mySourceDirs).addElement(dir);
@@ -83,7 +66,6 @@ public class DirParser {
           Iterable<SNode> roots = SModelOperations.getRoots(m, null);
           JavaParser.tryResolveUnknowns(roots);
           JavaParser.tryResolveDynamicRefs(roots);
-          // <node> 
         }
       }
     };
