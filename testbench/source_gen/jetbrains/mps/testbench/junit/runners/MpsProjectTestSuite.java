@@ -97,25 +97,25 @@ public static   @interface ModuleUUID {    /**
     String value();
 }
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target(value = {ElementType.TYPE})
-public static @interface ModelLongName {  /**
-   * 
-   * 
-   * @return path to MPS project
-   */
+  @Retention(RetentionPolicy.RUNTIME)
+  @Target(value = {ElementType.TYPE})
+public static   @interface ModelLongName {    /**
+     * 
+     * 
+     * @return path to MPS project
+     */
 
-  String value();
+    String value();
 }
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target(value = {ElementType.TYPE})
-public static @interface TestClass {/**
- * 
- * 
- * @return path to MPS project
- */
+  @Retention(RetentionPolicy.RUNTIME)
+  @Target(value = {ElementType.TYPE})
+public static   @interface TestClass {    /**
+     * 
+     * 
+     * @return path to MPS project
+     */
 
-String value();
+    String value();
 }
 }

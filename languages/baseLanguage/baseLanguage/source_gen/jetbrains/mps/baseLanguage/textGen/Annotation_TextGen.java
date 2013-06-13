@@ -48,7 +48,6 @@ public class Annotation_TextGen extends SNodeTextGen {
       }
     }
     this.decreaseDepth();
-    this.decreaseDepth();
     this.appendNewLine();
     this.append("}");
     this.appendNewLine();

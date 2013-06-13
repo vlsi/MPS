@@ -176,9 +176,9 @@ public static   @interface ModuleClassSymbols {
     String[] tests();
 }
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target(value = {ElementType.TYPE})
-public static @interface ModuleReference {
-  String value();
+  @Retention(RetentionPolicy.RUNTIME)
+  @Target(value = {ElementType.TYPE})
+public static   @interface ModuleReference {
+    String value();
 }
 }
