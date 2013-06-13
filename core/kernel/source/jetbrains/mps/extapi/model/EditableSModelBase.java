@@ -234,8 +234,6 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
       }
     }
 
-    updateReferenceAfterRename(newModelReference);
-
     fireModelRenamed(new SModelRenamedEvent(this, oldName.getModelName(), newModelName));
     fireModelRenamed(oldName);
   }
