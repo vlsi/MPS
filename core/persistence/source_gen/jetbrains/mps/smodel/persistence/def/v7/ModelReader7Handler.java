@@ -20,6 +20,7 @@ import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.LazySNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -483,9 +484,10 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     @Override
     protected SNode createObject(Attributes attrs) throws SAXException {
       boolean needLazy = fieldtoState != ModelLoadingState.FULLY_LOADED;
+      String readType = InternUtil.intern(fieldhelper.readType(attrs.getValue("type")));
       return (needLazy ?
-        new LazySNode(fieldhelper.readType(attrs.getValue("type"))) :
-        new jetbrains.mps.smodel.SNode(fieldhelper.readType(attrs.getValue("type")))
+        new LazySNode(readType) :
+        new jetbrains.mps.smodel.SNode(readType)
       );
     }
 

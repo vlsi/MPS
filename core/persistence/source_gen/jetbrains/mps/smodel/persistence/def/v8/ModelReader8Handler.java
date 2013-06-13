@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.runtime.ConceptKind;
@@ -329,7 +330,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       if (fieldhelper.isImplementationWithStubNode(child._1())) {
         String stubConcept = fieldhelper.getStubConceptQualifiedName(child._2());
         if (stubConcept != null) {
-          fieldmodel.addRootNode(new jetbrains.mps.smodel.SNode(stubConcept));
+          fieldmodel.addRootNode(new jetbrains.mps.smodel.SNode(InternUtil.intern(stubConcept)));
         }
       }
       fieldhasSkippedNodes = true;
@@ -465,9 +466,10 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
           interfaceNode = (parsed._0() == ConceptKind.INTERFACE || attrs.getValue("role") == null);
         }
       }
+      String conceptName = InternUtil.intern(fieldhelper.readType(attrs.getValue("type")));
       jetbrains.mps.smodel.SNode result = (interfaceNode ?
-        new InterfaceSNode(fieldhelper.readType(attrs.getValue("type"))) :
-        new jetbrains.mps.smodel.SNode(fieldhelper.readType(attrs.getValue("type")))
+        new InterfaceSNode(conceptName) :
+        new jetbrains.mps.smodel.SNode(conceptName)
       );
       fieldlinkMap.addNodeMetainfo(parsed._0(), parsed._1(), (boolean) parsed._2(), result);
       return result;
@@ -601,7 +603,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       if (fieldstripImplementation && fieldhelper.isImplementationWithStubNode(child._1())) {
         String stubConcept = fieldhelper.getStubConceptQualifiedName(child._2());
         if (stubConcept != null) {
-          jetbrains.mps.smodel.SNode childNode = new jetbrains.mps.smodel.SNode(stubConcept);
+          jetbrains.mps.smodel.SNode childNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(stubConcept));
           result.addChild(child._0(), childNode);
           return;
         }
