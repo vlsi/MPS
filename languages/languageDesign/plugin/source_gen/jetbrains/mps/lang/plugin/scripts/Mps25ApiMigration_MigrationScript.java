@@ -22,8 +22,8 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.ModuleOperationContext;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
-import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -1220,7 +1220,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.plugin.structure.ModificationStatement", "modifiedGroup")), SModelReference.fromString("r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)"), SNodeId.fromString("1204991231476"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.plugin.structure.ModificationStatement", "modifiedGroup")), PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)"), SNodeId.fromString("1204991231476"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -1245,7 +1245,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.plugin.structure.ModificationStatement", "modifiedGroup")), SModelReference.fromString("r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)"), SNodeId.fromString("796800879946376627"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.plugin.structure.ModificationStatement", "modifiedGroup")), PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)"), SNodeId.fromString("796800879946376627"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
