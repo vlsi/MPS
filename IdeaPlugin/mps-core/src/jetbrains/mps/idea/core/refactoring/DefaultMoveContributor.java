@@ -21,18 +21,18 @@ import java.util.List;
 
 //
 public class DefaultMoveContributor implements MoveRefactoringContributor {
-  static String REFACTORING_NAME = "jetbrains.mps.lang.core.refactorings.MoveNodes";
+  static String REFACTORING_CLASS = "jetbrains.mps.lang.core.refactorings.MoveNodes";
 
   @Override
   public boolean isAvailableFor(@NotNull SNode node) {
-    IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName(REFACTORING_NAME);
-    return RefactoringUtil.isApplicable(refactoring, Arrays.asList(new SNode[] { node }));
+    IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName(REFACTORING_CLASS);
+    return RefactoringUtil.isApplicable(refactoring, Arrays.asList(new SNode[]{node}));
   }
 
   @Override
   public void invoke(@NotNull Project project, @NotNull SNode node) {
     final MPSProject mpsProject = project.getComponent(MPSProject.class);
-    final List<SNode> targets = Arrays.asList(new SNode[] { node });
+    final List<SNode> targets = Arrays.asList(new SNode[]{node});
 
     MoveNodesExecute.execute(mpsProject, targets, new ExecuteRefactoring() {
       @Override
@@ -46,11 +46,14 @@ public class DefaultMoveContributor implements MoveRefactoringContributor {
       }
     });
   }
-}
 
-class DefaultMoveRefactoring extends RefactoringWrapper {
+  class DefaultMoveRefactoring extends PsiAwareRefactoring {
+    public DefaultMoveRefactoring() {
+      super(RefactoringUtil.getRefactoringByClassName(REFACTORING_CLASS));
+    }
 
-  public DefaultMoveRefactoring() {
-    super(RefactoringUtil.getRefactoringByClassName(DefaultMoveContributor.REFACTORING_NAME));
+    // TODO add refactor() that tries to do bindToElement() to psi references
   }
 }
+
+
