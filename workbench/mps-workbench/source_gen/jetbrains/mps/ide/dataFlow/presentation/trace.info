@@ -853,8 +853,8 @@
     <nodeInfo nodeId="5496206068112920241" fileName="ShowCFGDialog.java" startLine="76" startPosition="7" endLine="77" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5130572135177608104" fileName="ShowCFGDialog.java" startLine="77" startPosition="20" endLine="78" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3544826152738993524" fileName="ShowCFGDialog.java" startLine="78" startPosition="20" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="635976204421017182" fileName="ShowCFGDialog.java" startLine="85" startPosition="36" endLine="86" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1752256779113131571" fileName="ShowCFGDialog.java" startLine="87" startPosition="29" endLine="88" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503373003786" fileName="ShowCFGDialog.java" startLine="85" startPosition="36" endLine="86" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503373003795" fileName="ShowCFGDialog.java" startLine="87" startPosition="29" endLine="88" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4282822416100099663" fileName="ShowCFGDialog.java" startLine="97" startPosition="32" endLine="98" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3544826152738994601" fileName="ShowCFGDialog.java" startLine="103" startPosition="44" endLine="104" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="222564635107964943" fileName="ShowCFGDialog.java" startLine="109" startPosition="38" endLine="110" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -873,7 +873,7 @@
     <nodeInfo nodeId="8206768923890114576" fileName="ShowCFGDialog.java" startLine="72" startPosition="14" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2937623487936733228" fileName="ShowCFGDialog.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
     <nodeInfo nodeId="1752256779112961947" fileName="ShowCFGDialog.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="635976204421110102" fileName="ShowCFGDialog.java" startLine="86" startPosition="80" endLine="89" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503373003793" fileName="ShowCFGDialog.java" startLine="86" startPosition="80" endLine="89" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4282822416100099659" fileName="ShowCFGDialog.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackground#()Ljava/awt/Color;" />
     <nodeInfo nodeId="4282822416100099673" fileName="ShowCFGDialog.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
     <nodeInfo nodeId="4282822416100099489" fileName="ShowCFGDialog.java" startLine="124" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackground#()Ljava/awt/Color;" />
@@ -887,12 +887,12 @@
     <nodeInfo nodeId="1752256779112961940" fileName="ShowCFGDialog.java" startLine="66" startPosition="13" endLine="71" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3544826152738994444" fileName="ShowCFGDialog.java" startLine="101" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
     <nodeInfo nodeId="222564635107936181" fileName="ShowCFGDialog.java" startLine="107" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
-    <nodeInfo nodeId="1752256779113131569" fileName="ShowCFGDialog.java" startLine="84" startPosition="25" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503373003784" fileName="ShowCFGDialog.java" startLine="84" startPosition="25" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4282822416100099666" fileName="ShowCFGDialog.java" startLine="115" startPosition="41" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4282822416100099492" fileName="ShowCFGDialog.java" startLine="129" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;)V" />
-    <nodeInfo nodeId="5496206068113099980" fileName="ShowCFGDialog.java" startLine="84" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2034046503373003782" fileName="ShowCFGDialog.java" startLine="84" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4282822416100099487" fileName="ShowCFGDialog.java" startLine="114" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyComponent#()V" />
-    <nodeInfo nodeId="5496206068113099978" fileName="ShowCFGDialog.java" startLine="82" startPosition="103" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503373003778" fileName="ShowCFGDialog.java" startLine="82" startPosition="103" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1752256779113131588" fileName="ShowCFGDialog.java" startLine="82" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNode#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
     <nodeInfo nodeId="8206768923889675631" fileName="ShowCFGDialog.java" startLine="50" startPosition="63" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4282822416100099637" fileName="ShowCFGDialog.java" startLine="48" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;Ljetbrains/mps/ide/dataFlow/presentation/IBlock;)V" />
@@ -901,7 +901,7 @@
     <scopeInfo nodeId="2937623487936733234" fileName="ShowCFGDialog.java" startLine="63" startPosition="57" endLine="64" endPosition="60" />
     <scopeInfo nodeId="1752256779112961952" fileName="ShowCFGDialog.java" startLine="68" startPosition="57" endLine="69" endPosition="52" />
     <scopeInfo nodeId="8206768923890114577" fileName="ShowCFGDialog.java" startLine="72" startPosition="16" endLine="73" endPosition="48" />
-    <scopeInfo nodeId="635976204421110105" fileName="ShowCFGDialog.java" startLine="87" startPosition="29" endLine="88" endPosition="89" />
+    <scopeInfo nodeId="2034046503373003794" fileName="ShowCFGDialog.java" startLine="87" startPosition="29" endLine="88" endPosition="89" />
     <scopeInfo nodeId="4282822416100099662" fileName="ShowCFGDialog.java" startLine="97" startPosition="32" endLine="98" endPosition="28" />
     <scopeInfo nodeId="3544826152738994448" fileName="ShowCFGDialog.java" startLine="103" startPosition="44" endLine="104" endPosition="24" />
     <scopeInfo nodeId="222564635107936184" fileName="ShowCFGDialog.java" startLine="109" startPosition="38" endLine="110" endPosition="25" />
@@ -921,8 +921,8 @@
     </scopeInfo>
     <scopeInfo nodeId="4282822416100099659" fileName="ShowCFGDialog.java" startLine="97" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="4282822416100099683" fileName="ShowCFGDialog.java" startLine="130" startPosition="35" endLine="133" endPosition="53" />
-    <scopeInfo nodeId="1752256779113131570" fileName="ShowCFGDialog.java" startLine="85" startPosition="36" endLine="89" endPosition="11">
-      <varInfo nodeId="635976204421017183" varName="node" />
+    <scopeInfo nodeId="2034046503373003785" fileName="ShowCFGDialog.java" startLine="85" startPosition="36" endLine="89" endPosition="11">
+      <varInfo nodeId="2034046503373003787" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4282822416100099673" fileName="ShowCFGDialog.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="4282822416100099676" varName="e" />
@@ -944,12 +944,12 @@
     <scopeInfo nodeId="4282822416100099524" fileName="ShowCFGDialog.java" startLine="161" startPosition="0" endLine="165" endPosition="0" />
     <scopeInfo nodeId="3544826152738994444" fileName="ShowCFGDialog.java" startLine="101" startPosition="0" endLine="106" endPosition="0" />
     <scopeInfo nodeId="222564635107936181" fileName="ShowCFGDialog.java" startLine="107" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="5496206068113099982" fileName="ShowCFGDialog.java" startLine="84" startPosition="25" endLine="90" endPosition="9" />
+    <scopeInfo nodeId="2034046503373003783" fileName="ShowCFGDialog.java" startLine="84" startPosition="25" endLine="90" endPosition="9" />
     <scopeInfo nodeId="4282822416100099492" fileName="ShowCFGDialog.java" startLine="129" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="4282822416100099495" varName="g" />
     </scopeInfo>
     <scopeInfo nodeId="4282822416100099665" fileName="ShowCFGDialog.java" startLine="114" startPosition="26" endLine="121" endPosition="9" />
-    <scopeInfo nodeId="5496206068113099980" fileName="ShowCFGDialog.java" startLine="84" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="2034046503373003782" fileName="ShowCFGDialog.java" startLine="84" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="4282822416100099487" fileName="ShowCFGDialog.java" startLine="114" startPosition="0" endLine="123" endPosition="0" />
     <scopeInfo nodeId="1752256779113131563" fileName="ShowCFGDialog.java" startLine="82" startPosition="103" endLine="92" endPosition="7" />
     <scopeInfo nodeId="1752256779113131588" fileName="ShowCFGDialog.java" startLine="82" startPosition="0" endLine="94" endPosition="0">
@@ -979,7 +979,7 @@
     <unitInfo nodeId="2937623487936733226" fileName="ShowCFGDialog.java" startLine="62" startPosition="41" endLine="66" endPosition="11" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$2" />
     <unitInfo nodeId="1752256779112961945" fileName="ShowCFGDialog.java" startLine="67" startPosition="41" endLine="71" endPosition="11" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$2" />
     <unitInfo nodeId="4282822416100099672" fileName="ShowCFGDialog.java" startLine="116" startPosition="32" endLine="121" endPosition="7" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
-    <unitInfo nodeId="5496206068113099980" fileName="ShowCFGDialog.java" startLine="83" startPosition="46" endLine="92" endPosition="5" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$2" />
+    <unitInfo nodeId="2034046503373003782" fileName="ShowCFGDialog.java" startLine="83" startPosition="46" endLine="92" endPosition="5" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$2" />
     <unitInfo nodeId="4282822416100099635" fileName="ShowCFGDialog.java" startLine="47" startPosition="49" endLine="76" endPosition="5" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
     <unitInfo nodeId="4282822416100099483" fileName="ShowCFGDialog.java" startLine="113" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$MyComponent" />
     <unitInfo nodeId="4282822416100099480" fileName="ShowCFGDialog.java" startLine="33" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog" />
