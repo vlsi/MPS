@@ -87,7 +87,7 @@ public class MergeSession {
         fillRootToChangesMap();
         fillNodeToChangesMap();
         myResultModel = result;
-        myNodeCopier = new NodeCopier(myResultModel);
+        myNodeCopier = new NodeCopier(myResultModel.getModelDescriptor());
       }
     });
   }
@@ -310,7 +310,7 @@ public class MergeSession {
     });
 
     myResolvedChanges = stateCopy.myResolvedChanges;
-    myNodeCopier.setState(stateCopy.myIdReplacementCache, myResultModel);
+    myNodeCopier.setState(stateCopy.myIdReplacementCache, myResultModel.getModelDescriptor());
   }
 
   public void setChangesInvalidateHandler(MergeSession.ChangesInvalidateHandler changesInvalidateHandler) {

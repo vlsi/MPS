@@ -11,9 +11,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -22,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
+import jetbrains.mps.extapi.model.SModelBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
@@ -87,7 +87,7 @@ public class ChangesStripActionsHelper {
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        final SModel model = as_ikrecr_a0a0a0a0a0a0c0i(ListSequence.fromList(changes).first().getChangeSet().getNewModel(), SModelBase.class).getSModelInternal();
+        final SModel model = ListSequence.fromList(changes).first().getChangeSet().getNewModel();
         final NodeCopier nc = new NodeCopier(model);
         Iterable<ModelChange> oppositeChanges = ListSequence.fromList(changes).select(new ISelector<ModelChange, ModelChange>() {
           public ModelChange select(ModelChange ch) {
@@ -101,7 +101,7 @@ public class ChangesStripActionsHelper {
         }
         Sequence.fromIterable(oppositeChanges).visitAll(new IVisitor<ModelChange>() {
           public void visit(ModelChange ch) {
-            ch.apply(model.getModelDescriptor(), nc);
+            ch.apply(model, nc);
           }
         });
         nc.restoreIds(true);
@@ -125,7 +125,7 @@ public class ChangesStripActionsHelper {
     ChangeGroup changeGroup = getCurrentChangeGroup(editorContext);
     assert changeGroup != null;
 
-    final org.jetbrains.mps.openapi.model.SModel oldModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
+    final SModel oldModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
     DiffTemporaryModule.createModuleAndRegister(as_ikrecr_a0a0e0l(oldModel, SModelBase.class).getSModelInternal(), "old", editorContext.getOperationContext().getProject(), false);
 
     // compute paths to root 
@@ -289,13 +289,6 @@ public class ChangesStripActionsHelper {
       checkedDotOperand.showPopupForGroup(null);
     }
 
-  }
-
-  private static <T> T as_ikrecr_a0a0a0a0a0a0c0i(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 
   private static <T> T as_ikrecr_a0a0e0l(Object o, Class<T> type) {
