@@ -48,7 +48,7 @@ import java.io.IOException;
 @RunWith(DynamicSuite.class)
 public class ModuleTestSuite {
   private static final String PROPERTY_LIBRARY = "mps.libraries";
-  private static final String MISC_XML = "misc.xml";
+  private static final String MISC_XML_URI = "/jetbrains/mps/testbench/junit/runners/misc.xml";
   private static final String PROPERTY_TEST_MODULE = "mps.test.modules";
 
   private static Environment CREATED_ENV;
@@ -213,10 +213,10 @@ public class ModuleTestSuite {
       File projectDir = FileUtil.createTmpDir();
       File dotMps = new File(projectDir, ".mps");
       dotMps.mkdir();
-      File projectFile = new File(dotMps, MISC_XML);
+      File projectFile = new File(dotMps, MISC_XML_URI.substring(MISC_XML_URI.lastIndexOf("/") + 1));
       try {
         projectFile.createNewFile();
-        InputStream input = ModuleTestSuite.class.getResourceAsStream(MISC_XML);
+        InputStream input = ModuleTestSuite.class.getResourceAsStream(MISC_XML_URI);
         FileOutputStream stream = new FileOutputStream(projectFile);
         stream.write(ReadUtil.read(input));
         stream.close();
