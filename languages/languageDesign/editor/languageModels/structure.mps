@@ -3484,6 +3484,11 @@
       <property name="role" nameId="tpce.1071599776563" value="cellSelector" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1948540814635886374" resolveInfo="AbstractCellSelector" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3604384757217586546" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="selectionStart" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3604384757217589208" resolveInfo="PositionSelector" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4510086454767561658" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
     </node>
@@ -3556,6 +3561,15 @@
       <property name="role" nameId="tpce.1071599776563" value="propertyDeclaration" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3604384757217589208" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
+    <property name="name" nameId="tpck.1169194664001" value="PositionSelector" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3604384757217589845" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="position" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
   </root>
 </model>

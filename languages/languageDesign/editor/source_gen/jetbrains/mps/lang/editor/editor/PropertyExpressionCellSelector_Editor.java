@@ -61,7 +61,7 @@ public class PropertyExpressionCellSelector_Editor extends DefaultNodeEditor {
 
   private EditorCell createConstant_i44x1b_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
-    editorCell.setCellId("Constant_i44x1b_b0");
+    editorCell.setCellId("sharp");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);

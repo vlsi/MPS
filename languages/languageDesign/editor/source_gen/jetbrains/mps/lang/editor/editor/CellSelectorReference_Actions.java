@@ -12,7 +12,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
-import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class CellSelectorReference_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,7 +32,7 @@ public class CellSelectorReference_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SConceptOperations.isExactly(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractCellSelector"), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "cellSelector", true))))) {
         SLinkOperations.setTarget(node, "cellSelector", null, true);
-        SelectionUtil.selectCell(editorContext, node, SelectionManager.LAST_EDITABLE_CELL);
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "closingBracket", 0);
       } else {
         SLinkOperations.setTarget(node, "cellSelector", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.AbstractCellSelector", null), true);
       }

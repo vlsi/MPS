@@ -1004,4 +1004,51 @@ public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_2162403111527377304(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation");
   }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_AbstractCellSelector_3604384757222897925(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PositionSelector"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode selectInEditorOperation = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation");
+        SLinkOperations.setTarget(selectInEditorOperation, "selectionStart", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PositionSelector", null), true);
+        return SLinkOperations.getTarget(selectInEditorOperation, "selectionStart", true);
+      }
+
+      public String getMatchingText(String pattern) {
+        return ",";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      public String getDescriptionText(String pattern) {
+        return "specify selection start position";
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PositionSelector"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode selectInEditorOperation = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation");
+        SLinkOperations.setTarget(selectInEditorOperation, "selectionStart", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PositionSelector", null), true);
+        return SLinkOperations.getTarget(selectInEditorOperation, "selectionStart", true);
+      }
+
+      public String getMatchingText(String pattern) {
+        return "selectionStart";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      public String getDescriptionText(String pattern) {
+        return "specify selection start position";
+      }
+    });
+    return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractCellSelector_3604384757222901473(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation");
+  }
 }

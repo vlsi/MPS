@@ -248,13 +248,22 @@ public class SelectionManagerImpl implements SelectionManager {
     if (cell instanceof EditorCell_Label) {
       EditorCell_Label labelCell = (EditorCell_Label) cell;
       boolean isFirstPositionRequested = caretPosition == 0;
-      boolean isLastPositionRequested = caretPosition == -1 || caretPosition == labelCell.getText().length();
-      labelCell = refineUsingCursorPositioningRules(labelCell, cellId, isFirstPositionRequested, isLastPositionRequested);
-      if (labelCell != null) {
-        if (isLastPositionRequested) {
-          caretPosition = labelCell.getText().length();
+      boolean isLastPositionRequested = caretPosition == -1 || (caretPosition != 0 && caretPosition == labelCell.getText().length());
+      EditorCell_Label refinedCell = refineUsingCursorPositioningRules(labelCell, cellId, isFirstPositionRequested, isLastPositionRequested);
+      if (refinedCell != null) {
+        if (refinedCell != labelCell) {
+          // first -> last & last -> first if prev. or next cell was selected
+          if (isFirstPositionRequested) {
+            isLastPositionRequested = true;
+          }
+          if (isLastPositionRequested) {
+            caretPosition = 0;
+          }
         }
-        setSelection(labelCell, caretPosition);
+        if (isLastPositionRequested) {
+          caretPosition = refinedCell.getText().length();
+        }
+        setSelection(refinedCell, caretPosition);
         return;
       }
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ut7n20c36ohl221uoxwilunymvolac">
+<dependencies version="2" modelHash="b41f1sooc73qm1qt59h0tn07zxy97uh">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
@@ -18,7 +18,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="7sv7zbis5542okuv20b5m1b8j4hic58" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="4fpv2xr3ihc6ydyum9jowto74hclgxr" />
   <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="-4k24uyi16xe6xg0zoz8jxdlndnirem2" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-57n32x4wskppowem3fc233nome153ss" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="8pw4letr5gca13gw7pzcy2xe9p2qaht" />
   <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-4byk9l07h3msrgceb0q8gf61k638q9y" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="aumxb375hryoj342z68nrzgvgr4jzbz" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="b9gqsef1colm9him17g58pu6gkpx9sg" />
@@ -98,6 +98,7 @@
     <dep root="2548761562328299818" />
     <dep root="2548761562337839713" />
     <dep root="2548761562342008913" />
+    <dep root="3604384757227223536" />
     <dep root="4510086454721348408" />
     <dep root="4514257407427004628" />
     <dep root="4644225720240136236" />
@@ -310,7 +311,7 @@
   <source id="1198490666793" name="reduce_CellModel_Block" hash="-9ysdine9fg2gyzrfjee9hybh9032sz8">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1201269922332" name="MAPPING_nodesOperations" hash="3belqii7libroa451orzi8z5wttlcci">
+  <source id="1201269922332" name="MAPPING_nodesOperations" hash="7gruamnnjjysq8tnuqee63z9o5holyg">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1201270306688" name="reduce_SelectAfterLater" hash="bchevgr6z8s93e7qmgdh7juqkvqnat8">
@@ -407,6 +408,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="4510086454721348408" name="reduce_SelectCellInEditorOperation" hash="-1poiyi3j6ahenznlq539wd8hl3ukvty">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="3604384757227223536" name="reduce_SelectLabelAndSetCaretInEditorOperation" hash="b2nneng8h7v4l896i6mxg1s48nvm2wa">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

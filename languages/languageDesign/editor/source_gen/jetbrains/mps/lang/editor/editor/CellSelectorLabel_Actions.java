@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
-import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class CellSelectorLabel_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -30,7 +29,7 @@ public class CellSelectorLabel_Actions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.setTarget(node, "cellSelector", null, true);
-      SelectionUtil.selectCell(editorContext, node, SelectionManager.LAST_EDITABLE_CELL);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "closingBracket", 0);
     }
   }
 
@@ -47,7 +46,8 @@ public class CellSelectorLabel_Actions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.setTarget(node, "cellSelector", null, true);
-      SelectionUtil.selectCell(editorContext, node, SelectionManager.LAST_EDITABLE_CELL);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "closingBracket", 0);
+
     }
   }
 }
