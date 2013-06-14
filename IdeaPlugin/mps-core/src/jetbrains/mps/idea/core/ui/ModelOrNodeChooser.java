@@ -122,6 +122,8 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
       if (!(mr instanceof DefaultModelRoot)) continue;
       for (String sourceRoot : ((DefaultModelRoot) mr).getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
         if (sourceRoot.startsWith(path)) return true;
+        // TODO this gives some unneeded items (like src_gen when src is source root)
+        if (path.startsWith(sourceRoot)) return true;
       }
     }
     return false;
