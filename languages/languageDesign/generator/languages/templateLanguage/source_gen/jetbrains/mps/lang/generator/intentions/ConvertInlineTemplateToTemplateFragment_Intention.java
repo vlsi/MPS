@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertInlineTemplateToTemplateFragment_Intention implements IntentionFactory {
@@ -98,7 +99,7 @@ public class ConvertInlineTemplateToTemplateFragment_Intention implements Intent
       SNode templateRefNode = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
       SLinkOperations.setTarget(templateRefNode, "template", templateNode, false);
 
-      editorContext.select(templateNode);
+      SelectionUtil.selectNode(editorContext, templateNode);
     }
 
     public IntentionDescriptor getDescriptor() {

@@ -5317,5 +5317,49 @@
     </scopeInfo>
     <unitInfo nodeId="3500491402030546638" fileName="MigrationUtil.java" startLine="16" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.scripts.MigrationUtil" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)/4178756444706388098">
+    <nodeInfo nodeId="4178756444706388098" fileName="SelectInEditorOperation_MigrationScript.java" startLine="14" startPosition="86" endLine="15" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="17" startPosition="31" endLine="18" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="21" startPosition="41" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="25" startPosition="59" endLine="26" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4178756444706398191" fileName="SelectInEditorOperation_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4178756444706482427" fileName="SelectInEditorOperation_MigrationScript.java" startLine="33" startPosition="52" endLine="34" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4178756444706473244" fileName="SelectInEditorOperation_MigrationScript.java" startLine="34" startPosition="145" endLine="35" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="38" startPosition="42" endLine="39" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4178756444706388098" fileName="SelectInEditorOperation_MigrationScript.java" startLine="15" startPosition="56" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="15" startPosition="56" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4178756444706388098" fileName="SelectInEditorOperation_MigrationScript.java" startLine="14" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectInEditorOperation_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="17" startPosition="31" endLine="18" endPosition="52" />
+    <scopeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="21" startPosition="41" endLine="22" endPosition="52" />
+    <scopeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="25" startPosition="59" endLine="26" endPosition="69" />
+    <scopeInfo nodeId="4178756444706394902" fileName="SelectInEditorOperation_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="111" />
+    <scopeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="38" startPosition="42" endLine="39" endPosition="21" />
+    <scopeInfo nodeId="4178756444706393532" fileName="SelectInEditorOperation_MigrationScript.java" startLine="33" startPosition="52" endLine="35" endPosition="138">
+      <varInfo nodeId="4178756444706482428" varName="selectInEditorOperation" />
+    </scopeInfo>
+    <scopeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="4178756444706393528" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="4178756444706393528" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="15" startPosition="56" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="4178756444706388098" fileName="SelectInEditorOperation_MigrationScript.java" startLine="14" startPosition="86" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="4178756444706388098" fileName="SelectInEditorOperation_MigrationScript.java" startLine="14" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="4178756444706388098" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="4178756444706393528" fileName="SelectInEditorOperation_MigrationScript.java" startLine="16" startPosition="28" endLine="41" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.SelectInEditorOperation_MigrationScript$1" />
+    <unitInfo nodeId="4178756444706388098" fileName="SelectInEditorOperation_MigrationScript.java" startLine="13" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.scripts.SelectInEditorOperation_MigrationScript" />
+  </root>
 </debugInfo>
 
