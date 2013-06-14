@@ -486,7 +486,7 @@
     <nodeInfo nodeId="3995997045458704700" fileName="MappingSelectTree.java" startLine="166" startPosition="30" endLine="167" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3995997045458704702" fileName="MappingSelectTree.java" startLine="168" startPosition="7" endLine="169" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3995997045458704714" fileName="MappingSelectTree.java" startLine="174" startPosition="56" endLine="175" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3995997045458704720" fileName="MappingSelectTree.java" startLine="179" startPosition="40" endLine="180" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3995997045458704720" fileName="MappingSelectTree.java" startLine="179" startPosition="40" endLine="180" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3995997045458704728" fileName="MappingSelectTree.java" startLine="184" startPosition="29" endLine="185" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3995997045458704741" fileName="MappingSelectTree.java" startLine="190" startPosition="48" endLine="191" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3995997045458704747" fileName="MappingSelectTree.java" startLine="195" startPosition="39" endLine="196" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -560,7 +560,7 @@
     <scopeInfo nodeId="3995997045458704677" fileName="MappingSelectTree.java" startLine="159" startPosition="41" endLine="160" endPosition="49" />
     <scopeInfo nodeId="3995997045458704699" fileName="MappingSelectTree.java" startLine="166" startPosition="30" endLine="167" endPosition="35" />
     <scopeInfo nodeId="3995997045458704713" fileName="MappingSelectTree.java" startLine="174" startPosition="56" endLine="175" endPosition="23" />
-    <scopeInfo nodeId="3995997045458704719" fileName="MappingSelectTree.java" startLine="179" startPosition="40" endLine="180" endPosition="70" />
+    <scopeInfo nodeId="3995997045458704719" fileName="MappingSelectTree.java" startLine="179" startPosition="40" endLine="180" endPosition="49" />
     <scopeInfo nodeId="3995997045458704727" fileName="MappingSelectTree.java" startLine="184" startPosition="29" endLine="185" endPosition="108" />
     <scopeInfo nodeId="3995997045458704740" fileName="MappingSelectTree.java" startLine="190" startPosition="48" endLine="191" endPosition="17" />
     <scopeInfo nodeId="3995997045458704746" fileName="MappingSelectTree.java" startLine="195" startPosition="39" endLine="196" endPosition="46" />
