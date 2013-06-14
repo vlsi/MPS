@@ -219,7 +219,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     final Wrappers._boolean res = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Boolean>() {
       public Boolean invoke() {
-        return res.value = !(isDirectCell(getCell(editor))) && check_myu41h_a0a0a0a0b0t(getNode(), ChangeEditorMessage.this) == null && !(editor instanceof InspectorEditorComponent);
+        return res.value = !(isDirectCell(getCell(editor))) && check_myu41h_a0a0a0a0a0b0t(getNode(), ChangeEditorMessage.this) == null && !(editor instanceof InspectorEditorComponent);
       }
     }));
     return res.value;
@@ -453,7 +453,7 @@ __switch__:
     return null;
   }
 
-  private static SNode check_myu41h_a0a0a0a0b0t(SNode checkedDotOperand, ChangeEditorMessage checkedDotThisExpression) {
+  private static SNode check_myu41h_a0a0a0a0a0b0t(SNode checkedDotOperand, ChangeEditorMessage checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getParent();
     }

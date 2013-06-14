@@ -79,7 +79,7 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
     final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        return node.value = check_q2vl_a0a0a1a0(((SNodePointer) getNodePointer()));
+        return node.value = check_q2vl_a0a0a0a1a0(((SNodePointer) getNodePointer()));
       }
     }));
     return node.value;
@@ -163,7 +163,7 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
 
   protected static Logger LOG = LogManager.getLogger(Node_Configuration.class);
 
-  private static SNode check_q2vl_a0a0a1a0(SNodePointer checkedDotOperand) {
+  private static SNode check_q2vl_a0a0a0a1a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }

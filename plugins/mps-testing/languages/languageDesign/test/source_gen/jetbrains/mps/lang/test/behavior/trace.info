@@ -604,15 +604,15 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/6268941039745707954">
     <nodeInfo nodeId="1977980803835751524" fileName="AnonymousCellAnnotation_Behavior.java" startLine="23" startPosition="178" endLine="24" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1977980803835923808" fileName="AnonymousCellAnnotation_Behavior.java" startLine="24" startPosition="111" endLine="25" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5681471431308132547" fileName="AnonymousCellAnnotation_Behavior.java" startLine="28" startPosition="72" endLine="29" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6268941039745711533" fileName="AnonymousCellAnnotation_Behavior.java" startLine="30" startPosition="9" endLine="31" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6268941039745711563" fileName="AnonymousCellAnnotation_Behavior.java" startLine="32" startPosition="39" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="9114978211826243797" fileName="AnonymousCellAnnotation_Behavior.java" startLine="34" startPosition="9" endLine="35" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361582466" fileName="AnonymousCellAnnotation_Behavior.java" startLine="28" startPosition="72" endLine="29" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361582477" fileName="AnonymousCellAnnotation_Behavior.java" startLine="30" startPosition="9" endLine="31" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361582489" fileName="AnonymousCellAnnotation_Behavior.java" startLine="32" startPosition="39" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2034046503361582498" fileName="AnonymousCellAnnotation_Behavior.java" startLine="34" startPosition="9" endLine="35" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6268941039745711572" fileName="AnonymousCellAnnotation_Behavior.java" startLine="37" startPosition="7" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7465350948216906327" fileName="AnonymousCellAnnotation_Behavior.java" startLine="41" startPosition="92" endLine="42" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7465350948216906335" fileName="AnonymousCellAnnotation_Behavior.java" startLine="42" startPosition="133" endLine="43" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9216084166067812550" fileName="AnonymousCellAnnotation_Behavior.java" startLine="43" startPosition="129" endLine="44" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9216084166067812558" fileName="AnonymousCellAnnotation_Behavior.java" startLine="44" startPosition="90" endLine="45" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361596675" fileName="AnonymousCellAnnotation_Behavior.java" startLine="41" startPosition="92" endLine="42" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361596683" fileName="AnonymousCellAnnotation_Behavior.java" startLine="42" startPosition="133" endLine="43" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361596691" fileName="AnonymousCellAnnotation_Behavior.java" startLine="43" startPosition="129" endLine="44" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361596697" fileName="AnonymousCellAnnotation_Behavior.java" startLine="44" startPosition="90" endLine="45" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6268941039745719425" fileName="AnonymousCellAnnotation_Behavior.java" startLine="52" startPosition="69" endLine="53" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6268941039745719441" fileName="AnonymousCellAnnotation_Behavior.java" startLine="54" startPosition="12" endLine="55" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9114978211826243755" fileName="AnonymousCellAnnotation_Behavior.java" startLine="60" startPosition="49" endLine="61" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -625,39 +625,39 @@
     <nodeInfo nodeId="5681471431307922127" fileName="AnonymousCellAnnotation_Behavior.java" startLine="73" startPosition="49" endLine="74" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6268941039745707954" fileName="AnonymousCellAnnotation_Behavior.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6268941039745719439" fileName="AnonymousCellAnnotation_Behavior.java" startLine="54" startPosition="10" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1977980803835923816" fileName="AnonymousCellAnnotation_Behavior.java" startLine="27" startPosition="25" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6268941039745711561" fileName="AnonymousCellAnnotation_Behavior.java" startLine="31" startPosition="121" endLine="34" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503361582464" fileName="AnonymousCellAnnotation_Behavior.java" startLine="27" startPosition="25" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503361582487" fileName="AnonymousCellAnnotation_Behavior.java" startLine="31" startPosition="121" endLine="34" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5681471431307922098" fileName="AnonymousCellAnnotation_Behavior.java" startLine="69" startPosition="30" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="6268941039745719423" fileName="AnonymousCellAnnotation_Behavior.java" startLine="51" startPosition="103" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7465350948216906325" fileName="AnonymousCellAnnotation_Behavior.java" startLine="40" startPosition="25" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503361596673" fileName="AnonymousCellAnnotation_Behavior.java" startLine="40" startPosition="25" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9114978211826243753" fileName="AnonymousCellAnnotation_Behavior.java" startLine="59" startPosition="109" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6268941039745707954" fileName="AnonymousCellAnnotation_Behavior.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getCaretPosition_6268941039745717986#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell_Label;)I" />
-    <nodeInfo nodeId="7465350948216906313" fileName="AnonymousCellAnnotation_Behavior.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2034046503361596671" fileName="AnonymousCellAnnotation_Behavior.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="6268941039745707954" fileName="AnonymousCellAnnotation_Behavior.java" startLine="59" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setupCaretAndSelection_9114978211826243747#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <nodeInfo nodeId="6268941039745707954" fileName="AnonymousCellAnnotation_Behavior.java" startLine="68" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setupInspector_5681471431307922086#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/NodeEditorComponent;)Ljetbrains/mps/nodeEditor/EditorComponent;" />
-    <nodeInfo nodeId="6268941039745711531" fileName="AnonymousCellAnnotation_Behavior.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7465350948216906312" fileName="AnonymousCellAnnotation_Behavior.java" startLine="38" startPosition="60" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6268941039745711530" fileName="AnonymousCellAnnotation_Behavior.java" startLine="25" startPosition="77" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361582462" fileName="AnonymousCellAnnotation_Behavior.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2034046503361596667" fileName="AnonymousCellAnnotation_Behavior.java" startLine="38" startPosition="60" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361582458" fileName="AnonymousCellAnnotation_Behavior.java" startLine="25" startPosition="77" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6268941039745707954" fileName="AnonymousCellAnnotation_Behavior.java" startLine="23" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setupSelection_6268941039745707957#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/NodeEditorComponent;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
     <scopeInfo nodeId="6268941039745707956" fileName="AnonymousCellAnnotation_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="1977980803835923817" fileName="AnonymousCellAnnotation_Behavior.java" startLine="28" startPosition="72" endLine="29" endPosition="144" />
-    <scopeInfo nodeId="6268941039745711562" fileName="AnonymousCellAnnotation_Behavior.java" startLine="32" startPosition="39" endLine="33" endPosition="60" />
+    <scopeInfo nodeId="2034046503361582465" fileName="AnonymousCellAnnotation_Behavior.java" startLine="28" startPosition="72" endLine="29" endPosition="144" />
+    <scopeInfo nodeId="2034046503361582488" fileName="AnonymousCellAnnotation_Behavior.java" startLine="32" startPosition="39" endLine="33" endPosition="60" />
     <scopeInfo nodeId="6268941039745719424" fileName="AnonymousCellAnnotation_Behavior.java" startLine="52" startPosition="69" endLine="53" endPosition="38" />
     <scopeInfo nodeId="6268941039745719440" fileName="AnonymousCellAnnotation_Behavior.java" startLine="54" startPosition="12" endLine="55" endPosition="71" />
     <scopeInfo nodeId="5681471431307922109" fileName="AnonymousCellAnnotation_Behavior.java" startLine="70" startPosition="92" endLine="71" endPosition="61" />
     <scopeInfo nodeId="6268941039745707954" fileName="AnonymousCellAnnotation_Behavior.java" startLine="20" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="6268941039745707954" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7465350948216906326" fileName="AnonymousCellAnnotation_Behavior.java" startLine="41" startPosition="92" endLine="45" endPosition="110">
-      <varInfo nodeId="7465350948216906336" varName="selectionEnd" />
-      <varInfo nodeId="9216084166067812551" varName="selectionManager" />
-      <varInfo nodeId="7465350948216906328" varName="selectionStart" />
+    <scopeInfo nodeId="2034046503361596674" fileName="AnonymousCellAnnotation_Behavior.java" startLine="41" startPosition="92" endLine="45" endPosition="110">
+      <varInfo nodeId="2034046503361596684" varName="selectionEnd" />
+      <varInfo nodeId="2034046503361596692" varName="selectionManager" />
+      <varInfo nodeId="2034046503361596676" varName="selectionStart" />
     </scopeInfo>
     <scopeInfo nodeId="9114978211826243754" fileName="AnonymousCellAnnotation_Behavior.java" startLine="60" startPosition="49" endLine="64" endPosition="86">
       <varInfo nodeId="9114978211826243756" varName="label" />
     </scopeInfo>
     <scopeInfo nodeId="6268941039745717989" fileName="AnonymousCellAnnotation_Behavior.java" startLine="51" startPosition="103" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="7465350948216906314" fileName="AnonymousCellAnnotation_Behavior.java" startLine="40" startPosition="25" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="2034046503361596672" fileName="AnonymousCellAnnotation_Behavior.java" startLine="40" startPosition="25" endLine="46" endPosition="9" />
     <scopeInfo nodeId="9114978211826243752" fileName="AnonymousCellAnnotation_Behavior.java" startLine="59" startPosition="109" endLine="65" endPosition="5" />
     <scopeInfo nodeId="5681471431307922093" fileName="AnonymousCellAnnotation_Behavior.java" startLine="68" startPosition="142" endLine="74" endPosition="46">
       <varInfo nodeId="5681471431307922095" varName="nodeToSelect" />
@@ -666,8 +666,8 @@
       <varInfo nodeId="6268941039745717992" varName="label" />
       <varInfo nodeId="6268941039745707954" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6268941039745711532" fileName="AnonymousCellAnnotation_Behavior.java" startLine="27" startPosition="25" endLine="35" endPosition="117" />
-    <scopeInfo nodeId="7465350948216906313" fileName="AnonymousCellAnnotation_Behavior.java" startLine="40" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="2034046503361582463" fileName="AnonymousCellAnnotation_Behavior.java" startLine="27" startPosition="25" endLine="35" endPosition="117" />
+    <scopeInfo nodeId="2034046503361596671" fileName="AnonymousCellAnnotation_Behavior.java" startLine="40" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="6268941039745707954" fileName="AnonymousCellAnnotation_Behavior.java" startLine="59" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="9114978211826243750" varName="cellWithId" />
       <varInfo nodeId="6268941039745707954" varName="thisNode" />
@@ -677,7 +677,7 @@
       <varInfo nodeId="5681471431307922091" varName="nodeEditorComponent" />
       <varInfo nodeId="6268941039745707954" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6268941039745711531" fileName="AnonymousCellAnnotation_Behavior.java" startLine="27" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="2034046503361582462" fileName="AnonymousCellAnnotation_Behavior.java" startLine="27" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="6268941039745707960" fileName="AnonymousCellAnnotation_Behavior.java" startLine="23" startPosition="178" endLine="48" endPosition="7">
       <varInfo nodeId="1977980803835923809" varName="cellWithId" />
       <varInfo nodeId="1977980803835751525" varName="editorComponent" />
@@ -688,8 +688,8 @@
       <varInfo nodeId="6268941039745711578" varName="nodeEditorComponent" />
       <varInfo nodeId="6268941039745707954" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="7465350948216906313" fileName="AnonymousCellAnnotation_Behavior.java" startLine="39" startPosition="45" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior$2" />
-    <unitInfo nodeId="6268941039745711531" fileName="AnonymousCellAnnotation_Behavior.java" startLine="26" startPosition="45" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior$1" />
+    <unitInfo nodeId="2034046503361596671" fileName="AnonymousCellAnnotation_Behavior.java" startLine="39" startPosition="45" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior$2" />
+    <unitInfo nodeId="2034046503361582462" fileName="AnonymousCellAnnotation_Behavior.java" startLine="26" startPosition="45" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior$1" />
     <unitInfo nodeId="6268941039745707954" fileName="AnonymousCellAnnotation_Behavior.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior" />
   </root>
 </debugInfo>

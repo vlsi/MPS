@@ -153,13 +153,13 @@ public class Ant_Command {
     final Wrappers._T<String> name = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
-        return name.value = check_11bn_a0a0a1a4(target);
+        return name.value = check_11bn_a0a0a0a1a4(target);
       }
     }));
     return name.value;
   }
 
-  private static String check_11bn_a0a0a1a4(SNode checkedDotOperand) {
+  private static String check_11bn_a0a0a0a1a4(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SPropertyOperations.getString(checkedDotOperand, "name");
     }

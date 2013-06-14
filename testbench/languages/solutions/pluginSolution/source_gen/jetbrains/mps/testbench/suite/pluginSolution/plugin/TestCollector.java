@@ -47,7 +47,7 @@ public class TestCollector {
       final Wrappers._T<List<SNode>> nodes = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SNode>>() {
         public List<SNode> invoke() {
-          final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0c0b2(), "annotation", false);
+          final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0c0b2(), "annotation", false);
 
           return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode itc) {
@@ -75,7 +75,7 @@ public class TestCollector {
       return any.value;
     }
 
-    private static SNode _quotation_createNode_rpw6il_a0a0a0c0b2() {
+    private static SNode _quotation_createNode_rpw6il_a0a0a0a0c0b2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
@@ -94,8 +94,8 @@ public class TestCollector {
       final Wrappers._T<List<SNode>> nodes = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SNode>>() {
         public List<SNode> invoke() {
-          final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0c0b3(), "annotation", false);
-          final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a1a0c0b3(), "annotation", false);
+          final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0c0b3(), "annotation", false);
+          final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a1a0a0c0b3(), "annotation", false);
 
           return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode cls) {
@@ -131,7 +131,7 @@ public class TestCollector {
       return any.value;
     }
 
-    private static SNode _quotation_createNode_rpw6il_a0a0a0c0b3() {
+    private static SNode _quotation_createNode_rpw6il_a0a0a0a0c0b3() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
@@ -139,7 +139,7 @@ public class TestCollector {
       return quotedNode_1;
     }
 
-    private static SNode _quotation_createNode_rpw6il_a0a1a0c0b3() {
+    private static SNode _quotation_createNode_rpw6il_a0a1a0a0c0b3() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
@@ -158,7 +158,7 @@ public class TestCollector {
       final Wrappers._T<List<SNode>> nodes = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SNode>>() {
         public List<SNode> invoke() {
-          final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0c0b4(), "annotation", false);
+          final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0c0b4(), "annotation", false);
 
           return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode cls) {
@@ -166,7 +166,7 @@ public class TestCollector {
                 public boolean accept(SNode cann) {
                   return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
                 }
-              })) && BehaviorReflection.invokeVirtual(Boolean.TYPE, cls, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0a0a0c0a2a1e(), "classifier", false)});
+              })) && BehaviorReflection.invokeVirtual(Boolean.TYPE, cls, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0a0a0c0a0a2a1e(), "classifier", false)});
             }
           }).toListSequence();
         }
@@ -186,7 +186,7 @@ public class TestCollector {
       return any.value;
     }
 
-    private static SNode _quotation_createNode_rpw6il_a0a0a0c0b4() {
+    private static SNode _quotation_createNode_rpw6il_a0a0a0a0c0b4() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
@@ -194,7 +194,7 @@ public class TestCollector {
       return quotedNode_1;
     }
 
-    private static SNode _quotation_createNode_rpw6il_a0a0a0a0a0a0c0a2a1e() {
+    private static SNode _quotation_createNode_rpw6il_a0a0a0a0a0a0c0a0a2a1e() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
