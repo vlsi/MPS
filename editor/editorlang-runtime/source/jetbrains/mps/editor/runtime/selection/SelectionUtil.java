@@ -23,8 +23,23 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Date: 6/10/13
  */
 public class SelectionUtil {
-  public static void select(EditorContext editorContext, SNode node, String cellId) {
+  public static void selectNode(EditorContext editorContext, SNode node) {
+    editorContext.flushEvents();
+    editorContext.getSelectionManager().setSelection(node);
+  }
+
+  public static void selectCell(EditorContext editorContext, SNode node, String cellId) {
     editorContext.flushEvents();
     editorContext.getSelectionManager().setSelection(node, cellId);
+  }
+
+  public static void selectLabelCellAnSetCaret(EditorContext editorContext, SNode node, String cellId, int caretPosition) {
+    editorContext.flushEvents();
+    editorContext.getSelectionManager().setSelection(node, cellId, caretPosition);
+  }
+
+  public static void selectLabelCellWithSelection(EditorContext editorContext, SNode node, String cellId, int startSelection, int endSelection) {
+    editorContext.flushEvents();
+    editorContext.getSelectionManager().setSelection(node, cellId, startSelection, endSelection);
   }
 }

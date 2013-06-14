@@ -5957,15 +5957,15 @@
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_DeleteOperation" typeId="tp25.1140133623887" id="1231694406831" nodeInfo="nn" />
             </node>
           </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2412132804001389971" nodeInfo="nn">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2412132804001390811" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2412132804001389970" nodeInfo="nn">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4510086454784748857" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4510086454784749226" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4510086454784748856" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1231693361387" resolveInfo="attributedNode" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectOperation" typeId="tpc2.1201265905111" id="2412132804001394423" nodeInfo="nn">
-                <node role="editorContext" roleId="tpc2.1201266028598" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="2412132804001397662" nodeInfo="nn" />
-                <node role="selectLaterParameter" roleId="tpc2.1201266036224" type="tpc2.PropertyParameter" typeId="tpc2.2412132804002425236" id="2412132804004712142" nodeInfo="ng">
-                  <node role="property" roleId="tpc2.2412132804002428925" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8418946122924355117" nodeInfo="nn">
+              <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="4510086454784752617" nodeInfo="nn">
+                <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="4510086454784752629" nodeInfo="nn" />
+                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.PropertyExpressionCellSelector" typeId="tpc2.4510086454726375946" id="4510086454784753566" nodeInfo="ng">
+                  <node role="propertyDeclaration" roleId="tpc2.4510086454769912032" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4510086454784753593" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1231694249738" resolveInfo="propertyDeclaration" />
                   </node>
                 </node>

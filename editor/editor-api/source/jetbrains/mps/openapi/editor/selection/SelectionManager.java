@@ -63,6 +63,15 @@ public interface SelectionManager {
   void setSelection(EditorCell_Label label, int caretPosition, int selectionStart, int selectionEnd);
 
   /**
+   * Selecting editor cell representing specified <code>node</code>.
+   * <p/>
+   * Selection will be cleared if corresponding cell was not found.
+   *
+   * @param node SNode to select
+   */
+  void setSelection(SNode node);
+
+  /**
    * Selecting editor cell with the specified <code>cellId</code> representing specified <code>node</code>.
    * Either actual <code>cellId</code> or one of predefined cell selectors can be passed as a parameter:
    * <ul>

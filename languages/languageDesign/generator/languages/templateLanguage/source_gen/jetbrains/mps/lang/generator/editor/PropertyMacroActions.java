@@ -33,7 +33,7 @@ public class PropertyMacroActions {
       SNode attributedNode = SNodeOperations.getParent(node);
       SNode propertyDeclaration = AttributeOperations.getPropertyDeclaration(node);
       SNodeOperations.deleteNode(node);
-      SelectionUtil.select(editorContext, attributedNode, CellIdManager.createPropertyId(SPropertyOperations.getString((propertyDeclaration), "name")));
+      SelectionUtil.selectCell(editorContext, attributedNode, CellIdManager.createPropertyId(SPropertyOperations.getString(propertyDeclaration, "name")));
     }
   }
 }

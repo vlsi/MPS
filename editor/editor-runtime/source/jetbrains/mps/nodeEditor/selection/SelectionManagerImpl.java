@@ -228,6 +228,11 @@ public class SelectionManagerImpl implements SelectionManager {
   }
 
   @Override
+  public void setSelection(SNode node) {
+    setSelection(myEditorComponent.findNodeCell(node));
+  }
+
+  @Override
   public void setSelection(SNode node, @NotNull String cellId) {
     EditorCell cell = findCell(node, cellId);
     if (cell == null) {

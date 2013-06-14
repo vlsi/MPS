@@ -3466,15 +3466,94 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1078938745671" resolveInfo="EditorComponentDeclaration" />
     </node>
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2412132804002425236" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode" />
-    <property name="name" nameId="tpck.1169194664001" value="PropertyParameter" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="property declaration" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1201266127262" resolveInfo="SelectParameter" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2412132804002428925" nodeInfo="ig">
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3647146066980922272" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
+    <property name="name" nameId="tpck.1169194664001" value="SelectInEditorOperation" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="select in" />
+    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1138411891628" resolveInfo="SNodeOperation" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1948540814633499358" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="editorContext" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <property name="role" nameId="tpce.1071599776563" value="property" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1948540814635895774" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="cellSelector" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1948540814635886374" resolveInfo="AbstractCellSelector" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4510086454767561658" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1948540814635886374" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
+    <property name="name" nameId="tpck.1169194664001" value="AbstractCellSelector" />
+    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2162403111526915125" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3547227755871693971" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
+    <property name="name" nameId="tpck.1169194664001" value="PredefinedSelector" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1948540814635886374" resolveInfo="AbstractCellSelector" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2162403111523065396" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="cellId" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="2162403111523060375" resolveInfo="PredefinedCellID" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2162403111523059536" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
+    <property name="name" nameId="tpck.1169194664001" value="IdSelector" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1948540814635886374" resolveInfo="AbstractCellSelector" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2162403111529391190" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="cellId" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+  </root>
+  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="2162403111523060375" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
+    <property name="name" nameId="tpck.1169194664001" value="PredefinedCellID" />
+    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2162403111523060376" nodeInfo="ig">
+      <property name="externalValue" nameId="tpce.1083923523172" value="FIRST" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="first" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2162403111523062256" nodeInfo="ig">
+      <property name="externalValue" nameId="tpce.1083923523172" value="LAST" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="last" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2162403111523062252" nodeInfo="ig">
+      <property name="externalValue" nameId="tpce.1083923523172" value="FIRST_EDITABLE" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="firstEditable" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2162403111523062249" nodeInfo="ig">
+      <property name="externalValue" nameId="tpce.1083923523172" value="LAST_EDITABLE" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="lastEditable" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4510086454722552739" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
+    <property name="name" nameId="tpck.1169194664001" value="PropertyDeclarationCellSelector" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1948540814635886374" resolveInfo="AbstractCellSelector" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4510086454740628767" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <property name="role" nameId="tpce.1071599776563" value="propertyDeclaration" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4510086454726375946" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
+    <property name="name" nameId="tpck.1169194664001" value="PropertyExpressionCellSelector" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1948540814635886374" resolveInfo="AbstractCellSelector" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4510086454769912032" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="propertyDeclaration" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </root>
