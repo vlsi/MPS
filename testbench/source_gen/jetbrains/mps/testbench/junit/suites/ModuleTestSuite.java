@@ -148,7 +148,8 @@ public class ModuleTestSuite {
 
 
   private static void createTestEnvironment(Map<String, File> libs) {
-    EnvironmentConfig config = EnvironmentConfig.defaultEnvironment();
+    // todo: ask Julia why without plugins? 
+    EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
     for (IMapping<String, File> lib : MapSequence.fromMap(libs)) {
       config = config.addLib(lib.key(), lib.value());
     }
