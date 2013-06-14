@@ -31,6 +31,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
@@ -583,10 +584,17 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     return label.isEditable() && label.isSelectable();
   }
 
-  private void deleteIfPossible() {
+  private void deleteIfPossible(CellActionType actionType) {
+    assert CellActionType.DELETE == actionType || CellActionType.BACKSPACE == actionType;
     if ("".equals(getText()) && isTopCell()) {
       if (getStyle().get(StyleAttributes.AUTO_DELETABLE)) {
-        getSNode().delete();
+        // TODO: just use delte action (do not call getSNode().delete()) in the end if acton was not found or is not applicable
+        CellAction deleteAction = getEditorComponent().getActionHandler().getApplicableCellAction(this, actionType);
+        if (deleteAction != null && deleteAction.canExecute(getContext())) {
+          deleteAction.execute(getContext());
+        } else {
+          getSNode().delete();
+        }
       }
     }
   }
@@ -1020,7 +1028,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       if (myActionType == CellActionType.BACKSPACE) {
         if (myTextLine.hasNonTrivialSelection()) {
           deleteSelection();
-          deleteIfPossible();
+          deleteIfPossible(myActionType);
           return true;
         }
 
@@ -1033,7 +1041,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
           if (!isCaretPositionAllowed(caretPosition - 1)) return false;
           setCaretPosition(caretPosition - 1);
           ensureCaretVisible();
-          deleteIfPossible();
+          deleteIfPossible(myActionType);
           return true;
         } else {
           if (myAllowErrors && canDeleteFrom(getPrevLeaf())) {
@@ -1048,7 +1056,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       } else if (myActionType == CellActionType.DELETE) {
         if (myTextLine.hasNonTrivialSelection()) {
           deleteSelection();
-          deleteIfPossible();
+          deleteIfPossible(myActionType);
           return true;
         } else if (caretPosition < oldText.length()) {
           String newText = oldText.substring(0, caretPosition) + oldText.substring(caretPosition + 1);
@@ -1057,7 +1065,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
           }
           changeText(newText);
           ensureCaretVisible();
-          deleteIfPossible();
+          deleteIfPossible(myActionType);
           return true;
         } else {
           if (myAllowErrors && canDeleteFrom(getNextLeaf())) {
