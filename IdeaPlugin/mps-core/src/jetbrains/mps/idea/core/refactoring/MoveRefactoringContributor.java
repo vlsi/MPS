@@ -5,10 +5,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * danilla 6/5/13
+ * danilla 6/13/13
  */
 
-public interface RenameRefactoringContributor {
+// TODO identical to RenameRefactoingConributor => if they don't diverge, make them one
+public interface MoveRefactoringContributor {
 
   boolean isAvailableFor(@NotNull SNode node);
 

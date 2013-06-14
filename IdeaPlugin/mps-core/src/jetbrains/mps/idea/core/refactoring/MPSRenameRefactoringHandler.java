@@ -86,8 +86,7 @@ public class MPSRenameRefactoringHandler implements RenameHandler {
           return;
         }
 
-        IRefactoring base = RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings.Rename");
-        IRefactoring psiAwareRefactoring = new PsiRenameRefactoringWrapper(base, node);
+        IRefactoring psiAwareRefactoring = new PsiRenameRefactoringWrapper();
 
         RefactoringAccess.getInstance().getRefactoringFacade().execute(
           RefactoringContext.createRefactoringContext(psiAwareRefactoring,

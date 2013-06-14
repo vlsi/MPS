@@ -79,8 +79,7 @@ public class MethodRenameContributor implements RenameRefactoringContributor {
       return;
     }
 
-    IRefactoring base = RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings.RenameMethod");
-    IRefactoring psiAwareRefactoring = new PsiMethodRenameRefactoringWrapper(base, node, d.getOverriding());
+    IRefactoring psiAwareRefactoring = new PsiMethodRenameRefactoringWrapper(d.getOverriding());
 
     RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContext(
       psiAwareRefactoring,

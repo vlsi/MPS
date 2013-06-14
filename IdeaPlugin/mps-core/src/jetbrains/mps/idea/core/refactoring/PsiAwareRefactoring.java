@@ -10,10 +10,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.refactoring.framework.IRefactoring;
-import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -22,32 +19,34 @@ import java.util.HashSet;
 import java.util.List;
 
 /**
- * danilla 6/3/13
+ * danilla 6/14/13
  */
 
-public class PsiRenameRefactoringWrapper extends PsiAwareRefactoring {
+public class PsiAwareRefactoring extends RefactoringWrapper {
 
-  public PsiRenameRefactoringWrapper() {
-    super(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings.Rename"));
-  }
-
-  protected PsiRenameRefactoringWrapper(IRefactoring base) {
+  public PsiAwareRefactoring(IRefactoring base) {
     super(base);
   }
 
   @Override
-  public void refactor(RefactoringContext refactoringContext) {
-    baseRefactoring.refactor(refactoringContext);
+  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
+    SearchResults<SNode> mpsResults = baseRefactoring.getAffectedNodes(refactoringContext);
 
     Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
     PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(refactoringContext.getSelectedNode());
+    // todo search scope?
     Collection<PsiReference> psiRefs = ReferencesSearch.search(psiTarget).findAll();
-
-    String newName = (String) refactoringContext.getParameter("newName");
-
+    // size may be bigger than needed, due to MPS usages returned among PSI usages
+    List<SearchResult<SNode>> psiResults = new ArrayList<SearchResult<SNode>>(psiRefs.size());
     for (PsiReference ref : psiRefs) {
-      ref.handleElementRename(newName);
-    }
-  }
+      PsiElement element = ref.getElement();
+      if (element instanceof MPSPsiNode) continue;
 
+      psiResults.add(new PsiSearchResult(ref));
+    }
+
+    mpsResults.addAll(new SearchResults<SNode>(new HashSet<SNode>(), psiResults));
+
+    return mpsResults;
+  }
 }
