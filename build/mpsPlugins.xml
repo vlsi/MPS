@@ -157,7 +157,7 @@
   
   <target name="test" depends="classes, fetchDependencies, declare-mps-tasks">
     <echo message="testing generation" />
-    <difftest parallelMode="true" fork="true">
+    <difftest parallelMode="true" fork="true" showdiff="true">
       <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />

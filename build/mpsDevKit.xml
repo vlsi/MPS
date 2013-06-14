@@ -473,7 +473,7 @@
   
   <target name="test" depends="classes, fetchDependencies, declare-mps-tasks">
     <echo message="testing generation" />
-    <difftest parallelMode="true" fork="true">
+    <difftest parallelMode="true" fork="true" showdiff="true">
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
       <plugin path="${artifacts.mpsTesting}/mps-testing" />
       <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.tool.gentest.jar" />
