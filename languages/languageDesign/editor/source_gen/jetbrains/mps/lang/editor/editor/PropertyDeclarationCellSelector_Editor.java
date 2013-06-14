@@ -29,6 +29,8 @@ import jetbrains.mps.smodel.IScope;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class PropertyDeclarationCellSelector_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -144,7 +146,8 @@ public class PropertyDeclarationCellSelector_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector");
+      SNode propertyExpression = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector");
+      SelectionUtil.selectCell(editorContext, propertyExpression, SelectionManager.LAST_EDITABLE_CELL);
     }
 
     public boolean isReferentPresentation() {
