@@ -104,7 +104,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
           null, jetbrains.mps.smodel.SModelId.generate(), "temp");
     } else {
       SModelId id = PersistenceFacade.getInstance().createModelId("path:" + relPath);
-      SModuleReference mref = ModuleReference.fromString(moduleRef);
+      SModuleReference mref = PersistenceFacade.getInstance().createModuleReference(moduleRef);
       if (mref == null) {
         // TODO fix
         return null;

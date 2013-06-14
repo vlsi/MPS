@@ -1026,9 +1026,8 @@
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4543209876460447536" nodeInfo="in">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88zw.~SModuleReference" resolveInfo="SModuleReference" />
                 </node>
-                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4543209876460447537" nodeInfo="nn">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="y090.~LanguageDesign_DevKit" resolveInfo="LanguageDesign_DevKit" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="y090.~LanguageDesign_DevKit%dMODULE_REFERENCE" resolveInfo="MODULE_REFERENCE" />
+                <node role="initializer" roleId="tpee.1068431790190" type="tp25.CheckedModuleReference" typeId="tp25.4357968816427488499" id="2034046503352867517" nodeInfo="nn">
+                  <property name="moduleId" nameId="tp25.4357968816427488500" value="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
                 </node>
               </node>
             </node>

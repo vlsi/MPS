@@ -16,7 +16,6 @@
     <classNode dependClassName="jetbrains.mps.ide.NewModuleCheckUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.library.LanguageDesign_DevKit" />
     <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
     <classNode dependClassName="jetbrains.mps.persistence.DefaultModelRoot" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />

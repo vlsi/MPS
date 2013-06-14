@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.library.LanguageDesign_DevKit;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -31,7 +31,6 @@ import com.intellij.openapi.vfs.VfsUtil;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModuleOperations;
@@ -153,7 +152,7 @@ public class NewModuleUtil {
     LanguageDescriptor descriptor = createNewLanguageDescriptor(namespace, descriptorFile);
 
     if (importLangDevDevkit) {
-      SModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
+      SModuleReference devkitRef = PersistenceFacade.getInstance().createModuleReference("2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)");
       descriptor.getUsedDevkits().add(devkitRef);
     }
 

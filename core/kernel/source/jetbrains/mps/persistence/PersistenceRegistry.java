@@ -109,7 +109,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   @Override
   public SModuleReference createModuleReference(String text) {
-    return ModuleReference.fromString(text);
+    return ModuleReference.parseReference(text);
   }
 
   @Override
