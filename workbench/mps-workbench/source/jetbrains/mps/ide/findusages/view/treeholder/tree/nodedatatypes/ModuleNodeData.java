@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.Icon;
 
@@ -97,7 +98,7 @@ public class ModuleNodeData extends BaseNodeData {
   @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
-    myModuleReference = jetbrains.mps.project.structure.modules.ModuleReference.fromString(element.getAttributeValue(MODULE_REF));
+    myModuleReference = PersistenceFacade.getInstance().createModuleReference(element.getAttributeValue(MODULE_REF));
   }
 
   @Override

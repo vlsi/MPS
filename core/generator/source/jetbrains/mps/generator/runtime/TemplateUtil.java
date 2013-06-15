@@ -16,16 +16,29 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.impl.interpreted.TemplateModuleInterpreted;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.project.structure.modules.mappingpriorities.*;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllLocal;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.lang.reflect.Array;
-import java.util.*;
+import java.util.AbstractCollection;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, 10/28/10
@@ -108,7 +121,7 @@ public class TemplateUtil {
   }
 
   public static TemplateModule createInterpretedGenerator(LanguageRuntime sourceLanguage, String moduleReference) {
-    Generator g = ModuleRepositoryFacade.getInstance().getModule(jetbrains.mps.project.structure.modules.ModuleReference.fromString(moduleReference), Generator.class);
+    Generator g = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(moduleReference), Generator.class);
     if (g == null) {
       LOG.error("language " + sourceLanguage.getNamespace() + " doesn't contain generator `" + moduleReference + "': try to regenerate language");
       return null;
@@ -181,7 +194,7 @@ public class TemplateUtil {
 
   public static TemplateMappingConfigRef createRefExternal(String moduleReference, TemplateMappingConfigRef inner) {
     MappingConfig_ExternalRef result = new MappingConfig_ExternalRef();
-    result.setGenerator(jetbrains.mps.project.structure.modules.ModuleReference.fromString(moduleReference));
+    result.setGenerator(PersistenceFacade.getInstance().createModuleReference(moduleReference));
     result.setMappingConfig((MappingConfig_AbstractRef) inner);
     return result;
   }

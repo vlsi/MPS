@@ -53,6 +53,7 @@ import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.util.Condition;
 
 import java.awt.Color;
@@ -497,7 +498,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       return null;
     }
     jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(concreteConceptFqName));
-    org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(node, newNode);
+    SNodeUtil.replaceWithAnother(node, newNode);
     getContext().flushEvents();
     return newNode;
   }

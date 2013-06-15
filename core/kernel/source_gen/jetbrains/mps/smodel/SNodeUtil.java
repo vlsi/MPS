@@ -24,6 +24,7 @@ public class SNodeUtil {
   public static final String concept_LinkDeclaration = "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   public static final String concept_InterfacePart = "jetbrains.mps.lang.core.structure.InterfacePart";
   public static final String concept_ImplementationPart = "jetbrains.mps.lang.core.structure.ImplementationPart";
+  public static final String concept_ImplementationWithStubPart = "jetbrains.mps.lang.core.structure.ImplementationWithStubPart";
 
   public static final String link_ConceptDeclaration_extends = "extends";
   public static final String link_ConceptDeclaration_implements = "implements";

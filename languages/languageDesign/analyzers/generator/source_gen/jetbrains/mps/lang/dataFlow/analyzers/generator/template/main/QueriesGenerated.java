@@ -76,6 +76,10 @@ public class QueriesGenerated {
     return "patternVar_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getOriginalCopiedInputNode(_context.getNode())), "jetbrains.mps.lang.pattern.structure.ActionAsPattern"), "varName");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1815980786158776239(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
+  }
+
   public static Object propertyMacro_GetPropertyValue_1420906503568751825(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "patternVar_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getOriginalCopiedInputNode(_context.getNode())), "jetbrains.mps.lang.pattern.structure.ActionAsPattern"), "varName");
   }
@@ -94,6 +98,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4943044633102149636(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), "concept", false), "virtual_getFqName_1213877404258", new Object[]{});
+  }
+
+  public static Object propertyMacro_GetPropertyValue_802679297401943030(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_4352355327610854507(final IOperationContext operationContext, final PropertyMacroContext _context) {

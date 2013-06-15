@@ -5,11 +5,15 @@ package jetbrains.mps.ide.dataFlow.presentation;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Set;
 import java.util.HashSet;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.apache.log4j.Priority;
 import java.awt.event.MouseEvent;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public abstract class AbstractBlock implements IBlock {
   protected int myX;
@@ -17,6 +21,7 @@ public abstract class AbstractBlock implements IBlock {
   protected int myWidth;
   protected int myHeight;
   protected SNodeReference mySourceNode;
+  private SNodeReference myRuleNodeReference;
   private int myPaddingX = 0;
   private int myPaddingY = 0;
   private int myCharHeight = 0;
@@ -25,19 +30,37 @@ public abstract class AbstractBlock implements IBlock {
   private Set<IBlockListener> myBlockListeners = new HashSet<IBlockListener>();
   private Set<IBlock> mySucc;
 
-  public AbstractBlock(int x, int y, int width, int height, SNodeReference sourceNode, String caption) {
+  public AbstractBlock(int x, int y, int width, int height, SNodeReference sourceNode, String caption, String ruleNodeReference) {
     this.myX = x;
     this.myY = y;
     this.myWidth = width;
     this.myHeight = height;
     this.mySourceNode = sourceNode;
     this.myCaption = caption;
+    if (ruleNodeReference != null) {
+      try {
+        this.myRuleNodeReference = PersistenceFacade.getInstance().createNodeReference(ruleNodeReference);
+      } catch (IllegalArgumentException e) {
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Can't find node: " + ruleNodeReference, e);
+        }
+        this.myRuleNodeReference = null;
+      }
+    }
   }
 
   @Override
   public SNodeReference getSourceNode() {
     return this.mySourceNode;
   }
+
+
+
+  public SNodeReference getRuleNodeReference() {
+    return this.myRuleNodeReference;
+  }
+
+
 
   @Override
   public int getX() {
@@ -144,4 +167,6 @@ public abstract class AbstractBlock implements IBlock {
     AbstractBlock.this.paintBlock(g);
     AbstractBlock.this.paintCaption(g);
   }
+
+  protected static Logger LOG = LogManager.getLogger(AbstractBlock.class);
 }

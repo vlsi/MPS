@@ -30,4 +30,6 @@ public abstract class ReloadManager {
   public abstract void removeReloadListener(ReloadListener listener);
 
   public abstract <T> T computeNoReload(Computable<T> computable);
+
+  public abstract void flush();
 }

@@ -96,7 +96,7 @@ public class VersionUtil {
   }
 
   public String genType(@NotNull SNode node) {
-    return genReferenceString(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode(), node.getConcept().getId(), false);
+    return genReferenceString(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode(), node.getConcept().getQualifiedName(), false);
   }
 
   public String genRole(@NotNull SNode node) {

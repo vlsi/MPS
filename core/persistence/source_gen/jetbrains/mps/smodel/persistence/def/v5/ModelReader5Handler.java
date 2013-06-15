@@ -17,7 +17,6 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
@@ -263,17 +262,17 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
 
     private void handleChild_2286463592495498227(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
-      (fieldmodel).addLanguage(ModuleReference.fromString(child));
+      (fieldmodel).addLanguage(PersistenceFacade.getInstance().createModuleReference(child));
     }
 
     private void handleChild_2286463592495498259(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
-      (fieldmodel).addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+      (fieldmodel).addEngagedOnGenerationLanguage(PersistenceFacade.getInstance().createModuleReference(child));
     }
 
     private void handleChild_2286463592495498276(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
-      (fieldmodel).addDevKit(ModuleReference.fromString(child));
+      (fieldmodel).addDevKit(PersistenceFacade.getInstance().createModuleReference(child));
     }
 
     private void handleChild_2286463592495498335(Object resultObject, Object value) throws SAXException {

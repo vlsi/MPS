@@ -4,7 +4,7 @@ package jetbrains.mps.internal.make.runtime.backports;
 
 import jetbrains.mps.progress.ProgressMonitorBase;
 import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.progress.SubProgressKind;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 public class JobProgressMonitorAdapter extends ProgressMonitorBase {
   private static final int WORK_AMOUNT = 10000;

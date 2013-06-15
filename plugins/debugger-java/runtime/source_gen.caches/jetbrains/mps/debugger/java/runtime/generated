@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bi8onol0ilz6k1f25pw19apld0zhmgi">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+<dependencies version="2" modelHash="-clpd7nhts082ubzes0wzym7poi63vdp">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <common hash="-9nyyp8ps4wxoweozd8bkd2opwhk2n0" />
-  <source id="7048882195103614171" name="JavaNodePositionProvider" hash="-cmm5mqkd0gs31lwptvosl7b3q2a66kn">
+  <source id="7048882195103614171" name="JavaNodePositionProvider" hash="346n5mdl6ygnm324myg7sngs25zgbcr">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaNodePositionProvider.java" />
   </source>
-  <source id="4352118152439837554" name="JavaDebugger" hash="bczqrziyvzmw3ydn96qxqri4ira3ux6">
+  <source id="4352118152439837554" name="JavaDebugger" hash="-2gmcyob04sksaeef7rdb2ihmic2d6jx">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaDebugger.java" />
   </source>

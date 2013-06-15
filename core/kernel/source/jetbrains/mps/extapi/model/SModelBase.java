@@ -21,16 +21,17 @@ import jetbrains.mps.smodel.DisposedRepository;
 import jetbrains.mps.smodel.IllegalModelAccessError;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -72,6 +73,11 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     return myRepository;
   }
 
+  @Override
+  public SNode createNode(SConcept concept) {
+    return new jetbrains.mps.smodel.SNode(concept.getQualifiedName());
+  }
+
   public void attach(SRepository repo) {
     if (myRepository == repo) return;
     synchronized (REPO_LOCK) {
@@ -87,7 +93,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     synchronized (REPO_LOCK) {
       // TODO isLoaded is not enough
       if (isLoaded()) {
-        for (org.jetbrains.mps.openapi.model.SNode node : getRootNodes()) {
+        for (SNode node : getRootNodes()) {
           ((SNodeBase) node).detach();
         }
       }
@@ -96,11 +102,11 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   @Override
-  public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
+  public Iterable<SNode> getRootNodes() {
     assertCanRead();
-    Iterable<org.jetbrains.mps.openapi.model.SNode> roots = getSModelInternal().getRootNodes();
+    Iterable<SNode> roots = getSModelInternal().getRootNodes();
     if (myRepository != null) {
-      for (org.jetbrains.mps.openapi.model.SNode r : roots) {
+      for (SNode r : roots) {
         ((SNodeBase) r).attach(myRepository);
       }
     }
@@ -108,8 +114,8 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SNode getNode(SNodeId id) {
-    SNode node = getSModelInternal().getNode(id);
+  public SNode getNode(SNodeId id) {
+    jetbrains.mps.smodel.SNode node = getSModelInternal().getNode(id);
     if (node == null) return null;
     if (myRepository != null) {
       node.attach(myRepository);
@@ -178,12 +184,12 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   @Override
-  public void addRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+  public void addRootNode(@NotNull SNode node) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public void removeRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+  public void removeRootNode(@NotNull SNode node) {
     throw new UnsupportedOperationException();
   }
 
@@ -196,10 +202,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   public boolean isRegistered() {
     SModule copy = myModule;
     return copy != null && copy.getRepository() != null;
-  }
-
-  protected void updateReferenceAfterRename(SModelReference ref) {
-    myModelReference = ref;
   }
 
   @NotNull
@@ -243,19 +245,19 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     myAccessListeners.remove(l);
   }
 
-  public void fireNodeRead(SNode node) {
+  public void fireNodeRead(jetbrains.mps.smodel.SNode node) {
     for (SModelAccessListener l : myAccessListeners) {
       l.nodeRead(node);
     }
   }
 
-  public void fireReferenceRead(SNode node, String role) {
+  public void fireReferenceRead(jetbrains.mps.smodel.SNode node, String role) {
     for (SModelAccessListener l : myAccessListeners) {
       l.referenceRead(node, role);
     }
   }
 
-  public void firePropertyRead(SNode node, String propertyName) {
+  public void firePropertyRead(jetbrains.mps.smodel.SNode node, String propertyName) {
     for (SModelAccessListener l : myAccessListeners) {
       l.propertyRead(node, propertyName);
     }
@@ -276,7 +278,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
         if (newState == ModelLoadingState.NOT_LOADED) {
           l.modelUnloaded(this);
         } else {
-          l.modelLoaded(this, newState == ModelLoadingState.ROOTS_LOADED);
+          l.modelLoaded(this, newState == ModelLoadingState.INTERFACE_LOADED);
         }
       } catch (Throwable t) {
         LOG.error("listener failure", t);
@@ -294,6 +296,12 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
         LOG.error("listener failure", t);
       }
     }
+  }
+
+  @Override
+  public void changeModelReference(SModelReference newModelReference) {
+    super.changeModelReference(newModelReference);
+    myModelReference = newModelReference;
   }
 
 

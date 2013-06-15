@@ -14,7 +14,7 @@
   <root type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="481983775135178859" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Typeof_ProjectPluginType" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom" />
-    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="481983775135178860" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="481983775135178860" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="481983775135178861" nodeInfo="nn">
         <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="481983775135178862" nodeInfo="nn">
           <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="481983775135178863" nodeInfo="in">
@@ -31,7 +31,7 @@
   <root type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="481983775135178865" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Typeof_ApplicationPluginType" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom" />
-    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="481983775135178866" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="481983775135178866" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="481983775135178867" nodeInfo="nn">
         <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="481983775135178868" nodeInfo="nn">
           <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4543772620559925688" nodeInfo="in">
@@ -48,7 +48,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="681855071694758171" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_GetToolInProjectOperation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool.Operations" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="681855071694758172" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="681855071694758172" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="681855071694758173" nodeInfo="nn">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="681855071694758174" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="681855071694758175" nodeInfo="nn">
@@ -82,7 +82,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="681855071694758184" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_GetPreferencesComponentInProjectOperation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Preference" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="681855071694758185" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="681855071694758185" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="681855071694758186" nodeInfo="nn">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="681855071694758187" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="681855071694758188" nodeInfo="nn">

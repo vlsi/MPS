@@ -27,6 +27,7 @@ public class CheckSubTypeOperation extends AddRemarkOperation {
     mySuperType = superType;
   }
 
+  @Override
   public String getPresentation() {
     return "checking whether " + mySubType + " is subtype of " + mySuperType;
   }

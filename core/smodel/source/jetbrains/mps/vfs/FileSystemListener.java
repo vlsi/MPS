@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.vfs;
 
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 /**
  * evgeny, 11/2/12

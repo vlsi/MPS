@@ -655,7 +655,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5298401719286459888(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "link", false), "role");
+    return SModelUtil.getGenuineLinkRole(SLinkOperations.getTarget(_context.getNode(), "link", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_5298401719286571842(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -2107,18 +2107,6 @@ public class QueriesGenerated {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
   }
 
-  public static SNode sourceNodeQuery_4510086454721385996(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "editorContext", true);
-  }
-
-  public static SNode sourceNodeQuery_4510086454721386004(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
-  }
-
-  public static SNode sourceNodeQuery_4510086454721389657(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "cellSelector", true);
-  }
-
   public static SNode sourceNodeQuery_3604384757227225224(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "editorContext", true);
   }
@@ -2128,6 +2116,18 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3604384757227225240(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "cellSelector", true);
+  }
+
+  public static SNode sourceNodeQuery_4510086454721385996(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "editorContext", true);
+  }
+
+  public static SNode sourceNodeQuery_4510086454721386004(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_4510086454721389657(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "cellSelector", true);
   }
 

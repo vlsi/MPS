@@ -114,6 +114,8 @@ public class WriteHelper {
       res[0] = 'i';
     } else if (conceptKind == ConceptKind.IMPLEMENTATION) {
       res[0] = 'l';
+    } else if (conceptKind == ConceptKind.IMPLEMENTATION_WITH_STUB) {
+      res[0] = 's';
     }
     if (conceptScope == StaticScope.ROOT) {
       res[1] = 'r';

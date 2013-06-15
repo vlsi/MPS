@@ -43,6 +43,7 @@ public class TargetState extends State {
     return new TargetInequalities(this);
   }
 
+  @Override
   public void clear(boolean clearDiff) {
     super.clear(clearDiff);
     myTargetNode = null;
@@ -77,6 +78,7 @@ public class TargetState extends State {
     }
   }
 
+  @Override
   public void expandAll(final Set<SNode> nodes, final boolean finalExpansion) {
     expandTargetNode();
     return;

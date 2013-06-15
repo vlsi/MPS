@@ -87,14 +87,14 @@ public class SwitchlanguageAspectDescriptorVariable implements TemplateSwitchMap
       try {
         environment.getTracer().pushMacro(nodeMacroRef_mjol5z_a0a0a2a5h);
         TemplateContext context1 = context.subContext("aspect.descriptor.field");
-        final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+        final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         try {
           environment.getTracer().pushTemplateNode(templateNode_mjol5z_a0a0a3a2a5h);
           environment.nodeCopied(context1, tnode2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314559519");
           SNodeAccessUtil.setProperty(tnode2, "name", "myEditorAspectDescriptor");
 
           {
-            final SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility");
+            final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility");
             try {
               environment.getTracer().pushTemplateNode(templateNode_mjol5z_a0a0a1a4a3a2a5h);
               environment.nodeCopied(context1, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314559520");
@@ -109,7 +109,7 @@ public class SwitchlanguageAspectDescriptorVariable implements TemplateSwitchMap
             // TODO validate child 
           }
           {
-            final SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType");
+            final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType");
             try {
               environment.getTracer().pushTemplateNode(templateNode_mjol5z_a0a0a1a5a3a2a5h);
               environment.nodeCopied(context1, tnode4, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314907605");

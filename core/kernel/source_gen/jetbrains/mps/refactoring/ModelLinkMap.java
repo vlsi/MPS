@@ -177,12 +177,12 @@ public class ModelLinkMap {
     for (jetbrains.mps.smodel.SModel.ImportElement element : ListSequence.fromList(((SModelInternal) myModel).importedModels())) {
       if (model.equals(element.getModelReference())) {
         res = true;
-        element.setModelReference((jetbrains.mps.smodel.SModelReference) newModel);
+        element.setModelReference(newModel);
       }
     }
     for (jetbrains.mps.smodel.SModel.ImportElement element : ListSequence.fromList(((SModelInternal) myModel).getAdditionalModelVersions())) {
       if (model.equals(element.getModelReference())) {
-        element.setModelReference((jetbrains.mps.smodel.SModelReference) newModel);
+        element.setModelReference(newModel);
       }
     }
     // update references 
@@ -191,7 +191,7 @@ public class ModelLinkMap {
       res = true;
       ListSequence.fromList(list).visitAll(new IVisitor<DynamicReference>() {
         public void visit(DynamicReference it) {
-          it.setTargetSModelReference((jetbrains.mps.smodel.SModelReference) newModel);
+          it.setTargetSModelReference(newModel);
         }
       });
       MapSequence.fromMap(myDynRefMap).put(newModel, list);
@@ -201,7 +201,7 @@ public class ModelLinkMap {
         res = true;
         ListSequence.fromList(MapSequence.fromMap(myTargetMap).get(ptr)).visitAll(new IVisitor<StaticReference>() {
           public void visit(StaticReference it) {
-            it.setTargetSModelReference((jetbrains.mps.smodel.SModelReference) newModel);
+            it.setTargetSModelReference(newModel);
           }
         });
       }

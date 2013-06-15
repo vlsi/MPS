@@ -30,10 +30,12 @@ public abstract class OverloadedOperationsTypesProvider implements IOverloadedOp
   protected boolean myRightIsStrong = false;
 
 
+  @Override
   public String getApplicableConceptFQName() {
     return myOperationConceptFQName;
   }
 
+  @Override
   public boolean isApplicable(SubtypingManager subtypingManager, SNode leftOperandType, SNode rightOperandType) {
     if (myLeftTypeIsExact) {
       if (!MatchingUtil.matchNodes(leftOperandType, myLeftOperandType)) {
@@ -56,10 +58,12 @@ public abstract class OverloadedOperationsTypesProvider implements IOverloadedOp
     return true;
   }
 
+  @Override
   public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
     return isApplicable(subtypingManager, leftOperandType, rightOperandType);
   }
 
+  @Override
   public int compareTo(IOverloadedOpsTypesProvider o) {
     if (o instanceof OverloadedOperationsTypesProvider) {
       OverloadedOperationsTypesProvider o2 = (OverloadedOperationsTypesProvider) o;

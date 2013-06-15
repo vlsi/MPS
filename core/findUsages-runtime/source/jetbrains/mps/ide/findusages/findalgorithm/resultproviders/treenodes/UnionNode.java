@@ -17,7 +17,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.annotations.NotNull;
 
 public class UnionNode extends BaseNode {

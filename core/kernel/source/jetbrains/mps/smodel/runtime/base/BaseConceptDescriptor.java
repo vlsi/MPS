@@ -60,6 +60,7 @@ public abstract class BaseConceptDescriptor implements ConceptDescriptor {
   public ConceptKind getConceptKind() {
     Set<String> ancestors = getAncestorsNames();
     return ancestors.contains(SNodeUtil.concept_InterfacePart) ? ConceptKind.INTERFACE
+        : ancestors.contains(SNodeUtil.concept_ImplementationWithStubPart) ? ConceptKind.IMPLEMENTATION_WITH_STUB
         : ancestors.contains(SNodeUtil.concept_ImplementationPart) ? ConceptKind.IMPLEMENTATION
         : ConceptKind.NORMAL;
   }

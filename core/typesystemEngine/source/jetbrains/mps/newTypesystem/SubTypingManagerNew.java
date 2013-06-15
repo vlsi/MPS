@@ -141,23 +141,32 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   @Override
-  public boolean isComparableByRules(SNode left, SNode right, boolean isWeak) {
+  public boolean isComparableByRules(final SNode left, final SNode right, final boolean isWeak) {
     if (left == null || right == null) {
       return false;
     }
-    List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(left, right, isWeak);
-    if (comparisonRule_runtimes != null) {
-      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.o1.areComparable(left, right, comparisonRule_runtime.o2)) return true;
-      }
-    }
-    comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(right, left, isWeak);
-    if (comparisonRule_runtimes != null) {
-      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.o1.areComparable(right, left, comparisonRule_runtime.o2)) return true;
-      }
-    }
-    return false;
+
+    return LanguageScopeExecutor.execWithTwoLanguageScope(
+        jetbrains.mps.util.SNodeOperations.getLanguage(left),
+        jetbrains.mps.util.SNodeOperations.getLanguage(right),
+        new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(left, right, isWeak);
+            if (comparisonRule_runtimes != null) {
+              for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
+                if (comparisonRule_runtime.o1.areComparable(left, right, comparisonRule_runtime.o2)) return true;
+              }
+            }
+            comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(right, left, isWeak);
+            if (comparisonRule_runtimes != null) {
+              for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
+                if (comparisonRule_runtime.o1.areComparable(right, left, comparisonRule_runtime.o2)) return true;
+              }
+            }
+            return false;
+          }
+        });
   }
 
   @Override

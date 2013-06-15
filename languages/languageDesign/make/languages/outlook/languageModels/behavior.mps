@@ -9,7 +9,7 @@
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2511103526757027801" nodeInfo="ng">
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="z5g5.5608160002100057298" resolveInfo="Outlook" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="2511103526757027802" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2511103526757027803" nodeInfo="nn" />
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2511103526757027803" nodeInfo="sn" />
     </node>
   </root>
 </model>

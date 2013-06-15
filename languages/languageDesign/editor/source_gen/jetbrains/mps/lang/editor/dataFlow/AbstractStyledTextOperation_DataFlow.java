@@ -14,7 +14,7 @@ public class AbstractStyledTextOperation_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitNop();
+    _context.getBuilder().emitNop("r:ee466c3b-c879-435f-9e8d-bb261ada44ed(jetbrains.mps.lang.editor.dataFlow)/4531786690998643509");
     for (SNode argument : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "actualArgument", true))) {
       _context.getBuilder().build((SNode) argument);
     }

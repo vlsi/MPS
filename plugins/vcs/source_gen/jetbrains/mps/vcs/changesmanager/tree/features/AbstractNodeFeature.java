@@ -4,14 +4,13 @@ package jetbrains.mps.vcs.changesmanager.tree.features;
 
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public abstract class AbstractNodeFeature extends Feature {
   private SNodeReference myNodeRef;
 
   protected AbstractNodeFeature(@NotNull SNodeReference nodePointer) {
-    super(((SModelReference) nodePointer.getModelReference()));
+    super(nodePointer.getModelReference());
     myNodeRef = nodePointer;
   }
 

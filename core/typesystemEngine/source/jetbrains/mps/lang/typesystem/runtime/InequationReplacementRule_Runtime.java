@@ -34,6 +34,7 @@ public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoA
     return checkInequation(subtype, supertype, equationInfo, status, true, true);
   }
 
+  @Override
   public IsApplicable2Status isApplicableAndPatterns(SNode node1, SNode node2) {
     IsApplicableStatus applicableStatus1 = isApplicableSubtypeAndPattern(node1);
     if (!applicableStatus1.isApplicable()) return IsApplicable2Status.FALSE_STATUS;
@@ -65,18 +66,22 @@ public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoA
 
   public abstract String getApplicableSupertypeConceptFQName();
 
+  @Override
   public boolean isApplicable1(SNode node) {
     return isApplicableSubtype(node);
   }
 
+  @Override
   public boolean isApplicable2(SNode node) {
     return isApplicableSupertype(node);
   }
 
+  @Override
   public String getApplicableConceptFQName1() {
     return getApplicableSubtypeConceptFQName();
   }
 
+  @Override
   public String getApplicableConceptFQName2() {
     return getApplicableSupertypeConceptFQName();
   }

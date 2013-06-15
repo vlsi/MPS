@@ -6,7 +6,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
@@ -17,18 +16,19 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.ProjectStructureModule;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class SModelOperations {
   public SModelOperations() {
@@ -45,7 +45,6 @@ public class SModelOperations {
       }
       return result;
     }
-    GlobalScope scope = GlobalScope.getInstance();
     List<SNode> list = new ArrayList<SNode>();
     Condition<SNode> cond = new Condition<SNode>() {
       @Override
@@ -89,7 +88,7 @@ public class SModelOperations {
     return allNodesIncludingImported(model, scope, false, concept);
   }
 
-  private static List<SNode> allNodesIncludingImported(SModel sModel, IScope scope, boolean roots, @Nullable SNode concept) {
+  private static List<SNode> allNodesIncludingImported(SModel sModel, IScope scope, boolean roots, @Nullable final SNode concept) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(sModel);
     List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
@@ -98,14 +97,18 @@ public class SModelOperations {
     }
     List<SNode> resultNodes = new ArrayList<SNode>();
     for (SModel aModel : modelsList) {
-      Iterable<? extends SNode> nodes = (roots ?
+      Iterable<SNode> nodes = (roots ?
         aModel.getRootNodes() :
         new NodesIterable(aModel)
       );
       if (concept == null) {
         resultNodes.addAll(IterableUtil.asList(nodes));
       } else if (roots) {
-        resultNodes.addAll(IterableUtil.asList(new ConditionalIterable(nodes, new IsInstanceCondition(concept))));
+        ListSequence.fromList(resultNodes).addSequence(Sequence.fromIterable(nodes).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(((SNode) it), NameUtil.nodeFQName(concept));
+          }
+        }));
       } else {
         resultNodes.addAll(IterableUtil.asList(((SModelInternal) aModel).getFastNodeFinder().getNodes(NameUtil.nodeFQName(concept), true)));
       }
@@ -135,6 +138,7 @@ public class SModelOperations {
     if (conceptFqName == null) {
       return null;
     }
+
     SNode nodeConcept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (jetbrains.mps.smodel.SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
       jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(conceptFqName);
@@ -147,7 +151,7 @@ public class SModelOperations {
     if (result == null) {
       return null;
     }
-    BehaviorManager.getInstance().initNode(result);
+    BehaviorReflection.initNode(result);
     return ((jetbrains.mps.smodel.SNode) result);
   }
 

@@ -39,7 +39,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   private SModelAdapter myListener = new MySModelAdapter();
   private SModelRepositoryAdapter myRepositoryAdapter = new MySModelRepositoryAdapter();
 
-  private Map<String, Set<SNode>> myNodes = new THashMap<String, Set<SNode>>();
+  private final Map<String, Set<SNode>> myNodes = new THashMap<String, Set<SNode>>();
 
   public DefaultFastNodeFinder(SModel model) {
     myModel = model;
@@ -146,6 +146,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
 
   private void remove(String conceptFqName, SNode node) {
     Set<SNode> set = myNodes.get(conceptFqName);
+    if (set == null) return;
 
     set.remove(node);
     if (set.isEmpty()) {

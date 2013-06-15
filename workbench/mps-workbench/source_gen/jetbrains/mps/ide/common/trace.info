@@ -262,18 +262,18 @@
     <unitInfo nodeId="1482618131069177615" fileName="FileOpenUtil.java" startLine="23" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.common.FileOpenUtil" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/4251154893541678687">
-    <nodeInfo nodeId="4251154893541691633" fileName="ReadComboBoxEditor.java" startLine="15" startPosition="25" endLine="16" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361624399" fileName="ReadComboBoxEditor.java" startLine="15" startPosition="25" endLine="16" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4251154893541691630" fileName="ReadComboBoxEditor.java" startLine="21" startPosition="55" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4251154893541678690" fileName="ReadComboBoxEditor.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReadComboBoxEditor#()V" />
-    <nodeInfo nodeId="4251154893541678723" fileName="ReadComboBoxEditor.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2034046503361624397" fileName="ReadComboBoxEditor.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4251154893541691625" fileName="ReadComboBoxEditor.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setItemInternal#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4251154893541678722" fileName="ReadComboBoxEditor.java" startLine="13" startPosition="46" endLine="18" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361624393" fileName="ReadComboBoxEditor.java" startLine="13" startPosition="46" endLine="18" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4251154893541678694" fileName="ReadComboBoxEditor.java" startLine="12" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setItem#(Ljava/lang/Object;)V" />
     <scopeInfo nodeId="4251154893541678693" fileName="ReadComboBoxEditor.java" startLine="9" startPosition="31" endLine="9" endPosition="31" />
-    <scopeInfo nodeId="4251154893541678724" fileName="ReadComboBoxEditor.java" startLine="15" startPosition="25" endLine="16" endPosition="58" />
+    <scopeInfo nodeId="2034046503361624398" fileName="ReadComboBoxEditor.java" startLine="15" startPosition="25" endLine="16" endPosition="58" />
     <scopeInfo nodeId="4251154893541691629" fileName="ReadComboBoxEditor.java" startLine="21" startPosition="55" endLine="22" endPosition="28" />
     <scopeInfo nodeId="4251154893541678690" fileName="ReadComboBoxEditor.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="4251154893541678723" fileName="ReadComboBoxEditor.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="2034046503361624397" fileName="ReadComboBoxEditor.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="4251154893541691625" fileName="ReadComboBoxEditor.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="4251154893541691624" varName="anObject" />
     </scopeInfo>
@@ -281,24 +281,24 @@
     <scopeInfo nodeId="4251154893541678694" fileName="ReadComboBoxEditor.java" startLine="12" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="4251154893541678697" varName="anObject" />
     </scopeInfo>
-    <unitInfo nodeId="4251154893541678723" fileName="ReadComboBoxEditor.java" startLine="14" startPosition="45" endLine="18" endPosition="5" unitName="jetbrains.mps.ide.common.ReadComboBoxEditor$1" />
+    <unitInfo nodeId="2034046503361624397" fileName="ReadComboBoxEditor.java" startLine="14" startPosition="45" endLine="18" endPosition="5" unitName="jetbrains.mps.ide.common.ReadComboBoxEditor$1" />
     <unitInfo nodeId="4251154893541678687" fileName="ReadComboBoxEditor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.common.ReadComboBoxEditor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/4251154893541691639">
     <nodeInfo nodeId="4251154893541691682" fileName="ReadComboBoxRenderrer.java" startLine="16" startPosition="158" endLine="17" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4251154893541691749" fileName="ReadComboBoxRenderrer.java" startLine="19" startPosition="25" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361607503" fileName="ReadComboBoxRenderrer.java" startLine="19" startPosition="25" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4251154893541691775" fileName="ReadComboBoxRenderrer.java" startLine="22" startPosition="7" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4251154893541691742" fileName="ReadComboBoxRenderrer.java" startLine="26" startPosition="138" endLine="27" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4251154893541691642" fileName="ReadComboBoxRenderrer.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReadComboBoxRenderrer#()V" />
-    <nodeInfo nodeId="4251154893541691688" fileName="ReadComboBoxRenderrer.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2034046503361607501" fileName="ReadComboBoxRenderrer.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4251154893541691728" fileName="ReadComboBoxRenderrer.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getListCellRenderretComponentInternal#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
-    <nodeInfo nodeId="4251154893541691687" fileName="ReadComboBoxRenderrer.java" startLine="17" startPosition="71" endLine="22" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361607497" fileName="ReadComboBoxRenderrer.java" startLine="17" startPosition="71" endLine="22" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4251154893541691646" fileName="ReadComboBoxRenderrer.java" startLine="15" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
     <scopeInfo nodeId="4251154893541691645" fileName="ReadComboBoxRenderrer.java" startLine="12" startPosition="34" endLine="12" endPosition="34" />
-    <scopeInfo nodeId="4251154893541691689" fileName="ReadComboBoxRenderrer.java" startLine="19" startPosition="25" endLine="20" endPosition="107" />
+    <scopeInfo nodeId="2034046503361607502" fileName="ReadComboBoxRenderrer.java" startLine="19" startPosition="25" endLine="20" endPosition="107" />
     <scopeInfo nodeId="4251154893541691741" fileName="ReadComboBoxRenderrer.java" startLine="26" startPosition="138" endLine="27" endPosition="92" />
     <scopeInfo nodeId="4251154893541691642" fileName="ReadComboBoxRenderrer.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="4251154893541691688" fileName="ReadComboBoxRenderrer.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2034046503361607501" fileName="ReadComboBoxRenderrer.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="4251154893541691728" fileName="ReadComboBoxRenderrer.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="4251154893541691761" varName="cellHasFocus" />
       <varInfo nodeId="4251154893541691755" varName="index" />
@@ -316,7 +316,7 @@
       <varInfo nodeId="4251154893541691649" varName="list" />
       <varInfo nodeId="4251154893541691651" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="4251154893541691688" fileName="ReadComboBoxRenderrer.java" startLine="18" startPosition="45" endLine="22" endPosition="5" unitName="jetbrains.mps.ide.common.ReadComboBoxRenderrer$1" />
+    <unitInfo nodeId="2034046503361607501" fileName="ReadComboBoxRenderrer.java" startLine="18" startPosition="45" endLine="22" endPosition="5" unitName="jetbrains.mps.ide.common.ReadComboBoxRenderrer$1" />
     <unitInfo nodeId="4251154893541691639" fileName="ReadComboBoxRenderrer.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ide.common.ReadComboBoxRenderrer" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/8606486054003576517">

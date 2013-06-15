@@ -77,7 +77,7 @@ public class SymbolicSuite extends ParentRunner<Runner> {
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
-public static   @interface SuiteClassSymbols {
+  public @interface SuiteClassSymbols {
     String[] value();
-}
+  }
 }

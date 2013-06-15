@@ -73,12 +73,8 @@ public class QueriesGenerated {
     return "FindUsagesDescriptor";
   }
 
-  public static Object propertyMacro_GetPropertyValue_7991477654791670147(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getModule().getModuleName();
-  }
-
-  public static Object propertyMacro_GetPropertyValue_7991477654791670162(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getModule().getModuleReference().getModuleId().toString();
+  public static Object propertyMacro_GetPropertyValue_4081282727750608488(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalInputModel().getModule().getModuleReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7991477654791670182(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -88,7 +84,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_7991477654791670213(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0a41(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
+        return eq_x583g4_a0a0a0a0a0a0a0a31(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
       }
     }).first().getNodeId().toString();
   }
@@ -226,7 +222,7 @@ public class QueriesGenerated {
     return new TemplateModelImpl(module);
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0a41(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0a31(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

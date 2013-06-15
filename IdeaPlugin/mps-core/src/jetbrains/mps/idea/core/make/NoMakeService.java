@@ -24,7 +24,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.Future;

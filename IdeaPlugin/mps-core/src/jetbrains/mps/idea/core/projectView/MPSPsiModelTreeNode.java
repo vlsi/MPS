@@ -20,6 +20,7 @@ import com.intellij.ide.projectView.PresentationData;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.BasePsiNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatusManager;
@@ -134,6 +135,6 @@ public class MPSPsiModelTreeNode extends BasePsiNode<MPSPsiModel> implements Nav
     if (fileStatusManager != null && getVirtualFile() != null) {
       return fileStatusManager.getStatus(psiModel.getSourceVirtualFile()).getColor();
     }
-    return Color.BLACK;
+    return EditorColorsManager.getInstance().getGlobalScheme().getDefaultForeground();
   }
 }

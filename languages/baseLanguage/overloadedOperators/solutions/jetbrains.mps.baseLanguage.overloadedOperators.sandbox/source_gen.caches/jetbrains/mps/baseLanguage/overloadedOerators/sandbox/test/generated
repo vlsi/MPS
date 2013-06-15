@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="biu7ici117ux13rr43wn9s3aubw0c7f">
+<dependencies version="2" modelHash="-53q4zt32k7beh2i41a4x1wdlhlvnnv9">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:28e834a9-8b65-474e-9087-1e117e68bbbb(jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator)" hash="-3y8nd5t7hzj3xqglgjgrdkcc63cohdu" />
-  <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" hash="c88mtjfwny8idjdrp91ud7tvzh20znc" />
+  <dep model="r:28e834a9-8b65-474e-9087-1e117e68bbbb(jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator)" hash="-c2g8f7jwbtry4cfhej1g7lopsjqqjc8" />
+  <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" hash="8q1nvd4x0vzbc81nwvphrdgjl58axll" />
   <common hash="-br332cxnzb4dca4ef9u6zub1li06fqv" />
-  <source id="4226637275972869608" name="Complex" hash="-9h90ybssnmc8st8nizbxsp1idzp4xz6" dependsOnNodes="true">
+  <source id="4226637275972869608" name="Complex" hash="-16vidlz2u28cv3z3ofr27t3z73i450a" dependsOnNodes="true">
     <dep root="4226637275972869614" />
     <dep root="4226637275972869620" />
     <dep root="4888428037514503250" />
@@ -19,7 +19,7 @@
     <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" />
     <file name="Complex.java" />
   </source>
-  <source id="4226637275972869614" name="TestComplex" hash="-wxxbny21qhqeyesoxt8917man1y8zh" dependsOnNodes="true">
+  <source id="4226637275972869614" name="TestComplex" hash="-bpjez1b5vvfgkc8jsmbtkmrfkugqgos" dependsOnNodes="true">
     <dep root="4226637275972869608" />
     <dep root="4226637275972869620" />
     <dep root="4888428037514503250" />
@@ -31,7 +31,7 @@
     <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" />
     <file name="TestComplex.java" />
   </source>
-  <source id="4226637275972869620" name="ComplexOperators" hash="-arb4nwvxopsdbl0lzj9rzxasn7izrnc" dependsOnNodes="true">
+  <source id="4226637275972869620" name="ComplexOperators" hash="3u6zr6ggw3y29d9c4xcnyzyw3d66g79" dependsOnNodes="true">
     <dep root="4226637275972869608" />
     <dep root="4226637275972869614" />
     <dep root="4888428037514503250" />
@@ -44,7 +44,7 @@
     <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" />
     <file name="ComplexOperators.java" />
   </source>
-  <source id="6517886960437939909" name="Complex2" hash="5yvtpn1czt7602c1zwhk0ycbyn5usx3" dependsOnNodes="true">
+  <source id="6517886960437939909" name="Complex2" hash="bets2jeeiwgncj50sbnaorl7n56nwck" dependsOnNodes="true">
     <dep root="4226637275972869608" />
     <dep root="4226637275972869614" />
     <dep root="4226637275972869620" />
@@ -55,7 +55,7 @@
     <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" />
     <file name="Complex2.java" />
   </source>
-  <source id="4888428037514503250" name="StringOperators" hash="-cb3qubpvrfv064eltn4pze4dbnka3ck">
+  <source id="4888428037514503250" name="StringOperators" hash="ciqo38gn4qeqo2ul8aaeqbgcw9gvk22">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:28e834a9-8b65-474e-9087-1e117e68bbbb(jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator)" />
     <file name="StringOperators.java" />

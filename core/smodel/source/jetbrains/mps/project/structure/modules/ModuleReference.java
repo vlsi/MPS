@@ -31,13 +31,12 @@ import java.util.regex.Pattern;
 public final class ModuleReference implements SModuleReference {
   private static final Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
 
+  /**
+   * use {@link org.jetbrains.mps.openapi.persistence.PersistenceFacade#createModuleReference(String)}
+   */
+  @Deprecated
   public static SModuleReference fromString(String text) {
-    text = text.trim();
-    Matcher m = MODULE_REFERENCE.matcher(text);
-    if (m.matches()) {
-      return new ModuleReference(m.group(2), m.group(1));
-    }
-    return new ModuleReference(text);
+    return parseReference(text);
   }
 
   private final String myModuleName;
@@ -94,6 +93,15 @@ public final class ModuleReference implements SModuleReference {
   @Deprecated
   public String getModuleFqName() {
     return myModuleName;
+  }
+
+  public static SModuleReference parseReference(String text) {
+    text = text.trim();
+    Matcher m = MODULE_REFERENCE.matcher(text);
+    if (m.matches()) {
+      return new ModuleReference(m.group(2), ModuleId.fromString(m.group(1)));
+    }
+    return new ModuleReference(text);
   }
 }
 

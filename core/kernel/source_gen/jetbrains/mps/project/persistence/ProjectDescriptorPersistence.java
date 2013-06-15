@@ -23,7 +23,6 @@ import org.apache.log4j.Priority;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -135,7 +134,7 @@ public class ProjectDescriptorPersistence {
       tc.setName(e.getAttributeValue("name"));
       String moduleRef = e.getAttributeValue("moduleRef");
       if (moduleRef != null) {
-        tc.setModuleRef(ModuleReference.fromString(moduleRef));
+        tc.setModuleRef(PersistenceFacade.getInstance().createModuleReference(moduleRef));
         result_jnk9az_a1a3.getTestConfigurations().add(tc);
       }
     }

@@ -8,8 +8,8 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -48,7 +48,7 @@ public class StubUtil {
       return null;
     }
 
-    SModule debuggerApi = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cc7da2f6-419f-4133-a811-31fcd3295a85"));
+    SModule debuggerApi = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("cc7da2f6-419f-4133-a811-31fcd3295a85(jetbrains.mps.debugger.api.api)"));
     for (SModel debuggerModel : Sequence.fromIterable(debuggerApi.getModels())) {
       if (eq_g10q2g_a0a0e0c(SNodeOperations.getModelLongName(debuggerModel), SModelStereotype.withoutStereotype(targetSModelReference.getModelName()))) {
         return debuggerModel;

@@ -12,7 +12,7 @@ public class BLCommand_BehaviorDescriptor extends StatementList_BehaviorDescript
   public BLCommand_BehaviorDescriptor() {
   }
 
-  public void virtual_execute_757553790980855637(SNode thisNode, final Project p, ConsoleStream console) {
+  public void virtual_execute_757553790980855637(SNode thisNode, final Project p, final ConsoleStream console) {
     BLCommand_Behavior.virtual_execute_757553790980855637(thisNode, p, console);
   }
 

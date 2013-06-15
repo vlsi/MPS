@@ -79,7 +79,7 @@ public abstract class ModuleRuntimeLibrariesImporter {
 
     Collection<Library> projectLibs2Add = new HashSet<Library>();
     for (SModule usedModule : collectRuntimeModules(myAddedModules)) {
-      if (BootstrapLanguages.JDK.equals(usedModule.getModuleReference())) {
+      if (BootstrapLanguages.jdkRef().equals(usedModule.getModuleReference())) {
         continue;
       }
 

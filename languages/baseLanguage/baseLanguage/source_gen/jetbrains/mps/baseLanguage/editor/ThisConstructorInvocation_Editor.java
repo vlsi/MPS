@@ -46,7 +46,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_g21mz4_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "constructorDeclaration");
+    style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "baseMethodDeclaration");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

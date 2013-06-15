@@ -25,7 +25,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5950344441601663777" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5950344441601663777" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5950344441601663779" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="ial" />
       </node>
@@ -76,7 +76,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5950344441601668454" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5950344441601668454" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5950344441601668455" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="new" />
       </node>
@@ -98,7 +98,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5950344441601676491" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5950344441601676491" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5950344441601676492" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="newValue" />
       </node>
@@ -146,7 +146,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7636045212390401432" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7636045212390401432" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7636045212390401434" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="newPropertyValue" />
       </node>
@@ -169,7 +169,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7636045212390401764" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7636045212390401764" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7636045212390401766" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="Property" />
       </node>
@@ -192,7 +192,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7636045212390410965" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_removeQuery_compact" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Testing if compact conditional presentation works as expected (remove hint query works properly)" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7636045212390410972" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7636045212390410972" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7636045212390410973" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="propValue" />
       </node>
@@ -240,7 +240,7 @@
         <property name="cellId" nameId="tp5g.1229194968595" value="property_projectionType" />
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7636045212390416995" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7636045212390416995" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7636045212390416999" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="rich" />
       </node>
@@ -276,7 +276,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7636045212393364917" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_removeQuery_switch" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Testing if child element projection will be switched from compact to rich type on changing corresponding model property (remove context hint query re-evaluated no model changes)" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7636045212393364918" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7636045212393364918" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7636045212393365029" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="false" />
       </node>
@@ -337,7 +337,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2601164129533059975" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2601164129533059975" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="2601164129533059976" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="new" />
       </node>
@@ -385,7 +385,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5613016763942494753" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5613016763942494753" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5613016763942494752" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="New" />
       </node>
@@ -420,7 +420,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5613016763942494884" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5613016763942494884" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5613016763942494883" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="New" />
       </node>
@@ -429,7 +429,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5613016763942508875" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_addQuery_RefNodeList_rich" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Testing if rich conditional presentation works as expected (add hint query works properly in RefNodeList cell)" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5613016763942508879" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5613016763942508879" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5613016763942508880" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="Property" />
       </node>
@@ -465,7 +465,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="554589055677209880" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_addQuery_RefNodeList_default" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Testing if default conditional presentation works as expected (add hint query works properly in RefNodeList cell)" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="554589055677209887" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="554589055677209887" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="554589055677209888" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="newPropertyValue" />
       </node>
@@ -513,7 +513,7 @@
         <property name="cellId" nameId="tp5g.1229194968595" value="property_projectionType" />
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="554589055677210833" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="554589055677210833" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="554589055677210834" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="rich" />
       </node>
@@ -550,7 +550,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="554589055677397793" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_removeQuery_RefNodeList_compact" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Testing if compact conditional presentation works as expected (remove hint query works properly in RefNodeList cell)" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="554589055677397794" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="554589055677397794" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="554589055677397795" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="propValue" />
       </node>
@@ -600,7 +600,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="554589055677398010" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="554589055677398010" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="554589055677398011" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="false" />
       </node>
@@ -636,7 +636,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5861024100074454462" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="EditorSpecifiedBy_add_context_hints_RefNode" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Editing MultipleEditorsTestChild child concept instance using rich editor (rich context hint was pushed into context by RefNode editor cell)" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5861024100074454469" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5861024100074454469" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5861024100074454470" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="New" />
       </node>
@@ -671,7 +671,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5861024100074455062" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="EditorSpecifiedBy_add_remove_context_hints_RefNode" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Editing MultipleEditorsTestChild child concept instance using compact editor (rich context hint was removed from the context &amp; compact pushed instead by RefNode editor cell)" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5861024100074455069" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5861024100074455069" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5861024100074455070" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="New" />
       </node>
@@ -706,7 +706,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1947450138886989116" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_addQuery_RefNode_default" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Testing if default conditional presentation works as expected (add hint query works properly in RefNode cell)" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1947450138886989117" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1947450138886989117" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="1947450138886989118" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="newPropertyValue" />
       </node>
@@ -741,7 +741,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1947450138886989214" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_addQuery_RefNode_rich" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Testing if rich conditional presentation works as expected (add hint query works properly in RefNode cell)" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1947450138886989215" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1947450138886989215" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="1947450138886989216" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="Property" />
       </node>
@@ -777,7 +777,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1947450138886989480" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_addQuery_RefNode_switch" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Testing if child element projection will be switched from default to rich type on switching corresponding model property (add context hint query in RefNode cell re-evaluated no model changes)" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1947450138886989484" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1947450138886989484" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="1947450138886989485" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="rich" />
       </node>
@@ -827,7 +827,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1947450138886994476" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_removeQuery_RefNode_compact" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Testing if compact conditional presentation works as expected (remove hint query works properly in RefNode cell)" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1947450138886994477" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1947450138886994477" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="1947450138886994478" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="propValue" />
       </node>
@@ -863,7 +863,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1947450138886994765" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_removeQuery_RefNode_switch" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Testing if child element projection will be switched from compact to rich type on changing corresponding model property (remove context hint query in RefNode cell re-evaluated no model changes)" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1947450138886994766" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1947450138886994766" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="1947450138886994767" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="false" />
       </node>
@@ -939,7 +939,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6355695904178440221" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6355695904178440221" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="6355695904178440220" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="newPropertyValue" />
       </node>

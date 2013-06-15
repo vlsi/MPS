@@ -273,7 +273,7 @@ public class JavaModuleFacetTab extends BaseTab {
 
     public LibraryTableModel() {
       super();
-      for(String javaStubPath : myJavaModuleFacet.getLibraryClassPath())
+      for(String javaStubPath : myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths())
         myStubModelEntries.add(javaStubPath);
     }
 
@@ -316,7 +316,7 @@ public class JavaModuleFacetTab extends BaseTab {
 
 
     public boolean isModified() {
-      return !(myJavaModuleFacet.getLibraryClassPath().containsAll(myStubModelEntries) && myStubModelEntries.containsAll(myJavaModuleFacet.getLibraryClassPath()));
+      return !(myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths().containsAll(myStubModelEntries) && myStubModelEntries.containsAll(myJavaModuleFacet.getLibraryClassPath()));
     }
 
     public void apply() {

@@ -11,9 +11,9 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.progress.SubProgressKind;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 

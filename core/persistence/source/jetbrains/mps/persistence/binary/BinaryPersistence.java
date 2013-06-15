@@ -163,7 +163,7 @@ public class BinaryPersistence {
 
     // TODO
     // new StructureModificationProcessor(myLinkMap, model).updateModelOnLoad();
-    return new ModelLoadResult(model, reader.hasSkippedNodes() ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED);
+    return new ModelLoadResult(model, reader.hasSkippedNodes() ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
   }
 
   private static void saveModel(SModel model, ModelOutputStream os) throws IOException {

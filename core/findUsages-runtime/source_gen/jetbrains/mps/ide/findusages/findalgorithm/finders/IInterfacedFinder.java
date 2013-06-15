@@ -5,7 +5,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public interface IInterfacedFinder extends IFinder {
   public String getConcept();

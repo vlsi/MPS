@@ -35,7 +35,8 @@ import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
@@ -50,7 +51,6 @@ import jetbrains.mps.debug.api.Debuggers;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -248,7 +248,7 @@ public class Java_Command {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         classpath.value = JavaModuleOperations.collectExecuteClasspath(module);
-        classpath.value.removeAll(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")).getFacet(JavaModuleFacet.class).getClassPath());
+        classpath.value.removeAll(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)")).getFacet(JavaModuleFacet.class).getClassPath());
       }
     });
     return new ArrayList<String>(classpath.value);
@@ -265,7 +265,7 @@ public class Java_Command {
   private static List<String> getClassRunnerClassPath() {
     return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        return Java_Command.getClasspath(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("5b247b59-8fd0-4475-a767-9e9ff6a9d01c")));
+        return Java_Command.getClasspath(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("5b247b59-8fd0-4475-a767-9e9ff6a9d01c(jetbrains.mps.baseLanguage.execution.startup)")));
       }
     });
   }

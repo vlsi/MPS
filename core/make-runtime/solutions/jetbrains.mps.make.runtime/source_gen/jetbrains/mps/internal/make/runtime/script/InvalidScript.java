@@ -7,7 +7,7 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.internal.collections.runtime.Sequence;

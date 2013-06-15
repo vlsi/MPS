@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.FindersManager;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;

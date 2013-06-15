@@ -9,7 +9,7 @@ import jetbrains.mps.ide.platform.watching.ReloadParticipant;
 import jetbrains.mps.idea.java.psi.PsiListener.FSMove;
 import jetbrains.mps.idea.java.psi.PsiListener.FSRename;
 import jetbrains.mps.idea.java.psi.PsiListener.PsiEvent;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
@@ -45,15 +45,7 @@ public class PsiChangeProcessor extends ReloadParticipant {
             final Project project = e.getKey();
             final PsiChangeData change = e.getValue();
 
-            // temp workaround for MPS-17899 Modifying nodes from reload session is not allowed
-            MPSProject mpsProject = project.getComponent(MPSProject.class);
-            // BAD ! runnng command for every psi update
-            ModelAccess.instance().runCommandInEDT(new Runnable() {
-              @Override
-              public void run() {
-                project.getComponent(PsiChangesWatcher.class).notifyListeners(change);
-              }
-            },mpsProject);
+            project.getComponent(PsiChangesWatcher.class).notifyListeners(change);
           }
         } finally {
           // clean-up

@@ -15,7 +15,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor").super_("jetbrains.mps.build.structure.BuildLayout_CopyProcessor").parents("jetbrains.mps.build.structure.BuildLayout_CopyProcessor").alias("convert *.mps into *.mpb (binary format)", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor").super_("jetbrains.mps.build.structure.BuildLayout_CopyProcessor").parents("jetbrains.mps.build.structure.BuildLayout_CopyProcessor").properties("stripImplementation").alias("convert *.mps into *.mpb (binary format)", "").create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMPSPlugin").super_("jetbrains.mps.build.structure.BuildPlugin").parents("jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildExternalDependency").alias("mps", "adds MPS capabilities (packaging, generation) to the project").create();
       case 2:
@@ -23,9 +23,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_FolderWithSources").super_("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources").parents("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", "jetbrains.mps.build.structure.BuildLayout_InJarNode").alias("folder with sources of", "MPS module").create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars").super_("jetbrains.mps.build.structure.BuildLayout_Node").parents("jetbrains.mps.build.structure.BuildLayout_Node").references("module").children(new String[]{"jarLocations"}, new boolean[]{true}).alias("module", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars").super_("jetbrains.mps.build.structure.BuildLayout_Node").parents("jetbrains.mps.build.structure.BuildLayout_Node").properties("stripImplementation").references("module").children(new String[]{"jarLocations"}, new boolean[]{true}).alias("module", "").create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources").super_("jetbrains.mps.build.structure.BuildLayout_Node").parents("jetbrains.mps.build.structure.BuildLayout_Node", "jetbrains.mps.build.structure.BuildLayout_InJarNode").properties("modelsOnly").references("module").alias("sources of", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources").super_("jetbrains.mps.build.structure.BuildLayout_Node").parents("jetbrains.mps.build.structure.BuildLayout_Node", "jetbrains.mps.build.structure.BuildLayout_InJarNode").properties("modelsOnly", "stripImplementation").references("module").alias("sources of", "").create();
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml").super_("jetbrains.mps.build.structure.BuildLayout_Node").parents("jetbrains.mps.build.structure.BuildLayout_Node").references("module").children(new String[]{"jarLocations"}, new boolean[]{true}).alias("module descriptor of", "").create();
       case 7:

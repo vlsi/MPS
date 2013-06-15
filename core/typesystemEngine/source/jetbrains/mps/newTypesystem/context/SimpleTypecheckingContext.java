@@ -62,6 +62,7 @@ public abstract class SimpleTypecheckingContext<
     return (STATE) new State(this);
   }
 
+  @Override
   public STATE getState() {
     assert myState != null;
     return myState;
@@ -176,6 +177,7 @@ public abstract class SimpleTypecheckingContext<
     return getState().typeOf(node, info);
   }
 
+  @Override
   public SNode computeTypeInferenceMode(SNode node) {
     synchronized (TYPECHECKING_LOCK) {
 //      myIsInferenceMode = true;
@@ -247,6 +249,7 @@ public abstract class SimpleTypecheckingContext<
     return getTypechecking().getNodesWithErrors(typesystemErrors);
   }
 
+  @Override
   public boolean isCheckedRoot(boolean considerNonTypesystemRules) {
     return getTypechecking().isChecked(considerNonTypesystemRules);
   }
@@ -263,6 +266,7 @@ public abstract class SimpleTypecheckingContext<
       return null;
     }
     Collections.sort(messages, new Comparator<IErrorReporter>() {
+      @Override
       public int compare(IErrorReporter o1, IErrorReporter o2) {
         return o2.getMessageStatus().compareTo(o1.getMessageStatus());
       }

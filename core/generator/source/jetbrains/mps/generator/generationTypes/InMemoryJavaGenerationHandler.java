@@ -22,7 +22,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -154,7 +154,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   private static boolean isJavaSource(SNode outputNode) {
-    String concept = outputNode.getConcept().getId();
+    String concept = outputNode.getConcept().getQualifiedName();
     return concept.equals(BootstrapLanguages.concept_baseLanguage_ClassConcept) || concept.equals(BootstrapLanguages.concept_baseLanguage_Interface) ||
       concept.equals(BootstrapLanguages.concept_baseLanguage_EnumClass) || concept.equals(BootstrapLanguages.concept_baseLanguage_Annotation);
   }

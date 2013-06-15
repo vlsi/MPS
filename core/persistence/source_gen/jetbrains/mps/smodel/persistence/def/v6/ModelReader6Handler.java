@@ -13,7 +13,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.smodel.LazySNode;
@@ -248,17 +247,17 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
 
     private void handleChild_7319439566871678401(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
-      fieldmodel.addLanguage(ModuleReference.fromString(child));
+      fieldmodel.addLanguage(PersistenceFacade.getInstance().createModuleReference(child));
     }
 
     private void handleChild_7319439566871678410(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
-      fieldmodel.addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+      fieldmodel.addEngagedOnGenerationLanguage(PersistenceFacade.getInstance().createModuleReference(child));
     }
 
     private void handleChild_7319439566871678419(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
-      fieldmodel.addDevKit(ModuleReference.fromString(child));
+      fieldmodel.addDevKit(PersistenceFacade.getInstance().createModuleReference(child));
     }
 
     private void handleChild_7319439566871678428(Object resultObject, Object value) throws SAXException {
@@ -276,8 +275,8 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_4813471910141063838(Object resultObject, Object value) throws SAXException {
       ModelLoadResult result = (ModelLoadResult) resultObject;
       Object child = (Object) value;
-      if (fieldtoState == ModelLoadingState.ROOTS_LOADED) {
-        result.setState(ModelLoadingState.ROOTS_LOADED);
+      if (fieldtoState == ModelLoadingState.INTERFACE_LOADED) {
+        result.setState(ModelLoadingState.INTERFACE_LOADED);
         throw new BreakParseSAXException();
       }
     }
@@ -405,7 +404,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
 
     private void handleChild_4813471910141063860(Object resultObject, Object value) throws SAXException {
       SNode child = (SNode) value;
-      if (fieldtoState == ModelLoadingState.ROOTS_LOADED && child != null) {
+      if (fieldtoState == ModelLoadingState.INTERFACE_LOADED && child != null) {
         fieldmodel.addRootNode(child);
       }
     }

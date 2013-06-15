@@ -53,7 +53,7 @@ public class ModelPersistence8 extends ModelPersistence7 {
 
   @Override
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
-    return new ModelReader8Handler(state == ModelLoadingState.ROOTS_LOADED, header);
+    return new ModelReader8Handler(state == ModelLoadingState.INTERFACE_LOADED, state == ModelLoadingState.NO_IMPLEMENTATION, header);
   }
 
   @Override

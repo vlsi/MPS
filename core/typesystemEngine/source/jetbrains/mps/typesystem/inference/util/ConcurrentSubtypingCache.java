@@ -66,6 +66,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     }
   }
 
+  @Override
   public void cacheIsSubtype(SNode subtype, SNode supertype, boolean answer, boolean isWeak) {
     ConcurrentMap<CacheNodeHandler, ConcurrentMap<CacheNodeHandler, MyBoolean>> cache = isWeak ? myCacheWeak : myCache;
     final CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
@@ -83,6 +84,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     }
   }
 
+  @Override
   public Boolean getIsSubtype(SNode subtype, SNode supertype, boolean isWeak) {
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
 
@@ -194,6 +196,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     }
   }
 
+  @Override
   public void cacheCoerce(SNode subtype, IMatchingPattern pattern, SNode result, boolean isWeak) {
     if (pattern instanceof ConceptMatchingPattern) {
       addCacheEntry(subtype, pattern.getConceptFQName(), result, isWeak);
@@ -206,6 +209,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
     }
   }
 
+  @Override
   @Nullable
   public Pair<Boolean, SNode> getCoerced(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
     if (pattern instanceof ConceptMatchingPattern) {

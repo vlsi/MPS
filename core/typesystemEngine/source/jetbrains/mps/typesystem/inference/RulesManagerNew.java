@@ -35,6 +35,7 @@ public class RulesManagerNew {
     myTypeChecker = typeChecker;
     //myOverloadedOperationsManager = new OverloadedOperationsManager(myTypeChecker);
     SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
+      @Override
       public void modelRemoved(SModel modelDescriptor) {
         myModelsToRules.remove(modelDescriptor);
       }

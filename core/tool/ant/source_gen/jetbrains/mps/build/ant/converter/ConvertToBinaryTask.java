@@ -26,6 +26,7 @@ import org.apache.tools.ant.Project;
 
 public class ConvertToBinaryTask extends Copy {
   private Map<String, String> toConvert = new HashMap<String, String>();
+  private boolean myStripImplementation = false;
   private File mpsHome;
 
 
@@ -48,6 +49,16 @@ public class ConvertToBinaryTask extends Copy {
     return mpsHome;
   }
 
+  public void setStripImplementation(boolean value) {
+    this.myStripImplementation = value;
+  }
+
+  public boolean getStripImplementation() {
+    return myStripImplementation;
+  }
+
+
+
   @Override
   public void execute() throws BuildException {
     super.execute();
@@ -65,8 +76,8 @@ public class ConvertToBinaryTask extends Copy {
       try {
         Class<?> converterClass = classLoader.loadClass("jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker");
         Object converter = converterClass.newInstance();
-        Method method = converterClass.getMethod("convert", Map.class);
-        method.invoke(converter, toConvert);
+        Method method = converterClass.getMethod("convert", Map.class, Boolean.class);
+        method.invoke(converter, toConvert, myStripImplementation);
       } catch (Throwable t) {
         if (t instanceof RuntimeException && t.getCause() instanceof IOException) {
           t = t.getCause();

@@ -23,7 +23,7 @@ import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.IModule.ModelAdjuster;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -170,7 +170,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     for (SModuleReference usedLanguage : getModuleDescriptor().getUsedLanguages()) {
       Language language = ModuleRepositoryFacade.getInstance().getModule(usedLanguage, Language.class);
       if (language != null) {
-        languages.add(new SLanguageLanguageAdapter(language));
+        languages.add(new SLanguageLanguageAdapter(language.getModuleName()));
       }
     }
 
@@ -179,7 +179,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       if (devKit != null) {
         for (Language language : devKit.getAllExportedLanguages()) {
           if (language != null) {
-            languages.add(new SLanguageLanguageAdapter(language));
+            languages.add(new SLanguageLanguageAdapter(language.getModuleName()));
           }
         }
       }
@@ -187,7 +187,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     if (BootstrapLanguages.coreLanguage() != null) {
       // todo: ???
-      languages.add(new SLanguageLanguageAdapter(BootstrapLanguages.coreLanguage()));
+      languages.add(new SLanguageLanguageAdapter(BootstrapLanguages.CORE_NAMESPACE));
     }
 
     return languages; // todo: maybe collect extended languages here
@@ -819,7 +819,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
       if (AbstractModule.this instanceof Language) {
         result.add((Language) AbstractModule.this);
-        result.addAll(ModuleUtil.refsToLanguages(Collections.singletonList(BootstrapLanguages.DESCRIPTOR)));
+        result.addAll(ModuleUtil.refsToLanguages(Collections.singletonList(BootstrapLanguages.descriptorLanguageRef())));
       }
 
       if (AbstractModule.this instanceof Generator) {

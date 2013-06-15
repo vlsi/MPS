@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -82,7 +83,8 @@ public class DevKit extends AbstractModule {
   public List<Language> getExportedLanguages() {
     List<Language> langs = new ArrayList<Language>();
     for (SModuleReference l : myDescriptor.getExportedLanguages()) {
-      SModuleReference ref = jetbrains.mps.project.structure.modules.ModuleReference.fromString(l.getModuleName());
+      SModuleReference ref = PersistenceFacade.getInstance().createModuleReference(l.getModuleName());
+      // TODO WTF? replace ref with l
       Language lang = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       if (lang != null) {
         langs.add(lang);

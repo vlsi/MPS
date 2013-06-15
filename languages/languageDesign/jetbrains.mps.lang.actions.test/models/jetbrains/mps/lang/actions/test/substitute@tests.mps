@@ -27,7 +27,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="kxd5.ActionTestContainer" typeId="kxd5.2550657305103395183" id="2550657305103548219" nodeInfo="ng" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2550657305103568266" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2550657305103568266" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="2550657305103844989" nodeInfo="nn">
         <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="2550657305103844990" nodeInfo="ng">
           <property name="keycode" nameId="tp4k.1207318242774" value="VK_SPACE" />
@@ -84,7 +84,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6866660893594595018" nodeInfo="ng">
     <property name="description" nameId="tp5g.1883175908513350760" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild1 concept specified in corresponsing &quot;add concept&quot; substitute menu part" />
     <property name="name" nameId="tpck.1169194664001" value="ConceptSubstitutePart" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3213804652571125192" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3213804652571125192" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3213804652571125191" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="chil" />
       </node>
@@ -138,7 +138,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3213804652589599697" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3213804652589599697" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="3213804652589599703" nodeInfo="nn">
         <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="3213804652589599705" nodeInfo="ng">
           <property name="keycode" nameId="tp4k.1207318242774" value="VK_SPACE" />
@@ -174,7 +174,7 @@
         <property name="cellId" nameId="tp5g.1229194968595" value="empty_addMenu_genericQuery" />
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3213804652593639404" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3213804652593639404" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3213804652593639403" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="chil" />
       </node>
@@ -209,7 +209,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3286607483605917229" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3286607483605917229" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3286607483605960932" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="ActionTestChild2" />
       </node>
@@ -240,7 +240,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2534942168317967779" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2534942168317967779" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="2534942168317967778" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="ActionTestChild1" />
       </node>
@@ -310,7 +310,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5164819300891971615" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5164819300891971615" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5164819300891971614" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="newChild2" />
       </node>
@@ -341,7 +341,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5164819300891972351" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5164819300891972351" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5164819300891972352" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="new" />
       </node>
@@ -413,7 +413,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2747974755163736571" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2747974755163736571" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="2747974755163736570" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="wrappedChild1" />
       </node>
@@ -444,7 +444,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8349639607716109542" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8349639607716109542" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="8349639607716109543" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="wrappedChild2" />
       </node>
@@ -473,7 +473,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8349639607731509562" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8349639607731509562" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="8349639607731509561" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="chil" />
       </node>
@@ -508,7 +508,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8349639607733366973" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8349639607733366973" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="8349639607733366972" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="chil" />
       </node>
@@ -532,7 +532,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="kxd5.ActionTestContainer" typeId="kxd5.2550657305103395183" id="8349639607733719255" nodeInfo="ng" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8349639607733720718" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8349639607733720718" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="8349639607733720783" nodeInfo="nn">
         <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8349639607733720784" nodeInfo="ng">
           <property name="keycode" nameId="tp4k.1207318242774" value="VK_SPACE" />
@@ -607,7 +607,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2870536390420394089" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2870536390420394089" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="2870536390420394090" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="wrappedChild1" />
       </node>

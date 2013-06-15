@@ -20,6 +20,7 @@ import com.intellij.ide.projectView.PresentationData;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.BasePsiNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.psi.PsiElement;
@@ -74,7 +75,7 @@ public class MPSPsiElementTreeNode extends BasePsiNode<MPSPsiRootNode> {
     if (fileStatusManager != null && getVirtualFile() != null) {
       return fileStatusManager.getStatus(containingFile.getVirtualFile()).getColor();
     }
-    return Color.BLACK;
+    return EditorColorsManager.getInstance().getGlobalScheme().getDefaultForeground();
   }
 
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor" />
   <unitInfo fileName="BuildMPSPlugin_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_BehaviorDescriptor" />
   <unitInfo fileName="BuildMpsAspect_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsAspect_BehaviorDescriptor" />
   <unitInfo fileName="BuildMpsLayout_FolderWithSources_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_FolderWithSources_BehaviorDescriptor" />
@@ -249,19 +249,28 @@
     <unitInfo nodeId="1265949165890654187" fileName="BuildMpsLayout_ModuleJars_Behavior.java" startLine="13" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars_Behavior" />
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1330375798066759587">
-    <nodeInfo nodeId="1330375798078621268" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="11" startPosition="80" endLine="12" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1330375798066759651" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="12" startPosition="55" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTaskName_1330375798060763184#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1330375798066759589" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+    <nodeInfo nodeId="1330375798078621268" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="14" startPosition="80" endLine="15" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1330375798066759651" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="15" startPosition="55" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7918752904805574282" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="20" startPosition="74" endLine="21" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7918752904805580409" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7918752904805563968" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="19" startPosition="98" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTaskName_1330375798060763184#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTaskArguments_7918752904805535914#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;" />
+    <scopeInfo nodeId="1330375798066759589" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="7918752904805563971" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="20" startPosition="74" endLine="21" endPosition="69" />
+    <scopeInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="1330375798066759587" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1330375798066759645" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="11" startPosition="80" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="1330375798066759645" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="14" startPosition="80" endLine="16" endPosition="24" />
+    <scopeInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1330375798066759587" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildLayout_ToBinaryCopyProcessor_Behavior" />
+    <scopeInfo nodeId="7918752904805557408" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="19" startPosition="98" endLine="23" endPosition="34" />
+    <scopeInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="19" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1330375798066759587" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildLayout_ToBinaryCopyProcessor_Behavior" />
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1517654889524432594">
     <nodeInfo nodeId="1517654889524473988" fileName="BuildMps_Language_Behavior.java" startLine="14" startPosition="75" endLine="15" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

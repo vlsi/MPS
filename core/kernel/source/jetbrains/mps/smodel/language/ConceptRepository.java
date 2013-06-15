@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.smodel.language;
 
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
@@ -32,6 +30,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -72,7 +71,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
         String modelFqName = SNodeOperations.getModelLongName(smd);
         // optimization - loading all concepts from this model into myConcepts cache
         for (SNode root : smd.getRootNodes()) {
-          String conceptFQName = modelFqName + "." + root.getProperty(SNodeUtil.property_INamedConcept_name);
+          String conceptFQName = InternUtil.intern(modelFqName + "." + root.getProperty(SNodeUtil.property_INamedConcept_name));
           if (conceptFQName.equals(SNodeUtil.concept_ConceptDeclaration)) {
             myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
           }
@@ -91,6 +90,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     }
     // adding
     //LOG.error("Creating a concept descriptor for a concept from a language not yet loaded " + id, new Throwable());
+    id = InternUtil.intern(id);
     myConcepts.putIfAbsent(id, new SConceptNodeAdapter(id));
   }
 

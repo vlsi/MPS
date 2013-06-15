@@ -34,10 +34,12 @@ public abstract class AbstractEquationOperation extends AbstractOperation {
     setRule(info);
   }
 
+  @Override
   public String getShortPresentation() {
     return myChild + " = " + myParent;
   }
 
+  @Override
   public List<SNode> getVariables() {
     LinkedList<SNode> nodes = new LinkedList<SNode>();
     if (TypesUtil.isVariable(myChild)) {

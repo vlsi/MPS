@@ -51,6 +51,7 @@ public class RulesManager {
     myRulesManagerNew = new RulesManagerNew(typeChecker);
     myOverloadedOperationsManager = new OverloadedOperationsManager(myTypeChecker);
     SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
+      @Override
       public void modelRemoved(SModel modelDescriptor) {
         myModelsWithLoadedRules.remove(modelDescriptor);
       }

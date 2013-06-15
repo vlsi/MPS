@@ -138,14 +138,12 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_gp4zyx_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_gp4zyx_a_0");
     editorCell.setBig(true);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    if (renderingCondition_gp4zyx_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_gp4zyx_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_gp4zyx_a0(editorContext, node));
+    if (renderingCondition_gp4zyx_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_gp4zyx_b0(editorContext, node));
     }
     return editorCell;
   }
@@ -153,17 +151,16 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gp4zyx_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gp4zyx_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_gp4zyx_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_gp4zyx_b0a(editorContext, node));
     return editorCell;
   }
 
-  private static boolean renderingCondition_gp4zyx_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
-  }
-
   private EditorCell createConstant_gp4zyx_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "models only:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strip implementation:");
     editorCell.setCellId("Constant_gp4zyx_a0a");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyKeyword(style, editorCell);
@@ -173,6 +170,46 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createProperty_gp4zyx_b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("stripImplementation");
+    provider.setNoTargetText("<no stripImplementation>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_stripImplementation");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createCollection_gp4zyx_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_gp4zyx_b0");
+    editorCell.addEditorCell(this.createConstant_gp4zyx_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_gp4zyx_b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_gp4zyx_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
+  }
+
+  private EditorCell createConstant_gp4zyx_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "models only:");
+    editorCell.setCellId("Constant_gp4zyx_a1a");
+    Style style = new StyleImpl();
+    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_gp4zyx_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("modelsOnly");
     provider.setNoTargetText("<no modelsOnly>");

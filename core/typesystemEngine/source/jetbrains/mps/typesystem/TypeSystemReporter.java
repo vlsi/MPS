@@ -50,7 +50,7 @@ public class TypeSystemReporter {
 
   public void reportTypeOf(SNode node, long time) {
     if (!isEnabled) return;
-    String conceptFqName = node.getConcept().getId();
+    String conceptFqName = node.getConcept().getQualifiedName();
     report(time, conceptFqName, myGetTypeOfTime);
   }
 
@@ -67,13 +67,13 @@ public class TypeSystemReporter {
 
   public void reportIsSubType(SNode subType, SNode superType, long time) {
     if (!isEnabled || null == subType || null == superType) return;
-    String conceptFqName = subType.getConcept().getId() + "   " + superType.getConcept().getId();
+    String conceptFqName = subType.getConcept().getQualifiedName() + "   " + superType.getConcept().getQualifiedName();
     report(time, conceptFqName, myIsSubTypeTime);
   }
 
   public void reportCoerce(SNode subType, String fq, long time) {
     if (!isEnabled || null == subType) return;
-    String conceptFqName = subType.getConcept().getId() + "   " + fq;
+    String conceptFqName = subType.getConcept().getQualifiedName() + "   " + fq;
     report(time, conceptFqName, myCoerceTime);
   }
 

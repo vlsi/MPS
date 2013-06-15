@@ -15,12 +15,21 @@
  */
 package jetbrains.mps.lang.dataFlow.framework.instructions;
 
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
+
 public class WriteInstruction extends Instruction {
   private Object myVar;
   private int myIndex;
   private Object myValue;
 
   public WriteInstruction(Object var, Object value) {
+    myVar = var;
+    myValue = value;
+  }
+
+  public WriteInstruction(String ruleNodeReference, Object var, Object value) {
+    super(ruleNodeReference);
     myVar = var;
     myValue = value;
   }
@@ -45,10 +54,6 @@ public class WriteInstruction extends Instruction {
 
   @Override
   public String commandPresentation() {
-    if (myValue == null) {
-      return "write " + myVar;
-    } else {
-      return "write " + myVar + " " + myValue;
-    }
+    return "write " + myVar;
   }
 }

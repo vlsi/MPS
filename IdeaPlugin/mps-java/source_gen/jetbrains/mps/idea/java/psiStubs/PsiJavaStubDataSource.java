@@ -14,6 +14,7 @@ import java.util.Iterator;
 import jetbrains.mps.idea.java.psi.PsiChangesWatcher;
 import com.intellij.psi.PsiJavaFile;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -34,6 +35,14 @@ public class PsiJavaStubDataSource extends DataSourceBase implements PsiListener
 
 
   public void psiChanged(final PsiListener.PsiEvent event) {
+
+    // this is a guard against the situation when our directory has been removed <!TextGen not found for 'jetbrains.mps.baseLanguage.structure.CommentPart'!> 
+    // we don't notify our listeners about anything in this case 
+    // they should be removed anyways 
+    if (!(myDirectory.isValid())) {
+      return;
+    }
+
     // we've been told something has changed in PSI 
     // let's see what matters to us 
 
@@ -100,6 +109,9 @@ public class PsiJavaStubDataSource extends DataSourceBase implements PsiListener
 
 
   public Iterable<PsiJavaFile> getJavaFiles() {
+    if (!(myDirectory.isValid())) {
+      return Sequence.fromIterable(Collections.<PsiJavaFile>emptyList());
+    }
     return Sequence.fromIterable(Sequence.fromArray(myDirectory.getFiles())).ofType(PsiJavaFile.class);
   }
 

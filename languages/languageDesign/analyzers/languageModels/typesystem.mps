@@ -21,7 +21,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="9177062368042317188" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_AnalyzerFunParameterProgramState" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Analyzer.AnalyzerFunctions" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="9177062368042317189" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="9177062368042317189" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="9177062368042322944" nodeInfo="nn">
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="9177062368042322947" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="9177062368042319985" nodeInfo="nn">
@@ -47,7 +47,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="9177062368042359783" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_AnalyzerMergeParameterInput" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Analyzer.AnalyzerFunctions" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="9177062368042359784" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="9177062368042359784" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="9177062368042359803" nodeInfo="nn">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="9177062368042359838" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="9177062368042359852" nodeInfo="nn">
@@ -93,7 +93,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="9177062368042364854" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_AnalyzerFunParameterInput" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Analyzer.AnalyzerFunctions" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="9177062368042364855" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="9177062368042364855" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="9177062368042364861" nodeInfo="nn">
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="9177062368042364864" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="9177062368042364858" nodeInfo="nn">
@@ -131,7 +131,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="9177062368042364884" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_AnalyzerFunctionResultType" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Analyzer.AnalyzerFunctions" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="9177062368042364885" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="9177062368042364885" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="430844094082159326" nodeInfo="nn">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="430844094082159330" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="430844094082159331" nodeInfo="nn">
@@ -167,7 +167,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="9177062368042364920" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_AnalyzerParameterProgram" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Analyzer.AnalyzerFunctions" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="9177062368042364921" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="9177062368042364921" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="9177062368042364923" nodeInfo="nn">
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="9177062368042364924" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="9177062368042364925" nodeInfo="nn">
@@ -192,7 +192,7 @@
   </root>
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4217760266503638769" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_InstructionReference" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="4217760266503638770" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="4217760266503638770" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="4217760266503638783" nodeInfo="nn">
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="4217760266503638786" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="4217760266503638773" nodeInfo="nn">
@@ -221,7 +221,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="178770917832494464" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_AnalyzerRunnerCreator" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Analyzer" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="178770917832494465" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="178770917832494465" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="178770917832644953" nodeInfo="nn">
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="178770917832644956" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="178770917832644950" nodeInfo="nn">
@@ -264,7 +264,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="7985661997283730035" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_InstructionType" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7985661997283730036" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7985661997283730036" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="7985661997283737353" nodeInfo="nn">
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="7985661997283737354" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="7985661997283737355" nodeInfo="nn">
@@ -311,7 +311,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4943044633101742738" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_ConceptCondition" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Rules" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="4943044633101742739" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="4943044633101742739" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4943044633101742741" nodeInfo="nn">
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4943044633101742742" nodeInfo="nr">
           <property name="name" nameId="tpck.1169194664001" value="conceptReference" />
@@ -358,7 +358,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4943044633102057756" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_ApplicableNodeReference" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Rules" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="4943044633102057757" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="4943044633102057757" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="4943044633102057763" nodeInfo="nn">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="4943044633102057767" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="4943044633102057768" nodeInfo="nn">

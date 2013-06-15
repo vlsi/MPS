@@ -33,40 +33,49 @@ public class StructuralNodeMap<T> implements Map<SNode, T> {
     return myRepresentatorsMap.get(node);
   }
 
+  @Override
   public int size() {
     return myMap.size();
   }
 
+  @Override
   public boolean isEmpty() {
     return myMap.isEmpty();
   }
 
+  @Override
   public boolean containsValue(Object value) {
     return myMap.containsValue(value);
   }
 
+  @Override
   public void putAll(Map<? extends SNode, ? extends T> t) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public Set<SNode> keySet() {
     return myMap.keySet();
   }
 
+  @Override
   public void clear() {
     myRepresentatorsMap.clear();
     myMap.clear();
     myAbsentNodes.clear();
   }
 
+  @Override
   public Collection<T> values() {
     return myMap.values();
   }
 
+  @Override
   public Set<Entry<SNode, T>> entrySet() {
     return myMap.entrySet();
   }
 
+  @Override
   public T get(Object key) {
     if (!(key instanceof SNode)) return null;
     SNode keyNode = (SNode) key;
@@ -87,6 +96,7 @@ public class StructuralNodeMap<T> implements Map<SNode, T> {
     return myMap.get(representator);
   }
 
+  @Override
   public T put(SNode keyNode, T value) {
     SNode representator = getKeyRepresentator(keyNode);
     if (representator == null) {
@@ -105,6 +115,7 @@ public class StructuralNodeMap<T> implements Map<SNode, T> {
     return myMap.put(representator, value);
   }
 
+  @Override
   public T remove(Object key) {
     if (!(key instanceof SNode)) return null;
     SNode keyNode = (SNode) key;
@@ -122,6 +133,7 @@ public class StructuralNodeMap<T> implements Map<SNode, T> {
     return myMap.remove(representator);
   }
 
+  @Override
   public boolean containsKey(Object key) {
     if (!(key instanceof SNode)) return false;
     SNode keyNode = (SNode) key;

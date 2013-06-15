@@ -88,34 +88,34 @@ public class MpsProjectTestSuite extends MPSProjectITestsSuite {
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
-public static   @interface ModuleUUID {    /**
+  public @interface ModuleUUID {
+    /**
      * 
      * 
      * @return path to MPS project
      */
-
     String value();
-}
+  }
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target(value = {ElementType.TYPE})
-public static @interface ModelLongName {  /**
-   * 
-   * 
-   * @return path to MPS project
-   */
+  @Retention(RetentionPolicy.RUNTIME)
+  @Target(value = {ElementType.TYPE})
+  public @interface ModelLongName {
+    /**
+     * 
+     * 
+     * @return path to MPS project
+     */
+    String value();
+  }
 
-  String value();
-}
-
-@Retention(RetentionPolicy.RUNTIME)
-@Target(value = {ElementType.TYPE})
-public static @interface TestClass {/**
- * 
- * 
- * @return path to MPS project
- */
-
-String value();
-}
+  @Retention(RetentionPolicy.RUNTIME)
+  @Target(value = {ElementType.TYPE})
+  public @interface TestClass {
+    /**
+     * 
+     * 
+     * @return path to MPS project
+     */
+    String value();
+  }
 }

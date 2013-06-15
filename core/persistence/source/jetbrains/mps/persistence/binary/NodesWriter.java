@@ -95,6 +95,8 @@ public class NodesWriter {
       result |= 1 << 1;
     } else if (conceptKind == ConceptKind.IMPLEMENTATION) {
       result |= 2 << 1;
+    } else if (conceptKind == ConceptKind.IMPLEMENTATION_WITH_STUB) {
+      result |= 3 << 1;
     }
     if (conceptScope == StaticScope.ROOT) {
       result |= 1 << 3;

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3h40hzs0hmkgmwf5pxljvrqwui5jdks">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+<dependencies version="2" modelHash="d29zrhzzfaay4g4n9aadl4708tfeq9y">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <common hash="3y4y4rpghxhnrmyb2n88lmih77iuyr7" />
-  <source id="8307544070813664740" name="MultiplyOperation" hash="-btc7bedp6ksffwd1xcps4hmw9xgd562">
+  <source id="8307544070813664740" name="MultiplyOperation" hash="3qdvjcx1n4zamzalsvagnjdu3toryi6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MultiplyOperation.java" />
   </source>
-  <source id="8307544070813664794" name="IfFunction" hash="57syhjf0v8a15leb6ayzg15bij61y7n">
+  <source id="8307544070813664794" name="IfFunction" hash="2dcht19a7gck0qult9mrjb5eyqs5s6i">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="IfFunction.java" />
   </source>
-  <source id="8307544070813664858" name="Function" hash="7kbs2p6cbmqd15dd2iohtbt6l07svwh">
+  <source id="8307544070813664858" name="Function" hash="-45u094gq5qvtrmcrdcef7delqom6cbz">
     <file name="Function.java" />
   </source>
-  <source id="8307544070813664867" name="DoubleConstant" hash="-39ho13wv2r0yj2h8ui8maqom5d4f8gk">
+  <source id="8307544070813664867" name="DoubleConstant" hash="-b6oeydccloaxex9w4cy1j7163cwytoo">
     <file name="DoubleConstant.java" />
   </source>
 </dependencies>

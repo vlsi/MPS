@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-880ax5t75ub0547mckzi212n9pc11nn">
-  <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" hash="at9pl5r19jew6os4j6sg2p02hjergeb" />
-  <dep model="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)" hash="2tqdvtl99xrcwqxd34b2hibahu85zlj" />
-  <dep model="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)" hash="-ehm68ba2u8i98b497w4zdh4gt2cnhdr" />
+<dependencies version="2" modelHash="8wq80k7hfnrxygi7cvny4q10cfwdm20">
+  <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" hash="-4bhsb1gj2a72d4cy5bw2d8asq5dv9d" />
+  <dep model="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)" hash="97krucvlompd1dazlw2p43xaqzlp00v" />
+  <dep model="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)" hash="73yrb0nirna9olin9fxby6pwqcunf6b" />
   <common hash="-8cwh7krczh8rq7556xjxx18gqtqf6jh" />
-  <source id="948722627350505706" name="LowLevelVariable_TextGen" hash="e24g6xhbfbxaiggh6o7a963r0mwd8rq">
+  <source id="948722627350505706" name="LowLevelVariable_TextGen" hash="-dx48yrdbvyxqr7c9c5wf04z7nenbp5o">
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <dep model="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)" />
     <file name="LowLevelVariable_TextGen.java" />
