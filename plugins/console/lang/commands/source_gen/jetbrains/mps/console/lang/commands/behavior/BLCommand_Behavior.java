@@ -36,7 +36,11 @@ public class BLCommand_Behavior {
           }
         });
 
-        QuickQueryUtils.make(p, model.value);
+        boolean result = QuickQueryUtils.make(p, model.value);
+        if (!(result)) {
+          return;
+        }
+
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
