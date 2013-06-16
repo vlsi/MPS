@@ -686,137 +686,148 @@
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="41" startPosition="114" endLine="42" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="46" startPosition="52" endLine="47" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="47" startPosition="114" endLine="48" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="52" startPosition="54" endLine="53" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="53" startPosition="114" endLine="54" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="58" startPosition="55" endLine="59" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="59" startPosition="114" endLine="60" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="64" startPosition="47" endLine="65" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="65" startPosition="114" endLine="66" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="70" startPosition="48" endLine="71" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="71" startPosition="114" endLine="72" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="76" startPosition="59" endLine="77" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="77" startPosition="114" endLine="78" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="82" startPosition="47" endLine="83" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="83" startPosition="114" endLine="84" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="52" startPosition="50" endLine="53" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="53" startPosition="114" endLine="54" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="58" startPosition="54" endLine="59" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="59" startPosition="114" endLine="60" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="64" startPosition="55" endLine="65" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="65" startPosition="114" endLine="66" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="70" startPosition="47" endLine="71" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="71" startPosition="114" endLine="72" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="76" startPosition="48" endLine="77" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="77" startPosition="114" endLine="78" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="82" startPosition="59" endLine="83" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="83" startPosition="114" endLine="84" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="88" startPosition="47" endLine="89" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="89" startPosition="114" endLine="90" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="95" startPosition="44" endLine="96" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="96" startPosition="141" endLine="97" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="100" startPosition="43" endLine="101" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="101" startPosition="141" endLine="102" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="105" startPosition="46" endLine="106" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="106" startPosition="141" endLine="107" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="110" startPosition="46" endLine="111" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="111" startPosition="141" endLine="112" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="115" startPosition="48" endLine="116" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="116" startPosition="141" endLine="117" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="120" startPosition="54" endLine="121" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="121" startPosition="141" endLine="122" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="125" startPosition="56" endLine="126" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="126" startPosition="141" endLine="127" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="130" startPosition="57" endLine="131" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="131" startPosition="141" endLine="132" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="135" startPosition="49" endLine="136" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="136" startPosition="141" endLine="137" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="140" startPosition="50" endLine="141" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="141" startPosition="141" endLine="142" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="145" startPosition="61" endLine="146" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="146" startPosition="141" endLine="147" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="150" startPosition="49" endLine="151" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="151" startPosition="141" endLine="152" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="155" startPosition="49" endLine="156" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="156" startPosition="141" endLine="157" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testDot#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testIf#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testWhile#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testWrite#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testForLoop#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="120" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testReturnNotNull#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="125" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testAnnotationParam#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="130" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testTernaryOperation#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="135" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testContinue#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="140" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testIfNullNew#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testIfNullReturnNotEmpty#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="150" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMPS10935#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="155" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMPS12640#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="94" startPosition="47" endLine="95" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="95" startPosition="114" endLine="96" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="101" startPosition="44" endLine="102" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="102" startPosition="141" endLine="103" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="106" startPosition="43" endLine="107" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="107" startPosition="141" endLine="108" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="111" startPosition="46" endLine="112" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="112" startPosition="141" endLine="113" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="116" startPosition="46" endLine="117" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="117" startPosition="141" endLine="118" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="121" startPosition="48" endLine="122" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="122" startPosition="141" endLine="123" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="126" startPosition="54" endLine="127" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="127" startPosition="141" endLine="128" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="131" startPosition="52" endLine="132" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="132" startPosition="140" endLine="133" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="136" startPosition="56" endLine="137" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="137" startPosition="141" endLine="138" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="141" startPosition="57" endLine="142" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="142" startPosition="141" endLine="143" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="146" startPosition="49" endLine="147" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="147" startPosition="141" endLine="148" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="151" startPosition="50" endLine="152" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="152" startPosition="141" endLine="153" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="156" startPosition="61" endLine="157" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="157" startPosition="141" endLine="158" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="161" startPosition="49" endLine="162" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="162" startPosition="141" endLine="163" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="166" startPosition="49" endLine="167" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="167" startPosition="141" endLine="168" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testDot#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testIf#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testWhile#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="116" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testWrite#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testForLoop#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testReturnNotNull#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="131" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testCallNotNull#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testAnnotationParam#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testTernaryOperation#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="146" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testContinue#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="151" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testIfNullNew#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="156" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testIfNullReturnNotEmpty#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="161" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMPS10935#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="166" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMPS12640#()V" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testDot#()V" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testIf#()V" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testWhile#()V" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testWrite#()V" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testForLoop#()V" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testReturnNotNull#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testAnnotationParam#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testTernaryOperation#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="63" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testContinue#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="69" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testIfNullNew#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testIfNullReturnNotEmpty#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMPS10935#()V" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMPS12640#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testCallNotNull#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testAnnotationParam#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="63" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testTernaryOperation#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="69" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testContinue#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testIfNullNew#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testIfNullReturnNotEmpty#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMPS10935#()V" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="93" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMPS12640#()V" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="16" startPosition="42" endLine="18" endPosition="100" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="22" startPosition="41" endLine="24" endPosition="99" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="28" startPosition="44" endLine="30" endPosition="102" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="34" startPosition="44" endLine="36" endPosition="102" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="40" startPosition="46" endLine="42" endPosition="104" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="46" startPosition="52" endLine="48" endPosition="110" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="52" startPosition="54" endLine="54" endPosition="112" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="58" startPosition="55" endLine="60" endPosition="113" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="64" startPosition="47" endLine="66" endPosition="105" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="70" startPosition="48" endLine="72" endPosition="106" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="76" startPosition="59" endLine="78" endPosition="117" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="82" startPosition="47" endLine="84" endPosition="105" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="52" startPosition="50" endLine="54" endPosition="108" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="58" startPosition="54" endLine="60" endPosition="112" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="64" startPosition="55" endLine="66" endPosition="113" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="70" startPosition="47" endLine="72" endPosition="105" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="76" startPosition="48" endLine="78" endPosition="106" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="82" startPosition="59" endLine="84" endPosition="117" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="88" startPosition="47" endLine="90" endPosition="105" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="95" startPosition="44" endLine="97" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="94" startPosition="47" endLine="96" endPosition="105" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="101" startPosition="44" endLine="103" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="100" startPosition="43" endLine="102" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="106" startPosition="43" endLine="108" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="105" startPosition="46" endLine="107" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="111" startPosition="46" endLine="113" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="110" startPosition="46" endLine="112" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="116" startPosition="46" endLine="118" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="115" startPosition="48" endLine="117" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="121" startPosition="48" endLine="123" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="120" startPosition="54" endLine="122" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="126" startPosition="54" endLine="128" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="125" startPosition="56" endLine="127" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="131" startPosition="52" endLine="133" endPosition="153">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="130" startPosition="57" endLine="132" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="136" startPosition="56" endLine="138" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="135" startPosition="49" endLine="137" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="141" startPosition="57" endLine="143" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="140" startPosition="50" endLine="142" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="146" startPosition="49" endLine="148" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="145" startPosition="61" endLine="147" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="151" startPosition="50" endLine="153" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="150" startPosition="49" endLine="152" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="156" startPosition="61" endLine="158" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="155" startPosition="49" endLine="157" endPosition="154">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="161" startPosition="49" endLine="163" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="125" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="140" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="145" startPosition="0" endLine="149" endPosition="0" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="155" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="166" startPosition="49" endLine="168" endPosition="154">
+      <varInfo nodeId="6011730950863071455" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="106" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="116" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="141" startPosition="0" endLine="145" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="151" startPosition="0" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="156" startPosition="0" endLine="160" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="161" startPosition="0" endLine="165" endPosition="0" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="166" startPosition="0" endLine="170" endPosition="0" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
@@ -830,8 +841,9 @@
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="75" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="81" startPosition="0" endLine="86" endPosition="0" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="87" startPosition="0" endLine="92" endPosition="0" />
-    <unitInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="93" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody" />
-    <unitInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="13" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test" />
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="93" startPosition="0" endLine="98" endPosition="0" />
+    <unitInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="99" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody" />
+    <unitInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="13" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/6639374232683434563">
     <nodeInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="16" startPosition="44" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
