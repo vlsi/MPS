@@ -27,8 +27,8 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -90,50 +90,24 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
             TemporaryModels.getInstance().addMissingModuleImports(myModel);
             myLastCommand = ListSequence.fromList(SLinkOperations.getTargets(myRoot, "item", true)).last();
             if ((myLastCommand != null)) {
+              final SNode res = SNodeOperations.insertNextSiblingChild(myLastCommand, _quotation_createNode_xg3v07_a0a0a0c0a0a0a0a0a0a0a11a11());
               BehaviorReflection.invokeVirtual(Void.class, myLastCommand, "virtual_execute_757553790980855637", new Object[]{project, new ConsoleStream() {
                 public void addText(String text) {
-                  System.out.print(text);
+                  ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a0a0b0a1a2a0a0a0a0a0a0a0l0l(text));
                 }
 
                 public void addNode(SNode node) {
-                  System.out.print(node.getPresentation());
+                  SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.lang.commands.structure.NodeResultPart"), "target", node, false);
                 }
 
                 public void addNewLine() {
-                  System.out.println("");
+                  SLinkOperations.addNewChild(res, "line", "jetbrains.mps.console.lang.commands.structure.BLCommandResultLine");
                 }
               }});
             }
           }
         });
         nextCommand();
-      }
-    }));
-    btnPanel.add(new JButton(new AbstractAction("Prev") {
-      public void actionPerformed(ActionEvent p0) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            if ((SNodeOperations.getPrevSibling(myLastCommand) == null)) {
-
-              return;
-            }
-            myLastCommand = SNodeOperations.cast(SNodeOperations.getPrevSibling(myLastCommand), "jetbrains.mps.console.lang.structure.Command");
-            // <node> 
-          }
-        });
-      }
-    }));
-    btnPanel.add(new JButton(new AbstractAction("Next") {
-      public void actionPerformed(ActionEvent p0) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            if ((SNodeOperations.getNextSibling(myLastCommand) == null)) {
-              return;
-            }
-            myLastCommand = SNodeOperations.cast(SNodeOperations.getNextSibling(myLastCommand), "jetbrains.mps.console.lang.structure.Command");
-            // <node> 
-          }
-        });
       }
     }));
   }
@@ -226,6 +200,24 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
   public void addNewLine() {
     SNode last = getLastResult();
     SLinkOperations.addNewChild(last, "line", "jetbrains.mps.console.lang.commands.structure.BLCommandResultLine");
+  }
+
+  private static SNode _quotation_createNode_xg3v07_a0a0a0c0a0a0a0a0a0a0a11a11() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    SNode quotedNode_2 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.lang.commands.structure.BLCommandResult", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.lang.commands.structure.BLCommandResultLine", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.addChild("line", quotedNode_2);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_xg3v07_a0a0a0a0b0a1a2a0a0a0a0a0a0a0l0l(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.lang.commands.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
+    return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_xg3v07_a0a0a72(Object parameter_1) {
