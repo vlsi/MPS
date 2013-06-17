@@ -16,6 +16,8 @@ import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -35,17 +37,20 @@ public class MPSMoveHandlerDelegate extends MoveHandlerDelegate {
 
   @Override
   public boolean canMove(PsiElement[] elements, @Nullable PsiElement targetContainer) {
-    assert elements.length == 1;
-    return elements[0] instanceof MPSPsiNode;
+    if (elements.length == 0) return false;
+
+    for (int i=0; i<elements.length; i++) {
+      if (!(elements[i] instanceof MPSPsiNode)) {
+        return false;
+      }
+    }
+    return true;
   }
 
   @Override
   public void doMove(final Project project, final PsiElement[] elements, @Nullable PsiElement targetContainer, @Nullable MoveCallback callback) {
 
-    assert elements.length == 1 && elements[0] instanceof MPSPsiNode;
     final MPSProject mpsProject = project.getComponent(MPSProject.class);
-
-//    final Ref<MoveRefactoringContributor> theContributor = new Ref<MoveRefactoringContributor>();
 
     mpsProject.getRepository().getModelAccess().runReadInEDT(new Runnable() {
       @Override
@@ -53,18 +58,21 @@ public class MPSMoveHandlerDelegate extends MoveHandlerDelegate {
 
         MoveRefactoringContributor theContributor = null;
 
-        SNode node = ((MPSPsiNode) elements[0]).getSNodeReference().resolve(mpsProject.getRepository());
+        List<SNode> nodes = new ArrayList<SNode>(elements.length);
+        for (int i = 0; i< elements.length; i++) {
+          nodes.add(((MPSPsiNode) elements[i]).getSNodeReference().resolve(mpsProject.getRepository()));
+        }
+
         for (MoveRefactoringContributorEP ep : MoveRefactoringContributorEP.EP_NAME.getExtensions()) {
           MoveRefactoringContributor c = ep.getContribitor();
-          if (c.isAvailableFor(node)) {
-//            theContributor.set(c);
+          if (c.isAvailableFor(nodes)) {
             theContributor = c;
             break;
           }
         }
 
         if (theContributor != null) {
-          theContributor.invoke(project, node);
+          theContributor.invoke(project, nodes);
         }
       }
     });

@@ -24,24 +24,23 @@ public class DefaultMoveContributor implements MoveRefactoringContributor {
   static String REFACTORING_CLASS = "jetbrains.mps.lang.core.refactorings.MoveNodes";
 
   @Override
-  public boolean isAvailableFor(@NotNull SNode node) {
+  public boolean isAvailableFor(@NotNull List<SNode> nodes) {
     IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName(REFACTORING_CLASS);
-    return RefactoringUtil.isApplicable(refactoring, Arrays.asList(new SNode[]{node}));
+    return RefactoringUtil.isApplicable(refactoring, nodes);
   }
 
   @Override
-  public void invoke(@NotNull Project project, @NotNull SNode node) {
+  public void invoke(@NotNull Project project, @NotNull final List<SNode> nodes) {
     final MPSProject mpsProject = project.getComponent(MPSProject.class);
-    final List<SNode> targets = Arrays.asList(new SNode[]{node});
 
-    MoveNodesExecute.execute(mpsProject, targets, new ExecuteRefactoring() {
+    MoveNodesExecute.execute(mpsProject, nodes, new ExecuteRefactoring() {
       @Override
       public void run(Object newLocation) {
         RefactoringAccess.getInstance().getRefactoringFacade().execute(
           RefactoringContext.createRefactoringContext(new DefaultMoveRefactoring(),
             Arrays.asList("target"),
             Arrays.asList(newLocation),
-            targets,
+            nodes,
             mpsProject));
       }
     });

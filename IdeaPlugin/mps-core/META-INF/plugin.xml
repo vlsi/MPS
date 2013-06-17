@@ -113,7 +113,7 @@
     <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFrameworkSupportProvider"/>
     <mps.LanguageLibrary dir="/languages"/>
     <mps.LanguageLibrary dir="/lib"/>
-    <mps.moveRefactoringContributor className="jetbrains.mps.idea.core.refactoring.DefaultMoveContributor"/>
+    <mps.moveRefactoringContributor className="jetbrains.mps.idea.core.refactoring.DefaultMoveContributor" id="mps-core" order="last"/>
 
     <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
     <usageGroupingRuleProvider implementation="jetbrains.mps.idea.core.usages.rules.MPSUsageGroupingRuleProviderImpl" />

@@ -1064,55 +1064,60 @@
     <nodeInfo nodeId="418677511065435615" fileName="BasicMoveRefactoring.java" startLine="32" startPosition="30" endLine="33" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5142438244426403105" fileName="BasicMoveRefactoring.java" startLine="33" startPosition="25" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1603057458589627246" fileName="BasicMoveRefactoring.java" startLine="34" startPosition="22" endLine="35" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5142438244426403117" fileName="BasicMoveRefactoring.java" startLine="36" startPosition="96" endLine="37" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5142438244426403124" fileName="BasicMoveRefactoring.java" startLine="38" startPosition="5" endLine="39" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5142438244426403137" fileName="BasicMoveRefactoring.java" startLine="43" startPosition="33" endLine="44" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5142438244426403159" fileName="BasicMoveRefactoring.java" startLine="48" startPosition="31" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5142438244426403169" fileName="BasicMoveRefactoring.java" startLine="49" startPosition="63" endLine="50" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5142438244426403181" fileName="BasicMoveRefactoring.java" startLine="53" startPosition="30" endLine="54" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5142438244426403191" fileName="BasicMoveRefactoring.java" startLine="60" startPosition="37" endLine="61" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418677511065422753" fileName="BasicMoveRefactoring.java" startLine="57" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="correctMoving#()V" />
+    <nodeInfo nodeId="9121891594400568917" fileName="BasicMoveRefactoring.java" startLine="36" startPosition="96" endLine="37" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9121891594400618742" fileName="BasicMoveRefactoring.java" startLine="37" startPosition="56" endLine="38" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9121891594400563650" fileName="BasicMoveRefactoring.java" startLine="39" startPosition="39" endLine="40" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5142438244426403117" fileName="BasicMoveRefactoring.java" startLine="41" startPosition="7" endLine="42" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5142438244426403124" fileName="BasicMoveRefactoring.java" startLine="43" startPosition="5" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5142438244426403137" fileName="BasicMoveRefactoring.java" startLine="48" startPosition="33" endLine="49" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5142438244426403159" fileName="BasicMoveRefactoring.java" startLine="53" startPosition="31" endLine="54" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5142438244426403169" fileName="BasicMoveRefactoring.java" startLine="54" startPosition="63" endLine="55" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5142438244426403181" fileName="BasicMoveRefactoring.java" startLine="58" startPosition="30" endLine="59" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5142438244426403191" fileName="BasicMoveRefactoring.java" startLine="65" startPosition="37" endLine="66" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418677511065422753" fileName="BasicMoveRefactoring.java" startLine="62" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="correctMoving#()V" />
     <nodeInfo nodeId="5142438244426403075" fileName="BasicMoveRefactoring.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setUssages#(Ljetbrains/mps/ide/findusages/model/SearchResults;)V" />
     <nodeInfo nodeId="5142438244426403088" fileName="BasicMoveRefactoring.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUsages#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="5142438244426403109" fileName="BasicMoveRefactoring.java" startLine="35" startPosition="62" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5142438244426403132" fileName="BasicMoveRefactoring.java" startLine="42" startPosition="47" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5142438244426403177" fileName="BasicMoveRefactoring.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteOld#()V" />
-    <nodeInfo nodeId="5142438244426403187" fileName="BasicMoveRefactoring.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setIsChangingModel#()V" />
+    <nodeInfo nodeId="9121891594400536026" fileName="BasicMoveRefactoring.java" startLine="38" startPosition="49" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5142438244426403132" fileName="BasicMoveRefactoring.java" startLine="47" startPosition="47" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5142438244426403177" fileName="BasicMoveRefactoring.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteOld#()V" />
+    <nodeInfo nodeId="5142438244426403187" fileName="BasicMoveRefactoring.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setIsChangingModel#()V" />
     <nodeInfo nodeId="5142438244426403048" fileName="BasicMoveRefactoring.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BasicMoveRefactoring#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5142438244426403155" fileName="BasicMoveRefactoring.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCopy#()V" />
-    <nodeInfo nodeId="5142438244426403128" fileName="BasicMoveRefactoring.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceSingleUsage#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5142438244426403097" fileName="BasicMoveRefactoring.java" startLine="31" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoring#()V" />
-    <scopeInfo nodeId="418677511065422756" fileName="BasicMoveRefactoring.java" startLine="57" startPosition="34" endLine="57" endPosition="34" />
+    <nodeInfo nodeId="5142438244426403155" fileName="BasicMoveRefactoring.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCopy#()V" />
+    <nodeInfo nodeId="5142438244426403128" fileName="BasicMoveRefactoring.java" startLine="47" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceSingleUsage#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5142438244426403109" fileName="BasicMoveRefactoring.java" startLine="35" startPosition="62" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5142438244426403097" fileName="BasicMoveRefactoring.java" startLine="31" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoring#()V" />
+    <scopeInfo nodeId="418677511065422756" fileName="BasicMoveRefactoring.java" startLine="62" startPosition="34" endLine="62" endPosition="34" />
     <scopeInfo nodeId="5142438244426403078" fileName="BasicMoveRefactoring.java" startLine="23" startPosition="55" endLine="24" endPosition="27" />
     <scopeInfo nodeId="5142438244426403092" fileName="BasicMoveRefactoring.java" startLine="27" startPosition="43" endLine="28" endPosition="25" />
-    <scopeInfo nodeId="5142438244426403116" fileName="BasicMoveRefactoring.java" startLine="36" startPosition="96" endLine="37" endPosition="50" />
-    <scopeInfo nodeId="5142438244426403136" fileName="BasicMoveRefactoring.java" startLine="43" startPosition="33" endLine="44" endPosition="79" />
-    <scopeInfo nodeId="5142438244426403180" fileName="BasicMoveRefactoring.java" startLine="53" startPosition="30" endLine="54" endPosition="46" />
-    <scopeInfo nodeId="5142438244426403190" fileName="BasicMoveRefactoring.java" startLine="60" startPosition="37" endLine="61" endPosition="119" />
+    <scopeInfo nodeId="9121891594400536029" fileName="BasicMoveRefactoring.java" startLine="39" startPosition="39" endLine="40" endPosition="17" />
+    <scopeInfo nodeId="5142438244426403136" fileName="BasicMoveRefactoring.java" startLine="48" startPosition="33" endLine="49" endPosition="79" />
+    <scopeInfo nodeId="5142438244426403180" fileName="BasicMoveRefactoring.java" startLine="58" startPosition="30" endLine="59" endPosition="46" />
+    <scopeInfo nodeId="5142438244426403190" fileName="BasicMoveRefactoring.java" startLine="65" startPosition="37" endLine="66" endPosition="119" />
     <scopeInfo nodeId="5142438244426403051" fileName="BasicMoveRefactoring.java" startLine="18" startPosition="64" endLine="20" endPosition="37" />
-    <scopeInfo nodeId="5142438244426403158" fileName="BasicMoveRefactoring.java" startLine="48" startPosition="31" endLine="50" endPosition="77" />
-    <scopeInfo nodeId="418677511065422753" fileName="BasicMoveRefactoring.java" startLine="57" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="5142438244426403158" fileName="BasicMoveRefactoring.java" startLine="53" startPosition="31" endLine="55" endPosition="77" />
+    <scopeInfo nodeId="418677511065422753" fileName="BasicMoveRefactoring.java" startLine="62" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="5142438244426403075" fileName="BasicMoveRefactoring.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="5142438244426403085" varName="usages" />
     </scopeInfo>
     <scopeInfo nodeId="5142438244426403088" fileName="BasicMoveRefactoring.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="5142438244426403109" fileName="BasicMoveRefactoring.java" startLine="35" startPosition="62" endLine="38" endPosition="5">
-      <varInfo nodeId="5142438244426403110" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="5142438244426403131" fileName="BasicMoveRefactoring.java" startLine="42" startPosition="47" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="5142438244426403177" fileName="BasicMoveRefactoring.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="5142438244426403187" fileName="BasicMoveRefactoring.java" startLine="60" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="5142438244426403131" fileName="BasicMoveRefactoring.java" startLine="47" startPosition="47" endLine="50" endPosition="5" />
+    <scopeInfo nodeId="5142438244426403177" fileName="BasicMoveRefactoring.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="5142438244426403187" fileName="BasicMoveRefactoring.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="5142438244426403048" fileName="BasicMoveRefactoring.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="5142438244426403066" varName="destination" />
       <varInfo nodeId="5142438244426403064" varName="moving" />
     </scopeInfo>
-    <scopeInfo nodeId="5142438244426403155" fileName="BasicMoveRefactoring.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="5142438244426403128" fileName="BasicMoveRefactoring.java" startLine="42" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="5142438244426403155" fileName="BasicMoveRefactoring.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="5142438244426403128" fileName="BasicMoveRefactoring.java" startLine="47" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="5142438244426403149" varName="usage" />
     </scopeInfo>
-    <scopeInfo nodeId="5142438244426403100" fileName="BasicMoveRefactoring.java" startLine="31" startPosition="31" endLine="39" endPosition="21" />
-    <scopeInfo nodeId="5142438244426403097" fileName="BasicMoveRefactoring.java" startLine="31" startPosition="0" endLine="41" endPosition="0" />
-    <unitInfo nodeId="5142438244426402999" fileName="BasicMoveRefactoring.java" startLine="11" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.BasicMoveRefactoring" />
+    <scopeInfo nodeId="5142438244426403116" fileName="BasicMoveRefactoring.java" startLine="36" startPosition="96" endLine="42" endPosition="50" />
+    <scopeInfo nodeId="5142438244426403109" fileName="BasicMoveRefactoring.java" startLine="35" startPosition="62" endLine="43" endPosition="5">
+      <varInfo nodeId="5142438244426403110" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5142438244426403100" fileName="BasicMoveRefactoring.java" startLine="31" startPosition="31" endLine="44" endPosition="21" />
+    <scopeInfo nodeId="5142438244426403097" fileName="BasicMoveRefactoring.java" startLine="31" startPosition="0" endLine="46" endPosition="0" />
+    <unitInfo nodeId="5142438244426402999" fileName="BasicMoveRefactoring.java" startLine="11" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.BasicMoveRefactoring" />
   </root>
   <root nodeRef="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)/7539251793091424811">
     <nodeInfo nodeId="7539251793092281546" fileName="MemberInsertingUtils.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MEMBERS_ORDER" />
