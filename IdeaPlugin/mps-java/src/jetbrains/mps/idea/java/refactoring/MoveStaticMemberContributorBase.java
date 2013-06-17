@@ -13,8 +13,8 @@ import com.intellij.refactoring.move.moveMembers.MoveMembersOptions;
 import com.intellij.refactoring.move.moveMembers.MoveMembersProcessor.MoveMembersUsageInfo;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.java.actions.MoveStaticMethodExecute;
-import jetbrains.mps.ide.java.actions.MoveStaticMethodExecute.ExecuteRefactoring;
+import jetbrains.mps.ide.java.actions.MoveRefactoringRunnable;
+import jetbrains.mps.ide.java.actions.MoveStaticMemberExecutable;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.refactoring.MoveRefactoringContributor;
@@ -40,7 +40,7 @@ import java.util.List;
 abstract class MoveStaticMemberContributorBase implements MoveRefactoringContributor {
 
   abstract String getRefactoringClassName();
-  abstract void executeRefactoring(MPSProject mpsProject, SNode target);
+  abstract MoveStaticMemberExecutable getRefactoringExecutable();
 
   @Override
   public boolean isAvailableFor(@NotNull List<SNode> nodes) {
@@ -56,7 +56,17 @@ abstract class MoveStaticMemberContributorBase implements MoveRefactoringContrib
     final MPSProject mpsProject = project.getComponent(MPSProject.class);
     final SNode target = nodes.get(0);
 
-    executeRefactoring(mpsProject, target);
+    getRefactoringExecutable().execute(mpsProject, target, new MoveRefactoringRunnable() {
+      @Override
+      public void run(SNode whereToMove) {
+        RefactoringAccess.getInstance().getRefactoringFacade().execute(
+          RefactoringContext.createRefactoringContext(new MovetStaticMemberRefactoring(),
+            Arrays.asList("destination"),
+            Arrays.asList(whereToMove),
+            target,
+            mpsProject));
+      }
+    });
   }
 
   class MovetStaticMemberRefactoring extends PsiAwareRefactoring {

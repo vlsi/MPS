@@ -1,7 +1,9 @@
 package jetbrains.mps.idea.java.refactoring;
 
-import jetbrains.mps.ide.java.actions.MoveStaticFieldExecute;
+import jetbrains.mps.ide.java.actions.MoveRefactoringRunnable;
+import jetbrains.mps.ide.java.actions.MoveStaticFieldExecutable;
 import jetbrains.mps.ide.java.actions.MoveStaticFieldExecute.ExecuteRefactoring;
+import jetbrains.mps.ide.java.actions.MoveStaticMemberExecutable;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -21,17 +23,7 @@ public class MoveStaticFieldContributor extends MoveStaticMemberContributorBase 
   }
 
   @Override
-  void executeRefactoring(final MPSProject mpsProject, final SNode target) {
-    MoveStaticFieldExecute.execute(mpsProject, target, new ExecuteRefactoring() {
-      @Override
-      public void run(SNode whereToMove) {
-        RefactoringAccess.getInstance().getRefactoringFacade().execute(
-          RefactoringContext.createRefactoringContext(new MovetStaticMemberRefactoring(),
-            Arrays.asList("destination"),
-            Arrays.asList(whereToMove),
-            target,
-            mpsProject));
-      }
-    });
+  MoveStaticMemberExecutable getRefactoringExecutable() {
+    return new MoveStaticFieldExecutable();
   }
 }

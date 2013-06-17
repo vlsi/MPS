@@ -10,15 +10,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 
-public class MoveStaticMethodExecute {
+public class MoveStaticFieldExecutable implements MoveStaticMemberExecutable {
 
 
-  public static void execute(MPSProject project, final SNode target, final MoveStaticMethodExecute.ExecuteRefactoring executeRefactoring) {
+  /**
+   * Shared between workbench action and plugin MoveContributor
+   */
+  @Override
+  public void execute(MPSProject project, final SNode target, final MoveRefactoringRunnable runnable) {
     final SNode whereToMove;
     whereToMove = MoveNodeDialog.getSelectedObject(project.getProject(), target, new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
       @Override
-      public boolean check(SNode selectedObject, SNode nodeToMove, SModel modelOfSelectedNode) {
-        return SNodeOperations.isInstanceOf(selectedObject, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(ListSequence.fromList(SNodeOperations.getAncestors(nodeToMove, null, false)).contains(selectedObject));
+      public boolean check(SNode selectedObject, SNode nodeToMove, SModel modelOfSelectedObject) {
+        return SNodeOperations.isInstanceOf(selectedObject, "jetbrains.mps.baseLanguage.structure.Classifier") && !(ListSequence.fromList(SNodeOperations.getAncestors(nodeToMove, null, false)).contains(selectedObject));
       }
     });
 
@@ -37,17 +41,10 @@ public class MoveStaticMethodExecute {
           return;
         }
 
-        executeRefactoring.run(whereToMove);
+        runnable.run(whereToMove);
       }
     });
   }
-
-
-
-  public static interface ExecuteRefactoring {
-    public void run(SNode whereToMove);
-  }
-
 
 
 }
