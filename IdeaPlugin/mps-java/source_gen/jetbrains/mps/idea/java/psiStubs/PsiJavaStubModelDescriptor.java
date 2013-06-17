@@ -163,6 +163,8 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
         continue;
       }
 
+      myMps2PsiMapper.clearFile(file.getName());
+
       SNode javaImports = getImports(file.getImportList().getAllImportStatements());
       ASTConverter converter = new ASTConverter(myMps2PsiMapper);
 
@@ -174,18 +176,9 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
           AttributeOperations.setAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), javaImports);
         }
 
-        SNodeId id = node.getNodeId();
-        SNode oldNode = myModel.getNode(id);
-
-        if ((oldNode != null)) {
-          SNodeOperations.replaceWithAnother(oldNode, node);
-        } else {
-          myModel.addRootNode(node);
-        }
-
+        myModel.addRootNode(node);
         SetSequence.fromSet(roots).addElement(node.getNodeId());
       }
-
       if (SetSequence.fromSet(roots).isNotEmpty()) {
         MapSequence.fromMap(myRootsPerFile).put(file.getName(), roots);
       }
@@ -233,6 +226,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
       SNode node = pair.o1;
       PsiElement element = pair.o2;
       MapSequence.fromMap(myGlobalMps2PsiMapping).put(node.getNodeId(), element);
+
       PsiFile file = element.getContainingFile();
       Set<SNodeId> mapForFile = MapSequence.fromMap(myAllNodesPerFile).get(file.getName());
       if (mapForFile == null) {

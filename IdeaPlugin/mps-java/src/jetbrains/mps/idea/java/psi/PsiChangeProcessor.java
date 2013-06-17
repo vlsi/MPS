@@ -1,10 +1,24 @@
 package jetbrains.mps.idea.java.psi;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiCodeBlock;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiExpression;
+import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiFileSystemItem;
+import com.intellij.psi.PsiJavaFile;
+import com.intellij.psi.PsiMethod;
+import com.intellij.psi.PsiModifier;
+import com.intellij.psi.PsiModifierList;
+import com.intellij.psi.PsiParameter;
+import com.intellij.psi.PsiParameterList;
+import com.intellij.psi.PsiReferenceList;
 import com.intellij.psi.PsiTreeChangeEvent;
+import com.intellij.psi.PsiTypeParameter;
+import com.intellij.psi.PsiTypeParameterList;
+import com.intellij.psi.PsiWhiteSpace;
 import jetbrains.mps.ide.platform.watching.ReloadParticipant;
 import jetbrains.mps.idea.java.psi.PsiListener.FSMove;
 import jetbrains.mps.idea.java.psi.PsiListener.FSRename;
@@ -14,6 +28,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -31,6 +46,12 @@ public class PsiChangeProcessor extends ReloadParticipant {
   private Map<Project, PsiChangeData> changeData = new HashMap<Project, PsiChangeData>();
 
   public PsiChangeProcessor() {
+  }
+
+  @Override
+  public boolean wantsToShowProgress() {
+    // we'll not request progress indicator for psi updates
+    return false;
   }
 
   // TODO look with what locks is it called
@@ -69,7 +90,10 @@ public class PsiChangeProcessor extends ReloadParticipant {
 
   @Override
   public boolean isEmpty() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    for (PsiChangeData data : changeData.values()) {
+      if (data.isNotEmpty()) return false;
+    }
+    return true;
   }
 
   // The following methods are called by PsiChangesWatcher when it receives a PSI event
@@ -81,6 +105,7 @@ public class PsiChangeProcessor extends ReloadParticipant {
 
   /*package*/ void childAdded(final PsiTreeChangeEvent event) {
 
+    if (!filter(event.getChild())) return;
     PsiChangeData data = proj(event.getChild());
 
     PsiElement elem = event.getChild();
@@ -94,6 +119,7 @@ public class PsiChangeProcessor extends ReloadParticipant {
   /*package*/ void childRemoved(PsiTreeChangeEvent event) {
 
     // can't use getChild() here as it's not valid any longer
+    if (!filter(event.getParent())) return;
     PsiChangeData data = proj(event.getParent());
 
     PsiElement elem = event.getChild();
@@ -106,12 +132,16 @@ public class PsiChangeProcessor extends ReloadParticipant {
   }
 
   /*package*/ void childReplaced(PsiTreeChangeEvent event) {
+    // if both are uninteresting, only then ignore
+    if (!filter(event.getOldChild()) && !filter(event.getNewChild())) return;
+
     PsiChangeData data = proj(event.getNewChild());
     // todo Q: should we check if it's PsiFile?
     data.changed.add(event.getNewChild().getContainingFile());
   }
 
   /*package*/ void childrenChanged(PsiTreeChangeEvent event) {
+    if (!filter(event.getParent())) return;
     if (event.getParent() instanceof PsiFile) {
       // it's some generic notification, we don't need it
       // (don't remember already what that means)
@@ -123,11 +153,12 @@ public class PsiChangeProcessor extends ReloadParticipant {
   }
 
   /*package*/ void childMoved(@NotNull PsiTreeChangeEvent event) {
+    if (!filter(event.getChild())) return;
     PsiChangeData data = proj(event.getChild());
 
     PsiElement elem = event.getChild();
     if (elem instanceof PsiFileSystemItem) {
-      // file moved;
+      // file item;
       data.moved.add(new FSMove((PsiFileSystemItem) elem, (PsiFileSystemItem) event.getOldParent(), (PsiFileSystemItem) event.getNewParent()));
     } else {
       // todo what if old/new parent is PsiFileSystemItem ?
@@ -157,6 +188,47 @@ public class PsiChangeProcessor extends ReloadParticipant {
       changeData.put(project, data);
     }
     return data;
+  }
+
+  private boolean filter(PsiElement elem) {
+    if (elem == null || elem instanceof PsiWhiteSpace) {
+      return false;
+    }
+    if (elem instanceof PsiJavaFile) {
+      return true;
+    }
+    PsiElement e = elem;
+    do {
+      if (interesting(e)) {
+        return true;
+      }
+      if (notInteresting(e)) {
+        return false;
+      }
+      e = e.getParent();
+    } while (e != null);
+    return false;
+  }
+
+  private boolean interesting(PsiElement elem) {
+    if (elem instanceof PsiClass
+      || elem instanceof PsiMethod
+      || elem instanceof PsiField
+      || elem instanceof PsiParameterList
+      || elem instanceof PsiParameter
+      || elem instanceof PsiReferenceList //  but not PsiReference !
+      || elem instanceof PsiModifierList
+      || elem instanceof PsiModifier
+      || elem instanceof PsiTypeParameterList
+      || elem instanceof PsiTypeParameter) {
+
+      return true;
+    }
+    return false;
+  }
+
+  private boolean notInteresting(PsiElement elem) {
+    return elem instanceof PsiCodeBlock || elem instanceof PsiExpression;
   }
 }
 
@@ -190,5 +262,9 @@ class PsiChangeData implements PsiEvent {
   @Override
   public Set<PsiFile> getChanged() {
     return changed;
+  }
+
+  boolean isNotEmpty() {
+    return !(changed.isEmpty() && created.isEmpty() && renamed.isEmpty() && moved.isEmpty() && removed.isEmpty());
   }
 }

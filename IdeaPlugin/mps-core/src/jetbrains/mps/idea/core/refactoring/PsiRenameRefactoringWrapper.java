@@ -4,6 +4,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiReference;
 import com.intellij.psi.search.searches.ReferencesSearch;
+import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -12,6 +13,7 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -24,82 +26,33 @@ import java.util.List;
  * danilla 6/3/13
  */
 
-public class PsiRenameRefactoringWrapper implements IRefactoring {
+public class PsiRenameRefactoringWrapper extends PsiAwareRefactoring {
 
-  // Q: or SNodeReference ?
-  // todo should get this from refactoring context (currently it doesn't have getTarget()...)
-  protected final SNode myTarget;
-  protected final IRefactoring baseRefactoring;
-
-  public PsiRenameRefactoringWrapper(IRefactoring base, SNode target) {
-    baseRefactoring = base;
-    myTarget = target;
+  public PsiRenameRefactoringWrapper() {
+    super(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings.Rename"));
   }
 
-  @Override
-  public String getUserFriendlyName() {
-    return baseRefactoring.getUserFriendlyName();
-  }
-
-  @Override
-  public Class getOverridenRefactoringClass() {
-    return baseRefactoring.getOverridenRefactoringClass();
-  }
-
-  @Override
-  public IRefactoringTarget getRefactoringTarget() {
-    return baseRefactoring.getRefactoringTarget();
-  }
-
-  @Override
-  public boolean init(RefactoringContext refactoringContext) {
-    return baseRefactoring.init(refactoringContext);
+  protected PsiRenameRefactoringWrapper(IRefactoring base) {
+    super(base);
   }
 
   @Override
   public void refactor(RefactoringContext refactoringContext) {
     baseRefactoring.refactor(refactoringContext);
 
-    Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
-    PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(myTarget);
-    Collection<PsiReference> psiRefs = ReferencesSearch.search(psiTarget).findAll();
+    UsagesList usages = refactoringContext.getUsages();
+    if (!(usages instanceof SearchResults)) {
+      return;
+    }
 
+    SearchResults<SNode> searchResults = (SearchResults<SNode>) usages;
     String newName = (String) refactoringContext.getParameter("newName");
 
-    for (PsiReference ref : psiRefs) {
-      ref.handleElementRename(newName);
+    for (SearchResult<SNode> result : searchResults.getSearchResults()) {
+      if (!(result instanceof PsiSearchResult)) continue;
+      PsiReference psiRef = ((PsiSearchResult) result).getReference();
+      psiRef.handleElementRename(newName);
     }
   }
 
-  @Override
-  public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext) {
-    return baseRefactoring.getModelsToGenerate(refactoringContext);
-  }
-
-  @Override
-  public void doWhenDone(RefactoringContext refactoringContext) {
-    baseRefactoring.doWhenDone(refactoringContext);
-  }
-
-  @Override
-  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
-    SearchResults<SNode> mpsResults = baseRefactoring.getAffectedNodes(refactoringContext);
-
-    Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
-    PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(myTarget);
-    // todo search scope?
-    Collection<PsiReference> psiRefs = ReferencesSearch.search(psiTarget).findAll();
-    // size may be bigger than needed, due to MPS usages returned among PSI usages
-    List<SearchResult<SNode>> psiResults = new ArrayList<SearchResult<SNode>>(psiRefs.size());
-    for (PsiReference ref : psiRefs) {
-      PsiElement element = ref.getElement();
-      if (element instanceof MPSPsiNode) continue;
-
-      psiResults.add(new PsiSearchResult(ref));
-    }
-
-    mpsResults.addAll(new SearchResults<SNode>(new HashSet<SNode>(), psiResults));
-
-    return mpsResults;
-  }
 }

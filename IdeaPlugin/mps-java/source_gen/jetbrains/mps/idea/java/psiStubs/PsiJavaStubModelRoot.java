@@ -23,20 +23,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.java.sourceStubs.Util;
 import org.jetbrains.mps.openapi.persistence.Memento;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiClass;
-import com.intellij.psi.PsiMethod;
-import com.intellij.psi.PsiField;
-import com.intellij.psi.PsiParameterList;
-import com.intellij.psi.PsiParameter;
-import com.intellij.psi.PsiReferenceList;
-import com.intellij.psi.PsiModifierList;
-import com.intellij.psi.PsiModifier;
-import com.intellij.psi.PsiTypeParameterList;
-import com.intellij.psi.PsiTypeParameter;
-import com.intellij.psi.PsiCodeBlock;
-import com.intellij.psi.PsiExpression;
-import com.intellij.psi.PsiWhiteSpace;
 import com.intellij.psi.PsiFileSystemItem;
 
 public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
@@ -182,38 +168,6 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
   @Override
   public void load(Memento memento) {
     throw new UnsupportedOperationException("JavaPsiStubs: unsupported for now");
-  }
-
-  private boolean interesting(PsiElement elem) {
-    if (elem instanceof PsiClass || elem instanceof PsiMethod || elem instanceof PsiField || elem instanceof PsiParameterList || elem instanceof PsiParameter || elem instanceof PsiReferenceList || elem instanceof PsiModifierList || elem instanceof PsiModifier || elem instanceof PsiTypeParameterList || elem instanceof PsiTypeParameter) {
-      //  but not PsiReference ! 
-      return true;
-    }
-    return false;
-  }
-
-  private boolean notInteresting(PsiElement elem) {
-    return elem instanceof PsiCodeBlock || elem instanceof PsiExpression;
-  }
-
-  private boolean filter(PsiElement elem) {
-    if (elem == null || elem instanceof PsiWhiteSpace) {
-      return false;
-    }
-    if (elem instanceof PsiJavaFile) {
-      return true;
-    }
-    PsiElement e = elem;
-    do {
-      if (interesting(e)) {
-        return true;
-      }
-      if (notInteresting(e)) {
-        return false;
-      }
-      e = e.getParent();
-    } while (e != null);
-    return false;
   }
 
 
