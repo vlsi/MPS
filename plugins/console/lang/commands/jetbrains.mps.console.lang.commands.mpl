@@ -24,7 +24,7 @@
         <dependency reexport="false">1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.lang.commands)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguage>de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.lang)</usedLanguage>
+        <usedLanguage>de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)</usedLanguage>
         <usedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</usedLanguage>
         <usedLanguage>b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</usedLanguage>
         <usedLanguage>d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)</usedLanguage>
@@ -70,7 +70,7 @@
     <dependency reexport="false">498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)</dependency>
     <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
     <dependency reexport="false">a8de7923-dc6f-4aa1-b8a9-2d19ffee3edd(jetbrains.mps.console)</dependency>
-    <dependency reexport="false">de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.lang)</dependency>
+    <dependency reexport="false">de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)</dependency>
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
     <dependency reexport="false">7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</dependency>
     <dependency reexport="false">f8e20673-3f65-44e9-84c0-c4a4b6ede37e(jetbrains.mps.make.facets)</dependency>
@@ -92,8 +92,8 @@
   </runtime>
   <extendedLanguages>
     <extendedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</extendedLanguage>
-    <extendedLanguage>de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.lang)</extendedLanguage>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
+    <extendedLanguage>de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)</extendedLanguage>
   </extendedLanguages>
 </language>
 

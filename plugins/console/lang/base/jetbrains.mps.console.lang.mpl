@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.console.lang" uuid="de1ad86d-6e50-4a02-b306-d4d17f64c375">
+<language namespace="jetbrains.mps.console.base" uuid="de1ad86d-6e50-4a02-b306-d4d17f64c375">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.console.lang#5336086527852717844" uuid="9a50fa6b-b447-4a24-90b5-e61ff938abaf">
+    <generator name="" generatorUID="jetbrains.mps.console.base#5336086527852717844" uuid="9a50fa6b-b447-4a24-90b5-e61ff938abaf">
       <models>
         <modelRoot contentPath="${module}/generator/template" type="default">
           <sourceRoot location="." />
@@ -45,6 +45,10 @@
   <runtime>
     <dependency reexport="false">a8de7923-dc6f-4aa1-b8a9-2d19ffee3edd(jetbrains.mps.console)</dependency>
   </runtime>
-  <extendedLanguages />
+  <extendedLanguages>
+    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
+    <extendedLanguage>1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.lang.commands)</extendedLanguage>
+    <extendedLanguage>de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)</extendedLanguage>
+  </extendedLanguages>
 </language>
 

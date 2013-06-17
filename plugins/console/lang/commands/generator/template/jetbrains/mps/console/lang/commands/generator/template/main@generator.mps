@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.console.lang.commands.generator.template.main@generator)">
   <persistence version="8" />
-  <language namespace="de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.lang)" />
+  <language namespace="de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
