@@ -158,7 +158,7 @@ public class PsiChangeProcessor extends ReloadParticipant {
 
     PsiElement elem = event.getChild();
     if (elem instanceof PsiFileSystemItem) {
-      // file moved;
+      // file item;
       data.moved.add(new FSMove((PsiFileSystemItem) elem, (PsiFileSystemItem) event.getOldParent(), (PsiFileSystemItem) event.getNewParent()));
     } else {
       // todo what if old/new parent is PsiFileSystemItem ?

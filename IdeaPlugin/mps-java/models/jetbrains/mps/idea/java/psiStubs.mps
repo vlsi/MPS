@@ -7054,7 +7054,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5760775789763227710" resolveInfo="fsMove" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5760775789763272581">
-                        <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="9d7a.~PsiListener%dFSMove%dmoved" resolveInfo="moved" />
+                        <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="9d7a.~PsiListener%dFSMove%ditem" resolveInfo="item" />
                       </node>
                     </node>
                   </node>
@@ -7094,7 +7094,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5760775789763227710" resolveInfo="fsMove" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5760775789763623584">
-                                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="9d7a.~PsiListener%dFSMove%dmoved" resolveInfo="moved" />
+                                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="9d7a.~PsiListener%dFSMove%ditem" resolveInfo="item" />
                               </node>
                             </node>
                             <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5760775789763596829">
@@ -7137,7 +7137,7 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5760775789763227710" resolveInfo="fsMove" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5760775789763827823">
-                                  <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="9d7a.~PsiListener%dFSMove%dmoved" resolveInfo="moved" />
+                                  <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="9d7a.~PsiListener%dFSMove%ditem" resolveInfo="item" />
                                 </node>
                               </node>
                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5760775789763798837">

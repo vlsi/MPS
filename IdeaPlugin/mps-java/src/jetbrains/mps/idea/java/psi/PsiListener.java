@@ -16,14 +16,8 @@
 
 package jetbrains.mps.idea.java.psi;
 
-import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiFileSystemItem;
-import jetbrains.mps.util.Triplet;
-
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * danilla 11/12/12
@@ -42,12 +36,12 @@ public interface PsiListener {
   }
 
   public static class FSMove {
-    public final PsiFileSystemItem moved;
+    public final PsiFileSystemItem item;
     public final PsiFileSystemItem from;
     public final PsiFileSystemItem to;
 
-    public FSMove(PsiFileSystemItem moved, PsiFileSystemItem from, PsiFileSystemItem to) {
-      this.moved = moved;
+    public FSMove(PsiFileSystemItem item, PsiFileSystemItem from, PsiFileSystemItem to) {
+      this.item = item;
       this.from = from;
       this.to = to;
     }

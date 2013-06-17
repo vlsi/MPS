@@ -94,7 +94,7 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
       @Override
       public void run() {
 
-        // if MPSReferenceSearch is moved to mps-core, it will be MPS2PsiMapperUtil.getNodeId
+        // if MPSReferenceSearch is item to mps-core, it will be MPS2PsiMapperUtil.getNodeId
         final SNode targetNode = getNodeForElement(psiTarget);
         if (targetNode == null) {
           // it can't be referenced from MPS
