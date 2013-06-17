@@ -83,6 +83,7 @@
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.fastFind.ClassStubPsiMapper"/>
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.psiStubs.Mapper"/>
     <mps.moveRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MoveStaticFieldContributor" order="before mps-core"/>
+    <mps.moveRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MoveStaticMethodContributor" order="before mps-core"/>
     <debugger.positionManagerFactory implementation="jetbrains.mps.idea.java.debugger.MpsPositionManagerFactory"/>
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
