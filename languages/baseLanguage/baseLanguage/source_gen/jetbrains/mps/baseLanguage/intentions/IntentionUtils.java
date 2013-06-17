@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class IntentionUtils {
   private IntentionUtils() {
@@ -172,21 +171,6 @@ public class IntentionUtils {
     }
 
     return currentResult;
-  }
-
-
-
-  /*package*/ static boolean hasCondition(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.WhileStatement") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.DoWhileStatement");
-  }
-
-  /*package*/ static SNode getCondition(SNode node) {
-    assert hasCondition(node);
-    return SNodeOperations.cast(ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Expression");
-      }
-    }).first(), "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
   private static boolean neq_k79hya_a0a0g(Object a, Object b) {

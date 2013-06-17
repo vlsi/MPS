@@ -30,25 +30,17 @@ public class AlterStatementListContainerFactoryUtils {
         ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(newNode), "statement", true)).addElement(SNodeOperations.copyNode(it));
       }
     });
-
     if (hasCondition(sampleNode) && hasCondition(newNode)) {
-      SNode originalCondition = AlterStatementListContainerFactoryUtils.getCondition(sampleNode);
+      SNode originalCondition = getCondition(sampleNode);
       if (originalCondition != null) {
-        if (SNodeOperations.isInstanceOf(newNode, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-          SLinkOperations.setTarget(SNodeOperations.cast(newNode, "jetbrains.mps.baseLanguage.structure.IfStatement"), "condition", SNodeOperations.copyNode(originalCondition), true);
-        } else if (SNodeOperations.isInstanceOf(newNode, "jetbrains.mps.baseLanguage.structure.WhileStatement")) {
-          SLinkOperations.setTarget(SNodeOperations.cast(newNode, "jetbrains.mps.baseLanguage.structure.WhileStatement"), "condition", SNodeOperations.copyNode(originalCondition), true);
-
-        } else if (SNodeOperations.isInstanceOf(newNode, "jetbrains.mps.baseLanguage.structure.DoWhileStatement")) {
-          SLinkOperations.setTarget(SNodeOperations.cast(newNode, "jetbrains.mps.baseLanguage.structure.DoWhileStatement"), "condition", SNodeOperations.copyNode(originalCondition), true);
-        }
+        SNodeOperations.replaceWithAnother(getCondition(newNode), SNodeOperations.copyNode(originalCondition));
       }
     }
   }
 
   public static void buildContainerIfPossible(SNode sampleNode, SNode newNode) {
     if (SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
-      AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(sampleNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), newNode);
+      buildContainer(SNodeOperations.cast(sampleNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), newNode);
     }
   }
 }
