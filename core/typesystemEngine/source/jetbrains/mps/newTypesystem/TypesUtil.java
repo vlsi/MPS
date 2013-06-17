@@ -82,11 +82,11 @@ public class TypesUtil {
   }
 
   private static void getVariablesInside(SNode node, List<SNode> result, State state) {
-    if (node == null) {
-      return;
-    }
     if (state != null) {
       node = state.getRepresentative(node);
+    }
+    if (node == null) {
+      return;
     }
     if (isVariable(node)) {
       result.add(node);
