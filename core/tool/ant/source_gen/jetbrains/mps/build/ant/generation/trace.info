@@ -93,11 +93,21 @@
     <unitInfo nodeId="4263887295358464059" fileName="GenerateTask.java" startLine="15" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.build.ant.generation.GenerateTask" />
   </root>
   <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/861826518923203126">
-    <nodeInfo nodeId="861826518923203153" fileName="DiffTestTask.java" startLine="8" startPosition="37" endLine="9" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="861826518923203150" fileName="DiffTestTask.java" startLine="7" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWorkerClass#()Ljava/lang/String;" />
-    <scopeInfo nodeId="861826518923203152" fileName="DiffTestTask.java" startLine="8" startPosition="37" endLine="9" endPosition="60" />
-    <scopeInfo nodeId="861826518923203150" fileName="DiffTestTask.java" startLine="7" startPosition="0" endLine="11" endPosition="0" />
-    <unitInfo nodeId="861826518923203126" fileName="DiffTestTask.java" startLine="6" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.build.ant.generation.DiffTestTask" />
+    <nodeInfo nodeId="861826518923203153" fileName="DiffTestTask.java" startLine="9" startPosition="37" endLine="10" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907891939" fileName="DiffTestTask.java" startLine="13" startPosition="32" endLine="14" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907891951" fileName="DiffTestTask.java" startLine="17" startPosition="59" endLine="18" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891935" fileName="DiffTestTask.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShowDiff#()Z" />
+    <nodeInfo nodeId="4003657351907891945" fileName="DiffTestTask.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShowDiff#(Z)V" />
+    <nodeInfo nodeId="861826518923203150" fileName="DiffTestTask.java" startLine="8" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWorkerClass#()Ljava/lang/String;" />
+    <scopeInfo nodeId="861826518923203152" fileName="DiffTestTask.java" startLine="9" startPosition="37" endLine="10" endPosition="60" />
+    <scopeInfo nodeId="4003657351907891938" fileName="DiffTestTask.java" startLine="13" startPosition="32" endLine="14" endPosition="84" />
+    <scopeInfo nodeId="4003657351907891950" fileName="DiffTestTask.java" startLine="17" startPosition="59" endLine="18" endPosition="97" />
+    <scopeInfo nodeId="4003657351907891935" fileName="DiffTestTask.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4003657351907891945" fileName="DiffTestTask.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="4003657351907891948" varName="isDifferenceCalculated" />
+    </scopeInfo>
+    <scopeInfo nodeId="861826518923203150" fileName="DiffTestTask.java" startLine="8" startPosition="0" endLine="12" endPosition="0" />
+    <unitInfo nodeId="861826518923203126" fileName="DiffTestTask.java" startLine="7" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.ant.generation.DiffTestTask" />
   </root>
   <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/9096318311151691260">
     <nodeInfo nodeId="5922356631317911885" fileName="Chunk.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBootstrap" />
