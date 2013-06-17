@@ -45,4 +45,10 @@ public class AlterStatementListContainerFactoryUtils {
       }
     }
   }
+
+  public static void buildContainerIfPossible(SNode sampleNode, SNode newNode) {
+    if (SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
+      AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(sampleNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), newNode);
+    }
+  }
 }
