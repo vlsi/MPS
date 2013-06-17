@@ -272,11 +272,6 @@
     <scopeInfo nodeId="7906452883299947298" fileName="ExecuteProjectTests.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <unitInfo nodeId="7906452883299946797" fileName="ExecuteProjectTests.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.testbench.junit.suites.ExecuteProjectTests" />
   </root>
-  <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/912926329919603117">
-    <nodeInfo nodeId="912926329919605304" fileName="ExecuteModuleTests.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExecuteModuleTests#()V" />
-    <scopeInfo nodeId="912926329919605308" fileName="ExecuteModuleTests.java" startLine="10" startPosition="31" endLine="10" endPosition="31" />
-    <scopeInfo nodeId="912926329919605304" fileName="ExecuteModuleTests.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <unitInfo nodeId="912926329919603117" fileName="ExecuteModuleTests.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.testbench.junit.suites.ExecuteModuleTests" />
-  </root>
+  <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/912926329919603117" />
 </debugInfo>
 

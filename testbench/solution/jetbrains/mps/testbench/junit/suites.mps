@@ -83,24 +83,6 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7906452883299947301" nodeInfo="nn" />
     </node>
   </root>
-  <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="912926329919603117" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="ExecuteModuleTests" />
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="912926329919605304" nodeInfo="igu">
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="912926329919605306" nodeInfo="in" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="912926329919605307" nodeInfo="nn" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="912926329919605308" nodeInfo="nn" />
-    </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="912926329919603118" nodeInfo="nn" />
-    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="912926329919605325" nodeInfo="nn">
-      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="u67u.~RunWith" resolveInfo="RunWith" />
-      <node role="value" roleId="tpee.1188214630783" type="tpee.ImplicitAnnotationInstanceValue" typeId="tpee.2580416627845338977" id="7535322034160226411" nodeInfo="ng">
-        <link role="key" roleId="tpee.1188214555875" targetNodeId="u67u.~RunWith%dvalue()" resolveInfo="value" />
-        <node role="value" roleId="tpee.1188214607812" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="7535322034160226487" nodeInfo="nn">
-          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="oh7r.912926329919748278" resolveInfo="MpsModuleTestSuite" />
-        </node>
-      </node>
-    </node>
-  </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5835181105767457626" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ModuleTestSuite" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7535322034160451297" nodeInfo="igu">

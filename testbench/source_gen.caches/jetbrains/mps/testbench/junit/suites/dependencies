@@ -6,10 +6,6 @@
     <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode dependClassName="org.junit.runners.Suite" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.ExecuteModuleTests" file="ExecuteModuleTests.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsModuleTestSuite" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.ExecuteProjectTests" file="ExecuteProjectTests.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsProjectTestSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
