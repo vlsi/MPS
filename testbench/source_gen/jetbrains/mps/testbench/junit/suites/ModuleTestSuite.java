@@ -61,6 +61,8 @@ public class ModuleTestSuite {
     // todo: get rid from 
     ModuleTestSuite.DummyProjectContainer container = new ModuleTestSuite.DummyProjectContainer();
     TestMain.PROJECT_CONTAINER = container;
+    // all classloading should be finished before test classes collecting 
+    container.getDummyProject();
 
     return ListSequence.fromList(getUnitTestClasses()).toGenericArray(Class.class);
   }
@@ -209,6 +211,8 @@ public class ModuleTestSuite {
       return p;
     }
 
+
+
     private File createDummyProjectFile() {
       File projectDir = FileUtil.createTmpDir();
       File dotMps = new File(projectDir, ".mps");
@@ -226,6 +230,13 @@ public class ModuleTestSuite {
         return null;
       }
       return projectDir;
+    }
+
+
+
+    @Override
+    public void clear() {
+      // do nothing 
     }
   }
 
