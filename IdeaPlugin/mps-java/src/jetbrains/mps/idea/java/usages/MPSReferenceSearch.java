@@ -113,6 +113,11 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
           if (psiNode == null) return;
           String refRole = sReference.getRole();
           MPSPsiRef[] refs = psiNode.getReferences(refRole);
+//          // 0 or 1
+//          MPSPsiRef ref = refs.length > 0 ? refs[0] : null;
+//          if (ref != null) {
+//            consumer.process(ref.getReference());
+//          }
 
           for (MPSPsiRef r : refs) {
             if (targetNode.getNodeId().equals(r.getNodeId())) {
