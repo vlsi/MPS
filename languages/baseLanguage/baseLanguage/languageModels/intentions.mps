@@ -8727,7 +8727,7 @@
   </root>
   <root type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1236187435379" nodeInfo="ng">
     <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
-    <property name="name" nameId="tpck.1169194664001" value="MakeMethodAbstarct" />
+    <property name="name" nameId="tpck.1169194664001" value="MakeMethodAbstract" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="1236187435380" nodeInfo="nn">

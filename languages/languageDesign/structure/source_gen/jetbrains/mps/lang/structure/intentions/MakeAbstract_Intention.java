@@ -14,10 +14,10 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class MakeAbsrtract_Intention implements IntentionFactory {
+public class MakeAbstract_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public MakeAbsrtract_Intention() {
+  public MakeAbstract_Intention() {
   }
 
   public String getConcept() {
@@ -25,11 +25,11 @@ public class MakeAbsrtract_Intention implements IntentionFactory {
   }
 
   public String getPresentation() {
-    return "MakeAbsrtract";
+    return "MakeAbstract";
   }
 
   public String getPersistentStateKey() {
-    return "jetbrains.mps.lang.structure.intentions.MakeAbsrtract_Intention";
+    return "jetbrains.mps.lang.structure.intentions.MakeAbstract_Intention";
   }
 
   public String getLanguageFqName() {
@@ -58,7 +58,7 @@ public class MakeAbsrtract_Intention implements IntentionFactory {
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeAbsrtract_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeAbstract_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -82,7 +82,7 @@ public class MakeAbsrtract_Intention implements IntentionFactory {
     }
 
     public IntentionDescriptor getDescriptor() {
-      return MakeAbsrtract_Intention.this;
+      return MakeAbstract_Intention.this;
     }
   }
 }

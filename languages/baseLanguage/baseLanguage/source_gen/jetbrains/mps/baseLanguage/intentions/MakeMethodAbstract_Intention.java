@@ -20,10 +20,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class MakeMethodAbstarct_Intention implements IntentionFactory {
+public class MakeMethodAbstract_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public MakeMethodAbstarct_Intention() {
+  public MakeMethodAbstract_Intention() {
   }
 
   public String getConcept() {
@@ -31,11 +31,11 @@ public class MakeMethodAbstarct_Intention implements IntentionFactory {
   }
 
   public String getPresentation() {
-    return "MakeMethodAbstarct";
+    return "MakeMethodAbstract";
   }
 
   public String getPersistentStateKey() {
-    return "jetbrains.mps.baseLanguage.intentions.MakeMethodAbstarct_Intention";
+    return "jetbrains.mps.baseLanguage.intentions.MakeMethodAbstract_Intention";
   }
 
   public String getLanguageFqName() {
@@ -85,7 +85,7 @@ public class MakeMethodAbstarct_Intention implements IntentionFactory {
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeMethodAbstarct_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeMethodAbstract_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -107,7 +107,7 @@ public class MakeMethodAbstarct_Intention implements IntentionFactory {
     }
 
     public IntentionDescriptor getDescriptor() {
-      return MakeMethodAbstarct_Intention.this;
+      return MakeMethodAbstract_Intention.this;
     }
   }
 }
