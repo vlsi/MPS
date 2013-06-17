@@ -108,6 +108,9 @@ public class MoveRenameBatch implements ProjectComponent {
 
   public void commit() {
 
+    // TODO !!! a better way to synchronize idea and mps is needed
+    // when refactoring starts we have to stop reloads
+    // and here resume and flush
     ReloadManager.getInstance().flush();
 
     // Maybe should be done in ReloadSession itself

@@ -171,9 +171,11 @@ public class PsiChangesWatcher implements ProjectComponent {
       if (isFromMPSPsiProvider(event)) return;
 
       Editor editor = FileEditorManager.getInstance(myProject).getSelectedTextEditor();
-      InplaceRefactoring ir = editor.getUserData(InplaceRefactoring.INPLACE_RENAMER);
-      if (ir != null) {
-        return;
+      if (editor != null) {
+        InplaceRefactoring ir = editor.getUserData(InplaceRefactoring.INPLACE_RENAMER);
+        if (ir != null) {
+          return;
+        }
       }
 
       myReloadManager.runReload(PsiChangeProcessor.class, new ReloadAction<PsiChangeProcessor>() {
