@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 
 /**
- * Suite class must be with public static Class[] factory() method annotated by @Factory
+ * Suite class must be with public static Class[] factory(Class testClass) method annotated by @Factory
  */
 public class DynamicSuite extends Suite {
   public DynamicSuite(Class<?> testClass, RunnerBuilder builder) throws Throwable {
@@ -23,20 +23,24 @@ public class DynamicSuite extends Suite {
 
 
   private static Class<?>[] getSuiteClasses(Class<?> testClass) throws Throwable {
-    for (Method method : testClass.getMethods()) {
-      if (method.getAnnotation(DynamicSuite.Factory.class) != null) {
-        int modifiers = method.getModifiers();
-        if (Modifier.isStatic(modifiers) && Modifier.isPublic(modifiers)) {
-          try {
-            return (Class<?>[]) method.invoke(null);
-          } catch (InvocationTargetException e) {
-            // re-throw exceptions from reflective call 
-            throw e.getTargetException();
+    Class<?> curClass = testClass;
+    while (curClass != null) {
+      for (Method method : curClass.getMethods()) {
+        if (method.getAnnotation(DynamicSuite.Factory.class) != null) {
+          int modifiers = method.getModifiers();
+          if (Modifier.isStatic(modifiers) && Modifier.isPublic(modifiers)) {
+            try {
+              return (Class<?>[]) method.invoke(null, testClass);
+            } catch (InvocationTargetException e) {
+              // re-throw exceptions from reflective call 
+              throw e.getTargetException();
+            }
           }
         }
       }
+      curClass = curClass.getSuperclass();
     }
-    throw new Exception("No public static factory method on class " + testClass.getName());
+    throw new Exception("No public static factory method in class or ots superclasses: " + testClass.getName());
   }
 
 

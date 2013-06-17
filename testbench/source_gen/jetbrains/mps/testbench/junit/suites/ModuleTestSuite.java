@@ -7,9 +7,9 @@ import jetbrains.mps.testbench.junit.runners.DynamicSuite;
 import jetbrains.mps.tool.environment.Environment;
 import org.junit.runners.model.InitializationError;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.junit.AfterClass;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -55,7 +55,7 @@ public class ModuleTestSuite {
 
 
   @DynamicSuite.Factory
-  public static Class<?>[] suiteClasses() throws InitializationError {
+  public static Class<?>[] suiteClasses(Class<?> testClass) throws InitializationError {
     createTestEnvironment(loadLibraries());
 
     // todo: get rid from 
@@ -64,7 +64,7 @@ public class ModuleTestSuite {
     // all classloading should be finished before test classes collecting 
     container.getDummyProject();
 
-    return ListSequence.fromList(getUnitTestClasses()).toGenericArray(Class.class);
+    return getUnitTestClasses();
   }
 
 
@@ -78,8 +78,8 @@ public class ModuleTestSuite {
 
 
 
-  protected static List<Class> getUnitTestClasses() throws InitializationError {
-    List<Class<?>> result = ListSequence.fromList(new ArrayList<Class<?>>());
+  protected static Class[] getUnitTestClasses() throws InitializationError {
+    List<Class> result = ListSequence.fromList(new ArrayList<Class>());
     for (Tuples._2<String, SModule> testClassDescriptor : ListSequence.fromList(getTestClassDescriptorsFromModels(ListSequence.fromList(getTestModules()).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
@@ -92,7 +92,7 @@ public class ModuleTestSuite {
         throw new InitializationError("Unable to load class for ITestCase by fq name: " + testClassDescriptor._0() + " from module: " + testClassDescriptor._1().getModuleName());
       }
     }
-    return (List) result;
+    return ListSequence.fromList(result).toGenericArray(Class.class);
   }
 
   protected static List<Tuples._2<String, SModule>> getTestClassDescriptorsFromModels(final Iterable<SModel> modelDescriptors) {
