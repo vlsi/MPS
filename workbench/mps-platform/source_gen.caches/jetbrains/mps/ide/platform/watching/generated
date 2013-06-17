@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2osyr9fd1x566595yr0vn0m7fwgpl2i">
+<dependencies version="2" modelHash="aemykx8m7y0e782844xb0nnr24u2ac8">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
@@ -106,7 +106,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FileSystemListenersContainer.java" />
   </source>
-  <source id="174954467868287275" name="ReloadSession" hash="eq8e76ej7pisvohk6bgw3l4msdrl4lw">
+  <source id="174954467868287275" name="ReloadSession" hash="-6bz09f5u5ok6a1dhfk6if4ny4ezo7du">
     <dep root="4774203567222745031" />
     <dep root="4774203567223269590" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -120,7 +120,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReloadSession.java" />
   </source>
-  <source id="4774203567222173397" name="ReloadManagerComponent" hash="-4uc6866jhuufoox2uyp69l41vblcwi2">
+  <source id="4774203567222173397" name="ReloadManagerComponent" hash="-9j9ksvhqcz34j1fmy8spayo87xl5h23">
     <dep root="174954467868287275" />
     <dep root="4774203567222745031" />
     <dep root="4774203567223337882" />
@@ -136,7 +136,7 @@
   <source id="4774203567222745031" name="ReloadListener" hash="4ireegdygti1pkgaonbs46333hhq2z3">
     <file name="ReloadListener.java" />
   </source>
-  <source id="4774203567223269590" name="ReloadParticipant" hash="7lz8pnx9esia6ol7iqf9g7n24pimslc">
+  <source id="4774203567223269590" name="ReloadParticipant" hash="8904vov5eybc45730e0vlzphv1g4g0o">
     <file name="ReloadParticipant.java" />
   </source>
   <source id="4774203567223296336" name="ReloadAction" hash="1iqq05j9fpurlog1o5brxyumyhbjq4d">
