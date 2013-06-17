@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dmacs4tqm65snpv82t6quw7fkjrxj4k">
+<dependencies version="2" modelHash="luvs0n69cfoc8ro3e8di6pfls9gdo5">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ar5rg4sgykttk0xr6ynoooewafaa239" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.lang.structure)" hash="9w7ax37wrlhyh24tn23h0nk8087ngkl" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.lang.structure)" hash="-a5bd611suu4vjvrk0yud227dppxvagp" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-6ygnwew9fsyml0umi7w20kwq5d46z7m" />
   <common hash="-7qh4cdz0hzk0kuv6rx30bou24dnxpat">
     <dep root="4417779018064682857" />
@@ -28,13 +28,13 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="5464054275389846505" name="BLCommand" hash="aph7nretfbt7sajc0s0n1lwzkv6kn7k">
+  <source id="5464054275389846505" name="BLCommand" hash="-46qgv9fxf09c7h2pc2y1tt1gczuotap">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8899274441241545834" name="ModelStatCommand" hash="-7qg2dnn6dsy2c2z1x00zcicgkt2qtfa">
+  <source id="8899274441241545834" name="ModelStatCommand" hash="-aa538hmz7c2fzvkxsrpqqft5yk07fwd">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8899274441241550347" name="FindUsagesCommand" hash="-92qvyq7se8yp3wieuj6txo31td3jmd8">
+  <source id="8899274441241550347" name="FindUsagesCommand" hash="-bhev4zw0z14djkve2ruw5bzalzkczts">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6852607286009484536" name="TextResultPart" hash="-799uqz47m9jwj5la2ladycj4i8n7s7o">

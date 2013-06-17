@@ -3,10 +3,10 @@
   <unitInfo fileName="BLCommandResultLine_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BLCommandResultLine_BehaviorDescriptor" />
   <unitInfo fileName="BLCommandResultPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BLCommandResultPart_BehaviorDescriptor" />
   <unitInfo fileName="BLCommandResult_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BLCommandResult_BehaviorDescriptor" />
-  <unitInfo fileName="BLCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BLCommand_BehaviorDescriptor" />
+  <unitInfo fileName="BLCommand_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BLCommand_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="FindUsagesCommand_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.FindUsagesCommand_BehaviorDescriptor" />
-  <unitInfo fileName="ModelStatCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.ModelStatCommand_BehaviorDescriptor" />
+  <unitInfo fileName="FindUsagesCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.FindUsagesCommand_BehaviorDescriptor" />
+  <unitInfo fileName="ModelStatCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.ModelStatCommand_BehaviorDescriptor" />
   <unitInfo fileName="NodeResultPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.NodeResultPart_BehaviorDescriptor" />
   <unitInfo fileName="PrintNewLine_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.PrintNewLine_BehaviorDescriptor" />
   <unitInfo fileName="PrintNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.PrintNode_BehaviorDescriptor" />
@@ -55,101 +55,21 @@
     <unitInfo nodeId="1549957824998997979" fileName="ModelStatCommand_Behavior.java" startLine="23" startPosition="55" endLine="41" endPosition="5" unitName="jetbrains.mps.console.lang.commands.behavior.ModelStatCommand_Behavior$1" />
     <unitInfo nodeId="1549957824998771093" fileName="ModelStatCommand_Behavior.java" startLine="18" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.ModelStatCommand_Behavior" />
   </root>
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.lang.commands.behavior)/5464054275389853151">
-    <nodeInfo nodeId="9010032133303936931" fileName="BLCommand_Behavior.java" startLine="27" startPosition="119" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1754361855867222163" fileName="BLCommand_Behavior.java" startLine="28" startPosition="29" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1868797401534226287" fileName="BLCommand_Behavior.java" startLine="31" startPosition="25" endLine="32" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361607168" fileName="BLCommand_Behavior.java" startLine="34" startPosition="29" endLine="35" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4479680595992766821" fileName="BLCommand_Behavior.java" startLine="37" startPosition="11" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2921639075324765954" fileName="BLCommand_Behavior.java" startLine="38" startPosition="0" endLine="39" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2921639075324836207" fileName="BLCommand_Behavior.java" startLine="40" startPosition="24" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2921639075324848288" fileName="BLCommand_Behavior.java" startLine="42" startPosition="9" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2034046503373010514" fileName="BLCommand_Behavior.java" startLine="48" startPosition="21" endLine="49" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503373010526" fileName="BLCommand_Behavior.java" startLine="49" startPosition="118" endLine="50" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503373010537" fileName="BLCommand_Behavior.java" startLine="50" startPosition="191" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2034046503373010538" fileName="BLCommand_Behavior.java" startLine="51" startPosition="0" endLine="52" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503373010562" fileName="BLCommand_Behavior.java" startLine="54" startPosition="61" endLine="55" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503373010576" fileName="BLCommand_Behavior.java" startLine="59" startPosition="56" endLine="60" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503373010583" fileName="BLCommand_Behavior.java" startLine="63" startPosition="56" endLine="64" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503373010592" fileName="BLCommand_Behavior.java" startLine="67" startPosition="56" endLine="68" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5464054275389853151" fileName="BLCommand_Behavior.java" startLine="79" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="5464054275389853151" fileName="BLCommand_Behavior.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2034046503361607166" fileName="BLCommand_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2921639075324783254" fileName="BLCommand_Behavior.java" startLine="39" startPosition="62" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503373010553" fileName="BLCommand_Behavior.java" startLine="53" startPosition="49" endLine="56" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503373010576" fileName="BLCommand_Behavior.java" startLine="58" startPosition="57" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503373010576" fileName="BLCommand_Behavior.java" startLine="58" startPosition="57" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503373010583" fileName="BLCommand_Behavior.java" startLine="62" startPosition="57" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503373010583" fileName="BLCommand_Behavior.java" startLine="62" startPosition="57" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503373010592" fileName="BLCommand_Behavior.java" startLine="66" startPosition="60" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503373010592" fileName="BLCommand_Behavior.java" startLine="66" startPosition="60" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503361607162" fileName="BLCommand_Behavior.java" startLine="32" startPosition="68" endLine="37" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503373010548" fileName="BLCommand_Behavior.java" startLine="52" startPosition="84" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2034046503373010512" fileName="BLCommand_Behavior.java" startLine="47" startPosition="33" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2034046503373010510" fileName="BLCommand_Behavior.java" startLine="47" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2034046503373010506" fileName="BLCommand_Behavior.java" startLine="45" startPosition="29" endLine="72" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1868797401535268429" fileName="BLCommand_Behavior.java" startLine="45" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1868797401535190894" fileName="BLCommand_Behavior.java" startLine="43" startPosition="0" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1868797401535606493" fileName="BLCommand_Behavior.java" startLine="31" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1868797401535557939" fileName="BLCommand_Behavior.java" startLine="29" startPosition="0" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5464054275389853151" fileName="BLCommand_Behavior.java" startLine="27" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/project/Project;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
-    <scopeInfo nodeId="5464054275389853316" fileName="BLCommand_Behavior.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
-    <scopeInfo nodeId="2034046503361607167" fileName="BLCommand_Behavior.java" startLine="34" startPosition="29" endLine="35" endPosition="54" />
-    <scopeInfo nodeId="2921639075324783257" fileName="BLCommand_Behavior.java" startLine="40" startPosition="24" endLine="41" endPosition="17" />
-    <scopeInfo nodeId="2034046503373010561" fileName="BLCommand_Behavior.java" startLine="54" startPosition="61" endLine="55" endPosition="65" />
-    <scopeInfo nodeId="2034046503373010576" fileName="BLCommand_Behavior.java" startLine="59" startPosition="56" endLine="60" endPosition="67" />
-    <scopeInfo nodeId="2034046503373010583" fileName="BLCommand_Behavior.java" startLine="63" startPosition="56" endLine="64" endPosition="67" />
-    <scopeInfo nodeId="2034046503373010592" fileName="BLCommand_Behavior.java" startLine="67" startPosition="56" endLine="68" endPosition="67" />
-    <scopeInfo nodeId="5464054275389853151" fileName="BLCommand_Behavior.java" startLine="24" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="5464054275389853151" varName="thisNode" />
+  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.lang.commands.behavior)/1769790395579698971">
+    <nodeInfo nodeId="1769790395579698971" fileName="FindUsagesCommand_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1769790395579698971" fileName="FindUsagesCommand_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/project/Project;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
+    <scopeInfo nodeId="1769790395579698973" fileName="FindUsagesCommand_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="1769790395579698982" fileName="FindUsagesCommand_Behavior.java" startLine="13" startPosition="107" endLine="13" endPosition="107" />
+    <scopeInfo nodeId="1769790395579698971" fileName="FindUsagesCommand_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="1769790395579698971" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2034046503361607166" fileName="BLCommand_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="2034046503373010552" fileName="BLCommand_Behavior.java" startLine="53" startPosition="49" endLine="56" endPosition="21" />
-    <scopeInfo nodeId="2034046503373010571" fileName="BLCommand_Behavior.java" startLine="58" startPosition="0" endLine="61" endPosition="19">
-      <varInfo nodeId="2034046503373010572" varName="ignore" />
+    <scopeInfo nodeId="1769790395579698971" fileName="FindUsagesCommand_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1769790395579698980" varName="console" />
+      <varInfo nodeId="1769790395579698978" varName="p" />
+      <varInfo nodeId="1769790395579698971" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2034046503373010575" fileName="BLCommand_Behavior.java" startLine="58" startPosition="57" endLine="61" endPosition="19" />
-    <scopeInfo nodeId="2034046503373010576" fileName="BLCommand_Behavior.java" startLine="58" startPosition="57" endLine="61" endPosition="19" />
-    <scopeInfo nodeId="2034046503373010579" fileName="BLCommand_Behavior.java" startLine="62" startPosition="0" endLine="65" endPosition="19">
-      <varInfo nodeId="2034046503373010580" varName="ignore" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503373010582" fileName="BLCommand_Behavior.java" startLine="62" startPosition="57" endLine="65" endPosition="19" />
-    <scopeInfo nodeId="2034046503373010583" fileName="BLCommand_Behavior.java" startLine="62" startPosition="57" endLine="65" endPosition="19" />
-    <scopeInfo nodeId="2034046503373010587" fileName="BLCommand_Behavior.java" startLine="66" startPosition="0" endLine="69" endPosition="19">
-      <varInfo nodeId="2034046503373010589" varName="ignore" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503373010591" fileName="BLCommand_Behavior.java" startLine="66" startPosition="60" endLine="69" endPosition="19" />
-    <scopeInfo nodeId="2034046503373010592" fileName="BLCommand_Behavior.java" startLine="66" startPosition="60" endLine="69" endPosition="19" />
-    <scopeInfo nodeId="2034046503373010548" fileName="BLCommand_Behavior.java" startLine="52" startPosition="84" endLine="57" endPosition="19">
-      <varInfo nodeId="2034046503373010551" varName="method" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503373010513" fileName="BLCommand_Behavior.java" startLine="48" startPosition="21" endLine="57" endPosition="19">
-      <varInfo nodeId="2034046503373010515" varName="loader" />
-      <varInfo nodeId="2034046503373010539" varName="methods" />
-      <varInfo nodeId="2034046503373010527" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503373010511" fileName="BLCommand_Behavior.java" startLine="47" startPosition="33" endLine="70" endPosition="17" />
-    <scopeInfo nodeId="2034046503373010510" fileName="BLCommand_Behavior.java" startLine="47" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1868797401535268430" fileName="BLCommand_Behavior.java" startLine="45" startPosition="29" endLine="72" endPosition="15" />
-    <scopeInfo nodeId="1868797401535268429" fileName="BLCommand_Behavior.java" startLine="45" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1868797401535606497" fileName="BLCommand_Behavior.java" startLine="31" startPosition="25" endLine="74" endPosition="11">
-      <varInfo nodeId="1868797401534226288" varName="model" />
-      <varInfo nodeId="2921639075324765955" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1868797401535606493" fileName="BLCommand_Behavior.java" startLine="31" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="5464054275389859618" fileName="BLCommand_Behavior.java" startLine="27" startPosition="119" endLine="76" endPosition="7">
-      <varInfo nodeId="9010032133303936934" varName="n" />
-    </scopeInfo>
-    <scopeInfo nodeId="5464054275389853151" fileName="BLCommand_Behavior.java" startLine="27" startPosition="0" endLine="78" endPosition="0">
-      <varInfo nodeId="6852607286010359860" varName="console" />
-      <varInfo nodeId="8754957448351363997" varName="p" />
-      <varInfo nodeId="5464054275389853151" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2034046503361607166" fileName="BLCommand_Behavior.java" startLine="33" startPosition="49" endLine="37" endPosition="9" unitName="jetbrains.mps.console.lang.commands.behavior.BLCommand_Behavior$2" />
-    <unitInfo nodeId="2034046503373010510" fileName="BLCommand_Behavior.java" startLine="46" startPosition="63" endLine="72" endPosition="13" unitName="jetbrains.mps.console.lang.commands.behavior.BLCommand_Behavior$3" />
-    <unitInfo nodeId="1868797401535268429" fileName="BLCommand_Behavior.java" startLine="44" startPosition="39" endLine="74" endPosition="9" unitName="jetbrains.mps.console.lang.commands.behavior.BLCommand_Behavior$2" />
-    <unitInfo nodeId="1868797401535606491" fileName="BLCommand_Behavior.java" startLine="30" startPosition="66" endLine="76" endPosition="5" unitName="jetbrains.mps.console.lang.commands.behavior.BLCommand_Behavior$1" />
-    <unitInfo nodeId="5464054275389853151" fileName="BLCommand_Behavior.java" startLine="23" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BLCommand_Behavior" />
+    <unitInfo nodeId="1769790395579698971" fileName="FindUsagesCommand_Behavior.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.FindUsagesCommand_Behavior" />
   </root>
+  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.lang.commands.behavior)/5464054275389853151" />
 </debugInfo>
 

@@ -20,11 +20,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.structure.ConsoleItem").interface_().create();
       case 3:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.structure.GeneratedCommand").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.lang.structure.Command").abstract_().create();
+      case 4:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.structure.InterpretedCommand").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.lang.structure.Command").abstract_().create();
+      case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.structure.Result").interface_().parents("jetbrains.mps.console.lang.structure.ConsoleItem").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.lang.structure.Command", "jetbrains.mps.console.lang.structure.Console", "jetbrains.mps.console.lang.structure.ConsoleItem", "jetbrains.mps.console.lang.structure.Result"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.lang.structure.Command", "jetbrains.mps.console.lang.structure.Console", "jetbrains.mps.console.lang.structure.ConsoleItem", "jetbrains.mps.console.lang.structure.GeneratedCommand", "jetbrains.mps.console.lang.structure.InterpretedCommand", "jetbrains.mps.console.lang.structure.Result"};
 }

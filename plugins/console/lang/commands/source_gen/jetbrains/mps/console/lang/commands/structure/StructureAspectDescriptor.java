@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.BLCommand").super_("jetbrains.mps.baseLanguage.structure.StatementList").parents("jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.console.lang.structure.Command").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.BLCommand").super_("jetbrains.mps.console.lang.structure.GeneratedCommand").parents("jetbrains.mps.console.lang.structure.GeneratedCommand").children(new String[]{"body"}, new boolean[]{false}).alias("{", "baseLanguage command").create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.BLCommandResult").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.lang.structure.Result").children(new String[]{"line"}, new boolean[]{true}).create();
       case 2:
@@ -22,9 +22,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.BLCommandResultPart").interface_().create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.FindUsagesCommand").super_("jetbrains.mps.console.lang.commands.structure.BLCommand").parents("jetbrains.mps.console.lang.commands.structure.BLCommand").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.FindUsagesCommand").super_("jetbrains.mps.console.lang.structure.InterpretedCommand").parents("jetbrains.mps.console.lang.structure.InterpretedCommand").create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.ModelStatCommand").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.console.lang.structure.Command", "jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"model"}, new boolean[]{false}).alias("stat", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.ModelStatCommand").super_("jetbrains.mps.console.lang.structure.InterpretedCommand").parents("jetbrains.mps.console.lang.structure.InterpretedCommand").children(new String[]{"model"}, new boolean[]{false}).alias("stat", "").create();
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.lang.commands.structure.NodeResultPart").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.lang.commands.structure.BLCommandResultPart").references("target").create();
       case 7:
