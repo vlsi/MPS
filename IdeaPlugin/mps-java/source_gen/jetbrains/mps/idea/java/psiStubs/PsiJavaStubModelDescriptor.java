@@ -73,10 +73,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
 
   @Override
   public boolean isLoaded() {
-    // <node> 
-    // Q: is it right? the idea is to the outside world we're always loaded 
-    // because any operation will load data transparently 
-    return true;
+    return myModel != null;
   }
 
 
