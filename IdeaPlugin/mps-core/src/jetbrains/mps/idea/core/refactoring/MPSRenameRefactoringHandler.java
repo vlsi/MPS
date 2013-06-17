@@ -73,27 +73,6 @@ public class MPSRenameRefactoringHandler implements RenameHandler {
             return;
           }
         }
-
-        // default rename logic: call jetbrains.mps.lang.core.refactorings.Rename refactoring
-        // and update psi references to the renamed node if any
-
-        String oldName = node.getName();
-
-        final String newName = RenameDialog.getNewName(project, oldName, "node");
-        if (newName == null) return;
-
-        if (node.getModel() == null || SNodeOperations.isDisposed(node)) {
-          return;
-        }
-
-        IRefactoring psiAwareRefactoring = new PsiRenameRefactoringWrapper();
-
-        RefactoringAccess.getInstance().getRefactoringFacade().execute(
-          RefactoringContext.createRefactoringContext(psiAwareRefactoring,
-            Arrays.asList("newName"),
-            Arrays.asList(newName),
-            node,
-            mpsProject));
       }
     });
   }

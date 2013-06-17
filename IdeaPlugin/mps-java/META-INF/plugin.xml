@@ -78,12 +78,12 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.modelRootContributor className="jetbrains.mps.idea.sourceStubs.JavaSourceModelRootContributor"/>
-    <mps.renameRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MethodRenameContributor"/>
     <mps.psiFactory implementation="jetbrains.mps.idea.java.psi.impl.JavaMPSPsiNodeFactory"/>
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.fastFind.ClassStubPsiMapper"/>
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.psiStubs.Mapper"/>
-    <mps.moveRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MoveStaticFieldContributor" order="before mps-core"/>
-    <mps.moveRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MoveStaticMethodContributor" order="before mps-core"/>
+    <mps.renameRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MethodRenameContributor" order="before mps-core-rename"/>
+    <mps.moveRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MoveStaticFieldContributor" order="before mps-core-move"/>
+    <mps.moveRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MoveStaticMethodContributor" order="before mps-core-move"/>
     <debugger.positionManagerFactory implementation="jetbrains.mps.idea.java.debugger.MpsPositionManagerFactory"/>
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>

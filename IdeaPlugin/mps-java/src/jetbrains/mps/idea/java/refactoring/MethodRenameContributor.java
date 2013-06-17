@@ -55,10 +55,6 @@ public class MethodRenameContributor implements RenameRefactoringContributor {
   public void invoke(@NotNull final Project project, @NotNull SNode node) {
 
     MPSProject mpsProject = project.getComponent(MPSProject.class);
-//    final SRepository repository = mpsProject.getRepository();
-//    ModelAccess modelAccess = repository.getModelAccess();
-
-
     String oldName = node.getName();
     PsiMethod psiMethod = (PsiMethod) MPSPsiProvider.getInstance(project).getPsi(node);
 

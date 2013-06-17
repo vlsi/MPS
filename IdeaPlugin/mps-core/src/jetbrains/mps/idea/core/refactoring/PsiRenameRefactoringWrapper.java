@@ -4,6 +4,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiReference;
 import com.intellij.psi.search.searches.ReferencesSearch;
+import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -39,14 +40,18 @@ public class PsiRenameRefactoringWrapper extends PsiAwareRefactoring {
   public void refactor(RefactoringContext refactoringContext) {
     baseRefactoring.refactor(refactoringContext);
 
-    Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
-    PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(refactoringContext.getSelectedNode());
-    Collection<PsiReference> psiRefs = ReferencesSearch.search(psiTarget).findAll();
+    UsagesList usages = refactoringContext.getUsages();
+    if (!(usages instanceof SearchResults)) {
+      return;
+    }
 
+    SearchResults<SNode> searchResults = (SearchResults<SNode>) usages;
     String newName = (String) refactoringContext.getParameter("newName");
 
-    for (PsiReference ref : psiRefs) {
-      ref.handleElementRename(newName);
+    for (SearchResult<SNode> result : searchResults.getSearchResults()) {
+      if (!(result instanceof PsiSearchResult)) continue;
+      PsiReference psiRef = ((PsiSearchResult) result).getReference();
+      psiRef.handleElementRename(newName);
     }
   }
 
