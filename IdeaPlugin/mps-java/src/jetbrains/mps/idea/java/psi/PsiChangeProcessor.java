@@ -48,6 +48,12 @@ public class PsiChangeProcessor extends ReloadParticipant {
   public PsiChangeProcessor() {
   }
 
+  @Override
+  public boolean wantsToShowProgress() {
+    // we'll not request progress indicator for psi updates
+    return false;
+  }
+
   // TODO look with what locks is it called
   @Override
   public void update(ProgressMonitor monitor) {
