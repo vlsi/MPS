@@ -11554,6 +11554,12 @@
                     <property name="text" nameId="iuxj.6666499814681541920" value="true" />
                   </node>
                 </node>
+                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6184156714606684189" nodeInfo="ng">
+                  <property name="attrName" nameId="iuxj.6666499814681447926" value="loglevel" />
+                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6184156714606684197" nodeInfo="ng">
+                    <property name="text" nameId="iuxj.6666499814681541920" value="warn" />
+                  </node>
+                </node>
                 <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3239569521490197936" nodeInfo="ng">
                   <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="false" />
                   <property name="tagName" nameId="iuxj.6666499814681415862" value="chunk" />
