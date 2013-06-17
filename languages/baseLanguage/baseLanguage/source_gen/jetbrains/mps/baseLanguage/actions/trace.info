@@ -5127,7 +5127,7 @@
     <nodeInfo nodeId="4920206213431854496" fileName="AlterStatementListContainerFactoryUtils.java" startLine="34" startPosition="57" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4540366540229612032" fileName="AlterStatementListContainerFactoryUtils.java" startLine="41" startPosition="80" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4920206213429823731" fileName="AlterStatementListContainerFactoryUtils.java" startLine="19" startPosition="30" endLine="24" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4920206213431854459" fileName="AlterStatementListContainerFactoryUtils.java" startLine="27" startPosition="81" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4920206213431854459" fileName="AlterStatementListContainerFactoryUtils.java" startLine="27" startPosition="77" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4540366540229612052" fileName="AlterStatementListContainerFactoryUtils.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="buildContainerIfPossible#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4920206213431854484" fileName="AlterStatementListContainerFactoryUtils.java" startLine="32" startPosition="7" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4920206213429823726" fileName="AlterStatementListContainerFactoryUtils.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCondition#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -5158,7 +5158,7 @@
     <scopeInfo nodeId="4920206213429823726" fileName="AlterStatementListContainerFactoryUtils.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="4920206213429823750" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4920206213431823418" fileName="AlterStatementListContainerFactoryUtils.java" startLine="27" startPosition="81" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="4920206213431823418" fileName="AlterStatementListContainerFactoryUtils.java" startLine="27" startPosition="77" endLine="38" endPosition="5" />
     <scopeInfo nodeId="4920206213431823415" fileName="AlterStatementListContainerFactoryUtils.java" startLine="27" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="4920206213431828559" varName="newNode" />
       <varInfo nodeId="4920206213431824990" varName="sampleNode" />

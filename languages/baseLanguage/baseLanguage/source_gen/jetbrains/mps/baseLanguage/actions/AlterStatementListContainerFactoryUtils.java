@@ -24,7 +24,7 @@ public class AlterStatementListContainerFactoryUtils {
     }).first(), "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
-  /*package*/ static void buildContainer(SNode sampleNode, final SNode newNode) {
+  private static void buildContainer(SNode sampleNode, final SNode newNode) {
     ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(sampleNode), "statement", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(newNode), "statement", true)).addElement(SNodeOperations.copyNode(it));
