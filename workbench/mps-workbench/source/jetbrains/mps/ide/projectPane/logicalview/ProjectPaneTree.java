@@ -186,6 +186,9 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
           }
         }
       });
+      if (result.isEmpty()) {
+        return;
+      }
 
       try {
         dge.startDrag(DragSource.DefaultMoveNoDrop, new MyTransferable(result), new MyDragSourceListener());
