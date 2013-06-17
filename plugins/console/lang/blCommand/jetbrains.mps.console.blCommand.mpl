@@ -35,13 +35,13 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <generator generatorUID="504d7390-81ca-4422-8018-f7290efa217f(jetbrains.mps.console.compiledCommand#5336086527852811409)" />
+            <generator generatorUID="504d7390-81ca-4422-8018-f7290efa217f(jetbrains.mps.console.blCommand#5336086527852811409)" />
             <external-mapping>
               <all-local-mappings />
             </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <generator generatorUID="504d7390-81ca-4422-8018-f7290efa217f(jetbrains.mps.console.compiledCommand#5336086527852811409)" />
+            <generator generatorUID="504d7390-81ca-4422-8018-f7290efa217f(jetbrains.mps.console.blCommand#5336086527852811409)" />
             <external-mapping>
               <mapping-set>
                 <mapping-set-element>
