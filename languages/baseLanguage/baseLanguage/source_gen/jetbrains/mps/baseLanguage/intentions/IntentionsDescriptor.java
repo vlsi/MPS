@@ -58,6 +58,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new MakeGeneric_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeMethodAbstract_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeMethodFinal_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeMethodStatic_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeMultiLiner_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeOneLiner_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeParameterFinal_Intention());

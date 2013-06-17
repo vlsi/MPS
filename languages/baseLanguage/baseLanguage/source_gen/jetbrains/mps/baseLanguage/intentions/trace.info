@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IntentionsDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/1193744597902">
     <nodeInfo nodeId="1193744597902" fileName="AddCastStatement_Intention.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1193744597902" fileName="AddCastStatement_Intention.java" startLine="29" startPosition="30" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -7945,6 +7945,115 @@
     </scopeInfo>
     <unitInfo nodeId="4467513934995351531" fileName="UsedefaultLayout_Intention.java" startLine="73" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.UsedefaultLayout_Intention$IntentionImplementation" />
     <unitInfo nodeId="4467513934995351531" fileName="UsedefaultLayout_Intention.java" startLine="17" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.UsedefaultLayout_Intention" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/47041348238355115">
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="29" startPosition="30" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="33" startPosition="35" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="37" startPosition="41" endLine="38" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="41" startPosition="37" endLine="42" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="45" startPosition="34" endLine="46" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="49" startPosition="44" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="54" startPosition="53" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="56" startPosition="5" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238386412" fileName="MakeMethodStatic_Intention.java" startLine="60" startPosition="91" endLine="61" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="64" startPosition="53" endLine="65" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="68" startPosition="35" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="73" startPosition="37" endLine="74" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="75" startPosition="5" endLine="76" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238464199" fileName="MakeMethodStatic_Intention.java" startLine="87" startPosition="8" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="47041348238566997" fileName="MakeMethodStatic_Intention.java" startLine="95" startPosition="8" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="47041348238653530" fileName="MakeMethodStatic_Intention.java" startLine="96" startPosition="0" endLine="97" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348238712891" fileName="MakeMethodStatic_Intention.java" startLine="97" startPosition="91" endLine="98" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348238792146" fileName="MakeMethodStatic_Intention.java" startLine="98" startPosition="173" endLine="99" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348238866831" fileName="MakeMethodStatic_Intention.java" startLine="99" startPosition="101" endLine="100" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348238973457" fileName="MakeMethodStatic_Intention.java" startLine="100" startPosition="115" endLine="101" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348239048113" fileName="MakeMethodStatic_Intention.java" startLine="101" startPosition="105" endLine="102" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348239121974" fileName="MakeMethodStatic_Intention.java" startLine="102" startPosition="119" endLine="103" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348239216336" fileName="MakeMethodStatic_Intention.java" startLine="103" startPosition="171" endLine="104" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348239319877" fileName="MakeMethodStatic_Intention.java" startLine="104" startPosition="171" endLine="105" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348239405643" fileName="MakeMethodStatic_Intention.java" startLine="105" startPosition="113" endLine="106" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348239485751" fileName="MakeMethodStatic_Intention.java" startLine="106" startPosition="173" endLine="107" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348239597889" fileName="MakeMethodStatic_Intention.java" startLine="107" startPosition="199" endLine="108" endPosition="383" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348241585343" fileName="MakeMethodStatic_Intention.java" startLine="108" startPosition="383" endLine="109" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348238866774" fileName="MakeMethodStatic_Intention.java" startLine="109" startPosition="255" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="47041348238577217" fileName="MakeMethodStatic_Intention.java" startLine="110" startPosition="0" endLine="111" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348238616298" fileName="MakeMethodStatic_Intention.java" startLine="111" startPosition="59" endLine="112" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348238616302" fileName="MakeMethodStatic_Intention.java" startLine="112" startPosition="39" endLine="113" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="116" startPosition="48" endLine="117" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeMethodStatic_Intention#()V" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="80" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="53" startPosition="84" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="72" startPosition="99" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="47041348238464176" fileName="MakeMethodStatic_Intention.java" startLine="83" startPosition="87" endLine="87" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="47041348238522232" fileName="MakeMethodStatic_Intention.java" startLine="91" startPosition="78" endLine="95" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="72" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="91" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="26" startPosition="39" endLine="26" endPosition="39" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="80" startPosition="38" endLine="80" endPosition="38" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="29" startPosition="30" endLine="30" endPosition="68" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="33" startPosition="35" endLine="34" endPosition="30" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="37" startPosition="41" endLine="38" endPosition="78" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="41" startPosition="37" endLine="42" endPosition="40" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="45" startPosition="34" endLine="46" endPosition="32" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="49" startPosition="44" endLine="50" endPosition="16" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="54" startPosition="53" endLine="55" endPosition="19" />
+    <scopeInfo nodeId="47041348238386408" fileName="MakeMethodStatic_Intention.java" startLine="60" startPosition="91" endLine="61" endPosition="214" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="64" startPosition="53" endLine="65" endPosition="130" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="68" startPosition="35" endLine="69" endPosition="17" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="73" startPosition="37" endLine="74" endPosition="132" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="116" startPosition="48" endLine="117" endPosition="45" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="80" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="47041348238355115" varName="editorContext" />
+      <varInfo nodeId="47041348238355115" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="116" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="53" startPosition="84" endLine="57" endPosition="16" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="72" startPosition="99" endLine="76" endPosition="30" />
+    <scopeInfo nodeId="47041348238355117" fileName="MakeMethodStatic_Intention.java" startLine="83" startPosition="87" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="53" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="47041348238355115" varName="editorContext" />
+      <varInfo nodeId="47041348238355115" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="72" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="47041348238355115" varName="context" />
+      <varInfo nodeId="47041348238355115" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="83" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="47041348238355115" varName="editorContext" />
+      <varInfo nodeId="47041348238355115" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="47041348238355119" fileName="MakeMethodStatic_Intention.java" startLine="91" startPosition="78" endLine="113" endPosition="49">
+      <varInfo nodeId="47041348238522235" varName="method" />
+    </scopeInfo>
+    <scopeInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="91" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="47041348238355115" varName="editorContext" />
+      <varInfo nodeId="47041348238355115" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="79" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodStatic_Intention$IntentionImplementation" />
+    <unitInfo nodeId="47041348238355115" fileName="MakeMethodStatic_Intention.java" startLine="23" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodStatic_Intention" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/5155195849735077874">
     <nodeInfo nodeId="5155195849735077874" fileName="SplitIf_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
