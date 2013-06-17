@@ -178,17 +178,10 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
 
         myModel.addRootNode(node);
         SetSequence.fromSet(roots).addElement(node.getNodeId());
-
-        // <node> 
-        // <node> 
-
-        // <node> 
-
       }
       if (SetSequence.fromSet(roots).isNotEmpty()) {
         MapSequence.fromMap(myRootsPerFile).put(file.getName(), roots);
       }
-
 
     }
 

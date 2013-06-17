@@ -6,6 +6,7 @@ import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.project.MPSProject;
@@ -106,7 +107,10 @@ public class MoveRenameBatch implements ProjectComponent {
   }
 
   public void commit() {
-    // Maybe should be done in ReloadSession
+
+    ReloadManager.getInstance().flush();
+
+    // Maybe should be done in ReloadSession itself
     ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
       @Override
       public void run() {

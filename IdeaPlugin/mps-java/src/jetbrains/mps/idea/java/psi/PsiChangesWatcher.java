@@ -17,8 +17,12 @@
 package jetbrains.mps.idea.java.psi;
 
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.editor.Editor;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.*;
+import com.intellij.refactoring.rename.inplace.InplaceRefactoring;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.platform.watching.ReloadAction;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
@@ -165,6 +169,12 @@ public class PsiChangesWatcher implements ProjectComponent {
     @Override
     public void childReplaced(final PsiTreeChangeEvent event) {
       if (isFromMPSPsiProvider(event)) return;
+
+      Editor editor = FileEditorManager.getInstance(myProject).getSelectedTextEditor();
+      InplaceRefactoring ir = editor.getUserData(InplaceRefactoring.INPLACE_RENAMER);
+      if (ir != null) {
+        return;
+      }
 
       myReloadManager.runReload(PsiChangeProcessor.class, new ReloadAction<PsiChangeProcessor>() {
         @Override
