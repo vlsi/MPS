@@ -27,8 +27,8 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -90,18 +90,27 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
             TemporaryModels.getInstance().addMissingModuleImports(myModel);
             myLastCommand = ListSequence.fromList(SLinkOperations.getTargets(myRoot, "item", true)).last();
             if ((myLastCommand != null)) {
-              final SNode res = SNodeOperations.insertNextSiblingChild(myLastCommand, _quotation_createNode_xg3v07_a0a0a0c0a0a0a0a0a0a0a11a11());
+              final SNode res = _quotation_createNode_xg3v07_a0a0c0a0a0a0a0a0a0a11a11();
               BehaviorReflection.invokeVirtual(Void.class, myLastCommand, "virtual_execute_757553790980855637", new Object[]{project, new ConsoleStream() {
                 public void addText(String text) {
-                  ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a0a0b0a1a2a0a0a0a0a0a0a0l0l(text));
+                  checkResultAvailable();
+                  ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a1a0a0b0a1a2a0a0a0a0a0a0a0l0l(text));
                 }
 
                 public void addNode(SNode node) {
+                  checkResultAvailable();
                   SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.lang.commands.structure.NodeResultPart"), "target", node, false);
                 }
 
                 public void addNewLine() {
+                  checkResultAvailable();
                   SLinkOperations.addNewChild(res, "line", "jetbrains.mps.console.lang.commands.structure.BLCommandResultLine");
+                }
+
+                private void checkResultAvailable() {
+                  if ((SNodeOperations.getNextSibling(myLastCommand) == null)) {
+                    SNodeOperations.insertNextSiblingChild(myLastCommand, res);
+                  }
                 }
               }});
             }
@@ -202,7 +211,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     SLinkOperations.addNewChild(last, "line", "jetbrains.mps.console.lang.commands.structure.BLCommandResultLine");
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a0a0c0a0a0a0a0a0a0a11a11() {
+  private static SNode _quotation_createNode_xg3v07_a0a0c0a0a0a0a0a0a0a11a11() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -212,7 +221,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a0a0a0b0a1a2a0a0a0a0a0a0a0l0l(Object parameter_1) {
+  private static SNode _quotation_createNode_xg3v07_a0a1a0a0b0a1a2a0a0a0a0a0a0a0l0l(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.lang.commands.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);

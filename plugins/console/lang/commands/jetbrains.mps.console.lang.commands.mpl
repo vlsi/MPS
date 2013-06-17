@@ -72,12 +72,15 @@
     <dependency reexport="false">a8de7923-dc6f-4aa1-b8a9-2d19ffee3edd(jetbrains.mps.console)</dependency>
     <dependency reexport="false">de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.lang)</dependency>
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
+    <dependency reexport="false">7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</dependency>
     <dependency reexport="false">f8e20673-3f65-44e9-84c0-c4a4b6ede37e(jetbrains.mps.make.facets)</dependency>
     <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
     <dependency reexport="false">7cafff2e-0f23-44d5-8d34-9e13afa2a751(jetbrains.mps.quickQueryLanguage.pluginSolution)</dependency>
     <dependency reexport="false">df9d410f-2ebb-43f7-893a-483a4f085250(jetbrains.mps.smodel.resources)</dependency>
   </dependencies>
   <usedLanguages>
+    <usedLanguage>63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)</usedLanguage>
+    <usedLanguage>b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</usedLanguage>
     <usedLanguage>696c1165-4a59-463b-bc5d-902caab85dd0(jetbrains.mps.make.facet)</usedLanguage>
   </usedLanguages>
   <usedDevKits>
