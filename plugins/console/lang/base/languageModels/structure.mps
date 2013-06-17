@@ -19,12 +19,14 @@
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="757553790980855626" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Command" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6852607286009180636" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6852607286009167343" resolveInfo="ConsoleItem" />
     </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="6852607286009167277" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Result" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6852607286009180634" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6852607286009167343" resolveInfo="ConsoleItem" />
     </node>
@@ -36,6 +38,7 @@
     <property name="name" nameId="tpck.1169194664001" value="InterpretedCommand" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1769790395579407469" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="757553790980855626" resolveInfo="Command" />
@@ -45,6 +48,7 @@
     <property name="name" nameId="tpck.1169194664001" value="GeneratedCommand" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1769790395579407474" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="757553790980855626" resolveInfo="Command" />
@@ -52,13 +56,13 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="529843215038987946" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
-    <property name="name" nameId="tpck.1169194664001" value="BLCommandResult" />
+    <property name="name" nameId="tpck.1169194664001" value="CommandResult" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="529843215038987947" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="line" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="529843215038987949" resolveInfo="BLCommandResultLine" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="529843215038987949" resolveInfo="CommandResultLine" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="529843215038987948" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6852607286009167277" resolveInfo="Result" />
@@ -66,25 +70,25 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="529843215038987949" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
-    <property name="name" nameId="tpck.1169194664001" value="BLCommandResultLine" />
+    <property name="name" nameId="tpck.1169194664001" value="CommandResultLine" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="529843215038987950" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="part" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="529843215038987951" resolveInfo="BLCommandResultPart" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="529843215038987951" resolveInfo="CommandResultPart" />
     </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="529843215038987951" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
-    <property name="name" nameId="tpck.1169194664001" value="BLCommandResultPart" />
+    <property name="name" nameId="tpck.1169194664001" value="CommandResultPart" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="529843215038987952" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
     <property name="name" nameId="tpck.1169194664001" value="NodeResultPart" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="529843215038987953" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="529843215038987951" resolveInfo="BLCommandResultPart" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="529843215038987951" resolveInfo="CommandResultPart" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="529843215038987954" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
@@ -98,7 +102,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="529843215038987956" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="529843215038987951" resolveInfo="BLCommandResultPart" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="529843215038987951" resolveInfo="CommandResultPart" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="529843215038987957" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="text" />
