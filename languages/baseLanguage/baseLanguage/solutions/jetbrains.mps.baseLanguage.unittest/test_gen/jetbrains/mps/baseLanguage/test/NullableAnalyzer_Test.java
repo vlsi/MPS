@@ -79,6 +79,12 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
   }
 
   @Test
+  public void testIfNull() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "testIfNull", true);
+  }
+
+  @Test
   public void testIfNullReturnNotEmpty() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "testIfNullReturnNotEmpty", true);
@@ -151,6 +157,11 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
     public void testIfNullNew() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8673157736019186600"), "jetbrains.mps.lang.test.structure.NodeOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("8673157736019186552")});
+    }
+
+    public void testIfNull() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("7209837885461331385"), "jetbrains.mps.lang.test.structure.NodeOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("7209837885461331359")});
     }
 
     public void testIfNullReturnNotEmpty() throws Exception {
