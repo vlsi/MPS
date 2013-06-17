@@ -245,6 +245,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" />
