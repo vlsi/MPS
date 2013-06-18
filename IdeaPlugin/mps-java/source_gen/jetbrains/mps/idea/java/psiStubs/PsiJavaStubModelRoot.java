@@ -176,14 +176,14 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
   public void psiChanged(PsiListener.PsiEvent event) {
     // here we simply decide if we have to update 
     for (PsiFileSystemItem fsItem : event.getCreated()) {
-      if (importantDir(fsItem) || firstFileInDir(fsItem)) {
+      if (importantFsItem(fsItem)) {
         update();
         return;
       }
     }
 
     for (PsiFileSystemItem fsItem : event.getRemoved()) {
-      if (importantDir(fsItem) || wasLastFileInDir(fsItem)) {
+      if (importantFsItem(fsItem)) {
         update();
         return;
       }
@@ -193,47 +193,8 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
 
 
 
-  private boolean firstFileInDir(PsiFileSystemItem fsItem) {
-    if (fsItem instanceof PsiJavaFile) {
-      PsiDirectory dir = (PsiDirectory) fsItem.getParent();
-      if (!(importantDir(dir))) {
-        return false;
-      }
-      // exactly one file 
-      // FIXME 3 files can be created in one psi event 
-      // FIXME between originating event and its handling here dir could change again 
-      return dir.getFiles().length == 1;
-    }
-    return false;
-  }
-
-
-
-  private boolean wasLastFileInDir(PsiFileSystemItem fsItem) {
-    if (fsItem instanceof PsiJavaFile) {
-      PsiDirectory dir = (PsiDirectory) fsItem.getParent();
-      if (!(importantDir(dir))) {
-        return false;
-      }
-      // exactly one file 
-      // FIXME 3 files can be created in one psi event 
-      // FIXME between originating event and its handling here dir could change again 
-      return dir.getFiles().length == 0;
-    }
-    return false;
-  }
-
-
-
-
-  private boolean importantDir(PsiFileSystemItem fsItem) {
-    if (!(fsItem instanceof PsiDirectory)) {
-      return false;
-    }
-    if (findOurSourceRoot(fsItem) == null) {
-      return false;
-    }
-    return true;
+  private boolean importantFsItem(PsiFileSystemItem fsItem) {
+    return (fsItem instanceof PsiDirectory || fsItem instanceof PsiJavaFile) && findOurSourceRoot(fsItem) != null;
   }
 
 

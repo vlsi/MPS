@@ -118,8 +118,13 @@ public class PsiChangeProcessor extends ReloadParticipant {
 
   /*package*/ void childRemoved(PsiTreeChangeEvent event) {
 
-    // can't use getChild() here as it's not valid any longer
-    if (!filter(event.getParent())) return;
+
+    if (!(event.getChild() instanceof PsiFileSystemItem)
+      && !filter(event.getParent())) { // can't use getChild() here as it's not valid any longer
+      return;
+    }
+
+    // so, if fs item or passed filtering then proceed
     PsiChangeData data = proj(event.getParent());
 
     PsiElement elem = event.getChild();
