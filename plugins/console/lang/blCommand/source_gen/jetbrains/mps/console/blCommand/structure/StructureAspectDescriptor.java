@@ -16,15 +16,23 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.BLCommand").super_("jetbrains.mps.console.base.structure.GeneratedCommand").parents("jetbrains.mps.console.base.structure.GeneratedCommand").children(new String[]{"body"}, new boolean[]{false}).alias("{", "baseLanguage command").create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.PrintNewLine").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").alias("printNewLine", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.EachNodeLoop").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").alias("eachNode", "for each node in current scope").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.PrintNode").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"node"}, new boolean[]{false}).alias("printNode", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.IShowable").interface_().create();
       case 3:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.PrintNewLine").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").alias("printNewLine", "").create();
+      case 4:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.PrintNode").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"node"}, new boolean[]{false}).alias("printNode", "").create();
+      case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.PrintText").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"text"}, new boolean[]{false}).alias("printText", "").create();
+      case 6:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ShowStatement").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").alias("show", "").create();
+      case 7:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.UsagesExpression").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"node"}, new boolean[]{false}).alias("usages", "direct references in current scope").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.PrintNewLine", "jetbrains.mps.console.blCommand.structure.PrintNode", "jetbrains.mps.console.blCommand.structure.PrintText"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.EachNodeLoop", "jetbrains.mps.console.blCommand.structure.IShowable", "jetbrains.mps.console.blCommand.structure.PrintNewLine", "jetbrains.mps.console.blCommand.structure.PrintNode", "jetbrains.mps.console.blCommand.structure.PrintText", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
 }

@@ -1,17 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2psuw6in45zvxap3ewnxppm2l2emws0">
+<dependencies version="2" modelHash="57rc8030ypv77d73a5kz3xf5wvbj41b">
+  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="c1xbedyalk4nw2czpsk8cfko8ym7qhu" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
+  <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" hash="-a1daeeyk9uwtgv1n4avg2uap6rvs9aq" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-1tx656zv7bogt6umzt3odacl5ktp1jw" />
-  <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" hash="az1a1q0uqrknaf7s4ongflmb1h76561" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-b0ap9w63zi0v8i4l4oc3sehog0hvphc" />
+  <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" hash="-4127rh51uuhn3zgjafckk5fp4r7r3k5" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-6ygnwew9fsyml0umi7w20kwq5d46z7m" />
-  <common hash="2psuw6in45zvxap3ewnxppm2l2emws0">
+  <common hash="96wannkvuf29v80rcc6zaetjwzo5phz" dependsOnNodes="true">
+    <dep root="6224631407134007787" />
+    <dep root="6224631407134025051" />
+    <dep root="6224631407134025278" />
+    <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
     <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BehaviorAspectDescriptor.java" />
+    <file name="RebuildAspectCommand_BehaviorDescriptor.java" />
+    <file name="ReloadClassesCommand_BehaviorDescriptor.java" />
+    <file name="ShowRepositoryCommand_BehaviorDescriptor.java" />
   </common>
+  <source id="6224631407134007787" name="ReloadClassesCommand_Behavior" hash="81765xfq16vlge9io3orfpi1kqpz8wo">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" />
+    <file name="ReloadClassesCommand_Behavior.java" />
+  </source>
+  <source id="6224631407134025051" name="ShowRepositoryCommand_Behavior" hash="e08vtp9hgmmhybtmwqr7q9sa0663rjt">
+    <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" />
+    <file name="ShowRepositoryCommand_Behavior.java" />
+  </source>
+  <source id="6224631407134025278" name="RebuildAspectCommand_Behavior" hash="34ht0t3tvc9xjbwxijgzrn78hscunop">
+    <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" />
+    <file name="RebuildAspectCommand_Behavior.java" />
+  </source>
 </dependencies>
 

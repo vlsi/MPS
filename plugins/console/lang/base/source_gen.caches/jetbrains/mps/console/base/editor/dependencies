@@ -56,6 +56,7 @@
     <classNode dependClassName="jetbrains.mps.console.base.editor.CommandResultLine_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.CommandResult_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.Console_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.base.editor.InterpretedCommand_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.NodeResultPart_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.TextResultPart_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
@@ -63,6 +64,12 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.base.editor.InterpretedCommand_Editor" file="InterpretedCommand_Editor.java">
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.console.base.editor.NodeResultPart_Editor" file="NodeResultPart_Editor.java">
     <classNode dependClassName="java.lang.Object" />

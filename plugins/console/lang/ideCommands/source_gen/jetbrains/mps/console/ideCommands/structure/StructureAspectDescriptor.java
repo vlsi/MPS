@@ -14,11 +14,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ModelStatCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"model"}, new boolean[]{false}).alias("stat", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ModelStatCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"model"}, new boolean[]{false}).alias("model info", "").create();
+      case 1:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.RebuildProjectCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"model"}, new boolean[]{false}).alias("rebuild project", "clean and make").create();
+      case 2:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.UnloadModelsCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").alias("unload models", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.ideCommands.structure.ModelStatCommand"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.ideCommands.structure.ModelStatCommand", "jetbrains.mps.console.ideCommands.structure.RebuildProjectCommand", "jetbrains.mps.console.ideCommands.structure.UnloadModelsCommand"};
 }

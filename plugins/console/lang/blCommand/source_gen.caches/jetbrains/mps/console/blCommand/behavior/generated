@@ -7,9 +7,9 @@
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" hash="-a1daeeyk9uwtgv1n4avg2uap6rvs9aq" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-1tx656zv7bogt6umzt3odacl5ktp1jw" />
-  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-aer81f61pb1zlb0xjjtc14ur2usummg" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-b0ap9w63zi0v8i4l4oc3sehog0hvphc" />
   <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="76myxegtoxgbtj6tyvu3vtcyqh6ntew" />
-  <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="27t2wnac9thzkbptxfahbjggpcho05i" />
+  <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="4tlnjr6ekpayv0svk1f077rfgh4k9vn" />
   <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" hash="2hf7wd9bjykv0opc11rw1zkjpxxgwmv" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-6ygnwew9fsyml0umi7w20kwq5d46z7m" />
   <common hash="-2faww7zas2906g8cazmdznu3ffl4l0r" dependsOnNodes="true">
@@ -27,9 +27,13 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BLCommand_BehaviorDescriptor.java" />
     <file name="BehaviorAspectDescriptor.java" />
+    <file name="EachNodeLoop_BehaviorDescriptor.java" />
+    <file name="IShowable_BehaviorDescriptor.java" />
     <file name="PrintNewLine_BehaviorDescriptor.java" />
     <file name="PrintNode_BehaviorDescriptor.java" />
     <file name="PrintText_BehaviorDescriptor.java" />
+    <file name="ShowStatement_BehaviorDescriptor.java" />
+    <file name="UsagesExpression_BehaviorDescriptor.java" />
   </common>
 </dependencies>
 

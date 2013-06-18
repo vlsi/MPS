@@ -9,7 +9,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963280015" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ModelStatCommand" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="stat" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="model info" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8483375838963280016" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -18,21 +18,14 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tp25.559557797393017698" resolveInfo="ModelReferenceExpression" />
     </node>
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963815961" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="ScopeChangeCommand" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8483375838963816015" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="isProject" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-  </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963817983" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="UnloadModelsCommand" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="unload models" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963818242" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="RebuildProjectCommand" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="rebuildProject" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="rebuild project" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="clean and make" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8483375838963818243" nodeInfo="ig">

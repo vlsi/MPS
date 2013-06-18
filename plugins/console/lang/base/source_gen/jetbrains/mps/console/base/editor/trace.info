@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.console.base.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.console.base.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)/4457873968123391941">
     <nodeInfo nodeId="4457873968123391941" fileName="Console_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4457873968123391941" fileName="Console_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -370,6 +370,27 @@
     </scopeInfo>
     <unitInfo nodeId="529843215038987978" fileName="CommandResultLine_Editor.java" startLine="40" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.console.base.editor.CommandResultLine_Editor$partListHandler_f5vlko_a0" />
     <unitInfo nodeId="529843215038987978" fileName="CommandResultLine_Editor.java" startLine="19" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.console.base.editor.CommandResultLine_Editor" />
+  </root>
+  <root nodeRef="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)/6224631407134024896">
+    <nodeInfo nodeId="6224631407134024896" fileName="InterpretedCommand_Editor.java" startLine="11" startPosition="79" endLine="12" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6224631407134024974" fileName="InterpretedCommand_Editor.java" startLine="15" startPosition="88" endLine="16" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6224631407134024974" fileName="InterpretedCommand_Editor.java" startLine="16" startPosition="146" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6224631407134024974" fileName="InterpretedCommand_Editor.java" startLine="17" startPosition="28" endLine="18" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6224631407134024896" fileName="InterpretedCommand_Editor.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6224631407134024974" fileName="InterpretedCommand_Editor.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_k55s8m_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="6224631407134024896" fileName="InterpretedCommand_Editor.java" startLine="11" startPosition="79" endLine="12" endPosition="62" />
+    <scopeInfo nodeId="6224631407134024896" fileName="InterpretedCommand_Editor.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="6224631407134024896" varName="editorContext" />
+      <varInfo nodeId="6224631407134024896" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6224631407134024974" fileName="InterpretedCommand_Editor.java" startLine="15" startPosition="88" endLine="18" endPosition="22">
+      <varInfo nodeId="6224631407134024974" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6224631407134024974" fileName="InterpretedCommand_Editor.java" startLine="15" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="6224631407134024974" varName="editorContext" />
+      <varInfo nodeId="6224631407134024974" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="6224631407134024896" fileName="InterpretedCommand_Editor.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.base.editor.InterpretedCommand_Editor" />
   </root>
 </debugInfo>
 

@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "995a7394-7f76-4b8b-a929-c53448708106(jetbrains.mps.console.internalCommands)";
-  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{};
+  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.console.base"};
 
   public Language() {
 
