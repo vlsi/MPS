@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.ide.ui;
 
-import com.intellij.xml.util.HtmlUtil;
-
 import javax.swing.JTree;
 import javax.swing.tree.TreePath;
 

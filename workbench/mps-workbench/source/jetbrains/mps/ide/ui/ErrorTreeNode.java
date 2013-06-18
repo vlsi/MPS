@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
 
+@Deprecated
 public class ErrorTreeNode extends TextTreeNode {
   public ErrorTreeNode(@NotNull String text) {
     super(text);
