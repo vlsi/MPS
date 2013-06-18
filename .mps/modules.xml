@@ -189,6 +189,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/console/jetbrains.mps.console.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/base/jetbrains.mps.console.base.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/blCommand/jetbrains.mps.console.blCommand.mpl" folder="platform.console" />
+      <modulePath path="$PROJECT_DIR$/plugins/console/lang/ideCommands/jetbrains.mps.console.ideCommands.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" folder="platform.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/jetbrains.mps.debugger.decisionTable.mpl" folder="platform.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/runtime/jetbrains.mps.debugger.decisionTable.runtime.msd" folder="platform.debugger" />
