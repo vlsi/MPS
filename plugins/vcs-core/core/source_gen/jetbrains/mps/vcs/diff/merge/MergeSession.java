@@ -11,12 +11,13 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -32,7 +33,6 @@ import java.util.Collections;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Comparator;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -66,12 +66,12 @@ public class MergeSession {
 
   public static MergeSession createMergeSession(SModel base, SModel mine, SModel repository) {
     // TODO generalize merge for any SModel 
-    SModel resModel = CopyUtil.copyModel(base);
+    jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(as_bow6nj_a0a0a1a31(base, SModelBase.class).getSModelInternal());
     if (resModel instanceof DefaultSModel) {
       int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
       ((DefaultSModel) resModel).setPersistenceVersion(pv);
     }
-    return new MergeSession(base, mine, repository, resModel);
+    return new MergeSession(base, mine, repository, resModel.getModelDescriptor());
   }
 
 
@@ -87,7 +87,7 @@ public class MergeSession {
         fillRootToChangesMap();
         fillNodeToChangesMap();
         myResultModel = result;
-        myNodeCopier = new NodeCopier(myResultModel.getModelDescriptor());
+        myNodeCopier = new NodeCopier(myResultModel);
       }
     });
   }
@@ -108,7 +108,7 @@ public class MergeSession {
   }
 
   public void installResultModelListener() {
-    myResultModel.addModelListener(myModelListener);
+    as_bow6nj_a0a0a71(myResultModel, SModelBase.class).addModelListener(myModelListener);
   }
 
   private void fillNodeToChangesMap() {
@@ -237,7 +237,7 @@ public class MergeSession {
   private void applyChange(ModelChange change) {
     if (SetSequence.fromSet(myResolvedChanges).contains(change)) {
     } else {
-      change.apply(myResultModel.getModelDescriptor(), myNodeCopier);
+      change.apply(myResultModel, myNodeCopier);
       SetSequence.fromSet(myResolvedChanges).addElement(change);
       SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)));
       excludeChangesNoRestoreIds(getConflictedWith(change));
@@ -265,15 +265,15 @@ public class MergeSession {
   }
 
   public SModel getBaseModel() {
-    return as_bow6nj_a0a0a63(myMineChangeSet.getOldModel(), SModelBase.class).getSModelInternal();
+    return myMineChangeSet.getOldModel();
   }
 
   public SModel getMyModel() {
-    return as_bow6nj_a0a0a73(myMineChangeSet.getNewModel(), SModelBase.class).getSModelInternal();
+    return myMineChangeSet.getNewModel();
   }
 
   public SModel getRepositoryModel() {
-    return as_bow6nj_a0a0a83(myRepositoryChangeSet.getNewModel(), SModelBase.class).getSModelInternal();
+    return myRepositoryChangeSet.getNewModel();
   }
 
   public ChangeSet getMyChangeSet() {
@@ -294,23 +294,25 @@ public class MergeSession {
 
   public void restoreState(MergeSessionState state) {
     MergeSessionState stateCopy = new MergeSessionState(state);
-    ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) myResultModel.getModelDescriptor()), null)).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SModelOperations.getRoots(myResultModel, null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
         SNodeOperations.deleteNode(r);
       }
     });
-    CopyUtil.clearModelProperties(myResultModel.getModelDescriptor());
+    CopyUtil.clearModelProperties(myResultModel);
+
     // clear UnregisteredNodes pool to avoid a lot of ERRORs in log: 
     UnregisteredNodes.instance().clear();
-    CopyUtil.copyModelProperties(stateCopy.myResultModel.getModelDescriptor(), myResultModel.getModelDescriptor());
-    ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) stateCopy.myResultModel.getModelDescriptor()), null)).visitAll(new IVisitor<SNode>() {
+
+    CopyUtil.copyModelProperties(stateCopy.myResultModel, myResultModel);
+    ListSequence.fromList(SModelOperations.getRoots(stateCopy.myResultModel, null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
-        SModelOperations.addRootNode(((org.jetbrains.mps.openapi.model.SModel) myResultModel.getModelDescriptor()), r);
+        SModelOperations.addRootNode(myResultModel, r);
       }
     });
 
     myResolvedChanges = stateCopy.myResolvedChanges;
-    myNodeCopier.setState(stateCopy.myIdReplacementCache, myResultModel.getModelDescriptor());
+    myNodeCopier.setState(stateCopy.myIdReplacementCache, myResultModel);
   }
 
   public void setChangesInvalidateHandler(MergeSession.ChangesInvalidateHandler changesInvalidateHandler) {
@@ -325,8 +327,9 @@ public class MergeSession {
   }
 
   private static int getPersistenceVersion(SModel model) {
-    if (model instanceof DefaultSModel) {
-      return ((DefaultSModel) model).getPersistenceVersion();
+    jetbrains.mps.smodel.SModel m = ((SModelBase) model).getSModelInternal();
+    if (m instanceof DefaultSModel) {
+      return ((DefaultSModel) m).getPersistenceVersion();
     }
     return -1;
   }
@@ -492,21 +495,14 @@ public class MergeSession {
 
   }
 
-  private static <T> T as_bow6nj_a0a0a63(Object o, Class<T> type) {
+  private static <T> T as_bow6nj_a0a0a1a31(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_bow6nj_a0a0a73(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_bow6nj_a0a0a83(Object o, Class<T> type) {
+  private static <T> T as_bow6nj_a0a0a71(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

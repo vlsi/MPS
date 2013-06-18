@@ -160,8 +160,8 @@ public class RootDifferencePane {
 
   public void setRootId(SNodeId rootId) {
     myRootId = rootId;
-    myOldEditor.editRoot(myProject, myRootId, as_guncoj_a0c0a1a23(myChangeSet.getOldModel(), SModelBase.class).getSModelInternal());
-    myNewEditor.editRoot(myProject, myRootId, as_guncoj_a0c0a2a23(myChangeSet.getNewModel(), SModelBase.class).getSModelInternal());
+    myOldEditor.editRoot(myProject, myRootId, myChangeSet.getOldModel());
+    myNewEditor.editRoot(myProject, myRootId, myChangeSet.getNewModel());
     rehighlight();
     myTraverser.goToFirstChangeLater();
   }
@@ -264,7 +264,7 @@ public class RootDifferencePane {
     myOldEditor.unhighlightAllChanges();
 
     if (myNewEditor.getEditedNode() == null) {
-      myNewEditor.editRoot(myProject, myRootId, as_guncoj_a0c0a0a4a14(myChangeSet.getNewModel(), SModelBase.class).getSModelInternal());
+      myNewEditor.editRoot(myProject, myRootId, myChangeSet.getNewModel());
     }
 
     myNewEditor.getMainEditor().rebuildEditorContent();
@@ -314,20 +314,6 @@ public class RootDifferencePane {
     );
   }
 
-  private static <T> T as_guncoj_a0c0a1a23(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_guncoj_a0c0a2a23(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
   private static <T> T as_guncoj_a0b0a0b0nb(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
@@ -336,13 +322,6 @@ public class RootDifferencePane {
   }
 
   private static <T> T as_guncoj_a0b0b0b0nb(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_guncoj_a0c0a0a4a14(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

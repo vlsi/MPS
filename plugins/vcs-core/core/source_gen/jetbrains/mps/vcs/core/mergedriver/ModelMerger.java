@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
@@ -79,7 +80,7 @@ import org.apache.log4j.LogManager;
       if (LOG.isInfoEnabled()) {
         LOG.info("Merging " + baseModel.getReference() + "...");
       }
-      final MergeSession mergeSession = MergeSession.createMergeSession(baseModel, localModel, latestModel);
+      final MergeSession mergeSession = MergeSession.createMergeSession(baseModel.getModelDescriptor(), localModel.getModelDescriptor(), latestModel.getModelDescriptor());
       int conflictingChangesCount = Sequence.fromIterable(mergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange c) {
           return Sequence.fromIterable(mergeSession.getConflictedWith(c)).isNotEmpty();
@@ -100,7 +101,7 @@ import org.apache.log4j.LogManager;
             LOG.info(String.format("%s: node id duplication detected, should merge in UI.", myModelName));
           }
         } else {
-          String resultString = ModelPersistence.modelToString(mergeSession.getResultModel());
+          String resultString = ModelPersistence.modelToString(as_gat80h_a0a0a0a0d0d0q0c(mergeSession.getResultModel(), SModelBase.class).getSModelInternal());
           if (LOG.isInfoEnabled()) {
             LOG.info(String.format("%s: merged successfully.", myModelName));
           }
@@ -139,4 +140,11 @@ import org.apache.log4j.LogManager;
   }
 
   protected static Logger LOG = LogManager.getLogger(ModelMerger.class);
+
+  private static <T> T as_gat80h_a0a0a0a0d0d0q0c(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
 }

@@ -864,9 +864,9 @@
     <nodeInfo nodeId="4481873561819695008" fileName="RootDifferencePane.java" startLine="150" startPosition="12" endLine="151" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4481873561811042879" fileName="RootDifferencePane.java" startLine="157" startPosition="30" endLine="158" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4481873561811042885" fileName="RootDifferencePane.java" startLine="161" startPosition="41" endLine="162" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4481873561811042894" fileName="RootDifferencePane.java" startLine="162" startPosition="22" endLine="163" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4481873561811042903" fileName="RootDifferencePane.java" startLine="163" startPosition="132" endLine="164" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4481873561811042912" fileName="RootDifferencePane.java" startLine="164" startPosition="132" endLine="165" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4481873561811042894" fileName="RootDifferencePane.java" startLine="162" startPosition="22" endLine="163" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4481873561811042903" fileName="RootDifferencePane.java" startLine="163" startPosition="73" endLine="164" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4481873561811042912" fileName="RootDifferencePane.java" startLine="164" startPosition="73" endLine="165" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4481873561811042914" fileName="RootDifferencePane.java" startLine="165" startPosition="18" endLine="166" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4481873561811042926" fileName="RootDifferencePane.java" startLine="169" startPosition="67" endLine="170" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4481873561811042935" fileName="RootDifferencePane.java" startLine="172" startPosition="47" endLine="173" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -905,7 +905,7 @@
     <nodeInfo nodeId="8817948936280415736" fileName="RootDifferencePane.java" startLine="262" startPosition="51" endLine="263" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8817948936280415740" fileName="RootDifferencePane.java" startLine="263" startPosition="40" endLine="264" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8817948936280415744" fileName="RootDifferencePane.java" startLine="264" startPosition="40" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8817948936280415752" fileName="RootDifferencePane.java" startLine="266" startPosition="46" endLine="267" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8817948936280415752" fileName="RootDifferencePane.java" startLine="266" startPosition="46" endLine="267" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8817948936280415761" fileName="RootDifferencePane.java" startLine="268" startPosition="5" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8817948936280415762" fileName="RootDifferencePane.java" startLine="269" startPosition="0" endLine="270" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8817948936280415768" fileName="RootDifferencePane.java" startLine="270" startPosition="55" endLine="271" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -949,11 +949,8 @@
     <nodeInfo nodeId="8817948936280920759" fileName="RootDifferencePane.java" startLine="278" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rollbackChanges#(Ljava/lang/Iterable;)V" />
     <nodeInfo nodeId="1872946594187327798" fileName="RootDifferencePane.java" startLine="303" startPosition="69" endLine="307" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1872946594189586082" fileName="RootDifferencePane.java" startLine="310" startPosition="69" endLine="314" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1872946594187611305" fileName="RootDifferencePane.java" startLine="317" startPosition="69" endLine="321" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1872946594189281839" fileName="RootDifferencePane.java" startLine="324" startPosition="69" endLine="328" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1872946594187483017" fileName="RootDifferencePane.java" startLine="331" startPosition="70" endLine="335" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1872946594189422929" fileName="RootDifferencePane.java" startLine="338" startPosition="70" endLine="342" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1872946594189686578" fileName="RootDifferencePane.java" startLine="345" startPosition="71" endLine="349" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1872946594187483017" fileName="RootDifferencePane.java" startLine="317" startPosition="70" endLine="321" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1872946594189422929" fileName="RootDifferencePane.java" startLine="324" startPosition="70" endLine="328" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4481873561819694994" fileName="RootDifferencePane.java" startLine="144" startPosition="30" endLine="149" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4481873561811042930" fileName="RootDifferencePane.java" startLine="170" startPosition="28" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8817948936280468294" fileName="RootDifferencePane.java" startLine="231" startPosition="38" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -961,11 +958,8 @@
     <nodeInfo nodeId="4481873561810341121" fileName="RootDifferencePane.java" startLine="291" startPosition="23" endLine="296" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1872946594187327798" fileName="RootDifferencePane.java" startLine="303" startPosition="0" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_guncoj_a0b0a6a22#(Ljava/lang/Object;Ljava/lang/Class;)null" />
     <nodeInfo nodeId="1872946594189586082" fileName="RootDifferencePane.java" startLine="310" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_guncoj_a0b0a7a22#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="1872946594187611305" fileName="RootDifferencePane.java" startLine="317" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_guncoj_a0c0a1a23#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="1872946594189281839" fileName="RootDifferencePane.java" startLine="324" startPosition="0" endLine="330" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_guncoj_a0c0a2a23#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="1872946594187483017" fileName="RootDifferencePane.java" startLine="331" startPosition="0" endLine="337" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_guncoj_a0b0a0b0nb#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="1872946594189422929" fileName="RootDifferencePane.java" startLine="338" startPosition="0" endLine="344" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_guncoj_a0b0b0b0nb#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="1872946594189686578" fileName="RootDifferencePane.java" startLine="345" startPosition="0" endLine="351" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_guncoj_a0c0a0a4a14#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="1872946594187483017" fileName="RootDifferencePane.java" startLine="317" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_guncoj_a0b0a0b0nb#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="1872946594189422929" fileName="RootDifferencePane.java" startLine="324" startPosition="0" endLine="330" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_guncoj_a0b0b0b0nb#(Ljava/lang/Object;Ljava/lang/Class;)null" />
     <nodeInfo nodeId="4481873561811042881" fileName="RootDifferencePane.java" startLine="161" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setRootId#(Lorg/jetbrains/mps/openapi/model/SNodeId;)V" />
     <nodeInfo nodeId="4481873561809569582" fileName="RootDifferencePane.java" startLine="214" startPosition="0" endLine="221" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3256036129446262074" fileName="RootDifferencePane.java" startLine="96" startPosition="33" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -997,7 +991,7 @@
     <scopeInfo nodeId="8817948936280468301" fileName="RootDifferencePane.java" startLine="233" startPosition="46" endLine="234" endPosition="23" />
     <scopeInfo nodeId="8817948936280468332" fileName="RootDifferencePane.java" startLine="242" startPosition="46" endLine="243" endPosition="23" />
     <scopeInfo nodeId="8817948936280537316" fileName="RootDifferencePane.java" startLine="257" startPosition="88" endLine="258" endPosition="52" />
-    <scopeInfo nodeId="8817948936280415751" fileName="RootDifferencePane.java" startLine="266" startPosition="46" endLine="267" endPosition="136" />
+    <scopeInfo nodeId="8817948936280415751" fileName="RootDifferencePane.java" startLine="266" startPosition="46" endLine="267" endPosition="75" />
     <scopeInfo nodeId="4481873561810341125" fileName="RootDifferencePane.java" startLine="293" startPosition="48" endLine="294" endPosition="20" />
     <scopeInfo nodeId="1973725742812731873" fileName="RootDifferencePane.java" startLine="128" startPosition="55" endLine="130" endPosition="110" />
     <scopeInfo nodeId="1973725742812934969" fileName="RootDifferencePane.java" startLine="133" startPosition="57" endLine="135" endPosition="68" />
@@ -1048,11 +1042,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1872946594187327798" fileName="RootDifferencePane.java" startLine="303" startPosition="69" endLine="307" endPosition="6" />
     <scopeInfo nodeId="1872946594189586082" fileName="RootDifferencePane.java" startLine="310" startPosition="69" endLine="314" endPosition="6" />
-    <scopeInfo nodeId="1872946594187611305" fileName="RootDifferencePane.java" startLine="317" startPosition="69" endLine="321" endPosition="6" />
-    <scopeInfo nodeId="1872946594189281839" fileName="RootDifferencePane.java" startLine="324" startPosition="69" endLine="328" endPosition="6" />
-    <scopeInfo nodeId="1872946594187483017" fileName="RootDifferencePane.java" startLine="331" startPosition="70" endLine="335" endPosition="6" />
-    <scopeInfo nodeId="1872946594189422929" fileName="RootDifferencePane.java" startLine="338" startPosition="70" endLine="342" endPosition="6" />
-    <scopeInfo nodeId="1872946594189686578" fileName="RootDifferencePane.java" startLine="345" startPosition="71" endLine="349" endPosition="6" />
+    <scopeInfo nodeId="1872946594187483017" fileName="RootDifferencePane.java" startLine="317" startPosition="70" endLine="321" endPosition="6" />
+    <scopeInfo nodeId="1872946594189422929" fileName="RootDifferencePane.java" startLine="324" startPosition="70" endLine="328" endPosition="6" />
     <scopeInfo nodeId="4481873561819694993" fileName="RootDifferencePane.java" startLine="144" startPosition="30" endLine="149" endPosition="9" />
     <scopeInfo nodeId="4481873561811042884" fileName="RootDifferencePane.java" startLine="161" startPosition="41" endLine="166" endPosition="39" />
     <scopeInfo nodeId="1872946594187327798" fileName="RootDifferencePane.java" startLine="303" startPosition="0" endLine="309" endPosition="0">
@@ -1063,25 +1054,13 @@
       <varInfo nodeId="1872946594189586082" varName="o" />
       <varInfo nodeId="1872946594189586082" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="1872946594187611305" fileName="RootDifferencePane.java" startLine="317" startPosition="0" endLine="323" endPosition="0">
-      <varInfo nodeId="1872946594187611305" varName="o" />
-      <varInfo nodeId="1872946594187611305" varName="type" />
-    </scopeInfo>
-    <scopeInfo nodeId="1872946594189281839" fileName="RootDifferencePane.java" startLine="324" startPosition="0" endLine="330" endPosition="0">
-      <varInfo nodeId="1872946594189281839" varName="o" />
-      <varInfo nodeId="1872946594189281839" varName="type" />
-    </scopeInfo>
-    <scopeInfo nodeId="1872946594187483017" fileName="RootDifferencePane.java" startLine="331" startPosition="0" endLine="337" endPosition="0">
+    <scopeInfo nodeId="1872946594187483017" fileName="RootDifferencePane.java" startLine="317" startPosition="0" endLine="323" endPosition="0">
       <varInfo nodeId="1872946594187483017" varName="o" />
       <varInfo nodeId="1872946594187483017" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="1872946594189422929" fileName="RootDifferencePane.java" startLine="338" startPosition="0" endLine="344" endPosition="0">
+    <scopeInfo nodeId="1872946594189422929" fileName="RootDifferencePane.java" startLine="324" startPosition="0" endLine="330" endPosition="0">
       <varInfo nodeId="1872946594189422929" varName="o" />
       <varInfo nodeId="1872946594189422929" varName="type" />
-    </scopeInfo>
-    <scopeInfo nodeId="1872946594189686578" fileName="RootDifferencePane.java" startLine="345" startPosition="0" endLine="351" endPosition="0">
-      <varInfo nodeId="1872946594189686578" varName="o" />
-      <varInfo nodeId="1872946594189686578" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="4481873561811042881" fileName="RootDifferencePane.java" startLine="161" startPosition="0" endLine="168" endPosition="0">
       <varInfo nodeId="4481873561811042918" varName="rootId" />
@@ -1147,7 +1126,7 @@
     <unitInfo nodeId="4481873561810341124" fileName="RootDifferencePane.java" startLine="292" startPosition="59" endLine="296" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RootDifferencePane$7" />
     <unitInfo nodeId="3256036129446440138" fileName="RootDifferencePane.java" startLine="97" startPosition="26" endLine="105" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RootDifferencePane$1" />
     <unitInfo nodeId="4481873561817319045" fileName="RootDifferencePane.java" startLine="108" startPosition="28" endLine="118" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.RootDifferencePane$2" />
-    <unitInfo nodeId="8817948936268058313" fileName="RootDifferencePane.java" startLine="44" startPosition="0" endLine="352" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.RootDifferencePane" />
+    <unitInfo nodeId="8817948936268058313" fileName="RootDifferencePane.java" startLine="44" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.RootDifferencePane" />
   </root>
 </debugInfo>
 
