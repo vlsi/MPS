@@ -22,7 +22,6 @@
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8483375838963280017" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="caxt.8483375838963280015" resolveInfo="ModelStatCommand" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="8483375838963280018" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8483375838963280019" nodeInfo="sn" />
