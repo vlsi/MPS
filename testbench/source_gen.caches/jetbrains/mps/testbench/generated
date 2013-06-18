@@ -13,7 +13,7 @@
   <dep model="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" hash="9dpsds30aleyoxj2inntdhjvyno30ds" />
   <dep model="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)" hash="-4tjx2q72aciiedr0di51q1fb6i3onqk" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-9fdi0n0a07zuqciwx30oe146qg9byaf" />
-  <dep model="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)" hash="-3ixtm3wp6dl6yy4sik5b7oz90pq9ivm" />
+  <dep model="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)" hash="-3f76szp1lwqeqz6onbv5kav315vrp95" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
   <common hash="70axoyf9mo2hfbnjkmgn3clvx50vxfr" />
   <source id="5294483648489413878" name="PerformanceMessenger" hash="8z5o62u68zc9byrhg5d7iakkt2eas6h">

@@ -4,41 +4,31 @@ package jetbrains.mps.testbench.junit.runners;
 
 import org.junit.runners.Suite;
 import org.junit.runners.model.RunnerBuilder;
-import java.lang.reflect.Method;
+import org.junit.runners.model.TestClass;
+import org.junit.runners.model.FrameworkMethod;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.lang.reflect.Modifier;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 
 /**
- * Suite class must be with public static Class[] factory(Class testClass) method annotated by @Factory
+ * Suite class must be with public static Class[] factory(TestClass testClass) method annotated by @Factory
  */
 public class DynamicSuite extends Suite {
   public DynamicSuite(Class<?> testClass, RunnerBuilder builder) throws Throwable {
-    super(builder, testClass, getSuiteClasses(testClass));
+    super(builder, testClass, getSuiteClasses(new TestClass(testClass)));
   }
 
 
 
-  private static Class<?>[] getSuiteClasses(Class<?> testClass) throws Throwable {
-    Class<?> curClass = testClass;
-    while (curClass != null) {
-      for (Method method : curClass.getMethods()) {
-        if (method.getAnnotation(DynamicSuite.Factory.class) != null) {
-          int modifiers = method.getModifiers();
-          if (Modifier.isStatic(modifiers) && Modifier.isPublic(modifiers)) {
-            try {
-              return (Class<?>[]) method.invoke(null, testClass);
-            } catch (InvocationTargetException e) {
-              // re-throw exceptions from reflective call 
-              throw e.getTargetException();
-            }
-          }
-        }
+  private static Class<?>[] getSuiteClasses(TestClass testClass) throws Throwable {
+    for (FrameworkMethod method : ListSequence.fromList(testClass.getAnnotatedMethods(DynamicSuite.Factory.class))) {
+      int modifiers = method.getMethod().getModifiers();
+      if (Modifier.isStatic(modifiers) && Modifier.isPublic(modifiers)) {
+        return (Class<?>[]) method.invokeExplosively(null, testClass);
       }
-      curClass = curClass.getSuperclass();
     }
     throw new Exception("No public static factory method in class or ots superclasses: " + testClass.getName());
   }

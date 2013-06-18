@@ -17,10 +17,11 @@
     <classNode dependClassName="java.lang.annotation.Retention" />
     <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
     <classNode dependClassName="java.lang.annotation.Target" />
-    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
-    <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="java.lang.reflect.Modifier" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.junit.runners.model.FrameworkMethod" />
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
+    <classNode dependClassName="org.junit.runners.model.TestClass" />
     <classNode extendsClassName="org.junit.runners.Suite" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.MPSOpenProjectRunner" file="MPSOpenProjectRunner.java">

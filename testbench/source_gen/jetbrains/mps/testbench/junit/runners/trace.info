@@ -458,48 +458,32 @@
     <unitInfo nodeId="2926331382166450989" fileName="ProjectTestsSupport.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ProjectTestsSupport" />
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/3540760116424246912">
-    <nodeInfo nodeId="3540760116424340586" fileName="DynamicSuite.java" startLine="19" startPosition="83" endLine="20" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2997351968240848065" fileName="DynamicSuite.java" startLine="25" startPosition="82" endLine="26" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3540760116424445147" fileName="DynamicSuite.java" startLine="29" startPosition="71" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3540760116424475974" fileName="DynamicSuite.java" startLine="32" startPosition="17" endLine="33" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3540760116424697641" fileName="DynamicSuite.java" startLine="34" startPosition="51" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3540760116424498904" fileName="DynamicSuite.java" startLine="35" startPosition="58" endLine="36" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2997351968240861467" fileName="DynamicSuite.java" startLine="40" startPosition="7" endLine="41" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3540760116424401331" fileName="DynamicSuite.java" startLine="42" startPosition="5" endLine="43" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3540760116424272882" fileName="DynamicSuite.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DynamicSuite#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
-    <nodeInfo nodeId="3540760116424475933" fileName="DynamicSuite.java" startLine="31" startPosition="77" endLine="37" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3540760116424455910" fileName="DynamicSuite.java" startLine="30" startPosition="48" endLine="38" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3540760116424371787" fileName="DynamicSuite.java" startLine="28" startPosition="51" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3540760116424350771" fileName="DynamicSuite.java" startLine="27" startPosition="30" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2997351968240814927" fileName="DynamicSuite.java" startLine="26" startPosition="34" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3540760116424340436" fileName="DynamicSuite.java" startLine="25" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSuiteClasses#(Ljava/lang/Class;)[Ljava/lang/Class;" />
-    <scopeInfo nodeId="3540760116424272886" fileName="DynamicSuite.java" startLine="19" startPosition="83" endLine="20" endPosition="58" />
-    <scopeInfo nodeId="3540760116424475934" fileName="DynamicSuite.java" startLine="32" startPosition="17" endLine="33" endPosition="65" />
-    <scopeInfo nodeId="3540760116424475935" fileName="DynamicSuite.java" startLine="34" startPosition="0" endLine="36" endPosition="43">
-      <varInfo nodeId="3540760116424475936" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="3540760116424475938" fileName="DynamicSuite.java" startLine="34" startPosition="51" endLine="36" endPosition="43" />
-    <scopeInfo nodeId="3540760116424272882" fileName="DynamicSuite.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+    <nodeInfo nodeId="3540760116424340586" fileName="DynamicSuite.java" startLine="20" startPosition="83" endLine="21" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3540760116424445147" fileName="DynamicSuite.java" startLine="27" startPosition="117" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3540760116424475974" fileName="DynamicSuite.java" startLine="29" startPosition="73" endLine="30" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3540760116424401331" fileName="DynamicSuite.java" startLine="32" startPosition="5" endLine="33" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3540760116424272882" fileName="DynamicSuite.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DynamicSuite#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
+    <nodeInfo nodeId="3540760116424455910" fileName="DynamicSuite.java" startLine="28" startPosition="56" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="47041348242533003" fileName="DynamicSuite.java" startLine="26" startPosition="83" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3540760116424340436" fileName="DynamicSuite.java" startLine="26" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSuiteClasses#(Lorg/junit/runners/model/TestClass;)[Ljava/lang/Class;" />
+    <scopeInfo nodeId="3540760116424272886" fileName="DynamicSuite.java" startLine="20" startPosition="83" endLine="21" endPosition="73" />
+    <scopeInfo nodeId="3540760116424455913" fileName="DynamicSuite.java" startLine="29" startPosition="73" endLine="30" endPosition="70" />
+    <scopeInfo nodeId="3540760116424272882" fileName="DynamicSuite.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="3540760116424279995" varName="builder" />
       <varInfo nodeId="3540760116424272892" varName="testClass" />
     </scopeInfo>
-    <scopeInfo nodeId="3540760116424455913" fileName="DynamicSuite.java" startLine="31" startPosition="77" endLine="37" endPosition="13" />
-    <scopeInfo nodeId="3540760116424371788" fileName="DynamicSuite.java" startLine="29" startPosition="71" endLine="38" endPosition="11">
+    <scopeInfo nodeId="47041348242533009" fileName="DynamicSuite.java" startLine="27" startPosition="117" endLine="31" endPosition="7">
       <varInfo nodeId="3540760116424445150" varName="modifiers" />
     </scopeInfo>
-    <scopeInfo nodeId="3540760116424350774" fileName="DynamicSuite.java" startLine="28" startPosition="51" endLine="39" endPosition="9" />
-    <scopeInfo nodeId="3540760116424350771" fileName="DynamicSuite.java" startLine="27" startPosition="30" endLine="40" endPosition="7">
-      <varInfo nodeId="3540760116424350772" varName="method" />
+    <scopeInfo nodeId="47041348242533003" fileName="DynamicSuite.java" startLine="26" startPosition="83" endLine="32" endPosition="5">
+      <varInfo nodeId="47041348242533005" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="2997351968240814931" fileName="DynamicSuite.java" startLine="27" startPosition="30" endLine="41" endPosition="42" />
-    <scopeInfo nodeId="3540760116424340439" fileName="DynamicSuite.java" startLine="25" startPosition="82" endLine="43" endPosition="112">
-      <varInfo nodeId="2997351968240848066" varName="curClass" />
-    </scopeInfo>
-    <scopeInfo nodeId="3540760116424340436" fileName="DynamicSuite.java" startLine="25" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="3540760116424340439" fileName="DynamicSuite.java" startLine="26" startPosition="83" endLine="33" endPosition="112" />
+    <scopeInfo nodeId="3540760116424340436" fileName="DynamicSuite.java" startLine="26" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="3540760116424340472" varName="testClass" />
     </scopeInfo>
-    <unitInfo nodeId="3540760116424292631" fileName="DynamicSuite.java" startLine="48" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.DynamicSuite$Factory" />
-    <unitInfo nodeId="3540760116424246912" fileName="DynamicSuite.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.DynamicSuite" />
+    <unitInfo nodeId="3540760116424292631" fileName="DynamicSuite.java" startLine="38" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.DynamicSuite$Factory" />
+    <unitInfo nodeId="3540760116424246912" fileName="DynamicSuite.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.DynamicSuite" />
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/3894165323890858623">
     <nodeInfo nodeId="3894165323891190773" fileName="MpsTestsSupport.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CREATED_ENV" />

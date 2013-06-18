@@ -5,6 +5,7 @@ package jetbrains.mps.testbench.junit.suites;
 import org.junit.runner.RunWith;
 import jetbrains.mps.testbench.junit.runners.DynamicSuite;
 import jetbrains.mps.tool.environment.Environment;
+import org.junit.runners.model.TestClass;
 import org.junit.runners.model.InitializationError;
 import jetbrains.mps.TestMain;
 import org.junit.AfterClass;
@@ -55,7 +56,7 @@ public class ModuleTestSuite {
 
 
   @DynamicSuite.Factory
-  public static Class<?>[] suiteClasses(Class<?> testClass) throws InitializationError {
+  public static Class<?>[] suiteClasses(TestClass testClass) throws InitializationError {
     createTestEnvironment(loadLibraries());
 
     // todo: get rid from 
