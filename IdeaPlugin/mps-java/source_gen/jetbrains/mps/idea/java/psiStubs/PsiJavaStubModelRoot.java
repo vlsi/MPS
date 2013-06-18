@@ -176,20 +176,53 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
   public void psiChanged(PsiListener.PsiEvent event) {
     // here we simply decide if we have to update 
     for (PsiFileSystemItem fsItem : event.getCreated()) {
-      if (importantDir(fsItem)) {
+      if (importantDir(fsItem) || firstFileInDir(fsItem)) {
         update();
         return;
       }
     }
 
     for (PsiFileSystemItem fsItem : event.getRemoved()) {
-      if (importantDir(fsItem)) {
+      if (importantDir(fsItem) || wasLastFileInDir(fsItem)) {
         update();
         return;
       }
     }
     // TODO handle moves and renames of directories 
   }
+
+
+
+  private boolean firstFileInDir(PsiFileSystemItem fsItem) {
+    if (fsItem instanceof PsiJavaFile) {
+      PsiDirectory dir = (PsiDirectory) fsItem.getParent();
+      if (!(importantDir(dir))) {
+        return false;
+      }
+      // exactly one file 
+      // FIXME 3 files can be created in one psi event 
+      // FIXME between originating event and its handling here dir could change again 
+      return dir.getFiles().length == 1;
+    }
+    return false;
+  }
+
+
+
+  private boolean wasLastFileInDir(PsiFileSystemItem fsItem) {
+    if (fsItem instanceof PsiJavaFile) {
+      PsiDirectory dir = (PsiDirectory) fsItem.getParent();
+      if (!(importantDir(dir))) {
+        return false;
+      }
+      // exactly one file 
+      // FIXME 3 files can be created in one psi event 
+      // FIXME between originating event and its handling here dir could change again 
+      return dir.getFiles().length == 0;
+    }
+    return false;
+  }
+
 
 
 

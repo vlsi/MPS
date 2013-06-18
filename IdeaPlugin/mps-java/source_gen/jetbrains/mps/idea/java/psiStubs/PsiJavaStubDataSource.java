@@ -160,6 +160,12 @@ public class PsiJavaStubDataSource extends DataSourceBase implements PsiListener
         }
         SetSequence.fromSet(reparse).addElement(((PsiJavaFile) fsItem));
       }
+      for (PsiFileSystemItem fsItem : psiEvent.getCreated()) {
+        if (!(isOurJavaFile(fsItem))) {
+          continue;
+        }
+        SetSequence.fromSet(reparse).addElement(((PsiJavaFile) fsItem));
+      }
     }
 
 
