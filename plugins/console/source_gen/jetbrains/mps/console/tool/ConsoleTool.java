@@ -19,14 +19,15 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.awt.BorderLayout;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import java.awt.FlowLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import javax.swing.JScrollPane;
+import java.awt.BorderLayout;
 import javax.swing.JComboBox;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
@@ -101,31 +102,61 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
       }
     });
 
-    myMainComponent = new JPanel();
-    myMainComponent.setLayout(new BorderLayout());
-    JScrollPane histPane = new JScrollPane(myHistEditor);
-    JScrollPane commandPane = new JScrollPane(myCommandEditor);
-    JSplitPane editorPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, histPane, commandPane);
-    editorPane.setDividerLocation(0.7);
-    myMainComponent.add(editorPane, BorderLayout.CENTER);
-
-    JPanel upper = new JPanel(new FlowLayout());
-    upper.add(createScopeComponent());
-    myMainComponent.add(upper, BorderLayout.NORTH);
-
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(new ConsoleTool.ExecuteAction(project));
     group.add(new ConsoleTool.PrevCmdAction());
     group.add(new ConsoleTool.NextCmdAction());
     group.add(new ConsoleTool.ClearAction());
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
-    myMainComponent.add(toolbar.getComponent(), BorderLayout.WEST);
+
+    myMainComponent = new JPanel();
+    myMainComponent.setLayout(new GridBagLayout());
+    GridBagConstraints c = new GridBagConstraints(0, 0, 0, 0, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+
+    c.gridx = 0;
+    c.gridy = 1;
+    c.gridwidth = 2;
+    c.gridheight = 1;
+    c.weightx = 1.0;
+    c.weighty = 0.0;
+    c.anchor = GridBagConstraints.EAST;
+    c.fill = GridBagConstraints.NONE;
+    myMainComponent.add(createScopeComponent(), c);
+
+    c.gridx = 0;
+    c.gridy = 0;
+    c.gridwidth = 1;
+    c.gridheight = 1;
+    c.weightx = 0.0;
+    c.weighty = 1.0;
+    c.anchor = GridBagConstraints.NORTH;
+    c.fill = GridBagConstraints.VERTICAL;
+    myMainComponent.add(toolbar.getComponent(), c);
+
+    c.gridx = 1;
+    c.gridy = 0;
+    c.gridwidth = 1;
+    c.gridheight = 1;
+    c.weightx = 1.0;
+    c.weighty = 1.0;
+    c.anchor = GridBagConstraints.CENTER;
+    c.fill = GridBagConstraints.BOTH;
+    myMainComponent.add(createEditorsComponent(), c);
+  }
+
+
+
+  private JScrollPane createEditorsComponent() {
+    JPanel editorsPanel = new JPanel(new BorderLayout());
+    editorsPanel.add(myHistEditor, BorderLayout.CENTER);
+    editorsPanel.add(myCommandEditor, BorderLayout.SOUTH);
+    return new JScrollPane(editorsPanel);
   }
 
 
 
   private JComponent createScopeComponent() {
-    return new JComboBox(new String[]{"project", "global"});
+    return new JComboBox(new String[]{"in project", "globally"});
   }
 
 
@@ -212,11 +243,11 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
 
   public void addText(String text) {
-    ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a63(text));
+    ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a83(text));
   }
 
   public void addNode(SNode node) {
-    SNode n = _quotation_createNode_xg3v07_a0a0lb();
+    SNode n = _quotation_createNode_xg3v07_a0a0nb();
     SLinkOperations.setTarget(n, "target", node, false);
     ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(n);
   }
@@ -236,7 +267,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     private jetbrains.mps.project.Project myProject;
 
     public ExecuteAction(jetbrains.mps.project.Project project) {
-      super("Execute", "Execute last command", IconContainer.ICON_c0a1sb);
+      super("Execute", "Execute last command", IconContainer.ICON_c0a1ub);
       ExecuteAction.this.myProject = project;
     }
 
@@ -250,11 +281,11 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
             return;
           }
 
-          final SNode res = _quotation_createNode_xg3v07_a0f0a0a2sb();
+          final SNode res = _quotation_createNode_xg3v07_a0f0a0a2ub();
           BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(lastCmd, "jetbrains.mps.console.base.structure.Command"), "virtual_execute_757553790980855637", new Object[]{ExecuteAction.this.myProject, new ConsoleStream() {
             public void addText(String text) {
               checkResultAvailable();
-              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a1a0a0b0a6a0a0c44(text));
+              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a1a0a0b0a6a0a0c64(text));
             }
 
             public void addNode(SNode node) {
@@ -280,7 +311,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private class ClearAction extends BaseAction {
     public ClearAction() {
-      super("Clear", "Clear console window", IconContainer.ICON_c0a0tb);
+      super("Clear", "Clear console window", IconContainer.ICON_c0a0vb);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -291,7 +322,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private class PrevCmdAction extends BaseAction {
     public PrevCmdAction() {
-      super("Prev", "Previous command", IconContainer.ICON_c0a0ub);
+      super("Prev", "Previous command", IconContainer.ICON_c0a0wb);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -317,7 +348,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private class NextCmdAction extends BaseAction {
     public NextCmdAction() {
-      super("Next", "Next command", IconContainer.ICON_c0a0vb);
+      super("Next", "Next command", IconContainer.ICON_c0a0xb);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -339,7 +370,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     }
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a0a63(Object parameter_1) {
+  private static SNode _quotation_createNode_xg3v07_a0a0a83(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
@@ -347,14 +378,14 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a0lb() {
+  private static SNode _quotation_createNode_xg3v07_a0a0nb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.NodeResultPart", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0f0a0a2sb() {
+  private static SNode _quotation_createNode_xg3v07_a0f0a0a2ub() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -364,7 +395,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a1a0a0b0a6a0a0c44(Object parameter_1) {
+  private static SNode _quotation_createNode_xg3v07_a0a1a0a0b0a6a0a0c64(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
