@@ -20,23 +20,6 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068580123136" resolveInfo="StatementList" />
     </node>
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8899274441241545834" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="ModelStatCommand" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="stat" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8899274441241642746" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="model" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tp25.559557797393017698" resolveInfo="ModelReferenceExpression" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8899274441241550347" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="FindUsagesCommand" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
-  </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6852607286009511387" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="command.out" />
     <property name="name" nameId="tpck.1169194664001" value="PrintText" />
