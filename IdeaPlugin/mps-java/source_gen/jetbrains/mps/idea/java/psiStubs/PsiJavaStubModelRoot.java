@@ -174,6 +174,9 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
 
   @Override
   public void psiChanged(PsiListener.PsiEvent event) {
+
+    // TODO re-write to sequences and any 
+
     // here we simply decide if we have to update 
     for (PsiFileSystemItem fsItem : event.getCreated()) {
       if (importantFsItem(fsItem)) {
