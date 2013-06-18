@@ -15,13 +15,17 @@
  */
 package jetbrains.mps.persistence.xml;
 
+import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.model.SModelPersistence;
 import jetbrains.mps.persistence.XmlModelPersistence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.testbench.MpsMakeHelper;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
@@ -43,19 +47,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * evgeny, 3/25/13
  */
-public class XmlConverterTest {
-
-
-  @BeforeClass
-  public static void start() throws Exception {
-    System.setProperty("idea.load.plugins.id", "jetbrains.mps.core");
-    new MpsMakeHelper().make();
-  }
-
-  @AfterClass
-  public static void shutdown() {
-  }
-
+public class XmlConverterTest extends CoreMpsTest {
   @Test
   public void testXml1() throws Exception {
     testXml("/jetbrains/mps/persistence/xml/testdata/test1.xml");

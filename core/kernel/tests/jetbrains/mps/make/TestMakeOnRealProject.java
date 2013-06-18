@@ -20,10 +20,8 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.util.Condition;
 import com.intellij.util.CommonProcessors.CollectProcessor;
 import com.intellij.util.FilteringProcessor;
-import jetbrains.mps.TestMain;
+import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -32,8 +30,8 @@ import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -49,7 +47,7 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.*;
 
-public class TestMakeOnRealProject {
+public class TestMakeOnRealProject extends WorkbenchMpsTest {
   private static final String TEST_JAVA_FILE = "Test.java";
 
   private IFile myTmpDir;
@@ -207,9 +205,6 @@ public class TestMakeOnRealProject {
   }
 
   private void createTmpModules() {
-    IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
-
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       @Override
       public void run() {
@@ -329,5 +324,4 @@ public class TestMakeOnRealProject {
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
     return (Solution) ModuleRepositoryFacade.createModule(handle, myModuleOwner);
   }
-
 }

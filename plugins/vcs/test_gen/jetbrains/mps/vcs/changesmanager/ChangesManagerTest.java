@@ -88,9 +88,11 @@ import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.junit.BeforeClass;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.smodel.SReference;
 import com.intellij.openapi.util.registry.Registry;
-import jetbrains.mps.TestMain;
+import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import org.junit.AfterClass;
 import jetbrains.mps.ide.platform.watching.ReloadListener;
@@ -977,16 +979,18 @@ public class ChangesManagerTest {
 
   @BeforeClass
   public static void setUp() {
+    MpsTestsSupport.initEnv(true, EnvironmentConfig.emptyEnvironment().withBootstrapLibraries().addPlugin("Git4Idea").addPlugin("jetbrains.mps.vcs").addPlugin("jetbrains.mps.ide.make"));
+
     SReference.disableLogging();
     Registry.get("vcs.showConsole").setValue(false);
 
-    ourProject = TestMain.startTestOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, "jetbrains.mps.vcs", "Git4Idea", "jetbrains.mps.ide.make");
+    ourProject = ProjectTestsSupport.startTestOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE);
     FSChangesWatcher.instance().initComponent(true);
   }
 
   @AfterClass
   public static void tearDown() {
-    TestMain.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
+    ProjectTestsSupport.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
   }
 
   private class MyReloadListener implements ReloadListener {
