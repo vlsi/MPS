@@ -19,6 +19,6 @@ public class DiffTestTask extends GenerateTask {
   }
 
   public void addConfiguredModule(ModuleChunkPart module) {
-    myWhatToDo.addModuleFile(module.getFile().getPath());
+    myWhatToDo.addModuleFile(module.getFile());
   }
 }
