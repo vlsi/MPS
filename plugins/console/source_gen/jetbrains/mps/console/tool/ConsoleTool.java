@@ -200,7 +200,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     private jetbrains.mps.project.Project myProject;
 
     public ExecuteAction(jetbrains.mps.project.Project project) {
-      super("Execute", "Execute last command", null);
+      super("Execute", "Execute last command", IconContainer.ICON_c0a1lb);
       ExecuteAction.this.myProject = project;
     }
 
@@ -244,7 +244,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private class ClearAction extends BaseAction {
     public ClearAction() {
-      super("Clear", "Clear console window", null);
+      super("Clear", "Clear console window", IconContainer.ICON_c0a0mb);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -255,7 +255,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private class PrevCmdAction extends BaseAction {
     public PrevCmdAction() {
-      super("Prev", "Previous command", null);
+      super("Prev", "Previous command", IconContainer.ICON_c0a0nb);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -281,7 +281,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private class NextCmdAction extends BaseAction {
     public NextCmdAction() {
-      super("Next", "Next command", null);
+      super("Next", "Next command", IconContainer.ICON_c0a0ob);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
