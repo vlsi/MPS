@@ -59,35 +59,6 @@
     <classNode dependClassName="org.junit.runners.model.Statement" />
     <classNode extendsClassName="org.junit.runners.Suite" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.MPSProjectITestsSuite" file="MPSProjectITestsSuite.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.junit.runner.Runner" />
-    <classNode dependClassName="org.junit.runners.model.InitializationError" />
-    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
-    <classNode dependClassName="org.junit.runners.model.TestClass" />
-    <classNode extendsClassName="org.junit.runners.Suite" />
-  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.MakeRunner" file="MakeRunner.java">
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="java.lang.Class" />
@@ -140,29 +111,6 @@
     <classNode extendsClassName="java.lang.annotation.Annotation" />
     <classNode extendsClassName="org.junit.runner.Runner" />
     <classNode extendsClassName="org.junit.runners.ParentRunner" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.MpsProjectTestSuite" file="MpsProjectTestSuite.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.lang.annotation.ElementType" />
-    <classNode dependClassName="java.lang.annotation.Retention" />
-    <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
-    <classNode dependClassName="java.lang.annotation.Target" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MPSOpenProjectRunner" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.junit.runners.model.InitializationError" />
-    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
-    <classNode dependClassName="org.junit.runners.model.TestClass" />
-    <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.MPSProjectITestsSuite" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.MpsTest" file="MpsTest.java">
     <classNode dependClassName="java.lang.Class" />

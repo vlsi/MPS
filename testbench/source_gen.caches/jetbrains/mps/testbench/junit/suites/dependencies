@@ -42,10 +42,6 @@
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode dependClassName="org.junit.runners.model.TestClass" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.ExecuteProjectTests" file="ExecuteProjectTests.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsProjectTestSuite" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.ModuleTestSuite" file="ModuleTestSuite.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileOutputStream" />
