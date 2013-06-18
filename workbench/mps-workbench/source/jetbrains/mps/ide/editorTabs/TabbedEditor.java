@@ -221,9 +221,9 @@ public class TabbedEditor extends BaseNodeEditor {
 
       ((SModelInternal) model).addModelListener(myModelListener);
 
-      executeInEDT(new Runnable() {
+      executeInEDT(new PrioritizedTask(TaskType.UPDATE_PROPERTIES, myType2TaskMap) {
         @Override
-        public void run() {
+        public void performTask() {
           updateProperties();
         }
       });
