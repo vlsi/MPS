@@ -231,7 +231,7 @@
     <nodeInfo nodeId="263837413765000158" fileName="MPSOpenProjectRunner.java" startLine="41" startPosition="32" endLine="42" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="263837413765000167" fileName="MPSOpenProjectRunner.java" startLine="43" startPosition="5" endLine="44" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="263837413764976883" fileName="MPSOpenProjectRunner.java" startLine="47" startPosition="70" endLine="48" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2770012171664644799" fileName="MPSOpenProjectRunner.java" startLine="48" startPosition="51" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5854739784701600021" fileName="MPSOpenProjectRunner.java" startLine="48" startPosition="51" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="263837413765452933" fileName="MPSOpenProjectRunner.java" startLine="49" startPosition="34" endLine="50" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4101410806532145677" fileName="MPSOpenProjectRunner.java" startLine="50" startPosition="52" endLine="51" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7906452883299947587" fileName="MPSOpenProjectRunner.java" startLine="52" startPosition="32" endLine="53" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
