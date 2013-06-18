@@ -58,7 +58,7 @@ public class MakeMethodStatic_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+    return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) && (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -85,7 +85,6 @@ public class MakeMethodStatic_Intention implements IntentionFactory {
         "Make Method Not Static" :
         "Make Method Static"
       );
-
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
