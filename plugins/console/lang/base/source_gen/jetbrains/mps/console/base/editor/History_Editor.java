@@ -16,29 +16,29 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class Console_Editor extends DefaultNodeEditor {
+public class History_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_abdadm_a(editorContext, node);
+    return this.createCollection_ff9cd8_a(editorContext, node);
   }
 
-  private EditorCell createCollection_abdadm_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ff9cd8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_abdadm_a");
+    editorCell.setCellId("Collection_ff9cd8_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createRefNodeList_abdadm_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ff9cd8_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_abdadm_a0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Console_Editor.itemListHandler_abdadm_a0(node, "item", editorContext);
+  private EditorCell createRefNodeList_ff9cd8_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new History_Editor.itemListHandler_ff9cd8_a0(node, "item", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_item");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class itemListHandler_abdadm_a0 extends RefNodeListHandler {
-    public itemListHandler_abdadm_a0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class itemListHandler_ff9cd8_a0 extends RefNodeListHandler {
+    public itemListHandler_ff9cd8_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -15,16 +15,18 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new CommandResult_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommandHolder_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new CommandResultLine_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommandResult_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new Console_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommandResultLine_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new History_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new NodeResultPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
       case 5:
+        return Collections.<ConceptEditor>singletonList(new NodeResultPart_Editor());
+      case 6:
         return Collections.<ConceptEditor>singletonList(new TextResultPart_Editor());
       default:
     }
@@ -42,5 +44,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.Console", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.TextResultPart"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.TextResultPart"};
 }

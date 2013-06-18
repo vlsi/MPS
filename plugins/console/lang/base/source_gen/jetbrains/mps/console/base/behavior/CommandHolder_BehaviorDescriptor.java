@@ -4,12 +4,12 @@ package jetbrains.mps.console.base.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class Console_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public Console_BehaviorDescriptor() {
+public class CommandHolder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+  public CommandHolder_BehaviorDescriptor() {
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.console.base.structure.Console";
+    return "jetbrains.mps.console.base.structure.CommandHolder";
   }
 }

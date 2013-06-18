@@ -46,7 +46,7 @@ public class GeneratedCommand_Behavior {
               public void run() {
                 try {
                   final ClassLoader loader = ClassLoaderManager.getInstance().getClassLoader(model.value.getModule());
-                  String name = Console_Behavior.call_getGeneratedName_5211727872447036782(SNodeOperations.cast(SNodeOperations.getParent(n), "jetbrains.mps.console.base.structure.Console"));
+                  String name = History_Behavior.call_getGeneratedName_5211727872447036782(SNodeOperations.cast(SNodeOperations.getParent(n), "jetbrains.mps.console.base.structure.History"));
 
                   Method[] methods = Class.forName(name, true, loader).getMethods();
                   for (Method method : methods) {

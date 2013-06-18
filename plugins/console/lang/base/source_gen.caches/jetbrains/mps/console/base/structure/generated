@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b0ap9w63zi0v8i4l4oc3sehog0hvphc">
+<dependencies version="2" modelHash="ctt3qa8v54rk826acps8bzf07e7juko">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ar5rg4sgykttk0xr6ynoooewafaa239" />
@@ -9,6 +9,7 @@
   <common hash="-17r0c9pyttz254m7irpla88p97e06yv">
     <dep root="1769790395579407461" />
     <dep root="1769790395579407473" />
+    <dep root="351968380916615243" />
     <dep root="529843215038987946" />
     <dep root="529843215038987949" />
     <dep root="529843215038987951" />
@@ -26,16 +27,16 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="757553790980850366" name="Console" hash="dkok8rtvzsmes47gx50cokmy3c8hjrb">
+  <source id="757553790980850366" name="History" hash="-506x43ho8f5xchbauzl3ukxnf8kfz87">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="757553790980855626" name="Command" hash="-95inegcqbip7ln32a9kieq2kp3q8oml">
+  <source id="757553790980855626" name="Command" hash="-a2h7xn5qyryrbu849odv0whcu4ate73">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6852607286009167277" name="Result" hash="-cotge7z0h3amc4xi2homjbjtj34807d">
+  <source id="6852607286009167277" name="Result" hash="-b0cfrzjn4ok2zh1fili93kb5lctb4as">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6852607286009167343" name="ConsoleItem" hash="2b84zl4cx0bzlouzqkofx1oujts3ekw">
+  <source id="6852607286009167343" name="HistoryItem" hash="dlif0wau9hueaaghit74jbjlbwbxji9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1769790395579407461" name="InterpretedCommand" hash="-3hlw0yh2j6mn1r2zacpohgpcl4xuttf">
@@ -57,6 +58,9 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="529843215038987955" name="TextResultPart" hash="-1ag36i9arhbspsyqdqo3ae4fyctoh3i">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="351968380916615243" name="CommandHolder" hash="-9uppuyuodhwuz0udwaf4co5ae8zv7tu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

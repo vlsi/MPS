@@ -5,7 +5,7 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class Console_Behavior {
+public class History_Behavior {
   public static void init(SNode thisNode) {
   }
 

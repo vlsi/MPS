@@ -12,20 +12,22 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 2:
-        return new Console_BehaviorDescriptor();
-      case 0:
-        return new CommandResult_BehaviorDescriptor();
-      case 1:
-        return new CommandResultLine_BehaviorDescriptor();
       case 3:
-        return new NodeResultPart_BehaviorDescriptor();
+        return new History_BehaviorDescriptor();
+      case 1:
+        return new CommandResult_BehaviorDescriptor();
+      case 2:
+        return new CommandResultLine_BehaviorDescriptor();
       case 4:
+        return new NodeResultPart_BehaviorDescriptor();
+      case 5:
         return new TextResultPart_BehaviorDescriptor();
+      case 0:
+        return new CommandHolder_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.Console", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.TextResultPart"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.TextResultPart"};
 }
