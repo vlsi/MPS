@@ -89,7 +89,6 @@
       <modulePath path="$PROJECT_DIR$/languages/core/stub/MPS.Platform/MPS.Platform.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/MPS.Workbench/MPS.Workbench.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/Testbench/Testbench.msd" folder="core.stub" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.console.internalCommands/jetbrains.mps.console.internalCommands.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/access/jetbrains.mps.lang.access.mpl" folder="core.languages" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/actions/jetbrains.mps.lang.actions.mpl" folder="core.aspects.actions" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/analyzers/jetbrains.mps.lang.dataFlow.analyzers.mpl" folder="core.aspects.dataflow" />
@@ -187,11 +186,11 @@
       <modulePath path="$PROJECT_DIR$/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" folder="platform.uiLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/util/uiLanguage/solutions/jetbrains.mps.uiLanguage.samples/jetbrains.mps.uiLanguage.samples.msd" folder="platform.uiLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/util/uiLanguage/solutions/pluginSolution/jetbrains.mps.uiLanguage.pluginSolution.msd" folder="platform.uiLanguage" />
-      <modulePath path="$PROJECT_DIR$/plugins/console/internalCommands/jetbrains.mps.console.internalCommands.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/jetbrains.mps.console.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/base/jetbrains.mps.console.base.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/blCommand/jetbrains.mps.console.blCommand.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/ideCommands/jetbrains.mps.console.ideCommands.mpl" folder="platform.console" />
+      <modulePath path="$PROJECT_DIR$/plugins/console/lang/internalCommands/jetbrains.mps.console.internalCommands.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/migration/jetbrains.mps.console.migration.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" folder="platform.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/jetbrains.mps.debugger.decisionTable.mpl" folder="platform.debugger" />
