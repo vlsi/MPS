@@ -20,9 +20,6 @@
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="757553790980855626" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Command" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6852607286009180636" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6852607286009167343" resolveInfo="HistoryItem" />
-    </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="6852607286009167277" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Result" />
@@ -127,6 +124,9 @@
       <property name="role" nameId="tpce.1071599776563" value="command" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="757553790980855626" resolveInfo="Command" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4374601616589942615" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6852607286009167343" resolveInfo="HistoryItem" />
     </node>
   </root>
 </model>
