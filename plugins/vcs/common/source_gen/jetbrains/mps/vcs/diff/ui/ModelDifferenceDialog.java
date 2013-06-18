@@ -41,7 +41,6 @@ import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
@@ -61,6 +60,7 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import java.util.Arrays;
+import jetbrains.mps.extapi.model.SModelBase;
 
 public class ModelDifferenceDialog extends DialogWrapper implements DataProvider {
   private Project myProject;
@@ -112,13 +112,11 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
       }
     });
     if (Sequence.fromIterable(myChangeSet.getChangesForRoot(null)).isNotEmpty()) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel);
-          SModel newMetaModel = MetadataUtil.createMetadataModel(newModel);
-          DiffTemporaryModule.createModuleAndRegister(newMetaModel, "new", p, myEditable);
-          DiffTemporaryModule.createModuleAndRegister(oldMetaModel, "old", p, false);
-          myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel.getModelDescriptor(), newMetaModel.getModelDescriptor(), true);
+          org.jetbrains.mps.openapi.model.SModel newMetaModel = MetadataUtil.createMetadataModel(newModel.getModelDescriptor(), myEditable);
+          org.jetbrains.mps.openapi.model.SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel.getModelDescriptor(), false);
+          myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel, newMetaModel, true);
         }
       });
     }
@@ -134,8 +132,8 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             if (myMetadataChangeSet != null) {
-              DiffTemporaryModule.unregisterModel(myMetadataChangeSet.getOldModel(), p);
-              DiffTemporaryModule.unregisterModel(myMetadataChangeSet.getNewModel(), p);
+              MetadataUtil.dispose(myMetadataChangeSet.getOldModel());
+              MetadataUtil.dispose(myMetadataChangeSet.getNewModel());
             }
             if (!(myOldRegistered)) {
               DiffTemporaryModule.unregisterModel(myChangeSet.getOldModel(), p);
@@ -237,7 +235,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     if (myMetadataChangeSet != null && myEditable) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          MetadataUtil.applyMetadataChanges(as_vk52pz_a0a0a0a0a0a0a0a0ib(myChangeSet.getNewModel(), SModelBase.class).getSModelInternal(), as_vk52pz_a0b0a0a0a0a0a0a0ib(myMetadataChangeSet.getNewModel(), SModelBase.class).getSModelInternal());
+          MetadataUtil.applyMetadataChanges(myChangeSet.getNewModel(), myMetadataChangeSet.getNewModel());
         }
       });
     }
@@ -454,20 +452,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     protected void onSelectRoot(@Nullable SNodeId rootId) {
       changeCurrentRoot(rootId);
     }
-  }
-
-  private static <T> T as_vk52pz_a0a0a0a0a0a0a0a0ib(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_vk52pz_a0b0a0a0a0a0a0a0ib(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 
   private static <T> T as_vk52pz_a0a0a0d74(Object o, Class<T> type) {

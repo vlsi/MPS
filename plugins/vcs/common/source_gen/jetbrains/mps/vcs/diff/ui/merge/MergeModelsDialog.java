@@ -31,6 +31,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.ui.MetadataUtil;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction;
 import com.intellij.openapi.diff.impl.mergeTool.MergeTool;
@@ -112,20 +113,13 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     });
     if (ListSequence.fromList(myMergeSession.getMetadataChanges()).isNotEmpty()) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          SModel baseMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getBaseModel());
-          SModel mineMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getMyModel());
-          SModel repoMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getRepositoryModel());
-          myMetadataMergeSession = MergeSession.createMergeSession(baseMetaModel, mineMetaModel, repoMetaModel);
+          org.jetbrains.mps.openapi.model.SModel baseMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getBaseModel().getModelDescriptor(), false);
+          org.jetbrains.mps.openapi.model.SModel mineMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getMyModel().getModelDescriptor(), false);
+          org.jetbrains.mps.openapi.model.SModel repoMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getRepositoryModel().getModelDescriptor(), false);
+          myMetadataMergeSession = MergeSession.createMergeSession(as_3qqb0l_a0a0a3a0a0a0a0a8a52(baseMetaModel, SModelBase.class).getSModelInternal(), as_3qqb0l_a0b0a3a0a0a0a0a8a52(mineMetaModel, SModelBase.class).getSModelInternal(), as_3qqb0l_a0c0a3a0a0a0a0a8a52(repoMetaModel, SModelBase.class).getSModelInternal());
           myMetadataInitialState = myMetadataMergeSession.getCurrentState();
-        }
-      });
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          DiffTemporaryModule.createModuleAndRegister(myMetadataMergeSession.getBaseModel(), "base", p, false);
-          DiffTemporaryModule.createModuleAndRegister(myMetadataMergeSession.getMyModel(), "mine", p, false);
-          DiffTemporaryModule.createModuleAndRegister(myMetadataMergeSession.getRepositoryModel(), "repo", p, false);
           DiffTemporaryModule.createModuleAndRegister(myMetadataMergeSession.getResultModel(), "result", p, true);
         }
       });
@@ -245,9 +239,9 @@ public class MergeModelsDialog extends DialogWrapper {
       public void run() {
         if (myMetadataMergeSession != null) {
           DiffTemporaryModule.unregisterModel(myMetadataMergeSession.getResultModel().getModelDescriptor(), p);
-          DiffTemporaryModule.unregisterModel(myMetadataMergeSession.getRepositoryModel().getModelDescriptor(), p);
-          DiffTemporaryModule.unregisterModel(myMetadataMergeSession.getMyModel().getModelDescriptor(), p);
-          DiffTemporaryModule.unregisterModel(myMetadataMergeSession.getBaseModel().getModelDescriptor(), p);
+          MetadataUtil.dispose(myMetadataMergeSession.getRepositoryModel().getModelDescriptor());
+          MetadataUtil.dispose(myMetadataMergeSession.getMyModel().getModelDescriptor());
+          MetadataUtil.dispose(myMetadataMergeSession.getBaseModel().getModelDescriptor());
         }
         DiffTemporaryModule.unregisterModel(myMergeSession.getResultModel().getModelDescriptor(), p);
         DiffTemporaryModule.unregisterModel(myMergeSession.getRepositoryModel().getModelDescriptor(), p);
@@ -389,7 +383,7 @@ public class MergeModelsDialog extends DialogWrapper {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         if (myMetadataMergeSession != null) {
-          MetadataUtil.applyMetadataChanges(myMergeSession.getResultModel(), myMetadataMergeSession.getResultModel());
+          MetadataUtil.applyMetadataChanges(myMergeSession.getResultModel().getModelDescriptor(), myMetadataMergeSession.getResultModel().getModelDescriptor());
         }
       }
     });
@@ -613,5 +607,26 @@ public class MergeModelsDialog extends DialogWrapper {
     protected void onSelectRoot(@Nullable SNodeId rootId) {
       changeCurrentRoot(rootId);
     }
+  }
+
+  private static <T> T as_3qqb0l_a0a0a3a0a0a0a0a8a52(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_3qqb0l_a0b0a3a0a0a0a0a8a52(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_3qqb0l_a0c0a3a0a0a0a0a8a52(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }
