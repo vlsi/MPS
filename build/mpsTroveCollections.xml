@@ -213,11 +213,8 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
-      <chunk bootstrap="true">
-        <module file="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" bootstrap="true" />
-        <module file="${mps_home}/languages/baseLanguage/collections/languages/trove/jetbrains.mps.baseLanguage.collections.trove.mpl" />
-      </chunk>
-      <chunk />
+      <module file="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" />
+      <module file="${mps_home}/languages/baseLanguage/collections/languages/trove/jetbrains.mps.baseLanguage.collections.trove.mpl" />
     </difftest>
   </target>
   

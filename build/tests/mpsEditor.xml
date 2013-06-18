@@ -446,19 +446,15 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.editor.editorTest.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
-      <chunk>
-        <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/jetbrains.mps.lang.actions.testLanguage.mpl" />
-        <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/jetbrains.mps.lang.editor.multiple.extension.testLanguage.mpl" />
-        <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/jetbrains.mps.lang.editor.multiple.testLanguage.mpl" />
-        <module file="${basedir}/languages/languageDesign/editor/languages/tableTests/jetbrains.mps.lang.editor.tableTests.mpl" />
-        <module file="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/testDefaultEditor.mpl" />
-      </chunk>
-      <chunk>
-        <module file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/jetbrains.mps.baseLanguage.test.msd" />
-        <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.test/jetbrains.mps.lang.actions.test.msd" />
-        <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.tests/jetbrains.mps.lang.editor.multiple.tests.msd" />
-        <module file="${basedir}/languages/languageDesign/editor/tests/table/jetbrains.mps.lang.editor.table.tests.msd" />
-      </chunk>
+      <module file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/jetbrains.mps.baseLanguage.test.msd" />
+      <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.test/jetbrains.mps.lang.actions.test.msd" />
+      <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/jetbrains.mps.lang.actions.testLanguage.mpl" />
+      <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/jetbrains.mps.lang.editor.multiple.extension.testLanguage.mpl" />
+      <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/jetbrains.mps.lang.editor.multiple.testLanguage.mpl" />
+      <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.tests/jetbrains.mps.lang.editor.multiple.tests.msd" />
+      <module file="${basedir}/languages/languageDesign/editor/tests/table/jetbrains.mps.lang.editor.table.tests.msd" />
+      <module file="${basedir}/languages/languageDesign/editor/languages/tableTests/jetbrains.mps.lang.editor.tableTests.mpl" />
+      <module file="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/testDefaultEditor.mpl" />
     </difftest>
   </target>
   

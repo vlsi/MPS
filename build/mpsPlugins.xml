@@ -213,10 +213,8 @@
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.uiLanguage.jar" />
       <library file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
-      <chunk>
-        <module file="${mps_home}/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" />
-        <module file="${mps_home}/plugins/mpsjava/migration/jetbrains.mps.ide.java.migration.msd" />
-      </chunk>
+      <module file="${mps_home}/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" />
+      <module file="${mps_home}/plugins/mpsjava/migration/jetbrains.mps.ide.java.migration.msd" />
     </difftest>
   </target>
   

@@ -530,22 +530,18 @@
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.uiLanguage.jar" />
       <library file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
-      <chunk>
-        <module file="${mps_home}/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" />
-        <module file="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/jetbrains.mps.debugger.api.lang.mpl" />
-        <module file="${mps_home}/plugins/debugger-api/runtime/jetbrains.mps.debugger.api.runtime.msd" />
-        <module file="${mps_home}/plugins/debugger-java/languages/customViewers/jetbrains.mps.debugger.java.customViewers.mpl" />
-        <module file="${mps_home}/plugins/debugger-java/languages/privateMembers/jetbrains.mps.debugger.java.privateMembers.mpl" />
-        <module file="${mps_home}/plugins/execution-api/jetbrains.mps.execution.api.msd" />
-        <module file="${mps_home}/plugins/execution-api/languages/common/jetbrains.mps.execution.common.mpl" />
-        <module file="${mps_home}/plugins/execution-api/languages/settings/jetbrains.mps.execution.settings.mpl" />
-      </chunk>
-      <chunk>
-        <module file="${mps_home}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" />
-        <module file="${mps_home}/plugins/debugger-java-customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" />
-        <module file="${mps_home}/plugins/debugger-java/languages/evaluation/jetbrains.mps.debugger.java.evaluation.mpl" />
-        <module file="${mps_home}/plugins/debugger-java/runtime/jetbrains.mps.debugger.java.runtime.msd" />
-      </chunk>
+      <module file="${mps_home}/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" />
+      <module file="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/jetbrains.mps.debugger.api.lang.mpl" />
+      <module file="${mps_home}/plugins/debugger-api/runtime/jetbrains.mps.debugger.api.runtime.msd" />
+      <module file="${mps_home}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" />
+      <module file="${mps_home}/plugins/debugger-java/languages/customViewers/jetbrains.mps.debugger.java.customViewers.mpl" />
+      <module file="${mps_home}/plugins/debugger-java-customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" />
+      <module file="${mps_home}/plugins/debugger-java/languages/evaluation/jetbrains.mps.debugger.java.evaluation.mpl" />
+      <module file="${mps_home}/plugins/debugger-java/languages/privateMembers/jetbrains.mps.debugger.java.privateMembers.mpl" />
+      <module file="${mps_home}/plugins/debugger-java/runtime/jetbrains.mps.debugger.java.runtime.msd" />
+      <module file="${mps_home}/plugins/execution-api/jetbrains.mps.execution.api.msd" />
+      <module file="${mps_home}/plugins/execution-api/languages/common/jetbrains.mps.execution.common.mpl" />
+      <module file="${mps_home}/plugins/execution-api/languages/settings/jetbrains.mps.execution.settings.mpl" />
     </difftest>
   </target>
   

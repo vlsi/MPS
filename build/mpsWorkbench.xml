@@ -380,21 +380,15 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
       <library file="${artifacts.mpsTesting}/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
-      <chunk>
-        <module file="${mps_home}/languages/core/stub/MPS.Workbench/MPS.Workbench.msd" />
-        <module file="${mps_home}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" />
-        <module file="${mps_home}/languages/util/uiLanguage/jetbrains.mps.uiLanguage.mpl" />
-      </chunk>
-      <chunk bootstrap="true">
-        <module file="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide.msd" bootstrap="true" />
-        <module file="${mps_home}/languages/languageDesign/plugin-standalone/jetbrains.mps.lang.plugin.standalone.mpl" />
-      </chunk>
-      <chunk>
-        <module file="${mps_home}/languages/core/core/solutions/pluginSolution/jetbrains.mps.lang.core.pluginSolution.msd" />
-        <module file="${mps_home}/languages/languageDesign/script/solutions/pluginSolution/jetbrains.mps.lang.script.pluginSolution.msd" />
-        <module file="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/jetbrains.mps.lang.typesystem.pluginSolution.msd" />
-        <module file="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution/jetbrains.mps.uiLanguage.pluginSolution.msd" />
-      </chunk>
+      <module file="${mps_home}/languages/core/stub/MPS.Workbench/MPS.Workbench.msd" />
+      <module file="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide.msd" />
+      <module file="${mps_home}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" />
+      <module file="${mps_home}/languages/core/core/solutions/pluginSolution/jetbrains.mps.lang.core.pluginSolution.msd" />
+      <module file="${mps_home}/languages/languageDesign/plugin-standalone/jetbrains.mps.lang.plugin.standalone.mpl" />
+      <module file="${mps_home}/languages/languageDesign/script/solutions/pluginSolution/jetbrains.mps.lang.script.pluginSolution.msd" />
+      <module file="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/jetbrains.mps.lang.typesystem.pluginSolution.msd" />
+      <module file="${mps_home}/languages/util/uiLanguage/jetbrains.mps.uiLanguage.mpl" />
+      <module file="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution/jetbrains.mps.uiLanguage.pluginSolution.msd" />
     </difftest>
   </target>
   

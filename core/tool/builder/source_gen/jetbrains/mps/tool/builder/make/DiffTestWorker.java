@@ -10,8 +10,13 @@ import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.builder.MpsWorker;
 import java.io.File;
 import java.io.IOException;
+import java.util.LinkedHashMap;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.Project;
+import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IScriptController;
@@ -88,9 +93,46 @@ public class DiffTestWorker extends GeneratorWorker {
   }
 
   @Override
-  protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
-    loadAndMake(go);
+  public void work() {
+    myReporter.init();
 
+    GeneratorWorker.MyEnvironment environment = new GeneratorWorker.MyEnvironment();
+    Map<String, File> libraries = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
+    for (String jar : ListSequence.fromList(myWhatToDo.getLibraryJars())) {
+      MapSequence.fromMap(libraries).put(jar, new File(jar));
+    }
+    environment.init(myWhatToDo.getMacro(), false, libraries, myWhatToDo.getLogLevel(), null);
+    setEnvironment(environment);
+
+    setupEnvironment();
+    setGenerationProperties();
+
+    Project project = createDummyProject();
+
+    LinkedHashSet<SModule> modules = new LinkedHashSet<SModule>();
+    for (File moduleFilePath : SetSequence.fromSet(myWhatToDo.getModules())) {
+      processModuleFile(moduleFilePath, modules);
+    }
+
+    MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, Collections.EMPTY_SET);
+    if (go.hasAnythingToGenerate()) {
+      loadAndMake(go);
+      generate(project, go);
+    } else {
+      error("Could not find anything to test.");
+    }
+
+    dispose();
+    showStatistic();
+
+    myReporter.finishRun();
+    cleanUp();
+  }
+
+
+
+  @Override
+  protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
     StringBuffer s = new StringBuffer("Generating:");
     for (Project p : go.getProjects()) {
       s.append("\n    ");
@@ -216,16 +258,6 @@ public class DiffTestWorker extends GeneratorWorker {
         prefix.trim()
       )));
     }
-  }
-
-  @Override
-  public void work() {
-    myReporter.init();
-
-    super.work();
-
-    myReporter.finishRun();
-    cleanUp();
   }
 
   private void cleanUp() {

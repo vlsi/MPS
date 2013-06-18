@@ -178,10 +178,8 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
-      <chunk>
-        <module file="${basedir}/languages/baseLanguage/closures/solutions/jetbrains.mps.baseLanguage.closures.unittest/jetbrains.mps.baseLanguage.closures.unittest.msd" />
-        <module file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" />
-      </chunk>
+      <module file="${basedir}/languages/baseLanguage/closures/solutions/jetbrains.mps.baseLanguage.closures.unittest/jetbrains.mps.baseLanguage.closures.unittest.msd" />
+      <module file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" />
     </difftest>
   </target>
   

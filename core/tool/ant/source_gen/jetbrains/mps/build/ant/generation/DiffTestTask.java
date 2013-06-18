@@ -17,4 +17,8 @@ public class DiffTestTask extends GenerateTask {
   public void setShowDiff(boolean isDifferenceCalculated) {
     myWhatToDo.putProperty(ScriptProperties.SHOW_DIFF, Boolean.toString(isDifferenceCalculated));
   }
+
+  public void addConfiguredModule(ModuleChunkPart module) {
+    myWhatToDo.addModuleFile(module.getFile().getPath());
+  }
 }

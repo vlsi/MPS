@@ -209,11 +209,9 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.smodelTests.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
-      <chunk>
-        <module file="${basedir}/languages/languageDesign/traceable.operations/tests/jetbrains.mps.lang.traceable.operations.test.msd" />
-        <module file="${basedir}/plugins/mps-testing/languages/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains.mps.smodel.test.msd" />
-        <module file="${basedir}/testbench/modules/testRead/jetbrains.mps.testRead.msd" />
-      </chunk>
+      <module file="${basedir}/languages/languageDesign/traceable.operations/tests/jetbrains.mps.lang.traceable.operations.test.msd" />
+      <module file="${basedir}/plugins/mps-testing/languages/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains.mps.smodel.test.msd" />
+      <module file="${basedir}/testbench/modules/testRead/jetbrains.mps.testRead.msd" />
     </difftest>
   </target>
   

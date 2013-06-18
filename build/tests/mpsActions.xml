@@ -151,9 +151,7 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
-      <chunk>
-        <module file="${basedir}/testbench/modules/testActions/jetbrains.mps.testActions.msd" />
-      </chunk>
+      <module file="${basedir}/testbench/modules/testActions/jetbrains.mps.testActions.msd" />
     </difftest>
   </target>
   

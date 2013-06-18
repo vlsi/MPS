@@ -95,7 +95,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     mpsWorker.workFromMain();
   }
 
-  private class MyEnvironment extends Environment {
+  protected class MyEnvironment extends Environment {
     @Override
     protected void loadLibraries() {
       if (myLibraryContibutor == null) {
