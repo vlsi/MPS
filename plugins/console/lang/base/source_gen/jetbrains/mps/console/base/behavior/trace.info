@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="CommandResultLine_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandResultLine_BehaviorDescriptor" />
-  <unitInfo fileName="CommandResultPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandResultPart_BehaviorDescriptor" />
-  <unitInfo fileName="CommandResult_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandResult_BehaviorDescriptor" />
+  <unitInfo fileName="CommandResultLine_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandResultLine_BehaviorDescriptor" />
+  <unitInfo fileName="CommandResultPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandResultPart_BehaviorDescriptor" />
+  <unitInfo fileName="CommandResult_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandResult_BehaviorDescriptor" />
   <unitInfo fileName="Command_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.console.base.behavior.Command_BehaviorDescriptor" />
   <unitInfo fileName="ConsoleItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ConsoleItem_BehaviorDescriptor" />
   <unitInfo fileName="Console_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.Console_BehaviorDescriptor" />

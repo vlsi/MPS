@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-aer81f61pb1zlb0xjjtc14ur2usummg">
+<dependencies version="2" modelHash="-b0ap9w63zi0v8i4l4oc3sehog0hvphc">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ar5rg4sgykttk0xr6ynoooewafaa239" />
@@ -44,13 +44,13 @@
   <source id="1769790395579407473" name="GeneratedCommand" hash="chfkelkxl048yxv5vuolynj5fsewnmx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="529843215038987946" name="CommandResult" hash="-akbvupbfrsw6iunvtqc818qak8f7tvz">
+  <source id="529843215038987946" name="CommandResult" hash="ajqqnfymnezusq7gt9rskm5mzocj99v">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="529843215038987949" name="CommandResultLine" hash="-esrm5ymezk2jw2gkvi88tbih68ga8jq">
+  <source id="529843215038987949" name="CommandResultLine" hash="5cbf52oeomw1a4jgvr4abzkv9vvwg76">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="529843215038987951" name="CommandResultPart" hash="ayjctlco3kqk7oy1ginsqcgsihe1t8r">
+  <source id="529843215038987951" name="CommandResultPart" hash="-29drad4bqlmdt5qmfqstvt9hac671p9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="529843215038987952" name="NodeResultPart" hash="4iip18lnzyv8jmxivw5sh7l0hpf5vnn">

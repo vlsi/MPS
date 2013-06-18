@@ -16,11 +16,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.Command").interface_().parents("jetbrains.mps.console.base.structure.ConsoleItem").create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandResult").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.Result").children(new String[]{"line"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandResult").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.Result", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"line"}, new boolean[]{true}).create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandResultLine").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"part"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandResultLine").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"part"}, new boolean[]{true}).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandResultPart").interface_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandResultPart").interface_().parents("jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").create();
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.Console").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"item"}, new boolean[]{true}).create();
       case 5:
