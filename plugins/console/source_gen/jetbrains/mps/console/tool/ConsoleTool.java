@@ -125,6 +125,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
   @Override
   protected void doRegister() {
     super.doRegister();
+    getToolWindow().setSplitMode(true, null);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ConsoleTool.this.myModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModuleWithSourceAndClassesGen());
