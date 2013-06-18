@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.awt.BorderLayout;
+import javax.swing.JScrollPane;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -82,7 +83,8 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
     myMainComponent = new JPanel();
     myMainComponent.setLayout(new BorderLayout());
-    myMainComponent.add(myEditor, BorderLayout.CENTER);
+    JScrollPane pane = new JScrollPane(myEditor);
+    myMainComponent.add(pane, BorderLayout.CENTER);
 
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(new ConsoleTool.ExecuteAction(project));
