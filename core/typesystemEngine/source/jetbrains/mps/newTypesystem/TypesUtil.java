@@ -44,6 +44,9 @@ public class TypesUtil {
   }
 
   public static boolean hasVariablesInside(SNode node) {
+    if (node == null) {
+      return false;
+    }
     if (TypesUtil.isVariable(node)) {
       return true;
     }
