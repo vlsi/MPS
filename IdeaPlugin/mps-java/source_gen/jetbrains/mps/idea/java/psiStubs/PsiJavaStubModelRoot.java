@@ -23,20 +23,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.java.sourceStubs.Util;
 import org.jetbrains.mps.openapi.persistence.Memento;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiClass;
-import com.intellij.psi.PsiMethod;
-import com.intellij.psi.PsiField;
-import com.intellij.psi.PsiParameterList;
-import com.intellij.psi.PsiParameter;
-import com.intellij.psi.PsiReferenceList;
-import com.intellij.psi.PsiModifierList;
-import com.intellij.psi.PsiModifier;
-import com.intellij.psi.PsiTypeParameterList;
-import com.intellij.psi.PsiTypeParameter;
-import com.intellij.psi.PsiCodeBlock;
-import com.intellij.psi.PsiExpression;
-import com.intellij.psi.PsiWhiteSpace;
 import com.intellij.psi.PsiFileSystemItem;
 
 public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
@@ -184,58 +170,59 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     throw new UnsupportedOperationException("JavaPsiStubs: unsupported for now");
   }
 
-  private boolean interesting(PsiElement elem) {
-    if (elem instanceof PsiClass || elem instanceof PsiMethod || elem instanceof PsiField || elem instanceof PsiParameterList || elem instanceof PsiParameter || elem instanceof PsiReferenceList || elem instanceof PsiModifierList || elem instanceof PsiModifier || elem instanceof PsiTypeParameterList || elem instanceof PsiTypeParameter) {
-      //  but not PsiReference ! 
-      return true;
-    }
-    return false;
-  }
-
-  private boolean notInteresting(PsiElement elem) {
-    return elem instanceof PsiCodeBlock || elem instanceof PsiExpression;
-  }
-
-  private boolean filter(PsiElement elem) {
-    if (elem == null || elem instanceof PsiWhiteSpace) {
-      return false;
-    }
-    if (elem instanceof PsiJavaFile) {
-      return true;
-    }
-    PsiElement e = elem;
-    do {
-      if (interesting(e)) {
-        return true;
-      }
-      if (notInteresting(e)) {
-        return false;
-      }
-      e = e.getParent();
-    } while (e != null);
-    return false;
-  }
-
 
 
   @Override
   public void psiChanged(PsiListener.PsiEvent event) {
     // here we simply decide if we have to update 
     for (PsiFileSystemItem fsItem : event.getCreated()) {
-      if (importantDir(fsItem)) {
+      if (importantDir(fsItem) || firstFileInDir(fsItem)) {
         update();
         return;
       }
     }
 
     for (PsiFileSystemItem fsItem : event.getRemoved()) {
-      if (importantDir(fsItem)) {
+      if (importantDir(fsItem) || wasLastFileInDir(fsItem)) {
         update();
         return;
       }
     }
     // TODO handle moves and renames of directories 
   }
+
+
+
+  private boolean firstFileInDir(PsiFileSystemItem fsItem) {
+    if (fsItem instanceof PsiJavaFile) {
+      PsiDirectory dir = (PsiDirectory) fsItem.getParent();
+      if (!(importantDir(dir))) {
+        return false;
+      }
+      // exactly one file 
+      // FIXME 3 files can be created in one psi event 
+      // FIXME between originating event and its handling here dir could change again 
+      return dir.getFiles().length == 1;
+    }
+    return false;
+  }
+
+
+
+  private boolean wasLastFileInDir(PsiFileSystemItem fsItem) {
+    if (fsItem instanceof PsiJavaFile) {
+      PsiDirectory dir = (PsiDirectory) fsItem.getParent();
+      if (!(importantDir(dir))) {
+        return false;
+      }
+      // exactly one file 
+      // FIXME 3 files can be created in one psi event 
+      // FIXME between originating event and its handling here dir could change again 
+      return dir.getFiles().length == 0;
+    }
+    return false;
+  }
+
 
 
 

@@ -94,7 +94,7 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
       @Override
       public void run() {
 
-        // if MPSReferenceSearch is moved to mps-core, it will be MPS2PsiMapperUtil.getNodeId
+        // if MPSReferenceSearch is item to mps-core, it will be MPS2PsiMapperUtil.getNodeId
         final SNode targetNode = getNodeForElement(psiTarget);
         if (targetNode == null) {
           // it can't be referenced from MPS
@@ -113,6 +113,11 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
           if (psiNode == null) return;
           String refRole = sReference.getRole();
           MPSPsiRef[] refs = psiNode.getReferences(refRole);
+//          // 0 or 1
+//          MPSPsiRef ref = refs.length > 0 ? refs[0] : null;
+//          if (ref != null) {
+//            consumer.process(ref.getReference());
+//          }
 
           for (MPSPsiRef r : refs) {
             if (targetNode.getNodeId().equals(r.getNodeId())) {

@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -60,6 +61,8 @@ public class MPSDotBasedPsiRef extends MPSPsiJavaRef {
         @Override
         public void run() {
           SReference sref = getSReference();
+          String role = sref.getRole();
+          SNode source = sref.getSourceNode();
 
           if (sref instanceof StaticReference) {
             String oldTargetIdString = ((StaticReference) sref).getTargetNodeId().toString();
@@ -72,7 +75,8 @@ public class MPSDotBasedPsiRef extends MPSPsiJavaRef {
             }
             SNodeId newTargetId = new Foreign(newTargetIdString);
 
-            ((StaticReference) sref).setTargetNodeId(newTargetId);
+            SReference newRef = StaticReference.create(role, source, sref.getTargetSModelReference(), newTargetId);
+            source.setReference(role, newRef);
 
           } else if (sref instanceof DynamicReference) {
             ((DynamicReference) sref).setResolveInfo(newName);

@@ -22,12 +22,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.MPSMainImpl;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.testbench.IdeaEnvironment;
 import jetbrains.mps.util.Computable;
 import junit.extensions.jfcunit.JFCTestCase;
 import junit.extensions.jfcunit.JFCTestHelper;
@@ -122,7 +122,7 @@ public abstract class UITestsBase extends JFCTestCase {
       final jetbrains.mps.project.Project[] project = new jetbrains.mps.project.Project[1];
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          project[0] = TestMain.loadProject(new File(myProjectPath));
+          project[0] = IdeaEnvironment.openProjectInIdeaEnvironment(new File(myProjectPath));
         }
       });
 

@@ -9,8 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 
 public interface RenameRefactoringContributor {
-  // run with read lock in EDT
+
   boolean isAvailableFor(@NotNull SNode node);
-  // run with read lock in EDT
+
   void invoke(@NotNull Project project, @NotNull SNode node);
 }

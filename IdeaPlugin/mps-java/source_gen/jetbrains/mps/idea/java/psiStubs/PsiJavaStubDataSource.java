@@ -136,13 +136,13 @@ public class PsiJavaStubDataSource extends DataSourceBase implements PsiListener
         SetSequence.fromSet(removed).addElement(((PsiJavaFile) fsItem));
       }
       for (PsiListener.FSMove fsMove : psiEvent.getMoved()) {
-        if (!(fsMove.moved instanceof PsiJavaFile)) {
+        if (!(fsMove.item instanceof PsiJavaFile)) {
           continue;
         }
         if (myDirectory.equals(fsMove.to)) {
-          SetSequence.fromSet(reparse).addElement(((PsiJavaFile) fsMove.moved));
+          SetSequence.fromSet(reparse).addElement(((PsiJavaFile) fsMove.item));
         } else if (myDirectory.equals(fsMove.from)) {
-          SetSequence.fromSet(removed).addElement(((PsiJavaFile) fsMove.moved));
+          SetSequence.fromSet(removed).addElement(((PsiJavaFile) fsMove.item));
         }
       }
 
@@ -155,6 +155,12 @@ public class PsiJavaStubDataSource extends DataSourceBase implements PsiListener
         SetSequence.fromSet(renamed).addElement(fsRename);
       }
       for (PsiFileSystemItem fsItem : psiEvent.getChanged()) {
+        if (!(isOurJavaFile(fsItem))) {
+          continue;
+        }
+        SetSequence.fromSet(reparse).addElement(((PsiJavaFile) fsItem));
+      }
+      for (PsiFileSystemItem fsItem : psiEvent.getCreated()) {
         if (!(isOurJavaFile(fsItem))) {
           continue;
         }

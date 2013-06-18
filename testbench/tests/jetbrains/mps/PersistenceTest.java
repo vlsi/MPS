@@ -15,10 +15,11 @@
  */
 package jetbrains.mps;
 
-import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
+import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.ProjectRunnable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
@@ -38,13 +39,20 @@ import jetbrains.mps.vfs.IFile;
 import junit.framework.AssertionFailedError;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersistenceTest extends BaseMPSTest {
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+// todo: should be CoreMpsTest
+public class PersistenceTest extends WorkbenchMpsTest {
   private static final String TEST_PERSISTENCE_PROJECT = "testPersistence" + MPSExtentions.DOT_MPS_PROJECT;
   private static final String TEST_MODEL = "testlanguage.structure";
   private final static File sourceZip = new File("testbench/modules/testPersistence.zip");
@@ -60,8 +68,9 @@ public class PersistenceTest extends BaseMPSTest {
     }
   };
 
+  @Test
   public void testPersistenceWriteRead() {
-    boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
+    boolean result = ProjectTestsSupport.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
         new ProjectRunnable() {
           public boolean execute(final Project project) {
             final File tempFile = new File(tempDir, "testModel");
@@ -70,7 +79,7 @@ public class PersistenceTest extends BaseMPSTest {
             ModelAccess.instance().runWriteInEDT(new Runnable() {
               public void run() {
                 try {
-                  DefaultSModelDescriptor testModel = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
+                  DefaultSModelDescriptor testModel = (DefaultSModelDescriptor) ProjectTestsSupport.getModel(project, TEST_MODEL);
                   assertEquals(START_PERSISTENCE_TEST_VERSION, testModel.getPersistenceVersion());
                   SModel model = testModel;
                   for (int i = START_PERSISTENCE_TEST_VERSION; i <= ModelPersistence.LAST_VERSION; ++i) {
@@ -107,6 +116,7 @@ public class PersistenceTest extends BaseMPSTest {
     assertTrue(result);
   }
 
+  @Test
   public void testPersistenceUpgrade() {
     try { // errors about not found attributes are expected for old models
       filter.start();
@@ -114,13 +124,13 @@ public class PersistenceTest extends BaseMPSTest {
       final int version[] = {START_PERSISTENCE_TEST_VERSION, START_PERSISTENCE_TEST_VERSION};
       for (; version[0] < ModelPersistence.LAST_VERSION; ++version[0])
         for (version[1] = version[0] + 1; version[1] <= ModelPersistence.LAST_VERSION; ++version[1]) {
-          boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
+          boolean result = ProjectTestsSupport.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
               new ProjectRunnable() {
                 public boolean execute(final Project project) {
 
                   final DefaultSModelDescriptor testModel = ModelAccess.instance().runWriteAction(new Computable<DefaultSModelDescriptor>() {
                     public DefaultSModelDescriptor compute() {
-                      DefaultSModelDescriptor modelDescr = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
+                      DefaultSModelDescriptor modelDescr = (DefaultSModelDescriptor) ProjectTestsSupport.getModel(project, TEST_MODEL);
                       modelDescr.reloadFromSource();   // no way to remove model from repository, so reloading
                       assertEquals(START_PERSISTENCE_TEST_VERSION, modelDescr.getPersistenceVersion());
                       return modelDescr;

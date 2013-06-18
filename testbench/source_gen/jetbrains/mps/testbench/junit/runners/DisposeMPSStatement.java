@@ -5,7 +5,7 @@ package jetbrains.mps.testbench.junit.runners;
 import org.junit.runners.model.Statement;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.TestMain;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
 import org.junit.runners.model.MultipleFailureException;
 
 public class DisposeMPSStatement extends Statement {
@@ -26,7 +26,7 @@ public class DisposeMPSStatement extends Statement {
       errors.add(th);
     } finally {
       try {
-        TestMain.disposeMPS();
+        ActiveEnvironment.get().disposeEnvironment();
       } catch (Throwable th) {
         errors.add(th);
       }

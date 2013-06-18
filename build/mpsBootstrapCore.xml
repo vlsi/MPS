@@ -2873,6 +2873,7 @@
         <module file="${mps_home}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" bootstrap="true" />
         <module file="${mps_home}/workbench/mps-platform/jetbrains.mps.ide.platform.msd" bootstrap="true" />
         <module file="${mps_home}/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/access/jetbrains.mps.lang.access.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/actions/jetbrains.mps.lang.actions.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/behavior/languages/behavior/jetbrains.mps.lang.behavior.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/checkedName/jetbrains.mps.lang.checkedName.mpl" bootstrap="true" />
@@ -2945,7 +2946,6 @@
         <module file="${mps_home}/languages/util/execution/util/jetbrains.mps.execution.util.mpl" />
         <module file="${mps_home}/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" />
         <module file="${mps_home}/workbench/mps-ui/jetbrains.mps.ide.ui.msd" />
-        <module file="${mps_home}/languages/languageDesign/access/jetbrains.mps.lang.access.mpl" />
         <module file="" />
         <module file="" />
         <module file="" />
@@ -8175,7 +8175,6 @@
     <delete dir="${mps_home}/languages/util/execution/util/source_gen" />
     <delete dir="${mps_home}/core/findUsages-runtime/source_gen" />
     <delete dir="${mps_home}/workbench/mps-ui/source_gen" />
-    <delete dir="${mps_home}/languages/languageDesign/access/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/access/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/actions/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/behavior/languages/behavior/generator/source_gen" />

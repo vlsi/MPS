@@ -4,13 +4,14 @@ package jetbrains.mps.tool.builder.make;
 
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.builder.MpsWorker;
-import java.util.Map;
-import java.io.File;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.LinkedHashMap;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.Project;
+import java.io.File;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.tool.environment.Environment;
+import org.apache.log4j.Logger;
+import jetbrains.mps.project.Project;
 import java.util.List;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -18,21 +19,21 @@ import java.util.Collections;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.tool.builder.Environment;
+import jetbrains.mps.tool.environment.MpsEnvironment;
+import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.tool.common.util.UrlClassLoader;
 import java.util.Set;
-import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
-import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.tool.common.ScriptProperties;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.tool.builder.util.PathManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.net.URL;
 import java.net.MalformedURLException;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.library.LibraryInitializer;
 
 public class ChunksGeneratorWorker extends GeneratorWorker {
   public ChunksGeneratorWorker(Script whatToDo) {
@@ -45,13 +46,18 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
 
   @Override
   public void work() {
-    ChunksGeneratorWorker.MyEnvironment environment = new ChunksGeneratorWorker.MyEnvironment();
-    Map<String, File> libraries = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
+    EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
+
     for (String jar : ListSequence.fromList(myWhatToDo.getLibraryJars())) {
-      MapSequence.fromMap(libraries).put(jar, new File(jar));
+      config = config.addLib(jar, new File(jar));
     }
-    environment.init(myWhatToDo.getMacro(), false, libraries, myWhatToDo.getLogLevel(), null);
-    setEnvironment(environment);
+    for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
+      config = config.addMacro(macro.key(), new File(macro.value()));
+    }
+
+
+    Environment environment = new ChunksGeneratorWorker.MyEnvironment(config);
+    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
 
     setupEnvironment();
     setGenerationProperties();
@@ -86,6 +92,7 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
       error("Could not find anything to generate.");
     }
 
+    environment.disposeEnvironment();
     dispose();
     showStatistic();
   }
@@ -95,30 +102,21 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
     mpsWorker.workFromMain();
   }
 
-  private class MyEnvironment extends Environment {
-    @Override
-    protected void loadLibraries() {
-      if (myLibraryContibutor == null) {
-        UrlClassLoader classloader = createClassloader();
-        Set<LibraryContributor.LibDescriptor> libraryPaths = new HashSet<LibraryContributor.LibDescriptor>();
-        for (String libName : myLibraries.keySet()) {
-          libraryPaths.add(new LibraryContributor.LibDescriptor(myLibraries.get(libName).getAbsolutePath(), classloader));
-
-        }
-        myLibraryContibutor = new SetLibraryContributor(libraryPaths);
-        LibraryInitializer.getInstance().addContributor(myLibraryContibutor);
-      }
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        @Override
-        public void run() {
-          LibraryInitializer.getInstance().update();
-        }
-      });
+  private class MyEnvironment extends MpsEnvironment {
+    public MyEnvironment(EnvironmentConfig config) {
+      super(config);
     }
 
     @Override
-    protected void configureMPS(boolean loadIdeaPlugins) {
-      setProperties(loadIdeaPlugins);
+    protected Iterable<LibraryContributor> createLibContributors(EnvironmentConfig config) {
+      // todo: !next line was removed  <node> 
+      UrlClassLoader classloader = createClassloader();
+      Set<LibraryContributor.LibDescriptor> libraryPaths = new HashSet<LibraryContributor.LibDescriptor>();
+      for (String libName : MapSequence.fromMap(config.libs()).keySet()) {
+        libraryPaths.add(new LibraryContributor.LibDescriptor(MapSequence.fromMap(config.libs()).get(libName).getAbsolutePath(), classloader));
+
+      }
+      return Sequence.<LibraryContributor>singleton(new SetLibraryContributor(libraryPaths));
     }
 
     private UrlClassLoader createClassloader() {

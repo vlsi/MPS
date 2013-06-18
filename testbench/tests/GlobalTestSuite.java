@@ -13,16 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import jetbrains.mps.TestMain;
-import jetbrains.mps.testbench.MpsMakeHelper;
-import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
-import jetbrains.mps.testbench.junit.runners.WatchingSuite;
+
+import jetbrains.mps.testbench.junit.runners.MpsTest.SuiteClassSymbols;
+import jetbrains.mps.testbench.junit.runners.MpsTest.WithIdeaInstance;
+import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
+import jetbrains.mps.testbench.junit.runners.SuiteMpsTest;
 import junit.framework.TestSuite;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
-
+@RunWith(SuiteMpsTest.class)
+@WithIdeaInstance
+@WithMake
 @SuiteClassSymbols({"jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest",
     "jetbrains.mps.dataFlow.lang.LivenessAnalysisTest",
     "jetbrains.mps.dataFlow.lang.ProgramTest",
@@ -48,16 +49,5 @@ import org.junit.runner.RunWith;
     "jetbrains.mps.workbench.ProjectCreationTest",
     "jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest",
     "jetbrains.mps.smodel.language.ExtensionRegistryTest"})
-@RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
-  @BeforeClass
-  public static void make () throws Exception {
-    System.setProperty("idea.load.plugins.id", "jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make,Git4Idea");
-    new MpsMakeHelper().make();
-  }
-
-  @AfterClass
-  public static void shutdown() {
-    TestMain.PROJECT_CONTAINER.clear();
-  }
 }
