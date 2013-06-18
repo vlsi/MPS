@@ -188,8 +188,22 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
         return;
       }
     }
-    // TODO handle moves and renames of directories 
+
+    for (PsiListener.FSRename rename : event.getRenamed()) {
+      if (importantFsItem(rename.item)) {
+        update();
+        return;
+      }
+    }
+
+    for (PsiListener.FSMove move : event.getMoved()) {
+      if (importantFsItem(move.item)) {
+        update();
+        return;
+      }
+    }
   }
+
 
 
 
