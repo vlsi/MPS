@@ -14,5 +14,6 @@ public class ReloadClassesCommand_Behavior {
 
   public static void virtual_execute_757553790980855637(SNode thisNode, Project p, ConsoleStream console) {
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+    console.addText("Classes reloaded");
   }
 }
