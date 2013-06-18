@@ -11,7 +11,7 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6852607286009511629" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_PrintNode" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="command.out" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="out" />
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6852607286009511893" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateStrongLessThanInequationStatement" typeId="tpd4.1179832490862" id="6852607286009512877" nodeInfo="nn">
         <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
@@ -36,7 +36,7 @@
   </root>
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6852607286009513112" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_PrintText" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="command.out" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="out" />
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6852607286009513113" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateStrongLessThanInequationStatement" typeId="tpd4.1179832490862" id="6852607286009525754" nodeInfo="nn">
         <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />

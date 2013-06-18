@@ -19,5 +19,14 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tp25.559557797393017698" resolveInfo="ModelReferenceExpression" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963815961" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
+    <property name="name" nameId="tpck.1169194664001" value="ScopeChangeCommand" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8483375838963816015" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="isProject" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+  </root>
 </model>
 
