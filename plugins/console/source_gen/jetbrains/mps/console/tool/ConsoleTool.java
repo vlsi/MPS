@@ -49,7 +49,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
 
   public ConsoleTool(Project project) {
-    super(project, "Console", -1, null, ToolWindowAnchor.BOTTOM, false);
+    super(project, "Console", -1, IconContainer.ICON_d0a9, ToolWindowAnchor.BOTTOM, false);
   }
 
 

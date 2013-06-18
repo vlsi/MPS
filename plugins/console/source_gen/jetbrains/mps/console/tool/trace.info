@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.console.tool.IconContainer" />
+  <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.tool.IconContainer" />
   <root nodeRef="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)/1488452273262903215">
     <nodeInfo nodeId="1488452273263179659" fileName="ConsoleTool.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainComponent" />
     <nodeInfo nodeId="1187329276712523465" fileName="ConsoleTool.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
@@ -9,7 +9,7 @@
     <nodeInfo nodeId="2505439483540129748" fileName="ConsoleTool.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
     <nodeInfo nodeId="3799388175938522479" fileName="ConsoleTool.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNewCommand" />
     <nodeInfo nodeId="8735002719774862870" fileName="ConsoleTool.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCursor" />
-    <nodeInfo nodeId="1488452273263052537" fileName="ConsoleTool.java" startLine="51" startPosition="39" endLine="52" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1488452273263052537" fileName="ConsoleTool.java" startLine="51" startPosition="39" endLine="52" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1183624488473738334" fileName="ConsoleTool.java" startLine="59" startPosition="34" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1488452273263097555" fileName="ConsoleTool.java" startLine="61" startPosition="5" endLine="62" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5166279417621403615" fileName="ConsoleTool.java" startLine="67" startPosition="38" endLine="68" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -187,7 +187,7 @@
     <nodeInfo nodeId="8735002719773641542" fileName="ConsoleTool.java" startLine="207" startPosition="76" endLine="241" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8735002719773235137" fileName="ConsoleTool.java" startLine="207" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="8243997536050847248" fileName="ConsoleTool.java" startLine="148" startPosition="40" endLine="148" endPosition="40" />
-    <scopeInfo nodeId="1488452273263052535" fileName="ConsoleTool.java" startLine="51" startPosition="39" endLine="52" endPosition="72" />
+    <scopeInfo nodeId="1488452273263052535" fileName="ConsoleTool.java" startLine="51" startPosition="39" endLine="52" endPosition="91" />
     <scopeInfo nodeId="1183624488473676345" fileName="ConsoleTool.java" startLine="59" startPosition="34" endLine="60" endPosition="26" />
     <scopeInfo nodeId="8735002719777562089" fileName="ConsoleTool.java" startLine="100" startPosition="8" endLine="101" endPosition="124" />
     <scopeInfo nodeId="8735002719778476817" fileName="ConsoleTool.java" startLine="109" startPosition="8" endLine="110" endPosition="124" />
