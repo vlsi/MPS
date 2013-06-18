@@ -30,11 +30,17 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import java.util.concurrent.ExecutionException;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.make.MPSCompilationResult;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -83,6 +89,8 @@ public class DiffTestWorker extends GeneratorWorker {
 
   @Override
   protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
+    loadAndMake(go);
+
     StringBuffer s = new StringBuffer("Generating:");
     for (Project p : go.getProjects()) {
       s.append("\n    ");
@@ -169,6 +177,36 @@ public class DiffTestWorker extends GeneratorWorker {
     } catch (InterruptedException ignore) {
     } catch (ExecutionException ignore) {
     }
+  }
+
+  private void loadAndMake(final MpsWorker.ObjectsToProcess go) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        LibraryInitializer.getInstance().update();
+      }
+    });
+    MPSCompilationResult result = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
+      public MPSCompilationResult compute() {
+        return new ModuleMaker().make(go.getModules(), new EmptyProgressMonitor() {
+          @Override
+          public void step(String text) {
+            // silently 
+          }
+
+          @Override
+          public void start(String taskName, int work) {
+            // silently 
+          }
+        });
+      }
+    });
+    // load classes 
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+      }
+    });
   }
 
   private void reportIfStartsWith(String prefix, String work, _FunctionTypes._void_P1_E0<? super String> format) {
