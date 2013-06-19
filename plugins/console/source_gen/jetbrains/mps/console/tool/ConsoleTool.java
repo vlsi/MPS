@@ -123,7 +123,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     c.gridwidth = 2;
     c.gridheight = 1;
     c.weightx = 1.0;
-    c.weighty = 0.0;
+    c.weighty = 0.001;
     c.anchor = GridBagConstraints.EAST;
     c.fill = GridBagConstraints.NONE;
     myMainComponent.add(createScopeComponent(), c);
@@ -132,7 +132,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     c.gridy = 0;
     c.gridwidth = 1;
     c.gridheight = 1;
-    c.weightx = 0.0;
+    c.weightx = 0.001;
     c.weighty = 1.0;
     c.anchor = GridBagConstraints.NORTH;
     c.fill = GridBagConstraints.VERTICAL;
