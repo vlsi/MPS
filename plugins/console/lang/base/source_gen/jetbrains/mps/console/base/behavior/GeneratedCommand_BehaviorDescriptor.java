@@ -4,15 +4,15 @@ package jetbrains.mps.console.base.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 
 public abstract class GeneratedCommand_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements Command_BehaviorDescriptor {
   public GeneratedCommand_BehaviorDescriptor() {
   }
 
-  public void virtual_execute_757553790980855637(SNode thisNode, final Project p, final ConsoleStream console) {
-    GeneratedCommand_Behavior.virtual_execute_757553790980855637(thisNode, p, console);
+  public void virtual_execute_757553790980855637(SNode thisNode, final ConsoleContext c, final ConsoleStream console, final Runnable callback) {
+    GeneratedCommand_Behavior.virtual_execute_757553790980855637(thisNode, c, console, callback);
   }
 
   @Override

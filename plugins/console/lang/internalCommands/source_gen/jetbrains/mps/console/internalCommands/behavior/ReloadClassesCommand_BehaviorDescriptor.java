@@ -4,15 +4,15 @@ package jetbrains.mps.console.internalCommands.behavior;
 
 import jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 
 public class ReloadClassesCommand_BehaviorDescriptor extends InterpretedCommand_BehaviorDescriptor {
   public ReloadClassesCommand_BehaviorDescriptor() {
   }
 
-  public void virtual_execute_757553790980855637(SNode thisNode, Project p, ConsoleStream console) {
-    ReloadClassesCommand_Behavior.virtual_execute_757553790980855637(thisNode, p, console);
+  public void virtual_execute_757553790980855637(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable callback) {
+    ReloadClassesCommand_Behavior.virtual_execute_757553790980855637(thisNode, c, console, callback);
   }
 
   @Override

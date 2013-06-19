@@ -8,7 +8,7 @@ import jetbrains.mps.util.IconUtil;
 public class IconContainer {
   protected static Icon ICON_d0a41 = IconUtil.getIcon("console.png");
   protected static Icon ICON_c0a1ub = IconUtil.getIcon("run.png");
-  protected static Icon ICON_c0a0vb = IconUtil.getIcon("clean.png");
-  protected static Icon ICON_c0a0wb = IconUtil.getIcon("previousOccurence.png");
-  protected static Icon ICON_c0a0xb = IconUtil.getIcon("nextOccurence.png");
+  protected static Icon ICON_c0a0wb = IconUtil.getIcon("clean.png");
+  protected static Icon ICON_c0a0yb = IconUtil.getIcon("previousOccurence.png");
+  protected static Icon ICON_c0a0ac = IconUtil.getIcon("nextOccurence.png");
 }

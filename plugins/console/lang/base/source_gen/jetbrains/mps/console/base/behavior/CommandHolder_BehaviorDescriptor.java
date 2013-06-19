@@ -4,7 +4,7 @@ package jetbrains.mps.console.base.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class CommandHolder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+public class CommandHolder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements HistoryItem_BehaviorDescriptor {
   public CommandHolder_BehaviorDescriptor() {
   }
 

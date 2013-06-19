@@ -14,9 +14,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.Command").interface_().parents("jetbrains.mps.console.base.structure.HistoryItem").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.Command").interface_().create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandHolder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"command"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandHolder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.HistoryItem").children(new String[]{"command"}, new boolean[]{false}).create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandResult").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.Result", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"line"}, new boolean[]{true}).create();
       case 3:

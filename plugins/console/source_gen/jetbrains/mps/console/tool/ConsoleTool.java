@@ -29,15 +29,16 @@ import java.awt.Insets;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 import javax.swing.JComboBox;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -161,22 +162,32 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
 
 
+  private SNode lastCmd() {
+    SNode cur = ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).last();
+    while ((cur != null) && !(SNodeOperations.isInstanceOf(cur, "jetbrains.mps.console.base.structure.CommandHolder"))) {
+      cur = SNodeOperations.cast(SNodeOperations.getPrevSibling(cur), "jetbrains.mps.console.base.structure.HistoryItem");
+    }
+    return SNodeOperations.cast(cur, "jetbrains.mps.console.base.structure.CommandHolder");
+  }
+
+
+
   private SNode getPrevCmd(SNode cmd) {
     SNode item = cmd;
     do {
       item = SNodeOperations.cast(SNodeOperations.getPrevSibling(item), "jetbrains.mps.console.base.structure.HistoryItem");
-    } while ((item != null) && !(SNodeOperations.isInstanceOf(item, "jetbrains.mps.console.base.structure.Command")));
+    } while ((item != null) && !(SNodeOperations.isInstanceOf(item, "jetbrains.mps.console.base.structure.CommandHolder")));
 
-    return SNodeOperations.cast(item, "jetbrains.mps.console.base.structure.Command");
+    return SNodeOperations.cast(item, "jetbrains.mps.console.base.structure.CommandHolder");
   }
 
   private SNode getNextCmd(SNode cmd) {
     SNode item = cmd;
     do {
       item = SNodeOperations.cast(SNodeOperations.getNextSibling(item), "jetbrains.mps.console.base.structure.HistoryItem");
-    } while ((item != null) && !(SNodeOperations.isInstanceOf(item, "jetbrains.mps.console.base.structure.Command")));
+    } while ((item != null) && !(SNodeOperations.isInstanceOf(item, "jetbrains.mps.console.base.structure.CommandHolder")));
 
-    return SNodeOperations.cast(item, "jetbrains.mps.console.base.structure.Command");
+    return SNodeOperations.cast(item, "jetbrains.mps.console.base.structure.CommandHolder");
   }
 
   @Override
@@ -243,23 +254,23 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
 
   public void addText(String text) {
-    ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a83(text));
+    ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a04(text));
   }
 
+
+
   public void addNode(SNode node) {
-    SNode n = _quotation_createNode_xg3v07_a0a0nb();
+    SNode n = _quotation_createNode_xg3v07_a0a0qb();
     SLinkOperations.setTarget(n, "target", node, false);
     ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(n);
   }
+
+
 
   public void addNewLine() {
     SNode last = getLastResult();
     SLinkOperations.addNewChild(last, "line", "jetbrains.mps.console.base.structure.CommandResultLine");
   }
-
-
-
-
 
 
 
@@ -276,16 +287,25 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
         public void run() {
           myCursor = null;
           TemporaryModels.getInstance().addMissingModuleImports(myModel);
-          final SNode lastCmd = ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).last();
-          if (!(SNodeOperations.isInstanceOf(lastCmd, "jetbrains.mps.console.base.structure.Command"))) {
+          final SNode lastCmd = SLinkOperations.getTarget(myCommandRoot, "command", true);
+          if ((lastCmd == null)) {
             return;
           }
 
-          final SNode res = _quotation_createNode_xg3v07_a0f0a0a2ub();
-          BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(lastCmd, "jetbrains.mps.console.base.structure.Command"), "virtual_execute_757553790980855637", new Object[]{ExecuteAction.this.myProject, new ConsoleStream() {
+          final SNode lastHist = ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).addElement(SNodeOperations.copyNode(myCommandRoot));
+          final SNode res = _quotation_createNode_xg3v07_a0g0a0a2ub();
+          BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(lastCmd, "jetbrains.mps.console.base.structure.Command"), "virtual_execute_757553790980855637", new Object[]{new ConsoleContext() {
+            public jetbrains.mps.project.Project getProject() {
+              return myProject;
+            }
+
+            public SearchScope getScope() {
+              return myProject.getScope();
+            }
+          }, new ConsoleStream() {
             public void addText(String text) {
               checkResultAvailable();
-              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a1a0a0b0a6a0a0c64(text));
+              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a1a0a0b0a7a0a0c64(text));
             }
 
             public void addNode(SNode node) {
@@ -299,9 +319,15 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
             }
 
             private void checkResultAvailable() {
-              if ((SNodeOperations.getNextSibling(lastCmd) == null)) {
-                SNodeOperations.insertNextSiblingChild(lastCmd, res);
+              if ((SNodeOperations.getNextSibling(lastHist) == null)) {
+                SNodeOperations.insertNextSiblingChild(lastHist, res);
               }
+            }
+          }, new Runnable() {
+            public void run() {
+              SLinkOperations.setTarget(myCommandRoot, "command", null, true);
+              myNewCommand = myCommandRoot;
+              myCursor = null;
             }
           }});
         }
@@ -309,68 +335,71 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     }
   }
 
+
+
   private class ClearAction extends BaseAction {
     public ClearAction() {
-      super("Clear", "Clear console window", IconContainer.ICON_c0a0vb);
+      super("Clear", "Clear console window", IconContainer.ICON_c0a0wb);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
       SLinkOperations.getTargets(myHistRoot, "item", true).clear();
       SLinkOperations.addNewChild(myHistRoot, "item", "jetbrains.mps.console.base.structure.HistoryItem");
+      SLinkOperations.setTarget(myCommandRoot, "command", null, true);
     }
   }
 
+
+
   private class PrevCmdAction extends BaseAction {
     public PrevCmdAction() {
-      super("Prev", "Previous command", IconContainer.ICON_c0a0wb);
+      super("Prev", "Previous command", IconContainer.ICON_c0a0yb);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
-      SNode lastCmd = ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).last();
+      SNode lastCmd = lastCmd();
       if ((lastCmd == null)) {
         return;
       }
+
       SNode newCursor;
       if (myCursor == null) {
-        assert SNodeOperations.isInstanceOf(lastCmd, "jetbrains.mps.console.base.structure.Command");
-        myNewCommand = SNodeOperations.cast(lastCmd, "jetbrains.mps.console.base.structure.Command");
-        newCursor = getPrevCmd(SNodeOperations.cast(lastCmd, "jetbrains.mps.console.base.structure.Command"));
+        newCursor = lastCmd;
       } else {
-        newCursor = getPrevCmd(SNodeOperations.cast(myCursor, "jetbrains.mps.console.base.structure.Command"));
+        newCursor = getPrevCmd(myCursor);
       }
       if ((newCursor == null)) {
         return;
       }
       myCursor = newCursor;
-      SNodeOperations.replaceWithAnother(lastCmd, SNodeOperations.copyNode(myCursor));
+      SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(SLinkOperations.getTarget(myCursor, "command", true)), true);
     }
   }
+
+
 
   private class NextCmdAction extends BaseAction {
     public NextCmdAction() {
-      super("Next", "Next command", IconContainer.ICON_c0a0xb);
+      super("Next", "Next command", IconContainer.ICON_c0a0ac);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
-      SNode lastCmd = ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).last();
-      if ((lastCmd == null)) {
-        return;
-      }
       if ((myCursor == null)) {
         return;
       }
-      SNode newCursor = getNextCmd(SNodeOperations.cast(myCursor, "jetbrains.mps.console.base.structure.Command"));
+
+      SNode newCursor = getNextCmd(myCursor);
       if (!((newCursor == null))) {
         myCursor = newCursor;
-        SNodeOperations.replaceWithAnother(lastCmd, SNodeOperations.copyNode(myCursor));
+        SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(SLinkOperations.getTarget(myCursor, "command", true)), true);
       } else {
         myCursor = null;
-        SNodeOperations.replaceWithAnother(lastCmd, SNodeOperations.copyNode(myNewCommand));
+        SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(SLinkOperations.getTarget(myNewCommand, "command", true)), true);
       }
     }
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a0a83(Object parameter_1) {
+  private static SNode _quotation_createNode_xg3v07_a0a0a04(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
@@ -378,14 +407,14 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a0nb() {
+  private static SNode _quotation_createNode_xg3v07_a0a0qb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.NodeResultPart", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0f0a0a2ub() {
+  private static SNode _quotation_createNode_xg3v07_a0g0a0a2ub() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -395,7 +424,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a1a0a0b0a6a0a0c64(Object parameter_1) {
+  private static SNode _quotation_createNode_xg3v07_a0a1a0a0b0a7a0a0c64(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
