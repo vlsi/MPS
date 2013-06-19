@@ -33,6 +33,12 @@
       <property name="name" nameId="tpck.1169194664001" value="EscapeSpecialCharactersInProperties" />
       <property name="title" nameId="tp33.1177457669450" value="Escape special characters in property values" />
     </node>
+    <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="6707148713287893740">
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="name" nameId="tpck.1169194664001" value="LinkListMigration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.5-&gt;3.0" />
+      <property name="title" nameId="tp33.1177457669450" value="LinkList Migration" />
+    </node>
   </roots>
   <root id="1239475791620">
     <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="1239475791621">
@@ -1399,6 +1405,24 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5426775851424580282">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5426775851424580284">
               <property name="value" nameId="tpee.1068580123138" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="6707148713287893740">
+    <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="6707148713287897624">
+      <property name="description" nameId="tp33.1177457972041" value=".count" />
+      <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tp25.1145468686058" resolveInfo="LinkList_GetCountOperation" />
+      <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="6707148713287897625">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6707148713287897626">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6707148713287897627">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6707148713287897649">
+              <node role="operand" roleId="tpee.1197027771414" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="6707148713287897628" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithNewOperation" typeId="tp25.1139867745658" id="6707148713287897655">
+                <link role="concept" roleId="tp25.1139867957129" targetNodeId="tp2q.1162935959151" resolveInfo="GetSizeOperation" />
+              </node>
             </node>
           </node>
         </node>
