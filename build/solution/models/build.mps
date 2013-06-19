@@ -890,6 +890,9 @@
         <property name="reexport" nameId="3ior.7259033139236507306" value="true" />
         <link role="module" roleId="3ior.2754769020641646250" targetNodeId="1277685309310599413" resolveInfo="mps-platform" />
       </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="9006263159271689125" nodeInfo="ng">
+        <link role="module" roleId="3ior.2754769020641646250" targetNodeId="3685693563424711955" resolveInfo="mps-editor-api" />
+      </node>
       <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="3457019891118511746" nodeInfo="ng">
         <link role="module" roleId="3ior.2754769020641646250" targetNodeId="6439852803280564092" resolveInfo="mps-icons" />
       </node>

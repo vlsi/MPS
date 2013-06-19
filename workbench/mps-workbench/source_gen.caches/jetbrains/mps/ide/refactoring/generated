@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9031x02434i5panb80lskizs0xud49">
+<dependencies version="2" modelHash="3857kwsjfeu3v29ecy7carifflj529e">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd(MPS.IDEA/com.intellij.ide.dnd@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd.aware(MPS.IDEA/com.intellij.ide.dnd.aware@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.util.gotoByName(MPS.IDEA/com.intellij.ide.util.gotoByName@java_stub)" />
@@ -56,8 +56,8 @@
   <dep model="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)" hash="31p6x1x5s5u8uenw41ht6cfh7zfkg50" />
   <dep model="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" hash="-d198ngrd2jxaqtbodes3ylbmaflbvug" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5wivjm735wrx1nbiz5js62dqixuwvq4" />
-  <common hash="-g1z9y87ho0cde9g9nq7ckdmvgdxrgv" />
-  <source id="2482360940803570809" name="RefactoringView" hash="emc0iljl2sf49bnnutajy042w3q624l">
+  <common hash="-92476mq48ywhom9yqs50esx4chdjd8p" />
+  <source id="2482360940803570809" name="RefactoringView" hash="-etl7892wt128atzvy0zy4zhesojgp26">
     <dep root="2482360940803571464" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />

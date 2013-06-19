@@ -22,6 +22,7 @@ import com.intellij.icons.AllIcons.Toolwindows;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.ToolWindows;
+import com.intellij.icons.AllIcons.Actions;
 
 import javax.swing.Icon;
 
@@ -68,4 +69,6 @@ public class IdeIcons {
   public static final Icon EXCLUDE = Diff.Remove;
   public static final Icon OPENED_FOLDER = AllIcons.Nodes.TreeOpen;
   public static final Icon CLOSED_FOLDER = AllIcons.Nodes.TreeClosed;
+
+  public static final Icon REFERENCE_ICON = Actions.Forward;
 }
