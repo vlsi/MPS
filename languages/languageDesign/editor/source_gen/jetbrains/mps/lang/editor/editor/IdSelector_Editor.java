@@ -11,6 +11,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -40,7 +44,17 @@ public class IdSelector_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     AbstractCellSelector_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IdSelector_Editor.ReplaceWith_AbstractCellSelector_cellMenu_xpgp09_a0a0()}));
     return editorCell;
+  }
+
+  public static class ReplaceWith_AbstractCellSelector_cellMenu_xpgp09_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractCellSelector_cellMenu_xpgp09_a0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.lang.editor.structure.AbstractCellSelector";
+    }
   }
 
   private EditorCell createProperty_xpgp09_b0(EditorContext editorContext, SNode node) {

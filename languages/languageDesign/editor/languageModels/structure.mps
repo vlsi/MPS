@@ -2222,6 +2222,7 @@
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="select" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="obsolete select in editor operation" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1138411891628" resolveInfo="SNodeOperation" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1201266028598" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -3470,8 +3471,9 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3647146066980922272" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
     <property name="name" nameId="tpck.1169194664001" value="SelectInEditorOperation" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="select in" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="select" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="select node in the editor" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1138411891628" resolveInfo="SNodeOperation" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1948540814633499358" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
