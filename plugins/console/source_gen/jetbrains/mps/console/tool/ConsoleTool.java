@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import java.awt.event.KeyEvent;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -104,7 +105,9 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     });
 
     DefaultActionGroup group = new DefaultActionGroup();
-    group.add(new ConsoleTool.ExecuteAction(project));
+    ConsoleTool.ExecuteAction ea = new ConsoleTool.ExecuteAction(project);
+    ea.registerCustomShortcutSet(KeyEvent.VK_ENTER, KeyEvent.CTRL_MASK, myCommandEditor);
+    group.add(ea);
     group.add(new ConsoleTool.PrevCmdAction());
     group.add(new ConsoleTool.NextCmdAction());
     group.add(new ConsoleTool.ClearAction());
@@ -326,8 +329,8 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
           }, new Runnable() {
             public void run() {
               SLinkOperations.setTarget(myCommandRoot, "command", null, true);
-              myNewCommand = myCommandRoot;
               myCursor = null;
+              myNewCommand = null;
             }
           }});
         }
@@ -365,6 +368,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
       SNode newCursor;
       if (myCursor == null) {
         newCursor = lastCmd;
+        myNewCommand = SNodeOperations.copyNode(myCommandRoot);
       } else {
         newCursor = getPrevCmd(myCursor);
       }
