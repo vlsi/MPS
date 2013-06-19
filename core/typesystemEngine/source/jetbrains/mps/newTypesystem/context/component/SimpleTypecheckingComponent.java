@@ -27,7 +27,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -173,13 +172,7 @@ import java.util.Set;
 //    }
   }
 
-  protected void computeTypesForNode(SNode node, boolean forceChildrenCheck, Collection<SNode> additionalNodes, SNode targetNode) {
-    if (node == null) return;
-    boolean incrementalMode = isIncrementalMode();
-    AccessTracking accessTracking = createAccessTracking();
-
-    myQueue.add(node);
-    myQueue.addAll(additionalNodes);
+  private void drainQueue(boolean forceChildrenCheck, SNode targetNode, AccessTracking accessTracking) {
     for (SNode sNode = myQueue.poll(); sNode != null; sNode = myQueue.poll()) {
       if (myFullyCheckedNodes.contains(sNode)) {
         continue;
@@ -214,9 +207,16 @@ import java.util.Set;
   }
 
   protected void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
-    computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
-    if (typeCalculated(initialNode) != null) return;
-    solveInequalitiesAndExpandTypes(finalExpansion);
+    AccessTracking accessTracking = createAccessTracking();
+    if (nodeToCheck != null) {
+      myQueue.add(nodeToCheck);
+      myQueue.addAll(additionalNodes);
+    }
+    while (!myQueue.isEmpty()) {
+      drainQueue(forceChildrenCheck, initialNode, accessTracking);
+      if (typeCalculated(initialNode) != null) return;
+      solveInequalitiesAndExpandTypes(finalExpansion);
+    }
   }
 
   protected SNode computeTypesForNode_special_(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
