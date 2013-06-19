@@ -225,37 +225,21 @@ import java.util.Set;
   }
 
   protected SNode computeTypesForNode_special__(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
-    SNode type = null;
-    SNode prevNode = null;
-    SNode node = initialNode;
     long start = System.currentTimeMillis();
     setTarget(initialNode);
-    while (node != null) {
-      Collection<SNode> additionalNodes = givenAdditionalNodes;
-      if (prevNode != null) {
-        additionalNodes = new ArrayList<SNode>(additionalNodes);
-        additionalNodes.add(prevNode);
-      }
-      computeTypesSpecial(node, false, additionalNodes, false, initialNode);
-      type = typeCalculated(initialNode);
-      if (type == null) {
-        if (node.getModel() != null && node.getParent() == null) {
-          //System.out.println("Root: " + initialNode.getDebugText());
-          computeTypes(initialNode, node);
-          type = getType(initialNode);
-          if (type == null && node != initialNode) {
-            TypeSystemComponent.LOG.debug("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new jetbrains.mps.smodel.SNodePointer(initialNode));
-          }
-          return type;
-        }
-        prevNode = node;
-        node = node.getParent();
-      } else {
-        type = typeCalculated(initialNode);
-        return type;
-      }
+    if (initialNode == null) return null;
+
+    computeTypesSpecial(initialNode, false, givenAdditionalNodes, false, initialNode);
+    SNode type = typeCalculated(initialNode);
+    if (type != null) return type;
+
+    if (initialNode.getModel() != null && initialNode.getParent() == null) {
+      computeTypes(initialNode, initialNode);
+      return getType(initialNode);
     }
-    return type;
+
+    TypeSystemComponent.LOG.debug("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new jetbrains.mps.smodel.SNodePointer(initialNode));
+    return null;
   }
 
   protected void computeTypes(SNode initialNode, SNode node) {
