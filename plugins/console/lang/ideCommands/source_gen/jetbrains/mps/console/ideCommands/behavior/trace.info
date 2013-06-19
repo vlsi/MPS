@@ -5,36 +5,38 @@
   <unitInfo fileName="RebuildProjectCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_BehaviorDescriptor" />
   <unitInfo fileName="UnloadModelsCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_BehaviorDescriptor" />
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/6224631407134025442">
+    <nodeInfo nodeId="9020890213748147039" fileName="RebuildProjectCommand_Behavior.java" startLine="13" startPosition="133" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6224631407134025442" fileName="RebuildProjectCommand_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6224631407134025442" fileName="RebuildProjectCommand_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;)V" />
+    <nodeInfo nodeId="6224631407134025442" fileName="RebuildProjectCommand_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;)V" />
     <scopeInfo nodeId="6224631407134025444" fileName="RebuildProjectCommand_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="6224631407134025623" fileName="RebuildProjectCommand_Behavior.java" startLine="13" startPosition="133" endLine="13" endPosition="133" />
+    <scopeInfo nodeId="6224631407134025623" fileName="RebuildProjectCommand_Behavior.java" startLine="13" startPosition="133" endLine="14" endPosition="19" />
     <scopeInfo nodeId="6224631407134025442" fileName="RebuildProjectCommand_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="6224631407134025442" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6224631407134025442" fileName="RebuildProjectCommand_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="6224631407134025442" fileName="RebuildProjectCommand_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="4374601616592692118" varName="c" />
       <varInfo nodeId="4374601616592692122" varName="callback" />
       <varInfo nodeId="4374601616592692120" varName="console" />
       <varInfo nodeId="6224631407134025442" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="6224631407134025442" fileName="RebuildProjectCommand_Behavior.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_Behavior" />
+    <unitInfo nodeId="6224631407134025442" fileName="RebuildProjectCommand_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/6224631407134040959">
+    <nodeInfo nodeId="9020890213748149049" fileName="UnloadModelsCommand_Behavior.java" startLine="13" startPosition="133" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6224631407134040959" fileName="UnloadModelsCommand_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6224631407134040959" fileName="UnloadModelsCommand_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;)V" />
+    <nodeInfo nodeId="6224631407134040959" fileName="UnloadModelsCommand_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;)V" />
     <scopeInfo nodeId="6224631407134040961" fileName="UnloadModelsCommand_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="6224631407134040970" fileName="UnloadModelsCommand_Behavior.java" startLine="13" startPosition="133" endLine="13" endPosition="133" />
+    <scopeInfo nodeId="6224631407134040970" fileName="UnloadModelsCommand_Behavior.java" startLine="13" startPosition="133" endLine="14" endPosition="19" />
     <scopeInfo nodeId="6224631407134040959" fileName="UnloadModelsCommand_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="6224631407134040959" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6224631407134040959" fileName="UnloadModelsCommand_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="6224631407134040959" fileName="UnloadModelsCommand_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="4374601616592692170" varName="c" />
       <varInfo nodeId="4374601616592692174" varName="callback" />
       <varInfo nodeId="4374601616592692172" varName="console" />
       <varInfo nodeId="6224631407134040959" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="6224631407134040959" fileName="UnloadModelsCommand_Behavior.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_Behavior" />
+    <unitInfo nodeId="6224631407134040959" fileName="UnloadModelsCommand_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/8483375838963280017">
     <nodeInfo nodeId="8483375838963280031" fileName="ModelStatCommand_Behavior.java" startLine="24" startPosition="25" endLine="25" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -50,11 +52,12 @@
     <nodeInfo nodeId="8483375838963280120" fileName="ModelStatCommand_Behavior.java" startLine="36" startPosition="76" endLine="37" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8483375838963280131" fileName="ModelStatCommand_Behavior.java" startLine="37" startPosition="76" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8483375838963280132" fileName="ModelStatCommand_Behavior.java" startLine="38" startPosition="0" endLine="39" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9020890213748080562" fileName="ModelStatCommand_Behavior.java" startLine="39" startPosition="57" endLine="40" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8483375838963280017" fileName="ModelStatCommand_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8483375838963280056" fileName="ModelStatCommand_Behavior.java" startLine="29" startPosition="62" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8483375838963280029" fileName="ModelStatCommand_Behavior.java" startLine="24" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8483375838963280028" fileName="ModelStatCommand_Behavior.java" startLine="22" startPosition="139" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8483375838963280017" fileName="ModelStatCommand_Behavior.java" startLine="22" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;)V" />
+    <nodeInfo nodeId="8483375838963280029" fileName="ModelStatCommand_Behavior.java" startLine="24" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8483375838963280028" fileName="ModelStatCommand_Behavior.java" startLine="22" startPosition="145" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8483375838963280017" fileName="ModelStatCommand_Behavior.java" startLine="22" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;)V" />
     <scopeInfo nodeId="8483375838963280019" fileName="ModelStatCommand_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
     <scopeInfo nodeId="8483375838963280017" fileName="ModelStatCommand_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="8483375838963280017" varName="thisNode" />
@@ -63,22 +66,22 @@
     <scopeInfo nodeId="8483375838963280056" fileName="ModelStatCommand_Behavior.java" startLine="29" startPosition="62" endLine="33" endPosition="9">
       <varInfo nodeId="8483375838963280060" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8483375838963280030" fileName="ModelStatCommand_Behavior.java" startLine="24" startPosition="25" endLine="39" endPosition="57">
+    <scopeInfo nodeId="8483375838963280030" fileName="ModelStatCommand_Behavior.java" startLine="24" startPosition="25" endLine="40" endPosition="23">
       <varInfo nodeId="8483375838963280052" varName="messageText" />
       <varInfo nodeId="8483375838963280032" varName="model" />
       <varInfo nodeId="8483375838963280047" varName="properties" />
       <varInfo nodeId="8483375838963280043" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="8483375838963280029" fileName="ModelStatCommand_Behavior.java" startLine="24" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="8483375838963280027" fileName="ModelStatCommand_Behavior.java" startLine="22" startPosition="139" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="8483375838963280017" fileName="ModelStatCommand_Behavior.java" startLine="22" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="8483375838963280029" fileName="ModelStatCommand_Behavior.java" startLine="24" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="8483375838963280027" fileName="ModelStatCommand_Behavior.java" startLine="22" startPosition="145" endLine="42" endPosition="7" />
+    <scopeInfo nodeId="8483375838963280017" fileName="ModelStatCommand_Behavior.java" startLine="22" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="62239170981211261" varName="c" />
       <varInfo nodeId="4374601616592094219" varName="callback" />
       <varInfo nodeId="6852607286014925704" varName="console" />
       <varInfo nodeId="8483375838963280017" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="8483375838963280029" fileName="ModelStatCommand_Behavior.java" startLine="23" startPosition="55" endLine="41" endPosition="5" unitName="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_Behavior$1" />
-    <unitInfo nodeId="8483375838963280017" fileName="ModelStatCommand_Behavior.java" startLine="18" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_Behavior" />
+    <unitInfo nodeId="8483375838963280029" fileName="ModelStatCommand_Behavior.java" startLine="23" startPosition="55" endLine="42" endPosition="5" unitName="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_Behavior$1" />
+    <unitInfo nodeId="8483375838963280017" fileName="ModelStatCommand_Behavior.java" startLine="18" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_Behavior" />
   </root>
 </debugInfo>
 
