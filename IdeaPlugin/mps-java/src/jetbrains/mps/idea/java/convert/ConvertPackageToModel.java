@@ -80,7 +80,7 @@ public class ConvertPackageToModel extends AnAction {
     SModule mpsModule = facet.getSolution();
     MPSProject mpsProject = e.getProject().getComponent(MPSProject.class);
 
-    final MultipleFilesParser parser = new MultipleFilesParser(mpsModule, mpsProject.getRepository().getModelAccess(), mpsProject);
+    final MultipleFilesParser parser = new MultipleFilesParser(mpsModule, mpsProject.getRepository(), mpsProject);
     final List<IFile> javaFiles = new ArrayList<IFile>();
     collectJavaFiles((PsiDirectory) element, javaFiles);
 
@@ -89,7 +89,7 @@ public class ConvertPackageToModel extends AnAction {
       public void run(@NotNull final ProgressIndicator progressIndicator) {
 
         try {
-          parser.convertToMps(javaFiles, new EmptyProgressMonitor() /*ProgressMonitorAdapter(progressIndicator)*/);
+          parser.convertToMps(javaFiles, new ProgressMonitorAdapter(progressIndicator));
 
         } catch (JavaParseException exc) {
           throw new RuntimeException(exc);
@@ -112,8 +112,9 @@ public class ConvertPackageToModel extends AnAction {
 //        Map<SNode, SNode> stubToMpsNodes = null;
 
         // this module and those which depend on it
-        GlobalSearchScope scope = new ModuleWithDependentsScope(module, false);
-        SearchScope mpsScope = new IdeaSearchScope(scope);
+//        GlobalSearchScope scope = new ModuleWithDependentsScope(module, false);
+        Set<SModel> excludeSet = new HashSet<SModel>(parser.getModels());
+        SearchScope mpsScope = new SearchScopeWithoutModels(module, excludeSet);
 
         Set<SNode> affectedNodes = new HashSet<SNode>();
 
@@ -245,7 +246,7 @@ public class ConvertPackageToModel extends AnAction {
   private void putStubNodes(PsiClass clas, Set<SNode> result) {
     putOneStubNode(clas, result);
 
-    for (PsiClass cl : clas.getAllInnerClasses()) {
+    for (PsiClass cl : clas.getInnerClasses()) {
       putStubNodes(cl, result);
     }
     for (PsiMethod m : clas.getMethods()) {

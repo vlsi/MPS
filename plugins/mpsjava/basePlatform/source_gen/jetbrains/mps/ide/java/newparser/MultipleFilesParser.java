@@ -5,8 +5,8 @@ package jetbrains.mps.ide.java.newparser;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-import jetbrains.mps.project.Project;
 import java.util.Map;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -17,17 +17,32 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.io.IOException;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.vfs.IFileUtils;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import jetbrains.mps.internal.collections.runtime.DequeSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.annotations.Nullable;
@@ -37,9 +52,9 @@ public class MultipleFilesParser {
   private static final Logger LOG = LogManager.getLogger(MultipleFilesParser.class);
 
   private SModule myModule;
+  private SRepository myRepository;
   private ModelAccess myModelAccess;
 
-  private Project myProject;
 
   private JavaParser myJavaParser = new JavaParser();
   private Map<String, Set<SNode>> classesPerPackage = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
@@ -49,17 +64,20 @@ public class MultipleFilesParser {
   private boolean wasDefaultPkg = false;
 
 
-  public MultipleFilesParser(SModule module, ModelAccess modelAccess, Project project) {
+  public MultipleFilesParser(SModule module, SRepository repository, Project project) {
     myModule = module;
-    myModelAccess = modelAccess;
-    myProject = project;
+    myRepository = repository;
+    myModelAccess = repository.getModelAccess();
   }
 
 
 
-  public void convertToMps(final List<IFile> files, final ProgressMonitor progress) throws JavaParseException, IOException {
+  public void convertToMps(final List<IFile> files, ProgressMonitor progress) throws JavaParseException, IOException {
+
+    progress.start("Converting...", 10);
+
     // first we build AST 
-    final ProgressMonitor parseProgress = progress.subTask(ListSequence.fromList(files).count());
+    final ProgressMonitor parseProgress = progress.subTask(1);
     parseProgress.start("Parsing...", ListSequence.fromList(files).count());
 
     // read action needed only because java parser does new node<Concept> 
@@ -83,10 +101,11 @@ public class MultipleFilesParser {
     parseProgress.done();
 
 
+    final Wrappers._int rootCount = new Wrappers._int(0);
+
     // now we attach the models and try to resolve      
-    final _FunctionTypes._void_P0_E0 resolveWork = new _FunctionTypes._void_P0_E0() {
+    final _FunctionTypes._void_P0_E0 createModelsWork = new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        int rootCount = 0;
         for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
           final SModel model = registerModelForPackage(pakage);
 
@@ -96,12 +115,9 @@ public class MultipleFilesParser {
               model.addRootNode(it);
             }
           });
-          rootCount = rootCount + SetSequence.fromSet(roots).count();
+          rootCount.value = rootCount.value + SetSequence.fromSet(roots).count();
         }
 
-        ProgressMonitor resolveProgress = progress.subTask(rootCount);
-        resolveProgress.start("Resolving...", rootCount);
-
         for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
           final SModel model = registerModelForPackage(pakage);
 
@@ -112,45 +128,116 @@ public class MultipleFilesParser {
             }
           });
 
-          rootCount = rootCount + SetSequence.fromSet(roots).count();
+          rootCount.value = rootCount.value + SetSequence.fromSet(roots).count();
           ListSequence.fromList(myModels).addElement(model);
-
         }
 
+        // should be cheap 
         for (SModel model : ListSequence.fromList(myModels)) {
-          for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
-            // FIXME change tryResolve to accept one node 
-            JavaParser.tryResolveUnknowns(Sequence.<SNode>singleton(root));
-            JavaParser.tryResolveDynamicRefs(Sequence.<SNode>singleton(root));
-            resolveProgress.advance(1);
-          }
+          JavaParser.tryResolveUnknowns(SModelOperations.getRoots(model, null));
         }
 
-        resolveProgress.done();
       }
     };
 
     if (myModelAccess.isCommandAction()) {
-      resolveWork.invoke();
+      createModelsWork.invoke();
     } else {
       try {
         SwingUtilities.invokeAndWait(new Runnable() {
           public void run() {
-            myModelAccess.executeCommandInEDT(new Runnable() {
+            myModelAccess.executeCommand(new Runnable() {
               public void run() {
-                resolveWork.invoke();
+                createModelsWork.invoke();
               }
             });
           }
         });
 
       } catch (InterruptedException e) {
-        LOG.error("Reference resolving pass was interrupted", e);
+        LOG.error("Models creation pass was interrupted", e);
       } catch (InvocationTargetException e) {
-        LOG.error("Exception in reference resolving pass", e.getCause());
+        LOG.error("Exception in model creation pass", e.getCause());
       }
     }
 
+    final ProgressMonitor resolveProgress = progress.subTask(9);
+    resolveProgress.start("Resolving...", rootCount.value);
+
+    final Map<SNodeReference, List<SReference>> referenceMap = MapSequence.fromMap(new HashMap<SNodeReference, List<SReference>>());
+
+    myModelAccess.runReadAction(new Runnable() {
+      public void run() {
+        for (SModel model : ListSequence.fromList(myModels)) {
+          for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
+
+            resolveProgress.step(root.getName());
+            try {
+              resolveReferences(root, referenceMap, 0);
+            } catch (Exception e) {
+            }
+            resolveProgress.advance(1);
+
+          }
+        }
+
+        resolveProgress.done();
+      }
+    });
+
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        public void run() {
+          myModelAccess.executeCommand(new Runnable() {
+            public void run() {
+              updateReference(referenceMap);
+            }
+          });
+        }
+      });
+
+    } catch (InterruptedException e) {
+      LOG.error("Reference update pass was interrupted", e);
+    } catch (InvocationTargetException e) {
+      LOG.error("Exception in reference update pass", e.getCause());
+    }
+
+    MapSequence.fromMap(referenceMap).clear();
+
+    myModelAccess.runReadAction(new Runnable() {
+      public void run() {
+        for (SModel model : ListSequence.fromList(myModels)) {
+          for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
+
+            try {
+              resolveReferences(root, referenceMap, 1);
+            } catch (Exception e) {
+            }
+          }
+        }
+      }
+    });
+
+
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        public void run() {
+          myModelAccess.executeCommand(new Runnable() {
+            public void run() {
+              updateReference(referenceMap);
+            }
+          });
+        }
+      });
+
+    } catch (InterruptedException e) {
+      LOG.error("Reference update pass was interrupted", e);
+    } catch (InvocationTargetException e) {
+      LOG.error("Exception in reference update pass", e.getCause());
+    }
+
+
+    progress.done();
   }
 
 
@@ -197,6 +284,97 @@ public class MultipleFilesParser {
 
   }
 
+
+
+  private void resolveReferences(SNode startNode, Map<SNodeReference, List<SReference>> result, int pass) {
+    Deque<SNode> stack = DequeSequence.fromDeque(new LinkedList<SNode>());
+    DequeSequence.fromDeque(stack).pushElement(startNode);
+
+    while (DequeSequence.fromDeque(stack).isNotEmpty()) {
+      SNode node = DequeSequence.fromDeque(stack).popElement();
+      SModel ourModel = node.getModel();
+      DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
+
+      Iterable<? extends SReference> refs = node.getReferences();
+      List<SReference> newRefs = ListSequence.fromList(new ArrayList<SReference>());
+
+      for (SReference ref : Sequence.fromIterable(refs)) {
+        if (!(ref instanceof DynamicReference)) {
+          continue;
+        }
+        // FIXME temp hack around typesystem looping when resolving certain dyn.references 
+
+        if (pass == 0) {
+          if (ref.getRole().equals("baseMethodDeclaration")) {
+            continue;
+          }
+          if (ref.getRole().equals("fieldDeclaration")) {
+            continue;
+          }
+
+        } else if (SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression")) {
+          if (Sequence.fromIterable(deepReferences(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true))).any(new IWhereFilter<SReference>() {
+            public boolean accept(SReference it) {
+              SReference ref = it;
+              return ref instanceof DynamicReference;
+            }
+          })) {
+
+            continue;
+          }
+        }
+
+        SNode target = ref.getTargetNode();
+        if (target == null) {
+          continue;
+        }
+
+        SModelReference targetModel = target.getModel().getReference();
+
+        SReference staticRef = StaticReference.create(ref.getRole(), node, target.getModel().getReference(), target.getNodeId());
+        ListSequence.fromList(newRefs).addElement(staticRef);
+      }
+
+      if (ListSequence.fromList(newRefs).isNotEmpty()) {
+        MapSequence.fromMap(result).put(node.getReference(), newRefs);
+      }
+    }
+  }
+
+
+
+  private void updateReference(Map<SNodeReference, List<SReference>> refMap) {
+    for (SNodeReference nodeRef : SetSequence.fromSet(MapSequence.fromMap(refMap).keySet())) {
+      final SNode node = nodeRef.resolve(myRepository);
+      if (node == null) {
+        continue;
+      }
+      ListSequence.fromList(MapSequence.fromMap(refMap).get(nodeRef)).visitAll(new IVisitor<SReference>() {
+        public void visit(SReference it) {
+
+          SModelReference targetModelRef = it.getTargetSModelReference();
+          ((SModelInternal) node.getModel()).addModelImport(targetModelRef, true);
+
+          node.setReference(it.getRole(), it);
+        }
+      });
+    }
+  }
+
+
+
+  private Iterable<SReference> deepReferences(SNode node) {
+
+    List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
+    ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(node)));
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+      ListSequence.fromList(refs).addSequence(Sequence.fromIterable(deepReferences(child)));
+    }
+
+    return refs;
+
+    // generator for yield broken? 
+  }
 
 
 
