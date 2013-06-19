@@ -4,9 +4,20 @@ package jetbrains.mps.console.blCommand.runtime.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import java.util.List;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import jetbrains.mps.util.FlattenIterable;
+import java.util.Collection;
 
 public class CommandUtil {
   public static Iterable<SNode> allNodes(SearchScope scope) {
-    return null;
+    List<Iterable<SNode>> res = new ArrayList<Iterable<SNode>>();
+    for (SModel model : Sequence.fromIterable(scope.getModels())) {
+      res.add(new NodesIterable(model));
+    }
+    return new FlattenIterable<SNode>(((Collection<Iterable<SNode>>) res));
   }
 }
