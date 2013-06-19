@@ -1,5 +1,274 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeRef="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)/3356342729940974921">
+    <nodeInfo nodeId="3356342729941530259" fileName="MultipleFilesParser.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="3356342729943012264" fileName="MultipleFilesParser.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
+    <nodeInfo nodeId="3356342729947011060" fileName="MultipleFilesParser.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelAccess" />
+    <nodeInfo nodeId="3356342729958467924" fileName="MultipleFilesParser.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="3356342729941361844" fileName="MultipleFilesParser.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJavaParser" />
+    <nodeInfo nodeId="3356342729941008387" fileName="MultipleFilesParser.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="classesPerPackage" />
+    <nodeInfo nodeId="3356342729944974693" fileName="MultipleFilesParser.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModels" />
+    <nodeInfo nodeId="3356342729961254469" fileName="MultipleFilesParser.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuccessfulFiles" />
+    <nodeInfo nodeId="3356342729941470337" fileName="MultipleFilesParser.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="wasDefaultPkg" />
+    <nodeInfo nodeId="3356342729946580819" fileName="MultipleFilesParser.java" startLine="52" startPosition="88" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729947121027" fileName="MultipleFilesParser.java" startLine="53" startPosition="22" endLine="54" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729958509141" fileName="MultipleFilesParser.java" startLine="54" startPosition="32" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729940981841" fileName="MultipleFilesParser.java" startLine="60" startPosition="124" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3356342729944138924" fileName="MultipleFilesParser.java" startLine="61" startPosition="26" endLine="62" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729944277349" fileName="MultipleFilesParser.java" startLine="62" startPosition="97" endLine="63" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729944444018" fileName="MultipleFilesParser.java" startLine="63" startPosition="76" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729952464431" fileName="MultipleFilesParser.java" startLine="64" startPosition="0" endLine="65" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3356342729953688829" fileName="MultipleFilesParser.java" startLine="65" startPosition="74" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729953825061" fileName="MultipleFilesParser.java" startLine="70" startPosition="15" endLine="71" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729953825064" fileName="MultipleFilesParser.java" startLine="71" startPosition="28" endLine="72" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729961324630" fileName="MultipleFilesParser.java" startLine="72" startPosition="37" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729961379022" fileName="MultipleFilesParser.java" startLine="73" startPosition="0" endLine="74" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729954670039" fileName="MultipleFilesParser.java" startLine="74" startPosition="70" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729944423208" fileName="MultipleFilesParser.java" startLine="81" startPosition="7" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729944423576" fileName="MultipleFilesParser.java" startLine="82" startPosition="0" endLine="83" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729941195701" fileName="MultipleFilesParser.java" startLine="83" startPosition="25" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729941195379" fileName="MultipleFilesParser.java" startLine="84" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729940981884" fileName="MultipleFilesParser.java" startLine="85" startPosition="0" endLine="86" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3356342729943363640" fileName="MultipleFilesParser.java" startLine="88" startPosition="28" endLine="89" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729943278480" fileName="MultipleFilesParser.java" startLine="90" startPosition="100" endLine="91" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729943327791" fileName="MultipleFilesParser.java" startLine="91" startPosition="63" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729943500868" fileName="MultipleFilesParser.java" startLine="92" startPosition="0" endLine="93" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729943973748" fileName="MultipleFilesParser.java" startLine="95" startPosition="41" endLine="96" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729943465934" fileName="MultipleFilesParser.java" startLine="98" startPosition="13" endLine="99" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729944465126" fileName="MultipleFilesParser.java" startLine="100" startPosition="9" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729944492156" fileName="MultipleFilesParser.java" startLine="101" startPosition="0" endLine="102" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729944595018" fileName="MultipleFilesParser.java" startLine="102" startPosition="70" endLine="103" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729944761561" fileName="MultipleFilesParser.java" startLine="103" startPosition="57" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729944842434" fileName="MultipleFilesParser.java" startLine="105" startPosition="100" endLine="106" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729944842439" fileName="MultipleFilesParser.java" startLine="106" startPosition="63" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729944842440" fileName="MultipleFilesParser.java" startLine="107" startPosition="0" endLine="108" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729944842453" fileName="MultipleFilesParser.java" startLine="110" startPosition="41" endLine="111" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729945195390" fileName="MultipleFilesParser.java" startLine="113" startPosition="13" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729944842460" fileName="MultipleFilesParser.java" startLine="114" startPosition="0" endLine="115" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729945219620" fileName="MultipleFilesParser.java" startLine="115" startPosition="69" endLine="116" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729945171209" fileName="MultipleFilesParser.java" startLine="116" startPosition="60" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729944822277" fileName="MultipleFilesParser.java" startLine="118" startPosition="9" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729945932878" fileName="MultipleFilesParser.java" startLine="121" startPosition="92" endLine="122" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3356342729945727471" fileName="MultipleFilesParser.java" startLine="122" startPosition="58" endLine="123" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729946089624" fileName="MultipleFilesParser.java" startLine="123" startPosition="75" endLine="124" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729946186185" fileName="MultipleFilesParser.java" startLine="124" startPosition="78" endLine="125" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729944688628" fileName="MultipleFilesParser.java" startLine="127" startPosition="9" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729944712629" fileName="MultipleFilesParser.java" startLine="128" startPosition="0" endLine="129" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729958243085" fileName="MultipleFilesParser.java" startLine="131" startPosition="6" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729947695263" fileName="MultipleFilesParser.java" startLine="133" startPosition="42" endLine="134" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729948867042" fileName="MultipleFilesParser.java" startLine="140" startPosition="33" endLine="141" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729965504987" fileName="MultipleFilesParser.java" startLine="145" startPosition="11" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729965667753" fileName="MultipleFilesParser.java" startLine="147" startPosition="40" endLine="148" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729966017575" fileName="MultipleFilesParser.java" startLine="149" startPosition="45" endLine="150" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729947862083" fileName="MultipleFilesParser.java" startLine="152" startPosition="5" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729961632070" fileName="MultipleFilesParser.java" startLine="158" startPosition="43" endLine="159" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3356342729962524292" fileName="MultipleFilesParser.java" startLine="164" startPosition="35" endLine="165" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3356342729941353959" fileName="MultipleFilesParser.java" startLine="170" startPosition="77" endLine="171" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729941374817" fileName="MultipleFilesParser.java" startLine="171" startPosition="55" endLine="172" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729941415788" fileName="MultipleFilesParser.java" startLine="172" startPosition="89" endLine="173" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729941415794" fileName="MultipleFilesParser.java" startLine="173" startPosition="42" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729941415797" fileName="MultipleFilesParser.java" startLine="175" startPosition="22" endLine="176" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3356342729941415801" fileName="MultipleFilesParser.java" startLine="177" startPosition="29" endLine="178" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729941415811" fileName="MultipleFilesParser.java" startLine="178" startPosition="134" endLine="179" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729941415817" fileName="MultipleFilesParser.java" startLine="180" startPosition="7" endLine="181" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3356342729941626613" fileName="MultipleFilesParser.java" startLine="182" startPosition="5" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729941909338" fileName="MultipleFilesParser.java" startLine="183" startPosition="0" endLine="184" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729941965705" fileName="MultipleFilesParser.java" startLine="185" startPosition="68" endLine="186" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729941965742" fileName="MultipleFilesParser.java" startLine="186" startPosition="118" endLine="187" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3356342729941414344" fileName="MultipleFilesParser.java" startLine="188" startPosition="5" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729942234854" fileName="MultipleFilesParser.java" startLine="189" startPosition="0" endLine="190" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729942280749" fileName="MultipleFilesParser.java" startLine="190" startPosition="51" endLine="191" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729942352370" fileName="MultipleFilesParser.java" startLine="192" startPosition="35" endLine="193" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729942489395" fileName="MultipleFilesParser.java" startLine="193" startPosition="103" endLine="194" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729942442719" fileName="MultipleFilesParser.java" startLine="195" startPosition="5" endLine="196" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729942701089" fileName="MultipleFilesParser.java" startLine="196" startPosition="84" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729942924345" fileName="MultipleFilesParser.java" startLine="203" startPosition="57" endLine="204" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729942924375" fileName="MultipleFilesParser.java" startLine="206" startPosition="106" endLine="207" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729942924387" fileName="MultipleFilesParser.java" startLine="207" startPosition="106" endLine="208" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3356342729942924389" fileName="MultipleFilesParser.java" startLine="209" startPosition="7" endLine="210" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3356342729942924391" fileName="MultipleFilesParser.java" startLine="210" startPosition="39" endLine="211" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3356342729942924393" fileName="MultipleFilesParser.java" startLine="211" startPosition="72" endLine="212" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3356342729942924358" fileName="MultipleFilesParser.java" startLine="213" startPosition="12" endLine="214" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3356342729942924415" fileName="MultipleFilesParser.java" startLine="218" startPosition="50" endLine="219" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3356342729942924423" fileName="MultipleFilesParser.java" startLine="220" startPosition="52" endLine="221" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729942924435" fileName="MultipleFilesParser.java" startLine="221" startPosition="97" endLine="222" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3356342729942924437" fileName="MultipleFilesParser.java" startLine="223" startPosition="5" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729942924438" fileName="MultipleFilesParser.java" startLine="224" startPosition="0" endLine="225" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729942924445" fileName="MultipleFilesParser.java" startLine="225" startPosition="117" endLine="226" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="3356342729942924449" fileName="MultipleFilesParser.java" startLine="226" startPosition="30" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3356342729942924450" fileName="MultipleFilesParser.java" startLine="227" startPosition="0" endLine="228" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3356342729942924471" fileName="MultipleFilesParser.java" startLine="234" startPosition="45" endLine="235" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3356342729942924473" fileName="MultipleFilesParser.java" startLine="237" startPosition="5" endLine="238" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3356342729942924356" fileName="MultipleFilesParser.java" startLine="213" startPosition="10" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3356342729943954738" fileName="MultipleFilesParser.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3356342729944842451" fileName="MultipleFilesParser.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3356342729948840648" fileName="MultipleFilesParser.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3356342729961632068" fileName="MultipleFilesParser.java" startLine="158" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuccessfulFiles#()Ljava/util/List;" />
+    <nodeInfo nodeId="3356342729962524290" fileName="MultipleFilesParser.java" startLine="164" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModels#()Ljava/util/List;" />
+    <nodeInfo nodeId="3356342729942924465" fileName="MultipleFilesParser.java" startLine="233" startPosition="76" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3356342729941415799" fileName="MultipleFilesParser.java" startLine="176" startPosition="42" endLine="180" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3356342729941881139" fileName="MultipleFilesParser.java" startLine="184" startPosition="33" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3356342729942329813" fileName="MultipleFilesParser.java" startLine="191" startPosition="82" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3356342729942924362" fileName="MultipleFilesParser.java" startLine="205" startPosition="34" endLine="209" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3356342729942924417" fileName="MultipleFilesParser.java" startLine="219" startPosition="37" endLine="223" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3356342729946436650" fileName="MultipleFilesParser.java" startLine="52" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MultipleFilesParser#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/module/ModelAccess;Ljetbrains/mps/project/Project;)V" />
+    <nodeInfo nodeId="3356342729943927539" fileName="MultipleFilesParser.java" startLine="93" startPosition="80" endLine="98" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729944842447" fileName="MultipleFilesParser.java" startLine="108" startPosition="80" endLine="113" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729965396028" fileName="MultipleFilesParser.java" startLine="138" startPosition="29" endLine="143" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729942924459" fileName="MultipleFilesParser.java" startLine="232" startPosition="62" endLine="237" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3356342729945594077" fileName="MultipleFilesParser.java" startLine="120" startPosition="62" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3356342729965337478" fileName="MultipleFilesParser.java" startLine="138" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3356342729945482131" fileName="MultipleFilesParser.java" startLine="119" startPosition="0" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3356342729941415795" fileName="MultipleFilesParser.java" startLine="174" startPosition="0" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3356342729954670038" fileName="MultipleFilesParser.java" startLine="69" startPosition="57" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3356342729965564157" fileName="MultipleFilesParser.java" startLine="136" startPosition="11" endLine="145" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729942924455" fileName="MultipleFilesParser.java" startLine="231" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootToCreateModel#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/persistence/ModelRoot;" />
+    <nodeInfo nodeId="3356342729953825057" fileName="MultipleFilesParser.java" startLine="68" startPosition="25" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3356342729942792310" fileName="MultipleFilesParser.java" startLine="89" startPosition="26" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3356342729942924352" fileName="MultipleFilesParser.java" startLine="204" startPosition="87" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3356342729942924411" fileName="MultipleFilesParser.java" startLine="218" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModel#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="3356342729953800072" fileName="MultipleFilesParser.java" startLine="68" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3356342729944842428" fileName="MultipleFilesParser.java" startLine="104" startPosition="0" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3356342729942924339" fileName="MultipleFilesParser.java" startLine="203" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerModelForPackage#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="3356342729953730552" fileName="MultipleFilesParser.java" startLine="66" startPosition="0" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3356342729965504986" fileName="MultipleFilesParser.java" startLine="135" startPosition="12" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3356342729947695270" fileName="MultipleFilesParser.java" startLine="135" startPosition="10" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3356342729947695261" fileName="MultipleFilesParser.java" startLine="132" startPosition="0" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3356342729941379789" fileName="MultipleFilesParser.java" startLine="170" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseFile#(Ljetbrains/mps/vfs/IFile;)V" />
+    <nodeInfo nodeId="3356342729947469445" fileName="MultipleFilesParser.java" startLine="88" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="3356342729947350444" fileName="MultipleFilesParser.java" startLine="86" startPosition="56" endLine="131" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3356342729940981125" fileName="MultipleFilesParser.java" startLine="60" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convertToMps#(Ljava/util/List;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
+    <scopeInfo nodeId="3356342729954670041" fileName="MultipleFilesParser.java" startLine="76" startPosition="0" endLine="76" endPosition="42">
+      <varInfo nodeId="3356342729954670043" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729954670047" fileName="MultipleFilesParser.java" startLine="76" startPosition="42" endLine="76" endPosition="42" />
+    <scopeInfo nodeId="3356342729954796863" fileName="MultipleFilesParser.java" startLine="77" startPosition="0" endLine="77" endPosition="35">
+      <varInfo nodeId="3356342729954796864" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729954796866" fileName="MultipleFilesParser.java" startLine="77" startPosition="35" endLine="77" endPosition="35" />
+    <scopeInfo nodeId="3356342729943954739" fileName="MultipleFilesParser.java" startLine="95" startPosition="41" endLine="96" endPosition="36" />
+    <scopeInfo nodeId="3356342729944842452" fileName="MultipleFilesParser.java" startLine="110" startPosition="41" endLine="111" endPosition="36" />
+    <scopeInfo nodeId="3356342729947695262" fileName="MultipleFilesParser.java" startLine="133" startPosition="42" endLine="134" endPosition="27" />
+    <scopeInfo nodeId="3356342729948840649" fileName="MultipleFilesParser.java" startLine="140" startPosition="33" endLine="141" endPosition="37" />
+    <scopeInfo nodeId="3356342729965504989" fileName="MultipleFilesParser.java" startLine="147" startPosition="0" endLine="148" endPosition="65">
+      <varInfo nodeId="3356342729965504991" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729965504995" fileName="MultipleFilesParser.java" startLine="147" startPosition="40" endLine="148" endPosition="65" />
+    <scopeInfo nodeId="3356342729965774778" fileName="MultipleFilesParser.java" startLine="149" startPosition="0" endLine="150" endPosition="73">
+      <varInfo nodeId="3356342729965774779" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729965774781" fileName="MultipleFilesParser.java" startLine="149" startPosition="45" endLine="150" endPosition="73" />
+    <scopeInfo nodeId="3356342729961632069" fileName="MultipleFilesParser.java" startLine="158" startPosition="43" endLine="159" endPosition="29" />
+    <scopeInfo nodeId="3356342729962524291" fileName="MultipleFilesParser.java" startLine="164" startPosition="35" endLine="165" endPosition="20" />
+    <scopeInfo nodeId="3356342729942924357" fileName="MultipleFilesParser.java" startLine="213" startPosition="12" endLine="214" endPosition="33" />
+    <scopeInfo nodeId="3356342729942924470" fileName="MultipleFilesParser.java" startLine="234" startPosition="45" endLine="235" endPosition="20" />
+    <scopeInfo nodeId="3356342729941415800" fileName="MultipleFilesParser.java" startLine="177" startPosition="29" endLine="179" endPosition="29" />
+    <scopeInfo nodeId="3356342729941881142" fileName="MultipleFilesParser.java" startLine="185" startPosition="68" endLine="187" endPosition="13" />
+    <scopeInfo nodeId="3356342729942329816" fileName="MultipleFilesParser.java" startLine="192" startPosition="35" endLine="194" endPosition="72" />
+    <scopeInfo nodeId="3356342729942924374" fileName="MultipleFilesParser.java" startLine="206" startPosition="106" endLine="208" endPosition="20" />
+    <scopeInfo nodeId="3356342729942924422" fileName="MultipleFilesParser.java" startLine="220" startPosition="52" endLine="222" endPosition="18" />
+    <scopeInfo nodeId="3356342729946436653" fileName="MultipleFilesParser.java" startLine="52" startPosition="88" endLine="55" endPosition="24" />
+    <scopeInfo nodeId="3356342729943954738" fileName="MultipleFilesParser.java" startLine="95" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="3356342729943954738" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729944842451" fileName="MultipleFilesParser.java" startLine="110" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="3356342729944842451" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729948840648" fileName="MultipleFilesParser.java" startLine="140" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="3356342729961632068" fileName="MultipleFilesParser.java" startLine="158" startPosition="0" endLine="161" endPosition="0" />
+    <scopeInfo nodeId="3356342729962524290" fileName="MultipleFilesParser.java" startLine="164" startPosition="0" endLine="167" endPosition="0" />
+    <scopeInfo nodeId="3356342729942924464" fileName="MultipleFilesParser.java" startLine="233" startPosition="76" endLine="236" endPosition="7" />
+    <scopeInfo nodeId="3356342729945594080" fileName="MultipleFilesParser.java" startLine="121" startPosition="92" endLine="125" endPosition="39" />
+    <scopeInfo nodeId="3356342729946436650" fileName="MultipleFilesParser.java" startLine="52" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="3356342729946842874" varName="modelAccess" />
+      <varInfo nodeId="3356342729946469276" varName="module" />
+      <varInfo nodeId="3356342729958495272" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729954670040" fileName="MultipleFilesParser.java" startLine="70" startPosition="15" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="3356342729965337479" fileName="MultipleFilesParser.java" startLine="138" startPosition="29" endLine="143" endPosition="15" />
+    <scopeInfo nodeId="3356342729942924459" fileName="MultipleFilesParser.java" startLine="232" startPosition="62" endLine="237" endPosition="5">
+      <varInfo nodeId="3356342729942924460" varName="root" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729945482137" fileName="MultipleFilesParser.java" startLine="120" startPosition="62" endLine="126" endPosition="11" />
+    <scopeInfo nodeId="3356342729945594077" fileName="MultipleFilesParser.java" startLine="120" startPosition="62" endLine="126" endPosition="11">
+      <varInfo nodeId="3356342729945594078" varName="root" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729941415796" fileName="MultipleFilesParser.java" startLine="175" startPosition="22" endLine="181" endPosition="13" />
+    <scopeInfo nodeId="3356342729942924458" fileName="MultipleFilesParser.java" startLine="232" startPosition="62" endLine="238" endPosition="16" />
+    <scopeInfo nodeId="3356342729965337478" fileName="MultipleFilesParser.java" startLine="138" startPosition="0" endLine="145" endPosition="0" />
+    <scopeInfo nodeId="3356342729942924361" fileName="MultipleFilesParser.java" startLine="205" startPosition="34" endLine="212" endPosition="29" />
+    <scopeInfo nodeId="3356342729945482131" fileName="MultipleFilesParser.java" startLine="119" startPosition="0" endLine="127" endPosition="9">
+      <varInfo nodeId="3356342729945482133" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729953825060" fileName="MultipleFilesParser.java" startLine="69" startPosition="57" endLine="78" endPosition="11" />
+    <scopeInfo nodeId="3356342729942792316" fileName="MultipleFilesParser.java" startLine="90" startPosition="100" endLine="99" endPosition="69">
+      <varInfo nodeId="3356342729943278481" varName="model" />
+      <varInfo nodeId="3356342729943500871" varName="roots" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729942924455" fileName="MultipleFilesParser.java" startLine="231" startPosition="0" endLine="240" endPosition="0">
+      <varInfo nodeId="3356342729942924475" varName="packageName" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729965504988" fileName="MultipleFilesParser.java" startLine="136" startPosition="11" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="3356342729942924414" fileName="MultipleFilesParser.java" startLine="218" startPosition="50" endLine="228" endPosition="22">
+      <varInfo nodeId="3356342729942924439" varName="modelDescr" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729953800073" fileName="MultipleFilesParser.java" startLine="68" startPosition="25" endLine="79" endPosition="9" />
+    <scopeInfo nodeId="3356342729953825057" fileName="MultipleFilesParser.java" startLine="68" startPosition="25" endLine="79" endPosition="9">
+      <varInfo nodeId="3356342729953825058" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729942792310" fileName="MultipleFilesParser.java" startLine="89" startPosition="26" endLine="100" endPosition="9">
+      <varInfo nodeId="3356342729942792312" varName="pakage" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729944842433" fileName="MultipleFilesParser.java" startLine="105" startPosition="100" endLine="117" endPosition="0">
+      <varInfo nodeId="3356342729944842435" varName="model" />
+      <varInfo nodeId="3356342729944842441" varName="roots" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729942924344" fileName="MultipleFilesParser.java" startLine="203" startPosition="57" endLine="215" endPosition="5">
+      <varInfo nodeId="3356342729942924346" varName="modelDescriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729942924411" fileName="MultipleFilesParser.java" startLine="218" startPosition="0" endLine="230" endPosition="0">
+      <varInfo nodeId="3356342729942924452" varName="packageName" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729953800072" fileName="MultipleFilesParser.java" startLine="68" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="3356342729944842428" fileName="MultipleFilesParser.java" startLine="104" startPosition="0" endLine="118" endPosition="9">
+      <varInfo nodeId="3356342729944842429" varName="pakage" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729942924339" fileName="MultipleFilesParser.java" startLine="203" startPosition="0" endLine="217" endPosition="0">
+      <varInfo nodeId="3356342729942924342" varName="fqName" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729947695271" fileName="MultipleFilesParser.java" startLine="135" startPosition="12" endLine="151" endPosition="7" />
+    <scopeInfo nodeId="3356342729941196608" fileName="MultipleFilesParser.java" startLine="170" startPosition="77" endLine="197" endPosition="0">
+      <varInfo nodeId="3356342729942280752" varName="classesInPackage" />
+      <varInfo nodeId="3356342729941353962" varName="contents" />
+      <varInfo nodeId="3356342729941909339" varName="dir" />
+      <varInfo nodeId="3356342729941374818" varName="parseResult" />
+      <varInfo nodeId="3356342729941415789" varName="pkg" />
+      <varInfo nodeId="3356342729942234857" varName="roots" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729941379789" fileName="MultipleFilesParser.java" startLine="170" startPosition="0" endLine="199" endPosition="0">
+      <varInfo nodeId="3356342729941197361" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729947469447" fileName="MultipleFilesParser.java" startLine="88" startPosition="28" endLine="129" endPosition="31">
+      <varInfo nodeId="3356342729944492157" varName="resolveProgress" />
+      <varInfo nodeId="3356342729943363643" varName="rootCount" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729947469445" fileName="MultipleFilesParser.java" startLine="88" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="3356342729940981118" fileName="MultipleFilesParser.java" startLine="60" startPosition="124" endLine="153" endPosition="0">
+      <varInfo nodeId="3356342729944138925" varName="parseProgress" />
+      <varInfo nodeId="3356342729947350447" varName="resolveWork" />
+    </scopeInfo>
+    <scopeInfo nodeId="3356342729940981125" fileName="MultipleFilesParser.java" startLine="60" startPosition="0" endLine="155" endPosition="0">
+      <varInfo nodeId="3356342729940981427" varName="files" />
+      <varInfo nodeId="3356342729940981585" varName="progress" />
+    </scopeInfo>
+    <unitInfo nodeId="3356342729943954738" fileName="MultipleFilesParser.java" startLine="94" startPosition="50" endLine="98" endPosition="11" unitName="jetbrains.mps.ide.java.newparser.MultipleFilesParser$3" />
+    <unitInfo nodeId="3356342729944842451" fileName="MultipleFilesParser.java" startLine="109" startPosition="50" endLine="113" endPosition="11" unitName="jetbrains.mps.ide.java.newparser.MultipleFilesParser$3" />
+    <unitInfo nodeId="3356342729948840648" fileName="MultipleFilesParser.java" startLine="139" startPosition="50" endLine="143" endPosition="13" unitName="jetbrains.mps.ide.java.newparser.MultipleFilesParser$4" />
+    <unitInfo nodeId="3356342729965337478" fileName="MultipleFilesParser.java" startLine="137" startPosition="41" endLine="145" endPosition="9" unitName="jetbrains.mps.ide.java.newparser.MultipleFilesParser$3" />
+    <unitInfo nodeId="3356342729953800072" fileName="MultipleFilesParser.java" startLine="67" startPosition="36" endLine="81" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.MultipleFilesParser$1" />
+    <unitInfo nodeId="3356342729947469445" fileName="MultipleFilesParser.java" startLine="87" startPosition="55" endLine="131" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.MultipleFilesParser$2" />
+    <unitInfo nodeId="3356342729940974921" fileName="MultipleFilesParser.java" startLine="36" startPosition="0" endLine="243" endPosition="0" unitName="jetbrains.mps.ide.java.newparser.MultipleFilesParser" />
+  </root>
   <root nodeRef="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)/3493766494546486454">
     <nodeInfo nodeId="6548439442932987624" fileName="ASTConverter.java" startLine="81" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3493766494546486462" fileName="ASTConverter.java" startLine="82" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOnlyStubs" />
@@ -2059,15 +2328,15 @@
     <nodeInfo nodeId="6956162774782465799" fileName="JavaParser.java" startLine="354" startPosition="0" endLine="355" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6956162774782797895" fileName="JavaParser.java" startLine="357" startPosition="49" endLine="358" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="4726082558177611961" fileName="JavaParser.java" startLine="359" startPosition="9" endLine="360" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="229101595900307229" fileName="JavaParser.java" startLine="361" startPosition="60" endLine="362" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3500060863298655706" fileName="JavaParser.java" startLine="364" startPosition="55" endLine="365" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1172665404463005173" fileName="JavaParser.java" startLine="366" startPosition="9" endLine="367" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6956162774782798512" fileName="JavaParser.java" startLine="367" startPosition="0" endLine="368" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6956162774782805270" fileName="JavaParser.java" startLine="369" startPosition="29" endLine="370" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6956162774782606161" fileName="JavaParser.java" startLine="371" startPosition="9" endLine="372" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1172665404464022888" fileName="JavaParser.java" startLine="372" startPosition="55" endLine="373" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1172665404463983143" fileName="JavaParser.java" startLine="373" startPosition="0" endLine="374" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1172665404464023679" fileName="JavaParser.java" startLine="375" startPosition="34" endLine="376" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7935837758427304591" fileName="JavaParser.java" startLine="360" startPosition="91" endLine="361" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7935837758427330302" fileName="JavaParser.java" startLine="361" startPosition="18" endLine="362" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1172665404463005173" fileName="JavaParser.java" startLine="362" startPosition="18" endLine="363" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6956162774782798512" fileName="JavaParser.java" startLine="363" startPosition="0" endLine="364" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6956162774782805270" fileName="JavaParser.java" startLine="365" startPosition="29" endLine="366" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6956162774782606161" fileName="JavaParser.java" startLine="367" startPosition="9" endLine="368" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1172665404464022888" fileName="JavaParser.java" startLine="368" startPosition="55" endLine="369" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1172665404463983143" fileName="JavaParser.java" startLine="369" startPosition="0" endLine="370" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1172665404464023679" fileName="JavaParser.java" startLine="371" startPosition="34" endLine="372" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3493766494546492317" fileName="JavaParser.java" startLine="45" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaParser#()V" />
     <nodeInfo nodeId="5616839344933922225" fileName="JavaParser.java" startLine="273" startPosition="10" endLine="275" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5616839344933920221" fileName="JavaParser.java" startLine="294" startPosition="0" endLine="296" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nodes" />
@@ -2084,10 +2353,8 @@
     <nodeInfo nodeId="5616839344933923171" fileName="JavaParser.java" startLine="318" startPosition="0" endLine="321" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorMsg#()Ljava/lang/String;" />
     <nodeInfo nodeId="8504030010051279121" fileName="JavaParser.java" startLine="329" startPosition="246" endLine="332" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6956162774782534776" fileName="JavaParser.java" startLine="356" startPosition="58" endLine="359" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="229101595900287432" fileName="JavaParser.java" startLine="360" startPosition="91" endLine="363" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3500060863298655698" fileName="JavaParser.java" startLine="363" startPosition="9" endLine="366" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6956162774782804705" fileName="JavaParser.java" startLine="368" startPosition="43" endLine="371" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1172665404464023141" fileName="JavaParser.java" startLine="374" startPosition="47" endLine="377" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6956162774782804705" fileName="JavaParser.java" startLine="364" startPosition="43" endLine="367" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1172665404464023141" fileName="JavaParser.java" startLine="370" startPosition="47" endLine="373" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9140629538072468459" fileName="JavaParser.java" startLine="64" startPosition="70" endLine="68" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4046344333283880884" fileName="JavaParser.java" startLine="157" startPosition="0" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7731963821318721634" fileName="JavaParser.java" startLine="188" startPosition="75" endLine="192" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2116,14 +2383,14 @@
     <nodeInfo nodeId="1179266876350200176" fileName="JavaParser.java" startLine="278" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="peekPackage#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="3671703302989070928" fileName="JavaParser.java" startLine="168" startPosition="36" endLine="183" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6072020170586257631" fileName="JavaParser.java" startLine="325" startPosition="144" endLine="342" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6956162774782511139" fileName="JavaParser.java" startLine="355" startPosition="65" endLine="374" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3493766494546492356" fileName="JavaParser.java" startLine="246" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makeImport#(Lorg/eclipse/jdt/internal/compiler/ast/ImportReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6072020170586257589" fileName="JavaParser.java" startLine="323" startPosition="64" endLine="343" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9025524024257344848" fileName="JavaParser.java" startLine="323" startPosition="0" endLine="345" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryResolveUnknowns#(Ljava/lang/Iterable;)V" />
     <nodeInfo nodeId="3671703302989070995" fileName="JavaParser.java" startLine="193" startPosition="7" endLine="216" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6956162774782511139" fileName="JavaParser.java" startLine="355" startPosition="65" endLine="378" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3493766494546492321" fileName="JavaParser.java" startLine="220" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="annotateWithmports#(Lorg/eclipse/jdt/internal/compiler/ast/CompilationUnitDeclaration;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6956162774781731270" fileName="JavaParser.java" startLine="349" startPosition="0" endLine="379" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="6956162774781586750" fileName="JavaParser.java" startLine="346" startPosition="0" endLine="381" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryResolveDynamicRefs#(Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="6956162774781731270" fileName="JavaParser.java" startLine="349" startPosition="0" endLine="375" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="6956162774781586750" fileName="JavaParser.java" startLine="346" startPosition="0" endLine="377" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryResolveDynamicRefs#(Ljava/lang/Iterable;)V" />
     <nodeInfo nodeId="3671703302989070793" fileName="JavaParser.java" startLine="167" startPosition="13" endLine="217" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8312519168222600819" fileName="JavaParser.java" startLine="75" startPosition="0" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="9210759828700287228" fileName="JavaParser.java" startLine="148" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachComments#([CLjetbrains/mps/ide/java/newparser/ASTConverter;Lorg/eclipse/jdt/internal/core/util/RecordedParsingInformation;)V" />
@@ -2147,10 +2414,8 @@
     <scopeInfo nodeId="5616839344933923174" fileName="JavaParser.java" startLine="318" startPosition="33" endLine="319" endPosition="22" />
     <scopeInfo nodeId="8504030010051279122" fileName="JavaParser.java" startLine="330" startPosition="28" endLine="331" endPosition="19" />
     <scopeInfo nodeId="6956162774782534778" fileName="JavaParser.java" startLine="357" startPosition="49" endLine="358" endPosition="19" />
-    <scopeInfo nodeId="229101595900287434" fileName="JavaParser.java" startLine="361" startPosition="60" endLine="362" endPosition="19" />
-    <scopeInfo nodeId="3500060863298655705" fileName="JavaParser.java" startLine="364" startPosition="55" endLine="365" endPosition="19" />
-    <scopeInfo nodeId="6956162774782804707" fileName="JavaParser.java" startLine="369" startPosition="29" endLine="370" endPosition="19" />
-    <scopeInfo nodeId="1172665404464023143" fileName="JavaParser.java" startLine="375" startPosition="34" endLine="376" endPosition="87" />
+    <scopeInfo nodeId="6956162774782804707" fileName="JavaParser.java" startLine="365" startPosition="29" endLine="366" endPosition="19" />
+    <scopeInfo nodeId="1172665404464023143" fileName="JavaParser.java" startLine="371" startPosition="34" endLine="372" endPosition="87" />
     <scopeInfo nodeId="3493766494546492317" fileName="JavaParser.java" startLine="45" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="4046344333283880886" fileName="JavaParser.java" startLine="158" startPosition="48" endLine="160" endPosition="70" />
     <scopeInfo nodeId="7731963821318721636" fileName="JavaParser.java" startLine="189" startPosition="77" endLine="191" endPosition="16" />
@@ -2272,6 +2537,10 @@
     <scopeInfo nodeId="6072020170586257631" fileName="JavaParser.java" startLine="325" startPosition="144" endLine="342" endPosition="7">
       <varInfo nodeId="6072020170586257632" varName="unk" />
     </scopeInfo>
+    <scopeInfo nodeId="6956162774782511145" fileName="JavaParser.java" startLine="356" startPosition="58" endLine="373" endPosition="9">
+      <varInfo nodeId="6956162774782798513" varName="target" />
+      <varInfo nodeId="1172665404463983144" varName="targetModel" />
+    </scopeInfo>
     <scopeInfo nodeId="3493766494546492360" fileName="JavaParser.java" startLine="246" startPosition="52" endLine="264" endPosition="15">
       <varInfo nodeId="6528213125912084443" varName="imp" />
       <varInfo nodeId="3493766494546492373" varName="isStatic" />
@@ -2282,6 +2551,9 @@
     <scopeInfo nodeId="6072020170586257592" fileName="JavaParser.java" startLine="324" startPosition="53" endLine="342" endPosition="7">
       <varInfo nodeId="6072020170586257595" varName="unknowns" />
     </scopeInfo>
+    <scopeInfo nodeId="6956162774782511139" fileName="JavaParser.java" startLine="355" startPosition="65" endLine="374" endPosition="7">
+      <varInfo nodeId="6956162774782511141" varName="ref" />
+    </scopeInfo>
     <scopeInfo nodeId="3493766494546492356" fileName="JavaParser.java" startLine="246" startPosition="0" endLine="266" endPosition="0">
       <varInfo nodeId="3493766494546492358" varName="impRef" />
     </scopeInfo>
@@ -2289,36 +2561,29 @@
     <scopeInfo nodeId="6072020170586257589" fileName="JavaParser.java" startLine="323" startPosition="64" endLine="343" endPosition="5">
       <varInfo nodeId="6072020170586257590" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6956162774782511145" fileName="JavaParser.java" startLine="356" startPosition="58" endLine="377" endPosition="9">
-      <varInfo nodeId="6956162774782798513" varName="target" />
-      <varInfo nodeId="1172665404463983144" varName="targetModel" />
-    </scopeInfo>
     <scopeInfo nodeId="9025524024257344848" fileName="JavaParser.java" startLine="323" startPosition="0" endLine="345" endPosition="0">
       <varInfo nodeId="6072020170586257587" varName="roots" />
     </scopeInfo>
     <scopeInfo nodeId="3493766494546492326" fileName="JavaParser.java" startLine="220" startPosition="85" endLine="243" endPosition="14">
       <varInfo nodeId="6528213125912464877" varName="imports" />
     </scopeInfo>
-    <scopeInfo nodeId="6956162774782511139" fileName="JavaParser.java" startLine="355" startPosition="65" endLine="378" endPosition="7">
-      <varInfo nodeId="6956162774782511141" varName="ref" />
+    <scopeInfo nodeId="6956162774781731274" fileName="JavaParser.java" startLine="350" startPosition="57" endLine="374" endPosition="7">
+      <varInfo nodeId="6956162774782369284" varName="node" />
+      <varInfo nodeId="1172665404463012389" varName="ourModel" />
+      <varInfo nodeId="6956162774782465802" varName="refs" />
     </scopeInfo>
     <scopeInfo nodeId="3493766494546492321" fileName="JavaParser.java" startLine="220" startPosition="0" endLine="245" endPosition="0">
       <varInfo nodeId="6528213125912069334" varName="clas" />
       <varInfo nodeId="3493766494546492324" varName="compResult" />
     </scopeInfo>
-    <scopeInfo nodeId="6956162774781731274" fileName="JavaParser.java" startLine="350" startPosition="57" endLine="378" endPosition="7">
-      <varInfo nodeId="6956162774782369284" varName="node" />
-      <varInfo nodeId="1172665404463012389" varName="ourModel" />
-      <varInfo nodeId="6956162774782465802" varName="refs" />
+    <scopeInfo nodeId="6956162774781571760" fileName="JavaParser.java" startLine="346" startPosition="67" endLine="375" endPosition="5">
+      <varInfo nodeId="6956162774781932727" varName="stack" />
     </scopeInfo>
     <scopeInfo nodeId="8312519168222600831" fileName="JavaParser.java" startLine="79" startPosition="22" endLine="109" endPosition="0">
       <varInfo nodeId="8312519168222600857" varName="astTypes" />
       <varInfo nodeId="8312519168222600840" varName="compRes" />
     </scopeInfo>
-    <scopeInfo nodeId="6956162774781571760" fileName="JavaParser.java" startLine="346" startPosition="67" endLine="379" endPosition="5">
-      <varInfo nodeId="6956162774781932727" varName="stack" />
-    </scopeInfo>
-    <scopeInfo nodeId="6956162774781586750" fileName="JavaParser.java" startLine="346" startPosition="0" endLine="381" endPosition="0">
+    <scopeInfo nodeId="6956162774781586750" fileName="JavaParser.java" startLine="346" startPosition="0" endLine="377" endPosition="0">
       <varInfo nodeId="6956162774781586734" varName="nodes" />
     </scopeInfo>
     <scopeInfo nodeId="3671703302989070796" fileName="JavaParser.java" startLine="168" startPosition="36" endLine="216" endPosition="7">
@@ -2361,7 +2626,7 @@
     <unitInfo nodeId="3671703302989071279" fileName="JavaParser.java" startLine="195" startPosition="104" endLine="199" endPosition="9" unitName="jetbrains.mps.ide.java.newparser.JavaParser$2" />
     <unitInfo nodeId="6072020170586257752" fileName="JavaParser.java" startLine="334" startPosition="59" endLine="340" endPosition="9" unitName="jetbrains.mps.ide.java.newparser.JavaParser$4" />
     <unitInfo nodeId="5616839344933920215" fileName="JavaParser.java" startLine="292" startPosition="0" endLine="322" endPosition="0" unitName="jetbrains.mps.ide.java.newparser.JavaParser$JavaParseResult" />
-    <unitInfo nodeId="3493766494546492073" fileName="JavaParser.java" startLine="42" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.ide.java.newparser.JavaParser" />
+    <unitInfo nodeId="3493766494546492073" fileName="JavaParser.java" startLine="42" startPosition="0" endLine="378" endPosition="0" unitName="jetbrains.mps.ide.java.newparser.JavaParser" />
   </root>
   <root nodeRef="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)/3493766494546492981">
     <nodeInfo nodeId="3493766494546492987" fileName="ParseDepth.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParseDepth#()V" />

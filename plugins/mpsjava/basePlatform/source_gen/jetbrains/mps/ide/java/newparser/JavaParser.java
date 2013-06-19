@@ -358,12 +358,8 @@ public class JavaParser {
           continue;
         }
         // FIXME temp hack around typesystem looping when resolving certain dyn.references 
-        if (ref.getRole().equals("baseMethodDeclaration")) {
-          continue;
-        }
-        if (ref.getRole().equals("fieldDeclaration")) {
-          continue;
-        }
+        // <node> 
+        // <node> 
 
         SNode target = ref.getTargetNode();
         if (target == null) {
