@@ -17,6 +17,7 @@ package jetbrains.mps.ide.findusages.view;
 
 import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.Actions;
+import com.intellij.icons.AllIcons.Toolwindows;
 import com.intellij.ide.OccurenceNavigator;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -47,6 +48,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
@@ -185,10 +187,11 @@ public abstract class UsagesView implements IExternalizeable {
   }
 
   public String getCaption() {
-    return mySearchQuery.getCaption();
+    return mySearchQuery == null ? "" : mySearchQuery.getCaption();
   }
 
   public Icon getIcon() {
+    if (mySearchQuery == null || mySearchQuery.getObjectHolder() == null) return Toolwindows.ToolWindowFind;
     return IconManager.getIconForIHolder(mySearchQuery.getObjectHolder());
   }
 
@@ -300,7 +303,7 @@ public abstract class UsagesView implements IExternalizeable {
     }
 
     public ButtonConfiguration showSettingsButton(boolean flag) {
-      myShowSettingsButton= flag;
+      myShowSettingsButton = flag;
       return this;
     }
 
@@ -416,15 +419,15 @@ public abstract class UsagesView implements IExternalizeable {
             }
 
             AnActionEvent event =
-                new AnActionEvent(e.getInputEvent(), e.getDataContext(), e.getPlace(), e.getPresentation(), e.getActionManager(), e.getModifiers()){
+                new AnActionEvent(e.getInputEvent(), e.getDataContext(), e.getPlace(), e.getPresentation(), e.getActionManager(), e.getModifiers()) {
                   @Nullable
                   @Override
                   public <T> T getData(@NotNull DataKey<T> key) {
-                    if(key == MPSCommonDataKeys.CONTEXT_MODEL) {
-                      return (T)((SNode)holder.getObject()).getModel();
+                    if (key == MPSCommonDataKeys.CONTEXT_MODEL) {
+                      return (T) ((SNode) holder.getObject()).getModel();
                     }
-                    if(key == MPSCommonDataKeys.NODE) {
-                      return (T)holder.getObject();
+                    if (key == MPSCommonDataKeys.NODE) {
+                      return (T) holder.getObject();
                     }
                     return super.getData(key);
                   }

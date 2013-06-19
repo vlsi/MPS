@@ -57,16 +57,16 @@ public class GeneratedCommand_Behavior {
                     }
                   }
                 } catch (ClassNotFoundException ignore) {
-                  if (LOG.isEnabledFor(Priority.WARN)) {
-                    LOG.warn("Exception on query loading", ignore);
+                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                    LOG.error("Exception on query loading", ignore);
                   }
                 } catch (IllegalAccessException ignore) {
-                  if (LOG.isEnabledFor(Priority.WARN)) {
-                    LOG.warn("Exception on query loading", ignore);
+                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                    LOG.error("Exception on query loading", ignore);
                   }
                 } catch (InvocationTargetException ignore) {
-                  if (LOG.isEnabledFor(Priority.WARN)) {
-                    LOG.warn("Exception on query loading", ignore);
+                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                    LOG.error("Exception on query loading", ignore);
                   }
                 }
               }

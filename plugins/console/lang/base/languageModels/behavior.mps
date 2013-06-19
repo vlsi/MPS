@@ -341,7 +341,7 @@
                                           </node>
                                           <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="2034046503373010575" nodeInfo="sn">
                                             <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="2034046503373010576" nodeInfo="nn">
-                                              <property name="severity" nameId="tpib.1167245565795" value="warn" />
+                                              <property name="severity" nameId="tpib.1167245565795" value="error" />
                                               <property name="hasException" nameId="tpib.1167228628751" value="true" />
                                               <node role="logExpression" roleId="tpib.1167227463056" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2034046503373010577" nodeInfo="nn">
                                                 <property name="value" nameId="tpee.1070475926801" value="Exception on query loading" />
@@ -361,7 +361,7 @@
                                           </node>
                                           <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="2034046503373010582" nodeInfo="sn">
                                             <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="2034046503373010583" nodeInfo="nn">
-                                              <property name="severity" nameId="tpib.1167245565795" value="warn" />
+                                              <property name="severity" nameId="tpib.1167245565795" value="error" />
                                               <property name="hasException" nameId="tpib.1167228628751" value="true" />
                                               <node role="logExpression" roleId="tpib.1167227463056" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2034046503373010585" nodeInfo="nn">
                                                 <property name="value" nameId="tpee.1070475926801" value="Exception on query loading" />
@@ -381,7 +381,7 @@
                                           </node>
                                           <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="2034046503373010591" nodeInfo="sn">
                                             <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="2034046503373010592" nodeInfo="nn">
-                                              <property name="severity" nameId="tpib.1167245565795" value="warn" />
+                                              <property name="severity" nameId="tpib.1167245565795" value="error" />
                                               <property name="hasException" nameId="tpib.1167228628751" value="true" />
                                               <node role="logExpression" roleId="tpib.1167227463056" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2034046503373010593" nodeInfo="nn">
                                                 <property name="value" nameId="tpee.1070475926801" value="Exception on query loading" />
