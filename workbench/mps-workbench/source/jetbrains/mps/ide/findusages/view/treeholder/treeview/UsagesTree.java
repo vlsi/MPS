@@ -23,10 +23,7 @@ import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.SystemInfo;
-import com.intellij.openapi.wm.ToolWindow;
-import com.intellij.openapi.wm.ToolWindowType;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -138,7 +135,7 @@ public class UsagesTree extends MPSTree {
     getActionMap().put(COMMAND_OPEN_NODE_IN_TREE, new AbstractAction() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        openCurrentNodeLink(true, !isUnstableWindow());
+        openCurrentNodeLink(true, true);
       }
     });
 
@@ -515,13 +512,6 @@ public class UsagesTree extends MPSTree {
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
-  private void openCurrentNodeLinkIfLeaf(boolean inProject, boolean focus) {
-    UsagesTreeNode treeNode = getCurrentNode();
-    if (treeNode == null) return;
-    if (treeNode.getChildCount() != 0) return;
-    goByNodeLink(treeNode, inProject, focus);
-  }
-
   private void openCurrentNodeLink(boolean inProjectIfPossible, boolean focus) {
     UsagesTreeNode treeNode = getCurrentNode();
     if (treeNode == null) return;
@@ -657,53 +647,6 @@ public class UsagesTree extends MPSTree {
     }
   }
 
-  public void navigateToNextResult() {
-    if (getResultsNode().getChildCount() == 0) return;
-
-    UsagesTreeNode currentNode = getCurrentNode();
-    UsagesTreeNode next;
-
-    if (currentNode == null || !inResults(currentNode)) {
-      next = findFirstResultInSubtree((UsagesTreeNode) getResultsNode().getChildAt(0), false);
-    } else {
-      next = findNextResult(currentNode);
-    }
-
-    if (next != null) {
-      setCurrentNode(next);
-      openCurrentNodeLink(false, !isUnstableWindow());
-    }
-  }
-
-  public void navigateToPreviousResult() {
-    boolean noResults = getResultsNode().getChildCount() == 0;
-
-    UsagesTreeNode searchedNodesNode = getSearchedNodesNode();
-    boolean noSearchedNodes = searchedNodesNode == null || searchedNodesNode.getChildCount() == 0;
-
-    if (noResults && noSearchedNodes) return;
-
-    UsagesTreeNode currentNode = getCurrentNode();
-    UsagesTreeNode next;
-
-    if (currentNode == null) {
-      next = findLastResultInSubtree((UsagesTreeNode) getResultsNode().getChildAt(0), false);
-    } else {
-      next = findPrevResult(currentNode);
-    }
-
-    if (next != null) {
-      setCurrentNode(next);
-      openCurrentNodeLink(false, !isUnstableWindow());
-    }
-  }
-
-  private boolean inResults(UsagesTreeNode node) {
-    if (node == getRootNode()) return false;
-    if (node == getResultsNode()) return true;
-    return inResults((UsagesTreeNode) node.getParent());
-  }
-
   public void navigateToNode(final SNode node, boolean focus) {
     ModelAccess.assertLegalWrite();
 
@@ -785,14 +728,5 @@ public class UsagesTree extends MPSTree {
       if (children == null) return new ArrayList<UsagesTreeNode>();
       return children;
     }
-  }
-
-  protected boolean isUnstableWindow() {
-    //todo this is a workaround for IDEA bug. Remove the method when they'll fix isAutoHide()
-    return getToolWindow().isAutoHide() || getToolWindow().getType() == ToolWindowType.SLIDING;
-  }
-
-  private ToolWindow getToolWindow() {
-    return myProject.getComponent(UsagesViewTool.class).getToolWindow();
   }
 }

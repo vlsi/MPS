@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.icons;
 
-import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
+import jetbrains.mps.ide.findusages.model.holders.ConstantHolder;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
@@ -44,8 +44,8 @@ public class IconManager {
       return IdeIcons.SOLUTION_ICON;
     } else if (holder instanceof VoidHolder) {
       return ((VoidHolder) holder).getIcon();
-    } else if (holder instanceof ConstantFinder.ConstantHolder) {
-      return ((ConstantFinder.ConstantHolder) holder).getIcon();
+    } else if (holder instanceof ConstantHolder) {
+      return ((ConstantHolder) holder).getIcon();
     }
     // StringHolder, AspectMethodsFinder.AspectMethodsHolder
     return null;

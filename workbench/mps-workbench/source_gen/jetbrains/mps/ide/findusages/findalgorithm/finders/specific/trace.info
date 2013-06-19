@@ -277,78 +277,22 @@
     <unitInfo nodeId="7228605397000826824" fileName="AspectMethodsFinder.java" startLine="25" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder" />
   </root>
   <root nodeRef="r:3decc57d-6015-4d6c-ad86-7f2134c013b6(jetbrains.mps.ide.findusages.findalgorithm.finders.specific)/7228605397000827110">
-    <nodeInfo nodeId="7228605397000827169" fileName="ConstantFinder.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResults" />
-    <nodeInfo nodeId="7228605397000827189" fileName="ConstantFinder.java" startLine="28" startPosition="80" endLine="29" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7228605397000827195" fileName="ConstantFinder.java" startLine="32" startPosition="34" endLine="33" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7228605397000827118" fileName="ConstantFinder.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myData" />
-    <nodeInfo nodeId="7228605397000827122" fileName="ConstantFinder.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCaption" />
-    <nodeInfo nodeId="7228605397000827125" fileName="ConstantFinder.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIcon" />
-    <nodeInfo nodeId="7228605397000827204" fileName="ConstantFinder.java" startLine="44" startPosition="54" endLine="45" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7228605397000827247" fileName="ConstantFinder.java" startLine="52" startPosition="36" endLine="53" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7228605397000827220" fileName="ConstantFinder.java" startLine="60" startPosition="45" endLine="61" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7228605397000827223" fileName="ConstantFinder.java" startLine="66" startPosition="32" endLine="67" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7228605397000827227" fileName="ConstantFinder.java" startLine="70" startPosition="27" endLine="71" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7228605397000827230" fileName="ConstantFinder.java" startLine="75" startPosition="90" endLine="76" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7228605397000827236" fileName="ConstantFinder.java" startLine="80" startPosition="91" endLine="81" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7228605397000827176" fileName="ConstantFinder.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstantFinder#()V" />
-    <nodeInfo nodeId="7228605397000827128" fileName="ConstantFinder.java" startLine="41" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstantHolder#()V" />
-    <nodeInfo nodeId="7228605397000827191" fileName="ConstantFinder.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7228605397000827131" fileName="ConstantFinder.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstantHolder#(Ljetbrains/mps/ide/findusages/model/SearchResults;)V" />
-    <nodeInfo nodeId="7228605397000827242" fileName="ConstantFinder.java" startLine="51" startPosition="27" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7228605397000827152" fileName="ConstantFinder.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="7228605397000827180" fileName="ConstantFinder.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="7228605397000827145" fileName="ConstantFinder.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getObject#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="7228605397000827155" fileName="ConstantFinder.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="read#(Lorg/jdom/Element;Ljetbrains/mps/project/Project;)V" />
-    <nodeInfo nodeId="7228605397000827162" fileName="ConstantFinder.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#(Lorg/jdom/Element;Ljetbrains/mps/project/Project;)V" />
-    <nodeInfo nodeId="7228605397000827149" fileName="ConstantFinder.java" startLine="64" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCaption#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7228605397000827216" fileName="ConstantFinder.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7228605397000827209" fileName="ConstantFinder.java" startLine="48" startPosition="85" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7228605397000827137" fileName="ConstantFinder.java" startLine="48" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstantHolder#(Ljava/util/Collection;Ljava/lang/String;)V" />
-    <scopeInfo nodeId="7228605397000827179" fileName="ConstantFinder.java" startLine="24" startPosition="27" endLine="24" endPosition="27" />
-    <scopeInfo nodeId="7228605397000827202" fileName="ConstantFinder.java" startLine="41" startPosition="29" endLine="41" endPosition="29" />
-    <scopeInfo nodeId="7228605397000827188" fileName="ConstantFinder.java" startLine="28" startPosition="80" endLine="29" endPosition="21" />
-    <scopeInfo nodeId="7228605397000827194" fileName="ConstantFinder.java" startLine="32" startPosition="34" endLine="33" endPosition="29" />
-    <scopeInfo nodeId="7228605397000827203" fileName="ConstantFinder.java" startLine="44" startPosition="54" endLine="45" endPosition="20" />
-    <scopeInfo nodeId="7228605397000827246" fileName="ConstantFinder.java" startLine="52" startPosition="36" endLine="53" endPosition="87" />
-    <scopeInfo nodeId="7228605397000827219" fileName="ConstantFinder.java" startLine="60" startPosition="45" endLine="61" endPosition="20" />
-    <scopeInfo nodeId="7228605397000827222" fileName="ConstantFinder.java" startLine="66" startPosition="32" endLine="67" endPosition="23" />
-    <scopeInfo nodeId="7228605397000827226" fileName="ConstantFinder.java" startLine="70" startPosition="27" endLine="71" endPosition="20" />
-    <scopeInfo nodeId="7228605397000827229" fileName="ConstantFinder.java" startLine="75" startPosition="90" endLine="76" endPosition="84" />
-    <scopeInfo nodeId="7228605397000827235" fileName="ConstantFinder.java" startLine="80" startPosition="91" endLine="81" endPosition="85" />
-    <scopeInfo nodeId="7228605397000827176" fileName="ConstantFinder.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="7228605397000827128" fileName="ConstantFinder.java" startLine="41" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="7228605397000827191" fileName="ConstantFinder.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="7228605397000827131" fileName="ConstantFinder.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="7228605397000827134" varName="data" />
-    </scopeInfo>
-    <scopeInfo nodeId="7228605397000827241" fileName="ConstantFinder.java" startLine="51" startPosition="27" endLine="54" endPosition="11" />
-    <scopeInfo nodeId="7228605397000827242" fileName="ConstantFinder.java" startLine="51" startPosition="27" endLine="54" endPosition="11">
-      <varInfo nodeId="7228605397000827244" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7228605397000827152" fileName="ConstantFinder.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="7228605397000827180" fileName="ConstantFinder.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+    <nodeInfo nodeId="7228605397000827169" fileName="ConstantFinder.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResults" />
+    <nodeInfo nodeId="7228605397000827189" fileName="ConstantFinder.java" startLine="18" startPosition="80" endLine="19" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7228605397000827195" fileName="ConstantFinder.java" startLine="22" startPosition="34" endLine="23" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7228605397000827176" fileName="ConstantFinder.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstantFinder#()V" />
+    <nodeInfo nodeId="7228605397000827191" fileName="ConstantFinder.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7228605397000827180" fileName="ConstantFinder.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <scopeInfo nodeId="7228605397000827179" fileName="ConstantFinder.java" startLine="14" startPosition="27" endLine="14" endPosition="27" />
+    <scopeInfo nodeId="7228605397000827188" fileName="ConstantFinder.java" startLine="18" startPosition="80" endLine="19" endPosition="21" />
+    <scopeInfo nodeId="7228605397000827194" fileName="ConstantFinder.java" startLine="22" startPosition="34" endLine="23" endPosition="29" />
+    <scopeInfo nodeId="7228605397000827176" fileName="ConstantFinder.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7228605397000827191" fileName="ConstantFinder.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="7228605397000827180" fileName="ConstantFinder.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="7228605397000827186" varName="monitor" />
       <varInfo nodeId="7228605397000827184" varName="query" />
     </scopeInfo>
-    <scopeInfo nodeId="7228605397000827145" fileName="ConstantFinder.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="7228605397000827155" fileName="ConstantFinder.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
-      <varInfo nodeId="7228605397000827158" varName="element" />
-      <varInfo nodeId="7228605397000827160" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="7228605397000827162" fileName="ConstantFinder.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
-      <varInfo nodeId="7228605397000827165" varName="element" />
-      <varInfo nodeId="7228605397000827167" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="7228605397000827149" fileName="ConstantFinder.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="7228605397000827216" fileName="ConstantFinder.java" startLine="50" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="7228605397000827208" fileName="ConstantFinder.java" startLine="48" startPosition="85" endLine="56" endPosition="9" />
-    <scopeInfo nodeId="7228605397000827137" fileName="ConstantFinder.java" startLine="48" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="7228605397000827143" varName="categoryName" />
-      <varInfo nodeId="7228605397000827140" varName="nodes" />
-    </scopeInfo>
-    <unitInfo nodeId="7228605397000827215" fileName="ConstantFinder.java" startLine="49" startPosition="47" endLine="56" endPosition="7" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder$1" />
-    <unitInfo nodeId="7228605397000827113" fileName="ConstantFinder.java" startLine="36" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder$ConstantHolder" />
-    <unitInfo nodeId="7228605397000827110" fileName="ConstantFinder.java" startLine="21" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder" />
+    <unitInfo nodeId="7228605397000827110" fileName="ConstantFinder.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder" />
   </root>
 </debugInfo>
 
