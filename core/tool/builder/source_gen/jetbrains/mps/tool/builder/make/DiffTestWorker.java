@@ -197,7 +197,7 @@ public class DiffTestWorker extends GeneratorWorker {
           testParams._0(new DiffTestWorker.MyUnitTestAdapter());
         }
         myReporter.finishRun();
-        myReporter.startRun("Module cluster " + String.valueOf(count[0]++));
+        myReporter.startRun(DiffTestWorker.this.myWhatToDo.getProperty("ant.project.name") + " cluster " + String.valueOf(count[0]++));
       }
     };
     IOperationContext context = new ProjectOperationContext(project);

@@ -1441,7 +1441,7 @@
     <nodeInfo nodeId="878521226301296783" fileName="DiffTestWorker.java" startLine="195" startPosition="33" endLine="196" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="878521226301296797" fileName="DiffTestWorker.java" startLine="196" startPosition="174" endLine="197" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296805" fileName="DiffTestWorker.java" startLine="198" startPosition="9" endLine="199" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226301296809" fileName="DiffTestWorker.java" startLine="199" startPosition="31" endLine="200" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226301296809" fileName="DiffTestWorker.java" startLine="199" startPosition="31" endLine="200" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301296821" fileName="DiffTestWorker.java" startLine="202" startPosition="6" endLine="203" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="878521226301296829" fileName="DiffTestWorker.java" startLine="204" startPosition="9" endLine="205" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="878521226301296852" fileName="DiffTestWorker.java" startLine="209" startPosition="35" endLine="210" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2124,7 +2124,7 @@
     </scopeInfo>
     <scopeInfo nodeId="878521226301298190" fileName="DiffTestWorker.java" startLine="545" startPosition="0" endLine="572" endPosition="0" />
     <scopeInfo nodeId="878521226301298073" fileName="DiffTestWorker.java" startLine="503" startPosition="25" endLine="531" endPosition="7" />
-    <scopeInfo nodeId="878521226301296668" fileName="DiffTestWorker.java" startLine="171" startPosition="114" endLine="200" endPosition="76">
+    <scopeInfo nodeId="878521226301296668" fileName="DiffTestWorker.java" startLine="171" startPosition="114" endLine="200" endPosition="135">
       <varInfo nodeId="878521226301296732" varName="dparams" />
       <varInfo nodeId="878521226301296675" varName="makeparams" />
       <varInfo nodeId="878521226301296706" varName="tparams" />
