@@ -30,13 +30,19 @@ import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.testFramework.LightVirtualFile;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+
+import javax.swing.Icon;
 
 /**
  * User: fyodor
@@ -53,6 +59,22 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
     myNodeId = nodeId;
     myName = name;
     myViewProvider = new SingleRootFileViewProvider(manager, new LightVirtualFile(), false);
+  }
+
+  @Override
+  protected Icon getBaseIcon() {
+    return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+      @Override
+      public Icon compute() {
+        return IconManager.getIconFor(getSNodeReference().resolve(MPSModuleRepository.getInstance()), true);
+      }
+    });
+  }
+
+  @Nullable
+  @Override
+  protected Icon getElementIcon(@IconFlags int flags) {
+    return getBaseIcon();
   }
 
   @Nullable

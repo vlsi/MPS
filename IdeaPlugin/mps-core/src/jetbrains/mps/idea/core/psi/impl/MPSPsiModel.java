@@ -30,17 +30,18 @@ import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -49,10 +50,10 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
+import javax.swing.Icon;
 import java.io.File;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
@@ -74,6 +75,28 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   public MPSPsiModel(SModelReference reference, PsiManager manager) {
     super(manager);
     this.myModelReference = reference;
+  }
+
+  @Override
+  protected Icon getBaseIcon() {
+    return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+      @Override
+      public Icon compute() {
+        return IconManager.getIconFor(myModelReference.resolve(MPSModuleRepository.getInstance()));
+      }
+    });
+  }
+
+  @Nullable
+  @Override
+  public Icon getIcon(int flags) {
+    return getBaseIcon();
+  }
+
+  @Nullable
+  @Override
+  protected Icon getElementIcon(@IconFlags int flags) {
+    return getBaseIcon();
   }
 
   @NotNull
