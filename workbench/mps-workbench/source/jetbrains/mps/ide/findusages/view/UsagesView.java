@@ -32,7 +32,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action;
+import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -298,7 +298,7 @@ public abstract class UsagesView implements IExternalizeable {
     }
 
     public ButtonConfiguration showSettingsButton(boolean flag) {
-      myShowSettingsButton= flag;
+      myShowSettingsButton = flag;
       return this;
     }
 
@@ -402,8 +402,13 @@ public abstract class UsagesView implements IExternalizeable {
     private void createButtons(ButtonConfiguration buttonConfiguration) {
       DefaultActionGroup actionGroup = new DefaultActionGroup();
 
-      if (buttonConfiguration.isShowSettingsButton()) {
+      if (buttonConfiguration.isShowSettingsButton() && ActionManager.getInstance().getAction(MPSActions.FIND_USAGES_WITH_DIALOG_ACTION) != null) {
         actionGroup.addAction(new AnAction("Settings...", "Show find usages settings dialog", AllIcons.General.ProjectSettings) {
+          @Override
+          public void update(AnActionEvent e) {
+            super.update(e);    //To change body of overridden methods use File | Settings | File Templates.
+          }
+
           @Override
           public void actionPerformed(AnActionEvent e) {
             assert mySearchQuery != null;
@@ -414,45 +419,23 @@ public abstract class UsagesView implements IExternalizeable {
             }
 
             AnActionEvent event =
-                new AnActionEvent(e.getInputEvent(), e.getDataContext(), e.getPlace(), e.getPresentation(), e.getActionManager(), e.getModifiers()){
+                new AnActionEvent(e.getInputEvent(), e.getDataContext(), e.getPlace(), e.getPresentation(), e.getActionManager(),
+                    e.getModifiers()) {
                   @Nullable
                   @Override
                   public <T> T getData(@NotNull DataKey<T> key) {
-                    if(key == MPSCommonDataKeys.CONTEXT_MODEL) {
-                      return (T)((SNode)holder.getObject()).getModel();
+                    if (key == MPSCommonDataKeys.CONTEXT_MODEL) {
+                      return (T) ((SNode) holder.getObject()).getModel();
                     }
-                    if(key == MPSCommonDataKeys.NODE) {
-                      return (T)holder.getObject();
+                    if (key == MPSCommonDataKeys.NODE) {
+                      return (T) holder.getObject();
                     }
                     return super.getData(key);
                   }
                 };
 
-            FindSpecificNodeUsages_Action action = new FindSpecificNodeUsages_Action();
+            AnAction action = ActionManager.getInstance().getAction(MPSActions.FIND_USAGES_WITH_DIALOG_ACTION);
             action.actionPerformed(event);
-
-//            FindUsagesOptions options = new FindUsagesOptions(
-//                new FindersOptions(),
-//                new ScopeOptions(),
-//                new jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions()
-//            );
-//            FindUsagesDialog findUsagesDialog = new FindUsagesDialog(options, (SNode)holder.getObject(), myProject);
-//            findUsagesDialog.show();
-
-//            options = findUsagesDialog.getResult();
-//            getOptionsComponent().getDefaultOptions().setDefaultSearchOptions(concept.value, options.value);
-//            // start
-//            final Wrappers._T<IResultProvider> provider = new Wrappers._T<IResultProvider>();
-//            final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();
-//            final Wrappers._T<jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions> viewOptions = new Wrappers._T<jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions>();
-//            ModelAccess.instance().runReadAction(new Runnable() {
-//              public void run() {
-//                provider.value = options.value.getOption(FindersOptions.class).getResult();
-//                query.value = options.value.getOption(ScopeOptions.class).getResult(operationNode.value, context, model);
-//                viewOptions.value = options.value.getOption(jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions.class);
-//              }
-//            });
-//            myProject.getComponent(UsagesViewTool.class).findUsages(provider.value, query.value, true, viewOptions.value.myShowOneResult, viewOptions.value.myNewTab, "No usages for that node");
           }
         });
       }
