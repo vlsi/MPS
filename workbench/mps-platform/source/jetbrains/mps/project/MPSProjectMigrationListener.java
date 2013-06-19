@@ -13,18 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
 
-import com.intellij.openapi.project.*;
 import com.intellij.openapi.project.Project;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 3/12/12
- * Time: 3:06 PM
- * To change this template use File | Settings | File Templates.
- */
 public interface MPSProjectMigrationListener {
   void migrationStarted(Project project);
 

@@ -22,6 +22,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.SNodeOperations;
@@ -67,7 +68,7 @@ public class ModelNodeData extends BaseNodeData {
     if (modelDescriptor != null) {
       return IconManager.getIconFor(modelDescriptor);
     }
-    return jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
+    return IdeIcons.MODEL_ICON;
   }
 
   @Override

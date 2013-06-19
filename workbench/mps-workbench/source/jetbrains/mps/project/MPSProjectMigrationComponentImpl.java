@@ -27,79 +27,75 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 3/12/12
- * Time: 2:16 PM
- * To change this template use File | Settings | File Templates.
- */
-
-
 @State(
     name = "MPSProjectMigrationState",
     storages = {
         @Storage(file = StoragePathMacros.PROJECT_FILE)
     }
 )
-public class MPSProjectMigrationState extends AbstractProjectComponent  implements PersistentStateComponent<MPSProjectMigrationState.MyState>{
+public class MPSProjectMigrationComponentImpl extends AbstractProjectComponent implements MPSProjectMigrationComponent,
+    PersistentStateComponent<MPSProjectMigrationComponentImpl.MyState> {
 
   private List<MPSProjectMigrationListener> myMigrationListeners =
-    Collections.synchronizedList(new ArrayList<MPSProjectMigrationListener>());
+      Collections.synchronizedList(new ArrayList<MPSProjectMigrationListener>());
   private boolean myMigrationInProgress = false;
   private Object myAgent;
   private MyState myState;
 
-  protected MPSProjectMigrationState(com.intellij.openapi.project.Project project, MPSProjectVersion version) {
+  protected MPSProjectMigrationComponentImpl(com.intellij.openapi.project.Project project, MPSProjectVersion version) {
     super(project);
   }
 
-  public boolean hasMigrationAgent () {
+  @Override
+  public boolean hasMigrationAgent() {
     return myAgent != null;
   }
-  
-  public void setMigrationAgent (@Nullable Object agent) {
+
+  public void setMigrationAgent(@Nullable Object agent) {
     if (myAgent != null && agent != null) throw new IllegalStateException("already has an agent");
     myAgent = agent;
   }
-  
-  public boolean isMigrationRequired () {
+
+  @Override
+  public boolean isMigrationRequired() {
     Version version = myProject.getComponent(MPSProjectVersion.class).getVersion();
     return version.isMajorUpdate(MPSProjectVersion.CURRENT) ||
-           version.isMinorUpdate(MPSProjectVersion.CURRENT);
+        version.isMinorUpdate(MPSProjectVersion.CURRENT);
   }
 
-  public void migrationStarted () {
+  public void migrationStarted() {
     this.myMigrationInProgress = true;
     fireMigrationEvent(Event.STARTED);
   }
 
-  public void migrationFinished () {
+  public void migrationFinished() {
     this.myMigrationInProgress = false;
     myProject.getComponent(MPSProjectVersion.class).setVersion(MPSProjectVersion.CURRENT);
     myState = null;
     fireMigrationEvent(Event.FINISHED);
   }
 
-  public void migrationAborted () {
+  public void migrationAborted() {
     this.myMigrationInProgress = false;
     fireMigrationEvent(Event.ABORTED);
   }
 
-  public boolean isMigrating () {
+  public boolean isMigrating() {
     return myMigrationInProgress;
   }
-  
-  public void addMigrationListener (MPSProjectMigrationListener listener) {
+
+  @Override
+  public void addMigrationListener(MPSProjectMigrationListener listener) {
     myMigrationListeners.add(listener);
   }
 
-  public void removeMigrationListener (MPSProjectMigrationListener listener) {
+  @Override
+  public void removeMigrationListener(MPSProjectMigrationListener listener) {
     myMigrationListeners.remove(listener);
   }
 
-  private void fireMigrationEvent (Event event) {
-    for (MPSProjectMigrationListener listener: new ArrayList<MPSProjectMigrationListener>(myMigrationListeners)) {
+  private void fireMigrationEvent(Event event) {
+    for (MPSProjectMigrationListener listener : new ArrayList<MPSProjectMigrationListener>(myMigrationListeners)) {
       event.fire(listener, myProject);
     }
   }
@@ -116,9 +112,10 @@ public class MPSProjectMigrationState extends AbstractProjectComponent  implemen
   }
 
   public void setCurrentStep(int n) {
-    if (myState == null)  myState = new MyState();
+    if (myState == null) myState = new MyState();
     myState.step = n;
   }
+
   public int getCurrentStep() {
     return myState == null ? 0 : myState.step;
   }
@@ -127,8 +124,8 @@ public class MPSProjectMigrationState extends AbstractProjectComponent  implemen
     STARTED,
     FINISHED,
     ABORTED;
-    
-    private void fire (MPSProjectMigrationListener listener, Project project) {
+
+    private void fire(MPSProjectMigrationListener listener, Project project) {
       switch (this) {
         case STARTED:
           listener.migrationStarted(project);

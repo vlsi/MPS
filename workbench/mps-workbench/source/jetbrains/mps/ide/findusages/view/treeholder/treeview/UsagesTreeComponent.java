@@ -16,8 +16,17 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
 import com.intellij.icons.AllIcons.General;
-import com.intellij.ide.*;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.ide.CommonActionsManager;
+import com.intellij.ide.DefaultTreeExpander;
+import com.intellij.ide.OccurenceNavigator;
+import com.intellij.ide.OccurenceNavigatorSupport;
+import com.intellij.ide.TreeExpander;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.pom.Navigatable;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.usageView.UsageViewBundle;
@@ -42,13 +51,13 @@ import jetbrains.mps.ide.navigation.ModuleNavigatable;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.TreeHighlighterExtension;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -57,7 +66,11 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.BorderLayout;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public abstract class UsagesTreeComponent extends JPanel implements IChangeListener {
   private static final Logger LOG = LogManager.getLogger(UsagesTreeComponent.class);

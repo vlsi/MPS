@@ -17,7 +17,14 @@ package jetbrains.mps.ide.findusages.view.icons;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
-import jetbrains.mps.ide.findusages.model.holders.*;
+import jetbrains.mps.ide.findusages.model.holders.IHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
+import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
+import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
+import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
@@ -28,13 +35,13 @@ public class IconManager {
       SNode node = ((NodeHolder) holder).getObject();
       return node == null ? null : jetbrains.mps.ide.icons.IconManager.getIconFor(node);
     } else if (holder instanceof ModelHolder) {
-      return jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
+      return IdeIcons.MODEL_ICON;
     } else if (holder instanceof ModelsHolder) {
-      return jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
+      return IdeIcons.MODEL_ICON;
     } else if (holder instanceof ModuleHolder) {
       return jetbrains.mps.ide.icons.IconManager.getIconFor(((ModuleHolder) holder).getObject());
     } else if (holder instanceof ModulesHolder) {
-      return jetbrains.mps.ide.projectPane.Icons.SOLUTION_ICON;
+      return IdeIcons.SOLUTION_ICON;
     } else if (holder instanceof VoidHolder) {
       return ((VoidHolder) holder).getIcon();
     } else if (holder instanceof ConstantFinder.ConstantHolder) {

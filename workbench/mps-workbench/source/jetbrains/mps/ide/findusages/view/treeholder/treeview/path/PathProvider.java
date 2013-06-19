@@ -17,12 +17,12 @@ package jetbrains.mps.ide.findusages.view.treeholder.treeview.path;
 
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import org.apache.log4j.Logger;
+import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -19,8 +19,8 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.project.MPSProjectMigrationComponent;
 import jetbrains.mps.project.MPSProjectMigrationListener;
-import jetbrains.mps.project.MPSProjectMigrationState;
 
 import javax.swing.Icon;
 
@@ -35,7 +35,7 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
 
   @Override
   public void projectOpened() {
-    final MPSProjectMigrationState migrationState = getProject().getComponent(MPSProjectMigrationState.class);
+    final MPSProjectMigrationComponent migrationState = getProject().getComponent(MPSProjectMigrationComponent.class);
     if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
       migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
         @Override
