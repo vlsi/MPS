@@ -273,7 +273,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   public void addNode(SNode node) {
     SNode n = _quotation_createNode_xg3v07_a0a0sb();
-    SLinkOperations.setTarget(n, "target", node, false);
+    SLinkOperations.setTarget(n, "target", SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), false);
     ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(n);
   }
 
@@ -304,7 +304,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
             return;
           }
 
-          final SNode lastHist = ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).last();
+          final SNode willBeLastHist = SNodeOperations.copyNode(myCommandRoot);
           final SNode res = _quotation_createNode_xg3v07_a0g0a0a2wb();
           BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(lastCmd, "jetbrains.mps.console.base.structure.Command"), "virtual_execute_757553790980855637", new Object[]{new ConsoleContext() {
             public jetbrains.mps.project.Project getProject() {
@@ -313,6 +313,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
             public SearchScope getScope() {
               return myProject.getScope();
+              // todo 
             }
           }, new ConsoleStream() {
             public void addText(String text) {
@@ -331,13 +332,13 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
             }
 
             private void checkResultAvailable() {
-              if ((SNodeOperations.getNextSibling(lastHist) == null)) {
-                SNodeOperations.insertNextSiblingChild(lastHist, res);
+              if ((SNodeOperations.getNextSibling(willBeLastHist) == null)) {
+                SNodeOperations.insertNextSiblingChild(willBeLastHist, res);
               }
             }
           }, new Runnable() {
             public void run() {
-              ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).addElement(SNodeOperations.copyNode(myCommandRoot));
+              ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).addElement(willBeLastHist);
               SLinkOperations.setTarget(myCommandRoot, "command", null, true);
               myCursor = null;
               myNewCommand = null;

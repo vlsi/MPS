@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-efkfs2msdj28r55kkjovp8affzlfudl">
+<dependencies version="2" modelHash="-46eb9et8j4h0y0szyu8403nqt2lrkki">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="e0q7rowediy12ivta1x08nl9e1ndmv6" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
@@ -23,16 +23,16 @@
   <source id="5336086527852811410" name="main" hash="6kknfbur4tyepmeuus3ww6h3rrs97eq">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5336086527852812352" name="reduce_BaseLanguageCommand" hash="2y1eb7uh9fuytns3m7fsxclihvjmmpw">
+  <source id="5336086527852812352" name="reduce_BaseLanguageCommand" hash="-8gfh1o9gmhna108ev9akhyhbiiw8dm6">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="4417779018064684966" name="reduce_PrintNewLine" hash="b2nrix4hygjwvqr8xcfb33kst0yz3f8">
+  <source id="4417779018064684966" name="reduce_PrintNewLine" hash="-61yy2dvz4fig7gvu95f9irtcorkl485">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="4417779018064685310" name="reduce_PrintNode" hash="-9v669cz0h72kgdptw4xgdj1wz1yxlpe">
+  <source id="4417779018064685310" name="reduce_PrintNode" hash="aw13rlz1kavu1obv4d14zf2kci5lkbs">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="4417779018064685347" name="reduce_PrintText" hash="eki5oi74sswftds9pbwxuz8ccunr4f8">
+  <source id="4417779018064685347" name="reduce_PrintText" hash="6djcd8v8j5aeks649oezsdx0omot9gl">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

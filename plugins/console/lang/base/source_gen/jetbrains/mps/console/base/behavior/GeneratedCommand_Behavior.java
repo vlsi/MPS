@@ -51,10 +51,11 @@ public class GeneratedCommand_Behavior {
                   Method[] methods = Class.forName(name, true, loader).getMethods();
                   for (Method method : methods) {
                     if (method.getName().equals("execute")) {
-                      method.invoke(null, new Object[]{console});
+                      callback.run();
+                      method.invoke(null, new Object[]{c, console});
+                      return;
                     }
                   }
-                  callback.run();
                 } catch (ClassNotFoundException ignore) {
                   if (LOG.isEnabledFor(Priority.WARN)) {
                     LOG.warn("Exception on query loading", ignore);

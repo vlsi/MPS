@@ -22,6 +22,8 @@ public class ModelStatCommand_Behavior {
   public static void virtual_execute_757553790980855637(final SNode thisNode, ConsoleContext c, ConsoleStream console, final Runnable callback) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
+        callback.run();
+
         SModel model = SModelRepository.getInstance().getModelDescriptor(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "model", true), "fqName"));
         int references = 0;
         int properties = 0;
@@ -37,7 +39,6 @@ public class ModelStatCommand_Behavior {
         messageText.append("Properties : ").append(properties).append("\n");
 
         JOptionPane.showMessageDialog(null, messageText);
-        callback.run();
       }
     });
   }
