@@ -304,7 +304,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
             return;
           }
 
-          final SNode lastHist = ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).addElement(SNodeOperations.copyNode(myCommandRoot));
+          final SNode lastHist = ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).last();
           final SNode res = _quotation_createNode_xg3v07_a0g0a0a2wb();
           BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(lastCmd, "jetbrains.mps.console.base.structure.Command"), "virtual_execute_757553790980855637", new Object[]{new ConsoleContext() {
             public jetbrains.mps.project.Project getProject() {
@@ -322,7 +322,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
             public void addNode(SNode node) {
               checkResultAvailable();
-              SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeResultPart"), "target", node, false);
+              SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeResultPart"), "target", ((SNode) node), false);
             }
 
             public void addNewLine() {
@@ -337,6 +337,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
             }
           }, new Runnable() {
             public void run() {
+              ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).addElement(SNodeOperations.copyNode(myCommandRoot));
               SLinkOperations.setTarget(myCommandRoot, "command", null, true);
               myCursor = null;
               myNewCommand = null;
