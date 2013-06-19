@@ -20,15 +20,12 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
+import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import java.awt.event.KeyEvent;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import java.awt.BorderLayout;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.JScrollPane;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -111,38 +108,10 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     });
 
     myMainComponent = new JPanel();
-    myMainComponent.setLayout(new GridBagLayout());
-    GridBagConstraints c = new GridBagConstraints(0, 0, 0, 0, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
-
-    c.gridx = 0;
-    c.gridy = 1;
-    c.gridwidth = 2;
-    c.gridheight = 1;
-    c.weightx = 1.0;
-    c.weighty = 0.0;
-    c.anchor = GridBagConstraints.EAST;
-    c.fill = GridBagConstraints.NONE;
-    myMainComponent.add(createScopeComponent(), c);
-
-    c.gridx = 0;
-    c.gridy = 0;
-    c.gridwidth = 1;
-    c.gridheight = 1;
-    c.weightx = 0.0;
-    c.weighty = 1.0;
-    c.anchor = GridBagConstraints.NORTH;
-    c.fill = GridBagConstraints.VERTICAL;
-    myMainComponent.add(getToolbarComponent(project), c);
-
-    c.gridx = 1;
-    c.gridy = 0;
-    c.gridwidth = 1;
-    c.gridheight = 1;
-    c.weightx = 1.0;
-    c.weighty = 1.0;
-    c.anchor = GridBagConstraints.CENTER;
-    c.fill = GridBagConstraints.BOTH;
-    myMainComponent.add(createEditorsComponent(), c);
+    myMainComponent.setLayout(new BorderLayout());
+    myMainComponent.add(createScopeComponent(), BorderLayout.SOUTH);
+    myMainComponent.add(getToolbarComponent(project), BorderLayout.WEST);
+    myMainComponent.add(createEditorsComponent(), BorderLayout.CENTER);
   }
 
 
@@ -180,8 +149,11 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
 
   private JComponent createScopeComponent() {
-    this.myScopeCombo = new JComboBox(new String[]{PROJECT_SCOPE, GLOBAL_SCOPE});
-    return this.myScopeCombo;
+    myScopeCombo = new JComboBox(new String[]{PROJECT_SCOPE, GLOBAL_SCOPE});
+    JPanel res = new JPanel(new BorderLayout());
+    res.add(new JPanel(), BorderLayout.CENTER);
+    res.add(myScopeCombo, BorderLayout.EAST);
+    return res;
   }
 
 
