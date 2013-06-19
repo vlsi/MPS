@@ -164,7 +164,7 @@ public class DeleteNodesHelper {
             }
           }
         }
-        final SearchResults sr = new SearchResults(SetSequence.fromSetWithValues(new HashSet<SNode>(), myNodesToDelete), SetSequence.fromSet(results).toListSequence());
+        final SearchResults sr = new SearchResults<SNode>(SetSequence.fromSetWithValues(new HashSet<SNode>(), myNodesToDelete), SetSequence.fromSet(results).toListSequence());
 
         if (pi.isCanceled()) {
           return;
