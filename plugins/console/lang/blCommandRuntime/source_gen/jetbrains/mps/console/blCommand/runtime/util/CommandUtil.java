@@ -11,6 +11,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.FlattenIterable;
 import java.util.Collection;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class CommandUtil {
   public static Iterable<SNode> allNodes(SearchScope scope) {
@@ -22,5 +29,47 @@ public class CommandUtil {
       res.add(new NodesIterable(model));
     }
     return new FlattenIterable<SNode>(((Collection<Iterable<SNode>>) res));
+  }
+
+
+
+  public static void show(Project p, SearchResults results) {
+    ProjectHelper.toIdeaProject(p).getComponent(UsagesViewTool.class).show(results);
+  }
+
+
+
+  public static SearchResults nodesToResults(Iterable<SNode> nodes) {
+    final SearchResults<SNode> res = new SearchResults<SNode>();
+    Sequence.fromIterable(nodes).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        res.getSearchResults().add(new SearchResult<SNode>(it, "usage"));
+      }
+    });
+    return res;
+  }
+
+
+
+  public static SearchResults modelsToResults(Iterable<SModel> models) {
+    final SearchResults<SModel> res = new SearchResults<SModel>();
+    Sequence.fromIterable(models).visitAll(new IVisitor<SModel>() {
+      public void visit(SModel it) {
+        res.getSearchResults().add(new SearchResult<SModel>(it, "usage"));
+      }
+    });
+    return res;
+  }
+
+
+
+  public static SearchResults modulesToResults(Iterable<SModule> modules) {
+    final SearchResults<SModule> res = new SearchResults<SModule>();
+    Sequence.fromIterable(modules).visitAll(new IVisitor<SModule>() {
+      public void visit(SModule it) {
+        res.getSearchResults().add(new SearchResult<SModule>(it, "usage"));
+      }
+    });
+    return res;
   }
 }

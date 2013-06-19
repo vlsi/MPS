@@ -12,26 +12,26 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class IShowable_Editor extends DefaultNodeEditor {
+public class ModulesShowable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_ryrsfq_a(editorContext, node);
+    return this.createCollection_xo67gn_a(editorContext, node);
   }
 
-  private EditorCell createCollection_ryrsfq_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_xo67gn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_ryrsfq_a");
+    editorCell.setCellId("Collection_xo67gn_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createComponent_ryrsfq_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_ryrsfq_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_xo67gn_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_xo67gn_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_ryrsfq_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_xo67gn_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     return editorCell;
   }
 
-  private EditorCell createRefNode_ryrsfq_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_xo67gn_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("items");
     provider.setNoTargetText("<no items>");

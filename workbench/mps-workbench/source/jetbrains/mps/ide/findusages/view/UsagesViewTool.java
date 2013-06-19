@@ -28,6 +28,7 @@ import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -55,13 +56,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @State(
-  name = "UsagesViewTool",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$WORKSPACE_FILE$"
-    )
-  }
+    name = "UsagesViewTool",
+    storages = {
+        @Storage(
+            id = "other",
+            file = "$WORKSPACE_FILE$"
+        )
+    }
 )
 public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateComponent<Element>, IUsagesViewTool {
 
@@ -76,7 +77,8 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   private static final String TOOL_WINDOW_ID = "Usages";
 
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
-  private jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions myDefaultViewOptions = new jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions();
+  private jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions myDefaultViewOptions =
+      new jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions();
 
   //----CONSTRUCT STUFF----
 
@@ -108,7 +110,8 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   //---FIND USAGES STUFF----
 
   @Override
-  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean forceNewTab, final String notFoundMsg) {
+  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean forceNewTab,
+      final String notFoundMsg) {
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
@@ -122,58 +125,64 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
           }
         });
         if (!isCancelled[0]) {
-          showResults(provider, query, searchResults[0], showOne, forceNewTab, isRerunnable, notFoundMsg);
+          SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+              showResults(provider, query, searchResults[0], showOne, forceNewTab, isRerunnable, notFoundMsg);
+            }
+          });
         }
       }
     });
   }
 
-  private void showResults(final IResultProvider provider, final SearchQuery query, final SearchResults searchResults, final boolean showOne, final boolean forceNewTab, final boolean isRerunnable, final String notFoundMsg) {
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        int resCount = searchResults.getSearchResults().size();
-        if (resCount == 0) {
-          final ToolWindowManager manager = ToolWindowManager.getInstance(getProject());
-          manager.notifyByBalloon(TOOL_WINDOW_ID, MessageType.INFO, notFoundMsg, null, null);
-        } else if (resCount == 1 && !showOne) {
-          ModelAccess.instance().runWriteInEDT(new Runnable() {
-            @Override
-            public void run() {
-              SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
-              // TODO: use node pointers here
-              if (node != null) {
-                IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
-                NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getParent() == null));
-              }
-            }
-          });
-        } else {
-          int index = getCurrentTabIndex();
-          ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              UsageViewData usageViewData = new UsageViewData();
-              usageViewData.createUsageView();
-              myUsageViewsData.add(usageViewData);
+  public void show(SearchResults results) {
+    ThreadUtils.assertEDT();
+    showResults(null, null, results, true, true, false, "");
+  }
 
-              usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable).showSettingsButton(true), searchResults);
-
-              Icon icon = usageViewData.myUsagesView.getIcon();
-              String caption = usageViewData.myUsagesView.getCaption();
-              JComponent component = usageViewData.myUsagesView.getComponent();
-              Content content = addContent(component, caption, icon, true);
-              getContentManager().setSelectedContent(content);
-            }
-          });
-
-          if (!forceNewTab) {
-            closeLastUnpinnedTab(index);
+  private void showResults(final IResultProvider provider, final SearchQuery query, final SearchResults searchResults, final boolean showOne,
+      final boolean forceNewTab, final boolean isRerunnable, final String notFoundMsg) {
+    int resCount = searchResults.getSearchResults().size();
+    if (resCount == 0) {
+      final ToolWindowManager manager = ToolWindowManager.getInstance(getProject());
+      manager.notifyByBalloon(TOOL_WINDOW_ID, MessageType.INFO, notFoundMsg, null, null);
+    } else if (resCount == 1 && !showOne) {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
+        public void run() {
+          SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
+          // TODO: use node pointers here
+          if (node != null) {
+            IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
+            NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getParent() == null));
           }
-          openTool(true);
         }
+      });
+    } else {
+      int index = getCurrentTabIndex();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          UsageViewData usageViewData = new UsageViewData();
+          usageViewData.createUsageView();
+          myUsageViewsData.add(usageViewData);
+
+          usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable).showSettingsButton(true), searchResults);
+
+          Icon icon = usageViewData.myUsagesView.getIcon();
+          String caption = usageViewData.myUsagesView.getCaption();
+          JComponent component = usageViewData.myUsagesView.getComponent();
+          Content content = addContent(component, caption, icon, true);
+          getContentManager().setSelectedContent(content);
+        }
+      });
+
+      if (!forceNewTab) {
+        closeLastUnpinnedTab(index);
       }
-    });
+      openTool(true);
+    }
   }
 
   //---END FIND STUFF----
