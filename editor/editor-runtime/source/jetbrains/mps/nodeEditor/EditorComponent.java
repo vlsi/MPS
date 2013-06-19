@@ -1302,6 +1302,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myEditorContext;
   }
 
+  protected SRepository getRepository() {
+    return myRepository;
+  }
+
   public EditorCell createRootCell() {
     return createRootCell(null);
   }
