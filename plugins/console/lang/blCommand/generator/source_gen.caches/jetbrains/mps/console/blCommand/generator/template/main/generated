@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2aqrczv04k3w1hjj5r7h15sbpg5x2w6">
+<dependencies version="2" modelHash="3mf3p4i8gd80tu2d05zyexlenquqnfs">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="e0q7rowediy12ivta1x08nl9e1ndmv6" />
@@ -40,7 +40,7 @@
   <source id="4417779018064685347" name="reduce_PrintText" hash="6djcd8v8j5aeks649oezsdx0omot9gl">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="313482946808709018" name="reduce_EachNodeLoop" hash="9654lvlm6gfecft622ida019kjib01x">
+  <source id="313482946808709018" name="reduce_EachNodeLoop" hash="-54fxrclr0yb2bylrvldj5mv2vzvtqon">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>
