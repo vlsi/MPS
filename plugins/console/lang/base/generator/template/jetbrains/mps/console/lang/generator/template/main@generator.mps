@@ -17,6 +17,9 @@
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="5336086527852743855" resolveInfo="Main" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="eynw.351968380916615243" resolveInfo="CommandHolder" />
     </node>
+    <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="3002373989556352001" nodeInfo="ng">
+      <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="eynw.757553790980850366" resolveInfo="History" />
+    </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5336086527852743855" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Main" />
