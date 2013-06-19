@@ -76,6 +76,9 @@
     <copy todir="${build.layout}/lib">
       <fileset file="${mps_home}/lib/tools.jar" />
     </copy>
+    <copy todir="${build.layout}/lib">
+      <fileset file="${mps_home}/lib/annotations.jar" />
+    </copy>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-tuples-runtime-jetbrains">
       <fileset dir="${mps_home}/languages/baseLanguage/tuples/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
