@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-27otysdomg2nmqy392dio2utxi3lgk4">
+  <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+  <common hash="aa2ia5z3qz6h380m2n406chcxb5591w" />
+  <source id="313482946808721508" name="CommandUtil" hash="3m5z3mm05n0hdxy6qy942p7t7ycdjfz">
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <file name="CommandUtil.java" />
+  </source>
+</dependencies>
+

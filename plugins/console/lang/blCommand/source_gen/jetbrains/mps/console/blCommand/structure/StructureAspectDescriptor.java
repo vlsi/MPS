@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.BLCommand").super_("jetbrains.mps.console.base.structure.GeneratedCommand").parents("jetbrains.mps.console.base.structure.GeneratedCommand").children(new String[]{"body"}, new boolean[]{false}).alias("{", "baseLanguage command").create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.EachNodeLoop").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").alias("eachNode", "for each node in current scope").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.EachNodeLoop").super_("jetbrains.mps.baseLanguage.structure.AbstractForStatement").parents("jetbrains.mps.baseLanguage.structure.AbstractForStatement").alias("eachNode", "for each node in current scope").create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.IShowable").interface_().create();
       case 3:

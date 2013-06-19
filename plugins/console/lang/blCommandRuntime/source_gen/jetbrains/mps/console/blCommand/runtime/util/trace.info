@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:b4d3e080-529f-482d-ad99-114342004f83(jetbrains.mps.console.blCommand.runtime.util)/313482946808721508">
+    <nodeInfo nodeId="313482946808975027" fileName="CommandUtil.java" startLine="9" startPosition="61" endLine="10" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="313482946808721597" fileName="CommandUtil.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="allNodes#(Lorg/jetbrains/mps/openapi/module/SearchScope;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="313482946808721586" fileName="CommandUtil.java" startLine="9" startPosition="61" endLine="10" endPosition="16" />
+    <scopeInfo nodeId="313482946808721597" fileName="CommandUtil.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="313482946808721652" varName="scope" />
+    </scopeInfo>
+    <unitInfo nodeId="313482946808721508" fileName="CommandUtil.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.console.blCommand.runtime.util.CommandUtil" />
+  </root>
+</debugInfo>
+

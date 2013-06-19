@@ -55,7 +55,7 @@
     <property name="name" nameId="tpck.1169194664001" value="EachNodeLoop" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="eachNode" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="for each node in current scope" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1144230876926" resolveInfo="AbstractForStatement" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963816171" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
