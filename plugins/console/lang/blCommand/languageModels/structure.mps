@@ -9,6 +9,7 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
+  <import index="3xdn" modelUID="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" version="1" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5464054275389846505" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="BLCommand" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="{" />
@@ -78,14 +79,53 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963816351" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="show" />
     <property name="name" nameId="tpck.1169194664001" value="ShowStatement" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="show" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1125969196844413410" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="showable" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="8483375838963816703" resolveInfo="IShowable" />
+    </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8483375838963816703" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="show" />
     <property name="name" nameId="tpck.1169194664001" value="IShowable" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1125969196844413408" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="items" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1125969196844413191" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="show" />
+    <property name="name" nameId="tpck.1169194664001" value="NodesShowable" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nodes" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1125969196844430890" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8483375838963816703" resolveInfo="IShowable" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1125969196844439726" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="show" />
+    <property name="name" nameId="tpck.1169194664001" value="ModelsShowable" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="models" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1125969196844439727" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8483375838963816703" resolveInfo="IShowable" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1125969196844440630" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="show" />
+    <property name="name" nameId="tpck.1169194664001" value="ModulesShowable" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="modules" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1125969196844440631" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8483375838963816703" resolveInfo="IShowable" />
+    </node>
   </root>
 </model>
 

@@ -14,22 +14,28 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
         return new BLCommand_BehaviorDescriptor();
-      case 4:
+      case 7:
         return new PrintText_BehaviorDescriptor();
-      case 3:
+      case 6:
         return new PrintNode_BehaviorDescriptor();
-      case 2:
+      case 5:
         return new PrintNewLine_BehaviorDescriptor();
       case 1:
         return new EachNodeLoop_BehaviorDescriptor();
-      case 6:
+      case 9:
         return new UsagesExpression_BehaviorDescriptor();
-      case 5:
+      case 8:
         return new ShowStatement_BehaviorDescriptor();
+      case 4:
+        return new NodesShowable_BehaviorDescriptor();
+      case 2:
+        return new ModelsShowable_BehaviorDescriptor();
+      case 3:
+        return new ModulesShowable_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.EachNodeLoop", "jetbrains.mps.console.blCommand.structure.PrintNewLine", "jetbrains.mps.console.blCommand.structure.PrintNode", "jetbrains.mps.console.blCommand.structure.PrintText", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.EachNodeLoop", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.PrintNewLine", "jetbrains.mps.console.blCommand.structure.PrintNode", "jetbrains.mps.console.blCommand.structure.PrintText", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
 }
