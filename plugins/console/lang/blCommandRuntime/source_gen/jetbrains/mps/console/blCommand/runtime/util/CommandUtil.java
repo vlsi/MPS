@@ -16,6 +16,9 @@ public class CommandUtil {
   public static Iterable<SNode> allNodes(SearchScope scope) {
     List<Iterable<SNode>> res = new ArrayList<Iterable<SNode>>();
     for (SModel model : Sequence.fromIterable(scope.getModels())) {
+      if (model.isReadOnly()) {
+        continue;
+      }
       res.add(new NodesIterable(model));
     }
     return new FlattenIterable<SNode>(((Collection<Iterable<SNode>>) res));
