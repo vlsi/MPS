@@ -357,7 +357,6 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
       SLinkOperations.getTargets(myHistRoot, "item", true).clear();
-      SLinkOperations.addNewChild(myHistRoot, "item", "jetbrains.mps.console.base.structure.HistoryItem");
       SLinkOperations.setTarget(myCommandRoot, "command", null, true);
     }
   }
