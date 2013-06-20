@@ -5,6 +5,8 @@ package jetbrains.mps.build.pluginSolution.plugin;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.project.Project;
+import javax.swing.Icon;
+import com.intellij.icons.AllIcons;
 
 public class BuildScript_Configuration_Factory extends ConfigurationFactory {
   public BuildScript_Configuration_Factory(BuildScript_Kind type) {
@@ -18,5 +20,14 @@ public class BuildScript_Configuration_Factory extends ConfigurationFactory {
   @Override
   public String getName() {
     return "Build Script";
+  }
+
+  @Override
+  public Icon getIcon() {
+    Icon icon = super.getIcon();
+    if (icon == null) {
+      return AllIcons.RunConfigurations.Application;
+    }
+    return icon;
   }
 }
