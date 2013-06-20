@@ -11116,8 +11116,8 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="3788991198419897451" nodeInfo="nn" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="3788991198419897452" nodeInfo="nn">
                     <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="3788991198419897453" nodeInfo="nn" />
-                    <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.IdSelector" typeId="tpc2.2162403111523059536" id="3788991198419897454" nodeInfo="ng">
-                      <property name="cellId" nameId="tpc2.2162403111529391190" value="closingBracket" />
+                    <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="4323500428164734361" nodeInfo="ng">
+                      <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="4323500428132436398" resolveInfo="closingBracket" />
                     </node>
                     <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="3788991198419897455" nodeInfo="ng">
                       <property name="position" nameId="tpc2.3604384757217589845" value="0" />
@@ -11231,8 +11231,8 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="3788991198419999489" nodeInfo="nn" />
               <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="3788991198419999490" nodeInfo="nn">
                 <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="3788991198419999491" nodeInfo="nn" />
-                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.IdSelector" typeId="tpc2.2162403111523059536" id="3788991198419999492" nodeInfo="ng">
-                  <property name="cellId" nameId="tpc2.2162403111529391190" value="closingBracket" />
+                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="4323500428164758391" nodeInfo="ng">
+                  <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="4323500428132436398" resolveInfo="closingBracket" />
                 </node>
                 <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="3788991198419999493" nodeInfo="ng">
                   <property name="position" nameId="tpc2.3604384757217589845" value="0" />
@@ -11263,8 +11263,8 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="3788991198419999912" nodeInfo="nn" />
               <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="3788991198419999913" nodeInfo="nn">
                 <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="3788991198419999914" nodeInfo="nn" />
-                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.IdSelector" typeId="tpc2.2162403111523059536" id="3788991198419999915" nodeInfo="ng">
-                  <property name="cellId" nameId="tpc2.2162403111529391190" value="closingBracket" />
+                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="4323500428164763264" nodeInfo="ng">
+                  <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="4323500428132436398" resolveInfo="closingBracket" />
                 </node>
                 <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="3788991198419999916" nodeInfo="ng">
                   <property name="position" nameId="tpc2.3604384757217589845" value="0" />
@@ -11354,8 +11354,8 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="3788991198420005513" nodeInfo="nn">
                       <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="3788991198420005514" nodeInfo="nn" />
-                      <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.IdSelector" typeId="tpc2.2162403111523059536" id="3788991198420005515" nodeInfo="ng">
-                        <property name="cellId" nameId="tpc2.2162403111529391190" value="sharp" />
+                      <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="4323500428164742687" nodeInfo="ng">
+                        <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="4323500428132428397" resolveInfo="sharp" />
                       </node>
                       <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="3788991198420005516" nodeInfo="ng">
                         <property name="position" nameId="tpc2.3604384757217589845" value="-1" />
@@ -11432,7 +11432,8 @@
           </node>
         </node>
         <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="4323500428132428397" nodeInfo="ng">
-          <property name="idString" nameId="tpc2.4323500428121234286" value="sharp" />
+          <property name="idString" value="sharp" />
+          <property name="name" nameId="tpck.1169194664001" value="sharp" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="4510086454773719538" nodeInfo="ng">
@@ -11727,7 +11728,8 @@
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="2162403111555415443" nodeInfo="nn" />
         <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="4323500428132436398" nodeInfo="ng">
-          <property name="idString" nameId="tpc2.4323500428121234286" value="closingBracket" />
+          <property name="idString" value="closingBracket" />
+          <property name="name" nameId="tpck.1169194664001" value="closingBracket" />
         </node>
       </node>
     </node>
@@ -11751,15 +11753,15 @@
               </node>
             </node>
           </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3604384757214492179" nodeInfo="nn">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3604384757214492693" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="3604384757214492177" nodeInfo="nn" />
-              <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="3604384757214502457" nodeInfo="nn">
-                <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="3604384757214502489" nodeInfo="nn" />
-                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.IdSelector" typeId="tpc2.2162403111523059536" id="3604384757227636305" nodeInfo="ng">
-                  <property name="cellId" nameId="tpc2.2162403111529391190" value="closingBracket" />
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4323500428136743882" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4323500428136744396" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="4323500428136743880" nodeInfo="nn" />
+              <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="4323500428136754203" nodeInfo="nn">
+                <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="4323500428136754277" nodeInfo="nn" />
+                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="4323500428163215890" nodeInfo="ng">
+                  <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="4323500428132436398" resolveInfo="closingBracket" />
                 </node>
-                <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="3604384757227636644" nodeInfo="ng">
+                <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="4323500428146797608" nodeInfo="ng">
                   <property name="position" nameId="tpc2.3604384757217589845" value="0" />
                 </node>
               </node>
@@ -11788,8 +11790,8 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="3604384757214510781" nodeInfo="nn" />
               <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="3604384757214510782" nodeInfo="nn">
                 <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="3604384757214510783" nodeInfo="nn" />
-                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.IdSelector" typeId="tpc2.2162403111523059536" id="3604384757227644485" nodeInfo="ng">
-                  <property name="cellId" nameId="tpc2.2162403111529391190" value="closingBracket" />
+                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="4323500428163225857" nodeInfo="ng">
+                  <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="4323500428132436398" resolveInfo="closingBracket" />
                 </node>
                 <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="3604384757227644540" nodeInfo="ng">
                   <property name="position" nameId="tpc2.3604384757217589845" value="0" />
@@ -11797,7 +11799,6 @@
               </node>
             </node>
           </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="3604384757229163966" nodeInfo="nn" />
         </node>
       </node>
     </node>
@@ -11876,8 +11877,8 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="2701921320707439147" nodeInfo="nn" />
               <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="2701921320707439148" nodeInfo="nn">
                 <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="2701921320707439149" nodeInfo="nn" />
-                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.IdSelector" typeId="tpc2.2162403111523059536" id="2701921320707439150" nodeInfo="ng">
-                  <property name="cellId" nameId="tpc2.2162403111529391190" value="closingBracket" />
+                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="4323500428164748096" nodeInfo="ng">
+                  <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="4323500428132436398" resolveInfo="closingBracket" />
                 </node>
                 <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="2701921320707439151" nodeInfo="ng">
                   <property name="position" nameId="tpc2.3604384757217589845" value="0" />
@@ -11908,8 +11909,8 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="2701921320707439163" nodeInfo="nn" />
               <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="2701921320707439164" nodeInfo="nn">
                 <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="2701921320707439165" nodeInfo="nn" />
-                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.IdSelector" typeId="tpc2.2162403111523059536" id="2701921320707439166" nodeInfo="ng">
-                  <property name="cellId" nameId="tpc2.2162403111529391190" value="closingBracket" />
+                <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="4323500428164752969" nodeInfo="ng">
+                  <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="4323500428132436398" resolveInfo="closingBracket" />
                 </node>
                 <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="2701921320707439167" nodeInfo="ng">
                   <property name="position" nameId="tpc2.3604384757217589845" value="0" />
@@ -11967,7 +11968,20 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.4323500428121233431" resolveInfo="EditorCellId" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4323500428121250558" nodeInfo="ng">
-      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.4323500428121234286" resolveInfo="idString" />
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+    </node>
+  </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4323500428143771380" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.4323500428136740385" resolveInfo="CellIdReferenceSelector" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="4323500428143771390" nodeInfo="ng">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.4323500428136742952" />
+      <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="4323500428143771391" nodeInfo="ng">
+        <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4323500428143771396" nodeInfo="ng">
+          <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+        </node>
+      </node>
     </node>
   </root>
 </model>

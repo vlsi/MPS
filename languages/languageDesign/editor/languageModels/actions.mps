@@ -3080,6 +3080,9 @@
     <property name="name" nameId="tpck.1169194664001" value="CellSelectorSubstituteActions" />
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="2162403111526915073" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tpc2.1948540814635886374" resolveInfo="AbstractCellSelector" />
+      <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="4323500428140647871" nodeInfo="ng">
+        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpc2.4323500428136740385" resolveInfo="CellIdReferenceSelector" />
+      </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="4510086454723070368" nodeInfo="ng">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpc2.2162403111523059536" resolveInfo="IdSelector" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleItemSubstitutePart" typeId="tpdg.1177327666243" id="2162403111531328597" nodeInfo="ng">
@@ -3097,7 +3100,7 @@
             </node>
           </node>
           <node role="descriptionText" roleId="tpdg.1177336018902" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="2162403111536153486" nodeInfo="ng">
-            <property name="text" nameId="tpdg.1196434851095" value="specified cell ID" />
+            <property name="text" nameId="tpdg.1196434851095" value="with spdcified string cell id" />
           </node>
           <node role="canSubstitute" roleId="tpdg.1177327698839" type="tpdg.QueryFunction_CanSubstitute" typeId="tpdg.1177327161126" id="2162403111536525497" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2162403111536525498" nodeInfo="sn">
@@ -3109,7 +3112,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2162403111536920469" nodeInfo="nn">
                 <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2162403111536899972" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2162403111536894484" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="\&quot;&lt;custom cell ID&gt;\&quot;" />
+                    <property name="value" nameId="tpee.1070475926801" value="\&quot;&lt;cell ID&gt;\&quot;" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2162403111536957460" nodeInfo="nn">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lc.~String%dstartsWith(java%dlang%dString)%cboolean" resolveInfo="startsWith" />
@@ -3182,9 +3185,15 @@
           </node>
           <node role="descriptionText" roleId="tpdg.1177339186632" type="tpdg.QueryFunction_ParameterizedSubstitute_String" typeId="tpdg.1177339114370" id="2162403111531338597" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2162403111531338598" nodeInfo="sn">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2162403111531342774" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2162403111531342773" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1070475926801" value="predefined cell ID" />
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4323500428136796816" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="4323500428136853769" nodeInfo="nn">
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4323500428136853774" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1070475926801" value=" cell" />
+                  </node>
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4323500428136808506" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="4323500428136806305" nodeInfo="nn" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.EnumMember_ValueOperation" typeId="tp25.1240171359678" id="4323500428136846771" nodeInfo="nn" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -3242,7 +3251,7 @@
             </node>
           </node>
           <node role="descriptionText" roleId="tpdg.1177336018902" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="4510086454728397572" nodeInfo="ng">
-            <property name="text" nameId="tpdg.1196434851095" value="specified property declaration" />
+            <property name="text" nameId="tpdg.1196434851095" value="representing specified property declaration" />
           </node>
         </node>
       </node>
@@ -3263,7 +3272,7 @@
             </node>
           </node>
           <node role="descriptionText" roleId="tpdg.1177336018902" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="4510086454728335519" nodeInfo="ng">
-            <property name="text" nameId="tpdg.1196434851095" value="node&lt;PropertyDeclaration&gt;" />
+            <property name="text" nameId="tpdg.1196434851095" value="representing property declaration specified by expression" />
           </node>
           <node role="canSubstitute" roleId="tpdg.1177327698839" type="tpdg.QueryFunction_CanSubstitute" typeId="tpdg.1177327161126" id="4510086454728337665" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4510086454728337666" nodeInfo="sn">
@@ -3324,8 +3333,8 @@
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4323500428129113400" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4323500428129111149" resolveInfo="cellId" />
                     </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4323500428127449180" nodeInfo="nn">
-                      <link role="property" roleId="tp25.1138056395725" targetNodeId="tpc2.4323500428121234286" resolveInfo="idString" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4323500428153998698" nodeInfo="nn">
+                      <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                     </node>
                   </node>
                 </node>

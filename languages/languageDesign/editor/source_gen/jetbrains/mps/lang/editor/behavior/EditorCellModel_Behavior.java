@@ -29,8 +29,8 @@ public class EditorCellModel_Behavior {
   }
 
   public static String call_getCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
-    if (SLinkOperations.getTarget(thisNode, "id", true) != null && isNotEmpty_osnhy3_a0a0a2(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "id", true), "idString"))) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "id", true), "idString");
+    if (SLinkOperations.getTarget(thisNode, "id", true) != null && isNotEmpty_osnhy3_a0a0a2(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "id", true), "name"))) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "id", true), "name");
     }
     String defaultCellId = EditorCellModel_Behavior.call_getDefaultCellId_4539255030934103845(thisNode);
     if (defaultCellId != null) {

@@ -47,7 +47,6 @@ public class CellSelectorLabel_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.setTarget(node, "cellSelector", null, true);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "closingBracket", 0);
-
     }
   }
 }

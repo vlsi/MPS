@@ -18,11 +18,11 @@ public class EditorCellId_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_cqcvxt_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("idString");
-    provider.setNoTargetText("<no idString>");
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_idString");
+    editorCell.setCellId("property_name");
     editorCell.setBig(true);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

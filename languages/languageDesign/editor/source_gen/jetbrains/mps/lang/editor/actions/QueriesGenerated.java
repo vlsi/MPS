@@ -833,6 +833,7 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AbstractCellSelector_2162403111526915073(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellIdReferenceSelector"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IdSelector");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -848,11 +849,11 @@ public class QueriesGenerated {
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             // ignoring "strictly" parameter to be able to immediately substitute any sub-string of specified string 
-            return "\"<custom cell ID>\"".startsWith(pattern);
+            return "\"<cell ID>\"".startsWith(pattern);
           }
 
           public String getDescriptionText(String pattern) {
-            return "specified cell ID";
+            return "with spdcified string cell id";
           }
 
           public String getMatchingText(String pattern) {
@@ -884,7 +885,7 @@ public class QueriesGenerated {
               }
 
               public String getDescriptionText(String pattern) {
-                return "predefined cell ID";
+                return SEnumOperations.getEnumMemberValue((item)) + " cell";
               }
             });
           }
@@ -910,7 +911,7 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String pattern) {
-            return "specified property declaration";
+            return "representing specified property declaration";
           }
 
           public String getMatchingText(String pattern) {
@@ -942,7 +943,7 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String pattern) {
-            return "node<PropertyDeclaration>";
+            return "representing property declaration specified by expression";
           }
 
           public String getMatchingText(String pattern) {
@@ -967,7 +968,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode cellId = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.EditorCellId", null);
-            SPropertyOperations.set(cellId, "idString", pattern);
+            SPropertyOperations.set(cellId, "name", pattern);
             return cellId;
           }
 
