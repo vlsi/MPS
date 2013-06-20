@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.ui.tree;
 
 import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;

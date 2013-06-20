@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.projectPane.*;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.*;
@@ -36,7 +37,7 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     myDevKit = devkit;
 
     setNodeIdentifier(calculateNodeIdentifier());
-    setIcon(Icons.DEVKIT_ICON);
+    setIcon(IdeIcons.DEVKIT_ICON);
   }
 
   @Override

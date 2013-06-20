@@ -16,10 +16,11 @@
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SModelsSubtree;
-import jetbrains.mps.ide.projectPane.SortUtil;
+import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelReferenceTreeNode;
@@ -49,7 +50,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     myProject = project;
 
     setNodeIdentifier(myLanguage.getModuleReference().toString());
-    setIcon(Icons.PROJECT_LANGUAGE_ICON);
+    setIcon(IdeIcons.PROJECT_LANGUAGE_ICON);
     init();
   }
 

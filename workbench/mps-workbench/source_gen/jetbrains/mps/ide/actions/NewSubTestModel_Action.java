@@ -28,7 +28,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.ide.projectPane.SortUtil;
+import jetbrains.mps.ide.ui.tree.SortUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 

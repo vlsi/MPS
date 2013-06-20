@@ -22,7 +22,7 @@ import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.projectPane.SortUtil;
+import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;

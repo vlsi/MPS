@@ -20,6 +20,7 @@ import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectLanguageTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import org.jetbrains.mps.openapi.module.SModule;

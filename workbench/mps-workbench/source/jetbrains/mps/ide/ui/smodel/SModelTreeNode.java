@@ -18,7 +18,7 @@ package jetbrains.mps.ide.ui.smodel;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
-import jetbrains.mps.ide.projectPane.SortUtil;
+import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.util.SNodeOperations;

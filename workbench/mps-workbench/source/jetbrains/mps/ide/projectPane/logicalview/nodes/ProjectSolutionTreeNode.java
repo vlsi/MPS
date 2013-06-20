@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SModelsSubtree;
@@ -38,7 +39,7 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
     IFile descriptorFile = mySolution.getDescriptorFile();
     String id = descriptorFile == null ? mySolution.getModuleName() : descriptorFile.getPath();
     setNodeIdentifier(id);
-    setIcon(Icons.SOLUTION_ICON);
+    setIcon(IdeIcons.SOLUTION_ICON);
     init();
   }
 
