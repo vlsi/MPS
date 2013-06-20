@@ -7943,7 +7943,7 @@
                       </node>
                     </node>
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="878521226301297079" nodeInfo="nn">
-                      <property name="value" nameId="tpee.1070475926801" value="." />
+                      <property name="value" nameId="tpee.1070475926801" value=".Test." />
                     </node>
                   </node>
                 </node>
