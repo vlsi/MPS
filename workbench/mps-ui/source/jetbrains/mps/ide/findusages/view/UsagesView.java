@@ -253,11 +253,14 @@ public abstract class UsagesView implements IExternalizeable {
     myButtonConfiguration.write(optionsXML, project);
     element.addContent(optionsXML);
 
+    //todo replace this with show-only tabs
+    if (myResultProvider == null) throw new CantSaveSomethingException();
     Element resultProviderXML = new Element(RESULT_PROVIDER);
     resultProviderXML.setAttribute(CLASS_NAME, myResultProvider.getClass().getName());
     myResultProvider.write(resultProviderXML, project);
     element.addContent(resultProviderXML);
 
+    if (mySearchQuery == null) throw new CantSaveSomethingException();
     Element queryXML = new Element(QUERY);
     mySearchQuery.write(queryXML, project);
     element.addContent(queryXML);
