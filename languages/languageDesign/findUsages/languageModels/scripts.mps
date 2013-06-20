@@ -21,7 +21,7 @@
       <property name="description" nameId="tp33.1177457972041" value="convert refactoring finder to findUsages' one" />
       <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tp1h.1212242396240" resolveInfo="ExecuteFindersExpression" />
       <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="6056923343037360230" nodeInfo="nn">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6056923343037360231" nodeInfo="nn">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6056923343037360231" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6056923343037361508" nodeInfo="nn">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6056923343037361509" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="replacer" />
@@ -47,7 +47,7 @@
                 <link role="link" roleId="tp25.1138056546658" targetNodeId="tp1h.1212242658590" />
               </node>
             </node>
-            <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="6056923343037361536" nodeInfo="nn">
+            <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="6056923343037361536" nodeInfo="sn">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6056923343037361566" nodeInfo="nn">
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6056923343037361567" nodeInfo="nr">
                   <property name="name" nameId="tpck.1169194664001" value="finderRef" />

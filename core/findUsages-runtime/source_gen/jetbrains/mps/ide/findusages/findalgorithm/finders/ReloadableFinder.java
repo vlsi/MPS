@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public class ReloadableFinder implements IInterfacedFinder {
   private static final Logger LOG = LogManager.getLogger(ReloadableFinder.class);

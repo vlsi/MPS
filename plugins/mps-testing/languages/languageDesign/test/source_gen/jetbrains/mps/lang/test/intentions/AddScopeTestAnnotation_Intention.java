@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddScopeTestAnnotation_Intention implements IntentionFactory {
@@ -101,7 +102,7 @@ public class AddScopeTestAnnotation_Intention implements IntentionFactory {
         }
       }
 
-      editorContext.select(newAnnotation);
+      SelectionUtil.selectNode(editorContext, newAnnotation);
     }
 
     public IntentionDescriptor getDescriptor() {

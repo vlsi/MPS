@@ -29,6 +29,8 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Iterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -129,6 +131,48 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
           }
         }
       }
+      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.IMethodCall") && SNodeOperations.isInstanceOf(source, "jetbrains.mps.baseLanguage.structure.Expression") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).contains(SNodeOperations.cast(source, "jetbrains.mps.baseLanguage.structure.Expression"))) {
+        SNode methodCall = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.IMethodCall");
+        SNode methodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
+        SNode var = source;
+        if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
+          var = SLinkOperations.getTarget(SNodeOperations.cast(source, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
+        }
+        if (var != null && methodDeclaration != null) {
+          {
+            Iterator<SNode> arg_it = ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).iterator();
+            Iterator<SNode> param_it = ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).iterator();
+            SNode arg_var;
+            SNode param_var;
+            while (arg_it.hasNext() && param_it.hasNext()) {
+              arg_var = arg_it.next();
+              param_var = param_it.next();
+              if (eq_7kkp52_a0c0e0a0e0k0g0b(arg_var, source)) {
+                if (ListSequence.fromList(SLinkOperations.getTargets(param_var, "annotation", true)).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode it) {
+                    return (SLinkOperations.getTarget(it, "annotation", false) != null);
+                  }
+                }).select(new ISelector<SNode, SNode>() {
+                  public SNode select(SNode it) {
+                    return SLinkOperations.getTarget(it, "annotation", false);
+                  }
+                }).contains(SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull")) && NullableState.canBeNull(result.get(instruction).get(var))) {
+                  String warning;
+                  if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+                    warning = "Argument " + SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") + " might be null";
+                  } else {
+                    warning = "Argument might be null";
+                  }
+                  {
+                    MessageTarget errorTarget = new NodeMessageTarget();
+                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(source, warning, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "741163781874494202", null, errorTarget);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
     // Find Nullable returns of NotNull methods 
     if (SNodeOperations.isInstanceOf(iMethodLike, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
@@ -166,5 +210,12 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
 
   public boolean overrides() {
     return false;
+  }
+
+  private static boolean eq_7kkp52_a0c0e0a0e0k0g0b(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

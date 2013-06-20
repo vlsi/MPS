@@ -54,6 +54,7 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.core.pluginSolution-src.jar" descriptor="jetbrains.mps.lang.core.pluginSolution.msd" />
       </module>
@@ -85,6 +86,7 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.script.pluginSolution-src.jar" descriptor="jetbrains.mps.lang.script.pluginSolution.msd" />
       </module>
@@ -116,6 +118,7 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.typesystem.pluginSolution-src.jar" descriptor="jetbrains.mps.lang.typesystem.pluginSolution.msd" />
       </module>
@@ -148,6 +151,7 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.plugin.standalone-src.jar" descriptor="jetbrains.mps.lang.plugin.standalone.mpl" />
       </module>
@@ -188,6 +192,7 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.uiLanguage-src.jar" descriptor="jetbrains.mps.uiLanguage.mpl" />
       </module>
@@ -227,6 +232,7 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.uiLanguage.pluginSolution-src.jar" descriptor="jetbrains.mps.uiLanguage.pluginSolution.msd" />
       </module>
@@ -257,7 +263,7 @@
     <jar destfile="${build.layout}/lib/mps-boot.jar">
       <fileset dir="${build.tmp}/java/out/startup" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/workbench-mps-workbench-models">
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/workbench-mps-workbench-models" stripImplementation="true">
       <fileset dir="${mps_home}/workbench/mps-workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-uiLanguage-runtime-jetbrains">
@@ -309,88 +315,7 @@
   
   <target name="classes" depends="compileJava, processResources" />
   
-  <target name="test" depends="classes, fetchDependencies, declare-mps-tasks">
-    <echo message="testing generation" />
-    <difftest parallelMode="true" fork="true" showdiff="true" loglevel="warn">
-      <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
-      <plugin path="${artifacts.mpsTesting}/mps-testing" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.tool.gentest.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.builders.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jetbrains.mps.baseLanguage.unitTest.libs.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.access.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.generationParameters.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.pattern.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.plugin-generator.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.quotation.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.refactoring.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.resources.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.script.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.stubs.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.facet.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.script.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/lib/mps-test.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
-      <library file="${artifacts.mpsTesting}/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
-      <module file="${mps_home}/languages/core/stub/MPS.Workbench/MPS.Workbench.msd" />
-      <module file="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide.msd" />
-      <module file="${mps_home}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" />
-      <module file="${mps_home}/languages/core/core/solutions/pluginSolution/jetbrains.mps.lang.core.pluginSolution.msd" />
-      <module file="${mps_home}/languages/languageDesign/plugin-standalone/jetbrains.mps.lang.plugin.standalone.mpl" />
-      <module file="${mps_home}/languages/languageDesign/script/solutions/pluginSolution/jetbrains.mps.lang.script.pluginSolution.msd" />
-      <module file="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/jetbrains.mps.lang.typesystem.pluginSolution.msd" />
-      <module file="${mps_home}/languages/util/uiLanguage/jetbrains.mps.uiLanguage.mpl" />
-      <module file="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution/jetbrains.mps.uiLanguage.pluginSolution.msd" />
-    </difftest>
-  </target>
+  <target name="test" depends="classes" />
   
   <target name="check" depends="test" />
   
@@ -517,8 +442,8 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -566,11 +491,11 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
         <fileset file="${mps_home}/lib/beansbinding-1.2.1.jar" />
@@ -647,9 +572,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
@@ -694,9 +619,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
@@ -742,9 +667,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
@@ -788,11 +713,11 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
@@ -839,11 +764,11 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
@@ -895,8 +820,8 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
@@ -933,11 +858,11 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
@@ -986,8 +911,8 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />

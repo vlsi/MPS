@@ -21,6 +21,7 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import jetbrains.mps.nodeEditor.CellSide;
@@ -28,12 +29,13 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
-import jetbrains.mps.nodeEditor.selection.MultipleSelection;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.selection.MultipleSelection;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
@@ -52,7 +54,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.lang.ref.WeakReference;
 
-public abstract class EditorCell_Label extends EditorCell_Basic {
+public abstract class EditorCell_Label extends EditorCell_Basic implements jetbrains.mps.openapi.editor.cells.EditorCell_Label {
   protected boolean myNoTextSet;
   protected TextLine myTextLine;
   protected TextLine myNullTextLine;
@@ -111,6 +113,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myCaretIsVisible = true;
   }
 
+  @Override
   public String getText() {
     return myTextLine.getText();
   }
@@ -151,24 +154,27 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     getStyle().set(StyleAttributes.NULL_SELECTED_TEXT_BACKGROUND_COLOR, color);
   }
 
+  /**
+   * @deprecated Use StyleAttributesUtil.isFirstPositionAllowed() instead. Should be removed after MPS 3.0
+   */
+  @Deprecated
   public boolean isFirstPositionAllowed() {
-    if (getStyle().isSpecified(StyleAttributes.FIRST_POSITION_ALLOWED)) {
-      return getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED);
-    }
-    return !getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
+    return StyleAttributesUtil.isFirstPositionAllowed(getStyle());
   }
 
+  /**
+   * @deprecated Use StyleAttributesUtil.isLastPositionAllowed() instead. Should be removed after MPS 3.0
+   */
+  @Deprecated
   public boolean isLastPositionAllowed() {
-    if (getStyle().isSpecified(StyleAttributes.LAST_POSITION_ALLOWED)) {
-      return getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED);
-    }
-    return !getStyle().get(StyleAttributes.PUNCTUATION_RIGHT);
+    return StyleAttributesUtil.isLastPositionAllowed(getStyle());
   }
 
   public int getCaretPosition() {
     return myTextLine.getCaretPosition();
   }
 
+  @Override
   public void setCaretPosition(int position) {
     setCaretPosition(position, false);
   }
@@ -242,10 +248,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
+  @Override
   public boolean isCaretEnabled() {
     return myTextLine.isCaretEnabled();
   }
 
+  @Override
   public void setCaretEnabled(boolean enabled) {
     myTextLine.setCaretEnabled(enabled);
   }
@@ -519,6 +527,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return result;
   }
 
+  @Override
   public boolean executeTextAction(CellActionType type, boolean allowErrors) {
     // only following actions are supported on text
     switch (type) {
@@ -560,7 +569,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       changeText(newText);
       setCaretPositionIfPossible(startSelection + 1);
       myTextLine.resetSelection();
-      editor.resetLastCaretX();
+      fireSelectionChanged();
       ensureCaretVisible();
       return true;
     }
@@ -575,30 +584,42 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return label.isEditable() && label.isSelectable();
   }
 
-  private void deleteIfPossible() {
+  private void deleteIfPossible(CellActionType actionType) {
+    assert CellActionType.DELETE == actionType || CellActionType.BACKSPACE == actionType;
     if ("".equals(getText()) && isTopCell()) {
       if (getStyle().get(StyleAttributes.AUTO_DELETABLE)) {
-        getSNode().delete();
+        // TODO: just use delte action (do not call getSNode().delete()) in the end if acton was not found or is not applicable
+        CellAction deleteAction = getEditorComponent().getActionHandler().getApplicableCellAction(this, actionType);
+        if (deleteAction != null && deleteAction.canExecute(getContext())) {
+          deleteAction.execute(getContext());
+        } else {
+          getSNode().delete();
+        }
       }
     }
   }
 
+  @Override
   public String getSelectedText() {
     return myTextLine.getTextuallySelectedText();
   }
 
+  @Override
   public int getSelectionStart() {
     return myTextLine.getStartTextSelectionPosition();
   }
 
+  @Override
   public void setSelectionStart(int position) {
     myTextLine.setStartTextSelectionPosition(position);
   }
 
+  @Override
   public int getSelectionEnd() {
     return myTextLine.getEndTextSelectionPosition();
   }
 
+  @Override
   public void setSelectionEnd(int position) {
     myTextLine.setEndTextSelectionPosition(position);
   }
@@ -610,7 +631,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     int endSel = myTextLine.getEndTextSelectionPosition();
     changeText(myText.substring(0, stSel) + myText.substring(endSel));
     myTextLine.setCaretPosition(stSel);
-    editor.resetLastCaretX();
+    fireSelectionChanged();
     ensureCaretVisible();
   }
 
@@ -626,13 +647,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
     SNode node = getSNode();
     if (node == null) return;
-    if (CommandProcessor.getInstance().getCurrentCommand() == null)return;
+    if (CommandProcessor.getInstance().getCurrentCommand() == null) return;
     if (EqualUtil.equals(oldText, text)) return;
     if (isValidText(text)) return;
 
     UndoHelper.getInstance().addUndoableAction(new MySNodeUndoableAction(node, cellInfo, editor, oldText, text));
 
-    if (node.getModel()==null) return;
+    if (node.getModel() == null) return;
 
     MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getContainingRoot()).setModificationStamp(LocalTimeCounter.currentTime());
   }
@@ -731,6 +752,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     getTextLine().selectAll();
   }
 
+  @Override
   public void deselectAll() {
     getTextLine().deselectAll();
   }
@@ -767,6 +789,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public String getTextAfterCaret() {
     return myTextLine.getTextAfterCaret();
+  }
+
+  private void fireSelectionChanged() {
+    getEditorComponent().getSelectionManager().setSelection(getEditorComponent().getSelectionManager().getSelection());
   }
 
   private static class MySNodeUndoableAction extends SNodeUndoableAction {
@@ -822,7 +848,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     @Override
     public void execute(EditorContext context) {
       setCaretPosition(getCaretPosition() - 1, myWithSelection);
-      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
+      fireSelectionChanged();
       ensureCaretVisible();
     }
   }
@@ -842,7 +868,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     @Override
     public void execute(EditorContext context) {
       setCaretPosition(getCaretPosition() + 1, myWithSelection);
-      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
+      fireSelectionChanged();
       ensureCaretVisible();
     }
   }
@@ -850,14 +876,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   private class SelectHome extends AbstractCellAction {
     @Override
     public boolean canExecute(EditorContext context) {
-      if (!isCaretPositionAllowed(0)) return false;
-      return true;
+      return isCaretPositionAllowed(0);
     }
 
     @Override
     public void execute(EditorContext context) {
       setCaretPosition(0, true);
-      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
+      fireSelectionChanged();
       ensureCaretVisible();
     }
   }
@@ -865,14 +890,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   private class SelectEnd extends AbstractCellAction {
     @Override
     public boolean canExecute(EditorContext context) {
-      if (!isCaretPositionAllowed(getText().length())) return false;
-      return true;
+      return isCaretPositionAllowed(getText().length());
     }
 
     @Override
     public void execute(EditorContext context) {
       setCaretPosition(getText().length(), true);
-      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
+      fireSelectionChanged();
       ensureCaretVisible();
     }
   }
@@ -880,7 +904,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   private class CopyLabelText extends AbstractCellAction {
     @Override
     public boolean canExecute(EditorContext context) {
-      SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
+      SelectionManager selectionManager = context.getEditorComponent().getSelectionManager();
       if (selectionManager.getSelection() instanceof EditorCellLabelSelection) {
         EditorCellLabelSelection labelSelection = (EditorCellLabelSelection) selectionManager.getSelection();
         return labelSelection.getEditorCellLabel().getSelectedText().length() > 0;
@@ -959,7 +983,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       EditorCell_Label cell = (EditorCell_Label) context.getSelectedCell();
       final String s = TextPasteUtil.getStringFromClipboard();
       cell.insertText(NameUtil.escapeInvisibleCharacters(s));
-      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
+      fireSelectionChanged();
       cell.ensureCaretVisible();
     }
   }
@@ -967,7 +991,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   private class CutLabelText extends AbstractCellAction {
     @Override
     public boolean canExecute(EditorContext context) {
-      SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
+      SelectionManager selectionManager = context.getEditorComponent().getSelectionManager();
       if (selectionManager.getSelection() instanceof EditorCellLabelSelection) {
         EditorCellLabelSelection labelSelection = (EditorCellLabelSelection) selectionManager.getSelection();
         return labelSelection.getEditorCellLabel().getSelectedText().length() > 0;
@@ -1004,7 +1028,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       if (myActionType == CellActionType.BACKSPACE) {
         if (myTextLine.hasNonTrivialSelection()) {
           deleteSelection();
-          deleteIfPossible();
+          deleteIfPossible(myActionType);
           return true;
         }
 
@@ -1017,7 +1041,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
           if (!isCaretPositionAllowed(caretPosition - 1)) return false;
           setCaretPosition(caretPosition - 1);
           ensureCaretVisible();
-          deleteIfPossible();
+          deleteIfPossible(myActionType);
           return true;
         } else {
           if (myAllowErrors && canDeleteFrom(getPrevLeaf())) {
@@ -1032,7 +1056,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       } else if (myActionType == CellActionType.DELETE) {
         if (myTextLine.hasNonTrivialSelection()) {
           deleteSelection();
-          deleteIfPossible();
+          deleteIfPossible(myActionType);
           return true;
         } else if (caretPosition < oldText.length()) {
           String newText = oldText.substring(0, caretPosition) + oldText.substring(caretPosition + 1);
@@ -1041,7 +1065,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
           }
           changeText(newText);
           ensureCaretVisible();
-          deleteIfPossible();
+          deleteIfPossible(myActionType);
           return true;
         } else {
           if (myAllowErrors && canDeleteFrom(getNextLeaf())) {

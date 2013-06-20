@@ -52,23 +52,25 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ImplementationPart").interface_().parents("jetbrains.mps.lang.core.structure.ScopeFacade").create();
       case 19:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.InterfacePart").interface_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ImplementationWithStubPart").interface_().parents("jetbrains.mps.lang.core.structure.ImplementationPart").create();
       case 20:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.LinkAttribute").super_("jetbrains.mps.lang.core.structure.Attribute").parents("jetbrains.mps.lang.core.structure.Attribute").properties("linkRole").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.InterfacePart").interface_().create();
       case 21:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.NodeAttribute").super_("jetbrains.mps.lang.core.structure.Attribute").parents("jetbrains.mps.lang.core.structure.Attribute").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.LinkAttribute").super_("jetbrains.mps.lang.core.structure.Attribute").parents("jetbrains.mps.lang.core.structure.Attribute").properties("linkRole").create();
       case 22:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.PropertyAttribute").super_("jetbrains.mps.lang.core.structure.Attribute").parents("jetbrains.mps.lang.core.structure.Attribute").properties("propertyName").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.NodeAttribute").super_("jetbrains.mps.lang.core.structure.Attribute").parents("jetbrains.mps.lang.core.structure.Attribute").create();
       case 23:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ScopeFacade").interface_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.PropertyAttribute").super_("jetbrains.mps.lang.core.structure.Attribute").parents("jetbrains.mps.lang.core.structure.Attribute").properties("propertyName").create();
       case 24:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ScopeProvider").interface_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ScopeFacade").interface_().create();
       case 25:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ScopeProvider").interface_().create();
+      case 26:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.ISuppressErrors").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ExportScope", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.IAntisuppressErrors", "jetbrains.mps.lang.core.structure.ICanSuppressErrors", "jetbrains.mps.lang.core.structure.IContainer", "jetbrains.mps.lang.core.structure.IDeprecatable", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.lang.core.structure.ISuppressErrors", "jetbrains.mps.lang.core.structure.IType", "jetbrains.mps.lang.core.structure.IWrapper", "jetbrains.mps.lang.core.structure.ImplementationContainer", "jetbrains.mps.lang.core.structure.ImplementationPart", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.core.structure.ScopeFacade", "jetbrains.mps.lang.core.structure.ScopeProvider", "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ExportScope", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.IAntisuppressErrors", "jetbrains.mps.lang.core.structure.ICanSuppressErrors", "jetbrains.mps.lang.core.structure.IContainer", "jetbrains.mps.lang.core.structure.IDeprecatable", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.lang.core.structure.ISuppressErrors", "jetbrains.mps.lang.core.structure.IType", "jetbrains.mps.lang.core.structure.IWrapper", "jetbrains.mps.lang.core.structure.ImplementationContainer", "jetbrains.mps.lang.core.structure.ImplementationPart", "jetbrains.mps.lang.core.structure.ImplementationWithStubPart", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.core.structure.ScopeFacade", "jetbrains.mps.lang.core.structure.ScopeProvider", "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"};
 }

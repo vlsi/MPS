@@ -17,6 +17,7 @@ package jetbrains.mps.openapi.editor;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.Computable;
@@ -113,4 +114,6 @@ public interface EditorContext {
   <T> T runWithContextCell(EditorCell contextCell, Computable<T> r);
 
   EditorCellFactory getCellFactory();
+
+  SelectionManager getSelectionManager();
 }

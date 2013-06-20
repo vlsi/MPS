@@ -24,6 +24,7 @@ import java.awt.Frame;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
+import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -106,7 +107,7 @@ public class GetModelContentsFromSource_Action extends BaseAction {
       }
       IFile result = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       if (result != null) {
-        final DirParser dirParser = new DirParser(module, null, new File(result.getPath()));
+        final DirParser dirParser = new DirParser(module, null, FileSystem.getInstance().getFileByPath(result.getPath()));
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             try {
@@ -114,7 +115,11 @@ public class GetModelContentsFromSource_Action extends BaseAction {
             } catch (JavaParseException e) {
               // TODO properly handle it 
               throw new RuntimeException(e);
+            } catch (IOException e) {
+              // FIXME 
+              throw new RuntimeException(e);
             }
+
           }
         });
       }

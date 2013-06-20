@@ -57,6 +57,7 @@ public class SubtypingResolver {
     long start = System.nanoTime();
 
     Boolean aBoolean = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         boolean result = isSubType(subType, superType);
         return result;
@@ -190,6 +191,7 @@ public class SubtypingResolver {
       myMatchingPairs = matchingPairs;
     }
 
+    @Override
     public boolean matchesWith(SNode nodeToMatch) {
       return TypesUtil.match(nodeToMatch, mySuperType, myMatchingPairs);
     }
@@ -197,8 +199,9 @@ public class SubtypingResolver {
     public SNode getSuperType() {
       return mySuperType;
     }
+    @Override
     public String getConceptFQName() {
-      return mySuperType.getConcept().getId();
+      return mySuperType.getConcept().getQualifiedName();
     }
   }
 

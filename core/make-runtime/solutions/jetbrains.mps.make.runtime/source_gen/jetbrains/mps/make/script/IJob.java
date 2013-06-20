@@ -5,7 +5,7 @@ package jetbrains.mps.make.script;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public interface IJob {
   public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, @NotNull ProgressMonitor monitor);

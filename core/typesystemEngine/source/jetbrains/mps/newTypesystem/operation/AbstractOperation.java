@@ -65,6 +65,7 @@ public abstract class AbstractOperation {
 
   public void redo(final State state) {
     state.executeStateChangeAction(new Runnable() {
+      @Override
       public void run() {
         doRedo(state);
       }

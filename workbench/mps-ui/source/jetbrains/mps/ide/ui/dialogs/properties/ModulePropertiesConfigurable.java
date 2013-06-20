@@ -74,7 +74,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.FacetTabsPersistence;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -264,9 +264,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         myModuleDependenciesTab.apply();
       else {
         if(myModule instanceof Language) {
-          ((LanguageDescriptor)myModule.getModuleDescriptor()).setGenPath(myGenOut.getText());
+          ((LanguageDescriptor)myModule.getModuleDescriptor()).setGenPath(myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
         } else if (myModule instanceof Solution) {
-          ((SolutionDescriptor)myModule.getModuleDescriptor()).setOutputPath(myGenOut.getText());
+          ((SolutionDescriptor)myModule.getModuleDescriptor()).setOutputPath(myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
         }
         myEntriesEditor.apply();
       }

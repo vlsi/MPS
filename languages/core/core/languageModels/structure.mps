@@ -241,5 +241,11 @@
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1319728274784973096" nodeInfo="ig">
     <property name="name" nameId="1169194664001" value="InterfacePart" />
   </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="6999738288738427190" nodeInfo="ig">
+    <property name="name" nameId="1169194664001" value="ImplementationWithStubPart" />
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6999738288738427191" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1319728274783077719" resolveInfo="ImplementationPart" />
+    </node>
+  </root>
 </model>
 

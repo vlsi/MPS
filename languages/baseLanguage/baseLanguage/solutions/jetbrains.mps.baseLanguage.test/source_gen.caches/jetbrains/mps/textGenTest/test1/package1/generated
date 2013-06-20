@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-11phkme7f5zegbx1meca6xn5npn7j40">
+<dependencies version="2" modelHash="d5j4pofz7bt4w3qje3u9skcg4t6n614">
   <common hash="-8lq11xpkms5k98siso20kgd2mqcrew7" />
-  <source id="5257650213624905139" name="Clazz" hash="4a07usl6x8u02cf0oy1rpa2gw90e3g2">
+  <source id="5257650213624905139" name="Clazz" hash="-4qbx5qualqhux4xvm37aguhcntctjia">
     <file name="Clazz.java" />
   </source>
 </dependencies>

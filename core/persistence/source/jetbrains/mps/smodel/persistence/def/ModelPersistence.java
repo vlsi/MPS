@@ -245,7 +245,7 @@ public class ModelPersistence {
    */
   public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source) throws IOException {
     int persistenceVersion =
-        model instanceof DefaultSModel ? ((DefaultSModel) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
+        model instanceof DefaultSModel ? ((DefaultSModel) model).getPersistenceVersion() : LAST_VERSION;
     return saveModel(model, source, persistenceVersion);
   }
 
@@ -256,7 +256,7 @@ public class ModelPersistence {
     LOG.debug("Saving model " + model.getReference() + " to " + source.getLocation());
 
     // (since 3.0) we do not support saving in old persistences (before 7)
-    persistenceVersion = Math.max(7, persistenceVersion);
+    persistenceVersion = persistenceVersion < 4 ? LAST_VERSION : Math.max(7, persistenceVersion);
 
     if (source.isReadOnly()) {
       throw new IOException("`" + source.getLocation() + "' is read-only");
@@ -341,16 +341,22 @@ public class ModelPersistence {
   }
 
   @NotNull
-  public static DefaultSModel readModel(@NotNull final StreamDataSource source, boolean onlyRoots) throws ModelReadException {
+  public static DefaultSModel readModelWithoutImplementation(@NotNull final StreamDataSource source) throws ModelReadException {
     SModelHeader header = loadDescriptor(source);
-    ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
+    return (DefaultSModel) readModel(header, source, ModelLoadingState.NO_IMPLEMENTATION).getModel();
+  }
+
+  @NotNull
+  public static DefaultSModel readModel(@NotNull final StreamDataSource source, boolean interfaceOnly) throws ModelReadException {
+    SModelHeader header = loadDescriptor(source);
+    ModelLoadingState state = interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED;
     return (DefaultSModel) readModel(header, source, state).getModel();
   }
 
   @NotNull
-  public static DefaultSModel readModel(@NotNull final String content, boolean onlyRoots) throws ModelReadException {
+  public static DefaultSModel readModel(@NotNull final String content, boolean interfaceOnly) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
-    ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
+    ModelLoadingState state = interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED;
     return (DefaultSModel) readModel(header, new InputSource(new StringReader(content)), state).getModel();
   }
 

@@ -15,8 +15,6 @@
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.ProjectTestHelper" file="ProjectTestHelper.java">
-    <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
-    <classNode dependClassName="com.intellij.util.PathUtil" />
     <classNode dependClassName="difflib.DiffUtils" />
     <classNode dependClassName="difflib.Patch" />
     <classNode dependClassName="java.io.BufferedReader" />
@@ -44,15 +42,12 @@
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.concurrent.ExecutionException" />
-    <classNode dependClassName="jetbrains.mps.TestMain" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
-    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -80,14 +75,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.testbench.TestMakeService" />
-    <classNode dependClassName="jetbrains.mps.testbench.Testbench" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
@@ -124,12 +115,12 @@
     <classNode dependClassName="jetbrains.mps.messages.Message" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.testbench.MessageFeedbackStrategy" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.IMakeService" />
     <classNode extendsClassName="jetbrains.mps.make.service.AbstractInputProcessor" />
     <classNode extendsClassName="jetbrains.mps.make.service.AbstractMakeService" />

@@ -17,7 +17,7 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;

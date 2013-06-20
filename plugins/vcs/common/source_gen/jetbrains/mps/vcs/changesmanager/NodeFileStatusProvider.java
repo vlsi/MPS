@@ -11,6 +11,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
 import com.intellij.openapi.editor.Document;
 import com.intellij.util.ThreeState;
@@ -33,8 +34,16 @@ public class NodeFileStatusProvider implements FileStatusProvider {
       return FileStatus.NOT_CHANGED;
     }
 
-    MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
+    final MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
     SNode root = MPSEditorUtil.getCurrentEditedNode(myProject, nodeFile);
+    if (root == null) {
+      root = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        @Override
+        public SNode compute() {
+          return nodeFile.getNode().getContainingRoot();
+        }
+      });
+    }
     if (root == null) {
       return null;
     }

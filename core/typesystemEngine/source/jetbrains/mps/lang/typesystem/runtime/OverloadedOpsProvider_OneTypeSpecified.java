@@ -25,10 +25,12 @@ public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloa
   protected boolean myTypeIsExact = false;
   protected boolean myIsStrong = false;
 
+  @Override
   public String getApplicableConceptFQName() {
     return myOperationConceptFQName;
   }
 
+  @Override
   public boolean isApplicable(SubtypingManager subtypingManager, SNode leftOperandType, SNode rightOperandType) {
     if (myTypeIsExact) {
       if (!(MatchingUtil.matchNodes(leftOperandType, myOperandType) || MatchingUtil.matchNodes(rightOperandType, myOperandType))) {
@@ -43,10 +45,12 @@ public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloa
     return true;
   }
 
+  @Override
   public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
     return isApplicable(subtypingManager, leftOperandType, rightOperandType);
   }
 
+  @Override
   public int compareTo(IOverloadedOpsTypesProvider o) {
     if (o instanceof OverloadedOpsProvider_OneTypeSpecified) {
       OverloadedOpsProvider_OneTypeSpecified o2 = (OverloadedOpsProvider_OneTypeSpecified) o;

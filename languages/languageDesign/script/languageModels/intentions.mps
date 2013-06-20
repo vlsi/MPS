@@ -17,7 +17,7 @@
     <property name="name" nameId="tpck.1169194664001" value="ConvertToClassifierFQNameSpecification" />
     <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp33.5434557751112207651" resolveInfo="DirectClassifierSpecification" />
     <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="5434557751114211966" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5434557751114211967" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5434557751114211967" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5434557751114213032" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5434557751114213031" nodeInfo="nn">
             <property name="value" nameId="tpee.1070475926801" value="Convert Direct Classifier reference to hardcoded FQName specification" />
@@ -26,7 +26,7 @@
       </node>
     </node>
     <node role="executeFunction" roleId="tp3j.2522969319638198291" type="tp3j.ExecuteBlock" typeId="tp3j.1192795911897" id="5434557751114211968" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5434557751114211969" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5434557751114211969" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5434557751114222128" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5434557751114222129" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="classifierSpecification" />
@@ -120,7 +120,7 @@
     <property name="name" nameId="tpck.1169194664001" value="ConvertToMethodFQNameSpecification" />
     <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp33.2291767839159498115" resolveInfo="DirectMethodSpecification" />
     <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="4126624587000694736" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4126624587000694737" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4126624587000694737" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4126624587000709697" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4126624587000709698" nodeInfo="nn">
             <property name="value" nameId="tpee.1070475926801" value="Convert Direct Method reference to hardcoded FQName specification" />
@@ -129,7 +129,7 @@
       </node>
     </node>
     <node role="executeFunction" roleId="tp3j.2522969319638198291" type="tp3j.ExecuteBlock" typeId="tp3j.1192795911897" id="4126624587000694738" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4126624587000694739" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4126624587000694739" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4126624587000711658" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4126624587000711659" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="methodSpecification" />

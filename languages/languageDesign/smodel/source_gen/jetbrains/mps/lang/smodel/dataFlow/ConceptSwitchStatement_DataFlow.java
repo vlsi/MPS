@@ -16,7 +16,7 @@ public class ConceptSwitchStatement_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
 
     for (SNode switchCase : SLinkOperations.getTargets(_context.getNode(), "case", true)) {
-      _context.getBuilder().emitIfJump(_context.getBuilder().after(switchCase));
+      _context.getBuilder().emitIfJump(_context.getBuilder().after(switchCase), "r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)/2832018561208855918");
       _context.getBuilder().build((SNode) switchCase);
     }
   }

@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -58,14 +57,14 @@ public class ModelContentUtil {
       namespaces.add(ref.getModuleName());
     }
     for (SNode root : model.getRootNodes()) {
-      namespaces.add(NameUtil.namespaceFromConceptFQName(root.getConcept().getId()));
+      namespaces.add(root.getConcept().getLanguage().getQualifiedName());
       for (SNode child : jetbrains.mps.util.SNodeOperations.getDescendants(root, null)) {
-        namespaces.add(NameUtil.namespaceFromConceptFQName(child.getConcept().getId()));
+        namespaces.add(child.getConcept().getLanguage().getQualifiedName());
       }
     }
     // empty behavior model should have it's behavior aspect descriptor generated
     if (model.getModule() instanceof Language && LanguageAspect.BEHAVIOR.is(model)) {
-      namespaces.add(BootstrapLanguages.BEHAVIOR.getModuleName());
+      namespaces.add(BootstrapLanguages.BEHAVIOR_NAMESPACE);
     }
     return namespaces;
   }

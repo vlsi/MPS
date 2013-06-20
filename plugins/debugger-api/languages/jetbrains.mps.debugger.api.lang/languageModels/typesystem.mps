@@ -18,7 +18,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="2526721715665547048" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_DebuggerReference" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="2526721715665547049" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="2526721715665547049" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="2526721715665562909" nodeInfo="nn">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2526721715665562913" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2526721715665562914" nodeInfo="nn">
@@ -54,7 +54,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5365453833390544926" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_CreateBreakpointOperation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="5365453833390544927" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="5365453833390544927" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5365453833390548228" nodeInfo="nn">
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5365453833390548229" nodeInfo="nr">
           <property name="name" nameId="tpck.1169194664001" value="parent" />
@@ -68,7 +68,7 @@
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5365453833390548236" nodeInfo="nn">
-        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5365453833390548237" nodeInfo="nn">
+        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5365453833390548237" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateStrongLessThanInequationStatement" typeId="tpd4.1179832490862" id="5365453833390548276" nodeInfo="nn">
             <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
             <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="5365453833390571558" nodeInfo="ng">
@@ -129,7 +129,7 @@
   <root type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="3570824963050586846" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="DebuggerTypeIsDebuggerType" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
-    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="3570824963050586847" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="3570824963050586847" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3570824963050586849" nodeInfo="nn">
         <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3570824963050586851" nodeInfo="nn">
           <node role="quotedNode" roleId="tp3r.1196350785114" type="86gq.DebuggerType" typeId="86gq.1104094430779063683" id="3570824963050586853" nodeInfo="in" />
@@ -143,9 +143,9 @@
   </root>
   <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4030433165041852571" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="check_DebuggerReferenceThrowableIsCaught" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="4030433165041852572" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="4030433165041852572" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7329423411587718618" nodeInfo="nn">
-        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="7329423411587718619" nodeInfo="nn">
+        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="7329423411587718619" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7329423411587718639" nodeInfo="nn">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7329423411587718640" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="throwables" />
@@ -213,7 +213,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6586232406240905081" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_DebuggerConfiguration" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6586232406240905082" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6586232406240905082" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateStrongLessThanInequationStatement" typeId="tpd4.1179832490862" id="6586232406240905084" nodeInfo="nn">
         <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="6586232406240905086" nodeInfo="ng">
@@ -242,7 +242,7 @@
   </root>
   <root type="tpd4.ComparisonRule" typeId="tpd4.1188811367543" id="8321799582437916610" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="DebuggerIsDebugger" />
-    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="8321799582437916612" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="8321799582437916612" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8321799582437927607" nodeInfo="nn">
         <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8321799582437927611" nodeInfo="nn">
           <property name="value" nameId="tpee.1068580123138" value="true" />

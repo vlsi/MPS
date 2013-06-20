@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -63,7 +63,7 @@ public class Insert_Action extends BaseAction {
     try {
       EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
       if (((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).isFirstCaretPosition()) {
-        if (!(((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).isLastCaretPosition()) || (editorCell instanceof EditorCell_Label && !(((EditorCell_Label) editorCell).isLastPositionAllowed()))) {
+        if (!(((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).isLastCaretPosition()) || !(StyleAttributesUtil.isLastPositionAllowed(editorCell.getStyle()))) {
           EditorActionUtils.callInsertBeforeAction(editorCell);
           return;
         }

@@ -15,16 +15,19 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.selection.MultipleSelection;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionInfo;
+import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -43,28 +46,28 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
   private static final String LAST_NODE_ID_PROPERTY_NAME = "lastNodeId";
   private static final String PARENT_NODE_ID_PROPERTY_NAME = "parentNodeId";
 
-  private SNode myFirstNode;
-  private SNode myLastNode;
-  private SNode myParentNode;
-  private String myRole;
+  private final SNode myFirstNode;
+  private final SNode myLastNode;
+  private final SNode myParentNode;
+  private final String myRole;
+  private final String myModelReference;
 
   public NodeRangeSelection(@NotNull EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException,
       SelectionRestoreException {
     super(editorComponent);
     if (cellInfo != null) {
-      throw new SelectionStoreException("Non-null CellInfo objet passed as a parameter: " + cellInfo);
+      throw new SelectionStoreException("Non-null CellInfo object passed as a parameter: " + cellInfo);
     }
     myRole = properties.get(ROLE_PROPERTY_NAME);
     if (myRole == null) {
       throw new SelectionStoreException("Role property missed");
     }
 
-    String modelId = properties.get(MODEL_ID_PROPERTY_NAME);
-    if (modelId == null) {
+    myModelReference = properties.get(MODEL_ID_PROPERTY_NAME);
+    if (myModelReference == null) {
       throw new SelectionStoreException("Model ID property missed");
     }
-    SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(
-        PersistenceFacade.getInstance().createModelReference(modelId));
+    SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(myModelReference));
     if (sModelDescriptor == null) {
       throw new SelectionRestoreException();
     }
@@ -88,6 +91,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     myLastNode = lastNode;
     myParentNode = myFirstNode.getParent();
     myRole = myFirstNode.getRoleInParent();
+    myModelReference = myFirstNode.getModel().getReference().toString();
 
     assert myParentNode != null;
     assert myParentNode == myLastNode.getParent();
@@ -98,25 +102,37 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
   private void initSelectedCells() {
     List<EditorCell> selectedCells = new ArrayList<EditorCell>();
-    List<? extends SNode> children = IterableUtil.asList(myParentNode.getChildren(myRole));
-    int i1 = children.indexOf(myFirstNode);
-    assert i1 != -1;
-    int i2 = children.indexOf(myLastNode);
-    assert i2 != -1;
-    for (int index = Math.min(i1, i2); index <= Math.max(i1, i2); index++) {
-      SNode nextNode = children.get(index);
-      EditorCell editorCell = getEditorComponent().findNodeCell(nextNode);
-      assert editorCell != null : "editor cell was not found for node: " + nextNode;
-      selectedCells.add(editorCell);
+    boolean withinSelection = false;
+    boolean breakLoop = false;
+    for (SNode child : myParentNode.getChildren(myRole)) {
+      if (myFirstNode.equals(child) || myLastNode.equals(child)) {
+        if (withinSelection || myFirstNode.equals(myLastNode)) {
+          breakLoop = true;
+        }
+        if (!withinSelection) {
+          withinSelection = true;
+        }
+      }
+      if (withinSelection) {
+        EditorCell editorCell = getEditorComponent().findNodeCell(child);
+        assert editorCell != null : "editor cell was not found for node: " + child;
+        selectedCells.add(editorCell);
+      }
+      if (breakLoop) {
+        break;
+      }
     }
+    // asserting both first/last node was in this children collection
+    assert withinSelection;
+    assert breakLoop;
     setSelectedCells(selectedCells);
   }
 
   @Override
   public SelectionInfo getSelectionInfo() {
-    SelectionInfo selectionInfo = new SelectionInfo(this.getClass().getName());
+    SelectionInfoImpl selectionInfo = new SelectionInfoImpl(this.getClass().getName());
     selectionInfo.getPropertiesMap().put(ROLE_PROPERTY_NAME, myRole);
-    selectionInfo.getPropertiesMap().put(MODEL_ID_PROPERTY_NAME, myParentNode.getModel().getReference().toString());
+    selectionInfo.getPropertiesMap().put(MODEL_ID_PROPERTY_NAME, myModelReference);
     selectionInfo.getPropertiesMap().put(FIRST_NODE_ID_PROPERTY_NAME, myFirstNode.getNodeId().toString());
     selectionInfo.getPropertiesMap().put(LAST_NODE_ID_PROPERTY_NAME, myLastNode.getNodeId().toString());
     selectionInfo.getPropertiesMap().put(PARENT_NODE_ID_PROPERTY_NAME, myParentNode.getNodeId().toString());
@@ -156,7 +172,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
   @Override
   public void executeAction(CellActionType type) {
-    getEditorComponent().assertModelNotDisposed();
+    ((jetbrains.mps.nodeEditor.EditorComponent) getEditorComponent()).assertModelNotDisposed();
     if (type == CellActionType.BACKSPACE || type == CellActionType.DELETE) {
       performDeleteAction(type);
       return;

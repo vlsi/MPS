@@ -304,6 +304,7 @@ import java.util.*;
   }
 
   private class MyLanguageCacheListener implements CacheChangeListener {
+    @Override
     public void languageCacheChanged() {
       setCacheWasRebuild(true);
       setInvalidationWasPerformed(false);

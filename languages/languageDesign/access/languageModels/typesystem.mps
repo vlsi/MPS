@@ -12,11 +12,11 @@
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8974276187400348229" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="check_CommandClosureLiteral" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="8974276187400348230" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="8974276187400348230" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="8974276187400348231" nodeInfo="nn">
-        <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="8974276187400348232" nodeInfo="nn">
+        <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="8974276187400348232" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8974276187400348233" nodeInfo="nn">
-            <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8974276187400348234" nodeInfo="nn">
+            <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8974276187400348234" nodeInfo="sn">
               <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="8974276187400348235" nodeInfo="nn">
                 <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8974276187400348236" nodeInfo="nn">
                   <property name="value" nameId="tpee.1070475926801" value="not allowed here" />
@@ -67,7 +67,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="8974276187400348251" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_ExecuteCommandInEDTStatement" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="8974276187400348252" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="8974276187400348252" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="8974276187400348253" nodeInfo="nn">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="8974276187400348254" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="8974276187400348255" nodeInfo="nn">

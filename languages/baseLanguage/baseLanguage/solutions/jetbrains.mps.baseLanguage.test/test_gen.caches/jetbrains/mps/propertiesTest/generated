@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cv07fbq0lrxlpjpdj958wuhc7ydlu0w">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="16sfc7fae7htr94ns3e2tugmu89lr5r" />
-  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="dgtel9s427vm37iaz9u6ikq38xnt1eq" />
+<dependencies version="2" modelHash="93objybfridudy5m914ctvtq0pzfo3r">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="93532tba9vfh2vu3y5akjytftkojc3t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="3ufygskomwsbyhgecoht1jp34ipmj9l" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <common hash="3r0hvz4vaez3zpqxqfotixtirhgc215" />
-  <source id="12077399789561866" name="PropertiesTest_Test" hash="bim5nslx2lcdl826nzu5toigh2h0wxb">
+  <source id="12077399789561866" name="PropertiesTest_Test" hash="-59j1m82l3k4f0mfbommsk6gw1l818yg">
     <dep root="12077399789561873" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" />
     <file name="PropertiesTest_Test.java" />
   </source>
-  <source id="12077399789561873" name="TestClass" hash="-3wchhu6veud7u9v1vii7bsrdgb6e4jt">
+  <source id="12077399789561873" name="TestClass" hash="4fqdkr1a78czlsuw93kln34i88gdd2u">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3x7vzylkobhu6gls9dhtm5s8q0g0vzj">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+<dependencies version="2" modelHash="-472i9h9x0s5nwkcl3xdi721xfynvz9a">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <common hash="derkcc0rzi39whq9bjj3gvquq665mvp" />
-  <source id="4146564171992399879" hash="8e0k7wbzjwtskh0bd6c2hstl6aa1e50">
+  <source id="4146564171992399879" hash="-cqasv5plll9sogfycmc79n3hnt6f2gk">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="RootCustom.java" />
   </source>

@@ -149,7 +149,7 @@ public class TextGen {
   // helper stuff
   @NotNull
   private static TextGenDescriptor getTextGenForNode(SNode node) {
-    return ConceptRegistry.getInstance().getTextGenDescriptor(node.getConcept().getId());
+    return ConceptRegistry.getInstance().getTextGenDescriptor(node.getConcept().getQualifiedName());
   }
 
   private static void adjustPositions(int delta, Map<SNode, ? extends PositionInfo> positionInfo) {

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dlxot7c1cer7elxz512xs0r8uyzzuf6">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+<dependencies version="2" modelHash="1nkaqhg5flgi720l9p8mzhyhp1x8ipz">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <common hash="-ek58jjv630jxrdyqxw7kl3j17ztx764" />
-  <source id="1560298786499489453" name="EditableStringDescriptor" hash="-e11te9bksrgk61zefneqm71afd1kf0h">
+  <source id="1560298786499489453" name="EditableStringDescriptor" hash="c5dio0j7wq0i9nl9c1fh8jk7wvp7hi">
     <file name="EditableStringDescriptor.java" />
   </source>
-  <source id="1560298786499491464" name="StringPathDescriptor" hash="xfwk5h2ig233g2peu167ct3r94s79v">
+  <source id="1560298786499491464" name="StringPathDescriptor" hash="7lhdw8sojoimj2hjrazroqrs35yd0a5">
     <file name="StringPathDescriptor.java" />
   </source>
-  <source id="1560298786499491489" name="BooleanDescriptor" hash="-5hubqy2ks9d5nxlcf0iacbnpa1tlkcu">
+  <source id="1560298786499491489" name="BooleanDescriptor" hash="-8xmitz601he0epxkmi67nmypm0jxdl2">
     <file name="BooleanDescriptor.java" />
   </source>
-  <source id="1560298786499493471" name="ModuleDescriptor" hash="-eu5kh0unsdzhnfpfaerxhfa2kjyrhzk">
+  <source id="1560298786499493471" name="ModuleDescriptor" hash="-5fpmf8qyjzrrxcivkbeckjd6t3xubhi">
     <file name="ModuleDescriptor.java" />
   </source>
-  <source id="1560298786499494704" name="ManagerDescriptor" hash="-ajqpi32g9npu4vdn8mhkwtrjejkfxz8">
+  <source id="1560298786499494704" name="ManagerDescriptor" hash="-9r3fd8d1vo1ui0mnouo6h3fdatpv2ut">
     <file name="ManagerDescriptor.java" />
   </source>
-  <source id="1560298786499495292" name="DepDescriptor" hash="apslsa6idvmazd4u1hoayh25sxp7pgr">
+  <source id="1560298786499495292" name="DepDescriptor" hash="d1a69s4to8m8tecrijoovvjwh3rtw7y">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DepDescriptor.java" />
   </source>
-  <source id="1560298786499497407" name="ModelDescriptor" hash="-bjg1k1siauymzga10qeyjl3pcktd840">
+  <source id="1560298786499497407" name="ModelDescriptor" hash="-av0b4sfm3ujfuwalu8yzn20by3rvymq">
     <file name="ModelDescriptor.java" />
   </source>
 </dependencies>

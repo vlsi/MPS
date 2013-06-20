@@ -25,6 +25,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.java.tests.utility.Utils" file="Utils.java">
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
@@ -53,9 +54,8 @@
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodeDifference" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
     <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot" />
-    <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenerationResult" />
@@ -64,10 +64,12 @@
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
 </dependenciesRoot>
 

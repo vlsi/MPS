@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.actions.runtime.impl.NodeFactoryUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.InternUtil;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.GlobalScope;
@@ -65,7 +66,8 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   public static SNode createNode(@NotNull SNode nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
     if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
-      return new jetbrains.mps.smodel.SNode(NameUtil.nodeFQName(nodeConcept));
+      String conceptFqName = InternUtil.intern(NameUtil.nodeFQName(nodeConcept));
+      return new jetbrains.mps.smodel.SNode(conceptFqName);
     }
     SNode newNode = SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, false);
     if (newNode == null) return null;

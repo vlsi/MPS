@@ -18,9 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AlterStatementListContainer_Intention implements IntentionFactory {
@@ -105,22 +103,9 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      final SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.castConcept(myParameter, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")), null);
-      ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(node), "statement", true)).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode it) {
-          ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(newInitializedInstance), "statement", true)).addElement(SNodeOperations.copyNode(it));
-        }
-      });
-
+      SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.castConcept(myParameter, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")), null);
+      AlterStatementListContainerFactoryUtils.buildContainerIfPossible(node, newInitializedInstance);
       SNodeOperations.replaceWithAnother(node, newInitializedInstance);
-
-      if (IntentionUtils.hasCondition(node) && IntentionUtils.hasCondition(newInitializedInstance)) {
-        SNode originalCondition = IntentionUtils.getCondition(node);
-        if (originalCondition != null) {
-          SNodeOperations.replaceWithAnother(IntentionUtils.getCondition(newInitializedInstance), SNodeOperations.copyNode(originalCondition));
-        }
-      }
-
       editorContext.selectWRTFocusPolicy(newInitializedInstance);
     }
 

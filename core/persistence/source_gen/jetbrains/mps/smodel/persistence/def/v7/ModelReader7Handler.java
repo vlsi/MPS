@@ -17,9 +17,9 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.util.xml.BreakParseSAXException;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.LazySNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -288,8 +288,8 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_2824634917103356434(Object resultObject, Object value) throws SAXException {
       ModelLoadResult result = (ModelLoadResult) resultObject;
       Object child = (Object) value;
-      if (fieldtoState == ModelLoadingState.ROOTS_LOADED && !(StructureModificationProcessor.hasRefactoringsToPlay(fieldmodel))) {
-        result.setState(ModelLoadingState.ROOTS_LOADED);
+      if (fieldtoState == ModelLoadingState.INTERFACE_LOADED && !(StructureModificationProcessor.hasRefactoringsToPlay(fieldmodel))) {
+        result.setState(ModelLoadingState.INTERFACE_LOADED);
         throw new BreakParseSAXException();
       }
     }
@@ -343,7 +343,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SModuleReference createObject(Attributes attrs) throws SAXException {
-      return ModuleReference.fromString(attrs.getValue("namespace"));
+      return PersistenceFacade.getInstance().createModuleReference(attrs.getValue("namespace"));
     }
 
     @Override
@@ -483,9 +483,10 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     @Override
     protected SNode createObject(Attributes attrs) throws SAXException {
       boolean needLazy = fieldtoState != ModelLoadingState.FULLY_LOADED;
+      String readType = InternUtil.intern(fieldhelper.readType(attrs.getValue("type")));
       return (needLazy ?
-        new LazySNode(fieldhelper.readType(attrs.getValue("type"))) :
-        new jetbrains.mps.smodel.SNode(fieldhelper.readType(attrs.getValue("type")))
+        new LazySNode(readType) :
+        new jetbrains.mps.smodel.SNode(readType)
       );
     }
 

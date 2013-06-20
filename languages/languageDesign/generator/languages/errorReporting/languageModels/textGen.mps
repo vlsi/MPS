@@ -10,7 +10,7 @@
   <root type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="7287346816896128678" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="qq7j.7287346816896104019" resolveInfo="ErrorReportingRoot" />
     <node role="textGenBlock" roleId="2omo.1233749296504" type="2omo.GenerateTextDeclaration" typeId="2omo.1233749247888" id="7287346816896128679" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7287346816896128680" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7287346816896128680" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="7287346816896135357" nodeInfo="nn">
           <node role="part" roleId="2omo.1237306115446" type="2omo.ConstantStringAppendPart" typeId="2omo.1237305557638" id="7287346816896135359" nodeInfo="ng">
             <property name="value" nameId="2omo.1237305576108" value="error reporting root {" />

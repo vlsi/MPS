@@ -5,7 +5,7 @@ package jetbrains.mps.ide.script.plugin.migrationtool;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.ThreadUtils;
 import java.awt.Frame;
 import com.intellij.openapi.progress.TaskInfo;

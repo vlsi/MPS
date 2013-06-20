@@ -2,7 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.platform.watching.EventProcessor" file="EventProcessor.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.FSChangesWatcher" file="FSChangesWatcher.java">
     <classNode dependClassName="com.intellij.openapi.application.Application" />
@@ -58,13 +58,13 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.progress.SubProgressKind" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystemListener" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.watching.ReloadParticipant" />
     <classNode extendsClassName="jetbrains.mps.vfs.FileSystemEvent" />
   </dependency>
@@ -128,6 +128,7 @@
     <classNode dependClassName="com.intellij.util.ui.update.MergingUpdateQueue" />
     <classNode dependClassName="com.intellij.util.ui.update.Update" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -143,6 +144,7 @@
     <classNode dependClassName="jetbrains.mps.make.IMakeNotificationListener" />
     <classNode dependClassName="jetbrains.mps.make.IMakeService" />
     <classNode dependClassName="jetbrains.mps.make.MakeNotification" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
@@ -154,7 +156,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.platform.watching.ReloadManager" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.ReloadParticipant" file="ReloadParticipant.java">
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.ReloadSession" file="ReloadSession.java">
     <classNode dependClassName="java.lang.Class" />
@@ -173,11 +175,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.progress.SubProgressKind" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
   </dependency>
 </dependenciesRoot>
 

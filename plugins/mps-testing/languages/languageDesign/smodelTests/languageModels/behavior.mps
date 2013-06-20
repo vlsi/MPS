@@ -9,7 +9,7 @@
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4900430935921348065" nodeInfo="ng">
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="yetq.278471160714141637" resolveInfo="Root" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4900430935921348066" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4900430935921348067" nodeInfo="nn" />
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4900430935921348067" nodeInfo="sn" />
     </node>
   </root>
 </model>

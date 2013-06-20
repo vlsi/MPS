@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddNodeHasErrorMark_Intention implements IntentionFactory {
@@ -86,7 +87,7 @@ public class AddNodeHasErrorMark_Intention implements IntentionFactory {
       SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.NodePropertiesContainer", null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer")), newAnnotation);
       SNodeFactoryOperations.addNewChild(newAnnotation, "properties", "jetbrains.mps.lang.test.structure.NodeErrorPropety");
-      editorContext.select(newAnnotation);
+      SelectionUtil.selectNode(editorContext, newAnnotation);
     }
 
     public IntentionDescriptor getDescriptor() {

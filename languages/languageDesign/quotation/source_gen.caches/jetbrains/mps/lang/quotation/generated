@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3dbjoprw7pwmpgw1kq1juxr36jnqu4c">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-19qr3t5j6zj1j6ub3v4uu8kimofng1x" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+<dependencies version="2" modelHash="-etkox1gkvbif4jgctcwxmcd84h9gk97">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="8pw4letr5gca13gw7pzcy2xe9p2qaht" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)" hash="-91nxjyur6z317njfzvxquo7gjvak98q" />
-  <dep model="r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)" hash="5lbexsbg7bm0ivzomaq0dp0439njqm8" />
-  <dep model="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)" hash="diz2xxkjptmkukngfihftayy3e57ymp" />
-  <dep model="r:b7e75e21-5f04-43f4-94cb-24c612b5504a(jetbrains.mps.lang.quotation.generator.baseLanguage.template.util)" hash="c7djp7modmdbr1ckx70mt2v84pvrary" />
+  <dep model="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)" hash="3df76qotiaami9ky6u3wmgjmbel0z2k" />
+  <dep model="r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)" hash="-1zv2jm367i75pfuel1gs9g75rmg4w82" />
+  <dep model="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)" hash="cabazg8v7csolbzxlwso2535vzdwx9y" />
+  <dep model="r:b7e75e21-5f04-43f4-94cb-24c612b5504a(jetbrains.mps.lang.quotation.generator.baseLanguage.template.util)" hash="-5pnl92y18gvzqj9f2f6hj7uas435x1f" />
   <common>
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />

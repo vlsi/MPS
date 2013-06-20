@@ -16,7 +16,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Deprecated" />
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp1h.1204722970897" resolveInfo="DeleteFeatureOperation" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="1210945623185" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210945623186" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210945623186" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="1210945727112" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1210945730349" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1210945729301" nodeInfo="nn" />
@@ -32,7 +32,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="RefActions" />
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp1h.1199619425400" resolveInfo="AbstractMoveExpression" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="1210946712796" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210946712797" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210946712797" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="1210946714720" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1210946723304" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1210946722428" nodeInfo="nn" />
@@ -56,7 +56,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Deprecated" />
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp1h.1197386846879" resolveInfo="ChangeFeatureNameOperation" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="1240302183948" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240302183949" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240302183949" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="1240302189841" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240302191922" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1240302191765" nodeInfo="nn" />
@@ -88,7 +88,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="RefActions" />
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp1h.1199620589385" resolveInfo="MoveNodeToNodeExpression" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="6528618226609613338" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6528618226609613339" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6528618226609613339" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="6528618226609660031" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6528618226609660032" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="6528618226609660033" nodeInfo="nn" />
@@ -120,7 +120,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="RefActions" />
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp1h.3302086321379400330" resolveInfo="ChangeFeatureNameExpression" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="3302086321379400384" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3302086321379400385" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3302086321379400385" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="3302086321379400386" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3302086321379400387" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="3302086321379400388" nodeInfo="nn" />
@@ -152,7 +152,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="RefActions" />
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp1h.3302086321379403347" resolveInfo="DeleteFeatureExpression" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="3302086321379403373" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3302086321379403374" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3302086321379403374" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="3302086321379403375" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3302086321379403376" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="3302086321379403377" nodeInfo="nn" />
@@ -168,7 +168,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Context" />
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp1h.2298239814950983788" resolveInfo="ExecuteRefactoringStatement" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="500737799669193847" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="500737799669193848" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="500737799669193848" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="500737799669193849" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="500737799669193852" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="500737799669193851" nodeInfo="nn" />
@@ -195,7 +195,7 @@
               <link role="link" roleId="tp25.1138056546658" targetNodeId="tp1h.2298239814950983793" />
             </node>
           </node>
-          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="500737799669193873" nodeInfo="nn">
+          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="500737799669193873" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="500737799669193867" nodeInfo="nn">
               <node role="codeFor" roleId="tp41.1206454079161" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="500737799669193900" nodeInfo="nn">
                 <link role="variable" roleId="tp2q.1153944258490" targetNodeId="500737799669193871" resolveInfo="parameter" />
@@ -210,7 +210,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Context" />
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp1h.3700868637771181541" resolveInfo="CreateRefactoringContext" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="500737799669193902" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="500737799669193903" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="500737799669193903" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="500737799669193904" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="500737799669193907" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="500737799669193906" nodeInfo="nn" />
@@ -237,7 +237,7 @@
               <link role="link" roleId="tp25.1138056546658" targetNodeId="tp1h.3700868637771354794" />
             </node>
           </node>
-          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="500737799669193925" nodeInfo="nn">
+          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="500737799669193925" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="500737799669193932" nodeInfo="nn">
               <node role="codeFor" roleId="tp41.1206454079161" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="500737799669193934" nodeInfo="nn">
                 <link role="variable" roleId="tp2q.1153944258490" targetNodeId="500737799669193923" resolveInfo="parameter" />
@@ -252,7 +252,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="RefActions" />
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp1h.6598645150040035709" resolveInfo="IsRefactoringApplicable" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="500737799669193936" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="500737799669193937" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="500737799669193937" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="500737799669193938" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="500737799669193941" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="500737799669193940" nodeInfo="nn" />

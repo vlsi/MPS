@@ -18,8 +18,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
+import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -39,7 +39,7 @@ public class UIEditorComponent extends EditorComponent {
 
     getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
       @Override
-      protected void selectionChangedTo(EditorComponent editorComponent, SingularSelection newSelection) {
+      protected void selectionChangedTo(jetbrains.mps.openapi.editor.EditorComponent editorComponent, SingularSelection newSelection) {
         myInspector.editNode(newSelection.getEditorCell().getSNode());
       }
     });
@@ -48,7 +48,11 @@ public class UIEditorComponent extends EditorComponent {
   @Override
   public EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditorContext() == null) {
-      return new EditorCell_Constant(new EditorContext(this, null, null), null, "<NO NODE>");
+      EditorContext editorContext = getEditorContext();
+      if (editorContext == null) {
+        editorContext = new EditorContext(this, null, getRepository());
+      }
+      return new EditorCell_Constant(editorContext, null, "<NO NODE>");
     }
     return getEditorContext().createRootCell(getEditedNode(), events);
   }

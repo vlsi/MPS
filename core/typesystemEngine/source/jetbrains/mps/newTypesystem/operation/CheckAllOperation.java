@@ -16,14 +16,17 @@
 package jetbrains.mps.newTypesystem.operation;
 
 public class CheckAllOperation extends AbstractOperation {
+  @Override
   public String getPresentation() {
     return "Type system trace";
   }
 
+  @Override
   public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
 
   }
 
+  @Override
   public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
 
   }

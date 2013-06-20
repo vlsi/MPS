@@ -30,14 +30,17 @@ public class RemoveDependencyOperation extends AbstractBlockOperation {
     myConditionKind = conditionKind;
   }
 
+  @Override
   public String getPresentation() {
     return "Block dependency removed: " + myVar + " -> [" + myBlock.getPresentation() + "]";
   }
 
+  @Override
   public void doUndo(State state) {
     state.addDependency(myBlock, myVar, myConditionKind);
   }
 
+  @Override
   public void doRedo(State state) {
     state.removeDependency(myBlock, myVar, myConditionKind);
   }

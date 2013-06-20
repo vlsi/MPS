@@ -9,21 +9,20 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.selection.SelectionStoreException;
+import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.nodeEditor.selection.SelectionRestoreException;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.selection.SelectionInfo;
-import java.util.List;
-import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.nodeEditor.selection.SelectionInfoImpl;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.datatransfer.SNodeTransferable;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.TextBuilder;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 public class TableColumnSelection extends AbstractMultipleSelection {
@@ -37,13 +36,13 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     if (cellInfo == null) {
       throw new SelectionStoreException("Requred CellInfo parameter is null");
     }
-    EditorCell editorCell = cellInfo.findCell(editorComponent);
+    EditorCell editorCell = cellInfo.findCell((jetbrains.mps.nodeEditor.EditorComponent) editorComponent);
     if (editorCell instanceof EditorCell_Table) {
       myTableCell = (EditorCell_Table) editorCell;
     } else {
       throw new SelectionRestoreException();
     }
-    myColumnNumber = SelectionInfo.Util.getIntProperty(properties, COLUMN_NUMBER_PROPERTY);
+    myColumnNumber = SelectionInfoImpl.Util.getIntProperty(properties, COLUMN_NUMBER_PROPERTY);
     if (myColumnNumber < 0) {
       throw new SelectionStoreException("Only positive column numbers are supported: " + myColumnNumber);
     }
@@ -65,10 +64,8 @@ public class TableColumnSelection extends AbstractMultipleSelection {
   }
 
   private void initSelectedCells() {
-    setSelectedCells((List) myTableCell.getColumnCells(myColumnNumber));
+    setSelectedCells(myTableCell.getColumnCells(myColumnNumber));
   }
-
-
 
   private void initActionMap() {
     MapSequence.fromMap(actionMap).put(CellActionType.SELECT_UP, new _FunctionTypes._void_P0_E0() {
@@ -84,8 +81,6 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     });
     MapSequence.fromMap(actionMap).put(CellActionType.PASTE, null);
   }
-
-
 
   @Override
   public boolean isSame(Selection another) {
@@ -104,13 +99,11 @@ public class TableColumnSelection extends AbstractMultipleSelection {
 
   @Override
   public SelectionInfo getSelectionInfo() throws SelectionStoreException {
-    SelectionInfo selectionInto = new SelectionInfo(this.getClass().getName(), ModuleReference.fromString("258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)").getModuleName());
+    SelectionInfoImpl selectionInto = new SelectionInfoImpl(this.getClass().getName(), "jetbrains.mps.lang.editor.table.runtime");
     selectionInto.setCellInfo(myTableCell.getCellInfo());
     selectionInto.getPropertiesMap().put(COLUMN_NUMBER_PROPERTY, Integer.toString(myColumnNumber));
     return selectionInto;
   }
-
-
 
   @Override
   public boolean canExecuteAction(CellActionType type) {
@@ -135,7 +128,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
   private TextBuilder renderText() {
     TextBuilder result = jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
     for (EditorCell cell : getSelectedCells()) {
-      result = result.appendToTheBottom(((jetbrains.mps.nodeEditor.cells.EditorCell) cell).renderText());
+      result = result.appendToTheBottom(cell.renderText());
     }
     return result;
   }
@@ -146,7 +139,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
       return;
     }
     SelectionManager selectionManager = getEditorComponent().getSelectionManager();
-    selectionManager.pushSelection(selectionManager.createSelection((jetbrains.mps.nodeEditor.cells.EditorCell) cell));
+    selectionManager.pushSelection(selectionManager.createSelection(cell));
   }
 
   private EditorCell getCellToSelectUp() {

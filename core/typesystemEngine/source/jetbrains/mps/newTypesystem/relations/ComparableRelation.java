@@ -28,10 +28,12 @@ import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import java.util.*;
 
 public class ComparableRelation extends AbstractRelation {
+  @Override
   public boolean accept(RelationKind kind) {
     return kind.isComparable();
   }
 
+  @Override
   public boolean solve(SNode node, Set<SNode> leftTypes, Set<SNode> rightTypes, State state, Map<SNode, RelationBlock> typesToBlocks) {
     EquationInfo info;
     List<SNode> nodes = new LinkedList<SNode>();

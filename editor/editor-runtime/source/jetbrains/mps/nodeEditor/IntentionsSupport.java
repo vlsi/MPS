@@ -38,9 +38,9 @@ import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
 import jetbrains.mps.intentions.LightBulbMenu;
 import jetbrains.mps.intentions.icons.Icons;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -140,8 +140,8 @@ public class IntentionsSupport {
 
     myEditor.getSelectionManager().addSelectionListener(new SelectionListener() {
       @Override
-      public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
-        if (!editorComponent.isFocusOwner()) return;
+      public void selectionChanged(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+        if (!((EditorComponent) editorComponent).isFocusOwner()) return;
         updateIntentionsStatus();
       }
     });
@@ -176,12 +176,13 @@ public class IntentionsSupport {
             public IntentionType compute() {
               if (isInconsistentEditor() || myEditor.isReadOnly()) return null;
               // TODO check for ActionsAsIntentions
-              return TypeContextManager.getInstance().runTypeCheckingComputation(myEditor.getTypecheckingContextOwner(), myEditor.getEditedNode(), new Computation<IntentionType>() {
-                @Override
-                public IntentionType compute(TypeCheckingContext context) {
-                  return IntentionsManager.getInstance().getHighestAvailableBaseIntentionType(myEditor.getSelectedNode(), myEditor.getEditorContext());
-                }
-              });
+              return TypeContextManager.getInstance().runTypeCheckingComputation(myEditor.getTypecheckingContextOwner(), myEditor.getEditedNode(),
+                  new Computation<IntentionType>() {
+                    @Override
+                    public IntentionType compute(TypeCheckingContext context) {
+                      return IntentionsManager.getInstance().getHighestAvailableBaseIntentionType(myEditor.getSelectedNode(), myEditor.getEditorContext());
+                    }
+                  });
             }
           });
 
@@ -217,7 +218,8 @@ public class IntentionsSupport {
   }
 
   private boolean isInconsistentEditor() {
-    return myEditor.isDisposed() || myEditor.getEditedNode() == null || jetbrains.mps.util.SNodeOperations.isDisposed(myEditor.getEditedNode()) || !myEditor.hasValidSelectedNode();
+    return myEditor.isDisposed() || myEditor.getEditedNode() == null || jetbrains.mps.util.SNodeOperations.isDisposed(myEditor.getEditedNode()) ||
+        !myEditor.hasValidSelectedNode();
   }
 
   private void adjustLightBulbLocation() {
@@ -298,8 +300,8 @@ public class IntentionsSupport {
             SNode intentionNode = intention.getDescriptor().getIntentionNodeReference().resolve(MPSModuleRepository.getInstance());
             if (intentionNode == null) {
               Messages.showErrorDialog(ProjectHelper.toIdeaProject(myEditor.getOperationContext().getProject()),
-                "Could not find declaration for " + intention.getClass().getSimpleName()
-                  + " intention (" + intention.getClass().getName() + ")", "Intention Declaration");
+                  "Could not find declaration for " + intention.getClass().getSimpleName()
+                      + " intention (" + intention.getClass().getName() + ")", "Intention Declaration");
             } else {
               NavigationSupport.getInstance().openNode(myEditor.getOperationContext(), intentionNode, true, true);
               NavigationSupport.getInstance().selectInTree(myEditor.getOperationContext(), intentionNode, false);
@@ -378,11 +380,11 @@ public class IntentionsSupport {
           return null;
         }
         return JBPopupFactory.getInstance().createActionGroupPopup(
-          "Intentions",
-          group,
-          dataContext,
-          JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
-          false);
+            "Intentions",
+            group,
+            dataContext,
+            JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
+            false);
       }
     });
 
@@ -408,12 +410,14 @@ public class IntentionsSupport {
       final QueryDescriptor query = new QueryDescriptor();
       query.setIntentionClass(BaseIntention.class);
       query.setEnabledOnly(true);
-      final Collection<Pair<IntentionExecutable, SNode>> availableIntentions = TypeContextManager.getInstance().runTypeCheckingComputation(myEditor.getTypecheckingContextOwner(), myEditor.getEditedNode(), new Computation<Collection<Pair<IntentionExecutable, SNode>>>() {
-        @Override
-        public Collection<Pair<IntentionExecutable, SNode>> compute(TypeCheckingContext context) {
-          return IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext);
-        }
-      });
+      final Collection<Pair<IntentionExecutable, SNode>> availableIntentions =
+          TypeContextManager.getInstance().runTypeCheckingComputation(myEditor.getTypecheckingContextOwner(), myEditor.getEditedNode(),
+              new Computation<Collection<Pair<IntentionExecutable, SNode>>>() {
+                @Override
+                public Collection<Pair<IntentionExecutable, SNode>> compute(TypeCheckingContext context) {
+                  return IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext);
+                }
+              });
       result.addAll(availableIntentions);
     }
     return result;

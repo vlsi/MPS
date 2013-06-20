@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b3tnrg28mlllhcmorf127l93ilpzyrj">
+<dependencies version="2" modelHash="47fims3cac4scjbouo0ftp7x3obd68c">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <common hash="cgwdv9egi2um3yjholzu3mk1ouf05rp" />
-  <source id="3531370237489972135" name="MergeDriverBackupUtil" hash="-niybh1z9pvffjntah734jef65qii49">
+  <source id="3531370237489972135" name="MergeDriverBackupUtil" hash="-cngtl95vn36m1umxdnsa7mptvx1k1ws">
     <dep root="3531370237490043869" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MergeDriverBackupUtil.java" />
   </source>
-  <source id="3531370237490043789" name="MergeVersion" hash="aoshzsmndgmsx8keqp399dpw3luy6fl">
+  <source id="3531370237490043789" name="MergeVersion" hash="eb3af1zz4cmsny6uw3zn10b9zifpmdp">
     <file name="MergeVersion.java" />
   </source>
-  <source id="3531370237490043817" name="ModelVersion" hash="dektdpgpw4e0v2ln7i8hcciz55f1zzu">
+  <source id="3531370237490043817" name="ModelVersion" hash="-4e04ziuhryj05rqlo3hlc6kq5yrbruj">
     <file name="ModelVersion.java" />
   </source>
   <source id="3531370237490043869" name="MergeConstants" hash="-8ue7zgnuhf2tu60geigpv3m1obc7gl4">

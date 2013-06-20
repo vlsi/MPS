@@ -23,14 +23,17 @@ public class RemoveEquationOperation extends AbstractEquationOperation {
     super(child, parent, source, null);
   }
 
+  @Override
   public void doUndo(State state) {
     state.getEquations().add(myChild, myParent);
   }
 
+  @Override
   public void doRedo(State state) {
     state.getEquations().remove(myChild);
   }
 
+  @Override
   public String getPresentation() {
     return getShortPresentation()+"   removed";
   }

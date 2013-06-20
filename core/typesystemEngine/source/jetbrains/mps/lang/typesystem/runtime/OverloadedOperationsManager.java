@@ -61,6 +61,7 @@ public class OverloadedOperationsManager {
     }
     final boolean[] severalRules = new boolean[]{false};
     Collections.sort(filteredProviders, new Comparator<IOverloadedOpsTypesProvider>() {
+      @Override
       public int compare(IOverloadedOpsTypesProvider o1, IOverloadedOpsTypesProvider o2) {
         int i = o1.compareTo(o2);
         if (i == 0) {

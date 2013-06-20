@@ -17,7 +17,8 @@ package jetbrains.mps.smodel.loading;
 
 public enum ModelLoadingState {
   NOT_LOADED("not loaded"),
-  ROOTS_LOADED("partially loaded"),
+  INTERFACE_LOADED("partially loaded"),
+  NO_IMPLEMENTATION("without implementation"),
   FULLY_LOADED("fully loaded");
 
   private String myPres;

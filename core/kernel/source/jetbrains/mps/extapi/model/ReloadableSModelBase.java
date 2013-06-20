@@ -16,7 +16,7 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;

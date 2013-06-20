@@ -128,7 +128,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
 
     private jetbrains.mps.smodel.SModel createModel() {
       final jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getReference());
-      model.addLanguage(BootstrapLanguages.PROJECT);
+      model.addLanguage(BootstrapLanguages.projectLanguageRef());
       final IFile file = getSource().getFile();
 
       final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(file);

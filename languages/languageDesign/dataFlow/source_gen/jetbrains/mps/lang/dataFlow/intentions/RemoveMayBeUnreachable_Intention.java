@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class RemoveMayBeUnreachable_Intention implements IntentionFactory {
@@ -80,7 +81,7 @@ public class RemoveMayBeUnreachable_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), node);
-      editorContext.select(node);
+      SelectionUtil.selectNode(editorContext, node);
     }
 
     public IntentionDescriptor getDescriptor() {

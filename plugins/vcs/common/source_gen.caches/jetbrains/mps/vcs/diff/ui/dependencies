@@ -49,6 +49,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" file="ModelDifferenceDialog.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />

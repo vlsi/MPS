@@ -28,6 +28,7 @@ public class TraceWarningOperation extends AddRemarkOperation {
     myRule = new Pair<String, String>(info.getRuleModel(), info.getRuleId());
   }
 
+  @Override
   public String getPresentationKind() {
     return PresentationKind.TRACE_WARNING;
   }

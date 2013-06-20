@@ -64,7 +64,6 @@ public class OverrideConceptMethodsAction {
       final Iterable<SNodeReference> selectedElements = (Iterable<SNodeReference>) dialog.getSelectedElements();
 
       ModelAccess.instance().runCommandInEDT(new Runnable() {
-        @Override
         public void run() {
           List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {
             public SNode select(SNodeReference it) {
@@ -82,7 +81,6 @@ public class OverrideConceptMethodsAction {
             myEditorContext.select(ListSequence.fromList(insertedMethods).last());
             myEditorContext.selectRange(ListSequence.fromList(insertedMethods).last(), ListSequence.fromList(insertedMethods).first());
           }
-
         }
       }, myProject);
     }

@@ -245,6 +245,10 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeFacade_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor" file="ImplementationWithStubPart_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor" file="InterfacePart_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor" file="LinkAttribute_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

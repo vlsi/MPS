@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2burlok4sjmqwvgxhqqggnee6bto1jd">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
-  <dep model="r:13099be6-e9be-4c1b-a5cd-d0d83a6c9f0a(jetbrains.mps.transformation.test.errorReporting.structure)" hash="-7j7jxzk00ru9vrk5jr2wel75rls2lr8" />
-  <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" hash="at9pl5r19jew6os4j6sg2p02hjergeb" />
+<dependencies version="2" modelHash="-4fx65741zipt3gm7gd5owd6lbj4ouhq">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+  <dep model="r:13099be6-e9be-4c1b-a5cd-d0d83a6c9f0a(jetbrains.mps.transformation.test.errorReporting.structure)" hash="cw7k2h85aide5cqm61npwjll98rul4y" />
+  <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" hash="-4bhsb1gj2a72d4cy5bw2d8asq5dv9d" />
   <common hash="e79fe7spmye6soivpg44p7jwtjf5hjq" />
-  <source id="7287346816896128678" name="ErrorReportingRoot_TextGen" hash="3dljpzgt0iyedcmhvl4pgr881gu16ap">
+  <source id="7287346816896128678" name="ErrorReportingRoot_TextGen" hash="-ch36hpib7amivsd6avekf0ht5axemal">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:13099be6-e9be-4c1b-a5cd-d0d83a6c9f0a(jetbrains.mps.transformation.test.errorReporting.structure)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />

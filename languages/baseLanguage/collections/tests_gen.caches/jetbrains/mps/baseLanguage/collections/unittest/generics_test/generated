@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9zhntk9k8xxpayiufkqaz1vq4f77emj">
+<dependencies version="2" modelHash="-38et4w706hbrtrhgqg6wx1ai3q8m99p">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="dgtel9s427vm37iaz9u6ikq38xnt1eq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="3ufygskomwsbyhgecoht1jp34ipmj9l" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6yvhxi9k55xxea1versvzjds8py3u8n" />
-  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-9fdi0n0a07zuqciwx30oe146qg9byaf" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ehclih2ljjvh3gcfl67v2ip8o73gip1" />
+  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2te9zcwr0xtinv0zm3xquqs5me3u63x" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5wivjm735wrx1nbiz5js62dqixuwvq4" />
   <common hash="ab88e6v14rxdg6b2flauc9vtodpe5z5" />
-  <source id="1170878927223" name="MySequence" hash="a2cbdusgiajdlivrj9b210331cjrh59">
+  <source id="1170878927223" name="MySequence" hash="-e67f8pyi0kjzzwmcat0src6hsa3qskf">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -17,15 +17,15 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MySequence.java" />
   </source>
-  <source id="1170879883276" name="BooleanSequence" hash="-5l833vky4ix2p1t42lhx6kb1kon0r5k">
+  <source id="1170879883276" name="BooleanSequence" hash="7xs8dmj2nk72mb7dzhs2ewwueqe1609">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BooleanSequence.java" />
   </source>
-  <source id="1170880204174" name="IntegerSequence" hash="6g6tcxcx713zwxsjzovgjh4drmkd10z">
+  <source id="1170880204174" name="IntegerSequence" hash="-99ninzgg7nfo369us2wpdk91j1vuwld">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="IntegerSequence.java" />
   </source>
-  <source id="1172029167443" name="Generics1_Test" hash="-wfmuurug6136tk9152vp6bfir5rn0k">
+  <source id="1172029167443" name="Generics1_Test" hash="48gd4e9iurm0qwa2b1i63mlnl7qgcni">
     <dep root="1170878927223" />
     <dep root="1170879883276" />
     <dep root="1170880204174" />

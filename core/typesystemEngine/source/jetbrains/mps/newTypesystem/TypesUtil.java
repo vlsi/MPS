@@ -44,6 +44,9 @@ public class TypesUtil {
   }
 
   public static boolean hasVariablesInside(SNode node) {
+    if (node == null) {
+      return false;
+    }
     if (TypesUtil.isVariable(node)) {
       return true;
     }
@@ -82,11 +85,11 @@ public class TypesUtil {
   }
 
   private static void getVariablesInside(SNode node, List<SNode> result, State state) {
-    if (node == null) {
-      return;
-    }
     if (state != null) {
       node = state.getRepresentative(node);
+    }
+    if (node == null) {
+      return;
     }
     if (isVariable(node)) {
       result.add(node);
@@ -150,20 +153,24 @@ public class TypesUtil {
   private static class MatchingNodesCollector implements IMatchModifier {
     private final Set<Pair<SNode, SNode>> myMatchingPairs = new THashSet<Pair<SNode, SNode>>();
 
+    @Override
     public boolean accept(SNode node1, SNode node2) {
       return TypesUtil.isVariable(node1) || TypesUtil.isVariable(node2);
     }
 
+    @Override
     public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
       return false;
     }
 
+    @Override
     public void performAction(SNode node1, SNode node2) {
       if (myMatchingPairs != null) {
         myMatchingPairs.add(new Pair<SNode, SNode>(node1, node2));
       }
     }
 
+    @Override
     public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
     }
   }

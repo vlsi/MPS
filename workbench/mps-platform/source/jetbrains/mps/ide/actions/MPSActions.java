@@ -34,4 +34,5 @@ public class MPSActions {
 
   public static final String EDITOR_GOTO_DECLARATION = "jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action";
 
+  public static final String FIND_USAGES_WITH_DIALOG_ACTION = "jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action";
 }

@@ -30,7 +30,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;

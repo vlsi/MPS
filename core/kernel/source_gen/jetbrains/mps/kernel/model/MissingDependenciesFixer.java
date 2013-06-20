@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.DevKit;
 
 public class MissingDependenciesFixer {
@@ -97,7 +97,7 @@ public class MissingDependenciesFixer {
           if (lang == null) {
             continue;
           }
-          SModuleReference ref = ModuleReference.fromString(namespace.toString());
+          SModuleReference ref = PersistenceFacade.getInstance().createModuleReference(namespace.toString());
           module.addUsedLanguage(ref);
         }
         for (SModuleReference devKitNamespace : ((SModelInternal) model).importedDevkits()) {
@@ -108,7 +108,7 @@ public class MissingDependenciesFixer {
           if (devKit == null) {
             continue;
           }
-          SModuleReference ref = ModuleReference.fromString(devKitNamespace.toString());
+          SModuleReference ref = PersistenceFacade.getInstance().createModuleReference(devKitNamespace.toString());
           module.addUsedDevkit(ref);
         }
 

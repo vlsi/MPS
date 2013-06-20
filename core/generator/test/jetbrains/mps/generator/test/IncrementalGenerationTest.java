@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.generator.test;
 
-import jetbrains.mps.TestMain;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Assert;
 import org.junit.Test;
@@ -33,7 +33,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testIncSolution1() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/languageDesign/generator"));
+    final Project p = loadProject(new File(System.getProperty("user.dir") + "/languages/languageDesign/generator"));
     SModel descr = findModel(p, "test_Closure");
 
     doTestIncrementalGeneration(p, descr,
@@ -60,7 +60,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testIdeActions() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir")));
+    final Project p = loadProject(new File(System.getProperty("user.dir")));
     SModel descr = findModel(p, "jetbrains.mps.ide.actions");
 
     doTestIncrementalGeneration(p, descr,
@@ -79,7 +79,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testBaseLanguageStructure() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir")));
+    final Project p = loadProject(new File(System.getProperty("user.dir")));
     SModel descr = findModel(p, "jetbrains.mps.baseLanguage.structure");
 
     doTestIncrementalGeneration(p, descr,
@@ -98,7 +98,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testBaseLanguageEditor() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir")));
+    final Project p = loadProject(new File(System.getProperty("user.dir")));
     SModel descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
 
     doTestIncrementalGeneration(p, descr,

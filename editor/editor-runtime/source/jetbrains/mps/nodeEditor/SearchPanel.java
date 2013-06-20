@@ -97,7 +97,7 @@ public class SearchPanel extends AbstractSearchPanel {
   public void goToPrevious() {
     if (mySearchEntries.size() == 0) return;
     addToHistory();
-    EditorCell selectedCell = myEditor.getDeepestSelectedCell();
+    jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = myEditor.getDeepestSelectedCell();
     int selectionStart = 0;
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label labelCell = (EditorCell_Label) selectedCell;
@@ -129,7 +129,7 @@ public class SearchPanel extends AbstractSearchPanel {
   public void goToNext() {
     if (mySearchEntries.size() == 0) return;
     addToHistory();
-    EditorCell selectedCell = myEditor.getDeepestSelectedCell();
+    jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = myEditor.getDeepestSelectedCell();
     int selectionEnd = -1;
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label labelCell = (EditorCell_Label) selectedCell;

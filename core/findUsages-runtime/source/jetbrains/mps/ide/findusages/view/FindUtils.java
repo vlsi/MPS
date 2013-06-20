@@ -30,7 +30,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;

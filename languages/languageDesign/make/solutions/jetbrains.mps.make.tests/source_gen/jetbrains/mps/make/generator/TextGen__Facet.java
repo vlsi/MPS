@@ -16,7 +16,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.script.IConfigMonitor;
 import java.util.Map;

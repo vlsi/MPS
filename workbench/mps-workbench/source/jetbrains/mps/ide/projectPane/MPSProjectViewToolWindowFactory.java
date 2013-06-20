@@ -21,21 +21,13 @@ import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowFactory;
-import jetbrains.mps.project.MPSProjectMigrationListener;
+import jetbrains.mps.project.MPSProjectMigrationComponent;
 import jetbrains.mps.project.MPSProjectMigrationListener.DEFAULT;
-import jetbrains.mps.project.MPSProjectMigrationState;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 16.03.2012
- * Time: 10:56
- * To change this template use File | Settings | File Templates.
- */
 public class MPSProjectViewToolWindowFactory implements ToolWindowFactory, DumbAware {
   @Override
   public void createToolWindowContent(final Project project, final ToolWindow toolWindow) {
-    MPSProjectMigrationState migrationState = project.getComponent(MPSProjectMigrationState.class);
+    MPSProjectMigrationComponent migrationState = project.getComponent(MPSProjectMigrationComponent.class);
     if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
       migrationState.addMigrationListener(new DEFAULT() {
         @Override
@@ -43,8 +35,7 @@ public class MPSProjectViewToolWindowFactory implements ToolWindowFactory, DumbA
           ((ProjectViewImpl) ProjectView.getInstance(project)).setupImpl(toolWindow);
         }
       });
-    }
-    else {
+    } else {
       ((ProjectViewImpl) ProjectView.getInstance(project)).setupImpl(toolWindow);
     }
   }

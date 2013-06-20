@@ -12,6 +12,6 @@ public class MatrixInitializerIndexReference_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "index", false));
+    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "index", false), "r:48b4a246-e052-4ee3-ba92-1505c2e94044(jetbrains.mps.baseLanguage.math.dataFlow)/5359814223490146671");
   }
 }

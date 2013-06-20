@@ -21,7 +21,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;

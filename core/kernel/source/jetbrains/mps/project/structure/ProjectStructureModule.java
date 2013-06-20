@@ -55,6 +55,7 @@ import org.jetbrains.mps.openapi.module.SModuleListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -69,9 +70,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ProjectStructureModule extends AbstractModule implements CoreComponent {
 
-  //  private static final Logger LOG = Logger.getLogger(ProjectStructureModule.class);
-  private static final SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString(
-      "642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)");
+  private static final String MODULE_REF = "642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)";
 
   private Map<SModelId, ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelId, ProjectStructureSModelDescriptor>();
 
@@ -100,7 +99,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   public ProjectStructureModule(MPSModuleRepository repository, SModelRepository modelRepository) {
-    setModuleReference(MODULE_REFERENCE);
+    setModuleReference(PersistenceFacade.getInstance().createModuleReference(MODULE_REF));
   }
 
   private void refreshModule(SModule module, boolean isDeleted) {
@@ -186,7 +185,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   @Override
   public Set<SLanguage> getUsedLanguages() {
     return Collections.<SLanguage>singleton(
-        new SLanguageLanguageAdapter(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.PROJECT, Language.class)));
+        new SLanguageLanguageAdapter(BootstrapLanguages.PROJECT_NAMESPACE));
   }
 
   private void removeModel(SModel md) {
@@ -206,7 +205,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   private static SModelFqName getModelFqName(SModule module) {
-    return new SModelFqName(MODULE_REFERENCE.getModuleName(), "module." + module.getModuleName(), SModelStereotype.getStubStereotypeForId("project"));
+    return new SModelFqName(PersistenceFacade.getInstance().createModuleReference(MODULE_REF).getModuleName(), "module." + module.getModuleName(), SModelStereotype.getStubStereotypeForId("project"));
   }
 
   private static SModelReference getSModelReference(SModule module) {

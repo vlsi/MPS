@@ -17,12 +17,12 @@ public class ParallelFor_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "inputSequence", true));
     if (SLinkOperations.getTarget(_context.getNode(), "threadPool", true) != null) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "threadPool", true));
-      _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "threadPool", true));
+      _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "threadPool", true), "r:fe5285c7-54ed-422a-b9ef-c710009e0ee7(org.jetbrains.mps.samples.ParallelFor.dataFlow)/4659204813808536399");
     }
     _context.getBuilder().emitLabel("loop");
-    _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "loopVariable", true), SLinkOperations.getTarget(_context.getNode(), "inputSequence", true));
-    _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()));
+    _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "loopVariable", true), SLinkOperations.getTarget(_context.getNode(), "inputSequence", true), "r:fe5285c7-54ed-422a-b9ef-c710009e0ee7(org.jetbrains.mps.samples.ParallelFor.dataFlow)/7793246093816003169");
+    _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()), "r:fe5285c7-54ed-422a-b9ef-c710009e0ee7(org.jetbrains.mps.samples.ParallelFor.dataFlow)/7793246093816003203");
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
-    _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "loop"));
+    _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "loop"), "r:fe5285c7-54ed-422a-b9ef-c710009e0ee7(org.jetbrains.mps.samples.ParallelFor.dataFlow)/7793246093816003218");
   }
 }

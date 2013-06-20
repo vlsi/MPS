@@ -15,7 +15,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1550462124899260772" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="UpDownDummy" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="1550462124899311600" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1550462124899311601" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1550462124899311601" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1550462124899311616" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1550462124899311617" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1550462124899311618" nodeInfo="nn">
@@ -40,7 +40,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="1550462124899311622" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1550462124899311623" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1550462124899311623" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1550462124899311624" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1550462124899311625" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1550462124899311626" nodeInfo="nn">
@@ -64,7 +64,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1550462124899316437" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1550462124899316437" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="1550462124899316438" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="1550462124899316440" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.7791284463049070082" resolveInfo="SelectUp" />
@@ -100,7 +100,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1550462124899316455" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="UpDownStack" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="1550462124899316457" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1550462124899316458" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1550462124899316458" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1550462124899316459" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1550462124899316460" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1550462124899316461" nodeInfo="nn">
@@ -125,7 +125,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="1550462124899316465" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1550462124899316466" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1550462124899316466" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1550462124899316467" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1550462124899316468" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1550462124899316469" nodeInfo="nn">
@@ -146,7 +146,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1550462124899316474" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1550462124899316474" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="1550462124899316475" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="1550462124899316477" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.7791284463049070082" resolveInfo="SelectUp" />
@@ -170,7 +170,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="789834969242091856" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Up" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="789834969242091858" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="789834969242091859" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="789834969242091859" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="789834969242091860" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="789834969242110797" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="789834969242091861" nodeInfo="nn">
@@ -192,7 +192,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="789834969242110804" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="789834969242110805" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="789834969242110805" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="789834969242110806" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="789834969242110807" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="789834969242110808" nodeInfo="nn">
@@ -213,7 +213,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="789834969242110815" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="789834969242110815" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="789834969242110816" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="789834969242110818" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.7791284463049070082" resolveInfo="SelectUp" />
@@ -224,7 +224,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="789834969242110843" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="UpDownEntirely" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="789834969242110845" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="789834969242110846" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="789834969242110846" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="789834969242110847" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="789834969242110848" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="789834969242110849" nodeInfo="nn">
@@ -249,7 +249,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="789834969242110853" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="789834969242110854" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="789834969242110854" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="789834969242110855" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="789834969242110856" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="789834969242110857" nodeInfo="nn">
@@ -266,7 +266,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="789834969242110862" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="789834969242110862" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="2139113728684621883" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="2139113728684621885" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.7791284463049070082" resolveInfo="SelectUp" />
@@ -288,7 +288,7 @@
     <property name="name" nameId="tpck.1169194664001" value="HomeWithLineSelection_fromFirstCell" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Home" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="9080919888312354540" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312354541" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312354541" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9080919888312354542" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9080919888312354543" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -309,7 +309,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="9080919888312354548" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312354549" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312354549" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9080919888312354550" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9080919888312354551" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -329,7 +329,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312354556" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312354556" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="9080919888312354557" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="9080919888312408927" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.4225699205371269977" resolveInfo="SelectPrevious" />
@@ -346,7 +346,7 @@
     <property name="name" nameId="tpck.1169194664001" value="HomeWithLineSelection_fromLastCell" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Home" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="9080919888312408933" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312408934" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312408934" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9080919888312408935" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9080919888312408936" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -366,7 +366,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="9080919888312408940" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312408941" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312408941" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9080919888312408942" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9080919888312408943" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -386,7 +386,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312408947" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312408947" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="9080919888312408948" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="9080919888312408949" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.4225699205371269977" resolveInfo="SelectPrevious" />
@@ -403,7 +403,7 @@
     <property name="name" nameId="tpck.1169194664001" value="EndWithLineSelection_fromFirstCell" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="End" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="9080919888312410799" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312410800" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312410800" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9080919888312410801" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9080919888312410802" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -423,7 +423,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="9080919888312410806" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312410807" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312410807" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9080919888312410808" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9080919888312410809" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -442,7 +442,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312410813" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312410813" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="9080919888312410814" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="9080919888312410815" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.4225699205371269974" resolveInfo="SelectNext" />
@@ -459,7 +459,7 @@
     <property name="name" nameId="tpck.1169194664001" value="EndWithLineSelection_fromLastCell" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="End" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="9080919888312410821" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312410822" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312410822" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9080919888312410823" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9080919888312410824" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -479,7 +479,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="9080919888312410828" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312410829" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312410829" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9080919888312410830" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9080919888312410831" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -498,7 +498,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312410835" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="9080919888312410835" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="9080919888312410836" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="9080919888312410837" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.4225699205371269974" resolveInfo="SelectNext" />
@@ -515,7 +515,7 @@
     <property name="name" nameId="tpck.1169194664001" value="RootHomeWithLineSelectionFromFirstCell" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="RootHome" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2025581204008535356" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2025581204008535357" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2025581204008535357" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2025581204008535358" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2025581204008535359" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -536,7 +536,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2025581204008535365" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2025581204008535366" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2025581204008535366" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2025581204008535367" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2025581204008535368" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -555,7 +555,7 @@
         <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2025581204008535373" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2025581204008535373" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="2025581204008535374" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="2025581204008535376" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.4225699205371269974" resolveInfo="SelectNext" />
@@ -572,7 +572,7 @@
     <property name="name" nameId="tpck.1169194664001" value="RootEndWithLineSelectionFromFirstCell" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="RootEnd" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5097407566121753123" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121753124" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121753124" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5097407566121753125" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5097407566121753126" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -593,7 +593,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5097407566121753130" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121753131" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121753131" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5097407566121753132" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5097407566121753133" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -612,7 +612,7 @@
         <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121753137" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121753137" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="5097407566121753138" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="5097407566121753139" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.4225699205371269974" resolveInfo="SelectNext" />
@@ -629,7 +629,7 @@
     <property name="name" nameId="tpck.1169194664001" value="RootHomeWithLineSelectionFromLastCell" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="RootHome" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5097407566121771938" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121771939" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121771939" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5097407566121771940" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5097407566121771941" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -649,7 +649,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5097407566121771945" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121771946" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121771946" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5097407566121771947" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5097407566121771948" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -668,7 +668,7 @@
         <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121771952" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121771952" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="5097407566121771953" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="5097407566121771954" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.4225699205371269977" resolveInfo="SelectPrevious" />
@@ -685,7 +685,7 @@
     <property name="name" nameId="tpck.1169194664001" value="RootEndWithLineSelectionFromLastCell" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="RootEnd" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5097407566121847269" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121847270" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121847270" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5097407566121847271" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5097407566121847272" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -705,7 +705,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5097407566121847276" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121847277" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121847277" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5097407566121847278" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5097407566121847279" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -724,7 +724,7 @@
         <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121847283" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5097407566121847283" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="5097407566121847284" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="5097407566121847285" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.4225699205371269977" resolveInfo="SelectPrevious" />
@@ -741,7 +741,7 @@
     <property name="name" nameId="tpck.1169194664001" value="SelectUpWithNodeRangeSelection" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="SelectUp" />
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5476958923832861258" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5476958923832861259" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5476958923832861259" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5476958923832861260" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5476958923832861261" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -767,7 +767,7 @@
       </node>
     </node>
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5476958923832863115" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5476958923832863116" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5476958923832863116" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5476958923832863117" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5476958923832863118" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -795,7 +795,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5476958923832863126" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5476958923832863126" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="5476958923832863127" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="5476958923832863129" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.4225699205371269974" resolveInfo="SelectNext" />
@@ -817,7 +817,7 @@
     <property name="name" nameId="tpck.1169194664001" value="SelectDownWithNodeRangeSelection" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="SelectDown" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5476958923832863139" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5476958923832863140" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5476958923832863140" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5476958923832863141" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5476958923832863142" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -846,7 +846,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5476958923832863153" nodeInfo="nn">
-      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5476958923832863154" nodeInfo="nn">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5476958923832863154" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5476958923832863155" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5476958923832863156" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="i" />
@@ -871,7 +871,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5476958923832863164" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5476958923832863164" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="5476958923832863165" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="5476958923832863167" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.4225699205371269977" resolveInfo="SelectPrevious" />
@@ -897,7 +897,7 @@
       <property name="isFinal" nameId="tpee.1221565133444" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="testClass" />
       <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceInitializer" typeId="tpee.1206629501431" id="2399036385470617214" nodeInfo="lgu">
-        <node role="statementList" roleId="tpee.1206629521979" type="tpee.StatementList" typeId="tpee.1068580123136" id="2399036385470617216" nodeInfo="nn">
+        <node role="statementList" roleId="tpee.1206629521979" type="tpee.StatementList" typeId="tpee.1068580123136" id="2399036385470617216" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="68nn.ClassReference" typeId="68nn.2399036385470202575" id="2399036385470617246" nodeInfo="ng">
             <link role="class" roleId="68nn.2399036385470202794" targetNodeId="2399036385470603863" resolveInfo="testClass" />
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2399036385470663257" nodeInfo="ng">
@@ -912,7 +912,7 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2399036385470603864" nodeInfo="nn" />
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7023440913657719795" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7023440913657719795" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="7023440913657719793" nodeInfo="nn">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="7023440913657719799" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.3228268613620327405" resolveInfo="GoByCurrentReference" />

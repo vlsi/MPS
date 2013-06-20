@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -58,8 +59,13 @@ public interface SModel {
   Iterable<SNode> getRootNodes();
 
   /**
-   * Add the node as a root to this model.
-   * After the operation each node in the underlying subtree will have getModel() set to return "this model".
+   * Instantiates an SNode of the given concept, suitable for use in this model.
+   */
+  SNode createNode(SConcept concept);
+
+  /**
+   * Adds the node as a root to this model.
+   * Each node in the underlying subtree becomes connected to this model and returns it from the getModel() method.
    *
    * @throws jetbrains.mps.smodel.IllegalModelChangeError
    *          when invoked on a read-only model or outside of a valid command.

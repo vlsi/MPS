@@ -31,4 +31,8 @@ public interface ProgressMonitor {
   boolean isCanceled();
 
   void cancel();
+
+  ProgressMonitor subTask(int work);
+
+  ProgressMonitor subTask(int work, SubProgressKind kind);
 }

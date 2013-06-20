@@ -15,7 +15,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
@@ -24,6 +23,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssueFinder" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
   </dependency>
@@ -46,7 +46,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.resolve.ResolverComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -62,6 +61,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.BrokenReferencesFinder" file="BrokenReferencesFinder.java">
@@ -245,13 +245,13 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.Default_KeymapChanges" file="Default_KeymapChanges.java">
@@ -459,13 +459,13 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.IModelCheckerFix" file="IModelCheckerFix.java" />
@@ -482,7 +482,6 @@
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerSettings" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -493,6 +492,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.project.ModuleContext" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ModelCheckerCheckinHandler" file="ModelCheckerCheckinHandler.java">
@@ -538,7 +538,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ModelCheckerExecutor" file="ModelCheckerExecutor.java">
     <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationManagerEx" />
@@ -575,7 +575,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -583,6 +582,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue" file="ModelCheckerIssue.java">
     <classNode dependClassName="java.lang.Override" />
@@ -611,10 +611,10 @@
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModuleChecker" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ModelCheckerPreferencesPage" file="ModelCheckerPreferencesPage.java">
@@ -785,7 +785,6 @@
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.validation.ModelValidator" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -793,6 +792,7 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.Modelchecker_ApplicationPlugin" file="Modelchecker_ApplicationPlugin.java">
@@ -857,13 +857,13 @@
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelChecker" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.validation.ModuleValidatorFactory" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ReferenceableConceptsChecker" file="ReferenceableConceptsChecker.java">
     <classNode dependClassName="java.lang.Override" />
@@ -884,7 +884,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
@@ -892,6 +891,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ShowModelCheckerTool_ActionGroup" file="ShowModelCheckerTool_ActionGroup.java">
@@ -935,13 +935,13 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.SpecificModelChecker" file="SpecificModelChecker.java">
     <classNode dependClassName="java.lang.Override" />
@@ -960,7 +960,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.ITypechecking" />
@@ -969,6 +968,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.util.SubtypingCache" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
     <classNode extendsClassName="jetbrains.mps.typesystem.inference.ITypeContextOwner" />
   </dependency>
@@ -991,11 +991,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.UnresolvedReferencesChecker" file="UnresolvedReferencesChecker.java">
@@ -1015,7 +1015,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.resolve.ResolverComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -1028,6 +1027,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.WrongAspectDependenciesFinder" file="WrongAspectDependenciesFinder.java">

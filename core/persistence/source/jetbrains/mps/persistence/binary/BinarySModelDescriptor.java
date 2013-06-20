@@ -75,7 +75,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
 
     ModelLoadResult result;
     try {
-      result = BinaryPersistence.readModel(getReference(), getSource(), state == ModelLoadingState.ROOTS_LOADED);
+      result = BinaryPersistence.readModel(getReference(), getSource(), state == ModelLoadingState.INTERFACE_LOADED);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       BinarySModel newModel = new InvalidBinarySModel(getReference(), e);

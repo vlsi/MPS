@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="50j31st17lm3z1sty42aaitrocxkbop">
+<dependencies version="2" modelHash="-54sz3en1te0qcltp9e182hsxwnevuw7">
   <common hash="7ldvvojeyztp403l9vgduj393ygu5dv" />
-  <source id="5294483648489409055" name="IRefactoringTester" hash="-3ha19fv7h20bn2xwgaqbt624gg3bsu3">
+  <source id="5294483648489409055" name="IRefactoringTester" hash="-b0tpjtgiinpwowq9rdildgbimpk6klm">
     <file name="IRefactoringTester.java" />
   </source>
 </dependencies>

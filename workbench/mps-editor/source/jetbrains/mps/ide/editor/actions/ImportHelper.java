@@ -175,7 +175,7 @@ public class ImportHelper {
 
           langs.remove(lang);
           //this is added in language implicitly, so we don't show this import
-          langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE, Language.class));
+          langs.remove(BootstrapLanguages.coreLanguage());
 
           for (Language l : langs) {
             Collection<SModuleReference> impLangs = ((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages();

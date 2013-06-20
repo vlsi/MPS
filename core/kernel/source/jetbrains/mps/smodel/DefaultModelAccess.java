@@ -25,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class DefaultModelAccess extends ModelAccess {
 
-  DefaultModelAccess() {
+  public DefaultModelAccess() {
   }
 
   @Override

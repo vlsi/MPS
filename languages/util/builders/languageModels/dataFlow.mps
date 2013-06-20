@@ -13,7 +13,7 @@
   <root type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="7802271442981637928" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="pmg0.7057666463730155278" resolveInfo="BuilderCreator" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="7802271442981637929" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7802271442981637930" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7802271442981637930" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="7802271442981637931" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7802271442981637934" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="7802271442981637933" nodeInfo="nn" />
@@ -36,7 +36,7 @@
   <root type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="7802271442981637948" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="pmg0.7057666463730155299" resolveInfo="BuilderStatement" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="7802271442981637949" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7802271442981637950" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7802271442981637950" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="7802271442981637951" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7802271442981637954" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="7802271442981637953" nodeInfo="nn" />
@@ -59,7 +59,7 @@
   <root type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="7802271442981707326" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="pmg0.7802271442981707292" resolveInfo="AsBuilderStatement" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="7802271442981707327" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7802271442981707328" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7802271442981707328" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="7802271442981707329" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7802271442981707332" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="7802271442981707331" nodeInfo="nn" />
@@ -91,7 +91,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="bean" />
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="pmg0.2679357232283750087" resolveInfo="BeanPropertyBuilder" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="5389689214216692448" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5389689214216692449" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5389689214216692449" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="5389689214216692450" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5389689214216692453" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="5389689214216692452" nodeInfo="nn" />
@@ -107,7 +107,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="simple" />
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="pmg0.5389689214217404511" resolveInfo="SimpleBuilderPropertyBuilder" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="932644095877920803" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="932644095877920804" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="932644095877920804" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="932644095877920805" nodeInfo="nn">
           <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="932644095877920808" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="932644095877920807" nodeInfo="nn" />

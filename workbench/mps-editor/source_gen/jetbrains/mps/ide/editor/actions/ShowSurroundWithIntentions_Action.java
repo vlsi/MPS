@@ -21,7 +21,7 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Point;
-import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.Selection;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-46degrb7cf21b1btvyhu2jcw6u5al4v">
+<dependencies version="2" modelHash="8987kl989ixvog5nekn9aqpprquxyzl">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
@@ -29,7 +29,6 @@
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model(MPS.Core/jetbrains.mps.ide.findusages.model@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model.holders(MPS.Core/jetbrains.mps.ide.findusages.model.holders@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)" />
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -38,6 +37,8 @@
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.icons(MPS.Platform/jetbrains.mps.icons@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" />
+  <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.findusages.view(MPS.Platform/jetbrains.mps.ide.findusages.view@java_stub)" />
+  <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.findusages.view.icons(MPS.Platform/jetbrains.mps.ide.findusages.view.icons@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.icons(MPS.Platform/jetbrains.mps.ide.icons@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.messages(MPS.Platform/jetbrains.mps.ide.messages@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
@@ -48,10 +49,7 @@
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.plugins.tool(MPS.Platform/jetbrains.mps.plugins.tool@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)" />
-  <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view(MPS.Workbench/jetbrains.mps.ide.findusages.view@java_stub)" />
-  <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view.icons(MPS.Workbench/jetbrains.mps.ide.findusages.view.icons@java_stub)" />
   <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.projectPane(MPS.Workbench/jetbrains.mps.ide.projectPane@java_stub)" />
-  <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.ui(MPS.Workbench/jetbrains.mps.ide.ui@java_stub)" />
   <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.plugins.applicationplugins(MPS.Workbench/jetbrains.mps.plugins.applicationplugins@java_stub)" />
   <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.plugins.projectplugins(MPS.Workbench/jetbrains.mps.plugins.projectplugins@java_stub)" />
   <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench(MPS.Workbench/jetbrains.mps.workbench@java_stub)" />
@@ -59,36 +57,36 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" />
   <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-3gd1wjtanyuae8zlmappxzhsoyku4tj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
-  <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="-1g2ap9iiogeshhmbrbga55hznlaiv0q" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="2op8y9fig1r9t602jduaxchhejyx723" />
+  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="c1xbedyalk4nw2czpsk8cfko8ym7qhu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
+  <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="b7cy7kefjsku7xbh9lxcricxkhnsi59" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="4fpv2xr3ihc6ydyum9jowto74hclgxr" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="aumxb375hryoj342z68nrzgvgr4jzbz" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="7tunkx61nsrmo3sgu4c3e00v2h21rh" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9iow8oinjz3flhnokp65cdgbcfbisw5" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="1finj81wqizm6kuxg2411qqmvihizqa" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6yvhxi9k55xxea1versvzjds8py3u8n" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-1lugkap5r9645u9hztq33busleneuk2" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-48vxm6lpdyencmht9ofqk4s4yqtnzq5" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="bafhkoh6uzz98lw8cefntraxkkh51e1" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ehclih2ljjvh3gcfl67v2ip8o73gip1" />
   <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="-49ex7wmetwukg1xzwma8ehh8cyyoww0" />
-  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="4242vdr5o54by9oi38vccohoi8637so" />
-  <dep model="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" hash="9deyh7wj333ln3opy2orcr0x7l0h6ov" />
+  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="d2b715y4rr078lxsq3srr9qscnnt287" />
+  <dep model="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" hash="iad34v0paaaaokkadywwcqcja7n96u" />
   <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="-evcrdurgb0bmbwga18dyu25hcn4t379" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-1yx8tk7ya5hl82987bo2ty1xbc0bzdk" />
-  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="97bcp20rwvaujtt4z6d96fxd6ude8mm" />
-  <dep model="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" hash="45im0laxk9flfxhft5vv184j8dspgnv" />
-  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="108m9frs6rdj82t6r1g3jbfyyzennzo" />
-  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="-aevh6xnwtzj06baeewsvolk5anm65zm" />
-  <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="-9uvwlvf131a3kqo9g1eijho212tgpq8" />
-  <dep model="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)" hash="7ag6d8mwigjqr6zvxk6lk13burx0xqr" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="6wbb4crf3b4dbgairjnjeebsacld5eq" />
-  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-9fdi0n0a07zuqciwx30oe146qg9byaf" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
-  <dep model="r:f77c2bf1-6f5c-4cb2-b314-a84dd502542e(jetbrains.mps.resolve)" hash="-df3b2vgoxqtzfglgidulyhpaq9i14tv" />
-  <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="27pvbkejb0wppox7fu7pugcggajvw6c" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
-  <common hash="9w946ptmeiqtbxrhdnwx4z1zy41j8zo">
+  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="4uegwn990784xqisb1lehvty88mf2e" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-achotqmank8lbn0qyr9phfzza4hbi1t" />
+  <dep model="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" hash="a594jcc1v8j8hrcj0drzqitvtljnt1" />
+  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="b0kikcuz4xhl7u2yvnhyms2uffn8cx2" />
+  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="-aer19kv5qljyhaz4bgt61yknnprfunr" />
+  <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="gl25jjwfjfu4wby24mt254hot7fpb3" />
+  <dep model="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)" hash="-4pe61fvgif3t2xebvkud7xniuv4g7f6" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="aoywaq1ew2203morpseql2gxmwetl9v" />
+  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2te9zcwr0xtinv0zm3xquqs5me3u63x" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-6ygnwew9fsyml0umi7w20kwq5d46z7m" />
+  <dep model="r:f77c2bf1-6f5c-4cb2-b314-a84dd502542e(jetbrains.mps.resolve)" hash="-bh1dhv7seajipmhw1dt0ledg3pnvata" />
+  <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="-n6rlu0rbqjb1901ezv3k8a5dddox6" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5wivjm735wrx1nbiz5js62dqixuwvq4" />
+  <common hash="-oxbs1i7o904g32yxg7nren2cwinysb">
     <dep root="1453248744423272128" />
     <dep root="1453248744423272129" />
     <dep root="1453248744423272137" />
@@ -199,7 +197,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <file name="Default_KeymapChanges.java" />
   </source>
-  <source id="1453248744423272137" name="ConstraintsChecker" hash="19moquy74otrsvdifpm8ebnpmhdqzvk">
+  <source id="1453248744423272137" name="ConstraintsChecker" hash="-2levzjcn6emgu93ku0c3916t7sgbyf2">
     <dep root="1453248744423272806" />
     <dep root="1453248744423273298" />
     <dep root="1453248744423273304" />
@@ -224,7 +222,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ConstraintsChecker.java" />
   </source>
-  <source id="1453248744423272447" name="ModelPropertiesChecker" hash="-7fsbl54cw5hxjzupixorq373lgcrzcq">
+  <source id="1453248744423272447" name="ModelPropertiesChecker" hash="-d84btyvdygfk6f3absa7jyke0p5l5p1">
     <dep root="1453248744423273304" />
     <dep root="1453248744423273649" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -244,7 +242,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelPropertiesChecker.java" />
   </source>
-  <source id="1453248744423272806" name="SpecificChecker" hash="-6zb9o6ax9mj2ajl80tlgledtmdld07h">
+  <source id="1453248744423272806" name="SpecificChecker" hash="-3xb0ias4oxvda9g0p5sqs3rzoljrr6u">
     <dep root="1453248744423273304" />
     <dep root="1453248744423273649" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -258,7 +256,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <file name="SpecificChecker.java" />
   </source>
-  <source id="1453248744423272985" name="UnavailableConceptsChecker" hash="a3wowg2sv82lus9mhn66u4vmo3xrjdd">
+  <source id="1453248744423272985" name="UnavailableConceptsChecker" hash="-22wgpbyjci6vrcnnhf5s19evysv9alt">
     <dep root="1453248744423272806" />
     <dep root="1453248744423273304" />
     <dep root="1453248744423273649" />
@@ -279,7 +277,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="UnavailableConceptsChecker.java" />
   </source>
-  <source id="1453248744423273062" name="UnresolvedReferencesChecker" hash="-7fvd5s1k4w65zu6khk200anezqv02dd">
+  <source id="1453248744423273062" name="UnresolvedReferencesChecker" hash="-3y5k90ke26v8kdzexhnp87gc392ej3t">
     <dep root="1453248744423272806" />
     <dep root="1453248744423273298" />
     <dep root="1453248744423273304" />
@@ -308,12 +306,12 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="UnresolvedReferencesChecker.java" />
   </source>
-  <source id="1453248744423273146" name="BrokenReferencesFinder" hash="7puhkjlrurs42z9vht886fpye0jtymz">
+  <source id="1453248744423273146" name="BrokenReferencesFinder" hash="blemwxzu3iynhzeizoqriqrwduvj8cd">
     <dep root="1453248744423272806" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BrokenReferencesFinder.java" />
   </source>
-  <source id="1453248744423273165" name="CheckBeforeGenerationDialog" hash="73esx57ofuj24x2b3le2yli6arond0v">
+  <source id="1453248744423273165" name="CheckBeforeGenerationDialog" hash="-3987ufqv8x6zh9vhg5xpyeum020pyyt">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
@@ -324,16 +322,15 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CheckBeforeGenerationDialog.java" />
   </source>
-  <source id="1453248744423273298" name="IModelCheckerFix" hash="-35g74ttspzo8mhvz3gqszk5pw3l5dyd">
+  <source id="1453248744423273298" name="IModelCheckerFix" hash="3ipvbdgcqydos1bdgmxg4y85ek2p5f8">
     <file name="IModelCheckerFix.java" />
   </source>
-  <source id="1453248744423273304" name="ModelChecker" hash="3p7g8bpg8hcqs2hrb08hqf7nlachgiw">
+  <source id="1453248744423273304" name="ModelChecker" hash="-84d8f49zrc59cub7nrsw0nc09tiiea0">
     <dep root="1453248744423272806" />
     <dep root="1453248744423273649" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model(MPS.Core/jetbrains.mps.ide.findusages.model@java_stub)" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -349,7 +346,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelChecker.java" />
   </source>
-  <source id="1453248744423273462" name="ModelCheckerCheckinHandler" hash="-2hvjs1czt81sivpugrbib6xeiulerdb">
+  <source id="1453248744423273462" name="ModelCheckerCheckinHandler" hash="6idb1eqk31paktw2vy74yexnnlfuala">
     <dep root="1453248744423411392" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -365,15 +362,15 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelCheckerCheckinHandler.java" />
   </source>
-  <source id="1453248744423273649" name="ModelCheckerIssue" hash="6q351v3rxyshp9oi5fixrmmf5mm6cq">
+  <source id="1453248744423273649" name="ModelCheckerIssue" hash="3qpnggpsnarmzzdbi1u7xbl7eq9jcwl">
     <dep root="1453248744423273298" />
+    <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.findusages.view.icons(MPS.Platform/jetbrains.mps.ide.findusages.view.icons@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.messages(MPS.Platform/jetbrains.mps.ide.messages@java_stub)" />
-    <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view.icons(MPS.Workbench/jetbrains.mps.ide.findusages.view.icons@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModelCheckerIssue.java" />
   </source>
-  <source id="1453248744423273915" name="ModelCheckerIssueFinder" hash="-68z9lrdlrkjeev4sr1u1m2os4s0h8rz">
+  <source id="1453248744423273915" name="ModelCheckerIssueFinder" hash="7jutsy1qgk1ctdq95y799og0drz80lh">
     <dep root="1453248744423272806" />
     <dep root="1453248744423275727" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -385,7 +382,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelCheckerIssueFinder.java" />
   </source>
-  <source id="1453248744423274141" name="ModelCheckerPreferencesPage" hash="-27ii6frg6tun2d5o4aufryozy4g3azk">
+  <source id="1453248744423274141" name="ModelCheckerPreferencesPage" hash="-7qo7pdw1960780i3358j011l8ze2fim">
     <dep root="1453248744423274373" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.options(MPS.IDEA/com.intellij.openapi.options@java_stub)" />
@@ -393,7 +390,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModelCheckerPreferencesPage.java" />
   </source>
-  <source id="1453248744423274373" name="ModelCheckerSettings" hash="-8rxd66ub6iedcb8bux3dmjzkjywby6">
+  <source id="1453248744423274373" name="ModelCheckerSettings" hash="82q0dz8wotqws5zj3hp4iwf22xkazmr">
     <dep root="1453248744423272806" />
     <dep root="1453248744423274141" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
@@ -401,7 +398,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModelCheckerSettings.java" />
   </source>
-  <source id="1453248744423274789" name="ModelCheckerUtils" hash="6a2ao7kcwhc4rid9kkart87aa8fdavx">
+  <source id="1453248744423274789" name="ModelCheckerUtils" hash="-ehypdhgidvmmx3etvgf4l0bs3wgpjnx">
     <dep root="1453248744423273649" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -421,7 +418,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelCheckerUtils.java" />
   </source>
-  <source id="1453248744423274976" name="ModelCheckerViewer" hash="-86plut6xbb874ytr83b0msrv1mfsttz">
+  <source id="1453248744423274976" name="ModelCheckerViewer" hash="12wnxfyglfpr3mumn5kkride0qrbyxk">
     <dep root="1453248744423273304" />
     <dep root="1453248744423273649" />
     <dep root="1453248744423273915" />
@@ -439,10 +436,10 @@
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model(MPS.Core/jetbrains.mps.ide.findusages.model@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+    <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.findusages.view(MPS.Platform/jetbrains.mps.ide.findusages.view@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.icons(MPS.Platform/jetbrains.mps.ide.icons@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.messages(MPS.Platform/jetbrains.mps.ide.messages@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
-    <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view(MPS.Workbench/jetbrains.mps.ide.findusages.view@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -453,7 +450,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelCheckerViewer.java" />
   </source>
-  <source id="1453248744423275727" name="ModuleChecker" hash="-54grpweay1gcqi2rrv6u2ny84358yta">
+  <source id="1453248744423275727" name="ModuleChecker" hash="887o127k8i0sheyf346oieuaqlr9h8i">
     <dep root="1453248744423273304" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -488,7 +485,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <file name="CheckModel_ActionGroup.java" />
   </source>
-  <source id="1453248744423276149" name="ShowModelChecker" hash="-c3ffxww12zt3ejfi0bkgbtq35upjpof">
+  <source id="1453248744423276149" name="ShowModelChecker" hash="3bx1x98w5tihnj6dp1bx9zdfuhdmu4e">
     <dep root="1453248744423272128" />
     <dep root="1453248744423272129" />
     <dep root="1453248744423272137" />
@@ -547,7 +544,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ShowModelChecker_Action.java" />
   </source>
-  <source id="1453248744423276216" name="CheckProject" hash="59y2zeylcjb29yadchc78amj8x1cxw1">
+  <source id="1453248744423276216" name="CheckProject" hash="1vpyygmkwa1c5c4y12n7dysi7xk4vx8">
     <dep root="1453248744423272128" />
     <dep root="1453248744423272129" />
     <dep root="1453248744423272137" />
@@ -609,7 +606,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CheckProject_Action.java" />
   </source>
-  <source id="1453248744423276236" name="CheckModule" hash="-17u3gmcy97wqmxxxnyfjsywlcypaeji">
+  <source id="1453248744423276236" name="CheckModule" hash="-bkd3gab82gqr2i7fehmrhbak4aosjd">
     <dep root="1453248744423272128" />
     <dep root="1453248744423272129" />
     <dep root="1453248744423272137" />
@@ -681,7 +678,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CheckModule_Action.java" />
   </source>
-  <source id="1453248744423276340" name="CheckModel" hash="-6yexlkf1qwli4qh156022sd4np534sz">
+  <source id="1453248744423276340" name="CheckModel" hash="-17p4s1ec6s4oqinvynvp9f9d2n9frcg">
     <dep root="1453248744423272128" />
     <dep root="1453248744423272129" />
     <dep root="1453248744423272137" />
@@ -746,7 +743,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CheckModel_Action.java" />
   </source>
-  <source id="1453248744423411352" name="FindlAllBrokenReferences" hash="-927d1xvscz8g5cvdayb56yc060q9781">
+  <source id="1453248744423411352" name="FindlAllBrokenReferences" hash="-aasn6tsjax2380ysh69e2crkqtytw2r">
     <dep root="1453248744423272128" />
     <dep root="1453248744423272129" />
     <dep root="1453248744423272137" />
@@ -810,7 +807,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FindlAllBrokenReferences_Action.java" />
   </source>
-  <source id="1453248744423411392" name="ModelCheckerTool" hash="8k20fq5u9cwc12gkctz4vq19a2kmwme">
+  <source id="1453248744423411392" name="ModelCheckerTool" hash="-codv295yljou53lvfhmsai7s5ejl9i">
     <dep root="1453248744423273304" />
     <dep root="1453248744423273915" />
     <dep root="1453248744423274976" />
@@ -849,7 +846,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <file name="ToolsInternalEx_ActionGroup.java" />
   </source>
-  <source id="6550340959293376935" name="FindAllAdapterUsages" hash="-8mpdqgdxccm443mzxyg1mkuqafagk0r">
+  <source id="6550340959293376935" name="FindAllAdapterUsages" hash="-av8q37m4rnpdsxgvh45om666m78jagt">
     <dep root="1453248744423272128" />
     <dep root="1453248744423272129" />
     <dep root="1453248744423272137" />
@@ -913,7 +910,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FindAllAdapterUsages_Action.java" />
   </source>
-  <source id="6550340959293397988" name="AdapterUsagesFinder" hash="8ellh7qp9zh4gysss4mtnrj5o94aj8d">
+  <source id="6550340959293397988" name="AdapterUsagesFinder" hash="s6ou45vr6wagx1r32gkvewku2ohjlc">
     <dep root="1453248744423272806" />
     <dep root="1453248744423273304" />
     <dep root="1453248744423273649" />
@@ -940,7 +937,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AdapterUsagesFinder.java" />
   </source>
-  <source id="2786701023156660698" name="SpecificModelChecker" hash="-dp7ipdlnom216nz6j6g8hagmca8262x">
+  <source id="2786701023156660698" name="SpecificModelChecker" hash="73wnnun3w2dfryd6zbpbuy0r1dvecg1">
     <dep root="1453248744423272806" />
     <dep root="1453248744423273298" />
     <dep root="1453248744423273649" />
@@ -962,7 +959,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SpecificModelChecker.java" />
   </source>
-  <source id="7224745844707398031" name="FindCrossTemplateReferences" hash="cekao4jcvcv36ixskwn86xoaifwy7t0">
+  <source id="7224745844707398031" name="FindCrossTemplateReferences" hash="4zepny754kcjkq3wl9yypryrvu6h97b">
     <dep root="1453248744423272128" />
     <dep root="1453248744423272129" />
     <dep root="1453248744423272137" />
@@ -1088,7 +1085,7 @@
     <file name="Modelchecker_ApplicationPlugin.java" />
     <file name="Modelchecker_ProjectPlugin.java" />
   </source>
-  <source id="2843918448603437232" name="FindWrongAspectDependencies" hash="-7g80xfi5szig9iiujy17377sbjj5yk1">
+  <source id="2843918448603437232" name="FindWrongAspectDependencies" hash="d1xvd99bzkgj3fjlje86832sscjj8s1">
     <dep root="1453248744423272128" />
     <dep root="1453248744423272129" />
     <dep root="1453248744423272137" />
@@ -1159,7 +1156,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FindWrongAspectDependencies_Action.java" />
   </source>
-  <source id="8307046163197924981" name="GeneratorTemplatesChecker" hash="-8s2os0jryjpt8ueffoupa9ya8w56x1k">
+  <source id="8307046163197924981" name="GeneratorTemplatesChecker" hash="git9h9kl16421g0tsz8tpv637ho0d4">
     <dep root="1453248744423272806" />
     <dep root="1453248744423273304" />
     <dep root="1453248744423273649" />
@@ -1176,12 +1173,12 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="GeneratorTemplatesChecker.java" />
   </source>
-  <source id="2843918448603437706" name="WrongAspectDependenciesFinder" hash="-aubs6or5522p9plfi8jufhpfjqd6xjo">
+  <source id="2843918448603437706" name="WrongAspectDependenciesFinder" hash="74anwz4dbuzr60uhryrbnsg6o5x2a3q">
     <dep root="1453248744423272806" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="WrongAspectDependenciesFinder.java" />
   </source>
-  <source id="32328476334654562" name="ModelCheckerExecutor" hash="-33g4s1x1tbvpn1wxg1acpils6j18pof">
+  <source id="32328476334654562" name="ModelCheckerExecutor" hash="-1tp43alsb2f3xs4uplrrrpmdr4074wf">
     <dep root="1453248744423272806" />
     <dep root="1453248744423273649" />
     <dep root="1453248744423273915" />
@@ -1196,7 +1193,6 @@
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model(MPS.Core/jetbrains.mps.ide.findusages.model@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model.holders(MPS.Core/jetbrains.mps.ide.findusages.model.holders@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" />
@@ -1208,7 +1204,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelCheckerExecutor.java" />
   </source>
-  <source id="32328476334414636" name="ModelCheckerController" hash="5bf4wpj8xiwjtajo7xu87i80dskelr3">
+  <source id="32328476334414636" name="ModelCheckerController" hash="awnkfbd02lt0rgnrvf05h0yn58deit5">
     <dep root="1453248744423273649" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1216,7 +1212,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelCheckerController.java" />
   </source>
-  <source id="2843918448603437373" name="AspectDependenciesChecker" hash="42xz853ivvyymq99w7tbx5a8m4xnfq2">
+  <source id="2843918448603437373" name="AspectDependenciesChecker" hash="-423nn5rpfgudqms3cb2mthdmappeptq">
     <dep root="1453248744423272806" />
     <dep root="1453248744423273298" />
     <dep root="1453248744423273304" />
@@ -1248,7 +1244,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <file name="CheckNamespace_ActionGroup.java" />
   </source>
-  <source id="7502735747194136940" name="CheckNamespace" hash="-bbxof760t6jac48401e0dx9t1gp941r">
+  <source id="7502735747194136940" name="CheckNamespace" hash="d29944dpqlf761kvs2y1ko5hfnt76bd">
     <dep root="1453248744423272128" />
     <dep root="1453248744423272129" />
     <dep root="1453248744423272137" />
@@ -1305,7 +1301,6 @@
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui(MPS.Platform/jetbrains.mps.ide.ui@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)" />
     <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.projectPane(MPS.Workbench/jetbrains.mps.ide.projectPane@java_stub)" />
-    <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.ui(MPS.Workbench/jetbrains.mps.ide.ui@java_stub)" />
     <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench(MPS.Workbench/jetbrains.mps.workbench@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -1318,7 +1313,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CheckNamespace_Action.java" />
   </source>
-  <source id="1833497744617099302" name="ReferenceableConceptsChecker" hash="-331vtmmdoyyijr2rhy8ydsihnhwzu3u">
+  <source id="1833497744617099302" name="ReferenceableConceptsChecker" hash="-628wbrnk8w7h9e2dhnsvvi0t33box41">
     <dep root="1453248744423272806" />
     <dep root="1453248744423273304" />
     <dep root="1453248744423273649" />
@@ -1342,7 +1337,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReferenceableConceptsChecker.java" />
   </source>
-  <source id="1833497744616771108" name="FindReferencesToNonReferenceable" hash="-brse7okde97m7nas9scmpk4vvyuwley">
+  <source id="1833497744616771108" name="FindReferencesToNonReferenceable" hash="-bkgwb6zckikzszzwa8byi8gs0j3nfr7">
     <dep root="1453248744423272128" />
     <dep root="1453248744423272129" />
     <dep root="1453248744423272137" />

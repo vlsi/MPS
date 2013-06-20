@@ -12,7 +12,7 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5750432610478621621" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_ActionTestContainer" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="5750432610478621622" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="5750432610478621622" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="5750432610478655947" nodeInfo="nn">
         <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5750432610478656353" nodeInfo="nn">
           <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="5750432610478661146" nodeInfo="nn">
@@ -25,7 +25,7 @@
         <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="5750432610478655953" nodeInfo="nr">
           <property name="name" nameId="tpck.1169194664001" value="parameterizedSubstNode" />
         </node>
-        <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="5750432610478655965" nodeInfo="nn">
+        <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="5750432610478655965" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateStrongLessThanInequationStatement" typeId="tpd4.1179832490862" id="5750432610478685704" nodeInfo="nn">
             <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="5750432610478693961" nodeInfo="ng">
               <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="5750432610478693957" nodeInfo="nn">
@@ -56,7 +56,7 @@
         <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="5164819300891447933" nodeInfo="nr">
           <property name="name" nameId="tpck.1169194664001" value="simpleSubstNode" />
         </node>
-        <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="5164819300891447934" nodeInfo="nn">
+        <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="5164819300891447934" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateStrongLessThanInequationStatement" typeId="tpd4.1179832490862" id="5164819300891447935" nodeInfo="nn">
             <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="5164819300891447936" nodeInfo="ng">
               <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="5164819300891447937" nodeInfo="nn">

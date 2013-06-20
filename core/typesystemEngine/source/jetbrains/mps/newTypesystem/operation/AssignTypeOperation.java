@@ -34,22 +34,27 @@ public class AssignTypeOperation extends AbstractOperation {
     setRule(info);
   }
 
+  @Override
   public void doUndo(State state) {
     state.getNodeMaps().removeNodeType(myNode);
   }
 
+  @Override
   public void doRedo(State state) {
     state.getNodeMaps().assignNodeType(myNode, myType);
   }
 
+  @Override
   public String getPresentation() {
     return myNode + " : " + myType+ "   assigned";
   }
 
+  @Override
   public String getPresentationKind() {
     return PresentationKind.TYPE_ASSIGNED;
   }
 
+  @Override
   public List<SNode> getVariables() {
     LinkedList<SNode> nodes = new LinkedList<SNode>();
     if (TypesUtil.isVariable(myType)) {

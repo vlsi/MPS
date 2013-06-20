@@ -50,7 +50,7 @@ public class SNodeDescriptorPresentation extends BasePresentation {
 
   @Override
   public Icon doGetIcon() {
-    String conceptFqName = myNodeResult.getConcept().getId();
+    String conceptFqName = myNodeResult.getConcept().getQualifiedName();
 
     //we don't use alternative icon here since it's very expensive and slows down Ctrl+N popup considerably
     return IconManager.getIconForConceptFQName(conceptFqName);

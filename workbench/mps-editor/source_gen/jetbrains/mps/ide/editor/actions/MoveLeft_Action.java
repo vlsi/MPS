@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;

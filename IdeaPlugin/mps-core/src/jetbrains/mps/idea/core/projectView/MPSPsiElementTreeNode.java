@@ -20,10 +20,10 @@ import com.intellij.ide.projectView.PresentationData;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.BasePsiNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatusManager;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import org.jetbrains.annotations.Nullable;
@@ -61,20 +61,22 @@ public class MPSPsiElementTreeNode extends BasePsiNode<MPSPsiRootNode> {
 
   @Override
   protected void updateImpl(PresentationData presentation) {
-    MPSPsiNodeBase psiElement = extractPsiFromValue();
-    presentation.setPresentableText(psiElement.getName());
-    presentation.setIcon(psiElement.getIcon(getIconableFlags()));
-    Color statusColor = getNodeColor(psiElement);
+    MPSPsiNodeBase psiNodeBase = extractPsiFromValue();
+    presentation.setPresentableText(psiNodeBase.getName());
+    presentation.setIcon(psiNodeBase.getIcon(getIconableFlags()));
+    Color statusColor = getNodeColor(psiNodeBase);
     presentation.setForcedTextForeground(statusColor);
   }
 
-  private Color getNodeColor(PsiElement psiElement) {
-    PsiFile containingFile = psiElement.getContainingFile();
+  private Color getNodeColor(MPSPsiNodeBase psiNodeBase) {
+    //TODO: implement getVirtualFile()?
     final FileStatusManager fileStatusManager = FileStatusManager.getInstance(myProject);
-    if (fileStatusManager != null && getVirtualFile() != null) {
-      return fileStatusManager.getStatus(containingFile.getVirtualFile()).getColor();
+    VirtualFile virtualFile = null;
+    if (fileStatusManager != null && psiNodeBase instanceof MPSPsiRootNode
+      && (virtualFile = ((MPSPsiRootNode)psiNodeBase).getVirtualFile()) != null) {
+      return fileStatusManager.getStatus(virtualFile).getColor();
     }
-    return Color.BLACK;
+    return EditorColorsManager.getInstance().getGlobalScheme().getDefaultForeground();
   }
 
 }

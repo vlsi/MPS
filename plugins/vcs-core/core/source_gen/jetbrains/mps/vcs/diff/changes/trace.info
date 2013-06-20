@@ -442,184 +442,184 @@
     <unitInfo nodeId="4209733725028893042" fileName="ModelVersionChange.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ModelVersionChange" />
   </root>
   <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/4972886494893223485">
-    <nodeInfo nodeId="4972886494893223503" fileName="NodeGroupChange.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParentNodeId" />
-    <nodeInfo nodeId="4972886494893223507" fileName="NodeGroupChange.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
-    <nodeInfo nodeId="959738663751379601" fileName="NodeGroupChange.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBegin" />
-    <nodeInfo nodeId="959738663751379604" fileName="NodeGroupChange.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEnd" />
-    <nodeInfo nodeId="959738663751379607" fileName="NodeGroupChange.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResultBegin" />
-    <nodeInfo nodeId="959738663751379610" fileName="NodeGroupChange.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResultEnd" />
-    <nodeInfo nodeId="959738663751510251" fileName="NodeGroupChange.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPreparedIdsToDelete" />
-    <nodeInfo nodeId="959738663751511036" fileName="NodeGroupChange.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPreparedAnchorId" />
-    <nodeInfo nodeId="4972886494893364942" fileName="NodeGroupChange.java" startLine="30" startPosition="161" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4972886494893364949" fileName="NodeGroupChange.java" startLine="31" startPosition="21" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893364958" fileName="NodeGroupChange.java" startLine="32" startPosition="34" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751379672" fileName="NodeGroupChange.java" startLine="33" startPosition="18" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751379676" fileName="NodeGroupChange.java" startLine="34" startPosition="20" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751379680" fileName="NodeGroupChange.java" startLine="35" startPosition="16" endLine="36" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751379684" fileName="NodeGroupChange.java" startLine="36" startPosition="32" endLine="37" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893364969" fileName="NodeGroupChange.java" startLine="41" startPosition="36" endLine="42" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4972886494893364975" fileName="NodeGroupChange.java" startLine="46" startPosition="27" endLine="47" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751379641" fileName="NodeGroupChange.java" startLine="50" startPosition="25" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751379647" fileName="NodeGroupChange.java" startLine="54" startPosition="23" endLine="55" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751379653" fileName="NodeGroupChange.java" startLine="58" startPosition="29" endLine="59" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751379659" fileName="NodeGroupChange.java" startLine="62" startPosition="31" endLine="63" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751511100" fileName="NodeGroupChange.java" startLine="67" startPosition="40" endLine="68" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="959738663751511110" fileName="NodeGroupChange.java" startLine="68" startPosition="74" endLine="69" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="959738663751511114" fileName="NodeGroupChange.java" startLine="69" startPosition="28" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="959738663751511115" fileName="NodeGroupChange.java" startLine="70" startPosition="0" endLine="71" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="959738663751511123" fileName="NodeGroupChange.java" startLine="71" startPosition="87" endLine="72" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751511131" fileName="NodeGroupChange.java" startLine="73" startPosition="45" endLine="74" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751511246" fileName="NodeGroupChange.java" startLine="84" startPosition="82" endLine="85" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="959738663751511221" fileName="NodeGroupChange.java" startLine="85" startPosition="24" endLine="86" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751511229" fileName="NodeGroupChange.java" startLine="88" startPosition="37" endLine="89" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751511238" fileName="NodeGroupChange.java" startLine="91" startPosition="7" endLine="92" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751511243" fileName="NodeGroupChange.java" startLine="92" startPosition="33" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="959738663751511249" fileName="NodeGroupChange.java" startLine="93" startPosition="0" endLine="94" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3396946986144293914" fileName="NodeGroupChange.java" startLine="94" startPosition="28" endLine="95" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3396946986144293966" fileName="NodeGroupChange.java" startLine="95" startPosition="75" endLine="96" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3396946986144293925" fileName="NodeGroupChange.java" startLine="97" startPosition="55" endLine="98" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751511244" fileName="NodeGroupChange.java" startLine="99" startPosition="5" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="959738663751511252" fileName="NodeGroupChange.java" startLine="100" startPosition="0" endLine="101" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3396946986144293808" fileName="NodeGroupChange.java" startLine="105" startPosition="6" endLine="106" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3396946986144294041" fileName="NodeGroupChange.java" startLine="107" startPosition="76" endLine="108" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4453118635377437332" fileName="NodeGroupChange.java" startLine="114" startPosition="30" endLine="115" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751366469" fileName="NodeGroupChange.java" startLine="121" startPosition="27" endLine="122" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751366483" fileName="NodeGroupChange.java" startLine="124" startPosition="39" endLine="125" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751379511" fileName="NodeGroupChange.java" startLine="126" startPosition="5" endLine="127" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751379545" fileName="NodeGroupChange.java" startLine="132" startPosition="27" endLine="133" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751379552" fileName="NodeGroupChange.java" startLine="135" startPosition="39" endLine="136" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751379557" fileName="NodeGroupChange.java" startLine="137" startPosition="5" endLine="138" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5814105446971274255" fileName="NodeGroupChange.java" startLine="142" startPosition="34" endLine="143" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5814105446971274102" fileName="NodeGroupChange.java" startLine="146" startPosition="49" endLine="147" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5814105446971274116" fileName="NodeGroupChange.java" startLine="147" startPosition="45" endLine="148" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5814105446971274239" fileName="NodeGroupChange.java" startLine="149" startPosition="18" endLine="150" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5814105446971274129" fileName="NodeGroupChange.java" startLine="152" startPosition="39" endLine="153" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5814105446971274139" fileName="NodeGroupChange.java" startLine="156" startPosition="5" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5814105446971274172" fileName="NodeGroupChange.java" startLine="166" startPosition="87" endLine="167" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5814105446971274185" fileName="NodeGroupChange.java" startLine="168" startPosition="34" endLine="169" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5814105446971274210" fileName="NodeGroupChange.java" startLine="176" startPosition="10" endLine="177" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5814105446971274277" fileName="NodeGroupChange.java" startLine="178" startPosition="14" endLine="179" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5814105446971274221" fileName="NodeGroupChange.java" startLine="182" startPosition="39" endLine="183" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5814105446971274225" fileName="NodeGroupChange.java" startLine="185" startPosition="18" endLine="186" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5814105446971274291" fileName="NodeGroupChange.java" startLine="187" startPosition="12" endLine="188" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751379694" fileName="NodeGroupChange.java" startLine="194" startPosition="48" endLine="195" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5814105446971274264" fileName="NodeGroupChange.java" startLine="178" startPosition="12" endLine="180" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5814105446971274289" fileName="NodeGroupChange.java" startLine="187" startPosition="10" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="959738663751379637" fileName="NodeGroupChange.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBegin#()I" />
-    <nodeInfo nodeId="959738663751379643" fileName="NodeGroupChange.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEnd#()I" />
-    <nodeInfo nodeId="959738663751379649" fileName="NodeGroupChange.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultEnd#()I" />
-    <nodeInfo nodeId="959738663751379655" fileName="NodeGroupChange.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultBegin#()I" />
-    <nodeInfo nodeId="959738663751511129" fileName="NodeGroupChange.java" startLine="72" startPosition="78" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="959738663751511227" fileName="NodeGroupChange.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNodeId;)V" />
-    <nodeInfo nodeId="3396946986144293875" fileName="NodeGroupChange.java" startLine="96" startPosition="134" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="3396946986144294028" fileName="NodeGroupChange.java" startLine="106" startPosition="49" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="959738663751366459" fileName="NodeGroupChange.java" startLine="120" startPosition="31" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="959738663751366474" fileName="NodeGroupChange.java" startLine="123" startPosition="5" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="959738663751379543" fileName="NodeGroupChange.java" startLine="131" startPosition="28" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="959738663751379550" fileName="NodeGroupChange.java" startLine="134" startPosition="5" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5814105446971274127" fileName="NodeGroupChange.java" startLine="152" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5814105446971274216" fileName="NodeGroupChange.java" startLine="181" startPosition="5" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4972886494893364965" fileName="NodeGroupChange.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParentNodeId#()Lorg/jetbrains/mps/openapi/model/SNodeId;" />
-    <nodeInfo nodeId="4972886494893364971" fileName="NodeGroupChange.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRole#()Ljava/lang/String;" />
-    <nodeInfo nodeId="959738663751511149" fileName="NodeGroupChange.java" startLine="75" startPosition="7" endLine="79" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3396946986144293802" fileName="NodeGroupChange.java" startLine="101" startPosition="24" endLine="105" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5786223774279741790" fileName="NodeGroupChange.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5814105446971274140" fileName="NodeGroupChange.java" startLine="157" startPosition="0" endLine="161" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5814105446971274155" fileName="NodeGroupChange.java" startLine="161" startPosition="6" endLine="165" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5814105446971274199" fileName="NodeGroupChange.java" startLine="172" startPosition="20" endLine="176" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8272111966352338825" fileName="NodeGroupChange.java" startLine="198" startPosition="55" endLine="202" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5814105446971274177" fileName="NodeGroupChange.java" startLine="205" startPosition="64" endLine="209" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5814105446971274180" fileName="NodeGroupChange.java" startLine="212" startPosition="66" endLine="216" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751511223" fileName="NodeGroupChange.java" startLine="86" startPosition="14" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4453118635377437320" fileName="NodeGroupChange.java" startLine="112" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootId#()Lorg/jetbrains/mps/openapi/model/SNodeId;" />
-    <nodeInfo nodeId="5814105446971274242" fileName="NodeGroupChange.java" startLine="150" startPosition="114" endLine="155" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5814105446971274170" fileName="NodeGroupChange.java" startLine="165" startPosition="6" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5814105446971274284" fileName="NodeGroupChange.java" startLine="184" startPosition="5" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="959738663751379688" fileName="NodeGroupChange.java" startLine="192" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createOppositeChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
-    <nodeInfo nodeId="8272111966352338796" fileName="NodeGroupChange.java" startLine="198" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodeRange#(II)Ljava/lang/String;" />
-    <nodeInfo nodeId="5814105446971274177" fileName="NodeGroupChange.java" startLine="205" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_yjf6x2_a0a6a12#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5814105446971274180" fileName="NodeGroupChange.java" startLine="212" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_yjf6x2_a0a6a12_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5814105446971274234" fileName="NodeGroupChange.java" startLine="148" startPosition="25" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4972886494893364937" fileName="NodeGroupChange.java" startLine="30" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeGroupChange#(Ljetbrains/mps/vcs/diff/ChangeSet;Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;IIII)V" />
-    <nodeInfo nodeId="5814105446971274259" fileName="NodeGroupChange.java" startLine="171" startPosition="27" endLine="180" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="959738663751379531" fileName="NodeGroupChange.java" startLine="130" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="959738663751366448" fileName="NodeGroupChange.java" startLine="118" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
-    <nodeInfo nodeId="5814105446971274194" fileName="NodeGroupChange.java" startLine="170" startPosition="5" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="959738663751511095" fileName="NodeGroupChange.java" startLine="66" startPosition="25" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="959738663751510258" fileName="NodeGroupChange.java" startLine="66" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="prepare#()V" />
-    <nodeInfo nodeId="3396946986144293792" fileName="NodeGroupChange.java" startLine="83" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/vcs/diff/changes/NodeCopier;)V" />
-    <nodeInfo nodeId="5814105446971274098" fileName="NodeGroupChange.java" startLine="146" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Z)Ljava/lang/String;" />
-    <scopeInfo nodeId="4972886494893364968" fileName="NodeGroupChange.java" startLine="41" startPosition="36" endLine="42" endPosition="26" />
-    <scopeInfo nodeId="4972886494893364974" fileName="NodeGroupChange.java" startLine="46" startPosition="27" endLine="47" endPosition="18" />
-    <scopeInfo nodeId="959738663751379640" fileName="NodeGroupChange.java" startLine="50" startPosition="25" endLine="51" endPosition="19" />
-    <scopeInfo nodeId="959738663751379646" fileName="NodeGroupChange.java" startLine="54" startPosition="23" endLine="55" endPosition="17" />
-    <scopeInfo nodeId="959738663751379652" fileName="NodeGroupChange.java" startLine="58" startPosition="29" endLine="59" endPosition="23" />
-    <scopeInfo nodeId="959738663751379658" fileName="NodeGroupChange.java" startLine="62" startPosition="31" endLine="63" endPosition="25" />
-    <scopeInfo nodeId="959738663751511130" fileName="NodeGroupChange.java" startLine="73" startPosition="45" endLine="74" endPosition="93" />
-    <scopeInfo nodeId="959738663751511228" fileName="NodeGroupChange.java" startLine="88" startPosition="37" endLine="89" endPosition="35" />
-    <scopeInfo nodeId="3396946986144293876" fileName="NodeGroupChange.java" startLine="97" startPosition="55" endLine="98" endPosition="92" />
-    <scopeInfo nodeId="3396946986144294031" fileName="NodeGroupChange.java" startLine="107" startPosition="76" endLine="108" endPosition="50" />
-    <scopeInfo nodeId="4453118635377437324" fileName="NodeGroupChange.java" startLine="114" startPosition="30" endLine="115" endPosition="96" />
-    <scopeInfo nodeId="959738663751366460" fileName="NodeGroupChange.java" startLine="121" startPosition="27" endLine="122" endPosition="28" />
-    <scopeInfo nodeId="959738663751366475" fileName="NodeGroupChange.java" startLine="124" startPosition="39" endLine="125" endPosition="31" />
-    <scopeInfo nodeId="959738663751379544" fileName="NodeGroupChange.java" startLine="132" startPosition="27" endLine="133" endPosition="152" />
-    <scopeInfo nodeId="959738663751379551" fileName="NodeGroupChange.java" startLine="135" startPosition="39" endLine="136" endPosition="113" />
-    <scopeInfo nodeId="5786223774279741793" fileName="NodeGroupChange.java" startLine="142" startPosition="34" endLine="143" endPosition="32" />
-    <scopeInfo nodeId="5814105446971274128" fileName="NodeGroupChange.java" startLine="152" startPosition="39" endLine="153" endPosition="37" />
-    <scopeInfo nodeId="5814105446971274171" fileName="NodeGroupChange.java" startLine="166" startPosition="87" endLine="167" endPosition="27" />
-    <scopeInfo nodeId="5814105446971274184" fileName="NodeGroupChange.java" startLine="168" startPosition="34" endLine="169" endPosition="39" />
-    <scopeInfo nodeId="5814105446971274265" fileName="NodeGroupChange.java" startLine="178" startPosition="14" endLine="179" endPosition="51" />
-    <scopeInfo nodeId="5814105446971274220" fileName="NodeGroupChange.java" startLine="182" startPosition="39" endLine="183" endPosition="51" />
-    <scopeInfo nodeId="5814105446971274285" fileName="NodeGroupChange.java" startLine="185" startPosition="18" endLine="186" endPosition="82" />
-    <scopeInfo nodeId="5814105446971274290" fileName="NodeGroupChange.java" startLine="187" startPosition="12" endLine="188" endPosition="70" />
-    <scopeInfo nodeId="959738663751379691" fileName="NodeGroupChange.java" startLine="194" startPosition="48" endLine="195" endPosition="138" />
-    <scopeInfo nodeId="959738663751379637" fileName="NodeGroupChange.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="959738663751379643" fileName="NodeGroupChange.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="959738663751379649" fileName="NodeGroupChange.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="959738663751379655" fileName="NodeGroupChange.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="959738663751511129" fileName="NodeGroupChange.java" startLine="72" startPosition="78" endLine="75" endPosition="7">
+    <nodeInfo nodeId="4972886494893223503" fileName="NodeGroupChange.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParentNodeId" />
+    <nodeInfo nodeId="4972886494893223507" fileName="NodeGroupChange.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
+    <nodeInfo nodeId="959738663751379601" fileName="NodeGroupChange.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBegin" />
+    <nodeInfo nodeId="959738663751379604" fileName="NodeGroupChange.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEnd" />
+    <nodeInfo nodeId="959738663751379607" fileName="NodeGroupChange.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResultBegin" />
+    <nodeInfo nodeId="959738663751379610" fileName="NodeGroupChange.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResultEnd" />
+    <nodeInfo nodeId="959738663751510251" fileName="NodeGroupChange.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPreparedIdsToDelete" />
+    <nodeInfo nodeId="959738663751511036" fileName="NodeGroupChange.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPreparedAnchorId" />
+    <nodeInfo nodeId="4972886494893364942" fileName="NodeGroupChange.java" startLine="31" startPosition="161" endLine="32" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4972886494893364949" fileName="NodeGroupChange.java" startLine="32" startPosition="21" endLine="33" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893364958" fileName="NodeGroupChange.java" startLine="33" startPosition="34" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751379672" fileName="NodeGroupChange.java" startLine="34" startPosition="18" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751379676" fileName="NodeGroupChange.java" startLine="35" startPosition="20" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751379680" fileName="NodeGroupChange.java" startLine="36" startPosition="16" endLine="37" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751379684" fileName="NodeGroupChange.java" startLine="37" startPosition="32" endLine="38" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893364969" fileName="NodeGroupChange.java" startLine="42" startPosition="36" endLine="43" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4972886494893364975" fileName="NodeGroupChange.java" startLine="47" startPosition="27" endLine="48" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751379641" fileName="NodeGroupChange.java" startLine="51" startPosition="25" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751379647" fileName="NodeGroupChange.java" startLine="55" startPosition="23" endLine="56" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751379653" fileName="NodeGroupChange.java" startLine="59" startPosition="29" endLine="60" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751379659" fileName="NodeGroupChange.java" startLine="63" startPosition="31" endLine="64" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751511100" fileName="NodeGroupChange.java" startLine="68" startPosition="40" endLine="69" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="959738663751511110" fileName="NodeGroupChange.java" startLine="69" startPosition="74" endLine="70" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="959738663751511114" fileName="NodeGroupChange.java" startLine="70" startPosition="28" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="959738663751511115" fileName="NodeGroupChange.java" startLine="71" startPosition="0" endLine="72" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="959738663751511123" fileName="NodeGroupChange.java" startLine="72" startPosition="87" endLine="73" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751511131" fileName="NodeGroupChange.java" startLine="74" startPosition="45" endLine="75" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751511246" fileName="NodeGroupChange.java" startLine="85" startPosition="82" endLine="86" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="959738663751511221" fileName="NodeGroupChange.java" startLine="86" startPosition="24" endLine="87" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751511229" fileName="NodeGroupChange.java" startLine="89" startPosition="37" endLine="90" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751511238" fileName="NodeGroupChange.java" startLine="92" startPosition="7" endLine="93" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751511243" fileName="NodeGroupChange.java" startLine="93" startPosition="33" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="959738663751511249" fileName="NodeGroupChange.java" startLine="94" startPosition="0" endLine="95" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3396946986144293914" fileName="NodeGroupChange.java" startLine="95" startPosition="28" endLine="96" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3396946986144293966" fileName="NodeGroupChange.java" startLine="96" startPosition="75" endLine="97" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3396946986144293925" fileName="NodeGroupChange.java" startLine="98" startPosition="55" endLine="99" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751511244" fileName="NodeGroupChange.java" startLine="100" startPosition="5" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="959738663751511252" fileName="NodeGroupChange.java" startLine="101" startPosition="0" endLine="102" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3396946986144293808" fileName="NodeGroupChange.java" startLine="106" startPosition="6" endLine="107" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3068277858973560843" fileName="NodeGroupChange.java" startLine="108" startPosition="76" endLine="109" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4453118635377437332" fileName="NodeGroupChange.java" startLine="115" startPosition="30" endLine="116" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751366469" fileName="NodeGroupChange.java" startLine="122" startPosition="27" endLine="123" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751366483" fileName="NodeGroupChange.java" startLine="125" startPosition="39" endLine="126" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751379511" fileName="NodeGroupChange.java" startLine="127" startPosition="5" endLine="128" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751379545" fileName="NodeGroupChange.java" startLine="133" startPosition="27" endLine="134" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751379552" fileName="NodeGroupChange.java" startLine="136" startPosition="39" endLine="137" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751379557" fileName="NodeGroupChange.java" startLine="138" startPosition="5" endLine="139" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5814105446971274255" fileName="NodeGroupChange.java" startLine="143" startPosition="34" endLine="144" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5814105446971274102" fileName="NodeGroupChange.java" startLine="147" startPosition="49" endLine="148" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5814105446971274116" fileName="NodeGroupChange.java" startLine="148" startPosition="45" endLine="149" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5814105446971274239" fileName="NodeGroupChange.java" startLine="150" startPosition="18" endLine="151" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5814105446971274129" fileName="NodeGroupChange.java" startLine="153" startPosition="39" endLine="154" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5814105446971274139" fileName="NodeGroupChange.java" startLine="157" startPosition="5" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5814105446971274172" fileName="NodeGroupChange.java" startLine="167" startPosition="87" endLine="168" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5814105446971274185" fileName="NodeGroupChange.java" startLine="169" startPosition="34" endLine="170" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5814105446971274210" fileName="NodeGroupChange.java" startLine="177" startPosition="10" endLine="178" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5814105446971274277" fileName="NodeGroupChange.java" startLine="179" startPosition="14" endLine="180" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5814105446971274221" fileName="NodeGroupChange.java" startLine="183" startPosition="39" endLine="184" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5814105446971274225" fileName="NodeGroupChange.java" startLine="186" startPosition="18" endLine="187" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5814105446971274291" fileName="NodeGroupChange.java" startLine="188" startPosition="12" endLine="189" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751379694" fileName="NodeGroupChange.java" startLine="195" startPosition="48" endLine="196" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5814105446971274264" fileName="NodeGroupChange.java" startLine="179" startPosition="12" endLine="181" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5814105446971274289" fileName="NodeGroupChange.java" startLine="188" startPosition="10" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="959738663751379637" fileName="NodeGroupChange.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBegin#()I" />
+    <nodeInfo nodeId="959738663751379643" fileName="NodeGroupChange.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEnd#()I" />
+    <nodeInfo nodeId="959738663751379649" fileName="NodeGroupChange.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultEnd#()I" />
+    <nodeInfo nodeId="959738663751379655" fileName="NodeGroupChange.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultBegin#()I" />
+    <nodeInfo nodeId="959738663751511129" fileName="NodeGroupChange.java" startLine="73" startPosition="78" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="959738663751511227" fileName="NodeGroupChange.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNodeId;)V" />
+    <nodeInfo nodeId="3396946986144293875" fileName="NodeGroupChange.java" startLine="97" startPosition="134" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="3396946986144294028" fileName="NodeGroupChange.java" startLine="107" startPosition="49" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="959738663751366459" fileName="NodeGroupChange.java" startLine="121" startPosition="31" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="959738663751366474" fileName="NodeGroupChange.java" startLine="124" startPosition="5" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="959738663751379543" fileName="NodeGroupChange.java" startLine="132" startPosition="28" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="959738663751379550" fileName="NodeGroupChange.java" startLine="135" startPosition="5" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5814105446971274127" fileName="NodeGroupChange.java" startLine="153" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5814105446971274216" fileName="NodeGroupChange.java" startLine="182" startPosition="5" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4972886494893364965" fileName="NodeGroupChange.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParentNodeId#()Lorg/jetbrains/mps/openapi/model/SNodeId;" />
+    <nodeInfo nodeId="4972886494893364971" fileName="NodeGroupChange.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRole#()Ljava/lang/String;" />
+    <nodeInfo nodeId="959738663751511149" fileName="NodeGroupChange.java" startLine="76" startPosition="7" endLine="80" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3396946986144293802" fileName="NodeGroupChange.java" startLine="102" startPosition="24" endLine="106" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5786223774279741790" fileName="NodeGroupChange.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5814105446971274140" fileName="NodeGroupChange.java" startLine="158" startPosition="0" endLine="162" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5814105446971274155" fileName="NodeGroupChange.java" startLine="162" startPosition="6" endLine="166" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5814105446971274199" fileName="NodeGroupChange.java" startLine="173" startPosition="20" endLine="177" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8272111966352338825" fileName="NodeGroupChange.java" startLine="199" startPosition="55" endLine="203" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5814105446971274177" fileName="NodeGroupChange.java" startLine="206" startPosition="64" endLine="210" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5814105446971274180" fileName="NodeGroupChange.java" startLine="213" startPosition="66" endLine="217" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751511223" fileName="NodeGroupChange.java" startLine="87" startPosition="14" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4453118635377437320" fileName="NodeGroupChange.java" startLine="113" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootId#()Lorg/jetbrains/mps/openapi/model/SNodeId;" />
+    <nodeInfo nodeId="5814105446971274242" fileName="NodeGroupChange.java" startLine="151" startPosition="114" endLine="156" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5814105446971274170" fileName="NodeGroupChange.java" startLine="166" startPosition="6" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5814105446971274284" fileName="NodeGroupChange.java" startLine="185" startPosition="5" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="959738663751379688" fileName="NodeGroupChange.java" startLine="193" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createOppositeChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
+    <nodeInfo nodeId="8272111966352338796" fileName="NodeGroupChange.java" startLine="199" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodeRange#(II)Ljava/lang/String;" />
+    <nodeInfo nodeId="5814105446971274177" fileName="NodeGroupChange.java" startLine="206" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_yjf6x2_a0a6a12#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5814105446971274180" fileName="NodeGroupChange.java" startLine="213" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_yjf6x2_a0a6a12_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5814105446971274234" fileName="NodeGroupChange.java" startLine="149" startPosition="25" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4972886494893364937" fileName="NodeGroupChange.java" startLine="31" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeGroupChange#(Ljetbrains/mps/vcs/diff/ChangeSet;Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;IIII)V" />
+    <nodeInfo nodeId="5814105446971274259" fileName="NodeGroupChange.java" startLine="172" startPosition="27" endLine="181" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="959738663751379531" fileName="NodeGroupChange.java" startLine="131" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="959738663751366448" fileName="NodeGroupChange.java" startLine="119" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
+    <nodeInfo nodeId="5814105446971274194" fileName="NodeGroupChange.java" startLine="171" startPosition="5" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="959738663751511095" fileName="NodeGroupChange.java" startLine="67" startPosition="25" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="959738663751510258" fileName="NodeGroupChange.java" startLine="67" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="prepare#()V" />
+    <nodeInfo nodeId="3396946986144293792" fileName="NodeGroupChange.java" startLine="84" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/vcs/diff/changes/NodeCopier;)V" />
+    <nodeInfo nodeId="5814105446971274098" fileName="NodeGroupChange.java" startLine="147" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Z)Ljava/lang/String;" />
+    <scopeInfo nodeId="4972886494893364968" fileName="NodeGroupChange.java" startLine="42" startPosition="36" endLine="43" endPosition="26" />
+    <scopeInfo nodeId="4972886494893364974" fileName="NodeGroupChange.java" startLine="47" startPosition="27" endLine="48" endPosition="18" />
+    <scopeInfo nodeId="959738663751379640" fileName="NodeGroupChange.java" startLine="51" startPosition="25" endLine="52" endPosition="19" />
+    <scopeInfo nodeId="959738663751379646" fileName="NodeGroupChange.java" startLine="55" startPosition="23" endLine="56" endPosition="17" />
+    <scopeInfo nodeId="959738663751379652" fileName="NodeGroupChange.java" startLine="59" startPosition="29" endLine="60" endPosition="23" />
+    <scopeInfo nodeId="959738663751379658" fileName="NodeGroupChange.java" startLine="63" startPosition="31" endLine="64" endPosition="25" />
+    <scopeInfo nodeId="959738663751511130" fileName="NodeGroupChange.java" startLine="74" startPosition="45" endLine="75" endPosition="93" />
+    <scopeInfo nodeId="959738663751511228" fileName="NodeGroupChange.java" startLine="89" startPosition="37" endLine="90" endPosition="35" />
+    <scopeInfo nodeId="3396946986144293876" fileName="NodeGroupChange.java" startLine="98" startPosition="55" endLine="99" endPosition="92" />
+    <scopeInfo nodeId="3396946986144294031" fileName="NodeGroupChange.java" startLine="108" startPosition="76" endLine="109" endPosition="67" />
+    <scopeInfo nodeId="4453118635377437324" fileName="NodeGroupChange.java" startLine="115" startPosition="30" endLine="116" endPosition="96" />
+    <scopeInfo nodeId="959738663751366460" fileName="NodeGroupChange.java" startLine="122" startPosition="27" endLine="123" endPosition="28" />
+    <scopeInfo nodeId="959738663751366475" fileName="NodeGroupChange.java" startLine="125" startPosition="39" endLine="126" endPosition="31" />
+    <scopeInfo nodeId="959738663751379544" fileName="NodeGroupChange.java" startLine="133" startPosition="27" endLine="134" endPosition="152" />
+    <scopeInfo nodeId="959738663751379551" fileName="NodeGroupChange.java" startLine="136" startPosition="39" endLine="137" endPosition="113" />
+    <scopeInfo nodeId="5786223774279741793" fileName="NodeGroupChange.java" startLine="143" startPosition="34" endLine="144" endPosition="32" />
+    <scopeInfo nodeId="5814105446971274128" fileName="NodeGroupChange.java" startLine="153" startPosition="39" endLine="154" endPosition="37" />
+    <scopeInfo nodeId="5814105446971274171" fileName="NodeGroupChange.java" startLine="167" startPosition="87" endLine="168" endPosition="27" />
+    <scopeInfo nodeId="5814105446971274184" fileName="NodeGroupChange.java" startLine="169" startPosition="34" endLine="170" endPosition="39" />
+    <scopeInfo nodeId="5814105446971274265" fileName="NodeGroupChange.java" startLine="179" startPosition="14" endLine="180" endPosition="51" />
+    <scopeInfo nodeId="5814105446971274220" fileName="NodeGroupChange.java" startLine="183" startPosition="39" endLine="184" endPosition="51" />
+    <scopeInfo nodeId="5814105446971274285" fileName="NodeGroupChange.java" startLine="186" startPosition="18" endLine="187" endPosition="82" />
+    <scopeInfo nodeId="5814105446971274290" fileName="NodeGroupChange.java" startLine="188" startPosition="12" endLine="189" endPosition="70" />
+    <scopeInfo nodeId="959738663751379691" fileName="NodeGroupChange.java" startLine="195" startPosition="48" endLine="196" endPosition="138" />
+    <scopeInfo nodeId="959738663751379637" fileName="NodeGroupChange.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="959738663751379643" fileName="NodeGroupChange.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="959738663751379649" fileName="NodeGroupChange.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="959738663751379655" fileName="NodeGroupChange.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="959738663751511129" fileName="NodeGroupChange.java" startLine="73" startPosition="78" endLine="76" endPosition="7">
       <varInfo nodeId="959738663751511141" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="959738663751511227" fileName="NodeGroupChange.java" startLine="88" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="959738663751511227" fileName="NodeGroupChange.java" startLine="89" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="959738663751511227" varName="id" />
     </scopeInfo>
-    <scopeInfo nodeId="3396946986144293875" fileName="NodeGroupChange.java" startLine="96" startPosition="134" endLine="99" endPosition="5">
+    <scopeInfo nodeId="3396946986144293875" fileName="NodeGroupChange.java" startLine="97" startPosition="134" endLine="100" endPosition="5">
       <varInfo nodeId="3396946986144293878" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="3396946986144294028" fileName="NodeGroupChange.java" startLine="106" startPosition="49" endLine="109" endPosition="5">
+    <scopeInfo nodeId="3396946986144294028" fileName="NodeGroupChange.java" startLine="107" startPosition="49" endLine="110" endPosition="5">
       <varInfo nodeId="3396946986144294029" varName="newNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5814105446971274127" fileName="NodeGroupChange.java" startLine="152" startPosition="0" endLine="155" endPosition="0">
+    <scopeInfo nodeId="5814105446971274127" fileName="NodeGroupChange.java" startLine="153" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="5814105446971274127" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="4972886494893364965" fileName="NodeGroupChange.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="4972886494893364971" fileName="NodeGroupChange.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="5786223774279741790" fileName="NodeGroupChange.java" startLine="141" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="8272111966352338799" fileName="NodeGroupChange.java" startLine="198" startPosition="55" endLine="202" endPosition="6" />
-    <scopeInfo nodeId="5814105446971274177" fileName="NodeGroupChange.java" startLine="205" startPosition="64" endLine="209" endPosition="6" />
-    <scopeInfo nodeId="5814105446971274180" fileName="NodeGroupChange.java" startLine="212" startPosition="66" endLine="216" endPosition="6" />
-    <scopeInfo nodeId="4453118635377437320" fileName="NodeGroupChange.java" startLine="112" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="5814105446971274260" fileName="NodeGroupChange.java" startLine="172" startPosition="20" endLine="177" endPosition="77">
+    <scopeInfo nodeId="4972886494893364965" fileName="NodeGroupChange.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="4972886494893364971" fileName="NodeGroupChange.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="5786223774279741790" fileName="NodeGroupChange.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="8272111966352338799" fileName="NodeGroupChange.java" startLine="199" startPosition="55" endLine="203" endPosition="6" />
+    <scopeInfo nodeId="5814105446971274177" fileName="NodeGroupChange.java" startLine="206" startPosition="64" endLine="210" endPosition="6" />
+    <scopeInfo nodeId="5814105446971274180" fileName="NodeGroupChange.java" startLine="213" startPosition="66" endLine="217" endPosition="6" />
+    <scopeInfo nodeId="4453118635377437320" fileName="NodeGroupChange.java" startLine="113" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="5814105446971274260" fileName="NodeGroupChange.java" startLine="173" startPosition="20" endLine="178" endPosition="77">
       <varInfo nodeId="5814105446971274200" varName="addedOrInserted" />
     </scopeInfo>
-    <scopeInfo nodeId="959738663751379688" fileName="NodeGroupChange.java" startLine="192" startPosition="0" endLine="197" endPosition="0" />
-    <scopeInfo nodeId="5814105446971274235" fileName="NodeGroupChange.java" startLine="149" startPosition="18" endLine="155" endPosition="16" />
-    <scopeInfo nodeId="8272111966352338796" fileName="NodeGroupChange.java" startLine="198" startPosition="0" endLine="204" endPosition="0">
+    <scopeInfo nodeId="959738663751379688" fileName="NodeGroupChange.java" startLine="193" startPosition="0" endLine="198" endPosition="0" />
+    <scopeInfo nodeId="5814105446971274235" fileName="NodeGroupChange.java" startLine="150" startPosition="18" endLine="156" endPosition="16" />
+    <scopeInfo nodeId="8272111966352338796" fileName="NodeGroupChange.java" startLine="199" startPosition="0" endLine="205" endPosition="0">
       <varInfo nodeId="8272111966352338802" varName="begin" />
       <varInfo nodeId="8272111966352338804" varName="end" />
     </scopeInfo>
-    <scopeInfo nodeId="5814105446971274177" fileName="NodeGroupChange.java" startLine="205" startPosition="0" endLine="211" endPosition="0">
+    <scopeInfo nodeId="5814105446971274177" fileName="NodeGroupChange.java" startLine="206" startPosition="0" endLine="212" endPosition="0">
       <varInfo nodeId="5814105446971274177" varName="a" />
       <varInfo nodeId="5814105446971274177" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="5814105446971274180" fileName="NodeGroupChange.java" startLine="212" startPosition="0" endLine="218" endPosition="0">
+    <scopeInfo nodeId="5814105446971274180" fileName="NodeGroupChange.java" startLine="213" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="5814105446971274180" varName="a" />
       <varInfo nodeId="5814105446971274180" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4972886494893364941" fileName="NodeGroupChange.java" startLine="30" startPosition="161" endLine="37" endPosition="28" />
-    <scopeInfo nodeId="959738663751366451" fileName="NodeGroupChange.java" startLine="120" startPosition="31" endLine="127" endPosition="29" />
-    <scopeInfo nodeId="959738663751379534" fileName="NodeGroupChange.java" startLine="131" startPosition="28" endLine="138" endPosition="165" />
-    <scopeInfo nodeId="4972886494893364937" fileName="NodeGroupChange.java" startLine="30" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="4972886494893364941" fileName="NodeGroupChange.java" startLine="31" startPosition="161" endLine="38" endPosition="28" />
+    <scopeInfo nodeId="959738663751366451" fileName="NodeGroupChange.java" startLine="121" startPosition="31" endLine="128" endPosition="29" />
+    <scopeInfo nodeId="959738663751379534" fileName="NodeGroupChange.java" startLine="132" startPosition="28" endLine="139" endPosition="165" />
+    <scopeInfo nodeId="4972886494893364937" fileName="NodeGroupChange.java" startLine="31" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="959738663751379663" varName="begin" />
       <varInfo nodeId="4972886494893364943" varName="changeSet" />
       <varInfo nodeId="959738663751379665" varName="end" />
@@ -628,37 +628,37 @@
       <varInfo nodeId="959738663751379669" varName="resultEnd" />
       <varInfo nodeId="4972886494893364956" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="5814105446971274198" fileName="NodeGroupChange.java" startLine="171" startPosition="27" endLine="180" endPosition="7" />
-    <scopeInfo nodeId="959738663751379531" fileName="NodeGroupChange.java" startLine="130" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="959738663751366448" fileName="NodeGroupChange.java" startLine="118" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="959738663751511099" fileName="NodeGroupChange.java" startLine="67" startPosition="40" endLine="79" endPosition="8">
+    <scopeInfo nodeId="5814105446971274198" fileName="NodeGroupChange.java" startLine="172" startPosition="27" endLine="181" endPosition="7" />
+    <scopeInfo nodeId="959738663751379531" fileName="NodeGroupChange.java" startLine="131" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="959738663751366448" fileName="NodeGroupChange.java" startLine="119" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="959738663751511099" fileName="NodeGroupChange.java" startLine="68" startPosition="40" endLine="80" endPosition="8">
       <varInfo nodeId="959738663751511116" varName="children" />
       <varInfo nodeId="959738663751511101" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="959738663751510260" fileName="NodeGroupChange.java" startLine="66" startPosition="25" endLine="80" endPosition="5" />
-    <scopeInfo nodeId="959738663751510258" fileName="NodeGroupChange.java" startLine="66" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="3396946986144293798" fileName="NodeGroupChange.java" startLine="84" startPosition="82" endLine="109" endPosition="5">
+    <scopeInfo nodeId="959738663751510260" fileName="NodeGroupChange.java" startLine="67" startPosition="25" endLine="81" endPosition="5" />
+    <scopeInfo nodeId="959738663751510258" fileName="NodeGroupChange.java" startLine="67" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="3396946986144293798" fileName="NodeGroupChange.java" startLine="85" startPosition="82" endLine="110" endPosition="5">
       <varInfo nodeId="3396946986144293803" varName="anchor" />
       <varInfo nodeId="3396946986144293967" varName="newChildren" />
       <varInfo nodeId="3396946986144293915" varName="nodesToAdd" />
       <varInfo nodeId="3396946986144293809" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="3396946986144293792" fileName="NodeGroupChange.java" startLine="83" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="3396946986144293792" fileName="NodeGroupChange.java" startLine="84" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="3396946986144293795" varName="model" />
       <varInfo nodeId="5746253950163662095" varName="nodeCopier" />
     </scopeInfo>
-    <scopeInfo nodeId="5814105446971274101" fileName="NodeGroupChange.java" startLine="146" startPosition="49" endLine="189" endPosition="5">
+    <scopeInfo nodeId="5814105446971274101" fileName="NodeGroupChange.java" startLine="147" startPosition="49" endLine="190" endPosition="5">
       <varInfo nodeId="5814105446971274103" varName="newChildren" />
       <varInfo nodeId="5814105446971274117" varName="newIds" />
       <varInfo nodeId="5814105446971274156" varName="newStuff" />
       <varInfo nodeId="5814105446971274141" varName="oldStuff" />
     </scopeInfo>
-    <scopeInfo nodeId="5814105446971274098" fileName="NodeGroupChange.java" startLine="146" startPosition="0" endLine="191" endPosition="0">
+    <scopeInfo nodeId="5814105446971274098" fileName="NodeGroupChange.java" startLine="147" startPosition="0" endLine="192" endPosition="0">
       <varInfo nodeId="5814105446971274231" varName="verbose" />
     </scopeInfo>
-    <unitInfo nodeId="959738663751511227" fileName="NodeGroupChange.java" startLine="87" startPosition="62" endLine="91" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange$1" />
-    <unitInfo nodeId="5814105446971274127" fileName="NodeGroupChange.java" startLine="151" startPosition="113" endLine="155" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange$2" />
-    <unitInfo nodeId="4972886494893223485" fileName="NodeGroupChange.java" startLine="20" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
+    <unitInfo nodeId="959738663751511227" fileName="NodeGroupChange.java" startLine="88" startPosition="62" endLine="92" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange$1" />
+    <unitInfo nodeId="5814105446971274127" fileName="NodeGroupChange.java" startLine="152" startPosition="113" endLine="156" endPosition="7" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange$2" />
+    <unitInfo nodeId="4972886494893223485" fileName="NodeGroupChange.java" startLine="21" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
   </root>
   <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/5505786199853653616">
     <nodeInfo nodeId="5505786199853656967" fileName="DoNotGenerateOptionChange.java" startLine="12" startPosition="66" endLine="13" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

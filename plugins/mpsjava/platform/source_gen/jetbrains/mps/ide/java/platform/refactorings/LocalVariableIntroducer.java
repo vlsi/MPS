@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.Point;
 
@@ -76,7 +76,7 @@ public class LocalVariableIntroducer {
         EditorCell_Label ecl = ((EditorCell_Label) cell);
         myEditorComponent.getSelectionManager().setSelection(ecl, 0, 0, ecl.getText().length());
       } else {
-        myEditorComponent.getSelectionManager().setSelection((jetbrains.mps.nodeEditor.cells.EditorCell) cell);
+        myEditorComponent.getSelectionManager().setSelection(cell);
       }
     }
   }

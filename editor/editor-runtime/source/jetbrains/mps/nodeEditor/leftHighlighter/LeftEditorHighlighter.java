@@ -40,8 +40,8 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.apache.log4j.LogManager;
@@ -364,7 +364,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
   public void highlight(EditorCell cell, EditorCell cell2, Color c) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.unHighlight() should be called in eventDispatchThread";
-    assert cell.getEditor() == myEditorComponent : "cell must be from my editor";
+    assert cell.getEditorComponent() == myEditorComponent : "cell must be from my editor";
     myBracketsPainter.addBracket(cell, cell2, c);
   }
 

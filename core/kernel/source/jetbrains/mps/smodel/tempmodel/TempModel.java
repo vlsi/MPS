@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.tempmodel;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.SModelId.RegularSModelId;
+import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;

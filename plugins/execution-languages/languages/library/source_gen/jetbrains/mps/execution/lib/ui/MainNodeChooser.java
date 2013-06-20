@@ -16,7 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;

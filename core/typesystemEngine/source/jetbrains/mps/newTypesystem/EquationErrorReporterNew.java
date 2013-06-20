@@ -54,6 +54,7 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
       info != null ? info.getRuleId() : null);
   }
 
+  @Override
   public String reportError() {
     SNode lRepresentative = myLeft;
     if (lRepresentative != null && TypesUtil.isVariable(lRepresentative)) {
@@ -67,14 +68,17 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
       myBetween + PresentationManager.toString(rRepresentative) + myAfter;
   }
 
+  @Override
   public MessageStatus getMessageStatus() {
     return MessageStatus.ERROR;
   }
 
+  @Override
   public MessageTarget getErrorTarget() {
     return new NodeMessageTarget();
   }
 
+  @Override
   public SNode getSNode() {
     return mySNodePointer.resolve(MPSModuleRepository.getInstance());
   }

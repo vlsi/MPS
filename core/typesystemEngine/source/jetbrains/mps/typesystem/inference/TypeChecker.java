@@ -77,6 +77,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     mySubtypingManagerTracer = new SubtypingManager_Tracer(this);
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -95,6 +96,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     });
   }
 
+  @Override
   public void dispose() {
     myLanguageRegistry.removeRegistryListener(this);
     INSTANCE = null;

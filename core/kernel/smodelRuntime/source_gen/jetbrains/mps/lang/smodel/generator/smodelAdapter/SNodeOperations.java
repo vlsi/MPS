@@ -331,11 +331,38 @@ public class SNodeOperations {
   }
 
   public static SNode getNextSibling(SNode node) {
-    return node.getNextSibling();
+    SNode p = node.getParent();
+    if (p == null) {
+      return null;
+    }
+    SNode current = node;
+    String currentRole = node.getRoleInParent();
+    assert currentRole != null : "role must be not null";
+    while (current.getNextSibling() != null) {
+      current = current.getNextSibling();
+      if (current.getRoleInParent().equals(currentRole)) {
+        return current;
+      }
+    }
+    return null;
   }
 
   public static SNode getPrevSibling(SNode node) {
-    return node.getPrevSibling();
+    SNode p = node.getParent();
+    if (p == null) {
+      return null;
+    }
+    SNode current = node;
+    String currentRole = node.getRoleInParent();
+    assert currentRole != null : "role must be not null";
+    SNode fc = p.getFirstChild();
+    while (current != fc) {
+      current = current.getPrevSibling();
+      if (current.getRoleInParent().equals(currentRole)) {
+        return current;
+      }
+    }
+    return null;
   }
 
   public static List<SNode> getPrevSiblings(SNode node, boolean inclusion) {
@@ -421,7 +448,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert parent != null && role != null;
-    parent.insertChild(role, node, newChild);
+    jetbrains.mps.util.SNodeOperations.insertChild(parent, role, newChild, node);
     return newChild;
   }
 
@@ -439,7 +466,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    parent.insertChild(role, newChild, node.getPrevSibling());
+    parent.insertChildBefore(role, node, newChild);
     return newChild;
   }
 
@@ -457,7 +484,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    nodeParent.insertChild(role, siblingNode, node);
+    jetbrains.mps.util.SNodeOperations.insertChild(nodeParent, role, siblingNode, node);
     return siblingNode;
   }
 
@@ -475,7 +502,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    nodeParent.insertChild(role, siblingNode, node.getPrevSibling());
+    nodeParent.insertChildBefore(role, siblingNode, node);
     return siblingNode;
   }
 
@@ -561,7 +588,7 @@ public class SNodeOperations {
   public static SNode getConceptDeclaration(SNode node) {
     return (node == null ?
       null :
-      SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance())
+      SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance())
     );
   }
 
@@ -612,9 +639,9 @@ public class SNodeOperations {
     }
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
       if (ourCastsEnabled) {
-        throw new NodeCastException("Can't cast " + node.getConcept().getId() + " to " + castTo);
+        throw new NodeCastException("Can't cast " + node.getConcept().getQualifiedName() + " to " + castTo);
       } else {
-        LOG.warning("Can't cast " + node.getConcept().getId() + " to " + castTo);
+        LOG.warning("Can't cast " + node.getConcept().getQualifiedName() + " to " + castTo);
       }
     }
     return node;

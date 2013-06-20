@@ -32,7 +32,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
   public SNode doRefactoring() {
     this.findDuplicates();
     SNode newDeclaration;
-    if (this.myFieldInitialization == FieldInitializationPlace.FIELD) {
+    if (myFieldInitialization == FieldInitializationPlace.FIELD) {
       newDeclaration = _quotation_createNode_baxqxe_a0a0c0d(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), SNodeOperations.copyNode(this.getExpression()), this.getName());
     } else {
       newDeclaration = _quotation_createNode_baxqxe_a0a0a2a3(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), this.getName());

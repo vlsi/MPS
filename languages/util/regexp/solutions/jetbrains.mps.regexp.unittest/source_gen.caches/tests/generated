@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3b3jv8drxapwbqsy0ae2kqx2dtrju0p">
+<dependencies version="2" modelHash="-7gqiuek2ud67jqc0achqfdogc63fetg">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="3vaucuv8ijalypmac905c3i0jkfi1vt" />
-  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="dgtel9s427vm37iaz9u6ikq38xnt1eq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-ad0iherm9b3nxpu34o58rk2ookph87v" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="3ufygskomwsbyhgecoht1jp34ipmj9l" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" hash="e6rdmwcyeak8sqknzzqtckum355zxwg" />
   <dep model="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" hash="-5wdv9bpyjzuw6k6w31hjme5qyqtqtk1" />
-  <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" hash="-brwfit5n1b16eilea48i7odal0xohaf" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" hash="-6ipy94pid340zwtjgk79tk81f3vnnd0" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-6ygnwew9fsyml0umi7w20kwq5d46z7m" />
   <common hash="4b5m0nsbq8g61eoutv7sconpnfr1ikn" />
-  <source id="6799940379546332953" name="Statements_Test" hash="9cvg54gcngfjwclwimu91mh0trw68h7">
+  <source id="6799940379546332953" name="Statements_Test" hash="6bubajm5v2qz1ytr8u6o8fpwf8ktp7r">
     <dep root="6799940379546332968" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -29,7 +29,7 @@
   <source id="6799940379546332968" name="Regexps" hash="cun50jhbht3z7ift5ria2i1fcyqnu81">
     <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1353467374625228509" name="Escaping_Test" hash="-5onmcm1ly1bxatb8odzdzfmfj8ckj79">
+  <source id="1353467374625228509" name="Escaping_Test" hash="6c51l3a33byh98zueugeqszu5p51aje">
     <dep root="6799940379546332968" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -43,7 +43,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Escaping_Test.java" />
   </source>
-  <source id="6129327962763155569" name="Replace_Test" hash="-364ktf0uv8v5j1c9gch57v6lgsn4s40">
+  <source id="6129327962763155569" name="Replace_Test" hash="-cyut0afyvnetefk16o1bj6s65oxiwgm">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" />
@@ -58,7 +58,7 @@
     <file name="Replace_Test.java" />
     <file name="_Replacer_55w9mm_a0a0a0a.java" />
   </source>
-  <source id="6129327962764348634" name="Match_Test" hash="-3ftnyesp8uygsiq1cnd8jnos20kg06h">
+  <source id="6129327962764348634" name="Match_Test" hash="1c4zoufp17w8le8h2mzyit5au4zsq41">
     <dep root="6799940379546332968" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -72,7 +72,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Match_Test.java" />
   </source>
-  <source id="3796137614137404062" name="PerlReplace_Test" hash="-bewl8zy5h4kzc5lgbv57rn0qw3952n0">
+  <source id="3796137614137404062" name="PerlReplace_Test" hash="6ros8kqiv0dcytk66lkgp5xmge8oqia">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" />

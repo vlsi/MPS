@@ -80,9 +80,9 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_insertChild() throws Throwable {
+  public void test_insertChildBefore() throws Throwable {
     this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)");
-    this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_insertChild", true);
+    this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_insertChildBefore", true);
   }
 
   @Test
@@ -254,7 +254,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       this.assertMethod("public final boolean jetbrains.mps.smodel.SNode.hasProperty(java.lang.String)", listener.getResults().o1);
     }
 
-    public void test_insertChild() throws Exception {
+    public void test_insertChildBefore() throws Exception {
       this.addNodeById("8150353254540236423");
       this.addNodeById("8150353254540236549");
       this.addNodeById("4195712261513743410");
@@ -265,9 +265,9 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
       NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
 
-      sNode.insertChild("", child, null);
+      sNode.insertChildBefore("", child, null);
 
-      this.assertMethod("public void jetbrains.mps.smodel.SNode.insertChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)", listener.getResults().o1);
+      this.assertMethod("public void jetbrains.mps.smodel.SNode.insertChildBefore(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)", listener.getResults().o1);
     }
 
     public void test_putUserObject() throws Exception {

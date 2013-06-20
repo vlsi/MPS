@@ -44,7 +44,7 @@ import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -532,7 +532,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private SNode copyInputNode(SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
-    jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(inputNode.getConcept().getId());
+    jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(inputNode.getConcept().getQualifiedName());
     if (inputNode.getNodeId() != null && inputNode.getModel() != null) {
       outputNode.setId(inputNode.getNodeId());
     }

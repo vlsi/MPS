@@ -11,7 +11,7 @@
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8425555512443914486" nodeInfo="ng">
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="dvap.1236693300889" resolveInfo="VarVariableDeclaration" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="8425555512443914487" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425555512443914488" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425555512443914488" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8425555512443914489" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8425555512443914528" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8425555512443914493" nodeInfo="nn">

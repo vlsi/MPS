@@ -36,7 +36,6 @@ import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
-import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -44,10 +43,7 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
@@ -57,6 +53,7 @@ import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.util.Condition;
 
 import java.awt.Color;
@@ -501,7 +498,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       return null;
     }
     jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(concreteConceptFqName));
-    org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(node, newNode);
+    SNodeUtil.replaceWithAnother(node, newNode);
     getContext().flushEvents();
     return newNode;
   }
@@ -960,19 +957,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public boolean isUnderFolded() {
-    return getFoldedAbove() != null;
-  }
-
-  @Override
-  public EditorCell_Collection getFoldedAbove() {
-    for (EditorCell_Collection parent : IterableUtil.asIterable(parents())) {
-      if (parent.isFolded()) return parent;
-    }
-    return null;
-  }
-
-  @Override
   public EditorCell_Collection findParent(Condition<EditorCell_Collection> condition) {
     if (this instanceof EditorCell_Collection && condition.met((EditorCell_Collection) this)) {
       return (EditorCell_Collection) this;
@@ -1327,26 +1311,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   @Override
   public EditorCell getFirstChild() {
     return this;
-  }
-
-  @Override
-  public EditorCell getFirstDescendant(Condition<EditorCell> condition) {
-    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverserIterable(this, true, true)) {
-      if (condition.met((EditorCell) current)) {
-        return (EditorCell) current;
-      }
-    }
-    return null;
-  }
-
-  @Override
-  public EditorCell getLastDescendant(Condition<EditorCell> condition) {
-    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverserIterable(this, false, true)) {
-      if (condition.met((EditorCell) current)) {
-        return (EditorCell) current;
-      }
-    }
-    return null;
   }
 
   @Override

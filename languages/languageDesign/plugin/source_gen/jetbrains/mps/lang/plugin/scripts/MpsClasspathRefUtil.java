@@ -4,8 +4,8 @@ package jetbrains.mps.lang.plugin.scripts;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -28,7 +28,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
   }
 
   /*package*/ static void updateReferencesToMpsClasspath(SNode node) {
-    SModule[] modules = {MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("3f233e7f-b8a6-46d2-a57f-795d56775243")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("8865b7a8-5271-43d3-884c-6fd1d9cfdd34")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86441d7a-e194-42da-81a5-2161ec62a379")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("498d89d2-c2e9-11e2-ad49-6cf049e62fe5"))};
+    SModule[] modules = {ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)"))};
 
     SModel model = SNodeOperations.getModel(node);
     SModule module = check_xpwqv8_a0d0b(model);

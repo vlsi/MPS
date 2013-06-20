@@ -13,7 +13,7 @@
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="6594325605663831247" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="testError" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6594325605663831248" nodeInfo="in" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6594325605663831249" nodeInfo="nn">
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6594325605663831249" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp5g.CheckNodeForErrors" typeId="tp5g.1215075719096" id="6594325605663831250" nodeInfo="nn">
           <node role="nodeToCheck" roleId="tp5g.1214846370530" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="6594325605663831252" nodeInfo="nn">
             <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="6594325605663831243" resolveInfo="badDecl" />
@@ -24,7 +24,7 @@
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="6594325605663849567" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="hasType" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6594325605663849568" nodeInfo="in" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6594325605663849569" nodeInfo="nn">
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6594325605663849569" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp5g.CheckNodeForErrors" typeId="tp5g.1215075719096" id="6594325605663849571" nodeInfo="nn">
           <node role="nodeToCheck" roleId="tp5g.1214846370530" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="6594325605663849573" nodeInfo="nn">
             <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="6594325605663849562" resolveInfo="hasType" />
@@ -35,7 +35,7 @@
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="6594325605663849578" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="hasError" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6594325605663849579" nodeInfo="in" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6594325605663849580" nodeInfo="nn">
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6594325605663849580" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp5g.CheckNodeForErrors" typeId="tp5g.1215075719096" id="6594325605663849639" nodeInfo="nn">
           <node role="nodeToCheck" roleId="tp5g.1214846370530" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="6594325605663849641" nodeInfo="nn">
             <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="6594325605663849638" resolveInfo="hasError" />
@@ -46,7 +46,7 @@
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="6594325605663849744" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="hasTypeInSet" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6594325605663849745" nodeInfo="in" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6594325605663849746" nodeInfo="nn">
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6594325605663849746" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tp5g.CheckNodeForErrors" typeId="tp5g.1215075719096" id="6594325605663849748" nodeInfo="nn">
           <node role="nodeToCheck" roleId="tp5g.1214846370530" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="6594325605663849750" nodeInfo="nn">
             <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="6594325605663852574" resolveInfo="hasTypeInSet" />
@@ -62,7 +62,7 @@
         <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="6594325605663717990" nodeInfo="igu">
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6594325605663717991" nodeInfo="in" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6594325605663717992" nodeInfo="nn" />
-          <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6594325605663717993" nodeInfo="nn">
+          <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6594325605663717993" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6594325605663831238" nodeInfo="nn">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6594325605663831239" nodeInfo="nr">
                 <property name="name" nameId="tpck.1169194664001" value="i" />

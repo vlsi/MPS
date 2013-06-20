@@ -4,7 +4,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.List;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

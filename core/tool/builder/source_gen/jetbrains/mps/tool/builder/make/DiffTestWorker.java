@@ -10,8 +10,11 @@ import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.builder.MpsWorker;
 import java.io.File;
 import java.io.IOException;
-import java.util.LinkedHashMap;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.tool.environment.Environment;
+import org.apache.log4j.Logger;
 import jetbrains.mps.project.Project;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -68,7 +71,7 @@ import java.io.FileOutputStream;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.progress.ProgressMonitorBase;
-import jetbrains.mps.progress.SubProgressKind;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 public class DiffTestWorker extends GeneratorWorker {
   private final DiffTestWorker.MyMessageHandler myMessageHandler = new DiffTestWorker.MyMessageHandler();
@@ -96,13 +99,17 @@ public class DiffTestWorker extends GeneratorWorker {
   public void work() {
     myReporter.init();
 
-    GeneratorWorker.MyEnvironment environment = new GeneratorWorker.MyEnvironment();
-    Map<String, File> libraries = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
+    EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
+
     for (String jar : ListSequence.fromList(myWhatToDo.getLibraryJars())) {
-      MapSequence.fromMap(libraries).put(jar, new File(jar));
+      config = config.addLib(jar, new File(jar));
     }
-    environment.init(myWhatToDo.getMacro(), false, libraries, myWhatToDo.getLogLevel(), null);
-    setEnvironment(environment);
+    for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
+      config = config.addMacro(macro.key(), new File(macro.value()));
+    }
+
+    Environment environment = new GeneratorWorker.MyEnvironment(config);
+    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
 
     setupEnvironment();
     setGenerationProperties();
@@ -122,6 +129,7 @@ public class DiffTestWorker extends GeneratorWorker {
       error("Could not find anything to test.");
     }
 
+    environment.disposeEnvironment();
     dispose();
     showStatistic();
 

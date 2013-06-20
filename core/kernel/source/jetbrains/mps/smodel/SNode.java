@@ -312,11 +312,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public void addChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
-    assertCanChange();
-
-    SNode firstChild = firstChild();
-    final SNode anchor = firstChild == null ? null : firstChild.treePrevious();
-    insertChild(role, child, anchor);
+    insertChildBefore(role, child, null);
   }
 
   @Override
@@ -531,8 +527,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return s;
   }
 
-  @Override
-  public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
+  public void insertChildBefore(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child,
+      @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     assertCanChange();
 
     if (ourMemberAccessModifier != null) {
@@ -552,7 +548,24 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       throw new RuntimeException("Trying to create a cyclic tree");
     }
 
-    children_insertAfter(((SNode) anchor), schild);
+    if (anchor != null) {
+      if (anchor.getParent() != this) {
+        throw new RuntimeException(
+            "anchor is not a child of this node" + " | " +
+                "this: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this) + " | " +
+                "anchor: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(anchor)
+        );
+      }
+//      if (!role.equals(anchor.getRoleInParent())){
+//        throw new RuntimeException(
+//            "anchor has a different role" + " | " +
+//                "role: " + role + " | " +
+//                "anchor role: " + anchor.getRoleInParent()
+//        );
+//      }
+    }
+
+    children_insertBefore(((SNode) anchor), schild);
     schild.setRoleInParent(role);
 
     //if child is in unregistered nodes, add this one too to track undo for it
@@ -701,48 +714,40 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
+  public org.jetbrains.mps.openapi.model.SNode getFirstChild() {
+    nodeRead();
+    fireNodeReadAccess();
+    return firstChild();
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SNode getLastChild() {
+    nodeRead();
+    fireNodeReadAccess();
+    return firstChild().treePrevious();
+  }
+
+  @Override
   public SNode getPrevSibling() {
     nodeRead();
+    fireNodeReadAccess();
 
     SNode p = getParent();
     if (p == null) return null;
 
-    fireNodeReadAccess();
-
-    SNode curent = this;
-    String currentRole = getRoleInParent();
-    assert currentRole != null : "role must be not null";
-
-    SNode fc = p.firstChildInRole(currentRole);
-    while (curent != fc) {
-      curent = curent.treePrevious();
-      if (curent.getRoleInParent().equals(currentRole)) return curent;
-    }
-
-    return null;
+    SNode tp = treePrevious();
+    return tp.next == null ? null : tp;
   }
 
   @Override
   public SNode getNextSibling() {
     nodeRead();
+    fireNodeReadAccess();
 
     SNode p = getParent();
     if (p == null) return null;
 
-    fireNodeReadAccess();
-
-    SNode current = this;
-    String currentRole = getRoleInParent();
-    assert currentRole != null : "role must be not null";
-
-    // to ensure that role is loaded
-    p.firstChildInRole(currentRole);
-    while (current.treeNext() != null) {
-      current = current.treeNext();
-      if (current.getRoleInParent().equals(currentRole)) return current;
-    }
-
-    return null;
+    return treeNext();
   }
 
   @Override
@@ -1210,14 +1215,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   protected SNode treePrevious() {
-    if (prev == null) return null;
     if (myRepository != null && prev.myRepository == null) {
       prev.attach(myRepository);
     }
     return prev;
   }
 
-  protected SNode treeNext() {
+  public SNode treeNext() {
     if (next == null) return null;
     if (myRepository != null && next.myRepository == null) {
       next.attach(myRepository);
@@ -1229,32 +1233,40 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return parent;
   }
 
-  protected void children_insertAfter(SNode anchor, @NotNull SNode node) {
+  protected void children_insertBefore(SNode anchor, @NotNull SNode node) {
     //be sure that getFirstChild is called before any access to myFirstChild
     SNode firstChild = firstChild();
-    if (anchor == null) {
-      if (firstChild != null) {
-        node.prev = firstChild.prev;
-        firstChild.prev = node;
-      } else {
-        node.prev = node;
-      }
-      node.next = firstChild;
-      first = node;
-    } else {
-      node.prev = anchor;
-      node.next = anchor.next;
-      if (anchor.next == null) {
-        firstChild.prev = node;
-      } else {
-        anchor.next.prev = node;
-      }
-      anchor.next = node;
-    }
+
     if (myRepository != null) {
       node.attach(myRepository);
     }
     node.parent = this;
+
+    if (firstChild == null) {
+      assert anchor == null;
+      first = node;
+      node.next = null;
+      node.prev = node;
+      return;
+    }
+
+    if (anchor == null) {
+      SNode lastChild = firstChild.prev;
+      node.next = null;
+      node.prev = lastChild;
+      firstChild.prev = node;
+      lastChild.next = node;
+      return;
+    }
+
+    node.next = anchor;
+    node.prev = anchor.prev;
+    if (anchor != firstChild) {
+      anchor.prev.next = node;
+    } else {
+      first = node;
+    }
+    anchor.prev = node;
   }
 
   protected void children_remove(@NotNull SNode node) {
@@ -1380,7 +1392,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @Deprecated in 3.0
    */
   public boolean isRoot() {
-    return getModel() != null && getParent()==null;
+    return getModel() != null && getParent() == null;
   }
 
   @Deprecated
@@ -1630,10 +1642,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    */
   public void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore) {
     if (insertBefore) {
-      final SNode anchor = firstChild() == anchorChild ? null : anchorChild.treePrevious();
-      insertChild(role, child, anchor);
+      insertChildBefore(role, child, anchorChild);
     } else {
-      insertChild(role, child, anchorChild);
+      jetbrains.mps.util.SNodeOperations.insertChild(this, role, child, anchorChild);
     }
   }
 
@@ -1930,7 +1941,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @Deprecated in 3.0
    */
   public void insertChild(final SNode anchor, String role, final SNode child) {
-    insertChild(role, child, anchor);
+    jetbrains.mps.util.SNodeOperations.insertChild(this, role, child, anchor);
   }
 
   @Deprecated
@@ -1970,7 +1981,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assert oldChildRole != null;
     SNode prevChild = oldChild;
     for (SNode newChild : newChildren) {
-      insertChild(oldChildRole, newChild, prevChild);
+      jetbrains.mps.util.SNodeOperations.insertChild(this, oldChildRole, newChild, prevChild);
       prevChild = newChild;
     }
     removeChild(oldChild);

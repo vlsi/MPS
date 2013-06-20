@@ -23,7 +23,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;

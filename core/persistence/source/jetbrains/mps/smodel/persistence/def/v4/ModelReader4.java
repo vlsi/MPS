@@ -71,7 +71,7 @@ public class ModelReader4 implements IModelReader {
     for (Object language : languages) {
       Element element = (Element) language;
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addLanguage(jetbrains.mps.project.structure.modules.ModuleReference.fromString(languageNamespace));
+      model.addLanguage(PersistenceFacade.getInstance().createModuleReference(languageNamespace));
       List<Element> aspectElements = element.getChildren(ModelPersistence.LANGUAGE_ASPECT);
 
       //aspect models versions
@@ -86,7 +86,7 @@ public class ModelReader4 implements IModelReader {
     for (Object languageEOG : languagesEOG) {
       Element element = (Element) languageEOG;
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addEngagedOnGenerationLanguage(jetbrains.mps.project.structure.modules.ModuleReference.fromString(languageNamespace));
+      model.addEngagedOnGenerationLanguage(PersistenceFacade.getInstance().createModuleReference(languageNamespace));
     }
 
     //devkits
@@ -94,7 +94,7 @@ public class ModelReader4 implements IModelReader {
     for (Object devkit : devkits) {
       Element element = (Element) devkit;
       String devkitNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addDevKit(jetbrains.mps.project.structure.modules.ModuleReference.fromString(devkitNamespace));
+      model.addDevKit(PersistenceFacade.getInstance().createModuleReference(devkitNamespace));
     }
 
     // imports

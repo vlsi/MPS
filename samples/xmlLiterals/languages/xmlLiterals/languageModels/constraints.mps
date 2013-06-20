@@ -12,7 +12,7 @@
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="9152904044274469613" nodeInfo="ng">
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="v5hn.9152904044274469601" resolveInfo="TextMacro" />
     <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="9152904044274469614" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="9152904044274469615" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="9152904044274469615" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9152904044274484469" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9152904044274484482" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9152904044274484471" nodeInfo="nn">
@@ -35,7 +35,7 @@
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="9152904044274518160" nodeInfo="ng">
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="v5hn.9152904044274518122" resolveInfo="ElementMacro" />
     <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="9152904044274518161" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="9152904044274518162" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="9152904044274518162" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9152904044274518163" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9152904044274518164" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9152904044274518165" nodeInfo="nn">

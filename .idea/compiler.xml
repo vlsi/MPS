@@ -270,6 +270,10 @@
       <directory url="file://$PROJECT_DIR$/languages/util/uiLanguage/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/uiLanguage/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/uiLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/console/lang/base/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/console/lang/base/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/console/lang/commands/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/console/lang/commands/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/runtime/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/runtime/test_gen" includeSubdirectories="true" />
@@ -566,6 +570,8 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testMake/solutions/jetbrains.mps.testModels/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testMake/solutions/jetbrains.mps.testModels/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testMoveElements/languages/testMoveElements/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRead/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRead/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/testRefactoring/source_gen" includeSubdirectories="true" />

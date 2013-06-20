@@ -16,16 +16,11 @@
 package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import org.apache.log4j.Logger;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class DescriptorUtils {
 
@@ -83,23 +78,5 @@ public class DescriptorUtils {
   public static <T> T getObjectByClassNameForLanguageNamespace(String className, Class<T> castTo, String languageNamespace, boolean avoidLogErrors) {
     return getObjectByClassNameForLanguage(className, castTo, ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class),
         avoidLogErrors);
-  }
-
-  @Nullable
-  public static Object getObjectByClassNameForConcept(String className, String conceptFqName, boolean avoidLogErrors) {
-    return getObjectByClassNameForLanguageNamespace(className, NameUtil.namespaceFromConceptFQName(conceptFqName), avoidLogErrors);
-  }
-
-  public static List<String> getLanguageConcepts(Language language) {
-    List<String> result = new ArrayList<String>();
-
-    for (SNode node : new NodesIterable(LanguageAspect.STRUCTURE.get(language))) {
-      if ("jetbrains.mps.lang.structure.structure.ConceptDeclaration".equals(node.getConcept().getId()) ||
-          "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration".equals(node.getConcept().getId())) {
-        result.add(NameUtil.nodeFQName(node));
-      }
-    }
-
-    return result;
   }
 }

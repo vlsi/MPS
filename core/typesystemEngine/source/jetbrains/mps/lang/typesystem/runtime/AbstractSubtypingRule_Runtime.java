@@ -39,6 +39,7 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
     return null;
   }
 
+  @Override
   public boolean isWeak() {
     return false;
   }

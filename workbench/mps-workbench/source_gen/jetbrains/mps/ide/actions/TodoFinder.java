@@ -5,7 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
@@ -21,7 +21,7 @@ public class TodoFinder implements IFinder {
 
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-    Set<SNode> nodes = FindUsagesFacade.getInstance().findInstances(query.getScope(), Collections.singleton(SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.structure.TextCommentPart")), false, new EmptyProgressMonitor());
+    Set<SNode> nodes = (Set<SNode>) FindUsagesFacade.getInstance().findInstances(query.getScope(), Collections.singleton(SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.structure.TextCommentPart")), false, new EmptyProgressMonitor());
     SearchResults<SNode> results = new SearchResults<SNode>();
     for (SNode node : nodes) {
       String text = SPropertyOperations.getString(node, "text");

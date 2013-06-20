@@ -20,7 +20,7 @@ import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.JComponent;

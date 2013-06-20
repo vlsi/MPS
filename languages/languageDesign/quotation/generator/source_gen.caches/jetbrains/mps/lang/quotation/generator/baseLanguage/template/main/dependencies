@@ -116,7 +116,6 @@
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateVarContext" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -145,7 +144,6 @@
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -175,7 +173,6 @@
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateVarContext" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -206,7 +203,6 @@
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateVarContext" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

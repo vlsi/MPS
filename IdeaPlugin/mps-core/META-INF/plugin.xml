@@ -102,6 +102,7 @@
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootContributor" beanClass="jetbrains.mps.idea.core.project.ModelRootContributorEP"/>
     <extensionPoint qualifiedName="com.intellij.mps.renameRefactoringContributor" beanClass="jetbrains.mps.idea.core.refactoring.RenameRefactoringContributorEP"/>
+    <extensionPoint qualifiedName="com.intellij.mps.moveRefactoringContributor" beanClass="jetbrains.mps.idea.core.refactoring.MoveRefactoringContributorEP"/>
     <extensionPoint qualifiedName="com.intellij.mps.psiFactory" interface="jetbrains.mps.idea.core.psi.MPSPsiNodeFactory"/>
     <extensionPoint qualifiedName="com.intellij.mps.psiSourceFinder" interface="jetbrains.mps.idea.core.psi.MPS2PsiMapper"/>
   </extensionPoints>
@@ -112,13 +113,15 @@
     <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFrameworkSupportProvider"/>
     <mps.LanguageLibrary dir="/languages"/>
     <mps.LanguageLibrary dir="/lib"/>
+    <mps.renameRefactoringContributor className="jetbrains.mps.idea.core.refactoring.DefaultRenameContributor" id="mps-core-rename" order="last"/>
+    <mps.moveRefactoringContributor className="jetbrains.mps.idea.core.refactoring.DefaultMoveContributor" id="mps-core-move" order="last"/>
 
-    <!--<customUsageSearcher implementation="jetbrains.mps.idea.core.usages.MPSUsageSearcher"/>-->
     <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
     <usageGroupingRuleProvider implementation="jetbrains.mps.idea.core.usages.rules.MPSUsageGroupingRuleProviderImpl" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <renameHandler implementation="jetbrains.mps.idea.core.refactoring.ModelRenameHandler"/>
     <renameHandler implementation="jetbrains.mps.idea.core.refactoring.MPSRenameRefactoringHandler"/>
+    <refactoring.moveHandler implementation="jetbrains.mps.idea.core.refactoring.MPSMoveHandlerDelegate" order="first"/> <!-- isn't first a bit too much -->
     <moduleRendererFactory implementation="jetbrains.mps.idea.core.navigation.MpsRendererFactory" order="first"/>
     <compileServer.plugin classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar"/>
     <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
@@ -150,12 +153,6 @@
             class="jetbrains.mps.idea.core.actions.UnmarkModelRootAction">
       <add-to-group group-id="MarkRootGroup"/>
     </action>
-    <!--<action id="jetbrains.mps.idea.core.actions.OpenModelPropertiesAction"
-            class="jetbrains.mps.idea.core.actions.OpenModelPropertiesAction">
-      <add-to-group group-id="ProjectViewPopupMenuSettingsGroup" relative-to-action="MarkRootGroup"
-                    anchor="after"/>
-      <keyboard-shortcut first-keystroke="alt ENTER" keymap="$default"/>
-    </action>-->
     <action id="jetbrains.mps.idea.core.actions.AddMissingDependencyAction"
             class="jetbrains.mps.idea.core.actions.AddMissingDependencyAction">
       <add-to-group group-id="jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup"/>

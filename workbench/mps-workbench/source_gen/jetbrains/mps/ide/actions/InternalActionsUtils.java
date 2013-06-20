@@ -136,7 +136,7 @@ public class InternalActionsUtils {
   public static void showUsagesViewForNodes(Project project, final List<SNodeReference> nodes) {
     IResultProvider provider = FindUtils.makeProvider(new IFinder() {
       @Override
-      public SearchResults find(SearchQuery query, jetbrains.mps.progress.ProgressMonitor progress) {
+      public SearchResults find(SearchQuery query, ProgressMonitor progress) {
         SearchResults<SNode> results = new SearchResults<SNode>();
         for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodeReference, SNode>() {
           public SNode select(SNodeReference it) {

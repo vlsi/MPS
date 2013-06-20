@@ -35,17 +35,21 @@ public class AddRemarkOperation extends AbstractOperation {
     myString = "";
   }
 
+  @Override
   public String getPresentation() {
     return myString;
   }
 
+  @Override
   public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
   }
 
+  @Override
   public void doRedo(State state) {
 
   }
 
+  @Override
   public void execute(State state) {
     if (myAction != null) {
       myAction.run();
@@ -53,6 +57,7 @@ public class AddRemarkOperation extends AbstractOperation {
     }
   }
 
+  @Override
   public boolean hasEffect() {
     return false;
   }

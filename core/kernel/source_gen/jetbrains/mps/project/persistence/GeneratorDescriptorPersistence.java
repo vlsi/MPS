@@ -9,7 +9,7 @@ import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import org.apache.log4j.Priority;
@@ -68,7 +68,7 @@ public class GeneratorDescriptorPersistence {
 
         // "depends on" generators 
         for (Element refGenerator : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(generatorElement, "external-templates"), "generator"))) {
-          result_wk2vdq_a0a0a0b.getDepGenerators().add(ModuleReference.fromString(refGenerator.getAttributeValue("generatorUID")));
+          result_wk2vdq_a0a0a0b.getDepGenerators().add(PersistenceFacade.getInstance().createModuleReference(refGenerator.getAttributeValue("generatorUID")));
         }
 
         for (Element ruleElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(generatorElement, "mapping-priorities"), "mapping-priority-rule"))) {
@@ -196,7 +196,7 @@ public class GeneratorDescriptorPersistence {
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
           final MappingConfig_ExternalRef result_wk2vdq_a0a3a0a0e = new MappingConfig_ExternalRef();
-          final SModuleReference result_wk2vdq_a0a0a3a0a0e = ModuleReference.fromString(genUID);
+          final SModuleReference result_wk2vdq_a0a0a3a0a0e = PersistenceFacade.getInstance().createModuleReference(genUID);
           result_wk2vdq_a0a3a0a0e.setGenerator(result_wk2vdq_a0a0a3a0a0e);
           final MappingConfig_AbstractRef result_wk2vdq_a1a0a3a0a0e = local;
           result_wk2vdq_a0a3a0a0e.setMappingConfig(result_wk2vdq_a1a0a3a0a0e);
@@ -216,7 +216,7 @@ public class GeneratorDescriptorPersistence {
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
           final MappingConfig_ExternalRef result_wk2vdq_a0a5a1a0e = new MappingConfig_ExternalRef();
-          final SModuleReference result_wk2vdq_a0a0a5a1a0e = ModuleReference.fromString(genUID);
+          final SModuleReference result_wk2vdq_a0a0a5a1a0e = PersistenceFacade.getInstance().createModuleReference(genUID);
           result_wk2vdq_a0a5a1a0e.setGenerator(result_wk2vdq_a0a0a5a1a0e);
           final MappingConfig_AbstractRef result_wk2vdq_a1a0a5a1a0e = mappingSet;
           result_wk2vdq_a0a5a1a0e.setMappingConfig(result_wk2vdq_a1a0a5a1a0e);
@@ -229,7 +229,7 @@ public class GeneratorDescriptorPersistence {
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
           final MappingConfig_ExternalRef result_wk2vdq_a0a2a2a0e = new MappingConfig_ExternalRef();
-          final SModuleReference result_wk2vdq_a0a0a2a2a0e = ModuleReference.fromString(generator.getAttributeValue("generatorUID"));
+          final SModuleReference result_wk2vdq_a0a0a2a2a0e = PersistenceFacade.getInstance().createModuleReference(generator.getAttributeValue("generatorUID"));
           result_wk2vdq_a0a2a2a0e.setGenerator(result_wk2vdq_a0a0a2a2a0e);
           final MappingConfig_AbstractRef result_wk2vdq_a1a0a2a2a0e = loadGeneratorMappingConfigRef(XmlUtil.first(parentElement, "external-mapping"), generator.getAttributeValue("generatorUID"), true);
           result_wk2vdq_a0a2a2a0e.setMappingConfig(result_wk2vdq_a1a0a2a2a0e);
@@ -253,7 +253,7 @@ public class GeneratorDescriptorPersistence {
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
           final MappingConfig_ExternalRef result_wk2vdq_a0a7a3a0e = new MappingConfig_ExternalRef();
-          final SModuleReference result_wk2vdq_a0a0a7a3a0e = ModuleReference.fromString(genUID);
+          final SModuleReference result_wk2vdq_a0a0a7a3a0e = PersistenceFacade.getInstance().createModuleReference(genUID);
           result_wk2vdq_a0a7a3a0e.setGenerator(result_wk2vdq_a0a0a7a3a0e);
           final MappingConfig_AbstractRef result_wk2vdq_a1a0a7a3a0e = mapping_SimpleRef;
           result_wk2vdq_a0a7a3a0e.setMappingConfig(result_wk2vdq_a1a0a7a3a0e);

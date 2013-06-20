@@ -31,7 +31,7 @@ import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.IOperationContext;

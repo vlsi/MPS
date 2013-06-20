@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -89,7 +90,7 @@ public class SurroundWithTypeCast_Intention implements IntentionFactory {
       SNode castExpression = _quotation_createNode_3zfq0u_a0b0a(SNodeOperations.copyNode(node), expectedType);
       SNodeOperations.replaceWithAnother(node, castExpression);
       if (expectedType != null) {
-        editorContext.select(castExpression);
+        SelectionUtil.selectNode(editorContext, castExpression);
       } else {
         editorContext.selectAndSetCaret(SLinkOperations.getTarget(SNodeOperations.cast(castExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", true), 2);
       }

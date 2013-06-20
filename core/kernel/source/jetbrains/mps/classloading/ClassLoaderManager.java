@@ -19,7 +19,7 @@ import gnu.trove.THashMap;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.SModelRootClassesListener;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
@@ -192,7 +192,8 @@ public class ClassLoaderManager implements CoreComponent {
     }
 
     if (!ModuleClassLoaderSupport.canCreate(module)) {
-      throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
+//      throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
+      return null;
     }
     if (!module.getFacet(JavaModuleFacet.class).isCompileInMps()) {
       // core module

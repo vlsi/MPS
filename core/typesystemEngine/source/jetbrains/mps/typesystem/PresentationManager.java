@@ -36,7 +36,7 @@ public class PresentationManager {
     if (SNodeOperations.isUnknown(type)) {
       String persistentName = type.getName();
       if (persistentName == null) {
-        return "?" + NameUtil.shortNameFromLongName(type.getConcept().getId()) + "?";
+        return "?" + NameUtil.shortNameFromLongName(type.getConcept().getQualifiedName()) + "?";
       }
       return "?" + persistentName + "?";
     }

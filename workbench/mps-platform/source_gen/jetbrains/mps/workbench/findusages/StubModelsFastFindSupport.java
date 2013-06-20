@@ -22,9 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.findUsages.FindUsagesUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
@@ -95,10 +92,10 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
 
   @Override
   public void findInstances(Collection<SModel> models, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
-    final String blName = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleName();
+    final String blName = "jetbrains.mps.baseLanguage";
     concepts = SetSequence.fromSetWithValues(new HashSet<SAbstractConcept>(), SetSequence.fromSet(concepts).where(new IWhereFilter<SAbstractConcept>() {
       public boolean accept(SAbstractConcept it) {
-        return NameUtil.namespaceFromConceptFQName(it.getConceptId()).equals(blName);
+        return it.getLanguage().getQualifiedName().equals(blName);
       }
     }));
 

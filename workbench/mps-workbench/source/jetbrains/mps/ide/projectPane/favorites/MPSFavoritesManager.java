@@ -79,7 +79,7 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
       Element favoriteElement = (Element) favorite;
       final String moduleRef = favoriteElement.getAttributeValue(MODULE_REFERENCE);
       if (moduleRef != null) {
-        result.add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(moduleRef));
+        result.add(PersistenceFacade.getInstance().createModuleReference(moduleRef));
         continue;
       }
       String snodeRef = favoriteElement.getAttributeValue(SNODE_REFERENCE);

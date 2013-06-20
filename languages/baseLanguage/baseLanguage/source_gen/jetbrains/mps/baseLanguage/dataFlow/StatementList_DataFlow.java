@@ -23,7 +23,7 @@ public class StatementList_DataFlow extends DataFlowBuilder {
         _context.getBuilder().build((SNode) param);
       }
     }
-    _context.getBuilder().emitNop();
+    _context.getBuilder().emitNop("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206464445632");
     SNode lastStatement = null;
     if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).isNotEmpty()) {
       SNode methodLike = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
@@ -34,7 +34,7 @@ public class StatementList_DataFlow extends DataFlowBuilder {
     for (SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {
       _context.getBuilder().build((SNode) s);
       if (s == lastStatement && SNodeOperations.isInstanceOf(s, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && ExpressionStatement_Behavior.call_canServeAsReturn_1239355137616(SNodeOperations.cast(s, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
-        _context.getBuilder().emitRet();
+        _context.getBuilder().emitRet("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4447433352191878575");
       }
     }
   }

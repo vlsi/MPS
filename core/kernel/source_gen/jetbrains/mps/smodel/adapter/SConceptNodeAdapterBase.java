@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.GlobalScope;
 
 public class SConceptNodeAdapterBase implements SAbstractConcept {
@@ -97,12 +96,8 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
 
   @Override
   public SLanguage getLanguage() {
-    final SNodePointer pointer = getConcept();
-    // If pointer is bad - just return null 
-    if (pointer.resolve(MPSModuleRepository.getInstance()) == null) {
-      return null;
-    }
-    return new SLanguageLanguageAdapter(((Language) jetbrains.mps.util.SNodeOperations.getModelFromNodeReference(pointer).getModule()));
+    String language = NameUtil.namespaceFromConceptFQName(myConceptName);
+    return new SLanguageLanguageAdapter(language);
   }
 
   public SNodePointer getConcept() {

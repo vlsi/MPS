@@ -73,6 +73,7 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.dates-src.jar" descriptor="jetbrains.mps.baseLanguage.dates.mpl" />
       </module>
@@ -118,6 +119,7 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.datesInternal-src.jar" descriptor="jetbrains.mps.baseLanguage.datesInternal.mpl" />
       </module>
@@ -282,6 +284,7 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.datesInternal" />
         <fileset file="${contrib_home}/mps-dates/languages/dates/runtime/lib/joda-time-2.1.jar" />
@@ -326,6 +329,7 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime" />
@@ -372,6 +376,7 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${contrib_home}/mps-dates/languages/dates/runtime/lib/joda-time-2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />

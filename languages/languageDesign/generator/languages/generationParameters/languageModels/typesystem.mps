@@ -16,7 +16,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5540778578667537766" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_DefaultGeneratorParameter" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="parameter" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="5540778578667537767" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="5540778578667537767" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="5540778578667542587" nodeInfo="nn">
         <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
         <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="5540778578667542588" nodeInfo="ng" />

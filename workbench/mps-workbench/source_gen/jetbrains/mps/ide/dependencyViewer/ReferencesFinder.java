@@ -77,7 +77,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     return results;
   }
 
-  /*package*/ SearchResults getUsagesSearchResults(List<SNode> references, final DependencyViewerScope sourceScope, final DependencyViewerScope targetScope, jetbrains.mps.progress.ProgressMonitor monitor) {
+  /*package*/ SearchResults getUsagesSearchResults(List<SNode> references, final DependencyViewerScope sourceScope, final DependencyViewerScope targetScope, ProgressMonitor monitor) {
     final SearchResults<SNode> results = new SearchResults<SNode>();
     try {
       monitor.start("filtering references", ListSequence.fromList(references).count());

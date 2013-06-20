@@ -123,6 +123,13 @@ public class Styles_StyleSheet {
     return style;
   }
 
+  @Deprecated
+  public static Style getString(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
+    return style;
+  }
+
   public static void applyRootCellModelStyle(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ?
       null :
@@ -199,6 +206,10 @@ public class Styles_StyleSheet {
       null :
       editorCell.getSNode()
     )));
+  }
+
+  public static void applyString(Style style, EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
   }
 
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(EditorContext editorContext, SNode node) {

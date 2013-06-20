@@ -12,6 +12,6 @@ public class MultiForEachVariableReference_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "variable", false));
+    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "variable", false), "r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/5684597377559860369");
   }
 }

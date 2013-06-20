@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.progress;
 
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
+
 /**
  * Evgeny Gryaznov, 10/3/11
  */

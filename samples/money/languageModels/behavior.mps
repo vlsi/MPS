@@ -14,19 +14,19 @@
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877266178" nodeInfo="ng">
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp7v.1186667651178" resolveInfo="MoneyLiteral" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877266179" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877266180" nodeInfo="nn" />
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877266180" nodeInfo="sn" />
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877287607" nodeInfo="ng">
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp7v.1186669599053" resolveInfo="MoneyType" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877287608" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877287609" nodeInfo="nn" />
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877287609" nodeInfo="sn" />
     </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1213877287610" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getAbstractCreator" />
       <property name="isPrivate" nameId="1i04.1225194472833" value="false" />
       <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpek.1213877337340" resolveInfo="getAbstractCreator" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877287611" nodeInfo="nn">
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877287611" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1213877287612" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1213877287613" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="creator" />
@@ -57,13 +57,13 @@
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877300004" nodeInfo="ng">
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp7v.1187357945755" resolveInfo="MoneyGetCurrencyMethodCall" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877300005" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877300006" nodeInfo="nn" />
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877300006" nodeInfo="sn" />
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877315451" nodeInfo="ng">
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp7v.1187340310888" resolveInfo="MoneyCreator" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877315452" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877315453" nodeInfo="nn" />
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877315453" nodeInfo="sn" />
     </node>
   </root>
 </model>

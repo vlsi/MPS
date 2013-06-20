@@ -8,7 +8,7 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -27,7 +27,7 @@ public class LanguageRuntimeGeneratorUtils {
       genContext.showErrorMessage(modelReference, "Parent of ModelReference is not a Language: " + SPropertyOperations.getString(modelReference, "qualifiedName"));
       return false;
     }
-    SModuleReference moduleReference = ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, language, "virtual_getModuleReference_9020561928507315628", new Object[]{}));
+    SModuleReference moduleReference = PersistenceFacade.getInstance().createModuleReference(BehaviorReflection.invokeVirtual(String.class, language, "virtual_getModuleReference_9020561928507315628", new Object[]{}));
     Language languageModule = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
     if (languageModule == null) {
       genContext.showErrorMessage(language, "No language in repository: " + SPropertyOperations.getString(language, "namespace"));

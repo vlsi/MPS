@@ -142,7 +142,6 @@ public class BaseGeneratorWorker extends MpsWorker {
       executeTask(p, new MpsWorker.ObjectsToProcess(Collections.singleton(p), new HashSet<SModule>(), new HashSet<SModel>()));
 
       p.projectClosed();
-      disposeProject(p);
       doneSomething = true;
     }
 

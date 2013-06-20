@@ -202,8 +202,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
             return ModelAccess.instance().runReadAction(new Computable<Integer>() {
               @Override
               public Integer compute() {
-                String concept1 = node1.getConcept().getId();
-                String concept2 = node2.getConcept().getId();
+                String concept1 = node1.getConcept().getQualifiedName();
+                String concept2 = node2.getConcept().getQualifiedName();
                 return concept1.compareTo(concept2);
               }
             });

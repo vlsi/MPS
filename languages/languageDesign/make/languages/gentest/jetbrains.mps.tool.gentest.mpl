@@ -21,7 +21,6 @@
     <dependency reexport="false">e6368d5c-b931-4d4d-9941-07b7da7d2e2d(jetbrains.mps.tool.builder)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguage>63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)</usedLanguage>
     <usedLanguage>696c1165-4a59-463b-bc5d-902caab85dd0(jetbrains.mps.make.facet)</usedLanguage>
     <usedLanguage>95f8a3e6-f994-4ca0-a65e-763c9bae2d3b(jetbrains.mps.make.script)</usedLanguage>
   </usedLanguages>

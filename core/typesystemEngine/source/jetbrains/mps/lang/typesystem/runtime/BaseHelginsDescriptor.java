@@ -33,38 +33,47 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
   protected Set<IVariableConverter_Runtime> myVariableConverters = new THashSet<IVariableConverter_Runtime>();
   protected Set<IOverloadedOpsTypesProvider> myOverloadedOperationsTypesProviders = new THashSet<IOverloadedOpsTypesProvider>();
 
+  @Override
   public Set<InferenceRule_Runtime> getInferenceRules() {
     return Collections.unmodifiableSet(this.myInferenceRules);
   }
 
+  @Override
   public Set<NonTypesystemRule_Runtime> getNonTypesystemRules() {
     return Collections.unmodifiableSet(this.myNonTypesystemRules);
   }
 
+  @Override
   public Set<SubtypingRule_Runtime> getSubtypingRules() {
     return Collections.unmodifiableSet(this.mySubtypingRules);
   }
 
+  @Override
   public Set<ComparisonRule_Runtime> getComparisonRules() {
     return Collections.unmodifiableSet(this.myComparisonRules);
   }
 
+  @Override
   public Set<IDependency_Runtime> getDependencies() {
     return Collections.unmodifiableSet(this.myDependencies);
   }
 
+  @Override
   public Set<InequationReplacementRule_Runtime> getEliminationRules() {
     return Collections.unmodifiableSet(this.myInequationReplacementRules);
   }
 
+  @Override
   public Set<IVariableConverter_Runtime> getVariableConverters() {
     return Collections.unmodifiableSet(this.myVariableConverters);
   }
 
+  @Override
   public Set<IOverloadedOpsTypesProvider> getOverloadedOperationsTypesProviders() {
     return Collections.unmodifiableSet(this.myOverloadedOperationsTypesProviders);
   }
 
+  @Override
   public Set<AbstractDependentComputation_Runtime> getDependentComputations() {
     return Collections.unmodifiableSet(this.myDependentComputations);
   }

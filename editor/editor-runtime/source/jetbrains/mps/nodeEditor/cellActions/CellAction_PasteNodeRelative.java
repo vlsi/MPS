@@ -21,12 +21,12 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -47,7 +47,7 @@ public class CellAction_PasteNodeRelative extends AbstractCellAction {
 
   @Override
   public boolean canExecute(EditorContext context) {
-    EditorCell selectedCell = (EditorCell) context.getSelectedCell();
+    EditorCell selectedCell = context.getSelectedCell();
     if (selectedCell == null) {
       return false;
     }

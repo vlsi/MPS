@@ -15,7 +15,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1381762044504275935" nodeInfo="ng">
     <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     <property name="name" nameId="tpck.1169194664001" value="typeof_Node_CopyWithTraceOperation" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1381762044504275936" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1381762044504275936" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.TypeVarDeclaration" typeId="tpd4.1174665551739" id="1205967749950" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="Concept" />
       </node>
@@ -60,7 +60,7 @@
   </root>
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="2603522263179374361" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_NList_CopyWithTraceOperation" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="2603522263179374362" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="2603522263179374362" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="2603522263179374388" nodeInfo="nn">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2603522263179374392" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2603522263179374393" nodeInfo="nn">

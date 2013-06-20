@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.structure.model.ModelRootManager;
 
 public class LanguageID {
   public static final String JAVA = "java";
   // TODO move JavaStub -> core?
-  public static final ModelRootManager JAVA_MANAGER = new ModelRootManager(BootstrapLanguages.BASE_LANGUAGE.getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs");
+  public static final ModelRootManager JAVA_MANAGER = new ModelRootManager("f3061a53-9226-4cc5-a443-f952ceaf5816",
+      "jetbrains.mps.baseLanguage.stubs.JavaStubs");
 }

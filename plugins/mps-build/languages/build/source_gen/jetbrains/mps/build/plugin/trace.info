@@ -90,21 +90,21 @@
     <nodeInfo nodeId="4243675727097117247" fileName="CopyGeneratedScripts_Facet.java" startLine="211" startPosition="173" endLine="212" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4243675727097117247" fileName="CopyGeneratedScripts_Facet.java" startLine="212" startPosition="56" endLine="213" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8686556823662822575" fileName="CopyGeneratedScripts_Facet.java" startLine="215" startPosition="19" endLine="216" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8686556823662821330" fileName="CopyGeneratedScripts_Facet.java" startLine="219" startPosition="37" endLine="220" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6108411337680467476" fileName="CopyGeneratedScripts_Facet.java" startLine="220" startPosition="298" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6108411337680467482" fileName="CopyGeneratedScripts_Facet.java" startLine="221" startPosition="0" endLine="222" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3186742424691105265" fileName="CopyGeneratedScripts_Facet.java" startLine="224" startPosition="55" endLine="225" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3186742424691105273" fileName="CopyGeneratedScripts_Facet.java" startLine="225" startPosition="101" endLine="226" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6108411337680467474" fileName="CopyGeneratedScripts_Facet.java" startLine="228" startPosition="23" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6108411337680467488" fileName="CopyGeneratedScripts_Facet.java" startLine="229" startPosition="0" endLine="230" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8686556823662821285" fileName="CopyGeneratedScripts_Facet.java" startLine="231" startPosition="92" endLine="232" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3493897664597075806" fileName="CopyGeneratedScripts_Facet.java" startLine="232" startPosition="78" endLine="233" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3038073278400310265" fileName="CopyGeneratedScripts_Facet.java" startLine="234" startPosition="57" endLine="235" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3493897664597078014" fileName="CopyGeneratedScripts_Facet.java" startLine="236" startPosition="65" endLine="237" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3038073278400327784" fileName="CopyGeneratedScripts_Facet.java" startLine="237" startPosition="41" endLine="238" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3493897664597078006" fileName="CopyGeneratedScripts_Facet.java" startLine="238" startPosition="111" endLine="239" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3493897664597078158" fileName="CopyGeneratedScripts_Facet.java" startLine="240" startPosition="25" endLine="241" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8686556823662870314" fileName="CopyGeneratedScripts_Facet.java" startLine="242" startPosition="23" endLine="243" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361584521" fileName="CopyGeneratedScripts_Facet.java" startLine="219" startPosition="37" endLine="220" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361584536" fileName="CopyGeneratedScripts_Facet.java" startLine="220" startPosition="298" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2034046503361584537" fileName="CopyGeneratedScripts_Facet.java" startLine="221" startPosition="0" endLine="222" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2034046503361584555" fileName="CopyGeneratedScripts_Facet.java" startLine="224" startPosition="55" endLine="225" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361584563" fileName="CopyGeneratedScripts_Facet.java" startLine="225" startPosition="101" endLine="226" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2034046503361584575" fileName="CopyGeneratedScripts_Facet.java" startLine="228" startPosition="23" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2034046503361584576" fileName="CopyGeneratedScripts_Facet.java" startLine="229" startPosition="0" endLine="230" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2034046503361584582" fileName="CopyGeneratedScripts_Facet.java" startLine="231" startPosition="92" endLine="232" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361584587" fileName="CopyGeneratedScripts_Facet.java" startLine="232" startPosition="78" endLine="233" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361584600" fileName="CopyGeneratedScripts_Facet.java" startLine="234" startPosition="57" endLine="235" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361584607" fileName="CopyGeneratedScripts_Facet.java" startLine="236" startPosition="65" endLine="237" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2034046503361584609" fileName="CopyGeneratedScripts_Facet.java" startLine="237" startPosition="41" endLine="238" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361584613" fileName="CopyGeneratedScripts_Facet.java" startLine="238" startPosition="111" endLine="239" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="2034046503361584617" fileName="CopyGeneratedScripts_Facet.java" startLine="240" startPosition="25" endLine="241" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361584629" fileName="CopyGeneratedScripts_Facet.java" startLine="242" startPosition="23" endLine="243" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="809559803149914579" fileName="CopyGeneratedScripts_Facet.java" startLine="246" startPosition="19" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="809559803149914581" fileName="CopyGeneratedScripts_Facet.java" startLine="247" startPosition="0" endLine="248" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="809559803149914608" fileName="CopyGeneratedScripts_Facet.java" startLine="248" startPosition="24" endLine="249" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -187,19 +187,19 @@
     <nodeInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="367" startPosition="193" endLine="370" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CopyGeneratedScripts_Facet#()V" />
     <nodeInfo nodeId="4243675727097117252" fileName="CopyGeneratedScripts_Facet.java" startLine="190" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
-    <nodeInfo nodeId="3186742424691095095" fileName="CopyGeneratedScripts_Facet.java" startLine="224" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2034046503361584553" fileName="CopyGeneratedScripts_Facet.java" startLine="224" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="4243675727097117262" fileName="CopyGeneratedScripts_Facet.java" startLine="342" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/mps/build/plugin/CopyGeneratedScripts_Facet/Target_collectScriptDirectories/Parameters;" />
     <nodeInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="355" startPosition="114" endLine="359" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="543355706921827627" fileName="CopyGeneratedScripts_Facet.java" startLine="105" startPosition="359" endLine="110" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6648795410103988209" fileName="CopyGeneratedScripts_Facet.java" startLine="120" startPosition="43" endLine="125" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3493897664597077882" fileName="CopyGeneratedScripts_Facet.java" startLine="235" startPosition="73" endLine="240" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3186742424691094739" fileName="CopyGeneratedScripts_Facet.java" startLine="222" startPosition="65" endLine="228" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361584605" fileName="CopyGeneratedScripts_Facet.java" startLine="235" startPosition="73" endLine="240" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503361584539" fileName="CopyGeneratedScripts_Facet.java" startLine="222" startPosition="65" endLine="228" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4243675727097117245" fileName="CopyGeneratedScripts_Facet.java" startLine="313" startPosition="0" endLine="320" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
     <nodeInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="353" startPosition="84" endLine="360" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="364" startPosition="11" endLine="371" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="994937056134597787" fileName="CopyGeneratedScripts_Facet.java" startLine="103" startPosition="62" endLine="111" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3736430118459669527" fileName="CopyGeneratedScripts_Facet.java" startLine="119" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3493897664597074109" fileName="CopyGeneratedScripts_Facet.java" startLine="233" startPosition="117" endLine="242" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503361584598" fileName="CopyGeneratedScripts_Facet.java" startLine="233" startPosition="117" endLine="242" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="353" startPosition="0" endLine="362" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
     <nodeInfo nodeId="6648795410103988203" fileName="CopyGeneratedScripts_Facet.java" startLine="117" startPosition="39" endLine="127" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="363" startPosition="83" endLine="373" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
@@ -207,17 +207,17 @@
     <nodeInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="363" startPosition="0" endLine="375" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
     <nodeInfo nodeId="1670948443106485494" fileName="CopyGeneratedScripts_Facet.java" startLine="102" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptWritten#(Ljetbrains/mps/vfs/IFile;)Z" />
     <nodeInfo nodeId="5780287594867997506" fileName="CopyGeneratedScripts_Facet.java" startLine="115" startPosition="21" endLine="129" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3186742424691105325" fileName="CopyGeneratedScripts_Facet.java" startLine="230" startPosition="76" endLine="244" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2034046503361584578" fileName="CopyGeneratedScripts_Facet.java" startLine="230" startPosition="76" endLine="244" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1670948443106472922" fileName="CopyGeneratedScripts_Facet.java" startLine="100" startPosition="47" endLine="115" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="809559803149985731" fileName="CopyGeneratedScripts_Facet.java" startLine="219" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="809559803149985730" fileName="CopyGeneratedScripts_Facet.java" startLine="217" startPosition="73" endLine="246" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361584519" fileName="CopyGeneratedScripts_Facet.java" startLine="219" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2034046503361584515" fileName="CopyGeneratedScripts_Facet.java" startLine="217" startPosition="73" endLine="246" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4902420589297092385" fileName="CopyGeneratedScripts_Facet.java" startLine="96" startPosition="19" endLine="131" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3776947097491473484" fileName="CopyGeneratedScripts_Facet.java" startLine="95" startPosition="63" endLine="134" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="809559803149895943" fileName="CopyGeneratedScripts_Facet.java" startLine="216" startPosition="258" endLine="257" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4243675727097117254" fileName="CopyGeneratedScripts_Facet.java" startLine="91" startPosition="86" endLine="137" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="4243675727097117247" fileName="CopyGeneratedScripts_Facet.java" startLine="213" startPosition="86" endLine="260" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="4243675727097117254" fileName="CopyGeneratedScripts_Facet.java" startLine="88" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="4243675727097117247" fileName="CopyGeneratedScripts_Facet.java" startLine="210" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="4243675727097117254" fileName="CopyGeneratedScripts_Facet.java" startLine="88" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="4243675727097117247" fileName="CopyGeneratedScripts_Facet.java" startLine="210" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
     <nodeInfo nodeId="4243675727097117252" fileName="CopyGeneratedScripts_Facet.java" startLine="86" startPosition="29" endLine="139" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4243675727097117245" fileName="CopyGeneratedScripts_Facet.java" startLine="208" startPosition="29" endLine="262" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4243675727097117252" fileName="CopyGeneratedScripts_Facet.java" startLine="86" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
@@ -278,8 +278,8 @@
       <varInfo nodeId="4243675727097117252" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="4243675727097117245" fileName="CopyGeneratedScripts_Facet.java" startLine="205" startPosition="0" endLine="207" endPosition="0" />
-    <scopeInfo nodeId="3186742424691095096" fileName="CopyGeneratedScripts_Facet.java" startLine="224" startPosition="55" endLine="226" endPosition="82">
-      <varInfo nodeId="3186742424691105266" varName="userObject" />
+    <scopeInfo nodeId="2034046503361584554" fileName="CopyGeneratedScripts_Facet.java" startLine="224" startPosition="55" endLine="226" endPosition="82">
+      <varInfo nodeId="2034046503361584556" varName="userObject" />
     </scopeInfo>
     <scopeInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="350" startPosition="0" endLine="352" endPosition="0" />
     <scopeInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="356" startPosition="45" endLine="358" endPosition="138">
@@ -312,7 +312,7 @@
       <varInfo nodeId="4243675727097117252" varName="cls" />
     </scopeInfo>
     <scopeInfo nodeId="4243675727097117252" fileName="CopyGeneratedScripts_Facet.java" startLine="195" startPosition="0" endLine="198" endPosition="0" />
-    <scopeInfo nodeId="3493897664597077883" fileName="CopyGeneratedScripts_Facet.java" startLine="236" startPosition="65" endLine="239" endPosition="35" />
+    <scopeInfo nodeId="2034046503361584606" fileName="CopyGeneratedScripts_Facet.java" startLine="236" startPosition="65" endLine="239" endPosition="35" />
     <scopeInfo nodeId="4243675727097117245" fileName="CopyGeneratedScripts_Facet.java" startLine="265" startPosition="0" endLine="268" endPosition="0" />
     <scopeInfo nodeId="4243675727097117245" fileName="CopyGeneratedScripts_Facet.java" startLine="269" startPosition="0" endLine="272" endPosition="0" />
     <scopeInfo nodeId="4243675727097117245" fileName="CopyGeneratedScripts_Facet.java" startLine="273" startPosition="0" endLine="276" endPosition="0" />
@@ -341,8 +341,8 @@
       <varInfo nodeId="4243675727097117252" varName="cls" />
       <varInfo nodeId="4243675727097117252" varName="copyFrom" />
     </scopeInfo>
-    <scopeInfo nodeId="3186742424691095095" fileName="CopyGeneratedScripts_Facet.java" startLine="224" startPosition="0" endLine="228" endPosition="0">
-      <varInfo nodeId="3186742424691095095" varName="it" />
+    <scopeInfo nodeId="2034046503361584553" fileName="CopyGeneratedScripts_Facet.java" startLine="224" startPosition="0" endLine="228" endPosition="0">
+      <varInfo nodeId="2034046503361584553" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="4243675727097117262" fileName="CopyGeneratedScripts_Facet.java" startLine="342" startPosition="0" endLine="346" endPosition="0">
       <varInfo nodeId="4243675727097117262" varName="from" />
@@ -361,8 +361,8 @@
     <scopeInfo nodeId="994937056134597788" fileName="CopyGeneratedScripts_Facet.java" startLine="104" startPosition="155" endLine="110" endPosition="25">
       <varInfo nodeId="8686556823662870393" varName="destPath" />
     </scopeInfo>
-    <scopeInfo nodeId="3493897664597074110" fileName="CopyGeneratedScripts_Facet.java" startLine="234" startPosition="57" endLine="241" endPosition="76">
-      <varInfo nodeId="3038073278400310266" varName="ext" />
+    <scopeInfo nodeId="2034046503361584599" fileName="CopyGeneratedScripts_Facet.java" startLine="234" startPosition="57" endLine="241" endPosition="76">
+      <varInfo nodeId="2034046503361584601" varName="ext" />
     </scopeInfo>
     <scopeInfo nodeId="4243675727097117245" fileName="CopyGeneratedScripts_Facet.java" startLine="313" startPosition="0" endLine="320" endPosition="0">
       <varInfo nodeId="4243675727097117245" varName="cls" />
@@ -379,9 +379,9 @@
     <scopeInfo nodeId="5780287594867997540" fileName="CopyGeneratedScripts_Facet.java" startLine="117" startPosition="39" endLine="127" endPosition="25" />
     <scopeInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="363" startPosition="83" endLine="373" endPosition="7" />
     <scopeInfo nodeId="5780287594867997539" fileName="CopyGeneratedScripts_Facet.java" startLine="117" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="3186742424691105328" fileName="CopyGeneratedScripts_Facet.java" startLine="231" startPosition="92" endLine="243" endPosition="294">
-      <varInfo nodeId="8686556823662821286" varName="fileName" />
-      <varInfo nodeId="3493897664597075807" varName="targetXml" />
+    <scopeInfo nodeId="2034046503361584581" fileName="CopyGeneratedScripts_Facet.java" startLine="231" startPosition="92" endLine="243" endPosition="294">
+      <varInfo nodeId="2034046503361584583" varName="fileName" />
+      <varInfo nodeId="2034046503361584588" varName="targetXml" />
     </scopeInfo>
     <scopeInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="363" startPosition="0" endLine="375" endPosition="0">
       <varInfo nodeId="4243675727097083061" varName="properties" />
@@ -390,13 +390,13 @@
     <scopeInfo nodeId="1670948443106485494" fileName="CopyGeneratedScripts_Facet.java" startLine="102" startPosition="0" endLine="115" endPosition="0">
       <varInfo nodeId="1670948443106485497" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="3186742424691105325" fileName="CopyGeneratedScripts_Facet.java" startLine="230" startPosition="76" endLine="244" endPosition="21">
-      <varInfo nodeId="3186742424691105326" varName="descendant" />
+    <scopeInfo nodeId="2034046503361584578" fileName="CopyGeneratedScripts_Facet.java" startLine="230" startPosition="76" endLine="244" endPosition="21">
+      <varInfo nodeId="2034046503361584579" varName="descendant" />
     </scopeInfo>
-    <scopeInfo nodeId="809559803149985732" fileName="CopyGeneratedScripts_Facet.java" startLine="219" startPosition="37" endLine="244" endPosition="21">
-      <varInfo nodeId="3186742424691094740" varName="buildScriptDescendants" />
+    <scopeInfo nodeId="2034046503361584520" fileName="CopyGeneratedScripts_Facet.java" startLine="219" startPosition="37" endLine="244" endPosition="21">
+      <varInfo nodeId="2034046503361584540" varName="buildScriptDescendants" />
     </scopeInfo>
-    <scopeInfo nodeId="809559803149985731" fileName="CopyGeneratedScripts_Facet.java" startLine="219" startPosition="0" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="2034046503361584519" fileName="CopyGeneratedScripts_Facet.java" startLine="219" startPosition="0" endLine="246" endPosition="0" />
     <scopeInfo nodeId="4902420589297092391" fileName="CopyGeneratedScripts_Facet.java" startLine="97" startPosition="69" endLine="130" endPosition="148">
       <varInfo nodeId="4902420589297434844" varName="ftres" />
       <varInfo nodeId="4796668409958471070" varName="toCopy" />
@@ -436,13 +436,13 @@
     <scopeInfo nodeId="4243675727097117252" fileName="CopyGeneratedScripts_Facet.java" startLine="86" startPosition="0" endLine="141" endPosition="0" />
     <scopeInfo nodeId="4243675727097117245" fileName="CopyGeneratedScripts_Facet.java" startLine="208" startPosition="0" endLine="264" endPosition="0" />
     <unitInfo nodeId="6648795410103988215" fileName="CopyGeneratedScripts_Facet.java" startLine="121" startPosition="69" endLine="125" endPosition="27" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$4" />
-    <unitInfo nodeId="3186742424691095095" fileName="CopyGeneratedScripts_Facet.java" startLine="223" startPosition="169" endLine="228" endPosition="21" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$3" />
+    <unitInfo nodeId="2034046503361584553" fileName="CopyGeneratedScripts_Facet.java" startLine="223" startPosition="169" endLine="228" endPosition="21" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$3" />
     <unitInfo nodeId="3736430118459669525" fileName="CopyGeneratedScripts_Facet.java" startLine="118" startPosition="62" endLine="127" endPosition="23" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$3" />
     <unitInfo nodeId="5780287594867997539" fileName="CopyGeneratedScripts_Facet.java" startLine="116" startPosition="67" endLine="129" endPosition="19" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$2" />
     <unitInfo nodeId="1670948443106485492" fileName="CopyGeneratedScripts_Facet.java" startLine="101" startPosition="65" endLine="115" endPosition="19" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$2" />
     <unitInfo nodeId="4243675727097117262" fileName="CopyGeneratedScripts_Facet.java" startLine="325" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$Target_collectScriptDirectories$Parameters" />
     <unitInfo nodeId="4243675727097083061" fileName="CopyGeneratedScripts_Facet.java" startLine="349" startPosition="0" endLine="376" endPosition="0" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$TargetProperties" />
-    <unitInfo nodeId="809559803149985731" fileName="CopyGeneratedScripts_Facet.java" startLine="218" startPosition="57" endLine="246" endPosition="17" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$2" />
+    <unitInfo nodeId="2034046503361584519" fileName="CopyGeneratedScripts_Facet.java" startLine="218" startPosition="57" endLine="246" endPosition="17" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$2" />
     <unitInfo nodeId="4243675727097117254" fileName="CopyGeneratedScripts_Facet.java" startLine="87" startPosition="17" endLine="139" endPosition="7" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$1" />
     <unitInfo nodeId="4243675727097117247" fileName="CopyGeneratedScripts_Facet.java" startLine="209" startPosition="17" endLine="262" endPosition="7" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$1" />
     <unitInfo nodeId="4243675727097117252" fileName="CopyGeneratedScripts_Facet.java" startLine="78" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$Target_copyFiles" />

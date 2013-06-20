@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dacsoz9e7s6nmd615431lq9q635crp6">
+<dependencies version="2" modelHash="bjbcccw1xspnjbsxbf7jq7t9gla9jzd">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-3gd1wjtanyuae8zlmappxzhsoyku4tj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="c1xbedyalk4nw2czpsk8cfko8ym7qhu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9iow8oinjz3flhnokp65cdgbcfbisw5" />
-  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-8kbwkwsxkzs059jlmagbtjq0yhtcnrp" />
-  <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" hash="-d5h6hd3yvrdr5x73qydo6xlvmqd1p29" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="6wbb4crf3b4dbgairjnjeebsacld5eq" />
-  <dep model="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)" hash="-8v91zz2ulue8v9lpxiwgksoortu7ww9" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-48vxm6lpdyencmht9ofqk4s4yqtnzq5" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-1tx656zv7bogt6umzt3odacl5ktp1jw" />
+  <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" hash="4xo3cwz7410bljbo6th2f2sr4azbpin" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="aoywaq1ew2203morpseql2gxmwetl9v" />
+  <dep model="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)" hash="-9cwh5s0apjh8gcz1cfr0a7guplhp5cd" />
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-d5d9w8abuqtq2rr8fp0jyiyuwa1qbm7" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-6ygnwew9fsyml0umi7w20kwq5d46z7m" />
   <common hash="chw2m1peysa62a5q1oq4m09ljy6drl1" dependsOnNodes="true">
     <dep root="2059109515400548715" />
     <dep root="2059109515400548735" />
@@ -67,7 +67,7 @@
     <file name="BwfTaskPart_BehaviorDescriptor.java" />
     <file name="BwfTask_BehaviorDescriptor.java" />
   </common>
-  <source id="2769948622284605897" name="BwfTask_Behavior" hash="5cuvs0ffj5a2p2t4sr260wvezqkswi2">
+  <source id="2769948622284605897" name="BwfTask_Behavior" hash="dxf2kvpcdkg5419yugzngndci1x0b7n">
     <dep root="2059109515400548715" />
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -76,7 +76,7 @@
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfTask_Behavior.java" />
   </source>
-  <source id="7385586609667776608" name="BwfJavaModule_Behavior" hash="b3dpp1twbqldcvi7yd1kyfruykysgln">
+  <source id="7385586609667776608" name="BwfJavaModule_Behavior" hash="dxqaui3b0711zuppkodhlyvt4bkafvb">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -85,7 +85,7 @@
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfJavaModule_Behavior.java" />
   </source>
-  <source id="3961775458390352366" name="BwfTaskPart_Behavior" hash="-oh18249shd0lwcmq0yr61w20d85tf">
+  <source id="3961775458390352366" name="BwfTaskPart_Behavior" hash="-9n691honxk5o77bc0y3efkrdyti9w9o">
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -93,7 +93,7 @@
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfTaskPart_Behavior.java" />
   </source>
-  <source id="3961775458390497598" name="BwfSubTask_Behavior" hash="7r4j8g371c8509vldyaud6q5wl7tp6l">
+  <source id="3961775458390497598" name="BwfSubTask_Behavior" hash="bdyt312ky364o4jf64kjtistysxsu6e">
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -101,7 +101,7 @@
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfSubTask_Behavior.java" />
   </source>
-  <source id="7306485738221487431" name="BwfProject_Behavior" hash="cceqqfi67bcoyhu7o4in4u1qzq1tsd8">
+  <source id="7306485738221487431" name="BwfProject_Behavior" hash="-1cc0t0ni3qzc3uyclk2ubajcep69yvg">
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -109,7 +109,7 @@
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfProject_Behavior.java" />
   </source>
-  <source id="6647099934207210772" name="BwfPathDeclaration_Behavior" hash="-d850oys9wr0j001h4zsggiawdwb7q0a">
+  <source id="6647099934207210772" name="BwfPathDeclaration_Behavior" hash="67ftjalehomqaw1valsxvfraj2x4m1s">
     <dep root="2059109515400548715" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -119,17 +119,17 @@
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfPathDeclaration_Behavior.java" />
   </source>
-  <source id="6647099934207246775" name="BwfJavaDependency_Behavior" hash="-e10925x07f6qljss8hrqdt426jpkki2">
+  <source id="6647099934207246775" name="BwfJavaDependency_Behavior" hash="-3qsru3wwnnijhi8j5ogehw9w8fg0apm">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfJavaDependency_Behavior.java" />
   </source>
-  <source id="6647099934207246785" name="BwfJavaModuleReference_Behavior" hash="81xt2fdvzy733yiptjny63mk4zy9zbi">
+  <source id="6647099934207246785" name="BwfJavaModuleReference_Behavior" hash="98gg249b4rbl0ryimemjd1xf7oxqcmg">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfJavaModuleReference_Behavior.java" />
   </source>
-  <source id="2059109515400548715" name="BwfProjectPart_Behavior" hash="7skvu7k0btqoci418iwjbl7fbqfgq8">
+  <source id="2059109515400548715" name="BwfProjectPart_Behavior" hash="1ftzrbvqyiyehrwoo2wo0krgzmti865">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -138,31 +138,31 @@
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfProjectPart_Behavior.java" />
   </source>
-  <source id="2059109515400548735" name="BwfMacro_Behavior" hash="-971pplx6nf933wzeoira8f8bwp40raj">
+  <source id="2059109515400548735" name="BwfMacro_Behavior" hash="-96scah9rz34ck0wl4m174gzrjaey2p9">
     <dep root="2059109515400548715" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfMacro_Behavior.java" />
   </source>
-  <source id="2059109515400548749" name="BwfMacroListImport_Behavior" hash="-6hscimajz79disygjetn41ujtszvk9c">
+  <source id="2059109515400548749" name="BwfMacroListImport_Behavior" hash="3670rp6qb1feedb8zo22ahfkc6lpk3s">
     <dep root="2059109515400548715" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfMacroListImport_Behavior.java" />
   </source>
-  <source id="2059109515400548763" name="BwfAntTaskDeclaration_Behavior" hash="-dbtihgjrvv1i9hv4n0vhob3zcd45ji4">
+  <source id="2059109515400548763" name="BwfAntTaskDeclaration_Behavior" hash="-cik5a371jbun3lbqr828wdrh033hw2v">
     <dep root="2059109515400548715" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfAntTaskDeclaration_Behavior.java" />
   </source>
-  <source id="244868996532667552" name="BwfCustomMacro_Behavior" hash="-bzij4vtwsd9ef6s2cllgai9mb65c6e8">
+  <source id="244868996532667552" name="BwfCustomMacro_Behavior" hash="egglf6fcyojzbersyo0cthccrjxhhik">
     <dep root="2059109515400548715" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfCustomMacro_Behavior.java" />
   </source>
-  <source id="2529023923283158068" name="BwfAntTaskBundleDeclaration_Behavior" hash="cm26ttkp7kefsfcqpu9jzknmnd8bo3p">
+  <source id="2529023923283158068" name="BwfAntTaskBundleDeclaration_Behavior" hash="fyph18mtvy0fvmu6nm1ghroo4fa9r0">
     <dep root="2059109515400548715" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />

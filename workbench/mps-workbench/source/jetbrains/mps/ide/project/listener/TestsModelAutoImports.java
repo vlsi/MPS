@@ -30,7 +30,7 @@ public class TestsModelAutoImports extends AutoImportsContributor<Solution> {
   @Override
   public Set<Language> getAutoImportedLanguages(Solution contextModule, SModel model) {
     if (SModelStereotype.isTestModel(model)) {
-      return Collections.singleton(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.UNITTEST, Language.class));
+      return Collections.singleton(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.unitTestLanguageRef(), Language.class));
     } else {
       return Collections.emptySet();
     }

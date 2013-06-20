@@ -13,7 +13,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="8sls.6036237525966182694" resolveInfo="LowLevelVariable" />
     <node role="textGenBlock" roleId="2omo.1233749296504" type="2omo.GenerateTextDeclaration" typeId="2omo.1233749247888" id="948722627350505707" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="948722627350505708" nodeInfo="nn" />
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="948722627350505708" nodeInfo="sn" />
     </node>
   </root>
   <root type="2omo.LanguageTextGenDeclaration" typeId="2omo.1233921373471" id="948722627350506005" nodeInfo="ng">

@@ -24,11 +24,11 @@ public class ForStatement_DataFlow extends DataFlowBuilder {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
       SNode constant = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant");
       if (!(SPropertyOperations.getBoolean(constant, "value"))) {
-        _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
+        _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3337377470784677523");
       }
     } else if ((SLinkOperations.getTarget(_context.getNode(), "condition", true) != null)) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "condition", true));
-      _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()));
+      _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3337377470784677540");
     }
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
     for (final SNode iteration : SLinkOperations.getTargets(_context.getNode(), "iteration", true)) {
@@ -40,7 +40,7 @@ public class ForStatement_DataFlow extends DataFlowBuilder {
     }
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
       public void run() {
-        _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "start"));
+        _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "start"), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/9092976468699818459");
       }
     });
   }

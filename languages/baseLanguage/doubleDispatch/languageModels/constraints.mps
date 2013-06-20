@@ -12,7 +12,7 @@
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="2403002034744707266" nodeInfo="ng">
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="spkm.2403002034744698617" resolveInfo="DispatchModifier" />
     <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="2403002034744707318" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2403002034744707319" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2403002034744707319" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="2323553266854773026" nodeInfo="nn">
           <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="2323553266854773555" nodeInfo="nn">
             <property name="text" nameId="tpee.6329021646629104958" value="applicable only to java methods" />

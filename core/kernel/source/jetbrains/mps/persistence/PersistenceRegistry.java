@@ -19,6 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.ProjectStructureModelRoot;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
@@ -104,6 +105,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   @Override
   public Set<String> getModelFactoryExtensions() {
     return myExtensionToModelFactoryMap.keySet();
+  }
+
+  @Override
+  public SModuleReference createModuleReference(String text) {
+    return ModuleReference.parseReference(text);
   }
 
   @Override

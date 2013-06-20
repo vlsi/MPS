@@ -10,14 +10,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.Set;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.util.SNodeOperations;
@@ -57,12 +57,12 @@ public class QuickQueryUtils {
     SModel tempModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModuleWithSourceAndClassesGen());
     tempModel.addRootNode(query);
 
-    ((SModelInternal) tempModel).addDevKit(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference());
+    ((SModelInternal) tempModel).addDevKit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
 
     Set<Language> languagesForImport = SetSequence.fromSet(new HashSet<Language>());
     SetSequence.fromSet(languagesForImport).addElement(BootstrapLanguages.collectionsLanguage());
     SetSequence.fromSet(languagesForImport).addElement(SModelUtil.getDeclaringLanguage(conceptToFind));
-    SetSequence.fromSet(languagesForImport).addElement((Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c")));
+    SetSequence.fromSet(languagesForImport).addElement(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)"), Language.class));
     for (Language language : SetSequence.fromSet(languagesForImport)) {
       ((AbstractModule) tempModel.getModule()).addDependency(language.getModuleReference(), false);
 

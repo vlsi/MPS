@@ -82,7 +82,6 @@
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -93,6 +92,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx2" />
@@ -104,7 +104,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
@@ -112,6 +111,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.generator.generationTypes.GenerationHandlerBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.MakeGenerationStrategy" file="MakeGenerationStrategy.java">
@@ -230,7 +230,6 @@
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
@@ -249,6 +248,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx2" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />

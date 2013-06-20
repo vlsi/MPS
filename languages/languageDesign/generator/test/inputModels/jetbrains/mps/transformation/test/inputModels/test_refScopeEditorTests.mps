@@ -46,7 +46,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5934496548013480020" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5934496548013480020" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5934496548013480021" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="aaaa" />
       </node>
@@ -117,7 +117,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3715568794894764091" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3715568794894764091" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3715568794894764092" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="c" />
       </node>
@@ -186,7 +186,7 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3715568794894764214" nodeInfo="nn">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3715568794894764214" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3715568794894764215" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="equals" />
       </node>

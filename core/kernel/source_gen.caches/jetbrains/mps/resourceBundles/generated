@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="52p2nk2nwkrb8sm2k41m25n0q75vxgt">
+<dependencies version="2" modelHash="-ccvjn79zz9eghdtxkxrk0xicit3x1jp">
   <common hash="bkajnnulispe9511j4wzb6j7t5wypxc" />
   <source id="2939287019638088102" name="IconResourceBundle" hash="-9kkp5i30r9qpnyi9bmtsbixu3v2lxh">
     <file name="IconResourceBundle.java" />
   </source>
-  <source id="2939287019638088106" name="PluginResourceBundle" hash="-46aro0zprkdzozjzs8tatwu9hsbwgs5">
+  <source id="2939287019638088106" name="PluginResourceBundle" hash="-cywg3orfm551nuz6t9mod06riowfkin">
     <file name="PluginResourceBundle.java" />
   </source>
 </dependencies>

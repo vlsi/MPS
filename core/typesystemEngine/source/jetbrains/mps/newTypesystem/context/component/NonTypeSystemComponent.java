@@ -72,6 +72,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
     clearCaches();
   }
 
+  @Override
   public void clearNodeTypes() {
     super.clearNodeTypes();
     clearAllExceptErrors();
@@ -93,6 +94,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
     myNodesDependentOnCachesWithNTRules.clear();
   }
 
+  @Override
   public Map<SNode, List<IErrorReporter>> getNodesToErrorsMap() {
     return Collections.unmodifiableMap(myNodesToErrorsMap);
   }
@@ -194,6 +196,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
     iErrorReporters.add(errorReporter);
 
     Collections.sort(iErrorReporters, new Comparator<IErrorReporter>() {
+      @Override
       public int compare(IErrorReporter o1, IErrorReporter o2) {
         return o1.getMessageStatus().compareTo(o2.getMessageStatus());
       }
@@ -358,6 +361,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
       myIsSetAccessReport = accessReport;
     }
 
+    @Override
     public void nodeTypeAccessed(SNode term) {
       if (myIsSetAccessReport) {
         new Throwable().printStackTrace();

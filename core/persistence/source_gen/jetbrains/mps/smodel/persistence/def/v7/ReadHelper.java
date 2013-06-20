@@ -92,6 +92,23 @@ public class ReadHelper {
     return nodeInfo.startsWith("i");
   }
 
+  public boolean isImplementationNode(String nodeInfo) {
+    return nodeInfo != null && (nodeInfo.startsWith("l") || nodeInfo.startsWith("s"));
+  }
+
+  public boolean isImplementationWithStubNode(String nodeInfo) {
+    return nodeInfo != null && nodeInfo.startsWith("s");
+  }
+
+  public String getStubConceptQualifiedName(String type) {
+    String originalConcept = readType(type);
+    int lastDot = originalConcept.lastIndexOf('.');
+    if (lastDot == -1) {
+      return null;
+    }
+    return originalConcept.substring(0, lastDot + 1) + "Stub" + originalConcept.substring(lastDot + 1);
+  }
+
   public Tuples._3<ConceptKind, StaticScope, Boolean> readNodeInfo(String s) {
     ConceptKind kind;
     StaticScope scope;
@@ -107,6 +124,9 @@ public class ReadHelper {
         break;
       case 'l':
         kind = ConceptKind.IMPLEMENTATION;
+        break;
+      case 's':
+        kind = ConceptKind.IMPLEMENTATION_WITH_STUB;
         break;
       default:
         return null;

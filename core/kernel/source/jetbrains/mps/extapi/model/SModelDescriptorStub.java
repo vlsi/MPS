@@ -349,7 +349,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   }
 
   @Override
-  public final void changeModelReference(SModelReference newModelReference) {
+  public void changeModelReference(SModelReference newModelReference) {
     getSModelInternal().changeModelReference(newModelReference);
   }
 

@@ -16,8 +16,7 @@
 package jetbrains.mps.nodeEditor.keymaps;
 
 import jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
@@ -26,15 +25,17 @@ import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -154,7 +155,8 @@ public abstract class KeymapHandler<E> {
    * @param keymapsAndCells - List of pairs keymap/ownerCell
    * @return List of pairs keymapAction/actionCell
    */
-  private List<Pair<KeyMapAction, EditorCell>> selectActionsFromKeymaps(EditorCell selectedCell, Collection<ActionKey> actionKeys, EditorContext editorContext, List<Pair<KeyMap, EditorCell>> keymapsAndCells) {
+  private List<Pair<KeyMapAction, EditorCell>> selectActionsFromKeymaps(EditorCell selectedCell, Collection<ActionKey> actionKeys, EditorContext editorContext,
+      List<Pair<KeyMap, EditorCell>> keymapsAndCells) {
     // choose appropriate actions from keymaps
     List<Pair<KeyMapAction, EditorCell>> actionsAndCells = new LinkedList<Pair<KeyMapAction, EditorCell>>();
     for (Pair<KeyMap, EditorCell> keymapAndCell : keymapsAndCells) {
@@ -191,14 +193,15 @@ public abstract class KeymapHandler<E> {
   }
 
   private static boolean isStrictlyFirstCaretPosition(EditorCell_Label label) {
-    return label.isFirstCaretPosition() && label.isFirstPositionAllowed() && label.getContainingBigCell().getFirstLeaf() == label;
+    return label.isFirstCaretPosition() && StyleAttributesUtil.isFirstPositionAllowed(label.getStyle()) && label.getContainingBigCell().getFirstLeaf() == label;
   }
 
   private static boolean isStrictlyLastCaretPosition(EditorCell_Label label) {
-    return label.isLastCaretPosition() && label.isLastPositionAllowed() && label.getContainingBigCell().getLastLeaf() == label;
+    return label.isLastCaretPosition() && StyleAttributesUtil.isLastPositionAllowed(label.getStyle()) && label.getContainingBigCell().getLastLeaf() == label;
   }
 
-  private EditorCell selectActionCell(KeyMapAction action, EditorCell keymapOwnerCell, EditorCell selectedCell, int actualCaretPosition, EditorContext editorContext) {
+  private EditorCell selectActionCell(KeyMapAction action, EditorCell keymapOwnerCell, EditorCell selectedCell, int actualCaretPosition,
+      EditorContext editorContext) {
     // Action caret policy is different from actual one
     if (action.getCaretPolicy() != KeyMapAction.CARET_AT_ANY_POSITION && action.getCaretPolicy() != actualCaretPosition) {
       return null;

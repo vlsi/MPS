@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5iedv47sroe9jc7ooqpqc5oavam07ua">
+<dependencies version="2" modelHash="2064dvlmspk39wzqiafz2misv268kyp">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
-  <common hash="2bqc29xxkjuq0rzo6py3viji93tc4od" />
-  <source id="1560298786499497434" name="ModulePathChooser" hash="-6vq45c7n1qox7f86x28o77b4i5z3fe6">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+  <common hash="9woav2zke5vo5yqz19o0fzvsvo91hhy" />
+  <source id="1560298786499497434" name="ModulePathChooser" hash="kmsfewt6m28778dq7rkk7kd5l29xe3">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModulePathChooser.java" />

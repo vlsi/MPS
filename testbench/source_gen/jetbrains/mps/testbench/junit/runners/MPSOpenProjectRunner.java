@@ -7,12 +7,8 @@ import jetbrains.mps.project.Project;
 import org.junit.runner.Description;
 import org.junit.runners.model.InitializationError;
 import org.junit.runner.notification.RunNotifier;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.testbench.Testbench;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -50,19 +46,14 @@ public class MPSOpenProjectRunner extends Runner {
 
   protected void init(Class<?> testClass) throws InitializationError {
     String projectPath = getProjectPath(testClass);
-    BasicConfigurator.configure();
-    Logger.getRootLogger().setLevel(Level.INFO);
+    MpsTestsSupport.initEnv(true);
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-    TestMain.configureMPS();
     initPathMacros();
-    Testbench.initLibs();
     if (ourMPSProject != null) {
       throw new InitializationError("One MPS project was already openned in this java process: " + ourMPSProject.getName() + " (on trying to open: " + projectPath + ")");
     }
     ourMPSProject = TestMain.PROJECT_CONTAINER.getProject(projectPath);
 
-    // <node> 
-    // <node> 
     // TODO: 
     // 
     // 2. Libraries? 
@@ -107,12 +98,12 @@ public class MPSOpenProjectRunner extends Runner {
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
-public static   @interface MPSProject {    /**
+  public @interface MPSProject {
+    /**
      * 
      * 
      * @return path to MPS project
      */
-
     String value();
-}
+  }
 }

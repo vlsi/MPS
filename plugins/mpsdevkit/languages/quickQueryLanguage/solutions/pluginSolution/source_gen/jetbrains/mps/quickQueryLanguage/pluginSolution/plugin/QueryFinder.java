@@ -6,9 +6,10 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -17,9 +18,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class QueryFinder implements IFinder {
   private static Logger LOG = LogManager.getLogger(QueryFinder.class);
   private Query myQuery;
+  private _FunctionTypes._void_P0_E0 myDisposer;
 
-  public QueryFinder(Query query) {
-    this.myQuery = query;
+  public QueryFinder(Query query, _FunctionTypes._void_P0_E0 queryDisposer) {
+    // todo: this finder works only once 
+    myQuery = query;
+    myDisposer = queryDisposer;
   }
 
   @Override
@@ -41,6 +45,8 @@ public class QueryFinder implements IFinder {
         LOG.warn("Exception on search query execution", e);
       }
     }
+
+    myDisposer.invoke();
 
     return results;
   }

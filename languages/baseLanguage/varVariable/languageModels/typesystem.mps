@@ -14,7 +14,7 @@
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1236696569510" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_VarVariableDeclaration" />
     <property name="overrides" nameId="tpd4.1195213689297" value="true" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236696569511" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236696569511" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.TypeVarDeclaration" typeId="tpd4.1174665551739" id="8425555512443936489" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="initializerType" />
       </node>
@@ -38,7 +38,7 @@
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.WhenConcreteStatement" typeId="tpd4.1185805035213" id="8425555512443936496" nodeInfo="nn">
-        <node role="body" roleId="tpd4.1185805047793" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425555512443936497" nodeInfo="nn">
+        <node role="body" roleId="tpd4.1185805047793" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425555512443936497" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8425555512443935653" nodeInfo="nn">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8425555512443935654" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="concreteInitializerType" />
@@ -102,7 +102,7 @@
   </root>
   <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8067700594454594112" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="check_VarVariableDeclaration" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="8067700594454594113" nodeInfo="nn">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="8067700594454594113" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.AssertStatement" typeId="tpd4.1175517400280" id="8067700594454596069" nodeInfo="nn">
         <node role="condition" roleId="tpd4.1175517761460" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8067700594454596085" nodeInfo="nn">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8067700594454596076" nodeInfo="nn">

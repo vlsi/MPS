@@ -15,31 +15,42 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.kernel.model.SModelUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.IterableUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptUtil;
+import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 class IntelligentNodeMover {
   private static final Logger LOG = LogManager.getLogger(IntelligentNodeMover.class);
 
   private List<SNode> myNodes = new ArrayList<SNode>();
-  private EditorContext myEditorContext;
+  private EditorComponent myComponent;
   private boolean myForward;
+  private SNode myCurrent;
+  private SNode myParent;
+  private String myRole;
+  private SLink myLink;
 
-  IntelligentNodeMover(EditorContext context, List<SNode> nodes, boolean forward) {
-    myNodes.addAll(nodes);
-    myEditorContext = context;
+  IntelligentNodeMover(EditorComponent component, boolean forward) {
+    myComponent = component;
     myForward = forward;
   }
 
@@ -48,148 +59,212 @@ class IntelligentNodeMover {
   }
 
   void move() {
-    final List<SNode> nodes = new ArrayList<SNode>();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       @Override
       public void run() {
-        nodes.addAll(myEditorContext.getSelectedNodes());
-
-        if (nodes.isEmpty()) {
+        if (!findAppropriateNode(myComponent.getSelectedNodes())) {
           return;
         }
 
+        assert !myNodes.isEmpty();
+
         doMove();
       }
-    });
+    }, ProjectHelper.getProject(myComponent.getEditorContext().getRepository()));
 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        if (nodes.size() == 1) {
-          myEditorContext.getNodeEditorComponent().selectNode(nodes.get(0));
-        } else if (nodes.size() > 1) {
-          SelectionManager selectionManager = myEditorContext.getNodeEditorComponent().getSelectionManager();
-          selectionManager.setSelection(selectionManager.createRangeSelection(nodes.get(0), nodes.get(nodes.size() - 1)));
+        if (myNodes.size() == 1) {
+          myComponent.selectNode(myNodes.get(0));
+        } else if (myNodes.size() > 1) {
+          SelectionManager selectionManager = myComponent.getSelectionManager();
+          selectionManager.setSelection(selectionManager.createRangeSelection(myNodes.get(0), myNodes.get(myNodes.size() - 1)));
         }
       }
     });
   }
 
-  private void doMove() {
-    final SNode current = findBoundaryNode();
-    if (current == null) return;
-    if (current.getParent() == null) return;
-
-    final SNode parent = current.getParent();
-    final String role = current.getRoleInParent();
-    assert parent != null && role != null;
-
-    final SNode acd = ((jetbrains.mps.smodel.SNode) parent).getConceptDeclarationNode();
-    final SNode link = SModelSearchUtil.findLinkDeclaration(acd, role);
-
-    if (link == null) {
-      LOG.error("Can't find a link " + role + " in concept " + acd.getName());
-      return;
+  private boolean findAppropriateNode(List<SNode> selectedNodes) {
+    myCurrent = findBoundaryNode(selectedNodes);
+    if (myCurrent == null || myCurrent.getParent() == null) {
+      return false;
+    }
+    String role = myCurrent.getRoleInParent();
+    assert role != null;
+    for (SNode node : selectedNodes) {
+      if (node == null || !role.equals(node.getRoleInParent())) {
+        return false;
+      }
     }
 
-    if (!SModelUtil.isMultipleLinkDeclaration(link)) {
-      return;
-    }
-
-    final SNode targetType = link.getParent();
-
-    if (isBoundary(current)) {
-      SNode currentAnchor = parent;
-      SNode currentTarget = parent.getParent();
-
-      while (currentTarget != null) {
-        if (currentTarget.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(targetType)))) {
-          parent.removeChild(current);
-          addWithAnchor(currentTarget, currentAnchor, role, current);
-          moveOtherNodes(current);
-          return;
-        }
-
-        SNode levelCurrent = siblingWithTheSameRole(currentAnchor);
-        while (levelCurrent != null) {
-          SNode result = findNodeAtBoundary(targetType, levelCurrent, true);
-          if (result != null) {
-            parent.removeChild(current);
-            addAtBoundary(result, role, current);
-            moveOtherNodes(current);
-            return;
-          }
-
-          levelCurrent = siblingWithTheSameRole(levelCurrent);
-        }
-
-        currentTarget = currentTarget.getParent();
-        currentAnchor = currentAnchor.getParent();
+    boolean nodeChanged = false;
+    while (myCurrent != null) {
+      if (myCurrent.getParent() == null) {
+        return false;
       }
 
-      return;
-    }
+      myParent = myCurrent.getParent();
+      myRole = myCurrent.getRoleInParent();
+      assert myParent != null && myRole != null;
 
-    final SNode prevChild = siblingWithTheSameRole(current);
-    if (prevChild == null) {
-      List<? extends SNode> children = IterableUtil.asList(current.getParent().getChildren(role));
-      LOG.error("Prev. child is null. isForward = " + forward() + "; index = " + children.indexOf(current));
-      return;
-    }
+      final SConcept acd = myParent.getConcept();
+      myLink = acd.findLink(myRole);
 
-    SNode innermostContainer = findNodeAtBoundary(targetType, prevChild, true);
-    if (innermostContainer != null) {
-      parent.removeChild(current);
-      addAtBoundary(innermostContainer, role, current);
+      if (myLink == null) {
+        LOG.error("Can't find a link " + myRole + " in concept " + acd.getName());
+        return false;
+      }
+
+      if (myLink.isMultiple()) {
+        break;
+      }
+      myCurrent = myCurrent.getParent();
+      nodeChanged = true;
+    }
+    if (myCurrent == null) {
+      return false;
+    }
+    if (nodeChanged) {
+      myNodes.add(myCurrent);
     } else {
-      parent.removeChild(current);
-      addWithAnchor(parent, prevChild, role, current);
+      myNodes.addAll(selectedNodes);
     }
-
-    moveOtherNodes(current);
+    return true;
   }
 
-  private void moveOtherNodes(SNode current) {
-    SNode parent = current.getParent();
+  private void doMove() {
+    if (isBoundary(myCurrent)) {
+      moveBoundaryNode();
+    } else {
+      moveNotBoundaryNode();
+    }
+
+  }
+
+
+
+  private void moveNotBoundaryNode() {
+    final SNode prevChild = siblingWithTheSameRole(myCurrent);
+    if (prevChild == null) {
+      List<? extends SNode> children = IterableUtil.asList(myCurrent.getParent().getChildren(myRole));
+      LOG.error("Prev. child is null. isForward = " + forward() + "; index = " + children.indexOf(myCurrent));
+      return;
+    }
+
+    EditorCell anchorCell = myComponent.findNodeCell(prevChild);
+    if (tryPasteToCellAndChildren(anchorCell)) return;
+    addWithAnchor(myParent, prevChild);
+  }
+
+
+  private void moveBoundaryNode() {
+    EditorCell anchorCell = myComponent.findNodeCell(myCurrent);
+
+    SNode currentTarget = myCurrent.getParent();
+
+    while (currentTarget != null && anchorCell != null && anchorCell.getParent() != null) {
+      Iterator<EditorCell> iterator = getCellIterator(anchorCell);
+      while (iterator.hasNext()) {
+        EditorCell next = iterator.next();
+        if (next.getSNode().equals(currentTarget) && next.getRole() != null && !next.isReferenceCell() && haveSimilarLink(currentTarget))  {
+          addAtBoundary(currentTarget);
+          return;
+        }
+        if (tryPasteToCellAndChildren(next)) {
+          return;
+        }
+      }
+      anchorCell = anchorCell.getParent();
+      if (anchorCell != null && anchorCell.isBig()) {
+        SNode currentAnchor = anchorCell.getSNode();
+        currentTarget = currentAnchor.getParent();
+        if (currentTarget != null && haveSimilarLink(currentTarget) && currentAnchor.getRoleInParent().equals(myRole)) {
+          addWithAnchor(currentTarget, currentAnchor);
+          return;
+        }
+      }
+    }
+  }
+
+  private boolean tryPasteToCellAndChildren(EditorCell anchorCell) {
+    if (tryPasteToCell(anchorCell)) {
+      return true;
+    }
+    for (EditorCell levelCell : new DfsTraverserIterable(anchorCell, forward(), true)) {
+      if (tryPasteToCell(levelCell)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private boolean tryPasteToCell(EditorCell levelCell) {
+    if (canPasteToCell(levelCell)) {
+      addAtBoundary(levelCell.getSNode());
+      moveOtherNodes();
+      return true;
+    }
+    return false;
+  }
+
+  private boolean canPasteToCell(EditorCell levelCell) {
+    if (levelCell == null) {
+      return false;
+    }
+    final SNode levelNode = levelCell.getSNode();
+    return levelCell.isBig() && levelNode != null && haveSimilarLink(levelNode) &&
+        CellFinderUtil.findChildByCondition(levelCell,
+            new Condition<EditorCell>() {
+              @Override
+              public boolean met(EditorCell cell) {
+                return !cell.isReferenceCell() && cell instanceof EditorCell_Collection && myRole.equals(cell.getRole()) && cell.getSNode().equals(levelNode);
+              }
+            }, forward(), true) != null;
+  }
+
+  private Iterator<EditorCell> getCellIterator(EditorCell anchorCell) {
+    Iterator<EditorCell> iterator = forward() ? anchorCell.getParent().iterator() : anchorCell.getParent().reverseIterator();
+    while (iterator.hasNext()) {
+      if (iterator.next().equals(anchorCell)) {
+        break;
+      }
+    }
+    return iterator;
+  }
+
+  private void moveOtherNodes() {
+    SNode parent = myCurrent.getParent();
     if (forward()) {
       for (SNode node : myNodes.subList(0, myNodes.size() - 1)) {
         node.getParent().removeChild(node);
-        parent.insertChild(current.getRoleInParent(), node, current.getPrevSibling());
+        parent.insertChildBefore(myRole, node, myCurrent);
       }
     } else {
       List<SNode> list = new ArrayList<SNode>(myNodes.subList(1, myNodes.size()));
       Collections.reverse(list);
       for (SNode node : list) {
         node.getParent().removeChild(node);
-        parent.insertChild(current.getRoleInParent(), node, current);
+        jetbrains.mps.util.SNodeOperations.insertChild(parent, myRole, node, myCurrent);
       }
     }
   }
 
-  private SNode findNodeAtBoundary(SNode acd, SNode current, boolean includeThis) {
-    if (includeThis && current.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(acd)))) {
-      return current;
-    }
-
-    List<? extends SNode> children = IterableUtil.copyToList(current.getChildren());
-    if (!forward()) {
-      Collections.reverse(children);
-    }
-    for (SNode child : children) {
-      SNode result = findNodeAtBoundary(acd, child, true);
-      if (result != null) {
-        return result;
+  private boolean haveSimilarLink(SNode current) {
+    for (SAbstractConcept concept : SConceptUtil.getAllSuperConcepts(current.getConcept(), true)) {
+      SLink currentLink = concept.findLink(myLink.getRole());
+      if (currentLink != null && currentLink.isMultiple() && !currentLink.isReference() && currentLink.getTargetConcept().getQualifiedName().equals(myLink.getTargetConcept().getQualifiedName())) {
+        return true;
       }
     }
-
-    return null;
+    return false;
   }
 
   private SNode siblingWithTheSameRole(SNode node) {
     if (forward()) {
-      return node.getNextSibling();
+      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNextSibling(node);
     } else {
-      return node.getPrevSibling();
+      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getPrevSibling(node);
     }
   }
 
@@ -205,27 +280,31 @@ class IntelligentNodeMover {
     }
   }
 
-  private void addWithAnchor(SNode parent, SNode prevChild, String role, SNode current) {
+  private void addWithAnchor(SNode parent, SNode prevChild) {
+    myParent.removeChild(myCurrent);
     if (forward()) {
-      parent.insertChild(role, current, prevChild);
+      jetbrains.mps.util.SNodeOperations.insertChild(parent, myRole, myCurrent, prevChild);
     } else {
-      parent.insertChild(role, current, prevChild.getPrevSibling());
+      parent.insertChildBefore(myRole, myCurrent, prevChild);
     }
+    moveOtherNodes();
   }
 
-  private void addAtBoundary(SNode result, String role, SNode current) {
+  private void addAtBoundary(SNode result) {
+    myParent.removeChild(myCurrent);
     if (forward()) {
-      result.insertChild(role, current, null);
+      jetbrains.mps.util.SNodeOperations.insertChild(result, myRole, myCurrent, null);
     } else {
-      result.addChild(role, current);
+      result.addChild(myRole, myCurrent);
     }
+    moveOtherNodes();
   }
 
-  private SNode findBoundaryNode() {
+  private SNode findBoundaryNode(List<SNode> nodes) {
     if (forward()) {
-      return myNodes.get(myNodes.size() - 1);
+      return nodes.get(nodes.size() - 1);
     } else {
-      return myNodes.get(0);
+      return nodes.get(0);
     }
   }
 }

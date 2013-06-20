@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddTestAnnotation_Intention implements IntentionFactory {
@@ -85,7 +86,7 @@ public class AddTestAnnotation_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.TestNodeAnnotation", null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.INodeAnnotattion")), newAnnotation);
-      editorContext.select(newAnnotation);
+      SelectionUtil.selectNode(editorContext, newAnnotation);
     }
 
     public IntentionDescriptor getDescriptor() {

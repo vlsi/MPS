@@ -156,13 +156,6 @@ public class SModelUtil_new implements CoreComponent {
       }
     }
 
-    // patch: old generated adapters use fqName without word 'structure'
-    if (conceptFqName.indexOf(".structure.") == -1) {
-      String conceptName = NameUtil.shortNameFromLongName(conceptFqName);
-      String languageNamespace = NameUtil.namespaceFromLongName(conceptFqName);
-      conceptFqName = languageNamespace + ".structure." + conceptName;
-    }
-
     jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(conceptFqName);
     if (nodeId != null) {
       newNode.setId(nodeId);

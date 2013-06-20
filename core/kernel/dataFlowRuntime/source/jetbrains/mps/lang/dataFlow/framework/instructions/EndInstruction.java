@@ -17,12 +17,22 @@ package jetbrains.mps.lang.dataFlow.framework.instructions;
 
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.Program.TryFinallyInfo;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.*;
 
 public class EndInstruction extends Instruction {
   private Set<RetInstruction> myReturns = new HashSet<RetInstruction>();
   private Set<TryFinallyInfo> myRootTryFinallies = new HashSet<TryFinallyInfo>();
+
+  public EndInstruction() {
+    super();
+  }
+
+  public EndInstruction(String ruleNodeReference) {
+    super(ruleNodeReference);
+  }
 
   @Override
   public String commandPresentation() {

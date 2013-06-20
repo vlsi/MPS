@@ -24,9 +24,9 @@ import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class ScopeOptions extends BaseOptions {

@@ -56,7 +56,7 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
   @Override
   public String getApplicableConcept() {
     SNode patternNode = RuleUtil.getPatternReductionRulePatternNode(ruleNode);
-    return patternNode.getConcept().getId();
+    return patternNode.getConcept().getQualifiedName();
   }
 
   @Override

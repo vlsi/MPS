@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.ArrayList;

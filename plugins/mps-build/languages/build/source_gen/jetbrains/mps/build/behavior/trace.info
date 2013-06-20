@@ -38,7 +38,7 @@
   <unitInfo fileName="BuildLayout_CopyHandler_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyHandler_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_CopyMapper_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyMapper_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_CopyParameter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyParameter_BehaviorDescriptor" />
-  <unitInfo fileName="BuildLayout_CopyProcessor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyProcessor_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_CopyProcessor_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyProcessor_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_CopyRegexMapper_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyRegexMapper_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_Copy_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Copy_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_CustomCopy_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CustomCopy_BehaviorDescriptor" />
@@ -325,95 +325,108 @@
     <unitInfo nodeId="1224588814561807530" fileName="BuildJavaPlugin_Behavior.java" startLine="23" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildJavaPlugin_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1330375798060762852">
-    <nodeInfo nodeId="1330375798101186783" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="20" startPosition="112" endLine="21" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1330375798092398973" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="21" startPosition="118" endLine="22" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1330375798096626706" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="22" startPosition="126" endLine="23" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1330375798096632886" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="24" startPosition="26" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1330375798096561210" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1330375798062464659" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="27" startPosition="0" endLine="28" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1330375798062547437" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="28" startPosition="28" endLine="29" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1330375798101861332" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="30" startPosition="29" endLine="31" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1330375798096675579" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1330375798092502565" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="33" startPosition="214" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1330375798062135840" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="34" startPosition="31" endLine="35" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1330375798101802441" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="39" startPosition="102" endLine="40" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1330375798101831822" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="41" startPosition="104" endLine="42" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1330375798101798085" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1330375798101447986" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="47" startPosition="75" endLine="48" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1330375798101364962" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="49" startPosition="96" endLine="50" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1330375798101446162" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="51" startPosition="37" endLine="52" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1330375798101610244" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="54" startPosition="33" endLine="55" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1330375798101582749" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="56" startPosition="11" endLine="57" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1330375798101372922" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="58" startPosition="9" endLine="59" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1330375798101678123" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="61" startPosition="12" endLine="62" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1330375798101704570" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="64" startPosition="28" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1330375798101512050" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="66" startPosition="5" endLine="67" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="71" startPosition="77" endLine="72" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="76" startPosition="110" endLine="77" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1330375798101675359" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="61" startPosition="10" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1330375798096585610" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="23" startPosition="39" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1330375798096522582" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="29" startPosition="133" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1330375798101595556" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="53" startPosition="92" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1330375798101690842" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="63" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTaskName_1330375798060763184#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTaskName_1330375798060763184#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1330375798062888294" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="38" startPosition="71" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1330375798101427691" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="52" startPosition="75" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="filesetName_1330375798101726877#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1330375798101372370" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="50" startPosition="156" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1330375798101319142" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="48" startPosition="44" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="20" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTempFolder_1330375798096391716#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="47" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="representativeName_1330375798101242503#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1330375798060763014" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="1330375798096585612" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="24" startPosition="26" endLine="25" endPosition="21" />
-    <scopeInfo nodeId="1330375798096522584" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="30" startPosition="29" endLine="31" endPosition="134" />
-    <scopeInfo nodeId="1330375798062888296" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="39" startPosition="102" endLine="40" endPosition="213" />
-    <scopeInfo nodeId="1330375798086023577" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="41" startPosition="104" endLine="42" endPosition="207" />
-    <scopeInfo nodeId="1330375798101595558" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="54" startPosition="33" endLine="55" endPosition="28" />
-    <scopeInfo nodeId="1330375798101675360" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="61" startPosition="12" endLine="62" endPosition="137" />
-    <scopeInfo nodeId="1330375798101690844" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="64" startPosition="28" endLine="65" endPosition="30" />
-    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="71" startPosition="77" endLine="72" endPosition="127" />
-    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="76" startPosition="110" endLine="77" endPosition="264" />
-    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
+    <nodeInfo nodeId="1330375798101186783" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="21" startPosition="112" endLine="22" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1330375798092398973" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="22" startPosition="118" endLine="23" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1330375798096626706" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="23" startPosition="126" endLine="24" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1330375798096632886" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="25" startPosition="26" endLine="26" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1330375798096561210" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="27" startPosition="5" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1330375798062464659" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="28" startPosition="0" endLine="29" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1330375798062547437" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="29" startPosition="28" endLine="30" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1330375798101861332" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="31" startPosition="29" endLine="32" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1330375798096675579" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1330375798092502565" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="34" startPosition="214" endLine="35" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1330375798062135840" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="35" startPosition="31" endLine="36" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1330375798101802441" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="40" startPosition="102" endLine="41" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1330375798101831822" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="42" startPosition="104" endLine="43" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1330375798101798085" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="44" startPosition="5" endLine="45" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1330375798101447986" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="48" startPosition="75" endLine="49" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1330375798101364962" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="50" startPosition="96" endLine="51" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1330375798101446162" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="52" startPosition="37" endLine="53" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1330375798101610244" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="55" startPosition="33" endLine="56" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1330375798101582749" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="57" startPosition="11" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1330375798101372922" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="59" startPosition="9" endLine="60" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1330375798101678123" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="62" startPosition="12" endLine="63" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1330375798101704570" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="65" startPosition="28" endLine="66" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1330375798101512050" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="67" startPosition="5" endLine="68" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="72" startPosition="77" endLine="73" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="77" startPosition="95" endLine="78" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="82" startPosition="110" endLine="83" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="87" startPosition="128" endLine="88" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1330375798101675359" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="62" startPosition="10" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1330375798096585610" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="24" startPosition="39" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1330375798096522582" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="30" startPosition="133" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1330375798101595556" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="54" startPosition="92" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1330375798101690842" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="64" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTaskName_1330375798060763184#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTaskArguments_7918752904805535914#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;" />
+    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTaskName_1330375798060763184#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTaskArguments_7918752904805535914#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/Map;" />
+    <nodeInfo nodeId="1330375798062888294" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="39" startPosition="71" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1330375798101427691" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="53" startPosition="75" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="39" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="filesetName_1330375798101726877#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1330375798101372370" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="51" startPosition="156" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1330375798101319142" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="49" startPosition="44" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="21" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTempFolder_1330375798096391716#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="48" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="representativeName_1330375798101242503#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1330375798060763014" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
+    <scopeInfo nodeId="1330375798096585612" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="25" startPosition="26" endLine="26" endPosition="21" />
+    <scopeInfo nodeId="1330375798096522584" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="31" startPosition="29" endLine="32" endPosition="134" />
+    <scopeInfo nodeId="1330375798062888296" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="40" startPosition="102" endLine="41" endPosition="213" />
+    <scopeInfo nodeId="1330375798086023577" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="42" startPosition="104" endLine="43" endPosition="207" />
+    <scopeInfo nodeId="1330375798101595558" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="55" startPosition="33" endLine="56" endPosition="28" />
+    <scopeInfo nodeId="1330375798101675360" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="62" startPosition="12" endLine="63" endPosition="137" />
+    <scopeInfo nodeId="1330375798101690844" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="65" startPosition="28" endLine="66" endPosition="30" />
+    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="72" startPosition="77" endLine="73" endPosition="127" />
+    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="77" startPosition="95" endLine="78" endPosition="171" />
+    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="82" startPosition="110" endLine="83" endPosition="264" />
+    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="87" startPosition="128" endLine="88" endPosition="308" />
+    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1330375798060762852" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1330375798101427693" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="53" startPosition="92" endLine="57" endPosition="27" />
-    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1330375798101427693" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="54" startPosition="92" endLine="58" endPosition="27" />
+    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="1330375798060762852" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="1330375798060762852" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="1330375798060762852" varName="callerConceptFqName" />
       <varInfo nodeId="1330375798060762852" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1330375798101726880" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="38" startPosition="71" endLine="44" endPosition="18" />
-    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="1330375798060762852" varName="callerConceptFqName" />
+      <varInfo nodeId="1330375798060762852" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1330375798101726880" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="39" startPosition="71" endLine="45" endPosition="18" />
+    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="39" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1330375798101735661" varName="fileset" />
     </scopeInfo>
-    <scopeInfo nodeId="1330375798101372374" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="51" startPosition="37" endLine="59" endPosition="91">
+    <scopeInfo nodeId="1330375798101372374" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="52" startPosition="37" endLine="60" endPosition="91">
       <varInfo nodeId="1330375798101446163" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="1330375798101319144" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="49" startPosition="96" endLine="60" endPosition="7">
+    <scopeInfo nodeId="1330375798101319144" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="50" startPosition="96" endLine="61" endPosition="7">
       <varInfo nodeId="1330375798101364963" varName="compositePart" />
     </scopeInfo>
-    <scopeInfo nodeId="1330375798096391719" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="20" startPosition="112" endLine="35" endPosition="19">
+    <scopeInfo nodeId="1330375798096391719" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="21" startPosition="112" endLine="36" endPosition="19">
       <varInfo nodeId="1330375798062547438" varName="copyNode" />
       <varInfo nodeId="1330375798092398974" varName="map" />
       <varInfo nodeId="1330375798062464662" varName="name" />
       <varInfo nodeId="1330375798096626707" varName="outpath" />
       <varInfo nodeId="1330375798101186784" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="20" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="21" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1330375798096391732" varName="genContext" />
       <varInfo nodeId="1330375798060762852" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1330375798101242506" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="47" startPosition="75" endLine="67" endPosition="26">
+    <scopeInfo nodeId="1330375798101242506" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="48" startPosition="75" endLine="68" endPosition="26">
       <varInfo nodeId="1330375798101447987" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="47" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="48" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="1330375798101256907" varName="path" />
     </scopeInfo>
-    <unitInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="16" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyProcessor_Behavior" />
+    <unitInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="17" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyProcessor_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1330375798085107723">
     <nodeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
