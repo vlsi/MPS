@@ -5,7 +5,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
-  <language namespace="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.lang.commands)" />
+  <language namespace="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.blCommand)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)" />
   <language namespace="63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)" />
@@ -1663,12 +1663,12 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6852607286014635191" nodeInfo="nn">
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="6852607286014685880" nodeInfo="nn">
               <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4417779018063659071" nodeInfo="nn">
-                <node role="quotedNode" roleId="tp3r.1196350785114" type=".jetbrains.mps.console.lang.commands.structure.TextResultPart" id="4417779018063713584" nodeInfo="ng">
-                  <property name="text" value="text" />
-                  <node role="smodelAttribute" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="4417779018063747520" nodeInfo="ng">
+                <node role="quotedNode" roleId="tp3r.1196350785114" type="eynw.TextResultPart" typeId="eynw.529843215038987955" id="4344638274670527026" nodeInfo="ng">
+                  <property name="text" nameId="eynw.529843215038987957" value="text" />
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="4344638274670593977" nodeInfo="ng">
                     <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
                     <property name="label" nameId="tp3r.6489343236075007666" value="TextResultPart" />
-                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4417779018063767023" nodeInfo="nn">
+                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4344638274670627717" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6852607286010656939" resolveInfo="text" />
                     </node>
                   </node>
@@ -1707,7 +1707,7 @@
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="eynw.529843215038987952" resolveInfo="NodeResultPart" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4417779018064268281" nodeInfo="nn">
-              <node role="quotedNode" roleId="tp3r.1196350785114" type=".jetbrains.mps.console.lang.commands.structure.NodeResultPart" id="4417779018064268282" nodeInfo="ng" />
+              <node role="quotedNode" roleId="tp3r.1196350785114" type="eynw.NodeResultPart" typeId="eynw.529843215038987952" id="4344638274670378520" nodeInfo="ng" />
             </node>
           </node>
         </node>
@@ -1938,8 +1938,8 @@
                       <link role="concept" roleId="tp25.1138405853777" targetNodeId="eynw.529843215038987946" resolveInfo="CommandResult" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3975386772502798925" nodeInfo="nn">
-                      <node role="quotedNode" roleId="tp3r.1196350785114" type=".jetbrains.mps.console.lang.structure.CommandResult" id="8735002719773029491" nodeInfo="ng">
-                        <node role="line" type=".jetbrains.mps.console.lang.structure.CommandResultLine" id="7629059997631220821" nodeInfo="ng" />
+                      <node role="quotedNode" roleId="tp3r.1196350785114" type="eynw.CommandResult" typeId="eynw.529843215038987946" id="2439314208286102045" nodeInfo="ng">
+                        <node role="line" roleId="eynw.529843215038987947" type="eynw.CommandResultLine" typeId="eynw.529843215038987949" id="2439314208286169658" nodeInfo="ng" />
                       </node>
                     </node>
                   </node>
@@ -2068,12 +2068,12 @@
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="3975386772502274176" nodeInfo="nn">
                                       <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3975386772502290144" nodeInfo="nn">
-                                        <node role="quotedNode" roleId="tp3r.1196350785114" type=".jetbrains.mps.console.lang.structure.TextResultPart" id="3975386772502306081" nodeInfo="ng">
-                                          <property name="text" value="text" />
-                                          <node role="smodelAttribute" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="3975386772502338428" nodeInfo="ng">
+                                        <node role="quotedNode" roleId="tp3r.1196350785114" type="eynw.TextResultPart" typeId="eynw.529843215038987955" id="2439314208286206228" nodeInfo="ng">
+                                          <property name="text" nameId="eynw.529843215038987957" value="text" />
+                                          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="2439314208286342173" nodeInfo="ng">
                                             <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
                                             <property name="label" nameId="tp3r.6489343236075007666" value="TextResultPart" />
-                                            <node role="expression" roleId="tp3r.1196350785111" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3975386772502353944" nodeInfo="nn">
+                                            <node role="expression" roleId="tp3r.1196350785111" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2439314208286377164" nodeInfo="nn">
                                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2034046503373011211" resolveInfo="text" />
                                             </node>
                                           </node>
