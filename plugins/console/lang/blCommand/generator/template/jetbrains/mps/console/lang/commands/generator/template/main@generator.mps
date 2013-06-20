@@ -86,6 +86,12 @@
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="7738379549905438724" resolveInfo="reduce_UsagesExpression" />
       </node>
     </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7738379549911145326" nodeInfo="ng">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3xdn.7738379549910147341" resolveInfo="InstancesExpression" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7738379549911145671" nodeInfo="nn">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="7738379549910152710" resolveInfo="reduce_InstancesExpression" />
+      </node>
+    </node>
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5336086527852812352" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="reduce_BaseLanguageCommand" />
