@@ -11432,7 +11432,6 @@
           </node>
         </node>
         <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="4323500428132428397" nodeInfo="ng">
-          <property name="idString" value="sharp" />
           <property name="name" nameId="tpck.1169194664001" value="sharp" />
         </node>
       </node>
@@ -11728,7 +11727,6 @@
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="2162403111555415443" nodeInfo="nn" />
         <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="4323500428132436398" nodeInfo="ng">
-          <property name="idString" value="closingBracket" />
           <property name="name" nameId="tpck.1169194664001" value="closingBracket" />
         </node>
       </node>
