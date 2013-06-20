@@ -72,4 +72,10 @@ public class CommandUtil {
     });
     return res;
   }
+
+
+
+  public static Collection<SNode> usages(SearchScope scope, SNode node) {
+    return null;
+  }
 }
