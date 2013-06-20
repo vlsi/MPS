@@ -8,6 +8,7 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.merge.MergeSessionState;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -24,10 +25,9 @@ import java.util.Set;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -73,6 +73,8 @@ public class MergeModelsDialog extends DialogWrapper {
   private MergeSession myMetadataMergeSession;
   private MergeSessionState myInitialState;
   private MergeSessionState myMetadataInitialState;
+  private SModel myResultModel;
+  private SModel myMetadataResultModel;
   private SNodeId myRootId;
 
   private MergeModelsDialog.MergeModelsTree myMergeTree;
@@ -97,19 +99,16 @@ public class MergeModelsDialog extends DialogWrapper {
     myProject = request.getProject();
     myContentTitles = request.getContentTitles();
     assert myContentTitles.length == 3;
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myMergeSession = MergeSession.createMergeSession(baseModel.getModelDescriptor(), mineModel.getModelDescriptor(), repositoryModel.getModelDescriptor());
-        myInitialState = myMergeSession.getCurrentState();
-      }
-    });
     final jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        DiffTemporaryModule.createModuleAndRegister(as_3qqb0l_a0a0a0a0a0a0h0z(myMergeSession.getBaseModel(), SModelBase.class).getSModelInternal(), "base", p, false);
-        DiffTemporaryModule.createModuleAndRegister(as_3qqb0l_a0a0b0a0a0a0h0z(myMergeSession.getMyModel(), SModelBase.class).getSModelInternal(), "mine", p, false);
-        DiffTemporaryModule.createModuleAndRegister(as_3qqb0l_a0a0c0a0a0a0h0z(myMergeSession.getRepositoryModel(), SModelBase.class).getSModelInternal(), "repo", p, false);
-        DiffTemporaryModule.createModuleAndRegister(as_3qqb0l_a0a0d0a0a0a0h0z(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal(), "result", p, true);
+        DiffTemporaryModule.createModuleAndRegister(baseModel, "base", p, false);
+        DiffTemporaryModule.createModuleAndRegister(mineModel, "mine", p, false);
+        DiffTemporaryModule.createModuleAndRegister(repositoryModel, "repo", p, false);
+        myMergeSession = MergeSession.createMergeSession(baseModel.getModelDescriptor(), mineModel.getModelDescriptor(), repositoryModel.getModelDescriptor());
+        myInitialState = myMergeSession.getCurrentState();
+        myResultModel = as_3qqb0l_a0a0f0a0a0a0g0bb(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal();
+        DiffTemporaryModule.createModuleAndRegister(myResultModel, "result", p, true);
       }
     });
     if (ListSequence.fromList(myMergeSession.getMetadataChanges()).isNotEmpty()) {
@@ -120,7 +119,8 @@ public class MergeModelsDialog extends DialogWrapper {
           org.jetbrains.mps.openapi.model.SModel repoMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getRepositoryModel(), false);
           myMetadataMergeSession = MergeSession.createMergeSession(baseMetaModel, mineMetaModel, repoMetaModel);
           myMetadataInitialState = myMetadataMergeSession.getCurrentState();
-          DiffTemporaryModule.createModuleAndRegister(as_3qqb0l_a0a0f0a0a0a0a0i0z(myMetadataMergeSession.getResultModel(), SModelBase.class).getSModelInternal(), "result", p, true);
+          myMetadataResultModel = as_3qqb0l_a0a0f0a0a0a0a0h0bb(myMetadataMergeSession.getResultModel(), SModelBase.class).getSModelInternal();
+          DiffTemporaryModule.createModuleAndRegister(myMetadataResultModel, "result", p, true);
         }
       });
     }
@@ -216,7 +216,7 @@ public class MergeModelsDialog extends DialogWrapper {
 
   public SModel getResultModel() {
     return (myApplyChanges ?
-      as_3qqb0l_a0a0a0ib(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal() :
+      as_3qqb0l_a0a0a0kb(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal() :
       null
     );
   }
@@ -230,7 +230,7 @@ public class MergeModelsDialog extends DialogWrapper {
         DiffTemporaryModule.resetSModelId(myMergeSession.getResultModel());
       }
     });
-    return as_3qqb0l_a0a2a53(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal();
+    return as_3qqb0l_a0a2a73(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal();
   }
 
   public void unregisterModels() {
@@ -238,12 +238,12 @@ public class MergeModelsDialog extends DialogWrapper {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (myMetadataMergeSession != null) {
-          DiffTemporaryModule.unregisterModel(myMetadataMergeSession.getResultModel(), p);
+          DiffTemporaryModule.unregisterModel(myMetadataResultModel.getModelDescriptor(), p);
           MetadataUtil.dispose(myMetadataMergeSession.getRepositoryModel());
           MetadataUtil.dispose(myMetadataMergeSession.getMyModel());
           MetadataUtil.dispose(myMetadataMergeSession.getBaseModel());
         }
-        DiffTemporaryModule.unregisterModel(myMergeSession.getResultModel(), p);
+        DiffTemporaryModule.unregisterModel(myResultModel.getModelDescriptor(), p);
         DiffTemporaryModule.unregisterModel(myMergeSession.getRepositoryModel(), p);
         DiffTemporaryModule.unregisterModel(myMergeSession.getMyModel(), p);
         DiffTemporaryModule.unregisterModel(myMergeSession.getBaseModel(), p);
@@ -583,7 +583,7 @@ public class MergeModelsDialog extends DialogWrapper {
 
     @Override
     protected Iterable<SModel> getModels() {
-      return Arrays.asList(as_3qqb0l_a0a0a0d76(myMergeSession.getBaseModel(), SModelBase.class).getSModelInternal(), as_3qqb0l_a0b0a0d76(myMergeSession.getMyModel(), SModelBase.class).getSModelInternal(), as_3qqb0l_a0c0a0d76(myMergeSession.getRepositoryModel(), SModelBase.class).getSModelInternal());
+      return Arrays.asList(as_3qqb0l_a0a0a0d96(myMergeSession.getBaseModel(), SModelBase.class).getSModelInternal(), as_3qqb0l_a0b0a0d96(myMergeSession.getMyModel(), SModelBase.class).getSModelInternal(), as_3qqb0l_a0c0a0d96(myMergeSession.getRepositoryModel(), SModelBase.class).getSModelInternal());
     }
 
     @Override
@@ -609,70 +609,49 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-  private static <T> T as_3qqb0l_a0a0a0a0a0a0h0z(Object o, Class<T> type) {
+  private static <T> T as_3qqb0l_a0a0f0a0a0a0g0bb(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_3qqb0l_a0a0b0a0a0a0h0z(Object o, Class<T> type) {
+  private static <T> T as_3qqb0l_a0a0f0a0a0a0a0h0bb(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_3qqb0l_a0a0c0a0a0a0h0z(Object o, Class<T> type) {
+  private static <T> T as_3qqb0l_a0a0a0kb(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_3qqb0l_a0a0d0a0a0a0h0z(Object o, Class<T> type) {
+  private static <T> T as_3qqb0l_a0a2a73(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_3qqb0l_a0a0f0a0a0a0a0i0z(Object o, Class<T> type) {
+  private static <T> T as_3qqb0l_a0a0a0d96(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_3qqb0l_a0a0a0ib(Object o, Class<T> type) {
+  private static <T> T as_3qqb0l_a0b0a0d96(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_3qqb0l_a0a2a53(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_3qqb0l_a0a0a0d76(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_3qqb0l_a0b0a0d76(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_3qqb0l_a0c0a0d76(Object o, Class<T> type) {
+  private static <T> T as_3qqb0l_a0c0a0d96(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
