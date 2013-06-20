@@ -21,28 +21,35 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.io.IOException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import javax.swing.SwingUtilities;
-import java.lang.reflect.InvocationTargetException;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vfs.IFileUtils;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
-import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import javax.swing.SwingUtilities;
+import java.lang.reflect.InvocationTargetException;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.SModelInternal;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.annotations.Nullable;
@@ -62,6 +69,7 @@ public class MultipleFilesParser {
   private List<IFile> mySuccessfulFiles = ListSequence.fromList(new ArrayList<IFile>());
 
   private boolean wasDefaultPkg = false;
+  private int myRootCount = 0;
 
 
   public MultipleFilesParser(SModule module, SRepository repository, Project project) {
@@ -74,7 +82,7 @@ public class MultipleFilesParser {
 
   public void convertToMps(final List<IFile> files, ProgressMonitor progress) throws JavaParseException, IOException {
 
-    progress.start("Converting...", 10);
+    progress.start("Converting...", 31);
 
     // first we build AST 
     final ProgressMonitor parseProgress = progress.subTask(1);
@@ -104,8 +112,9 @@ public class MultipleFilesParser {
     final Wrappers._int rootCount = new Wrappers._int(0);
 
     // now we attach the models and try to resolve      
-    final _FunctionTypes._void_P0_E0 createModelsWork = new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
+
+    runCommand("model creation pass", new Runnable() {
+      public void run() {
         for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
           final SModel model = registerModelForPackage(pakage);
 
@@ -116,6 +125,9 @@ public class MultipleFilesParser {
             }
           });
           rootCount.value = rootCount.value + SetSequence.fromSet(roots).count();
+
+          ((SModelInternal) model).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+
         }
 
         for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
@@ -138,104 +150,29 @@ public class MultipleFilesParser {
         }
 
       }
-    };
-
-    if (myModelAccess.isCommandAction()) {
-      createModelsWork.invoke();
-    } else {
-      try {
-        SwingUtilities.invokeAndWait(new Runnable() {
-          public void run() {
-            myModelAccess.executeCommand(new Runnable() {
-              public void run() {
-                createModelsWork.invoke();
-              }
-            });
-          }
-        });
-
-      } catch (InterruptedException e) {
-        LOG.error("Models creation pass was interrupted", e);
-      } catch (InvocationTargetException e) {
-        LOG.error("Exception in model creation pass", e.getCause());
-      }
-    }
-
-    final ProgressMonitor resolveProgress = progress.subTask(9);
-    resolveProgress.start("Resolving...", rootCount.value);
-
-    final Map<SNodeReference, List<SReference>> referenceMap = MapSequence.fromMap(new HashMap<SNodeReference, List<SReference>>());
-
-    myModelAccess.runReadAction(new Runnable() {
-      public void run() {
-        for (SModel model : ListSequence.fromList(myModels)) {
-          for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
-
-            resolveProgress.step(root.getName());
-            try {
-              resolveReferences(root, referenceMap, 0);
-            } catch (Exception e) {
-            }
-            resolveProgress.advance(1);
-
-          }
-        }
-
-        resolveProgress.done();
-      }
     });
 
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          myModelAccess.executeCommand(new Runnable() {
-            public void run() {
-              updateReference(referenceMap);
-            }
-          });
-        }
-      });
+    myRootCount = rootCount.value;
 
-    } catch (InterruptedException e) {
-      LOG.error("Reference update pass was interrupted", e);
-    } catch (InvocationTargetException e) {
-      LOG.error("Exception in reference update pass", e.getCause());
-    }
+    ProgressMonitor resolveProgress = progress.subTask(30);
 
-    MapSequence.fromMap(referenceMap).clear();
-
-    myModelAccess.runReadAction(new Runnable() {
-      public void run() {
-        for (SModel model : ListSequence.fromList(myModels)) {
-          for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
-
-            try {
-              resolveReferences(root, referenceMap, 1);
-            } catch (Exception e) {
-            }
-          }
-        }
+    resolveUpdatePass("top level refs", new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
+      public Iterable<SReference> invoke(SNode node) {
+        return getTopLevelRefs(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));
       }
-    });
+    }, resolveProgress.subTask(10));
 
+    resolveUpdatePass("field/method type refs", new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
+      public Iterable<SReference> invoke(SNode node) {
+        return getFieldAndMethodTypeRefs(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));
+      }
+    }, resolveProgress.subTask(10));
 
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          myModelAccess.executeCommand(new Runnable() {
-            public void run() {
-              updateReference(referenceMap);
-            }
-          });
-        }
-      });
-
-    } catch (InterruptedException e) {
-      LOG.error("Reference update pass was interrupted", e);
-    } catch (InvocationTargetException e) {
-      LOG.error("Exception in reference update pass", e.getCause());
-    }
-
+    resolveUpdatePass("all type refs", new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
+      public Iterable<SReference> invoke(SNode node) {
+        return getFieldAndMethodTypeRefs(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));
+      }
+    }, resolveProgress.subTask(10));
 
     progress.done();
   }
@@ -286,19 +223,181 @@ public class MultipleFilesParser {
 
 
 
-  private void resolveReferences(SNode startNode, Map<SNodeReference, List<SReference>> result, int pass) {
-    Deque<SNode> stack = DequeSequence.fromDeque(new LinkedList<SNode>());
-    DequeSequence.fromDeque(stack).pushElement(startNode);
+  private void runCommand(String name, final Runnable runnable) {
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        public void run() {
+          myModelAccess.executeCommand(runnable);
+        }
+      });
 
-    while (DequeSequence.fromDeque(stack).isNotEmpty()) {
-      SNode node = DequeSequence.fromDeque(stack).popElement();
+    } catch (InterruptedException e) {
+      LOG.error(name + " was interrupted", e);
+    } catch (InvocationTargetException e) {
+      LOG.error("Exception in " + name, e.getCause());
+    }
+  }
+
+
+
+  private void resolveUpdatePass(String stepName, final _FunctionTypes._return_P1_E0<? extends Iterable<SReference>, ? super SNode> extractor, final ProgressMonitor progress) {
+    final Map<SNodeReference, List<SReference>> resolveMap = MapSequence.fromMap(new HashMap<SNodeReference, List<SReference>>());
+
+    progress.start(stepName, myRootCount);
+
+    myModelAccess.runReadAction(new Runnable() {
+      public void run() {
+
+        for (SModel model : ListSequence.fromList(myModels)) {
+          for (SNode claz : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+
+            Iterable<SReference> refs = extractor.invoke(claz);
+            resolveRefs(refs, resolveMap);
+
+            progress.advance(1);
+          }
+        }
+      }
+    });
+
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        public void run() {
+          myModelAccess.executeCommand(new Runnable() {
+            public void run() {
+              updateReference(resolveMap);
+            }
+          });
+        }
+      });
+
+    } catch (InterruptedException e) {
+      LOG.error(stepName + " pass was interrupted", e);
+    } catch (InvocationTargetException e) {
+      LOG.error("Exception in " + stepName + " pass", e.getCause());
+    }
+
+    progress.done();
+  }
+
+
+
+  private Iterable<SReference> getTopLevelRefs(SNode node) {
+    final List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
+
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true))));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true)).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(it)));
+        }
+      });
+
+    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(it)));
+        }
+      });
+    }
+
+    for (SNode inner : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, new String[]{}))) {
+      if (SNodeOperations.isInstanceOf(inner, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        continue;
+      }
+      ListSequence.fromList(refs).addSequence(Sequence.fromIterable(getTopLevelRefs(inner)));
+    }
+
+    return refs;
+  }
+
+
+
+  private Iterable<SReference> getFieldAndMethodTypeRefs(SNode node) {
+    List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
+
+    for (SNode member : ListSequence.fromList(SLinkOperations.getTargets(node, "member", true))) {
+      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+        ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(SLinkOperations.getTarget(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", true))));
+
+      } else if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")) {
+        ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(SLinkOperations.getTarget(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true))));
+        for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true))) {
+          ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(SLinkOperations.getTarget(param, "type", true))));
+        }
+        for (SNode thrws : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "throwsItem", true))) {
+          ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(thrws)));
+        }
+
+      } else if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+        ListSequence.fromList(refs).addSequence(Sequence.fromIterable(getFieldAndMethodTypeRefs(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.Classifier"))));
+      }
+    }
+
+    return refs;
+  }
+
+
+
+  private Iterable<SReference> getVarTypeRefs(SNode node) {
+    List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
+
+    for (SNode block : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, new String[]{}))) {
+
+      for (SNode varDecl : ListSequence.fromList(SNodeOperations.getDescendants(block, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{}))) {
+        ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(SLinkOperations.getTarget(varDecl, "type", true))));
+      }
+    }
+
+    return refs;
+  }
+
+
+
+  private void resolveRefs(Iterable<SReference> refs, Map<SNodeReference, List<SReference>> result) {
+    for (SReference ref : refs) {
+      if (!(ref instanceof DynamicReference)) {
+        continue;
+      }
+
+      SNode target = ref.getTargetNode();
+      if (target == null) {
+        continue;
+      }
+
+      SNode source = ref.getSourceNode();
+      SModelReference targetModel = target.getModel().getReference();
+
+      SReference staticRef = StaticReference.create(ref.getRole(), source, targetModel, target.getNodeId());
+
+      List<SReference> nodeRefs = MapSequence.fromMap(result).get(source.getReference());
+      if (nodeRefs == null) {
+        nodeRefs = ListSequence.fromList(new ArrayList<SReference>());
+        MapSequence.fromMap(result).put(source.getReference(), nodeRefs);
+      }
+      ListSequence.fromList(nodeRefs).addElement((SReference) staticRef);
+    }
+  }
+
+
+
+  private void resolveReferences(SNode startNode, Map<SNodeReference, List<SReference>> result, int pass) {
+    final Queue<SNode> stack = QueueSequence.fromQueue(new LinkedList<SNode>());
+    QueueSequence.fromQueue(stack).addLastElement(startNode);
+
+    while (QueueSequence.fromQueue(stack).isNotEmpty()) {
+      SNode node = QueueSequence.fromQueue(stack).removeFirstElement();
       SModel ourModel = node.getModel();
-      DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
+      ListSequence.fromList(SNodeOperations.getChildren(node)).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          QueueSequence.fromQueue(stack).addLastElement(it);
+        }
+      });
 
       Iterable<? extends SReference> refs = node.getReferences();
       List<SReference> newRefs = ListSequence.fromList(new ArrayList<SReference>());
 
-      for (SReference ref : Sequence.fromIterable(refs)) {
+      for (final SReference ref : Sequence.fromIterable(refs)) {
         if (!(ref instanceof DynamicReference)) {
           continue;
         }
@@ -308,7 +407,7 @@ public class MultipleFilesParser {
           if (ref.getRole().equals("baseMethodDeclaration")) {
             continue;
           }
-          if (ref.getRole().equals("fieldDeclaration")) {
+          if (ref.getRole().equals("fieldDeclaration") || ref.getRole().equals("variableDeclaration")) {
             continue;
           }
 
@@ -324,7 +423,30 @@ public class MultipleFilesParser {
           }
         }
 
-        SNode target = ref.getTargetNode();
+        SNode target = null;
+
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Future<SNode> future = executor.submit(new Callable<SNode>() {
+          public SNode call() throws Exception {
+            final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
+            myModelAccess.runReadAction(new Runnable() {
+              public void run() {
+                result.value = ref.getTargetNode();
+              }
+            });
+            return result.value;
+          }
+        });
+
+        try {
+          target = future.get(1000, TimeUnit.MILLISECONDS);
+        } catch (TimeoutException e) {
+          LOG.error("Reference resolve timeout");
+          future.cancel(true);
+        } catch (Exception e) {
+          future.cancel(true);
+        }
+
         if (target == null) {
           continue;
         }
