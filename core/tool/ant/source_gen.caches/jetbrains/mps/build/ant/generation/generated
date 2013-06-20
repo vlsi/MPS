@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="42utobqdo02i9osiurcoj9e6nixaw9n">
+<dependencies version="2" modelHash="btyw5z959u1a0sjnr0ouo4rftyclgnc">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" hash="7pjirlk0yhaaq7ncawmrmlyybc79b5y" />
   <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="-a3z6qcokjr74bchh0pzpdox8npkt9yv" />
-  <common hash="-aucg41m8aiy1kon5i46g4ytfqlt9zxq" />
+  <common hash="66ok0pl00zp72s773dbmvepnkgf1u5m" />
   <source id="9096318311151691260" name="Chunk" hash="-88rz0ph6s3zyi1kn1m8re1289jqpd21">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Chunk.java" />
@@ -12,15 +12,21 @@
   <source id="9096318311151864960" name="ModuleChunkPart" hash="amzaecs6muofrdgcxtayvvbp7d4e5rk">
     <file name="ModuleChunkPart.java" />
   </source>
-  <source id="4263887295358464059" name="GenerateChunksTask" hash="e2kir9chyqjcmk72a26d191hy35u7hp">
+  <source id="4263887295358464059" name="GenerateTask" hash="7xcp2rujrd9lyhwr8s1eisuth721ej8">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
     <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
-    <file name="GenerateChunksTask.java" />
+    <file name="GenerateTask.java" />
   </source>
   <source id="978600701689990961" name="Plugin" hash="2z7zzdtjovhulfzl9p6xgxkomye5b4f">
     <file name="Plugin.java" />
+  </source>
+  <source id="861826518923203126" name="DiffTestTask" hash="-c9p17eqwms17nymxmtwohunrttcmb1w">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
+    <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
+    <file name="DiffTestTask.java" />
   </source>
 </dependencies>
 

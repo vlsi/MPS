@@ -39,7 +39,7 @@ import jetbrains.mps.generator.info.ForeignPathsProvider;
 import java.io.File;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 
-public class ReducedGenerationWorker extends GeneratorWorker {
+public class ReducedGenerationWorker extends BaseGeneratorWorker {
   private ModuleOutputPaths myOutputPaths;
   private ReducedGenerationWorker.MyForeignRootPaths myForeignRootPaths;
   private OutputPathRedirects myOutputRedirects;
@@ -65,7 +65,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     MakeSession ms = new MakeSession(context, getMyMessageHandler(), true) {
       @Override
       public IScript toScript(ScriptBuilder scriptBuilder) {
-        scriptBuilder.withFacetNames(new IFacet.Name("jetbrains.mps.build.reduced.ReportFiles"), new IFacet.Name("jetbrains.mps.build.reduced.CollectHashes"));
+        scriptBuilder.withFacetNames(new IFacet.Name("jetbrains.mps.make.reduced.ReportFiles"), new IFacet.Name("jetbrains.mps.make.reduced.CollectHashes"));
         return scriptBuilder.toScript();
       }
     };

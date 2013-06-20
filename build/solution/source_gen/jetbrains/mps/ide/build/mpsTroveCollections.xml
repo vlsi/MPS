@@ -221,9 +221,7 @@
         <module file="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/languages/baseLanguage/collections/languages/trove/jetbrains.mps.baseLanguage.collections.trove.mpl" />
       </chunk>
-      <chunk>
-        <module file="" />
-      </chunk>
+      <chunk />
     </generate>
   </target>
   

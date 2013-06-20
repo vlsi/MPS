@@ -68,7 +68,17 @@ public class PropertyExpressionCellSelector_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     PropertyExpressionDelete_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new PropertyExpressionCellSelector_Editor.ReplaceWith_AbstractCellSelector_cellMenu_i44x1b_a0b0()}));
     return editorCell;
+  }
+
+  public static class ReplaceWith_AbstractCellSelector_cellMenu_i44x1b_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractCellSelector_cellMenu_i44x1b_a0b0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.lang.editor.structure.AbstractCellSelector";
+    }
   }
 
   private EditorCell createRefNode_i44x1b_c0(EditorContext editorContext, SNode node) {

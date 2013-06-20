@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -114,8 +115,7 @@ public class ConceptRegistry implements CoreComponent {
       }
 
       if (descriptor == null) {
-        // todo: maybe Interpreted?
-        descriptor = new IllegalConceptDescriptor(fqName);
+        descriptor = StructureAspectInterpreted.getInstance().getDescriptor(fqName);
       }
 
       conceptDescriptors.put(fqName, descriptor);

@@ -16,6 +16,7 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 public class CellSelectorReference_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new CellSelectorReference_Actions.CellSelectorReference_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.INSERT, new CellSelectorReference_Actions.CellSelectorReference_Actions_INSERT(node));
   }
 
   public static class CellSelectorReference_Actions_DELETE extends AbstractCellAction {
@@ -35,6 +36,24 @@ public class CellSelectorReference_Actions {
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "closingBracket", 0);
       } else {
         SLinkOperations.setTarget(node, "cellSelector", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.AbstractCellSelector", null), true);
+      }
+    }
+  }
+
+  public static class CellSelectorReference_Actions_INSERT extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public CellSelectorReference_Actions_INSERT(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      if (SLinkOperations.getTarget(node, "selectionStart", true) == null) {
+        SLinkOperations.setTarget(node, "selectionStart", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PositionSelector", null), true);
       }
     }
   }

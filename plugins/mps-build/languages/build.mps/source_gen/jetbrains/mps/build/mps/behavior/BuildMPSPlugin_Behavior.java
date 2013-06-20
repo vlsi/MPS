@@ -17,6 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.ScopeUtil;
+import jetbrains.mps.build.mps.util.VisibleModules;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -81,6 +83,20 @@ public class BuildMPSPlugin_Behavior {
         if ((log4jJar != null)) {
           helper.artifacts().put("log4j", log4jJar);
           builder.add(log4jJar, log4j);
+        }
+      }
+    }
+
+    // fetch gentest language 
+    VisibleModules visibleModules = new VisibleModules(artifacts.getProject(), artifacts.getGenContext());
+    visibleModules.collect();
+    SNode gentest = visibleModules.resolve("jetbrains.mps.tool.gentest", "3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7");
+    if ((gentest != null)) {
+      if (SNodeOperations.getContainingRoot(gentest) != SNodeOperations.getContainingRoot(thisNode)) {
+        SNode gentestJar = SNodeOperations.as(artifacts.findArtifact(gentest), "jetbrains.mps.build.structure.BuildLayout_Node");
+        if (gentestJar != null) {
+          helper.artifacts().put(SPropertyOperations.getString(gentest, "uuid"), gentestJar);
+          builder.add(gentestJar, gentest);
         }
       }
     }
