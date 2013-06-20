@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="btyw5z959u1a0sjnr0ouo4rftyclgnc">
+<dependencies version="2" modelHash="4vh1n6quws108cdufzgaaezztqy3xcp">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" hash="7pjirlk0yhaaq7ncawmrmlyybc79b5y" />
@@ -22,11 +22,11 @@
   <source id="978600701689990961" name="Plugin" hash="2z7zzdtjovhulfzl9p6xgxkomye5b4f">
     <file name="Plugin.java" />
   </source>
-  <source id="861826518923203126" name="DiffTestTask" hash="-c9p17eqwms17nymxmtwohunrttcmb1w">
+  <source id="861826518923203126" name="GenTestTask" hash="bzzcs5fkse7bvefmoxqbo5p3i54s93c">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
     <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
-    <file name="DiffTestTask.java" />
+    <file name="GenTestTask.java" />
   </source>
 </dependencies>
 

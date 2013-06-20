@@ -7,7 +7,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.generation.ModuleChunkPart" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.generation.DiffTestTask" file="DiffTestTask.java">
+  <dependency className="jetbrains.mps.build.ant.generation.GenTestTask" file="GenTestTask.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

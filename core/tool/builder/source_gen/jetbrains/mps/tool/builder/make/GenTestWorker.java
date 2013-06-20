@@ -73,15 +73,15 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.progress.ProgressMonitorBase;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
-public class DiffTestWorker extends GeneratorWorker {
-  private final DiffTestWorker.MyMessageHandler myMessageHandler = new DiffTestWorker.MyMessageHandler();
+public class GenTestWorker extends GeneratorWorker {
+  private final GenTestWorker.MyMessageHandler myMessageHandler = new GenTestWorker.MyMessageHandler();
   private boolean myTestFailed = false;
   private IMessageFormat myBuildServerMessageFormat;
   private Map<String, String> path2tmp = MapSequence.fromMap(new HashMap<String, String>());
   private String tmpPath;
-  private DiffTestWorker.MyReporter myReporter = new DiffTestWorker.MyReporter();
+  private GenTestWorker.MyReporter myReporter = new GenTestWorker.MyReporter();
 
-  public DiffTestWorker(Script whatToDo, MpsWorker.AntLogger logger) {
+  public GenTestWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
     myBuildServerMessageFormat = getBuildServerMessageFormat();
     File tmpDir;
@@ -173,7 +173,7 @@ public class DiffTestWorker extends GeneratorWorker {
       }
     };
 
-    IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new DiffTestWorker.MyJobMonitor(new DiffTestWorker.MyProgress(startTestFormat, finishTestFormat))) {
+    IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new GenTestWorker.MyJobMonitor(new GenTestWorker.MyProgress(startTestFormat, finishTestFormat))) {
       @Override
       public void setup(IPropertiesPool ppool, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
         super.setup(ppool, toExecute, input);
@@ -201,10 +201,10 @@ public class DiffTestWorker extends GeneratorWorker {
 
         if (isInvokeTestsSet()) {
           Tuples._1<UnitTestListener> testParams = (Tuples._1<UnitTestListener>) ppool.properties(new ITarget.Name("jetbrains.mps.tool.gentest.Test.runTests"), Object.class);
-          testParams._0(new DiffTestWorker.MyUnitTestAdapter());
+          testParams._0(new GenTestWorker.MyUnitTestAdapter());
         }
         myReporter.finishRun();
-        myReporter.startRun(DiffTestWorker.this.myWhatToDo.getProperty("ant.project.name"));
+        myReporter.startRun(GenTestWorker.this.myWhatToDo.getProperty("ant.project.name"));
       }
     };
     IOperationContext context = new ProjectOperationContext(project);
@@ -222,7 +222,7 @@ public class DiffTestWorker extends GeneratorWorker {
           return scriptBuilder.toScript();
         }
       };
-      bms.make(ms, collectResources(context, go.getModules(), go.getModels()), null, ctl, new DiffTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat)).get();
+      bms.make(ms, collectResources(context, go.getModules(), go.getModels()), null, ctl, new GenTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat)).get();
     } catch (InterruptedException ignore) {
     } catch (ExecutionException ignore) {
     }
@@ -386,7 +386,7 @@ public class DiffTestWorker extends GeneratorWorker {
   }
 
   public static void main(String[] args) {
-    DiffTestWorker generator = new DiffTestWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
+    GenTestWorker generator = new GenTestWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     generator.workFromMain();
   }
 
@@ -429,15 +429,15 @@ public class DiffTestWorker extends GeneratorWorker {
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
-          DiffTestWorker.this.error(msg.getText());
+          GenTestWorker.this.error(msg.getText());
           myReporter.errorLine("[ERROR] " + msg.getText());
           break;
         case WARNING:
-          DiffTestWorker.this.warning(msg.getText());
+          GenTestWorker.this.warning(msg.getText());
           myReporter.outputLine("[WARNING]" + msg.getText());
           break;
         case INFORMATION:
-          DiffTestWorker.this.info(msg.getText());
+          GenTestWorker.this.info(msg.getText());
           myReporter.outputLine("[INFO]" + msg.getText());
           break;
         default:

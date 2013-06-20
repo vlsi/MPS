@@ -7603,7 +7603,7 @@
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="878521226301296209" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="DiffTestWorker" />
+    <property name="name" nameId="tpck.1169194664001" value="GenTestWorker" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="861826518925396686" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4263887295358465244" resolveInfo="GeneratorWorker" />
     </node>
@@ -7612,12 +7612,12 @@
       <property name="name" nameId="tpck.1169194664001" value="myMessageHandler" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="878521226301296213" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="878521226301297870" resolveInfo="DiffTestWorker.MyMessageHandler" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="878521226301297870" resolveInfo="GenTestWorker.MyMessageHandler" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="878521226301296214" nodeInfo="nn" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="878521226301296215" nodeInfo="nn">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="878521226301296216" nodeInfo="nn">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="878521226301297873" resolveInfo="DiffTestWorker.MyMessageHandler" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="878521226301297873" resolveInfo="GenTestWorker.MyMessageHandler" />
         </node>
       </node>
     </node>
@@ -7657,11 +7657,11 @@
       <property name="name" nameId="tpck.1169194664001" value="myReporter" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="878521226301296237" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="878521226301296238" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="878521226301298055" resolveInfo="DiffTestWorker.MyReporter" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="878521226301298055" resolveInfo="GenTestWorker.MyReporter" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="878521226301296239" nodeInfo="nn">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="878521226301296240" nodeInfo="nn">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="878521226301298066" resolveInfo="DiffTestWorker.MyReporter" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="878521226301298066" resolveInfo="GenTestWorker.MyReporter" />
         </node>
       </node>
     </node>
@@ -8391,10 +8391,10 @@
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="878521226301296488" nodeInfo="nn">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="861826518923500577" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="861826518923500559" resolveInfo="DiffTestWorker.MyJobMonitor" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="861826518923500559" resolveInfo="GenTestWorker.MyJobMonitor" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="861826518923500578" nodeInfo="nn">
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="861826518923500579" nodeInfo="nn">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="861826518923500102" resolveInfo="DiffTestWorker.MyProgress" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="861826518923500102" resolveInfo="GenTestWorker.MyProgress" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="861826518923500580" nodeInfo="nn">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="878521226301296439" resolveInfo="startTestFormat" />
                           </node>
@@ -8742,7 +8742,7 @@
                             <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="878521226301296798" nodeInfo="nn">
                               <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="878521226301296799" nodeInfo="nn">
                                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="878521226301296800" nodeInfo="nn">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="878521226301297955" resolveInfo="DiffTestWorker.MyUnitTestAdapter" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="878521226301297955" resolveInfo="GenTestWorker.MyUnitTestAdapter" />
                                 </node>
                               </node>
                               <node role="lValue" roleId="tpee.1068498886295" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="878521226301296801" nodeInfo="nn">
@@ -8789,7 +8789,7 @@
                                   <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="jo3e.878521226300773740" resolveInfo="myWhatToDo" />
                                 </node>
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1787667533298685410" nodeInfo="nn">
-                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="878521226301296209" resolveInfo="DiffTestWorker" />
+                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="878521226301296209" resolveInfo="GenTestWorker" />
                                 </node>
                               </node>
                             </node>
@@ -8976,7 +8976,7 @@
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="878521226301296892" nodeInfo="nn">
                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="861826518923551326" nodeInfo="nn">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="861826518923551304" resolveInfo="DiffTestWorker.MyProgressMonitorBase" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="861826518923551304" resolveInfo="GenTestWorker.MyProgressMonitorBase" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="861826518923551327" nodeInfo="nn">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="878521226301296439" resolveInfo="startTestFormat" />
                         </node>
@@ -10296,11 +10296,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="878521226301297854" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="generator" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="878521226301297855" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="878521226301296209" resolveInfo="DiffTestWorker" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="878521226301296209" resolveInfo="GenTestWorker" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="878521226301297856" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="878521226301297857" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="878521226301296241" resolveInfo="DiffTestWorker" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="878521226301296241" resolveInfo="GenTestWorker" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="878521226301297858" nodeInfo="nn">
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="asz6.878521226297927156" resolveInfo="Script" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.878521226297928267" resolveInfo="fromDumpInFile" />
@@ -10430,7 +10430,7 @@
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="861826518923500118" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="861826518923500119" nodeInfo="nn">
-                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="861826518923500098" resolveInfo="DiffTestWorker.MyProgress" />
+                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="861826518923500098" resolveInfo="GenTestWorker.MyProgress" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="861826518923500120" nodeInfo="nn">
                   <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="861826518923500083" resolveInfo="myStartTestFormat" />
@@ -10464,7 +10464,7 @@
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="861826518923500121" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="861826518923500122" nodeInfo="nn">
-                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="861826518923500098" resolveInfo="DiffTestWorker.MyProgress" />
+                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="861826518923500098" resolveInfo="GenTestWorker.MyProgress" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="861826518923500123" nodeInfo="nn">
                   <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="861826518923500088" resolveInfo="myFinishTestFormat" />
@@ -10502,7 +10502,7 @@
                   <property name="name" nameId="tpck.1169194664001" value="format" />
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="861826518923500124" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="861826518923500125" nodeInfo="nn">
-                      <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="861826518923500098" resolveInfo="DiffTestWorker.MyProgress" />
+                      <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="861826518923500098" resolveInfo="GenTestWorker.MyProgress" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="861826518923500126" nodeInfo="nn">
                       <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="861826518923500083" resolveInfo="myStartTestFormat" />
@@ -10520,7 +10520,7 @@
                     <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="878521226301296545" nodeInfo="nn">
                       <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="861826518923500127" nodeInfo="nn">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="861826518923500128" nodeInfo="nn">
-                          <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="861826518923500098" resolveInfo="DiffTestWorker.MyProgress" />
+                          <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="861826518923500098" resolveInfo="GenTestWorker.MyProgress" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="861826518923500129" nodeInfo="nn">
                           <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="861826518923500088" resolveInfo="myFinishTestFormat" />
@@ -10624,7 +10624,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="878521226301297891" nodeInfo="nn">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="878521226301297892" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="878521226301297893" nodeInfo="nn">
-                      <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="878521226301296209" resolveInfo="DiffTestWorker" />
+                      <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="878521226301296209" resolveInfo="GenTestWorker" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="878521226301297894" nodeInfo="nn">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jo3e.878521226300774639" resolveInfo="error" />
@@ -10674,7 +10674,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="878521226301297911" nodeInfo="nn">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="878521226301297912" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="878521226301297913" nodeInfo="nn">
-                      <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="878521226301296209" resolveInfo="DiffTestWorker" />
+                      <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="878521226301296209" resolveInfo="GenTestWorker" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="878521226301297914" nodeInfo="nn">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jo3e.878521226300774614" resolveInfo="warning" />
@@ -10724,7 +10724,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="878521226301297931" nodeInfo="nn">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="878521226301297932" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="878521226301297933" nodeInfo="nn">
-                      <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="878521226301296209" resolveInfo="DiffTestWorker" />
+                      <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="878521226301296209" resolveInfo="GenTestWorker" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="878521226301297934" nodeInfo="nn">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jo3e.878521226300774604" resolveInfo="info" />
@@ -12443,7 +12443,7 @@
                               </node>
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="861826518923551320" nodeInfo="nn">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="861826518923551321" nodeInfo="nn">
-                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="861826518923551300" resolveInfo="DiffTestWorker.MyProgressMonitorBase" />
+                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="861826518923551300" resolveInfo="GenTestWorker.MyProgressMonitorBase" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="861826518923551322" nodeInfo="nn">
                                   <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="861826518923551285" resolveInfo="myStartTestFormat" />
@@ -12486,7 +12486,7 @@
                               </node>
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="861826518923551323" nodeInfo="nn">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="861826518923551324" nodeInfo="nn">
-                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="861826518923551300" resolveInfo="DiffTestWorker.MyProgressMonitorBase" />
+                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="861826518923551300" resolveInfo="GenTestWorker.MyProgressMonitorBase" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="861826518923551325" nodeInfo="nn">
                                   <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="861826518923551290" resolveInfo="myFinishTestFormat" />

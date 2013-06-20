@@ -107,7 +107,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.tool.common.IMessageFormat" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.builder.make.DiffTestWorker" file="DiffTestWorker.java">
+  <dependency className="jetbrains.mps.tool.builder.make.GenTestWorker" file="GenTestWorker.java">
     <classNode dependClassName="java.io.BufferedOutputStream" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileOutputStream" />
