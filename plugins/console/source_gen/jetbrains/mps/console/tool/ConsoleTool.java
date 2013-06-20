@@ -38,6 +38,7 @@ import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -298,7 +299,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
           final SNode willBeLastHist = SNodeOperations.copyNode(myCommandRoot);
           final SNode res = _quotation_createNode_xg3v07_a0g0a0a2cc();
           final SearchScope scope = (myScopeCombo.getSelectedItem() == PROJECT_SCOPE ?
-            myProject.getScope() :
+            new ProjectScope(myProject) :
             GlobalScope.getInstance()
           );
           BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(lastCmd, "jetbrains.mps.console.base.structure.Command"), "virtual_execute_757553790980855637", new Object[]{new ConsoleContext() {
