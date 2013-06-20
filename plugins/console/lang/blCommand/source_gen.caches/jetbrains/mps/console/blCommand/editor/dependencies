@@ -41,6 +41,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.BLCommand_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.EachNodeLoop_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.blCommand.editor.InstancesExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ModelsShowable_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ModulesShowable_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.NodesShowable_Editor" />
@@ -48,11 +49,24 @@
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.PrintNode_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.PrintText_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ShowStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.blCommand.editor.UsagesExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.blCommand.editor.InstancesExpression_Editor" file="InstancesExpression_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.console.blCommand.editor.ModelsShowable_Editor" file="ModelsShowable_Editor.java">
     <classNode dependClassName="java.lang.Class" />

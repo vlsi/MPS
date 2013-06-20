@@ -22,6 +22,9 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class CommandUtil {
   public static Iterable<SNode> allNodes(SearchScope scope) {
@@ -81,5 +84,13 @@ public class CommandUtil {
 
   public static Collection<SReference> usages(SearchScope scope, SNode node) {
     return FindUsagesManager.getInstance().findUsages(scope, Collections.<SNode>singleton(node), new EmptyProgressMonitor());
+  }
+
+
+
+  public static Collection<SNode> instances(SearchScope scope, SNode concept) {
+    String cName = NameUtil.nodeFQName(concept);
+    SAbstractConcept c = SConceptRepository.getInstance().getConcept(cName);
+    return FindUsagesManager.getInstance().findInstances(scope, Collections.singleton(c), false, new EmptyProgressMonitor());
   }
 }
