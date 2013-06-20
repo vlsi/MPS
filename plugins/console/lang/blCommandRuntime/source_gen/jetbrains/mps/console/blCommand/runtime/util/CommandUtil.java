@@ -18,6 +18,10 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import java.util.Collections;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class CommandUtil {
   public static Iterable<SNode> allNodes(SearchScope scope) {
@@ -75,7 +79,7 @@ public class CommandUtil {
 
 
 
-  public static Collection<SNode> usages(SearchScope scope, SNode node) {
-    return null;
+  public static Collection<SReference> usages(SearchScope scope, SNode node) {
+    return FindUsagesManager.getInstance().findUsages(scope, Collections.<SNode>singleton(node), new EmptyProgressMonitor());
   }
 }

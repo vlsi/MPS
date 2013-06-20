@@ -209,7 +209,7 @@
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="7738379549905488942" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="7738379549905488938" nodeInfo="nn">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tp2q.CollectionType" typeId="tp2q.7125221305512719026" id="7738379549905488977" nodeInfo="in">
-              <node role="elementType" roleId="tp2q.5686963296372573084" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7738379549905489026" nodeInfo="in" />
+              <node role="elementType" roleId="tp2q.5686963296372573084" type="tp25.SReferenceType" typeId="tp25.8758390115029295477" id="7738379549910118965" nodeInfo="in" />
             </node>
           </node>
         </node>
