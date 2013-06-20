@@ -48,7 +48,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
