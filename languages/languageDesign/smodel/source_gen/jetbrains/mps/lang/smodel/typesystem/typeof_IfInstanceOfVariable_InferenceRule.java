@@ -17,7 +17,6 @@ public class typeof_IfInstanceOfVariable_InferenceRule extends AbstractInference
   public void applyRule(final SNode variable, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode iiostmt = SNodeOperations.as(SNodeOperations.getParent(variable), "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement");
     if ((iiostmt != null)) {
-      SNode ignore = typeCheckingContext.typeOf(iiostmt, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8658296822737562953", true);
       typeCheckingContext.typeOf(iiostmt, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8658296822738406899", true);
     }
   }
