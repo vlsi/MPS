@@ -17,8 +17,8 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -51,6 +51,18 @@ public class CommandUtil {
     Sequence.fromIterable(nodes).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         res.getSearchResults().add(new SearchResult<SNode>(it, "usage"));
+      }
+    });
+    return res;
+  }
+
+
+
+  public static SearchResults refsToResults(Iterable<SReference> nodes) {
+    final SearchResults<SNode> res = new SearchResults<SNode>();
+    Sequence.fromIterable(nodes).visitAll(new IVisitor<SReference>() {
+      public void visit(SReference it) {
+        res.getSearchResults().add(new SearchResult<SNode>(it.getSourceNode(), "usage"));
       }
     });
     return res;
