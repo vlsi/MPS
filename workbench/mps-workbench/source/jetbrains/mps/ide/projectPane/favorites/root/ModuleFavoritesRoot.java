@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.projectPane.favorites.root;
 
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModuleReference;

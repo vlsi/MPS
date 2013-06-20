@@ -13,15 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.ui;
+package jetbrains.mps.ide.ui.tree;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.ui.treeMessages.TreeMessage;
-import jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;

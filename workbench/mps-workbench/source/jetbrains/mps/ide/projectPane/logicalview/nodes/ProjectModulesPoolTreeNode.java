@@ -18,7 +18,7 @@ package jetbrains.mps.ide.projectPane.logicalview.nodes;
 import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.DevKit;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;

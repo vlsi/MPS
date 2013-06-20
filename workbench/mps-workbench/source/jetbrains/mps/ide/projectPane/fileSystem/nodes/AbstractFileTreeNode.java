@@ -20,7 +20,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import java.util.Collection;

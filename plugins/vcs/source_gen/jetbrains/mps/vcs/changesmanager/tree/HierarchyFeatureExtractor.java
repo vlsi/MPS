@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.changesmanager.tree;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;

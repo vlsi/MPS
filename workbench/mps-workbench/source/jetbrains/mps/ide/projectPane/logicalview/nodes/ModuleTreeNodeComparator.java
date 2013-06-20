@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ModuleTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SModule;

@@ -19,7 +19,7 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 
 import javax.swing.tree.TreeNode;
 import java.util.ArrayList;

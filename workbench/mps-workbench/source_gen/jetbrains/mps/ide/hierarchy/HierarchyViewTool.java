@@ -5,7 +5,7 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.ide.MPSCoreComponents;
 import com.intellij.openapi.project.Project;
 import com.intellij.icons.AllIcons;
-import jetbrains.mps.ide.ui.TreeHighlighterExtension;
+import jetbrains.mps.ide.ui.tree.TreeHighlighterExtension;
 
 public class HierarchyViewTool extends AbstractHierarchyView {
   private MPSCoreComponents myCoreComponents;

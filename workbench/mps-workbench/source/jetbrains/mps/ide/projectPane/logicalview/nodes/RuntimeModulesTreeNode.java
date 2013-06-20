@@ -17,7 +17,7 @@ package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
-import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public class RuntimeModulesTreeNode extends TextTreeNode {

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 
 import com.intellij.ide.OccurenceNavigator;
 import javax.swing.event.TreeSelectionListener;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.event.TreeSelectionEvent;
 import com.intellij.pom.Navigatable;

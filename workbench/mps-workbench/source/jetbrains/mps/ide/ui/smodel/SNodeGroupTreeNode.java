@@ -18,8 +18,8 @@ package jetbrains.mps.ide.ui.smodel;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.awt.Color;

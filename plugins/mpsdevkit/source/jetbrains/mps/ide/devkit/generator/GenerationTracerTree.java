@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTree;
 
 public class GenerationTracerTree extends MPSTree {
   private TracerNode myRootTracerNode;

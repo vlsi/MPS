@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.changesmanager.tree;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import java.util.Map;
-import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;

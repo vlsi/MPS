@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.ToStringComparator;

@@ -11,9 +11,9 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTree;
 import javax.swing.tree.TreePath;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 

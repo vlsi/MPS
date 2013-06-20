@@ -22,7 +22,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.refactoring.framework.InvalidInputValueException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;

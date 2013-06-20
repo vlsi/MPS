@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.ui;
+package jetbrains.mps.ide.ui.tree;
 
 import jetbrains.mps.smodel.IOperationContext;
 
-/**
- * @author Kostik
- */
-public class TextMPSTreeNode extends MPSTreeNode {
-  protected String myText;
+public class TextTreeNode extends MPSTreeNode {
+  public TextTreeNode(String text) {
+    this(text, null);
+  }
 
-  public TextMPSTreeNode(String text, IOperationContext operationContext) {
-    super(operationContext);
-    myText = text;
-    setNodeIdentifier(myText);
+  public TextTreeNode(String text, IOperationContext context) {
+    super(context);
+    setText(text);
+    setNodeIdentifier(text.replaceAll(MPSTree.TREE_PATH_SEPARATOR, " "));
+    setUserObject(text);
   }
 }

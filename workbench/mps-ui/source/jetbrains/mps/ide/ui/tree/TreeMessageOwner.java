@@ -13,27 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.ui;
+package jetbrains.mps.ide.ui.tree;
 
-import javax.swing.JTree;
-import javax.swing.tree.TreePath;
-
-/**
- * @author Kostik
- */
-public class MPSTreeSpeedSearch extends TreeSpeedSearch {
-  public MPSTreeSpeedSearch(JTree tree) {
-    super(tree);
-  }
-
-  @Override
-  protected String getElementText(Object element) {
-    TreePath path = (TreePath) element;
-    MPSTreeNode last = (MPSTreeNode) path.getLastPathComponent();
-    return removeTags(last.getText());
-  }
-  
-  private String removeTags (String input){
-    return input.replaceAll("<(.|\n)*?>", "");
-  }
+public interface TreeMessageOwner {
 }

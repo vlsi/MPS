@@ -45,7 +45,7 @@ import java.awt.LayoutManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.execution.Location;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.plugins.runconfigs.MPSLocation;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 

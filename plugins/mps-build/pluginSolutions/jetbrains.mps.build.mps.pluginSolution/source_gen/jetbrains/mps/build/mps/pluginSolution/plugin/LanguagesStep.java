@@ -24,7 +24,7 @@ import javax.swing.border.EmptyBorder;
 import jetbrains.mps.ide.common.LayoutUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.StandaloneMPSProject;
 
 public class LanguagesStep extends AbstractStep {

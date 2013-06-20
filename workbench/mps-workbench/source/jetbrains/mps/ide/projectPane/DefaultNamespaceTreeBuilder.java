@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 
 public abstract class DefaultNamespaceTreeBuilder<N extends MPSTreeNode> extends NamespaceTreeBuilder<N, NamespaceTextNode> {
   protected DefaultNamespaceTreeBuilder() {

@@ -13,14 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.ui;
+package jetbrains.mps.ide.ui.tree;
 
-public interface MPSTreeNodeListener {
-  public void treeNodeAdded(MPSTreeNode treeNode, MPSTree tree);
+import javax.swing.JTree;
+import javax.swing.tree.TreePath;
 
-  public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree);
+/**
+ * @author Kostik
+ */
+public class MPSTreeSpeedSearch extends TreeSpeedSearch {
+  public MPSTreeSpeedSearch(JTree tree) {
+    super(tree);
+  }
 
-  public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree);
-
-  public void beforeTreeDisposed(MPSTree tree);
+  @Override
+  protected String getElementText(Object element) {
+    TreePath path = (TreePath) element;
+    MPSTreeNode last = (MPSTreeNode) path.getLastPathComponent();
+    return removeTags(last.getText());
+  }
+  
+  private String removeTags (String input){
+    return input.replaceAll("<(.|\n)*?>", "");
+  }
 }

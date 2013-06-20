@@ -13,17 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.ui;
+package jetbrains.mps.ide.ui.tree;
 
-import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;
+public interface MPSTreeNodeListener {
+  public void treeNodeAdded(MPSTreeNode treeNode, MPSTree tree);
 
-public abstract class MPSTreeNodeEx extends MPSTreeNode {
-  protected MPSTreeNodeEx(IOperationContext operationContext) {
-    super(operationContext);
-  }
+  public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree);
 
-  public SNode getSNode() {
-    return null;
-  }
+  public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree);
+
+  public void beforeTreeDisposed(MPSTree tree);
 }

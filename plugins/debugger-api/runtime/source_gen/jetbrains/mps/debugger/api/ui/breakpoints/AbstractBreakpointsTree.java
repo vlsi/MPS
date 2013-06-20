@@ -10,7 +10,7 @@ import javax.swing.event.TreeSelectionEvent;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import javax.swing.tree.TreePath;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import java.util.ArrayList;

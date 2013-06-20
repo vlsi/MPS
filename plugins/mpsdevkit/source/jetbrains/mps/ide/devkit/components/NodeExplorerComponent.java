@@ -19,9 +19,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
@@ -35,7 +35,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-import java.util.List;
 
 public class NodeExplorerComponent {
   private MyTree myTree = new MyTree();
