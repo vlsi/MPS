@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
-import jetbrains.mps.extapi.model.SModelBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
@@ -126,7 +125,7 @@ public class ChangesStripActionsHelper {
     assert changeGroup != null;
 
     final SModel oldModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
-    DiffTemporaryModule.createModuleAndRegister(as_ikrecr_a0a0e0l(oldModel, SModelBase.class).getSModelInternal(), "old", editorContext.getOperationContext().getProject(), false);
+    DiffTemporaryModule.createModuleAndRegister(oldModel, "old", editorContext.getOperationContext().getProject(), false);
 
     // compute paths to root 
     Iterable<SNode> baseNodes = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, SNode>() {
@@ -289,13 +288,6 @@ public class ChangesStripActionsHelper {
       checkedDotOperand.showPopupForGroup(null);
     }
 
-  }
-
-  private static <T> T as_ikrecr_a0a0e0l(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 
   private static boolean eq_ikrecr_a0a0a0a0a0d0t0l(Object a, Object b) {

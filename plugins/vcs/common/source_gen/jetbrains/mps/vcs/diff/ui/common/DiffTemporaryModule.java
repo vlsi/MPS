@@ -17,14 +17,12 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ScopeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.extapi.module.SModuleBase;
-import jetbrains.mps.extapi.model.SModelBase;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -86,48 +84,31 @@ public class DiffTemporaryModule extends AbstractModule {
     return null;
   }
 
-  private static void createModuleForModel(SModel model, String version, Project project, boolean mergeResultModel) {
-    SModule module = null;
-    if (mergeResultModel) {
-      org.jetbrains.mps.openapi.model.SModel mdInRepo = SModelRepository.getInstance().getModelDescriptor(model.getReference());
-      if (mdInRepo != null) {
-        module = mdInRepo.getModule();
-      }
-    }
-
-    if (module == null) {
-      module = new DiffTemporaryModule(model, version, project);
-    }
-    model.setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, model, mergeResultModel));
-  }
-
-  public static void createModuleAndRegister(SModel model, String version, Project project, boolean mergeResultModel) {
+  public static void createModuleAndRegister(org.jetbrains.mps.openapi.model.SModel model, String version, Project project, boolean mergeResultModel) {
     if (version != null) {
       setSModelId(model, version);
     }
-    createModuleForModel(model, (version == null ?
+    SModule module = new DiffTemporaryModule(as_3t8mfw_a0a0a0b0h(model, SModelBase.class).getSModelInternal(), (version == null ?
       "temporary" :
       version
-    ), project, mergeResultModel);
-    registerModel(model, project);
+    ), project);
+    MPSModuleRepository.getInstance().registerModule(module, project);
+    ((SModuleBase) module).registerModel((SModelBase) model);
   }
 
-  public static void setSModelId(SModel model, String version) {
+  public static void setSModelId(org.jetbrains.mps.openapi.model.SModel model, String version) {
     SModelReference modelRef = model.getReference();
-    CopyUtil.changeModelReference(model.getModelDescriptor(), new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(genMergeSModelName(modelRef.getModelName(), version)), genMergeSModelId(modelRef.getModelId(), version)));
-    model.setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(null, model, false));
+    SModelReference newRef = new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(genMergeSModelName(modelRef.getModelName(), version)), genMergeSModelId(modelRef.getModelId(), version));
+    // <node> 
+    as_3t8mfw_a0a3a8(model, SModelBase.class).changeModelReference(newRef);
   }
 
   public static void resetSModelId(org.jetbrains.mps.openapi.model.SModel model) {
     SModelReference modelRef = model.getReference();
     assert modelRef.getModelId() instanceof SModelId.ForeignSModelId;
-    CopyUtil.changeModelReference(model, new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(getOriginalSModelName(modelRef.getModelName())), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getModelId())));
-  }
-
-  private static void registerModel(SModel model, MPSModuleOwner owner) {
-    SModule module = model.getModelDescriptor().getModule();
-    MPSModuleRepository.getInstance().registerModule(module, owner);
-    ((SModuleBase) module).registerModel((SModelBase) model.getModelDescriptor());
+    SModelReference oldRef = new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(getOriginalSModelName(modelRef.getModelName())), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getModelId()));
+    // <node> 
+    as_3t8mfw_a0a4a9(model, SModelBase.class).changeModelReference(oldRef);
   }
 
   public static void unregisterModel(org.jetbrains.mps.openapi.model.SModel model, MPSModuleOwner owner) {
@@ -249,5 +230,26 @@ public class DiffTemporaryModule extends AbstractModule {
     public SModule getModule() {
       return DiffTemporaryModule.this;
     }
+  }
+
+  private static <T> T as_3t8mfw_a0a0a0b0h(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_3t8mfw_a0a3a8(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_3t8mfw_a0a4a9(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }

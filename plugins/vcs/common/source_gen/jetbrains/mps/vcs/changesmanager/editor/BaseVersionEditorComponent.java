@@ -5,11 +5,12 @@ package jetbrains.mps.vcs.changesmanager.editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import javax.swing.JScrollPane;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.vcs.diff.merge.MergeResultModel;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
@@ -40,8 +41,8 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
   public BaseVersionEditorComponent(final SRepository repository, final ChangeGroup changeGroup) {
     super(repository);
-    SModel baseModel = as_i3w5ys_a0a0b0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModelInternal();
-    myBaseModel = CopyUtil.copyModel(baseModel);
+    jetbrains.mps.smodel.SModel baseModel = as_i3w5ys_a0a0b0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModelInternal();
+    myBaseModel = new MergeResultModel(CopyUtil.copyModel(baseModel), true);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         DiffTemporaryModule.createModuleAndRegister(myBaseModel, null, ProjectHelper.getProject(repository), false);
@@ -57,7 +58,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
         Iterable<ChangeEditorMessage> messages = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
           public Iterable<ChangeEditorMessage> translate(ModelChange ch) {
-            return ChangeEditorMessageFactory.createMessages(myBaseModel, ch, BaseVersionEditorComponent.this, null);
+            return ChangeEditorMessageFactory.createMessages(as_i3w5ys_a0a0a0a0a0a0a5a0a0a0a5a2(myBaseModel, SModelBase.class).getSModelInternal(), ch, BaseVersionEditorComponent.this, null);
           }
         });
         verticalBounds.value = Sequence.fromIterable(messages).select(new ISelector<ChangeEditorMessage, Bounds>() {
@@ -103,7 +104,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   public void dispose() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        DiffTemporaryModule.unregisterModel(myBaseModel.getModelDescriptor(), getOperationContext().getProject());
+        DiffTemporaryModule.unregisterModel(myBaseModel, getOperationContext().getProject());
       }
     });
     super.dispose();
@@ -114,6 +115,13 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   }
 
   private static <T> T as_i3w5ys_a0a0b0c(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_i3w5ys_a0a0a0a0a0a0a5a0a0a0a5a2(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

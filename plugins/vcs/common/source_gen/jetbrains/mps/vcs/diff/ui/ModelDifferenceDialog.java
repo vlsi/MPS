@@ -20,10 +20,12 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vcs.diff.merge.MergeResultModel;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -87,18 +89,23 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
 
   public ModelDifferenceDialog(final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
     super(diffRequest.getProject());
+    // temporary: create "normal" models 
+    final Wrappers._T<org.jetbrains.mps.openapi.model.SModel> newMD = new Wrappers._T<org.jetbrains.mps.openapi.model.SModel>(newModel.getModelDescriptor());
+    final Wrappers._T<org.jetbrains.mps.openapi.model.SModel> oldMD = new Wrappers._T<org.jetbrains.mps.openapi.model.SModel>(oldModel.getModelDescriptor());
     myProject = diffRequest.getProject();
-    myOldRegistered = SModelRepository.getInstance().getModelDescriptor(oldModel.getReference()) == oldModel.getModelDescriptor();
-    myNewRegistered = SModelRepository.getInstance().getModelDescriptor(newModel.getReference()) == newModel.getModelDescriptor();
+    myOldRegistered = SModelRepository.getInstance().getModelDescriptor(oldModel.getReference()) == oldMD.value;
+    myNewRegistered = SModelRepository.getInstance().getModelDescriptor(newModel.getReference()) == newMD.value;
     myEditable = newModel.getModelDescriptor() instanceof EditableSModel && myNewRegistered;
     final jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (!(myNewRegistered)) {
-          DiffTemporaryModule.createModuleAndRegister(newModel, "new", p, false);
+          newMD.value = new MergeResultModel(newModel, true);
+          DiffTemporaryModule.createModuleAndRegister(newMD.value, "new", p, false);
         }
         if (!(myOldRegistered)) {
-          DiffTemporaryModule.createModuleAndRegister(oldModel, "old", p, false);
+          oldMD.value = new MergeResultModel(oldModel, true);
+          DiffTemporaryModule.createModuleAndRegister(oldMD.value, "old", p, false);
         }
       }
     });
@@ -108,14 +115,14 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         setTitle("Difference for model: " + oldModel.getModelDescriptor().getModelName());
-        myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel.getModelDescriptor(), newModel.getModelDescriptor(), true);
+        myChangeSet = ChangeSetBuilder.buildChangeSet(oldMD.value, newMD.value, true);
       }
     });
     if (Sequence.fromIterable(myChangeSet.getChangesForRoot(null)).isNotEmpty()) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          org.jetbrains.mps.openapi.model.SModel newMetaModel = MetadataUtil.createMetadataModel(newModel.getModelDescriptor(), myEditable);
-          org.jetbrains.mps.openapi.model.SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel.getModelDescriptor(), false);
+          org.jetbrains.mps.openapi.model.SModel newMetaModel = MetadataUtil.createMetadataModel(newMD.value, myEditable);
+          org.jetbrains.mps.openapi.model.SModel oldMetaModel = MetadataUtil.createMetadataModel(oldMD.value, false);
           myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel, newMetaModel, true);
         }
       });

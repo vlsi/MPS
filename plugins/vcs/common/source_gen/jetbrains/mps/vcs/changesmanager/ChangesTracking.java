@@ -39,7 +39,6 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
@@ -237,7 +236,7 @@ public class ChangesTracking {
       public void run() {
         synchronized (ChangesTracking.this) {
           if (!(myDisposed)) {
-            DiffTemporaryModule.setSModelId(as_5iuzi5_a0a0a0a0a0a0a0a0u0s(baseVersionModel.value, SModelBase.class).getSModelInternal(), "repository");
+            DiffTemporaryModule.setSModelId(baseVersionModel.value, "repository");
             ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor, true);
             myDifference.setChangeSet((ChangeSetImpl) changeSet);
             buildCaches();
@@ -605,13 +604,6 @@ public class ChangesTracking {
       return checkedDotOperand.getOldModel();
     }
     return null;
-  }
-
-  private static <T> T as_5iuzi5_a0a0a0a0a0a0a0a0u0s(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 
   private static boolean neq_5iuzi5_a0a1a72(Object a, Object b) {
