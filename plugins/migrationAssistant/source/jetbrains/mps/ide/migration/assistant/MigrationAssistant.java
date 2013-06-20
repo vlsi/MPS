@@ -27,54 +27,41 @@ import com.intellij.openapi.util.AsyncResult;
 import com.intellij.openapi.util.AsyncResult.Handler;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.impl.welcomeScreen.WelcomeFrame;
-import jetbrains.mps.extapi.persistence.DataSourceBase;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProjectMigrationState;
-import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.MPSProjectMigrationComponent;
+import jetbrains.mps.project.MPSProjectMigrationComponentImpl;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.FrameUtil;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 3/12/12
- * Time: 4:02 PM
- * To change this template use File | Settings | File Templates.
- */
 public class MigrationAssistant extends AbstractProjectComponent {
 
-  private final MPSProjectMigrationState myMigrationState;
+  private final MPSProjectMigrationComponent myMigrationState;
 
-  protected MigrationAssistant(Project project, MPSProjectMigrationState migrationState) {
+  protected MigrationAssistant(Project project, MPSProjectMigrationComponent migrationState) {
     super(project);
     myMigrationState = migrationState;
   }
 
   @Override
   public void initComponent() {
-    myMigrationState.setMigrationAgent(this);
+    if (myMigrationState instanceof MPSProjectMigrationComponentImpl) {
+      ((MPSProjectMigrationComponentImpl) myMigrationState).setMigrationAgent(this);
+    }
   }
 
   @Override
   public void disposeComponent() {
-    myMigrationState.setMigrationAgent(null);
+    if (myMigrationState instanceof MPSProjectMigrationComponentImpl) {
+      ((MPSProjectMigrationComponentImpl) myMigrationState).setMigrationAgent(null);
+    }
   }
 
   @Override
   public void projectOpened() {
-    final MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
-    if (migrationState.isMigrationRequired()) {
-      initiateMigration(migrationState);
+    final MPSProjectMigrationComponent migrationState = myProject.getComponent(MPSProjectMigrationComponent.class);
+    if (migrationState.isMigrationRequired() && migrationState instanceof MPSProjectMigrationComponentImpl) {
+      initiateMigration((MPSProjectMigrationComponentImpl) migrationState);
     }
   }
 
@@ -94,7 +81,7 @@ public class MigrationAssistant extends AbstractProjectComponent {
     });
   }
 
-  private void initiateMigration(final MPSProjectMigrationState migrationState) {
+  private void initiateMigration(final MPSProjectMigrationComponentImpl migrationState) {
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
 
@@ -120,9 +107,9 @@ public class MigrationAssistant extends AbstractProjectComponent {
               @Override
               public void run(Boolean ok) {
                 if (ok) {
-                  myMigrationState.migrationFinished();
+                  migrationState.migrationFinished();
                 } else {
-                  myMigrationState.migrationAborted();
+                  migrationState.migrationAborted();
                   forceCloseProject();
                 }
               }

@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddMayBeUnreachable_Intention implements IntentionFactory {
@@ -84,7 +85,7 @@ public class AddMayBeUnreachable_Intention implements IntentionFactory {
       SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", null);
       SNodeOperations.replaceWithAnother(node, result);
       SLinkOperations.setTarget(result, "emitStatement", node, true);
-      editorContext.select(node);
+      SelectionUtil.selectNode(editorContext, node);
     }
 
     public IntentionDescriptor getDescriptor() {

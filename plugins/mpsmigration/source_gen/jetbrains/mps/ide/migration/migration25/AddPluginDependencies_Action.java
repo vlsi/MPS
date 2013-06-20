@@ -11,8 +11,7 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
@@ -61,7 +60,7 @@ public class AddPluginDependencies_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SModuleReference standaloneRef = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("ef7bf5ac-d06c-4342-b11d-e42104eb9343")).getModuleReference();
+      SModuleReference standaloneRef = PersistenceFacade.getInstance().createModuleReference("ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)");
       for (Language lang : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(Language.class))) {
         SModel aspect = LanguageAspect.PLUGIN.get(lang);
         if (aspect == null) {

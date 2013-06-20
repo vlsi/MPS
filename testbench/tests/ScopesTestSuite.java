@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.testbench.junit.runners.MPSOpenProjectRunner;
 import jetbrains.mps.testbench.junit.runners.MPSOpenProjectRunner.MPSProject;
 import jetbrains.mps.testbench.junit.runners.MPSOpenProjectSuite;
 import org.junit.runner.RunWith;

@@ -104,7 +104,7 @@ public class ChangesStripActionsHelper {
           }
         });
         nc.restoreIds(true);
-        check_ikrecr_a6a0c0i(getPainter(editorContext));
+        check_ikrecr_a6a0a0c0i(getPainter(editorContext));
       }
     });
   }
@@ -262,7 +262,7 @@ public class ChangesStripActionsHelper {
     return null;
   }
 
-  private static void check_ikrecr_a6a0c0i(ChangeStripsPainter checkedDotOperand) {
+  private static void check_ikrecr_a6a0a0c0i(ChangeStripsPainter checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.showPopupForGroup(null);
     }

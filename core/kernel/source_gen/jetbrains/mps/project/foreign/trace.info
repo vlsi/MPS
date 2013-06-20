@@ -229,7 +229,7 @@
     <nodeInfo nodeId="9081946191808704654" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="59" startPosition="0" endLine="60" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="842994667883032964" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="60" startPosition="36" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="9081946191808704684" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="61" startPosition="0" endLine="62" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="9081946191808704532" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="64" startPosition="57" endLine="65" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9081946191808704532" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="64" startPosition="57" endLine="65" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9081946191808704690" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="67" startPosition="9" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="9081946191808704696" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="68" startPosition="0" endLine="69" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="842994667883033007" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="69" startPosition="25" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -269,7 +269,7 @@
     <nodeInfo nodeId="9081946191808703886" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="22" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
     <scopeInfo nodeId="9081946191808703874" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
     <scopeInfo nodeId="1500771540769465734" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="25" startPosition="26" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="9081946191808704519" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="64" startPosition="57" endLine="65" endPosition="95" />
+    <scopeInfo nodeId="9081946191808704519" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="64" startPosition="57" endLine="65" endPosition="122" />
     <scopeInfo nodeId="6183869481952518589" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="83" startPosition="55" endLine="84" endPosition="62" />
     <scopeInfo nodeId="6183869481952532704" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="87" startPosition="45" endLine="88" endPosition="25" />
     <scopeInfo nodeId="9081946191808723787" fileName="IdeaModuleSolutionDescriptorIO.java" startLine="96" startPosition="0" endLine="97" endPosition="41">

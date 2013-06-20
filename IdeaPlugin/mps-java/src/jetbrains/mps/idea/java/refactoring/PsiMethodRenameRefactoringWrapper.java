@@ -18,8 +18,10 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.refactoring.PsiRenameRefactoringWrapper;
 import jetbrains.mps.idea.core.refactoring.PsiSearchResult;
+import jetbrains.mps.idea.core.refactoring.RefactoringWrapper;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -34,8 +36,8 @@ import java.util.List;
 public class PsiMethodRenameRefactoringWrapper extends PsiRenameRefactoringWrapper {
   private boolean myOverriding;
 
-  public PsiMethodRenameRefactoringWrapper(IRefactoring base, SNode target, boolean overriding) {
-    super(base, target);
+  public PsiMethodRenameRefactoringWrapper(boolean overriding) {
+    super(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings.RenameMethod"));
     myOverriding = overriding;
   }
 
@@ -47,7 +49,7 @@ public class PsiMethodRenameRefactoringWrapper extends PsiRenameRefactoringWrapp
     // now do the PSI part of refactoring
 
     Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
-    PsiMethod method = (PsiMethod) MPSPsiProvider.getInstance(project).getPsi(myTarget);
+    PsiMethod method = (PsiMethod) MPSPsiProvider.getInstance(project).getPsi(refactoringContext.getSelectedNode());
 
     String newName = (String) refactoringContext.getParameter("newName");
 
@@ -64,8 +66,6 @@ public class PsiMethodRenameRefactoringWrapper extends PsiRenameRefactoringWrapp
       }
     }
 
-
-
   }
 
   @Override
@@ -73,7 +73,7 @@ public class PsiMethodRenameRefactoringWrapper extends PsiRenameRefactoringWrapp
     SearchResults<SNode> mpsResults = baseRefactoring.getAffectedNodes(refactoringContext);
 
     Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
-    PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(myTarget);
+    PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(refactoringContext.getSelectedNode());
     assert psiTarget instanceof PsiMethod;
 
     PsiMethod method = (PsiMethod) psiTarget;

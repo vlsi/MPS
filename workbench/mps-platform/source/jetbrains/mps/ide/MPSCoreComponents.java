@@ -28,6 +28,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.MPSTypesystem;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -69,6 +70,12 @@ public class MPSCoreComponents implements ApplicationComponent {
 
   @Override
   public void disposeComponent() {
+    // set IoFileSystem
+    if (FileSystem.getInstance().getFileSystemProvider() instanceof IdeaFileSystemProvider) {
+      ((IdeaFileSystemProvider) FileSystem.getInstance().getFileSystemProvider()).dispose();
+      FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
+    }
+
     // dispose BaseLanguage
     MPSBaseLanguage.getInstance().dispose();
 

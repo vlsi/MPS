@@ -36,6 +36,7 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.core.projectView.MPSPsiElementTreeNode;
+import jetbrains.mps.idea.core.projectView.MPSPsiModelTreeNode;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelFileTracker;
@@ -75,7 +76,7 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
             if (vFile != null && vFile.getFileType().equals(MPSFileTypeFactory.MPS_FILE_TYPE)) {
               result.add(o);
             }
-          } else if (o instanceof MPSPsiElementTreeNode) {
+          } else if (o instanceof MPSPsiElementTreeNode || o instanceof MPSPsiModelTreeNode) {
             result.add(o);
           } else if (o instanceof PsiDirectoryNode) {
             VirtualFile virtualFile = ((PsiDirectoryNode) o).getVirtualFile();
@@ -121,6 +122,8 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
       if (!(mr instanceof DefaultModelRoot)) continue;
       for (String sourceRoot : ((DefaultModelRoot) mr).getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
         if (sourceRoot.startsWith(path)) return true;
+        // TODO this gives some unneeded items (like src_gen when src is source root)
+        if (path.startsWith(sourceRoot)) return true;
       }
     }
     return false;

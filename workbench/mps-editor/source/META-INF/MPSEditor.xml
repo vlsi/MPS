@@ -91,5 +91,6 @@
     <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.TransientModelWarningsProvider"/>
     <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.PackagedModelWarningsProvider"/>
     <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.ModelProblemsProvider"/>
+    <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.UnresolvedModelImportsProvider"/>
   </extensions>
 </components>

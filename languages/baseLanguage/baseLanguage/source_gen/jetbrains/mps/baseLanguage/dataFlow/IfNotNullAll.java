@@ -37,6 +37,7 @@ public class IfNotNullAll extends DataFlowConstructor {
               boolean before = false;
               int position = ((Program) (o)).getEnd(object);
               Instruction instruction = new notNullInstruction(notNullNode);
+              instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/2263844335513471519");
               instruction.setSource(node);
               ((Program) (o)).insert(instruction, position, true, before);
             }
@@ -47,6 +48,7 @@ public class IfNotNullAll extends DataFlowConstructor {
               boolean before = false;
               int position = ((Program) (o)).getEnd(object);
               Instruction instruction = new nullableInstruction(notNullNode);
+              instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/2263844335513479569");
               instruction.setSource(node);
               ((Program) (o)).insert(instruction, position, true, before);
             }
@@ -58,6 +60,7 @@ public class IfNotNullAll extends DataFlowConstructor {
                 boolean before = true;
                 int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifFalseStatement", true));
                 Instruction instruction = new nullableInstruction(notNullNode);
+                instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1007191014633107714");
                 instruction.setSource(node);
                 ((Program) (o)).insert(instruction, position, true, before);
               }
@@ -70,6 +73,7 @@ public class IfNotNullAll extends DataFlowConstructor {
                 boolean before = true;
                 int position = ((Program) (o)).getStart(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
                 Instruction instruction = new nullableInstruction(notNullNode);
+                instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1007191014633107741");
                 instruction.setSource(node);
                 ((Program) (o)).insert(instruction, position, true, before);
               }

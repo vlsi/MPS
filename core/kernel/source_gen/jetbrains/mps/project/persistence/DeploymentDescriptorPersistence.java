@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.project.structure.modules.Dependency;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class DeploymentDescriptorPersistence {
   public DeploymentDescriptorPersistence() {
@@ -40,7 +40,7 @@ public class DeploymentDescriptorPersistence {
               result_wu2j1h_a0a0d0c0b.getDependencies().add(new _FunctionTypes._return_P0_E0<Dependency>() {
                 public Dependency invoke() {
                   final Dependency result_wu2j1h_a0a0a0a0a4a0a0d0c0b = new Dependency();
-                  final SModuleReference result_wu2j1h_a0a0a0a0a0a4a0a0d0c0b = ModuleReference.fromString(module.getAttributeValue("ref"));
+                  final SModuleReference result_wu2j1h_a0a0a0a0a0a4a0a0d0c0b = PersistenceFacade.getInstance().createModuleReference(module.getAttributeValue("ref"));
                   result_wu2j1h_a0a0a0a0a4a0a0d0c0b.setModuleRef(result_wu2j1h_a0a0a0a0a0a4a0a0d0c0b);
                   final boolean result_wu2j1h_a1a0a0a0a0a4a0a0d0c0b = false;
                   result_wu2j1h_a0a0a0a0a4a0a0d0c0b.setReexport(result_wu2j1h_a1a0a0a0a0a4a0a0d0c0b);

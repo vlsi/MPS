@@ -19,6 +19,8 @@ package jetbrains.mps.lang.dataFlow.framework.instructions;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.Program.TryFinallyInfo;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.*;
 
@@ -26,12 +28,17 @@ public abstract class Instruction {
   private Program myProgram;
   private Object mySource;
 
+  private String myRuleReference;
   private Set<Instruction> myJumps = new HashSet<Instruction>();
   private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private TryFinallyInfo myBlockInfo;
   private int myIndex;
 
   public Instruction() {
+  }
+
+  public Instruction(String ruleNodeReference) {
+    myRuleReference = ruleNodeReference;
   }
 
   public Program getProgram() {
@@ -149,5 +156,13 @@ public abstract class Instruction {
 
   public String toString() {
     return getIndex() + ": " + commandPresentation();
+  }
+
+  public String getRuleReference() {
+    return myRuleReference;
+  }
+
+  public void setRuleReference(String ruleReference) {
+    myRuleReference = ruleReference;
   }
 }

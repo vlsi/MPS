@@ -5,42 +5,18 @@ package jetbrains.mps.console.lang.commands.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.console.tool.ConsoleStream;
-import jetbrains.mps.make.script.IScript;
-import jetbrains.mps.make.script.ScriptBuilder;
-import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.make.facet.ITarget;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.reloading.IClassPathItem;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.console.lang.behavior.Console_Behavior;
-import jetbrains.mps.project.facets.JavaModuleOperations;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IOption;
-import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import java.util.Collections;
-import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.make.IMakeService;
-import java.util.concurrent.Future;
-import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.resources.CResource;
+import jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QuickQueryUtils;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.console.lang.behavior.Console_Behavior;
 import java.lang.reflect.Method;
 import org.apache.log4j.Priority;
 import java.lang.reflect.InvocationTargetException;
-import java.util.concurrent.ExecutionException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -48,90 +24,54 @@ public class BLCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(final SNode thisNode, final Project p, final ConsoleStream console) {
-    final IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compileToMemory")).toScript();
-
-    final Wrappers._T<IClassPathItem> classPath = new Wrappers._T<IClassPathItem>();
-    final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
-    final Wrappers._T<ModuleContext> context = new Wrappers._T<ModuleContext>();
-    final Wrappers._T<String> className = new Wrappers._T<String>();
-
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        model.value = SNodeOperations.getModel(thisNode);
-        SModule module = model.value.getModule();
-        context.value = new ModuleContext(module, p);
-        className.value = Console_Behavior.call_getGeneratedName_5211727872447036782(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.console.lang.structure.Console"));
-        classPath.value = JavaModuleOperations.createClassPathItem(JavaModuleOperations.collectExecuteClasspath(module), module.getModuleName());
-      }
-    });
+  public static void virtual_execute_757553790980855637(SNode thisNode, final Project p, final ConsoleStream console) {
+    final SNode n = thisNode;
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
-        IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
-          @Override
-          public <T extends IOption> T relayQuery(IQuery<T> query) {
-            return query.defaultOption();
+        final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            model.value = SNodeOperations.getModel(n);
           }
-        }, new IJobMonitor.Stub()) {
-          @Override
-          public void setup(IPropertiesPool ppool) {
-            super.setup(ppool);
-            Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compileToMemory"), Object.class);
-            if (params != null) {
-              params._0(Collections.<IClassPathItem>singletonList(classPath.value));
-            }
-          }
-        };
+        });
 
+        boolean result = QuickQueryUtils.make(p, model.value);
+        if (!(result)) {
+          return;
+        }
 
-        MakeSession session = new MakeSession(context.value, null, true);
-        if (IMakeService.INSTANCE.get().openNewSession(session)) {
-          Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(context.value, Sequence.<SModel>singleton(model.value)).resources(false), scr, ctl);
-          try {
-            IResult result = future.get();
-            if (result.isSucessful()) {
-              final CResource out = (CResource) Sequence.fromIterable(result.output()).first();
-              SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                  final IClassesData cd = out.classes();
-                  if (cd == null) {
-                    return;
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                try {
+                  final ClassLoader loader = ClassLoaderManager.getInstance().getClassLoader(model.value.getModule());
+                  String name = Console_Behavior.call_getGeneratedName_5211727872447036782(SNodeOperations.cast(SNodeOperations.getParent(n), "jetbrains.mps.console.lang.structure.Console"));
+
+                  Method[] methods = Class.forName(name, true, loader).getMethods();
+                  for (Method method : methods) {
+                    if (method.getName().equals("execute")) {
+                      method.invoke(null, new Object[]{console});
+                    }
                   }
-
-                  final Wrappers._T<ClassLoader> loader = new Wrappers._T<ClassLoader>();
-                  ModelAccess.instance().runReadAction(new Runnable() {
-                    public void run() {
-                      loader.value = cd.getClassLoader(ClassLoaderManager.getInstance().getClassLoader(model.value.getModule()));
-                    }
-                  });
-                  try {
-                    Method[] methods = Class.forName(className.value, true, loader.value).getMethods();
-                    for (Method method : methods) {
-                      if (method.getName().equals("execute")) {
-                        method.invoke(null, new Object[]{console});
-                      }
-                    }
-                  } catch (ClassNotFoundException ignore) {
-                    if (LOG.isEnabledFor(Priority.WARN)) {
-                      LOG.warn("Exception on query loading", ignore);
-                    }
-                  } catch (IllegalAccessException ignore) {
-                    if (LOG.isEnabledFor(Priority.WARN)) {
-                      LOG.warn("Exception on query loading", ignore);
-                    }
-                  } catch (InvocationTargetException ignore) {
-                    if (LOG.isEnabledFor(Priority.WARN)) {
-                      LOG.warn("Exception on query loading", ignore);
-                    }
+                } catch (ClassNotFoundException ignore) {
+                  if (LOG.isEnabledFor(Priority.WARN)) {
+                    LOG.warn("Exception on query loading", ignore);
+                  }
+                } catch (IllegalAccessException ignore) {
+                  if (LOG.isEnabledFor(Priority.WARN)) {
+                    LOG.warn("Exception on query loading", ignore);
+                  }
+                } catch (InvocationTargetException ignore) {
+                  if (LOG.isEnabledFor(Priority.WARN)) {
+                    LOG.warn("Exception on query loading", ignore);
                   }
                 }
-              });
-            }
-          } catch (InterruptedException ignore) {
-          } catch (ExecutionException ignore) {
+              }
+            });
           }
-        }
+        });
       }
     });
   }

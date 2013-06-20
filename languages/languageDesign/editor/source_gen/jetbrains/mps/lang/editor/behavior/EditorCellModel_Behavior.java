@@ -28,8 +28,19 @@ public class EditorCellModel_Behavior {
     return result;
   }
 
-  public static String virtual_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
+  public static String call_getCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
+    if (SLinkOperations.getTarget(thisNode, "id", true) != null && isNotEmpty_osnhy3_a0a0a2(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "id", true), "name"))) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "id", true), "name");
+    }
+    String defaultCellId = EditorCellModel_Behavior.call_getDefaultCellId_4539255030934103845(thisNode);
+    if (defaultCellId != null) {
+      return defaultCellId;
+    }
     return gc.createUniqueName(EditorCellModel_Behavior.call_getCellModelKind_1216811674575(thisNode) + "_", thisNode);
+  }
+
+  public static String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
+    return null;
   }
 
   public static String call_getFactoryMethodName_1216812165609(SNode thisNode, TemplateQueryContext cg) {
@@ -217,8 +228,8 @@ public class EditorCellModel_Behavior {
   }
 
   @Deprecated
-  public static String call_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_createCellId_1216737839993", new Object[]{gc});
+  public static String call_getDefaultCellId_4539255030934103845(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getDefaultCellId_4539255030934103845", new Object[]{});
   }
 
   @Deprecated
@@ -242,8 +253,8 @@ public class EditorCellModel_Behavior {
   }
 
   @Deprecated
-  public static String callSuper_createCellId_1216737839993(SNode thisNode, String callerConceptFqName, TemplateQueryContext gc) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_createCellId_1216737839993", new Class[]{SNode.class, TemplateQueryContext.class}, new Object[]{gc});
+  public static String callSuper_getDefaultCellId_4539255030934103845(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_getDefaultCellId_4539255030934103845", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -264,5 +275,9 @@ public class EditorCellModel_Behavior {
   @Deprecated
   public static boolean callSuper_isCellIdInitialized_1229948571177(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_isCellIdInitialized_1229948571177", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  public static boolean isNotEmpty_osnhy3_a0a0a2(String str) {
+    return str != null && str.length() > 0;
   }
 }

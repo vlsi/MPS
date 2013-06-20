@@ -588,7 +588,7 @@ public class SNodeOperations {
   public static SNode getConceptDeclaration(SNode node) {
     return (node == null ?
       null :
-      SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance())
+      SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance())
     );
   }
 
@@ -639,9 +639,9 @@ public class SNodeOperations {
     }
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
       if (ourCastsEnabled) {
-        throw new NodeCastException("Can't cast " + node.getConcept().getId() + " to " + castTo);
+        throw new NodeCastException("Can't cast " + node.getConcept().getQualifiedName() + " to " + castTo);
       } else {
-        LOG.warning("Can't cast " + node.getConcept().getId() + " to " + castTo);
+        LOG.warning("Can't cast " + node.getConcept().getQualifiedName() + " to " + castTo);
       }
     }
     return node;

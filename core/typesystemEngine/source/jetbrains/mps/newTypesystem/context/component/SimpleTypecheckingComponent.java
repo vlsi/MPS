@@ -27,7 +27,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -173,13 +172,7 @@ import java.util.Set;
 //    }
   }
 
-  protected void computeTypesForNode(SNode node, boolean forceChildrenCheck, Collection<SNode> additionalNodes, SNode targetNode) {
-    if (node == null) return;
-    boolean incrementalMode = isIncrementalMode();
-    AccessTracking accessTracking = createAccessTracking();
-
-    myQueue.add(node);
-    myQueue.addAll(additionalNodes);
+  private void drainQueue(boolean forceChildrenCheck, SNode targetNode, AccessTracking accessTracking) {
     for (SNode sNode = myQueue.poll(); sNode != null; sNode = myQueue.poll()) {
       if (myFullyCheckedNodes.contains(sNode)) {
         continue;
@@ -214,9 +207,16 @@ import java.util.Set;
   }
 
   protected void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
-    computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
-    if (typeCalculated(initialNode) != null) return;
-    solveInequalitiesAndExpandTypes(finalExpansion);
+    AccessTracking accessTracking = createAccessTracking();
+    if (nodeToCheck != null) {
+      myQueue.add(nodeToCheck);
+      myQueue.addAll(additionalNodes);
+    }
+    while (!myQueue.isEmpty()) {
+      drainQueue(forceChildrenCheck, initialNode, accessTracking);
+      if (typeCalculated(initialNode) != null) return;
+      solveInequalitiesAndExpandTypes(finalExpansion);
+    }
   }
 
   protected SNode computeTypesForNode_special_(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
@@ -225,37 +225,21 @@ import java.util.Set;
   }
 
   protected SNode computeTypesForNode_special__(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
-    SNode type = null;
-    SNode prevNode = null;
-    SNode node = initialNode;
     long start = System.currentTimeMillis();
     setTarget(initialNode);
-    while (node != null) {
-      Collection<SNode> additionalNodes = givenAdditionalNodes;
-      if (prevNode != null) {
-        additionalNodes = new ArrayList<SNode>(additionalNodes);
-        additionalNodes.add(prevNode);
-      }
-      computeTypesSpecial(node, false, additionalNodes, false, initialNode);
-      type = typeCalculated(initialNode);
-      if (type == null) {
-        if (node.getModel() != null && node.getParent() == null) {
-          //System.out.println("Root: " + initialNode.getDebugText());
-          computeTypes(initialNode, node);
-          type = getType(initialNode);
-          if (type == null && node != initialNode) {
-            TypeSystemComponent.LOG.debug("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new jetbrains.mps.smodel.SNodePointer(initialNode));
-          }
-          return type;
-        }
-        prevNode = node;
-        node = node.getParent();
-      } else {
-        type = typeCalculated(initialNode);
-        return type;
-      }
+    if (initialNode == null) return null;
+
+    computeTypesSpecial(initialNode, false, givenAdditionalNodes, false, initialNode);
+    SNode type = typeCalculated(initialNode);
+    if (type != null) return type;
+
+    if (initialNode.getModel() != null && initialNode.getParent() == null) {
+      computeTypes(initialNode, initialNode);
+      return getType(initialNode);
     }
-    return type;
+
+    TypeSystemComponent.LOG.debug("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new jetbrains.mps.smodel.SNodePointer(initialNode));
+    return null;
   }
 
   protected void computeTypes(SNode initialNode, SNode node) {

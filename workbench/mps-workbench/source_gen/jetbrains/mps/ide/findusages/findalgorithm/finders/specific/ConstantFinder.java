@@ -7,16 +7,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.ide.findusages.model.holders.IHolder;
-import javax.swing.Icon;
-import java.util.Collection;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import org.jetbrains.annotations.NotNull;
-import org.jdom.Element;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.findusages.CantLoadSomethingException;
-import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 
 public class ConstantFinder implements IFinder {
   private SearchResults<SNode> myResults = new SearchResults<SNode>();
@@ -31,54 +21,5 @@ public class ConstantFinder implements IFinder {
 
   public String getDescription() {
     return "constant finder";
-  }
-
-  public static class ConstantHolder implements IHolder<SearchResults<SNode>> {
-    private SearchResults<SNode> myData = new SearchResults<SNode>();
-    private String myCaption = "<null>";
-    private Icon myIcon = null;
-
-    public ConstantHolder() {
-    }
-
-    public ConstantHolder(SearchResults<SNode> data) {
-      myData = data;
-    }
-
-    public ConstantHolder(final Collection<SNode> nodes, final String categoryName) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          for (SNode node : nodes) {
-            myData.getSearchResults().add(new SearchResult<SNode>(node, categoryName));
-          }
-        }
-      });
-    }
-
-    @Override
-    public SearchResults<SNode> getObject() {
-      return myData;
-    }
-
-    @NotNull
-    @Override
-    public String getCaption() {
-      return myCaption;
-    }
-
-    public Icon getIcon() {
-      return myIcon;
-    }
-
-    @Override
-    public void read(Element element, Project project) throws CantLoadSomethingException {
-      throw new CantLoadSomethingException("do not call read on ConstantHolder!!!");
-    }
-
-    @Override
-    public void write(Element element, Project project) throws CantSaveSomethingException {
-      throw new CantSaveSomethingException("do not call write on ConstantHolder!!!");
-    }
   }
 }

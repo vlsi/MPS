@@ -16,6 +16,7 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 
 public class EditorCell_Empty extends EditorCell_Basic {
   private boolean myCaretVisible = false;
@@ -92,20 +93,6 @@ public class EditorCell_Empty extends EditorCell_Basic {
     });
   }
 
-  private boolean isFirstPositionAllowed() {
-    if (this.getStyle().isSpecified(StyleAttributes.FIRST_POSITION_ALLOWED)) {
-      return this.getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED);
-    }
-    return !(this.getStyle().get(StyleAttributes.PUNCTUATION_LEFT));
-  }
-
-  private boolean isLastPositionAllowed() {
-    if (this.getStyle().isSpecified(StyleAttributes.LAST_POSITION_ALLOWED)) {
-      return this.getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED);
-    }
-    return !(this.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT));
-  }
-
   private boolean applyLeftTransform(EditorContext editorContext, EditorCell_Empty cellForNewNode, String text) {
     CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(cellForNewNode, CellActionType.LEFT_TRANSFORM);
     ltAction.execute(editorContext);
@@ -124,11 +111,11 @@ public class EditorCell_Empty extends EditorCell_Basic {
 
   @Override
   public boolean isLastCaretPosition() {
-    return this.isLastPositionAllowed() && !(this.isFirstPositionAllowed());
+    return StyleAttributesUtil.isLastPositionAllowed(getStyle()) && !(StyleAttributesUtil.isFirstPositionAllowed(getStyle()));
   }
 
   @Override
   public boolean isFirstCaretPosition() {
-    return this.isFirstPositionAllowed() && !(this.isLastPositionAllowed());
+    return StyleAttributesUtil.isFirstPositionAllowed(getStyle()) && !(StyleAttributesUtil.isLastPositionAllowed(getStyle()));
   }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-69flps24gvvu8nfxv4d8nfugpkc051v">
+<dependencies version="2" modelHash="-1lugkap5r9645u9hztq33busleneuk2">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="2tkar8wwxyebdmgxtp5o764ljq3vhpt" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-a5paiteqlzxfcmwi6m4jtivpvepljjm" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ar5rg4sgykttk0xr6ynoooewafaa239" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-6ygnwew9fsyml0umi7w20kwq5d46z7m" />
   <common hash="9gv0an3piurewzum15biyric8ka4vsx">
     <dep root="1138055754698" />
     <dep root="1138056022639" />
@@ -152,6 +152,7 @@
     <dep root="6407023681583036855" />
     <dep root="6407023681583040688" />
     <dep root="6407023681583040953" />
+    <dep root="6955116391921790598" />
     <dep root="6973815483243445083" />
     <dep root="6995935425733782641" />
     <dep root="8339862546319741524" />
@@ -526,7 +527,7 @@
   <source id="5708036808576088033" name="Reference_GetResolveInfo" hash="-9lzhjvjfemx9wzfowauvgwurodkk8xs">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4357968816427488499" name="CheckedModuleReference" hash="8qymgeg5o8f1cowjwj8pnflcjmv70th">
+  <source id="4357968816427488499" name="CheckedModuleReference" hash="-dwu8z8jk141osf9w6awbg5o91v6k8kg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1540150895035667832" name="OperationParm_SameMetaLevel" hash="-17pqzdktlajrwhoe47ik4yztyk8lbg4">
@@ -617,6 +618,9 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="597763930871270009" name="ChildNodeRefExpression" hash="4q0h4mfeo1p3yj8tivnyf5jb16wfw5b">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6955116391921790598" name="CheckedModuleQualifiedName" hash="-243yt55qd1o0xmj5yy6vu3kqm0snocg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

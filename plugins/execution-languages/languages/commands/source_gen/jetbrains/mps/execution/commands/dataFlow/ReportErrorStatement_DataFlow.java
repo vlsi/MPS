@@ -12,8 +12,8 @@ public class ReportErrorStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "exception", true));
-    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "message", true));
-    _context.getBuilder().emitRet();
+    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "exception", true), "r:106d443d-ed4f-44b7-91fa-ab9e0bf2751b(jetbrains.mps.execution.commands.dataFlow)/2228878981387200509");
+    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "message", true), "r:106d443d-ed4f-44b7-91fa-ab9e0bf2751b(jetbrains.mps.execution.commands.dataFlow)/2228878981387200518");
+    _context.getBuilder().emitRet("r:106d443d-ed4f-44b7-91fa-ab9e0bf2751b(jetbrains.mps.execution.commands.dataFlow)/2228878981387200528");
   }
 }

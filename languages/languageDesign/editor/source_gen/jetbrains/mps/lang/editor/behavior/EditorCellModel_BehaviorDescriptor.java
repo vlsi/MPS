@@ -4,18 +4,17 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 
 public abstract class EditorCellModel_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStyleContainer_BehaviorDescriptor {
   public EditorCellModel_BehaviorDescriptor() {
   }
 
-  public String virtual_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
-    return EditorCellModel_Behavior.virtual_createCellId_1216737839993(thisNode, gc);
-  }
-
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
     return EditorCellModel_Behavior.virtual_getClosingText_1220339738643(thisNode);
+  }
+
+  public String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
+    return EditorCellModel_Behavior.virtual_getDefaultCellId_4539255030934103845(thisNode);
   }
 
   public int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {

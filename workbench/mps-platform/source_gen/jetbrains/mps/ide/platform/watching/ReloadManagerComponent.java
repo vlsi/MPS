@@ -174,12 +174,17 @@ public class ReloadManagerComponent extends ReloadManager implements Application
           return;
         }
 
-        ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {
-          @Override
-          public void run(@NotNull final ProgressIndicator progressIndicator) {
-            rs.doReload(new ProgressMonitorAdapter(progressIndicator));
-          }
-        });
+        if (rs.wantsToShowProgress()) {
+          ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {
+            @Override
+            public void run(@NotNull final ProgressIndicator progressIndicator) {
+              rs.doReload(new ProgressMonitorAdapter(progressIndicator));
+            }
+          });
+
+        } else {
+          rs.doReload(new EmptyProgressMonitor());
+        }
       }
     });
   }

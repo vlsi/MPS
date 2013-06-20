@@ -41,7 +41,8 @@ import java.util.Set;
 
 public class TextLine {
   // COLORS: Remove hardcoded color
-  private static final Color ERROR_COLOR = StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() : new Color(255, 220, 220);
+  private static final Color ERROR_COLOR =
+      StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() : new Color(255, 220, 220);
 
   private static Map<Font, FontMetrics> ourFontMetricsCache = new HashMap<Font, FontMetrics>();
   private static Map<String, Font> ourFontsCache = new HashMap<String, Font>();
@@ -454,17 +455,17 @@ public class TextLine {
     if (backgroundColor != null && !g.getColor().equals(backgroundColor) && !mySelected) {
       g.setColor(backgroundColor);
       g.fillRect(shiftX + getPaddingLeft(),
-        shiftY + getPaddingTop(),
-        myWidth,
-        myTextHeight);
+          shiftY + getPaddingTop(),
+          myWidth,
+          myTextHeight);
     }
 
     if (textBackgroundColor != null) {
       g.setColor(textBackgroundColor);
       g.fillRect(shiftX + getPaddingLeft(),
-        shiftY + getPaddingTop(),
-        myWidth,
-        myTextHeight);
+          shiftY + getPaddingTop(),
+          myWidth,
+          myTextHeight);
     }
 
     g.setFont(getFont());
@@ -476,7 +477,7 @@ public class TextLine {
     int selectionEndX = shiftX + getPaddingLeft() + getSelectionEndX();
     int endLineX = shiftX + getPaddingLeft() + getTextEndX();
     int baselineY = shiftY + myHeight - myDescent - getPaddingBottom() - getPaddingTop();
-    int centerLineY = shiftY + (myHeight - getPaddingBottom() + getPaddingTop())/ 2;
+    int centerLineY = shiftY + (myHeight - getPaddingBottom() + getPaddingTop()) / 2;
 
     if (getStartTextSelectionPosition() > 0) {
       g.drawString(myText.substring(0, getStartTextSelectionPosition()), shiftX + getPaddingLeft(), baselineY);
@@ -618,11 +619,13 @@ public class TextLine {
   }
 
   public void setStartTextSelectionPosition(int i) {
+    assert i >= 0;
     this.myStartTextSelectionPosition = Math.min(i, myText.length());
     mySelectionStartX = -1;
   }
 
   public void setEndTextSelectionPosition(int i) {
+    assert i >= 0;
     this.myEndTextSelectionPosition = Math.min(i, myText.length());
     mySelectionEndX = -1;
   }
@@ -671,6 +674,7 @@ public class TextLine {
   }
 
   public void setCaretPosition(int position, boolean duringSelection) {
+    assert position >= 0;
     if (!duringSelection) {
       doSetCaretPosition(Math.min(myText.length(), position));
       setStartTextSelectionPosition(getCaretPosition());

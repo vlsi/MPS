@@ -17,14 +17,14 @@ public class MultipleForeachLoop_DataFlow extends DataFlowBuilder {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(variable, "iterable", true));
     }
     _context.getBuilder().emitLabel("condition");
-    _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()));
+    _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()), "r:00000000-0000-4000-0000-011c895902af(jetbrains.mps.lang.typesystem.dataFlow)/1207317596837");
     for (SNode variable : SLinkOperations.getTargets(_context.getNode(), "loopVariable", true)) {
-      _context.getBuilder().emitWrite(SLinkOperations.getTarget(variable, "variable", true));
+      _context.getBuilder().emitWrite(SLinkOperations.getTarget(variable, "variable", true), "r:00000000-0000-4000-0000-011c895902af(jetbrains.mps.lang.typesystem.dataFlow)/1207317623996");
     }
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
       public void run() {
-        _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "condition"));
+        _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "condition"), "r:00000000-0000-4000-0000-011c895902af(jetbrains.mps.lang.typesystem.dataFlow)/1207318409285");
       }
     });
   }

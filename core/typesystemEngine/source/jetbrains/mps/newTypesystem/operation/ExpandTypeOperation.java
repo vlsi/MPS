@@ -27,18 +27,22 @@ public class ExpandTypeOperation extends AssignTypeOperation {
     myOldType = oldType;
   }
 
+  @Override
   public String getPresentationKind() {
     return PresentationKind.TYPE_EXPANDED;
   }
 
+  @Override
   public String getPresentation() {
     return "Type expanded: " + myNode + " ------> " + myType;
   }
 
+  @Override
   public void doRedo(State state) {
     state.getNodeMaps().assignNodeTypeDontChangeSource(myNode, myType);
   }
 
+  @Override
   public void doUndo(State state) {
     state.getNodeMaps().assignNodeTypeDontChangeSource(myNode, myOldType);
   }

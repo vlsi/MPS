@@ -84,7 +84,7 @@ public class MPSModelNavigationContributor implements ApplicationComponent, Navi
 
       boolean needToLoad = false;
       for (NavigationTarget snd : descriptors.get(0)) {
-        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(snd.getConcept().getId()).getProperty(
+        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(snd.getConcept().getQualifiedName()).getProperty(
           SNodeUtil.property_INamedConcept_name);
         if (descriptor instanceof BasePropertyConstraintsDescriptor && !((BasePropertyConstraintsDescriptor) descriptor).isGetterDefault()) {
           needToLoad = true;

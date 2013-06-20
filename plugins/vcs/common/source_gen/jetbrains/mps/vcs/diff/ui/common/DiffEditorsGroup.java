@@ -44,9 +44,9 @@ public class DiffEditorsGroup {
         int viewY = thisEditor.getViewport().getViewPosition().y;
         SNode visibleNode = thisEditor.getEditedNode();
         if (viewY > thisEditor.getRootCell().getY()) {
-          visibleNode = check_s6qw4f_a0a0c0a1a5(thisEditor.findCellWeak(1, viewY));
+          visibleNode = check_s6qw4f_a0a0c0a0a1a5(thisEditor.findCellWeak(1, viewY));
         }
-        SModel otherModel = check_s6qw4f_a0d0a1a5(otherEditor.getEditedNode());
+        SModel otherModel = check_s6qw4f_a0d0a0a1a5(otherEditor.getEditedNode());
         if (otherModel == null) {
           return;
         }
@@ -68,7 +68,7 @@ public class DiffEditorsGroup {
           }
 
           SNode prevSibling = SNodeOperations.getPrevSibling(visibleNode);
-          if (check_s6qw4f_a5a6a0b0f(visibleNode.getRoleInParent(), prevSibling)) {
+          if (check_s6qw4f_a5a6a0a0b0f(visibleNode.getRoleInParent(), prevSibling)) {
             visibleNode = prevSibling;
           } else {
             visibleNode = visibleNode.getParent();
@@ -86,10 +86,10 @@ public class DiffEditorsGroup {
     protected void selectionChangedTo(jetbrains.mps.openapi.editor.EditorComponent component, final SingularSelection newSelection) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SNodeId selectionId = check_s6qw4f_a0a0a0a1g(check_s6qw4f_a0a0a0a0b6(newSelection.getEditorCell()));
+          SNodeId selectionId = check_s6qw4f_a0a0a0a0a1g(check_s6qw4f_a0a0a0a0a0b6(newSelection.getEditorCell()));
           if (selectionId != null) {
             for (DiffEditor diffEditor : ListSequence.fromList(myDiffEditors)) {
-              diffEditor.inspect(check_s6qw4f_a0a0a0a1a0a0b6(check_s6qw4f_a0a0a0a0b0a0a1g(diffEditor.getMainEditor().getEditedNode()), selectionId));
+              diffEditor.inspect(check_s6qw4f_a0a0a0a1a0a0a0b6(check_s6qw4f_a0a0a0a0b0a0a0a1g(diffEditor.getMainEditor().getEditedNode()), selectionId));
             }
           }
         }
@@ -119,56 +119,56 @@ public class DiffEditorsGroup {
     }
   }
 
-  private static SNode check_s6qw4f_a0a0c0a1a5(EditorCell checkedDotOperand) {
+  private static SNode check_s6qw4f_a0a0c0a0a1a5(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }
     return null;
   }
 
-  private static SModel check_s6qw4f_a0d0a1a5(SNode checkedDotOperand) {
+  private static SModel check_s6qw4f_a0d0a0a1a5(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
     return null;
   }
 
-  private static boolean check_s6qw4f_a5a6a0b0f(String checkedDotOperand, SNode prevSibling) {
+  private static boolean check_s6qw4f_a5a6a0a0b0f(String checkedDotOperand, SNode prevSibling) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.equals(check_s6qw4f_a0a5a6a0b0f(prevSibling));
+      return checkedDotOperand.equals(check_s6qw4f_a0a5a6a0a0b0f(prevSibling));
     }
     return false;
   }
 
-  private static String check_s6qw4f_a0a5a6a0b0f(SNode checkedDotOperand) {
+  private static String check_s6qw4f_a0a5a6a0a0b0f(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRoleInParent();
     }
     return null;
   }
 
-  private static SNodeId check_s6qw4f_a0a0a0a1g(SNode checkedDotOperand) {
+  private static SNodeId check_s6qw4f_a0a0a0a0a1g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }
     return null;
   }
 
-  private static SNode check_s6qw4f_a0a0a0a0b6(EditorCell checkedDotOperand) {
+  private static SNode check_s6qw4f_a0a0a0a0a0b6(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }
     return null;
   }
 
-  private static SNode check_s6qw4f_a0a0a0a1a0a0b6(SModel checkedDotOperand, SNodeId selectionId) {
+  private static SNode check_s6qw4f_a0a0a0a1a0a0a0b6(SModel checkedDotOperand, SNodeId selectionId) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(selectionId);
     }
     return null;
   }
 
-  private static SModel check_s6qw4f_a0a0a0a0b0a0a1g(SNode checkedDotOperand) {
+  private static SModel check_s6qw4f_a0a0a0a0b0a0a0a1g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

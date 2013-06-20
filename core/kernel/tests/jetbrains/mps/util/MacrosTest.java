@@ -15,23 +15,17 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.BaseMPSTest;
-import jetbrains.mps.TestMain;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.CoreMpsTest;
+import org.junit.Test;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MacrosTest extends BaseMPSTest {
+import static org.junit.Assert.fail;
 
-  @Override
-  protected void setUp() throws Exception {
-    IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
-  }
-
+public class MacrosTest extends CoreMpsTest {
+  @Test
   public void testExpand() {
     List<String> tests = generateExpandTests();
     for (String test : tests) {
@@ -45,6 +39,7 @@ public class MacrosTest extends BaseMPSTest {
     }
   }
 
+  @Test
   public void testShrink() {
     List<String> tests = generateShrinkTests();
     for (String test : tests) {

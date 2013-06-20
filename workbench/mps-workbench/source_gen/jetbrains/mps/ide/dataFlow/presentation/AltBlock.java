@@ -7,8 +7,8 @@ import java.awt.Graphics;
 import java.awt.Color;
 
 public class AltBlock extends AbstractBlock {
-  public AltBlock(int x, int y, int width, int height, SNodeReference source, String caption) {
-    super(x, y, width, height, source, caption);
+  public AltBlock(int x, int y, int width, int height, SNodeReference source, String caption, String ruleNodeReference) {
+    super(x, y, width, height, source, caption, ruleNodeReference);
   }
 
   @Override

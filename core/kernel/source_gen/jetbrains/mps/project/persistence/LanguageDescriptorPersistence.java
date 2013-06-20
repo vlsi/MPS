@@ -11,7 +11,6 @@ import org.jdom.Element;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.List;
 import org.apache.log4j.Priority;
@@ -70,7 +69,7 @@ public class LanguageDescriptorPersistence {
 
           ModuleDescriptorPersistence.loadDependencies(result_v3r4p8_a0a0e0c0b, languageElement);
           for (Element extendedLanguage : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "extendedLanguages"), "extendedLanguage"))) {
-            result_v3r4p8_a0a0e0c0b.getExtendedLanguages().add(ModuleReference.fromString(extendedLanguage.getText()));
+            result_v3r4p8_a0a0e0c0b.getExtendedLanguages().add(PersistenceFacade.getInstance().createModuleReference(extendedLanguage.getText()));
           }
 
           Element autoImports = XmlUtil.first(languageElement, "accessoryModels");

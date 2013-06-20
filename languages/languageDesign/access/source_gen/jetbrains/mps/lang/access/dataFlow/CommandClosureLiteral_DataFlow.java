@@ -19,7 +19,7 @@ public class CommandClosureLiteral_DataFlow extends DataFlowBuilder {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
     } else {
       for (SNode var : StatementList_Behavior.call_getExternalVariablesDeclarations_1214501165480(SLinkOperations.getTarget(_context.getNode(), "body", true))) {
-        _context.getBuilder().emitRead(var);
+        _context.getBuilder().emitRead(var, "r:7fecad41-ba00-432a-a44f-b9577c19856b(jetbrains.mps.lang.access.dataFlow)/8974276187400348282");
       }
     }
   }

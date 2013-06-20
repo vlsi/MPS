@@ -158,7 +158,7 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
     };
 
     refFactories.put("jetbrains.mps.baseLanguage.structure.Classifier", dotBasedRefCreator);
-    refFactories.put("jetbrains.mps.baseLanguage.structure.FieldDeclaration", dotBasedRefCreator);
+    refFactories.put("jetbrains.mps.baseLanguage.structure.VariableDeclaration", dotBasedRefCreator);
     // this is really for constructors (not all BaseMethodDeclarations)
     // it's done this way because currently Creators have link to ConstructorDeclaration
     // in a form of specialized link to BaseMethodDeclaration

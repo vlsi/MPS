@@ -19,6 +19,7 @@ package org.jetbrains.mps.openapi.module;
  * A globally unique reference to a module
  */
 public interface SModuleReference {
+
   SModuleId getModuleId();
 
   String getModuleName();

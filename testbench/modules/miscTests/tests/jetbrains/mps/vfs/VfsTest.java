@@ -17,14 +17,12 @@ package jetbrains.mps.vfs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.TestMain;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import static org.junit.Assert.*;
-import org.junit.Before;
+
 import org.junit.Test;
 
 import java.io.File;
@@ -38,7 +36,7 @@ import java.util.Arrays;
  *
  * @author Evgeny Gerashchenko
  */
-public class VfsTest {
+public class VfsTest extends WorkbenchMpsTest {
   private static final String SUBSUBDIR = "subdir" + File.separator + "subsubdir";
   private static final int FILE_SIZE = 20000;
 
@@ -93,12 +91,6 @@ public class VfsTest {
       doJarVfsTest();
     }
   };
-
-  @Before
-  public void setUp() throws Exception {
-    IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
-  }
 
   private static void doBaseVfsTest() {
     IFile tmpDir = IFileUtils.createTmpDir();

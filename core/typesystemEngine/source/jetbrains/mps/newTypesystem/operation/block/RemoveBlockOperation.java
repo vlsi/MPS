@@ -25,6 +25,7 @@ public class RemoveBlockOperation extends AbstractBlockOperation {
     super(block);
   }
 
+  @Override
   public String getPresentation() {
     if (myBlock.getBlockKind().equals(BlockKind.WHEN_CONCRETE)) {
       return myBlock.getPresentation() + "   executed";
@@ -32,19 +33,23 @@ public class RemoveBlockOperation extends AbstractBlockOperation {
     return myBlock.getPresentation() + "   solved";
   }
 
+  @Override
   public void doUndo(State state) {
     state.addBlockNoVars(myBlock);
   }
 
+  @Override
   public void doRedo(State state) {
     state.removeBlockNoVars(myBlock);
   }
 
+  @Override
   public void execute(State state) {
     super.execute(state);
     myBlock.performAction();
   }
 
+  @Override
   public String getPresentationKind() {
     if (myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE) {
       return PresentationKind.WHEN_CONCRETE_REMOVED;

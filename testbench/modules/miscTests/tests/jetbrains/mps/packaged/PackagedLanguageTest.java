@@ -15,13 +15,15 @@
  */
 package jetbrains.mps.packaged;
 
-import jetbrains.mps.TestMain;
-import jetbrains.mps.TestMain.ProjectRunnable;
+import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
+import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.ProjectRunnable;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -38,7 +40,7 @@ import java.io.File;
  * @author Evgeny Gerashchenko
  * @since 14 December 2010
  */
-public class PackagedLanguageTest {
+public class PackagedLanguageTest extends WorkbenchMpsTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testPackaged");
   private static final File PROJECT_ARCHIVE = new File("testbench/modules/testPackaged.zip");
   private static final String PROJECT_FILE = "ProjectWithPackagedLanguage.mpr";
@@ -47,21 +49,21 @@ public class PackagedLanguageTest {
 
   @Test
   public void testPackagedLanguageLoading() {
-    final boolean result = TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE,
-      new ProjectRunnable() {
-        public boolean execute(final Project project) {
-          return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-            @Override
-            public Boolean compute() {
-              checkStructureModelLoaded();
-              checkEditorModelLoaded();
-              checkIconsLoaded();
-              checkStubsLoaded();
-              return true;
-            }
-          });
-        }
-      });
+    final boolean result = ProjectTestsSupport.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE,
+        new ProjectRunnable() {
+          public boolean execute(final Project project) {
+            return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+              @Override
+              public Boolean compute() {
+                checkStructureModelLoaded();
+                checkEditorModelLoaded();
+                checkIconsLoaded();
+                checkStubsLoaded();
+                return true;
+              }
+            });
+          }
+        });
     if (!result) {
       Assert.fail();
     }

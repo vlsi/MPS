@@ -65,11 +65,9 @@ import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -269,31 +267,29 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_IfStatement_4920206213435985511(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
-    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+    AlterStatementListContainerFactoryUtils.buildContainerIfPossible(_context.getSampleNode(), _context.getNewNode());
   }
 
   public static void nodeFactory_NodeSetup_WhileStatement_4920206213425901381(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
-      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
-      AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
-    }
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
+    AlterStatementListContainerFactoryUtils.buildContainerIfPossible(_context.getSampleNode(), _context.getNewNode());
   }
 
   public static void nodeFactory_NodeSetup_DoWhileStatement_4920206213435982911(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
-    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+    AlterStatementListContainerFactoryUtils.buildContainerIfPossible(_context.getSampleNode(), _context.getNewNode());
   }
 
   public static void nodeFactory_NodeSetup_ForStatement_4920206213436039859(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+    AlterStatementListContainerFactoryUtils.buildContainerIfPossible(_context.getSampleNode(), _context.getNewNode());
   }
 
   public static void nodeFactory_NodeSetup_ForeachStatement_4920206213436049782(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+    AlterStatementListContainerFactoryUtils.buildContainerIfPossible(_context.getSampleNode(), _context.getNewNode());
   }
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -5013,7 +5009,7 @@ __switch__:
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         AbstractModule module = (AbstractModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
         SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a732(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
-        SModuleReference javadocLangReference = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage.javadoc", Language.class).getModuleReference();
+        SModuleReference javadocLangReference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
         if (!(model.importedLanguages().contains(javadocLangReference))) {
           module.addUsedLanguage(javadocLangReference);
           model.addLanguage(javadocLangReference);

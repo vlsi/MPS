@@ -34,11 +34,13 @@ public class RuntimeSupportNew extends RuntimeSupport {
     return subTyping.coerceSubTypingNew(subtype, pattern, isWeak, null);
   }
 
+  @Override
   public SNode coerce_(SNode subtype, IMatchingPattern pattern) {
     SubTypingManagerNew subTyping = (SubTypingManagerNew) myTypeChecker.getSubtypingManager();
     return subTyping.coerceSubTypingNew(subtype, pattern, true, null);
   }
 
+  @Override
   public SNode coerce_(SNode subtype, IMatchingPattern pattern, boolean isWeak, TypeCheckingContext typeCheckingContext) {
     if (typeCheckingContext == null) {
       return coerce_(subtype, pattern);
@@ -46,6 +48,7 @@ public class RuntimeSupportNew extends RuntimeSupport {
     return ((SubTypingManagerNew)TypeChecker.getInstance().getSubtypingManager()).coerceSubTypingNew(subtype, pattern, isWeak, typeCheckingContext);
   }
 
+  @Override
   public SNode coerce_(SNode subtype, IMatchingPattern pattern, TypeCheckingContext typeCheckingContext) {
     if (typeCheckingContext == null) {
       return coerce_(subtype, pattern);

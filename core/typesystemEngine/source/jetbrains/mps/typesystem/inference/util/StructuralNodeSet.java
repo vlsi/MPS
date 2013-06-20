@@ -70,23 +70,28 @@ public class StructuralNodeSet<T> implements Set<SNode> {
     }
   }
 
+  @Override
   public int size() {
     return myWrappers.size();
   }
 
+  @Override
   public boolean isEmpty() {
     return myWrappers.isEmpty();
   }
 
+  @Override
   public void clear() {
     myWrappers.clear();
   }
 
+  @Override
   public boolean contains(Object o) {
     if (!(o instanceof SNode)) return false;
     return containsStructurally((SNode) o);
   }
 
+  @Override
   public Iterator<SNode> iterator() {
     return getNodes().iterator();
   }
@@ -99,37 +104,45 @@ public class StructuralNodeSet<T> implements Set<SNode> {
     return nodes;
   }
 
+  @Override
   public boolean add(SNode o) {
     return addStructurally(o);
   }
 
+  @Override
   public boolean addAll(Collection<? extends SNode> c) {
     return addCollectionStructurally(c);
   }
 
 
+  @Override
   public boolean remove(Object o) {
     if (!(o instanceof SNode)) return false;
     return removeStructurally((SNode) o);
   }
 
 
+  @Override
   public Object[] toArray() {
     return getNodes().toArray();
   }
 
+  @Override
   public <T> T[] toArray(T[] a) {
     return getNodes().toArray(a);
   }
 
+  @Override
   public boolean containsAll(Collection<?> c) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public boolean retainAll(Collection<?> c) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public boolean removeAll(Collection<?> c) {
     throw new UnsupportedOperationException();
   }

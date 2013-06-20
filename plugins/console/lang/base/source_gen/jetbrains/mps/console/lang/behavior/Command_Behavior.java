@@ -13,9 +13,6 @@ public class Command_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(SNode thisNode, Project p, ConsoleStream console) {
-  }
-
   @Deprecated
   public static void call_execute_757553790980855637(SNode thisNode, Project p, ConsoleStream console) {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_execute_757553790980855637", new Object[]{p, console});

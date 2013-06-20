@@ -47,7 +47,7 @@ public class CoercionManager {
     if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
     if (!CoerceUtil.canBeCoerced(subtype, pattern.getConceptFQName())) return null;
-    if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConcept().getId())) {
+    if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConcept().getQualifiedName())) {
       List<SNode> children = new ArrayList(IterableUtil.asCollection(subtype.getChildren("argument")));
       for (SNode child : children) {
         SNode result = coerceSubTypingNew(child, pattern, isWeak, context);
@@ -56,7 +56,7 @@ public class CoercionManager {
       return null;
     }
     final TypeCheckingContext typeCheckingContext = context;
-    if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConcept().getId())) {
+    if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConcept().getQualifiedName())) {
       List<SNode> children = new ArrayList(IterableUtil.asCollection(subtype.getChildren("argument")));
 
       SNode lcs = SubtypingUtil.createLeastCommonSupertype(children, typeCheckingContext);
@@ -65,6 +65,7 @@ public class CoercionManager {
 
     //asking the cache
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
+      @Override
       public SNode compute() {
         Pair<Boolean, SNode> answer = getCoerceCacheAnswer(subtype, pattern, isWeak);
         if (answer != null && answer.o1) {
@@ -110,6 +111,7 @@ public class CoercionManager {
       ArrayList<SNode> ancestorsSorted;
       ancestorsSorted = new ArrayList<SNode>(ancestors);
       Collections.sort(ancestorsSorted, new Comparator<SNode>() {
+        @Override
         public int compare(SNode o1, SNode o2) {
           return TypesUtil.depth(o2) - TypesUtil.depth(o1);
         }
@@ -158,6 +160,7 @@ public class CoercionManager {
       myPattern = pattern;
     }
 
+    @Override
     public boolean matchesWith(SNode nodeToMatch) {
       return myPattern.match(nodeToMatch);
     }
@@ -166,6 +169,7 @@ public class CoercionManager {
       return myPattern;
     }
 
+    @Override
     public String getConceptFQName() {
       return myPattern.getConceptFQName();
     }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489411750">
-    <nodeInfo nodeId="4480898598423846009" fileName="Order.java" startLine="15" startPosition="18" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="value#()I" />
-    <scopeInfo nodeId="4480898598423846009" fileName="Order.java" startLine="15" startPosition="18" endLine="16" endPosition="25" />
+    <nodeInfo nodeId="4480898598423846009" fileName="Order.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="value#()I" />
+    <scopeInfo nodeId="4480898598423846009" fileName="Order.java" startLine="16" startPosition="0" endLine="17" endPosition="0" />
     <unitInfo nodeId="5294483648489411750" fileName="Order.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.testbench.junit.Order" />
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489411798">
@@ -80,10 +80,10 @@
     <unitInfo nodeId="5294483648489411798" fileName="DelegatingRunNotifier.java" startLine="12" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.testbench.junit.DelegatingRunNotifier" />
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489411978">
-    <nodeInfo nodeId="4480898598409263160" fileName="ExpectLogEvent.java" startLine="13" startPosition="34" endLine="14" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="level#()I" />
-    <nodeInfo nodeId="4480898598409266572" fileName="ExpectLogEvent.java" startLine="14" startPosition="41" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="text#()[Ljava/lang/String;" />
-    <scopeInfo nodeId="4480898598409263160" fileName="ExpectLogEvent.java" startLine="13" startPosition="34" endLine="14" endPosition="41" />
-    <scopeInfo nodeId="4480898598409266572" fileName="ExpectLogEvent.java" startLine="14" startPosition="41" endLine="15" endPosition="66" />
+    <nodeInfo nodeId="4480898598409263160" fileName="ExpectLogEvent.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="level#()I" />
+    <nodeInfo nodeId="4480898598409266572" fileName="ExpectLogEvent.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="text#()[Ljava/lang/String;" />
+    <scopeInfo nodeId="4480898598409263160" fileName="ExpectLogEvent.java" startLine="14" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="4480898598409266572" fileName="ExpectLogEvent.java" startLine="15" startPosition="0" endLine="16" endPosition="0" />
     <unitInfo nodeId="5294483648489411978" fileName="ExpectLogEvent.java" startLine="11" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.testbench.junit.ExpectLogEvent" />
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489412039">

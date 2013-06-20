@@ -28,8 +28,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.MPSProjectMigrationComponent;
 import jetbrains.mps.project.MPSProjectMigrationListener;
-import jetbrains.mps.project.MPSProjectMigrationState;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
@@ -49,7 +49,7 @@ import java.io.File;
 public class ProjectLibraryManager extends BaseLibraryManager implements ProjectComponent {
   private Project myProject;
 
-  public ProjectLibraryManager(Project project, MPSProject mpsProject, DumbService dumbService, MPSCoreComponents coreComponents, MPSProjectMigrationState migrationState) {
+  public ProjectLibraryManager(Project project, MPSProject mpsProject, DumbService dumbService, MPSCoreComponents coreComponents, MPSProjectMigrationComponent migrationState) {
     super(coreComponents.getModuleRepository());
     myProject = project;
   }
@@ -85,7 +85,7 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   @Override
   public void projectOpened() {
-    final MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
+    final MPSProjectMigrationComponent migrationState = myProject.getComponent(MPSProjectMigrationComponent.class);
     if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
       migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
         @Override

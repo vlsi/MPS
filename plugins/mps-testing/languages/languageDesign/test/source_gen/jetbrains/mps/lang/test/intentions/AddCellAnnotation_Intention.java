@@ -24,6 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddCellAnnotation_Intention implements IntentionFactory {
@@ -125,7 +126,7 @@ public class AddCellAnnotation_Intention implements IntentionFactory {
         SLinkOperations.setTarget(newAnnotation, "nodeRangeSelectionEnd", nodeRangeSelection.getLastNode(), false);
       }
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.INodeAnnotattion")), newAnnotation);
-      editorContext.select(newAnnotation);
+      SelectionUtil.selectNode(editorContext, newAnnotation);
     }
 
     public IntentionDescriptor getDescriptor() {

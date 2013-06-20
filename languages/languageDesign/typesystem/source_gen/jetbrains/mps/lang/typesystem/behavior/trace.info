@@ -110,7 +110,7 @@
   <unitInfo fileName="SubtypingRule_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.SubtypingRule_BehaviorDescriptor" />
   <unitInfo fileName="TypeCheckerAccessExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeCheckerAccessExpression_BehaviorDescriptor" />
   <unitInfo fileName="TypeClause_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeClause_BehaviorDescriptor" />
-  <unitInfo fileName="TypeOfExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeOfExpression_BehaviorDescriptor" />
+  <unitInfo fileName="TypeOfExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeOfExpression_BehaviorDescriptor" />
   <unitInfo fileName="TypeVarDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeVarDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="TypeVarReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeVarReference_BehaviorDescriptor" />
   <unitInfo fileName="TypesystemIntentionArgument_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypesystemIntentionArgument_BehaviorDescriptor" />
@@ -1138,6 +1138,20 @@
       <varInfo nodeId="7342618720440051596" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="7342618720440051596" fileName="DefaultGroupReference_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.DefaultGroupReference_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/8658296822738826268">
+    <nodeInfo nodeId="8658296822739029318" fileName="TypeOfExpression_Behavior.java" startLine="12" startPosition="100" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8658296822738826268" fileName="TypeOfExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8658296822738826268" fileName="TypeOfExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+    <scopeInfo nodeId="8658296822738826430" fileName="TypeOfExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="8658296822739029224" fileName="TypeOfExpression_Behavior.java" startLine="12" startPosition="100" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="8658296822738826268" fileName="TypeOfExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="8658296822738826268" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8658296822738826268" fileName="TypeOfExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="8658296822738826268" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="8658296822738826268" fileName="TypeOfExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeOfExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/8952337903384830487">
     <nodeInfo nodeId="8952337903384866982" fileName="AbstractRule_Behavior.java" startLine="17" startPosition="160" endLine="18" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

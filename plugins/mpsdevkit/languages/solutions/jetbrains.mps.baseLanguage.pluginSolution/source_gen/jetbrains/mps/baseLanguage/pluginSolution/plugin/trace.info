@@ -155,7 +155,7 @@
     <nodeInfo nodeId="1410818700511161410" fileName="ShowNullDFA_Action.java" startLine="85" startPosition="137" endLine="86" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5887161262767846186" fileName="ShowNullDFA_Action.java" startLine="88" startPosition="27" endLine="89" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4282822416100099611" fileName="ShowNullDFA_Action.java" startLine="89" startPosition="104" endLine="90" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1410818700511176460" fileName="ShowNullDFA_Action.java" startLine="92" startPosition="9" endLine="93" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1410818700511176460" fileName="ShowNullDFA_Action.java" startLine="92" startPosition="9" endLine="93" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="95" startPosition="45" endLine="96" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="101" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="60" startPosition="57" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -214,7 +214,7 @@
     <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="44" startPosition="89" endLine="52" endPosition="5" />
     <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="58" startPosition="5" endLine="67" endPosition="5" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="84" startPosition="9" endLine="93" endPosition="172">
+    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="84" startPosition="9" endLine="93" endPosition="188">
       <varInfo nodeId="1410818700511161411" varName="graph" />
       <varInfo nodeId="5887161262767846194" varName="runner" />
     </scopeInfo>

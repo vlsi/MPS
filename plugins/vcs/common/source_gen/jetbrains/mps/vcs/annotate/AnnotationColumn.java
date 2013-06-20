@@ -207,7 +207,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
         final CurrentDifference currentDifference = registry.getCurrentDifference(myModel);
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            ListSequence.fromList(check_5mnya_a0a0a1a0a0v0v(currentDifference.getChangeSet())).visitAll(new IVisitor<ModelChange>() {
+            ListSequence.fromList(check_5mnya_a0a0a0a1a0a0v0v(currentDifference.getChangeSet())).visitAll(new IVisitor<ModelChange>() {
               public void visit(ModelChange ch) {
                 saveChange(ch);
               }
@@ -709,12 +709,12 @@ __switch__:
                 final Wrappers._T<SNodeId> rootId = new Wrappers._T<SNodeId>();
                 ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNodeId>() {
                   public SNodeId invoke() {
-                    SNodeId nodeId = check_5mnya_a0a0a91a8a2a0a0a0a1a1a2tb(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
+                    SNodeId nodeId = check_5mnya_a0a0a0a91a8a2a0a0a0a1a1a2tb(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
                     SNode node = afterModel.getNode(nodeId);
                     if ((node == null)) {
                       node = beforeModel.value.getNode(nodeId);
                     }
-                    return rootId.value = check_5mnya_a0d0a91a8a2a0a0a0a1a1a2tb(SNodeOperations.getContainingRoot(node));
+                    return rootId.value = check_5mnya_a0d0a0a91a8a2a0a0a0a1a1a2tb(SNodeOperations.getContainingRoot(node));
                   }
                 }));
 
@@ -775,7 +775,7 @@ __switch__:
     return null;
   }
 
-  private static List<ModelChange> check_5mnya_a0a0a1a0a0v0v(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_5mnya_a0a0a0a1a0a0v0v(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
@@ -803,14 +803,14 @@ __switch__:
     return null;
   }
 
-  private static SNodeId check_5mnya_a0a0a91a8a2a0a0a0a1a1a2tb(LineContent checkedDotOperand) {
+  private static SNodeId check_5mnya_a0a0a0a91a8a2a0a0a0a1a1a2tb(LineContent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }
     return null;
   }
 
-  private static SNodeId check_5mnya_a0d0a91a8a2a0a0a0a1a1a2tb(SNode checkedDotOperand) {
+  private static SNodeId check_5mnya_a0d0a0a91a8a2a0a0a0a1a1a2tb(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }

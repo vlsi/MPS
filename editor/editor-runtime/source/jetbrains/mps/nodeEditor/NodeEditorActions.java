@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.nodeEditor.actions.CursorPositionTracker;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -170,7 +171,6 @@ public class NodeEditorActions {
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
         label.home();
-        editorComponent.resetLastCaretX();
       }
       editorComponent.changeSelection(target);
     }
@@ -201,7 +201,6 @@ public class NodeEditorActions {
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
         label.end();
-        editorComponent.resetLastCaretX();
       }
       editorComponent.changeSelection(target);
     }
@@ -258,6 +257,12 @@ public class NodeEditorActions {
   }
 
   public static class MoveUp extends NavigationAction {
+    private final CursorPositionTracker myPositionTracker;
+
+    public MoveUp(CursorPositionTracker positionTracker) {
+      myPositionTracker = positionTracker;
+    }
+
     @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selectedCell = getDeepestSelectedCell(context);
@@ -267,15 +272,11 @@ public class NodeEditorActions {
     @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selectedCell = getDeepestSelectedCell(context);
-      int caretX = selectedCell.getCaretX();
-      EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
-      if (editorComponent.hasLastCaretX()) {
-        caretX = editorComponent.getLastCaretX();
-      }
-      editorComponent.saveLastCaretX(caretX);
+      int caretX = myPositionTracker.hasPosition() ? myPositionTracker.getPosition() : selectedCell.getCaretX();
       EditorCell target = findTarget(selectedCell, caretX);
       target.setCaretX(caretX);
-      editorComponent.changeSelection(target, false);
+      context.getEditorComponent().changeSelection(target);
+      myPositionTracker.savePosition(caretX);
     }
 
     private EditorCell getDeepestSelectedCell(jetbrains.mps.openapi.editor.EditorContext context) {
@@ -294,6 +295,12 @@ public class NodeEditorActions {
   }
 
   public static class MoveDown extends NavigationAction {
+    private final CursorPositionTracker myPositionTracker;
+
+    public MoveDown(CursorPositionTracker positionTracker) {
+      myPositionTracker = positionTracker;
+    }
+
     @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selectedCell = getDeepestSelectedCell(context);
@@ -303,19 +310,15 @@ public class NodeEditorActions {
     @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selectedCell = getDeepestSelectedCell(context);
-      int caretX = selectedCell.getCaretX();
-      EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
-      if (editorComponent.hasLastCaretX()) {
-        caretX = editorComponent.getLastCaretX();
-      }
-      editorComponent.saveLastCaretX(caretX);
+      int caretX = myPositionTracker.hasPosition() ? myPositionTracker.getPosition() : selectedCell.getCaretX();
       EditorCell target = findTarget(selectedCell, caretX);
       target.setCaretX(caretX);
-      editorComponent.changeSelection(target, false);
+      context.getEditorComponent().changeSelection(target);
+      myPositionTracker.savePosition(caretX);
     }
 
     private EditorCell getDeepestSelectedCell(jetbrains.mps.openapi.editor.EditorContext context) {
-      Selection deepestSelection = context.getEditorComponent().getSelectionManager().getDeepestSelection();
+      Selection deepestSelection = context.getSelectionManager().getDeepestSelection();
       if (deepestSelection instanceof SingularSelection) {
         return ((SingularSelection) deepestSelection).getEditorCell();
       } else if (deepestSelection instanceof NodeRangeSelection) {

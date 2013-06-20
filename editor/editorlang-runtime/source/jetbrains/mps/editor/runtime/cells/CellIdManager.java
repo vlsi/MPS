@@ -1,0 +1,50 @@
+/*
+ * Copyright 2003-2013 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.editor.runtime.cells;
+
+/**
+ * User: shatalin
+ * Date: 6/10/13
+ */
+public class CellIdManager {
+  public static String createComponentId(String editorComponentName) {
+    return "component_" + editorComponentName;
+  }
+
+  /**
+   * @deprecated Should be removed as well as CellModel_ConceptProperty
+   */
+  @Deprecated
+  public static String createConceptPropertyId(String conceptPropertyName) {
+    return "conceptProperty_" + conceptPropertyName;
+  }
+
+  public static String createPropertyId(String propertyName) {
+    return "property_" + propertyName;
+  }
+
+  public static String createRefCellId(String linkRole) {
+    return "refCell_" + linkRole;
+  }
+
+  public static String createRefNodeListId(String linkRole) {
+    return "refNodeList_" + linkRole;
+  }
+
+  public static String createRefNodeId(String linkRole) {
+    return "refNode_" + linkRole;
+  }
+}

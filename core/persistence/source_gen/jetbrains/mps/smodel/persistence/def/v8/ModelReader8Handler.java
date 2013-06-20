@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.InterfaceSNode;
@@ -391,7 +390,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SModuleReference createObject(Attributes attrs) throws SAXException {
-      return ModuleReference.fromString(attrs.getValue("namespace"));
+      return PersistenceFacade.getInstance().createModuleReference(attrs.getValue("namespace"));
     }
 
     @Override

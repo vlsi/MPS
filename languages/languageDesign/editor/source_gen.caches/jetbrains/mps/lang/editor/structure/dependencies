@@ -65,6 +65,19 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.FocusPolicy" />
     <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.structure.PredefinedCellID" file="PredefinedCellID.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.structure.PredefinedCellID_PropertySupport" file="PredefinedCellID_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.structure.PredefinedCellID" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.structure.RightTransformAnchorTag" file="RightTransformAnchorTag.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />

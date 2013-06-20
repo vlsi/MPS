@@ -263,7 +263,7 @@ public class Generator extends AbstractModule {
 
         Set<Language> result = new LinkedHashSet<Language>();
         result.add(BootstrapLanguages.generatorLanguage());
-        result.add((Language) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.GENERATOR_CONTEXT.getModuleId()));
+        result.add(BootstrapLanguages.generatorContextLanguage());
         result.addAll(ModuleUtil.refsToLanguages(sourceLanguage.getExtendedLanguageRefs()));
 
         return result;
@@ -274,7 +274,7 @@ public class Generator extends AbstractModule {
 
     @Override
     public Set<DevKit> getAutoImportedDevKits(Generator contextModule, org.jetbrains.mps.openapi.model.SModel model) {
-      return Collections.singleton((DevKit) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.DEVKIT_GENERAL.getModuleId()));
+      return Collections.singleton(BootstrapLanguages.generalDevKit());
     }
   }
 }

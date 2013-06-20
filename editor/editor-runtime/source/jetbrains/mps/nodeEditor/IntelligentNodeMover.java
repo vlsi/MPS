@@ -163,7 +163,7 @@ class IntelligentNodeMover {
 
     SNode currentTarget = myCurrent.getParent();
 
-    while (currentTarget != null && anchorCell != null) {
+    while (currentTarget != null && anchorCell != null && anchorCell.getParent() != null) {
       Iterator<EditorCell> iterator = getCellIterator(anchorCell);
       while (iterator.hasNext()) {
         EditorCell next = iterator.next();

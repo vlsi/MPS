@@ -54,7 +54,7 @@ public class InternalModelsFindUsagesParticipant implements ApplicationComponent
     boolean hasProjectLanguageConcepts = false;
     for (SAbstractConcept n : concepts) {
       String namespace = NameUtil.namespaceFromConceptFQName(n.getQualifiedName());
-      if (BootstrapLanguages.PROJECT.getModuleName().equals(namespace)) {
+      if (BootstrapLanguages.PROJECT_NAMESPACE.equals(namespace)) {
         hasProjectLanguageConcepts = true;
       }
     }

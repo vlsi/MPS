@@ -34,7 +34,7 @@ public enum LanguageAspect {
   STRUCTURE("structure") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.STRUCTURE;
+      return BootstrapLanguages.structureLanguageRef();
     }
 
     @Override
@@ -46,7 +46,7 @@ public enum LanguageAspect {
   EDITOR("editor") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.EDITOR;
+      return BootstrapLanguages.editorLanguageRef();
     }
 
     @Override
@@ -58,7 +58,7 @@ public enum LanguageAspect {
   ACTIONS("actions") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.ACTIONS;
+      return BootstrapLanguages.actionsLanguageRef();
     }
 
     @Override
@@ -70,7 +70,7 @@ public enum LanguageAspect {
   CONSTRAINTS("constraints") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.CONSTRAINTS;
+      return BootstrapLanguages.constraintsLanguageRef();
     }
 
     @Override
@@ -82,7 +82,7 @@ public enum LanguageAspect {
   BEHAVIOR("behavior") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.BEHAVIOR;
+      return BootstrapLanguages.behaviorLanguageRef();
     }
 
     @Override
@@ -94,7 +94,7 @@ public enum LanguageAspect {
   TYPESYSTEM("typesystem") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.TYPESYSTEM;
+      return BootstrapLanguages.typesystemLanguageRef();
     }
 
     @Override
@@ -106,7 +106,7 @@ public enum LanguageAspect {
   REFACTORINGS("refactorings") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.REFACTORING;
+      return BootstrapLanguages.refactoringLanguageRef();
     }
 
     @Override
@@ -118,7 +118,7 @@ public enum LanguageAspect {
   SCRIPTS("scripts") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.SCRIPT;
+      return BootstrapLanguages.scriptLanguageRef();
     }
 
     @Override
@@ -130,7 +130,7 @@ public enum LanguageAspect {
   INTENTIONS("intentions") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.INTENTIONS;
+      return BootstrapLanguages.intentionsLanguageRef();
     }
 
     @Override
@@ -142,7 +142,7 @@ public enum LanguageAspect {
   FIND_USAGES("findUsages") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.FIND_USAGES;
+      return BootstrapLanguages.findUsagesLanguageRef();
     }
 
     @Override
@@ -155,7 +155,7 @@ public enum LanguageAspect {
   PLUGIN("plugin") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.MAKE_FACET;
+      return BootstrapLanguages.pluginLanguageRef();
     }
 
     @Override
@@ -167,7 +167,7 @@ public enum LanguageAspect {
   DATA_FLOW("dataFlow") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.DATA_FLOW;
+      return BootstrapLanguages.dataFlowLanguageRef();
     }
 
     @Override
@@ -179,7 +179,7 @@ public enum LanguageAspect {
   TEST("test") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.TEST;
+      return BootstrapLanguages.testLanguageRef();
     }
 
     @Override
@@ -191,7 +191,7 @@ public enum LanguageAspect {
   TEXT_GEN("textGen") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.TEXT_GEN;
+      return BootstrapLanguages.textGenLanguageRef();
     }
 
     @Override
@@ -203,7 +203,7 @@ public enum LanguageAspect {
   STUBS("stubs") {
     @Override
     public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.STUBS;
+      return BootstrapLanguages.stubsLanguageRef();
     }
 
     @Override

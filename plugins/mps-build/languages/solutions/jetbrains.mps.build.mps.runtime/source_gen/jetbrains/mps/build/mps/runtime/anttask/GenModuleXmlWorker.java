@@ -7,7 +7,7 @@ import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.project.Project;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -60,7 +60,7 @@ public class GenModuleXmlWorker extends MpsWorker {
   public void processParameter(Project project, String parameter) {
     ModuleXml params = GenModuleXmlTask.decode(parameter);
 
-    final SModuleReference moduleRef = ModuleReference.fromString(params.getRef());
+    final SModuleReference moduleRef = PersistenceFacade.getInstance().createModuleReference(params.getRef());
     SModule module = ModelAccess.instance().runReadAction(new Computable<SModule>() {
       public SModule compute() {
         return MPSModuleRepository.getInstance().getModule(moduleRef);

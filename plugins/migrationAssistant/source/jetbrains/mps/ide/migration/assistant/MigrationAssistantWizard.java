@@ -32,18 +32,19 @@ import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.icons.MPSIcons.Small;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProjectMigrationState;
+import jetbrains.mps.project.MPSProjectMigrationComponent;
+import jetbrains.mps.project.MPSProjectMigrationComponentImpl;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -88,13 +89,6 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 16.03.2012
- * Time: 10:10
- * To change this template use File | Settings | File Templates.
- */
 public class MigrationAssistantWizard extends AbstractWizardEx {
 
   private static Logger LOG = LogManager.getLogger(MigrationAssistantWizard.class);
@@ -121,15 +115,14 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
   };
 
-
   public MigrationAssistantWizard(Project project) {
     super("Migration Assistant Wizard", project, Arrays.asList(
-      new InitialStep(project),
-      new OldPersistenceDetectedStep(project),
-      new MigrationsActionsStep(project),
-      new MigrationsProgressStep(project),
-      new MigrationsFinishedStep(project),
-      new MigrationsFinishedWithErrorsStep(project)));
+        new InitialStep(project),
+        new OldPersistenceDetectedStep(project),
+        new MigrationsActionsStep(project),
+        new MigrationsProgressStep(project),
+        new MigrationsFinishedStep(project),
+        new MigrationsFinishedWithErrorsStep(project)));
   }
 
   @Override
@@ -252,7 +245,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     protected void createComponent() {
       this.myComponent = new JPanel(new BorderLayout(5, 5));
       myComponent.setBorder(BorderFactory.createCompoundBorder(
-        BorderFactory.createEtchedBorder(), BorderFactory.createEmptyBorder(2, 2, 2, 2)));
+          BorderFactory.createEtchedBorder(), BorderFactory.createEmptyBorder(2, 2, 2, 2)));
     }
   }
 
@@ -280,12 +273,12 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       JTextPane info = new JTextPane();
       info.setContentType("text/html");
       info.setText("Welcome to Migration Assistant!" +
-        "<br><br>" +
-        "MPS has detected that your project requires migration before it can be used with this version of the product." +
-        "<br><br>" +
-        "This wizard will guide you through the migration process. It's going to take a while." +
-        "<br><br>" +
-        "Select Next to proceed with migration or Cancel if you wish to postpone it.");
+          "<br><br>" +
+          "MPS has detected that your project requires migration before it can be used with this version of the product." +
+          "<br><br>" +
+          "This wizard will guide you through the migration process. It's going to take a while." +
+          "<br><br>" +
+          "Select Next to proceed with migration or Cancel if you wish to postpone it.");
       info.setEditable(false);
       info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
@@ -351,10 +344,10 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       JTextPane info = new JTextPane();
       info.setContentType("text/html");
       info.setText("Some models in this project are stored in the persistence version that is no longer supported." +
-        "<br><br>" +
-        "You have to manually upgrade persistence of these models using a previous version of MPS." +
-        "<br><br>" +
-        "The migration cannot proceed.");
+          "<br><br>" +
+          "You have to manually upgrade persistence of these models using a previous version of MPS." +
+          "<br><br>" +
+          "The migration cannot proceed.");
       info.setEditable(false);
       info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
@@ -379,8 +372,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
         }
       };
       listPanel.setBorder(BorderFactory.createCompoundBorder(
-        BorderFactory.createEmptyBorder(2, 2, 2, 2),
-        BorderFactory.createEtchedBorder()));
+          BorderFactory.createEmptyBorder(2, 2, 2, 2),
+          BorderFactory.createEtchedBorder()));
       listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
 
       pagePanel.add(listPanel);
@@ -442,8 +435,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
       JPanel listPanel = new JPanel(new BorderLayout(5, 5));
       listPanel.setBorder(BorderFactory.createCompoundBorder(
-        BorderFactory.createEmptyBorder(2, 0, 0, 0),
-        BorderFactory.createEtchedBorder()));
+          BorderFactory.createEmptyBorder(2, 0, 0, 0),
+          BorderFactory.createEtchedBorder()));
       listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
 
       JPanel buttonsPanel = createButtonsPanel();
@@ -458,7 +451,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
       Insets insets = new Insets(2, 2, 2, 2);
       GridBagConstraints gbc = new GridBagConstraints(0, 0, 1, 1, 1., 0., GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL, insets, 0,
-        0);
+          0);
 
       myIncludeBtn = new JButton("Include");
       myIncludeBtn.setMnemonic('I');
@@ -647,8 +640,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
       JPanel listPanel = new JPanel(new BorderLayout(5, 5));
       listPanel.setBorder(BorderFactory.createCompoundBorder(
-        BorderFactory.createEmptyBorder(0, 0, 2, 0),
-        BorderFactory.createEtchedBorder()));
+          BorderFactory.createEmptyBorder(0, 0, 2, 0),
+          BorderFactory.createEtchedBorder()));
       listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
 
       myComponent.add(listPanel, BorderLayout.CENTER);
@@ -713,7 +706,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
         public void run() {
           if (!myStarted) {
             // launch migration
-            MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
+            MPSProjectMigrationComponentImpl migrationState = (MPSProjectMigrationComponentImpl) myProject.getComponent(MPSProjectMigrationComponent.class);
             migrationState.migrationStarted();
             myStarted = true;
             runProcessWithProgressSynchronously(myTask, myProgressIndicator);
@@ -782,11 +775,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       JTextPane info = new JTextPane();
       info.setContentType("text/html");
       info.setText("Congratulations! Migration has completed successfully." +
-        "<br><br>" +
-        "Your project files have been upgraded to be used with the latest version of MPS." +
-        "<br><br>" +
-        "The wizard can now be closed and your project will be loaded."
-        );
+          "<br><br>" +
+          "Your project files have been upgraded to be used with the latest version of MPS." +
+          "<br><br>" +
+          "The wizard can now be closed and your project will be loaded."
+      );
       info.setEditable(false);
       info.addHyperlinkListener(new HyperlinkListener() {
         public void hyperlinkUpdate(HyperlinkEvent e) {
@@ -840,10 +833,10 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       JTextPane info = new JTextPane();
       info.setContentType("text/html");
       info.setText("Warning! Although migration has completed, there were some errors during the process. Please review the errors log." +
-        "<br><br>" +
-        "Your project files have been upgraded to be used with the latest version of MPS." +
-        "<br><br>" +
-        "The wizard can now be closed and your project will be loaded."
+          "<br><br>" +
+          "Your project files have been upgraded to be used with the latest version of MPS." +
+          "<br><br>" +
+          "The wizard can now be closed and your project will be loaded."
       );
       info.setEditable(false);
       info.addHyperlinkListener(new HyperlinkListener() {

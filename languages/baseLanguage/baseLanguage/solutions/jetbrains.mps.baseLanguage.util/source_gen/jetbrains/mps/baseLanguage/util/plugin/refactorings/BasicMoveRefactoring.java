@@ -34,6 +34,11 @@ public class BasicMoveRefactoring {
     this.createCopy();
     MoveRefactoringUtils.fixImportsFromNode(this.myReplacing);
     for (SearchResult<SNode> result : ListSequence.fromList(this.myUsages.getSearchResults())) {
+      // accomodate for non-MPS usages (e.g. in plugin) 
+      // TODO (not sure if it's a good solution) 
+      if (result.getObject() == null) {
+        continue;
+      }
       this.replaceSingleUsage(result.getObject());
     }
     this.deleteOld();

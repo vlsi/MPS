@@ -22,7 +22,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new AddModifiers_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddNewLine_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddOverrideAnnotation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveStaticMethodModifier_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddRuntimeExceptionToMethodSignature_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddStaticFieldModifier_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddThrows_Intention());
@@ -56,8 +55,9 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new MakeFieldTransient_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeFieldVolatile_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeGeneric_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MakeMethodAbstarct_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeMethodAbstract_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeMethodFinal_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeMethodStatic_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeMultiLiner_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeOneLiner_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeParameterFinal_Intention());

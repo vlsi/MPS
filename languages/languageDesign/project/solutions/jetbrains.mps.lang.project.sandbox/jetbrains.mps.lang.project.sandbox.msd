@@ -4,9 +4,6 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
     </modelRoot>
-    <modelRoot contentPath="${mps_home}/languages/util" type="project">
-      <sourceRoot location="." />
-    </modelRoot>
   </models>
   <sourcePath />
   <usedLanguages>

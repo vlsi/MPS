@@ -51,6 +51,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
     return new IncrementalTypechecking(getNode(), getState());
   }
 
+  @Override
   public boolean isSingleTypeComputation() {
     return false;
   }
@@ -88,14 +89,17 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
     }
   }
 
+  @Override
   public SNode getTypeOf_generationMode(final SNode node) {
     throw new IllegalStateException("Invalid usage of IncrementalTypecheckingContext");
   }
 
+  @Override
   public SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
     throw new IllegalStateException("Invalid usage of IncrementalTypecheckingContext");
   }
 
+  @Override
   public SNode getTypeOf_normalMode(SNode node) {
     if (!checkIfNotChecked(node, false)) return null;
     return getTypeDontCheck(node);
@@ -108,6 +112,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
     super.dispose();
   }
 
+  @Override
   public boolean messagesChanged(Object requesting) {
     int hash = getTypechecking().getNodesWithErrors(true).hashCode();
     if (hash != myOldHash) {
@@ -210,6 +215,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
     }
   }
 
+  @Override
   protected void applyNonTypesystemRules() {
     getTypechecking().applyNonTypesystemRulesToRoot(null, this);
   }

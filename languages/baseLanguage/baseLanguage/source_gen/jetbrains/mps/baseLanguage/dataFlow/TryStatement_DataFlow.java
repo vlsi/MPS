@@ -15,9 +15,9 @@ public class TryStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitTry();
+    _context.getBuilder().emitTry("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206957590308");
     for (SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
-      _context.getBuilder().emitIfJump(_context.getBuilder().before(c));
+      _context.getBuilder().emitIfJump(_context.getBuilder().before(c), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1207141005368");
     }
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
     for (Instruction instruction : _context.getBuilder().getInstructionsFor(SLinkOperations.getTarget(_context.getNode(), "body", true))) {
@@ -25,26 +25,26 @@ public class TryStatement_DataFlow extends DataFlowBuilder {
         continue;
       }
       for (SNode catchClause : DataFlowTryCatchUtil.getPossibleCatches((SNode) InstructionUtil.getSource(instruction), SLinkOperations.getTargets(_context.getNode(), "catchClause", true))) {
-        _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), _context.getBuilder().insertAfter(instruction));
+        _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), _context.getBuilder().insertAfter(instruction), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7597254041024568860");
       }
-      _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "afterCatches"), _context.getBuilder().insertAfter(instruction));
+      _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "afterCatches"), _context.getBuilder().insertAfter(instruction), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7597254041024771349");
     }
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
       public void run() {
-        _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "afterCatches"));
+        _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "afterCatches"), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1207141036944");
       }
     });
     for (SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
       _context.getBuilder().build((SNode) c);
       _context.getBuilder().emitMayBeUnreachable(new Runnable() {
         public void run() {
-          _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "afterCatches"));
+          _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "afterCatches"), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1207141053010");
         }
       });
     }
     _context.getBuilder().emitLabel("afterCatches");
-    _context.getBuilder().emitFinally();
+    _context.getBuilder().emitFinally("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206957590308");
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "finallyBody", true));
-    _context.getBuilder().emitEndTry();
+    _context.getBuilder().emitEndTry("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206957590308");
   }
 }

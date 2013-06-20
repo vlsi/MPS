@@ -11,6 +11,6 @@ public class ActionDataParameterDeclaration_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitWrite(_context.getNode());
+    _context.getBuilder().emitWrite(_context.getNode(), "r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)/1241370924005");
   }
 }

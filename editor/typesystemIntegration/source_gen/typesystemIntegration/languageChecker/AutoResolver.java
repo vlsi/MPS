@@ -13,13 +13,13 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.typesystem.checking.HighlightUtil;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
@@ -40,9 +40,6 @@ public class AutoResolver extends EditorCheckerAdapter {
       return messages;
     }
     boolean autoresolve = !(hasUnresolvedImportedModels(SNodeOperations.getModel(rootNode), editorContext));
-    if (!(autoresolve)) {
-      SetSequence.fromSet(messages).addElement(HighlightUtil.createWarningMessage(rootNode, "Containing model has unresolved model imports. Automatic refrence resolving is switched off to avoid incorrect reference target resolving.", this));
-    }
     final Set<SReference> badReferences = collectBadReferences(rootNode);
     for (SReference ref : SetSequence.fromSet(badReferences)) {
       EditorMessage message = HighlightUtil.createHighlighterMessage(ref.getSourceNode(), "Unresolved reference", this, editorContext);
@@ -73,9 +70,9 @@ public class AutoResolver extends EditorCheckerAdapter {
     if (editorContext == null) {
       return true;
     }
-    IScope scope = editorContext.getScope();
+    SRepository repository = editorContext.getRepository();
     for (SModelReference modelReference : ListSequence.fromList(SModelOperations.getImportedModelUIDs(model))) {
-      if (scope.getModelDescriptor(modelReference) == null) {
+      if (modelReference.resolve(repository) == null) {
         return true;
       }
     }

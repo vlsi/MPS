@@ -24,18 +24,22 @@ public class SolveInequalitiesOperation extends AbstractOperation {
     myAction = action;
   }
 
+  @Override
   public String getPresentation() {
     return "Solving inequalities";
   }
 
+  @Override
   public void doUndo(State state) {
     state.getInequalities().setSolvingInProcess(false);
   }
 
+  @Override
   public void doRedo(State state) {
     state.getInequalities().setSolvingInProcess(true);
   }
 
+  @Override
   public void execute(State state) {
     state.getInequalities().setSolvingInProcess(true);
     if (myAction != null) {

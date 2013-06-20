@@ -18,7 +18,6 @@ package jetbrains.mps.ide.findusages.view.optionseditor.components;
 import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 
-import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;

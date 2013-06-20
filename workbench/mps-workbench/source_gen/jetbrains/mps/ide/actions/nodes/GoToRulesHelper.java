@@ -91,7 +91,7 @@ public class GoToRulesHelper {
       final SNode subConcept = getApplicableConcept(SLinkOperations.getTarget(overridingRule, "applicableNode", true));
       ListSequence.fromList(rules).removeWhere(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return getApplicableConcept(it) == subConcept;
+          return getApplicableConcept(SLinkOperations.getTarget(it, "applicableNode", true)) == subConcept;
         }
       });
     }

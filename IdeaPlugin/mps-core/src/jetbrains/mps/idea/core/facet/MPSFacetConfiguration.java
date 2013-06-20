@@ -96,7 +96,7 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
       }
     }
     if (myConfigurationBean.getUsedLanguages() == null) {
-      myConfigurationBean.setUsedLanguages(new String[]{BootstrapLanguages.BASE_LANGUAGE.toString()});
+      myConfigurationBean.setUsedLanguages(new String[]{BootstrapLanguages.baseLanguageRef().toString()});
     }
   }
 

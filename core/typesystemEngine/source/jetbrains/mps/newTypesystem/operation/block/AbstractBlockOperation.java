@@ -33,6 +33,7 @@ public abstract class AbstractBlockOperation extends AbstractOperation {
     return myBlock;
   }
 
+  @Override
   public List<SNode> getVariables() {
     return myBlock.getVariables(null);
   }

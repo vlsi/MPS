@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
@@ -36,11 +39,12 @@ import java.util.List;
 public class SelectionManagerImpl implements SelectionManager {
   private static final Logger LOG = LogManager.getLogger(SelectionManagerImpl.class);
 
+  @NotNull
   private EditorComponent myEditorComponent;
   private Deque<Selection> mySelectionStack = new LinkedList<Selection>();
   private List<SelectionListener> mySelectionListeners = new LinkedList<SelectionListener>();
 
-  public SelectionManagerImpl(EditorComponent editorComponent) {
+  public SelectionManagerImpl(@NotNull EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
   }
 
@@ -200,10 +204,11 @@ public class SelectionManagerImpl implements SelectionManager {
   }
 
   private void doChangeSelection(Selection oldSelection, Selection newSelection) {
-    if (oldSelection != null) {
+    boolean isSameSelection = oldSelection == newSelection;
+    if (oldSelection != null && !isSameSelection) {
       oldSelection.deactivate();
     }
-    if (newSelection != null) {
+    if (newSelection != null && !isSameSelection) {
       newSelection.activate();
     }
     for (SelectionListener nextListener : mySelectionListeners) {
@@ -220,5 +225,126 @@ public class SelectionManagerImpl implements SelectionManager {
       mySelectionStack.getLast().deactivate();
     }
     mySelectionStack.clear();
+  }
+
+  @Override
+  public void setSelection(SNode node) {
+    setSelection(myEditorComponent.findNodeCell(node));
+  }
+
+  @Override
+  public void setSelection(SNode node, @NotNull String cellId) {
+    EditorCell cell = findCell(node, cellId);
+    if (cell == null) {
+      clearSelection();
+    } else {
+      setSelection(cell);
+    }
+  }
+
+  @Override
+  public void setSelection(SNode node, @NotNull String cellId, int caretPosition) {
+    EditorCell cell = findCell(node, cellId);
+    if (cell instanceof EditorCell_Label) {
+      EditorCell_Label labelCell = (EditorCell_Label) cell;
+      boolean isFirstPositionRequested = caretPosition == 0;
+      boolean isLastPositionRequested = caretPosition == -1 || (caretPosition != 0 && caretPosition == labelCell.getText().length());
+      EditorCell_Label refinedCell = refineUsingCursorPositioningRules(labelCell, cellId, isFirstPositionRequested, isLastPositionRequested);
+      if (refinedCell != null) {
+        if (refinedCell != labelCell) {
+          // first -> last & last -> first if prev. or next cell was selected
+          if (isFirstPositionRequested) {
+            isLastPositionRequested = true;
+          }
+          if (isLastPositionRequested) {
+            caretPosition = 0;
+          }
+        }
+        if (isLastPositionRequested) {
+          caretPosition = refinedCell.getText().length();
+        }
+        setSelection(refinedCell, caretPosition);
+        return;
+      }
+    }
+    clearSelection();
+  }
+
+  private EditorCell_Label refineUsingCursorPositioningRules(EditorCell_Label labelCell, String cellId, boolean isFirstPositionRequested,
+      boolean isLastPositionRequested) {
+    if (isFirstPositionRequested && !StyleAttributesUtil.isFirstPositionAllowed(labelCell.getStyle())) {
+      return getNextApplicableCell(labelCell, false, SelectionManager.FIRST_EDITABLE_CELL.equals(cellId));
+    }
+    if (isLastPositionRequested && !StyleAttributesUtil.isLastPositionAllowed(labelCell.getStyle())) {
+      return getNextApplicableCell(labelCell, true, SelectionManager.LAST_EDITABLE_CELL.equals(cellId));
+    }
+    return labelCell;
+  }
+
+  private EditorCell_Label getNextApplicableCell(EditorCell_Label startCell, boolean forwardDirection, boolean findEditableCell) {
+    for (EditorCell nextCell : new DfsTraverserIterable(startCell, forwardDirection, false)) {
+      if (nextCell instanceof EditorCell_Label) {
+        EditorCell_Label labelCell = (EditorCell_Label) nextCell;
+        if (findEditableCell ? labelCell.isSelectable() && labelCell.isEditable() : labelCell.isSelectable()) {
+          return labelCell;
+        }
+      }
+    }
+    return null;
+  }
+
+  @Override
+  public void setSelection(SNode node, @NotNull String cellId, int selectionStart, int selectionEnd) {
+    EditorCell cell = findCell(node, cellId);
+    if (cell instanceof EditorCell_Label) {
+      EditorCell_Label label = (EditorCell_Label) cell;
+      if (selectionStart == -1) {
+        selectionStart = label.getText().length();
+      }
+      if (selectionEnd == -1) {
+        selectionEnd = label.getText().length();
+      }
+
+      setSelection(label, selectionEnd, selectionStart, selectionEnd);
+    } else {
+      clearSelection();
+    }
+  }
+
+  /**
+   * looking for the cell with specified id for the specified node taking into account
+   * cell selector constants: SelectionManager.FIRST_CELL/SelectionManager.LAST_CELL/..
+   */
+  private EditorCell findCell(SNode node, String cellId) {
+    EditorCell nodeCell = myEditorComponent.findNodeCell(node);
+    if (nodeCell == null) {
+      return null;
+    }
+    if (isSpecifiedById(nodeCell, cellId)) {
+      return nodeCell;
+    }
+
+    boolean useForwardIterator = !SelectionManager.LAST_CELL.equals(cellId) && !SelectionManager.LAST_EDITABLE_CELL.equals(cellId);
+    for (EditorCell cell : new DfsTraverserIterable(nodeCell, useForwardIterator, true)) {
+      if (isSpecifiedById(cell, cellId)) {
+        return cell;
+      }
+    }
+
+    return null;
+  }
+
+  private boolean isSpecifiedById(EditorCell cell, String cellId) {
+    if (cellId.equals(cell.getCellId())) {
+      return true;
+    }
+
+    // processing cell selector constants
+    boolean selectable = SelectionManager.FIRST_CELL.equals(cellId) || SelectionManager.LAST_CELL.equals(cellId);
+    boolean editable = SelectionManager.FIRST_EDITABLE_CELL.equals(cellId) || SelectionManager.LAST_EDITABLE_CELL.equals(cellId);
+    boolean isCellSelector = selectable || editable;
+
+    return isCellSelector && !(cell instanceof EditorCell_Collection) && cell.isSelectable() &&
+        (selectable || (cell instanceof EditorCell_Label && ((EditorCell_Label) cell).isEditable()));
   }
 }

@@ -24,7 +24,8 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.Computable;
@@ -32,15 +33,12 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -83,7 +81,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   @Override
   public Class generateClass() throws EvaluationException {
-    return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, SModelRepository.getInstance().getModelDescriptor(myContainerModel), Properties.EVALUATOR_NAME, getContext(), Properties.IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), ClassLoaderManager.getInstance().getClassLoader(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd"))));
+    return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, SModelRepository.getInstance().getModelDescriptor(myContainerModel), Properties.EVALUATOR_NAME, getContext(), Properties.IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), ClassLoaderManager.getInstance().getClassLoader(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd(jetbrains.mps.debugger.java.api)"))));
   }
 
   @Override
@@ -155,8 +153,8 @@ public class EvaluationContainer implements IEvaluationContainer {
     new EvaluationContainer.MyBaseLanguagesImportHelper().tryToImport(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), evaluatorNode, "virtual_getCode_317191294093624551", new Object[]{}), nodesToImport);
 
     SModelOperations.validateLanguagesAndImports(containerModel, true, true);
-    ((SModelInternal) containerModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
-    ((SModelInternal) containerModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
+    ((SModelInternal) containerModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debugger.java.evaluation)"));
+    ((SModelInternal) containerModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)"));
   }
 
   protected SNode createEvaluatorNode() {

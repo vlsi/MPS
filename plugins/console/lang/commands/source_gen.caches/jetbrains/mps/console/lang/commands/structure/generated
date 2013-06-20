@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d22fvbxzzye7mpregbh37sdmi9atsys">
+<dependencies version="2" modelHash="-dmacs4tqm65snpv82t6quw7fkjrxj4k">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ar5rg4sgykttk0xr6ynoooewafaa239" />
@@ -31,7 +31,7 @@
   <source id="5464054275389846505" name="BLCommand" hash="aph7nretfbt7sajc0s0n1lwzkv6kn7k">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8899274441241545834" name="ModelStatCommand" hash="c37sd584wkltk7naabuczh7yyyq7mv6">
+  <source id="8899274441241545834" name="ModelStatCommand" hash="-7qg2dnn6dsy2c2z1x00zcicgkt2qtfa">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8899274441241550347" name="FindUsagesCommand" hash="-92qvyq7se8yp3wieuj6txo31td3jmd8">

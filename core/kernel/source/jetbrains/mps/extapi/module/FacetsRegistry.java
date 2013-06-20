@@ -96,7 +96,7 @@ public class FacetsRegistry extends FacetsFacade implements CoreComponent {
         return new JavaModuleFacetImpl();
       }
     });
-    registerLanguageFacet(BootstrapLanguages.BASE_LANGUAGE.getModuleName(), JavaModuleFacet.FACET_TYPE);
+    registerLanguageFacet(BootstrapLanguages.BASE_LANGUAGE_NAMESPACE, JavaModuleFacet.FACET_TYPE);
 
     addFactory(TestsFacet.FACET_TYPE, new FacetFactory() {
       @Override

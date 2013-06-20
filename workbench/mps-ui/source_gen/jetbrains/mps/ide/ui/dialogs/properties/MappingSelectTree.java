@@ -177,7 +177,7 @@ public class MappingSelectTree extends Tree {
 
     @Override
     public SModelReference getObject() {
-      return (jetbrains.mps.smodel.SModelReference) super.getObject();
+      return (SModelReference) super.getObject();
     }
 
     @Override

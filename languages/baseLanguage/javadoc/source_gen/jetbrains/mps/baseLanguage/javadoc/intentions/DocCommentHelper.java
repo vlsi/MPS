@@ -7,14 +7,13 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class DocCommentHelper {
   public static void addJavadocLangIfMissing(SNode node) {
     AbstractModule module = (AbstractModule) SNodeOperations.getModel(node).getModule();
     SModelInternal model = as_zf4tay_a0a1a0(SNodeOperations.getModel(node), SModelInternal.class);
-    SModuleReference javadocLangReference = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage.javadoc", Language.class).getModuleReference();
+    SModuleReference javadocLangReference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
     if (!(model.importedLanguages().contains(javadocLangReference))) {
       module.addUsedLanguage(javadocLangReference);
       model.addLanguage(javadocLangReference);

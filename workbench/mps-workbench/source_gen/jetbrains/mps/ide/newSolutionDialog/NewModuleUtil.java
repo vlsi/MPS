@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.library.LanguageDesign_DevKit;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -31,7 +31,6 @@ import com.intellij.openapi.vfs.VfsUtil;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModuleOperations;
@@ -45,6 +44,7 @@ import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -152,7 +152,7 @@ public class NewModuleUtil {
     LanguageDescriptor descriptor = createNewLanguageDescriptor(namespace, descriptorFile);
 
     if (importLangDevDevkit) {
-      SModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
+      SModuleReference devkitRef = PersistenceFacade.getInstance().createModuleReference("2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)");
       descriptor.getUsedDevkits().add(devkitRef);
     }
 
@@ -182,9 +182,9 @@ public class NewModuleUtil {
     templateModelsRoot.setContentRoot(descriptorFile.getParent().getPath());
     templateModelsRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, templateModelsDir);
     generatorDescriptor.getModelRootDescriptors().add(templateModelsRoot.toDescriptor());
-    generatorDescriptor.getUsedDevkits().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference());
-    generatorDescriptor.getUsedLanguages().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("b401a680-8325-4110-8fd3-84331ff25bef")).getModuleReference());
-    generatorDescriptor.getUsedLanguages().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5")).getModuleReference());
+    generatorDescriptor.getUsedDevkits().add(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
+    generatorDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)"));
+    generatorDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)"));
     descriptor.getGenerators().add(generatorDescriptor);
     language.setLanguageDescriptor(descriptor, false);
     language.save();

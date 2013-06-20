@@ -15,13 +15,7 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
@@ -87,45 +81,13 @@ public class MoveNodes_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<SModel> targetModelDescriptor = new Wrappers._T<SModel>();
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
 
-      modelAccess.runReadAction(new Runnable() {
-        public void run() {
-          targetModelDescriptor.value = SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first());
-        }
-      });
-
-      final Object newLocation = MoveNodesDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), targetModelDescriptor.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {
-        @Override
-        public boolean check(Object selectedObject, SModel model) {
-          return selectedObject instanceof SNode || selectedObject instanceof SModel;
-        }
-      });
-      if (newLocation == null) {
-        return;
-      }
-
-      modelAccess.runReadInEDT(new Runnable() {
-        @Override
-        public void run() {
-          for (SNode n : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target")))) {
-            SNode node = ((SNode) n);
-            if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(node)) {
-              return;
-            }
-          }
-          if (newLocation instanceof SNode && (!(((SNode) newLocation).getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) newLocation)))) {
-            return;
-          }
-
-          if (newLocation instanceof SModel && (((SModel) newLocation).getReference().resolve(MPSModuleRepository.getInstance()) != newLocation)) {
-            return;
-          }
-
+      MoveNodesExecute.execute(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("target")), new MoveNodesExecute.ExecuteRefactoring() {
+        public void run(Object newLocation) {
           RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(newLocation), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
         }
       });
+
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MoveNodes", t);

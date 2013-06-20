@@ -16,9 +16,9 @@ public class ReturnStatement_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
     if (ReturnStatement_Behavior.call_getReturnJumpTarget_1229351767970(_context.getNode()) != null) {
-      _context.getBuilder().emitJump(_context.getBuilder().after(ReturnStatement_Behavior.call_getReturnJumpTarget_1229351767970(_context.getNode())));
+      _context.getBuilder().emitJump(_context.getBuilder().after(ReturnStatement_Behavior.call_getReturnJumpTarget_1229351767970(_context.getNode())), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1229352005756");
     } else {
-      _context.getBuilder().emitRet();
+      _context.getBuilder().emitRet("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1229351994644");
     }
   }
 }

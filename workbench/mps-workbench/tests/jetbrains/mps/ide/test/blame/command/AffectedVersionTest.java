@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.ide.test.blame.command;
 
-import jetbrains.mps.TestMain;
+import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
-import junit.framework.TestCase;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.jdom.Element;
@@ -29,13 +28,13 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.List;
 
-public class AffectedVersionTest extends TestCase {
+import static org.junit.Assert.fail;
+
+public class AffectedVersionTest extends WorkbenchMpsTest {
   private static final String URL = Command.YOUTRACK_BASE_URL + "/rest/admin/customfield/versionBundle/MPS%20Versions";
 
   @Test
   public void testVersion() throws IOException {
-    TestMain.configureMPS();
-
     String version = Command.getVersion();
     if (version == null) return;
 

@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.wm.IdeFocusManager;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
@@ -41,6 +40,7 @@ import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -494,5 +494,10 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
       myCellFactory = new EditorCellFactoryImpl(this);
     }
     return myCellFactory;
+  }
+
+  @Override
+  public SelectionManager getSelectionManager() {
+    return myNodeEditorComponent.getSelectionManager();
   }
 }

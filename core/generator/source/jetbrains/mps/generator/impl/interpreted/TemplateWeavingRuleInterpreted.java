@@ -63,7 +63,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       consequence = null;
       template = null;
     } else {
-      String consequenceConceptFQName = consequenceNode.getConcept().getId();
+      String consequenceConceptFQName = consequenceNode.getConcept().getQualifiedName();
       if (consequenceConceptFQName.equals(RuleUtil.concept_TemplateDeclarationReference)) {
         consequence = new TemplateDeclarationConsequence();
         template = RuleUtil.getTemplateDeclarationReference_Template(consequenceNode);
