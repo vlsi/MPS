@@ -26,7 +26,9 @@ public interface SearchScope {
 
   Iterable<SModel> getModels();
 
+  @Deprecated
   SModel resolve(SModelReference reference);
 
+  @Deprecated
   SModule resolve(SModuleReference reference);
 }
