@@ -36,6 +36,6 @@ public class typeof_MultipleExpression_InferenceRule extends AbstractInferenceRu
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 }
