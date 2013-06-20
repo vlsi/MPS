@@ -125,10 +125,10 @@
     <classNode dependClassName="javax.swing.JTree" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="javax.swing.tree.DefaultTreeCellRenderer" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTree" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.NewMPSTreeCellRenderer" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.TextMPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.NewMPSTreeCellRenderer" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.TextMPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef" />

@@ -11,8 +11,8 @@
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.ChildHierarchyTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.CircularHierarchyException" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.HierarchyTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.TreeTextUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -23,8 +23,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTree" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.TextTreeNode" />
+    <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
+    <classNode extendsClassName="jetbrains.mps.ide.ui.tree.TextTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.ide.hierarchy.AbstractHierarchyView" file="AbstractHierarchyView.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
@@ -80,7 +80,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.IconContainer" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.TreeHighlighterExtension" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.TreeHighlighterExtension" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
@@ -155,7 +155,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.ide.hierarchy.HierarchyViewTool" file="HierarchyViewTool.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
@@ -164,7 +164,7 @@
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyTree" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.TreeHighlighterExtension" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.TreeHighlighterExtension" />
     <classNode extendsClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView" />
   </dependency>
   <dependency className="jetbrains.mps.ide.hierarchy.IconContainer" file="IconContainer.java">

@@ -6,7 +6,7 @@
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTree" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode extendsClassName="com.intellij.ide.OccurenceNavigator" />
     <classNode extendsClassName="com.intellij.pom.Navigatable" />
     <classNode extendsClassName="javax.swing.event.TreeSelectionListener" />
@@ -19,14 +19,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.FailedTestOccurenceNavigator" file="FailedTestOccurenceNavigator.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMethodTreeNode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTree" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.BaseTestOccurenceNavigator" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.ProgressLine" file="ProgressLine.java">
@@ -232,7 +232,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTree" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestOptions" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.icons.Icons" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTree" file="TestTree.java">
@@ -254,8 +254,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestState" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTreeIconAnimator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestOptions" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.TextTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.TextTreeNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -264,7 +264,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestView" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTree" />
+    <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTreeIconAnimator" file="TestTreeIconAnimator.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
@@ -382,7 +382,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTreeSelectionListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestOptions" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

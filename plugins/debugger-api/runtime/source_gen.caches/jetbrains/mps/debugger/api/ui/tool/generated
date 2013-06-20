@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1beq6mrq08m9ihu85gw7dnqqgkyf2a2">
+<dependencies version="2" modelHash="dwvzptmblx0l47tej62v50a6mek97qb">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.ui(MPS.IDEA/com.intellij.execution.ui@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
@@ -18,7 +18,7 @@
   <dep model="r:4a0301da-c964-420c-8e35-486843de9df5(jetbrains.mps.debug.api.evaluation)" hash="6gapjppclh0tlnvbd9pxw9c36b4r9vt" />
   <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="-3khy3ybi9j3b325qda4iltwaw0vj4ie" />
   <dep model="r:e60874cf-5ffd-4123-9760-5f88ff8e0a5a(jetbrains.mps.debugger.api.ui.icons)" hash="-1r5kmmrdj4d841vlm5iiqq6as3bnx9s" />
-  <common hash="7z6d4t4rfrqsi6hzce6vbk6tqtgaz3x" />
+  <common hash="e0mr00aglqde2ezbnz9ighuk4qzyo2n" />
   <source id="4474271214083118614" name="DebuggerToolContent" hash="du634h6ryikn5taqc9svf4v2hxei765">
     <file name="DebuggerToolContent.java" />
   </source>
@@ -36,7 +36,7 @@
     <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" />
     <file name="DebuggerToolContentBuilder.java" />
   </source>
-  <source id="4474271214083120661" name="DebuggerToolPanel" hash="71ap9vja44vunsa9vvlobc5zwlzs253">
+  <source id="4474271214083120661" name="DebuggerToolPanel" hash="-befoys6lrgrkbe0s0r6yf5f25odfnk">
     <dep root="4474271214083118614" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />

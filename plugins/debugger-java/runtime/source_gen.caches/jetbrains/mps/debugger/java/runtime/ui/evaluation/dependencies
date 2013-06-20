@@ -99,7 +99,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.messages.Icons" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -112,8 +112,8 @@
     <classNode extendsClassName="jetbrains.mps.debugger.api.ui.tree.WatchableNode" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationModelNode" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationState" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTree" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.TextTreeNode" />
+    <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
+    <classNode extendsClassName="jetbrains.mps.ide.ui.tree.TextTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" file="EvaluationUi.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataKey" />
