@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -90,12 +92,17 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
         myHistEditor.setFocusable(false);
 
         ConsoleTool.this.myCommandEditor = new UIEditorComponent(ProjectHelper.toMPSProject(getProject()).getRepository(), null);
-
-        Language[] langs = new Language[]{ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)"), Language.class), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.blCommand)"), Language.class), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"), Language.class), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("a5e4de53-46a3-44da-aab3-68fdf1c34ed0(jetbrains.mps.console.ideCommands)"), Language.class)};
-        for (Language l : langs) {
+        Language base = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)"), Language.class);
+        Collection<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
+        for (Language l : CollectionSequence.fromCollection(languages)) {
+          if (l != base && !(l.getAllExtendedLanguages().contains(base))) {
+            continue;
+          }
           ((SModelInternal) myModel).addLanguage(l.getModuleReference());
           ((AbstractModule) myModel.getModule()).addUsedLanguage(l.getModuleReference());
         }
+        ((SModelInternal) myModel).addDevKit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
+        ((AbstractModule) myModel.getModule()).addUsedDevkit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
 
         ConsoleTool.this.myContext = new ModuleContext(myModel.getModule(), project);
 
