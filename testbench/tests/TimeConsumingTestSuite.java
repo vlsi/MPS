@@ -13,25 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import jetbrains.mps.TestMain;
-import jetbrains.mps.testbench.MpsMakeHelper;
-import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
-import jetbrains.mps.testbench.junit.runners.WatchingSuite;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+
+import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
+import jetbrains.mps.testbench.junit.runners.MpsTest.SuiteClassSymbols;
+import jetbrains.mps.testbench.junit.runners.MpsTest.WithIdeaInstance;
+import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
+import jetbrains.mps.testbench.junit.runners.SuiteMpsTest;
 import org.junit.runner.RunWith;
 
-
+@RunWith(SuiteMpsTest.class)
+@WithIdeaInstance
+@PreloadAllModules
+@WithMake
 @SuiteClassSymbols({"jetbrains.mps.PersistenceTest"})
-@RunWith(WatchingSuite.class)
 public class TimeConsumingTestSuite {
-  @BeforeClass
-  public static void make () throws Exception {
-    new MpsMakeHelper().make();
-  }
-
-  @AfterClass
-  public static void shutdown() {
-    TestMain.PROJECT_CONTAINER.clear();
-  }
 }

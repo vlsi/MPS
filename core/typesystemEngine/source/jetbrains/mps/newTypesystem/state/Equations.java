@@ -85,16 +85,18 @@ public class Equations {
       return node;
     }
     SNode nameRepresentative = getNameRepresentative(node);
-    SNode parent = myRepresentatives.get(nameRepresentative);
+    SNode currentKey = nameRepresentative;
     SNode current = nameRepresentative;
-    if (parent != null) {
+    if (myRepresentatives.containsKey(currentKey)) {
+      SNode parent = myRepresentatives.get(currentKey);
       List<SNode> path = new LinkedList<SNode>();
-      while (parent != null) {
+      while (myRepresentatives.containsKey(currentKey)) {
+        parent = myRepresentatives.get(currentKey);
         if (current != nameRepresentative) {
           path.add(current);
         }
         current = parent;
-        parent = myRepresentatives.get(parent);
+        currentKey = parent;
       }
       if (path.size() > 1 && shortenPaths) {
         for (SNode elem : path) {
@@ -249,6 +251,7 @@ public class Equations {
     all.addAll(myRepresentatives.keySet());
     for (SNode node : all) {
       SNode representative = getRepresentativeNoShortenPaths(node);
+      if (representative == null) continue;
       Set<SNode> value = map.get(representative);
       if (value == null) {
         value = new THashSet<SNode>();

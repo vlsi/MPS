@@ -13,21 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
 
-import jetbrains.mps.TestMain;
+import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.WriteAction;
 import jetbrains.mps.util.IterableUtil;
 import org.junit.After;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -36,18 +33,12 @@ import java.util.UUID;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
-public class DependenciesTests {
+public class DependenciesTests extends CoreMpsTest {
   private static final MPSModuleOwner OWNER = new BaseMPSModuleOwner() {
   };
 
   @Rule
   public WriteAction wa = new WriteAction();
-
-  @BeforeClass
-  public static void setUp() throws Exception {
-    IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
-  }
 
   @After
   public void afterTest() {

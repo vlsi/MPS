@@ -6,6 +6,7 @@ import java.awt.datatransfer.StringSelection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
@@ -55,7 +56,7 @@ public class TransformationTestRunner {
       // close all projects before run test 
       TestMain.PROJECT_CONTAINER.clear();
     }
-    TestMain.configureMPS();
+    MpsTestsSupport.initEnv(true);
     // we do not want to save our project, see MPS-13352 
     ApplicationManagerEx.getApplicationEx().doNotSave();
     clearSystemClipboard();

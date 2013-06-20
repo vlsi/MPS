@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.findusages.model.CategoryKind" file="CategoryKind.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.Icon" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.findusages.model.IResultProvider" file="IResultProvider.java">
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.IExternalizeable" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.findusages.model.SearchQuery" file="SearchQuery.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.CantLoadSomethingException" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.IHolder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.ModelHolder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.ModuleHolder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.NodeHolder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.VoidHolder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.IExternalizeable" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.findusages.model.SearchResult" file="SearchResult.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.CategoryKind" />
+    <classNode dependClassName="jetbrains.mps.util.Pair" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.findusages.model.SearchResults" file="SearchResults.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.findUsages.UsagesList" />
+  </dependency>
+</dependenciesRoot>
+

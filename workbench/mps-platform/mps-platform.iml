@@ -30,6 +30,7 @@
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="library" name="ASM" level="project" />
     <orderEntry type="library" name="Commons-httpclient" level="project" />
+    <orderEntry type="module" module-name="mps-ui" />
   </component>
 </module>
 

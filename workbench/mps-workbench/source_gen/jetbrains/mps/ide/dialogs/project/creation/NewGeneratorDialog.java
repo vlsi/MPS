@@ -198,9 +198,9 @@ public class NewGeneratorDialog extends DialogWrapper {
       return;
     }
     EditableSModel templateModel = SModuleOperations.createModelWithAdjustments(getTemplateModelPrefix(sourceLanguage) + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next());
-    SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+    SNode mappingConfiguration = SModelOperations.createNewNode(((SModel) templateModel), null, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     SPropertyOperations.set(mappingConfiguration, "name", "main");
-    SModelOperations.addRootNode(templateModel, mappingConfiguration);
+    SModelOperations.addRootNode(((SModel) templateModel), mappingConfiguration);
     templateModel.save();
   }
 

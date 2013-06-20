@@ -44,6 +44,9 @@ public class TypesUtil {
   }
 
   public static boolean hasVariablesInside(SNode node) {
+    if (node == null) {
+      return false;
+    }
     if (TypesUtil.isVariable(node)) {
       return true;
     }
@@ -82,11 +85,11 @@ public class TypesUtil {
   }
 
   private static void getVariablesInside(SNode node, List<SNode> result, State state) {
-    if (node == null) {
-      return;
-    }
     if (state != null) {
       node = state.getRepresentative(node);
+    }
+    if (node == null) {
+      return;
     }
     if (isVariable(node)) {
       result.add(node);

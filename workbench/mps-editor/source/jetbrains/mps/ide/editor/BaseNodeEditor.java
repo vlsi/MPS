@@ -41,7 +41,9 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public abstract class BaseNodeEditor implements Editor {
   private static Logger LOG = LogManager.getLogger(BaseNodeEditor.class);
@@ -51,6 +53,7 @@ public abstract class BaseNodeEditor implements Editor {
   private IOperationContext myContext;
   private JComponent myReplace = null;
   private SNodeReference myCurrentlyEditedNode = null;
+  protected Map<TaskType, PrioritizedTask> myType2TaskMap = new HashMap<TaskType, PrioritizedTask>();
 
   public BaseNodeEditor(IOperationContext context) {
     myContext = context;
@@ -86,9 +89,9 @@ public abstract class BaseNodeEditor implements Editor {
 
   protected void editNode(final SNodeReference nodeReference, final IOperationContext context, final boolean select) {
     assert myEditorComponent != null;
-    executeInEDT(new Runnable() {
+    executeInEDT(new PrioritizedTask(TaskType.EDIT_NODE, myType2TaskMap) {
       @Override
-      public void run() {
+      public void performTask() {
         SNode node = nodeReference.resolve(MPSModuleRepository.getInstance());
         if (node == null) {
           return;
@@ -102,11 +105,11 @@ public abstract class BaseNodeEditor implements Editor {
     myCurrentlyEditedNode = nodeReference;
   }
 
-  protected void executeInEDT(Runnable runnable) {
+  protected void executeInEDT(PrioritizedTask task) {
     if (ModelAccess.instance().isInEDT()) {
-      runnable.run();
+      task.run();
     } else {
-      ModelAccess.instance().runReadInEDT(runnable);
+      ModelAccess.instance().runReadInEDT(task);
     }
   }
 
@@ -204,9 +207,9 @@ public abstract class BaseNodeEditor implements Editor {
     assert myEditorComponent != null;
     assert myEditorComponent.getEditorContext() != null;
     final EditorContext editorContext = getEditorContext();
-    executeInEDT(new Runnable() {
+    executeInEDT(new PrioritizedTask(TaskType.EDITOR_MEMENTO, myType2TaskMap) {
       @Override
-      public void run() {
+      public void performTask() {
         editorContext.setMemento(s.myMemento);
       }
     });
@@ -219,12 +222,45 @@ public abstract class BaseNodeEditor implements Editor {
       return;
     }
     final EditorContext inspectorEditorContext = editorComponent.getInspector().getEditorContext();
-    executeInEDT(new Runnable() {
+    executeInEDT(new PrioritizedTask(TaskType.INSPECTOR_MEMENTO, myType2TaskMap) {
       @Override
-      public void run() {
+      public void performTask() {
         inspectorEditorContext.setMemento(s.myInspectorMemento);
       }
     });
+  }
+
+  public abstract static class PrioritizedTask implements Runnable {
+    private final TaskType myType;
+    private final Map<TaskType, PrioritizedTask> myType2TaskMap;
+
+    public PrioritizedTask(TaskType type, Map<TaskType, PrioritizedTask> type2TaskMap) {
+      synchronized (type2TaskMap) {
+        myType = type;
+        myType2TaskMap = type2TaskMap;
+        myType2TaskMap.put(myType, this);
+      }
+    }
+
+    @Override
+    public void run() {
+      synchronized (myType2TaskMap) {
+        if (myType2TaskMap.get(myType) != this) {
+          return;
+        }
+        myType2TaskMap.remove(myType);
+      }
+      performTask();
+    }
+
+    protected abstract void performTask();
+  }
+
+  public enum TaskType {
+    EDIT_NODE,
+    EDITOR_MEMENTO,
+    INSPECTOR_MEMENTO,
+    UPDATE_PROPERTIES;
   }
 
   public static class BaseEditorState implements EditorState {

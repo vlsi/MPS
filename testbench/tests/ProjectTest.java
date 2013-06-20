@@ -14,31 +14,27 @@
  * limitations under the License.
  */
 
-import com.intellij.ide.IdeEventQueue;
-import jetbrains.mps.TestMain;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
+import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
+import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
+import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;
 import jetbrains.mps.testbench.junit.Order;
-import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.*;
-import org.junit.rules.TestName;
 import org.junit.rules.TestWatchman;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.TestClass;
 
-import java.io.File;
 import java.util.*;
 
 
@@ -46,136 +42,75 @@ import java.util.*;
  * User: fyodor
  * Date: Aug 19, 2010
  */
-@RunWith(WatchingParameterizedWithMake.class)
+@RunWith(ParameterizedMpsTest.class)
+@PreloadAllModules
+@WithMake
+@WithSorting
 public class ProjectTest {
-
-  private static ProjectTestHelper HELPER;
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
+
   private static Project mpsProject;
-
-  public static class Fixture {
-    String fixtureId;
-    Token token;
-    List<FrameworkMethod> methods = new ArrayList<FrameworkMethod>();
-
-    Fixture(SModule module, Project project) {
-      fixtureId = getFixtureId(module, project);
-      this.token = HELPER.getToken(module, project);
-      methods.addAll(METHODS);
-    }
-
-    private String getFixtureId(SModule module, Project project) {
-      String suffix;
-      if (module instanceof Language) {
-        suffix = " [lang]";
-      } else if (module instanceof Solution) {
-        suffix = " [solution]";
-      } else {
-        suffix = " [" + module.getClass().getSimpleName() + "]";
-      }
-
-      return module.getModuleName() + suffix;
-//      String modulePath = module.getDescriptorFile().getPath();
-//      String projectBaseDir = project.getBaseDir().getPath();
-//      if (modulePath.startsWith(projectBaseDir)) {
-//        modulePath = modulePath.substring(projectBaseDir.length());
-//      }
-//      return  modulePath;
-    }
-
-    void after(FrameworkMethod mth) {
-      methods.remove(mth);
-      if (methods.size() == 0) {
-        HELPER.cleanUp(token);
-      }
-    }
-
-    @Override
-    public String toString() {
-      return fixtureId;
-    }
-  }
 
   @Parameters
   public static List<Object[]> FIXTURES() {
-    HELPER = new ProjectTestHelper();
-    HELPER.setMacro("samples_home", System.getProperty("user.dir") + "/samples");
-    List<Object[]> fixtures = new ArrayList<Object[]>();
-    mpsProject = TestMain.loadProject(new File(System.getProperty("user.dir")));
-    Set<SModule> allModules = ModelAccess.instance().runReadAction(new Computable<Set<SModule>>() {
+    return (new CheckProjectStructureHelper(Collections.<String>emptySet())).filePaths();
+  }
+
+  // main part
+  private List<FrameworkMethod> methods = new ArrayList<FrameworkMethod>();
+  private Token token;
+  private boolean needGeneration;
+
+  public ProjectTest(String testName, final ModuleHandle handle) {
+    initProjectIfNeeded();
+    this.methods.addAll(METHODS);
+    token = ModelAccess.instance().runReadAction(new Computable<Token>() {
       @Override
-      public Set<SModule> compute() {
-        return MPSModuleRepository.getInstance().getAllModules();
+      public Token compute() {
+        return ProjectTestHelper.getToken(MPSModuleRepository.getInstance().getModule(handle.getDescriptor().getModuleReference().getModuleId()), mpsProject);
       }
     });
-    
-    List<SModule> mlist=new ArrayList<SModule>(allModules);
-    Collections.sort(mlist, new Comparator<SModule>() {
+    needGeneration = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
-      public int compare(SModule m1, SModule m2) {
-        String fqName1 = m1.getModuleName();
-        String fqName2 = m2.getModuleName();
-        return fqName1.compareTo(fqName2);
+      public Boolean compute() {
+        SModule module = MPSModuleRepository.getInstance().getModule(handle.getDescriptor().getModuleReference().getModuleId());
+        for (org.jetbrains.mps.openapi.model.SModel descriptor : module.getModels()) {
+          if (jetbrains.mps.util.SNodeOperations.isGeneratable(descriptor)) return true;
+        }
+        return false;
       }
     });
-    for (SModule module : mlist) {
-      if (!needsGeneration(module) || module instanceof Generator) continue;
-      fixtures.add(new Object[]{new Fixture(module, mpsProject)});
+  }
+
+  private static void initProjectIfNeeded() {
+    if (mpsProject == null) {
+      mpsProject = ActiveEnvironment.get().createDummyProject();
+//    mpsProject = environment.openProject(new File(System.getProperty("user.dir")));
     }
-    return fixtures;
   }
-
-  private static boolean needsGeneration(SModule module) {
-    for (SModel descriptor : module.getModels()) {
-      if (jetbrains.mps.util.SNodeOperations.isGeneratable(descriptor)) return true;
-    }
-    return false;
-  }
-
-  private final Fixture fixture;
-
-  @AfterClass
-  public static void disposeProject() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        mpsProject.dispose();
-        IdeEventQueue.getInstance().flushQueue();
-        System.gc();
-      }
-    });
-    // magic
-    ModelAccess.instance().flushEventQueue();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        IdeEventQueue.getInstance().flushQueue();
-      }
-    });
-    HELPER.dispose();
-  }
-
-
-  public ProjectTest(Fixture fix) {
-    this.fixture = fix;
-  }
-
-  @Rule
-  public TestName name = new TestName();
 
   @Rule
   public TestWatchman watchman = new TestWatchman() {
     @Override
     public void finished(FrameworkMethod method) {
-      fixture.after(method);
+      methods.remove(method);
+      if (methods.size() == 0) {
+        ProjectTestHelper.cleanUp(token);
+      }
     }
   };
 
   @Test
   @Order(1)
   public void buildModule() throws Exception {
-    if (!HELPER.build(fixture.token)) {
-      List<String> errors = HELPER.buildErrors(fixture.token);
+    if (!needGeneration) {
+      return;
+    }
+
+    if (!ProjectTestHelper.build(token)) {
+      List<String> errors = ProjectTestHelper.buildErrors(token);
       Assert.assertTrue("Build errors:\n" + IterableUtils.join(errors, "\n"), errors.isEmpty());
-      List<String> warns = HELPER.buildWarns(fixture.token);
+      List<String> warns = ProjectTestHelper.buildWarns(token);
       Assert.assertTrue("Build warnings:\n" + IterableUtils.join(warns, "\n"), warns.isEmpty());
     }
   }
@@ -183,14 +118,17 @@ public class ProjectTest {
   @Test
   @Order(2)
   public void diffModule() throws Exception {
-    List<String> diffReport = HELPER.getDiffReport(fixture.token);
+    if (!needGeneration) {
+      return;
+    }
+
+    List<String> diffReport = ProjectTestHelper.getDiffReport(token);
     Assert.assertTrue("Difference:\n" + IterableUtils.join(diffReport, "\n"), diffReport.isEmpty());
   }
-
 
   //  @Test
   @Order(4)
   public void testProject() throws Exception {
-    HELPER.test(fixture.token);
+    ProjectTestHelper.test(token);
   }
 }

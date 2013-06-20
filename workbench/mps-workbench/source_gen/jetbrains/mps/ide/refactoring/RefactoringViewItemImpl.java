@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.holders.ConstantHolder;
 import jetbrains.mps.project.GlobalScope;
 import javax.swing.SwingUtilities;
 import java.awt.Component;
@@ -151,7 +152,7 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myUsagesView.setRunOptions(FindUtils.makeProvider(new ConstantFinder()), new SearchQuery(new ConstantFinder.ConstantHolder(mySearchResults), GlobalScope.getInstance()), new UsagesView.ButtonConfiguration(false, false, true), mySearchResults);
+        myUsagesView.setRunOptions(FindUtils.makeProvider(new ConstantFinder()), new SearchQuery(new ConstantHolder(mySearchResults), GlobalScope.getInstance()), new UsagesView.ButtonConfiguration(false, false, true), mySearchResults);
       }
     });
   }

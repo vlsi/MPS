@@ -35,6 +35,6 @@ public class typeof_ParenthesisExpression_InferenceRule extends AbstractInferenc
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

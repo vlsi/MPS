@@ -48,7 +48,11 @@ public class UIEditorComponent extends EditorComponent {
   @Override
   public EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditorContext() == null) {
-      return new EditorCell_Constant(new EditorContext(this, null, null), null, "<NO NODE>");
+      EditorContext editorContext = getEditorContext();
+      if (editorContext == null) {
+        editorContext = new EditorContext(this, null, getRepository());
+      }
+      return new EditorCell_Constant(editorContext, null, "<NO NODE>");
     }
     return getEditorContext().createRootCell(getEditedNode(), events);
   }

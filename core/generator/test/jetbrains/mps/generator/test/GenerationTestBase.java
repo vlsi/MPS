@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.generator.test;
 
-import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.application.PathManager;
-import jetbrains.mps.TestMain;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
+import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
@@ -43,11 +44,9 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
-import jetbrains.mps.testbench.Testbench;
 import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
@@ -79,17 +78,15 @@ public class GenerationTestBase {
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner() {
   };
 
+  private static Environment CREATED_ENV;
+
   @BeforeClass
   public static void init() throws Exception {
-    BasicConfigurator.configure();
+    CREATED_ENV = MpsTestsSupport.initEnv(false);
+    MpsTestsSupport.makeAllInCreatedEnvironment();
+
     Logger.getRootLogger().setLevel(Level.INFO);
-
     IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
-
-    Testbench.initLibs();
-    Testbench.makeAll();
-    Testbench.reloadAll();
   }
 
   protected void doMeasureParallelGeneration(final Project p, final SModel descr, int threads) throws IOException {
@@ -312,16 +309,14 @@ public class GenerationTestBase {
     return null;
   }
 
+  protected static Project loadProject(File projectFile) {
+    return ActiveEnvironment.get().openProject(projectFile);
+  }
+
   protected static void cleanup(final Project p) {
-    ModelAccess.instance().flushEventQueue();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      @Override
-      public void run() {
-        p.dispose();
-        IdeEventQueue.getInstance().flushQueue();
-        System.gc();
-      }
-    });
+    if (CREATED_ENV != null) {
+      CREATED_ENV.disposeEnvironment();
+    }
   }
 
   protected static void assertNoDiff(Map<String, String> expected, Map<String, String> actual) {

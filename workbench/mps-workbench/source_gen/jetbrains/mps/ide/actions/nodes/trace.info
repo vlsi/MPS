@@ -24,7 +24,7 @@
     <nodeInfo nodeId="3256144589678342630" fileName="GoToRulesHelper.java" startLine="85" startPosition="39" endLine="86" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3256144589678342663" fileName="GoToRulesHelper.java" startLine="88" startPosition="24" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4832363360995121839" fileName="GoToRulesHelper.java" startLine="90" startPosition="45" endLine="91" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3256144589678342867" fileName="GoToRulesHelper.java" startLine="93" startPosition="41" endLine="94" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3256144589678342867" fileName="GoToRulesHelper.java" startLine="93" startPosition="41" endLine="94" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3256144589678340766" fileName="GoToRulesHelper.java" startLine="97" startPosition="5" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4832363360995121875" fileName="GoToRulesHelper.java" startLine="98" startPosition="0" endLine="99" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4832363360995121883" fileName="GoToRulesHelper.java" startLine="102" startPosition="63" endLine="103" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -95,7 +95,7 @@
     <scopeInfo nodeId="3256144589678342284" fileName="GoToRulesHelper.java" startLine="77" startPosition="39" endLine="78" endPosition="155" />
     <scopeInfo nodeId="3256144589678342563" fileName="GoToRulesHelper.java" startLine="81" startPosition="37" endLine="82" endPosition="147" />
     <scopeInfo nodeId="3256144589678342625" fileName="GoToRulesHelper.java" startLine="85" startPosition="39" endLine="86" endPosition="63" />
-    <scopeInfo nodeId="3256144589678342862" fileName="GoToRulesHelper.java" startLine="93" startPosition="41" endLine="94" endPosition="56" />
+    <scopeInfo nodeId="3256144589678342862" fileName="GoToRulesHelper.java" startLine="93" startPosition="41" endLine="94" endPosition="107" />
     <scopeInfo nodeId="4832363360995121893" fileName="GoToRulesHelper.java" startLine="104" startPosition="33" endLine="105" endPosition="18" />
     <scopeInfo nodeId="4131125964516851084" fileName="GoToRulesHelper.java" startLine="111" startPosition="46" endLine="112" endPosition="19" />
     <scopeInfo nodeId="4832363360995121949" fileName="GoToRulesHelper.java" startLine="115" startPosition="36" endLine="116" endPosition="19" />

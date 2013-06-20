@@ -19,10 +19,11 @@ import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
@@ -31,7 +32,8 @@ import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.Project
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectOptions;
 import junit.framework.Assert;
 import org.junit.After;
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.*;
@@ -75,17 +77,27 @@ public class ProjectCreationTest {
   private static final List<String> PROJECT_WITH_MODULES_PATH_LIST_DB = CollectionUtil.union(PROJECT_PROPERTIES_DIR_CONTENT, PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
 
   private IFile myTmpDir;
+
+  private static Environment CREATED_ENV;
+
   private Project myProject;
 
-
-  @Before
-  public void setUp() {
+  @BeforeClass
+  public static void init() {
     IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
+    CREATED_ENV = MpsTestsSupport.initEnv(true);
+  }
+
+  @AfterClass
+  public static void dispose() {
+    if (CREATED_ENV != null) {
+      CREATED_ENV.disposeEnvironment();
+    }
   }
 
   @After
   public void tearDown() {
+    // todo: remove?
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       @Override
       public void run() {
