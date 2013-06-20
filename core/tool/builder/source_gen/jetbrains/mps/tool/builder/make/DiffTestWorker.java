@@ -37,8 +37,8 @@ import jetbrains.mps.make.facet.IFacet;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -164,9 +164,8 @@ public class DiffTestWorker extends GeneratorWorker {
         )));
       }
     };
-    final int[] count = new int[]{1};
 
-    IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new DiffTestWorker.MyJobMonitor(new DiffTestWorker.MyProgress(startTestFormat, finishTestFormat), startTestFormat, finishTestFormat)) {
+    IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new DiffTestWorker.MyJobMonitor(new DiffTestWorker.MyProgress(startTestFormat, finishTestFormat))) {
       @Override
       public void setup(IPropertiesPool ppool, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
         super.setup(ppool, toExecute, input);
@@ -215,7 +214,7 @@ public class DiffTestWorker extends GeneratorWorker {
           return scriptBuilder.toScript();
         }
       };
-      bms.make(ms, collectResources(context, go.getProjects(), go.getModules(), go.getModels()), null, ctl, new DiffTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat)).get();
+      bms.make(ms, collectResources(context, go.getModules(), go.getModels()), null, ctl, new DiffTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat)).get();
     } catch (InterruptedException ignore) {
     } catch (ExecutionException ignore) {
     }
@@ -228,7 +227,7 @@ public class DiffTestWorker extends GeneratorWorker {
         LibraryInitializer.getInstance().update();
       }
     });
-    MPSCompilationResult result = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
+    ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
         return new ModuleMaker().make(go.getModules(), new EmptyProgressMonitor() {
           @Override
@@ -276,7 +275,7 @@ public class DiffTestWorker extends GeneratorWorker {
     MapSequence.fromMap(path2tmp).clear();
   }
 
-  private Iterable<IResource> collectResources(IOperationContext context, Iterable<Project> projects, final Iterable<SModule> modules, final Iterable<SModel> models) {
+  private Iterable<IResource> collectResources(IOperationContext context, final Iterable<SModule> modules, final Iterable<SModel> models) {
     final Wrappers._T<Iterable<SModel>> result = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -357,19 +356,6 @@ public class DiffTestWorker extends GeneratorWorker {
 
   private boolean isRunningOnTeamCity() {
     return myWhatToDo.getProperty("teamcity.version") != null;
-  }
-
-  private String[] getPerfomanceReportDestinations() {
-    String reportType = myWhatToDo.getProperty(ScriptProperties.GENERATE_PERFORMANCE_REPORT);
-    if (reportType == null || reportType.isEmpty()) {
-      return new String[]{};
-    }
-    String[] reports = reportType.split(",+");
-    return reports;
-  }
-
-  private boolean isSaveGeneratedFilesOnDisk() {
-    return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.SAVE_ON_DISK));
   }
 
   private boolean isInvokeTestsSet() {
@@ -570,7 +556,12 @@ public class DiffTestWorker extends GeneratorWorker {
       this.testReporter = null;
     }
 
+    private String normalizeTestName(String name) {
+      return name.replace("@", "_");
+    }
+
     private void testStarted(String testname) {
+      testname = normalizeTestName(testname);
       if (currentTestName != null) {
         testReporter.testFinished(currentTestName);
       }
@@ -579,11 +570,13 @@ public class DiffTestWorker extends GeneratorWorker {
     }
 
     private void testFinished(String testname) {
+      testname = normalizeTestName(testname);
       testReporter.testFinished(testname);
       this.currentTestName = null;
     }
 
     private void testFailed(String testname, String msg, String longmsg) {
+      testname = normalizeTestName(testname);
       testReporter.testFailed(testname, msg, longmsg);
     }
 
@@ -609,13 +602,8 @@ public class DiffTestWorker extends GeneratorWorker {
   }
 
   private class MyJobMonitor extends IJobMonitor.Stub {
-    private final _FunctionTypes._void_P1_E0<? super String> myStartTestFormat;
-    private final _FunctionTypes._void_P1_E0<? super String> myFinishTestFormat;
-
-    public MyJobMonitor(IProgress pstub, _FunctionTypes._void_P1_E0<? super String> startTestFormat, _FunctionTypes._void_P1_E0<? super String> finishTestFormat) {
+    public MyJobMonitor(IProgress pstub) {
       super(pstub);
-      myStartTestFormat = startTestFormat;
-      myFinishTestFormat = finishTestFormat;
     }
 
     @Override
