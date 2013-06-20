@@ -252,7 +252,7 @@ public class DiffTestWorker extends GeneratorWorker {
 
   private void reportIfStartsWith(String prefix, String work, _FunctionTypes._void_P1_E0<? super String> format) {
     if (work != null && work.startsWith(prefix)) {
-      format.invoke(work.substring(prefix.length()) + ".Test." + ((prefix == null ?
+      format.invoke(work.substring(prefix.length()) + "." + ((prefix == null ?
         null :
         prefix.trim()
       )));
