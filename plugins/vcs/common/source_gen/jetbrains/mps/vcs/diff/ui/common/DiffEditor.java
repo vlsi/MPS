@@ -103,7 +103,7 @@ public class DiffEditor implements EditorMessageOwner {
     );
   }
 
-  public void highlightChange(jetbrains.mps.smodel.SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
+  public void highlightChange(SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
     final List<ChangeEditorMessage> messages = ChangeEditorMessageFactory.createMessages(model, change, this, conflictChecker);
     if (ListSequence.fromList(messages).isEmpty()) {
       return;

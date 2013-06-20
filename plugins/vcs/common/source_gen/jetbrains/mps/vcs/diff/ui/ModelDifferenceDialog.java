@@ -62,7 +62,6 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import java.util.Arrays;
-import jetbrains.mps.extapi.model.SModelBase;
 
 public class ModelDifferenceDialog extends DialogWrapper implements DataProvider {
   private Project myProject;
@@ -441,8 +440,8 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     }
 
     @Override
-    protected Iterable<SModel> getModels() {
-      return Arrays.asList(as_vk52pz_a0a0a0d74(myChangeSet.getNewModel(), SModelBase.class).getSModelInternal(), as_vk52pz_a0b0a0d74(myChangeSet.getOldModel(), SModelBase.class).getSModelInternal());
+    protected Iterable<org.jetbrains.mps.openapi.model.SModel> getModels() {
+      return Arrays.asList(myChangeSet.getNewModel(), myChangeSet.getOldModel());
     }
 
     @Override
@@ -459,19 +458,5 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     protected void onSelectRoot(@Nullable SNodeId rootId) {
       changeCurrentRoot(rootId);
     }
-  }
-
-  private static <T> T as_vk52pz_a0a0a0d74(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_vk52pz_a0b0a0d74(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 }

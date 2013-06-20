@@ -58,7 +58,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
         Iterable<ChangeEditorMessage> messages = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
           public Iterable<ChangeEditorMessage> translate(ModelChange ch) {
-            return ChangeEditorMessageFactory.createMessages(as_i3w5ys_a0a0a0a0a0a0a5a0a0a0a5a2(myBaseModel, SModelBase.class).getSModelInternal(), ch, BaseVersionEditorComponent.this, null);
+            return ChangeEditorMessageFactory.createMessages(myBaseModel, ch, BaseVersionEditorComponent.this, null);
           }
         });
         verticalBounds.value = Sequence.fromIterable(messages).select(new ISelector<ChangeEditorMessage, Bounds>() {
@@ -115,13 +115,6 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   }
 
   private static <T> T as_i3w5ys_a0a0b0c(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_i3w5ys_a0a0a0a0a0a0a5a0a0a0a5a2(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

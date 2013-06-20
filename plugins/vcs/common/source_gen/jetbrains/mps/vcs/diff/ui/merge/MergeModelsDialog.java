@@ -587,8 +587,8 @@ public class MergeModelsDialog extends DialogWrapper {
     }
 
     @Override
-    protected Iterable<SModel> getModels() {
-      return Arrays.asList(as_3qqb0l_a0a0a0d76(myMergeSession.getBaseModel(), SModelBase.class).getSModelInternal(), as_3qqb0l_a0b0a0d76(myMergeSession.getMyModel(), SModelBase.class).getSModelInternal(), as_3qqb0l_a0c0a0d76(myMergeSession.getRepositoryModel(), SModelBase.class).getSModelInternal());
+    protected Iterable<org.jetbrains.mps.openapi.model.SModel> getModels() {
+      return Arrays.asList(myMergeSession.getBaseModel(), myMergeSession.getMyModel(), myMergeSession.getRepositoryModel());
     }
 
     @Override
@@ -622,27 +622,6 @@ public class MergeModelsDialog extends DialogWrapper {
   }
 
   private static <T> T as_3qqb0l_a0a2a53(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_3qqb0l_a0a0a0d76(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_3qqb0l_a0b0a0d76(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_3qqb0l_a0c0a0d76(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

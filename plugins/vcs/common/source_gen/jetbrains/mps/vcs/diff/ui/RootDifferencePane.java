@@ -19,7 +19,6 @@ import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
-import jetbrains.mps.extapi.model.SModelBase;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import jetbrains.mps.ide.icons.IdeIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -35,7 +34,7 @@ import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
@@ -72,8 +71,8 @@ public class RootDifferencePane {
 
     myStatusBar = statusBar;
 
-    myOldEditor = addEditor(0, as_guncoj_a0b0a6a22(myChangeSet.getOldModel(), SModelBase.class).getSModelInternal(), titles[0]);
-    myNewEditor = addEditor(1, as_guncoj_a0b0a7a22(myChangeSet.getNewModel(), SModelBase.class).getSModelInternal(), titles[1]);
+    myOldEditor = addEditor(0, myChangeSet.getOldModel(), titles[0]);
+    myNewEditor = addEditor(1, myChangeSet.getNewModel(), titles[1]);
     linkEditors(true);
     linkEditors(false);
 
@@ -235,8 +234,8 @@ public class RootDifferencePane {
       }
     });
     for (ModelChange change : Sequence.fromIterable(myChangeSet.getChangesForRoot(myRootId))) {
-      higlightChange(myOldEditor, as_guncoj_a0b0a0b0nb(myChangeSet.getOldModel(), SModelBase.class).getSModelInternal(), change);
-      higlightChange(myNewEditor, as_guncoj_a0b0b0b0nb(myChangeSet.getNewModel(), SModelBase.class).getSModelInternal(), change);
+      higlightChange(myOldEditor, myChangeSet.getOldModel(), change);
+      higlightChange(myNewEditor, myChangeSet.getNewModel(), change);
     }
     ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
       public void visit(ChangeGroupLayout b) {
@@ -299,32 +298,4 @@ public class RootDifferencePane {
   }
 
 
-
-  private static <T> T as_guncoj_a0b0a6a22(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_guncoj_a0b0a7a22(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_guncoj_a0b0a0b0nb(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_guncoj_a0b0b0b0nb(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
 }

@@ -37,7 +37,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -276,7 +275,7 @@ public class MergeRootsPane {
   }
 
   private void higlightChange(DiffEditor diffEditor, SModel model, ModelChange change) {
-    diffEditor.highlightChange(as_lifo0_a0a0a0a34(model, SModelBase.class).getSModelInternal(), change, myConflictChecker);
+    diffEditor.highlightChange(model, change, myConflictChecker);
   }
 
   private void linkEditors(boolean mine, boolean inspector) {
@@ -381,12 +380,5 @@ public class MergeRootsPane {
       ListSequence.fromList(myEdtiorSeparators).clear();
       myDisposed = true;
     }
-  }
-
-  private static <T> T as_lifo0_a0a0a0a34(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 }
