@@ -958,6 +958,43 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_EditorCellId_4323500428127332368(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorCellId");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode cellId = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.EditorCellId", null);
+            SPropertyOperations.set(cellId, "idString", pattern);
+            return cellId;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "custom cell id";
+          }
+
+          public String getMatchingText(String pattern) {
+            return ((pattern == null || pattern.length() == 0) ?
+              "\"id\"" :
+              pattern
+            );
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_EditorCellId_4323500428127345618(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return _context.getCurrentTargetNode() == null;
+  }
+
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1948540814637841122(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractCellSelector"), _context.getSourceNode()) {
