@@ -13,6 +13,7 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="library" name="Annotations" level="project" />
   </component>
 </module>
 
