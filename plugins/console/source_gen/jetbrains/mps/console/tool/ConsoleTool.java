@@ -118,10 +118,10 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private JComponent getToolbarComponent(jetbrains.mps.project.Project project) {
     DefaultActionGroup group = new DefaultActionGroup();
-    group.add(registerShortcut(new ConsoleTool.ExecuteAction(project), KeyEvent.VK_ENTER, KeyEvent.CTRL_MASK));
-    group.add(registerShortcut(new ConsoleTool.PrevCmdAction(), KeyEvent.VK_UP, KeyEvent.CTRL_MASK));
-    group.add(registerShortcut(new ConsoleTool.NextCmdAction(), KeyEvent.VK_DOWN, KeyEvent.CTRL_MASK));
-    group.add(registerShortcut(new ConsoleTool.ClearAction(), KeyEvent.VK_BACK_SPACE, KeyEvent.CTRL_MASK));
+    group.add(registerShortcut(new ConsoleTool.ExecuteAction(project), KeyEvent.VK_ENTER));
+    group.add(registerShortcut(new ConsoleTool.PrevCmdAction(), KeyEvent.VK_UP));
+    group.add(registerShortcut(new ConsoleTool.NextCmdAction(), KeyEvent.VK_DOWN));
+    group.add(registerShortcut(new ConsoleTool.ClearAction(), KeyEvent.VK_BACK_SPACE));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
 
     JPanel res = new JPanel(new BorderLayout());
@@ -131,9 +131,9 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
 
 
-  private BaseAction registerShortcut(BaseAction a, int key, int mod) {
-    a.registerCustomShortcutSet(key, mod, myCommandEditor);
-    a.registerCustomShortcutSet(key, mod, myHistEditor);
+  private BaseAction registerShortcut(BaseAction a, int key) {
+    a.registerCustomShortcutSet(key, KeyEvent.CTRL_MASK, myCommandEditor);
+    a.registerCustomShortcutSet(key, KeyEvent.CTRL_MASK, myHistEditor);
     return a;
   }
 
