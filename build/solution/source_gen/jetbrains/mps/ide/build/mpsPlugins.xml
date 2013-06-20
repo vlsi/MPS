@@ -328,14 +328,11 @@
       <chunk>
         <module file="${mps_home}/plugins/console/jetbrains.mps.console.msd" />
         <module file="${mps_home}/plugins/console/lang/base/jetbrains.mps.console.lang.mpl" />
-        <module file="" />
         <module file="${mps_home}/plugins/console/lang/commands/jetbrains.mps.console.lang.commands.mpl" />
         <module file="${mps_home}/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" />
         <module file="${mps_home}/plugins/mpsjava/migration/jetbrains.mps.ide.java.migration.msd" />
       </chunk>
-      <chunk>
-        <module file="" />
-      </chunk>
+      <chunk />
     </generate>
   </target>
   

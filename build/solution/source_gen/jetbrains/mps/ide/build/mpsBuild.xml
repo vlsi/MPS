@@ -471,19 +471,14 @@
       <library file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
       <chunk>
         <module file="${mps_home}/plugins/mps-build/languages/build.startup/jetbrains.mps.build.startup.mpl" />
-        <module file="" />
         <module file="${mps_home}/plugins/mps-build/languages/build.workflow/jetbrains.mps.build.workflow.mpl" />
-        <module file="" />
       </chunk>
       <chunk>
         <module file="${mps_home}/plugins/mps-build/languages/build/jetbrains.mps.build.mpl" />
-        <module file="" />
         <module file="${mps_home}/plugins/mps-build/languages/build.mps/jetbrains.mps.build.mps.mpl" />
         <module file="${mps_home}/plugins/mps-build/languages/build.mps.tests/jetbrains.mps.build.mps.tests.mpl" />
       </chunk>
       <chunk>
-        <module file="" />
-        <module file="" />
         <module file="${mps_home}/build/solution/jetbrains.mps.ide.build.msd" />
       </chunk>
     </generate>
