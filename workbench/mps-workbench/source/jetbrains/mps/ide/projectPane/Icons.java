@@ -36,7 +36,6 @@ public class Icons extends IdeIcons {
   public static final Icon CLOSE_DISABLED_ICON = Actions.CloseNewHovered;
 
   public static final Icon PROPERTY_ICON = General.Block;
-  public static final Icon REFERENCE_ICON = Actions.Forward;
 
   public static final Icon PROP_AND_REF = getPropAndRefIcon();
   private static final Icon getPropAndRefIcon() {
