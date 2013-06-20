@@ -14,9 +14,9 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -82,11 +82,15 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
 
   @Nullable
   public SNode getNode() {
-    return ((SNodePointer) getNodePointer()).resolve(MPSModuleRepository.getInstance());
+    SNodeReference reference = getNodePointer();
+    if (reference == null) {
+      return null;
+    }
+    return reference.resolve(MPSModuleRepository.getInstance());
   }
 
   @Nullable
-  public SNodeReference getNodePointer() {
+  public SNodePointer getNodePointer() {
     if (this.getModelId() == null || this.getNodeId() == null) {
       return null;
     }
