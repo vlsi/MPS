@@ -28,7 +28,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.ui.smodel.PackageNode;
+import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.ui.smodel;
+package jetbrains.mps.ide.ui.tree.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.editor.colors.ColorKey;
@@ -211,7 +211,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode) || !(myNode.getModel() != null) || myNode.getModel() == null) {
+        if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode) || myNode.getModel() == null) {
           return;
         }
         treeView.editNode(myNode, getOperationContext(), focus);

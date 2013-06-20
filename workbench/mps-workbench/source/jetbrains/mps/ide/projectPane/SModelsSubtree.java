@@ -22,7 +22,7 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import org.jetbrains.mps.openapi.model.SModel;

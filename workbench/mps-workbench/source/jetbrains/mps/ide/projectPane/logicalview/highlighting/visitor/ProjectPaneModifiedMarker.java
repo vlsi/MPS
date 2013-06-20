@@ -19,7 +19,7 @@ import com.intellij.icons.AllIcons.General;
 import com.intellij.ui.LayeredIcon;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.IconNodeUpdate;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.swing.*;

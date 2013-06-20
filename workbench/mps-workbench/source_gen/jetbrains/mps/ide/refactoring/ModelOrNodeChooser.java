@@ -11,8 +11,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import javax.swing.JComponent;
 
 public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTargetChooser {

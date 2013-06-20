@@ -9,17 +9,17 @@ import jetbrains.mps.ide.ui.tree.TextMPSTreeNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.ModuleContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import javax.swing.JPopupMenu;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
-import jetbrains.mps.ide.ui.smodel.PackageNode;
+import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 
 public class DependencyTree extends MPSTree {
   private DependencyViewerScope myScope;
