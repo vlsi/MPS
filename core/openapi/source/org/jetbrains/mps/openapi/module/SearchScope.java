@@ -19,9 +19,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 /**
- * Gives a convenient way to access and resolve all visible modules and their models
- * DO NOT implement this interface directly. Always use BaseScope class
- *
  * Should be used only as find usages search scope
  */
 public interface SearchScope {
@@ -29,7 +26,9 @@ public interface SearchScope {
 
   Iterable<SModel> getModels();
 
+  @Deprecated
   SModel resolve(SModelReference reference);
 
+  @Deprecated
   SModule resolve(SModuleReference reference);
 }

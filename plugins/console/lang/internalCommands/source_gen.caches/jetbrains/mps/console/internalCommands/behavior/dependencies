@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.console.internalCommands.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.console.internalCommands.behavior.RebuildAspectCommand_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.internalCommands.behavior.RebuildAspectCommand_Behavior" file="RebuildAspectCommand_Behavior.java">
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.internalCommands.behavior.RebuildAspectCommand_BehaviorDescriptor" file="RebuildAspectCommand_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.internalCommands.behavior.RebuildAspectCommand_Behavior" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_Behavior" file="ReloadClassesCommand_Behavior.java">
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_BehaviorDescriptor" file="ReloadClassesCommand_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_Behavior" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_Behavior" file="ShowRepositoryCommand_Behavior.java">
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_BehaviorDescriptor" file="ShowRepositoryCommand_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_Behavior" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+</dependenciesRoot>
+

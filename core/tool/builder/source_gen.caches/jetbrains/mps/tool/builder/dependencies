@@ -97,7 +97,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.tool.environment.ActiveEnvironment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />

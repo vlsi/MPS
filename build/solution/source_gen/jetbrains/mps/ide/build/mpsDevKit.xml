@@ -542,10 +542,10 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.build.gentest.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.build.reduced.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.facet.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.reduced.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.script.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
@@ -576,7 +576,6 @@
         <module file="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/jetbrains.mps.lang.typesystem.devkit.pluginSolution.msd" />
         <module file="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" />
         <module file="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.mpl" />
-        <module file="" />
         <module file="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution/jetbrains.mps.quickQueryLanguage.pluginSolution.msd" />
       </chunk>
     </generate>
