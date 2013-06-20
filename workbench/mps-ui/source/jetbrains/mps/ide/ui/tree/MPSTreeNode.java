@@ -20,24 +20,32 @@ import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IdeIcons;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.util.Condition;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.Icon;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
+import javax.swing.tree.TreeNode;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.font.TextAttribute;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -105,6 +113,19 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
       return ((MPSTreeNode) getParent()).getTree();
     }
     return myTree;
+  }
+
+  /**
+   *  returns the closest ancestor (nodes or the containing tree) which implements the given class
+   */
+  public <T> T getAncestor(@Nullable Class<T> cls) {
+    TreeNode parent = getParent();
+    while (parent != null) {
+      if (cls.isInstance(parent)) return (T) parent;
+      parent = parent.getParent();
+    }
+    if (myTree != null && cls.isInstance(myTree)) return (T) myTree;
+    return null;
   }
 
   public void setTree(MPSTree tree) {
@@ -206,8 +227,8 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   final void removeThisAndChildren() {
     if (!myAdded) {
       throw new IllegalStateException(
-        String.format("Trying to remove tree node which have not been added, tree=%s, node=%s",
-          myTree != null ? myTree.getClass().getName() : "null", getClass().getName()));
+          String.format("Trying to remove tree node which have not been added, tree=%s, node=%s",
+              myTree != null ? myTree.getClass().getName() : "null", getClass().getName()));
     }
     try {
       onRemove();
@@ -226,8 +247,8 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   final void addThisAndChildren() {
     if (myAdded) {
       throw new IllegalStateException(
-        String.format("Trying to add tree node which have already been added, tree=%s, node=%s",
-          myTree != null ? myTree.getClass().getName() : "null", getClass().getName()));
+          String.format("Trying to add tree node which have already been added, tree=%s, node=%s",
+              myTree != null ? myTree.getClass().getName() : "null", getClass().getName()));
     }
     try {
       onAdd();
@@ -489,7 +510,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
         parentId = ((MPSTreeNode) getParent()).getNodeIdentifier();
       }
       throw new IllegalStateException("MPSTreeNode identifier cannot be null, class="
-        + getClass().getName() + ", parent id=" + parentId);
+          + getClass().getName() + ", parent id=" + parentId);
     } else {
       return myNodeIdentifier;
     }

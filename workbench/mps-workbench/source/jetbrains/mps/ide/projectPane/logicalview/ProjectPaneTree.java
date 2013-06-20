@@ -24,20 +24,34 @@ import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneDnDListener;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.ProjectPaneTreeHighlighter;
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
+import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode.NodeChildrenProvider;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.tree.TreePath;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
-import java.awt.dnd.*;
+import java.awt.dnd.DnDConstants;
+import java.awt.dnd.DragGestureEvent;
+import java.awt.dnd.DragGestureListener;
+import java.awt.dnd.DragSource;
+import java.awt.dnd.DragSourceAdapter;
+import java.awt.dnd.DragSourceDragEvent;
+import java.awt.dnd.DropTarget;
+import java.awt.dnd.InvalidDnDOperationException;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
@@ -45,7 +59,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
+public class ProjectPaneTree extends ProjectTree implements LogicalViewTree, NodeChildrenProvider {
   private ProjectPane myProjectPane;
   private KeyAdapter myKeyListener = new KeyAdapter() {
     @Override
@@ -99,6 +113,18 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
     return myProjectPane.getProjectView().isAutoscrollToSource(myProjectPane.getId());
   }
 
+  @Override
+  public void populate(SNodeTreeNode treeNode) {
+    if (myProjectPane.isShowPropertiesAndReferences()) {
+      SNode n = treeNode.getSNode();
+      if (n == null || jetbrains.mps.util.SNodeOperations.isDisposed(n)) return;
+
+      treeNode.add(new ConceptTreeNode(treeNode.getOperationContext(), n));
+      treeNode.add(new PropertiesTreeNode(treeNode.getOperationContext(), n));
+      treeNode.add(new ReferencesTreeNode(treeNode.getOperationContext(), n));
+    }
+  }
+
   private class MyTransferable implements Transferable {
     private final String mySupportedFlavor = "MPSNodeToMoveFlavor";
     private Object myObject;
@@ -113,7 +139,7 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
       DataFlavor dataFlavor = null;
       try {
         dataFlavor = new DataFlavor(DataFlavor.javaJVMLocalObjectMimeType + ";class=" + aClass.getName(),
-          mySupportedFlavor, aClass.getClassLoader());
+            mySupportedFlavor, aClass.getClassLoader());
       } catch (ClassNotFoundException ignored) {
       }
       return new DataFlavor[]{dataFlavor};

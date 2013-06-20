@@ -29,7 +29,6 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -239,7 +238,7 @@ public class CreateRootNodeGroup extends BaseGroup {
         @Override
         public void run() {
           final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(MPSModuleRepository.getInstance()), null, null, myModelDescriptor, myScope);
-          SNodeAccessUtil.setProperty(node, SModelTreeNode.PACK, myPackage);
+          SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, myPackage);
           myModelDescriptor.addRootNode(node);
 
           ModelAccess.instance().runWriteInEDT(new Runnable() {

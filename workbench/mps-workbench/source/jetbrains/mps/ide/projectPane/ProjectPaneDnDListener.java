@@ -130,11 +130,11 @@ public class ProjectPaneDnDListener implements DropTargetListener {
 
         for (Pair<SNode, String> sourceNode : getNodesToMove(targetModel, targetPackage, sourceNodes)) {
           String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
-          SNodeAccessUtil.setProperty(sourceNode.o1, SModelTreeNode.PACK, fullTargetPack);
+          SNodeAccessUtil.setProperty(sourceNode.o1, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
           if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.concept_AbstractConceptDeclaration)) {
             List<SNode> allAspects = SNodeUtil.findAllAspects(sourceNode.o1);
             for (SNode aspect : allAspects) {
-              SNodeAccessUtil.setProperty(aspect, SModelTreeNode.PACK, fullTargetPack);
+              SNodeAccessUtil.setProperty(aspect, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
             }
           }
         }

@@ -19,21 +19,20 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.tree.ErrorState;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.workbench.action.ActionUtils;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -169,10 +168,9 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     SNode n = getSNode();
     if (n == null || jetbrains.mps.util.SNodeOperations.isDisposed(n)) return;
 
-    if (showPropertiesAndReferences()) {
-      add(new ConceptTreeNode(getOperationContext(),n));
-      add(new PropertiesTreeNode(getOperationContext(), n));
-      add(new ReferencesTreeNode(getOperationContext(), n));
+    NodeChildrenProvider provider = getAncestor(NodeChildrenProvider.class);
+    if (provider != null) {
+      provider.populate(this);
     }
 
     for (SNode childNode : n.getChildren()) {
@@ -190,14 +188,8 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   protected SNodeTreeNode createChildTreeNode(SNode childNode, String role, IOperationContext operationContext) {
     SModelTreeNode sModelTreeNode = getSModelModelTreeNode();
     SNodeTreeNode child = sModelTreeNode == null ? new SNodeTreeNode(childNode, role, operationContext)
-      : sModelTreeNode.createSNodeTreeNode(childNode, role, operationContext);
+        : sModelTreeNode.createSNodeTreeNode(childNode, role, operationContext);
     return child;
-  }
-
-  private boolean showPropertiesAndReferences() {
-    Project project = getOperationContext().getProject();
-    return getTree() instanceof LogicalViewTree &&
-      ProjectPane.getInstance(ProjectHelper.toIdeaProject(project)).isShowPropertiesAndReferences();
   }
 
   @Override
@@ -267,4 +259,8 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     return false;
   }
 
+  public interface NodeChildrenProvider {
+
+    void populate(SNodeTreeNode treeNode);
+  }
 }

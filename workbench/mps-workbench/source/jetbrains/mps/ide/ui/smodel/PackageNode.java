@@ -20,6 +20,7 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -77,7 +78,7 @@ public class PackageNode extends SNodeGroupTreeNode {
   public Set<SNode> getNodesUnderPackage(SModel sm) {
     Set<SNode> nodes = new LinkedHashSet<SNode>();
     for (SNode root : sm.getRootNodes()) {
-      String rootPack = SNodeAccessUtil.getProperty(root, SModelTreeNode.PACK);
+      String rootPack = SNodeAccessUtil.getProperty(root, SNodeUtil.property_BaseConcept_virtualPackage);
       if (rootPack != null && (rootPack.startsWith(getFullPackage() + ".") || rootPack.equals(getFullPackage()))) {
         nodes.add(root);
       }
