@@ -71,7 +71,7 @@ public class MergeSession {
       int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
       ((DefaultSModel) resModel).setPersistenceVersion(pv);
     }
-    return new MergeSession(base, mine, repository, new MergeResultModel(resModel, false));
+    return new MergeSession(base, mine, repository, new MergeTemporaryModel(resModel, false));
   }
 
 

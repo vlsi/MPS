@@ -25,8 +25,8 @@ import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vcs.diff.merge.MergeResultModel;
-import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
+import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -94,17 +94,17 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     myOldRegistered = SNodeOperations.isRegistered(oldMD.value);
     myNewRegistered = SNodeOperations.isRegistered(newMD.value);
     myEditable = newMD.value instanceof EditableSModel && myNewRegistered;
-    final jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
+    jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (!(myNewRegistered)) {
           // temporary: create "normal" model 
-          newMD.value = new MergeResultModel(newModel, true);
-          DiffTemporaryModule.createModuleAndRegister(newMD.value, "new", p, false);
+          newMD.value = new MergeTemporaryModel(newModel, true);
+          DiffModelUtil.renameModelAndRegister(newMD.value, "new");
         }
         if (!(myOldRegistered)) {
-          oldMD.value = new MergeResultModel(oldModel, true);
-          DiffTemporaryModule.createModuleAndRegister(oldMD.value, "old", p, false);
+          oldMD.value = new MergeTemporaryModel(oldModel, true);
+          DiffModelUtil.renameModelAndRegister(oldMD.value, "old");
         }
       }
     });
@@ -142,10 +142,10 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
               MetadataUtil.dispose(myMetadataChangeSet.getNewModel());
             }
             if (!(myOldRegistered)) {
-              DiffTemporaryModule.unregisterModel(myChangeSet.getOldModel(), p);
+              DiffModelUtil.unregisterModel(myChangeSet.getOldModel());
             }
             if (!(myNewRegistered)) {
-              DiffTemporaryModule.unregisterModel(myChangeSet.getNewModel(), p);
+              DiffModelUtil.unregisterModel(myChangeSet.getNewModel());
             }
           }
         });

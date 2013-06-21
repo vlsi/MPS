@@ -9,20 +9,18 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
-import jetbrains.mps.smodel.SModelId;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-public class MergeResultModel extends EditableSModelBase {
+public class MergeTemporaryModel extends EditableSModelBase {
   protected volatile SModel mySModel;
   private boolean myReadOnly;
 
-  public MergeResultModel(SModelReference modelRef, boolean readonly) {
+  public MergeTemporaryModel(SModelReference modelRef, boolean readonly) {
     super(modelRef, new NullDataSource());
     myReadOnly = readonly;
     updateTimestamp();
   }
 
-  public MergeResultModel(SModel model, boolean readonly) {
+  public MergeTemporaryModel(SModel model, boolean readonly) {
     this(model.getSModelReference(), readonly);
     mySModel = model;
     model.setModelDescriptor(this);
@@ -77,10 +75,5 @@ public class MergeResultModel extends EditableSModelBase {
   @Override
   protected void reloadContents() {
     throw new UnsupportedOperationException();
-  }
-
-  private static SModelReference createModelRef(SModelReference oldRef, String version) {
-    SModelId id = SModelId.generate();
-    return PersistenceFacade.getInstance().createModelReference(null, id, oldRef + version);
   }
 }

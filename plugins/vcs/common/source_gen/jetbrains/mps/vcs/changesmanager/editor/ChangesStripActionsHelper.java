@@ -20,7 +20,7 @@ import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
-import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
+import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
@@ -125,7 +125,8 @@ public class ChangesStripActionsHelper {
     assert changeGroup != null;
 
     final SModel oldModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
-    DiffTemporaryModule.createModuleAndRegister(oldModel, "old", editorContext.getOperationContext().getProject(), false);
+    // do we need??? there were no de-registration 
+    DiffModelUtil.renameModelAndRegister(oldModel, "old");
 
     // compute paths to root 
     Iterable<SNode> baseNodes = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, SNode>() {
@@ -184,7 +185,7 @@ public class ChangesStripActionsHelper {
       final String commonRole = Sequence.fromIterable(roles).first();
       if (Sequence.fromIterable(roles).all(new IWhereFilter<String>() {
         public boolean accept(String r) {
-          return eq_ikrecr_a0a0a0a0a0d0t0l(r, commonRole);
+          return eq_ikrecr_a0a0a0a0a0d0u0l(r, commonRole);
         }
       })) {
         Iterable<Integer> indices = Sequence.fromIterable(children).select(new ISelector<SNode, Integer>() {
@@ -210,7 +211,7 @@ public class ChangesStripActionsHelper {
     }
 
     CopyPasteUtil.copyNodesToClipboard(nodesToCopy);
-    check_ikrecr_a22a11(getPainter(editorContext));
+    check_ikrecr_a32a11(getPainter(editorContext));
   }
 
   private static ChangeGroup check_ikrecr_a0a1(ChangeStripsPainter checkedDotOperand, EditorContext editorContext, boolean next) {
@@ -283,14 +284,14 @@ public class ChangesStripActionsHelper {
     return null;
   }
 
-  private static void check_ikrecr_a22a11(ChangeStripsPainter checkedDotOperand) {
+  private static void check_ikrecr_a32a11(ChangeStripsPainter checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.showPopupForGroup(null);
     }
 
   }
 
-  private static boolean eq_ikrecr_a0a0a0a0a0d0t0l(Object a, Object b) {
+  private static boolean eq_ikrecr_a0a0a0a0a0d0u0l(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
