@@ -56,6 +56,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.SModuleOperations;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -595,6 +596,7 @@ public class MultipleFilesParser {
     SModel modelDescr = SModuleOperations.createModelWithAdjustments(packageName, getRootToCreateModel(packageName));
     assert modelDescr != null;
 
+    ((EditableSModel) modelDescr).save();
     return modelDescr;
   }
 
