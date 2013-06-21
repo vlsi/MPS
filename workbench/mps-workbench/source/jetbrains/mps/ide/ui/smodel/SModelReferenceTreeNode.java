@@ -17,16 +17,16 @@ package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.ui.LayeredIcon;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.swing.Icon;
 
@@ -55,8 +55,7 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(myProject));
-        projectPane.selectModel(myModelDescriptor, false);
+        NavigationSupport.getInstance().selectInTree(new ProjectOperationContext(myProject), myModelDescriptor, false);
       }
     });
   }

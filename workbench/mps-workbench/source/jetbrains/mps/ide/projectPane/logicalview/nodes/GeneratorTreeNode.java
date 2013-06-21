@@ -17,7 +17,7 @@ package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.StereotypeProvider;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SModelsSubtree;
 import jetbrains.mps.project.ModuleContext;
@@ -32,12 +32,12 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
   public GeneratorTreeNode(Generator generator, Project project) {
     super(new ModuleContext(generator, project));
     setNodeIdentifier(calculateNodeIdenifier());
-    setIcon(Icons.GENERATOR_ICON);
+    setIcon(IdeIcons.GENERATOR_ICON);
     init();
   }
 
   @Override
-  protected String getModulePresentation() {
+  public String getModuleText() {
     return calculateText();
   }
 

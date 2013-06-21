@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.ModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.module.MPSModuleTreeNode;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -25,21 +25,15 @@ import java.util.Comparator;
 
 public class ModuleTreeNodeComparator implements Comparator<MPSTreeNode> {
   private SModule getModule(MPSTreeNode treeNode) {
-    if (treeNode instanceof ProjectModuleTreeNode) {
-      return ((ProjectModuleTreeNode) treeNode).getModule();
-    }
-    if (treeNode instanceof ModuleTreeNode) {
-      return ((ModuleTreeNode) treeNode).getModule();
+    if (treeNode instanceof MPSModuleTreeNode) {
+      return ((MPSModuleTreeNode) treeNode).getModule();
     }
     return null;
   }
 
   private String getValueToCompare(MPSTreeNode treeNode) {
-    if (treeNode instanceof ProjectModuleTreeNode) {
-      return ((ProjectModuleTreeNode) treeNode).getModulePresentation();
-    }
-    if (treeNode instanceof ModuleTreeNode) {
-      return treeNode.getText();
+    if (treeNode instanceof MPSModuleTreeNode) {
+      return ((MPSModuleTreeNode) treeNode).getModuleText();
     }
     return null;
   }

@@ -2327,6 +2327,18 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.actions.NamespaceInternalActionsUtil" file="NamespaceInternalActionsUtil.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NamespaceNewActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NewModel_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.NamespaceTextNode" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.actions.NamespaceInternalActions_ActionGroup" file="NamespaceInternalActions_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -2339,6 +2351,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.tree.TreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NamespaceInternalActionsUtil" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.NamespaceTextNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />

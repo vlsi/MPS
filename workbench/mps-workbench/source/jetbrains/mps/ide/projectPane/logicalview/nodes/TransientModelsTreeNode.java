@@ -42,7 +42,7 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   }
 
   @Override
-  protected String getModulePresentation() {
+  public String getModuleText() {
     String name = myTransientModule.getModuleName();
 
     if (name != null) {

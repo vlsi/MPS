@@ -72,7 +72,7 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   @Override
-  protected String getModulePresentation() {
+  public String getModuleText() {
     String name = myDevKit.getModuleDescriptor().getNamespace();
 
     if (myShortNameOnly) {

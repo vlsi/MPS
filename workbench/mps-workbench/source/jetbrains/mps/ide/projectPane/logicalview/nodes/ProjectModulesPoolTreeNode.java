@@ -16,8 +16,8 @@
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.DevKit;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -39,8 +39,8 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
     super("Modules Pool");
     myProject = project;
 
-    setIcon(Icons.MODULE_GROUP_CLOSED, false);
-    setIcon(Icons.MODULE_GROUP_OPENED, true);
+    setIcon(IdeIcons.MODULE_GROUP_CLOSED, false);
+    setIcon(IdeIcons.MODULE_GROUP_OPENED, true);
   }
 
   @Override

@@ -59,7 +59,7 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
   }
 
   @Override
-  protected String getModulePresentation() {
+  public String getModuleText() {
     String name = mySolution.getModuleName();
 
     if (myShortNameOnly) {

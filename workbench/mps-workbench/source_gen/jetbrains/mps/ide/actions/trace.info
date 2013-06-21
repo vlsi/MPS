@@ -2955,7 +2955,7 @@
     <nodeInfo nodeId="2269823069229883611" fileName="NamespaceInternalActions_ActionGroup.java" startLine="44" startPosition="34" endLine="45" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3490322862906608993" fileName="NamespaceInternalActions_ActionGroup.java" startLine="48" startPosition="59" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226502135321" fileName="NamespaceInternalActions_ActionGroup.java" startLine="52" startPosition="68" endLine="53" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228317970580" fileName="NamespaceInternalActions_ActionGroup.java" startLine="53" startPosition="98" endLine="54" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1228317970580" fileName="NamespaceInternalActions_ActionGroup.java" startLine="53" startPosition="98" endLine="54" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1228318015474" fileName="NamespaceInternalActions_ActionGroup.java" startLine="55" startPosition="31" endLine="56" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1228318065360" fileName="NamespaceInternalActions_ActionGroup.java" startLine="56" startPosition="66" endLine="57" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6661528628553997681" fileName="NamespaceInternalActions_ActionGroup.java" startLine="59" startPosition="7" endLine="60" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2971,7 +2971,7 @@
     <nodeInfo nodeId="1226502116289" fileName="NamespaceInternalActions_ActionGroup.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPlace#(Ljetbrains/mps/workbench/ActionPlace;Lorg/jetbrains/mps/util/Condition;)V" />
     <nodeInfo nodeId="1226502116289" fileName="NamespaceInternalActions_ActionGroup.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStrict#()Z" />
     <nodeInfo nodeId="1226502116289" fileName="NamespaceInternalActions_ActionGroup.java" startLine="33" startPosition="25" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1228317975665" fileName="NamespaceInternalActions_ActionGroup.java" startLine="54" startPosition="60" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1228317975665" fileName="NamespaceInternalActions_ActionGroup.java" startLine="54" startPosition="88" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3356634874434605420" fileName="NamespaceInternalActions_ActionGroup.java" startLine="60" startPosition="167" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3356634874434448737" fileName="NamespaceInternalActions_ActionGroup.java" startLine="46" startPosition="7" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3356634874434605382" fileName="NamespaceInternalActions_ActionGroup.java" startLine="51" startPosition="7" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -12190,6 +12190,45 @@
       <varInfo nodeId="5916754392152578765" varName="query" />
     </scopeInfo>
     <unitInfo nodeId="5916754392152578755" fileName="TodoFinder.java" startLine="18" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.actions.TodoFinder" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/592892991208959069">
+    <nodeInfo nodeId="592892991209055604" fileName="NamespaceInternalActionsUtil.java" startLine="12" startPosition="81" endLine="13" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="592892991209055608" fileName="NamespaceInternalActionsUtil.java" startLine="13" startPosition="53" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="592892991209055617" fileName="NamespaceInternalActionsUtil.java" startLine="15" startPosition="50" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="592892991209055621" fileName="NamespaceInternalActionsUtil.java" startLine="17" startPosition="5" endLine="18" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="592892991209055688" fileName="NamespaceInternalActionsUtil.java" startLine="18" startPosition="70" endLine="19" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="592892991209055640" fileName="NamespaceInternalActionsUtil.java" startLine="20" startPosition="95" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="592892991209055646" fileName="NamespaceInternalActionsUtil.java" startLine="23" startPosition="26" endLine="24" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="592892991209055660" fileName="NamespaceInternalActionsUtil.java" startLine="26" startPosition="44" endLine="27" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="592892991209055676" fileName="NamespaceInternalActionsUtil.java" startLine="32" startPosition="68" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="592892991209055683" fileName="NamespaceInternalActionsUtil.java" startLine="36" startPosition="5" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="592892991209055611" fileName="NamespaceInternalActionsUtil.java" startLine="14" startPosition="51" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="592892991209055626" fileName="NamespaceInternalActionsUtil.java" startLine="19" startPosition="51" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="592892991209055642" fileName="NamespaceInternalActionsUtil.java" startLine="22" startPosition="5" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="592892991209055654" fileName="NamespaceInternalActionsUtil.java" startLine="25" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="592892991209055674" fileName="NamespaceInternalActionsUtil.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNamespace#(Ljava/util/Map;)Ljava/lang/String;" />
+    <nodeInfo nodeId="592892991209055667" fileName="NamespaceInternalActionsUtil.java" startLine="29" startPosition="25" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="592892991209055663" fileName="NamespaceInternalActionsUtil.java" startLine="28" startPosition="5" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="592892991209007050" fileName="NamespaceInternalActionsUtil.java" startLine="12" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createNewGroup#(Ljetbrains/mps/ide/projectPane/NamespaceTextNode;)Lcom/intellij/openapi/actionSystem/DefaultActionGroup;" />
+    <scopeInfo nodeId="592892991209055619" fileName="NamespaceInternalActionsUtil.java" startLine="15" startPosition="50" endLine="16" endPosition="18" />
+    <scopeInfo nodeId="592892991209055639" fileName="NamespaceInternalActionsUtil.java" startLine="20" startPosition="95" endLine="21" endPosition="18" />
+    <scopeInfo nodeId="592892991209055645" fileName="NamespaceInternalActionsUtil.java" startLine="23" startPosition="26" endLine="24" endPosition="80" />
+    <scopeInfo nodeId="592892991209055659" fileName="NamespaceInternalActionsUtil.java" startLine="26" startPosition="44" endLine="27" endPosition="30" />
+    <scopeInfo nodeId="592892991209055675" fileName="NamespaceInternalActionsUtil.java" startLine="32" startPosition="68" endLine="33" endPosition="37" />
+    <scopeInfo nodeId="592892991209055674" fileName="NamespaceInternalActionsUtil.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="592892991210987903" varName="_params" />
+    </scopeInfo>
+    <scopeInfo nodeId="592892991209055666" fileName="NamespaceInternalActionsUtil.java" startLine="29" startPosition="25" endLine="35" endPosition="9" />
+    <scopeInfo nodeId="592892991209007053" fileName="NamespaceInternalActionsUtil.java" startLine="12" startPosition="81" endLine="37" endPosition="20">
+      <varInfo nodeId="592892991209055607" varName="hasModelsUnder" />
+      <varInfo nodeId="592892991209055603" varName="hasModulesUnder" />
+      <varInfo nodeId="592892991209055620" varName="newGroup" />
+    </scopeInfo>
+    <scopeInfo nodeId="592892991209007050" fileName="NamespaceInternalActionsUtil.java" startLine="12" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="592892991209023391" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="592892991209055672" fileName="NamespaceInternalActionsUtil.java" startLine="30" startPosition="23" endLine="35" endPosition="7" unitName="jetbrains.mps.ide.actions.NamespaceInternalActionsUtil$1" />
+    <unitInfo nodeId="592892991208959069" fileName="NamespaceInternalActionsUtil.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceInternalActionsUtil" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/6290562762037774100">
     <nodeInfo nodeId="6290562762037774100" fileName="PackageNewActions_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

@@ -51,7 +51,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
       }
       if ((int) ListSequence.fromList(selectedNodes).count() == 1) {
         NamespaceTextNode node = (NamespaceTextNode) ListSequence.fromList(selectedNodes).first();
-        DefaultActionGroup newGroup = node.createNewGroup();
+        DefaultActionGroup newGroup = NamespaceInternalActionsUtil.createNewGroup(node);
         if (newGroup != null) {
           NamespaceInternalActions_ActionGroup.this.add(newGroup);
           NamespaceInternalActions_ActionGroup.this.addSeparator();

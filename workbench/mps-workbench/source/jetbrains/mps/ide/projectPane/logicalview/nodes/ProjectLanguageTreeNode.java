@@ -85,7 +85,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   }
 
   @Override
-  protected String getModulePresentation() {
+  public String getModuleText() {
     String languageUID = myLanguage.getModuleName();
 
     if (myShortNameOnly) {

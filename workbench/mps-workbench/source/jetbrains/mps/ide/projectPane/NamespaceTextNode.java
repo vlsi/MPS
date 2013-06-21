@@ -16,21 +16,17 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.ide.actions.NamespaceNewActions_ActionGroup;
-import jetbrains.mps.ide.actions.NewModel_Action;
 import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNodeBuilder;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.action.CoreActionGroups;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.CoreActionGroups;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
@@ -83,35 +79,6 @@ public class NamespaceTextNode extends TextTreeNode {
   @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(CoreActionGroups.NAMESPACE_ACTIONS);
-  }
-
-  public DefaultActionGroup createNewGroup() {
-    boolean hasModulesUnder = hasModulesUnder();
-    boolean hasModelsUnder = hasModelsUnder();
-
-    if (!hasModelsUnder && !hasModulesUnder) return null;
-
-    DefaultActionGroup newGroup = new DefaultActionGroup("New", true);
-
-    // Actions should be disabled for modules pool
-    if (getPath().length > 1 && getPath()[1] instanceof ProjectModulesPoolTreeNode) {
-      return null;
-    }
-
-    if (hasModulesUnder) {
-      newGroup.addAll(ActionUtils.getGroup(NamespaceNewActions_ActionGroup.ID));
-    }
-    if (hasModelsUnder && hasModulesUnder) {
-      newGroup.addSeparator();
-    }
-    if (hasModelsUnder) {
-      newGroup.add(new NewModel_Action() {
-        protected String getNamespace() {
-          return NamespaceTextNode.this.getNamespace();
-        }
-      });
-    }
-    return newGroup;
   }
 
   public List<SModel> getModelsUnder() {

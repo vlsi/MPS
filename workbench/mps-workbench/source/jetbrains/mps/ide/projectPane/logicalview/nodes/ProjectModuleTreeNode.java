@@ -16,13 +16,14 @@
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.module.MPSModuleTreeNode;
 import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 
-public abstract class ProjectModuleTreeNode extends MPSTreeNode {
+public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSModuleTreeNode {
   public static ProjectModuleTreeNode createFor(Project project, SModule module) {
     return createFor(project, module, false);
   }
@@ -52,12 +53,8 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
   @Override
   protected void doUpdatePresentation() {
-    setText(getModulePresentation());
+    setText(getModuleText());
   }
-
-  protected abstract String getModulePresentation();
-
-  public abstract SModule getModule();
 
   @Override
   protected final boolean canBeOpened() {

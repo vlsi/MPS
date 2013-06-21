@@ -71,4 +71,7 @@ public class IdeIcons {
   public static final Icon CLOSED_FOLDER = AllIcons.Nodes.TreeClosed;
 
   public static final Icon REFERENCE_ICON = Actions.Forward;
+
+  public static final Icon MODULE_GROUP_CLOSED = AllIcons.Nodes.ModuleGroup;
+  public static final Icon MODULE_GROUP_OPENED = AllIcons.Nodes.ModuleGroup;
 }
