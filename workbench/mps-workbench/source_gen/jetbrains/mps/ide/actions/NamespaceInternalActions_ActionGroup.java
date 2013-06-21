@@ -15,7 +15,6 @@ import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.List;
 import javax.swing.tree.TreeNode;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -41,7 +40,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
   public void doUpdate(AnActionEvent event) {
     try {
       NamespaceInternalActions_ActionGroup.this.removeAll();
-      List<TreeNode> selectedNodes = event.getData(MPSDataKeys.LOGICAL_VIEW_NODES);
+      List<TreeNode> selectedNodes = event.getData(MPSCommonDataKeys.TREE_NODES);
       if (selectedNodes == null) {
         return;
       }

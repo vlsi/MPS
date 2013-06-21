@@ -20,7 +20,6 @@ import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
-import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.tree.ErrorState;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -28,6 +27,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.CoreActionGroups;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -138,7 +138,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   @Override
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_NODE_ACTIONS);
+    return ActionUtils.getGroup(CoreActionGroups.NODE_ACTIONS);
   }
 
   @Override

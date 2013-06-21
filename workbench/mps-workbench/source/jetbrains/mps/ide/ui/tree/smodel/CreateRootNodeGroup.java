@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.model;
+package jetbrains.mps.ide.ui.tree.smodel;
 
 import com.intellij.ide.FileEditorProvider;
 import com.intellij.ide.SelectInContext;
@@ -25,7 +25,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
@@ -47,11 +47,11 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -86,20 +86,20 @@ public class CreateRootNodeGroup extends BaseGroup {
   public void doUpdate(AnActionEvent event) {
     removeAll();
 
-    SModel modelDescriptor = event.getData(MPSDataKeys.CONTEXT_MODEL);
+    SModel modelDescriptor = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
     if (modelDescriptor == null) {
       setEnabledState(event.getPresentation(), false);
       return;
     }
 
-    if (!(modelDescriptor instanceof EditableSModel) || (((EditableSModel) modelDescriptor).isReadOnly())) {
+    if (!(modelDescriptor instanceof EditableSModel) || modelDescriptor.isReadOnly()) {
       event.getPresentation().setEnabled(false);
       event.getPresentation().setVisible(false);
       return;
     }
 
-    IScope scope = event.getData(MPSDataKeys.SCOPE);
-    IOperationContext context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+    IScope scope = event.getData(MPSCommonDataKeys.SCOPE);
+    IOperationContext context = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
 
     boolean isStubModel = SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
     if (scope == null || context == null || isStubModel) {
@@ -107,10 +107,10 @@ public class CreateRootNodeGroup extends BaseGroup {
       return;
     }
 
-    boolean inEditor = event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE) == null;
+    boolean inEditor = event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE) == null;
 
     if (!inEditor) {
-      Integer selectedItemsCount = event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE);
+      Integer selectedItemsCount = event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE);
       boolean singleItemSelected = selectedItemsCount != null && selectedItemsCount == 1;
 
       if (!singleItemSelected) {
@@ -118,7 +118,7 @@ public class CreateRootNodeGroup extends BaseGroup {
         return;
       }
 
-      TreeNode treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
+      TreeNode treeNode = event.getData(MPSCommonDataKeys.TREE_NODE);
 
       if (!(treeNode instanceof PackageNode)) {
         myPackage = null;
@@ -127,7 +127,7 @@ public class CreateRootNodeGroup extends BaseGroup {
         myPackage = node.getPackage();
       }
     } else {
-      SNode node = event.getData(MPSDataKeys.NODE);
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
       myPackage = null;
       if (node != null) {
         SNode root = node.getContainingRoot();
@@ -224,10 +224,10 @@ public class CreateRootNodeGroup extends BaseGroup {
     @Override
     protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
       if (!super.collectActionData(e, _params)) return false;
-      myProject = MPSDataKeys.PROJECT.getData(e.getDataContext());
-      myScope = MPSDataKeys.SCOPE.getData(e.getDataContext());
+      myProject = MPSCommonDataKeys.PROJECT.getData(e.getDataContext());
+      myScope = MPSCommonDataKeys.SCOPE.getData(e.getDataContext());
       if (myScope == null) return false;
-      myContext = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
+      myContext = MPSCommonDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
       if (myContext == null) return false;
       return true;
     }
@@ -237,7 +237,8 @@ public class CreateRootNodeGroup extends BaseGroup {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(MPSModuleRepository.getInstance()), null, null, myModelDescriptor, myScope);
+          final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(MPSModuleRepository.getInstance()), null, null, myModelDescriptor,
+              myScope);
           SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, myPackage);
           myModelDescriptor.addRootNode(node);
 

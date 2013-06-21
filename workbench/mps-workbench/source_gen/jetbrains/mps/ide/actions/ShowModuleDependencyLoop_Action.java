@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import org.apache.log4j.Logger;
@@ -62,7 +61,7 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treenode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("treenode", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("treenode") == null) {
       return false;
     }

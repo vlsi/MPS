@@ -12,7 +12,6 @@ import jetbrains.mps.ide.ui.smodel.PropertyTreeNode;
 import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -57,7 +56,7 @@ public class DeletePropertyAction_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }

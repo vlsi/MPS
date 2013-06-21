@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
@@ -68,7 +67,7 @@ public class RenameNamespace_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }

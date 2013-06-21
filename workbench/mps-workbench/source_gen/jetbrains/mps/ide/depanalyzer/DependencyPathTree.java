@@ -31,7 +31,6 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.IOperationContext;
@@ -142,10 +141,10 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   @Override
   public Object getData(@NonNls String id) {
     DependencyTreeNode current = as_9bg0dz_a0a0a31(getCurrentNode(), DependencyTreeNode.class);
-    if (id.equals(MPSDataKeys.LOGICAL_VIEW_NODE.getName())) {
+    if (id.equals(MPSCommonDataKeys.TREE_NODE.getName())) {
       return current;
     }
-    if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+    if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
       return check_9bg0dz_a0a2a31(current);
     }
     if (id.equals(MPSCommonDataKeys.MODULE.getName())) {

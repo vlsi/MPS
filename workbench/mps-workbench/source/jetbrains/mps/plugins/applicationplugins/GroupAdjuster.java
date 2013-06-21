@@ -33,6 +33,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.CoreActionGroups;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -48,8 +49,8 @@ public class GroupAdjuster {
   }
 
   public static void adjustTopLevelGroups(BaseApplicationPlugin idePlugin) {
-    addPlace(ProjectPaneActionGroups.PROJECT_PANE_NODE_ACTIONS, ActionPlace.PROJECT_PANE_SNODE);
-    addPlace(ProjectPaneActionGroups.PROJECT_PANE_MODEL_ACTIONS, ActionPlace.PROJECT_PANE_SMODEL);
+    addPlace(CoreActionGroups.NODE_ACTIONS, ActionPlace.PROJECT_PANE_SNODE);
+    addPlace(CoreActionGroups.MODEL_ACTIONS, ActionPlace.PROJECT_PANE_SMODEL);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_MODULE_ACTIONS, ActionPlace.PROJECT_PANE_MODULE);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_LANGUAGE_ACTIONS, ActionPlace.PROJECT_PANE_LANGUAGE);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_DEVKIT_ACTIONS, ActionPlace.PROJECT_PANE_DEVKIT);
@@ -57,8 +58,8 @@ public class GroupAdjuster {
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_SOLUTION_ACTIONS, ActionPlace.PROJECT_PANE_SOLUTION);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_GENERATOR_ACTIONS, ActionPlace.PROJECT_PANE_GENERATOR);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_TRANSIENT_MODULES_ACTIONS, ActionPlace.PROJECT_PANE_TRANSIENT_MODULES);
-    addPlace(ProjectPaneActionGroups.PROJECT_PANE_PACKAGE_ACTIONS, ActionPlace.PROJECT_PANE_PACKAGE);
-    addPlace(ProjectPaneActionGroups.PROJECT_PANE_NAMESPACE_ACTIONS, ActionPlace.PROJECT_PANE_NAMESPACE);
+    addPlace(CoreActionGroups.PACKAGE_ACTIONS, ActionPlace.PROJECT_PANE_PACKAGE);
+    addPlace(CoreActionGroups.NAMESPACE_ACTIONS, ActionPlace.PROJECT_PANE_NAMESPACE);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_RUNTIME_FOLDER_ACTIONS, ActionPlace.PROJECT_PANE_RUNTIME_FOLDER);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_ACCESSORIES_ACTIONS, ActionPlace.PROJECT_PANE_ACCESSORIES);
     addPlace(ProjectPaneActionGroups.PROJECT_NEW_ACTIONS, ActionPlace.PROJECT_PANE_PROJECT);

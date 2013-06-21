@@ -14,7 +14,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.depanalyzer.DependencyUtil;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.project.Project;
@@ -71,7 +70,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }

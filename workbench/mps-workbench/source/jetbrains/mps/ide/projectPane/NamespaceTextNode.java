@@ -27,6 +27,7 @@ import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.workbench.action.CoreActionGroups;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -81,7 +82,7 @@ public class NamespaceTextNode extends TextTreeNode {
 
   @Override
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_NAMESPACE_ACTIONS);
+    return ActionUtils.getGroup(CoreActionGroups.NAMESPACE_ACTIONS);
   }
 
   public DefaultActionGroup createNewGroup() {

@@ -16,13 +16,12 @@
 package jetbrains.mps.ide.ui.tree.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
+import jetbrains.mps.workbench.action.CoreActionGroups;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -46,7 +45,7 @@ public class PackageNode extends SNodeGroupTreeNode {
 
   @Override
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_PACKAGE_ACTIONS);
+    return ActionUtils.getGroup(CoreActionGroups.PACKAGE_ACTIONS);
   }
 
   @Override

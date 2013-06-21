@@ -149,9 +149,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
 
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return getContextForSelection();
-    if (dataId.equals(MPSDataKeys.LOGICAL_VIEW_NODE.getName())) return getSelectedTreeNode(TreeNode.class);
-    if (dataId.equals(MPSDataKeys.LOGICAL_VIEW_NODES.getName())) return getSelectedTreeNodes(TreeNode.class);
-    if (dataId.equals(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE.getName())) return getSelectionSize();
+    if (dataId.equals(MPSDataKeys.TREE_NODE.getName())) return getSelectedTreeNode(TreeNode.class);
+    if (dataId.equals(MPSDataKeys.TREE_NODES.getName())) return getSelectedTreeNodes(TreeNode.class);
+    if (dataId.equals(MPSDataKeys.TREE_SELECTION_SIZE.getName())) return getSelectionSize();
     if (dataId.equals(MPSDataKeys.PLACE.getName())) return getPlace();
 
     //PDK

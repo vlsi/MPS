@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
@@ -98,7 +97,7 @@ public class NewModel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }

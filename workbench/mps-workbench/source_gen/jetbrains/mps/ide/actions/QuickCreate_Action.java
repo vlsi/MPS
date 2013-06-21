@@ -9,7 +9,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
@@ -53,7 +52,7 @@ public class QuickCreate_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }

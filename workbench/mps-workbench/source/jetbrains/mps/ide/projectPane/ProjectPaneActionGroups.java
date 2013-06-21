@@ -16,10 +16,10 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.actions.*;
+import jetbrains.mps.workbench.action.CoreActionGroups;
 
-public class ProjectPaneActionGroups {
-  public static final String PROJECT_PANE_NODE_ACTIONS = NodeActions_ActionGroup.ID;
-  public static final String PROJECT_PANE_MODEL_ACTIONS = ModelActions_ActionGroup.ID;
+public class ProjectPaneActionGroups extends CoreActionGroups {
+
   public static final String PROJECT_PANE_MODULE_ACTIONS = ModuleActions_ActionGroup.ID;
   public static final String PROJECT_PANE_LANGUAGE_ACTIONS = LanguageActions_ActionGroup.ID;
   public static final String PROJECT_PANE_DEVKIT_ACTIONS = DevkitActions_ActionGroup.ID;
@@ -27,8 +27,6 @@ public class ProjectPaneActionGroups {
   public static final String PROJECT_PANE_SOLUTION_ACTIONS = SolutionActions_ActionGroup.ID;
   public static final String PROJECT_PANE_GENERATOR_ACTIONS = GeneratorActions_ActionGroup.ID;
   public static final String PROJECT_PANE_TRANSIENT_MODULES_ACTIONS = TransientModulesActions_ActionGroup.ID;
-  public static final String PROJECT_PANE_PACKAGE_ACTIONS = PackageActions_ActionGroup.ID;
-  public static final String PROJECT_PANE_NAMESPACE_ACTIONS = NamespaceActions_ActionGroup.ID;
   public static final String PROJECT_PANE_RUNTIME_FOLDER_ACTIONS = RuntimeFolderActions_ActionGroup.ID;
 
   // FIXME hardcoded action ID

@@ -17,17 +17,16 @@ package jetbrains.mps.ide.ui.tree.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.workbench.action.CoreActionGroups;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.util.Condition;
@@ -264,7 +263,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   @Override
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_MODEL_ACTIONS);
+    return ActionUtils.getGroup(CoreActionGroups.MODEL_ACTIONS);
   }
 
   @Override

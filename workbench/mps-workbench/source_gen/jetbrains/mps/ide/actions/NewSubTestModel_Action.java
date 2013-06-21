@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelFqName;
@@ -83,7 +82,7 @@ public class NewSubTestModel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }

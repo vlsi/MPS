@@ -10,7 +10,6 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
@@ -62,7 +61,7 @@ public class ModelProperties_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("size", event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE));
+    MapSequence.fromMap(_params).put("size", event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE));
     if (MapSequence.fromMap(_params).get("size") == null) {
       return false;
     }

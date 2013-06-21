@@ -35,7 +35,7 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.ActionPlace;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import javax.swing.Icon;
@@ -214,7 +214,7 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
   @Nullable
   @Override
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSDataKeys.PLACE.getName())) {
+    if (dataId.equals(MPSCommonDataKeys.PLACE.getName())) {
       return getPlace();
     }
 

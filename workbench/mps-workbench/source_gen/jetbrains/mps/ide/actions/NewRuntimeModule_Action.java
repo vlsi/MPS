@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -86,7 +85,7 @@ public class NewRuntimeModule_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }
