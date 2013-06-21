@@ -230,12 +230,17 @@ public class MergeModelsDialog extends DialogWrapper {
     if (!(myApplyChanges)) {
       return null;
     }
+    final org.jetbrains.mps.openapi.model.SModel resultModel = myMergeSession.getResultModel();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        DiffTemporaryModule.resetSModelId(myMergeSession.getResultModel());
+        DiffTemporaryModule.resetSModelId(resultModel);
+        // fix??? 
+        for (org.jetbrains.mps.openapi.model.SModel m : new org.jetbrains.mps.openapi.model.SModel[]{myMergeSession.getMyModel(), myMergeSession.getRepositoryModel()}) {
+          DiffTemporaryModule.fixReferences(resultModel, m.getReference());
+        }
       }
     });
-    return as_3qqb0l_a0a2a53(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal();
+    return as_3qqb0l_a0a3a53(resultModel, SModelBase.class).getSModelInternal();
   }
 
   public void unregisterModels() {
@@ -621,7 +626,7 @@ public class MergeModelsDialog extends DialogWrapper {
     );
   }
 
-  private static <T> T as_3qqb0l_a0a2a53(Object o, Class<T> type) {
+  private static <T> T as_3qqb0l_a0a3a53(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

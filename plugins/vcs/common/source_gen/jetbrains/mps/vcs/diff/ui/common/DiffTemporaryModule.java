@@ -20,18 +20,19 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.extapi.module.SModuleBase;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.SReferenceBase;
 import jetbrains.mps.smodel.MPSModuleOwner;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.extapi.model.EditableSModelBase;
-import org.jetbrains.mps.openapi.persistence.NullDataSource;
-import java.io.IOException;
-import org.jetbrains.mps.openapi.persistence.ModelSaveException;
-import jetbrains.mps.project.ModuleContext;
 
 public class DiffTemporaryModule extends AbstractModule {
   private SModel myModel;
@@ -51,10 +52,6 @@ public class DiffTemporaryModule extends AbstractModule {
   @Override
   protected AbstractModule.ModuleScope createScope() {
     return new DiffTemporaryModule.DiffModuleScope();
-  }
-
-  private DiffTemporaryModule.DiffModuleContext createContext() {
-    return new DiffTemporaryModule.DiffModuleContext();
   }
 
   private org.jetbrains.mps.openapi.model.SModel findModel(SModelReference reference) {
@@ -88,7 +85,7 @@ public class DiffTemporaryModule extends AbstractModule {
     if (version != null) {
       setSModelId(model, version);
     }
-    SModule module = new DiffTemporaryModule(as_3t8mfw_a0a0a0b0h(model, SModelBase.class).getSModelInternal(), (version == null ?
+    SModule module = new DiffTemporaryModule(as_3t8mfw_a0a0a0b0g(model, SModelBase.class).getSModelInternal(), (version == null ?
       "temporary" :
       version
     ), project);
@@ -98,17 +95,29 @@ public class DiffTemporaryModule extends AbstractModule {
 
   public static void setSModelId(org.jetbrains.mps.openapi.model.SModel model, String version) {
     SModelReference modelRef = model.getReference();
-    SModelReference newRef = new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(genMergeSModelName(modelRef.getModelName(), version)), genMergeSModelId(modelRef.getModelId(), version));
-    // <node> 
-    as_3t8mfw_a0a3a8(model, SModelBase.class).changeModelReference(newRef);
+    as_3t8mfw_a0a1a7(model, SModelBase.class).changeModelReference(genMergeSModelRef(modelRef, version));
   }
 
   public static void resetSModelId(org.jetbrains.mps.openapi.model.SModel model) {
     SModelReference modelRef = model.getReference();
     assert modelRef.getModelId() instanceof SModelId.ForeignSModelId;
-    SModelReference oldRef = new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(getOriginalSModelName(modelRef.getModelName())), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getModelId()));
-    // <node> 
-    as_3t8mfw_a0a4a9(model, SModelBase.class).changeModelReference(oldRef);
+    as_3t8mfw_a0a2a8(model, SModelBase.class).changeModelReference(getOriginalSModelRef(modelRef));
+  }
+
+  public static void fixReferences(org.jetbrains.mps.openapi.model.SModel model, final SModelReference modelRef) {
+    assert modelRef.getModelId() instanceof SModelId.ForeignSModelId;
+    final SModelReference oldModelRef = getOriginalSModelRef(modelRef);
+    for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+      Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
+        public boolean accept(SReference it) {
+          return modelRef.equals(it.getTargetSModelReference());
+        }
+      }).visitAll(new IVisitor<SReference>() {
+        public void visit(SReference it) {
+          as_3t8mfw_a0a0a0a0a0a0a2a9(it, SReferenceBase.class).setTargetSModelReference(oldModelRef);
+        }
+      });
+    }
   }
 
   public static void unregisterModel(org.jetbrains.mps.openapi.model.SModel model, MPSModuleOwner owner) {
@@ -117,21 +126,18 @@ public class DiffTemporaryModule extends AbstractModule {
     MPSModuleRepository.getInstance().unregisterModule(module, owner);
   }
 
-  private static org.jetbrains.mps.openapi.model.SModelId genMergeSModelId(org.jetbrains.mps.openapi.model.SModelId modelId, String version) {
-    return SModelId.foreign("merge_" + version + "#" + modelId.toString());
+  private static SModelReference genMergeSModelRef(SModelReference ref, String version) {
+    SModelId newId = SModelId.foreign("merge_" + version + "#" + ref.getModelId().toString());
+    String newName = ref.getModelName() + "@" + version;
+    return PersistenceFacade.getInstance().createModelReference(ref.getModuleReference(), newId, newName);
   }
 
-  private static org.jetbrains.mps.openapi.model.SModelId getOriginalSModelId(SModelId.ForeignSModelId modelId) {
-    String id = modelId.getId();
-    return SModelId.fromString(id.substring(id.indexOf("#") + 1));
-  }
-
-  private static String genMergeSModelName(String name, String version) {
-    return name + "@" + version;
-  }
-
-  private static String getOriginalSModelName(String name) {
-    return name.substring(0, name.lastIndexOf("@"));
+  private static SModelReference getOriginalSModelRef(SModelReference ref) {
+    String id = as_3t8mfw_a0a0a0m(ref.getModelId(), SModelId.ForeignSModelId.class).getId();
+    String name = ref.getModelName();
+    org.jetbrains.mps.openapi.model.SModelId oldId = SModelId.fromString(id.substring(id.indexOf("#") + 1));
+    String oldName = name.substring(0, name.lastIndexOf("@"));
+    return PersistenceFacade.getInstance().createModelReference(ref.getModuleReference(), oldId, oldName);
   }
 
   private class DiffModuleScope extends AbstractModule.ModuleScope {
@@ -157,96 +163,35 @@ public class DiffTemporaryModule extends AbstractModule {
     }
   }
 
-  public static class DiffSModelDescriptor extends EditableSModelBase {
-    private SModule myModule;
-    private boolean myEditable;
-    private final SModel mySModel;
-
-
-    private DiffSModelDescriptor(SModule module, SModel model, boolean editable) {
-      super(model.getReference(), new NullDataSource());
-      myModule = module;
-      mySModel = model;
-      myEditable = editable;
-      updateTimestamp();
-    }
-
-    @Override
-    public SModule getModule() {
-      return myModule;
-    }
-
-    @Override
-    public org.jetbrains.mps.openapi.model.SModel resolveModel(SModelReference reference) {
-      throw new UnsupportedOperationException("not supported");
-    }
-
-    @Override
-    public boolean isReadOnly() {
-      return !(myEditable);
-    }
-
-
-
-    public SModel getSModelInternal() {
-      return mySModel;
-    }
-
-    protected SModel getCurrentModelInternal() {
-      return mySModel;
-    }
-
-    public boolean isLoaded() {
-      return true;
-    }
-
-    @Override
-    public boolean isChanged() {
-      return false;
-    }
-
-    @Override
-    public void rename(String newModelName, boolean changeFile) {
-      throw new UnsupportedOperationException();
-    }
-
-
-
-    protected void reloadContents() {
-      throw new UnsupportedOperationException();
-    }
-
-    protected boolean saveModel() throws IOException, ModelSaveException {
-      throw new UnsupportedOperationException();
-    }
-  }
-
-  private class DiffModuleContext extends ModuleContext {
-    private DiffModuleContext() {
-      super(DiffTemporaryModule.this, myProject);
-    }
-
-    @Override
-    public SModule getModule() {
-      return DiffTemporaryModule.this;
-    }
-  }
-
-  private static <T> T as_3t8mfw_a0a0a0b0h(Object o, Class<T> type) {
+  private static <T> T as_3t8mfw_a0a0a0b0g(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_3t8mfw_a0a3a8(Object o, Class<T> type) {
+  private static <T> T as_3t8mfw_a0a1a7(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_3t8mfw_a0a4a9(Object o, Class<T> type) {
+  private static <T> T as_3t8mfw_a0a2a8(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_3t8mfw_a0a0a0a0a0a0a2a9(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_3t8mfw_a0a0a0m(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
