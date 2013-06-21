@@ -17,14 +17,14 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.io.IOException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -77,7 +77,7 @@ public class MultipleFilesParser {
   private int myRootCount = 0;
 
 
-  public MultipleFilesParser(SModule module, SRepository repository, Project project) {
+  public MultipleFilesParser(SModule module, SRepository repository) {
     myModule = module;
     myRepository = repository;
     myModelAccess = repository.getModelAccess();
@@ -120,23 +120,17 @@ public class MultipleFilesParser {
 
     runCommand("model creation pass", new Runnable() {
       public void run() {
+        ((AbstractModule) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
+        ((AbstractModule) myModule).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+
         for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
           final SModel model = registerModelForPackage(pakage);
 
-          Set<SNode> roots = MapSequence.fromMap(classesPerPackage).get(pakage);
-          SetSequence.fromSet(roots).visitAll(new IVisitor<SNode>() {
-            public void visit(SNode it) {
-              model.addRootNode(it);
-            }
-          });
-          rootCount.value = rootCount.value + SetSequence.fromSet(roots).count();
+          if (model == null) {
+            continue;
+          }
 
           ((SModelInternal) model).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
-
-        }
-
-        for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
-          final SModel model = registerModelForPackage(pakage);
 
           Set<SNode> roots = MapSequence.fromMap(classesPerPackage).get(pakage);
           SetSequence.fromSet(roots).visitAll(new IVisitor<SNode>() {
@@ -148,6 +142,8 @@ public class MultipleFilesParser {
           rootCount.value = rootCount.value + SetSequence.fromSet(roots).count();
           ListSequence.fromList(myRoots).addSequence(SetSequence.fromSet(roots));
           ListSequence.fromList(myModels).addElement(model);
+
+
         }
 
         // should be cheap 
