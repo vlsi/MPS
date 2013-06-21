@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7coted5hkpjia5ms2l4jw39sm32hulg">
+<dependencies version="2" modelHash="e91gn8057z2021e23z5s2im7i4gc2i7">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(MPS.IDEA/com.intellij.openapi.extensions@java_stub)" />
@@ -120,7 +120,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CurrentDifference.java" />
   </source>
-  <source id="3161776655522682154" name="ChangesTracking" hash="4vap0ff0qoq1pm52m8jlc6nddwd740r">
+  <source id="3161776655522682154" name="ChangesTracking" hash="-7hrdpzq8zqmwud5aok2n0dnkvjo5m66">
     <dep root="3161776655522572366" />
     <dep root="6389979038222847043" />
     <dep root="8579517044346265736" />

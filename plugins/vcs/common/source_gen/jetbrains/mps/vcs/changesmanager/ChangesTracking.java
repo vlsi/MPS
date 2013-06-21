@@ -37,6 +37,7 @@ import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import org.apache.log4j.Priority;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
@@ -234,7 +235,7 @@ public class ChangesTracking {
         synchronized (ChangesTracking.this) {
           if (!(myDisposed)) {
             // todo: check it is needed 
-            // <node> 
+            DiffModelUtil.renameModel(baseVersionModel.value, "repository");
             ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor, true);
             myDifference.setChangeSet((ChangeSetImpl) changeSet);
             buildCaches();
