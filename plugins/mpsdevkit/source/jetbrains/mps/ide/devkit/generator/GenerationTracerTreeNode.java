@@ -22,18 +22,18 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.action.BaseAction;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.workbench.action.BaseAction;
 
 import java.util.Map;
 
@@ -84,14 +84,13 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     return myTracerNode;
   }
 
-  @Override
-  public ActionGroup getActionGroup() {
+  final ActionGroup getTracerActionGroup() {
     if (myTracerNode.getKind() == Kind.INPUT ||
-      myTracerNode.getKind() == Kind.APPROXIMATE_INPUT) {
+        myTracerNode.getKind() == Kind.APPROXIMATE_INPUT) {
       return createActionGroupForInputNode();
     }
     if (myTracerNode.getKind() == Kind.OUTPUT ||
-      myTracerNode.getKind() == Kind.APPROXIMATE_OUTPUT) {
+        myTracerNode.getKind() == Kind.APPROXIMATE_OUTPUT) {
       return createActionGroupForOutputNode();
     }
     return null;
@@ -106,7 +105,8 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     final GenerationTracer tracer = (GenerationTracer) myProject.getComponent(IGenerationTracer.class);
 
     final TracerNode tracerNode = this.getTracerNode();
-    final boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()) != null;
+    final boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().resolve(
+        MPSModuleRepository.getInstance()) != null;
 
     DefaultActionGroup group = new DefaultActionGroup();
     // is traceback shown?
@@ -148,7 +148,8 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     DefaultActionGroup group = new DefaultActionGroup();
 
     final TracerNode tracerNode = this.getTracerNode();
-    final boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()) != null;
+    final boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().resolve(
+        MPSModuleRepository.getInstance()) != null;
 
     // is trace (forward) shown?
     GenerationTracerTreeNode rootNode = (GenerationTracerTreeNode) getRoot();

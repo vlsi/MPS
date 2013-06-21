@@ -32,6 +32,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -251,7 +252,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
-    return node.getActionGroup();
+    return ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
+      @Override
+      public ActionGroup compute() {
+        return node.getActionGroup();
+      }
+    });
   }
 
   private void showPopup(int x, int y) {

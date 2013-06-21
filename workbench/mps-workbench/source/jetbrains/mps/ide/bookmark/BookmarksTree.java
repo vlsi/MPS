@@ -19,20 +19,20 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.bookmark.BookmarkManager.BookmarkListener;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.List;
 import java.util.Map;
@@ -69,19 +69,30 @@ public class BookmarksTree extends MPSTree {
   }
 
   @Override
+  protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
+    if (node instanceof BookmarkNode) {
+      BaseAction action = new BaseAction("Remove Bookmark") {
+        @Override
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+          ((BookmarkNode) node).removeBookmark();
+        }
+      };
+      return ActionUtils.groupFromActions(action);
+    } else if(!(node instanceof MySNodeTreeNode)){
+      BaseAction hierarchyAction = new BaseAction("Remove All Bookmarks") {
+        @Override
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+          myBookmarkManager.clearBookmarks();
+        }
+      };
+      return ActionUtils.groupFromActions(hierarchyAction);
+    }
+    return null;
+  }
+
+  @Override
   protected MPSTreeNode rebuild() {
-    MPSTreeNode root = new TextTreeNode("no bookmarks") {
-      @Override
-      public ActionGroup getActionGroup() {
-        BaseAction hierarchyAction = new BaseAction("Remove All Bookmarks") {
-          @Override
-          protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-            myBookmarkManager.clearBookmarks();
-          }
-        };
-        return ActionUtils.groupFromActions(hierarchyAction);
-      }
-    };
+    MPSTreeNode root = new TextTreeNode("no bookmarks");
     root.setIcon(IdeIcons.DEFAULT_ICON);
     List<SNodeReference> nodePointers = myBookmarkManager.getAllNumberedBookmarks();
     boolean hasBookmarks = false;
@@ -165,27 +176,10 @@ public class BookmarksTree extends MPSTree {
     public void navigateToBookmark() {
       myBookmarkManager.navigateToBookmark(myNumber);
     }
-
-    @Override
-    public ActionGroup getActionGroup() {
-      BaseAction action = new BaseAction("Remove Bookmark") {
-        @Override
-        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          removeBookmark();
-        }
-      };
-      return ActionUtils.groupFromActions(action);
-    }
   }
 
   private class MyTextTreeNodeUnnumbered extends TextTreeNode implements BookmarkNode {
     SNodeReference myNodePointer;
-
-    public MyTextTreeNodeUnnumbered(SNode node) {
-      super("bookmark");
-      myNodePointer = new jetbrains.mps.smodel.SNodePointer(node);
-      setNodeIdentifier("bookmark_" + node.getNodeId().toString());
-    }
 
     @Override
     public void removeBookmark() {
@@ -195,7 +189,7 @@ public class BookmarksTree extends MPSTree {
     public MyTextTreeNodeUnnumbered(SNodeReference nodePointer) {
       super("bookmark");
       myNodePointer = nodePointer;
-      setNodeIdentifier("bookmark_" +nodePointer.toString());
+      setNodeIdentifier("bookmark_" + nodePointer.toString());
     }
 
     @Override
@@ -204,17 +198,6 @@ public class BookmarksTree extends MPSTree {
       if (targetNode != null) {
         NavigationSupport.getInstance().openNode(new ProjectOperationContext(myProject), targetNode, true, true);
       }
-    }
-
-    @Override
-    public ActionGroup getActionGroup() {
-      BaseAction action = new BaseAction("Remove Bookmark") {
-        @Override
-        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          removeBookmark();
-        }
-      };
-      return ActionUtils.groupFromActions(action);
     }
   }
 
@@ -230,14 +213,10 @@ public class BookmarksTree extends MPSTree {
         public void run() {
           SNode openNode = getSNode();
           if (openNode == null) return;
-          NavigationSupport.getInstance().openNode(getOperationContext(), openNode, true, !(openNode.getModel() != null && openNode.getParent() == null));
+          NavigationSupport.getInstance().openNode(getOperationContext(), openNode, true,
+              !(openNode.getModel() != null && openNode.getParent() == null));
         }
       });
-    }
-
-    @Override
-    public ActionGroup getActionGroup() {
-      return null;
     }
 
     @Override

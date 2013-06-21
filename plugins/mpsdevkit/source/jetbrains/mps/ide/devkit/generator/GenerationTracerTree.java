@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.ide.devkit.generator;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 
 public class GenerationTracerTree extends MPSTree {
   private TracerNode myRootTracerNode;
@@ -38,5 +42,17 @@ public class GenerationTracerTree extends MPSTree {
 
   public void setAutoscrollToSource(boolean b) {
     myAutoscrollToSource = b;
+  }
+
+  @Override
+  protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
+    if (!(node instanceof GenerationTracerTreeNode)) return null;
+
+    return ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
+      @Override
+      public ActionGroup compute() {
+        return ((GenerationTracerTreeNode) node).getTracerActionGroup();
+      }
+    });
   }
 }

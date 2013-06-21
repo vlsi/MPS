@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.classpath;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -102,6 +103,11 @@ public class ClassPathViewerTool extends BaseProjectTool {
       }
 
       return root;
+    }
+
+    @Override
+    protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
+      return null;
     }
 
     private class ModuleTreeNode extends MPSTreeNode {

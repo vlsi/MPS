@@ -17,6 +17,7 @@ package jetbrains.mps.ide.projectPane.favorites;
 
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -40,6 +41,7 @@ import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -249,6 +251,16 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     @Override
     protected String getPopupMenuPlace() {
       return ActionPlaces.FAVORITES_VIEW_POPUP;
+    }
+
+    @Override
+    protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
+      return ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
+        @Override
+        public ActionGroup compute() {
+          return node.getActionGroup();
+        }
+      });
     }
 
     @Override
