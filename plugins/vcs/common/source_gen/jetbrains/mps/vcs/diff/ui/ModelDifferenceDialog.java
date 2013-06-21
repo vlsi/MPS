@@ -21,7 +21,7 @@ import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
@@ -88,17 +88,17 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
 
   public ModelDifferenceDialog(final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
     super(diffRequest.getProject());
-    // temporary: create "normal" models 
     final Wrappers._T<org.jetbrains.mps.openapi.model.SModel> newMD = new Wrappers._T<org.jetbrains.mps.openapi.model.SModel>(newModel.getModelDescriptor());
     final Wrappers._T<org.jetbrains.mps.openapi.model.SModel> oldMD = new Wrappers._T<org.jetbrains.mps.openapi.model.SModel>(oldModel.getModelDescriptor());
     myProject = diffRequest.getProject();
-    myOldRegistered = SModelRepository.getInstance().getModelDescriptor(oldModel.getReference()) == oldMD.value;
-    myNewRegistered = SModelRepository.getInstance().getModelDescriptor(newModel.getReference()) == newMD.value;
-    myEditable = newModel.getModelDescriptor() instanceof EditableSModel && myNewRegistered;
+    myOldRegistered = SNodeOperations.isRegistered(oldMD.value);
+    myNewRegistered = SNodeOperations.isRegistered(newMD.value);
+    myEditable = newMD.value instanceof EditableSModel && myNewRegistered;
     final jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (!(myNewRegistered)) {
+          // temporary: create "normal" model 
           newMD.value = new MergeResultModel(newModel, true);
           DiffTemporaryModule.createModuleAndRegister(newMD.value, "new", p, false);
         }
