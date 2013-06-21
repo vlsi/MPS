@@ -1907,6 +1907,54 @@
     <unitInfo nodeId="3294454325389348340" fileName="IntelligentInputWithSubstitutionChooser_Test.java" startLine="25" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.IntelligentInputWithSubstitutionChooser_Test$TestBody" />
     <unitInfo nodeId="3294454325389348340" fileName="IntelligentInputWithSubstitutionChooser_Test.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.IntelligentInputWithSubstitutionChooser_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3310643382746679883">
+    <nodeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="18" startPosition="52" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3310643382746839765" fileName="PostfixCaret_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PostfixCaret_Test#()V" />
+    <nodeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PostfixCaret#()V" />
+    <nodeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="14" startPosition="30" endLine="14" endPosition="30" />
+    <scopeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="18" startPosition="52" endLine="20" endPosition="93" />
+    <scopeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="59">
+      <varInfo nodeId="3310643382746679883" varName="editor" />
+      <varInfo nodeId="3310643382746679883" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.PostfixCaret_Test$TestBody" />
+    <unitInfo nodeId="3310643382746679883" fileName="PostfixCaret_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.PostfixCaret_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3310643382746749106">
+    <nodeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="18" startPosition="51" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3310643382746877184" fileName="PrefixCaret_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrefixCaret_Test#()V" />
+    <nodeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PrefixCaret#()V" />
+    <nodeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="14" startPosition="29" endLine="14" endPosition="29" />
+    <scopeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="18" startPosition="51" endLine="20" endPosition="92" />
+    <scopeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="59">
+      <varInfo nodeId="3310643382746749106" varName="editor" />
+      <varInfo nodeId="3310643382746749106" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.PrefixCaret_Test$TestBody" />
+    <unitInfo nodeId="3310643382746749106" fileName="PrefixCaret_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.PrefixCaret_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3727822333335494274">
     <nodeInfo nodeId="3727822333335494274" fileName="NodeAfterSubstitutionHasNoErrorCell_Test.java" startLine="18" startPosition="75" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3727822333335494274" fileName="NodeAfterSubstitutionHasNoErrorCell_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2577,6 +2625,31 @@
     <scopeInfo nodeId="5207728530610804374" fileName="InterWithNonLabelSelected_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <unitInfo nodeId="5207728530610804374" fileName="InterWithNonLabelSelected_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.InterWithNonLabelSelected_Test$TestBody" />
     <unitInfo nodeId="5207728530610804374" fileName="InterWithNonLabelSelected_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.InterWithNonLabelSelected_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5208303506491635237">
+    <nodeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="18" startPosition="54" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5208303506491638516" fileName="MoveInnerClass_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5208303506491643363" fileName="MoveInnerClass_Test.java" startLine="32" startPosition="113" endLine="33" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveInnerClass_Test#()V" />
+    <nodeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MoveInnerClass#()V" />
+    <nodeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="14" startPosition="32" endLine="14" endPosition="32" />
+    <scopeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="18" startPosition="54" endLine="20" endPosition="95" />
+    <scopeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="113">
+      <varInfo nodeId="5208303506491635237" varName="editor" />
+      <varInfo nodeId="5208303506491635237" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.MoveInnerClass_Test$TestBody" />
+    <unitInfo nodeId="5208303506491635237" fileName="MoveInnerClass_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.MoveInnerClass_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5331479185384370996">
     <nodeInfo nodeId="5331479185384370996" fileName="LT_PlusExpressionRArgument_with_Plus_Test.java" startLine="18" startPosition="76" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
