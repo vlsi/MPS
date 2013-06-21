@@ -19,12 +19,10 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.ui.tree.ErrorState;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.CoreActionGroups;
@@ -194,29 +192,20 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   @Override
   public void doubleClick() {
-    if (getTree() instanceof LogicalViewTree) {
-      editNode((LogicalViewTree) getTree(), true);
+    NodeNavigationProvider provider = getAncestor(NodeNavigationProvider.class);
+    if (provider != null) {
+      provider.editNode(this, true);
     }
   }
 
   @Override
   public void autoscroll() {
     super.autoscroll();
-    if (getTree() instanceof LogicalViewTree) {
-      editNode((LogicalViewTree) getTree(), false);
-    }
-  }
 
-  private void editNode(final LogicalViewTree treeView, final boolean focus) {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode) || myNode.getModel() == null) {
-          return;
-        }
-        treeView.editNode(myNode, getOperationContext(), focus);
-      }
-    });
+    NodeNavigationProvider provider = getAncestor(NodeNavigationProvider.class);
+    if (provider != null) {
+      provider.editNode(this, false);
+    }
   }
 
   protected SModel getModelDescriptor() {
@@ -262,5 +251,10 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   public interface NodeChildrenProvider {
 
     void populate(SNodeTreeNode treeNode);
+  }
+
+  public interface NodeNavigationProvider {
+
+    void editNode(SNodeTreeNode treeNode, boolean wasClicked);
   }
 }

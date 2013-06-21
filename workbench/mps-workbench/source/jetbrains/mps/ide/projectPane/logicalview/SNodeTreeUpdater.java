@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
-  private Project myProject;
+  protected final Project myProject;
   protected T myTreeNode;
   private DependencyRecorder<SNodeTreeNode> myDependencyRecorder;
 

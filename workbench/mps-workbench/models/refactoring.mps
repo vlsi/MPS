@@ -62,7 +62,7 @@
   <import index="u741" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.findusages.view.treeholder.treeview(MPS.Platform/jetbrains.mps.ide.findusages.view.treeholder.treeview@java_stub)" version="-1" />
   <import index="ogel" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view(MPS.Workbench/jetbrains.mps.ide.findusages.view@java_stub)" version="-1" />
   <import index="mlq0" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui.tree(MPS.Platform/jetbrains.mps.ide.ui.tree@java_stub)" version="-1" />
-  <import index="slnr" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.ui.tree.smodel(MPS.Workbench/jetbrains.mps.ide.ui.tree.smodel@java_stub)" version="-1" />
+  <import index="8slo" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui.tree.smodel(MPS.Platform/jetbrains.mps.ide.ui.tree.smodel@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
@@ -4403,12 +4403,12 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3548249452606133129" resolveInfo="selection" />
                       </node>
                       <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3548249452606133151" nodeInfo="in">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="slnr.~SNodeTreeNode" resolveInfo="SNodeTreeNode" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8slo.~SNodeTreeNode" resolveInfo="SNodeTreeNode" />
                       </node>
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3548249452606133152" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="slnr.~SNodeTreeNode%dgetSNode()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getSNode" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8slo.~SNodeTreeNode%dgetSNode()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getSNode" />
                   </node>
                 </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3548249452606133153" nodeInfo="nn">
@@ -4419,7 +4419,7 @@
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="3548249452606133154" nodeInfo="nn">
             <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4293086527924042470" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="slnr.~SNodeTreeNode" resolveInfo="SNodeTreeNode" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8slo.~SNodeTreeNode" resolveInfo="SNodeTreeNode" />
             </node>
             <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3548249452606133156" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3548249452606133129" resolveInfo="selection" />
@@ -4428,7 +4428,7 @@
           <node role="elsifClauses" roleId="tpee.1206060520071" type="tpee.ElsifClause" typeId="tpee.1206060495898" id="3548249452606133157" nodeInfo="ng">
             <node role="condition" roleId="tpee.1206060619838" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="3548249452606133158" nodeInfo="nn">
               <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3548249452606133159" nodeInfo="in">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="slnr.~SModelTreeNode" resolveInfo="SModelTreeNode" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8slo.~SModelTreeNode" resolveInfo="SModelTreeNode" />
               </node>
               <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3548249452606133160" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3548249452606133129" resolveInfo="selection" />
@@ -4444,12 +4444,12 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3548249452606133129" resolveInfo="selection" />
                         </node>
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3548249452606133170" nodeInfo="in">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="slnr.~SModelTreeNode" resolveInfo="SModelTreeNode" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8slo.~SModelTreeNode" resolveInfo="SModelTreeNode" />
                         </node>
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3548249452606133171" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="slnr.~SModelTreeNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8slo.~SModelTreeNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
                     </node>
                   </node>
                   <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3548249452606133164" nodeInfo="nn">

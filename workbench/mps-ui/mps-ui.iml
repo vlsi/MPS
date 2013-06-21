@@ -21,6 +21,7 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="editor-api" />
+    <orderEntry type="module" module-name="actions-runtime" />
   </component>
 </module>
 
