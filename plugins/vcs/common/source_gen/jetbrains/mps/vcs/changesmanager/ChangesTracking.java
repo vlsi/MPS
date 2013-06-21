@@ -33,8 +33,7 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import org.apache.log4j.Priority;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -192,7 +191,7 @@ public class ChangesTracking {
     }
     final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
     if (BaseVersionUtil.isAddedFileStatus(status) || ConflictsUtil.isModelOrModuleConflicting(myModelDescriptor, myProject)) {
-      baseVersionModel.value = TemporaryModels.getInstance().create(true, TempModuleOptions.forDefaultModule());
+      baseVersionModel.value = new MergeTemporaryModel(myModelDescriptor.getReference(), true);
     } else {
       Object content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
       if (content == null && status != FileStatus.NOT_CHANGED) {
@@ -204,22 +203,21 @@ public class ChangesTracking {
         return;
       }
       String ext = modelVFile.getExtension();
-      SModel md = (content instanceof String ?
+      baseVersionModel.value = (content instanceof String ?
         PersistenceUtil.loadModel((String) content, ext) :
         PersistenceUtil.loadModel((byte[]) content, ext)
       );
-      if (md == null) {
+      if (baseVersionModel.value == null) {
         return;
       }
-      baseVersionModel.value = md;
 
-      if (Sequence.fromIterable(((Iterable<SModel.Problem>) md.getProblems())).any(new IWhereFilter<SModel.Problem>() {
+      if (Sequence.fromIterable(((Iterable<SModel.Problem>) baseVersionModel.value.getProblems())).any(new IWhereFilter<SModel.Problem>() {
         public boolean accept(SModel.Problem it) {
           return it.isError();
         }
       })) {
         StringBuilder sb = new StringBuilder();
-        for (SModel.Problem p : Sequence.fromIterable((Iterable<SModel.Problem>) md.getProblems())) {
+        for (SModel.Problem p : Sequence.fromIterable((Iterable<SModel.Problem>) baseVersionModel.value.getProblems())) {
           sb.append((p.isError() ?
             "error: " :
             "warn: "

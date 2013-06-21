@@ -118,10 +118,10 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
       }
     });
     if (Sequence.fromIterable(myChangeSet.getChangesForRoot(null)).isNotEmpty()) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          org.jetbrains.mps.openapi.model.SModel newMetaModel = MetadataUtil.createMetadataModel(newMD.value, myEditable);
-          org.jetbrains.mps.openapi.model.SModel oldMetaModel = MetadataUtil.createMetadataModel(oldMD.value, false);
+          org.jetbrains.mps.openapi.model.SModel newMetaModel = MetadataUtil.createMetadataModel(newMD.value, "metadata_new", myEditable);
+          org.jetbrains.mps.openapi.model.SModel oldMetaModel = MetadataUtil.createMetadataModel(oldMD.value, "metadata_old", false);
           myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel, newMetaModel, true);
         }
       });

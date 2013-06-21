@@ -4,10 +4,10 @@ package jetbrains.mps.vcs.diff.ui;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -32,16 +32,17 @@ public class MetadataUtil {
   public MetadataUtil() {
   }
 
-  public static SModel createMetadataModel(SModel model, boolean editable) {
-    SModelBase metadataModel = (SModelBase) TemporaryModels.getInstance().create(!(editable), TempModuleOptions.forDefaultModule());
+  public static SModel createMetadataModel(SModel model, String version, boolean editable) {
+    SModelBase metadataModel = new MergeTemporaryModel(model.getReference(), !(editable));
     metadataModel.addLanguage(PersistenceFacade.getInstance().createModuleReference("6df0089f-3288-4998-9d57-e698e7c8e145(jetbrains.mps.ide.vcs.modelmetadata)"));
     metadataModel.addLanguage(PersistenceFacade.getInstance().createModuleReference("86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)"));
     SModelOperations.addRootNode(((SModel) metadataModel), createModelRoot(model));
+    DiffModelUtil.renameModelAndRegister(metadataModel, version);
     return metadataModel;
   }
 
   public static void dispose(SModel model) {
-    TemporaryModels.getInstance().dispose(model);
+    DiffModelUtil.unregisterModel(model);
   }
 
   private static SNode createModelRoot(SModel model) {

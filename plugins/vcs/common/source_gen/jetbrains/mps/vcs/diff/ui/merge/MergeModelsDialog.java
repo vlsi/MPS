@@ -118,11 +118,11 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     });
     if (ListSequence.fromList(myMergeSession.getMetadataChanges()).isNotEmpty()) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          org.jetbrains.mps.openapi.model.SModel baseMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getBaseModel(), false);
-          org.jetbrains.mps.openapi.model.SModel mineMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getMyModel(), false);
-          org.jetbrains.mps.openapi.model.SModel repoMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getRepositoryModel(), false);
+          org.jetbrains.mps.openapi.model.SModel baseMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getBaseModel(), "metadata_base", false);
+          org.jetbrains.mps.openapi.model.SModel mineMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getMyModel(), "metadata_mine", false);
+          org.jetbrains.mps.openapi.model.SModel repoMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getRepositoryModel(), "metadata_repo", false);
           myMetadataMergeSession = MergeSession.createMergeSession(baseMetaModel, mineMetaModel, repoMetaModel);
           myMetadataInitialState = myMetadataMergeSession.getCurrentState();
           DiffModelUtil.renameModelAndRegister(myMetadataMergeSession.getResultModel(), "result");
