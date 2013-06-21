@@ -13,7 +13,7 @@ import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.ModuleContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
-import javax.swing.JPopupMenu;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
@@ -51,7 +51,7 @@ public class DependencyTree extends MPSTree {
   }
 
   @Override
-  protected JPopupMenu createPopupMenu(MPSTreeNode node) {
+  protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
     return null;
   }
 

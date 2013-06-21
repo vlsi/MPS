@@ -17,6 +17,7 @@ package jetbrains.mps.ide.projectPane.favorites;
 
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
@@ -243,6 +244,11 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     @Override
     public boolean isAutoOpen() {
       return getProjectView().isAutoscrollToSource(getId());
+    }
+
+    @Override
+    protected String getPopupMenuPlace() {
+      return ActionPlaces.FAVORITES_VIEW_POPUP;
     }
 
     @Override

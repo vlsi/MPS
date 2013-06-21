@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
@@ -49,7 +47,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.AbstractAction;
-import javax.swing.JPopupMenu;
 import javax.swing.KeyStroke;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
@@ -471,7 +468,7 @@ public class UsagesTree extends MPSTree {
   }
 
   @Override
-  protected JPopupMenu createPopupMenu(MPSTreeNode node) {
+  protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
     if (!myShowPopupMenu) return null;
 
     BaseAction includeAction = new BaseAction("Include") {
@@ -508,8 +505,7 @@ public class UsagesTree extends MPSTree {
       }
     };
 
-    DefaultActionGroup group = ActionUtils.groupFromActions(includeAction, excludeAction, includeSelectedOnlyAction);
-    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
+    return ActionUtils.groupFromActions(includeAction, excludeAction, includeSelectedOnlyAction);
   }
 
   private void openCurrentNodeLink(boolean inProjectIfPossible, boolean focus) {

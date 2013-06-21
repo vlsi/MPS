@@ -31,10 +31,9 @@ import com.intellij.util.ui.update.Update;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractAction;
@@ -53,7 +52,12 @@ import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public abstract class MPSTree extends DnDAwareTree implements Disposable {
   public static final String PATH = "path";
@@ -236,16 +240,18 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     return null;
   }
 
-  protected JPopupMenu createPopupMenu(final MPSTreeNode node) {
-    return ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
-      @Override
-      public JPopupMenu compute() {
-        ActionManager manager = ActionManager.getInstance();
-        ActionGroup actionGroup = node.getActionGroup();
-        if (actionGroup == null) return null;
-        return manager.createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, actionGroup).getComponent();
-      }
-    });
+  protected final JPopupMenu createPopupMenu(final MPSTreeNode node) {
+    ActionGroup actionGroup = createPopupActionGroup(node);
+    if (actionGroup == null) return null;
+    return ActionManager.getInstance().createActionPopupMenu(getPopupMenuPlace(), actionGroup).getComponent();
+  }
+
+  protected String getPopupMenuPlace() {
+    return ActionPlaces.UNKNOWN;
+  }
+
+  protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
+    return node.getActionGroup();
   }
 
   private void showPopup(int x, int y) {
@@ -408,7 +414,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     if (!ThreadUtils.isEventDispatchThread()) {
       throw new RuntimeException("Rebuild now can be only called from UI thread");
     }
-    assert !isDisposed():"Trying to reconstruct disposed tree. Try finding \"later\" in stacktrace";
+    assert !isDisposed() : "Trying to reconstruct disposed tree. Try finding \"later\" in stacktrace";
 
     runRebuildAction(new Runnable() {
       @Override
