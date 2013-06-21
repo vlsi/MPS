@@ -8,12 +8,16 @@ import org.jetbrains.mps.openapi.model.SModel;
 import javax.swing.JComboBox;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
+import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.project.ModuleContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NonNls;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -59,13 +63,14 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private SNode myCommandRoot;
   private UIEditorComponent myCommandEditor;
+  private FileEditor myCommandFileEditor;
 
   private ModuleContext myContext;
 
 
 
   public ConsoleTool(Project project) {
-    super(project, "Console", -1, IconContainer.ICON_d0a81, ToolWindowAnchor.BOTTOM, false);
+    super(project, "Console", -1, IconContainer.ICON_d0a91, ToolWindowAnchor.BOTTOM, false);
   }
 
 
@@ -92,7 +97,17 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
         };
         myHistEditor.setFocusable(false);
 
-        ConsoleTool.this.myCommandEditor = new UIEditorComponent(ProjectHelper.toMPSProject(getProject()).getRepository(), null);
+        ConsoleTool.this.myCommandEditor = new UIEditorComponent(ProjectHelper.toMPSProject(getProject()).getRepository(), null) {
+          @Nullable
+          @Override
+          public Object getData(@NonNls String key) {
+            if (PlatformDataKeys.FILE_EDITOR.is(key)) {
+              return myCommandFileEditor;
+            }
+            return super.getData(key);
+          }
+        };
+        myCommandFileEditor = new ConsoleFileEditor(myCommandEditor);
         Language base = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)"), Language.class);
         Collection<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
         for (Language l : CollectionSequence.fromCollection(languages)) {
@@ -258,13 +273,13 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
 
   public void addText(String text) {
-    ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a84(text));
+    ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a94(text));
   }
 
 
 
   public void addNode(SNode node) {
-    SNode n = _quotation_createNode_xg3v07_a0a0yb();
+    SNode n = _quotation_createNode_xg3v07_a0a0zb();
     SLinkOperations.setTarget(n, "target", SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), false);
     ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(n);
   }
@@ -282,7 +297,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     private jetbrains.mps.project.Project myProject;
 
     public ExecuteAction(jetbrains.mps.project.Project project) {
-      super("Execute", "Execute last command", IconContainer.ICON_c0a1cc);
+      super("Execute", "Execute last command", IconContainer.ICON_c0a1dc);
       ExecuteAction.this.myProject = project;
     }
 
@@ -297,7 +312,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
           }
 
           final SNode willBeLastHist = SNodeOperations.copyNode(myCommandRoot);
-          final SNode res = _quotation_createNode_xg3v07_a0g0a0a2cc();
+          final SNode res = _quotation_createNode_xg3v07_a0g0a0a2dc();
           final SearchScope scope = (myScopeCombo.getSelectedItem() == PROJECT_SCOPE ?
             new ProjectScope(myProject) :
             GlobalScope.getInstance()
@@ -313,7 +328,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
           }, new ConsoleStream() {
             public void addText(String text) {
               checkResultAvailable();
-              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a1a0a0b0a8a0a0c45(text));
+              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a1a0a0b0a8a0a0c55(text));
             }
 
             public void addNode(SNode node) {
@@ -348,7 +363,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private class ClearAction extends BaseAction {
     public ClearAction() {
-      super("Clear", "Clear console window", IconContainer.ICON_c0a0ec);
+      super("Clear", "Clear console window", IconContainer.ICON_c0a0fc);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -361,7 +376,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private class PrevCmdAction extends BaseAction {
     public PrevCmdAction() {
-      super("Prev", "Previous command", IconContainer.ICON_c0a0gc);
+      super("Prev", "Previous command", IconContainer.ICON_c0a0hc);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -389,7 +404,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private class NextCmdAction extends BaseAction {
     public NextCmdAction() {
-      super("Next", "Next command", IconContainer.ICON_c0a0ic);
+      super("Next", "Next command", IconContainer.ICON_c0a0jc);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -408,7 +423,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     }
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a0a84(Object parameter_1) {
+  private static SNode _quotation_createNode_xg3v07_a0a0a94(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
@@ -416,14 +431,14 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a0yb() {
+  private static SNode _quotation_createNode_xg3v07_a0a0zb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.NodeResultPart", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0g0a0a2cc() {
+  private static SNode _quotation_createNode_xg3v07_a0g0a0a2dc() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -433,7 +448,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a1a0a0b0a8a0a0c45(Object parameter_1) {
+  private static SNode _quotation_createNode_xg3v07_a0a1a0a0b0a8a0a0c55(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
