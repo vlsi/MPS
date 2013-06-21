@@ -10,11 +10,6 @@ import jetbrains.mps.util.annotation.DisposableCommand;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.workbench.action.BaseAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import java.util.Map;
-import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class HierarchyTreeNode extends MPSTreeNode {
@@ -80,22 +75,6 @@ public class HierarchyTreeNode extends MPSTreeNode {
       "no name" :
       name
     );
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    final AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();
-    if (hierarchyView == null) {
-      return null;
-    }
-    BaseAction hierarchyAction = new BaseAction("Show Hierarchy For This Node") {
-      @Override
-      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        final SNode node = myNode;
-        hierarchyView.showItemInHierarchy(node, getOperationContext());
-      }
-    };
-    return ActionUtils.groupFromActions(hierarchyAction);
   }
 
   @Override

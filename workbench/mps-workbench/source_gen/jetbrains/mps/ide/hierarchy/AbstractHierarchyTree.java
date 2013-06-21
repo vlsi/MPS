@@ -19,6 +19,11 @@ import java.util.HashSet;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.smodel.SModelStereotype;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.workbench.action.BaseAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 public abstract class AbstractHierarchyTree extends MPSTree {
   protected IOperationContext myOperationContext;
@@ -35,6 +40,8 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     myConceptFqName = aConceptFqName;
     myIsParentHierarchy = isParentHierarchy;
   }
+
+
 
   @Nullable
   public AbstractHierarchyView getHierarchyView() {
@@ -214,5 +221,25 @@ public abstract class AbstractHierarchyTree extends MPSTree {
         setIcon(myHierarchyView.getIcon());
       }
     }
+  }
+
+  @Override
+  protected ActionGroup createPopupActionGroup(final MPSTreeNode treeNode) {
+    if (!(treeNode instanceof HierarchyTreeNode)) {
+      return null;
+    }
+
+    final AbstractHierarchyView hierarchyView = getHierarchyView();
+    if (hierarchyView == null) {
+      return null;
+    }
+    BaseAction hierarchyAction = new BaseAction("Show Hierarchy For This Node") {
+      @Override
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+        final SNode node = ((HierarchyTreeNode) treeNode).getNode();
+        hierarchyView.showItemInHierarchy(node, treeNode.getOperationContext());
+      }
+    };
+    return ActionUtils.groupFromActions(hierarchyAction);
   }
 }
