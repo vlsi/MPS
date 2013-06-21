@@ -83,6 +83,7 @@
   <import index="r9fo" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(MPS.OpenAPI/org.jetbrains.mps.util@java_stub)" version="-1" />
   <import index="3jkk" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui(MPS.Platform/jetbrains.mps.ide.ui@java_stub)" version="-1" />
   <import index="mlq0" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui.tree(MPS.Platform/jetbrains.mps.ide.ui.tree@java_stub)" version="-1" />
+  <import index="fse5" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.ui.tree.module(MPS.Workbench/jetbrains.mps.ide.ui.tree.module@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -5462,8 +5463,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8722937377469656341" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8722937377469656342" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="builder" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469656343" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gcfa.~NamespaceTreeBuilder" resolveInfo="NamespaceTreeBuilder" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4417290638886086244" nodeInfo="in">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fse5.~NamespaceTreeBuilder" resolveInfo="NamespaceTreeBuilder" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8722937377469656344" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8722937377469656345" nodeInfo="nn">
@@ -5492,7 +5493,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8722937377469656342" resolveInfo="builder" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8722937377469656356" nodeInfo="nn">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gcfa.~NamespaceTreeBuilder%daddNode(jetbrains%dmps%dide%dui%dtree%dMPSTreeNode)%cvoid" resolveInfo="addNode" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fse5.~NamespaceTreeBuilder%daddNode(jetbrains%dmps%dide%dui%dtree%dMPSTreeNode)%cvoid" resolveInfo="addNode" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8722937377469656357" nodeInfo="nn">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8722937377469656358" nodeInfo="nn">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8722937377469655472" resolveInfo="CheckBoxNode" />
@@ -5534,7 +5535,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8722937377469656342" resolveInfo="builder" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8722937377469656371" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gcfa.~NamespaceTreeBuilder%dfillNode(jetbrains%dmps%dide%dui%dtree%dMPSTreeNode)%cvoid" resolveInfo="fillNode" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fse5.~NamespaceTreeBuilder%dfillNode(jetbrains%dmps%dide%dui%dtree%dMPSTreeNode)%cvoid" resolveInfo="fillNode" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8722937377469656372" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8722937377469656362" resolveInfo="allModulesNode" />
               </node>
@@ -6233,7 +6234,7 @@
       <property name="name" nameId="tpck.1169194664001" value="MyTreeBuilder" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469656083" nodeInfo="nn" />
       <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469656149" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gcfa.~NamespaceTreeBuilder" resolveInfo="NamespaceTreeBuilder" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fse5.~NamespaceTreeBuilder" resolveInfo="NamespaceTreeBuilder" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469656150" nodeInfo="in">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8722937377469655412" resolveInfo="CheckBoxNode" />
         </node>
@@ -6253,13 +6254,13 @@
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469656086" nodeInfo="nn" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8722937377469656087" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="8722937377469656088" nodeInfo="nn">
-            <link role="constructorDeclaration" roleId="tpee.1241540960362" targetNodeId="gcfa.~NamespaceTreeBuilder%d&lt;init&gt;(jetbrains%dmps%dide%dprojectPane%dNamespaceTreeBuilder$NamespaceNodeBuilder)" resolveInfo="NamespaceTreeBuilder" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gcfa.~NamespaceTreeBuilder%d&lt;init&gt;(jetbrains%dmps%dide%dprojectPane%dNamespaceTreeBuilder$NamespaceNodeBuilder)" resolveInfo="NamespaceTreeBuilder" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fse5.~NamespaceTreeBuilder%d&lt;init&gt;(jetbrains%dmps%dide%dui%dtree%dmodule%dNamespaceTreeBuilder$NamespaceNodeBuilder)" resolveInfo="NamespaceTreeBuilder" />
+            <link role="constructorDeclaration" roleId="tpee.1241540960362" targetNodeId="fse5.~NamespaceTreeBuilder%d&lt;init&gt;(jetbrains%dmps%dide%dui%dtree%dmodule%dNamespaceTreeBuilder$NamespaceNodeBuilder)" resolveInfo="NamespaceTreeBuilder" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8722937377469656089" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="8722937377469656090" nodeInfo="nn">
                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="8722937377469656091" nodeInfo="ig">
-                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="gcfa.~NamespaceTreeBuilder$NamespaceNodeBuilder" resolveInfo="NamespaceTreeBuilder.NamespaceNodeBuilder" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="fse5.~NamespaceTreeBuilder$NamespaceNodeBuilder" resolveInfo="NamespaceTreeBuilder.NamespaceNodeBuilder" />
                   <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469656092" nodeInfo="nn" />
                   <node role="typeParameter" roleId="tpee.1201186121363" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469656107" nodeInfo="in">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8722937377469655376" resolveInfo="CheckBoxNamespaceNode" />

@@ -10,7 +10,7 @@ import jetbrains.mps.make.IMakeService;
 import javax.swing.tree.TreeNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;

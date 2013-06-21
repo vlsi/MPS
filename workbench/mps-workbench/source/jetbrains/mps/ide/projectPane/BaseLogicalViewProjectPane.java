@@ -36,11 +36,13 @@ import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import jetbrains.mps.ide.ui.tree.module.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.tree.module.GeneratorTreeNode;
+import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
@@ -289,7 +291,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   public SModule getContextModule() {
     MPSTreeNode treeNode = (MPSTreeNode) getSelectedTreeNode(TreeNode.class);
-    while (treeNode != null && !(treeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode)) {
+    while (treeNode != null && !(treeNode instanceof ProjectModuleTreeNode)) {
       treeNode = (MPSTreeNode) treeNode.getParent();
     }
     if (treeNode == null) return null;
@@ -349,9 +351,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       return ActionPlace.PROJECT_PANE_SNODE;
     } else if (treeNode instanceof SModelTreeNode) {
       return ActionPlace.PROJECT_PANE_SMODEL;
-    } else if ((treeNode instanceof ProjectTreeNode) || (treeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode)) {
+    } else if ((treeNode instanceof ProjectTreeNode) || (treeNode instanceof jetbrains.mps.ide.ui.tree.module.ProjectTreeNode)) {
       return ActionPlace.PROJECT_PANE_PROJECT;
-    } else if (treeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.GeneratorTreeNode) {
+    } else if (treeNode instanceof GeneratorTreeNode) {
       return ActionPlace.PROJECT_PANE_GENERATOR;
     } else if (treeNode instanceof TransientModelsTreeNode) {
       return ActionPlace.PROJECT_PANE_TRANSIENT_MODULES;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -77,7 +77,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     }
 
     Collections.sort(namespaces, new ToStringComparator());
-    Collections.sort(nodes, new jetbrains.mps.ide.projectPane.logicalview.nodes.ModuleTreeNodeComparator());
+    Collections.sort(nodes, new ModuleTreeNodeComparator());
 
     node.removeAllChildren();
 

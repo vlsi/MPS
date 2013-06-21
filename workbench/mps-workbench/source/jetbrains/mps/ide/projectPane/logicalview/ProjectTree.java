@@ -18,11 +18,11 @@ package jetbrains.mps.ide.projectPane.logicalview;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
+import jetbrains.mps.ide.ui.tree.module.DefaultNamespaceTreeBuilder;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectModulesPoolTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
+import jetbrains.mps.ide.ui.tree.module.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
@@ -42,7 +42,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ProjectTree extends MPSTree {
   private Project myProject;
   private ProjectTreeNode myProjectTreeNode;
-  private jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode myModulesPoolTreeNode;
+  private ProjectModulesPoolTreeNode myModulesPoolTreeNode;
   private AtomicReference<IMakeNotificationListener> myMakeNotificationListener = new AtomicReference<IMakeNotificationListener>();
 
   public ProjectTree(Project project) {

@@ -17,8 +17,9 @@ package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
+import jetbrains.mps.ide.ui.tree.module.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ModuleTreeNodeComparator;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
@@ -49,7 +50,7 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
       }
     }
 
-    Collections.sort(moduleNodes, new jetbrains.mps.ide.projectPane.logicalview.nodes.ModuleTreeNodeComparator());
+    Collections.sort(moduleNodes, new ModuleTreeNodeComparator());
 
     MyNamespaceTreeBuilder builder = new MyNamespaceTreeBuilder();
     for (ModuleTreeNode mtn : moduleNodes) {

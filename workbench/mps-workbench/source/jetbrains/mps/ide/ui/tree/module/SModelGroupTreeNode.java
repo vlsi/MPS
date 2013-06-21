@@ -13,10 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane.logicalview.nodes;
+package jetbrains.mps.ide.ui.tree.module;
 
-import jetbrains.mps.ide.StereotypeProvider;
-import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 

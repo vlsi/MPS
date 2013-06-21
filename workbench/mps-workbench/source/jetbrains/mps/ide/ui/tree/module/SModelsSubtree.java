@@ -13,12 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
-import jetbrains.mps.ide.StereotypeProvider;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectLanguageTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;

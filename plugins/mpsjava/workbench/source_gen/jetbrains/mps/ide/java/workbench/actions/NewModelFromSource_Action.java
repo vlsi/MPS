@@ -36,7 +36,7 @@ import jetbrains.mps.ide.java.newparser.JavaParseException;
 import java.io.IOException;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import javax.swing.tree.TreeNode;
-import jetbrains.mps.ide.StereotypeProvider;
+import jetbrains.mps.ide.ui.tree.module.StereotypeProvider;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 

@@ -48,10 +48,10 @@
     <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependencyViewerScope" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.NamespaceTextNode" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.TextMPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.module.NamespaceTextNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.smodel.PackageNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode" />

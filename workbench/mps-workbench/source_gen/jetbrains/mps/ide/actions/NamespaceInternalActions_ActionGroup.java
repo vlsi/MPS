@@ -15,7 +15,7 @@ import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.List;
 import javax.swing.tree.TreeNode;
-import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.BaseGroup;

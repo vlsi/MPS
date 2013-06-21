@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane.logicalview.nodes;
+package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.DevKit;
 import org.jetbrains.mps.openapi.module.SModule;

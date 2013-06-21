@@ -7,7 +7,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextMPSTreeNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.ModuleContext;
@@ -18,7 +18,7 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 
 public class DependencyTree extends MPSTree {

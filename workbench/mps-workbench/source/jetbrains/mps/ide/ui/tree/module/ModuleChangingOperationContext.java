@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.ui.tree.module;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;

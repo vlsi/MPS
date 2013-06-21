@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane.logicalview.nodes;
+package jetbrains.mps.ide.ui.tree.module;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
-import jetbrains.mps.ide.projectPane.SModelsSubtree;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;

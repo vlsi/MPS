@@ -13,20 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane.logicalview.nodes;
+package jetbrains.mps.ide.ui.tree.module;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
-import jetbrains.mps.ide.ui.tree.TextTreeNode;
-import jetbrains.mps.workbench.action.ActionUtils;
+public interface StereotypeProvider {
+  String getStereotype();
 
-public class RuntimeModulesTreeNode extends TextTreeNode {
-  public RuntimeModulesTreeNode() {
-    super("runtime");
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_RUNTIME_FOLDER_ACTIONS);
-  }
+  boolean isStrict();
 }
