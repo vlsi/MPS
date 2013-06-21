@@ -52,15 +52,13 @@ public class NewLanguageDialog extends DialogWrapper {
           myProject.getProjectFile().getAbsolutePath()
         )) :
         null
-      )) {
+      ));
+      myLanguageSettings.setListener(new NewLanguageSettings.LangSettingsChangedListener() {
         @Override
-        protected void updateLanguageLocation() {
-          super.updateLanguageLocation();
-          if (myLanguageSettings != null) {
-            check();
-          }
+        public void changed() {
+          NewLanguageDialog.this.check();
         }
-      };
+      });
     }
     return myLanguageSettings;
   }
