@@ -5914,14 +5914,12 @@
               <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.PropertyDeclarationCellSelector" typeId="tpc2.4510086454722552739" id="4461169032989026832" nodeInfo="ng">
                 <link role="propertyDeclaration" roleId="tpc2.4510086454740628767" targetNodeId="tpee.1070475926801" resolveInfo="value" />
               </node>
-              <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="4461169032989026967" nodeInfo="ng">
-                <node role="positionExpression" roleId="tpc2.4461169032989029707" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4461169032991578260" nodeInfo="nn">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4461169032991577204" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1202131050790" resolveInfo="left" />
-                  </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4461169032991584958" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lc.~String%dlength()%cint" resolveInfo="length" />
-                  </node>
+              <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4461169033001281102" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4461169033001280046" nodeInfo="nn">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1202131050790" resolveInfo="left" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4461169033001287844" nodeInfo="nn">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lc.~String%dlength()%cint" resolveInfo="length" />
                 </node>
               </node>
             </node>

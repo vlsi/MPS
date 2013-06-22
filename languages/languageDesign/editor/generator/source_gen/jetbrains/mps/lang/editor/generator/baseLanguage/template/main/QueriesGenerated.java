@@ -2123,7 +2123,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_4461169032991627451(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "selectionStart", true), "positionExpression", true);
+    return SLinkOperations.getTarget(_context.getNode(), "selectionStart", true);
   }
 
   public static SNode sourceNodeQuery_4510086454721385996(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2151,11 +2151,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_4461169032991671657(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "selectionStart", true), "positionExpression", true);
+    return SLinkOperations.getTarget(_context.getNode(), "selectionStart", true);
   }
 
   public static SNode sourceNodeQuery_4461169032991700811(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "selectionEnd", true), "positionExpression", true);
+    return SLinkOperations.getTarget(_context.getNode(), "selectionEnd", true);
   }
 
   public static Object templateArgumentQuery_2467262375112804984(final IOperationContext operationContext, final TemplateQueryContext _context) {

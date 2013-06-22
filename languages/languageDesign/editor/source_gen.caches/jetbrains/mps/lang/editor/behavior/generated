@@ -21,7 +21,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="b7cy7kefjsku7xbh9lxcricxkhnsi59" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="4fpv2xr3ihc6ydyum9jowto74hclgxr" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="al3ceed0t3me73r8q7wei0ojf8hii4j" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-5npsvsyrn9wjxm8chqeqoks9rzxsct3" />
   <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-4byk9l07h3msrgceb0q8gf61k638q9y" />
   <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="6i4p9sgum9p3e5fryx1sqx252kwroyy" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="aumxb375hryoj342z68nrzgvgr4jzbz" />
@@ -349,7 +349,6 @@
     <file name="ParametersInformationQuery_BehaviorDescriptor.java" />
     <file name="ParametersInformationStyleClassItem_BehaviorDescriptor.java" />
     <file name="PositionChildrenStyleClassItem_BehaviorDescriptor.java" />
-    <file name="PositionSelector_BehaviorDescriptor.java" />
     <file name="PositionStyleClassItem_BehaviorDescriptor.java" />
     <file name="PreDefinedStyleClassItem_BehaviorDescriptor.java" />
     <file name="PreDefinedStyleSheetClass_BehaviorDescriptor.java" />

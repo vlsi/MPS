@@ -1658,7 +1658,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.ParametersInformationQuery_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.ParametersInformationStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.PositionChildrenStyleClassItem_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.editor.PositionSelector_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.PositionStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.PreDefinedStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.PredefinedSelector_Editor" />
@@ -2199,18 +2198,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editor.PositionSelector_Editor" file="PositionSelector_Editor.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editor.PositionStyleClassItem_Editor" file="PositionStyleClassItem_Editor.java">
