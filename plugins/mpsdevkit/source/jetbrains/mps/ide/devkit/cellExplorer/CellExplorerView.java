@@ -26,8 +26,6 @@ import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -47,6 +45,8 @@ import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
@@ -73,12 +73,14 @@ public class CellExplorerView extends BaseProjectTool {
   private CellTreeNode myCashedPropertyCellTreeNode = null;
 
   private EditorComponent.RebuildListener myRebuildListener = new EditorComponent.RebuildListener() {
+    @Override
     public void editorRebuilt(EditorComponent editor) {
       update();
     }
   };
 
   private EditorComponent.CellSynchronizationWithModelListener mySynchronizationListener = new EditorComponent.CellSynchronizationWithModelListener() {
+    @Override
     public void cellSynchronizedWithModel(EditorCell cell) {
       if (cell == null) return;
       CellTreeNode cellTreeNode;
@@ -174,15 +176,39 @@ public class CellExplorerView extends BaseProjectTool {
     return "Cell Explorer";
   }
 
+  @Override
   public Icon getIcon() {
     return CellExplorer.CellExplorer;
   }
 
+  @Override
   public JComponent getComponent() {
     return myComponent;
   }
 
   private class MyTree extends MPSTree {
+    @Override
+    protected ActionGroup createPopupActionGroup(final MPSTreeNode treeNode) {
+      if (treeNode instanceof CellTreeNode) {
+        BaseAction selectInEditorAction = new BaseAction("Select In Editor") {
+          @Override
+          protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+            ((CellTreeNode) treeNode).showCell();
+          }
+        };
+        BaseAction propertiesAction = new BaseAction("Properties") {
+          @Override
+          protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+            new CellPropertiesWindow(((CellTreeNode) treeNode).myCell, e.getData(MPSDataKeys.FRAME));
+          }
+        };
+        return ActionUtils.groupFromActions(selectInEditorAction, propertiesAction);
+
+      }
+      return null;
+    }
+
+    @Override
     protected MPSTreeNode rebuild() {
       if (myCurrentEditor == null || myCurrentEditor.getRootCell() == null) {
         return new TextTreeNode("No editor selected") {
@@ -212,6 +238,7 @@ public class CellExplorerView extends BaseProjectTool {
       setNodeIdentifier(calculateNodeIdentifier());
     }
 
+    @Override
     protected void doUpdatePresentation() {
       if (myCell.isErrorState()) {
         setIcon(CellExplorer.CellError);
@@ -229,29 +256,18 @@ public class CellExplorerView extends BaseProjectTool {
         setIcon(CellExplorer.CellDefault);
       }
 
-      setAdditionalText("[" + myCell.getX() + ", " + myCell.getY() + ", " + myCell.getWidth() + ", " + myCell.getHeight() + "], baseLine = " + myCell.getBaseline() + ", ascent = " + myCell.getAscent() + ", descent = " + myCell.getDescent());
+      setAdditionalText(
+          "[" + myCell.getX() + ", " + myCell.getY() + ", " + myCell.getWidth() + ", " + myCell.getHeight() + "], baseLine = " + myCell.getBaseline() + ", ascent = " + myCell.getAscent() + ", descent = " + myCell.getDescent());
     }
 
+    @Override
     public boolean isInitialized() {
       return myInitialized;
     }
 
+    @Override
     public int getToggleClickCount() {
       return -1;
-    }
-
-    public ActionGroup getActionGroup() {
-      BaseAction selectInEditorAction = new BaseAction("Select In Editor") {
-        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          showCell();
-        }
-      };
-      BaseAction propertiesAction = new BaseAction("Properties") {
-        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          new CellPropertiesWindow(myCell, e.getData(MPSDataKeys.FRAME));
-        }
-      };
-      return ActionUtils.groupFromActions(selectInEditorAction, propertiesAction);
     }
 
     private void showCell() {
@@ -261,10 +277,12 @@ public class CellExplorerView extends BaseProjectTool {
       }
     }
 
+    @Override
     public void doubleClick() {
       showCell();
     }
 
+    @Override
     protected void doInit() {
       removeAllChildren();
       if (myCell.getSNode() != null) {
@@ -281,10 +299,12 @@ public class CellExplorerView extends BaseProjectTool {
             }
           }
 
+          @Override
           public void doubleClick() {
             CellTreeNode.this.doubleClick();
           }
 
+          @Override
           public boolean isLeaf() {
             return true;
           }
@@ -350,6 +370,7 @@ public class CellExplorerView extends BaseProjectTool {
 
       List<ActionKey> actionKeys = new ArrayList<ActionKey>(keyMap.getActionKeys());
       Collections.sort(actionKeys, new Comparator<ActionKey>() {
+        @Override
         public int compare(ActionKey firstKey, ActionKey secondKey) {
           return firstKey.toString().compareTo(secondKey.toString());
         }
@@ -367,6 +388,7 @@ public class CellExplorerView extends BaseProjectTool {
               setIcon(CellExplorer.CellActionKey);
             }
 
+            @Override
             public boolean isLeaf() {
               return true;
             }

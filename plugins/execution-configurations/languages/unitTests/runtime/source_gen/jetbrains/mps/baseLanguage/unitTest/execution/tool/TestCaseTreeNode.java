@@ -11,8 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class TestCaseTreeNode extends BaseTestTreeNode {
@@ -35,11 +33,6 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
       }
     });
     return className.value;
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup("jetbrains.mps.ide.actions.JUnitTestCaseActions_ActionGroup");
   }
 
   @Override

@@ -6,9 +6,6 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.workbench.action.BaseGroup;
-import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -30,11 +27,6 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
   @Nullable
   public SNode getNode() {
     return myNode;
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup"));
   }
 
   public void openNode(final boolean focus, final boolean select) {

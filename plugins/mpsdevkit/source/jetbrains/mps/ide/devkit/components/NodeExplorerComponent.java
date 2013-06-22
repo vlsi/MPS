@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.devkit.components;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -64,6 +65,12 @@ public class NodeExplorerComponent {
   private class MyTree extends MPSTree {
     private IOperationContext myOperationContext;
 
+    @Override
+    protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
+      return null;
+    }
+
+    @Override
     protected MPSTreeNode rebuild() {
       if (myNode == null || myNode.resolve(MPSModuleRepository.getInstance()) == null) {
         return new TextTreeNode("no node");
@@ -92,6 +99,7 @@ public class NodeExplorerComponent {
       super(node, role, operationContext);
     }
 
+    @Override
     protected void doUpdatePresentation_internal() {
       super.doUpdatePresentation_internal();
       String string = getText();
@@ -99,6 +107,7 @@ public class NodeExplorerComponent {
       setText(string + typeInfo);
     }
 
+    @Override
     protected void doInit() {
       this.removeAllChildren();
 
@@ -123,6 +132,7 @@ public class NodeExplorerComponent {
       myNode = new jetbrains.mps.smodel.SNodePointer(node);
     }
 
+    @Override
     protected void doInit() {
       for (SReference reference : jetbrains.mps.util.SNodeOperations.getReferences(myNode.resolve(MPSModuleRepository.getInstance()))) {
         SNode referent = reference.getTargetNode();
@@ -133,6 +143,7 @@ public class NodeExplorerComponent {
       myIsInitialized = true;
     }
 
+    @Override
     public boolean isInitialized() {
       return myIsInitialized;
     }
@@ -147,6 +158,7 @@ public class NodeExplorerComponent {
       myNode = new jetbrains.mps.smodel.SNodePointer(node);
     }
 
+    @Override
     protected void doInit() {
       SNode node = myNode.resolve(MPSModuleRepository.getInstance());
       for (String name : node.getPropertyNames()) {
@@ -157,6 +169,7 @@ public class NodeExplorerComponent {
       myIsInitialized = true;
     }
 
+    @Override
     public boolean isInitialized() {
       return myIsInitialized;
     }

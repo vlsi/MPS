@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview;
 
-import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -51,11 +50,6 @@ public class ProjectTree extends MPSTree {
 
     getSelectionModel().setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
     scrollsOnExpand = false;
-  }
-
-  @Override
-  protected String getPopupMenuPlace() {
-    return ActionPlaces.PROJECT_VIEW_POPUP;
   }
 
   @Override

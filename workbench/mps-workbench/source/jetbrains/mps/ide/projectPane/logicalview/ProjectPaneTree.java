@@ -17,6 +17,8 @@ package jetbrains.mps.ide.projectPane.logicalview;
 
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
@@ -33,6 +35,7 @@ import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeChildrenProvider;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -118,6 +121,21 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
   @Override
   public boolean isAutoOpen() {
     return myProjectPane.getProjectView().isAutoscrollToSource(myProjectPane.getId());
+  }
+
+  @Override
+  protected String getPopupMenuPlace() {
+    return ActionPlaces.PROJECT_VIEW_POPUP;
+  }
+
+  @Override
+  protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
+    return ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
+      @Override
+      public ActionGroup compute() {
+        return node.getActionGroup();
+      }
+    });
   }
 
   @Override

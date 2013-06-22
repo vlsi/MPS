@@ -17,7 +17,10 @@ import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.workbench.action.BaseGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
 import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
@@ -67,6 +70,14 @@ public class VariablesTree extends MPSTree implements DataProvider {
     });
     setRootVisible(false);
     setShowsRootHandles(true);
+  }
+
+  @Override
+  protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
+    if (node instanceof AbstractWatchableNode) {
+      return ((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup"));
+    }
+    return null;
   }
 
   public void setUiState(@NotNull AbstractUiState uiState) {

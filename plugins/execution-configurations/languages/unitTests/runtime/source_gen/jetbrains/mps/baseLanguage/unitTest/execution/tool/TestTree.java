@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import javax.swing.SwingUtilities;
@@ -55,6 +57,17 @@ public class TestTree extends MPSTree implements TestView, Disposable {
       }
       testCaseNode.setState(testState);
     }
+  }
+
+  @Override
+  protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
+    if (node instanceof TestCaseTreeNode) {
+      return ActionUtils.getGroup("jetbrains.mps.ide.actions.JUnitTestCaseActions_ActionGroup");
+    }
+    if (node instanceof TestMethodTreeNode) {
+      return ActionUtils.getGroup("jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup");
+    }
+    return null;
   }
 
   @Override
