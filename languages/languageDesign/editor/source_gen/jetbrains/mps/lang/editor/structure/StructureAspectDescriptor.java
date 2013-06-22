@@ -337,7 +337,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 160:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("position").alias("position-children", "").staticScope(StaticScope.NONE).create();
       case 161:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PositionSelector").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("position").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PositionSelector").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"positionExpression"}, new boolean[]{false}).create();
       case 162:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PositionStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("position").alias("position", "").staticScope(StaticScope.NONE).create();
       case 163:

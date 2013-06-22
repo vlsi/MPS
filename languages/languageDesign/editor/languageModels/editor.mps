@@ -11121,6 +11121,9 @@
                     </node>
                     <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="3788991198419897455" nodeInfo="ng">
                       <property name="position" nameId="tpc2.3604384757217589845" value="0" />
+                      <node role="positionExpression" roleId="tpc2.4461169032989029707" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4461169032991552772" nodeInfo="nn">
+                        <property name="value" nameId="tpee.1068580320021" value="0" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -11236,6 +11239,9 @@
                 </node>
                 <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="3788991198419999493" nodeInfo="ng">
                   <property name="position" nameId="tpc2.3604384757217589845" value="0" />
+                  <node role="positionExpression" roleId="tpc2.4461169032989029707" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4461169032991572165" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1068580320021" value="0" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -11268,6 +11274,9 @@
                 </node>
                 <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="3788991198419999916" nodeInfo="ng">
                   <property name="position" nameId="tpc2.3604384757217589845" value="0" />
+                  <node role="positionExpression" roleId="tpc2.4461169032989029707" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4461169032991572167" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1068580320021" value="0" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -11359,6 +11368,9 @@
                       </node>
                       <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="3788991198420005516" nodeInfo="ng">
                         <property name="position" nameId="tpc2.3604384757217589845" value="-1" />
+                        <node role="positionExpression" roleId="tpc2.4461169032989029707" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4461169032991561175" nodeInfo="nn">
+                          <property name="value" nameId="tpee.1068580320021" value="-1" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -11490,11 +11502,8 @@
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3604384757217590489" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.3604384757217589208" resolveInfo="PositionSelector" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="3604384757217595103" nodeInfo="ng">
-      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.3604384757217589845" resolveInfo="position" />
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.AutoDeletableStyleClassItem" typeId="tpc2.1186414949600" id="2701921320703735119" nodeInfo="nn">
-        <property name="flag" nameId="tpc2.1186414551515" value="false" />
-      </node>
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="4461169032989057596" nodeInfo="ng">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.4461169032989029707" />
     </node>
   </root>
   <root type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="4510086454730016044" nodeInfo="ng">
@@ -11761,6 +11770,9 @@
                 </node>
                 <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="4323500428146797608" nodeInfo="ng">
                   <property name="position" nameId="tpc2.3604384757217589845" value="0" />
+                  <node role="positionExpression" roleId="tpc2.4461169032989029707" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4461169032991546618" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1068580320021" value="0" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -11793,6 +11805,9 @@
                 </node>
                 <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="3604384757227644540" nodeInfo="ng">
                   <property name="position" nameId="tpc2.3604384757217589845" value="0" />
+                  <node role="positionExpression" roleId="tpc2.4461169032989029707" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4461169032991546708" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1068580320021" value="0" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -11880,6 +11895,9 @@
                 </node>
                 <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="2701921320707439151" nodeInfo="ng">
                   <property name="position" nameId="tpc2.3604384757217589845" value="0" />
+                  <node role="positionExpression" roleId="tpc2.4461169032989029707" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4461169032991566636" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1068580320021" value="0" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -11912,6 +11930,9 @@
                 </node>
                 <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpc2.PositionSelector" typeId="tpc2.3604384757217589208" id="2701921320707439167" nodeInfo="ng">
                   <property name="position" nameId="tpc2.3604384757217589845" value="0" />
+                  <node role="positionExpression" roleId="tpc2.4461169032989029707" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4461169032991566697" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1068580320021" value="0" />
+                  </node>
                 </node>
               </node>
             </node>
